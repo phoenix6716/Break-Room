@@ -1,4 +1,8 @@
-# INSERT COIN — Full Retro Arcade Redesign
+# Historical design notes
+
+The text below describes an earlier visual pass. The current files are the approved Midnight Arcade styling; preserve them and the existing header. Lowball and Stake are implemented. Other game pages intentionally serve as coming-soon layout guides.
+
+# Midnight Arcade — Full Retro Arcade Redesign
 
 This pass goes beyond recolouring: it gives the site a cabinet-inspired visual system with a neon-purple cabinet backdrop, grid floor texture, subtle CRT scanlines, blinking marquee bulbs, pixel-display type, chunky offset shadows, high-contrast game art panels, hover lift/score-card motion, and a new “Ready Player One?” marquee + scrolling announcement strip on the home screen.
 

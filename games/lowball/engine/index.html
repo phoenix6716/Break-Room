@@ -535,6 +535,9 @@
     padding: 16px; background: rgba(5, 20, 12, 0.72);
   }
   .modal.show { display: flex; }
+  /* The wrapper supplies the visible viewport; standalone play uses the full window. */
+  .modal { top:var(--embed-visible-top, 0px); bottom:auto; height:var(--embed-visible-height, 100vh); }
+  .modal .modal-panel { max-height:calc(var(--embed-visible-height, 100vh) - 32px); }
   .modal-panel {
     width: min(100%, 380px); max-height: 94vh; overflow-y: auto;
     border-image-source: url('stat-tile.png');
@@ -593,7 +596,7 @@
   }
   html { background:#100a2e !important; }
   body {
-    /* Match the original INSERT COIN template background exactly. */
+    /* Match the original Midnight Arcade template background exactly. */
     background-color:#100a2e !important;
     background-image:radial-gradient(ellipse at 12% 4%,#5222a544 0,transparent 34%),radial-gradient(ellipse at 94% 25%,#ff4fd81a 0,transparent 26%),linear-gradient(#25e7ff0b 1px,transparent 1px),linear-gradient(90deg,#25e7ff0b 1px,transparent 1px) !important;
     background-size:auto,auto,24px 24px,24px 24px !important;
@@ -602,7 +605,7 @@
     padding:14px 12px 22px !important;
     font-family:'m6x11', monospace !important;
   }
-  /* The INSERT COIN page has a subtle grid background, but no scanline overlay. */
+  /* The Midnight Arcade page has a subtle grid background, but no scanline overlay. */
   body::before, body::after { content:none !important; display:none !important; }
   .wrap { max-width:620px !important; width:100% !important; margin-inline:auto !important; }
   header { margin:0 0 12px !important; }

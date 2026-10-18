@@ -1,38 +1,48 @@
-# INSERT COIN — Daily Arcade UI pack
+# Midnight Arcade
 
-Phone-first static HTML/CSS prototype. No framework, package manager, build step or JavaScript required. Open `index.html` in a browser.
+A static daily games website with the approved purple arcade styling and shared game header. No framework, package installation, or build step is required.
 
-## Files
-- `index.html`: home hub, score averages, reset countdown sample and game cards in played, ready and locked states.
-- `friends.html`: friend-code form, friends list and score-only daily feed.
-- `profile.html`: player identity, lifetime average, per-game averages, best scores, streaks and achievements.
-- `login.html`: Google/email login screen.
-- `signup.html`: Google/email sign-up screen.
-- `game.html`: shared wrapper for individual games.
-- `style-guide.html`: palette, score badges, button/input/modal/toast states and empty states.
-- `styles.css`: all styling, responsive rules and CSS variables.
-- `assets/logo.svg` and `assets/favicon.svg`: logo and browser favicon.
-- `assets/icons/`: home, friends, profile, streak, trophy, share, settings, sound-on, sound-off, check, lock, clock and close SVGs.
+## Run locally
 
-## Prototype limits
-Scores and player data are sample content. The reset countdown is a static sample, not a live timer. Forms, Google sign-in, friend adding, sound and sharing are visual placeholders. Daily attempt limits require backend enforcement; do not collect real passwords before implementing secure authentication.
+From this checkout:
 
-## Art direction
-- Balatro-inspired retro pixel-art UI with a playful, slightly cheeky space-arcade personality.
-- Nebula palette colours only: near-black violet surfaces, ice-blue highlights, lavender secondary accents, warm off-white text and coral errors.
-- Pixel-style headings, clean sans-serif body copy, square/stepped-feeling corners and crisp pixel-offset borders. No gradients, soft glow, or rounded-card aesthetic.
+```sh
+python3 -m http.server 8000 --bind 127.0.0.1
+```
 
-## Main design tokens
-`--bg`, `--bg-raised`, `--panel`, `--panel-deep`, `--line`, `--text`, `--muted`, `--pink`, `--cyan`, `--yellow`, `--green`, `--red`, `--purple`, `--pixel`, `--body`, `--space-1` to `--space-10`, `--radius`, `--tap`, `--content`.
+The homepage is `index.html`; each game has a standalone route in `games/<id>/`.
 
+## Current games
 
-## Game integration
-See `GAME-INTEGRATION-PLAN.md` for the registry, shared lifecycle, adding games, and the prioritised production scoring plan. `game.html?id=number-drop` demonstrates the playable sample engine. Attempts are currently local-browser demo records only.
+- **Lowball** — integrated price-guessing engine, four daily items, region selector, local progress/statistics, and its existing Unlimited purchase placeholder. Daily reset is midnight in Australia/Sydney.
+- **Stake** — five daily trivia questions, chip betting, local progress/statistics, and playable Unlimited practice. Daily reset follows the device's local date.
+- **Coming soon** — Pixel Pairs, Word Forge, Gridlock, Number Drop, Memory Lane, and Mystery Cabinet. Their pages intentionally preserve the default game layout for future integrations. They do not accept attempts or create demonstration scores.
 
+The homepage lists Lowball and Stake first. Its lineup counts describe availability rather than fabricated player results. Profile, friends, login, and signup remain visual prototypes with sample data; no authentication service is connected. Lowball's external statistics, checkout, and restore services remain unset in `games/lowball/engine/site-config.js`.
 
-## Standalone game URLs
-Each game has its own page under `games/<game-id>/`, for example `games/lowball/`. The homepage/menu remains the primary discovery page; individual game pages use a compact menu and the INSERT COIN wordmark to return home. Each route has unique title and description metadata for search discovery. Lowball's route is prepared, but the actual Lowball engine must still be integrated from its separate project.
+## Shared files
 
+- `styles.css`: the approved website styling and homepage cards.
+- `game-flow.css`: the approved game layout and drawer styling.
+- `navigation.js`: shared drawer behavior, focus management, and backdrop dismissal for every game page.
+- `game-config.js`: game registry. Existing browser storage namespaces are retained for compatibility.
+- `game.js`: availability controller for coming-soon pages; implemented games own their engines.
+- `assets/logo.svg`: existing symbol retained pending selection of a new Midnight Arcade logo.
 
-## Lowball integration
-Lowball is linked from the homepage game grid and opens at `games/lowball/index.html`. Its original price-guessing game runs from `games/lowball/engine/index.html`, with its original custom item/icon assets and region selector retained. The embedded game's colours are overridden to match INSERT COIN's purple, cyan, magenta and yellow palette.
+See [GAME-INTEGRATION-PLAN.md](GAME-INTEGRATION-PLAN.md) for the template contract. Logo mockups, when present in `design/`, are concepts for review and are not automatically installed as the site logo.
+
+## Browser regression checks
+
+With the local server running, and Node.js, Playwright, and Chromium available:
+
+```sh
+node tests/smoke.cjs
+```
+
+The prepared cloud environment supplies these tools. `ARCADE_TEST_URL` overrides the default test server address; `ARCADE_CHROMIUM` overrides `/usr/bin/chromium`.
+
+Checks cover homepage ordering/availability; drawers and keyboard focus at 320, 390, 768, and 1440 pixels; coming-soon layouts; and complete Lowball/Stake daily runs, refresh/resume, statistics, and existing Unlimited behavior in isolated browser contexts. External Google Fonts requests are blocked in these functional tests, so they use fallback fonts. Tests do not validate payment providers, authentication, real-device behavior, or production hosting.
+
+## Preserve when extending
+
+Keep the current styling and header layout. Lowball and Stake are substantially complete; do not replace their mechanics or artwork with placeholder logic. Keep Lowball's region selector exclusive to Lowball. Browser storage is device-local, not shared account storage or server-enforced access.
