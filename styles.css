@@ -49,7 +49,10 @@ body:after{content:"";pointer-events:none;position:fixed;inset:0;z-index:20;opac
 @media(max-width:760px){.card-lowball .game-art svg,.card-stake .game-art svg{height:90px;width:130px}}
 @media(max-width:600px){.stat-value{font-size:clamp(17px,4.7vw,23px)}}
 
-/* Selected Midnight Marquee wordmark: preserve the existing header arrangement. */
-.brand img.brand-logo{display:block;width:210px;height:60px;object-fit:contain;filter:none}
-@media(max-width:760px){.brand img.brand-logo{width:180px;height:50px}}
-@media(max-width:380px){.brand img.brand-logo{width:164px;height:48px}}
+/* Selected Cabinet Badge wordmark: preserve the existing header arrangement. */
+.brand .brand-logo{display:block;position:relative;overflow:hidden;width:210px;height:60px}
+@media(max-width:760px){.brand .brand-logo{width:180px;height:50px}}
+@media(max-width:380px){.brand .brand-logo{width:164px;height:48px}}
+
+/* Display the selected artwork at its visible bounds, preserving its original PNG. */
+html .brand .brand-logo img.brand-logo-art{position:absolute;display:block;width:109.310518%;height:auto;max-width:none;left:-4.68042275%;top:50%;transform:translateY(-50%);filter:none;image-rendering:auto}

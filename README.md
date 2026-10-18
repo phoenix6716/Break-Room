@@ -27,10 +27,10 @@ The homepage lists Lowball and Stake first. Its lineup counts describe availabil
 - `navigation.js`: shared drawer behavior, focus management, and backdrop dismissal for every game page.
 - `game-config.js`: game registry. Existing browser storage namespaces are retained for compatibility.
 - `game.js`: availability controller for coming-soon pages; implemented games own their engines.
-- `assets/midnight-marquee-logo.png`: selected Midnight Marquee wordmark.
+- `assets/cabinet-badge-logo.png`: selected Cabinet Badge wordmark, displayed at its visible bounds without modifying the source PNG.
 - `assets/midnight-moon-icon.png`: matching moon badge used as the website favicon.
 
-See [GAME-INTEGRATION-PLAN.md](GAME-INTEGRATION-PLAN.md) for the template contract. The user selected logo concept 2 (Midnight Marquee); its refined wordmark and moon icon are installed. The original comparison sheet remains in `design/` as history.
+See [GAME-INTEGRATION-PLAN.md](GAME-INTEGRATION-PLAN.md) for the template contract. The user selected option 1 (Cabinet Badge) from the latest logo explorations; that wordmark is installed. The existing moon favicon is retained. The original comparison sheet remains in `design/` as history.
 
 ## Browser regression checks
 

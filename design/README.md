@@ -1,14 +1,16 @@
 # Midnight Arcade logo concepts
 
+**Current selection: Cabinet Badge (round 4, option 1).** The header wordmark is installed from `assets/cabinet-badge-logo.png`. The PNG is unchanged from the reviewed option; CSS clips transparent margins to match the homepage preview. Previous explorations below are retained as history. The existing moon favicon is retained.
+
 `midnight-arcade-logo-concepts.png` is a comparison board of three generated concepts:
 
 1. **Moon Cabinet** — a crescent moon wrapping an arcade cabinet.
 2. **Midnight Marquee** — an arcade sign with a midnight clock and moon icon.
 3. **Night Shift** — an MA monogram with orbit and star details.
 
-## Selected direction: 02 / Midnight Marquee
+## Earlier selection: 02 / Midnight Marquee
 
-The user selected option 2. The refined production PNGs are installed in `assets/midnight-marquee-logo.png` and `assets/midnight-moon-icon.png`.
+The user previously selected option 2. Its archived PNGs remain in `assets/midnight-marquee-logo.png` and `assets/midnight-moon-icon.png`.
 
 The two-line wordmark uses the cyan/magenta arcade frame, midnight clock, and yellow stars. The matching moon badge is used for the website favicon. Both assets have transparent outer backgrounds. The full wordmark replaces the former icon/text lockup on the site while preserving header placement and navigation.
 
@@ -22,7 +24,7 @@ After seeing the first set, the user asked for a more inventive direction with l
 2. **Daily Reset** — a compact double-zero counter symbol with one yellow rollover segment, referencing fresh daily games.
 3. **Still Open** — an angular A-shaped doorway with a magenta light plane, referencing a late-night arcade entrance.
 
-These are new proposals, not selections or installed replacements. The website still uses the previously selected Midnight Marquee assets while the user reviews the alternatives. No website styling, headers, or gameplay changed in this round.
+These are new proposals, not selections or installed replacements. At the time of this round, the website still used the previously selected Midnight Marquee assets while the user reviewed the alternatives. No website styling, headers, or gameplay changed in this round.
 
 ## Round 3 — Moon Cabinet with printed game-title lettering
 
