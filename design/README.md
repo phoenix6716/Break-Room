@@ -13,3 +13,13 @@ The user selected option 2. The refined production PNGs are installed in `assets
 The two-line wordmark uses the cyan/magenta arcade frame, midnight clock, and yellow stars. The matching moon badge is used for the website favicon. Both assets have transparent outer backgrounds. The full wordmark replaces the former icon/text lockup on the site while preserving header placement and navigation.
 
 The original concept board is retained as design history. The legacy SVG symbol and Lowball's own standalone game icons are retained but are not used for the Midnight Arcade header branding. The selected assets are raster PNGs, not SVG vector artwork.
+
+## Round 2 — simpler identities under review
+
+After seeing the first set, the user asked for a more inventive direction with less of a generic AI-generated appearance. `midnight-arcade-concepts-round-2.png` explores three restrained alternatives:
+
+1. **After Hours** — a cyan open-door shape takes the place of the I in a custom wordmark; the companion MA symbol repeats that shape.
+2. **Daily Reset** — a compact double-zero counter symbol with one yellow rollover segment, referencing fresh daily games.
+3. **Still Open** — an angular A-shaped doorway with a magenta light plane, referencing a late-night arcade entrance.
+
+These are new proposals, not selections or installed replacements. The website still uses the previously selected Midnight Marquee assets while the user reviews the alternatives. No website styling, headers, or gameplay changed in this round.
