@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refund Policy - Lowball</title>
+<meta name="robots" content="index,follow">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="stylesheet" href="legal.css">
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="index.html">&larr; Back to the game</a>
+<div class="paper">
+<h1>Refund Policy</h1>
+<div class="meta">Last updated: <span data-fill="updated"></span></div>
+
+<p>We want you to be happy with Unlimited. This policy explains when you can get your money back.</p>
+
+<h2>14-day refund</h2>
+<p>If you buy Unlimited and you're not happy, email <a data-email href="mailto:support@YOURDOMAIN.com">support@YOURDOMAIN.com</a> within <strong>14 days</strong> of your purchase with your order number or the email you used. We'll refund the full price to your original payment method. You don't need to give a reason.</p>
+
+<h2>If something is wrong</h2>
+<p>If Unlimited doesn't work as described, we'll first try to fix it. If we can't, you're entitled to a refund at any time. This is on top of your rights under the Australian Consumer Law, which says that digital products must be of acceptable quality, match their description and be fit for purpose. Nothing in this policy limits those rights, and they apply even outside the 14-day window.</p>
+
+<h2>How refunds work</h2>
+<ul>
+<li>Payments are handled by <span data-fill="payments">Lemon Squeezy</span>. Refunds go back to the card or payment method you used.</li>
+<li>Refunds usually appear within 5 to 10 business days, depending on your bank.</li>
+<li>Once refunded, your Unlimited licence is switched off.</li>
+<li>Please contact us before starting a chargeback with your bank. We can usually fix things faster.</li>
+</ul>
+
+<h2>Subscriptions</h2>
+<p>Unlimited is currently a one-time purchase. If we introduce subscriptions, you'll be able to cancel any time and keep access until the end of the period you've paid for. The details will be shown before you pay.</p>
+
+<h2>UK and EU customers</h2>
+<p>If you're in the UK or EU you normally have a 14-day right to cancel a purchase. When you buy digital content that starts straight away, you agree to start now. By doing this you may lose that statutory right once access begins, but our 14-day refund above still applies.</p>
+
+<h2>Contact</h2>
+<p><span data-fill="business">[YOUR NAME OR BUSINESS NAME]</span>, ABN <span data-fill="abn">[YOUR ABN]</span><br>Email: <a data-email href="mailto:support@YOURDOMAIN.com">support@YOURDOMAIN.com</a></p>
+
+<div class="links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="refunds.html">Refund Policy</a></div>
+</div>
+</div>
+<script src="site-config.js"></script>
+<script>
+document.querySelectorAll("[data-fill]").forEach(function (el) {
+  var v = window.SITE && window.SITE[el.getAttribute("data-fill")];
+  if (v) el.textContent = v;
+});
+document.querySelectorAll("[data-email]").forEach(function (el) {
+  var e = window.SITE && window.SITE.email;
+  if (e) { el.textContent = e; el.setAttribute("href", "mailto:" + e); }
+});
+</script>
+</body>
+</html>

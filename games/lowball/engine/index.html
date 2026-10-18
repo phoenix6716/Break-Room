@@ -1,0 +1,1988 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lowball - Guess the price</title>
+<meta name="description" content="A free daily game: guess the price of everyday items in Australian, US, UK or Canadian prices. New items every day.">
+<meta name="theme-color" content="#100a2e">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<!-- TODO: replace YOURDOMAIN.com with your real domain before launch (social previews need absolute URLs) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lowball">
+<meta property="og:title" content="Lowball - Guess the price">
+<meta property="og:description" content="A free daily game. Can you guess what it costs?">
+<meta property="og:url" content="https://YOURDOMAIN.com/">
+<meta property="og:image" content="https://YOURDOMAIN.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lowball - Guess the price">
+<meta name="twitter:description" content="A free daily game. Can you guess what it costs?">
+<meta name="twitter:image" content="https://YOURDOMAIN.com/og-image.png">
+<!-- Analytics: paste your Plausible or Umami script tag here once you have an account. The game already sends events through track(). -->
+<style>
+  @font-face {
+    font-family: 'm6x11';
+    src: url('m6x11plus.ttf') format('truetype');
+    font-display: swap;
+  }
+
+  :root {
+    --felt: #0f3d2e;
+    --felt-dark: #0a2b20;
+    --panel: #10241a;
+    --panel-light: #1a3024;
+    --cream: #f7f1e3;
+    --gold: #ffcf56;
+    --gold-dark: #d9a62b;
+    --red: #ff4757;
+    --red-dark: #c0392b;
+    --blue: #3da5ff;
+    --green: #39d98a;
+    --ink: #22252b;
+    --border: #000000;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 16px; }
+  body { font-synthesis: none; }
+  b, strong, h1, h2, h3 { font-weight: normal; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'm6x11', sans-serif;
+    color: var(--cream);
+    display: flex;
+    justify-content: center;
+    padding: 18px;
+    background: #100a2e;
+    background-size: cover;
+    background-attachment: fixed;
+    image-rendering: pixelated;
+  }
+  .mono { font-family: 'm6x11', monospace; }
+
+  .wrap { width: 100%; max-width: clamp(440px, 46vw, 640px); }
+
+  header {
+    text-align: center;
+    margin: 6px 0 16px;
+  }
+  h1 {
+    font-size: 33px;
+    margin: 0;
+    color: var(--gold);
+    text-shadow: 3px 3px 0 var(--border);
+    letter-spacing: 0.5px;
+  }
+  .sub {
+    font-size: 22px;
+    color: var(--cream);
+    opacity: 0.7;
+    margin-top: 2px;
+  }
+
+  .mode-toggle {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+    border-image-source: url('toggle-bg.png');
+    border-image-slice: 48 fill;
+    border-image-width: 10px;
+    border-image-repeat: stretch;
+    border-style: solid;
+    border-width: 10px;
+    padding: 4px 4px;
+  }
+  .mode-btn {
+    flex: 1;
+    padding: 9px;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--cream);
+    font-family: 'm6x11', sans-serif;
+    font-size: 22px;
+    cursor: pointer;
+    opacity: 0.75;
+  }
+  .mode-btn.active {
+    background: var(--gold);
+    color: var(--ink);
+    opacity: 1;
+    box-shadow: 0 2px 0 var(--gold-dark);
+  }
+
+  .country-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 16px;
+    font-size: 22px;
+    color: var(--cream);
+  }
+  .country-label { opacity: 0.85; }
+  .cselect { position: relative; }
+  .cselect-btn {
+    width: auto;
+    min-width: 190px;
+    text-align: left;
+    border-radius: 0;
+    background: none;
+    border-image-source: url('dropdown-box.png');
+    border-image-slice: 70 150 70 70 fill;
+    border-image-width: 9px 20px 9px 9px;
+    border-image-repeat: stretch;
+    border-style: solid;
+    border-width: 9px 20px 9px 9px;
+    color: var(--cream);
+    padding: 6px 8px 6px 8px;
+    font-family: 'm6x11', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: 1;
+    display: block;
+    white-space: nowrap;
+  }
+  .cselect-btn:active { transform: translateY(2px); }
+  .cselect-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .cselect-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    margin: 4px 0 0;
+    padding: 6px 4px 8px;
+    list-style: none;
+    border-image-source: url('stat-tile.png');
+    border-image-slice: 60 fill;
+    border-image-width: 14px;
+    border-image-repeat: stretch;
+    border-style: solid;
+    border-width: 14px;
+    filter: drop-shadow(0 4px 0 rgba(0,0,0,0.35));
+  }
+  .cselect-list[hidden] { display: none; }
+  .cselect-list li {
+    padding: 6px 8px;
+    font-size: 22px;
+    line-height: 1;
+    color: var(--cream);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .cselect-list li.selected { color: var(--gold); }
+  .cselect-list li.active {
+    background: var(--gold);
+    color: var(--ink);
+    box-shadow: 0 2px 0 var(--gold-dark);
+  }
+
+  .stat-strip {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .stat-strip .stat {
+    flex: 1;
+    text-align: center;
+    border-image-source: url('stat-tile.png');
+    border-image-slice: 60 fill;
+    border-image-width: 14px;
+    border-image-repeat: stretch;
+    border-style: solid;
+    border-width: 14px;
+    padding: 6px 4px 8px;
+    line-height: 1.1;
+  }
+  .stat-strip .stat b {
+    display: block;
+    font-size: 33px;
+    color: var(--gold);
+  }
+  .stat-strip .stat span {
+    font-size: 22px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    letter-spacing: 0.5px;
+  }
+
+  .progress-dots {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    margin-bottom: 14px;
+  }
+  .dot {
+    width: 18px;
+    height: 18px;
+    background: url('dot-empty.png') center / contain no-repeat;
+    border: none;
+  }
+  .dot.done { background-image: url('dot-done.png'); }
+  .dot.current { background-image: url('dot-current.png'); }
+
+  .card {
+    background: url('receipt-bg.png') center / 100% 100% no-repeat;
+    aspect-ratio: 560 / 1003;
+    width: min(100%, 380px);
+    margin: 0 auto;
+    padding: 13% 15% 24%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--ink);
+    text-align: center;
+    position: relative;
+    filter: drop-shadow(0 8px 0 rgba(0,0,0,0.35));
+  }
+
+  .item-emoji {
+    font-size: 44px;
+    line-height: 1;
+    margin-bottom: 4px;
+    min-height: 44px;
+  }
+  .item-name {
+    font-size: 22px;
+    margin: 4px 0 2px;
+  }
+  .item-detail {
+    font-size: 22px;
+    opacity: 0.65;
+    margin-bottom: 20px;
+  }
+
+  .guess-row {
+    position: relative;
+    width: 150px;
+    margin: 0 auto 16px;
+  }
+  .guess-row .currency-chip {
+    position: absolute;
+    right: 100%;
+    margin-right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .currency-chip {
+    font-family: 'm6x11', monospace;
+    font-size: 22px;
+    color: var(--gold);
+    border-image-source: url('currency-chip.png');
+    border-image-slice: 70 fill;
+    border-image-width: 8px;
+    border-image-repeat: stretch;
+    border-style: solid;
+    border-width: 8px;
+    padding: 2px 4px;
+    display: flex;
+    align-items: center;
+  }
+
+  input[type=number] {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'm6x11', monospace;
+    background: none;
+    border-image-source: url('price-input.png');
+    border-image-slice: 70 fill;
+    border-image-width: 10px;
+    border-image-repeat: stretch;
+    border-style: solid;
+    border-width: 10px;
+    color: var(--ink);
+    font-size: 22px;
+    padding: 6px 8px;
+    text-align: center;
+    outline: none;
+    -moz-appearance: textfield;
+  }
+  input[type=number]:focus { filter: drop-shadow(0 0 4px var(--gold)); }
+
+  input[type=number]::-webkit-outer-spin-button,
+  input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  button {
+    width: 100%;
+    font-family: 'm6x11', sans-serif;
+    font-size: 22px;
+    padding: 14px;
+    border-radius: 4px;
+    border: 3px solid var(--border);
+    cursor: pointer;
+    letter-spacing: 1px;
+    image-rendering: pixelated;
+  }
+  .btn-gold, .btn-outline {
+    border-image-slice: 60 fill;
+    border-image-width: 14px;
+    border-image-repeat: stretch;
+    border-style: solid;
+    border-width: 14px;
+    background: none;
+    width: 150px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 auto;
+    padding: 6px 4px 8px;
+    display: block;
+    white-space: nowrap;
+    line-height: 1;
+  }
+  .btn-gold { border-image-source: url('button-primary.png'); color: #4a2d00; text-shadow: 0 1px 0 rgba(255,255,255,0.3); }
+  #shareBtn { width: 190px; padding: 6px 4px 8px; }
+  .legal-footer {
+    text-align: center; color: var(--cream); opacity: 0.7;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-size: 12px; line-height: 1.5; margin: 6px auto 0; max-width: 340px;
+  }
+  .legal-footer a { color: var(--cream); margin: 0 6px; }
+  .legal-footer .fine { margin-top: 6px; opacity: 0.85; }
+  .consent-bar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; display: none;
+    background: #f3e6c8; border-top: 4px solid #1d1a14; box-shadow: 0 -4px 0 rgba(0,0,0,0.3);
+    padding: 12px 14px calc(12px + env(safe-area-inset-bottom, 0px));
+    color: #26211a; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 14px; line-height: 1.45;
+  }
+  .consent-bar.show { display: block; }
+  .consent-inner { max-width: 560px; margin: 0 auto; }
+  .consent-inner a { color: #1d4a2e; }
+  .consent-btns { display: flex; gap: 10px; margin-top: 10px; }
+  .consent-btns button {
+    flex: 1; font-family: 'm6x11', monospace; font-size: 22px; padding: 6px 8px; cursor: pointer;
+    border: 3px solid #1d1a14; background: #e8d7ae; color: #26211a;
+  }
+  .consent-btns button.accept { background: #d9a21b; }
+  .consent-btns button:active { transform: translateY(2px); }
+
+  .deck-count { font-size: 22px; color: var(--cream); opacity: 0.8; }
+
+  .btn-gold:active { transform: translateY(3px); }
+  .btn-gold:disabled { opacity: 0.4; cursor: default; }
+  .btn-outline { width: 190px; padding: 6px 4px 8px; border-image-source: url('button-secondary.png'); color: var(--cream); text-shadow: 0 1px 0 rgba(0,0,0,0.6); margin-top: 10px; }
+  .btn-outline:active { transform: translateY(3px); }
+
+  .result { display: none; }
+  .result.show { display: block; }
+
+  .result-score {
+    font-family: 'm6x11', monospace;
+    font-size: 44px;
+    margin: 4px 0 0;
+  }
+  .result-score.great { color: var(--green); }
+  .result-score.good { color: var(--gold); }
+  .result-score.ok { color: #ff8a3d; }
+  .result-score.bad { color: var(--red); }
+  .result-label {
+    font-size: 22px;
+    margin-bottom: 14px;
+  }
+  .result-facts {
+    font-family: 'm6x11', monospace;
+    font-size: 22px;
+    margin-bottom: 16px;
+    line-height: 1.5;
+    background: rgba(0,0,0,0.05);
+    border-radius: 10px;
+    padding: 10px;
+  }
+  .squares {
+    margin-bottom: 4px;
+  }
+  @keyframes gemPop {
+    0%   { opacity: 0; transform: scale(0.2); }
+    60%  { opacity: 1; transform: scale(1.25); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  .squares.pop .gem {
+    animation: gemPop 0.28s steps(5) both;
+    animation-delay: calc(700ms + var(--i, 0) * 110ms);
+  }
+  .sound-btn {
+    display: block;
+    margin: 14px auto 0;
+    background: none;
+    border: none;
+    color: var(--cream);
+    opacity: 0.6;
+    font-family: 'm6x11', sans-serif;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 4px 8px;
+  }
+  .sound-btn:hover { opacity: 0.9; }
+  .result-note { font-size: 22px; opacity: 0.6; line-height: 1; margin-top: 2px; }
+  .result-note span { white-space: nowrap; }
+  .squares .gem {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    margin: 0 3px;
+    image-rendering: pixelated;
+  }
+
+  .final-screen { display: none; text-align: center; }
+  .final-screen.show { display: block; }
+  .final-total {
+    font-family: 'm6x11', monospace;
+    font-size: 44px;
+    color: var(--gold-dark);
+    text-shadow: 3px 3px 0 var(--border);
+    margin: 6px 0 2px;
+  }
+
+  footer {
+    text-align: center;
+    color: var(--cream);
+    opacity: 0.75;
+    font-size: 22px;
+    line-height: 1.1;
+    margin: -4px 0 14px;
+  }
+
+  @media (max-width: 400px) {
+    .mode-btn .rounds { display: none; }
+    #itemEmoji img { width: 112px !important; height: 112px !important; }
+    #finalScreen .final-total { margin: 2px 0 0; }
+    #finalScreen .btn-outline { margin-top: 4px; padding: 3px 14px 5px; }
+    #finalScreen .item-emoji { min-height: 0; margin-bottom: 0; }
+    #finalScreen .item-emoji img { width: 72px !important; height: 72px !important; }
+    footer { font-size: 22px; }
+  }
+
+  @media (max-width: 500px) {
+    /* ponytail: stats hide on phones so the guess button fits on screen; they stay in the stats popup */
+    .stat-strip, footer.tagline { display: none !important; }
+    body { padding: 10px 14px; }
+    header { margin: 0 0 8px; }
+    .mode-toggle, .country-row, .progress-dots { margin-bottom: 8px; }
+    .card { width: min(100%, 340px); }
+  }
+
+  @media (max-width: 500px) and (max-height: 700px) {
+    #itemEmoji img { width: 72px !important; height: 72px !important; }
+    .item-emoji { min-height: 0; }
+    .item-detail { margin-bottom: 8px; }
+    header { margin-bottom: 4px; }
+    .mode-toggle, .country-row, .progress-dots { margin-bottom: 4px; }
+    .card { margin-top: -16px; }
+    body { padding-top: 4px; }
+    .mode-btn { padding: 5px; }
+    .country-row { font-size: 20px; }
+  }
+
+  /* ---- motion: card entrance, reveal effects, confetti ---- */
+  @keyframes cardIn { from { opacity: 0; transform: translateY(26px) rotate(-1.5deg); } to { opacity: 1; transform: none; } }
+  @keyframes cardShake { 0%,100% { transform: none; } 20% { transform: translateX(-8px); } 40% { transform: translateX(7px); } 60% { transform: translateX(-5px); } 80% { transform: translateX(3px); } }
+  @keyframes cardGlow { 0%,100% { filter: drop-shadow(0 8px 0 rgba(0,0,0,0.35)); } 40% { filter: drop-shadow(0 8px 0 rgba(0,0,0,0.35)) drop-shadow(0 0 14px #f6c945) brightness(1.12); } }
+  @keyframes cardFlash { 0%,100% { filter: drop-shadow(0 8px 0 rgba(0,0,0,0.35)); } 25% { filter: drop-shadow(0 8px 0 rgba(0,0,0,0.35)) drop-shadow(0 0 26px #5fd16a) brightness(1.45); } 60% { filter: drop-shadow(0 8px 0 rgba(0,0,0,0.35)) drop-shadow(0 0 16px #f6c945) brightness(1.15); } }
+  @keyframes scorePop { 0% { transform: scale(0.6); } 60% { transform: scale(1.2); } 100% { transform: scale(1); } }
+  @keyframes dotPulse { from { transform: scale(1); } to { transform: scale(1.3); } }
+  @keyframes fxBurst { to { transform: translate(var(--dx), var(--dy)) rotate(var(--r)); opacity: 0; } }
+  @keyframes fxFall { to { transform: translate(var(--dx), 108vh) rotate(var(--r)); } }
+  .card.enter { animation: cardIn 0.3s steps(6) both; }
+  .card.shake { animation: cardShake 0.4s steps(8); }
+  .card.glow { animation: cardGlow 0.7s steps(7); }
+  .card.flash { animation: cardFlash 1s steps(10); }
+  .result.show .result-score { animation: scorePop 0.25s steps(4); }
+  .dot.current { animation: dotPulse 0.5s steps(3) infinite alternate; }
+  .fx { position: fixed; inset: 0; pointer-events: none; z-index: 40; overflow: hidden; }
+  .fx i { position: absolute; width: 8px; height: 8px; image-rendering: pixelated; }
+  .fx i.burst { animation: fxBurst 0.7s steps(8) forwards; }
+  .fx i.fall { animation: fxFall var(--t, 2s) linear forwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .card.enter, .card.shake, .card.glow, .card.flash, .result.show .result-score, .dot.current { animation: none; }
+  }
+
+  /* ---- header buttons, countdown ---- */
+  header { position: relative; }
+  .head-btns { position: absolute; right: 0; top: 0; display: flex; gap: 6px; }
+  .icon-btn {
+    width: 44px; height: 44px; padding: 0; margin: 0;
+    display: grid; place-items: center;
+    border-radius: 0; background: none;
+    border-image-source: url('button-secondary.png');
+    border-image-slice: 60 fill;
+    border-image-width: 10px;
+    border-image-repeat: stretch;
+    border-style: solid; border-width: 10px;
+    color: var(--cream);
+    font-family: 'm6x11', sans-serif; font-size: 22px; line-height: 1;
+    letter-spacing: 0; cursor: pointer;
+  }
+  .icon-btn:active { transform: translateY(2px); }
+  .icon-btn:focus-visible, .link-btn:focus-visible, .next-daily.ready:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .icon-btn svg { display: block; }
+  .next-daily { font-size: 22px; color: var(--cream); opacity: 0.7; margin-top: 2px; line-height: 1; }
+  .next-daily b { color: var(--gold); }
+  .next-daily.ready { opacity: 1; cursor: pointer; color: var(--gold); text-decoration: underline; }
+
+  /* ---- popups ---- */
+  .modal {
+    position: fixed; inset: 0; z-index: 100;
+    display: none; align-items: center; justify-content: center;
+    padding: 16px; background: rgba(5, 20, 12, 0.72);
+  }
+  .modal.show { display: flex; }
+  .modal-panel {
+    width: min(100%, 380px); max-height: 94vh; overflow-y: auto;
+    border-image-source: url('stat-tile.png');
+    border-image-slice: 60 fill;
+    border-image-width: 14px;
+    border-image-repeat: stretch;
+    border-style: solid; border-width: 14px;
+    padding: 6px 8px 12px; text-align: center; color: var(--cream);
+  }
+  .modal-title { font-size: 33px; color: var(--gold); margin: 0 0 10px; text-shadow: 2px 2px 0 var(--border); }
+  .how-step { display: flex; gap: 10px; align-items: flex-start; text-align: left; margin: 10px 0; font-size: 22px; line-height: 1.1; }
+  .how-n { flex: none; width: 28px; height: 28px; background: var(--gold); color: var(--ink); display: grid; place-items: center; box-shadow: 0 2px 0 var(--gold-dark); }
+  .modal-panel .btn-gold, .modal-panel .btn-outline { margin-top: 12px; }
+  .stats-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 6px; margin: 4px 0 12px; }
+  .stats-cell { width: calc(33.33% - 4px); line-height: 1; }
+  .stats-cell b { display: block; font-size: 33px; color: var(--gold); margin-bottom: 2px; }
+  .stats-cell span { font-size: 22px; text-transform: uppercase; opacity: 0.75; }
+  .chart { display: flex; align-items: flex-end; gap: 3px; height: 96px; padding: 0 2px; border-bottom: 3px solid rgba(247, 241, 227, 0.35); }
+  .chart .bar { flex: 1; min-height: 3px; background: var(--green); }
+  .chart .bar.t-y { background: var(--gold); }
+  .chart .bar.t-o { background: #ff8a3d; }
+  .chart .bar.t-r { background: var(--red); }
+  .chart .bar.none { background: rgba(247, 241, 227, 0.22); height: 3px; }
+  .chart-cap { font-size: 22px; opacity: 0.7; margin: 6px 0 0; line-height: 1; }
+  .chart-empty { font-size: 22px; opacity: 0.75; margin: 6px 0 0; line-height: 1.1; }
+  .final-pct { font-size: 22px; line-height: 1.1; margin: 4px 0 8px; color: #1d4a2e; }
+  .final-pct[hidden] { display: none; }
+
+  /* ---- Unlimited locked screen ---- */
+  .lock-screen { display: none; text-align: center; }
+  .lock-screen.show { display: block; }
+  .lock-list { font-size: 22px; line-height: 1.1; margin: 0 0 8px; }
+  #buyBtn { width: 190px; }
+  .lock-screen .item-emoji { min-height: 0; margin-bottom: 2px; }
+  .lock-price { font-size: 33px; color: var(--gold-dark); text-shadow: 2px 2px 0 var(--border); margin: 0 0 8px; line-height: 1; }
+  .link-btn { background: none; border: none; padding: 4px 8px; margin: 8px auto 0; width: auto; display: block; color: var(--ink); font-family: 'm6x11', sans-serif; font-size: 22px; letter-spacing: 0; text-decoration: underline; cursor: pointer; opacity: 0.8; }
+  .lock-msg { font-size: 22px; line-height: 1; min-height: 22px; margin-top: 4px; color: #7a1f16; }
+  .restore-row { display: none; margin-top: 2px; }
+  .restore-row .btn-outline { margin-top: 0; padding: 3px 4px 5px; }
+  .restore-row.show { display: block; }
+  .lock-screen.restoring .item-emoji, .lock-screen.restoring .lock-list { display: none; }
+  input.restore-input {
+    display: block; width: 190px; margin: 0 auto 6px;
+    font-family: 'm6x11', monospace; font-size: 22px; text-align: center; color: var(--ink);
+    background: none; outline: none;
+    border-image-source: url('price-input.png'); border-image-slice: 70 fill; border-image-width: 10px; border-image-repeat: stretch;
+    border-style: solid; border-width: 10px; padding: 4px 6px;
+  }
+</style>
+
+<style id="insert-coin-theme">
+  :root {
+    --felt:#17103b; --felt-dark:#0b0821; --panel:#21134f; --panel-light:#2b1a67;
+    --cream:#fff8f0; --gold:#ffe45c; --gold-dark:#d9a62b; --red:#ff4fd8;
+    --red-dark:#b52c98; --blue:#25e7ff; --green:#70ff9b; --ink:#17103b; --border:#08051b;
+  }
+  html { background:#100a2e !important; }
+  body {
+    /* Match the original INSERT COIN template background exactly. */
+    background-color:#100a2e !important;
+    background-image:radial-gradient(ellipse at 12% 4%,#5222a544 0,transparent 34%),radial-gradient(ellipse at 94% 25%,#ff4fd81a 0,transparent 26%),linear-gradient(#25e7ff0b 1px,transparent 1px),linear-gradient(90deg,#25e7ff0b 1px,transparent 1px) !important;
+    background-size:auto,auto,24px 24px,24px 24px !important;
+    background-attachment:fixed !important;
+    color:var(--cream) !important;
+    padding:14px 12px 22px !important;
+    font-family:'m6x11', monospace !important;
+  }
+  /* The INSERT COIN page has a subtle grid background, but no scanline overlay. */
+  body::before, body::after { content:none !important; display:none !important; }
+  .wrap { max-width:620px !important; width:100% !important; margin-inline:auto !important; }
+  header { margin:0 0 12px !important; }
+  h1 { color:var(--blue) !important; text-shadow:3px 3px 0 #08051b !important; letter-spacing:1px !important; }
+  .sub { color:#c5b6f3 !important; opacity:1 !important; }
+  .mode-toggle {
+    border:2px solid #8052b8 !important; border-image:none !important; border-radius:0 !important;
+    background:#160d3a !important; box-shadow:4px 4px 0 #08051b !important; padding:5px !important;
+  }
+  .mode-btn { color:#c5b6f3 !important; border:0 !important; border-radius:0 !important; }
+  .mode-btn.active { background:#ffe45c !important; color:#17103b !important; box-shadow:0 3px 0 #d9a62b !important; }
+  .country-row { color:#fff8f0 !important; flex-wrap:wrap !important; }
+  .cselect-btn {
+    border:2px solid #8052b8 !important; border-image:none !important; border-radius:0 !important;
+    background:#21134f !important; color:#fff8f0 !important; box-shadow:3px 3px 0 #08051b !important;
+  }
+  .cselect-list {
+    background:#21134f !important; border:2px solid #8052b8 !important; border-image:none !important;
+    border-radius:0 !important; box-shadow:4px 4px 0 #08051b !important;
+  }
+  .cselect-list li.active { background:#ffe45c !important; color:#17103b !important; }
+  .cselect-list li.selected { color:#25e7ff !important; }
+  .stat-strip .stat {
+    border:2px solid #493078 !important; border-image:none !important; border-radius:0 !important;
+    background:#21134f !important; box-shadow:3px 3px 0 #08051b !important;
+  }
+  .stat-strip .stat b { color:#25e7ff !important; }
+  .stat-strip .stat span { color:#c5b6f3 !important; }
+  .card {
+    background:url('receipt-bg.png') center / 100% 100% no-repeat !important;
+    background-color:transparent !important;
+    border:0 !important; border-image:none !important; border-radius:0 !important;
+    box-shadow:none !important; filter:drop-shadow(0 8px 0 rgba(0,0,0,0.35)) !important;
+    color:var(--ink) !important;
+  }
+  .item-name { color:#17103b !important; }
+  .item-detail { color:#514274 !important; opacity:1 !important; }
+  .guess-row input, input[type=number] {
+    background:#fff !important; color:#17103b !important; border:2px solid #8052b8 !important;
+    border-image:none !important; border-radius:0 !important; box-shadow:2px 2px 0 #08051b !important;
+  }
+  .currency-chip {
+    color:#fff8f0 !important; background:#21134f !important;
+    border:2px solid #25e7ff !important; border-image:none !important;
+    box-shadow:2px 2px 0 #08051b !important; padding:4px 6px !important;
+  }
+  .card::before, .card::after { content:none !important; display:none !important; background:none !important; }
+  .card { background-image:url('receipt-bg.png') !important; }
+  /* Keep the original receipt artwork, but disable only overlay-generated line effects. */
+  .card::before, .card::after, .card .item-art::before, .card .item-art::after { content:none !important; display:none !important; background-image:none !important; }
+  .item-emoji, .item-art, .item-image, .card img { image-rendering:pixelated; filter:none !important; }
+  .card { background-image:url('receipt-bg.png') !important; background-color:transparent !important; }
+  .btn-gold, .btn-outline {
+    width:150px !important; border:2px solid #25e7ff !important; border-image:none !important;
+    border-radius:0 !important; background:#21134f !important; color:#fff8f0 !important;
+    box-shadow:3px 3px 0 #08051b !important; text-shadow:none !important;
+  }
+  .btn-gold { background:#e7bd4f !important; border-color:#c99b2e !important; color:#17103b !important; }
+  .icon-btn {
+    border:2px solid #8052b8 !important; border-image:none !important; border-radius:0 !important;
+    background:#21134f !important; color:#25e7ff !important; box-shadow:2px 2px 0 #08051b !important;
+  }
+  .result-score.great { color:#39d98a !important; }
+  .result-score.good { color:#ffcf56 !important; }
+  .result-score.ok { color:#ff8a3d !important; }
+  .result-score.bad { color:#ff4757 !important; }
+  .lock-price { color:#17103b !important; text-shadow:none !important; }
+  .link-btn { color:#17103b !important; }
+  .modal { background:rgba(8,5,27,.82) !important; }
+  .modal-panel { background:#17103b !important; border:3px solid #25e7ff !important; border-image:none !important; border-radius:0 !important; box-shadow:6px 6px 0 #ff4fd8 !important; color:#fff8f0 !important; }
+  /* Receipt cleanup: preserve the original receipt PNG, suppress every CSS texture/scanline overlay on its surface and contents. */
+  .card { background-image:url('receipt-bg.png') !important; background-repeat:no-repeat !important; background-size:100% 100% !important; background-blend-mode:normal !important; }
+  .card::before, .card::after, .card *::before, .card *::after { content:none !important; display:none !important; background-image:none !important; box-shadow:none !important; }
+  .card, .card * { text-shadow:none; }
+  .card .item-art, .card .item-image, .card img, .card canvas { background-image:none !important; filter:none !important; mix-blend-mode:normal !important; }
+  .card .item-art img, .card .item-image img { image-rendering:pixelated !important; }
+  .modal-panel h2, .modal-panel h3 { color:#ffe45c !important; }
+  /* Result screen: Play Unlimited in the receipt's deep purple and gold. Sizes are the original ones. */
+  #playAgainBtn { background:#3a2273 !important; border-color:#000 !important; color:#fff8f0 !important; }
+  /* Scanlines are drawn inside the game, so the receipt and its item icons can sit above them while buttons, stats and the rest of the page keep them. */
+  html::after { content:""; position:fixed; inset:0; z-index:20; pointer-events:none; opacity:.12; background:repeating-linear-gradient(to bottom,transparent 0 3px,#05020e 4px 5px); mix-blend-mode:multiply; }
+  .card { z-index:25; }
+  .card button { position:relative; }
+  .card button::after { content:"" !important; display:block !important; position:absolute !important; inset:-2px !important; pointer-events:none !important; opacity:.12; mix-blend-mode:multiply; background-image:repeating-linear-gradient(to bottom,transparent 0 3px,#05020e 4px 5px) !important; box-shadow:none !important; }
+  .modal::after { content:""; position:absolute; inset:0; pointer-events:none; opacity:.12; background:repeating-linear-gradient(to bottom,transparent 0 3px,#05020e 4px 5px); mix-blend-mode:multiply; }
+  /* Country selector arrow (the original dropdown art had it; the theme removed that art). */
+  .cselect-btn { position:relative; padding-right:44px !important; }
+  .cselect-btn::before { content:""; position:absolute; top:5px; bottom:5px; right:36px; width:2px; background:#493078; }
+  .cselect-btn::after { content:""; position:absolute; top:50%; right:11px; width:13px; height:7px; margin-top:-3px; image-rendering:pixelated; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 7' shape-rendering='crispEdges'%3E%3Cpath fill='%23000' d='M0 0h13v1h-1v1h-1v1h-1v1H9v1H8v1H7v1H6V6H5V5H4V4H3V3H2V2H1V1H0z'/%3E%3Cpath fill='%23f2b13b' d='M2 1h9v1H10v1H9v1H8v1H7v1H6V5H5V4H4V3H3V2H2z'/%3E%3C/svg%3E") center/13px 7px no-repeat; }
+  a, .link-btn { color:#25e7ff; }
+  @media(max-width:480px) {
+    body { padding:8px 5px 16px !important; }
+    h1 { font-size:clamp(24px,7vw,32px) !important; }
+    .stat-strip { gap:5px !important; }
+    .stat-strip .stat { padding:5px 3px !important; }
+    .stat-strip .stat b { font-size:26px !important; }
+    .card { width:min(100%,380px) !important; }
+  }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="head-btns">
+      <button type="button" class="icon-btn" id="helpBtn" aria-label="How to play">?</button>
+      <button type="button" class="icon-btn" id="statsBtn" aria-label="Your stats"><svg width="22" height="22" viewBox="0 0 11 11" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="6" width="2" height="4" fill="#f7f1e3"/><rect x="4" y="3" width="2" height="7" fill="#f7f1e3"/><rect x="7" y="1" width="2" height="9" fill="#f7f1e3"/></svg></button>
+    </div>
+    <h1>LOWBALL</h1>
+    <div class="sub">Don't lowball it.</div>
+    <div class="next-daily" id="nextDaily">Next daily in --:--:--</div>
+  </header>
+
+  <div class="mode-toggle">
+    <button class="mode-btn active" id="normalModeBtn">Daily<span class="rounds"> (4 rounds)</span></button>
+    <button class="mode-btn" id="unlimitedModeBtn">Unlimited</button>
+  </div>
+
+  <div class="country-row">
+    <span class="country-label">Playing as</span>
+    <div class="cselect" id="cselect">
+      <button type="button" class="cselect-btn" id="cselectBtn" aria-haspopup="listbox" aria-expanded="false"><span id="cselectLabel">Australia</span></button>
+      <ul class="cselect-list" id="cselectList" role="listbox" tabindex="-1" hidden></ul>
+    </div>
+    <select id="countrySelect" hidden></select>
+  </div>
+
+  <div class="stat-strip" id="statStrip">
+    <div class="stat"><b id="streakVal">0</b><span>Streak</span></div>
+    <div class="stat"><b id="bestVal">0</b><span>Best</span></div>
+    <div class="stat"><b id="playedVal">0</b><span>Played</span></div>
+  </div>
+  <footer class="tagline">New items daily &middot; Australia, US, UK &amp; Canada</footer>
+
+  <div class="progress-dots" id="progressDots"></div>
+
+  <div class="card">
+    <div id="playArea">
+      <div class="item-emoji" id="itemEmoji">🛒</div>
+      <div class="item-name" id="itemName">Loading...</div>
+      <div class="item-detail" id="itemDetail"></div>
+      <div class="guess-row">
+        <span class="currency-chip" id="currencySymbol"></span>
+        <input type="number" id="guessInput" placeholder="0" inputmode="decimal" step="any">
+      </div>
+      <button class="btn-gold" id="submitBtn">LOCK IT IN</button>
+    </div>
+
+    <div class="result" id="resultArea">
+      <div class="result-score mono" id="resultScore">--</div>
+      <div class="result-label" id="resultLabel"></div>
+      <div class="result-facts" id="resultFacts"></div>
+      <div class="squares" id="squares"></div>
+      <button class="btn-gold" id="nextBtn">NEXT</button>
+    </div>
+
+    <div class="final-screen" id="finalScreen">
+      <div class="item-emoji"><img src="icons/trophy.png" alt="🏆" style="width:128px;height:128px;object-fit:contain;image-rendering:pixelated;"></div>
+      <div class="item-name" id="finalTitle">Round complete</div>
+      <div class="final-total" id="finalTotal">0</div>
+      <div class="result-label">average score</div>
+      <div class="final-pct" id="finalPct" hidden></div>
+      <div class="squares" id="finalSquares"></div>
+      <button class="btn-gold" id="shareBtn">COPY RESULT</button>
+      <button class="btn-outline" id="playAgainBtn" style="display:none;">PLAY UNLIMITED</button>
+    </div>
+
+    <div class="lock-screen" id="lockScreen">
+      <div class="item-emoji"><img src="icons/lock.png" alt="" style="width:56px;height:66px;object-fit:contain;image-rendering:pixelated;"></div>
+      <div class="item-name">Unlimited</div>
+      <div class="lock-list" id="lockList"></div>
+      <div class="lock-price" id="lockPrice"></div>
+      <button class="btn-gold" id="buyBtn">BUY UNLIMITED</button>
+      <button type="button" class="link-btn" id="restoreToggle">Restore purchase</button>
+      <div class="restore-row" id="restoreRow">
+        <input type="text" class="restore-input" id="restoreInput" placeholder="Email or key" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Email or licence key">
+        <button class="btn-outline" id="restoreGo">RESTORE</button>
+      </div>
+      <div class="lock-msg" id="lockMsg" role="status"></div>
+    </div>
+  </div>
+
+  <button type="button" class="sound-btn" id="soundBtn">Sound: on</button>
+
+  <div class="legal-footer">
+    <div><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refunds.html">Refunds</a><a href="#" id="cookieSettingsLink" style="display:none">Cookie settings</a></div>
+    <div class="fine">Prices are approximate and for fun. Brand names and logos belong to their owners. Lowball is not affiliated with or endorsed by them.</div>
+  </div>
+
+  <div class="modal" id="helpModal" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+    <div class="modal-panel">
+      <h2 class="modal-title" id="helpTitle">How to play</h2>
+      <div class="how-step"><span class="how-n">1</span><span>See an everyday item.</span></div>
+      <div class="how-step"><span class="how-n">2</span><span>Guess its price in your country's currency.</span></div>
+      <div class="how-step"><span class="how-n">3</span><span>The closer you are, the higher you score.</span></div>
+      <button class="btn-gold" id="helpClose">GOT IT</button>
+    </div>
+  </div>
+
+  <div class="modal" id="statsModal" role="dialog" aria-modal="true" aria-labelledby="statsTitle">
+    <div class="modal-panel">
+      <h2 class="modal-title" id="statsTitle">Your stats</h2>
+      <div class="stats-grid" id="statsGrid"></div>
+      <div id="statsChartWrap"></div>
+      <button class="btn-gold" id="statsShare" style="display:none">COPY RESULT</button>
+      <button class="btn-outline" id="statsClose">CLOSE</button>
+    </div>
+  </div>
+
+  <div class="consent-bar" id="consentBar" role="dialog" aria-label="Cookie choices">
+    <div class="consent-inner">
+      We use cookies to show ads that keep the game free. You can accept or reject them. Saved progress and basic stats don't need cookies.
+      <a href="privacy.html">Privacy policy</a>
+      <div class="consent-btns"><button type="button" id="consentReject">Reject</button><button type="button" class="accept" id="consentAccept">Accept</button></div>
+    </div>
+  </div>
+</div>
+
+<script src="site-config.js"></script>
+<script>
+// ---------- Item pool ----------
+// Starting price estimates per country — check against live local pricing
+// before launch, especially the bigger-ticket items which date quickly.
+const ITEMS = [
+  { name: "Big Mac", emoji: "🍔", detail: "McDonald's, single burger", prices: { AU: 8.50, US: 6.22, UK: 5.49, CA: 8.17 } },
+  { name: "Netflix Standard", emoji: "📺", detail: "monthly, ads removed", prices: { AU: 20.99, US: 19.99, UK: 13.99, CA: 19.99 } },
+  { name: "Spotify Premium", emoji: "🎧", detail: "individual plan, monthly", prices: { AU: 15.99, US: 12.99, UK: 12.99, CA: 13.99 } },
+  { name: "iPhone 16", emoji: "📱", detail: "128GB, outright", prices: { AU: 1399, US: 799, UK: 799, CA: 1149 } },
+  { name: "Coca-Cola bottle", emoji: "🥤", detail: "around 500-600ml", prices: { AU: 4.2, US: 2.5, UK: 2.0, CA: 3.0 } },
+  { name: "Dozen eggs", emoji: "🥚", detail: "free range, supermarket", prices: { AU: 7.5, US: 4.5, UK: 3.25, CA: 6.0 } },
+  { name: "Cinema ticket", emoji: "🎬", detail: "standard adult, evening", prices: { AU: 21, US: 13, UK: 10, CA: 16 } },
+  { name: "PlayStation 5", emoji: "🎮", detail: "disc edition", prices: { AU: 999.95, US: 649.99, UK: 569.99, CA: 819.99 } },
+  { name: "McDonald's fries", emoji: "🍟", detail: "medium, single item", prices: { AU: 4.5, US: 3.5, UK: 2.5, CA: 4.5 } },
+  { name: "Loaf of bread", emoji: "🍞", detail: "white, 700g, supermarket", prices: { AU: 3.5, US: 3.0, UK: 1.2, CA: 3.75 } },
+  { name: "Litre of milk", emoji: "🥛", detail: "full cream, supermarket", prices: { AU: 2.5, US: 1.1, UK: 1.25, CA: 3.0 } },
+  { name: "Starbucks latte", emoji: "☕", detail: "medium, dine-in", prices: { AU: 6.5, US: 5.25, UK: 4.25, CA: 5.75 } },
+  { name: "Movie popcorn", emoji: "🍿", detail: "large, cinema", prices: { AU: 12.5, US: 9, UK: 7, CA: 10 } },
+  { name: "AirPods Pro 3", emoji: "🎵", detail: "outright price", prices: { AU: 429, US: 249, UK: 219, CA: 329 } },
+  { name: "Nintendo Switch 2", emoji: "🕹️", detail: "console only", prices: { AU: 769.95, US: 499.99, UK: 419.99, CA: 679.99 } },
+  { name: "Domino's pizza", emoji: "🍕", detail: "large, value range", prices: { AU: 8.95, US: 9.99, UK: 14, CA: 12.99 } },
+  { name: "Petrol per litre", emoji: "⛽", detail: "unleaded 91", prices: { AU: 1.85, US: 0.9, UK: 1.45, CA: 1.56 } },
+  { name: "Gym membership", emoji: "🏋️", detail: "basic, monthly", prices: { AU: 78, US: 40, UK: 35, CA: 58 } },
+  { name: "Avocado", emoji: "🥑", detail: "single, supermarket", prices: { AU: 2.5, US: 1.5, UK: 1, CA: 2 } },
+  { name: "Uber short ride", emoji: "🚗", detail: "approx 5km trip", prices: { AU: 15, US: 12, UK: 12, CA: 15 } },
+  { name: "Toothpaste tube", emoji: "🪥", detail: "standard, supermarket", prices: { AU: 5, US: 4, UK: 2.5, CA: 4 } },
+  { name: "Band-Aids box", emoji: "🩹", detail: "standard pack", prices: { AU: 4.5, US: 4, UK: 2.5, CA: 5 } },
+  { name: "Kindle Paperwhite", emoji: "📖", detail: "base model", prices: { AU: 297, US: 159.99, UK: 159.99, CA: 199.99 } },
+  { name: "Standard stamp", emoji: "✉️", detail: "domestic letter", prices: { AU: 1.7, US: 0.78, UK: 1.7, CA: 1.44 } },
+  { name: "Movie ticket popcorn combo", emoji: "🎟️", detail: "ticket + small popcorn", prices: { AU: 27, US: 21, UK: 17, CA: 25 } },
+  { name: "Levi's 501 jeans", emoji: "👖", detail: "men's, full price", prices: { AU: 139.95, US: 79.5, UK: 100, CA: 98 } },
+  { name: "Dog food bag", emoji: "🐶", detail: "4kg bag, dry food", prices: { AU: 20, US: 25, UK: 15, CA: 25 } },
+  { name: "Haircut", emoji: "💈", detail: "men's, basic salon", prices: { AU: 35, US: 25, UK: 18, CA: 30 } },
+  { name: "Umbrella", emoji: "☂️", detail: "standard compact", prices: { AU: 15, US: 12, UK: 10, CA: 15 } },
+  { name: "Coffee capsules box", emoji: "☕", detail: "10 pack, supermarket", prices: { AU: 6.5, US: 7, UK: 4.5, CA: 8 } },
+  { name: "Monopoly board game", emoji: "🎲", detail: "classic edition", prices: { AU: 35, US: 20, UK: 20, CA: 30 } },
+  { name: "Sunscreen bottle", emoji: "🧴", detail: "SPF50, 200ml", prices: { AU: 15, US: 12, UK: 7, CA: 15 } },
+  { name: "Bananas", emoji: "🍌", detail: "1kg, supermarket", prices: { AU: 3.50, US: 1.70, UK: 1.20, CA: 2.00 } },
+  { name: "Cheddar cheese block", emoji: "🧀", detail: "500g, supermarket", prices: { AU: 7, US: 5, UK: 3.50, CA: 7 } },
+  { name: "Butter", emoji: "🧈", detail: "250g block", prices: { AU: 3.50, US: 3, UK: 2, CA: 4 } },
+  { name: "Chicken breast", emoji: "🍗", detail: "1kg, supermarket", prices: { AU: 12, US: 11, UK: 7, CA: 14 } },
+  { name: "Minced beef", emoji: "🥩", detail: "500g, supermarket", prices: { AU: 7, US: 5.50, UK: 3.50, CA: 8.50 } },
+  { name: "Rice", emoji: "🍚", detail: "1kg, white", prices: { AU: 3, US: 2.50, UK: 1.80, CA: 4.90 } },
+  { name: "Pasta", emoji: "🍝", detail: "500g, dried", prices: { AU: 1.50, US: 1.50, UK: 1, CA: 2 } },
+  { name: "Peanut butter", emoji: "🥜", detail: "400g jar", prices: { AU: 4.50, US: 3.50, UK: 2.50, CA: 4.50 } },
+  { name: "Breakfast cereal", emoji: "🥣", detail: "500g box", prices: { AU: 6, US: 5, UK: 3.50, CA: 6 } },
+  { name: "Chocolate block", emoji: "🍫", detail: "200g, milk chocolate", prices: { AU: 5, US: 3.50, UK: 2, CA: 4.50 } },
+  { name: "Potato chips", emoji: "🥔", detail: "200g bag", prices: { AU: 5, US: 4, UK: 2.50, CA: 4 } },
+  { name: "Orange juice", emoji: "🍊", detail: "2L, supermarket", prices: { AU: 5.50, US: 5, UK: 3.50, CA: 6 } },
+  { name: "Bottled water", emoji: "💧", detail: "1.5L", prices: { AU: 2.50, US: 2, UK: 1.20, CA: 2 } },
+  { name: "Tea bags", emoji: "🍵", detail: "100 pack", prices: { AU: 5, US: 5, UK: 3, CA: 6 } },
+  { name: "Ice cream tub", emoji: "🍨", detail: "1L, supermarket", prices: { AU: 6, US: 5, UK: 3.50, CA: 7 } },
+  { name: "Pint of beer", emoji: "🍺", detail: "500ml, pub", prices: { AU: 12, US: 7, UK: 6, CA: 9 } },
+  { name: "Bottle of wine", emoji: "🍷", detail: "mid-range, supermarket", prices: { AU: 18, US: 15, UK: 9, CA: 17 } },
+  { name: "Six-pack of beer", emoji: "🍻", detail: "supermarket", prices: { AU: 24, US: 12, UK: 10, CA: 17 } },
+  { name: "Flat white", emoji: "☕", detail: "cafe", prices: { AU: 5.50, US: 4, UK: 3.50, CA: 4.50 } },
+  { name: "Footlong sub sandwich", emoji: "🥖", detail: "standard", prices: { AU: 16, US: 10, UK: 8, CA: 14 } },
+  { name: "Frozen pizza", emoji: "🍕", detail: "supermarket", prices: { AU: 7, US: 5, UK: 3.50, CA: 7 } },
+  { name: "Fish and chips", emoji: "🐟", detail: "takeaway", prices: { AU: 18, US: 15, UK: 10, CA: 17 } },
+  { name: "Energy drink", emoji: "⚡", detail: "500ml can", prices: { AU: 4.50, US: 3, UK: 2, CA: 3.50 } },
+  { name: "Toilet paper", emoji: "🧻", detail: "12 rolls", prices: { AU: 10, US: 8, UK: 6, CA: 10 } },
+  { name: "Dishwashing liquid", emoji: "🧼", detail: "500ml", prices: { AU: 4, US: 3, UK: 2, CA: 4 } },
+  { name: "Laundry detergent", emoji: "🧺", detail: "2L", prices: { AU: 12, US: 10, UK: 7, CA: 12 } },
+  { name: "Tissues", emoji: "🤧", detail: "one box", prices: { AU: 3, US: 2.50, UK: 2, CA: 3 } },
+  { name: "AA batteries", emoji: "🔋", detail: "4 pack", prices: { AU: 7, US: 6, UK: 4, CA: 7 } },
+  { name: "LED light bulb", emoji: "💡", detail: "single", prices: { AU: 5, US: 4, UK: 3, CA: 5 } },
+  { name: "Shampoo", emoji: "🧴", detail: "400ml", prices: { AU: 8, US: 6, UK: 4, CA: 7 } },
+  { name: "Deodorant", emoji: "🧴", detail: "roll-on", prices: { AU: 6, US: 4, UK: 3, CA: 5 } },
+  { name: "Razor refills", emoji: "🪒", detail: "4 pack", prices: { AU: 25, US: 18, UK: 15, CA: 22 } },
+  { name: "Toothbrush", emoji: "🪥", detail: "manual, single", prices: { AU: 4, US: 3, UK: 2, CA: 3 } },
+  { name: "Lip balm", emoji: "💄", detail: "single stick", prices: { AU: 5, US: 3, UK: 2, CA: 4 } },
+  { name: "Hand soap", emoji: "🧼", detail: "pump bottle", prices: { AU: 4, US: 3, UK: 2, CA: 4 } },
+  { name: "Cotton t-shirt", emoji: "👕", detail: "basic", prices: { AU: 15, US: 12, UK: 8, CA: 15 } },
+  { name: "Socks", emoji: "🧦", detail: "3 pack", prices: { AU: 12, US: 10, UK: 6, CA: 12 } },
+  { name: "Hoodie", emoji: "🧥", detail: "mid-range", prices: { AU: 60, US: 45, UK: 35, CA: 55 } },
+  { name: "Nike Air Force 1", emoji: "👟", detail: "sneakers, full price", prices: { AU: 180, US: 115, UK: 110, CA: 150 } },
+  { name: "Sunglasses", emoji: "🕶️", detail: "basic", prices: { AU: 20, US: 15, UK: 10, CA: 20 } },
+  { name: "Backpack", emoji: "🎒", detail: "everyday, 25L", prices: { AU: 50, US: 40, UK: 30, CA: 50 } },
+  { name: "Wireless mouse", emoji: "🖱️", detail: "basic", prices: { AU: 25, US: 20, UK: 15, CA: 25 } },
+  { name: "USB-C cable", emoji: "🔌", detail: "1m", prices: { AU: 15, US: 10, UK: 8, CA: 15 } },
+  { name: "Phone case", emoji: "📱", detail: "standard", prices: { AU: 25, US: 20, UK: 15, CA: 25 } },
+  { name: "Bluetooth speaker", emoji: "🔊", detail: "portable, mid-range", prices: { AU: 100, US: 80, UK: 70, CA: 100 } },
+  { name: "iPad", emoji: "📱", detail: "base model", prices: { AU: 599, US: 449, UK: 429, CA: 649 } },
+  { name: "Apple Watch SE", emoji: "⌚", detail: "base model", prices: { AU: 399, US: 249, UK: 219, CA: 329 } },
+  { name: "External SSD", emoji: "💾", detail: "1TB", prices: { AU: 150, US: 100, UK: 90, CA: 140 } },
+  { name: "Air fryer", emoji: "🍟", detail: "4L", prices: { AU: 100, US: 80, UK: 60, CA: 100 } },
+  { name: "Electric kettle", emoji: "🫖", detail: "standard", prices: { AU: 35, US: 25, UK: 20, CA: 35 } },
+  { name: "Toaster", emoji: "🍞", detail: "2-slice", prices: { AU: 35, US: 25, UK: 20, CA: 35 } },
+  { name: "Robot vacuum", emoji: "🤖", detail: "entry-level", prices: { AU: 300, US: 250, UK: 200, CA: 300 } },
+  { name: "Pillow", emoji: "🛏️", detail: "standard", prices: { AU: 25, US: 20, UK: 15, CA: 25 } },
+  { name: "Pedestal fan", emoji: "🌀", detail: "standard", prices: { AU: 40, US: 30, UK: 25, CA: 40 } },
+  { name: "Disney+", emoji: "🏰", detail: "standard plan, monthly", prices: { AU: 17.99, US: 15.99, UK: 11.99, CA: 15.99 } },
+  { name: "Paperback novel", emoji: "📖", detail: "new release", prices: { AU: 25, US: 20, UK: 15, CA: 25 } },
+  { name: "Zoo ticket", emoji: "🦁", detail: "adult", prices: { AU: 55, US: 35, UK: 25, CA: 40 } },
+  { name: "Public transport fare", emoji: "🚆", detail: "single trip, city", prices: { AU: 5, US: 2.90, UK: 2.50, CA: 3.50 } },
+  { name: "Car wash", emoji: "🚗", detail: "basic", prices: { AU: 20, US: 12, UK: 8, CA: 15 } },
+  { name: "Dry cleaning", emoji: "👔", detail: "one shirt", prices: { AU: 8, US: 5, UK: 3.50, CA: 6 } },
+  { name: "Parking", emoji: "🅿️", detail: "1 hour, city", prices: { AU: 12, US: 10, UK: 6, CA: 8 } },
+  { name: "PS5 game", emoji: "🎮", detail: "new, full price", prices: { AU: 125, US: 70, UK: 70, CA: 90 } },
+  { name: "LEGO set", emoji: "🧱", detail: "about 500 pieces", prices: { AU: 60, US: 40, UK: 35, CA: 55 } },
+  { name: "Jigsaw puzzle", emoji: "🧩", detail: "1000 pieces", prices: { AU: 25, US: 20, UK: 15, CA: 25 } },
+  { name: "Soccer ball", emoji: "⚽", detail: "size 5", prices: { AU: 25, US: 20, UK: 15, CA: 25 } },
+  { name: "Yoga mat", emoji: "🧘", detail: "standard", prices: { AU: 25, US: 20, UK: 15, CA: 25 } },
+  { name: "Tennis balls", emoji: "🎾", detail: "3 pack", prices: { AU: 10, US: 7, UK: 6, CA: 10 } },
+  { name: "Cat food", emoji: "🐱", detail: "12 pack, wet", prices: { AU: 20, US: 15, UK: 10, CA: 18 } }
+];
+
+const CURRENCY = {
+  AU: { label: "Australia", symbol: "A$" },
+  US: { label: "United States", symbol: "$" },
+  UK: { label: "United Kingdom", symbol: "£" },
+  CA: { label: "Canada", symbol: "C$" }
+};
+
+const ROUNDS_PER_DAY = 4;
+
+// Date the prices were last checked against real shops, as "YYYY-MM-DD".
+// Leave empty until a check has been done. The result screen shows it when set.
+const PRICES_CHECKED = "2026-10-15";
+const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function prettyDate(iso) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || "");
+  return m ? parseInt(m[3], 10) + " " + MONTHS[parseInt(m[2], 10) - 1] + " " + m[1] : "";
+}
+
+// ---------- Sound and motion ----------
+const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let soundOn = true;
+let audioCtx = null;
+function ensureAudio() {
+  if (!soundOn) return null;
+  try {
+    if (!audioCtx) {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return null;
+      audioCtx = new AC();
+    }
+    if (audioCtx.state === "suspended") audioCtx.resume();
+    return audioCtx;
+  } catch (e) { return null; }
+}
+function tone(freq, at, dur, vol, type) {
+  const ctx = ensureAudio();
+  if (!ctx) return;
+  try {
+    const t0 = ctx.currentTime + at;
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    o.type = type || "square";
+    o.frequency.setValueAtTime(freq, t0);
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(vol || 0.06, t0 + 0.01);
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+    o.connect(g); g.connect(ctx.destination);
+    o.start(t0); o.stop(t0 + dur + 0.02);
+  } catch (e) {}
+}
+const NOTE = { C5: 523, D5: 587, E5: 659, G5: 784, A5: 880, C6: 1047, E6: 1319, G4: 392, E4: 330, C4: 262 };
+const SFX = {
+  lock()  { tone(NOTE.G4, 0, 0.07); tone(NOTE.C5, 0.07, 0.1); },
+  tick()  { tone(880, 0, 0.025, 0.025); },
+  key()   { tone(600 + Math.random() * 120, 0, 0.02, 0.02); },
+  click() { tone(NOTE.E5, 0, 0.03, 0.03); },
+  perfect() { [NOTE.C5, NOTE.E5, NOTE.G5, NOTE.C6, NOTE.E6, NOTE.C6, NOTE.E6].forEach((n, i) => tone(n, i * 0.07, 0.12, 0.06)); },
+  gem(i)  { tone(NOTE.C5 * Math.pow(1.122, i), 0, 0.09, 0.05); },
+  great() { [NOTE.C5, NOTE.E5, NOTE.G5, NOTE.C6].forEach((n, i) => tone(n, i * 0.09, 0.14, 0.06)); },
+  ok()    { tone(NOTE.E5, 0, 0.1, 0.06); tone(NOTE.G5, 0.1, 0.16, 0.06); },
+  bad()   { tone(NOTE.E4, 0, 0.12, 0.06, "triangle"); tone(NOTE.C4, 0.12, 0.2, 0.06, "triangle"); },
+  fanfare() { [NOTE.C5, NOTE.E5, NOTE.G5, NOTE.C6, NOTE.G5, NOTE.C6, NOTE.E6].forEach((n, i) => tone(n, i * 0.1, 0.16, 0.06)); }
+};
+function playTierSound(score) {
+  revealFx(score);
+  if (score >= 98) SFX.perfect(); else if (score >= 80) SFX.great(); else if (score >= 50) SFX.ok(); else SFX.bad();
+}
+function countUp(el, target, ms, onDone) {
+  if (reduceMotion || target <= 0) { el.textContent = target; if (onDone) onDone(); return; }
+  const token = {}; el._countToken = token;
+  const start = performance.now();
+  let lastTick = 0;
+  function step(now) {
+    if (el._countToken !== token) return;
+    const t = Math.min(1, (now - start) / ms);
+    const val = Math.round(target * (1 - Math.pow(1 - t, 3)));
+    el.textContent = val;
+    if (now - lastTick > 55 && t < 1) { SFX.tick(); lastTick = now; }
+    if (t < 1) requestAnimationFrame(step); else if (onDone) onDone();
+  }
+  requestAnimationFrame(step);
+}
+function popGems(container) {
+  if (reduceMotion) return;
+  container.classList.remove("pop"); void container.offsetWidth; container.classList.add("pop");
+  for (let i = 0; i < 5; i++) gemTimers.push(setTimeout(() => SFX.gem(i), 700 + i * 110));
+}
+
+// ---------- Visual effects (skipped with reduced motion) ----------
+const FX_COLORS = ["#f6c945", "#5fd16a", "#f7f1e3", "#ff8a3d"];
+function fx(kind, n, ox, oy) {
+  if (reduceMotion) return;
+  const box = document.createElement("div");
+  box.className = "fx";
+  for (let i = 0; i < n; i++) {
+    const b = document.createElement("i");
+    const r = (Math.random() * 720 - 360) + "deg";
+    b.style.background = FX_COLORS[i % FX_COLORS.length];
+    b.style.setProperty("--r", r);
+    if (kind === "burst") {
+      const a = Math.random() * Math.PI * 2, d = 40 + Math.random() * 80;
+      b.className = "burst";
+      b.style.left = ox + "px"; b.style.top = oy + "px";
+      b.style.setProperty("--dx", Math.cos(a) * d + "px");
+      b.style.setProperty("--dy", Math.sin(a) * d + "px");
+    } else {
+      b.className = "fall";
+      b.style.left = Math.random() * 100 + "%"; b.style.top = "-12px";
+      b.style.setProperty("--dx", (Math.random() * 120 - 60) + "px");
+      b.style.setProperty("--t", (1.6 + Math.random() * 1.2) + "s");
+    }
+    box.appendChild(b);
+  }
+  document.body.appendChild(box);
+  setTimeout(() => box.remove(), 3200);
+}
+const CARD_FX = ["enter", "shake", "glow", "flash"];
+let gemTimers = [];
+function clearCard() {
+  const c = document.querySelector(".card");
+  clearTimeout(c._fxTimer);
+  c.classList.remove(...CARD_FX);
+}
+// Cuts off everything still running (card effects, confetti, score count-up, gem sounds) so the next screen starts straight away.
+function stopFx() {
+  clearCard();
+  document.querySelectorAll(".fx").forEach(el => el.remove());
+  ["resultScore", "finalTotal"].forEach(id => { document.getElementById(id)._countToken = null; });
+  gemTimers.forEach(clearTimeout); gemTimers = [];
+}
+function cardPulse(cls) {
+  if (reduceMotion) return;
+  const c = document.querySelector(".card");
+  clearCard(); void c.offsetWidth; c.classList.add(cls);
+  c._fxTimer = setTimeout(() => c.classList.remove(cls), 1100);
+}
+function revealFx(score) {
+  const r = document.getElementById("resultScore").getBoundingClientRect();
+  const x = r.left + r.width / 2, y = r.top + r.height / 2;
+  if (score >= 98) { cardPulse("flash"); fx("burst", 28, x, y); }
+  else if (score >= 80) { cardPulse("glow"); fx("burst", 14, x, y); }
+  else if (score < 50) cardPulse("shake");
+}
+function celebrate(avg) {
+  SFX.fanfare();
+  if (avg >= 80) setTimeout(SFX.perfect, 700);
+  fx("fall", avg >= 80 ? 70 : avg >= 50 ? 40 : 16);
+}
+
+// ---------- State ----------
+let country = "AU";
+let mode = "normal"; // "normal" | "unlimited"
+let roundItems = [];
+let roundIndex = 0;
+let roundScores = [];
+let roundGuesses = []; // guesses kept so the share text can name the worst miss
+let currentItem = null;
+
+const DAILY_TZ = "Australia/Sydney";
+function sydneyYMD() {
+  const parts = new Intl.DateTimeFormat("en-CA", { timeZone: DAILY_TZ, year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(new Date());
+  const get = t => parseInt(parts.find(p => p.type === t).value, 10);
+  return { y: get("year"), m: get("month"), d: get("day") };
+}
+function getTodayKey() {
+  const t = sydneyYMD();
+  return t.y + "-" + t.m + "-" + t.d;
+}
+function dayNumber() {
+  const t = sydneyYMD();
+  return Math.floor(Date.UTC(t.y, t.m - 1, t.d) / 86400000) - Math.floor(Date.UTC(2026, 9, 1) / 86400000);
+}
+function mulberry32(seed) {
+  return function () {
+    seed |= 0; seed = (seed + 0x6D2B79F5) | 0;
+    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+const cycleCache = {};
+function cycleOrder(cycle, n) {
+  const key = cycle + ":" + n;
+  if (cycleCache[key]) return cycleCache[key];
+  const rnd = mulberry32(cycle * 7919 + 13);
+  const arr = Array.from({ length: n }, (_, i) => i);
+  for (let i = n - 1; i > 0; i--) {
+    const j = Math.floor(rnd() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  if (cycle > 0) {
+    // Keep recently used items away from the start of the next cycle so repeats stay far apart.
+    const recent = new Set(cycleOrder(cycle - 1, n).slice(-12));
+    const out = arr.filter(x => !recent.has(x)).concat(arr.filter(x => recent.has(x)));
+    return (cycleCache[key] = out);
+  }
+  return (cycleCache[key] = arr);
+}
+function pickDailyItems() {
+  // Every item appears once per cycle, so no repeats until the whole pool has been used.
+  const n = ITEMS.length;
+  const day = Math.max(0, dayNumber());
+  const picks = [];
+  for (let g = day * ROUNDS_PER_DAY; picks.length < ROUNDS_PER_DAY; g++) {
+    const idx = cycleOrder(Math.floor(g / n), n)[g % n];
+    if (!picks.includes(idx)) picks.push(idx);
+  }
+  return picks.map(i => ITEMS[i]);
+}
+let deck = [];
+let deckIndex = 0;
+function newDeck() {
+  const d = ITEMS.slice();
+  for (let i = d.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [d[i], d[j]] = [d[j], d[i]];
+  }
+  return d;
+}
+
+// Analytics hook: does nothing until a provider script (Plausible or Umami) is added to <head>.
+function track(name, props) {
+  try {
+    if (window.plausible) window.plausible(name, props ? { props } : undefined);
+    else if (window.umami && window.umami.track) window.umami.track(name, props);
+  } catch (e) {}
+}
+
+function safeGet(key, fallback) {
+  try { const v = localStorage.getItem(key); return v === null ? fallback : v; }
+  catch (e) { return fallback; }
+}
+function safeSet(key, val) {
+  try { localStorage.setItem(key, val); } catch (e) {}
+}
+function saveProgress(pending) {
+  if (mode !== "normal") return;
+  safeSet("pc_progress", JSON.stringify({ day: getTodayKey(), idx: roundIndex, scores: roundScores, guesses: roundGuesses, pending: pending || null }));
+}
+function loadProgress() {
+  try {
+    const p = JSON.parse(safeGet("pc_progress", "null"));
+    if (p && p.day === getTodayKey() && Array.isArray(p.scores) && Number.isInteger(p.idx)
+        && p.idx >= 0 && p.idx < ROUNDS_PER_DAY && p.scores.every(n => typeof n === "number")) return p;
+  } catch (e) {}
+  return null;
+}
+function loadStats() {
+  return {
+    streak: parseInt(safeGet("pc_streak", "0"), 10) || 0,
+    best: parseInt(safeGet("pc_best", "0"), 10) || 0,
+    played: parseInt(safeGet("pc_played", "0"), 10) || 0,
+    lastPlayed: safeGet("pc_last", "")
+  };
+}
+function saveStats(s) {
+  safeSet("pc_streak", s.streak);
+  safeSet("pc_best", s.best);
+  safeSet("pc_played", s.played);
+  safeSet("pc_last", s.lastPlayed);
+}
+function isYesterday(lastKey, todayKey) {
+  if (!lastKey) return false;
+  const parse = k => { const [y, m, d] = k.split("-").map(Number); return new Date(y, m - 1, d); };
+  const diff = Math.round((parse(todayKey) - parse(lastKey)) / 86400000);
+  return diff === 1;
+}
+
+// ---------- DOM refs ----------
+const countrySelect = document.getElementById("countrySelect");
+const normalModeBtn = document.getElementById("normalModeBtn");
+const unlimitedModeBtn = document.getElementById("unlimitedModeBtn");
+const statStrip = document.getElementById("statStrip");
+const progressDots = document.getElementById("progressDots");
+const playArea = document.getElementById("playArea");
+const resultArea = document.getElementById("resultArea");
+const finalScreen = document.getElementById("finalScreen");
+const guessInput = document.getElementById("guessInput");
+const lockScreen = document.getElementById("lockScreen");
+
+Object.keys(CURRENCY).forEach(code => {
+  const opt = document.createElement("option");
+  opt.value = code;
+  opt.textContent = CURRENCY[code].label;
+  countrySelect.appendChild(opt);
+});
+
+// Custom country dropdown (the hidden <select> above just holds the value)
+const cselectBtn = document.getElementById("cselectBtn");
+const cselectList = document.getElementById("cselectList");
+const cselectLabel = document.getElementById("cselectLabel");
+let cselectActive = 0;
+
+Object.keys(CURRENCY).forEach(code => {
+  const li = document.createElement("li");
+  li.setAttribute("role", "option");
+  li.dataset.code = code;
+  li.textContent = CURRENCY[code].label;
+  li.addEventListener("mouseenter", () => highlightCountry(Object.keys(CURRENCY).indexOf(code)));
+  li.addEventListener("click", () => { pickCountry(code); closeCountryList(); cselectBtn.focus(); });
+  cselectList.appendChild(li);
+});
+
+function updateCountryLabel() {
+  cselectLabel.textContent = CURRENCY[countrySelect.value].label;
+  [...cselectList.children].forEach(li => {
+    const sel = li.dataset.code === countrySelect.value;
+    li.classList.toggle("selected", sel);
+    li.setAttribute("aria-selected", sel ? "true" : "false");
+  });
+}
+function highlightCountry(i) {
+  const items = [...cselectList.children];
+  cselectActive = (i + items.length) % items.length;
+  items.forEach((li, n) => li.classList.toggle("active", n === cselectActive));
+}
+function openCountryList() {
+  cselectList.hidden = false;
+  cselectBtn.setAttribute("aria-expanded", "true");
+  highlightCountry(Object.keys(CURRENCY).indexOf(countrySelect.value));
+}
+function closeCountryList() {
+  cselectList.hidden = true;
+  cselectBtn.setAttribute("aria-expanded", "false");
+  [...cselectList.children].forEach(li => li.classList.remove("active"));
+}
+function pickCountry(code) {
+  countrySelect.value = code;
+  countrySelect.dispatchEvent(new Event("change"));
+  updateCountryLabel();
+}
+cselectBtn.addEventListener("click", () => { cselectList.hidden ? openCountryList() : closeCountryList(); });
+cselectBtn.addEventListener("keydown", (e) => {
+  const open = !cselectList.hidden;
+  if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+    e.preventDefault();
+    if (!open) openCountryList(); else highlightCountry(cselectActive + (e.key === "ArrowDown" ? 1 : -1));
+  } else if ((e.key === "Enter" || e.key === " ") && open) {
+    e.preventDefault();
+    pickCountry(Object.keys(CURRENCY)[cselectActive]); closeCountryList();
+  } else if (e.key === "Escape" && open) {
+    closeCountryList();
+  }
+});
+document.addEventListener("click", (e) => { if (!document.getElementById("cselect").contains(e.target)) closeCountryList(); });
+cselectBtn.addEventListener("blur", () => setTimeout(() => { if (!document.getElementById("cselect").contains(document.activeElement)) closeCountryList(); }, 120));
+
+// ---------- Rendering ----------
+function renderDots() {
+  if (mode !== "normal") {
+    progressDots.style.display = "flex";
+    progressDots.innerHTML = '<span class="deck-count">' + (deckIndex + 1) + " / " + deck.length + "</span>";
+    return;
+  }
+  progressDots.style.display = "flex";
+  progressDots.innerHTML = "";
+  for (let i = 0; i < ROUNDS_PER_DAY; i++) {
+    const d = document.createElement("div");
+    d.className = "dot" + (i < roundIndex ? " done" : i === roundIndex ? " current" : "");
+    progressDots.appendChild(d);
+  }
+}
+
+const ICON_FILES = {
+  "Bananas": "bananas",
+  "Cheddar cheese block": "cheddar-cheese-block",
+  "Butter": "butter",
+  "Chicken breast": "chicken-breast",
+  "Minced beef": "minced-beef",
+  "Rice": "rice",
+  "Pasta": "pasta",
+  "Peanut butter": "peanut-butter",
+  "Breakfast cereal": "breakfast-cereal",
+  "Chocolate block": "chocolate-block",
+  "Potato chips": "potato-chips",
+  "Orange juice": "orange-juice",
+  "Bottled water": "bottled-water",
+  "Tea bags": "tea-bags",
+  "Ice cream tub": "ice-cream-tub",
+  "Pint of beer": "pint-of-beer",
+  "Bottle of wine": "bottle-of-wine",
+  "Six-pack of beer": "six-pack-of-beer",
+  "Flat white": "flat-white",
+  "Footlong sub sandwich": "footlong-sub-sandwich",
+  "Frozen pizza": "frozen-pizza",
+  "Fish and chips": "fish-and-chips",
+  "Energy drink": "energy-drink",
+  "Toilet paper": "toilet-paper",
+  "Dishwashing liquid": "dishwashing-liquid",
+  "Laundry detergent": "laundry-detergent",
+  "Tissues": "tissues",
+  "AA batteries": "aa-batteries",
+  "LED light bulb": "led-light-bulb",
+  "Shampoo": "shampoo",
+  "Deodorant": "deodorant",
+  "Razor refills": "razor-refills",
+  "Toothbrush": "toothbrush",
+  "Lip balm": "lip-balm",
+  "Hand soap": "hand-soap",
+  "Cotton t-shirt": "cotton-t-shirt",
+  "Socks": "socks",
+  "Hoodie": "hoodie",
+  "Nike Air Force 1": "nike-air-force-1",
+  "Sunglasses": "sunglasses",
+  "Backpack": "backpack",
+  "Wireless mouse": "wireless-mouse",
+  "USB-C cable": "usb-c-cable",
+  "Phone case": "phone-case",
+  "Bluetooth speaker": "bluetooth-speaker",
+  "iPad": "ipad",
+  "Apple Watch SE": "apple-watch-se",
+  "External SSD": "external-ssd",
+  "Air fryer": "air-fryer",
+  "Electric kettle": "electric-kettle",
+  "Toaster": "toaster",
+  "Robot vacuum": "robot-vacuum",
+  "Pillow": "pillow",
+  "Pedestal fan": "pedestal-fan",
+  "Disney+": "disney",
+  "Paperback novel": "paperback-novel",
+  "Zoo ticket": "zoo-ticket",
+  "Public transport fare": "public-transport-fare",
+  "Car wash": "car-wash",
+  "Dry cleaning": "dry-cleaning",
+  "Parking": "parking",
+  "PS5 game": "ps5-game",
+  "LEGO set": "lego-set",
+  "Jigsaw puzzle": "jigsaw-puzzle",
+  "Soccer ball": "soccer-ball",
+  "Yoga mat": "yoga-mat",
+  "Tennis balls": "tennis-balls",
+  "Cat food": "cat-food",
+  "Big Mac": "big-mac",
+  "Netflix Standard": "netflix-standard",
+  "Spotify Premium": "spotify-premium",
+  "iPhone 16": "iphone-16",
+  "Coca-Cola bottle": "coca-cola-bottle",
+  "Dozen eggs": "dozen-eggs",
+  "Cinema ticket": "cinema-ticket",
+  "PlayStation 5": "playstation-5",
+  "McDonald's fries": "mcdonalds-fries",
+  "Loaf of bread": "loaf-of-bread",
+  "Litre of milk": "litre-of-milk",
+  "Starbucks latte": "starbucks-latte",
+  "Movie popcorn": "movie-popcorn",
+  "AirPods Pro 3": "airpods-pro-3",
+  "Nintendo Switch 2": "nintendo-switch-2",
+  "Domino's pizza": "dominos-pizza",
+  "Petrol per litre": "petrol-per-litre",
+  "Gym membership": "gym-membership",
+  "Avocado": "avocado",
+  "Uber short ride": "uber-short-ride",
+  "Toothpaste tube": "toothpaste-tube",
+  "Band-Aids box": "band-aids-box",
+  "Kindle Paperwhite": "kindle-paperwhite",
+  "Standard stamp": "standard-stamp",
+  "Movie ticket popcorn combo": "movie-ticket-popcorn-combo",
+  "Levi's 501 jeans": "levis-501-jeans",
+  "Dog food bag": "dog-food-bag",
+  "Haircut": "haircut",
+  "Umbrella": "umbrella",
+  "Coffee capsules box": "coffee-capsules-box",
+  "Monopoly board game": "monopoly-board-game",
+  "Sunscreen bottle": "sunscreen-bottle"
+};
+
+function showItem() {
+  currentItem = mode === "normal" ? roundItems[roundIndex] : deck[deckIndex];
+  const emojiEl = document.getElementById("itemEmoji");
+  emojiEl.textContent = currentItem.emoji;
+  if (ICON_FILES[currentItem.name]) {
+    const img = new Image();
+    const shown = currentItem;
+    img.onload = () => {
+      if (currentItem !== shown) return;
+      img.alt = "";
+      img.style.cssText = "width:160px;height:160px;object-fit:contain;image-rendering:pixelated;";
+      emojiEl.textContent = "";
+      emojiEl.appendChild(img);
+    };
+    img.src = "icons/" + ICON_FILES[currentItem.name] + ".png";
+  }
+  document.getElementById("itemName").textContent = currentItem.name;
+  document.getElementById("itemDetail").textContent = currentItem.detail;
+  document.getElementById("currencySymbol").textContent = CURRENCY[country].symbol;
+  guessInput.value = "";
+  playArea.style.display = "block";
+  resultArea.classList.remove("show");
+  finalScreen.classList.remove("show");
+  lockScreen.classList.remove("show");
+  renderDots();
+  stopFx();
+  cardPulse("enter");
+  setTimeout(() => guessInput.focus(), 50);
+}
+
+function fmtMoney(n) { return n >= 100 ? n.toFixed(0) : n.toFixed(2); }
+function offByText(guess, actual, pctOff, symbol) {
+  const diff = Math.abs(guess - actual);
+  if (diff < 0.005) return "Spot on";
+  const pct = pctOff < 10 ? pctOff.toFixed(1) : pctOff.toFixed(0);
+  return symbol + fmtMoney(diff) + (guess > actual ? " too high" : " too low") + " (" + pct + "%)";
+}
+function computeScore(guess, actual) {
+  const pctOff = Math.abs(guess - actual) / actual * 100;
+  return { pctOff, score: Math.max(0, Math.round(100 - pctOff)) };
+}
+function squaresForScore(score) {
+  const box = score >= 95 ? "🟩" : score >= 80 ? "🟨" : score >= 50 ? "🟧" : "🟥";
+  return box.repeat(5);
+}
+function gemForScore(score) {
+  if (score >= 95) return "gem-green.png";
+  if (score >= 80) return "gem-yellow.png";
+  if (score >= 50) return "gem-orange.png";
+  return "gem-red.png";
+}
+function squaresHTMLForScore(score) {
+  const src = gemForScore(score);
+  let out = "";
+  for (let i = 0; i < 5; i++) out += '<img src="' + src + '" class="gem" style="--i:' + i + '" alt="">';
+  return out;
+}
+function labelForScore(score) {
+  if (score >= 95) return "NAILED IT";
+  if (score >= 80) return "CLOSE";
+  if (score >= 50) return "NOT BAD";
+  if (score >= 20) return "OFF A BIT";
+  return "WAY OFF";
+}
+function classForScore(score) {
+  if (score >= 95) return "great";
+  if (score >= 80) return "good";
+  if (score >= 50) return "ok";
+  return "bad";
+}
+
+document.getElementById("submitBtn").addEventListener("click", submitGuess);
+guessInput.addEventListener("input", () => SFX.key());
+document.addEventListener("pointerdown", e => {
+  const b = e.target.closest && e.target.closest("button");
+  if (b && b.id !== "submitBtn" && b.id !== "soundBtn") SFX.click();
+});
+guessInput.addEventListener("keydown", e => { if (e.key === "Enter") submitGuess(); });
+
+function submitGuess() {
+  const guess = parseFloat(guessInput.value);
+  if (isNaN(guess) || guess <= 0) { guessInput.focus(); return; }
+
+  const { score } = computeScore(guess, currentItem.prices[country]);
+  roundScores.push(score);
+  roundGuesses.push(guess);
+  saveProgress({ guess: guess, country: country });
+  SFX.lock();
+  renderResult(guess, country, true);
+}
+
+function renderResult(guess, ctry, animate) {
+  const actual = currentItem.prices[ctry];
+  const { pctOff, score } = computeScore(guess, actual);
+
+  playArea.style.display = "none";
+  resultArea.classList.add("show");
+
+  const scoreEl = document.getElementById("resultScore");
+  scoreEl.className = "result-score mono " + classForScore(score);
+  document.getElementById("resultLabel").textContent = labelForScore(score);
+  const symbol = CURRENCY[ctry].symbol;
+  const checked = prettyDate(PRICES_CHECKED);
+  document.getElementById("resultFacts").innerHTML =
+    "You guessed <b>" + symbol + guess.toFixed(2) + "</b><br>" +
+    "Actual price is <b>" + symbol + actual.toFixed(2) + "</b><br>" +
+    offByText(guess, actual, pctOff, symbol) +
+    (checked ? '<div class="result-note"><span>Price checked</span> <span>' + checked + "</span></div>" : "");
+  const sq = document.getElementById("squares");
+  sq.classList.remove("pop");
+  sq.innerHTML = squaresHTMLForScore(score);
+
+  if (animate) {
+    countUp(scoreEl, score, 650, () => playTierSound(score));
+    popGems(sq);
+  } else {
+    scoreEl.textContent = score;
+  }
+  renderDots();
+}
+
+document.getElementById("nextBtn").addEventListener("click", () => {
+  if (mode === "normal") {
+    roundIndex++;
+    if (roundIndex >= ROUNDS_PER_DAY) {
+      finishNormalRound();
+      return;
+    }
+    saveProgress(null);
+    showItem();
+  } else {
+    deckIndex++;
+    if (deckIndex >= deck.length) { finishUnlimited(); return; }
+    showItem();
+  }
+});
+
+function finishUnlimited() {
+  const avg = Math.round(roundScores.reduce((a, b) => a + b, 0) / roundScores.length);
+  track("unlimited_complete", { score: avg });
+  playArea.style.display = "none";
+  resultArea.classList.remove("show");
+  finalScreen.classList.add("show");
+  progressDots.style.display = "none";
+  document.getElementById("finalTitle").textContent = "All " + deck.length + " items done";
+  document.getElementById("finalPct").hidden = true;
+  const totalEl = document.getElementById("finalTotal");
+  const fsq = document.getElementById("finalSquares");
+  fsq.classList.remove("pop");
+  fsq.innerHTML = squaresHTMLForScore(avg);
+  countUp(totalEl, avg, 800, () => celebrate(avg));
+  popGems(fsq);
+  const again = document.getElementById("playAgainBtn");
+  again.textContent = "PLAY AGAIN";
+  again.style.display = "block";
+  again.onclick = startUnlimitedMode;
+  document.getElementById("shareBtn").style.display = "block";
+  window._shareText = "Lowball Unlimited\n" + deck.length + " items  Avg " + avg;
+}
+
+function finishNormalRound() {
+  const todayKey = getTodayKey();
+  const stats = loadStats();
+  const avg = Math.round(roundScores.reduce((a, b) => a + b, 0) / roundScores.length);
+
+  const firstCompletion = stats.lastPlayed !== todayKey;
+  if (stats.lastPlayed !== todayKey) {
+    stats.streak = isYesterday(stats.lastPlayed, todayKey) ? stats.streak + 1 : 1;
+    stats.played += 1;
+    stats.lastPlayed = todayKey;
+    if (stats.streak > stats.best) stats.best = stats.streak;
+    saveStats(stats);
+    safeSet("pc_last_avg", avg);
+    recordHistory(avg);
+    track("daily_complete", { score: avg, streak: stats.streak });
+  }
+
+  updateStatStrip();
+  playArea.style.display = "none";
+  resultArea.classList.remove("show");
+  finalScreen.classList.add("show");
+  progressDots.style.display = "none";
+
+  const totalEl = document.getElementById("finalTotal");
+  const fsq = document.getElementById("finalSquares");
+  fsq.classList.remove("pop");
+  fsq.innerHTML = squaresHTMLForScore(avg);
+  countUp(totalEl, avg, 800, () => celebrate(avg));
+  popGems(fsq);
+  document.getElementById("finalTitle").textContent = "Round complete";
+  const playAgainNow = document.getElementById("playAgainBtn");
+  playAgainNow.textContent = "PLAY UNLIMITED";
+  playAgainNow.style.display = "block";
+  playAgainNow.onclick = startUnlimitedMode;
+  document.getElementById("shareBtn").style.display = "block";
+
+  window._shareText = buildDailyShare(roundScores, avg);
+  if (stats.lastPlayed === todayKey) safeSet("pc_last_share", window._shareText);
+  showPct(loadPct());
+  syncPercentile(avg, firstCompletion);
+  if (firstCompletion) setTimeout(openStats, reduceMotion ? 700 : 2300);
+}
+
+function shareLink() {
+  const d = window.SITE && window.SITE.domain;
+  if (d && !/YOURDOMAIN/i.test(d)) return "\n" + d;
+  return /^https?:/.test(location.protocol) ? "\n" + location.host : "";
+}
+function copyShare(btn) {
+  const text = (window._shareText || "") + shareLink();
+  track("share", { mode });
+  const old = btn.textContent;
+  const flash = (msg) => { btn.textContent = msg; setTimeout(() => { btn.textContent = old; }, 1500); };
+  const fallback = () => {
+    try {
+      const ta = document.createElement("textarea");
+      ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      const ok = document.execCommand("copy");
+      document.body.removeChild(ta);
+      flash(ok ? "COPIED" : "COPY FAILED");
+    } catch (e) { flash("COPY FAILED"); }
+  };
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(() => flash("COPIED"), fallback);
+    } else { fallback(); }
+  } catch (e) { fallback(); }
+}
+document.getElementById("shareBtn").addEventListener("click", function () { copyShare(this); });
+
+// ---------- Share text ----------
+function buildDailyShare(scores, avg) {
+  const gems = scores.map(s => s >= 95 ? "🟩" : s >= 80 ? "🟨" : s >= 50 ? "🟧" : "🟥").join("");
+  let out = "Lowball #" + (dayNumber() + 1) + "\n" + gems + "  Avg " + avg;
+  // Worst miss gives friends something to argue about. Shows the item and the guess, never the real price.
+  let w = 0;
+  scores.forEach((sc, i) => { if (sc < scores[w]) w = i; });
+  const item = roundItems[w], g = roundGuesses[w];
+  if (scores[w] < 80 && item && typeof g === "number") out += "\nWorst miss: " + item.name + " (I said " + CURRENCY[country].symbol + fmtMoney(g) + ")";
+  return out;
+}
+
+// ---------- Score history (this device only) ----------
+function loadHistory() {
+  try {
+    const h = JSON.parse(safeGet("pc_history", "{}"));
+    return h && typeof h === "object" && !Array.isArray(h) ? h : {};
+  } catch (e) { return {}; }
+}
+function recordHistory(avg) {
+  const h = loadHistory();
+  h[dayNumber()] = avg;
+  const cutoff = dayNumber() - 120;
+  Object.keys(h).forEach(k => { if (parseInt(k, 10) < cutoff) delete h[k]; });
+  safeSet("pc_history", JSON.stringify(h));
+}
+
+// ---------- Percentile vs other players (stays hidden until SITE.statsApi is set) ----------
+// Server contract is in README.md.
+function statsApiBase() {
+  const b = window.SITE && window.SITE.statsApi;
+  return b ? String(b).replace(/\/$/, "") : "";
+}
+function loadPct() {
+  try {
+    const p = JSON.parse(safeGet("pc_pct", "null"));
+    if (p && p.day === dayNumber() && typeof p.percentile === "number") return p;
+  } catch (e) {}
+  return null;
+}
+function showPct(p) {
+  const el = document.getElementById("finalPct");
+  if (p && mode === "normal") {
+    el.textContent = "Better than " + Math.round(p.percentile) + "% today";
+    el.hidden = false;
+  } else {
+    el.hidden = true;
+  }
+}
+async function syncPercentile(avg, submit) {
+  const base = statsApiBase();
+  if (!base) return;
+  const day = dayNumber();
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 6000);
+  try {
+    let res;
+    if (submit && safeGet("pc_submitted", "") !== String(day)) {
+      res = await fetch(base + "/score", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ day: day, score: avg }), signal: ctrl.signal });
+      if (res.ok) safeSet("pc_submitted", String(day));
+    } else {
+      res = await fetch(base + "/percentile?day=" + day + "&score=" + avg, { signal: ctrl.signal });
+    }
+    if (!res || !res.ok) return;
+    const data = await res.json();
+    if (data && typeof data.percentile === "number") {
+      const p = { day: day, percentile: data.percentile, players: data.players || 0 };
+      safeSet("pc_pct", JSON.stringify(p));
+      showPct(p);
+      if (document.getElementById("statsModal").classList.contains("show")) renderStats();
+    }
+  } catch (e) {
+  } finally { clearTimeout(timer); }
+}
+
+// ---------- Countdown to next daily (Sydney midnight) ----------
+const sydneyClock = new Intl.DateTimeFormat("en-GB", { timeZone: DAILY_TZ, hour: "2-digit", minute: "2-digit", second: "2-digit", hourCycle: "h23" });
+const loadedDayKey = getTodayKey();
+function pad2(n) { return String(n).padStart(2, "0"); }
+function tickNextDaily() {
+  const el = document.getElementById("nextDaily");
+  if (getTodayKey() !== loadedDayKey) {
+    if (!el.classList.contains("ready")) {
+      el.classList.add("ready");
+      el.setAttribute("role", "button");
+      el.tabIndex = 0;
+      el.textContent = "New daily ready. Tap to play";
+    }
+    return;
+  }
+  const parts = sydneyClock.formatToParts(new Date());
+  const g = t => parseInt(parts.find(p => p.type === t).value, 10);
+  const left = Math.max(0, 86400 - (g("hour") * 3600 + g("minute") * 60 + g("second")));
+  el.innerHTML = "Next daily in <b>" + pad2(Math.floor(left / 3600)) + ":" + pad2(Math.floor(left % 3600 / 60)) + ":" + pad2(left % 60) + "</b>";
+}
+document.getElementById("nextDaily").addEventListener("click", function () { if (this.classList.contains("ready")) location.reload(); });
+document.getElementById("nextDaily").addEventListener("keydown", function (e) { if ((e.key === "Enter" || e.key === " ") && this.classList.contains("ready")) { e.preventDefault(); location.reload(); } });
+setInterval(tickNextDaily, 1000);
+tickNextDaily();
+
+// ---------- Popups ----------
+let modalReturnFocus = null;
+function openModal(id, focusId) {
+  closeModals(true);
+  modalReturnFocus = document.activeElement;
+  document.getElementById(id).classList.add("show");
+  const f = document.getElementById(focusId);
+  if (f) f.focus();
+}
+function closeModals(silent) {
+  document.querySelectorAll(".modal.show").forEach(m => m.classList.remove("show"));
+  if (!silent && modalReturnFocus && modalReturnFocus.focus) { try { modalReturnFocus.focus(); } catch (e) {} }
+}
+document.querySelectorAll(".modal").forEach(m => m.addEventListener("click", e => { if (e.target === m) closeModalsAndMark(); }));
+document.addEventListener("keydown", e => { if (e.key === "Escape" && document.querySelector(".modal.show")) closeModalsAndMark(); });
+function closeModalsAndMark() {
+  if (document.getElementById("helpModal").classList.contains("show")) safeSet("pc_help_seen", "1");
+  closeModals(false);
+}
+function openHelp() { openModal("helpModal", "helpClose"); }
+document.getElementById("helpBtn").addEventListener("click", openHelp);
+document.getElementById("helpClose").addEventListener("click", closeModalsAndMark);
+
+function renderStats() {
+  const stats = loadStats();
+  const hist = loadHistory();
+  const keys = Object.keys(hist);
+  const vals = keys.map(k => hist[k]).filter(n => typeof n === "number");
+  const avg = vals.length ? Math.round(vals.reduce((a, b) => a + b, 0) / vals.length) : "--";
+  const bestDay = vals.length ? Math.max.apply(null, vals) : "--";
+  const cells = [
+    [stats.streak, "Streak"], [stats.best, "Best streak"], [stats.played, "Played"],
+    [avg, "Average"], [bestDay, "Best day"]
+  ];
+  const pct = loadPct();
+  if (pct) cells.push([Math.round(pct.percentile) + "%", "Beat today"]);
+  document.getElementById("statsGrid").innerHTML = cells.map(c => "<div class=\"stats-cell\"><b>" + c[0] + "</b><span>" + c[1] + "</span></div>").join("");
+
+  const wrap = document.getElementById("statsChartWrap");
+  if (!vals.length) {
+    wrap.innerHTML = '<div class="chart-empty">Finish a daily to start your chart.</div>';
+  } else {
+    let bars = "";
+    for (let i = 13; i >= 0; i--) {
+      const v = hist[dayNumber() - i];
+      if (typeof v === "number") {
+        const t = v >= 95 ? "" : v >= 80 ? " t-y" : v >= 50 ? " t-o" : " t-r";
+        bars += '<div class="bar' + t + '" style="height:' + Math.max(3, Math.round(v * 0.9)) + 'px" title="' + v + '"></div>';
+      } else {
+        bars += '<div class="bar none"></div>';
+      }
+    }
+    wrap.innerHTML = '<div class="chart" aria-hidden="true">' + bars + '</div><div class="chart-cap">Last 14 days</div>';
+  }
+  const doneToday = stats.lastPlayed === getTodayKey() && window._shareText && mode === "normal";
+  document.getElementById("statsShare").style.display = doneToday ? "block" : "none";
+}
+function openStats() { renderStats(); openModal("statsModal", "statsClose"); }
+document.getElementById("statsBtn").addEventListener("click", openStats);
+document.getElementById("statsClose").addEventListener("click", () => closeModals(false));
+document.getElementById("statsShare").addEventListener("click", function () { copyShare(this); });
+
+// ---------- Unlimited paywall (game side; payments connect through SITE.checkoutUrl and SITE.restoreApi) ----------
+function unlimitedUnlocked() { return safeGet("pc_pro", "") === "1"; }
+function showLock() {
+  mode = "locked";
+  track("paywall_view");
+  normalModeBtn.classList.remove("active");
+  unlimitedModeBtn.classList.add("active");
+  statStrip.style.display = "none";
+  playArea.style.display = "none";
+  resultArea.classList.remove("show");
+  finalScreen.classList.remove("show");
+  progressDots.style.display = "none";
+  document.getElementById("lockList").innerHTML = "All " + ITEMS.length + " items<br>One-time purchase";
+  document.getElementById("lockPrice").textContent = (window.SITE && window.SITE.unlimitedPrice) || "";
+  document.getElementById("lockMsg").textContent = "";
+  document.getElementById("restoreRow").classList.remove("show");
+  lockScreen.classList.remove("restoring");
+  lockScreen.classList.add("show");
+}
+function lockSay(t) { document.getElementById("lockMsg").textContent = t; }
+document.getElementById("buyBtn").addEventListener("click", () => {
+  track("buy_click");
+  const url = window.SITE && window.SITE.checkoutUrl;
+  if (url) { window.open(url, "_blank", "noopener"); lockSay(""); }
+  else lockSay("Buying is not open yet. Check back soon.");
+});
+document.getElementById("restoreToggle").addEventListener("click", () => {
+  const open = document.getElementById("restoreRow").classList.toggle("show");
+  lockScreen.classList.toggle("restoring", open);
+  lockSay("");
+});
+document.getElementById("restoreGo").addEventListener("click", async () => {
+  const val = document.getElementById("restoreInput").value.trim();
+  if (!val) { lockSay("Enter the email or key from your purchase."); return; }
+  const api = window.SITE && window.SITE.restoreApi;
+  if (!api) { lockSay("Restoring is not available yet."); return; }
+  lockSay("Checking...");
+  try {
+    const res = await fetch(api, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ key: val }) });
+    const data = res.ok ? await res.json() : null;
+    if (data && data.ok) { safeSet("pc_pro", "1"); lockSay(""); startUnlimitedMode(); }
+    else lockSay("No purchase found for that.");
+  } catch (e) { lockSay("Could not check right now. Try again."); }
+});
+
+// ---------- Mode + country switching ----------
+function startNormalMode() {
+  mode = "normal";
+  lockScreen.classList.remove("show");
+  normalModeBtn.classList.add("active");
+  unlimitedModeBtn.classList.remove("active");
+  statStrip.style.display = "flex";
+
+  const todayKey = getTodayKey();
+  const stats = loadStats();
+  roundItems = pickDailyItems();
+
+  if (stats.lastPlayed === todayKey) {
+    // already completed today
+    updateStatStrip();
+    playArea.style.display = "none";
+    resultArea.classList.remove("show");
+    finalScreen.classList.add("show");
+    progressDots.style.display = "none";
+    const avg = safeGet("pc_last_avg", "--");
+    document.getElementById("finalTotal").textContent = avg;
+    const avgNum = parseInt(avg, 10);
+    document.getElementById("finalSquares").innerHTML = isNaN(avgNum) ? "" : squaresHTMLForScore(avgNum);
+    window._shareText = safeGet("pc_last_share", "");
+    showPct(loadPct());
+    if (!isNaN(avgNum)) syncPercentile(avgNum, false);
+    document.getElementById("shareBtn").style.display = window._shareText ? "block" : "none";
+    const playAgainBtn = document.getElementById("playAgainBtn");
+    document.getElementById("finalTitle").textContent = "Round complete";
+    playAgainBtn.textContent = "PLAY UNLIMITED";
+    playAgainBtn.style.display = "block";
+    playAgainBtn.onclick = startUnlimitedMode;
+    return;
+  }
+  document.getElementById("shareBtn").style.display = "block";
+  const saved = loadProgress();
+  if (saved) {
+    roundIndex = saved.idx;
+    roundScores = saved.scores.slice();
+    roundGuesses = Array.isArray(saved.guesses) ? saved.guesses.slice() : [];
+    if (saved.pending && CURRENCY[saved.pending.country] && roundScores.length === roundIndex + 1) {
+      currentItem = roundItems[roundIndex];
+      finalScreen.classList.remove("show");
+      renderResult(saved.pending.guess, saved.pending.country, false);
+      return;
+    }
+    roundScores = roundScores.slice(0, roundIndex);
+    roundGuesses = roundGuesses.slice(0, roundIndex);
+  } else {
+    roundIndex = 0;
+    roundScores = [];
+    roundGuesses = [];
+  }
+  showItem();
+}
+
+function startUnlimitedMode() {
+  if (!unlimitedUnlocked()) { showLock(); return; }
+  lockScreen.classList.remove("show");
+  mode = "unlimited";
+  track("unlimited_start");
+  normalModeBtn.classList.remove("active");
+  unlimitedModeBtn.classList.add("active");
+  statStrip.style.display = "none";
+  document.getElementById("shareBtn").style.display = "block";
+  document.getElementById("playAgainBtn").style.display = "none";
+  roundScores = [];
+  roundGuesses = [];
+  deck = newDeck();
+  deckIndex = 0;
+  showItem();
+}
+
+normalModeBtn.addEventListener("click", startNormalMode);
+unlimitedModeBtn.addEventListener("click", startUnlimitedMode);
+
+function updateStatStrip() {
+  const stats = loadStats();
+  document.getElementById("streakVal").textContent = stats.streak;
+  document.getElementById("bestVal").textContent = stats.best;
+  document.getElementById("playedVal").textContent = stats.played;
+}
+
+countrySelect.addEventListener("change", (e) => {
+  country = e.target.value;
+  safeSet("pc_country", country);
+  if (playArea.style.display !== "none" && currentItem) {
+    document.getElementById("currencySymbol").textContent = CURRENCY[country].symbol;
+  }
+});
+
+function detectCountry() {
+  const saved = safeGet("pc_country", null);
+  if (saved && CURRENCY[saved]) {
+    country = saved;
+    countrySelect.value = country; updateCountryLabel();
+    return;
+  }
+  const guess = guessCountry();
+  if (guess) { country = guess; safeSet("pc_country", country); }
+  countrySelect.value = country; updateCountryLabel();
+  document.getElementById("currencySymbol").textContent = CURRENCY[country].symbol;
+}
+// Guess from the browser timezone, no outside service. Anywhere else stays on the default.
+function guessCountry() {
+  let tz = "";
+  try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (e) {}
+  if (/^Australia\//.test(tz)) return "AU";
+  if (/^Europe\/(London|Belfast|Jersey|Guernsey|Isle_of_Man)$/.test(tz)) return "UK";
+  if (/^America\/(Toronto|Vancouver|Edmonton|Winnipeg|Halifax|St_Johns|Regina|Moncton|Glace_Bay|Whitehorse|Yellowknife|Iqaluit|Rankin_Inlet|Resolute|Cambridge_Bay|Inuvik|Dawson|Dawson_Creek|Fort_Nelson|Goose_Bay|Montreal|Nipigon|Thunder_Bay|Pangnirtung|Rainy_River|Swift_Current|Atikokan|Blanc-Sablon|Creston)$/.test(tz)) return "CA";
+  if (/^(America|US)\//.test(tz) || tz === "Pacific/Honolulu") return "US";
+  return null;
+}
+
+// ---------- Init ----------
+(function init() {
+  soundOn = safeGet("pc_sound", "1") !== "0";
+  const soundBtn = document.getElementById("soundBtn");
+  const paintSound = () => { soundBtn.textContent = "Sound: " + (soundOn ? "on" : "off"); };
+  paintSound();
+  soundBtn.addEventListener("click", () => { soundOn = !soundOn; safeSet("pc_sound", soundOn ? "1" : "0"); paintSound(); if (soundOn) SFX.tick(); });
+  detectCountry();
+  updateStatStrip();
+  startNormalMode();
+  if (!safeGet("pc_help_seen", "")) setTimeout(() => { if (!document.querySelector(".modal.show")) openHelp(); }, 500);
+})();
+
+// ---------- Cookie consent (only active once an ad network is added) ----------
+const PC_CONSENT = (function () {
+  const KEY = "pc_consent";
+  const cbs = [];
+  const gpc = !!(navigator.globalPrivacyControl);
+  const adsOn = !!(window.SITE && window.SITE.adsEnabled);
+  const bar = document.getElementById("consentBar");
+  const link = document.getElementById("cookieSettingsLink");
+  const get = () => (gpc ? "denied" : safeGet(KEY, ""));
+  const apply = () => { if (get() === "granted") cbs.splice(0).forEach(f => { try { f(); } catch (e) {} }); };
+  const set = v => { safeSet(KEY, v); if (bar) bar.classList.remove("show"); track("consent", { choice: v }); apply(); };
+  if (adsOn) {
+    if (link) { link.style.display = "inline"; link.addEventListener("click", e => { e.preventDefault(); if (bar) bar.classList.add("show"); }); }
+    document.getElementById("consentAccept").addEventListener("click", () => set("granted"));
+    document.getElementById("consentReject").addEventListener("click", () => set("denied"));
+    if (!get() && bar) bar.classList.add("show");
+  }
+  return {
+    get,
+    // Load ad scripts inside PC_CONSENT.onGranted(() => { ... }) so they only run after the player accepts.
+    onGranted: function (f) { if (get() === "granted") f(); else cbs.push(f); }
+  };
+})();
+</script>
+</body>
+</html>

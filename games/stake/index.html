@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stake — INSERT COIN</title><link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../game-flow.css"><script defer src="../../game-config.js"></script><script defer src="../../game.js"></script>
+<style>
+:root{--bg:#100a2e;--card:#19113b;--ink:#f4f0ff;--mut:#b8afd8;--felt:#176b50;--gold:#e6bd58;--ok:#65d99a;--okbg:#173d31;--no:#ff7f91;--nobg:#4a2038;--line:#45346b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#100a2e;--card:#19113b;--ink:#f4f0ff;--mut:#b8afd8;--felt:#176b50;--gold:#e6bd58;--ok:#65d99a;--okbg:#173d31;--no:#ff7f91;--nobg:#4a2038;--line:#45346b}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#100a2e;--card:#19113b;--ink:#f4f0ff;--mut:#b8afd8;--felt:#176b50;--gold:#e6bd58;--ok:#65d99a;--okbg:#173d31;--no:#ff7f91;--nobg:#4a2038;--line:#45346b}
+/* HOOK cosmetic themes: add more variable sets keyed on :root[data-theme="name"] */
+*{box-sizing:border-box}
+body{margin:0;background-color:#100a25;background-image:radial-gradient(circle,rgba(116,83,168,.22) .8px,transparent 1px);background-size:5px 5px;background-attachment:fixed;color:var(--ink);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+main{max-width:480px;margin:0 auto;padding:12px 14px 32px}
+h1{margin:0;font-size:26px;letter-spacing:.14em}h2,h3{margin:.3em 0}
+.top{display:flex;justify-content:space-between;align-items:center}
+.tabs{display:flex;gap:6px;margin:10px 0}
+.tabs button{flex:1;min-height:46px;border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;font:inherit;font-weight:600}
+.tabs button[aria-selected=true]{background:var(--felt);color:#fff;border-color:var(--felt);text-decoration:underline;text-underline-offset:4px}
+.card{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:16px;margin-top:10px}
+.mut{color:var(--mut);margin:.3em 0}
+.cat{font-size:30px;font-weight:800;margin:.2em 0;display:inline-block;border-bottom:4px solid var(--gold)}
+.chips{display:flex;gap:12px;justify-content:center;margin:18px 0 6px}
+.chip{width:84px;height:84px;border-radius:50%;background:var(--felt);color:#fff;border:6px dashed rgba(255,255,255,.9);box-shadow:0 0 0 3px var(--felt),0 5px 0 3px rgba(0,0,0,.3);font:700 26px/1 system-ui;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0}
+.chip small{font-size:11px;font-weight:600;margin-top:3px}.chip:active{transform:translateY(3px)}
+.opt{display:flex;gap:10px;align-items:center;width:100%;min-height:52px;text-align:left;margin-top:8px;padding:10px 12px;border:2px solid var(--ink);border-radius:12px;background:var(--card);color:var(--ink);font:inherit}
+.opt b{flex:none;width:28px;height:28px;border-radius:50%;border:2px solid currentColor;text-align:center;line-height:24px}
+.opt span{min-width:0;overflow-wrap:anywhere}.opt .tag{margin-left:auto;font-weight:700;white-space:nowrap;padding-left:6px}
+.opt.ok,.pip.ok,.banner.ok{background:var(--okbg);border-color:var(--ok)}
+.opt.no,.pip.no,.banner.no{background:var(--nobg);border-color:var(--no)}
+.btn{min-height:48px;padding:0 20px;border:2px solid var(--felt);border-radius:12px;background:var(--felt);color:#fff;font:inherit;font-weight:700;margin-top:12px}
+.btn.alt{background:var(--card);color:var(--ink);border-color:var(--ink)}
+.banner{padding:10px 12px;border-radius:12px;font-weight:700;border:2px solid}
+.pips{display:flex;gap:6px;margin-top:8px}.pip{flex:1;text-align:center;padding:6px 0;border:2px solid var(--line);border-radius:10px;font-weight:700;min-height:34px}
+.pip.cur{border-color:var(--ink)}
+textarea,input{width:100%;font:inherit;color:var(--ink);background:var(--card);border:2px solid var(--line);border-radius:12px;padding:10px;min-height:48px}
+textarea{resize:none}.big{font-size:44px;font-weight:800;margin:.1em 0}
+
+
+
+/* INSERT COIN shared page layout; Stake's existing game palette and controls remain intact. */
+.standalone-page{background:transparent;color:var(--ink)}
+.standalone-wrap{max-width:760px;margin:0 auto;padding:22px 16px 34px}
+.standalone-heading{display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px;margin-bottom:18px}
+.standalone-title-group{grid-column:1;grid-row:1}.standalone-title-group h1{font-size:30px;letter-spacing:.04em;margin:0}.standalone-title-group p{color:var(--mut);margin:4px 0 0}
+.standalone-tools{grid-column:2;grid-row:1;display:flex;gap:8px}.mini-tool{width:44px;height:44px;border:2px solid var(--line);border-radius:0;background:var(--card);color:var(--ink);font:700 20px inherit;cursor:pointer}.mini-tool img{width:22px;height:22px;filter:brightness(0) invert(1)}
+.quick-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0 18px}.quick-stat{background:var(--card);border:2px solid var(--line);border-radius:12px;padding:12px;text-align:center;box-shadow:3px 4px 0 #08051b}.quick-stat strong{display:block;color:var(--gold);font-size:26px;line-height:1.1}.quick-stat span{display:block;color:var(--mut);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-top:5px}
+.game-popup-backdrop{position:fixed;inset:0;z-index:1000;background:rgba(7,4,20,.82);display:grid;place-items:center;padding:18px}.game-popup-backdrop[hidden]{display:none}.game-popup{position:relative;width:min(100%,540px);max-height:min(86vh,760px);overflow:auto;background:var(--card);color:var(--ink);border:2px solid var(--line);box-shadow:6px 7px 0 #05030d;padding:26px}.game-popup h2{font-size:24px;margin:4px 0 12px}.game-popup p{color:var(--mut)}.popup-kicker{color:var(--gold)!important;font-size:11px;font-weight:800;letter-spacing:.14em}.game-popup-close{position:absolute;right:10px;top:10px;border:2px solid var(--line);background:transparent;color:var(--ink);font-size:24px;width:36px;height:36px;cursor:pointer}.popup-instructions{line-height:1.6}.popup-instructions strong{color:var(--ink)}.popup-done{margin-top:12px}.extended-stats-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.extended-stats-grid>div{border:2px solid var(--line);padding:12px;background:var(--bg)}.extended-stats-grid strong,.extended-stats-grid span{display:block}.extended-stats-grid strong{font-size:23px;color:var(--gold)}.extended-stats-grid span{font-size:10px;color:var(--mut);font-weight:800;letter-spacing:.07em}.popup-footnote{font-size:12px}.standalone-footer{text-align:center;color:var(--mut);font-size:12px;margin:28px 0 0}.sound-control{background:transparent;color:var(--mut);border:0;font:inherit;cursor:pointer}.standalone-legal{display:flex;justify-content:center;gap:16px;margin:12px}.standalone-legal a{color:var(--mut)}.standalone-site-footer{margin-top:0}
+@media(max-width:520px){.standalone-wrap{padding:18px 12px 26px}.standalone-heading{gap:10px}.standalone-title-group h1{font-size:25px}.quick-stats{gap:6px}.quick-stat{padding:10px 4px}.quick-stat strong{font-size:22px}.game-popup{padding:24px 18px}}
+
+</style></head><body><header class="site-header game-site-header"><div class="wrap game-header-inner"><button class="game-menu-toggle" id="game-menu-toggle" type="button" aria-expanded="false" aria-controls="game-menu"><span class="hamburger-lines" aria-hidden="true">☰</span><span class="menu-toggle-label">MENU</span></button><a class="brand" href="../../index.html" aria-label="INSERT COIN — back to all games"><img src="../../assets/logo.svg" alt=""><span class="brand-name">INSERT <span>COIN</span></span></a><a class="game-header-account" href="../../login.html">ACCOUNT</a></div><nav class="game-menu" id="game-menu" aria-label="INSERT COIN menu" aria-hidden="true" hidden><div class="game-menu-heading"><span class="section-meta">INSERT COIN MENU</span><button class="game-menu-close" id="game-menu-close" type="button" aria-label="Close menu">×</button></div><div class="game-menu-content"><div class="game-menu-group"><span class="section-meta">PLAY MORE</span><a href="../stake/index.html">Stake</a><a href="../../index.html#daily-games">All games menu ↗</a><a href="../../games/lowball/index.html">Lowball</a><a href="../../games/pixel-pairs/index.html">Pixel Pairs</a><a href="../../games/word-forge/index.html">Word Forge</a><a href="../../games/gridlock/index.html">Gridlock</a><a href="../../games/number-drop/index.html">Number Drop</a><a href="../../games/memory-lane/index.html">Memory Lane</a></div><div class="game-menu-group"><span class="section-meta">YOUR ARCADE</span><a href="../../profile.html">My stats</a><a href="../../friends.html">Friends</a><a href="../../login.html">Account / sign in</a></div></div></nav></header><main class="standalone-page"><div class="standalone-wrap">
+<section class="standalone-heading" aria-labelledby="stake-page-title"><div class="standalone-heading-spacer"></div><div class="standalone-title-group"><h1 id="stake-page-title">Stake</h1><p>Trivia / Risk · Bet your chips.</p></div><div class="standalone-tools"><button class="mini-tool" id="help-popup-open" type="button" aria-label="How to play" title="How to play">?</button><button class="mini-tool" id="stats-popup-open" type="button" aria-label="Extended game stats" title="Extended game stats"><img src="../../assets/icons/trophy.svg" alt=""></button></div></section>
+<section class="quick-stats" aria-label="Your Stake stats"><div class="quick-stat"><strong id="stake-streak">0</strong><span>Streak</span></div><div class="quick-stat"><strong id="stake-best">0</strong><span>Best</span></div><div class="quick-stat"><strong id="stake-played">0</strong><span>Played</span></div></section>
+<div id="app"></div>
+<div class="game-popup-backdrop" id="help-popup" hidden><section class="game-popup" role="dialog" aria-modal="true" aria-labelledby="help-popup-title"><button class="game-popup-close" type="button" data-popup-close aria-label="Close">×</button><p class="popup-kicker">PLAYER GUIDE</p><h2 id="help-popup-title">HOW TO PLAY STAKE</h2><p>Stake chips on your knowledge across five daily trivia questions, or play unlimited rounds.</p><div class="popup-instructions"><p><strong>1. Choose your stake.</strong> Bet 1, 2, or 3 chips before the answer choices appear.</p><p><strong>2. Pick an answer.</strong> A correct answer wins the chips you staked; a wrong answer loses them.</p><p><strong>3. Finish the daily set.</strong> Answer all five questions to see your final score and share your result. Unlimited mode is for practice and does not affect your daily streak.</p></div><button class="button pink popup-done" type="button" data-popup-close>GOT IT</button></section></div>
+<div class="game-popup-backdrop" id="stats-popup" hidden><section class="game-popup" role="dialog" aria-modal="true" aria-labelledby="stats-popup-title"><button class="game-popup-close" type="button" data-popup-close aria-label="Close">×</button><p class="popup-kicker">CABINET RECORD</p><h2 id="stats-popup-title">EXTENDED STATS</h2><p class="stats-popup-game">Stake · Trivia / Risk</p><div class="extended-stats-grid"><div><strong id="stat-played">0</strong><span>RUNS PLAYED</span></div><div><strong id="stat-best">—</strong><span>BEST SCORE</span></div><div><strong id="stat-average">—</strong><span>AVERAGE SCORE</span></div><div><strong id="stat-streak">0</strong><span>CURRENT STREAK</span></div><div><strong id="stat-perfect">0</strong><span>POSITIVE RUNS</span></div><div><strong id="stat-last">—</strong><span>LAST SCORE</span></div></div><p class="popup-footnote">Stats are stored in this browser and do not sync between devices.</p><button class="button pink popup-done" type="button" data-popup-close>BACK TO GAME</button></section></div>
+<div class="standalone-footer"><p>INSERT COIN is an independent collection of daily games. Game artwork and challenge mechanics vary by cabinet.</p></div></div></main><footer class="site-footer standalone-site-footer"><div class="wrap footer-inner"><span>© 2026 INSERT COIN · ONE DAY. ONE RUN.</span><div class="footer-links"><a href="../../index.html">All games</a><a href="../../style-guide.html">Style guide</a></div></div></footer>
+<script>
+const SHARE_URL="https://example.com/stake"; // set to the published page URL
+// Format: category|question|correct answer|wrong|wrong|fun fact (facts are stable, units metric)
+const BANK=`Geography|Which is the longest river in Africa?|Nile|Congo|Niger|It flows north into the Mediterranean Sea.
+Geography|What is the capital of Canada?|Ottawa|Toronto|Montreal|Queen Victoria picked it in 1857.
+Geography|Which country spans the most time zones when overseas territories count?|France|Russia|United States|France has 12, or 13 with its Antarctic claim.
+Geography|What is the smallest country in the world by area?|Vatican City|Monaco|San Marino|It covers only about 0.44 km².
+Geography|In which country is Mount Kilimanjaro?|Tanzania|Kenya|Uganda|It rises 5,895 m, the highest peak in Africa.
+Geography|Which ocean is the deepest?|Pacific|Atlantic|Indian|The Mariana Trench there reaches nearly 11,000 m.
+Geography|Which is the largest hot desert in the world?|Sahara|Arabian|Gobi|It covers about 9 million km².
+Geography|In which country is Lake Baikal?|Russia|Mongolia|Kazakhstan|It holds about 20 percent of the world’s unfrozen fresh water.
+Geography|What is the capital of Australia?|Canberra|Sydney|Melbourne|It was built from scratch as a compromise between two rival cities.
+Science|What is the chemical symbol for gold?|Au|Ag|Gd|Au comes from the Latin word aurum.
+Science|How many bones does an adult human have?|206|186|256|Babies are born with roughly 270 that fuse over time.
+Science|Which planet has the shortest day?|Jupiter|Mercury|Mars|Jupiter spins once in about 10 hours.
+Science|Which gas do plants absorb for photosynthesis?|Carbon dioxide|Oxygen|Nitrogen|They release oxygen as a by-product.
+Science|What is the hardest natural substance?|Diamond|Quartz|Topaz|Diamond is made of pure carbon.
+Science|What is the speed of light in a vacuum?|300,000 km/s|150,000 km/s|3,000,000 km/s|Nothing travels faster through a vacuum.
+Science|Which organ makes insulin?|Pancreas|Liver|Kidney|Special cells called beta cells do the work.
+Science|Which gas is most abundant in Earth’s air?|Nitrogen|Oxygen|Argon|It makes up about 78 percent of the air.
+Science|At what temperature in °C does water boil at sea level?|100|90|110|On top of Mount Everest it boils at around 70 °C.
+Science|Which part of an atom carries a negative charge?|Electron|Proton|Neutron|An electron is about 1,836 times lighter than a proton.
+Animals|What is the largest mammal in the world?|Blue whale|African elephant|Sperm whale|It can reach about 30 m in length.
+Animals|How many hearts does an octopus have?|3|2|4|Two serve the gills and one serves the body.
+Animals|Which bird is the fastest in a dive?|Peregrine falcon|Golden eagle|Swift|It can pass 300 km/h when it stoops.
+Animals|What is a group of lions called?|Pride|Pack|Herd|A pride is usually related females and their cubs.
+Animals|Which mammal can truly fly?|Bat|Flying squirrel|Sugar glider|Bats are the only mammals with powered flight.
+Animals|What do koalas mainly eat?|Eucalyptus leaves|Bamboo|Acacia bark|They can sleep up to 20 hours a day.
+Animals|How many legs does a spider have?|8|6|10|Spiders are arachnids, not insects.
+Animals|Which of these mammals lays eggs?|Platypus|Kangaroo|Wombat|The platypus and echidna are the egg-laying mammals.
+Animals|What is the tallest land animal?|Giraffe|African elephant|Ostrich|Adults reach up to about 5.5 m.
+Animals|Which is the largest living bird?|Ostrich|Emu|Albatross|It can stand about 2.7 m tall.
+History|In which year did World War II end?|1945|1943|1947|Germany surrendered in May and Japan in September.
+History|Who was the first emperor of Rome?|Augustus|Julius Caesar|Nero|Caesar never held the title. Augustus took power in 27 BC.
+History|Which civilisation built Machu Picchu?|Inca|Aztec|Maya|It sits about 2,430 m up in the Andes.
+History|In which year did the Berlin Wall fall?|1989|1991|1985|It had divided the city for 28 years.
+History|Who was the first person to walk on the Moon?|Neil Armstrong|Buzz Aldrin|Yuri Gagarin|Apollo 11 landed in July 1969.
+History|Which empire did Genghis Khan found?|Mongol Empire|Ottoman Empire|Persian Empire|It became the largest land empire in history.
+History|Which ship sank in 1912 after hitting an iceberg?|Titanic|Lusitania|Britannic|About 2,224 people were on board.
+History|The Rosetta Stone helped scholars decode which writing?|Egyptian hieroglyphs|Cuneiform|Linear B|It was found in 1799 and carries one text in three scripts.
+History|In which year did the French Revolution begin?|1789|1776|1804|The Bastille fell on 14 July 1789.
+Arts|Who wrote Romeo and Juliet?|William Shakespeare|Christopher Marlowe|Charles Dickens|He wrote it in the mid 1590s.
+Arts|How many strings does a standard violin have?|4|5|6|They are tuned G, D, A and E.
+Arts|Which composer wrote his Ninth Symphony while almost deaf?|Beethoven|Mozart|Bach|It premiered in 1824 and includes the Ode to Joy.
+Arts|Who painted The Starry Night?|Vincent van Gogh|Claude Monet|Paul Cézanne|He painted it in 1889 in southern France.
+Arts|Who wrote the novel 1984?|George Orwell|Aldous Huxley|Ray Bradbury|Orwell was a pen name for Eric Blair.
+Arts|How many keys does a standard piano have?|88|76|92|52 are white and 36 are black.
+Arts|Who wrote Pride and Prejudice?|Jane Austen|Charlotte Brontë|Mary Shelley|It was published in 1813.
+Arts|Which art movement is Salvador Dalí linked with?|Surrealism|Cubism|Impressionism|He painted The Persistence of Memory in 1931.
+Maths|What is pi to two decimal places?|3.14|3.41|3.12|Its digits never end and never repeat.
+Maths|How many sides does a hexagon have?|6|5|8|Honeycomb cells are hexagons.
+Maths|What is 12 times 12?|144|124|164|A group of 144 is called a gross.
+Maths|What is the square root of 169?|13|14|12|13 is also a prime number.
+Maths|What do the angles of a flat triangle add up to?|180 degrees|90 degrees|360 degrees|This holds for every flat triangle.
+Maths|Which is the only even prime number?|2|0|4|Every other even number divides by 2.
+Food|Which spice comes from crocus flowers?|Saffron|Turmeric|Paprika|Each flower gives only three stigmas.
+Food|Which fruit is the main ingredient of guacamole?|Avocado|Lime|Tomato|Botanically an avocado is a berry.
+Food|What is the main ingredient of hummus?|Chickpeas|Lentils|Black beans|Hummus is the Arabic word for chickpeas.
+Food|Which nut is used to make marzipan?|Almond|Cashew|Walnut|It is made from ground almonds and sugar.
+Space|Which planet is closest to the Sun?|Mercury|Venus|Mars|A year on Mercury lasts 88 Earth days.
+Space|What is the name of our galaxy?|Milky Way|Andromeda|Triangulum|It holds hundreds of billions of stars.
+Space|Which planet has the hottest surface?|Venus|Mercury|Mars|It averages about 465 °C under thick clouds.
+Space|How long does sunlight take to reach Earth?|About 8 minutes|About 8 seconds|About 8 hours|The distance is about 150 million km.
+Body|What is the largest organ of the human body?|Skin|Liver|Lungs|Adult skin covers about 2 m².
+Body|Which blood cells carry oxygen?|Red blood cells|White blood cells|Platelets|They get their colour from haemoglobin.
+Geography|What is the capital of Japan?|Tokyo|Kyoto|Osaka|Tokyo was called Edo until 1868.
+Geography|What is the capital of Brazil?|Brasília|Rio de Janeiro|São Paulo|The city was inaugurated in 1960.
+Geography|Which river flows through Paris?|Seine|Loire|Rhine|It is about 777 km long.
+Geography|Which is the longest mountain range on land?|Andes|Himalayas|Rocky Mountains|It runs about 7,000 km along South America.
+Geography|What is the capital of Egypt?|Cairo|Alexandria|Luxor|Cairo sits on the banks of the Nile.
+Geography|What is the largest island in the world?|Greenland|Madagascar|Borneo|It covers about 2.1 million km².
+Geography|Which is the lowest point on land?|Dead Sea shore|Caspian Sea shore|Lake Victoria shore|It lies about 430 m below sea level.
+Geography|What is the capital of Argentina?|Buenos Aires|Santiago|Lima|Its name means fair winds in Spanish.
+Geography|Mount Everest lies on the border of Nepal and which country?|China|India|Bhutan|Its summit is about 8,849 m above sea level.
+Geography|What is the capital of Turkey?|Ankara|Istanbul|Izmir|Ankara became the capital in 1923.
+Geography|Which strait runs through Istanbul?|Bosphorus|Gibraltar|Hormuz|It joins the Black Sea to the Sea of Marmara.
+Geography|Which country is shaped like a boot?|Italy|Greece|Portugal|Its toe nearly touches the island of Sicily.
+Geography|Which is the longest river in Europe?|Volga|Danube|Rhine|It is about 3,530 km long.
+Geography|What is the capital of New Zealand?|Wellington|Auckland|Christchurch|It is the southernmost national capital in the world.
+Geography|Which is the largest country by area?|Russia|Canada|China|It covers about 17 million km².
+Science|What is the chemical symbol for sodium?|Na|So|Sd|Na comes from the Latin word natrium.
+Science|Which force keeps planets in orbit around the Sun?|Gravity|Magnetism|Friction|Newton described it in 1687.
+Science|What is the chemical formula of water?|H2O|CO2|O2|Each molecule has two hydrogen atoms and one oxygen atom.
+Science|Which part of a cell makes most of its energy?|Mitochondria|Nucleus|Ribosome|They produce a molecule called ATP.
+Science|At what temperature in °C does pure water freeze?|0|-10|10|Salt water freezes at a lower temperature.
+Science|Which metal is liquid at room temperature?|Mercury|Lead|Tin|Its symbol Hg comes from the Latin word hydrargyrum.
+Science|Which blood type is the universal donor for red cells?|O negative|AB positive|A positive|Its red cells carry no A, B or Rh markers.
+Science|What is the study of fungi called?|Mycology|Botany|Zoology|Mushrooms and yeasts are fungi.
+Science|Who published the theory of general relativity?|Albert Einstein|Isaac Newton|Niels Bohr|He published it in 1915.
+Science|What is the most abundant element in the universe?|Hydrogen|Oxygen|Carbon|It is the lightest element.
+Science|How many chromosomes do humans normally have?|46|44|48|They come in 23 pairs.
+Science|Which type of rock forms from cooled lava?|Igneous|Sedimentary|Metamorphic|Igneous comes from the Latin word for fire.
+Science|What is the unit of electrical resistance?|Ohm|Volt|Watt|It is named after Georg Ohm.
+Science|Which vitamin does skin make in sunlight?|Vitamin D|Vitamin C|Vitamin A|Few foods contain much of it naturally.
+Science|What is the chemical symbol for iron?|Fe|Ir|In|Fe comes from the Latin word ferrum.
+Animals|Which animal is the fastest on land?|Cheetah|Lion|Greyhound|It can reach about 100 km/h in short bursts.
+Animals|What is a baby kangaroo called?|Joey|Cub|Pup|A newborn joey is only about 2 cm long.
+Animals|Which is the largest living reptile?|Saltwater crocodile|Komodo dragon|Green anaconda|Big males can exceed 5 m in length.
+Animals|How many humps does a dromedary camel have?|1|2|3|A Bactrian camel has two.
+Animals|Which flightless bird lives in Antarctica?|Emperor penguin|Ostrich|Kiwi|Males keep the egg warm on their feet.
+Animals|Which of these is a mammal?|Dolphin|Shark|Tuna|Dolphins are warm-blooded and breathe air.
+Animals|Which mammal has the longest pregnancy?|African elephant|Blue whale|Giraffe|It lasts about 22 months.
+Animals|Which big cat has stripes?|Tiger|Leopard|Jaguar|No two tigers share the same stripe pattern.
+Animals|Which vertebrate may live the longest?|Greenland shark|Bowhead whale|Galápagos tortoise|It may live for more than 250 years.
+Animals|Which animal is famous for building dams?|Beaver|Otter|Muskrat|Its dams create ponds that protect its lodge.
+Animals|What do giant pandas mainly eat?|Bamboo|Eucalyptus|Fish|They can eat for 12 hours or more each day.
+Animals|Which insect makes honey?|Honey bee|Wasp|Ant|A hive can hold tens of thousands of bees.
+History|Who was the first president of the United States?|George Washington|Thomas Jefferson|John Adams|He took office in 1789.
+History|Which ancient city did Vesuvius bury in 79 AD?|Pompeii|Athens|Carthage|Ash preserved it until excavations began in the 1700s.
+History|Who was the first woman to win a Nobel Prize?|Marie Curie|Rosalind Franklin|Florence Nightingale|She won in 1903 and again in 1911.
+History|Whose expedition first sailed around the world?|Magellan|Columbus|Cook|It finished in 1522 after Magellan had died.
+History|In which year did the Western Roman Empire fall?|476|376|576|Odoacer removed the last emperor that year.
+History|Which country gave the Statue of Liberty to the United States?|France|Britain|Spain|It was dedicated in 1886.
+History|Who was known as the Maid of Orléans?|Joan of Arc|Marie Antoinette|Catherine de Medici|She was about 19 when she died in 1431.
+History|Which empire built the Colosseum?|Roman|Greek|Byzantine|It could hold roughly 50,000 spectators.
+History|In which year did the Wright brothers first fly?|1903|1895|1911|The first flight lasted 12 seconds.
+History|Which civilisation built the pyramids of Giza?|Egyptian|Roman|Persian|The Great Pyramid was originally about 147 m tall.
+History|Which country first let women vote in national elections in 1893?|New Zealand|Britain|United States|Australia followed in 1902.
+History|Who developed the first successful smallpox vaccine?|Edward Jenner|Louis Pasteur|Jonas Salk|He tested it in 1796.
+History|Which wall did the Romans build across northern England?|Hadrian’s Wall|Great Wall|Berlin Wall|Work began around 122 AD.
+Arts|Who painted the Mona Lisa?|Leonardo da Vinci|Michelangelo|Raphael|It hangs in the Louvre in Paris.
+Arts|Who composed The Four Seasons?|Antonio Vivaldi|Johann Sebastian Bach|Joseph Haydn|He was a Venetian priest nicknamed the Red Priest.
+Arts|Who wrote Don Quixote?|Miguel de Cervantes|Federico García Lorca|Gabriel García Márquez|It was published in two parts in 1605 and 1615.
+Arts|Who wrote the epic poem The Odyssey?|Homer|Virgil|Sophocles|It follows Odysseus on his ten-year journey home.
+Arts|Who sculpted the statue of David in Florence?|Michelangelo|Donatello|Bernini|The marble statue stands about 5 m tall.
+Arts|Who composed The Magic Flute?|Mozart|Verdi|Wagner|It premiered in Vienna in 1791.
+Arts|Who wrote Frankenstein?|Mary Shelley|Jane Austen|Emily Brontë|She began writing it at age 18.
+Arts|Who painted Girl with a Pearl Earring?|Johannes Vermeer|Rembrandt|Frans Hals|It dates from around 1665.
+Arts|Who wrote War and Peace?|Leo Tolstoy|Fyodor Dostoevsky|Anton Chekhov|Many editions run past 1,200 pages.
+Arts|Who painted Guernica?|Pablo Picasso|Joan Miró|Henri Matisse|It shows the 1937 bombing of a Basque town.
+Arts|How many lines does a limerick have?|5|4|6|Limericks follow an AABBA rhyme scheme.
+Maths|What is 15 percent of 200?|30|15|20|Take 10 percent, then add half of that.
+Maths|How many degrees are in a right angle?|90|45|180|A square has four of them.
+Maths|Which is the next prime number after 7?|11|9|13|9 is 3 times 3.
+Maths|What is 7 times 8?|56|54|64|The digits 5, 6, 7, 8 are a handy memory trick.
+Maths|What is the Roman numeral for 50?|L|C|D|C is 100 and D is 500.
+Maths|How many millimetres are in a metre?|1,000|100|10,000|Milli means one thousandth.
+Maths|How many sides does an octagon have?|8|6|10|Stop signs are octagons.
+Maths|What is the sum of the whole numbers from 1 to 10?|55|45|50|Pair 1 with 10 and 2 with 9 to get five pairs of 11.
+Food|Which country invented pizza as we know it?|Italy|Greece|France|The modern pizza comes from Naples.
+Food|What is sushi rice traditionally seasoned with?|Vinegar|Soy sauce|Sesame oil|Sugar and salt are added as well.
+Food|Which vegetable gives borscht its red colour?|Beetroot|Tomato|Red cabbage|It is a classic soup in Eastern Europe.
+Food|What is the main ingredient of tofu?|Soybeans|Rice|Wheat|It is made by curdling soy milk.
+Food|Which country does paella come from?|Spain|Portugal|Mexico|It began in the region of Valencia.
+Food|Which grain is used to make sake?|Rice|Barley|Corn|It is brewed, not distilled.
+Food|What gives chilli peppers their heat?|Capsaicin|Caffeine|Piperine|Birds cannot taste it.
+Food|Which cheese is traditional in a Greek salad?|Feta|Cheddar|Brie|It is made from sheep milk or a mix with goat milk.
+Space|Which planet is known as the Red Planet?|Mars|Jupiter|Mercury|Iron oxide dust gives it its colour.
+Space|Which planet is tilted on its side?|Uranus|Neptune|Saturn|Its axis tilts about 98 degrees.
+Space|What is the closest star to Earth?|The Sun|Proxima Centauri|Sirius|Proxima Centauri is next at about 4.2 light years.
+Space|What is the largest moon of Saturn?|Titan|Europa|Io|It has a thick atmosphere.
+Space|Who was the first human in space?|Yuri Gagarin|Neil Armstrong|Alan Shepard|His flight in 1961 lasted 108 minutes.
+Space|Which planet has the Great Red Spot?|Jupiter|Saturn|Mars|The storm has lasted for centuries.
+Body|How many chambers does the human heart have?|4|2|3|Two upper atria and two lower ventricles.
+Body|Which organ filters blood to make urine?|Kidney|Liver|Spleen|Each kidney holds about a million filters.
+Body|Which part of the eye changes in size to control light?|Pupil|Lens|Retina|The coloured iris widens or narrows it.
+Body|What is the longest bone in the human body?|Femur|Tibia|Humerus|It is the thigh bone.
+Body|Which mineral is the most abundant in bones?|Calcium|Iron|Sodium|Bones store about 99 percent of the body’s calcium.
+Body|How many teeth does an adult normally have?|32|28|36|That count includes four wisdom teeth.
+Sport|How many players are on the pitch per side in football?|11|9|12|Each team may also name substitutes.
+Sport|How often are the Summer Olympics held?|Every 4 years|Every 2 years|Every 5 years|The modern Games began in Athens in 1896.
+Sport|How many points is a try worth in rugby union?|5|3|7|A conversion adds 2 more points.
+Sport|How long is a marathon in kilometres?|42.195|40|45|The distance was fixed at this length in 1921.
+Sport|What is a score of zero called in tennis?|Love|Nil|Zero|The origin of the word is debated.
+Tech|What does the www in a web address stand for?|World Wide Web|Wide World Web|Web World Wide|Tim Berners-Lee invented the web in 1989.
+Tech|Which language has the most native speakers?|Mandarin Chinese|English|Spanish|Spanish comes second.
+Tech|How many bits are in a byte?|8|4|16|A kilobyte is roughly 1,000 bytes.`.trim().split("\n").map(l=>{const a=l.split("|");return{c:a[0],q:a[1],o:[a[2],a[3],a[4]],f:a[5]}});
+const pad=n=>(n<10?"0":"")+n,ymd=d=>d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate()),today=()=>ymd(new Date());
+const P=s=>s.split("-").map(Number),prev=s=>{const p=P(s);return ymd(new Date(p[0],p[1]-1,p[2]-1))};
+const ls={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const E=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e},A=(p,...k)=>{k.forEach(x=>p.appendChild(x));return p};
+const sg=n=>n>0?"+"+n:""+n,chipsW=n=>n+(n===1?" chip":" chips");
+// Seeded random: same date gives the same set for everyone
+function mk(str){let h=1779033703^str.length;for(let i=0;i<str.length;i++){h=Math.imul(h^str.charCodeAt(i),3432918353);h=h<<13|h>>>19}h=Math.imul(h^h>>>16,2246822507)^Math.imul(h^h>>>13,3266489909);let s=(h^h>>>16)>>>0;return()=>{s=s+0x6D2B79F5|0;let t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function shuf(a,r){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+const idxs=()=>BANK.map((_,i)=>i);
+function bq(k,r){const o=BANK[k],pm=shuf([0,1,2],r);return{c:o.c,q:o.q,o:pm.map(j=>o.o[j]),a:pm.indexOf(0),f:o.f}}
+// HOOK sponsored themed sets: swap the pool passed in here for a themed bank on chosen dates
+function dayQs(d){const r=mk("stake:"+d);return shuf(idxs(),r).slice(0,5).map(k=>bq(k,r))}
+function load(k){const t=ls.get(k);if(!t)return null;try{const s=JSON.parse(t),ok=a=>Array.isArray(a)&&a.length<=5&&a.every(Number.isInteger),d=s.b.length-s.p.length;if(ok(s.b)&&ok(s.p)&&d>=0&&d<=1&&s.b.every(x=>x>=1&&x<=3)&&s.p.every(x=>x>=0&&x<=2))return s}catch(e){}return null}
+// HOOK archive of past days: mkRun("d",date,key) loads any past date, so an archive list can call it
+function mkRun(mode,date,key){const r={mode,date,key,b:[],p:[],rv:false,qs:[],order:null,ptr:0};if(mode!=="u"){r.qs=dayQs(date);const s=load(key);if(s){r.b=s.b;r.p=s.p}}return r}
+function getQ(r,i){if(r.mode==="u")while(r.qs.length<=i){if(!r.order||r.ptr>=BANK.length){r.order=shuf(idxs(),Math.random);r.ptr=0}r.qs.push(bq(r.order[r.ptr++],Math.random))}return r.qs[i]}
+const save=r=>{if(r.key)ls.set(r.key,JSON.stringify({b:r.b,p:r.p}))};
+const sc=r=>r.p.reduce((s,x,i)=>s+(x===r.qs[i].a?1:-1)*r.b[i],0);
+const rowT=r=>r.p.map((x,i)=>(x===r.qs[i].a?"🟩":"🟥")+r.b[i]).join(" ");
+
+const shareT=r=>"Stake "+r.date+" "+rowT(r)+" = "+sg(sc(r))+"\n"+SHARE_URL;
+
+function streak(){try{const s=JSON.parse(ls.get("stake:streak"));if(s&&(s.last===today()||s.last===prev(today())))return s.n|0}catch(e){}return 0}
+// HOOK streak freezes: spend a freeze token here to keep n when a day is missed
+function bump(d){let s=null;try{s=JSON.parse(ls.get("stake:streak"))}catch(e){}if(s&&s.last===d)return;ls.set("stake:streak",JSON.stringify({last:d,n:s&&s.last===prev(d)?(s.n|0)+1:1}))}
+function cd(){const n=new Date(),ms=new Date(n.getFullYear(),n.getMonth(),n.getDate()+1)-n,s=Math.floor(ms/1000);return pad(Math.floor(s/3600))+":"+pad(Math.floor(s%3600/60))+":"+pad(s%60)}
+function copy(ta,msg){const fb=()=>{ta.focus();ta.select();let ok=false;try{ok=document.execCommand("copy")}catch(e){}msg.textContent=ok?"Copied.":"Press and hold the text to select it, then copy."};try{navigator.clipboard.writeText(ta.value).then(()=>{msg.textContent="Copied."},fb)}catch(e){fb()}}
+const app=document.getElementById("app");
+let tab="d",run=mkRun("d",today(),"stake:d:"+today()),unl=null;
+function render(){app.textContent="";const top=E("div","top"),tabs=E("div","tabs");
+A(top,E("h1",null,"STAKE"));tabs.setAttribute("role","tablist");
+[["d","Daily"],["u","Unlimited"]].forEach(t=>{const b=E("button",null,t[1]);b.setAttribute("role","tab");b.setAttribute("aria-selected",tab===t[0]);b.onclick=()=>{tab=t[0];render()};tabs.appendChild(b)});
+A(app,top,tabs);
+if(tab==="d")play(run);else{if(!unl)unl=mkRun("u",today(),null);play(unl)}}
+function status(r){const d=E("div");if(r.mode==="u"){d.className="mut";d.textContent="Answered "+r.p.length+" · Score "+sg(sc(r))+" · Not saved, no streak";return app.appendChild(d)}
+d.className="pips";for(let i=0;i<5;i++){let c="pip",t="–";if(i<r.p.length){const ok=r.p[i]===r.qs[i].a;c+=ok?" ok":" no";t=(ok?"✓":"✗")+r.b[i]}else if(i===r.p.length){c+=" cur";t="•"}const p=E("div",c,t);d.appendChild(p)}app.appendChild(d)}
+function play(r){if(r.mode!=="u"&&r.p.length>=5&&!r.rv)return results(r);status(r);
+const n=r.p.length,card=E("div","card"),tot=r.mode==="u"?"":" of 5";
+if(r.rv){const i=n-1,q=getQ(r,i),ok=r.p[i]===q.a,v=r.b[i];
+A(card,E("div","banner "+(ok?"ok":"no"),(ok?"✓ Right. You win ":"✗ Wrong. You lose ")+chipsW(v)+"."),E("p","mut",q.c),E("h3",null,q.q));
+q.o.forEach((t,j)=>{const d=E("div","opt"+(j===q.a?" ok":j===r.p[i]?" no":""));A(d,E("b",null,"ABC"[j]),E("span",null,t));if(j===q.a)d.appendChild(E("span","tag","✓ Correct"));else if(j===r.p[i])d.appendChild(E("span","tag","✗ Your pick"));card.appendChild(d)});
+const nb=E("button","btn",r.mode!=="u"&&n>=5?"See results":"Next question");nb.onclick=()=>{r.rv=false;render()};A(card,E("p",null,"Fun fact: "+q.f),nb)}
+else if(r.b.length>n){const q=getQ(r,n);A(card,E("p","mut","Question "+(n+1)+tot+" · Bet: "+chipsW(r.b[n])),E("div","cat",q.c),E("h2",null,q.q));
+q.o.forEach((t,j)=>{const b=E("button","opt");A(b,E("b",null,"ABC"[j]),E("span",null,t));b.onclick=()=>{r.p.push(j);r.rv=true;save(r);if(r.mode==="d"&&r.p.length===5)bump(r.date);render()};card.appendChild(b)})}
+else{const q=getQ(r,n),row=E("div","chips");A(card,E("p","mut","Question "+(n+1)+tot),E("div","cat",q.c),E("p","mut","Bet before you see the choices. Right wins the bet. Wrong loses it."));
+[1,2,3].forEach(v=>{const b=E("button","chip",String(v));b.appendChild(E("small",null,v===1?"chip":"chips"));b.setAttribute("aria-label","Bet "+chipsW(v));b.onclick=()=>{r.b.push(v);save(r);render()};row.appendChild(b)});card.appendChild(row)}
+app.appendChild(card)}
+function results(r){status(r);const c=E("div","card"),s=sc(r);
+A(c,E("p","mut","Today’s set is done"),E("div","big",sg(s)+(Math.abs(s)===1?" chip":" chips")),E("p",null,rowT(r)));
+
+const ta=E("textarea");ta.readOnly=true;ta.rows=3;ta.value=shareT(r);ta.onclick=()=>ta.select();ta.setAttribute("aria-label","Share text");
+const msg=E("p","mut"),cb=E("button","btn","Copy result");cb.onclick=()=>copy(ta,msg);A(c,E("p","mut","Spoiler-free share text:"),ta,cb,msg);
+// HOOK private leagues: post the date and sc(r) to a league here
+if(r.mode==="d"){const p=E("p",null,"Come back tomorrow for a new set of 5. Next set in "),b=E("b",null,cd());b.id="cd";p.appendChild(b);c.appendChild(p)}
+app.appendChild(c)}
+function tick(){if(run.date!==today()){run=mkRun("d",today(),"stake:d:"+today());render()}const c=document.getElementById("cd");if(c)c.textContent=cd()}
+setInterval(tick,1000);document.addEventListener("visibilitychange",tick);
+render();
+// Shared-template help and extended stats; game state and original Stake styling remain untouched.
+(()=>{
+ const $=id=>document.getElementById(id), help=$('help-popup'), stats=$('stats-popup');
+ const open=el=>{el.hidden=false;const b=el.querySelector('[data-popup-close]');if(b)b.focus()};
+ const close=el=>{el.hidden=true};
+ $('help-popup-open').addEventListener('click',()=>open(help));
+ function dailyRecords(){const out=[];try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(!k||!k.startsWith('stake:d:'))continue;const v=JSON.parse(localStorage.getItem(k)||'null');if(v&&Array.isArray(v.b)&&Array.isArray(v.p)&&v.p.length===5){const date=k.slice('stake:d:'.length);const rr=mkRun('d',date,k);rr.b=v.b;rr.p=v.p;out.push({date,score:sc(rr),positive:sc(rr)>0})}}}catch(e){}return out.sort((a,b)=>a.date.localeCompare(b.date))}
+ function streakCount(records){const days=new Set(records.map(r=>r.date));let d=new Date();d.setHours(0,0,0,0);let key=ymd(d);if(!days.has(key)){d.setDate(d.getDate()-1);key=ymd(d)}let n=0;while(days.has(key)&&n<366){n++;d.setDate(d.getDate()-1);key=ymd(d)}return n}
+ function updateStats(){const r=dailyRecords(),scores=r.map(x=>x.score),best=scores.length?Math.max(...scores):null,st=streakCount(r);$('stake-streak').textContent=st;$('stake-best').textContent=best===null?'0':sg(best);$('stake-played').textContent=r.length;
+ $('stat-played').textContent=r.length;$('stat-best').textContent=best===null?'—':sg(best)+' chips';$('stat-average').textContent=scores.length?sg(Math.round(scores.reduce((a,b)=>a+b,0)/scores.length))+' chips':'—';$('stat-streak').textContent=st;$('stat-perfect').textContent=scores.filter(x=>x>0).length;$('stat-last').textContent=scores.length?sg(scores[scores.length-1])+' chips':'—'}
+ $('stats-popup-open').addEventListener('click',()=>{updateStats();open(stats)});
+ document.querySelectorAll('[data-popup-close]').forEach(b=>b.addEventListener('click',()=>close(b.closest('.game-popup-backdrop'))));
+ [help,stats].forEach(el=>el.addEventListener('click',e=>{if(e.target===el)close(el)}));document.addEventListener('keydown',e=>{if(e.key==='Escape')[help,stats].forEach(close)});
+ updateStats();
+})();
+</script><style>
+/* Stake-specific popup palette: casino felt green, warm gold, and deep violet. */
+.game-popup-backdrop{background:rgba(7,4,22,.82)!important;backdrop-filter:blur(3px)}
+.game-popup{background:#17102f!important;color:#f4f0ff!important;border:2px solid #6d4a96!important;box-shadow:7px 7px 0 #08051b!important;border-radius:12px!important}
+.game-popup h2,.popup-instructions strong{color:#e7bd55!important}
+.game-popup p,.game-popup span{color:#c9bfdf}
+.popup-kicker{color:#56d99a!important}
+.game-popup-close{background:#21183f!important;color:#f4f0ff!important;border:1px solid #76559d!important}
+.extended-stats-grid>div{background:#100a25!important;border:1px solid #4e3a70!important}
+.extended-stats-grid strong{color:#e7bd55!important}
+.extended-stats-grid span{color:#56d99a!important}
+.game-popup .button.pink{background:#176b4d!important;color:#fff!important;border:2px solid #56d99a!important;box-shadow:3px 3px 0 #08051b!important}
+</style></body></html>

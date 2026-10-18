@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#100a2e"><meta name="description" content="Build the best word from six letters. Play Word Forge on INSERT COIN, the daily arcade."><meta name="robots" content="index,follow"><title>Word Forge — Play on INSERT COIN</title><link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../game-flow.css"><script defer src="../../game-config.js"></script><script defer src="../../game.js"></script></head>
+<body><header class="site-header game-site-header"><div class="wrap game-header-inner"><button class="game-menu-toggle" id="game-menu-toggle" type="button" aria-expanded="false" aria-controls="game-menu"><span class="hamburger-lines" aria-hidden="true">☰</span><span class="menu-toggle-label">MENU</span></button><a class="brand" href="../../index.html" aria-label="INSERT COIN — back to all games"><img src="../../assets/logo.svg" alt=""><span class="brand-name">INSERT <span>COIN</span></span></a><a class="game-header-account" href="../../login.html">ACCOUNT</a></div><nav class="game-menu" id="game-menu" aria-label="INSERT COIN menu" aria-hidden="true" hidden><div class="game-menu-heading"><span class="section-meta">INSERT COIN MENU</span><button class="game-menu-close" id="game-menu-close" type="button" aria-label="Close menu">×</button></div><div class="game-menu-content"><div class="game-menu-group"><span class="section-meta">PLAY MORE</span><a href="../stake/index.html">Stake</a><a href="../../index.html#daily-games">All games menu ↗</a><a href="../../games/lowball/index.html">Lowball</a><a href="../../games/pixel-pairs/index.html">Pixel Pairs</a><a href="../../games/word-forge/index.html">Word Forge</a><a href="../../games/gridlock/index.html">Gridlock</a><a href="../../games/number-drop/index.html">Number Drop</a><a href="../../games/memory-lane/index.html">Memory Lane</a></div><div class="game-menu-group"><span class="section-meta">YOUR ARCADE</span><a href="../../profile.html">My stats</a><a href="../../friends.html">Friends</a><a href="../../login.html">Account / sign in</a></div></div></nav></header>
+<main class="standalone-page">
+<div class="standalone-wrap">
+  <section class="standalone-heading" aria-labelledby="game-title">
+    <div class="standalone-heading-spacer"></div>
+    <div class="standalone-title-group"><h1 id="game-title">Word Forge</h1><p id="game-description">Make every letter count.</p><p class="daily-countdown">Next daily in <strong>06:34:18</strong></p></div>
+    <div class="standalone-tools"><button class="mini-tool" id="help-popup-open" type="button" aria-label="How to play" title="How to play">?</button><button class="mini-tool" id="stats-popup-open" type="button" aria-label="Extended game stats" title="Extended game stats"><img src="../../assets/icons/trophy.svg" alt=""></button></div>
+  </section>
+  <div class="mode-switch" role="group" aria-label="Game mode"><button class="mode-option is-selected" type="button" aria-pressed="true">Daily <span>(4 rounds)</span></button><button class="mode-option" type="button" aria-pressed="false" title="Unlimited mode is coming soon" disabled>Unlimited</button></div>
+<section class="quick-stats" aria-label="Your game stats"><div class="quick-stat"><strong>0</strong><span>Streak</span></div><div class="quick-stat"><strong>0</strong><span>Best</span></div><div class="quick-stat"><strong>0</strong><span>Played</span></div></section>
+  <p class="item-subline">New letters daily · Build your best word</p>
+  <div class="round-dots" aria-label="Four rounds"><span class="active"></span><span></span><span></span><span></span></div>
+  <section class="interchange-card" aria-label="Word Forge game card">
+    <section id="game-ready" class="game-state card-ready" aria-labelledby="ready-title">
+      <div class="item-art art-word-forge" aria-hidden="true"><span>Aa</span></div>
+      <h2 id="ready-title">Word Forge</h2>
+      <p id="game-instructions">Loading your daily challenge…</p>
+      <div class="game-flow-badges"><span class="score-badge tier-great" id="max-score">MAX 100 PTS</span><span class="score-badge tier-ok" id="attempt-status">RUN AVAILABLE</span></div>
+      <button class="button pink big lock-button" id="start-game" type="button">LET’S PLAY</button>
+    </section>
+    <section id="game-playing" class="game-state card-playing" hidden aria-live="polite"><div class="playfield-kicker">★ GAME ON ★</div><h2 id="play-title">WORD FORGE</h2><div id="engine-slot" class="engine-slot"><p>This cabinet’s gameplay engine plugs into this area.</p></div><p class="prototype-note" id="engine-note">Integration slot ready for a game-specific engine.</p><button class="button secondary" id="demo-finish" type="button">Finish demo run</button></section>
+    <section id="game-results" class="game-state card-results" hidden aria-live="polite"><div class="results-stamp">RUN COMPLETE</div><h2 id="result-title">NICE RUN!</h2><div class="result-score"><span id="result-score">0</span><small>/ 100</small></div><p id="result-message">Your score has been recorded for this demo.</p><div class="result-actions"><a class="button pink" href="../../index.html">ALL GAMES</a><button class="button secondary" id="share-result" type="button">COPY RESULT</button></div></section>
+    <section id="game-used" class="game-state card-used" hidden><div class="pixel-hero-mark">✓</div><h2>TODAY’S RUN COMPLETE</h2><p>You’ve already logged today’s scored run. Come back after the daily reset for another go.</p><div class="used-score" id="used-score"></div><a class="button pink" href="../../index.html">PICK ANOTHER GAME</a></section>
+  </section>
+  <div class="game-popup-backdrop" id="help-popup" hidden><section class="game-popup" role="dialog" aria-modal="true" aria-labelledby="help-popup-title"><button class="game-popup-close" type="button" data-popup-close aria-label="Close">×</button><p class="popup-kicker">PLAYER GUIDE</p><h2 id="help-popup-title">HOW TO PLAY</h2><p id="help-popup-description"></p><div class="popup-instructions" id="help-popup-instructions"></div><button class="button pink popup-done" type="button" data-popup-close>GOT IT</button></section></div>
+  <div class="game-popup-backdrop" id="stats-popup" hidden><section class="game-popup" role="dialog" aria-modal="true" aria-labelledby="stats-popup-title"><button class="game-popup-close" type="button" data-popup-close aria-label="Close">×</button><p class="popup-kicker">CABINET RECORD</p><h2 id="stats-popup-title">EXTENDED STATS</h2><p class="stats-popup-game" id="stats-popup-game"></p><div class="extended-stats-grid"><div><strong id="stat-played">0</strong><span>RUNS PLAYED</span></div><div><strong id="stat-best">—</strong><span>BEST SCORE</span></div><div><strong id="stat-average">—</strong><span>AVERAGE SCORE</span></div><div><strong id="stat-streak">0</strong><span>CURRENT STREAK</span></div><div><strong id="stat-perfect">0</strong><span>PERFECT RUNS</span></div><div><strong id="stat-last">—</strong><span>LAST SCORE</span></div></div><p class="popup-footnote">Stats are stored in this browser in this prototype. They will not sync between devices.</p><button class="button pink popup-done" type="button" data-popup-close>BACK TO GAME</button></section></div>
+  <script>
+  document.addEventListener('DOMContentLoaded',()=>{
+    const gameId='word-forge';
+    const games=window.INSERT_COIN_GAMES||[]; const game=games.find(g=>g.id===gameId);
+    const help=document.getElementById('help-popup'), stats=document.getElementById('stats-popup');
+    const openPopup=el=>{el.hidden=false;const close=el.querySelector('[data-popup-close]');if(close)close.focus();};
+    const closePopup=el=>{el.hidden=true;};
+    document.getElementById('help-popup-open').addEventListener('click',()=>{
+      document.getElementById('help-popup-title').textContent='HOW TO PLAY '+((game&&game.title)||'');
+      document.getElementById('help-popup-description').textContent=(game&&game.description)||'Play the daily cabinet challenge.';
+      document.getElementById('help-popup-instructions').textContent=(game&&game.instructions)||'Follow the instructions shown on the game card and aim for the highest score you can.';
+      openPopup(help);
+    });
+    document.getElementById('stats-popup-open').addEventListener('click',()=>{
+      const prefix='insert-coin:attempt:';const records=[];
+      try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&k.startsWith(prefix)&&k.endsWith(':'+gameId)){const v=JSON.parse(localStorage.getItem(k)||'null');if(v&&Number.isFinite(Number(v.score)))records.push({key:k,score:Number(v.score),day:k.slice(prefix.length).split(':')[0]});}}}catch(e){}
+      records.sort((a,b)=>a.day.localeCompare(b.day)); const scores=records.map(r=>r.score); const best=scores.length?Math.max(...scores):null; const avg=scores.length?Math.round(scores.reduce((a,b)=>a+b,0)/scores.length):null;
+      let streak=0;let day=new Date();day.setHours(0,0,0,0);const days=new Set(records.map(r=>r.day));let today=day.toISOString().slice(0,10);if(!days.has(today)){day.setDate(day.getDate()-1);today=day.toISOString().slice(0,10);}while(days.has(today)&&streak<366){streak++;day.setDate(day.getDate()-1);today=day.toISOString().slice(0,10);}
+      document.getElementById('stats-popup-game').textContent=(game&&game.title)||'This cabinet';
+      document.getElementById('stat-played').textContent=scores.length;document.getElementById('stat-best').textContent=best===null?'—':best+'/100';document.getElementById('stat-average').textContent=avg===null?'—':avg+'/100';document.getElementById('stat-streak').textContent=streak;document.getElementById('stat-perfect').textContent=scores.filter(x=>x===100).length;document.getElementById('stat-last').textContent=scores.length?scores[scores.length-1]+'/100':'—';openPopup(stats);
+    });
+    document.querySelectorAll('[data-popup-close]').forEach(b=>b.addEventListener('click',()=>closePopup(b.closest('.game-popup-backdrop'))));
+    [help,stats].forEach(el=>el.addEventListener('click',e=>{if(e.target===el)closePopup(el);}));
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'){[help,stats].forEach(el=>closePopup(el));}});
+  });
+  </script>
+  <div class="standalone-footer"><button class="sound-control" type="button" id="sound-toggle" aria-pressed="false">Sound: on</button><div class="standalone-legal"><a href="../../login.html">Privacy</a><a href="../../login.html">Terms</a><a href="../../login.html">Refunds</a></div><p>INSERT COIN is an independent collection of daily games. Game artwork and challenge mechanics vary by cabinet.</p></div>
+  <div class="standalone-hidden-actions"><button id="share-top" type="button" aria-label="Share game">Share</button><a href="../../index.html">Exit game</a></div>
+</div>
+</main><footer class="site-footer standalone-site-footer"><div class="wrap footer-inner"><span>© 2026 INSERT COIN · ONE DAY. ONE RUN.</span><div class="footer-links"><a href="../../login.html">Account</a><a href="../../style-guide.html">Style guide</a></div></div></footer><script>
+document.addEventListener("DOMContentLoaded",()=>{
+ const button=document.getElementById("game-menu-toggle"), menu=document.getElementById("game-menu"), close=document.getElementById("game-menu-close");
+ if(!button||!menu)return;
+ const backdrop=document.createElement("div");backdrop.className="game-menu-backdrop";backdrop.hidden=true;backdrop.setAttribute("aria-hidden","true");document.body.appendChild(backdrop);
+ const openMenu=()=>{menu.hidden=false;backdrop.hidden=false;menu.setAttribute("aria-hidden","false");button.setAttribute("aria-expanded","true");document.body.classList.add("game-menu-open");if(close)close.focus();};
+ const closeMenu=({restoreFocus=false}={})=>{menu.hidden=true;backdrop.hidden=true;menu.setAttribute("aria-hidden","true");button.setAttribute("aria-expanded","false");document.body.classList.remove("game-menu-open");if(restoreFocus)button.focus();};
+ button.addEventListener("click",()=>button.getAttribute("aria-expanded")==="true"?closeMenu():openMenu());
+ if(close)close.addEventListener("click",()=>closeMenu({restoreFocus:true}));
+ backdrop.addEventListener("click",()=>closeMenu({restoreFocus:true}));
+ menu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>closeMenu()));
+ document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!menu.hidden)closeMenu({restoreFocus:true});});
+});
+</script></body></html>
