@@ -23,3 +23,9 @@ After seeing the first set, the user asked for a more inventive direction with l
 3. **Still Open** — an angular A-shaped doorway with a magenta light plane, referencing a late-night arcade entrance.
 
 These are new proposals, not selections or installed replacements. The website still uses the previously selected Midnight Marquee assets while the user reviews the alternatives. No website styling, headers, or gameplay changed in this round.
+
+## Round 3 — Moon Cabinet with printed game-title lettering
+
+The user preferred the original Moon Cabinet idea over round 2 and requested a new logo combining it with the supplied Balatro reference's lettering style. `midnight-arcade-moon-cabinet-logo.png` retains the crescent and small arcade cabinet, with warm cream display letters, uneven baselines, dark outlines, subtle distressing, and red/cyan registration edges. It has a transparent background.
+
+This is a new logo for review. It has not replaced the installed website assets. No gameplay, navigation, or website layout changed.
