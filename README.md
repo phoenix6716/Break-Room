@@ -15,16 +15,17 @@ The homepage is `index.html`; each game has a standalone route in `games/<id>/`.
 ## Current games
 
 - **Lowball** — integrated price-guessing engine, four daily items, region selector, local progress/statistics, and its existing Unlimited purchase placeholder. Daily reset is midnight in Australia/Sydney.
-- **Stake** — five daily trivia questions, chip betting, local progress/statistics, and playable Unlimited practice. Daily reset follows the device's local date.
+- **Stake** — five daily trivia questions, chip betting, local progress/statistics, and playable Unlimited practice. Daily reset is midnight in Australia/Sydney, shared with Lowball and the homepage countdown.
 - **Coming soon** — Pixel Pairs, Word Forge, Gridlock, Number Drop, Memory Lane, and Mystery Cabinet. Their pages intentionally preserve the default game layout for future integrations. They do not accept attempts or create demonstration scores.
 
-The homepage lists Lowball and Stake first. Its lineup counts describe availability rather than fabricated player results. Profile, friends, login, and signup remain visual prototypes with sample data; no authentication service is connected. Lowball's external statistics, checkout, and restore services remain unset in `games/lowball/engine/site-config.js`.
+The homepage lists Lowball and Stake first. One compact introduction and a live universal countdown lead into the original mixed game grid. Availability is shown beside the games heading rather than in separate statistics panels. Homepage effects are quieter and supporting text is larger. Profile, friends, login, and signup remain visual prototypes with sample data; no authentication service is connected. Lowball's external statistics, checkout, and restore services remain unset in `games/lowball/engine/site-config.js`.
 
 ## Shared files
 
 - `styles.css`: the approved website styling and homepage cards.
 - `game-flow.css`: the approved game layout and drawer styling.
 - `navigation.js`: shared drawer behavior, focus management, and backdrop dismissal for every game page.
+- `daily-clock.js`: shared Sydney calendar, next-midnight calculation, and live homepage countdown; handles daylight-saving changes.
 - `game-config.js`: game registry. Existing browser storage namespaces are retained for compatibility.
 - `game.js`: availability controller for coming-soon pages; implemented games own their engines.
 - `assets/cabinet-badge-logo.png`: selected Cabinet Badge wordmark, displayed at its visible bounds without modifying the source PNG.
@@ -49,3 +50,9 @@ Checks cover homepage ordering/availability; drawers and keyboard focus at 320, 
 Keep the current styling and header layout. Lowball and Stake are substantially complete; do not replace their mechanics or artwork with placeholder logic. Keep Lowball's region selector exclusive to Lowball. Browser storage is device-local, not shared account storage or server-enforced access.
 
 For Stake's question typography and result-copying checks, run `node tests/stake-sharing.cjs` against the same local server. This checks real clipboard contents and its fallback behavior at mobile and desktop widths.
+
+## Shared daily reset
+
+All daily games use midnight **Australia/Sydney**, regardless of the device timezone. The homepage, Stake, Lowball, and future-game storage helpers use `daily-clock.js`. Countdown calculations handle 23-hour and 25-hour days. Historical storage keys and saved records are preserved. Stake now chooses its daily set and calculates streaks using the shared calendar rather than the device's local date. Lowball keeps its new-daily-ready interaction, and stale submissions after midnight load the new challenge instead of saving the previous puzzle as a new-day attempt.
+
+Run `node tests/daily-clock.cjs` for calendar/DST cases and `node tests/homepage-reset.cjs` (server running) for responsive layout and cross-timezone rollover checks. Serve the entire repository root even when opening Lowball's engine route directly, so its shared clock script remains accessible.

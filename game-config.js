@@ -10,7 +10,7 @@ window.MIDNIGHT_ARCADE_GAMES = [
  {id:'mystery-cabinet',title:'Mystery Cabinet',category:'???',description:'A new challenge is being prepared.',instructions:'This cabinet is not open yet.',accent:'yellow',status:'coming-soon',scoreMax:100,attemptsPerDay:0,engine:'placeholder'}
 ];
 window.MIDNIGHT_ARCADE_STORAGE = { // Demo only. Replace with server-side records before public launch.
- dayKey: () => { const d=new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; },
+ dayKey: () => window.MIDNIGHT_ARCADE_CLOCK.dayKey(),
  key: id => `insert-coin:attempt:${window.MIDNIGHT_ARCADE_STORAGE.dayKey()}:${id}`,
  get: id => { try { return JSON.parse(localStorage.getItem(window.MIDNIGHT_ARCADE_STORAGE.key(id))||'null'); } catch { return null; } },
  save: (id,data) => localStorage.setItem(window.MIDNIGHT_ARCADE_STORAGE.key(id),JSON.stringify(data))

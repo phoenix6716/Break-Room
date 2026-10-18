@@ -27,7 +27,7 @@ Do not mistake the hidden lifecycle sections for working engines. `game.js` curr
 1. Copy one of the placeholder routes, retaining the approved outer layout and shared navigation script.
 2. Give it a unique registry entry and route. Keep `status: 'coming-soon'` until its engine is ready.
 3. Implement the central gameplay and transitions for ready, playing, results, and already played. Wire controls to actual mechanics and scoring. Replace the disabled availability controller only for the new implemented game.
-4. Set up its real round count, modes, statistics, daily date boundary, and saved progress. Remove template-only preview labels once backed by working behavior. Do not inherit Lowball's region control.
+4. Set up its real round count, modes, statistics, and saved progress. Use `window.MIDNIGHT_ARCADE_CLOCK` from `daily-clock.js` for the shared midnight Australia/Sydney boundary; do not introduce a device-local or separate per-game daily reset. Remove template-only preview labels once backed by working behavior. Do not inherit Lowball's region control.
 5. Update the homepage card with game-specific art and accurate scoring/mode details, and change its coming-soon status only when it is playable.
 6. Extend `tests/smoke.cjs` with meaningful start, input, completion, refresh/resume, repeat attempt, keyboard, and narrow-screen checks.
 

@@ -4,6 +4,13 @@ const { chromium } = require('playwright');
 const base = process.env.ARCADE_TEST_URL || 'http://127.0.0.1:8000';
 const placeholderIds = ['pixel-pairs', 'word-forge', 'gridlock', 'number-drop', 'memory-lane', 'mystery-cabinet'];
 const routes = ['game.html', ...['lowball', 'stake', ...placeholderIds].map(id => `games/${id}/`)];
+async function lowballFrame(page) {
+  const handle = await page.locator('#lowball-game-frame').elementHandle();
+  const frame = await handle.contentFrame();
+  await frame.waitForURL('**/engine/index.html');
+  await frame.locator('#cselectBtn').waitFor();
+  return frame;
+}
 let checks = 0;
 function check(condition, message) { assert.ok(condition, message); checks++; }
 (async () => {
@@ -77,7 +84,7 @@ function check(condition, message) { assert.ok(condition, message); checks++; }
     page.on('pageerror', error => errors.push(error.message));
     page.setDefaultTimeout(8000);
     await page.goto(`${base}/games/lowball/`, {waitUntil: 'domcontentloaded'});
-    let frame = page.frames().find(frame => frame.url().includes('/engine/'));
+    let frame = await lowballFrame(page);
     await frame.locator('#helpModal.show').waitFor();
     await frame.locator('#helpClose').click();
     check(!await frame.locator('#helpModal').evaluate(el => el.classList.contains('show')), 'Lowball first-visit help closes');
@@ -93,7 +100,7 @@ function check(condition, message) { assert.ok(condition, message); checks++; }
       check(await frame.locator('#resultArea').evaluate(el => el.classList.contains('show')), 'Lowball round result');
       if (round === 0) {
         await page.reload({waitUntil: 'domcontentloaded'});
-        frame = page.frames().find(frame => frame.url().includes('/engine/'));
+        frame = await lowballFrame(page);
         await frame.locator('#resultArea.show').waitFor();
         check(await frame.locator('#resultFacts').innerText().then(t => t.includes('10.00')), 'Lowball resumes submitted guess');
       }
@@ -102,7 +109,7 @@ function check(condition, message) { assert.ok(condition, message); checks++; }
     await frame.locator('#finalScreen.show').waitFor();
     check(Number(await frame.locator('#finalTotal').innerText()) >= 0, 'Lowball final score');
     await page.reload({waitUntil: 'domcontentloaded'});
-    frame = page.frames().find(frame => frame.url().includes('/engine/'));
+    frame = await lowballFrame(page);
     await frame.locator('#finalScreen.show').waitFor();
     check(await frame.locator('#playedVal').innerText() === '1', 'Lowball completion persists once');
     await frame.locator('#statsBtn').click();

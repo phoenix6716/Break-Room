@@ -42,4 +42,8 @@ The user asked for three new logos in different styles that fit the current webs
 
 The `*-homepage.png` images show the current desktop homepage with a temporary header substitution. Transparent padding is clipped in the browser so each design can be compared at the same existing logo-slot dimensions. The source logo PNGs are unchanged. Google Fonts were blocked during the preview capture, so the page uses its existing fallback fonts. No actual homepage, styling, navigation, or game files were edited.
 
-Current homepage feedback to preserve for future work: the user likes a shorter single introduction, quieter effects, and clearer supporting text. Keep the existing game-card layout and keep coming-soon games together with the playable games. The user wants one universal daily reset time/countdown across all games rather than separate per-game reset displays. That timing change has not been implemented in this logo exploration task.
+Current homepage feedback to preserve for future work: the user likes a shorter single introduction, quieter effects, and clearer supporting text. Keep the existing game-card layout and keep coming-soon games together with the playable games. The user wants one universal daily reset time/countdown across all games rather than separate per-game reset displays. That timing change was pending during the logo exploration; it is now implemented by `daily-clock.js` for the homepage, Stake, Lowball, and future-game storage helpers.
+
+## Implemented homepage refinements
+
+The agreed homepage changes are now implemented: one compact introduction; a live universal midnight-Sydney countdown; quieter background grid/scanlines and shadows; and larger supporting text. The existing eight-card grid, its ordering, and the coming-soon artwork states are retained. The header and Cabinet Badge logo remain in place. Current screenshots are `previews/homepage-refined-desktop.png` and `previews/homepage-refined-mobile.png`.

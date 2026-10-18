@@ -19,4 +19,14 @@ The current site wordmark is Cabinet Badge (round 4, option 1), with the existin
 
 `node tests/stake-sharing.cjs` passes at 390 and 1440 pixel widths. It plays all five daily questions, checks the question and review typography, verifies that the share label/textarea are absent, reads the actual copied result from the browser clipboard, and tests fallback copying plus failure feedback/focus restoration. Shared links use the current hosted Stake route. No browser JavaScript errors were observed. Stake's inline scripts also pass syntax checks.
 
-Question and results screenshots are saved in `design/previews/stake-readable-question.png` and `design/previews/stake-copy-button-results.png`. Gameplay, scoring, and daily timing remain unchanged.
+Question and results screenshots are saved in `design/previews/stake-readable-question.png` and `design/previews/stake-copy-button-results.png`. That Stake sharing update left gameplay, scoring, and timing unchanged; the later shared-reset update below aligns daily timing across games.
+
+## Homepage refinements and universal reset
+
+- The original game-grid HTML is preserved byte for byte. The game grouping and ordering remain unchanged.
+- `node tests/daily-clock.cjs` passes Sydney-midnight, fractional-second, year/leap boundary, and 23-hour/25-hour daylight-saving cases.
+- `node tests/homepage-reset.cjs` passes responsive checks at 320, 390, 768, and 1440 pixels: one introduction, a working countdown, the original two/three-column grid, 14px descriptions, and no horizontal overflow. At 390px, the first game now starts around 567px down the page, compared with roughly 894px previously.
+- Browser clock tests in UTC, Los Angeles, Tokyo, and Sydney confirm that the homepage, Stake, and Lowball agree before and after Sydney midnight. Stake rotates its daily set and keeps calendar-based streaks consistent. Lowball signals the new daily and discards stale pending-round progression when loading the new day's challenge.
+- Actual responsive screenshots are in `design/previews/homepage-refined-desktop.png` and `design/previews/homepage-refined-mobile.png`; Google Fonts are blocked in the screenshot/test environment, so these use the existing fallback fonts.
+
+- After the shared-reset changes, the complete 500-assertion gameplay/navigation suite and the Stake clipboard/readability checks both pass. The Lowball smoke helper now waits for its iframe navigation before accessing engine controls. All 403 local HTML references exist, and inline scripts pass syntax checks.

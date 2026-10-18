@@ -706,7 +706,7 @@
   }
 </style>
 
-</head>
+<script src="../../../daily-clock.js"></script></head>
 <body>
 <div class="wrap">
   <header>
@@ -1090,11 +1090,10 @@ let roundScores = [];
 let roundGuesses = []; // guesses kept so the share text can name the worst miss
 let currentItem = null;
 
-const DAILY_TZ = "Australia/Sydney";
+const DAILY_TZ = window.MIDNIGHT_ARCADE_CLOCK.timeZone;
 function sydneyYMD() {
-  const parts = new Intl.DateTimeFormat("en-CA", { timeZone: DAILY_TZ, year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(new Date());
-  const get = t => parseInt(parts.find(p => p.type === t).value, 10);
-  return { y: get("year"), m: get("month"), d: get("day") };
+  const p = window.MIDNIGHT_ARCADE_CLOCK.parts();
+  return { y:p.year, m:p.month, d:p.day };
 }
 function getTodayKey() {
   const t = sydneyYMD();
@@ -1478,6 +1477,7 @@ document.addEventListener("pointerdown", e => {
 guessInput.addEventListener("keydown", e => { if (e.key === "Enter") submitGuess(); });
 
 function submitGuess() {
+  if (mode === "normal" && getTodayKey() !== loadedDayKey) { location.reload(); return; }
   const guess = parseFloat(guessInput.value);
   if (isNaN(guess) || guess <= 0) { guessInput.focus(); return; }
 
@@ -1520,6 +1520,7 @@ function renderResult(guess, ctry, animate) {
 }
 
 document.getElementById("nextBtn").addEventListener("click", () => {
+  if (mode === "normal" && getTodayKey() !== loadedDayKey) { location.reload(); return; }
   if (mode === "normal") {
     roundIndex++;
     if (roundIndex >= ROUNDS_PER_DAY) {
@@ -1705,7 +1706,6 @@ async function syncPercentile(avg, submit) {
 }
 
 // ---------- Countdown to next daily (Sydney midnight) ----------
-const sydneyClock = new Intl.DateTimeFormat("en-GB", { timeZone: DAILY_TZ, hour: "2-digit", minute: "2-digit", second: "2-digit", hourCycle: "h23" });
 const loadedDayKey = getTodayKey();
 function pad2(n) { return String(n).padStart(2, "0"); }
 function tickNextDaily() {
@@ -1719,10 +1719,7 @@ function tickNextDaily() {
     }
     return;
   }
-  const parts = sydneyClock.formatToParts(new Date());
-  const g = t => parseInt(parts.find(p => p.type === t).value, 10);
-  const left = Math.max(0, 86400 - (g("hour") * 3600 + g("minute") * 60 + g("second")));
-  el.innerHTML = "Next daily in <b>" + pad2(Math.floor(left / 3600)) + ":" + pad2(Math.floor(left % 3600 / 60)) + ":" + pad2(left % 60) + "</b>";
+  el.innerHTML = "Next daily in <b>" + window.MIDNIGHT_ARCADE_CLOCK.countdown() + "</b>";
 }
 document.getElementById("nextDaily").addEventListener("click", function () { if (this.classList.contains("ready")) location.reload(); });
 document.getElementById("nextDaily").addEventListener("keydown", function (e) { if ((e.key === "Enter" || e.key === " ") && this.classList.contains("ready")) { e.preventDefault(); location.reload(); } });
