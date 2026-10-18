@@ -47,3 +47,5 @@ Checks cover homepage ordering/availability; drawers and keyboard focus at 320, 
 ## Preserve when extending
 
 Keep the current styling and header layout. Lowball and Stake are substantially complete; do not replace their mechanics or artwork with placeholder logic. Keep Lowball's region selector exclusive to Lowball. Browser storage is device-local, not shared account storage or server-enforced access.
+
+For Stake's question typography and result-copying checks, run `node tests/stake-sharing.cjs` against the same local server. This checks real clipboard contents and its fallback behavior at mobile and desktop widths.

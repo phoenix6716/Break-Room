@@ -11,6 +11,7 @@
 body{margin:0;background-color:#100a25;background-image:radial-gradient(circle,rgba(116,83,168,.22) .8px,transparent 1px);background-size:5px 5px;background-attachment:fixed;color:var(--ink);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
 main{max-width:480px;margin:0 auto;padding:12px 14px 32px}
 h1{margin:0;font-size:26px;letter-spacing:.14em}h2,h3{margin:.3em 0}
+#app .stake-question{font-family:var(--body),system-ui,sans-serif;font-size:clamp(20px,2.4vw,24px);font-weight:700;line-height:1.45;letter-spacing:normal;text-shadow:none}
 .top{display:flex;justify-content:space-between;align-items:center}
 .tabs{display:flex;gap:6px;margin:10px 0}
 .tabs button{flex:1;min-height:46px;border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;font:inherit;font-weight:600}
@@ -57,7 +58,7 @@ textarea{resize:none}.big{font-size:44px;font-weight:800;margin:.1em 0}
 <div class="game-popup-backdrop" id="stats-popup" hidden><section class="game-popup" role="dialog" aria-modal="true" aria-labelledby="stats-popup-title"><button class="game-popup-close" type="button" data-popup-close aria-label="Close">×</button><p class="popup-kicker">CABINET RECORD</p><h2 id="stats-popup-title">EXTENDED STATS</h2><p class="stats-popup-game">Stake · Trivia / Risk</p><div class="extended-stats-grid"><div><strong id="stat-played">0</strong><span>RUNS PLAYED</span></div><div><strong id="stat-best">—</strong><span>BEST SCORE</span></div><div><strong id="stat-average">—</strong><span>AVERAGE SCORE</span></div><div><strong id="stat-streak">0</strong><span>CURRENT STREAK</span></div><div><strong id="stat-perfect">0</strong><span>POSITIVE RUNS</span></div><div><strong id="stat-last">—</strong><span>LAST SCORE</span></div></div><p class="popup-footnote">Stats are stored in this browser and do not sync between devices.</p><button class="button pink popup-done" type="button" data-popup-close>BACK TO GAME</button></section></div>
 <div class="standalone-footer"><p>Midnight Arcade is an independent collection of daily games. Game artwork and challenge mechanics vary by cabinet.</p></div></div></main><footer class="site-footer standalone-site-footer"><div class="wrap footer-inner"><span>© 2026 Midnight Arcade · ONE DAY. ONE RUN.</span><div class="footer-links"><a href="../../index.html">All games</a><a href="../../style-guide.html">Style guide</a></div></div></footer>
 <script>
-const SHARE_URL="https://example.com/stake"; // set to the published page URL
+const SHARE_URL=new URL("./",location.href).href; // share the actual hosted game route
 // Format: category|question|correct answer|wrong|wrong|fun fact (facts are stable, units metric)
 const BANK=`Geography|Which is the longest river in Africa?|Nile|Congo|Niger|It flows north into the Mediterranean Sea.
 Geography|What is the capital of Canada?|Ottawa|Toronto|Montreal|Queen Victoria picked it in 1857.
@@ -249,7 +250,14 @@ function streak(){try{const s=JSON.parse(ls.get("stake:streak"));if(s&&(s.last==
 // HOOK streak freezes: spend a freeze token here to keep n when a day is missed
 function bump(d){let s=null;try{s=JSON.parse(ls.get("stake:streak"))}catch(e){}if(s&&s.last===d)return;ls.set("stake:streak",JSON.stringify({last:d,n:s&&s.last===prev(d)?(s.n|0)+1:1}))}
 function cd(){const n=new Date(),ms=new Date(n.getFullYear(),n.getMonth(),n.getDate()+1)-n,s=Math.floor(ms/1000);return pad(Math.floor(s/3600))+":"+pad(Math.floor(s%3600/60))+":"+pad(s%60)}
-function copy(ta,msg){const fb=()=>{ta.focus();ta.select();let ok=false;try{ok=document.execCommand("copy")}catch(e){}msg.textContent=ok?"Copied.":"Press and hold the text to select it, then copy."};try{navigator.clipboard.writeText(ta.value).then(()=>{msg.textContent="Copied."},fb)}catch(e){fb()}}
+async function copy(text,msg){
+try{await navigator.clipboard.writeText(text);msg.textContent="Copied.";return}catch(e){}
+// Older browsers can copy from a temporary offscreen field; never show a share box.
+const field=E("textarea"),previous=document.activeElement;field.value=text;field.readOnly=true;
+field.style.cssText="position:fixed;left:-9999px;top:0;opacity:0";document.body.appendChild(field);
+let ok=false;try{field.select();ok=document.execCommand("copy")}catch(e){}finally{field.remove();if(previous&&previous.focus)previous.focus()}
+msg.textContent=ok?"Copied.":"Couldn't copy. Please try again.";
+}
 const app=document.getElementById("app");
 let tab="d",run=mkRun("d",today(),"stake:d:"+today()),unl=null;
 function render(){app.textContent="";const top=E("div","top"),tabs=E("div","tabs");
@@ -262,10 +270,10 @@ d.className="pips";for(let i=0;i<5;i++){let c="pip",t="–";if(i<r.p.length){con
 function play(r){if(r.mode!=="u"&&r.p.length>=5&&!r.rv)return results(r);status(r);
 const n=r.p.length,card=E("div","card"),tot=r.mode==="u"?"":" of 5";
 if(r.rv){const i=n-1,q=getQ(r,i),ok=r.p[i]===q.a,v=r.b[i];
-A(card,E("div","banner "+(ok?"ok":"no"),(ok?"✓ Right. You win ":"✗ Wrong. You lose ")+chipsW(v)+"."),E("p","mut",q.c),E("h3",null,q.q));
+A(card,E("div","banner "+(ok?"ok":"no"),(ok?"✓ Right. You win ":"✗ Wrong. You lose ")+chipsW(v)+"."),E("p","mut",q.c),E("h3","stake-question",q.q));
 q.o.forEach((t,j)=>{const d=E("div","opt"+(j===q.a?" ok":j===r.p[i]?" no":""));A(d,E("b",null,"ABC"[j]),E("span",null,t));if(j===q.a)d.appendChild(E("span","tag","✓ Correct"));else if(j===r.p[i])d.appendChild(E("span","tag","✗ Your pick"));card.appendChild(d)});
 const nb=E("button","btn",r.mode!=="u"&&n>=5?"See results":"Next question");nb.onclick=()=>{r.rv=false;render()};A(card,E("p",null,"Fun fact: "+q.f),nb)}
-else if(r.b.length>n){const q=getQ(r,n);A(card,E("p","mut","Question "+(n+1)+tot+" · Bet: "+chipsW(r.b[n])),E("div","cat",q.c),E("h2",null,q.q));
+else if(r.b.length>n){const q=getQ(r,n);A(card,E("p","mut","Question "+(n+1)+tot+" · Bet: "+chipsW(r.b[n])),E("div","cat",q.c),E("h2","stake-question",q.q));
 q.o.forEach((t,j)=>{const b=E("button","opt");A(b,E("b",null,"ABC"[j]),E("span",null,t));b.onclick=()=>{r.p.push(j);r.rv=true;save(r);if(r.mode==="d"&&r.p.length===5)bump(r.date);render()};card.appendChild(b)})}
 else{const q=getQ(r,n),row=E("div","chips");A(card,E("p","mut","Question "+(n+1)+tot),E("div","cat",q.c),E("p","mut","Bet before you see the choices. Right wins the bet. Wrong loses it."));
 [1,2,3].forEach(v=>{const b=E("button","chip",String(v));b.appendChild(E("small",null,v===1?"chip":"chips"));b.setAttribute("aria-label","Bet "+chipsW(v));b.onclick=()=>{r.b.push(v);save(r);render()};row.appendChild(b)});card.appendChild(row)}
@@ -273,8 +281,7 @@ app.appendChild(card)}
 function results(r){status(r);const c=E("div","card"),s=sc(r);
 A(c,E("p","mut","Today’s set is done"),E("div","big",sg(s)+(Math.abs(s)===1?" chip":" chips")),E("p",null,rowT(r)));
 
-const ta=E("textarea");ta.readOnly=true;ta.rows=3;ta.value=shareT(r);ta.onclick=()=>ta.select();ta.setAttribute("aria-label","Share text");
-const msg=E("p","mut"),cb=E("button","btn","Copy result");cb.onclick=()=>copy(ta,msg);A(c,E("p","mut","Spoiler-free share text:"),ta,cb,msg);
+const msg=E("p","mut"),cb=E("button","btn","Copy result");msg.setAttribute("role","status");msg.setAttribute("aria-live","polite");cb.onclick=()=>copy(shareT(r),msg);A(c,cb,msg);
 // HOOK private leagues: post the date and sc(r) to a league here
 if(r.mode==="d"){const p=E("p",null,"Come back tomorrow for a new set of 5. Next set in "),b=E("b",null,cd());b.id="cd";p.appendChild(b);c.appendChild(p)}
 app.appendChild(c)}
