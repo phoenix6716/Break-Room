@@ -29,3 +29,15 @@ These are new proposals, not selections or installed replacements. The website s
 The user preferred the original Moon Cabinet idea over round 2 and requested a new logo combining it with the supplied Balatro reference's lettering style. `midnight-arcade-moon-cabinet-logo.png` retains the crescent and small arcade cabinet, with warm cream display letters, uneven baselines, dark outlines, subtle distressing, and red/cyan registration edges. It has a transparent background.
 
 This is a new logo for review. It has not replaced the installed website assets. No gameplay, navigation, or website layout changed.
+
+## Round 4 — three styles tested in the homepage header
+
+The user asked for three new logos in different styles that fit the current website. Files in `logo-explorations/` are alternatives for review, with a browser-only homepage preview for each:
+
+1. `cabinet-badge.png` — cream squared lettering, magenta offset, cyan hardware-label accents, and a crescent in the D.
+2. `pixel-wordmark.png` — playful cyan/yellow pixel lettering with magenta accents; the wordmark is the identity.
+3. `midnight-ticket.png` — warm admission-ticket identity with purple slab lettering, cyan trim, and a small moon punch mark.
+
+The `*-homepage.png` images show the current desktop homepage with a temporary header substitution. Transparent padding is clipped in the browser so each design can be compared at the same existing logo-slot dimensions. The source logo PNGs are unchanged. Google Fonts were blocked during the preview capture, so the page uses its existing fallback fonts. No actual homepage, styling, navigation, or game files were edited.
+
+Current homepage feedback to preserve for future work: the user likes a shorter single introduction, quieter effects, and clearer supporting text. Keep the existing game-card layout and keep coming-soon games together with the playable games. The user wants one universal daily reset time/countdown across all games rather than separate per-game reset displays. That timing change has not been implemented in this logo exploration task.
