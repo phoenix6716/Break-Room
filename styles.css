@@ -48,3 +48,8 @@ body:after{content:"";pointer-events:none;position:fixed;inset:0;z-index:20;opac
 .coming-soon-art{position:absolute;inset:0;display:grid;place-content:center;text-align:center;color:var(--yellow);font:900 clamp(14px,2vw,20px)/1.25 var(--pixel);letter-spacing:2px;text-shadow:3px 3px 0 #10072e}
 @media(max-width:760px){.card-lowball .game-art svg,.card-stake .game-art svg{height:90px;width:130px}}
 @media(max-width:600px){.stat-value{font-size:clamp(17px,4.7vw,23px)}}
+
+/* Selected Midnight Marquee wordmark: preserve the existing header arrangement. */
+.brand img.brand-logo{display:block;width:210px;height:60px;object-fit:contain;filter:none}
+@media(max-width:760px){.brand img.brand-logo{width:180px;height:50px}}
+@media(max-width:380px){.brand img.brand-logo{width:164px;height:48px}}

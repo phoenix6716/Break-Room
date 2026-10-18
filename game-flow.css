@@ -122,3 +122,8 @@ body>.game-menu-backdrop{z-index:1090}
 @media(max-width:480px){.game-site-header .brand-name{font-size:11px}}
 @media(max-width:380px){.game-site-header .brand-name{font-size:9px}}
 @media(max-width:340px){.game-site-header .brand-name{font-size:8px}}
+
+/* Keep the selected logo independently centred between Menu and Account. */
+.game-site-header .game-header-inner>.brand img.brand-logo{display:block;width:180px;height:54px;object-fit:contain;filter:none}
+@media(max-width:600px){.game-site-header .game-header-inner>.brand img.brand-logo{width:166px;height:50px}}
+@media(max-width:340px){.game-site-header .game-header-inner>.brand img.brand-logo{width:150px;height:48px}}
