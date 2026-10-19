@@ -30,3 +30,7 @@ Question and results screenshots are saved in `design/previews/stake-readable-qu
 - Actual responsive screenshots are in `design/previews/homepage-refined-desktop.png` and `design/previews/homepage-refined-mobile.png`; Google Fonts are blocked in the screenshot/test environment, so these use the existing fallback fonts.
 
 - After the shared-reset changes, the complete 500-assertion gameplay/navigation suite and the Stake clipboard/readability checks both pass. The Lowball smoke helper now waits for its iframe navigation before accessing engine controls. All 403 local HTML references exist, and inline scripts pass syntax checks.
+
+## Shared header group order
+
+The six main site pages now place Home/Friends/Profile between the logo and the Log in/guest group on desktop. Checks at 320, 390, 768, and 1440 pixels confirmed group order, no horizontal overflow, working navigation/login links, and the existing wrapped mobile layout. Game-page headers remain unchanged. Homepage screenshots were refreshed.
