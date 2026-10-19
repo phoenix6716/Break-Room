@@ -23,3 +23,7 @@ body:has(#app) .standalone-page{max-width:1360px;padding-top:30px}.standalone-wr
 .concealed-question i:nth-child(2){background:#e2edf0;transform:rotate(2deg)}.concealed-question i:nth-child(3){background:#eee6cf;transform:rotate(7deg)}
 .has-loss .stake-results .big{color:#a24437!important}.has-loss .table-result-stamp{color:#a24437;border-color:#a24437}
 #app .question-card:focus,#app .stake-results:focus{outline:none}
+/* Centre the personal stats above the Daily / Unlimited switch. */
+.standalone-wrap:has(#app)>.quick-stats{grid-column:1;grid-row:2;justify-self:center;align-self:center;width:min(100%,360px);margin:0}
+#app{grid-row:3/6}
+@media(max-width:650px){.standalone-wrap:has(#app)>.quick-stats{order:1}#app{order:2}}
