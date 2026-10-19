@@ -27,3 +27,7 @@ The visual map and invariants are in [`design/GAME-LAYOUT.md`](../../design/GAME
 - `template.js`: accessible Daily/Unlimited tabs and help/stats dialogs; no game simulation.
 
 Do not import `games/stake/table.css`, `timer.css`, `questions.js`, its inline engine or `game.js` into a new game just to get the layout. Those are legacy/game-specific dependencies. This starter is independent of Stake's mechanics.
+
+## Existing-engine example
+
+`games/stack-up/` applies this shared shell to a real game. It keeps its own engine and saved-state format, moves its live timer/score into the engine area, and uses its existing dialog/mode handlers with the shared visuals and keyboard conventions. When migrating an existing game, adapt those handlers instead of loading duplicate `template.js` handlers over them.

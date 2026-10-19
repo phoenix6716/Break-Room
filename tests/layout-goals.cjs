@@ -18,17 +18,15 @@ async function centred(target,selectors,width){for(const selector of selectors){
    const errors=[];
    const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
    await page.clock.setFixedTime(fixed);
-   // Use Stack Up's original stylesheet as the reference, not the new shared rules.
-   await page.route('**/daily-reset.css',route=>route.fulfill({contentType:'text/css',body:''}));
-   await page.goto(base+'/games/stack-up/index.html');
-   await page.locator('[data-start-mode=daily]').click();
+   // The canonical template now owns the reset card; Stack Up uses that shared shell too.
+   await page.goto(base+'/games/_template/index.html');
    const original=await page.locator('.daily-reset-card').evaluate(appearance);
    const expectedTime=await page.locator('.daily-reset-card [data-daily-countdown]').innerText();
-   await page.unroute('**/daily-reset.css');
-   await page.reload();
-   assert.deepEqual(await page.locator('.daily-reset-card').evaluate(appearance),original,'Shared style preserves Stack Up');
+   await page.goto(base+'/games/stack-up/index.html');
+   await page.locator('[data-start-mode=daily]').click();
+   assert.deepEqual(await page.locator('.daily-reset-card').evaluate(appearance),original,'Stack Up matches the canonical reset card');
    await page.goto(base+'/games/stake/index.html');
-   assert.deepEqual(await page.locator('.daily-reset-card').evaluate(appearance),original,'Stake reset card matches original Stack Up');
+   assert.deepEqual(await page.locator('.daily-reset-card').evaluate(appearance),original,'Stake reset card matches the canonical template');
    assert.equal(await page.locator('.daily-reset-card p').innerText(),'Same time. Every game.');
    assert.equal(await page.locator('.daily-reset-card [data-daily-countdown]').innerText(),expectedTime);
    await centred(page,['.standalone-heading','#app .tabs','#app .pips','.stake-table'],width);
@@ -49,7 +47,7 @@ async function centred(target,selectors,width){for(const selector of selectors){
    await frame.locator('#normalModeBtn').waitFor();
    assert.equal(await frame.locator('#normalModeBtn').innerText(),'Daily');
    assert.equal(await frame.locator('#normalModeBtn .rounds').count(),0);
-   assert.deepEqual(await frame.locator('.daily-reset-card').evaluate(appearance),original,'Lowball reset card matches original Stack Up');
+   assert.deepEqual(await frame.locator('.daily-reset-card').evaluate(appearance),original,'Lowball reset card matches the canonical template');
    assert.equal(await frame.locator('.daily-reset-card p').innerText(),'Same time. Every game.');
    assert.equal(await frame.locator('.daily-reset-card [data-daily-countdown]').innerText(),expectedTime);
    await centred(frame,['header','.mode-toggle','.progress-dots','.card','#soundBtn'],width);
@@ -65,7 +63,7 @@ async function centred(target,selectors,width){for(const selector of selectors){
    await frame.locator('#cselectList li').filter({hasText:'United States'}).click();
    assert(!await frame.evaluate(()=>document.documentElement.scrollWidth>innerWidth));
    assert.deepEqual(errors,[]);
-   await context.close();console.log(`PASS ${width}px: both reset boxes match original Stack Up, clocks agree, Daily label simplified, both games centred at equal widths, rail/region/sound fit, menus and modes work.`);
+   await context.close();console.log(`PASS ${width}px: all reset boxes match the canonical template, clocks agree, Daily label simplified, both games centred at equal widths, rail/region/sound fit, menus and modes work.`);
   }
  }finally{await browser.close()}
 })().catch(error=>{console.error(error);process.exitCode=1});

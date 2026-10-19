@@ -126,3 +126,16 @@ Validation: `tests/layout-goals.cjs` passed at 320/390/768/1024/1100/1440px, inc
 Added `games/_template/` and scoped `game-shell.css`, with replaceable title, description, progress, engine, help, result and stat bindings. The shell uses the existing navigation, popup visuals and Sydney-midnight reset card; it has no Stake engine, fabricated stats or saved completion. `AGENTS.md`, `design/GAME-LAYOUT.md` and the starter README preserve the user’s chosen standard for future game work. Existing game pages and homepage registration are unchanged.
 
 `node tests/game-template.cjs` passed at 320/390/768/1100/1440px: viewport-centred title row, stats, tabs, progress, board and optional audio slot; independent wide-screen reset rail and narrow-screen reset placement; no overflow; real countdown; mode click/keyboard events and ARIA bindings; retained left menu; popup close, backdrop, Escape, focus trapping/restoration and inert background; no storage writes, page errors or failed assets; all local dependencies and explicit file links exist. Actual desktop/mobile/help/stats screenshots are saved in `design/previews/game-template/`. Tested through a local HTTP server, without a public-host deployment.
+
+### Stack Up shared-template migration — 19 October 2026
+
+Applied `game-shell.css` to Stack Up: shared site header and left menu; one title/stats/tools row; plain Daily/Unlimited tabs; centred progress and sorting engine; and one independent reset rail. Replaced the oversized landing layout with a compact launch panel in the same engine slot. The 90-second timer and current-run score sit together inside the playing area; the timer/score row stays visible while sorting on phones. Personal Streak/Best/Played stats now occupy the header; detailed records remain in the shared popup. Removed the old duplicate reset strip/sidebar and the dependency on historical `stack-layout.css`; retained the original questions, sorting, scoring, sharing, timer deadlines, storage keys, saved snapshots and migrations. “Unlimited” is the visible practice label; the existing internal `infinite` key is intentionally retained.
+
+Validation:
+
+- `tests/stack-shell.cjs` passed at 320/390/650/768/1024/1100/1440px: centred shell, one-row header, reset position, real clock, no overflow, menus/dialogs and focus, mode keyboard controls and ARIA, visible timer bar, unchanged saved Daily when switching modes, and full best-score fit after restoring a completed record. Desktop/mobile launch/play and help/stats screenshots are in `design/previews/stack-shell/`.
+- `tests/stack-up.cjs` passed: keyboard/button/drag/touch sorting, complete five-stack Daily, exact scoring, refresh/resume/review, stats/sharing, replay prevention, Unlimited, negative scores, timeout persistence, mode-switch deadlines, Sydney midnight and unavailable storage.
+- `tests/question-migrations.cjs` passed: old Stack Up/Stake snapshots retain questions, scores and progress; all Stack Up prompts/cards fit narrow/wide screens without revealing answer details.
+- `tests/layout-goals.cjs` passed at all six widths. Its reset-card reference now comes from the canonical template rather than Stack Up’s retired page stylesheet; computed appearance/countdowns still match across all three games.
+
+No public-host deployment was performed.
