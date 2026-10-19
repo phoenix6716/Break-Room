@@ -107,3 +107,7 @@ Moved Lowball's personal stats into the title/tools header row. Matched Stake's 
 ### Centred Lowball layout — 19 October 2026
 
 Replaced the offset sidebar layout with one centred column. Header, mode buttons, progress, playing area, settings row, sound toggle and legal footer share the viewport centre line. Countdown/region controls sit together below the game; sound sits beneath them at the bottom centre. Direct browser checks passed at 320, 390, 650, 768, 900, 1024 and 1440px in play and receipt states, including dropdown fit, no overflow, region switching, scoring, retained faceted gems and sound toggling. `tests/smoke.cjs` passed all 532 assertions; `tests/lowball-art.cjs` passed. Updated desktop/mobile full-page previews show the centred layout.
+
+### Lowball top-right reset rail — 19 October 2026
+
+Moved the countdown and region selector into a stacked top-right rail, independent of the centred game column. The sound toggle remains directly below the playing area on the same centre line. Narrow layouts keep the stacked controls above the game. Browser checks passed at 320, 390, 768, 1024, 1100, 1280 and 1440px: centred header/modes/game/sound, countdown above region selector, desktop rail outside the game without shifting its centre, no clipped dropdown or horizontal overflow, region switching, scoring, and retained faceted gems. Updated mobile/desktop previews are in `design/previews/game-polish/`.

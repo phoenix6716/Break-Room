@@ -608,6 +608,19 @@
 
   </header>
 
+  <section class="session-settings" aria-label="Daily reset and price region">
+  <aside class="live-reset" id="nextDaily" aria-label="Daily reset">NEXT DAILY RESET<strong data-daily-countdown>--:--:--</strong><p>Midnight Sydney. Every game.</p><span class="new-daily-ready" hidden>New daily ready. Tap to play</span></aside>
+
+  <div class="country-row">
+    <span class="country-label">Playing as</span>
+    <div class="cselect" id="cselect">
+      <button type="button" class="cselect-btn" id="cselectBtn" aria-haspopup="listbox" aria-expanded="false"><span id="cselectLabel">Australia</span></button>
+      <ul class="cselect-list" id="cselectList" role="listbox" tabindex="-1" hidden></ul>
+    </div>
+    <select id="countrySelect" hidden></select>
+  </div>
+  </section>
+
   <div class="mode-toggle">
     <button class="mode-btn active" id="normalModeBtn">Daily<span class="rounds"> (4 rounds)</span></button>
     <button class="mode-btn" id="unlimitedModeBtn">Unlimited</button>
@@ -671,18 +684,7 @@
     </div>
   </div>
 
-  <section class="session-settings" aria-label="Daily reset and price region">
-  <aside class="live-reset" id="nextDaily" aria-label="Daily reset">NEXT DAILY RESET<strong data-daily-countdown>--:--:--</strong><p>Midnight Sydney. Every game.</p><span class="new-daily-ready" hidden>New daily ready. Tap to play</span></aside>
 
-  <div class="country-row">
-    <span class="country-label">Playing as</span>
-    <div class="cselect" id="cselect">
-      <button type="button" class="cselect-btn" id="cselectBtn" aria-haspopup="listbox" aria-expanded="false"><span id="cselectLabel">Australia</span></button>
-      <ul class="cselect-list" id="cselectList" role="listbox" tabindex="-1" hidden></ul>
-    </div>
-    <select id="countrySelect" hidden></select>
-  </div>
-  </section>
 
   <button type="button" class="sound-btn" id="soundBtn">Sound: on</button>
 

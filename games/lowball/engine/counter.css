@@ -57,3 +57,9 @@ header{order:0;align-self:stretch}.mode-toggle{order:1;width:100%;align-self:str
 @media(max-width:650px){body{padding:22px 16px}.wrap{gap:17px}.session-settings{gap:18px;padding-top:16px}.session-settings .live-reset{font-size:9px}.session-settings .live-reset strong{font-size:23px}.session-settings .live-reset p{font-size:10px;line-height:1.5}.session-settings .country-label{font-size:10px}.session-settings .cselect-btn{font-size:12px;padding:11px 9px}.session-settings .country-row{gap:8px}.session-settings .cselect-list{font-size:12px}}
 @media(max-width:360px){body{padding-left:12px;padding-right:12px}.session-settings{gap:12px}.session-settings .live-reset{font-size:8px}.session-settings .live-reset strong{font-size:21px}.session-settings .cselect-btn{font-size:11px;padding:11px 8px}}
 .session-settings .live-reset{order:0}.session-settings .country-row{order:1}
+/* A separate top-right utility rail keeps the game itself on the viewport centre line. */
+.wrap{position:relative}
+.session-settings{order:1;grid-template-columns:minmax(0,1fr);align-self:flex-end;width:min(260px,100%);gap:17px;border:0;padding:0;margin:0}
+.session-settings .country-row{max-width:none;justify-self:stretch}.session-settings .live-reset{border-top:2px solid #17263a;padding-top:14px}
+.mode-toggle{order:2}.progress-dots{order:3}.card{order:4}
+@media(min-width:1100px){.wrap{--lowball-column:min(760px,calc(100vw - 448px));max-width:var(--lowball-column)}.session-settings{position:absolute;top:0;left:calc(100% + 24px);width:min(240px,calc((100vw - var(--lowball-column))/2 - 48px))}.mode-toggle{order:1}.progress-dots{order:2}.card{order:3}}
