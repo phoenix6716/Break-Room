@@ -1752,7 +1752,7 @@ function guessCountry() {
   soundOn = safeGet("pc_sound", "1") !== "0";
   const soundBtn = document.getElementById("soundBtn");
   const paintSound = () => {
-    soundBtn.innerHTML = LOWBALL_ART.markup({ art: soundOn ? "sound-on" : "sound-off" }) + '<span>Sound: ' + (soundOn ? 'on' : 'off') + '</span>';
+    soundBtn.innerHTML = LOWBALL_ART.markup({ art: soundOn ? "sound-on" : "sound-off" }) + '<span class="sound-label">Sound</span><span class="sound-state">' + (soundOn ? 'On' : 'Off') + '</span><span class="sound-switch" aria-hidden="true"><i></i></span>';
     soundBtn.setAttribute("aria-pressed", String(soundOn));
   };
   paintSound();
