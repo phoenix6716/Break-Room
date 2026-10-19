@@ -53,3 +53,7 @@ The agreed homepage changes are now implemented: one compact introduction; a liv
 The user expressed interest in changing the whole design and style. Visual direction and whether that includes game interfaces are still being clarified. `redesign/atmospheric-homepage-concept.png` is an initial generated homepage mockup exploring an atmospheric late-night games lounge: charcoal/navy, warm cream typography, muted jade accents, and tactile game artwork.
 
 This is a design image, not an implemented or tested webpage. It keeps the mixed eight-game grid, centred brand, and single universal reset concept. Its timer is illustrative, and some generated placeholder subtitles/artwork are exploratory rather than changes to game requirements. The real game rules, progress, shared Sydney reset, and current website remain unchanged. No new design direction has been approved yet.
+
+## Stack Up style — isolated main-menu prototype
+
+The user supplied a new Stack Up game and requested a main-menu prototype in its warm late-1990s/puzzle-book style before changing the real site. The working prototype lives at `prototypes/paper-arcade/index.html` with isolated styles, desktop/mobile screenshots, and an unmodified copy of the uploaded game for preview. It uses the source game's actual palette, grid, typography, shadows, and notched controls. No production homepage, game routes, shared styles, or game logic were changed. See the prototype's README for scope and validation.
