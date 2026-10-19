@@ -47,7 +47,7 @@ textarea{resize:none}.big{font-size:44px;font-weight:800;margin:.1em 0}
 .game-popup-backdrop{position:fixed;inset:0;z-index:1000;background:rgba(7,4,20,.82);display:grid;place-items:center;padding:18px}.game-popup-backdrop[hidden]{display:none}.game-popup{position:relative;width:min(100%,540px);max-height:min(86vh,760px);overflow:auto;background:var(--card);color:var(--ink);border:2px solid var(--line);box-shadow:6px 7px 0 #05030d;padding:26px}.game-popup h2{font-size:24px;margin:4px 0 12px}.game-popup p{color:var(--mut)}.popup-kicker{color:var(--gold)!important;font-size:11px;font-weight:800;letter-spacing:.14em}.game-popup-close{position:absolute;right:10px;top:10px;border:2px solid var(--line);background:transparent;color:var(--ink);font-size:24px;width:36px;height:36px;cursor:pointer}.popup-instructions{line-height:1.6}.popup-instructions strong{color:var(--ink)}.popup-done{margin-top:12px}.extended-stats-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.extended-stats-grid>div{border:2px solid var(--line);padding:12px;background:var(--bg)}.extended-stats-grid strong,.extended-stats-grid span{display:block}.extended-stats-grid strong{font-size:23px;color:var(--gold)}.extended-stats-grid span{font-size:10px;color:var(--mut);font-weight:800;letter-spacing:.07em}.popup-footnote{font-size:12px}.standalone-footer{text-align:center;color:var(--mut);font-size:12px;margin:28px 0 0}.sound-control{background:transparent;color:var(--mut);border:0;font:inherit;cursor:pointer}.standalone-legal{display:flex;justify-content:center;gap:16px;margin:12px}.standalone-legal a{color:var(--mut)}.standalone-site-footer{margin-top:0}
 @media(max-width:520px){.standalone-wrap{padding:18px 12px 26px}.standalone-heading{gap:10px}.standalone-title-group h1{font-size:25px}.quick-stats{gap:6px}.quick-stat{padding:10px 4px}.quick-stat strong{font-size:22px}.game-popup{padding:24px 18px}}
 
-</style><script defer src="../../navigation.js"></script><script src="../../daily-clock.js"></script><link rel="stylesheet" href="../../break-room.css"><script src="questions.js"></script><link rel="stylesheet" href="timer.css"><link rel="stylesheet" href="../../game-dialog.css"></head><body><header class="site-header game-site-header"><div class="wrap game-header-inner"><button class="game-menu-toggle" id="game-menu-toggle" type="button" aria-expanded="false" aria-controls="game-menu"><span class="hamburger-lines" aria-hidden="true">☰</span><span class="menu-toggle-label">MENU</span></button><a class="brand" href="../../index.html" aria-label="Break Room — back to all games"><span class="break-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="break-wordmark">BREAK ROOM</span></a><a class="game-header-account" href="../../login.html">ACCOUNT</a></div><nav class="game-menu" id="game-menu" aria-label="Break Room menu" aria-hidden="true" hidden>
+</style><script defer src="../../navigation.js"></script><script src="../../daily-clock.js"></script><link rel="stylesheet" href="../../break-room.css"><script src="questions.js"></script><link rel="stylesheet" href="timer.css"><link rel="stylesheet" href="../../game-dialog.css"><link rel="stylesheet" href="table.css"></head><body><header class="site-header game-site-header"><div class="wrap game-header-inner"><button class="game-menu-toggle" id="game-menu-toggle" type="button" aria-expanded="false" aria-controls="game-menu"><span class="hamburger-lines" aria-hidden="true">☰</span><span class="menu-toggle-label">MENU</span></button><a class="brand" href="../../index.html" aria-label="Break Room — back to all games"><span class="break-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="break-wordmark">BREAK ROOM</span></a><a class="game-header-account" href="../../login.html">ACCOUNT</a></div><nav class="game-menu" id="game-menu" aria-label="Break Room menu" aria-hidden="true" hidden>
 <div class="game-menu-heading"><span class="section-meta">BREAK ROOM</span><button class="game-menu-close" id="game-menu-close" type="button" aria-label="Close menu">×</button></div>
 <div class="game-menu-content"><div class="game-menu-group"><span class="section-meta">PLAY NOW</span><a href="../../index.html#daily-games">All games</a><a href="../../games/lowball/index.html">Lowball</a><a href="../../games/stake/index.html">Stake</a><a href="../../games/stack-up/index.html">Stack Up</a></div>
 <div class="game-menu-group"><span class="section-meta">COMING SOON</span><a href="../../games/pixel-pairs/index.html">Pixel Pairs</a><a href="../../games/word-forge/index.html">Word Forge</a><a href="../../games/gridlock/index.html">Gridlock</a><a href="../../games/number-drop/index.html">Number Drop</a><a href="../../games/memory-lane/index.html">Memory Lane</a><a href="../../games/mystery-cabinet/index.html">Mystery Cabinet</a></div><div class="game-menu-group"><span class="section-meta">YOUR ARCADE</span><a href="../../profile.html">My stats</a><a href="../../friends.html">Friends</a><a href="../../login.html">Account / sign in</a></div></div></nav></header><main class="standalone-page"><div class="standalone-wrap">
@@ -261,6 +261,7 @@ let ok=false;try{field.select();ok=document.execCommand("copy")}catch(e){}finall
 msg.textContent=ok?"Copied.":"Couldn't copy. Please try again.";
 }
 const app=document.getElementById("app");
+function focusTable(selector){app.querySelector(selector)?.focus({preventScroll:true})}
 // One-time replay reset for the Break Room update. Earlier dates stay intact.
 try {
  const resetKey="break-room:stake:daily-reset:2026-10-19";
@@ -272,29 +273,61 @@ try {
 let tab="d",run=mkRun("d",today(),"stake:d:"+today()),unl=null;
 function render(){app.textContent="";const top=E("div","top"),tabs=E("div","tabs");
 A(top,E("h1",null,"STAKE"));tabs.setAttribute("role","tablist");
-[["d","Daily"],["u","Unlimited"]].forEach(t=>{const b=E("button",null,t[1]);b.setAttribute("role","tab");b.setAttribute("aria-selected",tab===t[0]);b.onclick=()=>{tab=t[0];render()};tabs.appendChild(b)});
+[["d","Daily"],["u","Unlimited"]].forEach(t=>{const b=E("button",null,t[1]);b.setAttribute("role","tab");b.setAttribute("aria-selected",tab===t[0]);b.onclick=()=>{tab=t[0];render();focusTable('[role="tab"][aria-selected="true"]')};tabs.appendChild(b)});
+tabs.addEventListener("keydown",event=>{
+ if(!["ArrowLeft","ArrowRight","Home","End"].includes(event.key))return;
+ event.preventDefault();tab=event.key==="Home"?"d":event.key==="End"?"u":tab==="d"?"u":"d";render();focusTable('[role="tab"][aria-selected="true"]');
+});
 A(app,top,tabs);
 if(tab==="d")play(run);else{if(!unl)unl=mkRun("u",today(),null);play(unl)}}
 function status(r){const d=E("div");if(r.mode==="u"){d.className="mut";d.textContent="Answered "+r.p.length+" · Score "+sg(sc(r))+" · Not saved, no streak";return app.appendChild(d)}
 d.className="pips";for(let i=0;i<5;i++){let c="pip",t="–";if(i<r.p.length){const ok=r.p[i]===r.qs[i].a;c+=ok?" ok":" no";t=(ok?"✓":"✗")+r.b[i]}else if(i===r.p.length){c+=" cur";t="•"}const p=E("div",c,t);d.appendChild(p)}app.appendChild(d)}
+// The table is a presentation layer; bets, answers and deadlines retain their original state.
+function chipStack(count){
+ const stack=E("div","chip-stack");stack.setAttribute("aria-hidden","true");
+ for(let i=0;i<count;i++){const chip=E("i","stack-chip");chip.style.setProperty('--stack-index',i);stack.appendChild(chip)}
+ return stack;
+}
+function tableSurface(r,finished=false){
+ const surface=E("section","stake-table"+(finished?" is-finished":""));surface.setAttribute("aria-label","Stake trivia table");
+ const heading=E("div","table-topline"),light=E("span","table-open",r.mode==="u"?"PRACTICE TABLE":"THE DAILY TABLE");
+ A(heading,light,E("span",null,"KNOWLEDGE MEETS NERVE"));
+ const bank=E("div","table-bank"),total=E("div","bank-total"),number=E("strong",null,sg(sc(r)));
+ number.appendChild(E("small",null,Math.abs(sc(r))===1?" chip":" chips"));A(total,E("span","bank-label","YOUR TABLE TOTAL"),number);
+ const note=E("div","bank-note");A(note,E("span",null,r.mode==="u"?"PLAY AS LONG AS YOU LIKE":"FIVE QUESTIONS. MAKE THEM COUNT."),E("span",null,r.mode==="u"?"Practice · no daily streak":"Higher stakes. Bigger swings."));A(bank,total,note);A(surface,heading,bank);app.appendChild(surface);return surface;
+}
+function betInPlay(r,bet,settled=false,won=false){
+ const dock=E("div","bet-in-play"+(settled?won?" is-win":" is-loss":"")),words=E("div","bet-in-play-copy");
+ A(words,E("span","bet-dock-label",settled?"BET SETTLED":"ON THE TABLE"),E("strong",null,settled?(won?"+":"−")+chipsW(bet):chipsW(bet)+" in play"),E("span",null,settled?(won?"A little knowledge pays off.":"New question. Fresh chance."):"A right answer wins your stake. A miss loses it."));
+ A(dock,chipStack(bet),words);return dock;
+}
 function play(r){expire(r);if(r.mode!=="u"&&r.p.length>=5&&!r.rv)return results(r);status(r);
-const n=r.p.length,card=E("div","card"),tot=r.mode==="u"?"":" of 5";
-if(r.rv){const i=n-1,q=getQ(r,i),ok=r.p[i]===q.a,v=r.b[i];
-A(card,E("div","banner "+(ok?"ok":"no"),(ok?"✓ Right. You win ":r.p[i]===-1?"Time’s up. You lose ":"✗ Wrong. You lose ")+chipsW(v)+"."),E("p","mut",q.c),E("h3","stake-question",q.q));
-q.o.forEach((t,j)=>{const d=E("div","opt"+(j===q.a?" ok":j===r.p[i]?" no":""));A(d,E("b",null,"ABC"[j]),E("span",null,t));if(j===q.a)d.appendChild(E("span","tag","✓ Correct"));else if(j===r.p[i])d.appendChild(E("span","tag","✗ Your pick"));card.appendChild(d)});
-const nb=E("button","btn",r.mode!=="u"&&n>=5?"See results":"Next question");nb.onclick=()=>{r.rv=false;save(r);render()};A(card,E("p",null,"Fun fact: "+q.f),nb)}
-else if(r.b.length>n){const q=getQ(r,n);A(card,E("p","mut","Question "+(n+1)+tot+" · Bet: "+chipsW(r.b[n])),makeTimer(),E("div","cat",q.c),E("h2","stake-question",q.q));
-q.o.forEach((t,j)=>{const b=E("button","opt");A(b,E("b",null,"ABC"[j]),E("span",null,t));b.onclick=()=>{if(r.p.length!==n||r.b.length!==n+1)return;answer(r,j);render()};card.appendChild(b)})}
-else{const q=getQ(r,n),row=E("div","chips");A(card,E("p","mut","Question "+(n+1)+tot),E("div","cat",q.c),E("p","mut","Bet before you see the choices. Then answer within 30 seconds. Wrong answers and timeouts lose the bet."));
-[1,2,3].forEach(v=>{const b=E("button","chip",String(v));b.appendChild(E("small",null,v===1?"chip":"chips"));b.setAttribute("aria-label","Bet "+chipsW(v));b.onclick=()=>{if(r.b.length!==n||r.p.length!==n)return;r.b.push(v);r.deadline=Date.now()+30000;save(r);render()};row.appendChild(b)});card.appendChild(row)}
-const feedback=card.querySelector(".banner");if(feedback){feedback.setAttribute("role","status");feedback.setAttribute("aria-live","polite")}app.appendChild(card);paintTimer(r)}
-function results(r){status(r);const c=E("div","card"),s=sc(r);
-A(c,E("p","mut","Today’s set is done"),E("div","big",sg(s)+(Math.abs(s)===1?" chip":" chips")),E("p",null,rowT(r)));
-
-const msg=E("p","mut"),cb=E("button","btn","Copy result");msg.setAttribute("role","status");msg.setAttribute("aria-live","polite");cb.onclick=()=>copy(shareT(r),msg);A(c,cb,msg);
-// HOOK private leagues: post the date and sc(r) to a league here
-if(r.mode==="d"){const p=E("p",null,"Come back tomorrow for a new set of 5. Next set in "),b=E("b",null,cd());b.id="cd";p.appendChild(b);c.appendChild(p)}
-app.appendChild(c)}
+ const n=r.p.length,card=E("div","card question-card"),tot=r.mode==="u"?"":" of 5",surface=tableSurface(r);
+ card.tabIndex=-1;
+ let dock;
+ if(r.rv){const i=n-1,q=getQ(r,i),ok=r.p[i]===q.a,v=r.b[i];card.classList.add("is-review");
+ A(card,E("p","question-meta","Question "+(i+1)+tot+" · Bet: "+chipsW(v)),E("div","cat",q.c),E("div","banner "+(ok?"ok":"no"),(ok?"✓ Right. You win ":r.p[i]===-1?"Time’s up. You lose ":"✗ Wrong. You lose ")+chipsW(v)+"."),E("h3","stake-question",q.q));
+ q.o.forEach((t,j)=>{const d=E("div","opt"+(j===q.a?" ok":j===r.p[i]?" no":""));A(d,E("b",null,"ABC"[j]),E("span",null,t));if(j===q.a)d.appendChild(E("span","tag","✓ Correct"));else if(j===r.p[i])d.appendChild(E("span","tag","✗ Your pick"));card.appendChild(d)});
+ const nb=E("button","btn next-question",r.mode!=="u"&&n>=5?"See results":"Next question");nb.onclick=()=>{r.rv=false;save(r);render();focusTable(r.mode!=="u"&&n>=5?".stake-results":".chip")};A(card,E("p","question-fact","Fun fact: "+q.f),nb);dock=betInPlay(r,v,true,ok);
+ }else if(r.b.length>n){const q=getQ(r,n);card.classList.add("is-answering");
+ A(card,makeTimer(),E("p","question-meta","Question "+(n+1)+tot+" · Bet: "+chipsW(r.b[n])),E("div","cat",q.c),E("h2","stake-question",q.q));
+ q.o.forEach((t,j)=>{const b=E("button","opt");A(b,E("b",null,"ABC"[j]),E("span",null,t));b.onclick=()=>{if(r.p.length!==n||r.b.length!==n+1)return;answer(r,j);render();focusTable(".question-card")};card.appendChild(b)});dock=betInPlay(r,r.b[n]);
+ }else{const q=getQ(r,n),row=E("div","chips"),betDock=E("div","betting-dock");card.classList.add("is-betting");
+ const concealed=E("div","concealed-question");concealed.setAttribute("aria-hidden","true");A(concealed,E("i"),E("i"),E("i"));
+ A(card,E("p","question-meta","Question "+(n+1)+tot),E("div","cat",q.c),E("h2","bet-title","Know your stuff?"),concealed,E("p","bet-instruction","Choose your stake to reveal the question. Then you have 30 seconds to answer."));
+ [1,2,3].forEach(v=>{const option=E("div","stake-option"),b=E("button","chip chip-"+v);A(b,E("span","chip-value",String(v)),E("small",null,v===1?"chip":"chips"));b.setAttribute("aria-label","Bet "+chipsW(v));b.onclick=()=>{if(r.b.length!==n||r.p.length!==n)return;r.b.push(v);r.deadline=Date.now()+30000;save(r);render();focusTable(".question-card")};A(option,b,E("span","stake-caption",["PLAY IT SAFE","FEELING GOOD","BACK YOURSELF"][v-1]));row.appendChild(option)});
+ A(betDock,E("p","bet-dock-label","MAKE YOUR CALL"),row,E("p","betting-note","Win your stake if you're right. Lose it if you're wrong or time runs out."));dock=betDock;
+ }
+ const feedback=card.querySelector(".banner");if(feedback){feedback.setAttribute("role","status");feedback.setAttribute("aria-live","polite")}
+ A(surface,card,dock);paintTimer(r);
+}
+function results(r){status(r);const surface=tableSurface(r,true),c=E("div","card stake-results"),s=sc(r),correct=r.p.filter((pick,i)=>pick===r.qs[i].a).length;
+ surface.classList.toggle("has-loss",s<0);c.tabIndex=-1;
+ A(c,E("p","result-table-label","Today’s set is done"),E("h2","table-result-title","That's your daily hand."),E("div","big",sg(s)+(Math.abs(s)===1?" chip":" chips")),E("div","table-result-stamp",s>0?"IN THE GREEN":s===0?"EVEN STEVENS":"NEXT TIME, NEXT HAND"),E("p","result-summary",correct+" correct · "+(r.p.length-correct)+" missed"),E("p","result-hand",rowT(r)));
+ const msg=E("p","mut"),cb=E("button","btn","Copy result");msg.setAttribute("role","status");msg.setAttribute("aria-live","polite");cb.onclick=()=>copy(shareT(r),msg);A(c,cb,msg);
+ if(r.mode==="d"){const p=E("p","next-set-note","Come back tomorrow for a new set of 5. Next set in "),b=E("b",null,cd());b.id="cd";p.appendChild(b);c.appendChild(p)}
+ surface.appendChild(c);
+}
 // Deadlines use wall-clock time: refresh, inactive tabs and mode switches cannot pause a bet.
 function pending(r){return r&&r.b.length===r.p.length+1}
 function answer(r,pick){

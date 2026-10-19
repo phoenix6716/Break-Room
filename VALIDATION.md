@@ -85,3 +85,13 @@ This update replaces the preceding code-drawn SVG illustrations with actual gene
 - `tests/smoke.cjs`: 532 assertions passed, including Lowball regions, invalid input, four-round play, saved results, completed stats, and Unlimited; no browser JavaScript errors.
 - Visually inspected all four 25-item catalogue screenshots and the actual mobile playing area and desktop score receipt. Full website screenshots, close-ups, final-screen previews, utility art, and the complete HTML catalogue are in `design/previews/lowball-images/`.
 - Validated on a local HTTP server. The implementation uses local image paths and requires no remote image service. Public hosting was not deployed or tested.
+
+### Counter and tabletop visual overhaul — 19 October 2026
+
+- `tests/smoke.cjs`: all 532 assertions passed, covering both games' complete Daily flows, saved results, stats, regions, and Unlimited; no browser JavaScript errors.
+- `tests/lowball-art.cjs`: all 100 item images and nine utility images decode; each PNG is distinct; gem colours, sound settings, and play/result widths passed.
+- `tests/stake-timer.cjs`: passed at 320/390/768/1440px; 30-second deadlines, reload and modal timeouts, mode switching, five-loss totals, saved stats, late clicks, and popup parity with Stack Up all passed.
+- `tests/stake-sharing.cjs`: question/review typography, completed results, real clipboard contents, fallback, failure feedback, and focus restoration passed at 390 and 1440px.
+- `tests/game-surfaces.cjs`: passed at 320/390/768/1440px; currency stays inside the till, receipt fills the playing area, keyboard-only price/round progression and Stake betting/answering work, all three chips are circular, mode-arrow keys work, the longest bank question wraps, chip stacks reflect the bet, and reduced motion disables new animations.
+- Actual game previews saved under `design/previews/game-polish/`, including Lowball's counter/receipt/final screen and Stake's betting/question/win/urgent timer/timeout/final screens. Screenshot runs use isolated browser storage.
+- Tested using a local HTTP server; no public-host deployment was performed.

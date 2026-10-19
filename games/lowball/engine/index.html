@@ -589,6 +589,7 @@
 </style>
 
 <link rel="stylesheet" href="break-room-engine.css">
+<link rel="stylesheet" href="counter.css">
 
 <script src="../../../daily-clock.js"></script></head>
 <body>
@@ -628,17 +629,22 @@
 
   <div class="card">
     <div id="playArea">
-      <div class="item-emoji" id="itemEmoji">🛒</div>
-      <div class="item-name" id="itemName">Loading...</div>
-      <div class="item-detail" id="itemDetail"></div>
-      <div class="guess-row">
-        <span class="currency-chip" id="currencySymbol"></span>
-        <input type="number" id="guessInput" placeholder="0" inputmode="decimal" step="any">
+      <div class="counter-topline"><span><i aria-hidden="true"></i> THE PRICE IS YOURS TO GUESS</span><span id="counterItemNumber">ITEM 01 / 04</span></div>
+      <div class="product-display">
+        <div class="shelf-price-tag" aria-hidden="true"><span>YOUR CALL</span><b>?.??</b></div>
+        <div class="item-emoji" id="itemEmoji"></div>
+        <div class="counter-shelf" aria-hidden="true"></div>
       </div>
-      <button class="btn-gold" id="submitBtn">LOCK IT IN</button>
+      <div class="product-label"><span class="product-label-kicker">ON THE COUNTER</span><div class="item-name" id="itemName">Loading...</div><div class="item-detail" id="itemDetail"></div></div>
+      <div class="price-till">
+        <div class="till-topline"><label for="guessInput">NAME YOUR PRICE</label><span><i aria-hidden="true"></i> READY</span></div>
+        <div class="till-entry"><div class="guess-row"><span class="currency-chip" id="currencySymbol"></span><input type="number" id="guessInput" placeholder="0.00" inputmode="decimal" step="any" aria-label="Your price guess"></div><button class="btn-gold" id="submitBtn">LOCK IT IN <span aria-hidden="true">↵</span></button></div>
+        <p class="till-hint">Get close. Score big. <span>Press Enter to lock it in.</span></p><div class="till-drawer" aria-hidden="true"><span></span></div>
+      </div>
     </div>
 
     <div class="result" id="resultArea">
+      <div class="receipt-header"><span>BREAK ROOM GENERAL STORE</span><strong>PRICE CHECK</strong><span id="receiptItemName"></span></div>
       <div class="score-caption">ROUND SCORE <span>/ 100</span></div>
       <div class="result-score mono" id="resultScore">--</div>
       <div class="result-label" id="resultLabel"></div>
@@ -1189,6 +1195,7 @@ function showItem() {
   const emojiEl = document.getElementById("itemEmoji");
   emojiEl.innerHTML = LOWBALL_ART.markup(currentItem);
   document.getElementById("itemName").textContent = currentItem.name;
+  document.getElementById("counterItemNumber").textContent = mode === "normal" ? "ITEM " + String(roundIndex + 1).padStart(2, "0") + " / " + String(ROUNDS_PER_DAY).padStart(2, "0") : "PRACTICE / ITEM " + String(deckIndex + 1).padStart(2, "0");
   document.getElementById("itemDetail").textContent = currentItem.detail;
   document.getElementById("currencySymbol").textContent = CURRENCY[country].symbol;
   guessInput.value = "";
@@ -1240,7 +1247,7 @@ document.addEventListener("pointerdown", e => {
   const b = e.target.closest && e.target.closest("button");
   if (b && b.id !== "submitBtn" && b.id !== "soundBtn") SFX.click();
 });
-guessInput.addEventListener("keydown", e => { if (e.key === "Enter") submitGuess(); });
+guessInput.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); submitGuess(); } });
 
 function submitGuess() {
   if (mode === "normal" && getTodayKey() !== loadedDayKey) { location.reload(); return; }
@@ -1261,6 +1268,8 @@ function renderResult(guess, ctry, animate) {
 
   playArea.style.display = "none";
   resultArea.classList.add("show");
+  resultArea.dataset.tier = classForScore(score);
+  document.getElementById("receiptItemName").textContent = currentItem.name;
 
   const scoreEl = document.getElementById("resultScore");
   scoreEl.className = "result-score mono " + classForScore(score);
@@ -1279,6 +1288,7 @@ function renderResult(guess, ctry, animate) {
   if (animate) {
     countUp(scoreEl, score, 650, () => playTierSound(score));
     popGems(sq);
+    document.getElementById("nextBtn").focus({ preventScroll: true });
   } else {
     scoreEl.textContent = score;
   }

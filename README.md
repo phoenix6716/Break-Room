@@ -106,3 +106,11 @@ The original generated atlases are retained in `icons/generated/source/`. `manif
 Score receipts retain the clean system sans-serif numerals, compact monospace labels, side-by-side price comparison, and small verification date. Preview images and a complete HTML catalogue are in `design/previews/lowball-images/`.
 
 Run `ARCADE_TEST_URL=http://127.0.0.1:8015 node tests/lowball-art.cjs` against a local static server. It checks every asset through the actual game, all gem tiers, sound switching/persistence, and result/play layouts at four widths. The artwork needs no external image host, API key, or generation service at runtime.
+
+### Lowball counter and Stake tabletop
+
+Lowball's active playing surface is styled by `games/lowball/engine/counter.css`: a large item display on a shop shelf, printed product label, cash-register price input, and a receipt reveal with a stamped verdict and perforated paper edge. Existing generated PNGs, prices, regions, score calculations, and saved rounds are retained. Mobile prioritises the counter, with quick stats below. Enter submits a price and focuses Next; Enter again moves to the next item without skipping the receipt.
+
+Stake's active surface is styled by `games/stake/table.css`: textured green felt with a stitched edge, paper question cards and category tabs, a three-chip betting dock, and chip-stack feedback. The countdown is integrated into the question card and turns coral in the last ten seconds. The score tally, 30-second deadline, timeout penalties, Daily/Unlimited state, and shared popup design remain intact. Chips stay circular at every screen width. Keyboard betting/answering retains focus inside the game, and the mode tabs support arrow keys, Home, and End.
+
+Short stepped entrance, receipt, stamp, and chip animations respect reduced-motion preferences. Previews of play, receipt, review, timeout, and final-score states are in `design/previews/game-polish/`. Run `tests/game-surfaces.cjs` against the local server for keyboard, responsive layout, long-question, chip-shape and reduced-motion checks. Continue to use `tests/smoke.cjs`, `tests/lowball-art.cjs`, `tests/stake-timer.cjs`, and `tests/stake-sharing.cjs` for gameplay, image coverage, persistence and sharing.
