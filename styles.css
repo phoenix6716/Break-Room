@@ -86,3 +86,11 @@ html .brand .brand-logo img.brand-logo-art{position:absolute;display:block;width
 .home-page .pixel-rule{height:4px;filter:none}
 @media(max-width:760px){.home-intro{padding:18px;align-items:flex-start;flex-direction:column;gap:14px}.home-page .page{padding-top:22px}.home-page .home-reset{flex-direction:row;flex-wrap:wrap;gap:12px}.home-reset>div{flex:1 1 240px}.home-page .game-card-content{padding:12px}}
 @media(max-width:380px){.home-intro{padding:15px}.home-intro-copy{font-size:15px}.home-page .game-card-content{padding:10px}.home-page .game-card h3{font-size:15px}}
+
+/* Centre the main-site logo independently of the unequal navigation/account groups. */
+.header-inner{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:16px}
+.header-inner>.nav{grid-column:1;grid-row:1;justify-self:start;display:flex;width:auto;order:initial;padding:0}
+.header-inner>.brand{grid-column:2;grid-row:1;justify-self:center}
+.header-inner>.header-user{grid-column:3;grid-row:1;justify-self:end;margin-left:0}
+@media(max-width:900px){.header-inner{gap:6px 8px;padding:8px 0 0}.header-inner>.nav{grid-column:1/-1;grid-row:2;justify-self:stretch;justify-content:center;gap:8px;width:100%;padding-bottom:8px}}
+@media(max-width:600px){.header-inner>.brand .brand-logo{width:clamp(118px,38vw,172px);height:50px}.header-inner>.header-user{gap:4px}.header-inner>.header-user .button{font-size:9px;min-height:36px;padding:0 6px}.header-inner>.header-user .avatar{width:28px;height:28px;font-size:10px}}

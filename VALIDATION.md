@@ -33,4 +33,4 @@ Question and results screenshots are saved in `design/previews/stake-readable-qu
 
 ## Shared header group order
 
-The six main site pages now place Home/Friends/Profile between the logo and the Log in/guest group on desktop. Checks at 320, 390, 768, and 1440 pixels confirmed group order, no horizontal overflow, working navigation/login links, and the existing wrapped mobile layout. Game-page headers remain unchanged. Homepage screenshots were refreshed.
+The six main site pages place Home/Friends/Profile on the left, the logo independently centred, and the Log in/guest group on the right on desktop. At narrower widths the navigation occupies a second row while the logo remains centred above it and the account group stays on the right. Checks at 320, 390, 600, 768, 900, 1024, and 1440 pixels confirmed exact centring, no overlapping groups, no horizontal overflow, and working navigation/login links. Game-page headers remain unchanged. Homepage screenshots were refreshed.
