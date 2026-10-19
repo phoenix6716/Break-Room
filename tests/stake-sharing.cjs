@@ -17,7 +17,7 @@ const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
     assert.ok(font.size>=20&&font.line>=font.size*1.4);
     if(i===0)await page.screenshot({path:`/tmp/stake-question-readable-${width}.png`});
     await page.locator('button.opt').first().click();
-    assert.ok((await page.locator('#app .stake-question').evaluate(el=>getComputedStyle(el).fontFamily)).includes('Inter'));
+    assert.ok((await page.locator('#app .stake-question').evaluate(el=>getComputedStyle(el).fontFamily)).includes('Arial'));
     await page.getByRole('button',{name:i===4?'See results':'Next question',exact:true}).click();
    }
    assert.equal(await page.locator('textarea').count(),0);

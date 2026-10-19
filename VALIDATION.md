@@ -1,3 +1,16 @@
+# Break Room design rollout validation
+
+- Applied production menu, Break Room wordmark/favicon, cream grid, navy borders, pastel controls, and hard shadows.
+- Placeholder games retain all lifecycle markup, help/stats panels, menu and footer controls in the Stack Up introduction layout.
+- Lowball/Stake retain their existing engines and storage namespaces. Lowball iframe now resizes with its board and dialogs remain within the visible viewport.
+- Passed 500 smoke assertions across 320, 390, 768 and 1440px, including full Lowball/Stake daily runs, reload/resume, saved completion, region selection, stats, Unlimited, menu keyboard behaviour and disabled placeholders.
+- Passed Stake sharing tests at 390/1440px: question/review readability, real clipboard content, fallback, failure feedback and focus restoration.
+- Passed shared clock tests, including leap/year boundaries and 23/25-hour DST days; passed browser rollover tests in UTC, Los Angeles, Tokyo and Sydney.
+- Checked homepage, friends, profile, login, signup, style guide and game routes at four widths: no horizontal overflow. No broken local references found.
+- Captured desktop/mobile production-page screenshots under `design/previews/break-room/`; no browser JavaScript or failed-resource errors during capture.
+
+Scope: this rolls out styling, branding and layouts. Account/social backend placeholders and Lowball's existing purchase integration remain as before. Stack Up is explicitly marked Preview on the homepage and links to the uploaded game; it is not yet connected to the shared daily scoring/reset system. Historical design files remain archived.
+
 # Validation
 
 Verified in the prepared cloud environment using Chromium and Playwright:

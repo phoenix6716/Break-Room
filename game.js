@@ -15,7 +15,7 @@
     const element = document.getElementById(id);
     if (element) element.textContent = value;
   };
-  document.title = `${game.title} · Coming soon · Midnight Arcade`;
+  document.title = `${game.title} · Coming soon · Break Room`;
   text('game-title', game.title);
   text('game-category', `${game.category} / COMING SOON`);
   text('game-description', game.description);

@@ -1,0 +1,1 @@
+.break-mark{display:grid;grid-template-columns:repeat(2,10px);gap:3px}.break-mark i{width:10px;height:10px;background:#91c7dc;border:1px solid #17263a}.break-mark i:nth-child(2){background:#b8d957}.break-mark i:nth-child(3){background:#ee6557}.break-mark i:nth-child(4){background:#f9e2a7}

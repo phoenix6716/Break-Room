@@ -1,3 +1,9 @@
+# Break Room
+
+The production site now uses the approved cream grid, navy outlines, pastel palette and hard pixel shadows. The homepage uses the approved menu; placeholder games use the Stack Up introduction layout, and Lowball/Stake use broad boards with supporting controls.
+
+Shared styles: `break-room.css` (core pages and Stake), `menu.css` (homepage), `stack-layout.css` + `game-layout.css` + `placeholder-layout.css` (placeholder templates), and `games/lowball/engine/break-room-engine.css` (Lowball iframe). Existing storage keys and game engines are retained. Stack Up remains an explicitly labelled preview linked to the supplied game; its scoring/reset integration is separate.
+
 # Midnight Arcade
 
 A static daily games website with the approved purple arcade styling and shared game header. No framework, package installation, or build step is required.

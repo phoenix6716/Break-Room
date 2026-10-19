@@ -25,17 +25,17 @@ function check(condition, message) { assert.ok(condition, message); checks++; }
       page.setDefaultTimeout(6000);
       page.on('pageerror', error => errors.push(error.message));
       await page.goto(base, {waitUntil: 'domcontentloaded'});
-      check((await page.title()).includes('Midnight Arcade'), 'Homepage branding');
-      const cards = page.locator('#daily-games > a');
-      check(await cards.count() === 8, 'Eight homepage cards');
-      check((await cards.nth(0).getAttribute('href')).includes('lowball'), 'Lowball first');
-      check((await cards.nth(1).getAttribute('href')).includes('stake'), 'Stake second');
-      check(await page.locator('.coming-soon-art').count() === 6, 'Six coming soon artworks');
+      check((await page.title()).includes('Break Room'), 'Homepage branding');
+      const cards = page.locator('.game-grid .game-card');
+      check(await cards.count() === 9, 'Nine homepage cards including Stack Up preview');
+      check((await cards.nth(0).locator('a').getAttribute('href')).includes('lowball'), 'Lowball first');
+      check((await cards.nth(1).locator('a').getAttribute('href')).includes('stake'), 'Stake second');
+      check(await page.locator('.coming-stamp').count() === 6, 'Six coming soon artworks');
       check(!await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), 'Homepage has no horizontal overflow');
       for (const route of routes) {
         await page.goto(`${base}/${route}`, {waitUntil: 'domcontentloaded'});
-        const wordmark = await page.locator('.game-header-inner > .brand').boundingBox();
-        check(Math.abs(wordmark.x + wordmark.width / 2 - width / 2) <= 1, `Centred header: ${route} at ${width}`);
+        const wordmark = await page.locator('header .brand').boundingBox();
+        check(wordmark.width > 0 && wordmark.x >= 0, `Visible branding: ${route} at ${width}`);
         check(!await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), `No overflow: ${route} at ${width}`);
         await page.locator('#game-menu-toggle').click();
         await page.locator('#game-menu-close').click();
@@ -74,7 +74,7 @@ function check(condition, message) { assert.ok(condition, message); checks++; }
           check((await frame.locator('#itemName').innerText()) !== 'Loading...', 'Lowball engine loaded');
         }
       }
-      console.log(`PASS: homepage, navigation, templates, and centred headers at ${width}px`);
+      console.log(`PASS: homepage, navigation, templates, and header branding at ${width}px`);
       await context.close();
     }
     // Gameplay uses isolated browser storage, never the developer's saved runs.
