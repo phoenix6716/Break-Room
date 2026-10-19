@@ -7,8 +7,6 @@
 .sort-card:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--ink); }
 .sort-card.dragging { opacity: .4; transform: scale(.95); }
 .sort-card.drag-over { background: #e3f2ed; transform: translateX(3px); }
-.sort-card.wrong { animation: shake .42s ease both; border-color: var(--coral); background: #fff0e9; }
-.sort-card.correct { animation: pop .42s ease both; border-color: var(--green); background: #edf7dc; }
 .card-number { color: var(--ink-soft); font-family: ui-monospace, monospace; font-size: 10px; font-weight: 800; }
 .card-symbol { display: grid; place-items: center; width: 34px; height: 34px; border: 1.5px solid var(--ink); background: var(--blue); color: var(--ink); font-family: ui-monospace, monospace; font-size: 18px; font-weight: 900; }
 .card-symbol.alt-1 { background: #f6c671; }.card-symbol.alt-2 { background: #b8d957; }.card-symbol.alt-3 { background: #d8c6e7; }.card-symbol.alt-4 { background: #f1a99e; }
@@ -81,7 +79,7 @@
 .card-name{font:800 13px/1.35 Arial,sans-serif}.card-detail:empty{display:none}.card-moves{display:flex;gap:5px;margin-top:5px}
 .card-moves button{flex:1;min-width:0;min-height:36px;border:1.5px solid var(--ink);background:var(--white);font:900 16px ui-monospace,monospace;box-shadow:1px 1px var(--ink)}
 .card-moves button:disabled{opacity:.3}.sort-card:focus-visible,.sort-card:focus-within{outline:3px solid var(--coral);outline-offset:3px;background:#e4f2f4}
-.board-actions{align-items:center}.message{font:600 12px/1.6 Arial,sans-serif}.check-button{flex-shrink:0;min-height:44px}.check-button:disabled{opacity:.65;transform:none}
+.board-actions{align-items:center}.message{min-width:0;flex:1;font:600 12px/1.6 Arial,sans-serif;overflow-wrap:anywhere}.check-button{flex-shrink:0;min-height:44px}.check-button:disabled{opacity:.65;transform:none}
 .record-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:16px 0}.record-grid>div{background:var(--paper);border:1px solid var(--ink);padding:12px;min-width:0}.record-grid dt{font:800 10px/1.4 ui-monospace,monospace;color:var(--ink-soft)}.record-grid dd{margin:8px 0 0;font:900 23px/1.2 'Courier New',monospace;overflow-wrap:anywhere}
 .local-note{font:11px/1.5 Arial,sans-serif;color:var(--ink-soft);margin:16px 0 0}.tiny-label{color:var(--coral);font:900 9px/1.5 ui-monospace,monospace;letter-spacing:1px}
 .result-modal{opacity:1;pointer-events:auto;z-index:1100}.result-card{transform:none;max-height:calc(100dvh - 40px);overflow:auto}.result-card h2{font:800 28px/1.2 Arial,sans-serif}
@@ -94,3 +92,9 @@
 #eyebrow{margin:0 0 14px;font:800 9px/1.5 ui-monospace,monospace;letter-spacing:.7px}#eyebrow span{margin-left:6px;color:var(--coral)}
 
 #timer-card.warning{border-color:var(--coral)}#timer-card.warning .timer{color:var(--coral)}#timer-card.warning .timer-track span{background:var(--coral)}#timer-card.urgent{background:#fff1e9}
+
+/* Brief positional feedback after an incorrect submission; also visible on focused cards. */
+#cards .sort-card.correct{border-color:#3a7850;background:#d8ec91}
+#cards .sort-card.wrong{border-color:#b23b32;background:#f9d5cc}
+#cards .sort-card.correct .card-number{color:#285b38}
+#cards .sort-card.wrong .card-number{color:#8c2c26}

@@ -139,3 +139,11 @@ Validation:
 - `tests/layout-goals.cjs` passed at all six widths. Its reset-card reference now comes from the canonical template rather than Stack Up’s retired page stylesheet; computed appearance/countdowns still match across all three games.
 
 No public-host deployment was performed.
+
+### Stack Up incorrect-position feedback — 19 October 2026
+
+Incorrect submissions now highlight each correctly placed card green and each incorrectly placed card red for 1.1 seconds, with ✓/✕ markers and accessible position descriptions. The live message announces how many cards are in the right position. Repeated submissions restart the highlight; moving cards or rendering another stack clears it immediately. The clock continues running, normal Daily/Unlimited penalties apply, and no temporary feedback is saved. Updated the real help text.
+
+`tests/stack-feedback.cjs` passed at 320/390/768/1440px in both modes, including actual computed colours on focused cards, correct per-position classification, expiry/repeated submissions, clearing stale feedback, unchanged penalties, continuing timer and normal correct-stack completion. Screenshot: `design/previews/stack-shell/position-feedback.png`.
+
+`tests/stack-up.cjs` also passed the full Daily/Unlimited gameplay, save/resume, scoring, timeout, midnight, sharing and storage-failure checks. The positional-feedback test also checks that the live message stays clear of the submit button.

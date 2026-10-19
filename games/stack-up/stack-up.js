@@ -3,7 +3,7 @@
  'use strict';
  const $=id=>document.getElementById(id),clock=window.MIDNIGHT_ARCADE_CLOCK;
  const pool=window.STACK_UP_STACKS, prefix='break-room:stack-up:daily:',version=2;
- const memory=new Map();let persistent=true,run=null,mode='daily',dialog=null;
+ const memory=new Map();let persistent=true,run=null,mode='daily',dialog=null,feedbackTimer=null;
  const read=key=>{if(!persistent&&memory.has(key))return memory.get(key);try{return localStorage.getItem(key)||memory.get(key)||null}catch{return memory.get(key)||null}};
  function write(key,value){memory.set(key,value);try{localStorage.setItem(key,value)}catch{persistent=false;$('save-warning').hidden=false;}}
  try{localStorage.setItem('break-room:stack-up:storage-check','1');localStorage.removeItem('break-room:stack-up:storage-check')}catch{persistent=false;$('save-warning').hidden=false;}
@@ -42,7 +42,26 @@
   renderCards();updateTimer();refreshStats();if(complete)renderSummary();
  }
  function move(from,to){if(!currentDay()||!run||run.status!=='playing'||to<0||to>4)return;if(secondsLeft()===0){finish(false);return;}const [value]=run.order.splice(from,1);run.order.splice(to,0,value);save();renderCards();const card=$('cards').querySelector(`[data-value="${value}"]`);card.focus();$('message').textContent=`${stack().cards.find(c=>c.value===value).name} moved to position ${to+1}.`;}
+ function clearPositionFeedback(){
+  clearTimeout(feedbackTimer);feedbackTimer=null;
+  [...$('cards').children].forEach((card,index)=>{
+   card.classList.remove('correct','wrong');card.removeAttribute('aria-description');
+   card.querySelector('.card-number').textContent=String(index+1).padStart(2,'0');
+  });
+ }
+ function flashPositions(){
+  clearPositionFeedback();let correctCount=0;
+  [...$('cards').children].forEach((card,index)=>{
+   const correct=run.order[index]===index+1;if(correct)correctCount++;
+   card.classList.add(correct?'correct':'wrong');
+   card.setAttribute('aria-description',correct?'Correct position':'Incorrect position');
+   card.querySelector('.card-number').textContent=String(index+1).padStart(2,'0')+(correct?' ✓':' ✕');
+  });
+  feedbackTimer=setTimeout(clearPositionFeedback,1100);
+  return correctCount;
+ }
  function renderCards(){
+  clearPositionFeedback();
   const locked=run.status!=='playing',s=stack();$('cards').textContent='';
   run.order.forEach((value,index)=>{
    const item=s.cards.find(c=>c.value===value),card=document.createElement('article');card.className='sort-card';card.draggable=!locked;card.dataset.value=value;card.tabIndex=0;card.setAttribute('aria-label',`${item.name}, position ${index+1} of 5. Use arrow keys to move.`);
@@ -61,7 +80,7 @@
   });
  }
  function updateTimer(){if(!run)return;const seconds=run.status==='playing'?secondsLeft():(run.results.at(-1)?.seconds||0);$('timer').textContent=`${String(Math.floor(seconds/60)).padStart(2,'0')}:${String(seconds%60).padStart(2,'0')}`;$('timer').setAttribute('aria-label',seconds+' seconds remaining');$('timer-fill').style.width=seconds/90*100+'%';$('timer-card').classList.toggle('warning',run.status==='playing'&&seconds<=20);$('timer-card').classList.toggle('urgent',run.status==='playing'&&seconds<=10);$('timer-caption').textContent=run.status==='playing'?'The clock keeps running if you leave this stack.':'Clock stopped. Continue when you are ready.';}
- function check(){if(!run||!currentDay())return;if(run.status==='review'){openResult();return;}if(run.status!=='playing')return;if(secondsLeft()===0){finish(false);return;}if(run.order.every((v,i)=>v===i+1)){finish(true);return;}const loss=mode==='daily'?300:30;run.score-=loss;run.streak=0;run.mistakes++;save();$('run-score').textContent=format(run.score);$('streak-label').innerHTML='STREAK <b>0</b>';$('message').className='message bad';$('message').textContent=`Not quite. −${loss} points. Keep sorting while the clock runs.`;}
+ function check(){if(!run||!currentDay())return;if(run.status==='review'){openResult();return;}if(run.status!=='playing')return;if(secondsLeft()===0){finish(false);return;}if(run.order.every((v,i)=>v===i+1)){finish(true);return;}const loss=mode==='daily'?300:30;run.score-=loss;run.streak=0;run.mistakes++;save();$('run-score').textContent=format(run.score);$('streak-label').innerHTML='STREAK <b>0</b>';$('message').className='message bad';const correctCount=flashPositions();$('message').textContent=`Not quite. −${loss} points. ${correctCount} of 5 cards in the right position.`;}
  function finish(correct){if(!run||run.status!=='playing'||!currentDay())return;const seconds=secondsLeft(),multiplier=mode==='daily'?10:1,points=correct?Math.round((100+seconds*5+run.streak*35)*multiplier):-40*multiplier;run.score+=points;run.streak=correct?run.streak+1:0;run.results.push({correct,points,seconds,mistakes:run.mistakes});run.status=mode==='daily'&&run.round===4?'complete':'review';save();render();openResult();refreshLaunch();}
  function openResult(){if(!run||run.status==='playing')return;const r=run.results.at(-1),complete=run.status==='complete';$('result-kicker').textContent=complete?'DAILY COMPLETE':r.correct?'STACK COMPLETE':'TIME RAN OUT';$('result-title').textContent=complete?'Daily stack cleared.':r.correct?'Nice ordering.':'The clock got you.';$('result-detail').textContent=(r.points>=0?'+':'−')+format(Math.abs(r.points))+' points';$('fact-text').textContent=stack().fact;
   let order=$('correct-order');if(!order){order=document.createElement('p');order.id='correct-order';order.className='correct-order';$('fact-text').after(order);}order.textContent='Correct order: '+stack().cards.slice().sort((a,b)=>a.value-b.value).map(c=>c.name).join(' → ');
