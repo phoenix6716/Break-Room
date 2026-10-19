@@ -103,3 +103,7 @@ Restored the exact cut-corner, softly coloured faceted gems from the initial Bre
 ### Lowball header and reset alignment — 19 October 2026
 
 Moved Lowball's personal stats into the title/tools header row. Matched Stake's countdown wording, styles, shared clock, and desktop/tablet screen coordinates; moved the region selector below it; removed the country-list tagline and its rule. Preserved the midnight-ready reload action. Direct browser checks passed at 320/390/768/1440px for centring, no overlaps/overflow, countdown style parity, region changes, and submitting a guess. `tests/smoke.cjs` passed all 532 assertions. `tests/homepage-reset.cjs` passed responsive and midnight rollover/stale-submission checks in UTC, Los Angeles, Tokyo and Sydney. Updated mobile and desktop Lowball previews are in `design/previews/game-polish/`.
+
+### Centred Lowball layout — 19 October 2026
+
+Replaced the offset sidebar layout with one centred column. Header, mode buttons, progress, playing area, settings row, sound toggle and legal footer share the viewport centre line. Countdown/region controls sit together below the game; sound sits beneath them at the bottom centre. Direct browser checks passed at 320, 390, 650, 768, 900, 1024 and 1440px in play and receipt states, including dropdown fit, no overflow, region switching, scoring, retained faceted gems and sound toggling. `tests/smoke.cjs` passed all 532 assertions; `tests/lowball-art.cjs` passed. Updated desktop/mobile full-page previews show the centred layout.

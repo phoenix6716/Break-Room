@@ -43,3 +43,17 @@ header .stat-strip .stat{padding:12px 4px;border:0;box-shadow:none;background:no
 .sound-btn[aria-pressed=false]{background:#eeeade}.sound-btn[aria-pressed=false] .sound-state{color:#526273}.sound-btn[aria-pressed=false] .sound-switch{background:#c4d2d1}.sound-btn[aria-pressed=false] .sound-switch i{left:2px}
 .sound-btn:hover{opacity:1;transform:translate(-1px,-1px);box-shadow:4px 4px #17263a}.sound-btn:active{transform:translate(2px,2px);box-shadow:1px 1px #17263a}.sound-btn:focus-visible{outline:3px solid #ee6557;outline-offset:4px}
 @media(prefers-reduced-motion:reduce){.sound-btn,.sound-switch i{transition:none}}
+/* One central column: the counter, controls and footer share the same axis. */
+body{padding:28px 24px}.wrap{display:flex;flex-direction:column;align-items:stretch;max-width:760px;width:100%;gap:18px;margin:0 auto}
+header{order:0;align-self:stretch}.mode-toggle{order:1;width:100%;align-self:stretch}.progress-dots{order:2;align-self:stretch;justify-content:center;width:100%;margin:0;padding:0}
+.card{order:3;align-self:stretch;width:100%;max-width:none;margin:0}
+.session-settings{order:4;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start;width:100%;border-top:1px solid #a9b6aa;padding:18px 0 0;margin-top:7px}
+.session-settings .live-reset{display:block;grid-column:auto;grid-row:auto;align-self:start;border:0;padding:0;margin:0;text-align:left}
+.session-settings .live-reset strong{display:block;margin:8px 0;font-size:28px}.session-settings .live-reset p{margin:0}.session-settings .new-daily-ready{margin-top:8px}
+.session-settings .country-row{grid-column:auto;grid-row:auto;order:0;display:flex;flex-direction:column;align-items:stretch;align-self:start;justify-self:end;width:100%;max-width:260px;min-width:0;margin:0;gap:8px}
+.session-settings .cselect{min-width:0}.session-settings .cselect-btn{min-width:0;max-width:100%}.session-settings .cselect-list{left:auto;right:0;max-width:calc(100vw - 32px)}
+.sound-btn{order:5;grid-column:auto;align-self:center;justify-self:center;margin:0 auto 4px;flex:none}
+.legal-footer{order:6;align-self:center;width:100%;max-width:600px;text-align:center}
+@media(max-width:650px){body{padding:22px 16px}.wrap{gap:17px}.session-settings{gap:18px;padding-top:16px}.session-settings .live-reset{font-size:9px}.session-settings .live-reset strong{font-size:23px}.session-settings .live-reset p{font-size:10px;line-height:1.5}.session-settings .country-label{font-size:10px}.session-settings .cselect-btn{font-size:12px;padding:11px 9px}.session-settings .country-row{gap:8px}.session-settings .cselect-list{font-size:12px}}
+@media(max-width:360px){body{padding-left:12px;padding-right:12px}.session-settings{gap:12px}.session-settings .live-reset{font-size:8px}.session-settings .live-reset strong{font-size:21px}.session-settings .cselect-btn{font-size:11px;padding:11px 8px}}
+.session-settings .live-reset{order:0}.session-settings .country-row{order:1}
