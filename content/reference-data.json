@@ -1,0 +1,3088 @@
+{
+  "sources": {
+    "elements": {
+      "url": "https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master/PeriodicTableJSON.json",
+      "retrieved_utc": "2026-10-19T04:32:17.859177+00:00",
+      "sha256": "361bc5b62b646dd9c4ec870e9b5b81fc2f46ebb7d06eb4324c788db5ab768c97"
+    },
+    "countries": {
+      "url": "https://raw.githubusercontent.com/mledoze/countries/master/countries.json",
+      "retrieved_utc": "2026-10-19T04:32:17.859443+00:00",
+      "sha256": "913e5d716f9dc6b59881ee23488d47f5fda52070d1a34cac5fa327c9e61d8f7c"
+    },
+    "books": {
+      "url": "https://raw.githubusercontent.com/benoitvallon/100-best-books/master/books.json",
+      "retrieved_utc": "2026-10-19T04:32:17.860272+00:00",
+      "sha256": "ec4caeebf8d87f44dc3d183a9f8e8c861dd5ef00c9ac10bafbc46ae78223e201"
+    },
+    "movies": {
+      "url": "https://raw.githubusercontent.com/vega/vega-datasets/main/data/movies.json",
+      "retrieved_utc": "2026-10-19T04:32:17.860314+00:00",
+      "sha256": "e63c499759e3b07b49563e036f55290f87feb56def8703ec049ca305ab1523d3"
+    },
+    "airports": {
+      "url": "https://raw.githubusercontent.com/datasets/airport-codes/master/data/airport-codes.csv",
+      "retrieved_utc": "2026-10-19T04:32:17.861069+00:00",
+      "sha256": "52545fe3cbd7806f4d06c84fc2f93d805bb5f4cef60c463600fe586cd5ff47cf"
+    },
+    "airport-crosscheck": {
+      "url": "https://raw.githubusercontent.com/mwgg/Airports/master/airports.json",
+      "retrieved_utc": "2026-10-19T04:32:17.866787+00:00",
+      "sha256": "a7754cbe722ea21f0f9ab1ef07f4f07ee1e85b9cc99191ebde0b49fabb3c149a"
+    },
+    "math": {
+      "method": "Exact integer arithmetic, Fraction rational arithmetic, and polygon formulae; no external factual assertion."
+    }
+  },
+  "elements": {
+    "Hydrogen": {
+      "name": "Hydrogen",
+      "symbol": "H",
+      "number": 1,
+      "melt": 13.99,
+      "density_g_cm3": 8.988e-05,
+      "phase": "Gas"
+    },
+    "Helium": {
+      "name": "Helium",
+      "symbol": "He",
+      "number": 2,
+      "melt": 0.95,
+      "density_g_cm3": 0.0001786,
+      "phase": "Gas"
+    },
+    "Lithium": {
+      "name": "Lithium",
+      "symbol": "Li",
+      "number": 3,
+      "melt": 453.65,
+      "density_g_cm3": 0.534,
+      "phase": "Solid"
+    },
+    "Beryllium": {
+      "name": "Beryllium",
+      "symbol": "Be",
+      "number": 4,
+      "melt": 1560,
+      "density_g_cm3": 1.85,
+      "phase": "Solid"
+    },
+    "Boron": {
+      "name": "Boron",
+      "symbol": "B",
+      "number": 5,
+      "melt": 2349,
+      "density_g_cm3": 2.08,
+      "phase": "Solid"
+    },
+    "Carbon": {
+      "name": "Carbon",
+      "symbol": "C",
+      "number": 6,
+      "melt": 4600,
+      "density_g_cm3": 1.821,
+      "phase": "Solid"
+    },
+    "Nitrogen": {
+      "name": "Nitrogen",
+      "symbol": "N",
+      "number": 7,
+      "melt": 63.15,
+      "density_g_cm3": 0.001251,
+      "phase": "Gas"
+    },
+    "Oxygen": {
+      "name": "Oxygen",
+      "symbol": "O",
+      "number": 8,
+      "melt": 54.36,
+      "density_g_cm3": 0.001429,
+      "phase": "Gas"
+    },
+    "Fluorine": {
+      "name": "Fluorine",
+      "symbol": "F",
+      "number": 9,
+      "melt": 53.48,
+      "density_g_cm3": 0.001696,
+      "phase": "Gas"
+    },
+    "Neon": {
+      "name": "Neon",
+      "symbol": "Ne",
+      "number": 10,
+      "melt": 24.56,
+      "density_g_cm3": 0.0009002,
+      "phase": "Gas"
+    },
+    "Sodium": {
+      "name": "Sodium",
+      "symbol": "Na",
+      "number": 11,
+      "melt": 370.944,
+      "density_g_cm3": 0.968,
+      "phase": "Solid"
+    },
+    "Magnesium": {
+      "name": "Magnesium",
+      "symbol": "Mg",
+      "number": 12,
+      "melt": 923,
+      "density_g_cm3": 1.738,
+      "phase": "Solid"
+    },
+    "Aluminium": {
+      "name": "Aluminium",
+      "symbol": "Al",
+      "number": 13,
+      "melt": 933.47,
+      "density_g_cm3": 2.7,
+      "phase": "Solid"
+    },
+    "Silicon": {
+      "name": "Silicon",
+      "symbol": "Si",
+      "number": 14,
+      "melt": 1687,
+      "density_g_cm3": 2.329,
+      "phase": "Solid"
+    },
+    "Phosphorus": {
+      "name": "Phosphorus",
+      "symbol": "P",
+      "number": 15,
+      "melt": 317.3,
+      "density_g_cm3": 1.823,
+      "phase": "Solid"
+    },
+    "Sulfur": {
+      "name": "Sulfur",
+      "symbol": "S",
+      "number": 16,
+      "melt": 388.36,
+      "density_g_cm3": 2.07,
+      "phase": "Solid"
+    },
+    "Chlorine": {
+      "name": "Chlorine",
+      "symbol": "Cl",
+      "number": 17,
+      "melt": 171.6,
+      "density_g_cm3": 0.0032,
+      "phase": "Gas"
+    },
+    "Argon": {
+      "name": "Argon",
+      "symbol": "Ar",
+      "number": 18,
+      "melt": 83.81,
+      "density_g_cm3": 0.001784,
+      "phase": "Gas"
+    },
+    "Potassium": {
+      "name": "Potassium",
+      "symbol": "K",
+      "number": 19,
+      "melt": 336.7,
+      "density_g_cm3": 0.862,
+      "phase": "Solid"
+    },
+    "Calcium": {
+      "name": "Calcium",
+      "symbol": "Ca",
+      "number": 20,
+      "melt": 1115,
+      "density_g_cm3": 1.55,
+      "phase": "Solid"
+    },
+    "Scandium": {
+      "name": "Scandium",
+      "symbol": "Sc",
+      "number": 21,
+      "melt": 1814,
+      "density_g_cm3": 2.985,
+      "phase": "Solid"
+    },
+    "Titanium": {
+      "name": "Titanium",
+      "symbol": "Ti",
+      "number": 22,
+      "melt": 1941,
+      "density_g_cm3": 4.506,
+      "phase": "Solid"
+    },
+    "Vanadium": {
+      "name": "Vanadium",
+      "symbol": "V",
+      "number": 23,
+      "melt": 2183,
+      "density_g_cm3": 6,
+      "phase": "Solid"
+    },
+    "Chromium": {
+      "name": "Chromium",
+      "symbol": "Cr",
+      "number": 24,
+      "melt": 2180,
+      "density_g_cm3": 7.19,
+      "phase": "Solid"
+    },
+    "Manganese": {
+      "name": "Manganese",
+      "symbol": "Mn",
+      "number": 25,
+      "melt": 1519,
+      "density_g_cm3": 7.21,
+      "phase": "Solid"
+    },
+    "Iron": {
+      "name": "Iron",
+      "symbol": "Fe",
+      "number": 26,
+      "melt": 1811,
+      "density_g_cm3": 7.874,
+      "phase": "Solid"
+    },
+    "Cobalt": {
+      "name": "Cobalt",
+      "symbol": "Co",
+      "number": 27,
+      "melt": 1768,
+      "density_g_cm3": 8.9,
+      "phase": "Solid"
+    },
+    "Nickel": {
+      "name": "Nickel",
+      "symbol": "Ni",
+      "number": 28,
+      "melt": 1728,
+      "density_g_cm3": 8.908,
+      "phase": "Solid"
+    },
+    "Copper": {
+      "name": "Copper",
+      "symbol": "Cu",
+      "number": 29,
+      "melt": 1357.77,
+      "density_g_cm3": 8.96,
+      "phase": "Solid"
+    },
+    "Zinc": {
+      "name": "Zinc",
+      "symbol": "Zn",
+      "number": 30,
+      "melt": 692.68,
+      "density_g_cm3": 7.14,
+      "phase": "Solid"
+    },
+    "Gallium": {
+      "name": "Gallium",
+      "symbol": "Ga",
+      "number": 31,
+      "melt": 302.9146,
+      "density_g_cm3": 5.91,
+      "phase": "Solid"
+    },
+    "Germanium": {
+      "name": "Germanium",
+      "symbol": "Ge",
+      "number": 32,
+      "melt": 1211.4,
+      "density_g_cm3": 5.323,
+      "phase": "Solid"
+    },
+    "Arsenic": {
+      "name": "Arsenic",
+      "symbol": "As",
+      "number": 33,
+      "melt": 1090,
+      "density_g_cm3": 5.727,
+      "phase": "Solid"
+    },
+    "Selenium": {
+      "name": "Selenium",
+      "symbol": "Se",
+      "number": 34,
+      "melt": 494,
+      "density_g_cm3": 4.81,
+      "phase": "Solid"
+    },
+    "Bromine": {
+      "name": "Bromine",
+      "symbol": "Br",
+      "number": 35,
+      "melt": 265.8,
+      "density_g_cm3": 3.1028,
+      "phase": "Liquid"
+    },
+    "Krypton": {
+      "name": "Krypton",
+      "symbol": "Kr",
+      "number": 36,
+      "melt": 115.78,
+      "density_g_cm3": 0.003749,
+      "phase": "Gas"
+    },
+    "Rubidium": {
+      "name": "Rubidium",
+      "symbol": "Rb",
+      "number": 37,
+      "melt": 312.45,
+      "density_g_cm3": 1.532,
+      "phase": "Solid"
+    },
+    "Strontium": {
+      "name": "Strontium",
+      "symbol": "Sr",
+      "number": 38,
+      "melt": 1050,
+      "density_g_cm3": 2.64,
+      "phase": "Solid"
+    },
+    "Yttrium": {
+      "name": "Yttrium",
+      "symbol": "Y",
+      "number": 39,
+      "melt": 1799,
+      "density_g_cm3": 4.472,
+      "phase": "Solid"
+    },
+    "Zirconium": {
+      "name": "Zirconium",
+      "symbol": "Zr",
+      "number": 40,
+      "melt": 2128,
+      "density_g_cm3": 6.52,
+      "phase": "Solid"
+    },
+    "Niobium": {
+      "name": "Niobium",
+      "symbol": "Nb",
+      "number": 41,
+      "melt": 2750,
+      "density_g_cm3": 8.57,
+      "phase": "Solid"
+    },
+    "Molybdenum": {
+      "name": "Molybdenum",
+      "symbol": "Mo",
+      "number": 42,
+      "melt": 2896,
+      "density_g_cm3": 10.28,
+      "phase": "Solid"
+    },
+    "Technetium": {
+      "name": "Technetium",
+      "symbol": "Tc",
+      "number": 43,
+      "melt": 2430,
+      "density_g_cm3": 11,
+      "phase": "Solid"
+    },
+    "Ruthenium": {
+      "name": "Ruthenium",
+      "symbol": "Ru",
+      "number": 44,
+      "melt": 2607,
+      "density_g_cm3": 12.45,
+      "phase": "Solid"
+    },
+    "Rhodium": {
+      "name": "Rhodium",
+      "symbol": "Rh",
+      "number": 45,
+      "melt": 2237,
+      "density_g_cm3": 12.41,
+      "phase": "Solid"
+    },
+    "Palladium": {
+      "name": "Palladium",
+      "symbol": "Pd",
+      "number": 46,
+      "melt": 1828.05,
+      "density_g_cm3": 12.023,
+      "phase": "Solid"
+    },
+    "Silver": {
+      "name": "Silver",
+      "symbol": "Ag",
+      "number": 47,
+      "melt": 1234.93,
+      "density_g_cm3": 10.49,
+      "phase": "Solid"
+    },
+    "Cadmium": {
+      "name": "Cadmium",
+      "symbol": "Cd",
+      "number": 48,
+      "melt": 594.22,
+      "density_g_cm3": 8.65,
+      "phase": "Solid"
+    },
+    "Indium": {
+      "name": "Indium",
+      "symbol": "In",
+      "number": 49,
+      "melt": 429.7485,
+      "density_g_cm3": 7.31,
+      "phase": "Solid"
+    },
+    "Tin": {
+      "name": "Tin",
+      "symbol": "Sn",
+      "number": 50,
+      "melt": 505.08,
+      "density_g_cm3": 7.365,
+      "phase": "Solid"
+    },
+    "Antimony": {
+      "name": "Antimony",
+      "symbol": "Sb",
+      "number": 51,
+      "melt": 903.78,
+      "density_g_cm3": 6.697,
+      "phase": "Solid"
+    },
+    "Tellurium": {
+      "name": "Tellurium",
+      "symbol": "Te",
+      "number": 52,
+      "melt": 722.66,
+      "density_g_cm3": 6.24,
+      "phase": "Solid"
+    },
+    "Iodine": {
+      "name": "Iodine",
+      "symbol": "I",
+      "number": 53,
+      "melt": 386.85,
+      "density_g_cm3": 4.933,
+      "phase": "Solid"
+    },
+    "Xenon": {
+      "name": "Xenon",
+      "symbol": "Xe",
+      "number": 54,
+      "melt": 161.4,
+      "density_g_cm3": 0.005894,
+      "phase": "Gas"
+    },
+    "Cesium": {
+      "name": "Cesium",
+      "symbol": "Cs",
+      "number": 55,
+      "melt": 301.7,
+      "density_g_cm3": 1.93,
+      "phase": "Solid"
+    },
+    "Barium": {
+      "name": "Barium",
+      "symbol": "Ba",
+      "number": 56,
+      "melt": 1000,
+      "density_g_cm3": 3.51,
+      "phase": "Solid"
+    },
+    "Lanthanum": {
+      "name": "Lanthanum",
+      "symbol": "La",
+      "number": 57,
+      "melt": 1193,
+      "density_g_cm3": 6.162,
+      "phase": "Solid"
+    },
+    "Cerium": {
+      "name": "Cerium",
+      "symbol": "Ce",
+      "number": 58,
+      "melt": 1068,
+      "density_g_cm3": 6.77,
+      "phase": "Solid"
+    },
+    "Praseodymium": {
+      "name": "Praseodymium",
+      "symbol": "Pr",
+      "number": 59,
+      "melt": 1208,
+      "density_g_cm3": 6.77,
+      "phase": "Solid"
+    },
+    "Neodymium": {
+      "name": "Neodymium",
+      "symbol": "Nd",
+      "number": 60,
+      "melt": 1297,
+      "density_g_cm3": 7.01,
+      "phase": "Solid"
+    },
+    "Promethium": {
+      "name": "Promethium",
+      "symbol": "Pm",
+      "number": 61,
+      "melt": 1315,
+      "density_g_cm3": 7.26,
+      "phase": "Solid"
+    },
+    "Samarium": {
+      "name": "Samarium",
+      "symbol": "Sm",
+      "number": 62,
+      "melt": 1345,
+      "density_g_cm3": 7.52,
+      "phase": "Solid"
+    },
+    "Europium": {
+      "name": "Europium",
+      "symbol": "Eu",
+      "number": 63,
+      "melt": 1099,
+      "density_g_cm3": 5.264,
+      "phase": "Solid"
+    },
+    "Gadolinium": {
+      "name": "Gadolinium",
+      "symbol": "Gd",
+      "number": 64,
+      "melt": 1585,
+      "density_g_cm3": 7.9,
+      "phase": "Solid"
+    },
+    "Terbium": {
+      "name": "Terbium",
+      "symbol": "Tb",
+      "number": 65,
+      "melt": 1629,
+      "density_g_cm3": 8.23,
+      "phase": "Solid"
+    },
+    "Dysprosium": {
+      "name": "Dysprosium",
+      "symbol": "Dy",
+      "number": 66,
+      "melt": 1680,
+      "density_g_cm3": 8.54,
+      "phase": "Solid"
+    },
+    "Holmium": {
+      "name": "Holmium",
+      "symbol": "Ho",
+      "number": 67,
+      "melt": 1734,
+      "density_g_cm3": 8.79,
+      "phase": "Solid"
+    },
+    "Erbium": {
+      "name": "Erbium",
+      "symbol": "Er",
+      "number": 68,
+      "melt": 1802,
+      "density_g_cm3": 9.066,
+      "phase": "Solid"
+    },
+    "Thulium": {
+      "name": "Thulium",
+      "symbol": "Tm",
+      "number": 69,
+      "melt": 1818,
+      "density_g_cm3": 9.32,
+      "phase": "Solid"
+    },
+    "Ytterbium": {
+      "name": "Ytterbium",
+      "symbol": "Yb",
+      "number": 70,
+      "melt": 1097,
+      "density_g_cm3": 6.9,
+      "phase": "Solid"
+    },
+    "Lutetium": {
+      "name": "Lutetium",
+      "symbol": "Lu",
+      "number": 71,
+      "melt": 1925,
+      "density_g_cm3": 9.841,
+      "phase": "Solid"
+    },
+    "Hafnium": {
+      "name": "Hafnium",
+      "symbol": "Hf",
+      "number": 72,
+      "melt": 2506,
+      "density_g_cm3": 13.31,
+      "phase": "Solid"
+    },
+    "Tantalum": {
+      "name": "Tantalum",
+      "symbol": "Ta",
+      "number": 73,
+      "melt": 3290,
+      "density_g_cm3": 16.69,
+      "phase": "Solid"
+    },
+    "Tungsten": {
+      "name": "Tungsten",
+      "symbol": "W",
+      "number": 74,
+      "melt": 3695,
+      "density_g_cm3": 19.25,
+      "phase": "Solid"
+    },
+    "Rhenium": {
+      "name": "Rhenium",
+      "symbol": "Re",
+      "number": 75,
+      "melt": 3459,
+      "density_g_cm3": 21.02,
+      "phase": "Solid"
+    },
+    "Osmium": {
+      "name": "Osmium",
+      "symbol": "Os",
+      "number": 76,
+      "melt": 3306,
+      "density_g_cm3": 22.59,
+      "phase": "Solid"
+    },
+    "Iridium": {
+      "name": "Iridium",
+      "symbol": "Ir",
+      "number": 77,
+      "melt": 2719,
+      "density_g_cm3": 22.56,
+      "phase": "Solid"
+    },
+    "Platinum": {
+      "name": "Platinum",
+      "symbol": "Pt",
+      "number": 78,
+      "melt": 2041.4,
+      "density_g_cm3": 21.45,
+      "phase": "Solid"
+    },
+    "Gold": {
+      "name": "Gold",
+      "symbol": "Au",
+      "number": 79,
+      "melt": 1337.33,
+      "density_g_cm3": 19.3,
+      "phase": "Solid"
+    },
+    "Mercury": {
+      "name": "Mercury",
+      "symbol": "Hg",
+      "number": 80,
+      "melt": 234.321,
+      "density_g_cm3": 13.534,
+      "phase": "Liquid"
+    },
+    "Thallium": {
+      "name": "Thallium",
+      "symbol": "Tl",
+      "number": 81,
+      "melt": 577,
+      "density_g_cm3": 11.85,
+      "phase": "Solid"
+    },
+    "Lead": {
+      "name": "Lead",
+      "symbol": "Pb",
+      "number": 82,
+      "melt": 600.61,
+      "density_g_cm3": 11.34,
+      "phase": "Solid"
+    },
+    "Bismuth": {
+      "name": "Bismuth",
+      "symbol": "Bi",
+      "number": 83,
+      "melt": 544.7,
+      "density_g_cm3": 9.78,
+      "phase": "Solid"
+    },
+    "Polonium": {
+      "name": "Polonium",
+      "symbol": "Po",
+      "number": 84,
+      "melt": 527,
+      "density_g_cm3": 9.196,
+      "phase": "Solid"
+    },
+    "Astatine": {
+      "name": "Astatine",
+      "symbol": "At",
+      "number": 85,
+      "melt": 575,
+      "density_g_cm3": 6.35,
+      "phase": "Solid"
+    },
+    "Radon": {
+      "name": "Radon",
+      "symbol": "Rn",
+      "number": 86,
+      "melt": 202,
+      "density_g_cm3": 0.00973,
+      "phase": "Gas"
+    },
+    "Francium": {
+      "name": "Francium",
+      "symbol": "Fr",
+      "number": 87,
+      "melt": 300,
+      "density_g_cm3": 1.87,
+      "phase": "Solid"
+    },
+    "Radium": {
+      "name": "Radium",
+      "symbol": "Ra",
+      "number": 88,
+      "melt": 1233,
+      "density_g_cm3": 5.5,
+      "phase": "Solid"
+    },
+    "Actinium": {
+      "name": "Actinium",
+      "symbol": "Ac",
+      "number": 89,
+      "melt": 1500,
+      "density_g_cm3": 10,
+      "phase": "Solid"
+    },
+    "Thorium": {
+      "name": "Thorium",
+      "symbol": "Th",
+      "number": 90,
+      "melt": 2023,
+      "density_g_cm3": 11.724,
+      "phase": "Solid"
+    },
+    "Protactinium": {
+      "name": "Protactinium",
+      "symbol": "Pa",
+      "number": 91,
+      "melt": 1841,
+      "density_g_cm3": 15.37,
+      "phase": "Solid"
+    },
+    "Uranium": {
+      "name": "Uranium",
+      "symbol": "U",
+      "number": 92,
+      "melt": 1405.3,
+      "density_g_cm3": 19.1,
+      "phase": "Solid"
+    }
+  },
+  "countries": {
+    "Afghanistan": {
+      "name": "Afghanistan",
+      "area": 652230,
+      "capital": [
+        "Kabul"
+      ]
+    },
+    "Angola": {
+      "name": "Angola",
+      "area": 1246700,
+      "capital": [
+        "Luanda"
+      ]
+    },
+    "Albania": {
+      "name": "Albania",
+      "area": 28748,
+      "capital": [
+        "Tirana"
+      ]
+    },
+    "Andorra": {
+      "name": "Andorra",
+      "area": 468,
+      "capital": [
+        "Andorra la Vella"
+      ]
+    },
+    "United Arab Emirates": {
+      "name": "United Arab Emirates",
+      "area": 83600,
+      "capital": [
+        "Abu Dhabi"
+      ]
+    },
+    "Argentina": {
+      "name": "Argentina",
+      "area": 2780400,
+      "capital": [
+        "Buenos Aires"
+      ]
+    },
+    "Armenia": {
+      "name": "Armenia",
+      "area": 29743,
+      "capital": [
+        "Yerevan"
+      ]
+    },
+    "Antigua and Barbuda": {
+      "name": "Antigua and Barbuda",
+      "area": 442,
+      "capital": [
+        "Saint John's"
+      ]
+    },
+    "Australia": {
+      "name": "Australia",
+      "area": 7692024,
+      "capital": [
+        "Canberra"
+      ]
+    },
+    "Austria": {
+      "name": "Austria",
+      "area": 83871,
+      "capital": [
+        "Vienna"
+      ]
+    },
+    "Azerbaijan": {
+      "name": "Azerbaijan",
+      "area": 86600,
+      "capital": [
+        "Baku"
+      ]
+    },
+    "Burundi": {
+      "name": "Burundi",
+      "area": 27834,
+      "capital": [
+        "Gitega"
+      ]
+    },
+    "Belgium": {
+      "name": "Belgium",
+      "area": 30528,
+      "capital": [
+        "Brussels"
+      ]
+    },
+    "Benin": {
+      "name": "Benin",
+      "area": 112622,
+      "capital": [
+        "Porto-Novo"
+      ]
+    },
+    "Burkina Faso": {
+      "name": "Burkina Faso",
+      "area": 272967,
+      "capital": [
+        "Ouagadougou"
+      ]
+    },
+    "Bangladesh": {
+      "name": "Bangladesh",
+      "area": 147570,
+      "capital": [
+        "Dhaka"
+      ]
+    },
+    "Bulgaria": {
+      "name": "Bulgaria",
+      "area": 110879,
+      "capital": [
+        "Sofia"
+      ]
+    },
+    "Bahrain": {
+      "name": "Bahrain",
+      "area": 765,
+      "capital": [
+        "Manama"
+      ]
+    },
+    "Bahamas": {
+      "name": "Bahamas",
+      "area": 13943,
+      "capital": [
+        "Nassau"
+      ]
+    },
+    "Bosnia and Herzegovina": {
+      "name": "Bosnia and Herzegovina",
+      "area": 51209,
+      "capital": [
+        "Sarajevo"
+      ]
+    },
+    "Belarus": {
+      "name": "Belarus",
+      "area": 207600,
+      "capital": [
+        "Minsk"
+      ]
+    },
+    "Belize": {
+      "name": "Belize",
+      "area": 22966,
+      "capital": [
+        "Belmopan"
+      ]
+    },
+    "Bolivia": {
+      "name": "Bolivia",
+      "area": 1098581,
+      "capital": [
+        "Sucre"
+      ]
+    },
+    "Brazil": {
+      "name": "Brazil",
+      "area": 8515767,
+      "capital": [
+        "Brasília"
+      ]
+    },
+    "Barbados": {
+      "name": "Barbados",
+      "area": 430,
+      "capital": [
+        "Bridgetown"
+      ]
+    },
+    "Brunei": {
+      "name": "Brunei",
+      "area": 5765,
+      "capital": [
+        "Bandar Seri Begawan"
+      ]
+    },
+    "Bhutan": {
+      "name": "Bhutan",
+      "area": 38394,
+      "capital": [
+        "Thimphu"
+      ]
+    },
+    "Botswana": {
+      "name": "Botswana",
+      "area": 582000,
+      "capital": [
+        "Gaborone"
+      ]
+    },
+    "Central African Republic": {
+      "name": "Central African Republic",
+      "area": 622984,
+      "capital": [
+        "Bangui"
+      ]
+    },
+    "Canada": {
+      "name": "Canada",
+      "area": 9984670,
+      "capital": [
+        "Ottawa"
+      ]
+    },
+    "Switzerland": {
+      "name": "Switzerland",
+      "area": 41284,
+      "capital": [
+        "Bern"
+      ]
+    },
+    "Chile": {
+      "name": "Chile",
+      "area": 756102,
+      "capital": [
+        "Santiago"
+      ]
+    },
+    "China": {
+      "name": "China",
+      "area": 9706961,
+      "capital": [
+        "Beijing"
+      ]
+    },
+    "Ivory Coast": {
+      "name": "Ivory Coast",
+      "area": 322463,
+      "capital": [
+        "Yamoussoukro"
+      ]
+    },
+    "Cameroon": {
+      "name": "Cameroon",
+      "area": 475442,
+      "capital": [
+        "Yaoundé"
+      ]
+    },
+    "DR Congo": {
+      "name": "DR Congo",
+      "area": 2344858,
+      "capital": [
+        "Kinshasa"
+      ]
+    },
+    "Congo": {
+      "name": "Congo",
+      "area": 342000,
+      "capital": [
+        "Brazzaville"
+      ]
+    },
+    "Colombia": {
+      "name": "Colombia",
+      "area": 1141748,
+      "capital": [
+        "Bogotá"
+      ]
+    },
+    "Comoros": {
+      "name": "Comoros",
+      "area": 1862,
+      "capital": [
+        "Moroni"
+      ]
+    },
+    "Cape Verde": {
+      "name": "Cape Verde",
+      "area": 4033,
+      "capital": [
+        "Praia"
+      ]
+    },
+    "Costa Rica": {
+      "name": "Costa Rica",
+      "area": 51100,
+      "capital": [
+        "San José"
+      ]
+    },
+    "Cuba": {
+      "name": "Cuba",
+      "area": 109884,
+      "capital": [
+        "Havana"
+      ]
+    },
+    "Cyprus": {
+      "name": "Cyprus",
+      "area": 9251,
+      "capital": [
+        "Nicosia"
+      ]
+    },
+    "Czechia": {
+      "name": "Czechia",
+      "area": 78865,
+      "capital": [
+        "Prague"
+      ]
+    },
+    "Germany": {
+      "name": "Germany",
+      "area": 357114,
+      "capital": [
+        "Berlin"
+      ]
+    },
+    "Djibouti": {
+      "name": "Djibouti",
+      "area": 23200,
+      "capital": [
+        "Djibouti"
+      ]
+    },
+    "Dominica": {
+      "name": "Dominica",
+      "area": 751,
+      "capital": [
+        "Roseau"
+      ]
+    },
+    "Denmark": {
+      "name": "Denmark",
+      "area": 43094,
+      "capital": [
+        "Copenhagen"
+      ]
+    },
+    "Dominican Republic": {
+      "name": "Dominican Republic",
+      "area": 48671,
+      "capital": [
+        "Santo Domingo"
+      ]
+    },
+    "Algeria": {
+      "name": "Algeria",
+      "area": 2381741,
+      "capital": [
+        "Algiers"
+      ]
+    },
+    "Ecuador": {
+      "name": "Ecuador",
+      "area": 276841,
+      "capital": [
+        "Quito"
+      ]
+    },
+    "Egypt": {
+      "name": "Egypt",
+      "area": 1002450,
+      "capital": [
+        "Cairo"
+      ]
+    },
+    "Eritrea": {
+      "name": "Eritrea",
+      "area": 117600,
+      "capital": [
+        "Asmara"
+      ]
+    },
+    "Spain": {
+      "name": "Spain",
+      "area": 505992,
+      "capital": [
+        "Madrid"
+      ]
+    },
+    "Estonia": {
+      "name": "Estonia",
+      "area": 45227,
+      "capital": [
+        "Tallinn"
+      ]
+    },
+    "Ethiopia": {
+      "name": "Ethiopia",
+      "area": 1104300,
+      "capital": [
+        "Addis Ababa"
+      ]
+    },
+    "Finland": {
+      "name": "Finland",
+      "area": 338424,
+      "capital": [
+        "Helsinki"
+      ]
+    },
+    "Fiji": {
+      "name": "Fiji",
+      "area": 18272,
+      "capital": [
+        "Suva"
+      ]
+    },
+    "France": {
+      "name": "France",
+      "area": 551695,
+      "capital": [
+        "Paris"
+      ]
+    },
+    "Micronesia": {
+      "name": "Micronesia",
+      "area": 702,
+      "capital": [
+        "Palikir"
+      ]
+    },
+    "Gabon": {
+      "name": "Gabon",
+      "area": 267668,
+      "capital": [
+        "Libreville"
+      ]
+    },
+    "United Kingdom": {
+      "name": "United Kingdom",
+      "area": 242900,
+      "capital": [
+        "London"
+      ]
+    },
+    "Georgia": {
+      "name": "Georgia",
+      "area": 69700,
+      "capital": [
+        "Tbilisi"
+      ]
+    },
+    "Ghana": {
+      "name": "Ghana",
+      "area": 238533,
+      "capital": [
+        "Accra"
+      ]
+    },
+    "Guinea": {
+      "name": "Guinea",
+      "area": 245857,
+      "capital": [
+        "Conakry"
+      ]
+    },
+    "Gambia": {
+      "name": "Gambia",
+      "area": 10689,
+      "capital": [
+        "Banjul"
+      ]
+    },
+    "Guinea-Bissau": {
+      "name": "Guinea-Bissau",
+      "area": 36125,
+      "capital": [
+        "Bissau"
+      ]
+    },
+    "Equatorial Guinea": {
+      "name": "Equatorial Guinea",
+      "area": 28051,
+      "capital": [
+        "Malabo"
+      ]
+    },
+    "Greece": {
+      "name": "Greece",
+      "area": 131990,
+      "capital": [
+        "Athens"
+      ]
+    },
+    "Grenada": {
+      "name": "Grenada",
+      "area": 344,
+      "capital": [
+        "St. George's"
+      ]
+    },
+    "Guatemala": {
+      "name": "Guatemala",
+      "area": 108889,
+      "capital": [
+        "Guatemala City"
+      ]
+    },
+    "Guyana": {
+      "name": "Guyana",
+      "area": 214969,
+      "capital": [
+        "Georgetown"
+      ]
+    },
+    "Honduras": {
+      "name": "Honduras",
+      "area": 112492,
+      "capital": [
+        "Tegucigalpa"
+      ]
+    },
+    "Croatia": {
+      "name": "Croatia",
+      "area": 56594,
+      "capital": [
+        "Zagreb"
+      ]
+    },
+    "Haiti": {
+      "name": "Haiti",
+      "area": 27750,
+      "capital": [
+        "Port-au-Prince"
+      ]
+    },
+    "Hungary": {
+      "name": "Hungary",
+      "area": 93028,
+      "capital": [
+        "Budapest"
+      ]
+    },
+    "Indonesia": {
+      "name": "Indonesia",
+      "area": 1904569,
+      "capital": [
+        "Jakarta"
+      ]
+    },
+    "India": {
+      "name": "India",
+      "area": 3287590,
+      "capital": [
+        "New Delhi"
+      ]
+    },
+    "Ireland": {
+      "name": "Ireland",
+      "area": 70273,
+      "capital": [
+        "Dublin"
+      ]
+    },
+    "Iran": {
+      "name": "Iran",
+      "area": 1648195,
+      "capital": [
+        "Tehran"
+      ]
+    },
+    "Iraq": {
+      "name": "Iraq",
+      "area": 438317,
+      "capital": [
+        "Baghdad"
+      ]
+    },
+    "Iceland": {
+      "name": "Iceland",
+      "area": 103000,
+      "capital": [
+        "Reykjavik"
+      ]
+    },
+    "Israel": {
+      "name": "Israel",
+      "area": 20770,
+      "capital": [
+        "Jerusalem"
+      ]
+    },
+    "Italy": {
+      "name": "Italy",
+      "area": 301336,
+      "capital": [
+        "Rome"
+      ]
+    },
+    "Jamaica": {
+      "name": "Jamaica",
+      "area": 10991,
+      "capital": [
+        "Kingston"
+      ]
+    },
+    "Jordan": {
+      "name": "Jordan",
+      "area": 89342,
+      "capital": [
+        "Amman"
+      ]
+    },
+    "Japan": {
+      "name": "Japan",
+      "area": 377930,
+      "capital": [
+        "Tokyo"
+      ]
+    },
+    "Kazakhstan": {
+      "name": "Kazakhstan",
+      "area": 2724900,
+      "capital": [
+        "Astana"
+      ]
+    },
+    "Kenya": {
+      "name": "Kenya",
+      "area": 580367,
+      "capital": [
+        "Nairobi"
+      ]
+    },
+    "Kyrgyzstan": {
+      "name": "Kyrgyzstan",
+      "area": 199951,
+      "capital": [
+        "Bishkek"
+      ]
+    },
+    "Cambodia": {
+      "name": "Cambodia",
+      "area": 181035,
+      "capital": [
+        "Phnom Penh"
+      ]
+    },
+    "Kiribati": {
+      "name": "Kiribati",
+      "area": 811,
+      "capital": [
+        "South Tarawa"
+      ]
+    },
+    "Saint Kitts and Nevis": {
+      "name": "Saint Kitts and Nevis",
+      "area": 261,
+      "capital": [
+        "Basseterre"
+      ]
+    },
+    "South Korea": {
+      "name": "South Korea",
+      "area": 100210,
+      "capital": [
+        "Seoul"
+      ]
+    },
+    "Kuwait": {
+      "name": "Kuwait",
+      "area": 17818,
+      "capital": [
+        "Kuwait City"
+      ]
+    },
+    "Laos": {
+      "name": "Laos",
+      "area": 236800,
+      "capital": [
+        "Vientiane"
+      ]
+    },
+    "Lebanon": {
+      "name": "Lebanon",
+      "area": 10452,
+      "capital": [
+        "Beirut"
+      ]
+    },
+    "Liberia": {
+      "name": "Liberia",
+      "area": 111369,
+      "capital": [
+        "Monrovia"
+      ]
+    },
+    "Libya": {
+      "name": "Libya",
+      "area": 1759540,
+      "capital": [
+        "Tripoli"
+      ]
+    },
+    "Saint Lucia": {
+      "name": "Saint Lucia",
+      "area": 616,
+      "capital": [
+        "Castries"
+      ]
+    },
+    "Liechtenstein": {
+      "name": "Liechtenstein",
+      "area": 160,
+      "capital": [
+        "Vaduz"
+      ]
+    },
+    "Sri Lanka": {
+      "name": "Sri Lanka",
+      "area": 65610,
+      "capital": [
+        "Colombo"
+      ]
+    },
+    "Lesotho": {
+      "name": "Lesotho",
+      "area": 30355,
+      "capital": [
+        "Maseru"
+      ]
+    },
+    "Lithuania": {
+      "name": "Lithuania",
+      "area": 65300,
+      "capital": [
+        "Vilnius"
+      ]
+    },
+    "Luxembourg": {
+      "name": "Luxembourg",
+      "area": 2586,
+      "capital": [
+        "Luxembourg"
+      ]
+    },
+    "Latvia": {
+      "name": "Latvia",
+      "area": 64559,
+      "capital": [
+        "Riga"
+      ]
+    },
+    "Morocco": {
+      "name": "Morocco",
+      "area": 446550,
+      "capital": [
+        "Rabat"
+      ]
+    },
+    "Monaco": {
+      "name": "Monaco",
+      "area": 2.02,
+      "capital": [
+        "Monaco"
+      ]
+    },
+    "Moldova": {
+      "name": "Moldova",
+      "area": 33846,
+      "capital": [
+        "Chișinău"
+      ]
+    },
+    "Madagascar": {
+      "name": "Madagascar",
+      "area": 587041,
+      "capital": [
+        "Antananarivo"
+      ]
+    },
+    "Maldives": {
+      "name": "Maldives",
+      "area": 300,
+      "capital": [
+        "Malé"
+      ]
+    },
+    "Mexico": {
+      "name": "Mexico",
+      "area": 1964375,
+      "capital": [
+        "Mexico City"
+      ]
+    },
+    "Marshall Islands": {
+      "name": "Marshall Islands",
+      "area": 181,
+      "capital": [
+        "Majuro"
+      ]
+    },
+    "North Macedonia": {
+      "name": "North Macedonia",
+      "area": 25713,
+      "capital": [
+        "Skopje"
+      ]
+    },
+    "Mali": {
+      "name": "Mali",
+      "area": 1240192,
+      "capital": [
+        "Bamako"
+      ]
+    },
+    "Malta": {
+      "name": "Malta",
+      "area": 316,
+      "capital": [
+        "Valletta"
+      ]
+    },
+    "Myanmar": {
+      "name": "Myanmar",
+      "area": 676578,
+      "capital": [
+        "Naypyidaw"
+      ]
+    },
+    "Montenegro": {
+      "name": "Montenegro",
+      "area": 13812,
+      "capital": [
+        "Podgorica"
+      ]
+    },
+    "Mongolia": {
+      "name": "Mongolia",
+      "area": 1564110,
+      "capital": [
+        "Ulan Bator"
+      ]
+    },
+    "Mozambique": {
+      "name": "Mozambique",
+      "area": 801590,
+      "capital": [
+        "Maputo"
+      ]
+    },
+    "Mauritania": {
+      "name": "Mauritania",
+      "area": 1030700,
+      "capital": [
+        "Nouakchott"
+      ]
+    },
+    "Mauritius": {
+      "name": "Mauritius",
+      "area": 2040,
+      "capital": [
+        "Port Louis"
+      ]
+    },
+    "Malawi": {
+      "name": "Malawi",
+      "area": 118484,
+      "capital": [
+        "Lilongwe"
+      ]
+    },
+    "Malaysia": {
+      "name": "Malaysia",
+      "area": 330803,
+      "capital": [
+        "Kuala Lumpur"
+      ]
+    },
+    "Namibia": {
+      "name": "Namibia",
+      "area": 825615,
+      "capital": [
+        "Windhoek"
+      ]
+    },
+    "Niger": {
+      "name": "Niger",
+      "area": 1267000,
+      "capital": [
+        "Niamey"
+      ]
+    },
+    "Nigeria": {
+      "name": "Nigeria",
+      "area": 923768,
+      "capital": [
+        "Abuja"
+      ]
+    },
+    "Nicaragua": {
+      "name": "Nicaragua",
+      "area": 130373,
+      "capital": [
+        "Managua"
+      ]
+    },
+    "Netherlands": {
+      "name": "Netherlands",
+      "area": 41850,
+      "capital": [
+        "Amsterdam"
+      ]
+    },
+    "Norway": {
+      "name": "Norway",
+      "area": 323802,
+      "capital": [
+        "Oslo"
+      ]
+    },
+    "Nepal": {
+      "name": "Nepal",
+      "area": 147181,
+      "capital": [
+        "Kathmandu"
+      ]
+    },
+    "Nauru": {
+      "name": "Nauru",
+      "area": 21,
+      "capital": [
+        "Yaren"
+      ]
+    },
+    "New Zealand": {
+      "name": "New Zealand",
+      "area": 270467,
+      "capital": [
+        "Wellington"
+      ]
+    },
+    "Oman": {
+      "name": "Oman",
+      "area": 309500,
+      "capital": [
+        "Muscat"
+      ]
+    },
+    "Pakistan": {
+      "name": "Pakistan",
+      "area": 881912,
+      "capital": [
+        "Islamabad"
+      ]
+    },
+    "Panama": {
+      "name": "Panama",
+      "area": 75417,
+      "capital": [
+        "Panama City"
+      ]
+    },
+    "Peru": {
+      "name": "Peru",
+      "area": 1285216,
+      "capital": [
+        "Lima"
+      ]
+    },
+    "Philippines": {
+      "name": "Philippines",
+      "area": 342353,
+      "capital": [
+        "Manila"
+      ]
+    },
+    "Palau": {
+      "name": "Palau",
+      "area": 459,
+      "capital": [
+        "Ngerulmud"
+      ]
+    },
+    "Papua New Guinea": {
+      "name": "Papua New Guinea",
+      "area": 462840,
+      "capital": [
+        "Port Moresby"
+      ]
+    },
+    "Poland": {
+      "name": "Poland",
+      "area": 312679,
+      "capital": [
+        "Warsaw"
+      ]
+    },
+    "North Korea": {
+      "name": "North Korea",
+      "area": 120538,
+      "capital": [
+        "Pyongyang"
+      ]
+    },
+    "Portugal": {
+      "name": "Portugal",
+      "area": 92090,
+      "capital": [
+        "Lisbon"
+      ]
+    },
+    "Paraguay": {
+      "name": "Paraguay",
+      "area": 406752,
+      "capital": [
+        "Asunción"
+      ]
+    },
+    "Qatar": {
+      "name": "Qatar",
+      "area": 11586,
+      "capital": [
+        "Doha"
+      ]
+    },
+    "Romania": {
+      "name": "Romania",
+      "area": 238391,
+      "capital": [
+        "Bucharest"
+      ]
+    },
+    "Russia": {
+      "name": "Russia",
+      "area": 17098242,
+      "capital": [
+        "Moscow"
+      ]
+    },
+    "Rwanda": {
+      "name": "Rwanda",
+      "area": 26338,
+      "capital": [
+        "Kigali"
+      ]
+    },
+    "Saudi Arabia": {
+      "name": "Saudi Arabia",
+      "area": 2149690,
+      "capital": [
+        "Riyadh"
+      ]
+    },
+    "Sudan": {
+      "name": "Sudan",
+      "area": 1886068,
+      "capital": [
+        "Khartoum"
+      ]
+    },
+    "Senegal": {
+      "name": "Senegal",
+      "area": 196722,
+      "capital": [
+        "Dakar"
+      ]
+    },
+    "Singapore": {
+      "name": "Singapore",
+      "area": 710,
+      "capital": [
+        "Singapore"
+      ]
+    },
+    "Solomon Islands": {
+      "name": "Solomon Islands",
+      "area": 28896,
+      "capital": [
+        "Honiara"
+      ]
+    },
+    "Sierra Leone": {
+      "name": "Sierra Leone",
+      "area": 71740,
+      "capital": [
+        "Freetown"
+      ]
+    },
+    "El Salvador": {
+      "name": "El Salvador",
+      "area": 21041,
+      "capital": [
+        "San Salvador"
+      ]
+    },
+    "San Marino": {
+      "name": "San Marino",
+      "area": 61,
+      "capital": [
+        "City of San Marino"
+      ]
+    },
+    "Somalia": {
+      "name": "Somalia",
+      "area": 637657,
+      "capital": [
+        "Mogadishu"
+      ]
+    },
+    "Serbia": {
+      "name": "Serbia",
+      "area": 88361,
+      "capital": [
+        "Belgrade"
+      ]
+    },
+    "South Sudan": {
+      "name": "South Sudan",
+      "area": 619745,
+      "capital": [
+        "Juba"
+      ]
+    },
+    "São Tomé and Príncipe": {
+      "name": "São Tomé and Príncipe",
+      "area": 964,
+      "capital": [
+        "São Tomé"
+      ]
+    },
+    "Suriname": {
+      "name": "Suriname",
+      "area": 163820,
+      "capital": [
+        "Paramaribo"
+      ]
+    },
+    "Slovakia": {
+      "name": "Slovakia",
+      "area": 49037,
+      "capital": [
+        "Bratislava"
+      ]
+    },
+    "Slovenia": {
+      "name": "Slovenia",
+      "area": 20273,
+      "capital": [
+        "Ljubljana"
+      ]
+    },
+    "Sweden": {
+      "name": "Sweden",
+      "area": 450295,
+      "capital": [
+        "Stockholm"
+      ]
+    },
+    "Eswatini": {
+      "name": "Eswatini",
+      "area": 17364,
+      "capital": [
+        "Lobamba"
+      ]
+    },
+    "Seychelles": {
+      "name": "Seychelles",
+      "area": 452,
+      "capital": [
+        "Victoria"
+      ]
+    },
+    "Syria": {
+      "name": "Syria",
+      "area": 185180,
+      "capital": [
+        "Damascus"
+      ]
+    },
+    "Chad": {
+      "name": "Chad",
+      "area": 1284000,
+      "capital": [
+        "N'Djamena"
+      ]
+    },
+    "Togo": {
+      "name": "Togo",
+      "area": 56785,
+      "capital": [
+        "Lomé"
+      ]
+    },
+    "Thailand": {
+      "name": "Thailand",
+      "area": 513120,
+      "capital": [
+        "Bangkok"
+      ]
+    },
+    "Tajikistan": {
+      "name": "Tajikistan",
+      "area": 143100,
+      "capital": [
+        "Dushanbe"
+      ]
+    },
+    "Turkmenistan": {
+      "name": "Turkmenistan",
+      "area": 488100,
+      "capital": [
+        "Ashgabat"
+      ]
+    },
+    "Timor-Leste": {
+      "name": "Timor-Leste",
+      "area": 14874,
+      "capital": [
+        "Dili"
+      ]
+    },
+    "Tonga": {
+      "name": "Tonga",
+      "area": 747,
+      "capital": [
+        "Nuku'alofa"
+      ]
+    },
+    "Trinidad and Tobago": {
+      "name": "Trinidad and Tobago",
+      "area": 5130,
+      "capital": [
+        "Port of Spain"
+      ]
+    },
+    "Tunisia": {
+      "name": "Tunisia",
+      "area": 163610,
+      "capital": [
+        "Tunis"
+      ]
+    },
+    "Türkiye": {
+      "name": "Türkiye",
+      "area": 783562,
+      "capital": [
+        "Ankara"
+      ]
+    },
+    "Tuvalu": {
+      "name": "Tuvalu",
+      "area": 26,
+      "capital": [
+        "Funafuti"
+      ]
+    },
+    "Tanzania": {
+      "name": "Tanzania",
+      "area": 945087,
+      "capital": [
+        "Dodoma"
+      ]
+    },
+    "Uganda": {
+      "name": "Uganda",
+      "area": 241550,
+      "capital": [
+        "Kampala"
+      ]
+    },
+    "Ukraine": {
+      "name": "Ukraine",
+      "area": 603500,
+      "capital": [
+        "Kyiv"
+      ]
+    },
+    "Uruguay": {
+      "name": "Uruguay",
+      "area": 181034,
+      "capital": [
+        "Montevideo"
+      ]
+    },
+    "United States": {
+      "name": "United States",
+      "area": 9372610,
+      "capital": [
+        "Washington D.C."
+      ]
+    },
+    "Uzbekistan": {
+      "name": "Uzbekistan",
+      "area": 447400,
+      "capital": [
+        "Tashkent"
+      ]
+    },
+    "Vatican City": {
+      "name": "Vatican City",
+      "area": 0.44,
+      "capital": [
+        "Vatican City"
+      ]
+    },
+    "Saint Vincent and the Grenadines": {
+      "name": "Saint Vincent and the Grenadines",
+      "area": 389,
+      "capital": [
+        "Kingstown"
+      ]
+    },
+    "Venezuela": {
+      "name": "Venezuela",
+      "area": 916445,
+      "capital": [
+        "Caracas"
+      ]
+    },
+    "Vietnam": {
+      "name": "Vietnam",
+      "area": 331212,
+      "capital": [
+        "Hanoi"
+      ]
+    },
+    "Vanuatu": {
+      "name": "Vanuatu",
+      "area": 12189,
+      "capital": [
+        "Port Vila"
+      ]
+    },
+    "Samoa": {
+      "name": "Samoa",
+      "area": 2842,
+      "capital": [
+        "Apia"
+      ]
+    },
+    "Yemen": {
+      "name": "Yemen",
+      "area": 527968,
+      "capital": [
+        "Sana'a"
+      ]
+    },
+    "South Africa": {
+      "name": "South Africa",
+      "area": 1221037,
+      "capital": [
+        "Pretoria",
+        "Bloemfontein",
+        "Cape Town"
+      ]
+    },
+    "Zambia": {
+      "name": "Zambia",
+      "area": 752612,
+      "capital": [
+        "Lusaka"
+      ]
+    },
+    "Zimbabwe": {
+      "name": "Zimbabwe",
+      "area": 390757,
+      "capital": [
+        "Harare"
+      ]
+    }
+  },
+  "books": {
+    "Things Fall Apart": {
+      "title": "Things Fall Apart",
+      "author": "Chinua Achebe",
+      "year": 1958
+    },
+    "Fairy tales": {
+      "title": "Fairy tales",
+      "author": "Hans Christian Andersen",
+      "year": 1836
+    },
+    "Pride and Prejudice": {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "year": 1813
+    },
+    "Le Père Goriot": {
+      "title": "Le Père Goriot",
+      "author": "Honoré de Balzac",
+      "year": 1835
+    },
+    "Molloy, Malone Dies, The Unnamable, the trilogy": {
+      "title": "Molloy, Malone Dies, The Unnamable, the trilogy",
+      "author": "Samuel Beckett",
+      "year": 1952
+    },
+    "Ficciones": {
+      "title": "Ficciones",
+      "author": "Jorge Luis Borges",
+      "year": 1965
+    },
+    "Wuthering Heights": {
+      "title": "Wuthering Heights",
+      "author": "Emily Brontë",
+      "year": 1847
+    },
+    "The Stranger": {
+      "title": "The Stranger",
+      "author": "Albert Camus",
+      "year": 1942
+    },
+    "Poems": {
+      "title": "Poems",
+      "author": "Giacomo Leopardi",
+      "year": 1818
+    },
+    "Journey to the End of the Night": {
+      "title": "Journey to the End of the Night",
+      "author": "Louis-Ferdinand Céline",
+      "year": 1932
+    },
+    "Stories": {
+      "title": "Stories",
+      "author": "Franz Kafka",
+      "year": 1924
+    },
+    "Nostromo": {
+      "title": "Nostromo",
+      "author": "Joseph Conrad",
+      "year": 1904
+    },
+    "Great Expectations": {
+      "title": "Great Expectations",
+      "author": "Charles Dickens",
+      "year": 1861
+    },
+    "Berlin Alexanderplatz": {
+      "title": "Berlin Alexanderplatz",
+      "author": "Alfred Döblin",
+      "year": 1929
+    },
+    "Crime and Punishment": {
+      "title": "Crime and Punishment",
+      "author": "Fyodor Dostoevsky",
+      "year": 1866
+    },
+    "The Idiot": {
+      "title": "The Idiot",
+      "author": "Fyodor Dostoevsky",
+      "year": 1869
+    },
+    "The Possessed": {
+      "title": "The Possessed",
+      "author": "Fyodor Dostoevsky",
+      "year": 1872
+    },
+    "The Brothers Karamazov": {
+      "title": "The Brothers Karamazov",
+      "author": "Fyodor Dostoevsky",
+      "year": 1880
+    },
+    "Middlemarch": {
+      "title": "Middlemarch",
+      "author": "George Eliot",
+      "year": 1871
+    },
+    "Invisible Man": {
+      "title": "Invisible Man",
+      "author": "Ralph Ellison",
+      "year": 1952
+    },
+    "Absalom, Absalom!": {
+      "title": "Absalom, Absalom!",
+      "author": "William Faulkner",
+      "year": 1936
+    },
+    "The Sound and the Fury": {
+      "title": "The Sound and the Fury",
+      "author": "William Faulkner",
+      "year": 1929
+    },
+    "Madame Bovary": {
+      "title": "Madame Bovary",
+      "author": "Gustave Flaubert",
+      "year": 1857
+    },
+    "Sentimental Education": {
+      "title": "Sentimental Education",
+      "author": "Gustave Flaubert",
+      "year": 1869
+    },
+    "Gypsy Ballads": {
+      "title": "Gypsy Ballads",
+      "author": "Federico García Lorca",
+      "year": 1928
+    },
+    "One Hundred Years of Solitude": {
+      "title": "One Hundred Years of Solitude",
+      "author": "Gabriel García Márquez",
+      "year": 1967
+    },
+    "Love in the Time of Cholera": {
+      "title": "Love in the Time of Cholera",
+      "author": "Gabriel García Márquez",
+      "year": 1985
+    },
+    "Faust": {
+      "title": "Faust",
+      "author": "Johann Wolfgang von Goethe",
+      "year": 1832
+    },
+    "Dead Souls": {
+      "title": "Dead Souls",
+      "author": "Nikolai Gogol",
+      "year": 1842
+    },
+    "The Tin Drum": {
+      "title": "The Tin Drum",
+      "author": "Günter Grass",
+      "year": 1959
+    },
+    "The Devil to Pay in the Backlands": {
+      "title": "The Devil to Pay in the Backlands",
+      "author": "João Guimarães Rosa",
+      "year": 1956
+    },
+    "Hunger": {
+      "title": "Hunger",
+      "author": "Knut Hamsun",
+      "year": 1890
+    },
+    "The Old Man and the Sea": {
+      "title": "The Old Man and the Sea",
+      "author": "Ernest Hemingway",
+      "year": 1952
+    },
+    "A Doll's House": {
+      "title": "A Doll's House",
+      "author": "Henrik Ibsen",
+      "year": 1879
+    },
+    "Ulysses": {
+      "title": "Ulysses",
+      "author": "James Joyce",
+      "year": 1922
+    },
+    "The Trial": {
+      "title": "The Trial",
+      "author": "Franz Kafka",
+      "year": 1925
+    },
+    "The Castle": {
+      "title": "The Castle",
+      "author": "Franz Kafka",
+      "year": 1926
+    },
+    "The Sound of the Mountain": {
+      "title": "The Sound of the Mountain",
+      "author": "Yasunari Kawabata",
+      "year": 1954
+    },
+    "Zorba the Greek": {
+      "title": "Zorba the Greek",
+      "author": "Nikos Kazantzakis",
+      "year": 1946
+    },
+    "Sons and Lovers": {
+      "title": "Sons and Lovers",
+      "author": "D. H. Lawrence",
+      "year": 1913
+    },
+    "Independent People": {
+      "title": "Independent People",
+      "author": "Halldór Laxness",
+      "year": 1934
+    },
+    "The Golden Notebook": {
+      "title": "The Golden Notebook",
+      "author": "Doris Lessing",
+      "year": 1962
+    },
+    "Pippi Longstocking": {
+      "title": "Pippi Longstocking",
+      "author": "Astrid Lindgren",
+      "year": 1945
+    },
+    "Diary of a Madman": {
+      "title": "Diary of a Madman",
+      "author": "Lu Xun",
+      "year": 1918
+    },
+    "Children of Gebelawi": {
+      "title": "Children of Gebelawi",
+      "author": "Naguib Mahfouz",
+      "year": 1959
+    },
+    "Buddenbrooks": {
+      "title": "Buddenbrooks",
+      "author": "Thomas Mann",
+      "year": 1901
+    },
+    "The Magic Mountain": {
+      "title": "The Magic Mountain",
+      "author": "Thomas Mann",
+      "year": 1924
+    },
+    "Moby Dick": {
+      "title": "Moby Dick",
+      "author": "Herman Melville",
+      "year": 1851
+    },
+    "History": {
+      "title": "History",
+      "author": "Elsa Morante",
+      "year": 1974
+    },
+    "Beloved": {
+      "title": "Beloved",
+      "author": "Toni Morrison",
+      "year": 1987
+    },
+    "The Man Without Qualities": {
+      "title": "The Man Without Qualities",
+      "author": "Robert Musil",
+      "year": 1931
+    },
+    "Lolita": {
+      "title": "Lolita",
+      "author": "Vladimir Nabokov",
+      "year": 1955
+    },
+    "Nineteen Eighty-Four": {
+      "title": "Nineteen Eighty-Four",
+      "author": "George Orwell",
+      "year": 1949
+    },
+    "The Book of Disquiet": {
+      "title": "The Book of Disquiet",
+      "author": "Fernando Pessoa",
+      "year": 1928
+    },
+    "Tales": {
+      "title": "Tales",
+      "author": "Edgar Allan Poe",
+      "year": 1950
+    },
+    "In Search of Lost Time": {
+      "title": "In Search of Lost Time",
+      "author": "Marcel Proust",
+      "year": 1920
+    },
+    "Pedro Páramo": {
+      "title": "Pedro Páramo",
+      "author": "Juan Rulfo",
+      "year": 1955
+    },
+    "Midnight's Children": {
+      "title": "Midnight's Children",
+      "author": "Salman Rushdie",
+      "year": 1981
+    },
+    "Season of Migration to the North": {
+      "title": "Season of Migration to the North",
+      "author": "Tayeb Salih",
+      "year": 1966
+    },
+    "Blindness": {
+      "title": "Blindness",
+      "author": "José Saramago",
+      "year": 1995
+    },
+    "The Red and the Black": {
+      "title": "The Red and the Black",
+      "author": "Stendhal",
+      "year": 1830
+    },
+    "Confessions of Zeno": {
+      "title": "Confessions of Zeno",
+      "author": "Italo Svevo",
+      "year": 1923
+    },
+    "War and Peace": {
+      "title": "War and Peace",
+      "author": "Leo Tolstoy",
+      "year": 1867
+    },
+    "Anna Karenina": {
+      "title": "Anna Karenina",
+      "author": "Leo Tolstoy",
+      "year": 1877
+    },
+    "The Death of Ivan Ilyich": {
+      "title": "The Death of Ivan Ilyich",
+      "author": "Leo Tolstoy",
+      "year": 1886
+    },
+    "The Adventures of Huckleberry Finn": {
+      "title": "The Adventures of Huckleberry Finn",
+      "author": "Mark Twain",
+      "year": 1884
+    },
+    "Leaves of Grass": {
+      "title": "Leaves of Grass",
+      "author": "Walt Whitman",
+      "year": 1855
+    },
+    "Mrs Dalloway": {
+      "title": "Mrs Dalloway",
+      "author": "Virginia Woolf",
+      "year": 1925
+    },
+    "To the Lighthouse": {
+      "title": "To the Lighthouse",
+      "author": "Virginia Woolf",
+      "year": 1927
+    },
+    "Memoirs of Hadrian": {
+      "title": "Memoirs of Hadrian",
+      "author": "Marguerite Yourcenar",
+      "year": 1951
+    }
+  },
+  "movies": {
+    "Back to the Future": {
+      "title": "Back to the Future",
+      "year": 1985,
+      "director": "Robert Zemeckis"
+    },
+    "Blade Runner": {
+      "title": "Blade Runner",
+      "year": 1982,
+      "director": "Ridley Scott"
+    },
+    "Braveheart": {
+      "title": "Braveheart",
+      "year": 1995,
+      "director": "Mel Gibson"
+    },
+    "Forrest Gump": {
+      "title": "Forrest Gump",
+      "year": 1994,
+      "director": "Robert Zemeckis"
+    },
+    "The Godfather": {
+      "title": "The Godfather",
+      "year": 1972,
+      "director": "Francis Ford Coppola"
+    },
+    "Jurassic Park": {
+      "title": "Jurassic Park",
+      "year": 1993,
+      "director": "Steven Spielberg"
+    },
+    "Jaws": {
+      "title": "Jaws",
+      "year": 1975,
+      "director": "Steven Spielberg"
+    },
+    "The Lion King": {
+      "title": "The Lion King",
+      "year": 1994,
+      "director": "Rob Minkoff"
+    },
+    "Pulp Fiction": {
+      "title": "Pulp Fiction",
+      "year": 1994,
+      "director": "Quentin Tarantino"
+    },
+    "Raiders of the Lost Ark": {
+      "title": "Raiders of the Lost Ark",
+      "year": 1981,
+      "director": "Steven Spielberg"
+    },
+    "Rocky": {
+      "title": "Rocky",
+      "year": 1976,
+      "director": "John G. Avildsen"
+    },
+    "The Shawshank Redemption": {
+      "title": "The Shawshank Redemption",
+      "year": 1994,
+      "director": "Frank Darabont"
+    },
+    "The Silence of the Lambs": {
+      "title": "The Silence of the Lambs",
+      "year": 1991,
+      "director": "Jonathan Demme"
+    },
+    "The Terminator": {
+      "title": "The Terminator",
+      "year": 1984,
+      "director": "James Cameron"
+    },
+    "Toy Story": {
+      "title": "Toy Story",
+      "year": 1995,
+      "director": "John Lasseter"
+    },
+    "Alien": {
+      "title": "Alien",
+      "year": 1979,
+      "director": "Ridley Scott"
+    },
+    "The Dark Knight": {
+      "title": "The Dark Knight",
+      "year": 2008,
+      "director": "Christopher Nolan"
+    },
+    "Finding Nemo": {
+      "title": "Finding Nemo",
+      "year": 2003,
+      "director": "Andrew Stanton"
+    },
+    "Gladiator": {
+      "title": "Gladiator",
+      "year": 2000,
+      "director": "Ridley Scott"
+    },
+    "The Matrix": {
+      "title": "The Matrix",
+      "year": 1999,
+      "director": "Andy Wachowski"
+    },
+    "Monsters, Inc.": {
+      "title": "Monsters, Inc.",
+      "year": 2001,
+      "director": "David Silverman"
+    },
+    "The Incredibles": {
+      "title": "The Incredibles",
+      "year": 2004,
+      "director": "Brad Bird"
+    },
+    "Ratatouille": {
+      "title": "Ratatouille",
+      "year": 2007,
+      "director": "Brad Bird"
+    },
+    "Shrek": {
+      "title": "Shrek",
+      "year": 2001,
+      "director": "Andrew Adamson"
+    },
+    "The Sixth Sense": {
+      "title": "The Sixth Sense",
+      "year": 1999,
+      "director": "M. Night Shyamalan"
+    },
+    "Titanic": {
+      "title": "Titanic",
+      "year": 1997,
+      "director": "James Cameron"
+    },
+    "The Truman Show": {
+      "title": "The Truman Show",
+      "year": 1998,
+      "director": "Peter Weir"
+    },
+    "Up": {
+      "title": "Up",
+      "year": 2009,
+      "director": "Pete Docter"
+    },
+    "WALL-E": {
+      "title": "WALL-E",
+      "year": 2008,
+      "director": "Andrew Stanton"
+    }
+  },
+  "airports": {
+    "LHR": {
+      "name": "London Heathrow Airport",
+      "city": "London",
+      "iata": "LHR",
+      "icao": "EGLL",
+      "latitude": 51.470748,
+      "longitude": -0.459909,
+      "elevation_ft": 83.0
+    },
+    "CDG": {
+      "name": "Charles de Gaulle International Airport",
+      "city": "Paris (Roissy-en-France, Val-d'Oise)",
+      "iata": "CDG",
+      "icao": "LFPG",
+      "latitude": 49.00896,
+      "longitude": 2.554117,
+      "elevation_ft": 392.0
+    },
+    "FRA": {
+      "name": "Frankfurt Main Airport",
+      "city": "Frankfurt am Main",
+      "iata": "FRA",
+      "icao": "EDDF",
+      "latitude": 50.026706,
+      "longitude": 8.55835,
+      "elevation_ft": 364.0
+    },
+    "MAD": {
+      "name": "Adolfo Suárez Madrid–Barajas Airport",
+      "city": "Madrid",
+      "iata": "MAD",
+      "icao": "LEMD",
+      "latitude": 40.493407,
+      "longitude": -3.572249,
+      "elevation_ft": 1998.0
+    },
+    "FCO": {
+      "name": "Rome–Fiumicino Leonardo da Vinci International Airport",
+      "city": "Rome",
+      "iata": "FCO",
+      "icao": "LIRF",
+      "latitude": 41.804532,
+      "longitude": 12.251998,
+      "elevation_ft": 13.0
+    },
+    "AMS": {
+      "name": "Amsterdam Airport Schiphol",
+      "city": "Amsterdam",
+      "iata": "AMS",
+      "icao": "EHAM",
+      "latitude": 52.308601,
+      "longitude": 4.76389,
+      "elevation_ft": -11.0
+    },
+    "OSL": {
+      "name": "Oslo-Gardermoen International Airport",
+      "city": "Oslo (Gardermoen)",
+      "iata": "OSL",
+      "icao": "ENGM",
+      "latitude": 60.193901,
+      "longitude": 11.1004,
+      "elevation_ft": 681.0
+    },
+    "HEL": {
+      "name": "Helsinki Vantaa Airport",
+      "city": "Helsinki (Vantaa)",
+      "iata": "HEL",
+      "icao": "EFHK",
+      "latitude": 60.318363,
+      "longitude": 24.963341,
+      "elevation_ft": 179.0
+    },
+    "DUB": {
+      "name": "Dublin Airport",
+      "city": "Dublin",
+      "iata": "DUB",
+      "icao": "EIDW",
+      "latitude": 53.428713,
+      "longitude": -6.262121,
+      "elevation_ft": 242.0
+    },
+    "VIE": {
+      "name": "Vienna International Airport",
+      "city": "Vienna",
+      "iata": "VIE",
+      "icao": "LOWW",
+      "latitude": 48.110298,
+      "longitude": 16.5697,
+      "elevation_ft": 600.0
+    },
+    "ATH": {
+      "name": "Athens Eleftherios Venizelos International Airport",
+      "city": "Spata-Artemida",
+      "iata": "ATH",
+      "icao": "LGAV",
+      "latitude": 37.936401,
+      "longitude": 23.9445,
+      "elevation_ft": 308.0
+    },
+    "IST": {
+      "name": "İstanbul Airport",
+      "city": "Istanbul",
+      "iata": "IST",
+      "icao": "LTFM",
+      "latitude": 41.274874,
+      "longitude": 28.732136,
+      "elevation_ft": 325.0
+    },
+    "PRG": {
+      "name": "Václav Havel Airport Prague",
+      "city": "Prague",
+      "iata": "PRG",
+      "icao": "LKPR",
+      "latitude": 50.100874,
+      "longitude": 14.259911,
+      "elevation_ft": 1247.0
+    },
+    "WAW": {
+      "name": "Warsaw Chopin Airport",
+      "city": "Warsaw",
+      "iata": "WAW",
+      "icao": "EPWA",
+      "latitude": 52.165699,
+      "longitude": 20.9671,
+      "elevation_ft": 362.0
+    },
+    "CPH": {
+      "name": "Copenhagen Kastrup Airport",
+      "city": "Copenhagen",
+      "iata": "CPH",
+      "icao": "EKCH",
+      "latitude": 55.617900848389,
+      "longitude": 12.656000137329,
+      "elevation_ft": 17.0
+    },
+    "ARN": {
+      "name": "Stockholm-Arlanda Airport",
+      "city": "Stockholm",
+      "iata": "ARN",
+      "icao": "ESSA",
+      "latitude": 59.64849,
+      "longitude": 17.928829,
+      "elevation_ft": 137.0
+    },
+    "ZRH": {
+      "name": "Zürich Airport",
+      "city": "Zurich",
+      "iata": "ZRH",
+      "icao": "LSZH",
+      "latitude": 47.458056,
+      "longitude": 8.548056,
+      "elevation_ft": 1417.0
+    },
+    "LIS": {
+      "name": "Lisbon Humberto Delgado Airport",
+      "city": "Lisbon",
+      "iata": "LIS",
+      "icao": "LPPT",
+      "latitude": 38.7813,
+      "longitude": -9.13592,
+      "elevation_ft": 374.0
+    },
+    "BUD": {
+      "name": "Budapest Liszt Ferenc International Airport",
+      "city": "Budapest",
+      "iata": "BUD",
+      "icao": "LHBP",
+      "latitude": 47.43018,
+      "longitude": 19.262393,
+      "elevation_ft": 495.0
+    },
+    "BER": {
+      "name": "Berlin Brandenburg Airport",
+      "city": "Berlin",
+      "iata": "BER",
+      "icao": "EDDB",
+      "latitude": 52.361738,
+      "longitude": 13.502341,
+      "elevation_ft": 157.0
+    },
+    "DEN": {
+      "name": "Denver International Airport",
+      "city": "Denver",
+      "iata": "DEN",
+      "icao": "KDEN",
+      "latitude": 39.860027,
+      "longitude": -104.673792,
+      "elevation_ft": 5431.0
+    },
+    "JNB": {
+      "name": "O.R. Tambo International Airport",
+      "city": "Johannesburg",
+      "iata": "JNB",
+      "icao": "FAOR",
+      "latitude": -26.140081,
+      "longitude": 28.246801,
+      "elevation_ft": 5558.0
+    },
+    "BOG": {
+      "name": "El Dorado International Airport",
+      "city": "Bogota",
+      "iata": "BOG",
+      "icao": "SKBO",
+      "latitude": 4.70159,
+      "longitude": -74.1469,
+      "elevation_ft": 8361.0
+    },
+    "MEX": {
+      "name": "Mexico City Benito Juárez International Airport",
+      "city": "Mexico City",
+      "iata": "MEX",
+      "icao": "MMMX",
+      "latitude": 19.435822,
+      "longitude": -99.07033,
+      "elevation_ft": 7316.0
+    },
+    "UIO": {
+      "name": "Mariscal Sucre International Airport",
+      "city": "Quito",
+      "iata": "UIO",
+      "icao": "SEQM",
+      "latitude": -0.125399,
+      "longitude": -78.354306,
+      "elevation_ft": 7841.0
+    },
+    "LPB": {
+      "name": "El Alto International Airport",
+      "city": "La Paz / El Alto",
+      "iata": "LPB",
+      "icao": "SLLP",
+      "latitude": -16.510272,
+      "longitude": -68.189416,
+      "elevation_ft": 13355.0
+    },
+    "ADD": {
+      "name": "Addis Ababa Bole International Airport",
+      "city": "Addis Ababa",
+      "iata": "ADD",
+      "icao": "HAAB",
+      "latitude": 8.97789,
+      "longitude": 38.799301,
+      "elevation_ft": 7630.0
+    },
+    "NBO": {
+      "name": "Jomo Kenyatta International Airport",
+      "city": "Nairobi",
+      "iata": "NBO",
+      "icao": "HKJK",
+      "latitude": -1.318886,
+      "longitude": 36.928233,
+      "elevation_ft": 5330.0
+    },
+    "KTM": {
+      "name": "Tribhuvan International Airport",
+      "city": "Kathmandu",
+      "iata": "KTM",
+      "icao": "VNKT",
+      "latitude": 27.6966,
+      "longitude": 85.3591,
+      "elevation_ft": 4390.0
+    },
+    "SCL": {
+      "name": "Comodoro Arturo Merino Benítez International Airport",
+      "city": "Santiago",
+      "iata": "SCL",
+      "icao": "SCEL",
+      "latitude": -33.393001556396484,
+      "longitude": -70.78579711914062,
+      "elevation_ft": 1555.0
+    },
+    "LAS": {
+      "name": "Harry Reid International Airport",
+      "city": "Las Vegas",
+      "iata": "LAS",
+      "icao": "KLAS",
+      "latitude": 36.083361,
+      "longitude": -115.151817,
+      "elevation_ft": 2181.0
+    },
+    "PHX": {
+      "name": "Phoenix Sky Harbor International Airport",
+      "city": "Phoenix",
+      "iata": "PHX",
+      "icao": "KPHX",
+      "latitude": 33.435302,
+      "longitude": -112.005905,
+      "elevation_ft": 1135.0
+    },
+    "ABQ": {
+      "name": "Albuquerque International Sunport",
+      "city": "Albuquerque",
+      "iata": "ABQ",
+      "icao": "KABQ",
+      "latitude": 35.039976,
+      "longitude": -106.608925,
+      "elevation_ft": 5355.0
+    },
+    "RNO": {
+      "name": "Reno Tahoe International Airport",
+      "city": "Reno",
+      "iata": "RNO",
+      "icao": "KRNO",
+      "latitude": 39.4991,
+      "longitude": -119.767998,
+      "elevation_ft": 4415.0
+    },
+    "YYC": {
+      "name": "Calgary International Airport",
+      "city": "Calgary",
+      "iata": "YYC",
+      "icao": "CYYC",
+      "latitude": 51.118822,
+      "longitude": -114.009933,
+      "elevation_ft": 3557.0
+    },
+    "SLC": {
+      "name": "Salt Lake City International Airport",
+      "city": "Salt Lake City",
+      "iata": "SLC",
+      "icao": "KSLC",
+      "latitude": 40.78886,
+      "longitude": -111.979866,
+      "elevation_ft": 4227.0
+    },
+    "SYD": {
+      "name": "Sydney Kingsford Smith International Airport",
+      "city": "Sydney (Mascot)",
+      "iata": "SYD",
+      "icao": "YSSY",
+      "latitude": -33.946098,
+      "longitude": 151.177002,
+      "elevation_ft": 21.0
+    },
+    "NRT": {
+      "name": "Narita International Airport",
+      "city": "Narita",
+      "iata": "NRT",
+      "icao": "RJAA",
+      "latitude": 35.76858,
+      "longitude": 140.388714,
+      "elevation_ft": 141.0
+    },
+    "JFK": {
+      "name": "John F. Kennedy International Airport",
+      "city": "New York",
+      "iata": "JFK",
+      "icao": "KJFK",
+      "latitude": 40.639447,
+      "longitude": -73.779317,
+      "elevation_ft": 13.0
+    },
+    "LAX": {
+      "name": "Los Angeles International Airport",
+      "city": "Los Angeles",
+      "iata": "LAX",
+      "icao": "KLAX",
+      "latitude": 33.942501,
+      "longitude": -118.407997,
+      "elevation_ft": 125.0
+    },
+    "SIN": {
+      "name": "Singapore Changi Airport",
+      "city": "Singapore",
+      "iata": "SIN",
+      "icao": "WSSS",
+      "latitude": 1.35019,
+      "longitude": 103.994003,
+      "elevation_ft": 22.0
+    },
+    "HND": {
+      "name": "Tokyo Haneda International Airport",
+      "city": "Tokyo",
+      "iata": "HND",
+      "icao": "RJTT",
+      "latitude": 35.549678,
+      "longitude": 139.786958,
+      "elevation_ft": 35.0
+    },
+    "ICN": {
+      "name": "Incheon International Airport",
+      "city": "Seoul",
+      "iata": "ICN",
+      "icao": "RKSI",
+      "latitude": 37.469101,
+      "longitude": 126.450996,
+      "elevation_ft": 23.0
+    },
+    "AKL": {
+      "name": "Auckland International Airport",
+      "city": "Auckland",
+      "iata": "AKL",
+      "icao": "NZAA",
+      "latitude": -37.01199,
+      "longitude": 174.786331,
+      "elevation_ft": 23.0
+    },
+    "DXB": {
+      "name": "Dubai International Airport",
+      "city": "Dubai",
+      "iata": "DXB",
+      "icao": "OMDB",
+      "latitude": 25.24979,
+      "longitude": 55.370992,
+      "elevation_ft": 62.0
+    },
+    "CAI": {
+      "name": "Cairo International Airport",
+      "city": "Cairo",
+      "iata": "CAI",
+      "icao": "HECA",
+      "latitude": 30.111534,
+      "longitude": 31.396694,
+      "elevation_ft": 322.0
+    },
+    "DEL": {
+      "name": "Indira Gandhi International Airport",
+      "city": "New Delhi",
+      "iata": "DEL",
+      "icao": "VIDP",
+      "latitude": 28.55563,
+      "longitude": 77.09519,
+      "elevation_ft": 777.0
+    },
+    "BKK": {
+      "name": "Suvarnabhumi Airport",
+      "city": "Bangkok",
+      "iata": "BKK",
+      "icao": "VTBS",
+      "latitude": 13.6811,
+      "longitude": 100.747002,
+      "elevation_ft": 5.0
+    },
+    "GRU": {
+      "name": "São Paulo/Guarulhos–Governor André Franco Montoro International Airport",
+      "city": "São Paulo",
+      "iata": "GRU",
+      "icao": "SBGR",
+      "latitude": -23.431274,
+      "longitude": -46.469954,
+      "elevation_ft": 2461.0
+    },
+    "HKG": {
+      "name": "Hong Kong International Airport",
+      "city": "Hong Kong",
+      "iata": "HKG",
+      "icao": "VHHH",
+      "latitude": 22.31184,
+      "longitude": 113.914862,
+      "elevation_ft": 28.0
+    }
+  }
+}

@@ -1,8 +1,14 @@
+## Expanded question banks
+
+Stack Up now has 112 harder sorting sets and Stake has 264 questions: 100 additions to each game, plus harder replacements for Stack Up's original twelve. Pre-answer card descriptions are blank, so weights, dates and other answer values cannot give away the order. The quantities are shown only in the result explanation. Sources, checks and exclusions are documented in [content/QUESTION-SOURCES.md](content/QUESTION-SOURCES.md).
+
+Saved runs keep question snapshots; earlier records migrate against their original banks, preserving progress and scores after content updates. New question sources are loaded locally (`games/stack-up/stacks.js` and `games/stake/questions.js`), so downloaded copies need the complete updated folder.
+
 ## Stack Up is live
 
 `games/stack-up/index.html` is the production game. The homepage, game drawers and `game.html?id=stack-up` all open it directly. The original uploaded game remains archived under `design/prototypes/`.
 
-Daily selects five of twelve stacks from a date seed, with identical challenges across device timezones. Each stack has 90 seconds; points are multiplied by ten in Daily. A correct answer earns `(100 + remaining seconds × 5 + consecutive stack streak × 35) × multiplier`. A wrong guess costs 300 Daily points / 30 Infinite points and resets the stack streak. Timeout costs 400 / 40. Scores may be negative. Infinite is free practice and never enters Daily stats.
+Daily selects five of 112 stacks from a date seed, with identical challenges across device timezones. Each stack has 90 seconds; points are multiplied by ten in Daily. A correct answer earns `(100 + remaining seconds × 5 + consecutive stack streak × 35) × multiplier`. A wrong guess costs 300 Daily points / 30 Infinite points and resets the stack streak. Timeout costs 400 / 40. Scores may be negative. Infinite is free practice and never enters Daily stats.
 
 Daily state is saved under `break-room:stack-up:daily:YYYY-MM-DD`. Orders, penalties, deadlines, round results and completion survive reloads and mode switches. Timers use wall-clock deadlines and continue while a stack is left open; they stop between stacks. The next Daily unlocks at midnight Australia/Sydney. Stats, best scores, play streaks and sharing are backed by completed local Daily records. Browser storage failure is shown explicitly. There is no sample leaderboard or invented point balance. Cross-device accounts and online rankings are not part of this local game engine.
 

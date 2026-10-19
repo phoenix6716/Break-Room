@@ -1,0 +1,4604 @@
+{
+  "stack_up": [
+    {
+      "id": "stack-001",
+      "kind": "replacement",
+      "source": "elements",
+      "measure": "number",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Titanium",
+          "name": "Titanium",
+          "value": 22
+        },
+        {
+          "key": "Vanadium",
+          "name": "Vanadium",
+          "value": 23
+        },
+        {
+          "key": "Chromium",
+          "name": "Chromium",
+          "value": 24
+        },
+        {
+          "key": "Manganese",
+          "name": "Manganese",
+          "value": 25
+        },
+        {
+          "key": "Iron",
+          "name": "Iron",
+          "value": 26
+        }
+      ]
+    },
+    {
+      "id": "stack-002",
+      "kind": "replacement",
+      "source": "elements",
+      "measure": "melt",
+      "unit": "K",
+      "ordered": [
+        {
+          "key": "Silver",
+          "name": "Silver",
+          "value": 1234.93
+        },
+        {
+          "key": "Gold",
+          "name": "Gold",
+          "value": 1337.33
+        },
+        {
+          "key": "Copper",
+          "name": "Copper",
+          "value": 1357.77
+        },
+        {
+          "key": "Nickel",
+          "name": "Nickel",
+          "value": 1728
+        },
+        {
+          "key": "Iron",
+          "name": "Iron",
+          "value": 1811
+        }
+      ]
+    },
+    {
+      "id": "stack-003",
+      "kind": "replacement",
+      "source": "elements",
+      "measure": "density_g_cm3",
+      "unit": "g/cm³",
+      "ordered": [
+        {
+          "key": "Titanium",
+          "name": "Titanium",
+          "value": 4.506
+        },
+        {
+          "key": "Zinc",
+          "name": "Zinc",
+          "value": 7.14
+        },
+        {
+          "key": "Tin",
+          "name": "Tin",
+          "value": 7.365
+        },
+        {
+          "key": "Iron",
+          "name": "Iron",
+          "value": 7.874
+        },
+        {
+          "key": "Silver",
+          "name": "Silver",
+          "value": 10.49
+        }
+      ]
+    },
+    {
+      "id": "stack-004",
+      "kind": "replacement",
+      "source": "countries",
+      "measure": "area",
+      "unit": "km²",
+      "ordered": [
+        {
+          "key": "Ireland",
+          "name": "Ireland",
+          "value": 70273
+        },
+        {
+          "key": "Austria",
+          "name": "Austria",
+          "value": 83871
+        },
+        {
+          "key": "Portugal",
+          "name": "Portugal",
+          "value": 92090
+        },
+        {
+          "key": "Hungary",
+          "name": "Hungary",
+          "value": 93028
+        },
+        {
+          "key": "Iceland",
+          "name": "Iceland",
+          "value": 103000
+        }
+      ]
+    },
+    {
+      "id": "stack-005",
+      "kind": "replacement",
+      "source": "books",
+      "measure": "year",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "The Trial",
+          "name": "The Trial — Franz Kafka",
+          "value": 1925
+        },
+        {
+          "key": "The Castle",
+          "name": "The Castle — Franz Kafka",
+          "value": 1926
+        },
+        {
+          "key": "To the Lighthouse",
+          "name": "To the Lighthouse — Virginia Woolf",
+          "value": 1927
+        },
+        {
+          "key": "The Sound and the Fury",
+          "name": "The Sound and the Fury — William Faulkner",
+          "value": 1929
+        },
+        {
+          "key": "The Stranger",
+          "name": "The Stranger — Albert Camus",
+          "value": 1942
+        }
+      ]
+    },
+    {
+      "id": "stack-006",
+      "kind": "replacement",
+      "source": "movies",
+      "measure": "year",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Alien",
+          "name": "Alien",
+          "value": 1979
+        },
+        {
+          "key": "Blade Runner",
+          "name": "Blade Runner",
+          "value": 1982
+        },
+        {
+          "key": "The Terminator",
+          "name": "The Terminator",
+          "value": 1984
+        },
+        {
+          "key": "Back to the Future",
+          "name": "Back to the Future",
+          "value": 1985
+        },
+        {
+          "key": "Jurassic Park",
+          "name": "Jurassic Park",
+          "value": 1993
+        }
+      ]
+    },
+    {
+      "id": "stack-007",
+      "kind": "replacement",
+      "source": "airports",
+      "measure": "latitude",
+      "unit": "° latitude",
+      "ordered": [
+        {
+          "key": "FCO",
+          "name": "Rome (FCO)",
+          "value": 41.804532
+        },
+        {
+          "key": "VIE",
+          "name": "Vienna (VIE)",
+          "value": 48.110298
+        },
+        {
+          "key": "CDG",
+          "name": "Paris (Roissy-en-France, Val-d'Oise) (CDG)",
+          "value": 49.00896
+        },
+        {
+          "key": "FRA",
+          "name": "Frankfurt am Main (FRA)",
+          "value": 50.026706
+        },
+        {
+          "key": "LHR",
+          "name": "London (LHR)",
+          "value": 51.470748
+        }
+      ]
+    },
+    {
+      "id": "stack-008",
+      "kind": "replacement",
+      "source": "airports",
+      "measure": "longitude",
+      "unit": "° longitude",
+      "ordered": [
+        {
+          "key": "LHR",
+          "name": "London (LHR)",
+          "value": -0.459909
+        },
+        {
+          "key": "CDG",
+          "name": "Paris (Roissy-en-France, Val-d'Oise) (CDG)",
+          "value": 2.554117
+        },
+        {
+          "key": "AMS",
+          "name": "Amsterdam (AMS)",
+          "value": 4.76389
+        },
+        {
+          "key": "FRA",
+          "name": "Frankfurt am Main (FRA)",
+          "value": 8.55835
+        },
+        {
+          "key": "VIE",
+          "name": "Vienna (VIE)",
+          "value": 16.5697
+        }
+      ]
+    },
+    {
+      "id": "stack-009",
+      "kind": "replacement",
+      "source": "airports",
+      "measure": "elevation_ft",
+      "unit": "ft",
+      "ordered": [
+        {
+          "key": "SLC",
+          "name": "Salt Lake City (SLC)",
+          "value": 4227.0
+        },
+        {
+          "key": "DEN",
+          "name": "Denver (DEN)",
+          "value": 5431.0
+        },
+        {
+          "key": "JNB",
+          "name": "Johannesburg (JNB)",
+          "value": 5558.0
+        },
+        {
+          "key": "MEX",
+          "name": "Mexico City (MEX)",
+          "value": 7316.0
+        },
+        {
+          "key": "BOG",
+          "name": "Bogota (BOG)",
+          "value": 8361.0
+        }
+      ]
+    },
+    {
+      "id": "stack-010",
+      "kind": "replacement",
+      "source": "elements",
+      "measure": "number",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Zirconium",
+          "name": "Zirconium",
+          "value": 40
+        },
+        {
+          "key": "Niobium",
+          "name": "Niobium",
+          "value": 41
+        },
+        {
+          "key": "Molybdenum",
+          "name": "Molybdenum",
+          "value": 42
+        },
+        {
+          "key": "Palladium",
+          "name": "Palladium",
+          "value": 46
+        },
+        {
+          "key": "Silver",
+          "name": "Silver",
+          "value": 47
+        }
+      ]
+    },
+    {
+      "id": "stack-011",
+      "kind": "replacement",
+      "source": "elements",
+      "measure": "melt",
+      "unit": "K",
+      "ordered": [
+        {
+          "key": "Tin",
+          "name": "Tin",
+          "value": 505.08
+        },
+        {
+          "key": "Bismuth",
+          "name": "Bismuth",
+          "value": 544.7
+        },
+        {
+          "key": "Cadmium",
+          "name": "Cadmium",
+          "value": 594.22
+        },
+        {
+          "key": "Lead",
+          "name": "Lead",
+          "value": 600.61
+        },
+        {
+          "key": "Zinc",
+          "name": "Zinc",
+          "value": 692.68
+        }
+      ]
+    },
+    {
+      "id": "stack-012",
+      "kind": "replacement",
+      "source": "elements",
+      "measure": "density_g_cm3",
+      "unit": "g/cm³",
+      "ordered": [
+        {
+          "key": "Tin",
+          "name": "Tin",
+          "value": 7.365
+        },
+        {
+          "key": "Iron",
+          "name": "Iron",
+          "value": 7.874
+        },
+        {
+          "key": "Bismuth",
+          "name": "Bismuth",
+          "value": 9.78
+        },
+        {
+          "key": "Silver",
+          "name": "Silver",
+          "value": 10.49
+        },
+        {
+          "key": "Lead",
+          "name": "Lead",
+          "value": 11.34
+        }
+      ]
+    },
+    {
+      "id": "stack-013",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "number",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Magnesium",
+          "name": "Magnesium",
+          "value": 12
+        },
+        {
+          "key": "Cadmium",
+          "name": "Cadmium",
+          "value": 48
+        },
+        {
+          "key": "Antimony",
+          "name": "Antimony",
+          "value": 51
+        },
+        {
+          "key": "Platinum",
+          "name": "Platinum",
+          "value": 78
+        },
+        {
+          "key": "Lead",
+          "name": "Lead",
+          "value": 82
+        }
+      ]
+    },
+    {
+      "id": "stack-014",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "number",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Cobalt",
+          "name": "Cobalt",
+          "value": 27
+        },
+        {
+          "key": "Zinc",
+          "name": "Zinc",
+          "value": 30
+        },
+        {
+          "key": "Palladium",
+          "name": "Palladium",
+          "value": 46
+        },
+        {
+          "key": "Silver",
+          "name": "Silver",
+          "value": 47
+        },
+        {
+          "key": "Antimony",
+          "name": "Antimony",
+          "value": 51
+        }
+      ]
+    },
+    {
+      "id": "stack-015",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "number",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Magnesium",
+          "name": "Magnesium",
+          "value": 12
+        },
+        {
+          "key": "Chromium",
+          "name": "Chromium",
+          "value": 24
+        },
+        {
+          "key": "Manganese",
+          "name": "Manganese",
+          "value": 25
+        },
+        {
+          "key": "Cadmium",
+          "name": "Cadmium",
+          "value": 48
+        },
+        {
+          "key": "Tin",
+          "name": "Tin",
+          "value": 50
+        }
+      ]
+    },
+    {
+      "id": "stack-016",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "number",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Titanium",
+          "name": "Titanium",
+          "value": 22
+        },
+        {
+          "key": "Vanadium",
+          "name": "Vanadium",
+          "value": 23
+        },
+        {
+          "key": "Cobalt",
+          "name": "Cobalt",
+          "value": 27
+        },
+        {
+          "key": "Silver",
+          "name": "Silver",
+          "value": 47
+        },
+        {
+          "key": "Antimony",
+          "name": "Antimony",
+          "value": 51
+        }
+      ]
+    },
+    {
+      "id": "stack-017",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "number",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Magnesium",
+          "name": "Magnesium",
+          "value": 12
+        },
+        {
+          "key": "Copper",
+          "name": "Copper",
+          "value": 29
+        },
+        {
+          "key": "Molybdenum",
+          "name": "Molybdenum",
+          "value": 42
+        },
+        {
+          "key": "Tungsten",
+          "name": "Tungsten",
+          "value": 74
+        },
+        {
+          "key": "Bismuth",
+          "name": "Bismuth",
+          "value": 83
+        }
+      ]
+    },
+    {
+      "id": "stack-018",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "number",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Manganese",
+          "name": "Manganese",
+          "value": 25
+        },
+        {
+          "key": "Nickel",
+          "name": "Nickel",
+          "value": 28
+        },
+        {
+          "key": "Palladium",
+          "name": "Palladium",
+          "value": 46
+        },
+        {
+          "key": "Tin",
+          "name": "Tin",
+          "value": 50
+        },
+        {
+          "key": "Platinum",
+          "name": "Platinum",
+          "value": 78
+        }
+      ]
+    },
+    {
+      "id": "stack-019",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "number",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Chromium",
+          "name": "Chromium",
+          "value": 24
+        },
+        {
+          "key": "Nickel",
+          "name": "Nickel",
+          "value": 28
+        },
+        {
+          "key": "Cadmium",
+          "name": "Cadmium",
+          "value": 48
+        },
+        {
+          "key": "Tin",
+          "name": "Tin",
+          "value": 50
+        },
+        {
+          "key": "Platinum",
+          "name": "Platinum",
+          "value": 78
+        }
+      ]
+    },
+    {
+      "id": "stack-020",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "number",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Manganese",
+          "name": "Manganese",
+          "value": 25
+        },
+        {
+          "key": "Iron",
+          "name": "Iron",
+          "value": 26
+        },
+        {
+          "key": "Cobalt",
+          "name": "Cobalt",
+          "value": 27
+        },
+        {
+          "key": "Molybdenum",
+          "name": "Molybdenum",
+          "value": 42
+        },
+        {
+          "key": "Lead",
+          "name": "Lead",
+          "value": 82
+        }
+      ]
+    },
+    {
+      "id": "stack-021",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "number",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Vanadium",
+          "name": "Vanadium",
+          "value": 23
+        },
+        {
+          "key": "Cobalt",
+          "name": "Cobalt",
+          "value": 27
+        },
+        {
+          "key": "Zinc",
+          "name": "Zinc",
+          "value": 30
+        },
+        {
+          "key": "Tin",
+          "name": "Tin",
+          "value": 50
+        },
+        {
+          "key": "Bismuth",
+          "name": "Bismuth",
+          "value": 83
+        }
+      ]
+    },
+    {
+      "id": "stack-022",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "number",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Aluminium",
+          "name": "Aluminium",
+          "value": 13
+        },
+        {
+          "key": "Iron",
+          "name": "Iron",
+          "value": 26
+        },
+        {
+          "key": "Tin",
+          "name": "Tin",
+          "value": 50
+        },
+        {
+          "key": "Antimony",
+          "name": "Antimony",
+          "value": 51
+        },
+        {
+          "key": "Bismuth",
+          "name": "Bismuth",
+          "value": 83
+        }
+      ]
+    },
+    {
+      "id": "stack-023",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "melt",
+      "unit": "K",
+      "ordered": [
+        {
+          "key": "Magnesium",
+          "name": "Magnesium",
+          "value": 923
+        },
+        {
+          "key": "Silver",
+          "name": "Silver",
+          "value": 1234.93
+        },
+        {
+          "key": "Iron",
+          "name": "Iron",
+          "value": 1811
+        },
+        {
+          "key": "Platinum",
+          "name": "Platinum",
+          "value": 2041.4
+        },
+        {
+          "key": "Tungsten",
+          "name": "Tungsten",
+          "value": 3695
+        }
+      ]
+    },
+    {
+      "id": "stack-024",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "melt",
+      "unit": "K",
+      "ordered": [
+        {
+          "key": "Aluminium",
+          "name": "Aluminium",
+          "value": 933.47
+        },
+        {
+          "key": "Copper",
+          "name": "Copper",
+          "value": 1357.77
+        },
+        {
+          "key": "Iron",
+          "name": "Iron",
+          "value": 1811
+        },
+        {
+          "key": "Titanium",
+          "name": "Titanium",
+          "value": 1941
+        },
+        {
+          "key": "Platinum",
+          "name": "Platinum",
+          "value": 2041.4
+        }
+      ]
+    },
+    {
+      "id": "stack-025",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "melt",
+      "unit": "K",
+      "ordered": [
+        {
+          "key": "Zinc",
+          "name": "Zinc",
+          "value": 692.68
+        },
+        {
+          "key": "Aluminium",
+          "name": "Aluminium",
+          "value": 933.47
+        },
+        {
+          "key": "Titanium",
+          "name": "Titanium",
+          "value": 1941
+        },
+        {
+          "key": "Vanadium",
+          "name": "Vanadium",
+          "value": 2183
+        },
+        {
+          "key": "Tungsten",
+          "name": "Tungsten",
+          "value": 3695
+        }
+      ]
+    },
+    {
+      "id": "stack-026",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "melt",
+      "unit": "K",
+      "ordered": [
+        {
+          "key": "Bismuth",
+          "name": "Bismuth",
+          "value": 544.7
+        },
+        {
+          "key": "Zinc",
+          "name": "Zinc",
+          "value": 692.68
+        },
+        {
+          "key": "Copper",
+          "name": "Copper",
+          "value": 1357.77
+        },
+        {
+          "key": "Palladium",
+          "name": "Palladium",
+          "value": 1828.05
+        },
+        {
+          "key": "Chromium",
+          "name": "Chromium",
+          "value": 2180
+        }
+      ]
+    },
+    {
+      "id": "stack-027",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "melt",
+      "unit": "K",
+      "ordered": [
+        {
+          "key": "Tin",
+          "name": "Tin",
+          "value": 505.08
+        },
+        {
+          "key": "Aluminium",
+          "name": "Aluminium",
+          "value": 933.47
+        },
+        {
+          "key": "Copper",
+          "name": "Copper",
+          "value": 1357.77
+        },
+        {
+          "key": "Niobium",
+          "name": "Niobium",
+          "value": 2750
+        },
+        {
+          "key": "Molybdenum",
+          "name": "Molybdenum",
+          "value": 2896
+        }
+      ]
+    },
+    {
+      "id": "stack-028",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "melt",
+      "unit": "K",
+      "ordered": [
+        {
+          "key": "Tin",
+          "name": "Tin",
+          "value": 505.08
+        },
+        {
+          "key": "Gold",
+          "name": "Gold",
+          "value": 1337.33
+        },
+        {
+          "key": "Copper",
+          "name": "Copper",
+          "value": 1357.77
+        },
+        {
+          "key": "Vanadium",
+          "name": "Vanadium",
+          "value": 2183
+        },
+        {
+          "key": "Niobium",
+          "name": "Niobium",
+          "value": 2750
+        }
+      ]
+    },
+    {
+      "id": "stack-029",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "melt",
+      "unit": "K",
+      "ordered": [
+        {
+          "key": "Bismuth",
+          "name": "Bismuth",
+          "value": 544.7
+        },
+        {
+          "key": "Lead",
+          "name": "Lead",
+          "value": 600.61
+        },
+        {
+          "key": "Zinc",
+          "name": "Zinc",
+          "value": 692.68
+        },
+        {
+          "key": "Copper",
+          "name": "Copper",
+          "value": 1357.77
+        },
+        {
+          "key": "Titanium",
+          "name": "Titanium",
+          "value": 1941
+        }
+      ]
+    },
+    {
+      "id": "stack-030",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "melt",
+      "unit": "K",
+      "ordered": [
+        {
+          "key": "Silver",
+          "name": "Silver",
+          "value": 1234.93
+        },
+        {
+          "key": "Gold",
+          "name": "Gold",
+          "value": 1337.33
+        },
+        {
+          "key": "Titanium",
+          "name": "Titanium",
+          "value": 1941
+        },
+        {
+          "key": "Chromium",
+          "name": "Chromium",
+          "value": 2180
+        },
+        {
+          "key": "Niobium",
+          "name": "Niobium",
+          "value": 2750
+        }
+      ]
+    },
+    {
+      "id": "stack-031",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "melt",
+      "unit": "K",
+      "ordered": [
+        {
+          "key": "Magnesium",
+          "name": "Magnesium",
+          "value": 923
+        },
+        {
+          "key": "Gold",
+          "name": "Gold",
+          "value": 1337.33
+        },
+        {
+          "key": "Copper",
+          "name": "Copper",
+          "value": 1357.77
+        },
+        {
+          "key": "Chromium",
+          "name": "Chromium",
+          "value": 2180
+        },
+        {
+          "key": "Molybdenum",
+          "name": "Molybdenum",
+          "value": 2896
+        }
+      ]
+    },
+    {
+      "id": "stack-032",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "melt",
+      "unit": "K",
+      "ordered": [
+        {
+          "key": "Lead",
+          "name": "Lead",
+          "value": 600.61
+        },
+        {
+          "key": "Aluminium",
+          "name": "Aluminium",
+          "value": 933.47
+        },
+        {
+          "key": "Gold",
+          "name": "Gold",
+          "value": 1337.33
+        },
+        {
+          "key": "Cobalt",
+          "name": "Cobalt",
+          "value": 1768
+        },
+        {
+          "key": "Molybdenum",
+          "name": "Molybdenum",
+          "value": 2896
+        }
+      ]
+    },
+    {
+      "id": "stack-033",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "density_g_cm3",
+      "unit": "g/cm³",
+      "ordered": [
+        {
+          "key": "Aluminium",
+          "name": "Aluminium",
+          "value": 2.7
+        },
+        {
+          "key": "Titanium",
+          "name": "Titanium",
+          "value": 4.506
+        },
+        {
+          "key": "Tin",
+          "name": "Tin",
+          "value": 7.365
+        },
+        {
+          "key": "Cadmium",
+          "name": "Cadmium",
+          "value": 8.65
+        },
+        {
+          "key": "Silver",
+          "name": "Silver",
+          "value": 10.49
+        }
+      ]
+    },
+    {
+      "id": "stack-034",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "density_g_cm3",
+      "unit": "g/cm³",
+      "ordered": [
+        {
+          "key": "Vanadium",
+          "name": "Vanadium",
+          "value": 6
+        },
+        {
+          "key": "Niobium",
+          "name": "Niobium",
+          "value": 8.57
+        },
+        {
+          "key": "Silver",
+          "name": "Silver",
+          "value": 10.49
+        },
+        {
+          "key": "Palladium",
+          "name": "Palladium",
+          "value": 12.023
+        },
+        {
+          "key": "Tungsten",
+          "name": "Tungsten",
+          "value": 19.25
+        }
+      ]
+    },
+    {
+      "id": "stack-035",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "density_g_cm3",
+      "unit": "g/cm³",
+      "ordered": [
+        {
+          "key": "Vanadium",
+          "name": "Vanadium",
+          "value": 6
+        },
+        {
+          "key": "Iron",
+          "name": "Iron",
+          "value": 7.874
+        },
+        {
+          "key": "Niobium",
+          "name": "Niobium",
+          "value": 8.57
+        },
+        {
+          "key": "Tungsten",
+          "name": "Tungsten",
+          "value": 19.25
+        },
+        {
+          "key": "Platinum",
+          "name": "Platinum",
+          "value": 21.45
+        }
+      ]
+    },
+    {
+      "id": "stack-036",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "density_g_cm3",
+      "unit": "g/cm³",
+      "ordered": [
+        {
+          "key": "Magnesium",
+          "name": "Magnesium",
+          "value": 1.738
+        },
+        {
+          "key": "Antimony",
+          "name": "Antimony",
+          "value": 6.697
+        },
+        {
+          "key": "Manganese",
+          "name": "Manganese",
+          "value": 7.21
+        },
+        {
+          "key": "Molybdenum",
+          "name": "Molybdenum",
+          "value": 10.28
+        },
+        {
+          "key": "Platinum",
+          "name": "Platinum",
+          "value": 21.45
+        }
+      ]
+    },
+    {
+      "id": "stack-037",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "density_g_cm3",
+      "unit": "g/cm³",
+      "ordered": [
+        {
+          "key": "Aluminium",
+          "name": "Aluminium",
+          "value": 2.7
+        },
+        {
+          "key": "Antimony",
+          "name": "Antimony",
+          "value": 6.697
+        },
+        {
+          "key": "Cadmium",
+          "name": "Cadmium",
+          "value": 8.65
+        },
+        {
+          "key": "Lead",
+          "name": "Lead",
+          "value": 11.34
+        },
+        {
+          "key": "Tungsten",
+          "name": "Tungsten",
+          "value": 19.25
+        }
+      ]
+    },
+    {
+      "id": "stack-038",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "density_g_cm3",
+      "unit": "g/cm³",
+      "ordered": [
+        {
+          "key": "Zirconium",
+          "name": "Zirconium",
+          "value": 6.52
+        },
+        {
+          "key": "Chromium",
+          "name": "Chromium",
+          "value": 7.19
+        },
+        {
+          "key": "Iron",
+          "name": "Iron",
+          "value": 7.874
+        },
+        {
+          "key": "Cobalt",
+          "name": "Cobalt",
+          "value": 8.9
+        },
+        {
+          "key": "Molybdenum",
+          "name": "Molybdenum",
+          "value": 10.28
+        }
+      ]
+    },
+    {
+      "id": "stack-039",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "density_g_cm3",
+      "unit": "g/cm³",
+      "ordered": [
+        {
+          "key": "Titanium",
+          "name": "Titanium",
+          "value": 4.506
+        },
+        {
+          "key": "Tin",
+          "name": "Tin",
+          "value": 7.365
+        },
+        {
+          "key": "Copper",
+          "name": "Copper",
+          "value": 8.96
+        },
+        {
+          "key": "Silver",
+          "name": "Silver",
+          "value": 10.49
+        },
+        {
+          "key": "Palladium",
+          "name": "Palladium",
+          "value": 12.023
+        }
+      ]
+    },
+    {
+      "id": "stack-040",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "density_g_cm3",
+      "unit": "g/cm³",
+      "ordered": [
+        {
+          "key": "Antimony",
+          "name": "Antimony",
+          "value": 6.697
+        },
+        {
+          "key": "Chromium",
+          "name": "Chromium",
+          "value": 7.19
+        },
+        {
+          "key": "Nickel",
+          "name": "Nickel",
+          "value": 8.908
+        },
+        {
+          "key": "Silver",
+          "name": "Silver",
+          "value": 10.49
+        },
+        {
+          "key": "Tungsten",
+          "name": "Tungsten",
+          "value": 19.25
+        }
+      ]
+    },
+    {
+      "id": "stack-041",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "density_g_cm3",
+      "unit": "g/cm³",
+      "ordered": [
+        {
+          "key": "Vanadium",
+          "name": "Vanadium",
+          "value": 6
+        },
+        {
+          "key": "Zirconium",
+          "name": "Zirconium",
+          "value": 6.52
+        },
+        {
+          "key": "Zinc",
+          "name": "Zinc",
+          "value": 7.14
+        },
+        {
+          "key": "Bismuth",
+          "name": "Bismuth",
+          "value": 9.78
+        },
+        {
+          "key": "Gold",
+          "name": "Gold",
+          "value": 19.3
+        }
+      ]
+    },
+    {
+      "id": "stack-042",
+      "kind": "expanded",
+      "source": "elements",
+      "measure": "density_g_cm3",
+      "unit": "g/cm³",
+      "ordered": [
+        {
+          "key": "Magnesium",
+          "name": "Magnesium",
+          "value": 1.738
+        },
+        {
+          "key": "Titanium",
+          "name": "Titanium",
+          "value": 4.506
+        },
+        {
+          "key": "Zinc",
+          "name": "Zinc",
+          "value": 7.14
+        },
+        {
+          "key": "Niobium",
+          "name": "Niobium",
+          "value": 8.57
+        },
+        {
+          "key": "Gold",
+          "name": "Gold",
+          "value": 19.3
+        }
+      ]
+    },
+    {
+      "id": "stack-043",
+      "kind": "expanded",
+      "source": "countries",
+      "measure": "area",
+      "unit": "km²",
+      "ordered": [
+        {
+          "key": "Czechia",
+          "name": "Czechia",
+          "value": 78865
+        },
+        {
+          "key": "Austria",
+          "name": "Austria",
+          "value": 83871
+        },
+        {
+          "key": "New Zealand",
+          "name": "New Zealand",
+          "value": 270467
+        },
+        {
+          "key": "Germany",
+          "name": "Germany",
+          "value": 357114
+        },
+        {
+          "key": "Bolivia",
+          "name": "Bolivia",
+          "value": 1098581
+        }
+      ]
+    },
+    {
+      "id": "stack-044",
+      "kind": "expanded",
+      "source": "countries",
+      "measure": "area",
+      "unit": "km²",
+      "ordered": [
+        {
+          "key": "Austria",
+          "name": "Austria",
+          "value": 83871
+        },
+        {
+          "key": "United Kingdom",
+          "name": "United Kingdom",
+          "value": 242900
+        },
+        {
+          "key": "Malaysia",
+          "name": "Malaysia",
+          "value": 330803
+        },
+        {
+          "key": "Japan",
+          "name": "Japan",
+          "value": 377930
+        },
+        {
+          "key": "Sweden",
+          "name": "Sweden",
+          "value": 450295
+        }
+      ]
+    },
+    {
+      "id": "stack-045",
+      "kind": "expanded",
+      "source": "countries",
+      "measure": "area",
+      "unit": "km²",
+      "ordered": [
+        {
+          "key": "Portugal",
+          "name": "Portugal",
+          "value": 92090
+        },
+        {
+          "key": "United Kingdom",
+          "name": "United Kingdom",
+          "value": 242900
+        },
+        {
+          "key": "Germany",
+          "name": "Germany",
+          "value": 357114
+        },
+        {
+          "key": "Bolivia",
+          "name": "Bolivia",
+          "value": 1098581
+        },
+        {
+          "key": "Kazakhstan",
+          "name": "Kazakhstan",
+          "value": 2724900
+        }
+      ]
+    },
+    {
+      "id": "stack-046",
+      "kind": "expanded",
+      "source": "countries",
+      "measure": "area",
+      "unit": "km²",
+      "ordered": [
+        {
+          "key": "Czechia",
+          "name": "Czechia",
+          "value": 78865
+        },
+        {
+          "key": "Ecuador",
+          "name": "Ecuador",
+          "value": 276841
+        },
+        {
+          "key": "Japan",
+          "name": "Japan",
+          "value": 377930
+        },
+        {
+          "key": "Peru",
+          "name": "Peru",
+          "value": 1285216
+        },
+        {
+          "key": "Kazakhstan",
+          "name": "Kazakhstan",
+          "value": 2724900
+        }
+      ]
+    },
+    {
+      "id": "stack-047",
+      "kind": "expanded",
+      "source": "countries",
+      "measure": "area",
+      "unit": "km²",
+      "ordered": [
+        {
+          "key": "Iceland",
+          "name": "Iceland",
+          "value": 103000
+        },
+        {
+          "key": "Bulgaria",
+          "name": "Bulgaria",
+          "value": 110879
+        },
+        {
+          "key": "Spain",
+          "name": "Spain",
+          "value": 505992
+        },
+        {
+          "key": "Bolivia",
+          "name": "Bolivia",
+          "value": 1098581
+        },
+        {
+          "key": "Argentina",
+          "name": "Argentina",
+          "value": 2780400
+        }
+      ]
+    },
+    {
+      "id": "stack-048",
+      "kind": "expanded",
+      "source": "countries",
+      "measure": "area",
+      "unit": "km²",
+      "ordered": [
+        {
+          "key": "Ireland",
+          "name": "Ireland",
+          "value": 70273
+        },
+        {
+          "key": "Hungary",
+          "name": "Hungary",
+          "value": 93028
+        },
+        {
+          "key": "Vietnam",
+          "name": "Vietnam",
+          "value": 331212
+        },
+        {
+          "key": "Germany",
+          "name": "Germany",
+          "value": 357114
+        },
+        {
+          "key": "Argentina",
+          "name": "Argentina",
+          "value": 2780400
+        }
+      ]
+    },
+    {
+      "id": "stack-049",
+      "kind": "expanded",
+      "source": "countries",
+      "measure": "area",
+      "unit": "km²",
+      "ordered": [
+        {
+          "key": "Portugal",
+          "name": "Portugal",
+          "value": 92090
+        },
+        {
+          "key": "Ecuador",
+          "name": "Ecuador",
+          "value": 276841
+        },
+        {
+          "key": "Vietnam",
+          "name": "Vietnam",
+          "value": 331212
+        },
+        {
+          "key": "Finland",
+          "name": "Finland",
+          "value": 338424
+        },
+        {
+          "key": "Sweden",
+          "name": "Sweden",
+          "value": 450295
+        }
+      ]
+    },
+    {
+      "id": "stack-050",
+      "kind": "expanded",
+      "source": "countries",
+      "measure": "area",
+      "unit": "km²",
+      "ordered": [
+        {
+          "key": "Portugal",
+          "name": "Portugal",
+          "value": 92090
+        },
+        {
+          "key": "Greece",
+          "name": "Greece",
+          "value": 131990
+        },
+        {
+          "key": "Malaysia",
+          "name": "Malaysia",
+          "value": 330803
+        },
+        {
+          "key": "Japan",
+          "name": "Japan",
+          "value": 377930
+        },
+        {
+          "key": "Mongolia",
+          "name": "Mongolia",
+          "value": 1564110
+        }
+      ]
+    },
+    {
+      "id": "stack-051",
+      "kind": "expanded",
+      "source": "countries",
+      "measure": "area",
+      "unit": "km²",
+      "ordered": [
+        {
+          "key": "Czechia",
+          "name": "Czechia",
+          "value": 78865
+        },
+        {
+          "key": "Portugal",
+          "name": "Portugal",
+          "value": 92090
+        },
+        {
+          "key": "Iceland",
+          "name": "Iceland",
+          "value": 103000
+        },
+        {
+          "key": "Poland",
+          "name": "Poland",
+          "value": 312679
+        },
+        {
+          "key": "Vietnam",
+          "name": "Vietnam",
+          "value": 331212
+        }
+      ]
+    },
+    {
+      "id": "stack-052",
+      "kind": "expanded",
+      "source": "countries",
+      "measure": "area",
+      "unit": "km²",
+      "ordered": [
+        {
+          "key": "Ireland",
+          "name": "Ireland",
+          "value": 70273
+        },
+        {
+          "key": "Iceland",
+          "name": "Iceland",
+          "value": 103000
+        },
+        {
+          "key": "Romania",
+          "name": "Romania",
+          "value": 238391
+        },
+        {
+          "key": "United Kingdom",
+          "name": "United Kingdom",
+          "value": 242900
+        },
+        {
+          "key": "Peru",
+          "name": "Peru",
+          "value": 1285216
+        }
+      ]
+    },
+    {
+      "id": "stack-053",
+      "kind": "expanded",
+      "source": "books",
+      "measure": "year",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Moby Dick",
+          "name": "Moby Dick — Herman Melville",
+          "value": 1851
+        },
+        {
+          "key": "Sons and Lovers",
+          "name": "Sons and Lovers — D. H. Lawrence",
+          "value": 1913
+        },
+        {
+          "key": "The Castle",
+          "name": "The Castle — Franz Kafka",
+          "value": 1926
+        },
+        {
+          "key": "The Sound and the Fury",
+          "name": "The Sound and the Fury — William Faulkner",
+          "value": 1929
+        },
+        {
+          "key": "Blindness",
+          "name": "Blindness — José Saramago",
+          "value": 1995
+        }
+      ]
+    },
+    {
+      "id": "stack-054",
+      "kind": "expanded",
+      "source": "books",
+      "measure": "year",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Dead Souls",
+          "name": "Dead Souls — Nikolai Gogol",
+          "value": 1842
+        },
+        {
+          "key": "Hunger",
+          "name": "Hunger — Knut Hamsun",
+          "value": 1890
+        },
+        {
+          "key": "The Magic Mountain",
+          "name": "The Magic Mountain — Thomas Mann",
+          "value": 1924
+        },
+        {
+          "key": "Things Fall Apart",
+          "name": "Things Fall Apart — Chinua Achebe",
+          "value": 1958
+        },
+        {
+          "key": "Blindness",
+          "name": "Blindness — José Saramago",
+          "value": 1995
+        }
+      ]
+    },
+    {
+      "id": "stack-055",
+      "kind": "expanded",
+      "source": "books",
+      "measure": "year",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Ulysses",
+          "name": "Ulysses — James Joyce",
+          "value": 1922
+        },
+        {
+          "key": "The Trial",
+          "name": "The Trial — Franz Kafka",
+          "value": 1925
+        },
+        {
+          "key": "Invisible Man",
+          "name": "Invisible Man — Ralph Ellison",
+          "value": 1952
+        },
+        {
+          "key": "Things Fall Apart",
+          "name": "Things Fall Apart — Chinua Achebe",
+          "value": 1958
+        },
+        {
+          "key": "Love in the Time of Cholera",
+          "name": "Love in the Time of Cholera — Gabriel García Márquez",
+          "value": 1985
+        }
+      ]
+    },
+    {
+      "id": "stack-056",
+      "kind": "expanded",
+      "source": "books",
+      "measure": "year",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Pride and Prejudice",
+          "name": "Pride and Prejudice — Jane Austen",
+          "value": 1813
+        },
+        {
+          "key": "Moby Dick",
+          "name": "Moby Dick — Herman Melville",
+          "value": 1851
+        },
+        {
+          "key": "Mrs Dalloway",
+          "name": "Mrs Dalloway — Virginia Woolf",
+          "value": 1925
+        },
+        {
+          "key": "The Castle",
+          "name": "The Castle — Franz Kafka",
+          "value": 1926
+        },
+        {
+          "key": "One Hundred Years of Solitude",
+          "name": "One Hundred Years of Solitude — Gabriel García Márquez",
+          "value": 1967
+        }
+      ]
+    },
+    {
+      "id": "stack-057",
+      "kind": "expanded",
+      "source": "books",
+      "measure": "year",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Hunger",
+          "name": "Hunger — Knut Hamsun",
+          "value": 1890
+        },
+        {
+          "key": "Mrs Dalloway",
+          "name": "Mrs Dalloway — Virginia Woolf",
+          "value": 1925
+        },
+        {
+          "key": "The Castle",
+          "name": "The Castle — Franz Kafka",
+          "value": 1926
+        },
+        {
+          "key": "Lolita",
+          "name": "Lolita — Vladimir Nabokov",
+          "value": 1955
+        },
+        {
+          "key": "One Hundred Years of Solitude",
+          "name": "One Hundred Years of Solitude — Gabriel García Márquez",
+          "value": 1967
+        }
+      ]
+    },
+    {
+      "id": "stack-058",
+      "kind": "expanded",
+      "source": "books",
+      "measure": "year",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Moby Dick",
+          "name": "Moby Dick — Herman Melville",
+          "value": 1851
+        },
+        {
+          "key": "Buddenbrooks",
+          "name": "Buddenbrooks — Thomas Mann",
+          "value": 1901
+        },
+        {
+          "key": "The Trial",
+          "name": "The Trial — Franz Kafka",
+          "value": 1925
+        },
+        {
+          "key": "Things Fall Apart",
+          "name": "Things Fall Apart — Chinua Achebe",
+          "value": 1958
+        },
+        {
+          "key": "One Hundred Years of Solitude",
+          "name": "One Hundred Years of Solitude — Gabriel García Márquez",
+          "value": 1967
+        }
+      ]
+    },
+    {
+      "id": "stack-059",
+      "kind": "expanded",
+      "source": "books",
+      "measure": "year",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Pride and Prejudice",
+          "name": "Pride and Prejudice — Jane Austen",
+          "value": 1813
+        },
+        {
+          "key": "Dead Souls",
+          "name": "Dead Souls — Nikolai Gogol",
+          "value": 1842
+        },
+        {
+          "key": "Ulysses",
+          "name": "Ulysses — James Joyce",
+          "value": 1922
+        },
+        {
+          "key": "Things Fall Apart",
+          "name": "Things Fall Apart — Chinua Achebe",
+          "value": 1958
+        },
+        {
+          "key": "Beloved",
+          "name": "Beloved — Toni Morrison",
+          "value": 1987
+        }
+      ]
+    },
+    {
+      "id": "stack-060",
+      "kind": "expanded",
+      "source": "books",
+      "measure": "year",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "The Red and the Black",
+          "name": "The Red and the Black — Stendhal",
+          "value": 1830
+        },
+        {
+          "key": "Wuthering Heights",
+          "name": "Wuthering Heights — Emily Brontë",
+          "value": 1847
+        },
+        {
+          "key": "Mrs Dalloway",
+          "name": "Mrs Dalloway — Virginia Woolf",
+          "value": 1925
+        },
+        {
+          "key": "To the Lighthouse",
+          "name": "To the Lighthouse — Virginia Woolf",
+          "value": 1927
+        },
+        {
+          "key": "Beloved",
+          "name": "Beloved — Toni Morrison",
+          "value": 1987
+        }
+      ]
+    },
+    {
+      "id": "stack-061",
+      "kind": "expanded",
+      "source": "books",
+      "measure": "year",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Dead Souls",
+          "name": "Dead Souls — Nikolai Gogol",
+          "value": 1842
+        },
+        {
+          "key": "Wuthering Heights",
+          "name": "Wuthering Heights — Emily Brontë",
+          "value": 1847
+        },
+        {
+          "key": "Moby Dick",
+          "name": "Moby Dick — Herman Melville",
+          "value": 1851
+        },
+        {
+          "key": "Invisible Man",
+          "name": "Invisible Man — Ralph Ellison",
+          "value": 1952
+        },
+        {
+          "key": "The Golden Notebook",
+          "name": "The Golden Notebook — Doris Lessing",
+          "value": 1962
+        }
+      ]
+    },
+    {
+      "id": "stack-062",
+      "kind": "expanded",
+      "source": "books",
+      "measure": "year",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Dead Souls",
+          "name": "Dead Souls — Nikolai Gogol",
+          "value": 1842
+        },
+        {
+          "key": "Sons and Lovers",
+          "name": "Sons and Lovers — D. H. Lawrence",
+          "value": 1913
+        },
+        {
+          "key": "The Trial",
+          "name": "The Trial — Franz Kafka",
+          "value": 1925
+        },
+        {
+          "key": "The Castle",
+          "name": "The Castle — Franz Kafka",
+          "value": 1926
+        },
+        {
+          "key": "Invisible Man",
+          "name": "Invisible Man — Ralph Ellison",
+          "value": 1952
+        }
+      ]
+    },
+    {
+      "id": "stack-063",
+      "kind": "expanded",
+      "source": "movies",
+      "measure": "year",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "The Lion King",
+          "name": "The Lion King — hand-drawn Disney film",
+          "value": 1994
+        },
+        {
+          "key": "Toy Story",
+          "name": "Toy Story",
+          "value": 1995
+        },
+        {
+          "key": "The Truman Show",
+          "name": "The Truman Show",
+          "value": 1998
+        },
+        {
+          "key": "The Sixth Sense",
+          "name": "The Sixth Sense",
+          "value": 1999
+        },
+        {
+          "key": "Finding Nemo",
+          "name": "Finding Nemo",
+          "value": 2003
+        }
+      ]
+    },
+    {
+      "id": "stack-064",
+      "kind": "expanded",
+      "source": "movies",
+      "measure": "year",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Jaws",
+          "name": "Jaws — Steven Spielberg",
+          "value": 1975
+        },
+        {
+          "key": "Back to the Future",
+          "name": "Back to the Future",
+          "value": 1985
+        },
+        {
+          "key": "The Shawshank Redemption",
+          "name": "The Shawshank Redemption",
+          "value": 1994
+        },
+        {
+          "key": "Titanic",
+          "name": "Titanic — James Cameron",
+          "value": 1997
+        },
+        {
+          "key": "Monsters, Inc.",
+          "name": "Monsters, Inc.",
+          "value": 2001
+        }
+      ]
+    },
+    {
+      "id": "stack-065",
+      "kind": "expanded",
+      "source": "movies",
+      "measure": "year",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Rocky",
+          "name": "Rocky — John G. Avildsen",
+          "value": 1976
+        },
+        {
+          "key": "Jurassic Park",
+          "name": "Jurassic Park",
+          "value": 1993
+        },
+        {
+          "key": "The Matrix",
+          "name": "The Matrix",
+          "value": 1999
+        },
+        {
+          "key": "Gladiator",
+          "name": "Gladiator",
+          "value": 2000
+        },
+        {
+          "key": "Finding Nemo",
+          "name": "Finding Nemo",
+          "value": 2003
+        }
+      ]
+    },
+    {
+      "id": "stack-066",
+      "kind": "expanded",
+      "source": "movies",
+      "measure": "year",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "The Godfather",
+          "name": "The Godfather",
+          "value": 1972
+        },
+        {
+          "key": "Alien",
+          "name": "Alien",
+          "value": 1979
+        },
+        {
+          "key": "Raiders of the Lost Ark",
+          "name": "Raiders of the Lost Ark",
+          "value": 1981
+        },
+        {
+          "key": "Braveheart",
+          "name": "Braveheart — Mel Gibson",
+          "value": 1995
+        },
+        {
+          "key": "Ratatouille",
+          "name": "Ratatouille",
+          "value": 2007
+        }
+      ]
+    },
+    {
+      "id": "stack-067",
+      "kind": "expanded",
+      "source": "movies",
+      "measure": "year",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "The Godfather",
+          "name": "The Godfather",
+          "value": 1972
+        },
+        {
+          "key": "Raiders of the Lost Ark",
+          "name": "Raiders of the Lost Ark",
+          "value": 1981
+        },
+        {
+          "key": "Back to the Future",
+          "name": "Back to the Future",
+          "value": 1985
+        },
+        {
+          "key": "Forrest Gump",
+          "name": "Forrest Gump",
+          "value": 1994
+        },
+        {
+          "key": "Toy Story",
+          "name": "Toy Story",
+          "value": 1995
+        }
+      ]
+    },
+    {
+      "id": "stack-068",
+      "kind": "expanded",
+      "source": "movies",
+      "measure": "year",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Blade Runner",
+          "name": "Blade Runner",
+          "value": 1982
+        },
+        {
+          "key": "Back to the Future",
+          "name": "Back to the Future",
+          "value": 1985
+        },
+        {
+          "key": "Jurassic Park",
+          "name": "Jurassic Park",
+          "value": 1993
+        },
+        {
+          "key": "Braveheart",
+          "name": "Braveheart — Mel Gibson",
+          "value": 1995
+        },
+        {
+          "key": "Ratatouille",
+          "name": "Ratatouille",
+          "value": 2007
+        }
+      ]
+    },
+    {
+      "id": "stack-069",
+      "kind": "expanded",
+      "source": "movies",
+      "measure": "year",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Blade Runner",
+          "name": "Blade Runner",
+          "value": 1982
+        },
+        {
+          "key": "The Silence of the Lambs",
+          "name": "The Silence of the Lambs",
+          "value": 1991
+        },
+        {
+          "key": "Braveheart",
+          "name": "Braveheart — Mel Gibson",
+          "value": 1995
+        },
+        {
+          "key": "The Truman Show",
+          "name": "The Truman Show",
+          "value": 1998
+        },
+        {
+          "key": "Finding Nemo",
+          "name": "Finding Nemo",
+          "value": 2003
+        }
+      ]
+    },
+    {
+      "id": "stack-070",
+      "kind": "expanded",
+      "source": "movies",
+      "measure": "year",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "The Shawshank Redemption",
+          "name": "The Shawshank Redemption",
+          "value": 1994
+        },
+        {
+          "key": "Toy Story",
+          "name": "Toy Story",
+          "value": 1995
+        },
+        {
+          "key": "The Sixth Sense",
+          "name": "The Sixth Sense",
+          "value": 1999
+        },
+        {
+          "key": "The Dark Knight",
+          "name": "The Dark Knight",
+          "value": 2008
+        },
+        {
+          "key": "Up",
+          "name": "Up — Pixar film",
+          "value": 2009
+        }
+      ]
+    },
+    {
+      "id": "stack-071",
+      "kind": "expanded",
+      "source": "movies",
+      "measure": "year",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Raiders of the Lost Ark",
+          "name": "Raiders of the Lost Ark",
+          "value": 1981
+        },
+        {
+          "key": "Pulp Fiction",
+          "name": "Pulp Fiction",
+          "value": 1994
+        },
+        {
+          "key": "Titanic",
+          "name": "Titanic — James Cameron",
+          "value": 1997
+        },
+        {
+          "key": "Monsters, Inc.",
+          "name": "Monsters, Inc.",
+          "value": 2001
+        },
+        {
+          "key": "Ratatouille",
+          "name": "Ratatouille",
+          "value": 2007
+        }
+      ]
+    },
+    {
+      "id": "stack-072",
+      "kind": "expanded",
+      "source": "movies",
+      "measure": "year",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "The Terminator",
+          "name": "The Terminator",
+          "value": 1984
+        },
+        {
+          "key": "Jurassic Park",
+          "name": "Jurassic Park",
+          "value": 1993
+        },
+        {
+          "key": "Pulp Fiction",
+          "name": "Pulp Fiction",
+          "value": 1994
+        },
+        {
+          "key": "Monsters, Inc.",
+          "name": "Monsters, Inc.",
+          "value": 2001
+        },
+        {
+          "key": "The Incredibles",
+          "name": "The Incredibles",
+          "value": 2004
+        }
+      ]
+    },
+    {
+      "id": "stack-073",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "latitude",
+      "unit": "° latitude",
+      "ordered": [
+        {
+          "key": "GRU",
+          "name": "São Paulo (GRU)",
+          "value": -23.431274
+        },
+        {
+          "key": "KTM",
+          "name": "Kathmandu (KTM)",
+          "value": 27.6966
+        },
+        {
+          "key": "ICN",
+          "name": "Seoul (ICN)",
+          "value": 37.469101
+        },
+        {
+          "key": "LIS",
+          "name": "Lisbon (LIS)",
+          "value": 38.7813
+        },
+        {
+          "key": "AMS",
+          "name": "Amsterdam (AMS)",
+          "value": 52.308601
+        }
+      ]
+    },
+    {
+      "id": "stack-074",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "latitude",
+      "unit": "° latitude",
+      "ordered": [
+        {
+          "key": "SYD",
+          "name": "Sydney (Mascot) (SYD)",
+          "value": -33.946098
+        },
+        {
+          "key": "SIN",
+          "name": "Singapore (SIN)",
+          "value": 1.35019
+        },
+        {
+          "key": "ZRH",
+          "name": "Zurich (ZRH)",
+          "value": 47.458056
+        },
+        {
+          "key": "FRA",
+          "name": "Frankfurt am Main (FRA)",
+          "value": 50.026706
+        },
+        {
+          "key": "HEL",
+          "name": "Helsinki (Vantaa) (HEL)",
+          "value": 60.318363
+        }
+      ]
+    },
+    {
+      "id": "stack-075",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "latitude",
+      "unit": "° latitude",
+      "ordered": [
+        {
+          "key": "KTM",
+          "name": "Kathmandu (KTM)",
+          "value": 27.6966
+        },
+        {
+          "key": "PHX",
+          "name": "Phoenix (PHX)",
+          "value": 33.435302
+        },
+        {
+          "key": "NRT",
+          "name": "Narita (NRT)",
+          "value": 35.76858
+        },
+        {
+          "key": "PRG",
+          "name": "Prague (PRG)",
+          "value": 50.100874
+        },
+        {
+          "key": "HEL",
+          "name": "Helsinki (Vantaa) (HEL)",
+          "value": 60.318363
+        }
+      ]
+    },
+    {
+      "id": "stack-076",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "latitude",
+      "unit": "° latitude",
+      "ordered": [
+        {
+          "key": "HKG",
+          "name": "Hong Kong (HKG)",
+          "value": 22.31184
+        },
+        {
+          "key": "NRT",
+          "name": "Narita (NRT)",
+          "value": 35.76858
+        },
+        {
+          "key": "LIS",
+          "name": "Lisbon (LIS)",
+          "value": 38.7813
+        },
+        {
+          "key": "YYC",
+          "name": "Calgary (YYC)",
+          "value": 51.118822
+        },
+        {
+          "key": "BER",
+          "name": "Berlin (BER)",
+          "value": 52.361738
+        }
+      ]
+    },
+    {
+      "id": "stack-077",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "latitude",
+      "unit": "° latitude",
+      "ordered": [
+        {
+          "key": "NBO",
+          "name": "Nairobi (NBO)",
+          "value": -1.318886
+        },
+        {
+          "key": "UIO",
+          "name": "Quito (UIO)",
+          "value": -0.125399
+        },
+        {
+          "key": "DXB",
+          "name": "Dubai (DXB)",
+          "value": 25.24979
+        },
+        {
+          "key": "BUD",
+          "name": "Budapest (BUD)",
+          "value": 47.43018
+        },
+        {
+          "key": "LHR",
+          "name": "London (LHR)",
+          "value": 51.470748
+        }
+      ]
+    },
+    {
+      "id": "stack-078",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "latitude",
+      "unit": "° latitude",
+      "ordered": [
+        {
+          "key": "UIO",
+          "name": "Quito (UIO)",
+          "value": -0.125399
+        },
+        {
+          "key": "DEL",
+          "name": "New Delhi (DEL)",
+          "value": 28.55563
+        },
+        {
+          "key": "LIS",
+          "name": "Lisbon (LIS)",
+          "value": 38.7813
+        },
+        {
+          "key": "FCO",
+          "name": "Rome (FCO)",
+          "value": 41.804532
+        },
+        {
+          "key": "CDG",
+          "name": "Paris (Roissy-en-France, Val-d'Oise) (CDG)",
+          "value": 49.00896
+        }
+      ]
+    },
+    {
+      "id": "stack-079",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "latitude",
+      "unit": "° latitude",
+      "ordered": [
+        {
+          "key": "BKK",
+          "name": "Bangkok (BKK)",
+          "value": 13.6811
+        },
+        {
+          "key": "PHX",
+          "name": "Phoenix (PHX)",
+          "value": 33.435302
+        },
+        {
+          "key": "NRT",
+          "name": "Narita (NRT)",
+          "value": 35.76858
+        },
+        {
+          "key": "DEN",
+          "name": "Denver (DEN)",
+          "value": 39.860027
+        },
+        {
+          "key": "IST",
+          "name": "Istanbul (IST)",
+          "value": 41.274874
+        }
+      ]
+    },
+    {
+      "id": "stack-080",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "latitude",
+      "unit": "° latitude",
+      "ordered": [
+        {
+          "key": "LPB",
+          "name": "La Paz / El Alto (LPB)",
+          "value": -16.510272
+        },
+        {
+          "key": "ATH",
+          "name": "Spata-Artemida (ATH)",
+          "value": 37.936401
+        },
+        {
+          "key": "RNO",
+          "name": "Reno (RNO)",
+          "value": 39.4991
+        },
+        {
+          "key": "BUD",
+          "name": "Budapest (BUD)",
+          "value": 47.43018
+        },
+        {
+          "key": "CDG",
+          "name": "Paris (Roissy-en-France, Val-d'Oise) (CDG)",
+          "value": 49.00896
+        }
+      ]
+    },
+    {
+      "id": "stack-081",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "latitude",
+      "unit": "° latitude",
+      "ordered": [
+        {
+          "key": "SYD",
+          "name": "Sydney (Mascot) (SYD)",
+          "value": -33.946098
+        },
+        {
+          "key": "KTM",
+          "name": "Kathmandu (KTM)",
+          "value": 27.6966
+        },
+        {
+          "key": "DEN",
+          "name": "Denver (DEN)",
+          "value": 39.860027
+        },
+        {
+          "key": "BER",
+          "name": "Berlin (BER)",
+          "value": 52.361738
+        },
+        {
+          "key": "OSL",
+          "name": "Oslo (Gardermoen) (OSL)",
+          "value": 60.193901
+        }
+      ]
+    },
+    {
+      "id": "stack-082",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "latitude",
+      "unit": "° latitude",
+      "ordered": [
+        {
+          "key": "JNB",
+          "name": "Johannesburg (JNB)",
+          "value": -26.140081
+        },
+        {
+          "key": "ADD",
+          "name": "Addis Ababa (ADD)",
+          "value": 8.97789
+        },
+        {
+          "key": "MEX",
+          "name": "Mexico City (MEX)",
+          "value": 19.435822
+        },
+        {
+          "key": "SLC",
+          "name": "Salt Lake City (SLC)",
+          "value": 40.78886
+        },
+        {
+          "key": "WAW",
+          "name": "Warsaw (WAW)",
+          "value": 52.165699
+        }
+      ]
+    },
+    {
+      "id": "stack-083",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "longitude",
+      "unit": "° longitude",
+      "ordered": [
+        {
+          "key": "JFK",
+          "name": "New York (JFK)",
+          "value": -73.779317
+        },
+        {
+          "key": "LIS",
+          "name": "Lisbon (LIS)",
+          "value": -9.13592
+        },
+        {
+          "key": "FRA",
+          "name": "Frankfurt am Main (FRA)",
+          "value": 8.55835
+        },
+        {
+          "key": "JNB",
+          "name": "Johannesburg (JNB)",
+          "value": 28.246801
+        },
+        {
+          "key": "BKK",
+          "name": "Bangkok (BKK)",
+          "value": 100.747002
+        }
+      ]
+    },
+    {
+      "id": "stack-084",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "longitude",
+      "unit": "° longitude",
+      "ordered": [
+        {
+          "key": "RNO",
+          "name": "Reno (RNO)",
+          "value": -119.767998
+        },
+        {
+          "key": "ABQ",
+          "name": "Albuquerque (ABQ)",
+          "value": -106.608925
+        },
+        {
+          "key": "AMS",
+          "name": "Amsterdam (AMS)",
+          "value": 4.76389
+        },
+        {
+          "key": "BUD",
+          "name": "Budapest (BUD)",
+          "value": 19.262393
+        },
+        {
+          "key": "HEL",
+          "name": "Helsinki (Vantaa) (HEL)",
+          "value": 24.963341
+        }
+      ]
+    },
+    {
+      "id": "stack-085",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "longitude",
+      "unit": "° longitude",
+      "ordered": [
+        {
+          "key": "UIO",
+          "name": "Quito (UIO)",
+          "value": -78.354306
+        },
+        {
+          "key": "DUB",
+          "name": "Dublin (DUB)",
+          "value": -6.262121
+        },
+        {
+          "key": "AMS",
+          "name": "Amsterdam (AMS)",
+          "value": 4.76389
+        },
+        {
+          "key": "BER",
+          "name": "Berlin (BER)",
+          "value": 13.502341
+        },
+        {
+          "key": "CAI",
+          "name": "Cairo (CAI)",
+          "value": 31.396694
+        }
+      ]
+    },
+    {
+      "id": "stack-086",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "longitude",
+      "unit": "° longitude",
+      "ordered": [
+        {
+          "key": "LAS",
+          "name": "Las Vegas (LAS)",
+          "value": -115.151817
+        },
+        {
+          "key": "DUB",
+          "name": "Dublin (DUB)",
+          "value": -6.262121
+        },
+        {
+          "key": "CDG",
+          "name": "Paris (Roissy-en-France, Val-d'Oise) (CDG)",
+          "value": 2.554117
+        },
+        {
+          "key": "VIE",
+          "name": "Vienna (VIE)",
+          "value": 16.5697
+        },
+        {
+          "key": "SYD",
+          "name": "Sydney (Mascot) (SYD)",
+          "value": 151.177002
+        }
+      ]
+    },
+    {
+      "id": "stack-087",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "longitude",
+      "unit": "° longitude",
+      "ordered": [
+        {
+          "key": "MEX",
+          "name": "Mexico City (MEX)",
+          "value": -99.07033
+        },
+        {
+          "key": "FRA",
+          "name": "Frankfurt am Main (FRA)",
+          "value": 8.55835
+        },
+        {
+          "key": "OSL",
+          "name": "Oslo (Gardermoen) (OSL)",
+          "value": 11.1004
+        },
+        {
+          "key": "WAW",
+          "name": "Warsaw (WAW)",
+          "value": 20.9671
+        },
+        {
+          "key": "NBO",
+          "name": "Nairobi (NBO)",
+          "value": 36.928233
+        }
+      ]
+    },
+    {
+      "id": "stack-088",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "longitude",
+      "unit": "° longitude",
+      "ordered": [
+        {
+          "key": "YYC",
+          "name": "Calgary (YYC)",
+          "value": -114.009933
+        },
+        {
+          "key": "SCL",
+          "name": "Santiago (SCL)",
+          "value": -70.78579711914062
+        },
+        {
+          "key": "ZRH",
+          "name": "Zurich (ZRH)",
+          "value": 8.548056
+        },
+        {
+          "key": "CPH",
+          "name": "Copenhagen (CPH)",
+          "value": 12.656000137329
+        },
+        {
+          "key": "HND",
+          "name": "Tokyo (HND)",
+          "value": 139.786958
+        }
+      ]
+    },
+    {
+      "id": "stack-089",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "longitude",
+      "unit": "° longitude",
+      "ordered": [
+        {
+          "key": "JFK",
+          "name": "New York (JFK)",
+          "value": -73.779317
+        },
+        {
+          "key": "DUB",
+          "name": "Dublin (DUB)",
+          "value": -6.262121
+        },
+        {
+          "key": "LHR",
+          "name": "London (LHR)",
+          "value": -0.459909
+        },
+        {
+          "key": "IST",
+          "name": "Istanbul (IST)",
+          "value": 28.732136
+        },
+        {
+          "key": "HND",
+          "name": "Tokyo (HND)",
+          "value": 139.786958
+        }
+      ]
+    },
+    {
+      "id": "stack-090",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "longitude",
+      "unit": "° longitude",
+      "ordered": [
+        {
+          "key": "LAX",
+          "name": "Los Angeles (LAX)",
+          "value": -118.407997
+        },
+        {
+          "key": "LAS",
+          "name": "Las Vegas (LAS)",
+          "value": -115.151817
+        },
+        {
+          "key": "UIO",
+          "name": "Quito (UIO)",
+          "value": -78.354306
+        },
+        {
+          "key": "LHR",
+          "name": "London (LHR)",
+          "value": -0.459909
+        },
+        {
+          "key": "SIN",
+          "name": "Singapore (SIN)",
+          "value": 103.994003
+        }
+      ]
+    },
+    {
+      "id": "stack-091",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "longitude",
+      "unit": "° longitude",
+      "ordered": [
+        {
+          "key": "RNO",
+          "name": "Reno (RNO)",
+          "value": -119.767998
+        },
+        {
+          "key": "YYC",
+          "name": "Calgary (YYC)",
+          "value": -114.009933
+        },
+        {
+          "key": "LIS",
+          "name": "Lisbon (LIS)",
+          "value": -9.13592
+        },
+        {
+          "key": "CDG",
+          "name": "Paris (Roissy-en-France, Val-d'Oise) (CDG)",
+          "value": 2.554117
+        },
+        {
+          "key": "ATH",
+          "name": "Spata-Artemida (ATH)",
+          "value": 23.9445
+        }
+      ]
+    },
+    {
+      "id": "stack-092",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "longitude",
+      "unit": "° longitude",
+      "ordered": [
+        {
+          "key": "PHX",
+          "name": "Phoenix (PHX)",
+          "value": -112.005905
+        },
+        {
+          "key": "DEN",
+          "name": "Denver (DEN)",
+          "value": -104.673792
+        },
+        {
+          "key": "MAD",
+          "name": "Madrid (MAD)",
+          "value": -3.572249
+        },
+        {
+          "key": "FCO",
+          "name": "Rome (FCO)",
+          "value": 12.251998
+        },
+        {
+          "key": "CAI",
+          "name": "Cairo (CAI)",
+          "value": 31.396694
+        }
+      ]
+    },
+    {
+      "id": "stack-093",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "elevation_ft",
+      "unit": "ft",
+      "ordered": [
+        {
+          "key": "SCL",
+          "name": "Santiago (SCL)",
+          "value": 1555.0
+        },
+        {
+          "key": "LAS",
+          "name": "Las Vegas (LAS)",
+          "value": 2181.0
+        },
+        {
+          "key": "ADD",
+          "name": "Addis Ababa (ADD)",
+          "value": 7630.0
+        },
+        {
+          "key": "UIO",
+          "name": "Quito (UIO)",
+          "value": 7841.0
+        },
+        {
+          "key": "LPB",
+          "name": "La Paz / El Alto (LPB)",
+          "value": 13355.0
+        }
+      ]
+    },
+    {
+      "id": "stack-094",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "elevation_ft",
+      "unit": "ft",
+      "ordered": [
+        {
+          "key": "PHX",
+          "name": "Phoenix (PHX)",
+          "value": 1135.0
+        },
+        {
+          "key": "ZRH",
+          "name": "Zurich (ZRH)",
+          "value": 1417.0
+        },
+        {
+          "key": "GRU",
+          "name": "São Paulo (GRU)",
+          "value": 2461.0
+        },
+        {
+          "key": "RNO",
+          "name": "Reno (RNO)",
+          "value": 4415.0
+        },
+        {
+          "key": "NBO",
+          "name": "Nairobi (NBO)",
+          "value": 5330.0
+        }
+      ]
+    },
+    {
+      "id": "stack-095",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "elevation_ft",
+      "unit": "ft",
+      "ordered": [
+        {
+          "key": "SCL",
+          "name": "Santiago (SCL)",
+          "value": 1555.0
+        },
+        {
+          "key": "NBO",
+          "name": "Nairobi (NBO)",
+          "value": 5330.0
+        },
+        {
+          "key": "MEX",
+          "name": "Mexico City (MEX)",
+          "value": 7316.0
+        },
+        {
+          "key": "UIO",
+          "name": "Quito (UIO)",
+          "value": 7841.0
+        },
+        {
+          "key": "LPB",
+          "name": "La Paz / El Alto (LPB)",
+          "value": 13355.0
+        }
+      ]
+    },
+    {
+      "id": "stack-096",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "elevation_ft",
+      "unit": "ft",
+      "ordered": [
+        {
+          "key": "GRU",
+          "name": "São Paulo (GRU)",
+          "value": 2461.0
+        },
+        {
+          "key": "ABQ",
+          "name": "Albuquerque (ABQ)",
+          "value": 5355.0
+        },
+        {
+          "key": "MEX",
+          "name": "Mexico City (MEX)",
+          "value": 7316.0
+        },
+        {
+          "key": "ADD",
+          "name": "Addis Ababa (ADD)",
+          "value": 7630.0
+        },
+        {
+          "key": "BOG",
+          "name": "Bogota (BOG)",
+          "value": 8361.0
+        }
+      ]
+    },
+    {
+      "id": "stack-097",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "elevation_ft",
+      "unit": "ft",
+      "ordered": [
+        {
+          "key": "PRG",
+          "name": "Prague (PRG)",
+          "value": 1247.0
+        },
+        {
+          "key": "GRU",
+          "name": "São Paulo (GRU)",
+          "value": 2461.0
+        },
+        {
+          "key": "JNB",
+          "name": "Johannesburg (JNB)",
+          "value": 5558.0
+        },
+        {
+          "key": "MEX",
+          "name": "Mexico City (MEX)",
+          "value": 7316.0
+        },
+        {
+          "key": "UIO",
+          "name": "Quito (UIO)",
+          "value": 7841.0
+        }
+      ]
+    },
+    {
+      "id": "stack-098",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "elevation_ft",
+      "unit": "ft",
+      "ordered": [
+        {
+          "key": "ZRH",
+          "name": "Zurich (ZRH)",
+          "value": 1417.0
+        },
+        {
+          "key": "SLC",
+          "name": "Salt Lake City (SLC)",
+          "value": 4227.0
+        },
+        {
+          "key": "RNO",
+          "name": "Reno (RNO)",
+          "value": 4415.0
+        },
+        {
+          "key": "JNB",
+          "name": "Johannesburg (JNB)",
+          "value": 5558.0
+        },
+        {
+          "key": "UIO",
+          "name": "Quito (UIO)",
+          "value": 7841.0
+        }
+      ]
+    },
+    {
+      "id": "stack-099",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "elevation_ft",
+      "unit": "ft",
+      "ordered": [
+        {
+          "key": "YYC",
+          "name": "Calgary (YYC)",
+          "value": 3557.0
+        },
+        {
+          "key": "DEN",
+          "name": "Denver (DEN)",
+          "value": 5431.0
+        },
+        {
+          "key": "ADD",
+          "name": "Addis Ababa (ADD)",
+          "value": 7630.0
+        },
+        {
+          "key": "UIO",
+          "name": "Quito (UIO)",
+          "value": 7841.0
+        },
+        {
+          "key": "BOG",
+          "name": "Bogota (BOG)",
+          "value": 8361.0
+        }
+      ]
+    },
+    {
+      "id": "stack-100",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "elevation_ft",
+      "unit": "ft",
+      "ordered": [
+        {
+          "key": "PHX",
+          "name": "Phoenix (PHX)",
+          "value": 1135.0
+        },
+        {
+          "key": "MAD",
+          "name": "Madrid (MAD)",
+          "value": 1998.0
+        },
+        {
+          "key": "GRU",
+          "name": "São Paulo (GRU)",
+          "value": 2461.0
+        },
+        {
+          "key": "ADD",
+          "name": "Addis Ababa (ADD)",
+          "value": 7630.0
+        },
+        {
+          "key": "BOG",
+          "name": "Bogota (BOG)",
+          "value": 8361.0
+        }
+      ]
+    },
+    {
+      "id": "stack-101",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "elevation_ft",
+      "unit": "ft",
+      "ordered": [
+        {
+          "key": "PRG",
+          "name": "Prague (PRG)",
+          "value": 1247.0
+        },
+        {
+          "key": "ZRH",
+          "name": "Zurich (ZRH)",
+          "value": 1417.0
+        },
+        {
+          "key": "RNO",
+          "name": "Reno (RNO)",
+          "value": 4415.0
+        },
+        {
+          "key": "NBO",
+          "name": "Nairobi (NBO)",
+          "value": 5330.0
+        },
+        {
+          "key": "UIO",
+          "name": "Quito (UIO)",
+          "value": 7841.0
+        }
+      ]
+    },
+    {
+      "id": "stack-102",
+      "kind": "expanded",
+      "source": "airports",
+      "measure": "elevation_ft",
+      "unit": "ft",
+      "ordered": [
+        {
+          "key": "LAS",
+          "name": "Las Vegas (LAS)",
+          "value": 2181.0
+        },
+        {
+          "key": "YYC",
+          "name": "Calgary (YYC)",
+          "value": 3557.0
+        },
+        {
+          "key": "ADD",
+          "name": "Addis Ababa (ADD)",
+          "value": 7630.0
+        },
+        {
+          "key": "UIO",
+          "name": "Quito (UIO)",
+          "value": 7841.0
+        },
+        {
+          "key": "LPB",
+          "name": "La Paz / El Alto (LPB)",
+          "value": 13355.0
+        }
+      ]
+    },
+    {
+      "id": "stack-103",
+      "kind": "expanded",
+      "source": "math",
+      "measure": "result",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "7²",
+          "name": "7²",
+          "value": 49
+        },
+        {
+          "key": "5³",
+          "name": "5³",
+          "value": 125
+        },
+        {
+          "key": "6³",
+          "name": "6³",
+          "value": 216
+        },
+        {
+          "key": "3⁵",
+          "name": "3⁵",
+          "value": 243
+        },
+        {
+          "key": "2⁸",
+          "name": "2⁸",
+          "value": 256
+        }
+      ],
+      "calculations": {
+        "2⁸": "2**8",
+        "3⁵": "3**5",
+        "5³": "5**3",
+        "6³": "6**3",
+        "7²": "7**2"
+      }
+    },
+    {
+      "id": "stack-104",
+      "kind": "expanded",
+      "source": "math",
+      "measure": "result",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "8/15",
+          "name": "8/15",
+          "value": 0.5333333333333333
+        },
+        {
+          "key": "11/20",
+          "name": "11/20",
+          "value": 0.55
+        },
+        {
+          "key": "9/16",
+          "name": "9/16",
+          "value": 0.5625
+        },
+        {
+          "key": "7/12",
+          "name": "7/12",
+          "value": 0.5833333333333334
+        },
+        {
+          "key": "5/8",
+          "name": "5/8",
+          "value": 0.625
+        }
+      ],
+      "calculations": {
+        "7/12": "7/12",
+        "5/8": "5/8",
+        "8/15": "8/15",
+        "11/20": "11/20",
+        "9/16": "9/16"
+      }
+    },
+    {
+      "id": "stack-105",
+      "kind": "expanded",
+      "source": "math",
+      "measure": "result",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "35% of 120",
+          "name": "35% of 120",
+          "value": 42
+        },
+        {
+          "key": "8% of 550",
+          "name": "8% of 550",
+          "value": 44
+        },
+        {
+          "key": "18% of 250",
+          "name": "18% of 250",
+          "value": 45
+        },
+        {
+          "key": "20% of 230",
+          "name": "20% of 230",
+          "value": 46
+        },
+        {
+          "key": "12% of 400",
+          "name": "12% of 400",
+          "value": 48
+        }
+      ],
+      "calculations": {
+        "18% of 250": "18/100*250",
+        "12% of 400": "12/100*400",
+        "35% of 120": "35/100*120",
+        "8% of 550": "8/100*550",
+        "20% of 230": "20/100*230"
+      }
+    },
+    {
+      "id": "stack-106",
+      "kind": "expanded",
+      "source": "math",
+      "measure": "result",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "2⁴ − 3",
+          "name": "2⁴ − 3",
+          "value": 13
+        },
+        {
+          "key": "√200",
+          "name": "√200",
+          "value": 14.142135623730951
+        },
+        {
+          "key": "5 × 3",
+          "name": "5 × 3",
+          "value": 15
+        },
+        {
+          "key": "4²",
+          "name": "4²",
+          "value": 16
+        },
+        {
+          "key": "3³ − 10",
+          "name": "3³ − 10",
+          "value": 17
+        }
+      ],
+      "calculations": {
+        "√200": "sqrt(200)",
+        "4²": "4**2",
+        "3³ − 10": "3**3-10",
+        "2⁴ − 3": "2**4-3",
+        "5 × 3": "5*3"
+      }
+    },
+    {
+      "id": "stack-107",
+      "kind": "expanded",
+      "source": "math",
+      "measure": "result",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "3⁶",
+          "name": "3⁶",
+          "value": 729
+        },
+        {
+          "key": "10³",
+          "name": "10³",
+          "value": 1000
+        },
+        {
+          "key": "2¹⁰",
+          "name": "2¹⁰",
+          "value": 1024
+        },
+        {
+          "key": "6⁴",
+          "name": "6⁴",
+          "value": 1296
+        },
+        {
+          "key": "12³",
+          "name": "12³",
+          "value": 1728
+        }
+      ],
+      "calculations": {
+        "2¹⁰": "2**10",
+        "6⁴": "6**4",
+        "12³": "12**3",
+        "10³": "10**3",
+        "3⁶": "3**6"
+      }
+    },
+    {
+      "id": "stack-108",
+      "kind": "expanded",
+      "source": "math",
+      "measure": "result",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "14/19",
+          "name": "14/19",
+          "value": 0.7368421052631579
+        },
+        {
+          "key": "3/4",
+          "name": "3/4",
+          "value": 0.75
+        },
+        {
+          "key": "13/17",
+          "name": "13/17",
+          "value": 0.7647058823529411
+        },
+        {
+          "key": "10/13",
+          "name": "10/13",
+          "value": 0.7692307692307693
+        },
+        {
+          "key": "7/9",
+          "name": "7/9",
+          "value": 0.7777777777777778
+        }
+      ],
+      "calculations": {
+        "13/17": "13/17",
+        "7/9": "7/9",
+        "10/13": "10/13",
+        "3/4": "3/4",
+        "14/19": "14/19"
+      }
+    },
+    {
+      "id": "stack-109",
+      "kind": "expanded",
+      "source": "math",
+      "measure": "result",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "4!",
+          "name": "4!",
+          "value": 24
+        },
+        {
+          "key": "7²",
+          "name": "7²",
+          "value": 49
+        },
+        {
+          "key": "2⁶",
+          "name": "2⁶",
+          "value": 64
+        },
+        {
+          "key": "3⁴",
+          "name": "3⁴",
+          "value": 81
+        },
+        {
+          "key": "5!",
+          "name": "5!",
+          "value": 120
+        }
+      ],
+      "calculations": {
+        "4!": "factorial(4)",
+        "5!": "factorial(5)",
+        "3⁴": "3**4",
+        "2⁶": "2**6",
+        "7²": "7**2"
+      }
+    },
+    {
+      "id": "stack-110",
+      "kind": "expanded",
+      "source": "math",
+      "measure": "result",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Pentagon",
+          "name": "Pentagon",
+          "value": 5
+        },
+        {
+          "key": "Hexagon",
+          "name": "Hexagon",
+          "value": 9
+        },
+        {
+          "key": "Heptagon",
+          "name": "Heptagon",
+          "value": 14
+        },
+        {
+          "key": "Octagon",
+          "name": "Octagon",
+          "value": 20
+        },
+        {
+          "key": "Nonagon",
+          "name": "Nonagon",
+          "value": 27
+        }
+      ],
+      "calculations": {
+        "Pentagon": "5*(5-3)/2",
+        "Hexagon": "6*(6-3)/2",
+        "Heptagon": "7*(7-3)/2",
+        "Octagon": "8*(8-3)/2",
+        "Nonagon": "9*(9-3)/2"
+      }
+    },
+    {
+      "id": "stack-111",
+      "kind": "expanded",
+      "source": "math",
+      "measure": "result",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "Pentagon",
+          "name": "Pentagon",
+          "value": 108
+        },
+        {
+          "key": "Hexagon",
+          "name": "Hexagon",
+          "value": 120
+        },
+        {
+          "key": "Octagon",
+          "name": "Octagon",
+          "value": 135
+        },
+        {
+          "key": "Nonagon",
+          "name": "Nonagon",
+          "value": 140
+        },
+        {
+          "key": "Decagon",
+          "name": "Decagon",
+          "value": 144
+        }
+      ],
+      "calculations": {
+        "Pentagon": "(5-2)*180/5",
+        "Hexagon": "(6-2)*180/6",
+        "Octagon": "(8-2)*180/8",
+        "Nonagon": "(9-2)*180/9",
+        "Decagon": "(10-2)*180/10"
+      }
+    },
+    {
+      "id": "stack-112",
+      "kind": "expanded",
+      "source": "math",
+      "measure": "result",
+      "unit": "",
+      "ordered": [
+        {
+          "key": "5 × 5 × 3",
+          "name": "5 × 5 × 3",
+          "value": 75
+        },
+        {
+          "key": "4 × 4 × 5",
+          "name": "4 × 4 × 5",
+          "value": 80
+        },
+        {
+          "key": "3 × 3 × 9",
+          "name": "3 × 3 × 9",
+          "value": 81
+        },
+        {
+          "key": "3 × 7 × 4",
+          "name": "3 × 7 × 4",
+          "value": 84
+        },
+        {
+          "key": "2 × 6 × 8",
+          "name": "2 × 6 × 8",
+          "value": 96
+        }
+      ],
+      "calculations": {
+        "3 × 7 × 4": "3*7*4",
+        "5 × 5 × 3": "5*5*3",
+        "2 × 6 × 8": "2*6*8",
+        "4 × 4 × 5": "4*4*5",
+        "3 × 3 × 9": "3*3*9"
+      }
+    }
+  ],
+  "stake": [
+    {
+      "id": "stake-added-001",
+      "source": "elements",
+      "key": "Tungsten",
+      "field": "symbol",
+      "answer": "Tungsten"
+    },
+    {
+      "id": "stake-added-002",
+      "source": "elements",
+      "key": "Antimony",
+      "field": "symbol",
+      "answer": "Antimony"
+    },
+    {
+      "id": "stake-added-003",
+      "source": "elements",
+      "key": "Tin",
+      "field": "symbol",
+      "answer": "Tin"
+    },
+    {
+      "id": "stake-added-004",
+      "source": "elements",
+      "key": "Lead",
+      "field": "symbol",
+      "answer": "Lead"
+    },
+    {
+      "id": "stake-added-005",
+      "source": "elements",
+      "key": "Mercury",
+      "field": "symbol",
+      "answer": "Mercury"
+    },
+    {
+      "id": "stake-added-006",
+      "source": "elements",
+      "key": "Potassium",
+      "field": "symbol",
+      "answer": "Potassium"
+    },
+    {
+      "id": "stake-added-007",
+      "source": "elements",
+      "key": "Silver",
+      "field": "symbol",
+      "answer": "Silver"
+    },
+    {
+      "id": "stake-added-008",
+      "source": "elements",
+      "key": "Copper",
+      "field": "symbol",
+      "answer": "Copper"
+    },
+    {
+      "id": "stake-added-009",
+      "source": "elements",
+      "key": "Cobalt",
+      "field": "symbol",
+      "answer": "Cobalt"
+    },
+    {
+      "id": "stake-added-010",
+      "source": "elements",
+      "key": "Nickel",
+      "field": "symbol",
+      "answer": "Nickel"
+    },
+    {
+      "id": "stake-added-011",
+      "source": "elements",
+      "key": "Zinc",
+      "field": "symbol",
+      "answer": "Zinc"
+    },
+    {
+      "id": "stake-added-012",
+      "source": "elements",
+      "key": "Platinum",
+      "field": "symbol",
+      "answer": "Platinum"
+    },
+    {
+      "id": "stake-added-013",
+      "source": "elements",
+      "key": "Palladium",
+      "field": "symbol",
+      "answer": "Palladium"
+    },
+    {
+      "id": "stake-added-014",
+      "source": "elements",
+      "key": "Xenon",
+      "field": "symbol",
+      "answer": "Xenon"
+    },
+    {
+      "id": "stake-added-015",
+      "source": "elements",
+      "key": "Krypton",
+      "field": "symbol",
+      "answer": "Krypton"
+    },
+    {
+      "id": "stake-added-016",
+      "source": "elements",
+      "key": "Rubidium",
+      "field": "symbol",
+      "answer": "Rubidium"
+    },
+    {
+      "id": "stake-added-017",
+      "source": "elements",
+      "key": "Strontium",
+      "field": "symbol",
+      "answer": "Strontium"
+    },
+    {
+      "id": "stake-added-018",
+      "source": "elements",
+      "key": "Molybdenum",
+      "field": "symbol",
+      "answer": "Molybdenum"
+    },
+    {
+      "id": "stake-added-019",
+      "source": "elements",
+      "key": "Niobium",
+      "field": "symbol",
+      "answer": "Niobium"
+    },
+    {
+      "id": "stake-added-020",
+      "source": "elements",
+      "key": "Zirconium",
+      "field": "symbol",
+      "answer": "Zirconium"
+    },
+    {
+      "id": "stake-added-021",
+      "source": "elements",
+      "key": "Lead",
+      "field": "number",
+      "answer": "Lead"
+    },
+    {
+      "id": "stake-added-022",
+      "source": "elements",
+      "key": "Bismuth",
+      "field": "number",
+      "answer": "Bismuth"
+    },
+    {
+      "id": "stake-added-023",
+      "source": "elements",
+      "key": "Antimony",
+      "field": "number",
+      "answer": "Antimony"
+    },
+    {
+      "id": "stake-added-024",
+      "source": "elements",
+      "key": "Bismuth",
+      "field": "number",
+      "answer": "Bismuth"
+    },
+    {
+      "id": "stake-added-025",
+      "source": "elements",
+      "key": "Tin",
+      "field": "number",
+      "answer": "Tin"
+    },
+    {
+      "id": "stake-added-026",
+      "source": "elements",
+      "key": "Tungsten",
+      "field": "number",
+      "answer": "Tungsten"
+    },
+    {
+      "id": "stake-added-027",
+      "source": "elements",
+      "key": "Lead",
+      "field": "number",
+      "answer": "Lead"
+    },
+    {
+      "id": "stake-added-028",
+      "source": "elements",
+      "key": "Lead",
+      "field": "number",
+      "answer": "Lead"
+    },
+    {
+      "id": "stake-added-029",
+      "source": "elements",
+      "key": "Tungsten",
+      "field": "number",
+      "answer": "Tungsten"
+    },
+    {
+      "id": "stake-added-030",
+      "source": "elements",
+      "key": "Gold",
+      "field": "number",
+      "answer": "Gold"
+    },
+    {
+      "id": "stake-added-031",
+      "source": "countries",
+      "key": "Portugal",
+      "field": "capital",
+      "answer": "Lisbon"
+    },
+    {
+      "id": "stake-added-032",
+      "source": "countries",
+      "key": "Norway",
+      "field": "capital",
+      "answer": "Oslo"
+    },
+    {
+      "id": "stake-added-033",
+      "source": "countries",
+      "key": "Finland",
+      "field": "capital",
+      "answer": "Helsinki"
+    },
+    {
+      "id": "stake-added-034",
+      "source": "countries",
+      "key": "Iceland",
+      "field": "capital",
+      "answer": "Reykjavik"
+    },
+    {
+      "id": "stake-added-035",
+      "source": "countries",
+      "key": "Ireland",
+      "field": "capital",
+      "answer": "Dublin"
+    },
+    {
+      "id": "stake-added-036",
+      "source": "countries",
+      "key": "Austria",
+      "field": "capital",
+      "answer": "Vienna"
+    },
+    {
+      "id": "stake-added-037",
+      "source": "countries",
+      "key": "Czechia",
+      "field": "capital",
+      "answer": "Prague"
+    },
+    {
+      "id": "stake-added-038",
+      "source": "countries",
+      "key": "Hungary",
+      "field": "capital",
+      "answer": "Budapest"
+    },
+    {
+      "id": "stake-added-039",
+      "source": "countries",
+      "key": "Poland",
+      "field": "capital",
+      "answer": "Warsaw"
+    },
+    {
+      "id": "stake-added-040",
+      "source": "countries",
+      "key": "Slovenia",
+      "field": "capital",
+      "answer": "Ljubljana"
+    },
+    {
+      "id": "stake-added-041",
+      "source": "countries",
+      "key": "Croatia",
+      "field": "capital",
+      "answer": "Zagreb"
+    },
+    {
+      "id": "stake-added-042",
+      "source": "countries",
+      "key": "Estonia",
+      "field": "capital",
+      "answer": "Tallinn"
+    },
+    {
+      "id": "stake-added-043",
+      "source": "countries",
+      "key": "Latvia",
+      "field": "capital",
+      "answer": "Riga"
+    },
+    {
+      "id": "stake-added-044",
+      "source": "countries",
+      "key": "Lithuania",
+      "field": "capital",
+      "answer": "Vilnius"
+    },
+    {
+      "id": "stake-added-045",
+      "source": "countries",
+      "key": "Slovakia",
+      "field": "capital",
+      "answer": "Bratislava"
+    },
+    {
+      "id": "stake-added-046",
+      "source": "countries",
+      "key": "Romania",
+      "field": "capital",
+      "answer": "Bucharest"
+    },
+    {
+      "id": "stake-added-047",
+      "source": "countries",
+      "key": "Bulgaria",
+      "field": "capital",
+      "answer": "Sofia"
+    },
+    {
+      "id": "stake-added-048",
+      "source": "countries",
+      "key": "Mongolia",
+      "field": "capital",
+      "answer": "Ulan Bator"
+    },
+    {
+      "id": "stake-added-049",
+      "source": "countries",
+      "key": "Namibia",
+      "field": "capital",
+      "answer": "Windhoek"
+    },
+    {
+      "id": "stake-added-050",
+      "source": "countries",
+      "key": "Senegal",
+      "field": "capital",
+      "answer": "Dakar"
+    },
+    {
+      "id": "stake-added-051",
+      "source": "books",
+      "key": "Things Fall Apart",
+      "field": "author",
+      "answer": "Chinua Achebe"
+    },
+    {
+      "id": "stake-added-052",
+      "source": "books",
+      "key": "Invisible Man",
+      "field": "author",
+      "answer": "Ralph Ellison"
+    },
+    {
+      "id": "stake-added-053",
+      "source": "books",
+      "key": "Beloved",
+      "field": "author",
+      "answer": "Toni Morrison"
+    },
+    {
+      "id": "stake-added-054",
+      "source": "books",
+      "key": "The Stranger",
+      "field": "author",
+      "answer": "Albert Camus"
+    },
+    {
+      "id": "stake-added-055",
+      "source": "books",
+      "key": "Blindness",
+      "field": "author",
+      "answer": "José Saramago"
+    },
+    {
+      "id": "stake-added-056",
+      "source": "books",
+      "key": "The Tin Drum",
+      "field": "author",
+      "answer": "Günter Grass"
+    },
+    {
+      "id": "stake-added-057",
+      "source": "books",
+      "key": "Lolita",
+      "field": "author",
+      "answer": "Vladimir Nabokov"
+    },
+    {
+      "id": "stake-added-058",
+      "source": "books",
+      "key": "Madame Bovary",
+      "field": "author",
+      "answer": "Gustave Flaubert"
+    },
+    {
+      "id": "stake-added-059",
+      "source": "books",
+      "key": "The Red and the Black",
+      "field": "author",
+      "answer": "Stendhal"
+    },
+    {
+      "id": "stake-added-060",
+      "source": "books",
+      "key": "Dead Souls",
+      "field": "author",
+      "answer": "Nikolai Gogol"
+    },
+    {
+      "id": "stake-added-061",
+      "source": "books",
+      "key": "To the Lighthouse",
+      "field": "author",
+      "answer": "Virginia Woolf"
+    },
+    {
+      "id": "stake-added-062",
+      "source": "books",
+      "key": "Mrs Dalloway",
+      "field": "author",
+      "answer": "Virginia Woolf"
+    },
+    {
+      "id": "stake-added-063",
+      "source": "books",
+      "key": "The Golden Notebook",
+      "field": "author",
+      "answer": "Doris Lessing"
+    },
+    {
+      "id": "stake-added-064",
+      "source": "books",
+      "key": "The Old Man and the Sea",
+      "field": "author",
+      "answer": "Ernest Hemingway"
+    },
+    {
+      "id": "stake-added-065",
+      "source": "books",
+      "key": "The Sound and the Fury",
+      "field": "author",
+      "answer": "William Faulkner"
+    },
+    {
+      "id": "stake-added-066",
+      "source": "books",
+      "key": "The Trial",
+      "field": "author",
+      "answer": "Franz Kafka"
+    },
+    {
+      "id": "stake-added-067",
+      "source": "books",
+      "key": "The Castle",
+      "field": "author",
+      "answer": "Franz Kafka"
+    },
+    {
+      "id": "stake-added-068",
+      "source": "books",
+      "key": "Buddenbrooks",
+      "field": "author",
+      "answer": "Thomas Mann"
+    },
+    {
+      "id": "stake-added-069",
+      "source": "books",
+      "key": "The Magic Mountain",
+      "field": "author",
+      "answer": "Thomas Mann"
+    },
+    {
+      "id": "stake-added-070",
+      "source": "books",
+      "key": "Sons and Lovers",
+      "field": "author",
+      "answer": "D. H. Lawrence"
+    },
+    {
+      "id": "stake-added-071",
+      "source": "movies",
+      "key": "Alien",
+      "field": "year",
+      "answer": "1979"
+    },
+    {
+      "id": "stake-added-072",
+      "source": "movies",
+      "key": "The Matrix",
+      "field": "year",
+      "answer": "1999"
+    },
+    {
+      "id": "stake-added-073",
+      "source": "movies",
+      "key": "Jurassic Park",
+      "field": "year",
+      "answer": "1993"
+    },
+    {
+      "id": "stake-added-074",
+      "source": "movies",
+      "key": "Back to the Future",
+      "field": "year",
+      "answer": "1985"
+    },
+    {
+      "id": "stake-added-075",
+      "source": "movies",
+      "key": "Toy Story",
+      "field": "year",
+      "answer": "1995"
+    },
+    {
+      "id": "stake-added-076",
+      "source": "movies",
+      "key": "Titanic",
+      "field": "year",
+      "answer": "1997"
+    },
+    {
+      "id": "stake-added-077",
+      "source": "movies",
+      "key": "Shrek",
+      "field": "year",
+      "answer": "2001"
+    },
+    {
+      "id": "stake-added-078",
+      "source": "movies",
+      "key": "Finding Nemo",
+      "field": "year",
+      "answer": "2003"
+    },
+    {
+      "id": "stake-added-079",
+      "source": "movies",
+      "key": "The Incredibles",
+      "field": "year",
+      "answer": "2004"
+    },
+    {
+      "id": "stake-added-080",
+      "source": "movies",
+      "key": "The Dark Knight",
+      "field": "year",
+      "answer": "2008"
+    },
+    {
+      "id": "stake-added-081",
+      "source": "math",
+      "key": "math-1",
+      "field": "result",
+      "answer": "323",
+      "calculation": "17*19"
+    },
+    {
+      "id": "stake-added-082",
+      "source": "math",
+      "key": "math-2",
+      "field": "result",
+      "answer": "529",
+      "calculation": "23**2"
+    },
+    {
+      "id": "stake-added-083",
+      "source": "math",
+      "key": "math-3",
+      "field": "result",
+      "answer": "1024",
+      "calculation": "2**10"
+    },
+    {
+      "id": "stake-added-084",
+      "source": "math",
+      "key": "math-4",
+      "field": "result",
+      "answer": "5040",
+      "calculation": "factorial(7)"
+    },
+    {
+      "id": "stake-added-085",
+      "source": "math",
+      "key": "math-5",
+      "field": "result",
+      "answer": "210",
+      "calculation": "20*21/2"
+    },
+    {
+      "id": "stake-added-086",
+      "source": "math",
+      "key": "math-6",
+      "field": "result",
+      "answer": "36",
+      "calculation": "lcm(12,18)"
+    },
+    {
+      "id": "stake-added-087",
+      "source": "math",
+      "key": "math-7",
+      "field": "result",
+      "answer": "42",
+      "calculation": "gcd(84,126)"
+    },
+    {
+      "id": "stake-added-088",
+      "source": "math",
+      "key": "math-8",
+      "field": "result",
+      "answer": "143",
+      "calculation": "11*13"
+    },
+    {
+      "id": "stake-added-089",
+      "source": "math",
+      "key": "math-9",
+      "field": "result",
+      "answer": "14",
+      "calculation": "7*(7-3)/2"
+    },
+    {
+      "id": "stake-added-090",
+      "source": "math",
+      "key": "math-10",
+      "field": "result",
+      "answer": "144",
+      "calculation": "(10-2)*180/10"
+    },
+    {
+      "id": "stake-added-091",
+      "source": "math",
+      "key": "math-11",
+      "field": "result",
+      "answer": "225",
+      "calculation": "9**2+12**2"
+    },
+    {
+      "id": "stake-added-092",
+      "source": "math",
+      "key": "math-12",
+      "field": "result",
+      "answer": "125",
+      "calculation": "5**3"
+    },
+    {
+      "id": "stake-added-093",
+      "source": "math",
+      "key": "math-13",
+      "field": "result",
+      "answer": "25",
+      "calculation": "sqrt(625)"
+    },
+    {
+      "id": "stake-added-094",
+      "source": "math",
+      "key": "math-14",
+      "field": "result",
+      "answer": "37.5",
+      "calculation": "3/8*100"
+    },
+    {
+      "id": "stake-added-095",
+      "source": "math",
+      "key": "math-15",
+      "field": "result",
+      "answer": "45",
+      "calculation": "2**5+2**3+2**2+1"
+    },
+    {
+      "id": "stake-added-096",
+      "source": "math",
+      "key": "math-16",
+      "field": "result",
+      "answer": "1/2",
+      "calculation": "1/3+1/6"
+    },
+    {
+      "id": "stake-added-097",
+      "source": "math",
+      "key": "math-17",
+      "field": "result",
+      "answer": "72",
+      "calculation": "3*24"
+    },
+    {
+      "id": "stake-added-098",
+      "source": "math",
+      "key": "math-18",
+      "field": "result",
+      "answer": "13",
+      "calculation": "sqrt(5**2+12**2)"
+    },
+    {
+      "id": "stake-added-099",
+      "source": "math",
+      "key": "math-19",
+      "field": "result",
+      "answer": "45",
+      "calculation": "30/100*150"
+    },
+    {
+      "id": "stake-added-100",
+      "source": "math",
+      "key": "math-20",
+      "field": "result",
+      "answer": "49π",
+      "calculation": "7**2"
+    }
+  ]
+}

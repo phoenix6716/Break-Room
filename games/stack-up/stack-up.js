@@ -2,7 +2,7 @@
 (() => {
  'use strict';
  const $=id=>document.getElementById(id),clock=window.MIDNIGHT_ARCADE_CLOCK;
- const pool=window.STACK_UP_STACKS, prefix='break-room:stack-up:daily:',version=1;
+ const pool=window.STACK_UP_STACKS, prefix='break-room:stack-up:daily:',version=2;
  const memory=new Map();let persistent=true,run=null,mode='daily',dialog=null;
  const read=key=>{if(!persistent&&memory.has(key))return memory.get(key);try{return localStorage.getItem(key)||memory.get(key)||null}catch{return memory.get(key)||null}};
  function write(key,value){memory.set(key,value);try{localStorage.setItem(key,value)}catch{persistent=false;$('save-warning').hidden=false;}}
@@ -12,12 +12,17 @@
  function shuffle(items,random=Math.random){const copy=items.slice();for(let i=copy.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[copy[i],copy[j]]=[copy[j],copy[i]];}return copy;}
  function dailySet(day){return shuffle(pool.map((_,i)=>i),seeded('stack-up:'+day)).slice(0,5);}
  function valid(r,day){return r&&r.version===version&&r.day===day&&Number.isInteger(r.round)&&r.round>=0&&r.round<5&&Number.isFinite(r.score)&&Number.isInteger(r.streak)&&r.streak>=0&&Array.isArray(r.results)&&r.results.length<=5&&r.results.every(x=>x&&typeof x.correct==='boolean'&&Number.isFinite(x.points)&&Number.isInteger(x.mistakes)&&x.mistakes>=0)&&['playing','review','complete'].includes(r.status)&&Array.isArray(r.order)&&r.order.length===5&&new Set(r.order).size===5&&r.order.every(x=>Number.isInteger(x)&&x>=1&&x<=5)&&Number.isFinite(r.deadline)&&Number.isInteger(r.mistakes)&&r.mistakes>=0&&(r.status==='playing'?r.results.length===r.round:r.results.length===r.round+1)&&(r.status!=='complete'||r.round===4);}
- function load(day){try{const r=JSON.parse(read(prefix+day));return valid(r,day)?r:null}catch{return null;}}
+ function load(day){try{const r=JSON.parse(read(prefix+day));
+  // Earlier runs used a twelve-item bank. Freeze their original questions before the bank grows.
+  if(r?.version===1&&!r.stacks){const old=window.STACK_UP_LEGACY_STACKS;r.stacks=shuffle(old.map((_,i)=>i),seeded('stack-up:'+day)).slice(0,5).map(i=>old[i]);r.version=version;}
+  const snapshots=r?.stacks;
+  const validStacks=Array.isArray(snapshots)&&snapshots.length===5&&snapshots.every(s=>s&&typeof s.prompt==='string'&&typeof s.fact==='string'&&Array.isArray(s.ends)&&s.ends.length===2&&Array.isArray(s.cards)&&s.cards.length===5&&s.cards.every((c,i)=>c&&typeof c.name==='string'&&c.value===i+1));
+  return validStacks&&valid(r,day)?r:null}catch{return null;}}
  function save(){if(mode==='daily'&&run)write(prefix+run.day,JSON.stringify(run));}
- function stack(){return pool[mode==='daily'?dailySet(run.day)[run.round]:run.stack];}
+ function stack(){return (mode==='daily'?run.stacks[run.round]:pool[run.stack]);}
  function secondsLeft(){return Math.max(0,Math.min(90,Math.ceil((run.deadline-Date.now())/1000)));}
  function makeRound(){run.order=shuffle([1,2,3,4,5],mode==='daily'?seeded(run.day+':'+run.round):Math.random);if(run.order.every((v,i)=>v===i+1))run.order.push(run.order.shift());run.deadline=Date.now()+90000;run.mistakes=0;run.status='playing';save();}
- function newRun(nextMode){return{version,day:clock.dayKey(),round:0,score:0,streak:0,results:[],order:[],deadline:0,mistakes:0,status:'playing',stack:Math.floor(Math.random()*pool.length)};}
+ function newRun(nextMode){return{version,day:clock.dayKey(),round:0,score:0,streak:0,results:[],order:[],deadline:0,mistakes:0,status:'playing',stacks:nextMode==='daily'?dailySet(clock.dayKey()).map(i=>pool[i]):null,stack:Math.floor(Math.random()*pool.length)};}
  function currentDay(){if(mode==='daily'&&run&&run.day!==clock.dayKey()){closeDialog();run=null;$('game-interface').hidden=true;$('game-interface').setAttribute('aria-hidden','true');$('intro-screen').hidden=false;$('day-notice').hidden=false;refreshStats();refreshLaunch();return false;}return true;}
  function start(nextMode){closeDialog();mode=nextMode;run=mode==='daily'?load(clock.dayKey()):null;if(!run){run=newRun(mode);makeRound();}$('intro-screen').hidden=true;$('game-interface').hidden=false;$('game-interface').setAttribute('aria-hidden','false');$('day-notice').hidden=true;document.querySelectorAll('[data-mode]').forEach(b=>{b.classList.toggle('active',b.dataset.mode===mode);b.setAttribute('aria-pressed',String(b.dataset.mode===mode));});render();if(run.status==='playing')tick();else if(run.status==='review')openResult();$('game-interface').scrollIntoView({block:'start'});}
  function render(){
@@ -46,7 +51,7 @@
    const number=document.createElement('span');number.className='card-number';number.textContent=String(index+1).padStart(2,'0');
    const symbol=document.createElement('span');symbol.className='card-symbol alt-'+index;symbol.textContent=item.symbol;symbol.setAttribute('aria-hidden','true');
    const name=document.createElement('div');name.className='card-name';name.textContent=item.name;
-   const detail=document.createElement('div');detail.className='card-detail';detail.textContent=item.detail;
+   const detail=document.createElement('div');detail.className='card-detail';detail.textContent='';
    const moves=document.createElement('div');moves.className='card-moves';
    [-1,1].forEach(offset=>{const button=document.createElement('button');button.type='button';button.textContent=offset<0?'←':'→';button.setAttribute('aria-label',`Move ${item.name} ${offset<0?'earlier':'later'}`);button.disabled=locked||index+offset<0||index+offset>4;button.onclick=()=>move(index,index+offset);moves.append(button);});
    card.append(number,symbol,name,detail,moves);

@@ -1,3 +1,7 @@
+## Question-bank expansion
+
+Verified all 112 sorting-set orders against the checked-in factual reference snapshot and all 100 added trivia answer keys. Independent expected answers check the numerical sets/questions. Duplicate/tie checks and blank pre-answer descriptions pass. Migration tests pass for both games: old questions/scores/progress survive the larger bank, new records use question snapshots, bank reordering does not alter them, and old descriptions do not leak answer values. Full Stack Up, Stake sharing and shared-reset suites pass after the expansion. See `content/QUESTION-SOURCES.md` for reference URLs, excluded ambiguous entries and the reconciled airport-elevation discrepancy.
+
 ## Stack Up production integration
 
 - Full Daily five-stack runs passed at 320, 390, 768 and 1440px, including exact perfect score (31,000), daily completion saved once, replay prevented, result copy content, and Infinite scores excluded from Daily stats.
