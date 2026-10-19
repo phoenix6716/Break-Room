@@ -1,3 +1,7 @@
+## Stake timed questions and popup repair
+
+Passed `tests/stake-timer.cjs` at 320/390/768/1440px: untimed stake selection; 30-second question timer; persisted absolute deadline across refresh; expiry during help; timeout charged once; all five daily bets lost correctly with a -11-chip total, saved completion and correct stats; Unlimited expiry without affecting Daily stats. Additional checks passed for Daily expiry while viewing Unlimited, stopping the timer after answering, rejecting a late click as timeout, and matching both Stake popup styles to Stack Up's computed styles, focus trapping/restoration and removal of the old purple inner border. Existing question-bank migration, Stake sharing, shared-reset and full Stack Up suites also passed. Screenshots captured with no browser JS/resource errors.
+
 ## Question-bank expansion
 
 Verified all 112 sorting-set orders against the checked-in factual reference snapshot and all 100 added trivia answer keys. Independent expected answers check the numerical sets/questions. Duplicate/tie checks and blank pre-answer descriptions pass. Migration tests pass for both games: old questions/scores/progress survive the larger bank, new records use question snapshots, bank reordering does not alter them, and old descriptions do not leak answer values. Full Stack Up, Stake sharing and shared-reset suites pass after the expansion. See `content/QUESTION-SOURCES.md` for reference URLs, excluded ambiguous entries and the reconciled airport-elevation discrepancy.

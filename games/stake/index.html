@@ -47,14 +47,14 @@ textarea{resize:none}.big{font-size:44px;font-weight:800;margin:.1em 0}
 .game-popup-backdrop{position:fixed;inset:0;z-index:1000;background:rgba(7,4,20,.82);display:grid;place-items:center;padding:18px}.game-popup-backdrop[hidden]{display:none}.game-popup{position:relative;width:min(100%,540px);max-height:min(86vh,760px);overflow:auto;background:var(--card);color:var(--ink);border:2px solid var(--line);box-shadow:6px 7px 0 #05030d;padding:26px}.game-popup h2{font-size:24px;margin:4px 0 12px}.game-popup p{color:var(--mut)}.popup-kicker{color:var(--gold)!important;font-size:11px;font-weight:800;letter-spacing:.14em}.game-popup-close{position:absolute;right:10px;top:10px;border:2px solid var(--line);background:transparent;color:var(--ink);font-size:24px;width:36px;height:36px;cursor:pointer}.popup-instructions{line-height:1.6}.popup-instructions strong{color:var(--ink)}.popup-done{margin-top:12px}.extended-stats-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.extended-stats-grid>div{border:2px solid var(--line);padding:12px;background:var(--bg)}.extended-stats-grid strong,.extended-stats-grid span{display:block}.extended-stats-grid strong{font-size:23px;color:var(--gold)}.extended-stats-grid span{font-size:10px;color:var(--mut);font-weight:800;letter-spacing:.07em}.popup-footnote{font-size:12px}.standalone-footer{text-align:center;color:var(--mut);font-size:12px;margin:28px 0 0}.sound-control{background:transparent;color:var(--mut);border:0;font:inherit;cursor:pointer}.standalone-legal{display:flex;justify-content:center;gap:16px;margin:12px}.standalone-legal a{color:var(--mut)}.standalone-site-footer{margin-top:0}
 @media(max-width:520px){.standalone-wrap{padding:18px 12px 26px}.standalone-heading{gap:10px}.standalone-title-group h1{font-size:25px}.quick-stats{gap:6px}.quick-stat{padding:10px 4px}.quick-stat strong{font-size:22px}.game-popup{padding:24px 18px}}
 
-</style><script defer src="../../navigation.js"></script><script src="../../daily-clock.js"></script><link rel="stylesheet" href="../../break-room.css"><script src="questions.js"></script></head><body><header class="site-header game-site-header"><div class="wrap game-header-inner"><button class="game-menu-toggle" id="game-menu-toggle" type="button" aria-expanded="false" aria-controls="game-menu"><span class="hamburger-lines" aria-hidden="true">☰</span><span class="menu-toggle-label">MENU</span></button><a class="brand" href="../../index.html" aria-label="Break Room — back to all games"><span class="break-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="break-wordmark">BREAK ROOM</span></a><a class="game-header-account" href="../../login.html">ACCOUNT</a></div><nav class="game-menu" id="game-menu" aria-label="Break Room menu" aria-hidden="true" hidden>
+</style><script defer src="../../navigation.js"></script><script src="../../daily-clock.js"></script><link rel="stylesheet" href="../../break-room.css"><script src="questions.js"></script><link rel="stylesheet" href="timer.css"><link rel="stylesheet" href="../../game-dialog.css"></head><body><header class="site-header game-site-header"><div class="wrap game-header-inner"><button class="game-menu-toggle" id="game-menu-toggle" type="button" aria-expanded="false" aria-controls="game-menu"><span class="hamburger-lines" aria-hidden="true">☰</span><span class="menu-toggle-label">MENU</span></button><a class="brand" href="../../index.html" aria-label="Break Room — back to all games"><span class="break-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="break-wordmark">BREAK ROOM</span></a><a class="game-header-account" href="../../login.html">ACCOUNT</a></div><nav class="game-menu" id="game-menu" aria-label="Break Room menu" aria-hidden="true" hidden>
 <div class="game-menu-heading"><span class="section-meta">BREAK ROOM</span><button class="game-menu-close" id="game-menu-close" type="button" aria-label="Close menu">×</button></div>
 <div class="game-menu-content"><div class="game-menu-group"><span class="section-meta">PLAY NOW</span><a href="../../index.html#daily-games">All games</a><a href="../../games/lowball/index.html">Lowball</a><a href="../../games/stake/index.html">Stake</a><a href="../../games/stack-up/index.html">Stack Up</a></div>
 <div class="game-menu-group"><span class="section-meta">COMING SOON</span><a href="../../games/pixel-pairs/index.html">Pixel Pairs</a><a href="../../games/word-forge/index.html">Word Forge</a><a href="../../games/gridlock/index.html">Gridlock</a><a href="../../games/number-drop/index.html">Number Drop</a><a href="../../games/memory-lane/index.html">Memory Lane</a><a href="../../games/mystery-cabinet/index.html">Mystery Cabinet</a></div><div class="game-menu-group"><span class="section-meta">YOUR ARCADE</span><a href="../../profile.html">My stats</a><a href="../../friends.html">Friends</a><a href="../../login.html">Account / sign in</a></div></div></nav></header><main class="standalone-page"><div class="standalone-wrap">
 <section class="standalone-heading" aria-labelledby="stake-page-title"><div class="standalone-heading-spacer"></div><div class="standalone-title-group"><h1 id="stake-page-title">Stake</h1><p>Trivia / Risk · Bet your chips.</p></div><div class="standalone-tools"><button class="mini-tool" id="help-popup-open" type="button" aria-label="How to play" title="How to play">?</button><button class="mini-tool" id="stats-popup-open" type="button" aria-label="Extended game stats" title="Extended game stats"><img src="../../assets/icons/trophy.svg" alt=""></button></div></section>
 <section class="quick-stats" aria-label="Your Stake stats"><div class="quick-stat"><strong id="stake-streak">0</strong><span>Streak</span></div><div class="quick-stat"><strong id="stake-best">0</strong><span>Best</span></div><div class="quick-stat"><strong id="stake-played">0</strong><span>Played</span></div></section>
 <aside class="live-reset" aria-label="Daily reset">NEXT DAILY RESET<strong data-daily-countdown>--:--:--</strong><p>Midnight Sydney. Every game.</p></aside><div id="app"></div>
-<div class="game-popup-backdrop" id="help-popup" hidden><section class="game-popup" role="dialog" aria-modal="true" aria-labelledby="help-popup-title"><button class="game-popup-close" type="button" data-popup-close aria-label="Close">×</button><p class="popup-kicker">PLAYER GUIDE</p><h2 id="help-popup-title">HOW TO PLAY STAKE</h2><p>Stake chips on your knowledge across five daily trivia questions, or play unlimited rounds.</p><div class="popup-instructions"><p><strong>1. Choose your stake.</strong> Bet 1, 2, or 3 chips before the answer choices appear.</p><p><strong>2. Pick an answer.</strong> A correct answer wins the chips you staked; a wrong answer loses them.</p><p><strong>3. Finish the daily set.</strong> Answer all five questions to see your final score and share your result. Unlimited mode is for practice and does not affect your daily streak.</p></div><button class="button pink popup-done" type="button" data-popup-close>GOT IT</button></section></div>
+<div class="game-popup-backdrop" id="help-popup" hidden><section class="game-popup" role="dialog" aria-modal="true" aria-labelledby="help-popup-title"><button class="game-popup-close" type="button" data-popup-close aria-label="Close">×</button><p class="popup-kicker">PLAYER GUIDE</p><h2 id="help-popup-title">HOW TO PLAY STAKE</h2><p>Stake chips on your knowledge across five daily trivia questions, or play unlimited rounds.</p><div class="popup-instructions"><p><strong>1. Choose your stake.</strong> Bet 1, 2, or 3 chips before the answer choices appear.</p><p><strong>2. Pick an answer.</strong> You have 30 seconds after placing your bet. A correct answer wins the chips you staked; a wrong answer or timeout loses them. The timer keeps running if you leave or switch modes.</p><p><strong>3. Finish the daily set.</strong> Answer all five questions to see your final score and share your result. Unlimited mode is for practice and does not affect your daily streak.</p></div><button class="button pink popup-done" type="button" data-popup-close>GOT IT</button></section></div>
 <div class="game-popup-backdrop" id="stats-popup" hidden><section class="game-popup" role="dialog" aria-modal="true" aria-labelledby="stats-popup-title"><button class="game-popup-close" type="button" data-popup-close aria-label="Close">×</button><p class="popup-kicker">CABINET RECORD</p><h2 id="stats-popup-title">EXTENDED STATS</h2><p class="stats-popup-game">Stake · Trivia / Risk</p><div class="extended-stats-grid"><div><strong id="stat-played">0</strong><span>RUNS PLAYED</span></div><div><strong id="stat-best">—</strong><span>BEST SCORE</span></div><div><strong id="stat-average">—</strong><span>AVERAGE SCORE</span></div><div><strong id="stat-streak">0</strong><span>CURRENT STREAK</span></div><div><strong id="stat-perfect">0</strong><span>POSITIVE RUNS</span></div><div><strong id="stat-last">—</strong><span>LAST SCORE</span></div></div><p class="popup-footnote">Stats are stored in this browser and do not sync between devices.</p><button class="button pink popup-done" type="button" data-popup-close>BACK TO GAME</button></section></div>
 <div class="standalone-footer"><p>Break Room is an independent collection of daily games. Game artwork and challenge mechanics vary by cabinet.</p></div></div></main><footer class="site-footer standalone-site-footer"><div class="wrap footer-inner"><span>© 2026 Break Room · ONE DAY. ONE RUN.</span><div class="footer-links"><a href="../../index.html">All games</a><a href="../../style-guide.html">Style guide</a></div></div></footer>
 <script>
@@ -238,11 +238,11 @@ const idxs=()=>BANK.map((_,i)=>i);
 function bq(k,r){const o=BANK[k],pm=shuf([0,1,2],r);return{c:o.c,q:o.q,o:pm.map(j=>o.o[j]),a:pm.indexOf(0),f:o.f}}
 // HOOK sponsored themed sets: swap the pool passed in here for a themed bank on chosen dates
 function dayQs(d,limit=BANK.length){const r=mk("stake:"+d);return shuf(idxs().slice(0,limit),r).slice(0,5).map(k=>bq(k,r))}
-function load(k){const t=ls.get(k);if(!t)return null;try{const s=JSON.parse(t),ok=a=>Array.isArray(a)&&a.length<=5&&a.every(Number.isInteger),d=s.b.length-s.p.length;if(ok(s.b)&&ok(s.p)&&d>=0&&d<=1&&s.b.every(x=>x>=1&&x<=3)&&s.p.every(x=>x>=0&&x<=2)&&(!s.qs||(Array.isArray(s.qs)&&s.qs.length===5&&s.qs.every(q=>q&&typeof q.q==="string"&&typeof q.c==="string"&&typeof q.f==="string"&&Array.isArray(q.o)&&q.o.length===3&&q.o.every(x=>typeof x==="string")&&Number.isInteger(q.a)&&q.a>=0&&q.a<3))))return s}catch(e){}return null}
+function load(k){const t=ls.get(k);if(!t)return null;try{const s=JSON.parse(t),ok=a=>Array.isArray(a)&&a.length<=5&&a.every(Number.isInteger),d=s.b.length-s.p.length;if(ok(s.b)&&ok(s.p)&&d>=0&&d<=1&&s.b.every(x=>x>=1&&x<=3)&&s.p.every(x=>x>=-1&&x<=2)&&(s.rv==null||typeof s.rv==="boolean")&&(s.deadline==null||(Number.isFinite(s.deadline)&&s.deadline>0))&&(!s.qs||(Array.isArray(s.qs)&&s.qs.length===5&&s.qs.every(q=>q&&typeof q.q==="string"&&typeof q.c==="string"&&typeof q.f==="string"&&Array.isArray(q.o)&&q.o.length===3&&q.o.every(x=>typeof x==="string")&&Number.isInteger(q.a)&&q.a>=0&&q.a<3))))return s}catch(e){}return null}
 // HOOK archive of past days: mkRun("d",date,key) loads any past date, so an archive list can call it
-function mkRun(mode,date,key){const r={mode,date,key,b:[],p:[],rv:false,qs:[],order:null,ptr:0};if(mode!=="u"){const s=load(key);r.qs=s&&s.qs?s.qs:dayQs(date,s?LEGACY_BANK_SIZE:BANK.length);if(s){r.b=s.b;r.p=s.p}}return r}
+function mkRun(mode,date,key){const r={mode,date,key,b:[],p:[],rv:false,deadline:null,qs:[],order:null,ptr:0};if(mode!=="u"){const s=load(key);r.qs=s&&s.qs?s.qs:dayQs(date,s?LEGACY_BANK_SIZE:BANK.length);if(s){r.b=s.b;r.p=s.p;r.rv=!!s.rv;r.deadline=r.b.length>r.p.length?(s.deadline||Date.now()+30000):null;if(r.deadline&&!s.deadline)save(r)}}return r}
 function getQ(r,i){if(r.mode==="u")while(r.qs.length<=i){if(!r.order||r.ptr>=BANK.length){r.order=shuf(idxs(),Math.random);r.ptr=0}r.qs.push(bq(r.order[r.ptr++],Math.random))}return r.qs[i]}
-const save=r=>{if(r.key)ls.set(r.key,JSON.stringify({b:r.b,p:r.p,qs:r.qs}))};
+const save=r=>{if(r.key)ls.set(r.key,JSON.stringify({b:r.b,p:r.p,qs:r.qs,deadline:r.deadline,rv:r.rv}))};
 const sc=r=>r.p.reduce((s,x,i)=>s+(x===r.qs[i].a?1:-1)*r.b[i],0);
 const rowT=r=>r.p.map((x,i)=>(x===r.qs[i].a?"🟩":"🟥")+r.b[i]).join(" ");
 
@@ -277,17 +277,17 @@ A(app,top,tabs);
 if(tab==="d")play(run);else{if(!unl)unl=mkRun("u",today(),null);play(unl)}}
 function status(r){const d=E("div");if(r.mode==="u"){d.className="mut";d.textContent="Answered "+r.p.length+" · Score "+sg(sc(r))+" · Not saved, no streak";return app.appendChild(d)}
 d.className="pips";for(let i=0;i<5;i++){let c="pip",t="–";if(i<r.p.length){const ok=r.p[i]===r.qs[i].a;c+=ok?" ok":" no";t=(ok?"✓":"✗")+r.b[i]}else if(i===r.p.length){c+=" cur";t="•"}const p=E("div",c,t);d.appendChild(p)}app.appendChild(d)}
-function play(r){if(r.mode!=="u"&&r.p.length>=5&&!r.rv)return results(r);status(r);
+function play(r){expire(r);if(r.mode!=="u"&&r.p.length>=5&&!r.rv)return results(r);status(r);
 const n=r.p.length,card=E("div","card"),tot=r.mode==="u"?"":" of 5";
 if(r.rv){const i=n-1,q=getQ(r,i),ok=r.p[i]===q.a,v=r.b[i];
-A(card,E("div","banner "+(ok?"ok":"no"),(ok?"✓ Right. You win ":"✗ Wrong. You lose ")+chipsW(v)+"."),E("p","mut",q.c),E("h3","stake-question",q.q));
+A(card,E("div","banner "+(ok?"ok":"no"),(ok?"✓ Right. You win ":r.p[i]===-1?"Time’s up. You lose ":"✗ Wrong. You lose ")+chipsW(v)+"."),E("p","mut",q.c),E("h3","stake-question",q.q));
 q.o.forEach((t,j)=>{const d=E("div","opt"+(j===q.a?" ok":j===r.p[i]?" no":""));A(d,E("b",null,"ABC"[j]),E("span",null,t));if(j===q.a)d.appendChild(E("span","tag","✓ Correct"));else if(j===r.p[i])d.appendChild(E("span","tag","✗ Your pick"));card.appendChild(d)});
-const nb=E("button","btn",r.mode!=="u"&&n>=5?"See results":"Next question");nb.onclick=()=>{r.rv=false;render()};A(card,E("p",null,"Fun fact: "+q.f),nb)}
-else if(r.b.length>n){const q=getQ(r,n);A(card,E("p","mut","Question "+(n+1)+tot+" · Bet: "+chipsW(r.b[n])),E("div","cat",q.c),E("h2","stake-question",q.q));
-q.o.forEach((t,j)=>{const b=E("button","opt");A(b,E("b",null,"ABC"[j]),E("span",null,t));b.onclick=()=>{r.p.push(j);r.rv=true;save(r);if(r.mode==="d"&&r.p.length===5)bump(r.date);render()};card.appendChild(b)})}
-else{const q=getQ(r,n),row=E("div","chips");A(card,E("p","mut","Question "+(n+1)+tot),E("div","cat",q.c),E("p","mut","Bet before you see the choices. Right wins the bet. Wrong loses it."));
-[1,2,3].forEach(v=>{const b=E("button","chip",String(v));b.appendChild(E("small",null,v===1?"chip":"chips"));b.setAttribute("aria-label","Bet "+chipsW(v));b.onclick=()=>{r.b.push(v);save(r);render()};row.appendChild(b)});card.appendChild(row)}
-app.appendChild(card)}
+const nb=E("button","btn",r.mode!=="u"&&n>=5?"See results":"Next question");nb.onclick=()=>{r.rv=false;save(r);render()};A(card,E("p",null,"Fun fact: "+q.f),nb)}
+else if(r.b.length>n){const q=getQ(r,n);A(card,E("p","mut","Question "+(n+1)+tot+" · Bet: "+chipsW(r.b[n])),makeTimer(),E("div","cat",q.c),E("h2","stake-question",q.q));
+q.o.forEach((t,j)=>{const b=E("button","opt");A(b,E("b",null,"ABC"[j]),E("span",null,t));b.onclick=()=>{if(r.p.length!==n||r.b.length!==n+1)return;answer(r,j);render()};card.appendChild(b)})}
+else{const q=getQ(r,n),row=E("div","chips");A(card,E("p","mut","Question "+(n+1)+tot),E("div","cat",q.c),E("p","mut","Bet before you see the choices. Then answer within 30 seconds. Wrong answers and timeouts lose the bet."));
+[1,2,3].forEach(v=>{const b=E("button","chip",String(v));b.appendChild(E("small",null,v===1?"chip":"chips"));b.setAttribute("aria-label","Bet "+chipsW(v));b.onclick=()=>{if(r.b.length!==n||r.p.length!==n)return;r.b.push(v);r.deadline=Date.now()+30000;save(r);render()};row.appendChild(b)});card.appendChild(row)}
+const feedback=card.querySelector(".banner");if(feedback){feedback.setAttribute("role","status");feedback.setAttribute("aria-live","polite")}app.appendChild(card);paintTimer(r)}
 function results(r){status(r);const c=E("div","card"),s=sc(r);
 A(c,E("p","mut","Today’s set is done"),E("div","big",sg(s)+(Math.abs(s)===1?" chip":" chips")),E("p",null,rowT(r)));
 
@@ -295,14 +295,45 @@ const msg=E("p","mut"),cb=E("button","btn","Copy result");msg.setAttribute("role
 // HOOK private leagues: post the date and sc(r) to a league here
 if(r.mode==="d"){const p=E("p",null,"Come back tomorrow for a new set of 5. Next set in "),b=E("b",null,cd());b.id="cd";p.appendChild(b);c.appendChild(p)}
 app.appendChild(c)}
-function tick(){if(run.date!==today()){run=mkRun("d",today(),"stake:d:"+today());render()}const c=document.getElementById("cd");if(c)c.textContent=cd()}
-setInterval(tick,1000);document.addEventListener("visibilitychange",tick);
+// Deadlines use wall-clock time: refresh, inactive tabs and mode switches cannot pause a bet.
+function pending(r){return r&&r.b.length===r.p.length+1}
+function answer(r,pick){
+ if(!pending(r))return false;
+ if(r.mode==="d"&&r.date!==today()){tick();return false}
+ const expired=Number.isFinite(r.deadline)&&Date.now()>=r.deadline;
+ r.p.push(expired?-1:pick);r.rv=true;r.deadline=null;save(r);
+ if(r.mode==="d"&&r.p.length===5)bump(r.date);
+ document.dispatchEvent(new Event('stake-run-updated'));
+ return true;
+}
+function expire(r){return pending(r)&&Number.isFinite(r.deadline)&&Date.now()>=r.deadline?answer(r,-1):false}
+function makeTimer(){
+ const timer=E("div","stake-question-timer"),track=E("div","stake-timer-track"),fill=E("span","stake-timer-fill"),value=E("strong",null,"00:30");
+ timer.setAttribute("role","timer");timer.setAttribute("aria-live","off");
+ value.id="question-time";track.appendChild(fill);track.setAttribute("aria-hidden","true");A(timer,E("span",null,"TIME TO ANSWER"),value,track);return timer;
+}
+function paintTimer(r){
+ const timer=document.querySelector('.stake-question-timer');if(!timer||!pending(r))return;
+ const seconds=Math.max(0,Math.min(30,Math.ceil((r.deadline-Date.now())/1000)));
+ timer.setAttribute('aria-label',seconds+' seconds left to answer');timer.classList.toggle('is-urgent',seconds<=10);
+ document.getElementById('question-time').textContent='00:'+String(seconds).padStart(2,'0');
+ timer.querySelector('.stake-timer-fill').style.width=seconds/30*100+'%';
+}
+function tick(){
+ if(run.date!==today()){run=mkRun("d",today(),"stake:d:"+today());render()}
+ const changedDaily=expire(run),changedPractice=expire(unl);
+ if(changedDaily||changedPractice)render();
+ paintTimer(tab==="d"?run:unl);
+ const c=document.getElementById("cd");if(c)c.textContent=cd();
+}
+setInterval(tick,250);document.addEventListener("visibilitychange",tick);window.addEventListener("pageshow",tick);
 render();
-// Shared-template help and extended stats; game state and original Stake styling remain untouched.
+// Break Room help and stats dialogs share Stack Up visuals and keyboard behaviour.
 (()=>{
  const $=id=>document.getElementById(id), help=$('help-popup'), stats=$('stats-popup');
- const open=el=>{el.hidden=false;const b=el.querySelector('[data-popup-close]');if(b)b.focus()};
- const close=el=>{el.hidden=true};
+ let active=null,opener=null,background=[];
+ const close=el=>{if(!el||el.hidden)return;el.hidden=true;background.forEach(([e,inert])=>e.inert=inert);background=[];document.body.style.overflow='';active=null;opener?.focus()};
+ const open=el=>{if(active)close(active);opener=document.activeElement;document.body.append(el);el.hidden=false;active=el;background=[...document.body.children].filter(e=>e!==el&&!['SCRIPT','STYLE','LINK'].includes(e.tagName)).map(e=>[e,e.inert]);background.forEach(([e])=>e.inert=true);document.body.style.overflow='hidden';el.querySelector('[data-popup-close]').focus()};
  $('help-popup-open').addEventListener('click',()=>open(help));
  function dailyRecords(){const out=[];try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(!k||!k.startsWith('stake:d:'))continue;const v=JSON.parse(localStorage.getItem(k)||'null');if(v&&Array.isArray(v.b)&&Array.isArray(v.p)&&v.p.length===5){const date=k.slice('stake:d:'.length);const rr=mkRun('d',date,k);rr.b=v.b;rr.p=v.p;out.push({date,score:sc(rr),positive:sc(rr)>0})}}}catch(e){}return out.sort((a,b)=>a.date.localeCompare(b.date))}
  function streakCount(records){const days=new Set(records.map(r=>r.date));let key=today();if(!days.has(key))key=prev(key);let n=0;while(days.has(key)&&n<366){n++;key=prev(key)}return n}
@@ -310,19 +341,12 @@ render();
  $('stat-played').textContent=r.length;$('stat-best').textContent=best===null?'—':sg(best)+' chips';$('stat-average').textContent=scores.length?sg(Math.round(scores.reduce((a,b)=>a+b,0)/scores.length))+' chips':'—';$('stat-streak').textContent=st;$('stat-perfect').textContent=scores.filter(x=>x>0).length;$('stat-last').textContent=scores.length?sg(scores[scores.length-1])+' chips':'—'}
  $('stats-popup-open').addEventListener('click',()=>{updateStats();open(stats)});
  document.querySelectorAll('[data-popup-close]').forEach(b=>b.addEventListener('click',()=>close(b.closest('.game-popup-backdrop'))));
- [help,stats].forEach(el=>el.addEventListener('click',e=>{if(e.target===el)close(el)}));document.addEventListener('keydown',e=>{if(e.key==='Escape')[help,stats].forEach(close)});
+ [help,stats].forEach(el=>el.addEventListener('click',e=>{if(e.target===el)close(el)}));document.addEventListener('keydown',e=>{
+  if(!active)return;
+  if(e.key==='Escape'){e.preventDefault();close(active);return}
+  if(e.key==='Tab'){const buttons=[...active.querySelectorAll('button,a[href]')],first=buttons[0],last=buttons.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}
+ });
+ document.addEventListener('stake-run-updated',updateStats);
  updateStats();
 })();
-</script><style>
-/* Stake-specific popup palette: casino felt green, warm gold, and deep violet. */
-.game-popup-backdrop{background:rgba(7,4,22,.82)!important;backdrop-filter:blur(3px)}
-.game-popup{background:#17102f!important;color:#f4f0ff!important;border:2px solid #6d4a96!important;box-shadow:7px 7px 0 #08051b!important;border-radius:12px!important}
-.game-popup h2,.popup-instructions strong{color:#e7bd55!important}
-.game-popup p,.game-popup span{color:#c9bfdf}
-.popup-kicker{color:#56d99a!important}
-.game-popup-close{background:#21183f!important;color:#f4f0ff!important;border:1px solid #76559d!important}
-.extended-stats-grid>div{background:#100a25!important;border:1px solid #4e3a70!important}
-.extended-stats-grid strong{color:#e7bd55!important}
-.extended-stats-grid span{color:#56d99a!important}
-.game-popup .button.pink{background:#176b4d!important;color:#fff!important;border:2px solid #56d99a!important;box-shadow:3px 3px 0 #08051b!important}
-</style></body></html>
+</script></body></html>

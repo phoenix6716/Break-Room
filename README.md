@@ -1,3 +1,13 @@
+## Stake question timer and shared popups
+
+Stake now gives 30 seconds **after a bet is placed**, when the question/choices appear. A timeout loses that bet and opens the same answer-review flow as an incorrect answer. It applies to Daily and Unlimited. Daily deadlines persist across refreshes; both modes continue counting while another mode or a popup is open. Correct/incorrect answers stop that question's timer. Choosing the next stake is not timed.
+
+Saved records retain `b`, `p`, `qs` and now also `deadline` (absolute milliseconds or null) and `rv` (answer review). A pick of `-1` means timeout and is scored/shared as a loss. Earlier pending bets receive a persisted 30-second deadline on their first upgraded load. No existing completed scores are reset.
+
+`game-dialog.css` supplies the shared cream/navy popup visuals for Stack Up and Stake. Stake's late purple popup override has been removed. Both Stake dialogs support focus trapping, focus restoration and Escape, and the guide explains timer behaviour. `games/stake/timer.css` styles the sticky question countdown.
+
+Run `ARCADE_TEST_URL=http://127.0.0.1:8000 node tests/stake-timer.cjs` for timing, penalties, persistence, mode switching, popup styling/accessibility and responsive checks. Updated screenshots are in `design/previews/stake-timer/`.
+
 ## Expanded question banks
 
 Stack Up now has 112 harder sorting sets and Stake has 264 questions: 100 additions to each game, plus harder replacements for Stack Up's original twelve. Pre-answer card descriptions are blank, so weights, dates and other answer values cannot give away the order. The quantities are shown only in the result explanation. Sources, checks and exclusions are documented in [content/QUESTION-SOURCES.md](content/QUESTION-SOURCES.md).
