@@ -69,3 +69,10 @@ Question and results screenshots are saved in `design/previews/stake-readable-qu
 ## Shared header group order
 
 The six main site pages place Home/Friends/Profile on the left, the logo independently centred, and the Log in/guest group on the right on desktop. At narrower widths the navigation occupies a second row while the logo remains centred above it and the account group stays on the right. Checks at 320, 390, 600, 768, 900, 1024, and 1440 pixels confirmed exact centring, no overlapping groups, no horizontal overflow, and working navigation/login links. Game-page headers remain unchanged. Homepage screenshots were refreshed.
+
+### Lowball visual refresh — 19 October 2026
+
+- `tests/smoke.cjs`: 532 assertions passed; Lowball regions, invalid guesses, four-round completion, saved results, stats and Unlimited all passed; no browser JavaScript errors.
+- `tests/lowball-art.cjs`: all 100 item illustrations produce vector geometry with PNG requests blocked; new-item fallback and peanut-butter family checked; exact-price score receipts and layout checked at 320, 390, 768 and 1440px.
+- Reviewed screenshots of the playing area and mobile score receipt. Desktop/mobile score previews and an illustration sampler are saved in `design/previews/lowball-refresh/`.
+- Validated through the local HTTP server, not a public deployment.

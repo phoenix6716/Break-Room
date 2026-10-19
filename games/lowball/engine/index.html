@@ -639,6 +639,7 @@
     </div>
 
     <div class="result" id="resultArea">
+      <div class="score-caption">ROUND SCORE <span>/ 100</span></div>
       <div class="result-score mono" id="resultScore">--</div>
       <div class="result-label" id="resultLabel"></div>
       <div class="result-facts" id="resultFacts"></div>
@@ -647,7 +648,7 @@
     </div>
 
     <div class="final-screen" id="finalScreen">
-      <div class="item-emoji"><img src="icons/trophy.png" alt="🏆" style="width:128px;height:128px;object-fit:contain;image-rendering:pixelated;"></div>
+      <div class="item-emoji" id="trophyArt"></div>
       <div class="item-name" id="finalTitle">Round complete</div>
       <div class="final-total" id="finalTotal">0</div>
       <div class="result-label">average score</div>
@@ -658,7 +659,7 @@
     </div>
 
     <div class="lock-screen" id="lockScreen">
-      <div class="item-emoji"><img src="icons/lock.png" alt="" style="width:56px;height:66px;object-fit:contain;image-rendering:pixelated;"></div>
+      <div class="item-emoji" id="lockArt"></div>
       <div class="item-name">Unlimited</div>
       <div class="lock-list" id="lockList"></div>
       <div class="lock-price" id="lockPrice"></div>
@@ -709,7 +710,11 @@
 </div>
 
 <script src="site-config.js"></script>
+<script src="item-art.js"></script>
 <script>
+document.getElementById("trophyArt").innerHTML = LOWBALL_ART.markup({ art: "trophy" });
+document.getElementById("lockArt").innerHTML = LOWBALL_ART.markup({ art: "lock" });
+
 // ---------- Item pool ----------
 // Starting price estimates per country — check against live local pricing
 // before launch, especially the bigger-ticket items which date quickly.
@@ -1178,125 +1183,10 @@ function renderDots() {
   }
 }
 
-const ICON_FILES = {
-  "Bananas": "bananas",
-  "Cheddar cheese block": "cheddar-cheese-block",
-  "Butter": "butter",
-  "Chicken breast": "chicken-breast",
-  "Minced beef": "minced-beef",
-  "Rice": "rice",
-  "Pasta": "pasta",
-  "Peanut butter": "peanut-butter",
-  "Breakfast cereal": "breakfast-cereal",
-  "Chocolate block": "chocolate-block",
-  "Potato chips": "potato-chips",
-  "Orange juice": "orange-juice",
-  "Bottled water": "bottled-water",
-  "Tea bags": "tea-bags",
-  "Ice cream tub": "ice-cream-tub",
-  "Pint of beer": "pint-of-beer",
-  "Bottle of wine": "bottle-of-wine",
-  "Six-pack of beer": "six-pack-of-beer",
-  "Flat white": "flat-white",
-  "Footlong sub sandwich": "footlong-sub-sandwich",
-  "Frozen pizza": "frozen-pizza",
-  "Fish and chips": "fish-and-chips",
-  "Energy drink": "energy-drink",
-  "Toilet paper": "toilet-paper",
-  "Dishwashing liquid": "dishwashing-liquid",
-  "Laundry detergent": "laundry-detergent",
-  "Tissues": "tissues",
-  "AA batteries": "aa-batteries",
-  "LED light bulb": "led-light-bulb",
-  "Shampoo": "shampoo",
-  "Deodorant": "deodorant",
-  "Razor refills": "razor-refills",
-  "Toothbrush": "toothbrush",
-  "Lip balm": "lip-balm",
-  "Hand soap": "hand-soap",
-  "Cotton t-shirt": "cotton-t-shirt",
-  "Socks": "socks",
-  "Hoodie": "hoodie",
-  "Nike Air Force 1": "nike-air-force-1",
-  "Sunglasses": "sunglasses",
-  "Backpack": "backpack",
-  "Wireless mouse": "wireless-mouse",
-  "USB-C cable": "usb-c-cable",
-  "Phone case": "phone-case",
-  "Bluetooth speaker": "bluetooth-speaker",
-  "iPad": "ipad",
-  "Apple Watch SE": "apple-watch-se",
-  "External SSD": "external-ssd",
-  "Air fryer": "air-fryer",
-  "Electric kettle": "electric-kettle",
-  "Toaster": "toaster",
-  "Robot vacuum": "robot-vacuum",
-  "Pillow": "pillow",
-  "Pedestal fan": "pedestal-fan",
-  "Disney+": "disney",
-  "Paperback novel": "paperback-novel",
-  "Zoo ticket": "zoo-ticket",
-  "Public transport fare": "public-transport-fare",
-  "Car wash": "car-wash",
-  "Dry cleaning": "dry-cleaning",
-  "Parking": "parking",
-  "PS5 game": "ps5-game",
-  "LEGO set": "lego-set",
-  "Jigsaw puzzle": "jigsaw-puzzle",
-  "Soccer ball": "soccer-ball",
-  "Yoga mat": "yoga-mat",
-  "Tennis balls": "tennis-balls",
-  "Cat food": "cat-food",
-  "Big Mac": "big-mac",
-  "Netflix Standard": "netflix-standard",
-  "Spotify Premium": "spotify-premium",
-  "iPhone 16": "iphone-16",
-  "Coca-Cola bottle": "coca-cola-bottle",
-  "Dozen eggs": "dozen-eggs",
-  "Cinema ticket": "cinema-ticket",
-  "PlayStation 5": "playstation-5",
-  "McDonald's fries": "mcdonalds-fries",
-  "Loaf of bread": "loaf-of-bread",
-  "Litre of milk": "litre-of-milk",
-  "Starbucks latte": "starbucks-latte",
-  "Movie popcorn": "movie-popcorn",
-  "AirPods Pro 3": "airpods-pro-3",
-  "Nintendo Switch 2": "nintendo-switch-2",
-  "Domino's pizza": "dominos-pizza",
-  "Petrol per litre": "petrol-per-litre",
-  "Gym membership": "gym-membership",
-  "Avocado": "avocado",
-  "Uber short ride": "uber-short-ride",
-  "Toothpaste tube": "toothpaste-tube",
-  "Band-Aids box": "band-aids-box",
-  "Kindle Paperwhite": "kindle-paperwhite",
-  "Standard stamp": "standard-stamp",
-  "Movie ticket popcorn combo": "movie-ticket-popcorn-combo",
-  "Levi's 501 jeans": "levis-501-jeans",
-  "Dog food bag": "dog-food-bag",
-  "Haircut": "haircut",
-  "Umbrella": "umbrella",
-  "Coffee capsules box": "coffee-capsules-box",
-  "Monopoly board game": "monopoly-board-game",
-  "Sunscreen bottle": "sunscreen-bottle"
-};
-
 function showItem() {
   currentItem = mode === "normal" ? roundItems[roundIndex] : deck[deckIndex];
   const emojiEl = document.getElementById("itemEmoji");
-  emojiEl.textContent = currentItem.emoji;
-  if (ICON_FILES[currentItem.name]) {
-    const img = new Image();
-    const shown = currentItem;
-    img.onload = () => {
-      if (currentItem !== shown) return;
-      img.alt = "";
-      img.style.cssText = "width:160px;height:160px;object-fit:contain;image-rendering:pixelated;";
-      emojiEl.textContent = "";
-      emojiEl.appendChild(img);
-    };
-    img.src = "icons/" + ICON_FILES[currentItem.name] + ".png";
-  }
+  emojiEl.innerHTML = LOWBALL_ART.markup(currentItem);
   document.getElementById("itemName").textContent = currentItem.name;
   document.getElementById("itemDetail").textContent = currentItem.detail;
   document.getElementById("currencySymbol").textContent = CURRENCY[country].symbol;
@@ -1326,17 +1216,8 @@ function squaresForScore(score) {
   const box = score >= 95 ? "🟩" : score >= 80 ? "🟨" : score >= 50 ? "🟧" : "🟥";
   return box.repeat(5);
 }
-function gemForScore(score) {
-  if (score >= 95) return "gem-green.png";
-  if (score >= 80) return "gem-yellow.png";
-  if (score >= 50) return "gem-orange.png";
-  return "gem-red.png";
-}
 function squaresHTMLForScore(score) {
-  const src = gemForScore(score);
-  let out = "";
-  for (let i = 0; i < 5; i++) out += '<img src="' + src + '" class="gem" style="--i:' + i + '" alt="">';
-  return out;
+  return Array.from({ length: 5 }, (_, i) => LOWBALL_ART.gem(score, i)).join("");
 }
 function labelForScore(score) {
   if (score >= 95) return "NAILED IT";
@@ -1386,10 +1267,10 @@ function renderResult(guess, ctry, animate) {
   const symbol = CURRENCY[ctry].symbol;
   const checked = prettyDate(PRICES_CHECKED);
   document.getElementById("resultFacts").innerHTML =
-    "You guessed <b>" + symbol + guess.toFixed(2) + "</b><br>" +
-    "Actual price is <b>" + symbol + actual.toFixed(2) + "</b><br>" +
-    offByText(guess, actual, pctOff, symbol) +
-    (checked ? '<div class="result-note"><span>Price checked</span> <span>' + checked + "</span></div>" : "");
+    '<dl class="price-comparison"><div><dt>Your guess</dt><dd>' + symbol + guess.toFixed(2) + '</dd></div>' +
+    '<div><dt>Actual price</dt><dd>' + symbol + actual.toFixed(2) + '</dd></div></dl>' +
+    '<p class="price-difference">' + offByText(guess, actual, pctOff, symbol) + '</p>' +
+    (checked ? '<p class="result-note">Price checked ' + checked + '</p>' : '');
   const sq = document.getElementById("squares");
   sq.classList.remove("pop");
   sq.innerHTML = squaresHTMLForScore(score);
