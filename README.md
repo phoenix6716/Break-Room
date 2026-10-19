@@ -118,3 +118,11 @@ Short stepped entrance, receipt, stamp, and chip animations respect reduced-moti
 ### Restored Lowball score gems
 
 Lowball's round and final results use the original Break Room cut-corner, faceted score gems again: soft green, yellow, orange, and coral. The shared `LOWBALL_ART.gem()` renderer restores the exact earlier design and preserves existing tier thresholds and animations. Item illustrations and the trophy, lock, stats, and sound icons remain generated PNGs. The glossy square gem PNGs are archived with their source atlas but no longer mapped into the game.
+
+### Shared boxed resets and centred Stake
+
+`daily-reset.css` contains the original Stack Up reset-card appearance and is loaded last by Stack Up, Stake, and Lowball. Each reset card has the same cream background, navy border and hard shadow, heading, monospaced countdown, and “Same time. Every game.” note. The existing shared Sydney-midnight clock and Lowball's new-daily reload prompt are retained.
+
+Stake now uses the same centred responsive column as Lowball for the heading, personal stats, mode controls, progress markers, and playing surface. Its boxed reset sits independently at the top right on wide screens and above the game on narrower screens. Lowball's region remains under its boxed reset, its sound toggle stays centred below the game, and the Daily mode button now says only “Daily” (the four-round rules are unchanged).
+
+Run `ARCADE_TEST_URL=http://127.0.0.1:8025 node tests/layout-goals.cjs` against a root static server for the four requested acceptance checks. The reset comparison first disables the new stylesheet on Stack Up to read its original appearance, then compares both other games against that baseline.

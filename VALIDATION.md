@@ -111,3 +111,12 @@ Replaced the offset sidebar layout with one centred column. Header, mode buttons
 ### Lowball top-right reset rail — 19 October 2026
 
 Moved the countdown and region selector into a stacked top-right rail, independent of the centred game column. The sound toggle remains directly below the playing area on the same centre line. Narrow layouts keep the stacked controls above the game. Browser checks passed at 320, 390, 768, 1024, 1100, 1280 and 1440px: centred header/modes/game/sound, countdown above region selector, desktop rail outside the game without shifting its centre, no clipped dropdown or horizontal overflow, region switching, scoring, and retained faceted gems. Updated mobile/desktop previews are in `design/previews/game-polish/`.
+
+### Four layout goals completed — 19 October 2026
+
+1. Copied Stack Up's boxed daily reset into Lowball and Stake through one shared stylesheet, preserving Stack Up's original appearance.
+2. Removed the “(4 rounds)” suffix from Lowball's Daily button without changing the daily rules.
+3. Centred Stake's header, stats, modes, progress markers and table on the same responsive axis/width as Lowball. Kept the reset box in an independent top-right rail on wide screens.
+4. Verified the requested appearance and behaviour in the browser.
+
+Validation: `tests/layout-goals.cjs` passed at 320/390/768/1024/1100/1440px, including exact computed-style equality against Stack Up with the new stylesheet disabled, unchanged Stack Up styles after enabling it, equal countdown values, literal “Daily” text, equal centred game widths, reset/region/sound placement, no horizontal overflow or clipped dropdown, and working menus, modes and bets. `tests/smoke.cjs` passed all 532 assertions; `tests/stake-timer.cjs` passed all four widths, timeout/persistence/mode and popup checks; `tests/homepage-reset.cjs` passed all responsive and four-timezone midnight rollover checks. Full-page and reset-card previews were saved for desktop and mobile in `design/previews/game-polish/`. No public hosting deployment was performed.

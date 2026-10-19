@@ -590,6 +590,7 @@
 
 <link rel="stylesheet" href="break-room-engine.css">
 <link rel="stylesheet" href="counter.css">
+<link rel="stylesheet" href="../../../daily-reset.css">
 
 <script src="../../../daily-clock.js"></script></head>
 <body>
@@ -609,7 +610,7 @@
   </header>
 
   <section class="session-settings" aria-label="Daily reset and price region">
-  <aside class="live-reset" id="nextDaily" aria-label="Daily reset">NEXT DAILY RESET<strong data-daily-countdown>--:--:--</strong><p>Midnight Sydney. Every game.</p><span class="new-daily-ready" hidden>New daily ready. Tap to play</span></aside>
+  <aside class="live-reset timer-card daily-reset-card" id="nextDaily" aria-label="Daily reset"><div class="card-heading">NEXT DAILY RESET</div><div class="reset-clock" data-daily-countdown>--:--:--</div><p>Same time. Every game.</p><span class="new-daily-ready" hidden>New daily ready. Tap to play</span></aside>
 
   <div class="country-row">
     <span class="country-label">Playing as</span>
@@ -622,7 +623,7 @@
   </section>
 
   <div class="mode-toggle">
-    <button class="mode-btn active" id="normalModeBtn">Daily<span class="rounds"> (4 rounds)</span></button>
+    <button class="mode-btn active" id="normalModeBtn">Daily</button>
     <button class="mode-btn" id="unlimitedModeBtn">Unlimited</button>
   </div>
 

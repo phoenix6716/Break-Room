@@ -1,0 +1,42 @@
+/* Shared copy of Stack Up's daily-reset card. Loaded after each game's styles. */
+:root .daily-reset-card {
+  box-sizing: border-box;
+  background: #fffdf5;
+  border: 2px solid #17263a;
+  border-radius: 0;
+  box-shadow: 4px 4px 0 #17263a;
+  padding: 17px 17px 15px;
+  color: #17263a;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  text-align: start;
+  letter-spacing: normal;
+}
+:root .daily-reset-card .card-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  color: #526273;
+  font: 900 10px/normal ui-monospace, monospace;
+  letter-spacing: .7px;
+}
+:root .daily-reset-card .reset-clock {
+  display: block;
+  margin: 12px 0 0;
+  padding: 0;
+  color: #17263a;
+  font: 900 27px/normal ui-monospace, monospace;
+  letter-spacing: normal;
+  white-space: nowrap;
+}
+:root .daily-reset-card p {
+  margin: 10px 0 0;
+  padding: 0;
+  color: #526273;
+  font: 400 11px/normal Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: normal;
+}
