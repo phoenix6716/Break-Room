@@ -259,6 +259,14 @@ let ok=false;try{field.select();ok=document.execCommand("copy")}catch(e){}finall
 msg.textContent=ok?"Copied.":"Couldn't copy. Please try again.";
 }
 const app=document.getElementById("app");
+// One-time replay reset for the Break Room update. Earlier dates stay intact.
+try {
+ const resetKey="break-room:stake:daily-reset:2026-10-19";
+ if(!localStorage.getItem(resetKey)){
+  localStorage.removeItem("stake:d:"+today());
+  localStorage.setItem(resetKey,"1");
+ }
+} catch(e) {}
 let tab="d",run=mkRun("d",today(),"stake:d:"+today()),unl=null;
 function render(){app.textContent="";const top=E("div","top"),tabs=E("div","tabs");
 A(top,E("h1",null,"STAKE"));tabs.setAttribute("role","tablist");

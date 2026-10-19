@@ -116,8 +116,8 @@ function check(condition, message) { assert.ok(condition, message); checks++; }
     await frame.locator('#statsModal').waitFor({state:'visible'});
     await frame.locator('#statsClose').click();
     await frame.locator('#unlimitedModeBtn').click();
-    await frame.locator('#lockScreen.show').waitFor();
-    check((await frame.locator('#lockScreen').innerText()).includes('UNLIMITED'), 'Lowball unlimited retains existing locked state');
+    await frame.locator('#guessInput').waitFor({state:'visible'});
+    check(!await frame.locator('#lockScreen').evaluate(el=>el.classList.contains('show')), 'Lowball unlimited is free and unlocked');
     console.log('PASS: Lowball region, invalid input, four rounds, resume, saved completion, stats, unlimited state');
     await page.goto(`${base}/games/stake/`, {waitUntil: 'domcontentloaded'});
     for (let question = 0; question < 5; question++) {

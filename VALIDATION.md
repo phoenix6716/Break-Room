@@ -1,3 +1,7 @@
+## Replay and Unlimited update
+
+Passed the 500-assertion smoke suite, shared-clock/browser rollover suite and Stake sharing suite after the link/reset/Unlimited changes. New `tests/replay-unlimited.cjs` passed seeded current-run resets for both games, retention of older history, persistence of subsequent bets/guesses across refreshes, free Lowball Unlimited without `pc_pro`, no daily stats changes in practice, no Lowball overflow at four widths, and card navigation to explicit existing HTML files. Direct `file://` browser navigation was blocked by managed Chromium policy; no policy bypass was attempted. Updated Lowball desktop/mobile screenshots show the blue mat and price-slip design.
+
 # Break Room design rollout validation
 
 - Applied production menu, Break Room wordmark/favicon, cream grid, navy borders, pastel controls, and hard shadows.

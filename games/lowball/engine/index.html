@@ -1673,7 +1673,7 @@ document.getElementById("statsClose").addEventListener("click", () => closeModal
 document.getElementById("statsShare").addEventListener("click", function () { copyShare(this); });
 
 // ---------- Unlimited paywall (game side; payments connect through SITE.checkoutUrl and SITE.restoreApi) ----------
-function unlimitedUnlocked() { return safeGet("pc_pro", "") === "1"; }
+function unlimitedUnlocked() { return Boolean(window.SITE && window.SITE.unlimitedFree) || safeGet("pc_pro", "") === "1"; }
 function showLock() {
   mode = "locked";
   track("paywall_view");
@@ -1833,6 +1833,28 @@ function guessCountry() {
 
 // ---------- Init ----------
 (function init() {
+  // Clear only the current daily run once for this update, retaining prior history.
+  try {
+    const resetKey = "break-room:lowball:daily-reset:2026-10-19";
+    if (!localStorage.getItem(resetKey)) {
+      const stats = loadStats(), history = loadHistory(), today = dayNumber();
+      localStorage.removeItem("pc_progress");
+      if (stats.lastPlayed === getTodayKey()) {
+        delete history[today];
+        safeSet("pc_history", JSON.stringify(history));
+        const previous = Object.keys(history).map(Number).filter(n => n < today).sort((a,b) => b-a)[0];
+        if (previous !== undefined) {
+          const date = new Date(Date.UTC(2026,9,1) + previous * 86400000);
+          stats.lastPlayed = date.getUTCFullYear()+"-"+(date.getUTCMonth()+1)+"-"+date.getUTCDate();
+        } else stats.lastPlayed = "";
+        stats.played = Math.max(0, stats.played - 1);
+        stats.streak = Math.max(0, stats.streak - 1);
+        saveStats(stats);
+        ["pc_last_avg","pc_last_share","pc_pct","pc_submitted"].forEach(key => localStorage.removeItem(key));
+      }
+      localStorage.setItem(resetKey,"1");
+    }
+  } catch(e) {}
   soundOn = safeGet("pc_sound", "1") !== "0";
   const soundBtn = document.getElementById("soundBtn");
   const paintSound = () => { soundBtn.textContent = "Sound: " + (soundOn ? "on" : "off"); };

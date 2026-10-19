@@ -1,3 +1,11 @@
+## Downloaded-site navigation and replay update
+
+Game cards use explicit `games/<name>/index.html` links so opening the downloaded homepage does not navigate to a folder listing. Lowball's board uses a blue gridded mat and printed price slip. `SITE.unlimitedFree` is enabled in `games/lowball/engine/site-config.js`; Unlimited opens without a purchase flag.
+
+This update runs a one-time local migration per game (`break-room:<game>:daily-reset:2026-10-19`) to reopen the current daily. Stake removes only the current day's stored attempt. Lowball clears current progress and, if completed today, removes that day's history/completion and subtracts it from the played/streak counters while retaining older records and settings. The marker prevents repeated resets on refresh.
+
+Run `ARCADE_TEST_URL=http://127.0.0.1:8000 node tests/replay-unlimited.cjs` for explicit link targets, actual card navigation, seeded daily reset/preserved history, subsequent reload persistence, free Unlimited and responsive play-area checks. Managed Chromium blocks `file://`, so direct downloaded-file browser navigation could not be exercised here; real local HTML targets and equivalent HTTP navigation were verified.
+
 # Break Room
 
 The production site now uses the approved cream grid, navy outlines, pastel palette and hard pixel shadows. The homepage uses the approved menu; placeholder games use the Stack Up introduction layout, and Lowball/Stake use broad boards with supporting controls.
