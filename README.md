@@ -1,3 +1,7 @@
+## Current new-game layout standard
+
+**Use the centred Stake-based starter in [`games/_template/`](games/_template/README.md) for future added games.** The [layout map](design/GAME-LAYOUT.md) identifies the fixed shell and replaceable game areas; [AGENTS.md](AGENTS.md) preserves this user preference for future repository work. The starter has working shared controls and clear placeholders, with no fake engine or scores. It is not registered as a live game. Historical prototypes and the old generic game page are not the canonical new-game layout.
+
 ## Stake question timer and shared popups
 
 Stake now gives 30 seconds **after a bet is placed**, when the question/choices appear. A timeout loses that bet and opens the same answer-review flow as an incorrect answer. It applies to Daily and Unlimited. Daily deadlines persist across refreshes; both modes continue counting while another mode or a popup is open. Correct/incorrect answers stop that question's timer. Choosing the next stake is not timed.

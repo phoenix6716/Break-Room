@@ -1,3 +1,9 @@
+# Current game layout reference
+
+Future games use the **centred Stake-based shell**, documented in [GAME-LAYOUT.md](GAME-LAYOUT.md), with the reusable starter in [`games/_template/`](../games/_template/README.md). This supersedes the historical layout and branding notes below as the current default. Existing games are not migrated automatically.
+
+---
+
 # Midnight Arcade logo concepts
 
 **Current selection: Cabinet Badge (round 4, option 1).** The header wordmark is installed from `assets/cabinet-badge-logo.png`. The PNG is unchanged from the reviewed option; CSS clips transparent margins to match the homepage preview. Previous explorations below are retained as history. The existing moon favicon is retained.
