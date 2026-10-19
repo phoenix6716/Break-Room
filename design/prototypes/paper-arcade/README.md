@@ -20,3 +20,13 @@ Serve the full repository root with Python's HTTP server, then open `/design/pro
 ## Validation
 
 Checked at 320, 390, 768, 900, and 1440 pixel widths using Chromium/Playwright. All nine cards, the six coming-soon states, three game links, centred header branding, live countdown, two/three-column grid, and absence of horizontal overflow were confirmed. There were no failed HTTP resource responses or browser JavaScript errors on the menu. The Stack Up link opens the uploaded game's introduction; the Lowball link reaches the existing game route. No external fonts or package dependencies are required.
+
+## Break Room game template
+
+Open `game-template.html` through the repository's static server. This is an isolated design prototype using Word Forge as sample content, not an implemented word game. It imports the paper menu palette and the real shared Sydney countdown. Production pages and game records are untouched.
+
+The preview selector exposes Ready, Playing, Results, Daily complete and Coming soon. Start / Finish demo navigate sample states; mode and sound controls toggle preview state only. No gameplay or audio engine is connected. Help, stats and menu dialogs support Escape, focus trapping and focus restoration. Copy result shares labelled sample data. Existing account, legal and style-guide link targets are retained (legal pages remain existing placeholders).
+
+Coverage: all IDs from the six current standalone placeholder templates are preserved, including menu/account navigation, title/description/countdown, help/stats buttons, Daily/Unlimited, Streak/Best/Played, item subline, round indicators, artwork/instructions/score/attempt badges, start, game engine panel and demo finish, results/score/message/all games/copy, daily-used score/pick another game, both popup panels and all six extended stats, close/done/back controls, sound/share/exit, legal and footer links. Generic game.html scoring information is represented by the max-score badge and subline.
+
+Browser checks: 320, 390, 768 and 1440px; no horizontal overflow or console/resource errors; sample start/finish flow, all five states, disabled Coming soon, dialogs/menu and restored focus. Screenshots `game-template-*.png` show desktop, mobile, playing, results, daily complete, help and stats.
