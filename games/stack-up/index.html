@@ -8,9 +8,9 @@
   <meta name="description" content="Sort five familiar things against the clock. Play a fresh daily challenge or free Infinite practice at Break Room."><link rel="icon" href="../../assets/break-room-icon.svg"><link rel="stylesheet" href="../../stack-layout.css"><link rel="stylesheet" href="stack-up.css"><script src="../../daily-clock.js"></script><script defer="" src="../../navigation.js"></script><script defer src="legacy-stacks.js"></script><script defer="" src="stacks.js"></script><script defer="" src="stack-up.js"></script></head>
   <body>
     <div class="site-frame">
-      <header class="topbar"><div class="header-brand"><button id="game-menu-toggle" type="button" aria-label="Open games menu" aria-controls="game-menu" aria-expanded="false">☰</button><a class="brand" href="../../index.html"><img src="../../assets/break-room-icon.svg" width="28" height="28" alt="">BREAK ROOM</a></div><nav class="main-nav" aria-label="Game mode"><button class="nav-link active" data-mode="daily" type="button" aria-pressed="true">Daily <em>10×</em></button><button class="nav-link" data-mode="infinite" type="button" aria-pressed="false">Infinite</button><button id="stats-open" class="nav-link" type="button">Stats</button></nav><a class="player-chip" href="../../login.html"><span class="mini-avatar">?</span><span>ACCOUNT</span></a></header>
+      <header class="topbar"><div class="header-brand"><button id="game-menu-toggle" type="button" aria-label="Open games menu" aria-controls="game-menu" aria-expanded="false">☰</button><a class="brand" href="../../index.html"><img src="../../assets/break-room-icon.svg" width="28" height="28" alt="">BREAK ROOM</a></div><nav class="main-nav" aria-label="Game mode"><button class="nav-link active" data-mode="daily" type="button" aria-pressed="true">Daily <em>10×</em></button><button class="nav-link" data-mode="infinite" type="button" aria-pressed="false">Infinite</button></nav><a class="player-chip" href="../../login.html"><span>ACCOUNT</span></a></header>
 
-      <div class="utility-strip"><p>NEXT DAILY RESET <strong data-daily-countdown="">--:--:--</strong><span>Midnight Sydney · Every game</span></p><button class="mini-tool" id="help-open" type="button" aria-label="How to play">?</button></div><p id="save-warning" role="status" hidden="">Saving is unavailable in this browser. Keep this tab open to preserve your current run.</p><p id="day-notice" role="status" hidden="">A new daily is ready. Your previous daily has ended.</p><main id="play">
+      <div class="utility-strip"><p>NEXT DAILY RESET <strong data-daily-countdown="">--:--:--</strong><span>Midnight Sydney · Every game</span></p><div class="game-tools"><button class="mini-tool" id="help-open" type="button" aria-label="How to play">?</button><button class="mini-tool stats-tool" id="stats-open" type="button" aria-label="Extended game stats" title="Extended game stats"><img src="../../assets/icons/trophy.svg" alt=""></button></div></div><p id="save-warning" role="status" hidden="">Saving is unavailable in this browser. Keep this tab open to preserve your current run.</p><p id="day-notice" role="status" hidden="">A new daily is ready. Your previous daily has ended.</p><main id="play">
         <section class="intro-screen" id="intro-screen" aria-labelledby="intro-title">
           <div class="intro-copy">
             <p class="intro-kicker"><span></span>A QUICK GAME OF GOOD JUDGEMENT</p>
@@ -73,17 +73,6 @@
               <button id="check-button" class="check-button" type="button">LOCK IT IN <span>↵</span></button>
             </div>
           </section>
-
-          <section class="game-notes">
-            <div class="note-card">
-              <span class="note-icon pixel-book" aria-hidden="true"></span>
-              <p><b>FIELD NOTES</b><br>Learn the answer after every stack.</p>
-            </div>
-            <div class="note-card daily-note" id="daily-note">
-              <span class="note-icon pixel-star" aria-hidden="true">✦</span>
-              <p><b>DAILY IS LIVE</b><br>Five stacks. Ten times the points.</p>
-            </div>
-          </section>
         <section id="daily-summary" class="game-board" hidden="" aria-labelledby="summary-title"><span class="tiny-label">DAILY COMPLETE</span><h2 id="summary-title">A tidy little stack.</h2><p id="summary-score"></p><p id="summary-detail"></p><div class="summary-actions"><button id="summary-copy" class="check-button" type="button">COPY RESULT</button><button id="summary-infinite" class="check-button" type="button">PLAY INFINITE →</button><a class="text-link" href="../../index.html">All games</a></div><p id="share-status" role="status"></p></section></section>
 
         <aside class="side-column" aria-label="Game information">
@@ -100,7 +89,7 @@
             <p><span class="score-dot"></span><span id="score-caption">daily points</span></p>
           </section>
 
-          <section class="leaderboard-card" id="your-record"><div class="leaderboard-heading"><div><span class="tiny-label">ON THIS DEVICE</span><h2>Your record</h2></div></div><dl class="record-grid"><div><dt>Played</dt><dd id="record-played">0</dd></div><div><dt>Best</dt><dd id="record-best">—</dd></div><div><dt>Streak</dt><dd id="record-streak">0</dd></div><div><dt>Average</dt><dd id="record-average">—</dd></div></dl><button class="view-ranks" id="sidebar-stats-open" type="button">EXTENDED STATS <span>→</span></button><p class="local-note">Daily results saved in this browser. Infinite is practice.</p></section>
+          <section class="leaderboard-card" id="your-record"><div class="leaderboard-heading"><div><span class="tiny-label">ON THIS DEVICE</span><h2>Your record</h2></div></div><dl class="record-grid"><div><dt>Played</dt><dd id="record-played">0</dd></div><div><dt>Best</dt><dd id="record-best">—</dd></div><div><dt>Streak</dt><dd id="record-streak">0</dd></div><div><dt>Average</dt><dd id="record-average">—</dd></div></dl><p class="local-note">Daily results saved in this browser. Infinite is practice.</p></section>
         <section class="timer-card"><div class="card-heading">NEXT DAILY RESET</div><div class="reset-clock" data-daily-countdown="">--:--:--</div><p>Same time. Every game.</p></section></aside>
         </div>
       </main>

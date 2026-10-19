@@ -28,10 +28,9 @@
  function render(){
   const complete=run.status==='complete',s=stack();
   $('daily-summary').hidden=!complete;document.querySelector('.game-column>.game-board').hidden=complete;
-  document.querySelector('.game-notes').hidden=complete;$('timer-card').hidden=complete;
+  $('timer-card').hidden=complete;
   $('eyebrow').innerHTML=mode==='daily'?'DAILY CHALLENGE <span>10× POINTS</span>':'INFINITE MODE <span>FREE PRACTICE</span>';
   $('game-title').textContent=complete?'Daily stack cleared.':'Build the right stack.';
-  $('daily-note').style.display=mode==='daily'?'flex':'none';
   $('score-caption').textContent=mode==='daily'?'daily points':'practice points';$('run-score').textContent=format(run.score);
   $('category-tag').textContent=s.category;$('prompt').textContent=s.prompt;
   document.querySelector('.instructions').textContent='Drag the cards or use their arrows. Then lock it in.';
@@ -81,7 +80,7 @@
  document.querySelectorAll('[data-mode],[data-start-mode]').forEach(b=>b.onclick=()=>start(b.dataset.mode||b.dataset.startMode));
  $('check-button').onclick=check;$('next-button').onclick=next;$('result-close').onclick=closeDialog;
  $('help-open').onclick=e=>openDialog($('help-dialog'),e.currentTarget);
- for(const id of ['stats-open','sidebar-stats-open'])$(id).onclick=e=>{refreshStats();openDialog($('stats-dialog'),e.currentTarget);};
+ $('stats-open').onclick=e=>{refreshStats();openDialog($('stats-dialog'),e.currentTarget);};
  document.querySelectorAll('[data-close]').forEach(b=>b.onclick=closeDialog);
  for(const id of ['result-modal','help-dialog','stats-dialog'])$(id).onclick=e=>{if(e.target===$(id))closeDialog();};
  $('summary-copy').onclick=copy;$('summary-infinite').onclick=()=>start('infinite');
