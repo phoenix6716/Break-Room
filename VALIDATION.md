@@ -76,3 +76,12 @@ The six main site pages place Home/Friends/Profile on the left, the logo indepen
 - `tests/lowball-art.cjs`: all 100 item illustrations produce vector geometry with PNG requests blocked; new-item fallback and peanut-butter family checked; exact-price score receipts and layout checked at 320, 390, 768 and 1440px.
 - Reviewed screenshots of the playing area and mobile score receipt. Desktop/mobile score previews and an illustration sampler are saved in `design/previews/lowball-refresh/`.
 - Validated through the local HTTP server, not a public deployment.
+
+### Generated Lowball image set — 19 October 2026
+
+This update replaces the preceding code-drawn SVG illustrations with actual generated images. All 100 item illustrations and nine utility icons were generated from references to the original shaded pixel art. Five original atlases and an extraction manifest are retained alongside the 109 individual transparent PNGs.
+
+- `tests/lowball-art.cjs`: all 100 item images rendered through `showItem()` and decoded at 192×192; all nine utility images decoded; 109 distinct file hashes; every gem colour checked; sound-on/off artwork and saved sound settings checked; play/result layouts fit 320, 390, 768 and 1440px; no browser JavaScript errors or HTTP errors.
+- `tests/smoke.cjs`: 532 assertions passed, including Lowball regions, invalid input, four-round play, saved results, completed stats, and Unlimited; no browser JavaScript errors.
+- Visually inspected all four 25-item catalogue screenshots and the actual mobile playing area and desktop score receipt. Full website screenshots, close-ups, final-screen previews, utility art, and the complete HTML catalogue are in `design/previews/lowball-images/`.
+- Validated on a local HTTP server. The implementation uses local image paths and requires no remote image service. Public hosting was not deployed or tested.

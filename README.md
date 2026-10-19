@@ -97,10 +97,12 @@ All daily games use midnight **Australia/Sydney**, regardless of the device time
 
 Run `node tests/daily-clock.cjs` for calendar/DST cases and `node tests/homepage-reset.cjs` (server running) for responsive layout and cross-timezone rollover checks. Serve the entire repository root even when opening Lowball's engine route directly, so its shared clock script remains accessible.
 
-### Lowball artwork and score receipts
+### Lowball generated artwork and score receipts
 
-Lowball uses `games/lowball/engine/item-art.js` for inline SVG illustrations, including item art, trophies, locks, and result gems. All 100 current items are matched to reusable shape families. Add a normal item to `ITEMS` without generating an image: the renderer matches its name or supplies a parcel fallback. Set an optional `art` property (for example `art: "book"`) to pick a family explicitly; extend the drawings/rules in that single file for a new silhouette. Archived PNGs remain for compatibility but are no longer used for these illustrations.
+Lowball uses actual generated PNG images in `games/lowball/engine/icons/generated/`: 100 individual item illustrations and nine game icons (trophy, lock, stats, four gem colours, sound on/off). They match the original shaded pixel-art references. `item-art.js` maps each item explicitly to its image; it does not draw SVGs, match categories, or silently substitute an unrelated image. Existing items, prices, and mechanics are unchanged.
 
-Score receipts use system sans-serif numerals, compact monospace labels, a two-column price comparison, and a small verification date. They need no remote font service. Preview images are in `design/previews/lowball-refresh/`.
+The original generated atlases are retained in `icons/generated/source/`. `manifest.json` records each asset's atlas, cell, and extraction bounds. If needed, run `node scripts/extract-lowball-images.cjs` with Sharp available to reproduce the individual transparent 192px PNGs from those atlases. This extraction only crops and sizes generated artwork; it does not draw the illustrations. A new item needs its own generated PNG and an explicit mapping in `item-art.js`.
 
-Run `ARCADE_TEST_URL=http://127.0.0.1:8014 node tests/lowball-art.cjs` against a local static server to check item coverage with PNG requests blocked and result layouts at four screen widths.
+Score receipts retain the clean system sans-serif numerals, compact monospace labels, side-by-side price comparison, and small verification date. Preview images and a complete HTML catalogue are in `design/previews/lowball-images/`.
+
+Run `ARCADE_TEST_URL=http://127.0.0.1:8015 node tests/lowball-art.cjs` against a local static server. It checks every asset through the actual game, all gem tiers, sound switching/persistence, and result/play layouts at four widths. The artwork needs no external image host, API key, or generation service at runtime.

@@ -1,0 +1,1246 @@
+{
+  "version": 1,
+  "generator": "image_gen",
+  "generatedOn": "2026-10-19",
+  "style": "Generated shaded pixel art matching the original Lowball icons",
+  "items": {
+    "Big Mac": {
+      "file": "big-mac.png",
+      "source": "items-1.png",
+      "cell": 0,
+      "bounds": {
+        "left": 38,
+        "top": 67,
+        "width": 217,
+        "height": 220
+      }
+    },
+    "Netflix Standard": {
+      "file": "netflix-standard.png",
+      "source": "items-1.png",
+      "cell": 1,
+      "bounds": {
+        "left": 285,
+        "top": 83,
+        "width": 227,
+        "height": 190
+      }
+    },
+    "Spotify Premium": {
+      "file": "spotify-premium.png",
+      "source": "items-1.png",
+      "cell": 2,
+      "bounds": {
+        "left": 545,
+        "top": 84,
+        "width": 189,
+        "height": 189
+      }
+    },
+    "iPhone 16": {
+      "file": "iphone-16.png",
+      "source": "items-1.png",
+      "cell": 3,
+      "bounds": {
+        "left": 810,
+        "top": 53,
+        "width": 132,
+        "height": 232
+      }
+    },
+    "Coca-Cola bottle": {
+      "file": "coca-cola-bottle.png",
+      "source": "items-1.png",
+      "cell": 4,
+      "bounds": {
+        "left": 1063,
+        "top": 41,
+        "width": 108,
+        "height": 252
+      }
+    },
+    "Dozen eggs": {
+      "file": "dozen-eggs.png",
+      "source": "items-1.png",
+      "cell": 5,
+      "bounds": {
+        "left": 22,
+        "top": 325,
+        "width": 254,
+        "height": 199
+      }
+    },
+    "Cinema ticket": {
+      "file": "cinema-ticket.png",
+      "source": "items-1.png",
+      "cell": 6,
+      "bounds": {
+        "left": 285,
+        "top": 323,
+        "width": 225,
+        "height": 196
+      }
+    },
+    "PlayStation 5": {
+      "file": "playstation-5.png",
+      "source": "items-1.png",
+      "cell": 7,
+      "bounds": {
+        "left": 533,
+        "top": 307,
+        "width": 219,
+        "height": 221
+      }
+    },
+    "McDonald's fries": {
+      "file": "mcdonalds-fries.png",
+      "source": "items-1.png",
+      "cell": 8,
+      "bounds": {
+        "left": 785,
+        "top": 308,
+        "width": 183,
+        "height": 220
+      }
+    },
+    "Loaf of bread": {
+      "file": "loaf-of-bread.png",
+      "source": "items-1.png",
+      "cell": 9,
+      "bounds": {
+        "left": 990,
+        "top": 342,
+        "width": 247,
+        "height": 177
+      }
+    },
+    "Litre of milk": {
+      "file": "litre-of-milk.png",
+      "source": "items-1.png",
+      "cell": 10,
+      "bounds": {
+        "left": 69,
+        "top": 529,
+        "width": 153,
+        "height": 231
+      }
+    },
+    "Starbucks latte": {
+      "file": "starbucks-latte.png",
+      "source": "items-1.png",
+      "cell": 11,
+      "bounds": {
+        "left": 316,
+        "top": 538,
+        "width": 152,
+        "height": 216
+      }
+    },
+    "Movie popcorn": {
+      "file": "movie-popcorn.png",
+      "source": "items-1.png",
+      "cell": 12,
+      "bounds": {
+        "left": 528,
+        "top": 540,
+        "width": 197,
+        "height": 220
+      }
+    },
+    "AirPods Pro 3": {
+      "file": "airpods-pro-3.png",
+      "source": "items-1.png",
+      "cell": 13,
+      "bounds": {
+        "left": 777,
+        "top": 563,
+        "width": 196,
+        "height": 184
+      }
+    },
+    "Nintendo Switch 2": {
+      "file": "nintendo-switch-2.png",
+      "source": "items-1.png",
+      "cell": 14,
+      "bounds": {
+        "left": 1002,
+        "top": 594,
+        "width": 235,
+        "height": 130
+      }
+    },
+    "Domino's pizza": {
+      "file": "dominos-pizza.png",
+      "source": "items-1.png",
+      "cell": 15,
+      "bounds": {
+        "left": 22,
+        "top": 762,
+        "width": 257,
+        "height": 235
+      }
+    },
+    "Petrol per litre": {
+      "file": "petrol-per-litre.png",
+      "source": "items-1.png",
+      "cell": 16,
+      "bounds": {
+        "left": 312,
+        "top": 767,
+        "width": 182,
+        "height": 222
+      }
+    },
+    "Gym membership": {
+      "file": "gym-membership.png",
+      "source": "items-1.png",
+      "cell": 17,
+      "bounds": {
+        "left": 510,
+        "top": 793,
+        "width": 235,
+        "height": 193
+      }
+    },
+    "Avocado": {
+      "file": "avocado.png",
+      "source": "items-1.png",
+      "cell": 18,
+      "bounds": {
+        "left": 772,
+        "top": 783,
+        "width": 200,
+        "height": 201
+      }
+    },
+    "Uber short ride": {
+      "file": "uber-short-ride.png",
+      "source": "items-1.png",
+      "cell": 19,
+      "bounds": {
+        "left": 984,
+        "top": 823,
+        "width": 249,
+        "height": 136
+      }
+    },
+    "Toothpaste tube": {
+      "file": "toothpaste-tube.png",
+      "source": "items-1.png",
+      "cell": 20,
+      "bounds": {
+        "left": 34,
+        "top": 996,
+        "width": 226,
+        "height": 214
+      }
+    },
+    "Band-Aids box": {
+      "file": "band-aids-box.png",
+      "source": "items-1.png",
+      "cell": 21,
+      "bounds": {
+        "left": 303,
+        "top": 1006,
+        "width": 190,
+        "height": 202
+      }
+    },
+    "Kindle Paperwhite": {
+      "file": "kindle-paperwhite.png",
+      "source": "items-1.png",
+      "cell": 22,
+      "bounds": {
+        "left": 547,
+        "top": 996,
+        "width": 157,
+        "height": 218
+      }
+    },
+    "Standard stamp": {
+      "file": "standard-stamp.png",
+      "source": "items-1.png",
+      "cell": 23,
+      "bounds": {
+        "left": 778,
+        "top": 1006,
+        "width": 183,
+        "height": 205
+      }
+    },
+    "Movie ticket popcorn combo": {
+      "file": "movie-ticket-popcorn-combo.png",
+      "source": "items-1.png",
+      "cell": 24,
+      "bounds": {
+        "left": 1024,
+        "top": 1002,
+        "width": 208,
+        "height": 209
+      }
+    },
+    "Levi's 501 jeans": {
+      "file": "levis-501-jeans.png",
+      "source": "items-2.png",
+      "cell": 0,
+      "bounds": {
+        "left": 29,
+        "top": 65,
+        "width": 228,
+        "height": 213
+      }
+    },
+    "Dog food bag": {
+      "file": "dog-food-bag.png",
+      "source": "items-2.png",
+      "cell": 1,
+      "bounds": {
+        "left": 290,
+        "top": 47,
+        "width": 204,
+        "height": 238
+      }
+    },
+    "Haircut": {
+      "file": "haircut.png",
+      "source": "items-2.png",
+      "cell": 2,
+      "bounds": {
+        "left": 540,
+        "top": 73,
+        "width": 192,
+        "height": 210
+      }
+    },
+    "Umbrella": {
+      "file": "umbrella.png",
+      "source": "items-2.png",
+      "cell": 3,
+      "bounds": {
+        "left": 764,
+        "top": 62,
+        "width": 243,
+        "height": 219
+      }
+    },
+    "Coffee capsules box": {
+      "file": "coffee-capsules-box.png",
+      "source": "items-2.png",
+      "cell": 4,
+      "bounds": {
+        "left": 1019,
+        "top": 77,
+        "width": 219,
+        "height": 199
+      }
+    },
+    "Monopoly board game": {
+      "file": "monopoly-board-game.png",
+      "source": "items-2.png",
+      "cell": 5,
+      "bounds": {
+        "left": 26,
+        "top": 312,
+        "width": 239,
+        "height": 195
+      }
+    },
+    "Sunscreen bottle": {
+      "file": "sunscreen-bottle.png",
+      "source": "items-2.png",
+      "cell": 6,
+      "bounds": {
+        "left": 336,
+        "top": 290,
+        "width": 124,
+        "height": 226
+      }
+    },
+    "Bananas": {
+      "file": "bananas.png",
+      "source": "items-2.png",
+      "cell": 7,
+      "bounds": {
+        "left": 514,
+        "top": 307,
+        "width": 233,
+        "height": 196
+      }
+    },
+    "Cheddar cheese block": {
+      "file": "cheddar-cheese-block.png",
+      "source": "items-2.png",
+      "cell": 8,
+      "bounds": {
+        "left": 759,
+        "top": 322,
+        "width": 234,
+        "height": 183
+      }
+    },
+    "Butter": {
+      "file": "butter.png",
+      "source": "items-2.png",
+      "cell": 9,
+      "bounds": {
+        "left": 1008,
+        "top": 333,
+        "width": 234,
+        "height": 171
+      }
+    },
+    "Chicken breast": {
+      "file": "chicken-breast.png",
+      "source": "items-2.png",
+      "cell": 10,
+      "bounds": {
+        "left": 20,
+        "top": 547,
+        "width": 239,
+        "height": 187
+      }
+    },
+    "Minced beef": {
+      "file": "minced-beef.png",
+      "source": "items-2.png",
+      "cell": 11,
+      "bounds": {
+        "left": 268,
+        "top": 555,
+        "width": 242,
+        "height": 177
+      }
+    },
+    "Rice": {
+      "file": "rice.png",
+      "source": "items-2.png",
+      "cell": 12,
+      "bounds": {
+        "left": 528,
+        "top": 519,
+        "width": 209,
+        "height": 224
+      }
+    },
+    "Pasta": {
+      "file": "pasta.png",
+      "source": "items-2.png",
+      "cell": 13,
+      "bounds": {
+        "left": 778,
+        "top": 512,
+        "width": 206,
+        "height": 238
+      }
+    },
+    "Peanut butter": {
+      "file": "peanut-butter.png",
+      "source": "items-2.png",
+      "cell": 14,
+      "bounds": {
+        "left": 1051,
+        "top": 524,
+        "width": 153,
+        "height": 218
+      }
+    },
+    "Breakfast cereal": {
+      "file": "breakfast-cereal.png",
+      "source": "items-2.png",
+      "cell": 15,
+      "bounds": {
+        "left": 46,
+        "top": 743,
+        "width": 195,
+        "height": 238
+      }
+    },
+    "Chocolate block": {
+      "file": "chocolate-block.png",
+      "source": "items-2.png",
+      "cell": 16,
+      "bounds": {
+        "left": 284,
+        "top": 768,
+        "width": 200,
+        "height": 214
+      }
+    },
+    "Potato chips": {
+      "file": "potato-chips.png",
+      "source": "items-2.png",
+      "cell": 17,
+      "bounds": {
+        "left": 526,
+        "top": 754,
+        "width": 207,
+        "height": 220
+      }
+    },
+    "Orange juice": {
+      "file": "orange-juice.png",
+      "source": "items-2.png",
+      "cell": 18,
+      "bounds": {
+        "left": 812,
+        "top": 752,
+        "width": 140,
+        "height": 218
+      }
+    },
+    "Bottled water": {
+      "file": "bottled-water.png",
+      "source": "items-2.png",
+      "cell": 19,
+      "bounds": {
+        "left": 1072,
+        "top": 748,
+        "width": 112,
+        "height": 232
+      }
+    },
+    "Tea bags": {
+      "file": "tea-bags.png",
+      "source": "items-2.png",
+      "cell": 20,
+      "bounds": {
+        "left": 38,
+        "top": 1014,
+        "width": 252,
+        "height": 194
+      }
+    },
+    "Ice cream tub": {
+      "file": "ice-cream-tub.png",
+      "source": "items-2.png",
+      "cell": 21,
+      "bounds": {
+        "left": 289,
+        "top": 994,
+        "width": 208,
+        "height": 219
+      }
+    },
+    "Pint of beer": {
+      "file": "pint-of-beer.png",
+      "source": "items-2.png",
+      "cell": 22,
+      "bounds": {
+        "left": 558,
+        "top": 990,
+        "width": 149,
+        "height": 227
+      }
+    },
+    "Bottle of wine": {
+      "file": "bottle-of-wine.png",
+      "source": "items-2.png",
+      "cell": 23,
+      "bounds": {
+        "left": 819,
+        "top": 968,
+        "width": 107,
+        "height": 263
+      }
+    },
+    "Six-pack of beer": {
+      "file": "six-pack-of-beer.png",
+      "source": "items-2.png",
+      "cell": 24,
+      "bounds": {
+        "left": 1006,
+        "top": 987,
+        "width": 228,
+        "height": 239
+      }
+    },
+    "Flat white": {
+      "file": "flat-white.png",
+      "source": "items-3.png",
+      "cell": 0,
+      "bounds": {
+        "left": 34,
+        "top": 77,
+        "width": 225,
+        "height": 178
+      }
+    },
+    "Footlong sub sandwich": {
+      "file": "footlong-sub-sandwich.png",
+      "source": "items-3.png",
+      "cell": 1,
+      "bounds": {
+        "left": 270,
+        "top": 74,
+        "width": 245,
+        "height": 185
+      }
+    },
+    "Frozen pizza": {
+      "file": "frozen-pizza.png",
+      "source": "items-3.png",
+      "cell": 2,
+      "bounds": {
+        "left": 531,
+        "top": 45,
+        "width": 203,
+        "height": 218
+      }
+    },
+    "Fish and chips": {
+      "file": "fish-and-chips.png",
+      "source": "items-3.png",
+      "cell": 3,
+      "bounds": {
+        "left": 751,
+        "top": 80,
+        "width": 271,
+        "height": 188
+      }
+    },
+    "Energy drink": {
+      "file": "energy-drink.png",
+      "source": "items-3.png",
+      "cell": 4,
+      "bounds": {
+        "left": 1075,
+        "top": 45,
+        "width": 110,
+        "height": 218
+      }
+    },
+    "Toilet paper": {
+      "file": "toilet-paper.png",
+      "source": "items-3.png",
+      "cell": 5,
+      "bounds": {
+        "left": 35,
+        "top": 288,
+        "width": 235,
+        "height": 211
+      }
+    },
+    "Dishwashing liquid": {
+      "file": "dishwashing-liquid.png",
+      "source": "items-3.png",
+      "cell": 6,
+      "bounds": {
+        "left": 332,
+        "top": 270,
+        "width": 130,
+        "height": 241
+      }
+    },
+    "Laundry detergent": {
+      "file": "laundry-detergent.png",
+      "source": "items-3.png",
+      "cell": 7,
+      "bounds": {
+        "left": 546,
+        "top": 270,
+        "width": 174,
+        "height": 242
+      }
+    },
+    "Tissues": {
+      "file": "tissues.png",
+      "source": "items-3.png",
+      "cell": 8,
+      "bounds": {
+        "left": 767,
+        "top": 301,
+        "width": 240,
+        "height": 211
+      }
+    },
+    "AA batteries": {
+      "file": "aa-batteries.png",
+      "source": "items-3.png",
+      "cell": 9,
+      "bounds": {
+        "left": 1041,
+        "top": 320,
+        "width": 182,
+        "height": 176
+      }
+    },
+    "LED light bulb": {
+      "file": "led-light-bulb.png",
+      "source": "items-3.png",
+      "cell": 10,
+      "bounds": {
+        "left": 66,
+        "top": 520,
+        "width": 152,
+        "height": 228
+      }
+    },
+    "Shampoo": {
+      "file": "shampoo.png",
+      "source": "items-3.png",
+      "cell": 11,
+      "bounds": {
+        "left": 333,
+        "top": 520,
+        "width": 118,
+        "height": 229
+      }
+    },
+    "Deodorant": {
+      "file": "deodorant.png",
+      "source": "items-3.png",
+      "cell": 12,
+      "bounds": {
+        "left": 566,
+        "top": 523,
+        "width": 124,
+        "height": 226
+      }
+    },
+    "Razor refills": {
+      "file": "razor-refills.png",
+      "source": "items-3.png",
+      "cell": 13,
+      "bounds": {
+        "left": 777,
+        "top": 531,
+        "width": 232,
+        "height": 219
+      }
+    },
+    "Toothbrush": {
+      "file": "toothbrush.png",
+      "source": "items-3.png",
+      "cell": 14,
+      "bounds": {
+        "left": 1028,
+        "top": 524,
+        "width": 188,
+        "height": 231
+      }
+    },
+    "Lip balm": {
+      "file": "lip-balm.png",
+      "source": "items-3.png",
+      "cell": 15,
+      "bounds": {
+        "left": 66,
+        "top": 788,
+        "width": 169,
+        "height": 192
+      }
+    },
+    "Hand soap": {
+      "file": "hand-soap.png",
+      "source": "items-3.png",
+      "cell": 16,
+      "bounds": {
+        "left": 319,
+        "top": 762,
+        "width": 147,
+        "height": 227
+      }
+    },
+    "Cotton t-shirt": {
+      "file": "cotton-t-shirt.png",
+      "source": "items-3.png",
+      "cell": 17,
+      "bounds": {
+        "left": 505,
+        "top": 779,
+        "width": 239,
+        "height": 211
+      }
+    },
+    "Socks": {
+      "file": "socks.png",
+      "source": "items-3.png",
+      "cell": 18,
+      "bounds": {
+        "left": 748,
+        "top": 792,
+        "width": 256,
+        "height": 196
+      }
+    },
+    "Hoodie": {
+      "file": "hoodie.png",
+      "source": "items-3.png",
+      "cell": 19,
+      "bounds": {
+        "left": 1010,
+        "top": 762,
+        "width": 225,
+        "height": 230
+      }
+    },
+    "Nike Air Force 1": {
+      "file": "nike-air-force-1.png",
+      "source": "items-3.png",
+      "cell": 20,
+      "bounds": {
+        "left": 25,
+        "top": 1025,
+        "width": 259,
+        "height": 177
+      }
+    },
+    "Sunglasses": {
+      "file": "sunglasses.png",
+      "source": "items-3.png",
+      "cell": 21,
+      "bounds": {
+        "left": 287,
+        "top": 1051,
+        "width": 235,
+        "height": 122
+      }
+    },
+    "Backpack": {
+      "file": "backpack.png",
+      "source": "items-3.png",
+      "cell": 22,
+      "bounds": {
+        "left": 527,
+        "top": 988,
+        "width": 211,
+        "height": 223
+      }
+    },
+    "Wireless mouse": {
+      "file": "wireless-mouse.png",
+      "source": "items-3.png",
+      "cell": 23,
+      "bounds": {
+        "left": 775,
+        "top": 1030,
+        "width": 193,
+        "height": 160
+      }
+    },
+    "USB-C cable": {
+      "file": "usb-c-cable.png",
+      "source": "items-3.png",
+      "cell": 24,
+      "bounds": {
+        "left": 994,
+        "top": 1006,
+        "width": 229,
+        "height": 205
+      }
+    },
+    "Phone case": {
+      "file": "phone-case.png",
+      "source": "items-4.png",
+      "cell": 0,
+      "bounds": {
+        "left": 72,
+        "top": 47,
+        "width": 141,
+        "height": 231
+      }
+    },
+    "Bluetooth speaker": {
+      "file": "bluetooth-speaker.png",
+      "source": "items-4.png",
+      "cell": 1,
+      "bounds": {
+        "left": 265,
+        "top": 116,
+        "width": 234,
+        "height": 147
+      }
+    },
+    "iPad": {
+      "file": "ipad.png",
+      "source": "items-4.png",
+      "cell": 2,
+      "bounds": {
+        "left": 539,
+        "top": 47,
+        "width": 206,
+        "height": 231
+      }
+    },
+    "Apple Watch SE": {
+      "file": "apple-watch-se.png",
+      "source": "items-4.png",
+      "cell": 3,
+      "bounds": {
+        "left": 802,
+        "top": 73,
+        "width": 179,
+        "height": 212
+      }
+    },
+    "External SSD": {
+      "file": "external-ssd.png",
+      "source": "items-4.png",
+      "cell": 4,
+      "bounds": {
+        "left": 1010,
+        "top": 107,
+        "width": 220,
+        "height": 150
+      }
+    },
+    "Air fryer": {
+      "file": "air-fryer.png",
+      "source": "items-4.png",
+      "cell": 5,
+      "bounds": {
+        "left": 48,
+        "top": 298,
+        "width": 197,
+        "height": 220
+      }
+    },
+    "Electric kettle": {
+      "file": "electric-kettle.png",
+      "source": "items-4.png",
+      "cell": 6,
+      "bounds": {
+        "left": 294,
+        "top": 300,
+        "width": 195,
+        "height": 215
+      }
+    },
+    "Toaster": {
+      "file": "toaster.png",
+      "source": "items-4.png",
+      "cell": 7,
+      "bounds": {
+        "left": 514,
+        "top": 299,
+        "width": 222,
+        "height": 220
+      }
+    },
+    "Robot vacuum": {
+      "file": "robot-vacuum.png",
+      "source": "items-4.png",
+      "cell": 8,
+      "bounds": {
+        "left": 762,
+        "top": 335,
+        "width": 227,
+        "height": 173
+      }
+    },
+    "Pillow": {
+      "file": "pillow.png",
+      "source": "items-4.png",
+      "cell": 9,
+      "bounds": {
+        "left": 992,
+        "top": 329,
+        "width": 244,
+        "height": 191
+      }
+    },
+    "Pedestal fan": {
+      "file": "pedestal-fan.png",
+      "source": "items-4.png",
+      "cell": 10,
+      "bounds": {
+        "left": 52,
+        "top": 518,
+        "width": 162,
+        "height": 252
+      }
+    },
+    "Disney+": {
+      "file": "disney.png",
+      "source": "items-4.png",
+      "cell": 11,
+      "bounds": {
+        "left": 282,
+        "top": 553,
+        "width": 202,
+        "height": 197
+      }
+    },
+    "Paperback novel": {
+      "file": "paperback-novel.png",
+      "source": "items-4.png",
+      "cell": 12,
+      "bounds": {
+        "left": 520,
+        "top": 528,
+        "width": 219,
+        "height": 236
+      }
+    },
+    "Zoo ticket": {
+      "file": "zoo-ticket.png",
+      "source": "items-4.png",
+      "cell": 13,
+      "bounds": {
+        "left": 747,
+        "top": 556,
+        "width": 262,
+        "height": 196
+      }
+    },
+    "Public transport fare": {
+      "file": "public-transport-fare.png",
+      "source": "items-4.png",
+      "cell": 14,
+      "bounds": {
+        "left": 1028,
+        "top": 549,
+        "width": 207,
+        "height": 210
+      }
+    },
+    "Car wash": {
+      "file": "car-wash.png",
+      "source": "items-4.png",
+      "cell": 15,
+      "bounds": {
+        "left": 18,
+        "top": 783,
+        "width": 255,
+        "height": 213
+      }
+    },
+    "Dry cleaning": {
+      "file": "dry-cleaning.png",
+      "source": "items-4.png",
+      "cell": 16,
+      "bounds": {
+        "left": 301,
+        "top": 754,
+        "width": 198,
+        "height": 261
+      }
+    },
+    "Parking": {
+      "file": "parking.png",
+      "source": "items-4.png",
+      "cell": 17,
+      "bounds": {
+        "left": 562,
+        "top": 778,
+        "width": 148,
+        "height": 223
+      }
+    },
+    "PS5 game": {
+      "file": "ps5-game.png",
+      "source": "items-4.png",
+      "cell": 18,
+      "bounds": {
+        "left": 786,
+        "top": 766,
+        "width": 181,
+        "height": 234
+      }
+    },
+    "LEGO set": {
+      "file": "lego-set.png",
+      "source": "items-4.png",
+      "cell": 19,
+      "bounds": {
+        "left": 1003,
+        "top": 786,
+        "width": 233,
+        "height": 207
+      }
+    },
+    "Jigsaw puzzle": {
+      "file": "jigsaw-puzzle.png",
+      "source": "items-4.png",
+      "cell": 20,
+      "bounds": {
+        "left": 34,
+        "top": 1018,
+        "width": 219,
+        "height": 203
+      }
+    },
+    "Soccer ball": {
+      "file": "soccer-ball.png",
+      "source": "items-4.png",
+      "cell": 21,
+      "bounds": {
+        "left": 296,
+        "top": 1022,
+        "width": 181,
+        "height": 184
+      }
+    },
+    "Yoga mat": {
+      "file": "yoga-mat.png",
+      "source": "items-4.png",
+      "cell": 22,
+      "bounds": {
+        "left": 500,
+        "top": 1023,
+        "width": 259,
+        "height": 193
+      }
+    },
+    "Tennis balls": {
+      "file": "tennis-balls.png",
+      "source": "items-4.png",
+      "cell": 23,
+      "bounds": {
+        "left": 815,
+        "top": 996,
+        "width": 114,
+        "height": 230
+      }
+    },
+    "Cat food": {
+      "file": "cat-food.png",
+      "source": "items-4.png",
+      "cell": 24,
+      "bounds": {
+        "left": 1008,
+        "top": 1019,
+        "width": 218,
+        "height": 199
+      }
+    }
+  },
+  "utilities": {
+    "trophy": {
+      "file": "trophy.png",
+      "source": "utilities.png",
+      "cell": 0,
+      "bounds": {
+        "left": 61,
+        "top": 88,
+        "width": 338,
+        "height": 338
+      }
+    },
+    "lock": {
+      "file": "lock.png",
+      "source": "utilities.png",
+      "cell": 1,
+      "bounds": {
+        "left": 497,
+        "top": 89,
+        "width": 261,
+        "height": 338
+      }
+    },
+    "stats": {
+      "file": "stats.png",
+      "source": "utilities.png",
+      "cell": 2,
+      "bounds": {
+        "left": 870,
+        "top": 136,
+        "width": 322,
+        "height": 289
+      }
+    },
+    "gem-green": {
+      "file": "gem-green.png",
+      "source": "utilities.png",
+      "cell": 3,
+      "bounds": {
+        "left": 82,
+        "top": 503,
+        "width": 289,
+        "height": 281
+      }
+    },
+    "gem-yellow": {
+      "file": "gem-yellow.png",
+      "source": "utilities.png",
+      "cell": 4,
+      "bounds": {
+        "left": 486,
+        "top": 503,
+        "width": 282,
+        "height": 281
+      }
+    },
+    "gem-orange": {
+      "file": "gem-orange.png",
+      "source": "utilities.png",
+      "cell": 5,
+      "bounds": {
+        "left": 883,
+        "top": 501,
+        "width": 289,
+        "height": 283
+      }
+    },
+    "gem-red": {
+      "file": "gem-red.png",
+      "source": "utilities.png",
+      "cell": 6,
+      "bounds": {
+        "left": 82,
+        "top": 864,
+        "width": 292,
+        "height": 285
+      }
+    },
+    "sound-on": {
+      "file": "sound-on.png",
+      "source": "utilities.png",
+      "cell": 7,
+      "bounds": {
+        "left": 462,
+        "top": 875,
+        "width": 331,
+        "height": 295
+      }
+    },
+    "sound-off": {
+      "file": "sound-off.png",
+      "source": "utilities.png",
+      "cell": 8,
+      "bounds": {
+        "left": 861,
+        "top": 875,
+        "width": 333,
+        "height": 295
+      }
+    }
+  },
+  "sources": [
+    {
+      "file": "items-1.png",
+      "columns": 5,
+      "count": 25,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "file": "items-2.png",
+      "columns": 5,
+      "count": 25,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "file": "items-3.png",
+      "columns": 5,
+      "count": 25,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "file": "items-4.png",
+      "columns": 5,
+      "count": 25,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "file": "utilities.png",
+      "columns": 3,
+      "count": 9,
+      "width": 1254,
+      "height": 1254
+    }
+  ]
+}

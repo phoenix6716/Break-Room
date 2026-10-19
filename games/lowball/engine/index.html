@@ -596,7 +596,7 @@
   <header>
     <div class="head-btns">
       <button type="button" class="icon-btn" id="helpBtn" aria-label="How to play">?</button>
-      <button type="button" class="icon-btn" id="statsBtn" aria-label="Your stats"><svg width="22" height="22" viewBox="0 0 11 11" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="6" width="2" height="4" fill="#f7f1e3"/><rect x="4" y="3" width="2" height="7" fill="#f7f1e3"/><rect x="7" y="1" width="2" height="9" fill="#f7f1e3"/></svg></button>
+      <button type="button" class="icon-btn" id="statsBtn" aria-label="Your stats"><span id="statsArt"></span></button>
     </div>
     <h1>LOWBALL</h1>
     <div class="sub">Don't lowball it.</div>
@@ -712,6 +712,7 @@
 <script src="site-config.js"></script>
 <script src="item-art.js"></script>
 <script>
+document.getElementById("statsArt").innerHTML = LOWBALL_ART.markup({ art: "stats" });
 document.getElementById("trophyArt").innerHTML = LOWBALL_ART.markup({ art: "trophy" });
 document.getElementById("lockArt").innerHTML = LOWBALL_ART.markup({ art: "lock" });
 
@@ -1738,7 +1739,10 @@ function guessCountry() {
   } catch(e) {}
   soundOn = safeGet("pc_sound", "1") !== "0";
   const soundBtn = document.getElementById("soundBtn");
-  const paintSound = () => { soundBtn.textContent = "Sound: " + (soundOn ? "on" : "off"); };
+  const paintSound = () => {
+    soundBtn.innerHTML = LOWBALL_ART.markup({ art: soundOn ? "sound-on" : "sound-off" }) + '<span>Sound: ' + (soundOn ? 'on' : 'off') + '</span>';
+    soundBtn.setAttribute("aria-pressed", String(soundOn));
+  };
   paintSound();
   soundBtn.addEventListener("click", () => { soundOn = !soundOn; safeSet("pc_sound", soundOn ? "1" : "0"); paintSound(); if (soundOn) SFX.tick(); });
   detectCountry();

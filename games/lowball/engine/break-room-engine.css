@@ -10,7 +10,7 @@ body{min-height:0}.sound-btn{grid-column:1/-1;font:700 12px 'Courier New',monosp
 #playArea,.result.show,.final-screen.show,.lock-screen.show{position:relative;background:#fffdf5;border:2px solid #17263a;padding:24px 20px;box-shadow:4px 4px #3e86a5;min-width:0}
 #playArea{background-image:linear-gradient(#e9dfc866 1px,transparent 1px);background-size:100% 28px}.item-emoji{margin:0 auto 12px}.guess-row{margin-top:20px}.guess-row input{background:#f9e2a7;font-size:28px;box-shadow:2px 2px #17263a}.btn-gold{position:relative;box-shadow:3px 4px #17263a}.btn-gold:hover{transform:translate(-1px,-2px);box-shadow:4px 6px #17263a}.btn-gold:active{transform:translate(2px,2px);box-shadow:1px 1px #17263a}
 @media(max-width:750px){.card{padding:40px 16px 20px;min-height:430px}#playArea,.result.show,.final-screen.show,.lock-screen.show{padding:22px 12px}.card:before{font-size:8px;left:15px}.card:after{right:15px;width:24px}}
-/* Reusable vector illustrations and readable score receipts. All fonts are local. */
+/* Generated pixel-art images and readable score receipts. All fonts are local. */
 :root{--score-font:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--label-font:ui-monospace,'SFMono-Regular',Consolas,'Liberation Mono',monospace}
 .lowball-art{display:block;width:160px;height:160px;max-width:100%;margin:auto;overflow:visible}.item-emoji{font-size:0;line-height:1}.item-name{font-family:var(--score-font);font-weight:800;letter-spacing:-.6px}.item-detail{font-family:var(--score-font);font-size:14px}
 .result.show{padding:28px 22px 24px;background-image:linear-gradient(#fffdf5,#faf6e9)}
@@ -27,3 +27,9 @@ body{min-height:0}.sound-btn{grid-column:1/-1;font:700 12px 'Courier New',monosp
 .squares{display:flex;justify-content:center;gap:7px;margin:18px 0 20px}.squares .gem{display:inline-block;flex:0 0 28px;width:28px;height:28px;margin:0;image-rendering:auto}
 .btn-gold,.btn-outline,.mode-btn{font-family:var(--label-font);font-weight:700;letter-spacing:.4px}.final-total{color:#3a7850}.final-screen .item-emoji .lowball-art{width:88px;height:88px}.lock-screen .lowball-art{width:72px;height:72px}.final-screen .item-name{font-size:22px}.final-sub,.final-pct{font:14px/1.5 var(--score-font)}
 @media(max-width:750px){.result.show{padding:24px 12px}.price-comparison>div{padding:12px 10px}.price-comparison dt{font-size:9px;letter-spacing:0}.result-score,.final-total{font-size:72px}.lowball-art{width:144px;height:144px}}
+
+/* Every illustration uses a generated PNG, with nearest-neighbour rendering for pixel edges. */
+.lowball-art{object-fit:contain;image-rendering:pixelated}.squares .gem{image-rendering:pixelated}
+.icon-btn .lowball-art{width:22px;height:22px;margin:0}.icon-btn #statsArt{display:block}
+.sound-btn{display:flex;align-items:center;justify-content:center;gap:7px;opacity:1}
+.sound-btn .lowball-art{width:22px;height:22px;margin:0}
