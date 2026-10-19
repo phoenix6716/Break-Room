@@ -2,6 +2,10 @@
 
 The repository is named Midnight-Arcade, but the current website brand is **Break Room**.
 
+## Check installed skills before each task
+
+The user requests that, before starting any task, inspect the currently installed skills and assess whether any can help complete it. Read and apply relevant skill instructions; do not invoke unrelated skills merely because they are installed. Discover the current catalog rather than assuming the installed set is unchanged. Tell the user when first applying a skill in the conversation.
+
 ## Canonical layout for future games
 
 The user explicitly selected the current, centred **Stake layout** as the starting point for future added games. This file is durable repository guidance: read it again when adding a game.
