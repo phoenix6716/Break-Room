@@ -30,3 +30,9 @@ The preview selector exposes Ready, Playing, Results, Daily complete and Coming 
 Coverage: all IDs from the six current standalone placeholder templates are preserved, including menu/account navigation, title/description/countdown, help/stats buttons, Daily/Unlimited, Streak/Best/Played, item subline, round indicators, artwork/instructions/score/attempt badges, start, game engine panel and demo finish, results/score/message/all games/copy, daily-used score/pick another game, both popup panels and all six extended stats, close/done/back controls, sound/share/exit, legal and footer links. Generic game.html scoring information is represented by the max-score badge and subline.
 
 Browser checks: 320, 390, 768 and 1440px; no horizontal overflow or console/resource errors; sample start/finish flow, all five states, disabled Coming soon, dialogs/menu and restored focus. Screenshots `game-template-*.png` show desktop, mobile, playing, results, daily complete, help and stats.
+
+### Stack Up layout revision
+
+The template now uses the uploaded Stack Up CSS directly (`stack-layout.css`, extracted unchanged) for its header grid, split introduction, instruction rows, artwork, gameplay board, two note cards, and 300px sidebar. `game-template.css` adds the existing template controls and panels. Daily/Unlimited replace Daily/Infinite; Account replaces global points; Start run replaces the two launch buttons; the sidebar uses the universal reset, run score, and original Streak/Best/Played with extended stats instead of Stack Up's timer and leaderboard. Help, menu, sharing, sound, legal links, result and completed states remain available. All IDs from the previous template are retained. The source Stack Up game is untouched.
+
+Rechecked all states, dialogs, menu, mode toggles, focus restoration and overflow at 320, 390, 768 and 1440px with no JavaScript or resource errors. Updated all screenshots to this revision.
