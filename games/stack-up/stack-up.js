@@ -1,0 +1,88 @@
+/* Stack Up: one saved daily run, wall-clock timers, and free practice. */
+(() => {
+ 'use strict';
+ const $=id=>document.getElementById(id),clock=window.MIDNIGHT_ARCADE_CLOCK;
+ const pool=window.STACK_UP_STACKS, prefix='break-room:stack-up:daily:',version=1;
+ const memory=new Map();let persistent=true,run=null,mode='daily',dialog=null;
+ const read=key=>{if(!persistent&&memory.has(key))return memory.get(key);try{return localStorage.getItem(key)||memory.get(key)||null}catch{return memory.get(key)||null}};
+ function write(key,value){memory.set(key,value);try{localStorage.setItem(key,value)}catch{persistent=false;$('save-warning').hidden=false;}}
+ try{localStorage.setItem('break-room:stack-up:storage-check','1');localStorage.removeItem('break-room:stack-up:storage-check')}catch{persistent=false;$('save-warning').hidden=false;}
+ const format=n=>Math.round(n).toLocaleString('en-AU');
+ function seeded(seed){let h=2166136261;for(const c of seed)h=Math.imul(h^c.charCodeAt(0),16777619);return()=>{h+=0x6D2B79F5;let x=Math.imul(h^(h>>>15),1|h);x^=x+Math.imul(x^(x>>>7),61|x);return((x^(x>>>14))>>>0)/4294967296;};}
+ function shuffle(items,random=Math.random){const copy=items.slice();for(let i=copy.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[copy[i],copy[j]]=[copy[j],copy[i]];}return copy;}
+ function dailySet(day){return shuffle(pool.map((_,i)=>i),seeded('stack-up:'+day)).slice(0,5);}
+ function valid(r,day){return r&&r.version===version&&r.day===day&&Number.isInteger(r.round)&&r.round>=0&&r.round<5&&Number.isFinite(r.score)&&Number.isInteger(r.streak)&&r.streak>=0&&Array.isArray(r.results)&&r.results.length<=5&&r.results.every(x=>x&&typeof x.correct==='boolean'&&Number.isFinite(x.points)&&Number.isInteger(x.mistakes)&&x.mistakes>=0)&&['playing','review','complete'].includes(r.status)&&Array.isArray(r.order)&&r.order.length===5&&new Set(r.order).size===5&&r.order.every(x=>Number.isInteger(x)&&x>=1&&x<=5)&&Number.isFinite(r.deadline)&&Number.isInteger(r.mistakes)&&r.mistakes>=0&&(r.status==='playing'?r.results.length===r.round:r.results.length===r.round+1)&&(r.status!=='complete'||r.round===4);}
+ function load(day){try{const r=JSON.parse(read(prefix+day));return valid(r,day)?r:null}catch{return null;}}
+ function save(){if(mode==='daily'&&run)write(prefix+run.day,JSON.stringify(run));}
+ function stack(){return pool[mode==='daily'?dailySet(run.day)[run.round]:run.stack];}
+ function secondsLeft(){return Math.max(0,Math.min(90,Math.ceil((run.deadline-Date.now())/1000)));}
+ function makeRound(){run.order=shuffle([1,2,3,4,5],mode==='daily'?seeded(run.day+':'+run.round):Math.random);if(run.order.every((v,i)=>v===i+1))run.order.push(run.order.shift());run.deadline=Date.now()+90000;run.mistakes=0;run.status='playing';save();}
+ function newRun(nextMode){return{version,day:clock.dayKey(),round:0,score:0,streak:0,results:[],order:[],deadline:0,mistakes:0,status:'playing',stack:Math.floor(Math.random()*pool.length)};}
+ function currentDay(){if(mode==='daily'&&run&&run.day!==clock.dayKey()){closeDialog();run=null;$('game-interface').hidden=true;$('game-interface').setAttribute('aria-hidden','true');$('intro-screen').hidden=false;$('day-notice').hidden=false;refreshStats();refreshLaunch();return false;}return true;}
+ function start(nextMode){closeDialog();mode=nextMode;run=mode==='daily'?load(clock.dayKey()):null;if(!run){run=newRun(mode);makeRound();}$('intro-screen').hidden=true;$('game-interface').hidden=false;$('game-interface').setAttribute('aria-hidden','false');$('day-notice').hidden=true;document.querySelectorAll('[data-mode]').forEach(b=>{b.classList.toggle('active',b.dataset.mode===mode);b.setAttribute('aria-pressed',String(b.dataset.mode===mode));});render();if(run.status==='playing')tick();else if(run.status==='review')openResult();$('game-interface').scrollIntoView({block:'start'});}
+ function render(){
+  const complete=run.status==='complete',s=stack();
+  $('daily-summary').hidden=!complete;document.querySelector('.game-column>.game-board').hidden=complete;
+  document.querySelector('.game-notes').hidden=complete;$('timer-card').hidden=complete;
+  $('eyebrow').innerHTML=mode==='daily'?'DAILY CHALLENGE <span>10× POINTS</span>':'INFINITE MODE <span>FREE PRACTICE</span>';
+  $('game-title').textContent=complete?'Daily stack cleared.':'Build the right stack.';
+  $('daily-note').style.display=mode==='daily'?'flex':'none';
+  $('score-caption').textContent=mode==='daily'?'daily points':'practice points';$('run-score').textContent=format(run.score);
+  $('category-tag').textContent=s.category;$('prompt').textContent=s.prompt;
+  document.querySelector('.instructions').textContent='Drag the cards or use their arrows. Then lock it in.';
+  $('round-label').textContent=mode==='daily'?`ROUND ${run.round+1} / 5`:`STACK #${run.round+1}`;
+  $('streak-label').innerHTML=`STREAK <b>${run.streak}</b>`;
+  const labels=document.querySelectorAll('.sort-line span');labels[0].textContent=s.ends[0];labels[1].textContent=s.ends[1];
+  $('round-dots').innerHTML=Array.from({length:5},(_,i)=>`<i class="${mode==='daily'?(i<run.results.length?'done':i===run.round?'current':''):(i===run.round%5?'current':'')}"></i>`).join('');
+  const locked=run.status!=='playing';$('check-button').disabled=complete;$('check-button').textContent=locked?'VIEW RESULT':'LOCK IT IN ↵';
+  $('message').className='message';$('message').textContent=locked?'This stack is finished. View the answer to continue.':'Every correct stack earns points. Wrong guesses cost points.';
+  renderCards();updateTimer();refreshStats();if(complete)renderSummary();
+ }
+ function move(from,to){if(!currentDay()||!run||run.status!=='playing'||to<0||to>4)return;if(secondsLeft()===0){finish(false);return;}const [value]=run.order.splice(from,1);run.order.splice(to,0,value);save();renderCards();const card=$('cards').querySelector(`[data-value="${value}"]`);card.focus();$('message').textContent=`${stack().cards.find(c=>c.value===value).name} moved to position ${to+1}.`;}
+ function renderCards(){
+  const locked=run.status!=='playing',s=stack();$('cards').textContent='';
+  run.order.forEach((value,index)=>{
+   const item=s.cards.find(c=>c.value===value),card=document.createElement('article');card.className='sort-card';card.draggable=!locked;card.dataset.value=value;card.tabIndex=0;card.setAttribute('aria-label',`${item.name}, position ${index+1} of 5. Use arrow keys to move.`);
+   const number=document.createElement('span');number.className='card-number';number.textContent=String(index+1).padStart(2,'0');
+   const symbol=document.createElement('span');symbol.className='card-symbol alt-'+index;symbol.textContent=item.symbol;symbol.setAttribute('aria-hidden','true');
+   const name=document.createElement('div');name.className='card-name';name.textContent=item.name;
+   const detail=document.createElement('div');detail.className='card-detail';detail.textContent=item.detail;
+   const moves=document.createElement('div');moves.className='card-moves';
+   [-1,1].forEach(offset=>{const button=document.createElement('button');button.type='button';button.textContent=offset<0?'←':'→';button.setAttribute('aria-label',`Move ${item.name} ${offset<0?'earlier':'later'}`);button.disabled=locked||index+offset<0||index+offset>4;button.onclick=()=>move(index,index+offset);moves.append(button);});
+   card.append(number,symbol,name,detail,moves);
+   card.onkeydown=e=>{if(e.target!==card||!['ArrowLeft','ArrowUp','ArrowRight','ArrowDown'].includes(e.key))return;e.preventDefault();move(index,index+(['ArrowLeft','ArrowUp'].includes(e.key)?-1:1));};
+   card.ondragstart=e=>{if(locked||e.target.closest('button')){e.preventDefault();return;}e.dataTransfer.setData('text/plain',String(value));e.dataTransfer.effectAllowed='move';card.classList.add('dragging');};
+   card.ondragend=()=>card.classList.remove('dragging');card.ondragover=e=>{if(!locked){e.preventDefault();e.dataTransfer.dropEffect='move';}};
+   card.ondrop=e=>{e.preventDefault();const from=run.order.indexOf(Number(e.dataTransfer.getData('text/plain')));if(from>=0)move(from,index);};
+   $('cards').append(card);
+  });
+ }
+ function updateTimer(){if(!run)return;const seconds=run.status==='playing'?secondsLeft():(run.results.at(-1)?.seconds||0);$('timer').textContent=`${String(Math.floor(seconds/60)).padStart(2,'0')}:${String(seconds%60).padStart(2,'0')}`;$('timer').setAttribute('aria-label',seconds+' seconds remaining');$('timer-fill').style.width=seconds/90*100+'%';$('timer-card').classList.toggle('warning',run.status==='playing'&&seconds<=20);$('timer-card').classList.toggle('urgent',run.status==='playing'&&seconds<=10);$('timer-caption').textContent=run.status==='playing'?'The clock keeps running if you leave this stack.':'Clock stopped. Continue when you are ready.';}
+ function check(){if(!run||!currentDay())return;if(run.status==='review'){openResult();return;}if(run.status!=='playing')return;if(secondsLeft()===0){finish(false);return;}if(run.order.every((v,i)=>v===i+1)){finish(true);return;}const loss=mode==='daily'?300:30;run.score-=loss;run.streak=0;run.mistakes++;save();$('run-score').textContent=format(run.score);$('streak-label').innerHTML='STREAK <b>0</b>';$('message').className='message bad';$('message').textContent=`Not quite. −${loss} points. Keep sorting while the clock runs.`;}
+ function finish(correct){if(!run||run.status!=='playing'||!currentDay())return;const seconds=secondsLeft(),multiplier=mode==='daily'?10:1,points=correct?Math.round((100+seconds*5+run.streak*35)*multiplier):-40*multiplier;run.score+=points;run.streak=correct?run.streak+1:0;run.results.push({correct,points,seconds,mistakes:run.mistakes});run.status=mode==='daily'&&run.round===4?'complete':'review';save();render();openResult();refreshLaunch();}
+ function openResult(){if(!run||run.status==='playing')return;const r=run.results.at(-1),complete=run.status==='complete';$('result-kicker').textContent=complete?'DAILY COMPLETE':r.correct?'STACK COMPLETE':'TIME RAN OUT';$('result-title').textContent=complete?'Daily stack cleared.':r.correct?'Nice ordering.':'The clock got you.';$('result-detail').textContent=(r.points>=0?'+':'−')+format(Math.abs(r.points))+' points';$('fact-text').textContent=stack().fact;
+  let order=$('correct-order');if(!order){order=document.createElement('p');order.id='correct-order';order.className='correct-order';$('fact-text').after(order);}order.textContent='Correct order: '+stack().cards.slice().sort((a,b)=>a.value-b.value).map(c=>c.name).join(' → ');
+  $('next-button').textContent=complete?'SEE DAILY RESULTS →':'NEXT STACK →';openDialog($('result-modal'),$('check-button'));
+ }
+ function next(){if(!run||!currentDay())return;closeDialog();if(run.status==='complete'){renderSummary();$('summary-copy').focus();return;}if(run.status!=='review')return;run.round++;if(mode==='infinite'){run.stack=(run.stack+1+Math.floor(Math.random()*(pool.length-1)))%pool.length;}makeRound();render();$('cards').firstElementChild.focus();}
+ function renderSummary(){$('summary-score').textContent=format(run.score)+' points';$('summary-detail').textContent=`${run.results.filter(x=>x.correct).length} / 5 stacks cleared · ${run.day}. Your next daily arrives at midnight Sydney time.`;}
+ function records(){const keys=new Set(memory.keys());try{for(let i=0;i<localStorage.length;i++)keys.add(localStorage.key(i));}catch{}return [...keys].filter(k=>k?.startsWith(prefix)).map(k=>load(k.slice(prefix.length))).filter(r=>r?.status==='complete').sort((a,b)=>a.day.localeCompare(b.day));}
+ function refreshStats(){const all=records(),scores=all.map(r=>r.score),best=scores.length?Math.max(...scores):null,average=scores.length?Math.round(scores.reduce((a,b)=>a+b,0)/scores.length):null,days=new Set(all.map(r=>r.day));let day=clock.dayKey(),streak=0;if(!days.has(day))day=clock.previousDay(day);while(days.has(day)){streak++;day=clock.previousDay(day);}const values={played:all.length,best:best===null?'—':format(best),average:average===null?'—':format(average),streak,perfect:all.filter(r=>r.results.every(x=>x.correct&&x.mistakes===0)).length,last:all.length?format(all.at(-1).score):'—'};for(const [key,value]of Object.entries(values)){if($('record-'+key))$('record-'+key).textContent=value;$('stat-'+key).textContent=value;}}
+ function refreshLaunch(){const saved=load(clock.dayKey()),button=document.querySelector('[data-start-mode="daily"]');button.innerHTML=(saved?.status==='complete'?'VIEW DAILY RESULTS':saved?'RESUME DAILY':'PLAY DAILY')+' <strong>10×</strong><span>→</span>';}
+ function openDialog(overlay,opener){if(dialog)closeDialog();const previous=document.activeElement;overlay.hidden=false;overlay.setAttribute('aria-hidden','false');overlay.classList.add('open');const background=[...document.body.children].filter(x=>x!==overlay&&!['SCRIPT','LINK'].includes(x.tagName)).map(x=>[x,x.inert]);background.forEach(([x])=>x.inert=true);dialog={overlay,opener:opener||previous,background};document.body.style.overflow='hidden';overlay.querySelector('button').focus();}
+ function closeDialog(){if(!dialog)return;const {overlay,opener,background}=dialog;overlay.hidden=true;overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');background.forEach(([x,inert])=>x.inert=inert);document.body.style.overflow='';dialog=null;if(opener?.isConnected&&!opener.closest('[hidden]'))opener.focus();}
+ async function copy(){if(!run||run.status!=='complete')return;const text=`Stack Up ${run.day} ${run.results.map(r=>r.correct?'🟩':'⬜').join('')} ${run.score} points\n${new URL('index.html',location.href).href}`;let copied=false;try{await navigator.clipboard.writeText(text);copied=true;}catch{const field=document.createElement('textarea'),focus=document.activeElement;field.value=text;field.style.cssText='position:fixed;left:-9999px';document.body.append(field);field.select();try{copied=document.execCommand('copy')}catch{}field.remove();focus?.focus();}$('share-status').textContent=copied?'Copied!':"Couldn't copy in this browser. Try opening the game through a local web server.";}
+ function tick(){if(!run||!currentDay())return;if(run.status==='playing'){updateTimer();if(secondsLeft()===0)finish(false);}}
+ document.querySelectorAll('[data-mode],[data-start-mode]').forEach(b=>b.onclick=()=>start(b.dataset.mode||b.dataset.startMode));
+ $('check-button').onclick=check;$('next-button').onclick=next;$('result-close').onclick=closeDialog;
+ $('help-open').onclick=e=>openDialog($('help-dialog'),e.currentTarget);
+ for(const id of ['stats-open','sidebar-stats-open'])$(id).onclick=e=>{refreshStats();openDialog($('stats-dialog'),e.currentTarget);};
+ document.querySelectorAll('[data-close]').forEach(b=>b.onclick=closeDialog);
+ for(const id of ['result-modal','help-dialog','stats-dialog'])$(id).onclick=e=>{if(e.target===$(id))closeDialog();};
+ $('summary-copy').onclick=copy;$('summary-infinite').onclick=()=>start('infinite');
+ document.addEventListener('keydown',e=>{if(!dialog)return;if(e.key==='Escape'){e.preventDefault();closeDialog();return;}if(e.key==='Tab'){const list=[...dialog.overlay.querySelectorAll('button:not(:disabled),a[href]')],first=list[0],last=list.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
+ document.addEventListener('visibilitychange',tick);window.addEventListener('pageshow',tick);
+ window.addEventListener('storage',e=>{if(mode==='daily'&&run&&e.key===prefix+run.day){const saved=load(run.day);if(saved){closeDialog();run=saved;render();tick();}}});
+ setInterval(tick,250);refreshStats();refreshLaunch();
+ const saved=load(clock.dayKey());if(saved)start('daily');
+})();

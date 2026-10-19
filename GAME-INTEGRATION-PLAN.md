@@ -1,3 +1,7 @@
+## Stack Up completed
+
+Stack Up is implemented at `games/stack-up/` using the approved original layout and twelve curated stacks. It has seeded Sydney-date Daily sets, saved per-round wall-clock deadlines/order/results, one scored Daily run, free Infinite practice, real local records, sharing and accessible sorting. All game drawers and the homepage link to it. The original standalone upload is archived for reference. Its sample leaderboard and starter point balance are not used.
+
 # Midnight Arcade — default game template
 
 The current uploaded implementation takes precedence over the historical handover.

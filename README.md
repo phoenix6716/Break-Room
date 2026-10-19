@@ -1,3 +1,13 @@
+## Stack Up is live
+
+`games/stack-up/index.html` is the production game. The homepage, game drawers and `game.html?id=stack-up` all open it directly. The original uploaded game remains archived under `design/prototypes/`.
+
+Daily selects five of twelve stacks from a date seed, with identical challenges across device timezones. Each stack has 90 seconds; points are multiplied by ten in Daily. A correct answer earns `(100 + remaining seconds × 5 + consecutive stack streak × 35) × multiplier`. A wrong guess costs 300 Daily points / 30 Infinite points and resets the stack streak. Timeout costs 400 / 40. Scores may be negative. Infinite is free practice and never enters Daily stats.
+
+Daily state is saved under `break-room:stack-up:daily:YYYY-MM-DD`. Orders, penalties, deadlines, round results and completion survive reloads and mode switches. Timers use wall-clock deadlines and continue while a stack is left open; they stop between stacks. The next Daily unlocks at midnight Australia/Sydney. Stats, best scores, play streaks and sharing are backed by completed local Daily records. Browser storage failure is shown explicitly. There is no sample leaderboard or invented point balance. Cross-device accounts and online rankings are not part of this local game engine.
+
+Sort using desktop drag-and-drop, labelled touch buttons, or arrow keys on a focused card. Dialogs support Escape, focus trapping and focus restoration. Mobile keeps the timer sticky. Run `ARCADE_TEST_URL=http://127.0.0.1:8000 node tests/stack-up.cjs` for full-run, persistence, timer, mode, sharing, keyboard, touch, storage failure, midnight and responsive coverage. Screenshots are in `design/previews/stack-up/`.
+
 ## Downloaded-site navigation and replay update
 
 Game cards use explicit `games/<name>/index.html` links so opening the downloaded homepage does not navigate to a folder listing. Lowball's board uses a blue gridded mat and printed price slip. `SITE.unlimitedFree` is enabled in `games/lowball/engine/site-config.js`; Unlimited opens without a purchase flag.
@@ -10,7 +20,7 @@ Run `ARCADE_TEST_URL=http://127.0.0.1:8000 node tests/replay-unlimited.cjs` for 
 
 The production site now uses the approved cream grid, navy outlines, pastel palette and hard pixel shadows. The homepage uses the approved menu; placeholder games use the Stack Up introduction layout, and Lowball/Stake use broad boards with supporting controls.
 
-Shared styles: `break-room.css` (core pages and Stake), `menu.css` (homepage), `stack-layout.css` + `game-layout.css` + `placeholder-layout.css` (placeholder templates), and `games/lowball/engine/break-room-engine.css` (Lowball iframe). Existing storage keys and game engines are retained. Stack Up remains an explicitly labelled preview linked to the supplied game; its scoring/reset integration is separate.
+Shared styles: `break-room.css` (core pages and Stake), `menu.css` (homepage), `stack-layout.css` + `game-layout.css` + `placeholder-layout.css` (placeholder templates), and `games/lowball/engine/break-room-engine.css` (Lowball iframe). Existing storage keys and game engines are retained. Stack Up is now a full game at `games/stack-up/index.html`, with saved Daily runs, the shared Sydney reset, free Infinite practice, and real local stats.
 
 # Midnight Arcade
 
@@ -28,7 +38,7 @@ The homepage is `index.html`; each game has a standalone route in `games/<id>/`.
 
 ## Current games
 
-- **Lowball** — integrated price-guessing engine, four daily items, region selector, local progress/statistics, and its existing Unlimited purchase placeholder. Daily reset is midnight in Australia/Sydney.
+- **Lowball** — integrated price-guessing engine, four daily items, region selector, local progress/statistics, and free unlocked Unlimited practice. Daily reset is midnight in Australia/Sydney.
 - **Stake** — five daily trivia questions, chip betting, local progress/statistics, and playable Unlimited practice. Daily reset is midnight in Australia/Sydney, shared with Lowball and the homepage countdown.
 - **Coming soon** — Pixel Pairs, Word Forge, Gridlock, Number Drop, Memory Lane, and Mystery Cabinet. Their pages intentionally preserve the default game layout for future integrations. They do not accept attempts or create demonstration scores.
 

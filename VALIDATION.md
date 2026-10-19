@@ -1,3 +1,13 @@
+## Stack Up production integration
+
+- Full Daily five-stack runs passed at 320, 390, 768 and 1440px, including exact perfect score (31,000), daily completion saved once, replay prevented, result copy content, and Infinite scores excluded from Daily stats.
+- Passed desktop drag/drop, touch-button sorting, keyboard arrows, help/stats/menu, modal focus trapping/restoration and no-overflow checks.
+- Passed order and pending-result persistence, wrong-guess penalties, negative scores, timeout recorded once, wall-clock reload and Daily/Infinite switching without timer resets, and midnight Sydney rollover.
+- Passed same date-seeded challenge/order in UTC, Sydney and Los Angeles. Legacy `game.html?id=stack-up` redirects to the live game.
+- Passed storage-unavailable feedback with practice remaining playable.
+- Existing expanded smoke suite passed 532 assertions across all games. Existing shared-clock/browser rollover checks passed.
+- Desktop/mobile gameplay and intro/result/stats screenshots captured with no JavaScript or failed-resource errors.
+
 ## Replay and Unlimited update
 
 Passed the 500-assertion smoke suite, shared-clock/browser rollover suite and Stake sharing suite after the link/reset/Unlimited changes. New `tests/replay-unlimited.cjs` passed seeded current-run resets for both games, retention of older history, persistence of subsequent bets/guesses across refreshes, free Lowball Unlimited without `pc_pro`, no daily stats changes in practice, no Lowball overflow at four widths, and card navigation to explicit existing HTML files. Direct `file://` browser navigation was blocked by managed Chromium policy; no policy bypass was attempted. Updated Lowball desktop/mobile screenshots show the blue mat and price-slip design.
@@ -13,7 +23,7 @@ Passed the 500-assertion smoke suite, shared-clock/browser rollover suite and St
 - Checked homepage, friends, profile, login, signup, style guide and game routes at four widths: no horizontal overflow. No broken local references found.
 - Captured desktop/mobile production-page screenshots under `design/previews/break-room/`; no browser JavaScript or failed-resource errors during capture.
 
-Scope: this rolls out styling, branding and layouts. Account/social backend placeholders and Lowball's existing purchase integration remain as before. Stack Up is explicitly marked Preview on the homepage and links to the uploaded game; it is not yet connected to the shared daily scoring/reset system. Historical design files remain archived.
+Scope: this rolls out styling, branding and layouts. Account/social backend placeholders remain. Lowball Unlimited is free; Stack Up is now integrated with the shared reset and real local daily records. Historical design files remain archived.
 
 # Validation
 

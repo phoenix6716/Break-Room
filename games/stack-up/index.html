@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4eddc">
+    <title>Stack Up — Break Room</title>
+    
+  <meta name="description" content="Sort five familiar things against the clock. Play a fresh daily challenge or free Infinite practice at Break Room."><link rel="icon" href="../../assets/break-room-icon.svg"><link rel="stylesheet" href="../../stack-layout.css"><link rel="stylesheet" href="stack-up.css"><script src="../../daily-clock.js"></script><script defer="" src="../../navigation.js"></script><script defer="" src="stacks.js"></script><script defer="" src="stack-up.js"></script></head>
+  <body>
+    <div class="site-frame">
+      <header class="topbar"><div class="header-brand"><button id="game-menu-toggle" type="button" aria-label="Open games menu" aria-controls="game-menu" aria-expanded="false">☰</button><a class="brand" href="../../index.html"><img src="../../assets/break-room-icon.svg" width="28" height="28" alt="">BREAK ROOM</a></div><nav class="main-nav" aria-label="Game mode"><button class="nav-link active" data-mode="daily" type="button" aria-pressed="true">Daily <em>10×</em></button><button class="nav-link" data-mode="infinite" type="button" aria-pressed="false">Infinite</button><button id="stats-open" class="nav-link" type="button">Stats</button></nav><a class="player-chip" href="../../login.html"><span class="mini-avatar">?</span><span>ACCOUNT</span></a></header>
+
+      <div class="utility-strip"><p>NEXT DAILY RESET <strong data-daily-countdown="">--:--:--</strong><span>Midnight Sydney · Every game</span></p><button class="mini-tool" id="help-open" type="button" aria-label="How to play">?</button></div><p id="save-warning" role="status" hidden="">Saving is unavailable in this browser. Keep this tab open to preserve your current run.</p><p id="day-notice" role="status" hidden="">A new daily is ready. Your previous daily has ended.</p><main id="play">
+        <section class="intro-screen" id="intro-screen" aria-labelledby="intro-title">
+          <div class="intro-copy">
+            <p class="intro-kicker"><span></span>A QUICK GAME OF GOOD JUDGEMENT</p>
+            <h1 id="intro-title">Stack it right.<br><em>Beat the clock.</em></h1>
+            <p class="intro-lede">Put five familiar things in the right order. Speed, weight, age, sugar, distance — whatever the stack asks for.</p>
+
+            <div class="tutorial-steps" aria-label="How to play">
+              <article class="tutorial-step"><span>01</span><p><b>SORT</b> the cards by dragging or using their arrow buttons.</p></article>
+              <article class="tutorial-step"><span>02</span><p><b>LOCK IT IN</b> before the 90-second timer reaches zero.</p></article>
+              <article class="tutorial-step"><span>03</span><p><b>MAKE IT COUNT.</b> Right stacks earn points. Wrong guesses cost them.</p></article>
+            </div>
+
+            <div class="start-actions">
+              <button class="play-button primary-play" type="button" data-start-mode="daily">PLAY DAILY <strong>10×</strong><span>→</span></button>
+              <button class="play-button secondary-play" type="button" data-start-mode="infinite">PLAY INFINITE <span>→</span></button>
+            </div>
+            <p class="start-note">One daily run. Five stacks. Free Infinite practice whenever you like.</p>
+          </div>
+
+          <div class="intro-art" aria-hidden="true">
+            <div class="art-caption">SORT THE STACK</div>
+            <div class="pixel-board">
+              <div class="pixel-board-top"><span>SLOWER</span><i></i><span>FASTER</span></div>
+              <div class="sample-card sample-one"><b>01</b><i>→</i><span>Walking</span></div>
+              <div class="sample-card sample-two"><b>02</b><i>≋</i><span>Cheetah</span></div>
+              <div class="sample-card sample-three"><b>03</b><i>✦</i><span>Serve</span></div>
+              <div class="sample-card sample-four"><b>04</b><i>═</i><span>Train</span></div>
+              <div class="sample-card sample-five"><b>05</b><i>⌁</i><span>Jet</span></div>
+            </div>
+            <div class="art-floor"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="art-tag">90 SEC<br><b>GO!</b></div>
+          </div>
+        </section>
+
+        <div class="game-layout" id="game-interface" hidden="" aria-hidden="true">
+        <section class="game-column" aria-labelledby="game-title">
+          <div class="mode-strip">
+            <div>
+              <p id="eyebrow">DAILY CHALLENGE <span>10× POINTS</span></p>
+              <h1 id="game-title">Build the right stack.</h1>
+            </div>
+            <div class="round-counter"><span id="round-label">ROUND 1 / 5</span><div class="round-dots" id="round-dots" aria-hidden="true"></div></div>
+          </div>
+
+          <section class="game-board" aria-labelledby="prompt">
+            <div class="board-topline">
+              <span class="category-tag" id="category-tag">SPEED</span>
+              <span class="streak-label" id="streak-label">STREAK <b>0</b></span>
+            </div>
+            <h2 id="prompt">Put these things from slowest to fastest.</h2>
+            <p class="instructions">Drag the cards into order, then lock it in.</p>
+
+            <div class="sort-area" aria-label="Arrange the cards in order">
+              <div class="sort-line" aria-hidden="true"><span>SLOWER</span><i></i><span>FASTER</span></div>
+              <div class="cards" id="cards" aria-label="Draggable answer cards"></div>
+            </div>
+
+            <div class="board-actions">
+              <p id="message" class="message" aria-live="polite" role="status" aria-atomic="true">Every correct stack earns points.</p>
+              <button id="check-button" class="check-button" type="button">LOCK IT IN <span>↵</span></button>
+            </div>
+          </section>
+
+          <section class="game-notes">
+            <div class="note-card">
+              <span class="note-icon pixel-book" aria-hidden="true"></span>
+              <p><b>FIELD NOTES</b><br>Learn the answer after every stack.</p>
+            </div>
+            <div class="note-card daily-note" id="daily-note">
+              <span class="note-icon pixel-star" aria-hidden="true">✦</span>
+              <p><b>DAILY IS LIVE</b><br>Five stacks. Ten times the points.</p>
+            </div>
+          </section>
+        <section id="daily-summary" class="game-board" hidden="" aria-labelledby="summary-title"><span class="tiny-label">DAILY COMPLETE</span><h2 id="summary-title">A tidy little stack.</h2><p id="summary-score"></p><p id="summary-detail"></p><div class="summary-actions"><button id="summary-copy" class="check-button" type="button">COPY RESULT</button><button id="summary-infinite" class="check-button" type="button">PLAY INFINITE →</button><a class="text-link" href="../../index.html">All games</a></div><p id="share-status" role="status"></p></section></section>
+
+        <aside class="side-column" aria-label="Game information">
+          <section class="timer-card" id="timer-card">
+            <div class="card-heading"><span>TIME LEFT</span><i aria-hidden="true"></i></div>
+            <div id="timer" class="timer" aria-label="90 seconds remaining">01:30</div>
+            <div class="timer-track" aria-hidden="true"><span id="timer-fill"></span></div>
+            <p id="timer-caption">Stay sharp. Every second counts.</p>
+          </section>
+
+          <section class="score-card">
+            <div class="card-heading"><span>THIS RUN</span><i aria-hidden="true"></i></div>
+            <strong id="run-score" class="run-score">0</strong>
+            <p><span class="score-dot"></span><span id="score-caption">daily points</span></p>
+          </section>
+
+          <section class="leaderboard-card" id="your-record"><div class="leaderboard-heading"><div><span class="tiny-label">ON THIS DEVICE</span><h2>Your record</h2></div></div><dl class="record-grid"><div><dt>Played</dt><dd id="record-played">0</dd></div><div><dt>Best</dt><dd id="record-best">—</dd></div><div><dt>Streak</dt><dd id="record-streak">0</dd></div><div><dt>Average</dt><dd id="record-average">—</dd></div></dl><button class="view-ranks" id="sidebar-stats-open" type="button">EXTENDED STATS <span>→</span></button><p class="local-note">Daily results saved in this browser. Infinite is practice.</p></section>
+        <section class="timer-card"><div class="card-heading">NEXT DAILY RESET</div><div class="reset-clock" data-daily-countdown="">--:--:--</div><p>Same time. Every game.</p></section></aside>
+        </div>
+      </main>
+    <footer class="game-footer"><a href="../../index.html">← All games</a><p>BREAK ROOM · A little break. A few good games.</p><a href="../../profile.html">Profile</a></footer></div>
+
+    <div class="result-modal" id="result-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="result-title" hidden="">
+      <div class="result-card"><button id="result-close" class="dialog-close" type="button" aria-label="Close round result">×</button>
+        <span class="result-burst" aria-hidden="true">✦</span>
+        <p id="result-kicker">STACK COMPLETE</p>
+        <h2 id="result-title">Nice ordering.</h2>
+        <p id="result-detail">+1,200 points</p>
+        <div class="fact-box"><span>FIELD NOTE</span><p id="fact-text"></p></div>
+        <button class="next-button" id="next-button" type="button">NEXT STACK <span>→</span></button>
+      <p class="local-note">The clock stops between stacks.</p></div>
+    </div>
+
+    
+  
+
+
+<nav class="game-menu" id="game-menu" aria-label="Break Room menu" aria-hidden="true" hidden="">
+<div class="game-menu-heading"><span class="section-meta">BREAK ROOM</span><button class="game-menu-close" id="game-menu-close" type="button" aria-label="Close menu">×</button></div>
+<div class="game-menu-content"><div class="game-menu-group"><span class="section-meta">PLAY NOW</span><a href="../../index.html#daily-games">All games</a><a href="../../games/lowball/index.html">Lowball</a><a href="../../games/stake/index.html">Stake</a><a href="../../games/stack-up/index.html">Stack Up</a></div>
+<div class="game-menu-group"><span class="section-meta">COMING SOON</span><a href="../../games/pixel-pairs/index.html">Pixel Pairs</a><a href="../../games/word-forge/index.html">Word Forge</a><a href="../../games/gridlock/index.html">Gridlock</a><a href="../../games/number-drop/index.html">Number Drop</a><a href="../../games/memory-lane/index.html">Memory Lane</a><a href="../../games/mystery-cabinet/index.html">Mystery Cabinet</a></div><div class="game-menu-group"><span class="section-meta">YOUR ARCADE</span><a href="../../profile.html">My stats</a><a href="../../friends.html">Friends</a><a href="../../login.html">Account / sign in</a></div></div></nav><div class="dialog-backdrop" id="help-dialog" hidden=""><section class="dialog-card" role="dialog" aria-modal="true" aria-labelledby="help-title"><button class="dialog-close" data-close="" type="button" aria-label="Close help">×</button><span class="tiny-label">PLAYER GUIDE</span><h2 id="help-title">How to Stack Up</h2><p>Put five things in the order shown. Drag cards, tap their arrow buttons, or focus a card and press the arrow keys.</p><p>Each stack has 90 seconds. Lock in a correct order to earn 100 + 5 per remaining second + 35 per consecutive correct stack. Daily points are multiplied by ten.</p><p>A wrong order costs 300 Daily points (30 in Infinite) and resets the stack streak; you can keep trying until time runs out. A timeout costs 400 Daily points (40 in Infinite) and reveals the answer.</p><p>Daily has five stacks and one saved run per day. The clock keeps running if you leave mid-stack. Infinite is free practice and doesn't affect daily stats.</p><button class="check-button" data-close="" type="button">GOT IT</button></section></div><div class="dialog-backdrop" id="stats-dialog" hidden=""><section class="dialog-card" role="dialog" aria-modal="true" aria-labelledby="stats-title"><button class="dialog-close" data-close="" type="button" aria-label="Close stats">×</button><span class="tiny-label">ON THIS DEVICE</span><h2 id="stats-title">Stack Up stats</h2><dl class="record-grid"><div><dt>Runs played</dt><dd id="stat-played">0</dd></div><div><dt>Best score</dt><dd id="stat-best">—</dd></div><div><dt>Average</dt><dd id="stat-average">—</dd></div><div><dt>Current streak</dt><dd id="stat-streak">0</dd></div><div><dt>Perfect runs</dt><dd id="stat-perfect">0</dd></div><div><dt>Last score</dt><dd id="stat-last">—</dd></div></dl><p class="local-note">A perfect run clears all five stacks with no wrong guesses or timeouts. Scores can be negative. These are your real completed daily runs; Infinite scores aren't included.</p><button class="check-button" data-close="" type="button">BACK TO GAME</button></section></div></body></html>
