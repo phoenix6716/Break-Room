@@ -99,3 +99,7 @@ This update replaces the preceding code-drawn SVG illustrations with actual gene
 ### Lowball gem restoration — 19 October 2026
 
 Restored the exact cut-corner, softly coloured faceted gems from the initial Break Room visual refresh. Round and final scores share the restored renderer; the glossy square PNGs are no longer mapped into the game. `tests/lowball-art.cjs` passed for all four gem tiers on both round and final screens, all 100 item PNGs, the five remaining active utility PNGs, sound settings, and four responsive widths. Updated mobile receipt/final previews show the restored gems.
+
+### Lowball header and reset alignment — 19 October 2026
+
+Moved Lowball's personal stats into the title/tools header row. Matched Stake's countdown wording, styles, shared clock, and desktop/tablet screen coordinates; moved the region selector below it; removed the country-list tagline and its rule. Preserved the midnight-ready reload action. Direct browser checks passed at 320/390/768/1440px for centring, no overlaps/overflow, countdown style parity, region changes, and submitting a guess. `tests/smoke.cjs` passed all 532 assertions. `tests/homepage-reset.cjs` passed responsive and midnight rollover/stale-submission checks in UTC, Los Angeles, Tokyo and Sydney. Updated mobile and desktop Lowball previews are in `design/previews/game-polish/`.

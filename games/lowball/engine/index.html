@@ -595,19 +595,25 @@
 <body>
 <div class="wrap">
   <header>
+    <div class="lowball-title-group"><h1>LOWBALL</h1><div class="sub">Don't lowball it.</div></div>
+  <div class="stat-strip" id="statStrip">
+    <div class="stat"><b id="streakVal">0</b><span>Streak</span></div>
+    <div class="stat"><b id="bestVal">0</b><span>Best</span></div>
+    <div class="stat"><b id="playedVal">0</b><span>Played</span></div>
+  </div>
     <div class="head-btns">
       <button type="button" class="icon-btn" id="helpBtn" aria-label="How to play">?</button>
       <button type="button" class="icon-btn" id="statsBtn" aria-label="Your stats"><span id="statsArt"></span></button>
     </div>
-    <h1>LOWBALL</h1>
-    <div class="sub">Don't lowball it.</div>
-    <div class="next-daily" id="nextDaily">Next daily in --:--:--</div>
+
   </header>
 
   <div class="mode-toggle">
     <button class="mode-btn active" id="normalModeBtn">Daily<span class="rounds"> (4 rounds)</span></button>
     <button class="mode-btn" id="unlimitedModeBtn">Unlimited</button>
   </div>
+
+  <aside class="live-reset" id="nextDaily" aria-label="Daily reset">NEXT DAILY RESET<strong data-daily-countdown>--:--:--</strong><p>Midnight Sydney. Every game.</p><span class="new-daily-ready" hidden>New daily ready. Tap to play</span></aside>
 
   <div class="country-row">
     <span class="country-label">Playing as</span>
@@ -618,12 +624,7 @@
     <select id="countrySelect" hidden></select>
   </div>
 
-  <div class="stat-strip" id="statStrip">
-    <div class="stat"><b id="streakVal">0</b><span>Streak</span></div>
-    <div class="stat"><b id="bestVal">0</b><span>Best</span></div>
-    <div class="stat"><b id="playedVal">0</b><span>Played</span></div>
-  </div>
-  <footer class="tagline">New items daily &middot; Australia, US, UK &amp; Canada</footer>
+
 
   <div class="progress-dots" id="progressDots"></div>
 
@@ -1491,11 +1492,12 @@ function tickNextDaily() {
       el.classList.add("ready");
       el.setAttribute("role", "button");
       el.tabIndex = 0;
-      el.textContent = "New daily ready. Tap to play";
+      el.setAttribute("aria-label", "New daily ready. Tap to play");
+      el.querySelector(".new-daily-ready").hidden = false;
     }
     return;
   }
-  el.innerHTML = "Next daily in <b>" + window.MIDNIGHT_ARCADE_CLOCK.countdown() + "</b>";
+  el.querySelector("[data-daily-countdown]").textContent = window.MIDNIGHT_ARCADE_CLOCK.countdown();
 }
 document.getElementById("nextDaily").addEventListener("click", function () { if (this.classList.contains("ready")) location.reload(); });
 document.getElementById("nextDaily").addEventListener("keydown", function (e) { if ((e.key === "Enter" || e.key === " ") && this.classList.contains("ready")) { e.preventDefault(); location.reload(); } });
