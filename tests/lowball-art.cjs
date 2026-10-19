@@ -46,11 +46,16 @@ const assetRoot = path.resolve(__dirname, '../games/lowball/engine/icons/generat
         if (image.naturalWidth !== 192 || image.naturalHeight !== 192) throw Error(name);
       }));
     });
-    for (const [score, colour] of [[100,'green'],[80,'yellow'],[50,'orange'],[0,'red']]) {
+    for (const [score, colour] of [[100,'#b8d957'],[80,'#f9d883'],[50,'#e9a16a'],[0,'#ee8578']]) {
       await page.evaluate(score => {document.getElementById('squares').innerHTML=squaresHTMLForScore(score);},score);
-      assert.equal(await page.locator('#squares img').count(), 5);
-      assert.match(await page.locator('#squares img').first().getAttribute('src'), new RegExp(`gem-${colour}\\.png$`));
-      await page.locator('#squares img').evaluateAll(images=>Promise.all(images.map(image=>image.decode())));
+      assert.equal(await page.locator('#squares svg.gem').count(), 5);
+      assert.equal(await page.locator('#squares img').count(), 0);
+      assert.equal(await page.locator('#squares svg path').first().getAttribute('fill'), colour);
+      // Saved completions and freshly finished rounds share the same gems.
+      await page.evaluate(score => {document.getElementById('finalSquares').innerHTML=squaresHTMLForScore(score);},score);
+      assert.equal(await page.locator('#finalSquares svg.gem').count(), 5);
+      assert.equal(await page.locator('#finalSquares img').count(), 0);
+      assert.equal(await page.locator('#finalSquares svg path').first().getAttribute('fill'), colour);
     }
     await page.locator('#soundBtn').click();
     assert.equal(await page.locator('#soundBtn').getAttribute('aria-pressed'), 'false');
@@ -64,7 +69,7 @@ const assetRoot = path.resolve(__dirname, '../games/lowball/engine/icons/generat
       await page.evaluate(() => renderResult(currentItem.prices[country], country, false));
       assert.equal(await page.locator('#resultScore').innerText(), '100');
       assert.match(await page.locator('#resultFacts').innerText(), /Your guess[\s\S]*Actual price[\s\S]*Spot on/i);
-      assert.equal(await page.locator('#squares img').count(), 5);
+      assert.equal(await page.locator('#squares svg.gem').count(), 5);
       assert(await page.locator('.result-note').evaluate(el=>parseFloat(getComputedStyle(el).fontSize)<=12));
       assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth));
       await page.evaluate(()=>showItem());
@@ -73,6 +78,6 @@ const assetRoot = path.resolve(__dirname, '../games/lowball/engine/icons/generat
     }
     assert.deepEqual(errors, []);
     assert.deepEqual(failed, []);
-    console.log('PASS: all 100 item PNGs and 9 utility PNGs decode; 109 unique assets; all gem tiers; sound controls and reload; score/play layouts at four widths.');
+    console.log('PASS: all 100 item PNGs and 5 utility PNGs decode; 109 archived image assets remain unique; all four faceted gem tiers on round/final screens; sound controls and reload; score/play layouts at four widths.');
   } finally {await browser.close();}
 })().catch(error=>{console.error(error);process.exitCode=1;});

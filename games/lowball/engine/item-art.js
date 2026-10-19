@@ -1,4 +1,4 @@
-/* Generated PNG artwork only. Source atlases and extraction manifest are in icons/generated/.
+/* Generated item PNGs and restored faceted score gems. Source atlases are in icons/generated/.
    Add a generated image and its explicit item mapping when extending the item pool. */
 (() => {
   'use strict';
@@ -108,10 +108,6 @@
   "trophy": "trophy.png",
   "lock": "lock.png",
   "stats": "stats.png",
-  "gem-green": "gem-green.png",
-  "gem-yellow": "gem-yellow.png",
-  "gem-orange": "gem-orange.png",
-  "gem-red": "gem-red.png",
   "sound-on": "sound-on.png",
   "sound-off": "sound-off.png"
 });
@@ -125,9 +121,11 @@
   function markup(item) {
     return '<img class="lowball-art" src="' + source(item) + '" alt="" width="192" height="192" decoding="async" draggable="false">';
   }
+  // Restore the original Break Room cut-corner gems from the first visual refresh.
+  // Both round results and the final score use this shared renderer.
   function gem(score, index) {
-    const colour = score >= 95 ? 'green' : score >= 80 ? 'yellow' : score >= 50 ? 'orange' : 'red';
-    return '<img class="gem" src="' + source('gem-' + colour) + '" style="--i:' + index + '" alt="" width="28" height="28" draggable="false">';
+    const colour = score >= 95 ? '#b8d957' : score >= 80 ? '#f9d883' : score >= 50 ? '#e9a16a' : '#ee8578';
+    return `<svg class="gem" style="--i:${index}" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M7 2H25L30 7V25L25 30H7L2 25V7Z" fill="${colour}" stroke="#17263a" stroke-width="2"/><path d="M7 2L11 9H21L25 2M30 7L23 11V21L30 25M25 30L21 23H11L7 30M2 25L9 21V11L2 7" fill="none" stroke="#17263a" stroke-opacity=".4"/><path d="M11 9H21V23H9V11Z" fill="#fffdf5" opacity=".22"/></svg>`;
   }
   window.LOWBALL_ART = Object.freeze({source, markup, gem, items, utilities});
 })();

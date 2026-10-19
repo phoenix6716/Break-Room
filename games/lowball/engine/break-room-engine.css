@@ -33,3 +33,6 @@ body{min-height:0}.sound-btn{grid-column:1/-1;font:700 12px 'Courier New',monosp
 .icon-btn .lowball-art{width:22px;height:22px;margin:0}.icon-btn #statsArt{display:block}
 .sound-btn{display:flex;align-items:center;justify-content:center;gap:7px;opacity:1}
 .sound-btn .lowball-art{width:22px;height:22px;margin:0}
+
+/* Faceted score gems keep crisp vector edges alongside the generated item art. */
+.squares svg.gem{image-rendering:auto}

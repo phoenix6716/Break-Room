@@ -95,3 +95,7 @@ This update replaces the preceding code-drawn SVG illustrations with actual gene
 - `tests/game-surfaces.cjs`: passed at 320/390/768/1440px; currency stays inside the till, receipt fills the playing area, keyboard-only price/round progression and Stake betting/answering work, all three chips are circular, mode-arrow keys work, the longest bank question wraps, chip stacks reflect the bet, and reduced motion disables new animations.
 - Actual game previews saved under `design/previews/game-polish/`, including Lowball's counter/receipt/final screen and Stake's betting/question/win/urgent timer/timeout/final screens. Screenshot runs use isolated browser storage.
 - Tested using a local HTTP server; no public-host deployment was performed.
+
+### Lowball gem restoration — 19 October 2026
+
+Restored the exact cut-corner, softly coloured faceted gems from the initial Break Room visual refresh. Round and final scores share the restored renderer; the glossy square PNGs are no longer mapped into the game. `tests/lowball-art.cjs` passed for all four gem tiers on both round and final screens, all 100 item PNGs, the five remaining active utility PNGs, sound settings, and four responsive widths. Updated mobile receipt/final previews show the restored gems.
