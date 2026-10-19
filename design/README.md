@@ -47,3 +47,9 @@ Current homepage feedback to preserve for future work: the user likes a shorter 
 ## Implemented homepage refinements
 
 The agreed homepage changes are now implemented: one compact introduction; a live universal midnight-Sydney countdown; quieter background grid/scanlines and shadows; and larger supporting text. The existing eight-card grid, its ordering, and the coming-soon artwork states are retained. The header and Cabinet Badge logo remain in place. Current screenshots are `previews/homepage-refined-desktop.png` and `previews/homepage-refined-mobile.png`.
+
+## Broader visual redesign exploration
+
+The user expressed interest in changing the whole design and style. Visual direction and whether that includes game interfaces are still being clarified. `redesign/atmospheric-homepage-concept.png` is an initial generated homepage mockup exploring an atmospheric late-night games lounge: charcoal/navy, warm cream typography, muted jade accents, and tactile game artwork.
+
+This is a design image, not an implemented or tested webpage. It keeps the mixed eight-game grid, centred brand, and single universal reset concept. Its timer is illustrative, and some generated placeholder subtitles/artwork are exploratory rather than changes to game requirements. The real game rules, progress, shared Sydney reset, and current website remain unchanged. No new design direction has been approved yet.
