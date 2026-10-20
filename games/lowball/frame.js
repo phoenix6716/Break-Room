@@ -7,8 +7,10 @@
     const root = frame.contentDocument && frame.contentDocument.documentElement;
     if (!root) return;
     const rect = frame.getBoundingClientRect();
-    const top = Math.max(0, -rect.top);
-    const height = Math.max(0, Math.min(rect.bottom, window.innerHeight) - Math.max(0, rect.top));
+    const viewportTop = window.visualViewport?.offsetTop || 0;
+    const viewportBottom = viewportTop + (window.visualViewport?.height || window.innerHeight);
+    const top = Math.max(0, viewportTop - rect.top);
+    const height = Math.max(0, Math.min(rect.bottom, viewportBottom) - Math.max(viewportTop, rect.top));
     root.style.setProperty('--embed-visible-top', `${top}px`);
     root.style.setProperty('--embed-visible-height', `${height}px`);
   };
@@ -18,6 +20,8 @@
   frame.addEventListener('load', updateViewport);
   window.addEventListener('scroll', scheduleUpdate, {passive: true});
   window.addEventListener('resize', scheduleUpdate);
+  window.visualViewport?.addEventListener('resize', scheduleUpdate);
+  window.visualViewport?.addEventListener('scroll', scheduleUpdate);
   updateViewport();
 })();
 
@@ -37,5 +41,27 @@
     observer = new ResizeObserver(resize);
     observer.observe(wrap);
     resize();
+  });
+})();
+
+/* Dialog focus cannot escape the iframe into the outer header/footer. */
+(() => {
+  const frame = document.getElementById('lowball-game-frame');
+  let background = [], overflow = null;
+  function setDialog(open) {
+    if (open && overflow === null) {
+      overflow = document.body.style.overflow;
+      background = [...document.body.children].filter(el => !el.contains(frame) && !['SCRIPT','STYLE','LINK'].includes(el.tagName)).map(el => [el, el.inert]);
+      background.forEach(([el]) => { el.inert = true; });
+      document.body.style.overflow = 'hidden';
+    } else if (!open && overflow !== null) {
+      background.forEach(([el, inert]) => { el.inert = inert; }); background = [];
+      document.body.style.overflow = overflow; overflow = null;
+    }
+  }
+  frame.addEventListener('load', () => {
+    setDialog(false);
+    frame.contentWindow.addEventListener('lowball:dialog', event => setDialog(event.detail.open));
+    setDialog(!!frame.contentDocument.querySelector('.modal.show'));
   });
 })();

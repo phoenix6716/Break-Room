@@ -76,3 +76,7 @@ Keep the left Menu drawer, centred brand/game, header stats and tools, right res
 ## Privacy, terms and help
 
 [Privacy](privacy.html), [Terms of play](terms.html) and [Contact & data help](contact.html) apply across all games. The footer is shared static HTML and works without JavaScript. Run `npm run legal:sync` after adding pages; CI checks for drift. Legacy Lowball policy links redirect to these universal pages. See [LEGAL.md](LEGAL.md) for maintenance and remaining owner-supplied launch details.
+
+## Game usability
+
+The live games share larger phone controls and readable supporting text, keyboard modes/sorting, visible focus and explicit validation/result feedback. Lowball dialogs contain focus across its iframe; Stake preserves focus during inactive-mode timeouts. See [ACCESSIBILITY.md](ACCESSIBILITY.md) for the verified behaviors, tests and remaining real-device/screen-reader checks.

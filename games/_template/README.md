@@ -21,6 +21,7 @@ The visual map and invariants are in [`design/GAME-LAYOUT.md`](../../design/GAME
 
 - `styles.css`, `game-flow.css`, `break-room.css`: site frame/navigation and palette.
 - `game-shell.css`: canonical centred geometry and neutral placeholder surface.
+- `game-access.css`: shared target sizes, focus and readable game controls; load after game-specific styles. See [`ACCESSIBILITY.md`](../../ACCESSIBILITY.md).
 - `daily-reset.css`, `daily-clock.js`: exact shared reset card and Sydney-midnight clock.
 - `game-dialog.css`: shared popup visuals.
 - `navigation.js`: actual left sidebar, backdrop, focus management and Escape.

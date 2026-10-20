@@ -1,0 +1,29 @@
+/* Input, focus and readable supporting text shared by the live game shells. */
+.game-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+button{touch-action:manipulation}.game-menu-toggle,.game-menu-close,.game-header-account{min-height:44px;min-width:44px}
+.game-site-header a:focus-visible,.game-menu-toggle:focus-visible,.game-menu button:focus-visible,.game-menu a:focus-visible,.br-game-page button:focus-visible,.standalone-page button:focus-visible,body:has(#guessInput) button:focus-visible{outline:3px solid #17263a!important;outline-offset:4px}
+#app .question-card:focus-visible,#app .stake-results:focus-visible{outline:3px solid #91c7dc!important;outline-offset:4px}
+#app .bet-instruction,#app .betting-note,#app .question-fact{font-size:14px;line-height:1.6}#app .opt{font-size:16px;min-height:48px}#app .opt .tag{font-size:11px;line-height:1.4;max-width:70px}
+.br-game-page .instructions,.br-game-page .message{font-size:14px;line-height:1.6}.br-game-page .card-name{font-size:14px;line-height:1.4}.card-moves{flex-wrap:wrap}.card-moves button{min-width:44px;min-height:44px!important;touch-action:manipulation}
+#guess-error{margin:10px 0 0;color:#8c2c26;font:700 14px/1.5 Arial,sans-serif}#guess-error:empty{display:none}.guess-row:has([aria-invalid=true]){outline:3px solid #ee6557;outline-offset:3px}
+body:has(#guessInput) .cselect-btn,body:has(#guessInput) .cselect-list li{min-height:44px;box-sizing:border-box}body:has(#guessInput) .cselect-list li{display:flex;align-items:center;font-size:16px}body:has(#guessInput) .guess-row input{min-height:44px}body:has(#guessInput) .cselect-list li.selected{color:#17263a;font-weight:700}body:has(#guessInput) .cselect-list li.selected:after{content:'✓';margin-left:auto}
+body:has(#guessInput) .modal{overscroll-behavior:contain}body:has(#guessInput) .modal-panel{max-width:100%;overflow-wrap:anywhere;overscroll-behavior:contain}
+@media(max-width:650px){
+ .standalone-heading:has(#stake-page-title) .mini-tool,.br-game-tools .mini-tool,body:has(#guessInput) header .icon-btn{width:44px;height:44px;min-width:44px;min-height:44px;padding:0;flex-shrink:0}
+ .standalone-heading .standalone-tools,.br-game-tools,body:has(#guessInput) header .head-btns{gap:6px}
+ .standalone-heading .quick-stat span,.br-game-shell .quick-stat span,body:has(#guessInput) header .stat-strip .stat span{font-size:8px;letter-spacing:0}
+ .standalone-heading .quick-stat,.br-game-shell .quick-stat,body:has(#guessInput) header .stat-strip .stat{padding-left:1px;padding-right:1px}
+}
+@media(max-width:360px){
+ .standalone-heading:has(#stake-page-title),.br-game-heading,body:has(#guessInput) header{grid-template-columns:minmax(0,1fr) 118px minmax(0,1fr);gap:6px}
+ .standalone-heading .standalone-tools,.br-game-tools,body:has(#guessInput) header .head-btns{gap:0}
+ .standalone-heading .quick-stat strong,.br-game-shell .quick-stat strong,body:has(#guessInput) header .stat-strip .stat b{font-size:16px;letter-spacing:-.5px}
+}
+@media(prefers-reduced-motion:reduce){.game-sr-only{scroll-behavior:auto}}
+#app .stake-caption{font-size:9px;line-height:1.5;letter-spacing:0}#app .question-meta{font-size:11px;line-height:1.5}#app .bet-dock-label{font-size:11px}
+#app .question-card,#app .stake-results{scroll-margin-top:96px}.sort-card{scroll-margin-top:170px}
+
+body:has(#guessInput) .modal-panel button{min-width:44px;min-height:44px}.game-popup button:focus-visible,.result-card button:focus-visible{outline:3px solid #17263a!important;outline-offset:4px}
+#app .chip:focus-visible{outline-color:#f9e2a7!important}
+
+#prompt{scroll-margin-top:140px}#prompt:focus-visible{outline:3px solid #17263a;outline-offset:4px}

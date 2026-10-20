@@ -592,8 +592,9 @@
 <link rel="stylesheet" href="counter.css">
 <link rel="stylesheet" href="../../../daily-reset.css">
 
-<script src="../../../daily-clock.js"></script></head>
+<script src="../../../daily-clock.js"></script><link rel="stylesheet" href="../../../game-access.css"></head>
 <body>
+<p id="lowball-announcement" class="game-sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
 <div class="wrap">
   <header>
     <div class="lowball-title-group"><h1>LOWBALL</h1><div class="sub">Don't lowball it.</div></div>
@@ -613,18 +614,18 @@
   <aside class="live-reset timer-card daily-reset-card" id="nextDaily" aria-label="Daily reset"><div class="card-heading">NEXT DAILY RESET</div><div class="reset-clock" data-daily-countdown>--:--:--</div><p>Same time. Every game.</p><span class="new-daily-ready" hidden>New daily ready. Tap to play</span></aside>
 
   <div class="country-row">
-    <span class="country-label">Playing as</span>
+    <span class="country-label" id="country-label">Playing as</span>
     <div class="cselect" id="cselect">
-      <button type="button" class="cselect-btn" id="cselectBtn" aria-haspopup="listbox" aria-expanded="false"><span id="cselectLabel">Australia</span></button>
-      <ul class="cselect-list" id="cselectList" role="listbox" tabindex="-1" hidden></ul>
+      <button type="button" class="cselect-btn" id="cselectBtn" role="combobox" aria-label="Price region" aria-controls="cselectList" aria-haspopup="listbox" aria-expanded="false"><span id="cselectLabel">Australia</span></button>
+      <ul class="cselect-list" id="cselectList" aria-labelledby="country-label" role="listbox" tabindex="-1" hidden></ul>
     </div>
     <select id="countrySelect" hidden></select>
   </div>
   </section>
 
-  <div class="mode-toggle">
-    <button class="mode-btn active" id="normalModeBtn">Daily</button>
-    <button class="mode-btn" id="unlimitedModeBtn">Unlimited</button>
+  <div class="mode-toggle" role="tablist" aria-label="Game mode">
+    <button class="mode-btn active" id="normalModeBtn" role="tab" aria-selected="true" aria-controls="lowball-mode-panel">Daily</button>
+    <button class="mode-btn" id="unlimitedModeBtn" role="tab" aria-selected="false" aria-controls="lowball-mode-panel" tabindex="-1">Unlimited</button>
   </div>
 
 
@@ -633,7 +634,7 @@
 
   <div class="progress-dots" id="progressDots"></div>
 
-  <div class="card">
+  <div class="card" id="lowball-mode-panel" role="tabpanel" aria-labelledby="normalModeBtn">
     <div id="playArea">
       <div class="counter-topline"><span><i aria-hidden="true"></i> THE PRICE IS YOURS TO GUESS</span><span id="counterItemNumber">ITEM 01 / 04</span></div>
       <div class="product-display">
@@ -641,11 +642,11 @@
         <div class="item-emoji" id="itemEmoji"></div>
         <div class="counter-shelf" aria-hidden="true"></div>
       </div>
-      <div class="product-label"><span class="product-label-kicker">ON THE COUNTER</span><div class="item-name" id="itemName">Loading...</div><div class="item-detail" id="itemDetail"></div></div>
+      <div class="product-label"><span class="product-label-kicker">ON THE COUNTER</span><div class="item-name" id="itemName" tabindex="-1">Loading...</div><div class="item-detail" id="itemDetail"></div></div>
       <div class="price-till">
         <div class="till-topline"><label for="guessInput">NAME YOUR PRICE</label><span><i aria-hidden="true"></i> READY</span></div>
-        <div class="till-entry"><div class="guess-row"><span class="currency-chip" id="currencySymbol"></span><input type="number" id="guessInput" placeholder="0.00" inputmode="decimal" step="any" aria-label="Your price guess"></div><button class="btn-gold" id="submitBtn">LOCK IT IN <span aria-hidden="true">↵</span></button></div>
-        <p class="till-hint">Get close. Score big. <span>Press Enter to lock it in.</span></p><div class="till-drawer" aria-hidden="true"><span></span></div>
+        <div class="till-entry"><div class="guess-row"><span class="currency-chip" id="currencySymbol"></span><input type="number" id="guessInput" placeholder="0.00" inputmode="decimal" step="any" aria-label="Your price guess" aria-describedby="itemName itemDetail cselectLabel currencySymbol guess-error"></div><button class="btn-gold" id="submitBtn">LOCK IT IN <span aria-hidden="true">↵</span></button></div>
+        <p id="guess-error" role="status" aria-live="polite"></p><p class="till-hint">Get close. Score big. <span>Press Enter to lock it in.</span></p><div class="till-drawer" aria-hidden="true"><span></span></div>
       </div>
     </div>
 
@@ -1123,11 +1124,16 @@ const cselectBtn = document.getElementById("cselectBtn");
 const cselectList = document.getElementById("cselectList");
 const cselectLabel = document.getElementById("cselectLabel");
 let cselectActive = 0;
+let keyboardInput = false, playerInteracted = false;
+document.addEventListener("keydown", () => { keyboardInput = true; playerInteracted = true; }, true);
+document.addEventListener("pointerdown", () => { keyboardInput = false; playerInteracted = true; }, true);
+const announceLowball = text => { document.getElementById("lowball-announcement").textContent = text; };
 
 Object.keys(CURRENCY).forEach(code => {
   const li = document.createElement("li");
   li.setAttribute("role", "option");
   li.dataset.code = code;
+  li.id = "price-region-" + code;
   li.textContent = CURRENCY[code].label;
   li.addEventListener("mouseenter", () => highlightCountry(Object.keys(CURRENCY).indexOf(code)));
   li.addEventListener("click", () => { pickCountry(code); closeCountryList(); cselectBtn.focus(); });
@@ -1146,6 +1152,7 @@ function highlightCountry(i) {
   const items = [...cselectList.children];
   cselectActive = (i + items.length) % items.length;
   items.forEach((li, n) => li.classList.toggle("active", n === cselectActive));
+  cselectBtn.setAttribute("aria-activedescendant", items[cselectActive].id);
 }
 function openCountryList() {
   cselectList.hidden = false;
@@ -1155,6 +1162,7 @@ function openCountryList() {
 function closeCountryList() {
   cselectList.hidden = true;
   cselectBtn.setAttribute("aria-expanded", "false");
+  cselectBtn.removeAttribute("aria-activedescendant");
   [...cselectList.children].forEach(li => li.classList.remove("active"));
 }
 function pickCountry(code) {
@@ -1171,8 +1179,12 @@ cselectBtn.addEventListener("keydown", (e) => {
   } else if ((e.key === "Enter" || e.key === " ") && open) {
     e.preventDefault();
     pickCountry(Object.keys(CURRENCY)[cselectActive]); closeCountryList();
-  } else if (e.key === "Escape" && open) {
+  } else if ((e.key === "Home" || e.key === "End") && open) {
+    e.preventDefault(); highlightCountry(e.key === "Home" ? 0 : Object.keys(CURRENCY).length - 1);
+  } else if (e.key === "Tab" && open) {
     closeCountryList();
+  } else if (e.key === "Escape" && open) {
+    e.preventDefault(); closeCountryList();
   }
 });
 document.addEventListener("click", (e) => { if (!document.getElementById("cselect").contains(e.target)) closeCountryList(); });
@@ -1195,6 +1207,7 @@ function renderDots() {
 }
 
 function showItem() {
+  const advancing = resultArea.contains(document.activeElement) || finalScreen.contains(document.activeElement);
   currentItem = mode === "normal" ? roundItems[roundIndex] : deck[deckIndex];
   const emojiEl = document.getElementById("itemEmoji");
   emojiEl.innerHTML = LOWBALL_ART.markup(currentItem);
@@ -1203,6 +1216,8 @@ function showItem() {
   document.getElementById("itemDetail").textContent = currentItem.detail;
   document.getElementById("currencySymbol").textContent = CURRENCY[country].symbol;
   guessInput.value = "";
+  guessInput.removeAttribute("aria-invalid");
+  document.getElementById("guess-error").textContent = "";
   playArea.style.display = "block";
   resultArea.classList.remove("show");
   finalScreen.classList.remove("show");
@@ -1210,7 +1225,9 @@ function showItem() {
   renderDots();
   stopFx();
   cardPulse("enter");
-  setTimeout(() => guessInput.focus(), 50);
+  // Do not open a phone keyboard or scroll the embed on initial load.
+  if (keyboardInput && !document.querySelector(".modal.show")) guessInput.focus({preventScroll:true});
+  else if (advancing) document.getElementById("itemName").focus({preventScroll:true});
 }
 
 function fmtMoney(n) { return n >= 100 ? n.toFixed(0) : n.toFixed(2); }
@@ -1246,7 +1263,7 @@ function classForScore(score) {
 }
 
 document.getElementById("submitBtn").addEventListener("click", submitGuess);
-guessInput.addEventListener("input", () => SFX.key());
+guessInput.addEventListener("input", () => { SFX.key(); guessInput.removeAttribute("aria-invalid"); document.getElementById("guess-error").textContent = ""; });
 document.addEventListener("pointerdown", e => {
   const b = e.target.closest && e.target.closest("button");
   if (b && b.id !== "submitBtn" && b.id !== "soundBtn") SFX.click();
@@ -1256,7 +1273,7 @@ guessInput.addEventListener("keydown", e => { if (e.key === "Enter") { e.prevent
 function submitGuess() {
   if (mode === "normal" && getTodayKey() !== loadedDayKey) { location.reload(); return; }
   const guess = parseFloat(guessInput.value);
-  if (isNaN(guess) || guess <= 0) { guessInput.focus(); return; }
+  if (!Number.isFinite(guess) || guess <= 0) { guessInput.setAttribute("aria-invalid", "true"); document.getElementById("guess-error").textContent = "Enter a price greater than zero."; guessInput.focus(); return; }
 
   const { score } = computeScore(guess, currentItem.prices[country]);
   roundScores.push(score);
@@ -1297,6 +1314,7 @@ function renderResult(guess, ctry, animate) {
     scoreEl.textContent = score;
   }
   renderDots();
+  if (animate) announceLowball(currentItem.name + ": " + score + " out of 100. Your guess " + symbol + guess.toFixed(2) + ". Actual price " + symbol + actual.toFixed(2) + ". " + offByText(guess, actual, pctOff, symbol) + ".");
 }
 
 document.getElementById("nextBtn").addEventListener("click", () => {
@@ -1317,12 +1335,14 @@ document.getElementById("nextBtn").addEventListener("click", () => {
 });
 
 function finishUnlimited() {
+  announceLowball("Practice complete. Average score " + Math.round(roundScores.reduce((a,b)=>a+b,0)/roundScores.length) + " out of 100.");
   document.getElementById("final-score-label").textContent = "Practice score / 100";
   const avg = Math.round(roundScores.reduce((a, b) => a + b, 0) / roundScores.length);
   track("unlimited_complete", { score: avg });
   playArea.style.display = "none";
   resultArea.classList.remove("show");
   finalScreen.classList.add("show");
+  document.getElementById("shareBtn").focus({preventScroll:true});
   progressDots.style.display = "none";
   document.getElementById("finalTitle").textContent = "All " + deck.length + " items done";
   document.getElementById("finalPct").hidden = true;
@@ -1341,6 +1361,7 @@ function finishUnlimited() {
 }
 
 function finishNormalRound() {
+  announceLowball("Daily complete. Average score " + Math.round(roundScores.reduce((a,b)=>a+b,0)/roundScores.length) + " out of 100.");
   document.getElementById("final-score-label").textContent = "Arcade score / 100";
   const todayKey = getTodayKey();
   const stats = loadStats();
@@ -1362,6 +1383,7 @@ function finishNormalRound() {
   playArea.style.display = "none";
   resultArea.classList.remove("show");
   finalScreen.classList.add("show");
+  document.getElementById("shareBtn").focus({preventScroll:true});
   progressDots.style.display = "none";
 
   const totalEl = document.getElementById("finalTotal");
@@ -1510,20 +1532,42 @@ setInterval(tickNextDaily, 1000);
 tickNextDaily();
 
 // ---------- Popups ----------
-let modalReturnFocus = null;
+let modalReturnFocus = null, modalBackground = [], modalOverflow = "";
 function openModal(id, focusId) {
-  closeModals(true);
+  closeModals(true); closeCountryList();
   modalReturnFocus = document.activeElement;
-  document.getElementById(id).classList.add("show");
-  const f = document.getElementById(focusId);
-  if (f) f.focus();
+  const overlay = document.getElementById(id);
+  // Keep the dialog outside its inert game shell, including in the embedded route.
+  document.body.appendChild(overlay);
+  modalOverflow = document.body.style.overflow;
+  overlay.classList.add("show");
+  modalBackground = [...document.body.children].filter(el => el !== overlay && !["SCRIPT", "STYLE", "LINK"].includes(el.tagName)).map(el => [el, el.inert]);
+  modalBackground.forEach(([el]) => { el.inert = true; });
+  document.body.style.overflow = "hidden";
+  window.dispatchEvent(new CustomEvent("lowball:dialog", {detail:{open:true}}));
+  // Start at the title: the close button can be below the fold in landscape.
+  overlay.querySelector(".modal-panel").scrollTop = 0;
+  const initial = overlay.querySelector(".modal-title") || document.getElementById(focusId);
+  initial.tabIndex = -1; initial.focus({preventScroll:true});
 }
 function closeModals(silent) {
+  const wasOpen = !!document.querySelector(".modal.show");
   document.querySelectorAll(".modal.show").forEach(m => m.classList.remove("show"));
-  if (!silent && modalReturnFocus && modalReturnFocus.focus) { try { modalReturnFocus.focus(); } catch (e) {} }
+  modalBackground.forEach(([el, inert]) => { el.inert = inert; }); modalBackground = [];
+  if (wasOpen) { document.body.style.overflow = modalOverflow; window.dispatchEvent(new CustomEvent("lowball:dialog", {detail:{open:false}})); }
+  if (!silent && modalReturnFocus?.isConnected) modalReturnFocus.focus({preventScroll:true});
 }
 document.querySelectorAll(".modal").forEach(m => m.addEventListener("click", e => { if (e.target === m) closeModalsAndMark(); }));
-document.addEventListener("keydown", e => { if (e.key === "Escape" && document.querySelector(".modal.show")) closeModalsAndMark(); });
+document.addEventListener("keydown", e => {
+  const overlay = document.querySelector(".modal.show"); if (!overlay) return;
+  if (e.key === "Escape") { e.preventDefault(); closeModalsAndMark(); return; }
+  if (e.key === "Tab") {
+    const buttons = [...overlay.querySelectorAll("button:not(:disabled),a[href],input:not(:disabled)")].filter(el => el.getClientRects().length), first = buttons[0], last = buttons.at(-1);
+    if (!buttons.includes(document.activeElement)) { e.preventDefault(); (e.shiftKey ? last : first).focus(); }
+    else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+});
 function closeModalsAndMark() {
   if (document.getElementById("helpModal").classList.contains("show")) safeSet("pc_help_seen", "1");
   closeModals(false);
@@ -1578,6 +1622,7 @@ function showLock() {
   track("paywall_view");
   normalModeBtn.classList.remove("active");
   unlimitedModeBtn.classList.add("active");
+  updateModeTabs();
   statStrip.style.display = "none";
   playArea.style.display = "none";
   resultArea.classList.remove("show");
@@ -1623,6 +1668,7 @@ function startNormalMode() {
   lockScreen.classList.remove("show");
   normalModeBtn.classList.add("active");
   unlimitedModeBtn.classList.remove("active");
+  updateModeTabs();
   statStrip.style.display = "flex";
 
   const todayKey = getTodayKey();
@@ -1680,6 +1726,7 @@ function startUnlimitedMode() {
   track("unlimited_start");
   normalModeBtn.classList.remove("active");
   unlimitedModeBtn.classList.add("active");
+  updateModeTabs();
   statStrip.style.display = "none";
   document.getElementById("shareBtn").style.display = "block";
   document.getElementById("playAgainBtn").style.display = "none";
@@ -1690,6 +1737,15 @@ function startUnlimitedMode() {
   showItem();
 }
 
+function updateModeTabs() {
+  [normalModeBtn, unlimitedModeBtn].forEach(button => { const selected = button.classList.contains("active"); button.setAttribute("aria-selected", String(selected)); button.tabIndex = selected ? 0 : -1; });
+  document.getElementById("lowball-mode-panel").setAttribute("aria-labelledby", mode === "normal" ? "normalModeBtn" : "unlimitedModeBtn");
+}
+document.querySelector(".mode-toggle").addEventListener("keydown", e => {
+  if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(e.key)) return;
+  e.preventDefault(); const daily = e.key === "Home" || (e.key !== "End" && mode !== "normal");
+  (daily ? startNormalMode : startUnlimitedMode)(); (daily ? normalModeBtn : unlimitedModeBtn).focus();
+});
 normalModeBtn.addEventListener("click", startNormalMode);
 unlimitedModeBtn.addEventListener("click", startUnlimitedMode);
 
@@ -1745,7 +1801,12 @@ function guessCountry() {
   detectCountry();
   updateStatStrip();
   startNormalMode();
-  if (!safeGet("pc_help_seen", "")) setTimeout(() => { if (!document.querySelector(".modal.show")) openHelp(); }, 500);
+  if (!safeGet("pc_help_seen", "")) setTimeout(() => {
+    const embed = window.frameElement, outerFocus = embed?.ownerDocument.activeElement;
+    const outerBusy = embed && (embed.closest("[inert]") || (outerFocus !== embed && outerFocus !== embed.ownerDocument.body));
+    // A delayed first-visit hint must not interrupt the drawer, price entry or keyboard navigation.
+    if (!playerInteracted && !outerBusy && !document.querySelector(".modal.show")) openHelp();
+  }, 500);
 })();
 
 // ---------- Cookie consent (only active once an ad network is added) ----------
