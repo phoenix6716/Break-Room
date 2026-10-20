@@ -592,7 +592,7 @@
 <link rel="stylesheet" href="counter.css">
 <link rel="stylesheet" href="../../../daily-reset.css">
 
-<script src="../../../daily-clock.js"></script><link rel="stylesheet" href="../../../game-access.css"></head>
+<script src="../../../daily-clock.js"></script><link rel="stylesheet" href="../../../game-access.css"><link rel="stylesheet" href="../../../game-feel.css"><script src="../../../game-feel.js" data-sound="existing"></script></head>
 <body>
 <p id="lowball-announcement" class="game-sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
 <div class="wrap">
@@ -655,9 +655,9 @@
       <div class="score-caption">ROUND SCORE <span>/ 100</span></div>
       <div class="result-score mono" id="resultScore">--</div>
       <div class="result-label" id="resultLabel"></div>
-      <div class="result-facts" id="resultFacts"></div>
       <div class="squares" id="squares"></div>
-      <button class="btn-gold" id="nextBtn">NEXT</button>
+      <button class="btn-gold" id="nextBtn">NEXT ITEM →</button>
+      <div class="result-facts" id="resultFacts"></div>
     </div>
 
     <div class="final-screen" id="finalScreen">
@@ -918,7 +918,7 @@ function countUp(el, target, ms, onDone) {
 function popGems(container) {
   if (reduceMotion) return;
   container.classList.remove("pop"); void container.offsetWidth; container.classList.add("pop");
-  for (let i = 0; i < 5; i++) gemTimers.push(setTimeout(() => SFX.gem(i), 700 + i * 110));
+  for (let i = 0; i < 5; i++) gemTimers.push(setTimeout(() => SFX.gem(i), 250 + i * 65));
 }
 
 // ---------- Visual effects (skipped with reduced motion) ----------
@@ -1302,13 +1302,15 @@ function renderResult(guess, ctry, animate) {
     '<div><dt>Actual price</dt><dd>' + symbol + actual.toFixed(2) + '</dd></div></dl>' +
     '<p class="price-difference">' + offByText(guess, actual, pctOff, symbol) + '</p>' +
     (checked ? '<p class="result-note">Price checked ' + checked + '</p>' : '');
+  document.getElementById("nextBtn").textContent = mode === "normal" && roundIndex === ROUNDS_PER_DAY - 1 ? "SEE DAILY RESULTS →" : "NEXT ITEM →";
   const sq = document.getElementById("squares");
   sq.classList.remove("pop");
   sq.innerHTML = squaresHTMLForScore(score);
 
   if (animate) {
-    countUp(scoreEl, score, 650, () => playTierSound(score));
+    countUp(scoreEl, score, 350, () => playTierSound(score));
     popGems(sq);
+    window.BREAK_ROOM_FEEL.cue(resultArea,{kind:score===100?"perfect":"win",quiet:true});
     document.getElementById("nextBtn").focus({ preventScroll: true });
   } else {
     scoreEl.textContent = score;
@@ -1318,6 +1320,7 @@ function renderResult(guess, ctry, animate) {
 }
 
 document.getElementById("nextBtn").addEventListener("click", () => {
+  stopFx();
   if (mode === "normal" && getTodayKey() !== loadedDayKey) { location.reload(); return; }
   if (mode === "normal") {
     roundIndex++;
@@ -1335,6 +1338,7 @@ document.getElementById("nextBtn").addEventListener("click", () => {
 });
 
 function finishUnlimited() {
+  finalScreen.querySelector('.feel-result')?.remove();
   announceLowball("Practice complete. Average score " + Math.round(roundScores.reduce((a,b)=>a+b,0)/roundScores.length) + " out of 100.");
   document.getElementById("final-score-label").textContent = "Practice score / 100";
   const avg = Math.round(roundScores.reduce((a, b) => a + b, 0) / roundScores.length);
@@ -1403,7 +1407,13 @@ function finishNormalRound() {
   if (stats.lastPlayed === todayKey) safeSet("pc_last_share", window._shareText);
   showPct(loadPct());
   syncPercentile(avg, firstCompletion);
-  if (firstCompletion) setTimeout(openStats, reduceMotion ? 700 : 2300);
+  showDailyMilestone(avg);
+  if (firstCompletion) window.BREAK_ROOM_FEEL.cue(finalScreen,{kind:avg===100?"perfect":"win",quiet:true});
+}
+
+function showDailyMilestone(avg) {
+  const previous = Object.entries(loadHistory()).filter(([day,score]) => /^\d+$/.test(day) && Number(day)<dayNumber() && typeof score === "number" && Number.isFinite(score)).map(([,score]) => score);
+  window.BREAK_ROOM_FEEL.result(finalScreen,{score:avg,previous});
 }
 
 function shareLink() {
@@ -1688,7 +1698,7 @@ function startNormalMode() {
     document.getElementById("finalSquares").innerHTML = isNaN(avgNum) ? "" : squaresHTMLForScore(avgNum);
     window._shareText = safeGet("pc_last_share", "");
     showPct(loadPct());
-    if (!isNaN(avgNum)) syncPercentile(avgNum, false);
+    if (!isNaN(avgNum)) { syncPercentile(avgNum, false); showDailyMilestone(avgNum); }
     document.getElementById("shareBtn").style.display = window._shareText ? "block" : "none";
     const playAgainBtn = document.getElementById("playAgainBtn");
     document.getElementById("finalTitle").textContent = "Round complete";
