@@ -25,7 +25,7 @@ The profile uses **120 Sydney calendar dates, including today**, for every game'
 3. Average the means of games with at least one included result. Each game has equal weight, independent of how often it was played.
 4. Show the number of games and completed results supporting the average. A real zero counts; an unplayed game does not count as a zero. No included results means “—”.
 
-For example, 100 Lowball runs averaging 80, one Stake run scoring 0 and one Stack Up run scoring 50 produce `(80 + 0 + 50) / 3 = 43.3`, rather than letting Lowball dominate the result count. If only Lowball has results, the average is based on **1 of 5 games**, clearly labelled.
+For example, 100 Lowball runs averaging 80, one Stake run scoring 0 and one Stack Up run scoring 50 produce `(80 + 0 + 50) / 3 = 43.3`, rather than letting Lowball dominate the result count. If only Lowball has results, the average is based on **1 of 6 games**, clearly labelled.
 
 This is a deterministic shared performance scale. It is not a player percentile or evidence that all games have identical difficulty. Difficulty calibration would need real player outcome data. Browser storage may omit older results; neither old lifetime counters nor missing days are invented into score history.
 
@@ -44,3 +44,7 @@ Tests: `node tests/arcade-score.cjs`, `node tests/profile-records.cjs`, and `ARC
 Pack validation, independent optima and SQL parity are covered by `tests/pack-rules.cjs`; its engine/profile/sharing and responsive flow by `tests/pack.cjs`. Current existing projects apply `supabase/prior.sql` last for Pack/Prior cloud/Friends support.
 
 Prior keeps five untimed binary comparisons and native correct choices out of five. Its snapshot dates determine correctness, not a mutable current bank or stored score field. A zero completion counts; partials and Unlimited are excluded. The fifth answer completes the Daily even if its final review is still open. `tests/prior-rules.cjs` covers all 32 correctness patterns, all six Arcade outcomes and SQL parity; `tests/prior.cjs` covers actual result/profile/copy integration. Prior’s chance baseline and coarse 20-point steps differ from other games; the shared scale remains a transparent performance calculation, not proof of equal difficulty. Existing projects apply `supabase/prior.sql` last.
+
+## Laser addition
+
+Laser is now the sixth integrated game, with four first-fire Daily boards, free independent Unlimited practice, and unscored retries/solution reveals. See `games/laser/README.md` for the exact snapshot, scoring, controls and tests. Arcade score is first-fire hits × 25; partials and practice do not count. Existing Supabase projects apply **`supabase/laser.sql` LAST** (includes Pack/Prior); this supersedes earlier per-game migration instructions above. Fresh projects use updated setup then Friends. Live SQL/deployment and human playtesting are separate from local implementation verification.

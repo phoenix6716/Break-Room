@@ -27,3 +27,7 @@ The engineering acceptance target is playable extended sessions with clear contr
 ## Maintenance
 
 `practice-session.js` provides the in-memory deck and accessible control panel; `practice-session.css` provides the shared visual treatment. Keep it separate from `arcade-score.js`, save adapters and SQL. New games should define their practice eligibility and sampling rules explicitly and test mode continuity. Only introduce persistent practice records after specifying ownership, migration and cloud behavior; do not put practice totals into Daily history.
+
+## Laser addition
+
+Laser is now the sixth integrated game, with four first-fire Daily boards, free independent Unlimited practice, and unscored retries/solution reveals. See `games/laser/README.md` for the exact snapshot, scoring, controls and tests. Arcade score is first-fire hits × 25; partials and practice do not count. Existing Supabase projects apply **`supabase/laser.sql` LAST** (includes Pack/Prior); this supersedes earlier per-game migration instructions above. Fresh projects use updated setup then Friends. Live SQL/deployment and human playtesting are separate from local implementation verification.

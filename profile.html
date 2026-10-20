@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="profile.css">
   <script defer src="daily-clock.js"></script>
   <script defer src="arcade-score.js"></script>
-  <script defer src="pack-model.js"></script><script defer src="prior-model.js"></script><script defer src="profile-records.js"></script>
+  <script defer src="pack-model.js"></script><script defer src="prior-model.js"></script><script defer src="laser-model.js"></script><script defer src="profile-records.js"></script>
   <script defer src="profile.js"></script>
 <link rel="stylesheet" href="accounts.css"><script defer src="assets/vendor/supabase.js"></script><script defer src="account-config.js"></script><script defer src="cloud-saves.js"></script><script defer src="accounts.js"></script><link rel="stylesheet" href="legal.css"></head>
 <body class="profile-page">
@@ -30,14 +30,14 @@
       <div><span class="profile-label" id="arcade-average-title">YOUR ARCADE AVERAGE</span><strong><span id="arcade-average">—</span><small> / 100</small></strong></div>
       <div><h2>One scale. Every game.</h2><p id="arcade-basis">Complete a Daily to start your average.</p><p>Each game gets equal weight. Based on completed Daily scores in the last 120 days; unplayed games are excluded.</p></div>
     </section>
-    <details class="profile-scoring"><summary>How the Arcade score works</summary><ul><li><b>Lowball:</b> your Daily average, already out of 100.</li><li><b>Stake:</b> the chips staked on correct answers ÷ all chips staked × 100. Bigger bets give that question more weight. Wrong answers and timeouts earn zero for that bet.</li><li><b>Stack Up:</b> Daily points ÷ 31,000 × 100, capped at 0–100. Speed, streak bonuses and mistakes still affect your points.</li><li><b>Pack:</b> usefulness points earned ÷ the exact best available total × 100 across three Daily bags. No timer or speed bonus.</li><li><b>Prior:</b> correct earlier-event choices × 20. Five pairs, no timer or speed bonus.</li></ul><p>We average each game’s scores over the last 120 days, then average those game averages equally. A zero is included; a missing game is not counted as zero. Original chips and points stay intact. This is a shared performance scale, not a player percentile or a guarantee that games have equal difficulty. Older scores missing from browser history cannot be included.</p></details>
+    <details class="profile-scoring"><summary>How the Arcade score works</summary><ul><li><b>Lowball:</b> your Daily average, already out of 100.</li><li><b>Stake:</b> the chips staked on correct answers ÷ all chips staked × 100. Bigger bets give that question more weight. Wrong answers and timeouts earn zero for that bet.</li><li><b>Stack Up:</b> Daily points ÷ 31,000 × 100, capped at 0–100. Speed, streak bonuses and mistakes still affect your points.</li><li><b>Pack:</b> usefulness points earned ÷ the exact best available total × 100 across three Daily bags. No timer or speed bonus.</li><li><b>Prior:</b> correct earlier-event choices × 20. Five pairs, no timer or speed bonus.</li><li><b>Laser:</b> first-fire hits × 25. Four boards; retries and solutions never improve the scored result.</li></ul><p>We average each game’s scores over the last 120 days, then average those game averages equally. A zero is included; a missing game is not counted as zero. Original chips and points stay intact. This is a shared performance scale, not a player percentile or a guarantee that games have equal difficulty. Older scores missing from browser history cannot be included.</p></details>
     <section class="profile-overview" aria-label="Your Daily overview">
-      <article><span class="profile-label">DAILY RUNS COMPLETED</span><strong id="total-runs">—</strong><p>Across the five live games</p></article>
+      <article><span class="profile-label">DAILY RUNS COMPLETED</span><strong id="total-runs">—</strong><p>Across the six live games</p></article>
       <article><span class="profile-label">TODAY’S CHECKLIST</span><strong id="today-count">—</strong><p id="today-caption">One fresh Daily per game</p></article>
       <article><span class="profile-label">HISTORY STREAK</span><strong id="overall-streak">—</strong><p id="streak-caption">Consecutive days with a saved result</p></article>
     </section>
-    <section class="profile-empty" id="profile-empty" hidden><span class="profile-label">A CLEAN SLATE</span><h2>Your first break starts here.</h2><p>Finish a Daily in Lowball, Stake, Stack Up, Pack or Prior to start your record. An unfinished run won’t count.</p><a href="index.html#daily-games" class="button secondary">FIND YOUR FIRST GAME →</a></section>
-    <div class="section-head"><h2>Your games</h2><span class="section-meta">THREE GAMES. THREE WAYS TO SCORE.</span></div>
+    <section class="profile-empty" id="profile-empty" hidden><span class="profile-label">A CLEAN SLATE</span><h2>Your first break starts here.</h2><p>Finish a Daily in Lowball, Stake, Stack Up, Pack, Prior or Laser to start your record. An unfinished run won’t count.</p><a href="index.html#daily-games" class="button secondary">FIND YOUR FIRST GAME →</a></section>
+    <div class="section-head"><h2>Your games</h2><span class="section-meta">SIX GAMES. ONE SHARED SCALE.</span></div>
     <section class="profile-games" id="profile-games" aria-label="Game-by-game records"></section>
     <section class="profile-activity" aria-labelledby="activity-title">
       <div class="section-head"><h2 id="activity-title">Little breaks add up.</h2><span class="section-meta">LAST 14 DAYS · SYDNEY TIME</span></div>
@@ -45,7 +45,7 @@
       <p class="profile-fine">Each square shows how many of the four Daily games you completed. History streaks and achievements use the dated results still saved here. Lowball normally retains up to 121 days locally; cloud saves can preserve older results. Its lifetime play counter is included above.</p>
     </section>
     <section aria-labelledby="recent-title">
-      <div class="section-head recent-heading"><h2 id="recent-title">Recent runs</h2><label class="profile-filter">GAME <select id="result-filter"><option value="all">All games</option><option value="lowball">Lowball</option><option value="stake">Stake</option><option value="stack-up">Stack Up</option><option value="pack">Pack</option><option value="prior">Prior</option></select></label></div>
+      <div class="section-head recent-heading"><h2 id="recent-title">Recent runs</h2><label class="profile-filter">GAME <select id="result-filter"><option value="all">All games</option><option value="lowball">Lowball</option><option value="stake">Stake</option><option value="stack-up">Stack Up</option><option value="pack">Pack</option><option value="prior">Prior</option><option value="laser">Laser</option></select></label></div>
       <p id="recent-count" class="profile-fine" role="status"></p>
       <div class="profile-results" id="recent-results"></div>
       <button type="button" id="more-results" class="button secondary" hidden>SHOW MORE RUNS</button>

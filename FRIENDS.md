@@ -44,3 +44,7 @@ Current existing projects run `supabase/prior.sql` last after setup and friends;
 ## Prior migration and comparisons
 
 Existing projects apply `supabase/prior.sql` last; it includes Pack support as well. Fresh setup/friends includes Prior directly. `_friend_prior_score` validates five complete pair snapshots with distinct event IDs, integer years, unequal pair dates and binary choices, then derives correct × 20. It ignores asserted score fields. Only the bounded completed Arcade result reaches accepted, unblocked, opted-in friends; no event answers, sources, guesses or raw saves are returned. The profile and friend filters include all five games, while missing games remain excluded from equal-game averages. Database tests include Prior positive/zero scores, malformed shapes, shared access boundaries and the exact 120-day window.
+
+## Laser addition
+
+Laser is now the sixth integrated game, with four first-fire Daily boards, free independent Unlimited practice, and unscored retries/solution reveals. See `games/laser/README.md` for the exact snapshot, scoring, controls and tests. Arcade score is first-fire hits × 25; partials and practice do not count. Existing Supabase projects apply **`supabase/laser.sql` LAST** (includes Pack/Prior); this supersedes earlier per-game migration instructions above. Fresh projects use updated setup then Friends. Live SQL/deployment and human playtesting are separate from local implementation verification.

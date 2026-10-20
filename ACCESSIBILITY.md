@@ -28,3 +28,7 @@ Pack uses real labelled toggle buttons with `aria-pressed`, live over-capacity e
 ## Prior
 
 Prior uses two large real choice buttons, with dates/facts/references revealed only after the immutable choice. The earlier/later colors are accompanied by explicit text and your-pick labels. Review headings receive visible keyboard focus; year-gap/timeline text is readable without color or dragging. Reference links explain that they open a new tab. Five labelled progress marks describe each committed result. The canonical keyboard modes, inert/trapped Help/Stats, left menu, visible focus and common reset are retained. It has no timer or fake audio control. `tests/prior.cjs` covers complete responsive games, real zeroes, keyboard/touch, same-origin tabs, saved reviews, snapshot stability after bank reordering and denied clipboard/storage.
+
+## Laser addition
+
+Laser is now the sixth integrated game, with four first-fire Daily boards, free independent Unlimited practice, and unscored retries/solution reveals. See `games/laser/README.md` for the exact snapshot, scoring, controls and tests. Arcade score is first-fire hits × 25; partials and practice do not count. Existing Supabase projects apply **`supabase/laser.sql` LAST** (includes Pack/Prior); this supersedes earlier per-game migration instructions above. Fresh projects use updated setup then Friends. Live SQL/deployment and human playtesting are separate from local implementation verification.

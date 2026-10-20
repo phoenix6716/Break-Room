@@ -154,6 +154,57 @@ exception when others then return null;
 end $$;
 revoke all on function public._friend_prior_score(jsonb,date) from public,anon,authenticated;
 
+-- Laser v1: derive first-fire hits from board/mirror snapshots, never claimed scores.
+create or replace function public._friend_laser_hit(b jsonb,p jsonb) returns boolean language plpgsql immutable set search_path='' as $$
+declare n int; lv int; cfg int[]; q jsonb; x numeric; rr int; cc int; ori text; coords text[]:='{}'; legal text[]:='{}'; mirrors jsonb:='{}'; walls text[]:='{}'; target text; k text; r int; c int:=-1; dx int:=1; dy int:=0; tmp int; seen text[]:='{}'; state text;
+begin
+ if jsonb_typeof(b) is distinct from 'object' or jsonb_typeof(b->'id') is distinct from 'string' or b->>'id' !~ '^laser-v1-[0-3]-[0-9]+$' or char_length(b->>'id')>80 or jsonb_typeof(b->'level') is distinct from 'number' then return null;end if;
+ x=(b->>'level')::numeric;if x<>trunc(x) or x not between 0 and 3 then return null;end if;lv=x;
+ cfg=case lv when 0 then array[5,2,0] when 1 then array[6,3,0] when 2 then array[6,3,2] else array[7,4,3] end;n=cfg[1];
+ if b->'n' is distinct from to_jsonb(n) or jsonb_typeof(b->'row') is distinct from 'number' then return null;end if;
+ x=(b->>'row')::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;r=x;
+ if jsonb_typeof(b->'t') is distinct from 'array' or jsonb_array_length(b->'t')<>2 or jsonb_typeof(b->'fx') is distinct from 'array' or jsonb_array_length(b->'fx')<>cfg[2] or jsonb_typeof(b->'w') is distinct from 'array' or jsonb_array_length(b->'w')<>cfg[3] or jsonb_typeof(p) is distinct from 'array' or jsonb_array_length(p)<>2 then return null;end if;
+ -- Validate disjoint layout coordinates before tracing.
+ for q in select value from jsonb_array_elements(jsonb_build_array(b->'t')||(b->'fx')||(b->'w')) loop
+  if jsonb_typeof(q) is distinct from 'array' or jsonb_array_length(q) not in (2,3) then return null;end if;
+  if jsonb_typeof(q->0) is distinct from 'number' or jsonb_typeof(q->1) is distinct from 'number' then return null;end if;
+  x=(q->>0)::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;rr=x;
+  x=(q->>1)::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;cc=x;k=rr||','||cc;
+  if k=any(coords) then return null;end if;coords=array_append(coords,k);
+ end loop;
+ target=((b->'t'->>0)::numeric::int)::text||','||((b->'t'->>1)::numeric::int)::text;
+ for q in select value from jsonb_array_elements(b->'fx') loop
+  if jsonb_array_length(q)<>3 or jsonb_typeof(q->2) is distinct from 'string' or q->>2 not in ('/',E'\\') then return null;end if;
+  mirrors=jsonb_set(mirrors,array[((q->>0)::numeric::int)::text||','||((q->>1)::numeric::int)::text],q->2);
+ end loop;
+ for q in select value from jsonb_array_elements(b->'w') loop if jsonb_array_length(q)<>2 then return null;end if;walls=array_append(walls,((q->>0)::numeric::int)::text||','||((q->>1)::numeric::int)::text);end loop;
+ for q in select value from jsonb_array_elements(p) loop
+  if jsonb_typeof(q) is distinct from 'array' or jsonb_array_length(q)<>3 or jsonb_typeof(q->0) is distinct from 'number' or jsonb_typeof(q->1) is distinct from 'number' or jsonb_typeof(q->2) is distinct from 'string' or q->>2 not in ('/',E'\\') then return null;end if;
+  x=(q->>0)::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;rr=x;
+  x=(q->>1)::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;cc=x;k=rr||','||cc;
+  if k=any(coords) or k=any(legal) then return null;end if;legal=array_append(legal,k);mirrors=jsonb_set(mirrors,array[k],q->2);
+ end loop;
+ loop
+  c=c+dx;r=r+dy;if c<0 or r<0 or c>=n or r>=n then return false;end if;
+  state=r||','||c||','||dx||','||dy;if state=any(seen) then return false;end if;seen=array_append(seen,state);
+  k=r||','||c;if k=target then return true;end if;if k=any(walls) then return false;end if;
+  ori=mirrors->>k;if ori='/' then tmp=dx;dx=-dy;dy=-tmp;elsif ori=E'\\' then tmp=dx;dx=dy;dy=tmp;end if;
+ end loop;
+exception when others then return null;
+end $$;
+create or replace function public._friend_laser_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare i int; b jsonb; hit boolean; solved int:=0; ids text[]:='{}';
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or jsonb_typeof(v->'edits') is distinct from 'number' or (v->>'edits')::numeric<0 or (v->>'edits')::numeric>1000000 or (v->>'edits')::numeric<>trunc((v->>'edits')::numeric) or v->'round' is distinct from '3'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or jsonb_typeof(v->'boards') is distinct from 'array' or jsonb_array_length(v->'boards')<>4 or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>4 or v->'mirrors' is distinct from v->'picks'->3 then return null;end if;
+ for i in 0..3 loop
+  b=v->'boards'->i;if b->>'id'=any(ids) then return null;end if;ids=array_append(ids,b->>'id');
+  hit=public._friend_laser_hit(b,v->'picks'->i);if hit is null then return null;end if;if hit then solved=solved+1;end if;
+ end loop;
+ return solved*25;
+exception when others then return null;
+end $$;
+revoke all on function public._friend_laser_hit(jsonb,jsonb),public._friend_laser_score(jsonb,date) from public,anon,authenticated;
+
 create or replace function public._friend_score(g text,v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
 declare i int; j int; n numeric; bet int; pick int; answer int; total int:=0; won int:=0; legacy int[]; q jsonb; c jsonb;
 begin
@@ -176,6 +227,7 @@ begin
    end if;
    total=total+bet;if pick=answer then won=won+bet;end if;
   end loop;return won::double precision/total*100;
+ elsif g='laser' then return public._friend_laser_score(v,d);
  elsif g='prior' then return public._friend_prior_score(v,d);
  elsif g='pack' then return public._friend_pack_score(v,d);
  elsif g='stack-up' then
@@ -220,7 +272,7 @@ begin
    end if;
   else
    for entry in select * from jsonb_each_text(data) loop
-    if (game='stake' and entry.key !~ '^stake:d:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='prior' and entry.key !~ '^break-room:prior:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='pack' and entry.key !~ '^break-room:pack:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='stack-up' and entry.key !~ '^break-room:stack-up:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') then continue;end if;
+    if (game='stake' and entry.key !~ '^stake:d:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='laser' and entry.key !~ '^break-room:laser:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='prior' and entry.key !~ '^break-room:prior:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='pack' and entry.key !~ '^break-room:pack:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='stack-up' and entry.key !~ '^break-room:stack-up:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') then continue;end if;
     d=public._friend_date(right(entry.key,10));if d is null or d<p_today-119 or d>p_today then continue;end if;
     v=public._friend_json(entry.value);score=public._friend_score(game,v,d);
     if score is not null then day=d;arcade_score=score;return next;end if;

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Laser</title>
+<style>
+:root{--bg:#eef3f8;--fg:#0f1f2e;--card:#fff;--ln:#b9c7d6;--beam:#e0245e;--acc:#0a63e0;--ok:#0f7a58;--bad:#b8232b;--wl:#3b4a5a;box-sizing:border-box;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#070d14;--fg:#e4eef8;--card:#0e1824;--ln:#2a3b4d;--beam:#ff3d7f;--acc:#5aa2ff;--ok:#3ddc97;--bad:#ff6b73;--wl:#8798aa}}
+:root[data-theme="dark"]{--bg:#070d14;--fg:#e4eef8;--card:#0e1824;--ln:#2a3b4d;--beam:#ff3d7f;--acc:#5aa2ff;--ok:#3ddc97;--bad:#ff6b73;--wl:#8798aa}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:0 max(10px,env(safe-area-inset-right,0px)) 24px max(10px,env(safe-area-inset-left,0px));overflow-x:hidden}
+main{max-width:460px;margin:0 auto}
+h1{font:700 28px/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.3em;text-align:center;margin:18px 0 4px;color:var(--beam);text-shadow:0 0 12px var(--beam)}
+h2{font-size:18px;margin:10px 0}
+.sub,.st{text-align:center;margin:6px 0}
+.tabs{display:flex;gap:8px;margin:12px 0}
+.tabs button{flex:1}
+button,input,textarea{font:inherit;color:var(--fg)}
+.btn,.tabs button{min-height:44px;padding:8px 14px;border:2px solid var(--acc);background:var(--card);border-radius:8px;cursor:pointer}
+.btn{display:block;margin:12px auto;background:var(--acc);color:#fff;font-weight:700}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.tabs button[aria-pressed="true"]{background:var(--acc);color:#fff}
+.g{display:grid;gap:2px;grid-template-columns:20px repeat(var(--n),minmax(44px,1fr));margin:10px auto}
+.mk{align-self:center;text-align:center;font-size:14px;color:var(--beam)}
+.c{position:relative;aspect-ratio:1;min-width:44px;min-height:44px;padding:0;background:var(--card);border:1px solid var(--ln);border-radius:4px;overflow:hidden;cursor:pointer}
+.c .t{position:absolute;right:3px;bottom:1px;font:11px ui-monospace,monospace}
+.c .l{position:absolute;left:50%;top:10%;height:80%;width:4px;margin-left:-2px;background:var(--fg);border-radius:2px}
+.c .f{transform:rotate(45deg)}.c .b{transform:rotate(-45deg)}
+.c.pl{border:2px dashed var(--acc)}.c.pl .l{background:var(--acc)}
+.c.w{background:var(--wl);color:#fff;cursor:default}.c.fx,.c.tg{cursor:default}
+.c .s{font-size:22px}
+.c.tg .s{color:var(--beam)}
+.c.lit{background:color-mix(in srgb,var(--beam) 35%,var(--card));box-shadow:inset 0 0 14px var(--beam)}
+.c.lit::after{content:"\25CF";position:absolute;left:3px;top:0;font-size:12px;color:var(--beam)}
+.rs{text-align:center;font-weight:700;font-size:20px;margin:8px 0}.ok{color:var(--ok)}.no{color:var(--bad)}
+.fact{background:var(--card);border-left:4px solid var(--acc);padding:8px 12px;border-radius:4px}
+.pn{background:var(--card);border:1px solid var(--ln);border-radius:8px;padding:12px;margin:12px 0}
+.em{font-size:28px;text-align:center;letter-spacing:4px}
+input,textarea{width:100%;min-height:44px;padding:8px;background:var(--card);border:1px solid var(--ln);border-radius:6px}
+.row{padding:6px 0;border-bottom:1px solid var(--ln);font-size:14px}
+.err{color:var(--bad);margin:6px 0}
+</style></head><body><main>
+<h1>LASER</h1>
+<p class="sub">Place 2 mirrors. Hit the target.</p>
+<div class="tabs" role="group" aria-label="Mode"><button id="td" aria-pressed="true">Daily</button><button id="tu" aria-pressed="false">Unlimited</button></div>
+<div id="v"></div>
+</main>
+<script>
+// Set this to your published link. Empty means the current page address is used.
+const SHARE_URL="";
+// HOOK (monetisation): archive of past days, streak freezes, private leagues, sponsored themed boards, cosmetic beam colours.
+const CFG=[[5,2,0],[6,3,0],[6,3,2],[7,4,3]],L="abcdefg";
+const RX=/^(20\d\d-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01]))-((?:[a-g][1-7][fb]){2}(?:\.(?:[a-g][1-7][fb]){2}){3})$/;
+const FACTS=["Sunlight takes about 8 minutes to reach Earth.","Light in a vacuum travels exactly 299,792,458 metres per second.","Light from the Moon reaches Earth in about 1.3 seconds.","A flat mirror reflects light at the same angle it arrives.","Rainbows form when raindrops bend and reflect sunlight.","Visible light has wavelengths from about 380 to 750 nanometres.","Red is the longest wavelength of visible light.","Optical fibres carry data using total internal reflection.","The sky looks blue because air scatters short wavelengths most.","Apollo astronauts left reflectors on the Moon that return laser pulses.","Light slows to about 75 percent of its top speed in water.","Light in diamond travels about 2.4 times slower than in a vacuum.","A periscope uses two mirrors to show a view around an obstacle.","Isaac Newton built a reflecting telescope in 1668.","Light behaves as both a wave and a particle.","Most household mirrors have a thin metal coating on the back of the glass.","Photons have no mass.","Bike reflectors use corner reflectors that send light back toward its source.","Laser light is coherent, so its waves stay in step.","In one second light could circle Earth about 7 times.","Dark surfaces absorb most visible light and turn it into heat.","Newton showed that a prism splits white light into a spectrum of colours.","A mirror swaps front and back, not left and right.","The nearest star after the Sun is about 4.2 light years away."];
+const $=s=>document.querySelector(s),V=$("#v");
+function h(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function rng(s){let a=2166136261;for(const c of s){a^=c.charCodeAt(0);a=Math.imul(a,16777619)}return()=>{a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function trace(b,add){const g={};b.fx.forEach(m=>g[m[0]+","+m[1]]=m[2]);b.w.forEach(w=>g[w[0]+","+w[1]]="W");add.forEach(a=>g[a[0]+","+a[1]]=a[2]);
+let r=b.row,c=-1,dx=1,dy=0;const p=[];
+for(let s=0;s<400;s++){c+=dx;r+=dy;if(r<0||c<0||r>=b.n||c>=b.n)return{hit:false,p};p.push([r,c]);
+if(r==b.t[0]&&c==b.t[1])return{hit:true,p};const k=g[r+","+c];if(k=="W")return{hit:false,p};
+if(k=="/")[dx,dy]=[-dy,-dx];else if(k=="\\")[dx,dy]=[dy,dx]}
+return{hit:false,p}}
+function emp(b){const u=new Set([b.t+""]);b.fx.forEach(m=>u.add(m[0]+","+m[1]));b.w.forEach(w=>u.add(w+""));const e=[];
+for(let r=0;r<b.n;r++)for(let c=0;c<b.n;c++)if(!u.has(r+","+c))e.push([r,c]);return e}
+function solve(b){const e=emp(b),T=["/","\\"];
+if(trace(b,[]).hit)return null;
+for(const x of e)for(const t of T)if(trace(b,[[x[0],x[1],t]]).hit)return null;
+const s=[];for(let i=0;i<e.length;i++)for(let j=i+1;j<e.length;j++)for(const t of T)for(const u of T)
+if(trace(b,[[e[i][0],e[i][1],t],[e[j][0],e[j][1],u]]).hit)s.push([e[i],e[j],t,u]);return s}
+function ok(b){const s=solve(b);return!!s&&s.length>=1&&s.length<=3}
+function gen(R,i){const[n,f,w]=CFG[i];
+for(let a=0;a<40000;a++){const u=new Set(),pk=()=>{for(;;){const r=R()*n|0,c=R()*n|0;if(!u.has(r+","+c)){u.add(r+","+c);return[r,c]}}};
+const fx=[],ws=[];for(let k=0;k<f;k++){const q=pk();fx.push([q[0],q[1],R()<.5?"/":"\\"])}
+for(let k=0;k<w;k++)ws.push(pk());
+const b={n,fx,w:ws,row:R()*n|0,t:[-1,-1]},ec=emp(b),x=ec[R()*ec.length|0],y=ec[R()*ec.length|0];
+if(x==y)continue;
+const q=trace(b,[[x[0],x[1],R()<.5?"/":"\\"],[y[0],y[1],R()<.5?"/":"\\"]]).p.filter(c=>ec.some(e=>e[0]==c[0]&&e[1]==c[1])&&c!=x&&c!=y);
+if(!q.length)continue;b.t=q[R()*q.length|0];if(ok(b))return b}
+return null}
+function daySet(d){return[0,1,2,3].map(i=>{let b=gen(rng(d+"#"+i),i);if(!b||!ok(b))b=gen(rng(d+"#"+i+"x"),i);return b})}
+const mem={};function ld(k){try{const v=localStorage.getItem(k);return v?JSON.parse(v):null}catch(e){return mem[k]||null}}
+function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){mem[k]=v}}
+function ds(o){const d=new Date(Date.now()-(o||0)*864e5);return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+let T=ds(),daily=null,view="d",busy=false;
+function boards(){if(!daily||daily.d!=T)daily={d:T,b:daySet(T)};return daily.b}
+const enc=a=>a.slice().sort((p,q)=>p[0]-q[0]||p[1]-q[1]).map(p=>L[p[1]]+(p[0]+1)+(p[2]=="/"?"f":"b")).join("");
+const dec=(s,o)=>[+s[o+1]-1,L.indexOf(s[o]),s[o+2]=="f"?"/":"\\"];
+const fmt=a=>a.map(p=>L[p[1]]+(p[0]+1)+" "+p[2]).join(" and ");
+function play(el,bs,done,lbl){let i=0;const res=[],ans=[];busy=true;
+function show(){const b=bs[i],mk={},cells={},fx={},wl={};let lock=false;
+b.fx.forEach(m=>fx[m[0]+","+m[1]]=m[2]);b.w.forEach(w=>wl[w+""]=1);
+const root=h("div"),st=h("p","st"),g=h("div","g"),fire=h("button","btn","Fire"),out=h("div");
+el.replaceChildren(root);g.style.setProperty("--n",b.n);
+root.append(h("h2","",lbl||"Board "+(i+1)+" of "+bs.length),st,g,fire,out);
+const cn=()=>Object.keys(mk).length;
+function draw(r,c){const k=r+","+c,e=cells[k];e.replaceChildren();e.className="c";let t="empty";
+if(wl[k]){e.classList.add("w");e.append(h("span","s","\u25A0"),h("span","t","wall"));t="wall"}
+else if(r==b.t[0]&&c==b.t[1]){e.classList.add("tg");e.append(h("span","s","\u25CE"),h("span","t","target"));t="target"}
+else{const m=fx[k]||mk[k];if(m){e.classList.add(fx[k]?"fx":"pl");e.append(h("span","l "+(m=="/"?"f":"b")),h("span","t",m));t=(fx[k]?"fixed":"your")+" mirror "+m}}
+e.setAttribute("aria-label","Row "+(r+1)+" column "+L[c]+" "+t)}
+function upd(){st.textContent="Mirrors placed: "+cn()+" of 2";fire.disabled=lock||cn()!=2}
+for(let r=0;r<b.n;r++){g.append(h("span","mk",r==b.row?"\u25B6":""));
+for(let c=0;c<b.n;c++){const e=h("button");e.type="button";cells[r+","+c]=e;draw(r,c);
+e.onclick=()=>{const k=r+","+c;if(lock||fx[k]||wl[k]||(r==b.t[0]&&c==b.t[1]))return;
+const m=mk[k];if(!m){if(cn()>=2)return;mk[k]="/"}else if(m=="/")mk[k]="\\";else delete mk[k];draw(r,c);upd()};g.append(e)}}
+upd();
+fire.onclick=()=>{lock=true;upd();const ad=Object.keys(mk).map(k=>{const q=k.split(",").map(Number);return[q[0],q[1],mk[k]]});
+const R=trace(b,ad);res.push(R.hit?1:0);ans.push(ad);
+R.p.forEach((q,s)=>setTimeout(()=>cells[q[0]+","+q[1]].classList.add("lit"),s*140));
+setTimeout(()=>{out.append(h("p","rs "+(R.hit?"ok":"no"),R.hit?"\u2714 Solved":"\u2718 Missed"),h("p","fact","Light fact: "+FACTS[Math.random()*FACTS.length|0]));
+const nx=h("button","btn",lbl||i<bs.length-1?"Next board":"See results");
+nx.onclick=()=>{if(i<bs.length-1){i++;show()}else{busy=false;done(res,ans)}};out.append(nx);nx.focus()},R.p.length*140+300)}}
+show()}
+function share(code,res){const url=(SHARE_URL||location.href.split("?")[0].split("#")[0])+"?c="+code;
+const txt="Laser "+T+"\n"+res.map(x=>x?"\uD83D\uDFE9":"\uD83D\uDFE5").join("")+"\n"+code+"\n"+url;
+const box=h("div"),btn=h("button","btn","Copy result"),ta=h("textarea");ta.readOnly=true;ta.value=txt;ta.rows=5;ta.hidden=true;ta.setAttribute("aria-label","Share text");
+btn.onclick=()=>{const fb=()=>{ta.hidden=false;ta.select();btn.textContent="Select and copy the text"};
+try{navigator.clipboard.writeText(txt).then(()=>btn.textContent="Copied",fb)}catch(e){fb()}};
+box.append(btn,ta);return box}
+function home(){view="d";const dd=ld("laser.day"),s=ld("laser.streak")||{n:0},y=ds(1);
+V.replaceChildren(h("p","sub","Streak: "+(s.last==T||s.last==y?s.n:0)+(s.n==1&&(s.last==T||s.last==y)?" day":" days")));
+if(dd&&dd.d==T){const p=h("div","pn");p.append(h("p","em",dd.r.map(x=>x?"\uD83D\uDFE9":"\uD83D\uDFE5").join("")),
+h("p","sub","Solved "+dd.r.reduce((a,b)=>a+b,0)+" of 4. Come back tomorrow for a new set."),h("p","sub",""),share(T+"-"+dd.a.map(enc).join("."),dd.r));
+p.children[2].id="cd";p.children[2].setAttribute("aria-live","off");V.append(p);tick()}
+else{const b=h("button","btn","Play today\u2019s 4 boards");b.onclick=()=>{play(V,boards(),(r,a)=>{
+const o=ld("laser.streak")||{n:0,last:""};sv("laser.streak",{n:o.last==y?o.n+1:o.last==T?o.n:1,last:T});
+sv("laser.day",{d:T,r,a});home()})};V.append(b)}
+const c=h("div","pn"),inp=h("input"),go=h("button","btn","Compare with a friend"),er=h("p","err");
+inp.placeholder="Paste a friend\u2019s code";inp.setAttribute("aria-label","Friend code");inp.autocomplete="off";
+go.onclick=()=>cmp(inp.value,er);c.append(h("h2","","Compare mode"),inp,go,er);V.append(c)}
+function cmp(code,er){const m=RX.exec(String(code).trim().toLowerCase());
+if(!m){if(er)er.textContent="That code is not valid.";return}
+const d=m[1],bs=daySet(d),fr=m[2].split(".").map(s=>[dec(s,0),dec(s,3)]);
+play(V,bs,(res,ans)=>{view="c";let both=0;V.replaceChildren(h("h2","","Comparison for "+d));
+bs.forEach((b,i)=>{const e=emp(b).map(x=>x+""),f=fr[i],fv=f[0]+""!=f[1]+""&&e.includes(f[0][0]+","+f[0][1])&&e.includes(f[1][0]+","+f[1][1]),fh=fv&&trace(b,f).hit;
+if(fh&&res[i])both++;const r=h("div","row");
+r.textContent="Board "+(i+1)+". You: "+fmt(ans[i])+" "+(res[i]?"\uD83D\uDFE9 solved":"\uD83D\uDFE5 missed")+". Friend: "+fmt(f)+" "+(fh?"\uD83D\uDFE9 solved":"\uD83D\uDFE5 missed");V.append(r)});
+V.append(h("p","rs","You both solved "+both+" of 4"));const bk=h("button","btn","Back");bk.onclick=()=>{history.replaceState(null,"",location.pathname);home()};V.append(bk)})}
+let un=0,ut=0;
+function unl(){view="u";const cnt=h("p","sub"),box=h("div");V.replaceChildren(cnt,box);
+const nx=()=>{cnt.textContent="Solved "+un+" of "+ut+" boards";const b=gen(rng(Math.random()+"|"+Date.now()),Math.random()*4|0);
+play(box,[b],r=>{ut++;un+=r[0];nx()},"Board")};nx()}
+function tab(v){$("#td").setAttribute("aria-pressed",v=="d");$("#tu").setAttribute("aria-pressed",v=="u");busy=false;v=="d"?home():unl()}
+$("#td").onclick=()=>tab("d");$("#tu").onclick=()=>tab("u");
+function tick(){const e=$("#cd");if(T!=ds()){T=ds();daily=null;if(view=="d"&&!busy)home();return}
+if(e){const n=new Date(),m=new Date(n.getFullYear(),n.getMonth(),n.getDate()+1)-n,p=x=>String(x).padStart(2,"0");
+e.textContent="Next set in "+p(m/36e5|0)+":"+p(m/6e4%60|0)+":"+p(m/1e3%60|0)}}
+setInterval(tick,1000);
+boards();
+const qc=new URLSearchParams(location.search).get("c");
+if(qc&&RX.test(qc.trim().toLowerCase())){V.replaceChildren();cmp(qc,null)}else home();
+</script></body></html>

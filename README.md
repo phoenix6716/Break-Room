@@ -18,6 +18,7 @@ Open `http://127.0.0.1:8000/index.html`. Keep the full folder structure; links u
 | --- | --- |
 | Lowball | Four Daily price guesses, AU/US/UK/CA selection, generated pixel-art items and free Unlimited practice. |
 | Stake | Five Daily trivia questions, 1–3-chip bets and a 30-second timer after each bet; Unlimited practice. A timeout loses the bet. |
+| Laser | Four untimed mirror puzzles, first-fire Daily scoring, unscored retries/solutions and free practice. 160 solver-checked boards. |
 | Prior | Five untimed earlier-event choices, progressive gap bands, timeline/date reveals and free endless practice. 128 scoped events. |
 | Pack | Three untimed easy/medium/hard packing puzzles, a visual bag, personalized swaps and free Unlimited practice. 180 validated bags. |
 | Stack Up | Five Daily ordering sets, drag/touch/keyboard controls, 90 seconds per stack and position feedback; Infinite practice. |
@@ -90,3 +91,7 @@ Pack is now a real fourth game, with the name still provisional. See [its implem
 ## Prior integration
 
 Prior is the fifth game, with the name still provisional. See [its implementation notes](games/prior/README.md) and [candid prototype review](design/prototypes/prior/REVIEW.md). Existing Supabase projects run [supabase/prior.sql](supabase/prior.sql) **last**, after the earlier setup/social migrations; it also includes Pack support. Fresh projects use updated setup then friends. Browser play and local profiles work before the migration. Event source references are included, but independent source verification and human difficulty checks remain part of the prelaunch audit.
+
+## Laser integration
+
+Laser is the sixth game. See [its implementation notes](games/laser/README.md). Existing Supabase projects now run the complete [Laser migration](supabase/laser.sql) **last**; it includes Pack/Prior and supersedes their earlier migration instructions above. Fresh projects use updated setup then Friends. Local play works immediately; live cloud/Friends support needs this owner-applied SQL. The original prototype is preserved outside the build.
