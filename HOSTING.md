@@ -31,7 +31,7 @@ In the managed cloud environment, `/usr/bin/chromium` is already available; the 
 
 `npm test` runs these in order:
 
-1. A content inventory/review report, followed by content-tool, calendar/DST, Arcade scoring, account/cloud/friend database security, real local profile, question-bank and independent-maths checks.
+1. Shared static-footer consistency and a content inventory/review report, followed by content-tool, calendar/DST, Arcade scoring, account/cloud/friend database security, real local profile, question-bank and independent-maths checks.
 2. `npm run build`: a clean plain-file artifact in `dist/`.
 3. `npm run check`: all shipped local HTML/CSS references, JSON and JavaScript syntax (including inline engines), and exclusions for development-only content.
 4. `npm run test:browser`: every non-unit browser test in `tests/`, including actual complete game flows, profile/scoring, artwork, timers, sharing, saved-state migrations, reset boundaries, keyboard/touch controls and responsive layouts. A temporary server mounts the production artifact under `/Midnight-Arcade/`, not the origin root. The template and template-parity tests use a separate source mount because the development starter is intentionally not published.

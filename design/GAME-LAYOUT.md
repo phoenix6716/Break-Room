@@ -43,7 +43,7 @@ At widths below 1100px the reset card moves above the modes, aligned right withi
 | `#help-popup` | Objective, instructions | Shared popup appearance, close/Got it, accessible focus | Actual rules and game-specific timing/scoring |
 | `#stats-popup` | `[data-detail-stat]` | Extended stats popup and general metrics | Real stats, achievement metric, truthful storage description |
 | `#game-results-template` | Result title/score/summary | Reuse panel slot; honest result/share feedback | Real result content and copying, no default fake points |
-| Shared site footer | Existing site links | Site-level navigation only | Universal policies later when requested |
+| Shared site footer | All games / Privacy / Terms / Contact & data help | Static site-level navigation below the game | `npm run legal:sync`; read `LEGAL.md` |
 
 ## Fixed visual and interaction rules
 
@@ -55,7 +55,7 @@ At widths below 1100px the reset card moves above the modes, aligned right withi
 - Quick stats must come from real completed records. No fake balance, leaderboard, percentile, sample streak, hidden completion writes or sample share score. Local browser storage is not cross-device account sync.
 - Modal background content must be inert; Tab stays inside; Escape/backdrop/close buttons work; focus returns to the opener. Respect reduced motion, visible keyboard focus and touch targets.
 - Sound is optional. Do not add a fake toggle or claim audio works when it is not implemented. If present, centre it immediately beneath the game; retain the preference when storage works.
-- No standalone per-game Privacy/Terms/Refunds row or price/business disclaimer. The user removed Lowball's old standalone legal footer and plans universal legal content later. Do not invent it now.
+- Use the universal static footer and shared policies; run `npm run legal:sync` when adding a page. Keep it below the game/cloud status, outside the centred playing shell. Do not restore Lowball’s standalone Privacy/Terms/Refunds row or business/provider placeholders. See `LEGAL.md`.
 - Use local assets and explicit `index.html` routes, including navigation/share targets, so downloaded copies retain their structure. Do not load Stake's data/engine or old demo state code to obtain a layout.
 
 ## Stake-specific content that is intentionally absent

@@ -71,4 +71,8 @@ Only the checked `dist/` artifact is published by GitHub Actions after success o
 - `accounts.js`, `cloud-saves.js`, `friends.js`, `supabase/`: account ownership, sync and private social comparisons.
 - `games/lowball/engine/icons/generated/` and `item-art.js`: generated PNG artwork with explicit mappings. No code-drawn substitutes or unrelated fallback images.
 
-Keep the left Menu drawer, centred brand/game, header stats and tools, right reset rail, and optional working sound toggle below the game. Preserve real saves, scoring, generated artwork, circular Stake chips and game-specific mechanics. No standalone Lowball legal footer is required; universal legal pages remain future work. Read [AGENTS.md](AGENTS.md) before extending the project; older `design/prototypes/` and generic placeholder pages are historical references, not the canonical new-game standard.
+Keep the left Menu drawer, centred brand/game, header stats and tools, right reset rail, and optional working sound toggle below the game. Preserve real saves, scoring, generated artwork, circular Stake chips and game-specific mechanics. Use the universal Privacy, Terms and Contact/data-help pages with the shared static footer; see [LEGAL.md](LEGAL.md). Read [AGENTS.md](AGENTS.md) before extending the project; older `design/prototypes/` and generic placeholder pages are historical references, not the canonical new-game standard.
+
+## Privacy, terms and help
+
+[Privacy](privacy.html), [Terms of play](terms.html) and [Contact & data help](contact.html) apply across all games. The footer is shared static HTML and works without JavaScript. Run `npm run legal:sync` after adding pages; CI checks for drift. Legacy Lowball policy links redirect to these universal pages. See [LEGAL.md](LEGAL.md) for maintenance and remaining owner-supplied launch details.

@@ -1,35 +1,21 @@
-# Lowball
+# Lowball engine inside Break Room
 
-A daily price-guessing game. Single-page site: open `index.html`, no build step.
+Open the public wrapper at `games/lowball/index.html`; this directory is its embedded game engine. Serve the whole repository so shared assets, accounts and the Sydney clock can load. Read the root README, `CONTENT.md` and `ACCOUNTS.md` before changing it.
 
-## Before launch
-- Open `site-config.js` and fill in your business name, ABN, support email and domain. The privacy policy, terms and refund pages read from it.
-- Have a lawyer read `privacy.html`, `terms.html` and `refunds.html` before you take payments or show ads.
-- When you add an ad network, set `adsEnabled: true` in `site-config.js` (turns on the cookie banner) and load the ad script inside `PC_CONSENT.onGranted(...)`.
-- Replace `YOURDOMAIN.com` in the `<head>` of `index.html` with the real domain.
-- Add the analytics script tag in the `<head>` (see the comment there).
-- Prices were last checked on the date in `PRICES_CHECKED` in `index.html`.
+## Current service and policies
 
-## Daily reset
-The daily puzzle changes at midnight Sydney time (`Australia/Sydney`).
+Unlimited is free (`SITE.unlimitedFree`); advertising, payments, analytics and the old percentile service are not enabled. Dormant hooks are not installed integrations. Do not add tracking scripts or turn on monetization without deliberately implementing the feature and updating the universal policies first.
 
-## Adding items
-Add a row to `ITEMS` in `index.html`, add its icon file to `icons/`, and map it in `ICON_FILES`.
+Privacy, Terms and Contact/data help live at the site root. The old local privacy/terms/refunds URLs only redirect to those pages. The wrapper has the universal footer; do not add another legal footer inside the iframe. `site-config.js` no longer supplies invented business/ABN/support/provider details. See `LEGAL.md` for maintenance and owner-supplied launch details.
 
-## Percentile ("Better than 72% today")
-Hidden until `statsApi` in `site-config.js` is set to your server's base URL. The server needs two endpoints. `day` is the game's day number and `score` is the player's daily average (0 to 100):
-- `POST {statsApi}/score` with JSON `{ "day": 15, "score": 89 }`. Stores the score and replies `{ "percentile": 72.4, "players": 310 }`. The game sends this once per player per day.
-- `GET {statsApi}/percentile?day=15&score=89`. Replies with the same JSON without storing anything. The game calls it when a player returns after finishing.
+The production builder fills social URL/image metadata using `SITE_URL`; copied result links retain the wrapper's repository URL path. The public GitHub Pages URL does not automatically migrate saves from downloaded files or another origin.
 
-`percentile` is the share of that day's players (0 to 100) who scored lower. The server must allow requests from your site (CORS).
+## Daily reset, content and artwork
 
-## Unlimited paywall
-Daily is free. Unlimited shows a locked screen until `localStorage.pc_pro` is `"1"`. Set these in `site-config.js`:
-- `unlimitedPrice`: text shown on the locked screen (placeholder `A$9.99`).
-- `checkoutUrl`: your Lemon Squeezy checkout link. While empty, Buy says it is not open yet.
-- `restoreApi`: a URL that accepts `POST { "key": "<email or licence key>" }` and replies `{ "ok": true }` for a valid purchase. While empty, Restore says it is not available yet.
+Daily changes at midnight Australia/Sydney through the shared clock. Do not restore one-time Daily reset migrations. Editing pool size/order or price values can affect date-seeded unfinished games; follow the compatibility/review workflow in `CONTENT.md` rather than silently rewriting them.
 
-This lock only runs in the browser, so anyone who edits the page can skip it. A real paywall needs the server to hold the prices and check the purchase.
+Items live in `ITEMS` in `index.html`. Each needs its own generated PNG in `icons/generated/` and explicit `item-art.js` mapping. Keep the generated illustrations/gems; do not substitute code-drawn icons. The inherited `PRICES_CHECKED` date is a display value, not proof of current sourced local retail prices. The content report records this evidence gap.
 
-## Player stats
-Streak, best streak, played and the 14 day chart are stored on the player's device (`pc_history`, `pc_streak`, and so on). Clearing browser data resets them.
+## Saved progress
+
+Guest progress and preferences use native `pc_*` browser keys. Accounts can explicitly activate private Daily cloud snapshots and optionally import guest progress; see `ACCOUNTS.md` for per-user recovery copies, sync conflicts, export limits and logout behavior. Clearing site data can erase unsynced progress and does not delete server data. Profile and Friends calculate common Arcade scores alongside Lowball's native average, as documented in `SCORING.md`.

@@ -31,3 +31,7 @@ Do not import `games/stake/table.css`, `timer.css`, `questions.js`, its inline e
 ## Existing-engine example
 
 `games/stack-up/` applies this shared shell to a real game. It keeps its own engine and saved-state format, moves its live timer/score into the engine area, and uses its existing dialog/mode handlers with the shared visuals and keyboard conventions. When migrating an existing game, adapt those handlers instead of loading duplicate `template.js` handlers over them.
+
+## Universal footer
+
+The starter includes the same static All games / Privacy / Terms / Contact & data help footer as the live site, styled by `legal.css`. Keep it below the playing shell and use the site-wide policies. After promoting a new game to its production route, run `npm run legal:sync` to apply the shared definition. See [`LEGAL.md`](../../LEGAL.md); do not add a separate game-specific legal row.

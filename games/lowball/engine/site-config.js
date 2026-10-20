@@ -1,13 +1,7 @@
-// Fill these in once. The legal pages and the consent banner read from here.
+// Active Lowball feature configuration. Universal policies live at the site root.
 window.SITE = {
-  business: "[YOUR NAME OR BUSINESS NAME]",
-  abn: "[YOUR ABN]",
-  email: "support@YOURDOMAIN.com",
-  domain: "YOURDOMAIN.com",
+  domain: "",
   hosting: "GitHub Pages",
-  analytics: "Plausible",
-  payments: "Lemon Squeezy",
-  updated: "16 October 2026",
   // Set to true when you add an ad network. This turns on the consent banner.
   adsEnabled: false,
   // Unlimited paywall. Leave checkoutUrl empty until Lemon Squeezy is set up (the Buy button then says it is not open yet).
