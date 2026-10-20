@@ -1,3 +1,13 @@
+## Real friends and private score comparisons (20 October 2026)
+
+Full `npm test` passed all 27 suites (9 unit/database/maths and 18 browser), including all existing game/account regressions. The artifact passed checks for 320 files, 565 local references and 30 parsed scripts. Real PostgreSQL tests install/reinstall the migration, exercise requests and acceptance/cancellation/decline/removal/blocking across three accounts, and verify private table/helper access, anonymous/outsider denial and immediate server revocation after sharing off/removal. Existing game-save access rules remain intact.
+
+Server/client scoring parity passes for real native fixtures, zero/negative results, pending/malformed/future exclusions, Lowball history/last-result fallback, the exact 120-day window, 30 nonuniform Stake-bet/timeout cases, Stack Up bounds, and frozen legacy answer permutations across 120 dates. The added authenticated-helper denial assertion also passed in a final focused database run.
+
+The official-client browser test uses two browser contexts and the real PostgreSQL social RPC implementations; only email authentication transport is mocked. It passed codes/copy, requests/acceptance/removal/block/unblock, Today/history/game filtering, equal-game averages and sample counts, opt-in sharing/revocation, safe text rendering of HTML-like names, missing migration/offline errors, cross-tab logout cleanup, disabled no-JavaScript forms and 320/390/768/1100/1440px overflow checks. Desktop/mobile screenshots were visually inspected. No mock players are published in the site.
+
+These tests neither create live users/send invitations nor apply the migration to Supabase. The project owner must run `supabase/friends.sql` after `setup.sql`; see `FRIENDS.md`. Hosted Actions completion and live two-account friend activation are separate verification steps. Local logs: `/tmp/br-friends-final.log` and `/tmp/br-friends-db-final.log`.
+
 ## Account redirect race and blocked deployment (20 October 2026)
 
 The failed GitHub Actions run reported `page.waitForURL: net::ERR_ABORTED` at the cross-tab logout check. Save-generation, ownership and Supabase authentication events could each call `location.replace` before the first navigation finished. `accounts.js` now routes account navigation through one guarded helper so subsequent notifications cannot restart it. Browser checks wait for account-aware game controls, begin waiting before triggering logout/sync, assert the destination is ready and cover bursts of repeated save notifications.

@@ -1,3 +1,7 @@
+## Friends and comparisons
+
+Real friend codes, accepted requests, score sharing, remove/block controls and Today/120-day Arcade comparisons replace the prototype feed. Apply the additional [`supabase/friends.sql`](supabase/friends.sql) migration as documented in [FRIENDS.md](FRIENDS.md). Friends see only server-derived completed Daily scores from synced saves; raw answers, guesses and emails stay private.
+
 ## Accounts and cloud saves
 
 Email/password sign-up, confirmation, login, password recovery and private native-game cloud snapshots use Supabase. Guest play remains available. Activate cloud saves explicitly from `account.html`; importing this browser’s guest progress is optional. See [ACCOUNTS.md](ACCOUNTS.md) for required database/redirect/email setup, account isolation, conflict rules, offline behavior and verification limits. Public client configuration alone does not activate the database.
@@ -12,7 +16,7 @@ Every live Daily now reports a shared Arcade score alongside native chips/points
 
 ## Real local profile
 
-`profile.html` now reads completed Daily records from Lowball, Stake and Stack Up. It shows each game’s own score scale, real play counts and saved-history streaks, today’s checklist, recent results, a 14-day activity view and six achievements derived from available records. There is no sample identity or friend code. The shared Arcade average is calculated separately from the original per-game scores. Supabase accounts and cloud saves are implemented; project activation instructions are in [ACCOUNTS.md](ACCOUNTS.md). Friends remain future work.
+`profile.html` now reads completed Daily records from Lowball, Stake and Stack Up. It shows each game’s own score scale, real play counts and saved-history streaks, today’s checklist, recent results, a 14-day activity view and six achievements derived from available records. There is no sample identity or friend code. The shared Arcade average is calculated separately from the original per-game scores. Supabase accounts and cloud saves are implemented; project activation instructions are in [ACCOUNTS.md](ACCOUNTS.md). Friends and private score comparisons are implemented; see [FRIENDS.md](FRIENDS.md) for the additional database migration.
 
 `profile-records.js` is a read-only adapter; it does not start game engines, migrate saves, apply replay resets or write storage. Legacy Stake scores reconstruct the original 164-question option permutations without loading a game. Lowball lifetime plays come from its saved counter; best/average/activity use its retained score history (normally up to 121 days locally; cloud merges can preserve older results), with its stored last result as a fallback. Other incomplete, unsupported, invalid or future records are excluded. The page explains these limits and refreshes after storage changes, returning to the tab and the shared Sydney day boundary.
 
@@ -82,7 +86,7 @@ The homepage is `index.html`; each game has a standalone route in `games/<id>/`.
 - **Stake** — five daily trivia questions, chip betting, local progress/statistics, and playable Unlimited practice. Daily reset is midnight in Australia/Sydney, shared with Lowball and the homepage countdown.
 - **Coming soon** — Pixel Pairs, Word Forge, Gridlock, Number Drop, Memory Lane, and Mystery Cabinet. Their pages intentionally preserve the default game layout for future integrations. They do not accept attempts or create demonstration scores.
 
-The homepage lists Lowball and Stake first. One compact introduction and a live universal countdown lead into the original mixed game grid. Availability is shown beside the games heading rather than in separate statistics panels. Homepage effects are quieter and supporting text is larger. Friends remains an explicitly marked prototype with disabled submission controls. Login/signup now connect to Supabase; see `ACCOUNTS.md` for database and authentication activation. The profile reads real native-game results from the active browser save area. Lowball's external statistics, checkout, and restore services remain unset in `games/lowball/engine/site-config.js`.
+The homepage lists Lowball and Stake first. One compact introduction and a live universal countdown lead into the original mixed game grid. Availability is shown beside the games heading rather than in separate statistics panels. Homepage effects are quieter and supporting text is larger. Friends now uses accepted code-based requests and explicit score sharing; no example players/scores remain. Login/signup now connect to Supabase; see `ACCOUNTS.md` for database and authentication activation. The profile reads real native-game results from the active browser save area. Lowball's external statistics, checkout, and restore services remain unset in `games/lowball/engine/site-config.js`.
 
 ## Shared files
 

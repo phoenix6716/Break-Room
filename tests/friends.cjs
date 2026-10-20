@@ -1,0 +1,59 @@
+/* Browser + official auth client + real PostgreSQL friend RPCs. Only email auth is mocked. */
+const assert=require('node:assert/strict'),fs=require('node:fs'),{PGlite}=require('@electric-sql/pglite'),{chromium}=require('playwright');
+const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
+const ids={alice:'00000000-0000-4000-8000-000000000001',bob:'00000000-0000-4000-8000-000000000002'};
+const jwt=name=>[Buffer.from('{"alg":"HS256","typ":"JWT"}').toString('base64url'),Buffer.from(JSON.stringify({sub:ids[name],role:'authenticated',exp:Math.floor(Date.now()/1000)+3600})).toString('base64url'),'test-signature'].join('.');
+const user=name=>({id:ids[name],email:name+'@example.com',aud:'authenticated',role:'authenticated',created_at:new Date().toISOString(),app_metadata:{provider:'email'},user_metadata:{display_name:name==='alice'?'Alice':'Bob'}});
+let offline=false,missing=false,queue=Promise.resolve();
+(async()=>{const db=new PGlite();let browser;try{
+ await db.exec(`create role anon;create role authenticated;create schema auth;create table auth.users(id uuid primary key);create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;grant usage on schema auth to anon,authenticated;grant execute on function auth.uid() to anon,authenticated;`);
+ for(const id of Object.values(ids))await db.query('insert into auth.users values($1)',[id]);
+ await db.exec(fs.readFileSync('supabase/setup.sql','utf8'));await db.exec(fs.readFileSync('supabase/friends.sql','utf8'));
+ const today=(await db.query("select timezone('Australia/Sydney',now())::date::text as d")).rows[0].d,day=(Date.parse(today+'T00:00:00Z')-Date.UTC(2026,9,1))/86400000;
+ const qs=Array.from({length:5},()=>({q:'Secret question',c:'Category',f:'Secret answer',o:['A','B','C'],a:0}));
+ const stack=points=>({version:2,day:today,round:4,score:points,streak:5,results:Array.from({length:5},()=>({correct:true,points:points/5,mistakes:0})),order:[1,2,3,4,5],deadline:1,mistakes:0,status:'complete',stacks:Array.from({length:5},()=>({prompt:'Secret stack',fact:'Secret fact',ends:['First','Last'],cards:Array.from({length:5},(_,i)=>({name:'Item',value:i+1}))}))});
+ for(const name of ['alice','bob'])for(const [game,data]of Object.entries({lowball:{pc_history:JSON.stringify(name==='alice'?{[day]:80}:{[day]:0,[day-1]:100})},stake:{['stake:d:'+today]:JSON.stringify(name==='alice'?{b:[1,1,1,1,1],p:[0,0,0,0,0],qs}:{b:[3],p:[],qs})},'stack-up':{['break-room:stack-up:daily:'+today]:JSON.stringify(stack(name==='alice'?15500:31000))}}))await db.query('insert into public.game_saves(user_id,game,data) values($1,$2,$3)',[ids[name],game,JSON.stringify(data)]);
+ browser=await chromium.launch({executablePath:process.env.ARCADE_CHROMIUM||'/usr/bin/chromium',args:['--no-sandbox']});
+ async function context(){const ctx=await browser.newContext({permissions:['clipboard-read','clipboard-write']});await ctx.route('https://*.supabase.co/**',async route=>{
+  if(offline)return route.abort('internetdisconnected');const req=route.request(),url=new URL(req.url()),body=req.postDataJSON(),headers={'access-control-allow-origin':'*','access-control-allow-headers':'*','access-control-allow-methods':'GET,POST,PUT,OPTIONS','content-type':'application/json'};
+  const send=(data,status=200)=>route.fulfill({status,headers,body:JSON.stringify(data)});if(req.method()==='OPTIONS')return send({});
+  if(url.pathname.endsWith('/token')){const name=body.email.startsWith('bob')?'bob':'alice';return send({access_token:jwt(name),refresh_token:'refresh-'+name,token_type:'bearer',expires_in:3600,expires_at:Math.floor(Date.now()/1000)+3600,user:user(name)});}
+  if(url.pathname.endsWith('/logout'))return send({});
+  const claims=JSON.parse(Buffer.from(req.headers().authorization.slice(7).split('.')[1],'base64url').toString());
+  if(url.pathname.includes('/rpc/')){
+   if(missing)return send({code:'PGRST202',message:'Function missing'},404);
+   const name=url.pathname.split('/').at(-1);assert.ok(['friend_hub','friend_scores'].includes(name));
+   let resolveResult;const result=new Promise(resolve=>resolveResult=resolve);
+   queue=queue.then(async()=>{try{await db.exec('reset role;set role authenticated;');await db.query("select set_config('request.jwt.claim.sub',$1,false)",[claims.sub]);const args=name==='friend_hub'?[body.p_action||'list',body.p_code||null,body.p_target||null,body.p_name||null,body.p_share??null]:[];const r=await db.query(name==='friend_hub'?'select public.friend_hub($1,$2,$3,$4,$5) as x':'select public.friend_scores() as x',args);resolveResult({value:r.rows[0].x});}catch(error){resolveResult({error:error.message});}});
+   const r=await result;return r.error?send({message:r.error},400):send(r.value);
+  }
+  throw Error('Unexpected endpoint '+url.pathname);
+ });return ctx;}
+ async function login(page,name){await page.goto(base+'/login.html');await page.locator('#email').fill(name+'@example.com');await page.locator('#password').fill('password123');await page.locator('button[type=submit]').click();await page.waitForURL('**/account.html');await page.goto(base+'/friends.html');await page.locator('#friend-onboarding').waitFor();}
+ async function enable(page){await page.locator('#initial-sharing').check();await page.locator('#enable-friends button').click();await page.locator('#my-friend-code').waitFor();await page.waitForFunction(()=>document.querySelectorAll('.friend-score').length===1);return page.locator('#my-friend-code').innerText();}
+ const aCtx=await context(),bCtx=await context(),a=await aCtx.newPage(),b=await bCtx.newPage(),errors=[];for(const p of [a,b])p.on('pageerror',e=>errors.push(e.message));
+ await a.goto(base+'/friends.html');await a.locator('#friend-guest').waitFor();assert.equal(await a.locator('.friend-score').count(),0);
+ await login(a,'alice');missing=true;await a.locator('#enable-friends button').click();await a.locator('#friend-status').filter({hasText:'not installed yet'}).waitFor();missing=false;
+ const codeA=await enable(a);await a.locator('#copy-code').click();assert.equal(await a.evaluate(()=>navigator.clipboard.readText()),codeA);
+ await login(b,'bob');const codeB=await enable(b);
+ const card=(p,name)=>p.locator('.friend-score').filter({has:p.locator('.score-name').filter({hasText:name})});
+ assert.equal(await card(a,'Alice').locator('.overall strong').innerText(),'76.7');assert.equal(await card(b,'Bob').locator('.overall strong').innerText(),'50');
+ async function request(p,code){await p.locator('#friend-code').fill(code);await p.locator('#request-friend button').click();await p.locator('#friend-status').filter({hasText:'Request sent'}).waitFor();}
+ await request(a,codeB);assert.equal(await a.locator('.friend-score').count(),1);
+ await b.locator('#refresh-friends').click();await b.getByRole('button',{name:'Accept Alice',exact:true}).click();await b.waitForFunction(()=>document.querySelectorAll('.friend-score').length===2);
+ await a.locator('#refresh-friends').click();await a.waitForFunction(()=>document.querySelectorAll('.friend-score').length===2);
+ await a.setViewportSize({width:1440,height:1050});await a.screenshot({path:'/tmp/br-friends-desktop.png',fullPage:true});await a.setViewportSize({width:390,height:1000});await a.screenshot({path:'/tmp/br-friends-mobile.png',fullPage:true});await a.setViewportSize({width:1440,height:1050});
+ assert.equal(await card(a,'Bob').locator('.overall strong').innerText(),'50');assert.match(await card(a,'Bob').innerText(),/2 games · 2 completed Dailies/);assert.ok(!await a.locator('#friend-content').innerText().then(t=>t.includes('Secret')));
+ await a.locator('#comparison-window').selectOption('history');assert.equal(await card(a,'Bob').locator('.overall strong').innerText(),'75');await a.locator('#comparison-game').selectOption('stake');assert.equal(await card(a,'Bob').locator('.overall strong').innerText(),'—');await a.locator('#comparison-window').selectOption('today');await a.locator('#comparison-game').selectOption('all');
+ await a.locator('.friend-settings summary').click();await a.locator('#share-scores').uncheck();await a.locator('#friend-settings button').click();await a.locator('#friend-status').filter({hasText:'setting are saved'}).waitFor();await b.locator('#refresh-friends').click();await b.waitForFunction(()=>[...document.querySelectorAll('.friend-score')].some(c=>c.textContent.includes('Alice')&&c.querySelector('.overall strong').textContent==='—'));
+ await a.locator('#share-scores').check();await a.locator('#friend-name').fill('<b>Alice</b>');await a.locator('#friend-settings button').click();await a.locator('#friend-status').filter({hasText:'setting are saved'}).waitFor();assert.equal(await a.locator('.score-name b').count(),0);
+ await b.locator('#refresh-friends').click();await b.getByRole('button',{name:'Remove <b>Alice</b>',exact:true}).click();await b.waitForFunction(()=>document.querySelectorAll('.friend-score').length===1);
+ await request(b,codeA);await a.locator('#refresh-friends').click();await a.getByRole('button',{name:'Block Bob',exact:true}).click();await a.locator('#blocked-list button').filter({hasText:'Unblock'}).waitFor({state:'attached'});await b.locator('#friend-code').fill(codeA);await b.locator('#request-friend button').click();await b.locator('#friend-status').filter({hasText:'unavailable'}).waitFor();
+ await a.locator('#blocked-list').locator('..').locator('summary').click();await a.getByRole('button',{name:'Unblock Bob',exact:true}).click();
+ for(const width of [320,390,768,1100,1440]){await a.setViewportSize({width,height:1000});assert.equal(await a.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'Friends fits '+width);}
+ offline=true;await a.locator('#refresh-friends').click();await a.locator('#friend-status').filter({hasText:'Could not connect'}).waitFor();assert.equal(await a.locator('.friend-score').count(),0,'Offline errors clear stale comparison scores');offline=false;await a.locator('#refresh-friends').click();await a.waitForFunction(()=>document.querySelectorAll('.friend-score').length===1);
+ const logout=await aCtx.newPage();await logout.goto(base+'/account.html');await logout.locator('#sign-out').click();await a.locator('#friend-guest').waitFor();assert.equal(await a.locator('.friend-score').count(),0,'Cross-tab logout clears friend data');
+ assert.deepEqual(errors,[]);await aCtx.close();await bCtx.close();
+ const noJS=await browser.newContext({javaScriptEnabled:false}),fallback=await noJS.newPage();await fallback.goto(base+'/friends.html');for(const el of await fallback.locator('fieldset').all())assert.ok(await el.evaluate(e=>e.disabled));await noJS.close();
+ console.log('PASS friends browser + real PostgreSQL: login/guest/setup errors, codes/copy, request/accept/remove/block/unblock, real scores/zero/missing games/120-day averages, privacy switch, XSS-safe names, offline errors, logout cleanup, five responsive widths and no-JS form safety.');
+ }finally{if(browser)await browser.close();await db.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

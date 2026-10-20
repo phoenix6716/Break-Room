@@ -5,6 +5,7 @@
  const base=new URL('.',document.currentScript.src),accountURL=new URL('account.html',base).href;
  const generationKey='br:cloud:generation',ownerKey='br:cloud:owner',guestKey='br:cloud:guest',cacheKey=id=>'br:cloud:cache:'+id;
  const $=id=>document.getElementById(id),isAccount=!!$('account-content'),isGame=location.pathname.includes('/games/');
+ let resolveReady;const ready=new Promise(resolve=>resolveReady=resolve);
  let client=null,session=null,busy=false,lastUploaded='',syncTimer=null,initialOwner=null,redirecting=false;
  // Auth, ownership and generation events can arrive together on logout.
  // Navigate once so a second event cannot abort the first page load.
@@ -32,6 +33,7 @@
   if($('cloud-active'))$('cloud-active').textContent=signed&&owner()===session.user.id?'Cloud saves are active on this browser.':'Choose whether to bring this browser’s guest progress into your account.';
   if($('activate-cloud'))$('activate-cloud').textContent=signed&&owner()===session.user.id?'SYNC & LOAD LATEST SAVES':'USE CLOUD SAVES';
   if($('import-choice'))$('import-choice').hidden=signed&&owner()===session.user.id;
+  window.dispatchEvent(new Event('break-room:auth-change'));
   const note=document.querySelector('.profile-storage-note');
   if(note){const text=signed&&owner()===session.user.id?'Your account saves are active here. Open Account to load newer progress from another device. Unlimited practice is not included.':'Saved on this browser. Sign in and activate cloud saves to play across devices. Unlimited practice is not included.';note.textContent=text;}
  }
@@ -159,9 +161,11 @@
    // Never overwrite game storage while an engine is running. Downloads happen only
    // on the account screen; other pages just upload local changes after play.
    if(!isAccount)syncUpload();
-  }catch(error){status(friendly(error),true);}
+  }catch(error){status(friendly(error),true);}finally{resolveReady();}
  }
  function schedule(){clearTimeout(schedule.timer);schedule.timer=setTimeout(()=>syncUpload(),800);}
- window.BREAK_ROOM_ACCOUNTS=Object.freeze({sync:syncUpload});
+ window.BREAK_ROOM_ACCOUNTS=Object.freeze({sync:syncUpload,ready,getUser:()=>session?.user||null,
+  async friendsRPC(name,args={}){await ready;if(!['friend_hub','friend_scores'].includes(name))throw Error('Unknown friends operation.');if(!client||!session)throw Error('Please sign in to use friends.');const {data,error}=await client.rpc(name,args);if(error)throw error;return data;}
+ });
  boot();
 })();

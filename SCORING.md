@@ -32,3 +32,7 @@ Existing saves are read without alteration and historical Arcade scores are deri
 Future games must provide a documented deterministic 0–100 Daily calculation, preserve native score meaning where appropriate, expose the shared result alongside native values, and register a read-only record adapter. Include endpoint, penalty, pending/timeout, historical compatibility and precision tests. Do not assign arbitrary demo values. Keep version 1 formulas stable; any later scoring change needs explicit versioning and a considered history policy.
 
 Tests: `node tests/arcade-score.cjs`, `node tests/profile-records.cjs`, and `ARCADE_TEST_URL=http://127.0.0.1:8000 node tests/arcade-score-ui.cjs` / `node tests/profile.cjs` with the static server running.
+
+## Private friend comparisons
+
+`supabase/friends.sql` derives version 1 completed Daily scores server-side from private synced snapshots and returns only normalized score records to authorized friends. `friends.js` aggregates those records with the same `BREAK_ROOM_SCORE.summary` used by the profile. Today uses the server's Sydney date; historical comparisons use that date and the same 120-day window. The UI shows game/run sample counts and distinguishes missing results from genuine zeroes. SQL/JavaScript parity, including frozen legacy Stake shuffles and nonuniform bets, is covered by `tests/friends-database.cjs`. Cloud history may preserve older Lowball records; the common comparison window remains 120 days. See `FRIENDS.md` for sharing and data boundaries.
