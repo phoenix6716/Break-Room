@@ -6,7 +6,7 @@ Two historical events: choose the one that happened earlier. Five untimed Daily 
 
 Daily uses midnight Australia/Sydney. A versioned seed selects one wider-gap comparison (60–600 years), two medium (12–59) and two close (1–11). The five pairs use ten distinct events, exclude same-year ties and known direct related milestones (for example building/falling of the Berlin Wall), and randomize the earlier side. Gap bands do not guarantee measured human difficulty. The first pair is deliberately a warm-up.
 
-Unlimited is endless free practice, cycling the three gap bands and avoiding the immediately preceding pair's events. Its active pair and running correct/answered totals stay in memory when changing modes. Practice never affects Daily, streaks, profile, cloud history or achievements. Only Daily survives reload.
+Unlimited is endless free practice with Mixed/Easy/Medium/Hard selection. Mixed cycles the three gap bands. Selection applies to the next pair. Today's Daily events are held out; practice prefers avoiding the previous 40 event IDs and relaxes that window gradually only when a selected gap band has no eligible pair. A shuffled pair deck avoids repetition within its eligible pool. Its active pair, correct/answered totals and best correct run stay in memory when changing modes. Practice never affects Daily, streaks, profile, cloud history or achievements. Only Daily survives reload.
 
 ## Event authoring and factual review
 
@@ -18,7 +18,7 @@ Dates and milestone wording were checked during implementation and known histori
 
 ## Saving and integration
 
-`prior-model.js` is the pure version 1 date/event/pair/save/scoring contract. `prior.js` owns actual controls and persistence. `shell.js` supplies the canonical accessible Help/Stats and mode controls. The shared left Menu, title/stats/tools row, reset rail, mode tabs and footer remain intact; there is no fake audio control.
+`prior-model.js` is the pure version 1 date/event/pair/save/scoring contract. `prior.js` owns actual controls and persistence. `shell.js` supplies the canonical accessible Help/Stats and mode controls. The shared left Menu, title/stats/tools row, reset rail, mode tabs and footer remain intact; the shared optional synthesized sound control is initially off.
 
 Each `break-room:prior:daily:YYYY-MM-DD` entry stores `{version:1,day,phase,round,picks,pairs}`. All five pairs include full event snapshots. The fifth submitted answer counts as completion even before viewing the summary. Phase is `play`, `review` or `summary`; picks are integer side indices, not an asserted score. Browser reload, bank reordering and later event revisions must preserve valid snapshots rather than regenerating questions. Changing the working name must not change the native prefix or rewrite history.
 

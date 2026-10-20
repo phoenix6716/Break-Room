@@ -2,7 +2,7 @@
 
 A weight-and-usefulness puzzle, not a spatial packing game. Select items under the bag’s weight limit and maximize usefulness. All weights and usefulness values are **fictional puzzle values**, not real product measurements or travel advice.
 
-Daily has three untimed bags: easy, medium and hard. Selections can be changed freely until submitted; overweight or empty submissions are rejected. Submitting is final and reveals the unique best pack, with leave/add suggestions computed from the player’s actual selection. The third submission completes the Daily, even before opening the final summary. Unlimited is free, untimed practice and does not affect Daily records, streaks or cloud history. Switching modes preserves both active runs in that tab; only Daily survives reload.
+Daily has three untimed bags: easy, medium and hard. Selections can be changed freely until submitted; overweight or empty submissions are rejected. Submitting is final and reveals the unique best pack, with leave/add suggestions computed from the player’s actual selection. The third submission completes the Daily, even before opening the final summary. Unlimited is free, untimed practice with Mixed/Easy/Medium/Hard selection, a non-repeating eligible bag pool and session usefulness/perfect-pack totals. Mixed cycles easy/medium/hard. Settings apply to the next bag; today’s Daily snapshots are held out of practice. It does not affect Daily records, streaks or cloud history. Switching modes preserves both active runs in that tab; only Daily survives reload.
 
 ## Content and scoring
 
@@ -14,7 +14,7 @@ Native score is total usefulness across all three bags. Arcade score is `100 × 
 
 ## Integration and compatibility
 
-`pack-model.js` is the pure versioned puzzle/save/scoring contract, shared by the engine and read-only records/cloud adapters. `pack.js` owns real controls and saves; `shell.js` provides the canonical Help/Stats/mode interactions. The layout retains the left Menu drawer, centred Streak/Best/Played, common reset rail, Daily/Unlimited and universal footer. Pack has no audio, so there is no fake sound button. Comparisons use Break Room Friends rather than the prototype’s selection-encoding challenge codes or extra primary tab.
+`pack-model.js` is the pure versioned puzzle/save/scoring contract, shared by the engine and read-only records/cloud adapters. `pack.js` owns real controls and saves; `shell.js` provides the canonical Help/Stats/mode interactions. The layout retains the left Menu drawer, centred Streak/Best/Played, common reset rail, Daily/Unlimited and universal footer. Pack has the shared optional synthesized sound control, initially off and centred below the game. Comparisons use Break Room Friends rather than the prototype’s selection-encoding challenge codes or extra primary tab.
 
 Daily keys are `break-room:pack:daily:YYYY-MM-DD`, using midnight Australia/Sydney. Version 1 saves include all three puzzle snapshots, picks, selection, round and phase (`play`, `review`, `summary`). New banks must preserve saved snapshots; never regenerate an existing run or reset another game. Cloud merge advances by round/phase, with the first completed cloud result retained and equal-stage cloud choices winning ties. Guest/account ownership follows the same explicit consent and restoration rules as the other games.
 

@@ -592,7 +592,7 @@
 <link rel="stylesheet" href="counter.css">
 <link rel="stylesheet" href="../../../daily-reset.css">
 
-<script src="../../../daily-clock.js"></script><link rel="stylesheet" href="../../../game-access.css"><link rel="stylesheet" href="../../../game-feel.css"><script src="../../../game-feel.js" data-sound="existing"></script></head>
+<script src="../../../daily-clock.js"></script><link rel="stylesheet" href="../../../game-access.css"><link rel="stylesheet" href="../../../game-feel.css"><script src="../../../game-feel.js" data-sound="existing"></script><link rel="stylesheet" href="../../../practice-session.css"><script src="../../../practice-session.js"></script></head>
 <body>
 <p id="lowball-announcement" class="game-sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
 <div class="wrap">
@@ -634,6 +634,7 @@
 
   <div class="progress-dots" id="progressDots"></div>
 
+  <div id="lowball-practice"></div>
   <div class="card" id="lowball-mode-panel" role="tabpanel" aria-labelledby="normalModeBtn">
     <div id="playArea">
       <div class="counter-topline"><span><i aria-hidden="true"></i> THE PRICE IS YOURS TO GUESS</span><span id="counterItemNumber">ITEM 01 / 04</span></div>
@@ -695,8 +696,9 @@
     <div class="modal-panel">
       <h2 class="modal-title" id="helpTitle">How to play</h2>
       <div class="how-step"><span class="how-n">1</span><span>See an everyday item.</span></div>
-      <div class="how-step"><span class="how-n">2</span><span>Guess its price in your country's currency.</span></div>
-      <div class="how-step"><span class="how-n">3</span><span>The closer you are, the higher you score.</span></div>
+      <div class="how-step"><span class="how-n">2</span><span>Guess its reference price in your selected currency.</span></div>
+      <div class="how-step"><span class="how-n">3</span><span>The closer you are in either direction, the higher you score. A 1% miss costs about one point.</span></div>
+      <p class="modal-copy">Prices are game reference estimates, not live retailer quotes. Each region has its own prices. Unlimited is free practice and never changes your Daily record.</p>
       <button class="btn-gold" id="helpClose">GOT IT</button>
     </div>
   </div>
@@ -1043,13 +1045,31 @@ function pickDailyItems() {
 }
 let deck = [];
 let deckIndex = 0;
+let practiceQueue = [], practiceRecent = [], practiceSnapshot = null, practicePending = null, dailyDraft = null;
 function newDeck() {
-  const d = ITEMS.slice();
+  const excluded = new Set(pickDailyItems().map(item => item.name));
+  const allowed = ITEMS.filter(item => !excluded.has(item.name));
+  const remainder = practiceQueue.filter(item => !excluded.has(item.name));
+  practiceQueue = [];
+  if (remainder.length) return remainder;
+  const d = allowed.slice();
   for (let i = d.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [d[i], d[j]] = [d[j], d[i]];
   }
-  return d;
+  const recent = new Set(practiceRecent.slice(-12));
+  return d.filter(item => !recent.has(item.name)).concat(d.filter(item => recent.has(item.name)));
+}
+
+function rememberPractice() {
+  if (mode !== "unlimited") return;
+  practiceSnapshot = { deck: deck.slice(), deckIndex, scores: roundScores.slice(), guesses: roundGuesses.slice(), pending: practicePending, draft: guessInput.value, finished: finalScreen.classList.contains("show") };
+}
+function updatePracticePanel() {
+  const slot = document.getElementById("lowball-practice");slot.replaceChildren();if (mode !== "unlimited") return;
+  const count = roundScores.length, average = count ? Math.round(roundScores.reduce((a,b)=>a+b,0)/count) : "—", best = count ? Math.max(...roundScores) : "—";
+  const panel = window.BREAK_ROOM_PRACTICE.panel({id:"lowball-session",summary:count+" priced · "+average+" / 100 average · best guess "+best,note:"Game reference prices, not live retail quotes. Today's Daily items are held out. Session totals stay in this tab."});
+  const finish = document.createElement("button");finish.id="finish-practice";finish.className="btn-outline";finish.type="button";finish.textContent="FINISH SESSION";finish.disabled=!count;finish.hidden=finalScreen.classList.contains("show");finish.onclick=()=>{stopFx();finishUnlimited();};panel.append(finish);slot.append(panel);
 }
 
 // Analytics hook: does nothing until a provider script (Plausible or Umami) is added to <head>.
@@ -1209,6 +1229,7 @@ function renderDots() {
 function showItem() {
   const advancing = resultArea.contains(document.activeElement) || finalScreen.contains(document.activeElement);
   currentItem = mode === "normal" ? roundItems[roundIndex] : deck[deckIndex];
+  if (mode === "unlimited") practicePending = null;
   const emojiEl = document.getElementById("itemEmoji");
   emojiEl.innerHTML = LOWBALL_ART.markup(currentItem);
   document.getElementById("itemName").textContent = currentItem.name;
@@ -1224,6 +1245,7 @@ function showItem() {
   lockScreen.classList.remove("show");
   renderDots();
   stopFx();
+  updatePracticePanel();
   cardPulse("enter");
   // Do not open a phone keyboard or scroll the embed on initial load.
   if (keyboardInput && !document.querySelector(".modal.show")) guessInput.focus({preventScroll:true});
@@ -1271,6 +1293,7 @@ document.addEventListener("pointerdown", e => {
 guessInput.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); submitGuess(); } });
 
 function submitGuess() {
+  if (playArea.style.display === "none") return;
   if (mode === "normal" && getTodayKey() !== loadedDayKey) { location.reload(); return; }
   const guess = parseFloat(guessInput.value);
   if (!Number.isFinite(guess) || guess <= 0) { guessInput.setAttribute("aria-invalid", "true"); document.getElementById("guess-error").textContent = "Enter a price greater than zero."; guessInput.focus(); return; }
@@ -1278,6 +1301,7 @@ function submitGuess() {
   const { score } = computeScore(guess, currentItem.prices[country]);
   roundScores.push(score);
   roundGuesses.push(guess);
+  if (mode === "unlimited") { practicePending = {guess, country}; practiceRecent.push(currentItem.name);practiceRecent=practiceRecent.slice(-12); }
   saveProgress({ guess: guess, country: country });
   SFX.lock();
   renderResult(guess, country, true);
@@ -1301,7 +1325,7 @@ function renderResult(guess, ctry, animate) {
     '<dl class="price-comparison"><div><dt>Your guess</dt><dd>' + symbol + guess.toFixed(2) + '</dd></div>' +
     '<div><dt>Actual price</dt><dd>' + symbol + actual.toFixed(2) + '</dd></div></dl>' +
     '<p class="price-difference">' + offByText(guess, actual, pctOff, symbol) + '</p>' +
-    (checked ? '<p class="result-note">Price checked ' + checked + '</p>' : '');
+    (checked ? '<p class="result-note">Reference prices · ' + checked + '</p>' : '');
   document.getElementById("nextBtn").textContent = mode === "normal" && roundIndex === ROUNDS_PER_DAY - 1 ? "SEE DAILY RESULTS →" : "NEXT ITEM →";
   const sq = document.getElementById("squares");
   sq.classList.remove("pop");
@@ -1316,6 +1340,7 @@ function renderResult(guess, ctry, animate) {
     scoreEl.textContent = score;
   }
   renderDots();
+  updatePracticePanel();
   if (animate) announceLowball(currentItem.name + ": " + score + " out of 100. Your guess " + symbol + guess.toFixed(2) + ". Actual price " + symbol + actual.toFixed(2) + ". " + offByText(guess, actual, pctOff, symbol) + ".");
 }
 
@@ -1337,7 +1362,8 @@ document.getElementById("nextBtn").addEventListener("click", () => {
   }
 });
 
-function finishUnlimited() {
+function finishUnlimited(animate = true) {
+  practiceQueue = deck.slice(deckIndex + (practicePending ? 1 : 0));
   finalScreen.querySelector('.feel-result')?.remove();
   announceLowball("Practice complete. Average score " + Math.round(roundScores.reduce((a,b)=>a+b,0)/roundScores.length) + " out of 100.");
   document.getElementById("final-score-label").textContent = "Practice score / 100";
@@ -1348,20 +1374,21 @@ function finishUnlimited() {
   finalScreen.classList.add("show");
   document.getElementById("shareBtn").focus({preventScroll:true});
   progressDots.style.display = "none";
-  document.getElementById("finalTitle").textContent = "All " + deck.length + " items done";
+  document.getElementById("finalTitle").textContent = roundScores.length + (roundScores.length === 1 ? " item priced" : " items priced");
   document.getElementById("finalPct").hidden = true;
   const totalEl = document.getElementById("finalTotal");
   const fsq = document.getElementById("finalSquares");
   fsq.classList.remove("pop");
   fsq.innerHTML = squaresHTMLForScore(avg);
-  countUp(totalEl, avg, 800, () => celebrate(avg));
-  popGems(fsq);
+  if (animate) { countUp(totalEl, avg, 800, () => celebrate(avg)); popGems(fsq); }
+  else totalEl.textContent=avg;
   const again = document.getElementById("playAgainBtn");
-  again.textContent = "PLAY AGAIN";
+  again.textContent = "NEW SESSION →";
   again.style.display = "block";
-  again.onclick = startUnlimitedMode;
+  again.onclick = () => startUnlimitedMode(true);
   document.getElementById("shareBtn").style.display = "block";
-  window._shareText = "Lowball Unlimited\n" + deck.length + " items  Avg " + avg;
+  window._shareText = "Lowball Unlimited\n" + roundScores.length + " items  Avg " + avg;
+  updatePracticePanel();
 }
 
 function finishNormalRound() {
@@ -1673,6 +1700,7 @@ document.getElementById("restoreGo").addEventListener("click", async () => {
 
 // ---------- Mode + country switching ----------
 function startNormalMode() {
+  rememberPractice();stopFx();document.getElementById("lowball-practice").replaceChildren();
   document.getElementById("final-score-label").textContent = "Arcade score / 100";
   mode = "normal";
   lockScreen.classList.remove("show");
@@ -1727,10 +1755,14 @@ function startNormalMode() {
     roundGuesses = [];
   }
   showItem();
+  if (dailyDraft && dailyDraft.day === todayKey && dailyDraft.index === roundIndex) guessInput.value = dailyDraft.value;
 }
 
-function startUnlimitedMode() {
+function startUnlimitedMode(fresh = false) {
   if (!unlimitedUnlocked()) { showLock(); return; }
+  if (mode === "unlimited" && fresh !== true) return;
+  if (mode === "normal" && playArea.style.display !== "none") dailyDraft={day:getTodayKey(),index:roundIndex,value:guessInput.value};
+  stopFx();
   lockScreen.classList.remove("show");
   mode = "unlimited";
   track("unlimited_start");
@@ -1740,11 +1772,14 @@ function startUnlimitedMode() {
   statStrip.style.display = "none";
   document.getElementById("shareBtn").style.display = "block";
   document.getElementById("playAgainBtn").style.display = "none";
-  roundScores = [];
-  roundGuesses = [];
-  deck = newDeck();
-  deckIndex = 0;
-  showItem();
+  if (practiceSnapshot && fresh !== true) {
+    const saved=practiceSnapshot;deck=saved.deck.slice();deckIndex=saved.deckIndex;roundScores=saved.scores.slice();roundGuesses=saved.guesses.slice();
+    showItem();guessInput.value=saved.draft;
+    if(saved.pending){practicePending=saved.pending;renderResult(saved.pending.guess,saved.pending.country,false);}
+    if(saved.finished){stopFx();finishUnlimited(false);}
+    return;
+  }
+  practiceSnapshot=null;practicePending=null;roundScores = [];roundGuesses = [];deck = newDeck();deckIndex = 0;showItem();
 }
 
 function updateModeTabs() {
