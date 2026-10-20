@@ -36,7 +36,7 @@
     const get=key=>{try{return storage.getItem(key);}catch{unavailable=true;return null;}};
     const parse=key=>{const raw=get(key);if(raw===null)return null;try{return JSON.parse(raw);}catch{skipped++;return null;}};
     const allowed=day=>day && day<=today;
-    const add=(game,date,score,perfect=false)=>records.push({game,date,score,perfect});
+    const add=(game,date,score,perfect=false,arcadeScore=null)=>records.push({game,date,score,perfect,arcadeScore});
     const history=parse('pc_history'), lowDays=new Map();
     if(history!==null && !isObject(history))skipped++;
     if(isObject(history))for(const [key,score] of Object.entries(history)){
@@ -47,7 +47,7 @@
     const last=dateKey(get('pc_last')), lastRaw=get('pc_last_avg');
     const lastScore=lastRaw!==null&&lastRaw.trim()!==''?Number(lastRaw):NaN;
     if(allowed(last)&&Number.isFinite(lastScore)&&lastScore>=0&&lastScore<=100&&!lowDays.has(last))lowDays.set(last,lastScore);
-    for(const [date,score] of lowDays)add('lowball',date,score,score===100);
+    for(const [date,score] of lowDays)add('lowball',date,score,score===100,root.BREAK_ROOM_SCORE.lowball(score));
     const lowProgress=parse('pc_progress');
     if(isObject(lowProgress)&&dateKey(lowProgress.day)===today&&Number.isInteger(lowProgress.idx)&&lowProgress.idx>=0&&lowProgress.idx<4&&Array.isArray(lowProgress.scores)&&lowProgress.scores.length<=4&&lowProgress.scores.every(n=>Number.isFinite(n)&&n>=0&&n<=100)&&!lowDays.has(today))progress.add('lowball');
     let keys=[];
@@ -67,19 +67,20 @@
         else {skipped++;continue;}
         if(value.p.length!==5){if(date===today&&(value.b.length||value.p.length))progress.add(game);continue;}
         const score=value.p.reduce((sum,pick,i)=>sum+(pick===answers[i]?1:-1)*value.b[i],0);
-        add(game,date,score,score===15);
+        add(game,date,score,score===15,root.BREAK_ROOM_SCORE.stake(value.b,value.p,answers));
       }else{
         const valid=isObject(value)&&[1,2].includes(value.version)&&value.day===date&&Number.isInteger(value.round)&&value.round>=0&&value.round<5&&Number.isFinite(value.score)&&Number.isInteger(value.streak)&&value.streak>=0&&Array.isArray(value.order)&&value.order.length===5&&new Set(value.order).size===5&&value.order.every(n=>Number.isInteger(n)&&n>=1&&n<=5)&&Number.isFinite(value.deadline)&&Number.isInteger(value.mistakes)&&value.mistakes>=0&&['playing','review','complete'].includes(value.status)&&Array.isArray(value.results)&&value.results.every(r=>isObject(r)&&typeof r.correct==='boolean'&&Number.isFinite(r.points)&&Number.isInteger(r.mistakes)&&r.mistakes>=0)&&value.results.length===(value.status==='playing'?value.round:value.round+1)&&(value.version===1&&!value.stacks||Array.isArray(value.stacks)&&value.stacks.length===5&&value.stacks.every(s=>isObject(s)&&typeof s.prompt==='string'&&typeof s.fact==='string'&&Array.isArray(s.ends)&&s.ends.length===2&&Array.isArray(s.cards)&&s.cards.length===5&&s.cards.every((c,i)=>isObject(c)&&typeof c.name==='string'&&c.value===i+1))); 
         if(!valid){skipped++;continue;}
         if(value.status!=='complete'||value.round!==4){if(date===today)progress.add(game);continue;}
-        add(game,date,value.score,value.results.every(r=>r.correct&&r.mistakes===0));
+        add(game,date,value.score,value.results.every(r=>r.correct&&r.mistakes===0),root.BREAK_ROOM_SCORE.stackUp(value.score));
       }
     }
     records.sort((a,b)=>b.date.localeCompare(a.date)||a.game.localeCompare(b.game));
+    const arcade=root.BREAK_ROOM_SCORE.summary(records,today);
     const playedRaw=get('pc_played'), lifetime=/^\d+$/.test(playedRaw||'')?Number(playedRaw):0;
     const summaries=games.map(game=>{
       const own=records.filter(r=>r.game===game.id), scores=own.map(r=>r.score), streak=streaks(own.map(r=>r.date),today);
-      return {...game,records:own,played:game.id==='lowball'&&Number.isSafeInteger(lifetime)?Math.max(lifetime,own.length):own.length,
+      return {...game,arcade:arcade.games.find(g=>g.id===game.id),records:own,played:game.id==='lowball'&&Number.isSafeInteger(lifetime)?Math.max(lifetime,own.length):own.length,
         average:scores.length?scores.reduce((a,b)=>a+b,0)/scores.length:null,best:scores.length?Math.max(...scores):null,
         streak:streak.current,bestStreak:streak.best,today:own.some(r=>r.date===today)?'complete':progress.has(game.id)?'progress':'ready'};
     });
@@ -93,7 +94,7 @@
       {id:'stake',name:'High roller',detail:'Finish a Stake Daily with +15 chips.',earned:records.some(r=>r.game==='stake'&&r.perfect)},
       {id:'stack-up',name:'Neat stack',detail:'Clear all five Daily stacks without a wrong guess or timeout.',earned:records.some(r=>r.game==='stack-up'&&r.perfect)}
     ];
-    return {today,records,games:summaries,total,streak,days,achievements,unavailable,skipped};
+    return {today,records,games:summaries,arcade,total,streak,days,achievements,unavailable,skipped};
   }
   root.BREAK_ROOM_RECORDS=Object.freeze({read,dateKey,streaks,legacyStakeAnswers});
 })(typeof window==='undefined'?globalThis:window);

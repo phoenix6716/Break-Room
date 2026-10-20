@@ -1,6 +1,10 @@
+## Shared 0–100 Arcade scores
+
+Every live Daily now reports a shared Arcade score alongside native chips/points. The profile shows each game’s Arcade average and an overall average giving each played game equal weight over the same recent 120-day window, with explicit sample counts. No old saves are rewritten. Read [SCORING.md](SCORING.md) for the formulas, examples, retention limits and future-game contract.
+
 ## Real local profile
 
-`profile.html` now reads completed Daily records from Lowball, Stake and Stack Up. It shows each game’s own score scale, real play counts and saved-history streaks, today’s checklist, recent results, a 14-day activity view and six achievements derived from available records. There is no sample identity, friend code or combined score average. Accounts, friends and cloud sync remain separate future work.
+`profile.html` now reads completed Daily records from Lowball, Stake and Stack Up. It shows each game’s own score scale, real play counts and saved-history streaks, today’s checklist, recent results, a 14-day activity view and six achievements derived from available records. There is no sample identity or friend code. The shared Arcade average is calculated separately from the original per-game scores. Accounts, friends and cloud sync remain separate future work.
 
 `profile-records.js` is a read-only adapter; it does not start game engines, migrate saves, apply replay resets or write storage. Legacy Stake scores reconstruct the original 164-question option permutations without loading a game. Lowball lifetime plays come from its saved counter; best/average/activity use its retained score history (up to 121 days), with its stored last result as a fallback. Other incomplete, unsupported, invalid or future records are excluded. The page explains these limits and refreshes after storage changes, returning to the tab and the shared Sydney day boundary.
 

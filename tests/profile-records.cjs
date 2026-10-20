@@ -1,5 +1,5 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
-const sandbox={Intl,Date,Map,Set};vm.createContext(sandbox);vm.runInContext(fs.readFileSync('daily-clock.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('profile-records.js','utf8'),sandbox);
+const sandbox={Intl,Date,Map,Set};vm.createContext(sandbox);vm.runInContext(fs.readFileSync('daily-clock.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('arcade-score.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('profile-records.js','utf8'),sandbox);
 const api=sandbox.BREAK_ROOM_RECORDS;
 const stack={prompt:'Order these',fact:'An explanation',ends:['First','Last'],cards:Array.from({length:5},(_,i)=>({name:'Item '+i,value:i+1}))};
 function stackRun(day,score=31000){return{version:2,day,round:4,score,streak:5,results:Array.from({length:5},()=>({correct:true,points:score/5,mistakes:0})),order:[1,2,3,4,5],deadline:1,mistakes:0,status:'complete',stacks:Array(5).fill(stack)};}
@@ -12,6 +12,7 @@ const values={'pc_history':{'17':80,'18':100,'19':90},pc_played:'30',pc_last:'20
 let result=api.read(store(values),'2026-10-20');
 assert.equal(result.total,33);assert.equal(result.records.length,6);assert.equal(result.games[0].average,90);assert.equal(result.games[0].best,100);assert.equal(result.games[0].played,30);assert.equal(result.games[1].best,15);assert.equal(result.games[1].average,2);assert.equal(result.games[2].best,31000);assert.equal(result.streak.current,3);assert.equal(result.achievements.filter(a=>a.earned).length,5);
 assert.ok(result.games.every(g=>g.today==='complete'));
+assert.equal(result.arcade.average,80);assert.equal(result.games[1].arcade.average,50);assert.equal(result.arcade.runs,6);assert.equal(result.arcade.gamesPlayed,3);
 // Sparse/truncated Lowball history: preserve lifetime plays and recover its documented last score only once.
 result=api.read(store({pc_history:{'18':0},pc_played:'200',pc_last:'2026-10-20',pc_last_avg:'0'}),'2026-10-20');
 assert.equal(result.total,200);assert.equal(result.records.length,2);assert.equal(result.games[0].average,0);assert.equal(result.games[0].best,0);

@@ -1,0 +1,34 @@
+# Break Room Arcade score — version 1
+
+Every completed Daily has a shared **0–100 Arcade score**, alongside its original game score. Chips, points, deadlines, penalties, saved runs and game-specific achievements remain unchanged. `arcade-score.js` is the single calculator for the result screens and read-only profile adapters. Values are kept at full precision for averages and displayed to at most one decimal place.
+
+| Game | Arcade score | Examples |
+| --- | --- | --- |
+| Lowball | The existing completed Daily average | 75 points → 75/100 |
+| Stake | `100 × chips staked on correct answers ÷ total chips staked` | Five correct 1-chip bets → 100/100 and +5 chips. Three correct out of five equal bets → 60/100. All wrong/timeouts → 0/100. |
+| Stack Up | `100 × Daily points ÷ 31,000`, bounded to 0–100 | 15,500 points → 50/100. 31,000 → 100/100. Zero or negative points → 0/100. |
+
+Stake measures weighted accuracy, not net profit divided by the largest possible profit. A correct 3-chip bet contributes three times the weight of a correct 1-chip bet; incorrect answers and timeouts contribute their bet to the denominator but nothing to the numerator. Correctly answering every question scores 100 regardless of the stakes selected. Native chip profit remains visible and the +15-chip achievement keeps its original requirement.
+
+Stack Up's maximum is five immediate correct stacks: `(100 + 90 × 5 + streak × 35) × 10` for streaks 0 through 4, totalling 31,000. Speed, stack streaks, wrong attempts and timeout penalties still determine the native points. Negative runs remain visible in native points even though their Arcade score is bounded at zero.
+
+## A reliable calculation, with an explicit sample
+
+The profile uses **120 Sydney calendar dates, including today**, for every game's Arcade average. Lowball only retains around four months of dated results, so using all available years of the other games would give different time ranges.
+
+1. Select completed, valid Daily records within that common window. Exclude practice, pending runs, missing/invalid results and future dates.
+2. Compute each game's mean Arcade score from those records, without rounding intermediate values.
+3. Average the means of games with at least one included result. Each game has equal weight, independent of how often it was played.
+4. Show the number of games and completed results supporting the average. A real zero counts; an unplayed game does not count as a zero. No included results means “—”.
+
+For example, 100 Lowball runs averaging 80, one Stake run scoring 0 and one Stack Up run scoring 50 produce `(80 + 0 + 50) / 3 = 43.3`, rather than letting Lowball dominate the result count. If only Lowball has results, the average is based on **1 of 3 games**, clearly labelled.
+
+This is a deterministic shared performance scale. It is not a player percentile or evidence that all games have identical difficulty. Difficulty calibration would need real player outcome data. Browser storage may omit older results; neither old lifetime counters nor missing days are invented into score history.
+
+## Compatibility and future games
+
+Existing saves are read without alteration and historical Arcade scores are derived from the actual saved data. Stake uses its question snapshots (or frozen legacy option permutations), not current questions. The profile does not import game engines or trigger their replay resets. Lowball lifetime play counts remain separate from the number of recent scored records used by the average.
+
+Future games must provide a documented deterministic 0–100 Daily calculation, preserve native score meaning where appropriate, expose the shared result alongside native values, and register a read-only record adapter. Include endpoint, penalty, pending/timeout, historical compatibility and precision tests. Do not assign arbitrary demo values. Keep version 1 formulas stable; any later scoring change needs explicit versioning and a considered history policy.
+
+Tests: `node tests/arcade-score.cjs`, `node tests/profile-records.cjs`, and `ARCADE_TEST_URL=http://127.0.0.1:8000 node tests/arcade-score-ui.cjs` / `node tests/profile.cjs` with the static server running.

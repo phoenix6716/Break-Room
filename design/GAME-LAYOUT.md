@@ -60,7 +60,7 @@ At widths below 1100px the reset card moves above the modes, aligned right withi
 
 ## Stake-specific content that is intentionally absent
 
-The word Stake, trivia categories/questions, 30-second question clock, 1/2/3-chip bets, win/loss chip bank, circular poker chips, green felt surface, five-question Daily and chip-based final score are all engine-specific. Replace these with the new game's actual design inside the engine slot. Do not interpret the layout map as a requirement that every game have bets, a timer, a green table, four/five rounds, or a 100-point score.
+The word Stake, trivia categories/questions, 30-second question clock, 1/2/3-chip bets, win/loss chip bank, circular poker chips, green felt surface, five-question Daily and chip-based final score are all engine-specific. Replace these with the new game's actual design inside the engine slot. Do not interpret the layout map as a requirement that every game have bets, a timer, a green table, four/five rounds, or a 100-point native score. All games now also report a shared 0–100 Arcade score alongside native scores; see `SCORING.md` and `arcade-score.js`.
 
 Lowball's generated products, faceted score gems, till/receipt design and region selector are also game-specific. Existing games keep their approved mechanics/artwork.
 

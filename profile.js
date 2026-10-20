@@ -23,10 +23,11 @@
       const card=create('article','profile-game');card.dataset.game=game.id;
       const top=create('div','profile-game-top'),state=game.today==='complete'?'✓ DAILY COMPLETE':game.today==='progress'?'DAILY IN PROGRESS':'DAILY READY';
       top.append(create('span','profile-game-number',String(index+1).padStart(2,'0')),create('span','profile-game-status '+game.today,state));
+      const performance=create('div','profile-game-arcade');performance.append(create('span','profile-label','ARCADE AVERAGE · LAST 120 DAYS'));const average=create('strong',null,window.BREAK_ROOM_SCORE.format(game.arcade.average));average.append(create('small',null,' / 100'));performance.append(average,create('p',null,game.arcade.count+' saved Daily '+(game.arcade.count===1?'run':'runs')));
       const metrics=create('dl','profile-metrics');
-      metrics.append(metric('Average saved',score(game.average,game.id,true),game.unit),metric('Best saved',score(game.best,game.id),game.id==='lowball'?'out of 100':game.unit),metric('Daily runs',numbers.format(game.played),'completed'),metric('History streak',numbers.format(game.streak),game.streak===1?'day':'days'));
+      metrics.append(metric('Original average',score(game.average,game.id,true),game.unit),metric('Original best',score(game.best,game.id),game.id==='lowball'?'out of 100':game.unit),metric('Daily runs',numbers.format(game.played),'completed'),metric('History streak',numbers.format(game.streak),game.streak===1?'day':'days'));
       const link=create('a','button',game.today==='complete'?'VIEW DAILY RESULT →':game.today==='progress'?'RESUME DAILY →':'PLAY DAILY →');link.href=url(game.id);link.setAttribute('aria-label',link.textContent.replace(' →','')+' — '+game.name);
-      card.append(top,create('span','profile-label',game.category),create('h3',null,game.name),metrics,create('p','profile-game-note',game.note),link);return card;
+      card.append(top,create('span','profile-label',game.category),create('h3',null,game.name),performance,metrics,create('p','profile-game-note',game.note),link);return card;
     }));
   }
   function renderActivity(){
@@ -42,13 +43,13 @@
   }
   function renderResults(){
     const selected=$('result-filter').value, records=model.records.filter(r=>selected==='all'||r.game===selected),shown=records.slice(0,limit);
-    $('recent-count').textContent=records.length?`Showing ${shown.length} of ${records.length} saved Daily results. Scores use each game’s own scale.`:'No saved Daily results'+(selected==='all'?' yet.':' for this game yet.');
+    $('recent-count').textContent=records.length?`Showing ${shown.length} of ${records.length} saved Daily results. Arcade scores use the same 0–100 scale; original scores appear below.`:'No saved Daily results'+(selected==='all'?' yet.':' for this game yet.');
     const list=$('recent-results');
     list.replaceChildren(...shown.map(record=>{
       const game=model.games.find(g=>g.id===record.game),row=create('article','profile-result');row.dataset.game=record.game;
       const info=create('div'),link=create('a',null,game.name);link.href=url(game.id);
       const time=create('time',null,dateLabel(record.date)+(record.date===model.today?' · Today':''));time.dateTime=record.date;info.append(link,time);
-      const value=create('div','profile-result-score',score(record.score,record.game));value.append(create('small',null,record.game==='lowball'?'out of 100':game.unit));
+      const value=create('div','profile-result-score',window.BREAK_ROOM_SCORE.format(record.arcadeScore)+' / 100');value.append(create('small',null,score(record.score,record.game)+(record.game==='lowball'?' Lowball points':' '+game.unit)));
       row.append(info,value);return row;
     }));
     if(!shown.length)list.append(create('p','profile-results-empty','Finish a Daily to add a real result here. Unlimited practice and unfinished runs do not count.'));
@@ -74,6 +75,8 @@
     if(model.skipped)warnings.push('Some saved entries could not be used (invalid, incomplete data or future dates). Valid completed results are still shown; no saves have been changed.');
     $('storage-warning').hidden=!warnings.length;$('storage-warning').textContent=warnings.join(' ');
     $('profile-content').hidden=model.unavailable&&!model.total&&!model.records.length;
+    $('arcade-average').textContent=window.BREAK_ROOM_SCORE.format(model.arcade.average);
+    $('arcade-basis').textContent=model.arcade.runs?`${model.arcade.gamesPlayed} of 3 games · ${model.arcade.runs} saved Daily results · last 120 days`:'No scored Daily results in the last 120 days yet.';
     $('total-runs').textContent=numbers.format(model.total);
     const completed=model.games.filter(g=>g.today==='complete').length;
     $('today-count').textContent=completed+' / 3';$('today-caption').textContent=completed===3?'A clean sweep. Nicely done.':'Daily reset at midnight Sydney time';

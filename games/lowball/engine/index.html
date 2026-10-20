@@ -663,7 +663,7 @@
       <div class="item-emoji" id="trophyArt"></div>
       <div class="item-name" id="finalTitle">Round complete</div>
       <div class="final-total" id="finalTotal">0</div>
-      <div class="result-label">average score</div>
+      <div class="result-label" id="final-score-label">Arcade score / 100</div>
       <div class="final-pct" id="finalPct" hidden></div>
       <div class="squares" id="finalSquares"></div>
       <button class="btn-gold" id="shareBtn">COPY RESULT</button>
@@ -1317,6 +1317,7 @@ document.getElementById("nextBtn").addEventListener("click", () => {
 });
 
 function finishUnlimited() {
+  document.getElementById("final-score-label").textContent = "Practice score / 100";
   const avg = Math.round(roundScores.reduce((a, b) => a + b, 0) / roundScores.length);
   track("unlimited_complete", { score: avg });
   playArea.style.display = "none";
@@ -1340,6 +1341,7 @@ function finishUnlimited() {
 }
 
 function finishNormalRound() {
+  document.getElementById("final-score-label").textContent = "Arcade score / 100";
   const todayKey = getTodayKey();
   const stats = loadStats();
   const avg = Math.round(roundScores.reduce((a, b) => a + b, 0) / roundScores.length);
@@ -1413,7 +1415,7 @@ document.getElementById("shareBtn").addEventListener("click", function () { copy
 // ---------- Share text ----------
 function buildDailyShare(scores, avg) {
   const gems = scores.map(s => s >= 95 ? "🟩" : s >= 80 ? "🟨" : s >= 50 ? "🟧" : "🟥").join("");
-  let out = "Lowball #" + (dayNumber() + 1) + "\n" + gems + "  Avg " + avg;
+  let out = "Lowball #" + (dayNumber() + 1) + "\n" + gems + "  Avg " + avg + "/100";
   // Worst miss gives friends something to argue about. Shows the item and the guess, never the real price.
   let w = 0;
   scores.forEach((sc, i) => { if (sc < scores[w]) w = i; });
@@ -1616,6 +1618,7 @@ document.getElementById("restoreGo").addEventListener("click", async () => {
 
 // ---------- Mode + country switching ----------
 function startNormalMode() {
+  document.getElementById("final-score-label").textContent = "Arcade score / 100";
   mode = "normal";
   lockScreen.classList.remove("show");
   normalModeBtn.classList.add("active");

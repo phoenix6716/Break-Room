@@ -160,3 +160,19 @@ Lowball lifetime plays use its retained counter, while best/average/activity use
 - Previews in `design/previews/profile/`: populated desktop/mobile (isolated test fixtures), empty desktop, and a profile populated by actual game completions. No user’s saved results were used or modified during testing.
 
 No public-host deployment or account/backend work was performed.
+
+### Shared 0–100 Arcade score and profile average — 20 October 2026
+
+Added one pure versioned calculator in `arcade-score.js`. Lowball retains its existing Daily average; Stake measures chips staked on correct answers / total chips staked × 100; Stack Up scales Daily points by the theoretical 31,000-point maximum and bounds the result to 0–100. Original chip profits/points, game-specific achievements, stakes, question/stack timers, penalties, seeds and progress records are preserved. Stake and Stack Up now show a secondary shared result badge and include both scales in result copies. Lowball labels its existing final average as the Arcade score, with practice explicitly labelled separately.
+
+The profile shows each game's Arcade average and a common recent 120-Sydney-date, equal-game-weight average with explicit game/run sample counts. True zeroes count; absent/unplayed games do not; pending, practice, invalid, future and out-of-window records are excluded. Original raw stats remain separately labelled. There is an accessible native disclosure explaining formulas, weights, missing data, history retention and the difference from a difficulty-adjusted percentile. Historic shared scores are derived from saves without rewriting them. The starter and project guidance now require a documented bounded Arcade score for future games. `SCORING.md` is the version-1 contract.
+
+Validation:
+
+- `tests/arcade-score.cjs` passed exact weighted-bet/timeouts, all-low/all-high perfect Stake, Stack Up maximum/speed/penalty bounds, no intermediate rounding, the 120-day boundary, zero/missing cases and unequal-sample/equal-game averages.
+- `tests/profile-records.cjs` passed all existing compatibility cases plus integrated exact historical Arcade averages.
+- `tests/arcade-score-ui.cjs` passed 320/390/768/1440px: +5-chip perfect Stake also scores 100/100, 15,500 Stack Up points scores 50/100, unchanged 75-point Lowball scores 75/100, combined average is 75/100, copied results retain both scales, saves are unchanged on profile views, and there are no overflow, asset or browser errors.
+- `tests/profile.cjs` passed five widths, complete actual Daily games, legacy Stake engine comparisons, read-only viewing, filters, rollover and storage-denial states.
+- `tests/stake-timer.cjs`, `tests/stake-sharing.cjs`, `tests/stack-up.cjs` and `tests/game-template.cjs` passed their existing gameplay, saved progress, timing, sharing, keyboard and responsive checks.
+
+Actual UI previews are under `design/previews/arcade-score/` (isolated saved-record fixtures). No user saves were modified during testing and no public-host deployment was performed.

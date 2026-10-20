@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="../../game-dialog.css">
   <link rel="stylesheet" href="../../daily-reset.css">
   <script src="../../daily-clock.js"></script>
+  <script src="../../arcade-score.js"></script>
+  <link rel="stylesheet" href="../../arcade-score.css">
   <script defer src="../../navigation.js"></script>
   <script defer src="template.js"></script>
 </head>
@@ -115,7 +117,8 @@
     <section class="br-result-placeholder" aria-labelledby="game-result-title">
       <p class="br-result-kicker">RUN COMPLETE</p>
       <h2 id="game-result-title">[RESULT TITLE]</h2>
-      <strong class="br-result-score" data-result-score>[SCORE]</strong>
+      <strong class="br-result-score" data-result-score>[NATIVE SCORE]</strong>
+      <div class="arcade-score"><span class="arcade-score-label">ARCADE SCORE</span><strong data-arcade-score>[SCORE]<small> / 100</small></strong></div>
       <p data-result-summary>[Score explanation and next action]</p>
       <button class="button pink" type="button" data-copy-result disabled>COPY RESULT</button>
       <p data-share-status role="status"></p>
