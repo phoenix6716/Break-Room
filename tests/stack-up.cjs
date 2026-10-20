@@ -14,7 +14,7 @@ async function frozen(browser,width=1440,time='2026-10-19T03:00:00Z'){
  await page.goto(url);return{context,page};
 }
 (async()=>{
- const browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});const errors=[];
+ const browser=await chromium.launch({executablePath:process.env.ARCADE_CHROMIUM||'/usr/bin/chromium',args:['--no-sandbox']});const errors=[];
  try{
   for(const width of [320,390,768,1440]){
    const {context,page}=await frozen(browser,width);page.on('pageerror',e=>errors.push(e.message));

@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict'),{chromium}=require('playwright');
 const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
 async function open(browser,width=390){const c=await browser.newContext({viewport:{width,height:1000},reducedMotion:'reduce'});const p=await c.newPage();await p.clock.install({time:new Date('2026-10-19T03:00:00Z')});await p.clock.pauseAt(new Date('2026-10-19T03:00:00Z'));await p.goto(base+'/games/stake/index.html');return{c,p};}
-(async()=>{const browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});try{
+(async()=>{const browser=await chromium.launch({executablePath:process.env.ARCADE_CHROMIUM||'/usr/bin/chromium',args:['--no-sandbox']});try{
  for(const width of [320,390,768,1440]){
   const {c,p}=await open(browser,width);const errors=[];p.on('pageerror',e=>errors.push(e.message));
   assert.equal(await p.locator('.stake-question-timer').count(),0);await p.clock.runFor(60000);assert.equal(await p.evaluate(()=>run.p.length),0);

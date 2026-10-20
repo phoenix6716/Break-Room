@@ -6,7 +6,7 @@ const fixed=new Date('2026-10-20T03:00:00Z');
 async function reorder(page){for(let value=1;value<=5;value++){let at=await page.locator(`.sort-card[data-value="${value}"]`).evaluate(e=>[...e.parentElement.children].indexOf(e));while(at>value-1){await page.locator(`.sort-card[data-value="${value}"] button`).first().click();at--;}}}
 const snapshot=page=>page.evaluate(()=>Object.fromEntries(Object.keys(localStorage).sort().map(k=>[k,localStorage.getItem(k)])));
 (async()=>{
- const browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});fs.mkdirSync('design/previews/profile',{recursive:true});
+ const browser=await chromium.launch({executablePath:process.env.ARCADE_CHROMIUM||'/usr/bin/chromium',args:['--no-sandbox']});fs.mkdirSync('design/previews/profile',{recursive:true});
  try{
   for(const width of [320,390,768,1100,1440]){
    const context=await browser.newContext({viewport:{width,height:1000},reducedMotion:'reduce'}),page=await context.newPage(),errors=[];

@@ -5,7 +5,7 @@ const {readFileSync,existsSync}=require('node:fs');
 const path=require('node:path');
 const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
 (async()=>{
- const browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});
+ const browser=await chromium.launch({executablePath:process.env.ARCADE_CHROMIUM||'/usr/bin/chromium',args:['--no-sandbox']});
  try {
   const context=await browser.newContext({viewport:{width:390,height:950},reducedMotion:'reduce'});
   const page=await context.newPage();

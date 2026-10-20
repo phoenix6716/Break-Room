@@ -17,7 +17,7 @@ const assetRoot = path.resolve(__dirname, '../games/lowball/engine/icons/generat
     return crypto.createHash('sha256').update(data).digest('hex');
   }));
   assert.equal(hashes.size, 109, 'Every image must be an individual asset');
-  const browser = await chromium.launch({executablePath: '/usr/bin/chromium', args: ['--no-sandbox']});
+  const browser = await chromium.launch({executablePath: process.env.ARCADE_CHROMIUM || '/usr/bin/chromium', args: ['--no-sandbox']});
   try {
     const page = await browser.newPage({reducedMotion: 'reduce'});
     const errors = [], failed = [];

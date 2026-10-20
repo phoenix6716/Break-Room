@@ -10,7 +10,7 @@ const appearance=el=>{
 };
 async function centred(target,selectors,width){for(const selector of selectors){const box=await target.locator(selector).boundingBox();assert(box,selector+' visible');assert(Math.abs(box.x+box.width/2-width/2)<1,`${selector} centred at ${width}: ${JSON.stringify(box)}`)}}
 (async()=>{
- const browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});
+ const browser=await chromium.launch({executablePath:process.env.ARCADE_CHROMIUM||'/usr/bin/chromium',args:['--no-sandbox']});
  try{
   for(const width of [320,390,768,1024,1100,1440]){
    const context=await browser.newContext({viewport:{width,height:1100},reducedMotion:'reduce'});

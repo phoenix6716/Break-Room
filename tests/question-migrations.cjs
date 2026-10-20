@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict'),{chromium}=require('playwright');
 const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
 (async()=>{
- const browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});
+ const browser=await chromium.launch({executablePath:process.env.ARCADE_CHROMIUM||'/usr/bin/chromium',args:['--no-sandbox']});
  try{
   const context=await browser.newContext({viewport:{width:390,height:1000}}),page=await context.newPage();
   await page.goto(base+'/games/stack-up/index.html');

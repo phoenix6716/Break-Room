@@ -4,7 +4,7 @@ window.SITE = {
   abn: "[YOUR ABN]",
   email: "support@YOURDOMAIN.com",
   domain: "YOURDOMAIN.com",
-  hosting: "Cloudflare",
+  hosting: "GitHub Pages",
   analytics: "Plausible",
   payments: "Lemon Squeezy",
   updated: "16 October 2026",

@@ -2,7 +2,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs');
 const {chromium}=require('playwright'),{stackRun,qs}=require('./profile-records.cjs');
 const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
 (async()=>{
- const browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});fs.mkdirSync('design/previews/arcade-score',{recursive:true});
+ const browser=await chromium.launch({executablePath:process.env.ARCADE_CHROMIUM||'/usr/bin/chromium',args:['--no-sandbox']});fs.mkdirSync('design/previews/arcade-score',{recursive:true});
  try{for(const width of [320,390,768,1440]){
   const context=await browser.newContext({viewport:{width,height:1000},reducedMotion:'reduce',permissions:['clipboard-read','clipboard-write']}),page=await context.newPage(),errors=[];
   page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url());});await page.clock.setFixedTime(new Date('2026-10-20T03:00:00Z'));

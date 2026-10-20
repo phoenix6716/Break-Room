@@ -1387,7 +1387,7 @@ function finishNormalRound() {
 function shareLink() {
   const d = window.SITE && window.SITE.domain;
   if (d && !/YOURDOMAIN/i.test(d)) return "\n" + d;
-  return /^https?:/.test(location.protocol) ? "\n" + location.host : "";
+  return /^https?:/.test(location.protocol) ? "\n" + new URL("../index.html", location.href).href : "";
 }
 function copyShare(btn) {
   const text = (window._shareText || "") + shareLink();

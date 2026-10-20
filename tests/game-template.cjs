@@ -9,7 +9,7 @@ const previews = path.join(root, 'design/previews/game-template');
 
 (async () => {
   fs.mkdirSync(previews, { recursive: true });
-  const browser = await chromium.launch({ executablePath: '/usr/bin/chromium', args: ['--no-sandbox'] });
+  const browser = await chromium.launch({ executablePath: process.env.ARCADE_CHROMIUM || '/usr/bin/chromium', args: ['--no-sandbox'] });
   try {
     for (const width of [320, 390, 768, 1100, 1440]) {
       const page = await browser.newPage({ viewport: { width, height: 1000 }, reducedMotion: 'reduce' });

@@ -1,3 +1,7 @@
+## Hosting and continuous checks
+
+GitHub Actions now has a check-and-publish workflow for GitHub Pages. Run `npm ci` and `npm test` for the same local production-build checks; the browser runner tests the site under the repository URL path. Deployment requires Pages to be enabled with **GitHub Actions** as its source. See [HOSTING.md](HOSTING.md) for the exact activation steps, expected URL, rollback, browser-storage limits and what is published. No successful public deployment is implied by the workflow file alone.
+
 ## Shared 0–100 Arcade scores
 
 Every live Daily now reports a shared Arcade score alongside native chips/points. The profile shows each game’s Arcade average and an overall average giving each played game equal weight over the same recent 120-day window, with explicit sample counts. No old saves are rewritten. Read [SCORING.md](SCORING.md) for the formulas, examples, retention limits and future-game contract.
@@ -56,7 +60,7 @@ Shared styles: `break-room.css` (core pages and Stake), `menu.css` (homepage), `
 
 # Midnight Arcade
 
-A static daily games website with the approved purple arcade styling and shared game header. No framework, package installation, or build step is required.
+A static daily games website with the approved purple arcade styling and shared game header. The application needs no framework or runtime package installation. Development/CI uses locked npm test tools and a plain-file production packaging step; see HOSTING.md.
 
 ## Run locally
 
@@ -74,7 +78,7 @@ The homepage is `index.html`; each game has a standalone route in `games/<id>/`.
 - **Stake** — five daily trivia questions, chip betting, local progress/statistics, and playable Unlimited practice. Daily reset is midnight in Australia/Sydney, shared with Lowball and the homepage countdown.
 - **Coming soon** — Pixel Pairs, Word Forge, Gridlock, Number Drop, Memory Lane, and Mystery Cabinet. Their pages intentionally preserve the default game layout for future integrations. They do not accept attempts or create demonstration scores.
 
-The homepage lists Lowball and Stake first. One compact introduction and a live universal countdown lead into the original mixed game grid. Availability is shown beside the games heading rather than in separate statistics panels. Homepage effects are quieter and supporting text is larger. Friends, login and signup remain visual prototypes; the profile now uses real browser-local game results. No authentication service is connected. Lowball's external statistics, checkout, and restore services remain unset in `games/lowball/engine/site-config.js`.
+The homepage lists Lowball and Stake first. One compact introduction and a live universal countdown lead into the original mixed game grid. Availability is shown beside the games heading rather than in separate statistics panels. Homepage effects are quieter and supporting text is larger. Friends, login and signup remain explicitly marked prototypes with disabled submission controls; the profile uses real browser-local game results. No authentication service is connected. Lowball's external statistics, checkout, and restore services remain unset in `games/lowball/engine/site-config.js`.
 
 ## Shared files
 

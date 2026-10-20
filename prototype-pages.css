@@ -1,0 +1,2 @@
+/* Public prototypes cannot accept credentials or pretend to create accounts/friends. */
+.prototype-form{border:0;margin:0;padding:0;min-width:0}.prototype-form:disabled input,.prototype-form:disabled button{opacity:.65;cursor:not-allowed}.prototype-notice{border:2px solid var(--ink);background:var(--yellow);padding:12px 14px;font:13px/1.6 Arial,sans-serif;margin-bottom:20px}.prototype-notice a{text-decoration:underline}a[aria-disabled=true]{pointer-events:none;cursor:not-allowed;opacity:.65}
