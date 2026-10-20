@@ -147,3 +147,16 @@ Incorrect submissions now highlight each correctly placed card green and each in
 `tests/stack-feedback.cjs` passed at 320/390/768/1440px in both modes, including actual computed colours on focused cards, correct per-position classification, expiry/repeated submissions, clearing stale feedback, unchanged penalties, continuing timer and normal correct-stack completion. Screenshot: `design/previews/stack-shell/position-feedback.png`.
 
 `tests/stack-up.cjs` also passed the full Daily/Unlimited gameplay, save/resume, scoring, timeout, midnight, sharing and storage-failure checks. The positional-feedback test also checks that the live message stays clear of the submit button.
+
+### Real browser-local player profile — 20 October 2026
+
+Replaced the sample identity, friend code, placeholder-game scores and invented achievements in `profile.html`. `profile-records.js` reads the three existing save formats without loading any game engine or writing/migrating/resetting storage. The profile displays per-game scores/averages/bests/plays/history streaks in their original units, total completed plays, today’s checklist, 14-day dated activity, filterable/paginated recent runs and six provable achievements. Unlimited and valid unfinished runs do not count; today’s unfinished runs offer a Resume link. Empty, malformed/unusable records and denied-storage states have explicit messages. No account or cross-device sync is claimed.
+
+Lowball lifetime plays use its retained counter, while best/average/activity use up to 121 days of retained scores (plus its documented last-result fallback without double counting). History streaks/achievements are labelled as derived from available dated records. Stake snapshots determine new scores; legacy records reconstruct the frozen 164-question option permutations without importing or executing the game. Stack Up accepts completed supported save records without changing them. Each browser-local game remains the owner of its state.
+
+- `node tests/profile-records.cjs` passed: all three formats, lifetime/retained Lowball history, zero/negative results, corrupted/future/pending entries, real streaks and achievement conditions, unavailable storage and read-only access.
+- `tests/profile.cjs` passed at 320/390/768/1100/1440px: empty and populated views, exact counts/scores/achievements, recent-result filtering/pagination, no clipping/overflow/asset or JavaScript errors, storage-event refresh, Sydney day rollover and byte-for-byte unchanged saves.
+- Actual complete Daily runs through Lowball, Stake and Stack Up populate the exact scores (100, +15 chips, 31,000 points) and checklist. Forty legacy Stake dates match the live engine’s answer permutations. Profile opening/refresh preserves all records; real Stake/Stack Up practice does not change the profile totals. Denied localStorage displays a warning and hides unavailable stats.
+- Previews in `design/previews/profile/`: populated desktop/mobile (isolated test fixtures), empty desktop, and a profile populated by actual game completions. No user’s saved results were used or modified during testing.
+
+No public-host deployment or account/backend work was performed.

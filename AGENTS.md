@@ -21,3 +21,7 @@ The user explicitly selected the current, centred **Stake layout** as the starti
 - Validate at least 320/390/768/1100/1440px, ensure the central game does not shift to make room for the reset box, and check the left menu, popups, real game flow, Daily/Unlimited and saved state as appropriate. Use explicit `index.html` navigation targets so downloaded copies work.
 
 User requests take priority over these defaults. For details, component IDs, responsive placement and the new-game checklist, see `design/GAME-LAYOUT.md`.
+
+## Real local profile
+
+`profile.html` uses `profile-records.js` (read-only save adapters), `profile.js` and `profile.css`. Keep each game’s score scale separate and count only completed Dailies, excluding Unlimited, pending runs and demo data. Opening the profile must never migrate/write game saves or invoke engine initialization/reset scripts. Lowball retains up to 121 days of dated scores plus a lifetime play counter, so best/average/activity and history streaks must be labelled accordingly; do not invent older results or achievements. Legacy Stake scoring reconstructs its frozen 164-question option permutations; protect compatibility with the real-engine comparison in `tests/profile.cjs`. Accounts/cloud sync/friends are still future work.

@@ -1,3 +1,11 @@
+## Real local profile
+
+`profile.html` now reads completed Daily records from Lowball, Stake and Stack Up. It shows each game’s own score scale, real play counts and saved-history streaks, today’s checklist, recent results, a 14-day activity view and six achievements derived from available records. There is no sample identity, friend code or combined score average. Accounts, friends and cloud sync remain separate future work.
+
+`profile-records.js` is a read-only adapter; it does not start game engines, migrate saves, apply replay resets or write storage. Legacy Stake scores reconstruct the original 164-question option permutations without loading a game. Lowball lifetime plays come from its saved counter; best/average/activity use its retained score history (up to 121 days), with its stored last result as a fallback. Other incomplete, unsupported, invalid or future records are excluded. The page explains these limits and refreshes after storage changes, returning to the tab and the shared Sydney day boundary.
+
+Run `node tests/profile-records.cjs` and `ARCADE_TEST_URL=http://127.0.0.1:8000 node tests/profile.cjs`. Serve the repository root. The browser test exercises the actual three game engines and confirms profile views never change their saved records.
+
 ## Current new-game layout standard
 
 **Use the centred Stake-based starter in [`games/_template/`](games/_template/README.md) for future added games.** The [layout map](design/GAME-LAYOUT.md) identifies the fixed shell and replaceable game areas; [AGENTS.md](AGENTS.md) preserves this user preference for future repository work. The starter has working shared controls and clear placeholders, with no fake engine or scores. It is not registered as a live game. Historical prototypes and the old generic game page are not the canonical new-game layout.
@@ -62,7 +70,7 @@ The homepage is `index.html`; each game has a standalone route in `games/<id>/`.
 - **Stake** — five daily trivia questions, chip betting, local progress/statistics, and playable Unlimited practice. Daily reset is midnight in Australia/Sydney, shared with Lowball and the homepage countdown.
 - **Coming soon** — Pixel Pairs, Word Forge, Gridlock, Number Drop, Memory Lane, and Mystery Cabinet. Their pages intentionally preserve the default game layout for future integrations. They do not accept attempts or create demonstration scores.
 
-The homepage lists Lowball and Stake first. One compact introduction and a live universal countdown lead into the original mixed game grid. Availability is shown beside the games heading rather than in separate statistics panels. Homepage effects are quieter and supporting text is larger. Profile, friends, login, and signup remain visual prototypes with sample data; no authentication service is connected. Lowball's external statistics, checkout, and restore services remain unset in `games/lowball/engine/site-config.js`.
+The homepage lists Lowball and Stake first. One compact introduction and a live universal countdown lead into the original mixed game grid. Availability is shown beside the games heading rather than in separate statistics panels. Homepage effects are quieter and supporting text is larger. Friends, login and signup remain visual prototypes; the profile now uses real browser-local game results. No authentication service is connected. Lowball's external statistics, checkout, and restore services remain unset in `games/lowball/engine/site-config.js`.
 
 ## Shared files
 

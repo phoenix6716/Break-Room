@@ -1,1 +1,56 @@
-<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f4eddc"><meta name="description" content="Break Room daily puzzle arcade. One run per game, every day."><title>Player profile · Break Room</title><link rel="icon" type="image/svg+xml" href="assets/break-room-icon.svg"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="break-room.css"></head><body><header class="site-header"><div class="wrap header-inner"><nav class="nav" aria-label="Main navigation"><a href="index.html"><img src="assets/icons/home.svg" alt="">Home</a><a href="friends.html"><img src="assets/icons/friends.svg" alt="">Friends</a><a href="profile.html" aria-current="page"><img src="assets/icons/profile.svg" alt="">Profile</a></nav><a class="brand" href="index.html"><span class="break-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="break-wordmark">BREAK ROOM</span></a><div class="header-user"><a class="button secondary small" href="login.html">Log in</a><div class="avatar" aria-label="Guest profile">?</div></div></div></header><main class="page"><div class="wrap"><section class="page-intro"><div><div class="eyebrow">Player card / ID 042</div><h1>Player profile<span class="pink-text">.</span></h1><p>Your runs, your record, your streak.</p></div><button class="button secondary" type="button">⚙ Settings</button></section><section class="panel panel-pad"><div class="profile-top"><div class="profile-avatar">P</div><div><h2 style="margin-bottom:5px">pixelphoenix</h2><p>Joined 12 Aug 2026 · <span class="green">● Active today</span></p><div class="friend-code" style="margin-top:9px">PHNX-042 <img src="assets/icons/share.svg" width="16" alt=""></div></div></div><div class="stat-grid"><article class="panel stat"><div class="stat-label">Lifetime average</div><div class="stat-value pink-text">78<span style="font-size:14px">/100</span></div><div class="stat-note">126 scored runs</div></article><article class="panel stat"><div class="stat-label">Current streak</div><div class="stat-value yellow">07 <span style="font-size:14px">days</span></div><div class="stat-note">Personal best: 14 days</div></article><article class="panel stat"><div class="stat-label">Perfect scores</div><div class="stat-value cyan">08</div><div class="stat-note">100 out of 100</div></article></div></section><div class="section-head"><h2>Game-by-game record</h2><span class="section-meta">All time</span></div><section class="panel panel-pad"><table class="game-stats"><thead><tr><th>Game</th><th>Average</th><th>Best</th><th>Streak</th></tr></thead><tbody><tr><td>Pixel Pairs</td><td class="cyan">86</td><td><span class="score-badge tier-perfect">100</span></td><td><span class="streak-chip">🔥 07</span></td></tr><tr><td>Word Forge</td><td class="cyan">79</td><td><span class="score-badge tier-great">96</span></td><td><span class="streak-chip">🔥 04</span></td></tr><tr><td>Gridlock</td><td class="cyan">74</td><td><span class="score-badge tier-good">91</span></td><td><span class="streak-chip">🔥 02</span></td></tr><tr><td>Number Drop</td><td class="cyan">72</td><td><span class="score-badge tier-ok">88</span></td><td><span class="streak-chip">🔥 01</span></td></tr><tr><td>Memory Lane</td><td class="cyan">80</td><td><span class="score-badge tier-great">98</span></td><td><span class="streak-chip">🔥 06</span></td></tr></tbody></table></section><div class="section-head"><h2>Achievements</h2><span class="section-meta">2 / 6 unlocked</span></div><section class="game-grid"><article class="panel panel-pad"><div class="eyebrow yellow">✦ Unlocked</div><h3 style="margin-top:10px;font-family:var(--pixel)">Clean sweep</h3><p style="font-size:12px;margin:0">Play every available game in one day.</p></article><article class="panel panel-pad"><div class="eyebrow yellow">✦ Unlocked</div><h3 style="margin-top:10px;font-family:var(--pixel)">Back again</h3><p style="font-size:12px;margin:0">Keep a daily streak alive for 7 days.</p></article><article class="panel panel-pad" style="opacity:.65"><div class="eyebrow">Locked</div><h3 style="margin-top:10px;font-family:var(--pixel)">Perfect run</h3><p style="font-size:12px;margin:0">Earn a score of 100 in any game.</p></article></section></div></main><footer class="site-footer"><div class="wrap footer-inner"><span>© 2026 Break Room · ONE DAY. ONE RUN.</span><div class="footer-links"><a href="login.html">Account</a><a href="game.html">Game wrapper</a><a href="style-guide.html">Style guide</a></div></div></footer></body></html>
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4eddc">
+  <meta name="description" content="Your real Break Room Daily results, streaks and achievements, saved in this browser.">
+  <title>Your profile · Break Room</title>
+  <link rel="icon" type="image/svg+xml" href="assets/break-room-icon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="break-room.css">
+  <link rel="stylesheet" href="profile.css">
+  <script defer src="daily-clock.js"></script>
+  <script defer src="profile-records.js"></script>
+  <script defer src="profile.js"></script>
+</head>
+<body class="profile-page">
+<header class="site-header"><div class="wrap header-inner"><nav class="nav" aria-label="Main navigation"><a href="index.html"><img src="assets/icons/home.svg" alt="">Home</a><a href="friends.html"><img src="assets/icons/friends.svg" alt="">Friends</a><a href="profile.html" aria-current="page"><img src="assets/icons/profile.svg" alt="">Profile</a></nav><a class="brand" href="index.html"><span class="break-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="break-wordmark">BREAK ROOM</span></a><div class="header-user"><a class="button secondary small" href="login.html">Log in</a><div class="avatar" aria-label="Guest profile">?</div></div></div></header>
+<main class="page"><div class="wrap profile-wrap">
+  <section class="page-intro profile-intro">
+    <div><div class="eyebrow">YOUR PLAYER CARD / ON THIS BROWSER</div><h1>A little break.<br><span>Your own record.</span></h1><p>Your Daily games, streaks and well-earned little wins.</p></div>
+    <a class="button" href="index.html#daily-games">PLAY A DAILY →</a>
+  </section>
+  <p class="profile-storage-note"><img src="assets/icons/profile.svg" alt="">Saved on this browser. No account or cross-device sync yet. Unlimited practice is not included.</p>
+  <p id="storage-warning" class="profile-warning" role="status" hidden></p>
+  <noscript><p class="profile-warning">Turn on JavaScript to read your saved game results. <a href="index.html">Browse games</a>.</p></noscript>
+  <div id="profile-content" hidden>
+    <section class="profile-overview" aria-label="Your Daily overview">
+      <article><span class="profile-label">DAILY RUNS COMPLETED</span><strong id="total-runs">—</strong><p>Across the three live games</p></article>
+      <article><span class="profile-label">TODAY’S CHECKLIST</span><strong id="today-count">—</strong><p id="today-caption">One fresh Daily per game</p></article>
+      <article><span class="profile-label">HISTORY STREAK</span><strong id="overall-streak">—</strong><p id="streak-caption">Consecutive days with a saved result</p></article>
+    </section>
+    <section class="profile-empty" id="profile-empty" hidden><span class="profile-label">A CLEAN SLATE</span><h2>Your first break starts here.</h2><p>Finish a Daily in Lowball, Stake or Stack Up to start your record. An unfinished run won’t count.</p><a href="index.html#daily-games" class="button secondary">FIND YOUR FIRST GAME →</a></section>
+    <div class="section-head"><h2>Your games</h2><span class="section-meta">THREE GAMES. THREE WAYS TO SCORE.</span></div>
+    <section class="profile-games" id="profile-games" aria-label="Game-by-game records"></section>
+    <section class="profile-activity" aria-labelledby="activity-title">
+      <div class="section-head"><h2 id="activity-title">Little breaks add up.</h2><span class="section-meta">LAST 14 DAYS · SYDNEY TIME</span></div>
+      <ol id="activity-days" class="activity-days" aria-label="Daily completion history"></ol>
+      <p class="profile-fine">Each square shows how many of the three Daily games you completed. History streaks and achievements use the dated results still saved here. Lowball retains up to 121 days of scores; its lifetime play counter is included above.</p>
+    </section>
+    <section aria-labelledby="recent-title">
+      <div class="section-head recent-heading"><h2 id="recent-title">Recent runs</h2><label class="profile-filter">GAME <select id="result-filter"><option value="all">All games</option><option value="lowball">Lowball</option><option value="stake">Stake</option><option value="stack-up">Stack Up</option></select></label></div>
+      <p id="recent-count" class="profile-fine" role="status"></p>
+      <div class="profile-results" id="recent-results"></div>
+      <button type="button" id="more-results" class="button secondary" hidden>SHOW MORE RUNS</button>
+    </section>
+    <section aria-labelledby="achievements-title">
+      <div class="section-head"><h2 id="achievements-title">Small victories</h2><span class="section-meta" id="achievement-count"></span></div>
+      <div class="profile-achievements" id="achievements"></div>
+      <p class="profile-fine">Unlocked from completed Daily records. Locked means the available saves don’t show it yet.</p>
+    </section>
+  </div>
+</div></main>
+<footer class="site-footer"><div class="wrap footer-inner"><span>© 2026 Break Room · ONE DAY. ONE RUN.</span><div class="footer-links"><a href="index.html">All games</a><a href="friends.html">Friends</a></div></div></footer>
+</body>
+</html>
