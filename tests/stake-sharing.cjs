@@ -4,7 +4,7 @@ const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
 (async()=>{
  const browser=await chromium.launch({executablePath:process.env.ARCADE_CHROMIUM||'/usr/bin/chromium',args:['--no-sandbox']});
  try{
-  for(const width of [390,1440]){
+  for(const width of [320,390,768,1100,1440]){
    const context=await browser.newContext({viewport:{width,height:1000},permissions:['clipboard-read','clipboard-write']});
    await context.route('https://fonts.googleapis.com/**',r=>r.abort());
    const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
@@ -16,17 +16,27 @@ const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
     assert.ok(!font.family.includes('Pixelify')&&!font.family.includes('Courier'),font.family);
     assert.ok(font.size>=20&&font.line>=font.size*1.4);
     if(i===0)await page.screenshot({path:`/tmp/stake-question-readable-${width}.png`});
-    await page.locator('button.opt').first().click();
+    const answer=await page.evaluate(()=>getQ(run,run.p.length).a);
+    await page.locator('button.opt').nth(i%2===0?answer:(answer+1)%3).click();
     assert.ok((await page.locator('#app .stake-question').evaluate(el=>getComputedStyle(el).fontFamily)).includes('Arial'));
     await page.getByRole('button',{name:i===4?'See results':'Next question',exact:true}).click();
    }
    assert.equal(await page.locator('textarea').count(),0);
    assert.ok(!(await page.locator('#app').innerText()).includes('Spoiler-free share text:'));
+   assert.equal(await page.locator('.result-hand .result-round').count(),5);
+   assert.equal(await page.locator('.result-hand .is-correct').count(),3);
+   assert.equal(await page.locator('.result-hand .is-incorrect').count(),2);
+   assert.doesNotMatch(await page.locator('.result-hand').innerText(),/[🟩🟥]/u);
+   assert.match(await page.locator('.result-round').nth(1).getAttribute('aria-label'),/Question 2: incorrect, bet 1 chip, lost 1 chip/);
+   await page.locator('.stake-results').evaluate(e=>Promise.all(e.getAnimations().map(a=>a.finished.catch(()=>{}))));
+   const tiles=await page.locator('.result-round').evaluateAll(nodes=>nodes.map(e=>{const b=e.getBoundingClientRect();return{x:b.x,y:b.y,right:b.right};}));
+   assert.ok(tiles.every(t=>Math.abs(t.y-tiles[0].y)<1),'All five custom results fit on one row');assert.ok(tiles.every(t=>t.x>=0&&t.right<=width),'Result tiles stay inside the viewport');
    const button=page.getByRole('button',{name:'Copy result',exact:true});
    const status=page.locator('#app [role=status]');
    await button.click();await status.filter({hasText:'Copied.'}).waitFor();
    const copied=await page.evaluate(()=>navigator.clipboard.readText());
    assert.match(copied,/^Stake \d{4}-\d{2}-\d{2} /);
+   assert.ok(copied.includes('🟩1 🟥1 🟩1 🟥1 🟩1'),'Plain-text sharing retains portable result squares');
    assert.ok(copied.endsWith(`${base}/games/stake/`),copied);
    assert.ok(!copied.includes('example.com'));
    await page.evaluate(()=>Object.defineProperty(navigator.clipboard,'writeText',{configurable:true,value:()=>Promise.reject(new Error('Test clipboard fallback'))}));

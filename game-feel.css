@@ -16,3 +16,5 @@
 #finalScreen .feel-result{margin:18px auto;text-align:left;max-width:480px}#finalScreen #playAgainBtn{background:#b8d957;color:#17263a;border:2px solid #17263a;box-shadow:3px 3px #17263a;min-height:48px}
 @media(max-width:650px){.feel-result{padding:14px}.feel-stamp{font-size:11px}.feel-sound-row{margin-top:24px}}
 @media(prefers-reduced-motion:reduce){.feel-enter,.feel-enter *,.feel-bits i{animation:none!important;transition:none!important}.feel-bits{display:none}}
+.lowball-sound-row{order:5;flex:none;align-self:center}
+.feel-sound{width:auto;flex:none;letter-spacing:normal;border-radius:0}

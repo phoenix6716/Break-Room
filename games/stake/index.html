@@ -244,6 +244,12 @@ function getQ(r,i){if(r.mode==="u")while(r.qs.length<=i){if(!r.order||r.ptr>=BAN
 const save=r=>{if(r.key)ls.set(r.key,JSON.stringify({b:r.b,p:r.p,qs:r.qs,deadline:r.deadline,rv:r.rv}))};
 const sc=r=>r.p.reduce((s,x,i)=>s+(x===r.qs[i].a?1:-1)*r.b[i],0);
 const rowT=r=>r.p.map((x,i)=>(x===r.qs[i].a?"🟩":"🟥")+r.b[i]).join(" ");
+function resultHand(r){
+ const hand=E("ol","result-hand");hand.setAttribute("aria-label","Daily question results");
+ r.p.forEach((pick,i)=>{const correct=pick===r.qs[i].a,tile=E("li","result-round "+(correct?"is-correct":"is-incorrect")),mark=E("i","result-mark"),bet=E("strong",null,String(r.b[i]));
+  tile.setAttribute("aria-label","Question "+(i+1)+": "+(correct?"correct":pick===-1?"timed out":"incorrect")+", bet "+chipsW(r.b[i])+", "+(correct?"won ":"lost ")+chipsW(r.b[i]));mark.setAttribute("aria-hidden","true");bet.setAttribute("aria-hidden","true");A(tile,mark,bet);hand.appendChild(tile);
+ });return hand;
+}
 
 const shareT=r=>"Stake "+r.date+" "+rowT(r)+" = "+sg(sc(r))+"\nArcade score: "+window.BREAK_ROOM_SCORE.format(window.BREAK_ROOM_SCORE.stake(r.b,r.p,r.qs.map(q=>q.a)))+"/100\n"+SHARE_URL;
 
@@ -316,7 +322,7 @@ function play(r){expire(r);if(r.mode!=="u"&&r.p.length>=5&&!r.rv)return results(
 function settleFeel(r){const i=r.p.length-1,won=r.p[i]===r.qs[i]?.a;window.BREAK_ROOM_FEEL.cue(app.querySelector(".bet-in-play"),{kind:won&&r.b[i]===3?"perfect":won?"win":"miss",variant:"settle"});}
 function results(r){status(r);const surface=tableSurface(r,true),c=E("div","card stake-results"),s=sc(r),correct=r.p.filter((pick,i)=>pick===r.qs[i].a).length;
  surface.classList.toggle("has-loss",s<0);c.tabIndex=-1;
- A(c,E("p","result-table-label","Today’s set is done"),E("h2","table-result-title","That's your daily hand."),E("div","big",sg(s)+(Math.abs(s)===1?" chip":" chips")),E("div","table-result-stamp",s>0?"IN THE GREEN":s===0?"EVEN STEVENS":"NEXT TIME, NEXT HAND"),E("p","result-summary",correct+" correct · "+(r.p.length-correct)+" missed"),E("p","result-hand",rowT(r)));
+ A(c,E("p","result-table-label","Today’s set is done"),E("h2","table-result-title","That's your daily hand."),E("div","big",sg(s)+(Math.abs(s)===1?" chip":" chips")),E("div","table-result-stamp",s>0?"IN THE GREEN":s===0?"EVEN STEVENS":"NEXT TIME, NEXT HAND"),E("p","result-summary",correct+" correct · "+(r.p.length-correct)+" missed"),resultHand(r));
  c.appendChild(window.BREAK_ROOM_SCORE.badge(window.BREAK_ROOM_SCORE.stake(r.b,r.p,r.qs.map(q=>q.a))));
  const msg=E("p","mut"),cb=E("button","btn","Copy result");msg.setAttribute("role","status");msg.setAttribute("aria-live","polite");cb.onclick=()=>copy(shareT(r),msg);const replay=E("button","btn feel-replay","PLAY UNLIMITED →");replay.onclick=()=>{tab="u";render();focusTable(".chip,.question-card")};A(c,replay,cb,msg);
  if(r.mode==="d"){const p=E("p","next-set-note","Come back tomorrow for a new set of 5. Next set in "),b=E("b",null,cd());b.id="cd";p.appendChild(b);c.appendChild(p)}

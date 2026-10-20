@@ -59,11 +59,16 @@ const assetRoot = path.resolve(__dirname, '../games/lowball/engine/icons/generat
     }
     await page.locator('#soundBtn').click();
     assert.equal(await page.locator('#soundBtn').getAttribute('aria-pressed'), 'false');
-    assert.match(await page.locator('#soundBtn img').getAttribute('src'), /sound-off\.png$/);
+    assert.equal(await page.locator('#soundBtn').innerText(), '♪ SOUND OFF');
     await page.reload();
-    assert.match(await page.locator('#soundBtn img').getAttribute('src'), /sound-off\.png$/);
+    assert.equal(await page.locator('#soundBtn').innerText(), '♪ SOUND OFF');
     await page.locator('#soundBtn').click();
-    assert.match(await page.locator('#soundBtn img').getAttribute('src'), /sound-on\.png$/);
+    assert.equal(await page.locator('#soundBtn').innerText(), '♪ SOUND ON');
+    assert.equal(await page.locator('#soundBtn').getAttribute('aria-label'),'Game sound');
+    assert.equal(await page.locator('#soundBtn img').count(),0);
+    const appearance=el=>{const s=getComputedStyle(el);return ['backgroundColor','color','borderTopWidth','borderTopColor','boxShadow','fontFamily','fontSize','fontWeight','letterSpacing','paddingTop','paddingRight','minHeight','width','borderRadius'].map(k=>s[k]);};
+    const stake=await browser.newPage();await stake.goto(base+'/games/stake/index.html');await stake.getByRole('button',{name:'Game sound',exact:true}).click();
+    assert.deepEqual(await page.locator('#soundBtn').evaluate(appearance),await stake.locator('.feel-sound').evaluate(appearance),'Lowball uses the same actual button styling as Stake');await stake.close();
     for (const width of [320,390,768,1440]) {
       await page.setViewportSize({width,height:1000});
       await page.evaluate(() => renderResult(currentItem.prices[country], country, false));

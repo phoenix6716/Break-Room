@@ -688,7 +688,7 @@
 
 
 
-  <button type="button" class="sound-btn" id="soundBtn">Sound: on</button>
+  <div class="feel-sound-row lowball-sound-row"><button type="button" class="feel-sound" id="soundBtn" aria-label="Game sound">♪  SOUND ON</button></div>
 
 
   <div class="modal" id="helpModal" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
@@ -1803,7 +1803,7 @@ function guessCountry() {
   soundOn = safeGet("pc_sound", "1") !== "0";
   const soundBtn = document.getElementById("soundBtn");
   const paintSound = () => {
-    soundBtn.innerHTML = LOWBALL_ART.markup({ art: soundOn ? "sound-on" : "sound-off" }) + '<span class="sound-label">Sound</span><span class="sound-state">' + (soundOn ? 'On' : 'Off') + '</span><span class="sound-switch" aria-hidden="true"><i></i></span>';
+    soundBtn.textContent = "♪  SOUND " + (soundOn ? "ON" : "OFF");
     soundBtn.setAttribute("aria-pressed", String(soundOn));
   };
   paintSound();
