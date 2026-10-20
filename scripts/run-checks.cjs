@@ -1,7 +1,7 @@
 /* The same exit-code-preserving checks run locally and in GitHub Actions. */
 const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),{spawn}=require('node:child_process');
 const root=path.resolve(__dirname,'..'),kind=process.argv[2],logs=path.join(root,'.artifacts');
-const units=['friends-database.cjs','account-navigation.cjs','cloud-saves.cjs','cloud-database.cjs','arcade-score.cjs','daily-clock.cjs','profile-records.cjs','question-banks.cjs'];
+const units=['content-tools.cjs','friends-database.cjs','account-navigation.cjs','cloud-saves.cjs','cloud-database.cjs','arcade-score.cjs','daily-clock.cjs','profile-records.cjs','question-banks.cjs'];
 const mime={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.ico':'image/x-icon','.ttf':'font/ttf','.woff2':'font/woff2','.webmanifest':'application/manifest+json'};
 const prefix='/Midnight-Arcade';fs.mkdirSync(logs,{recursive:true});
 function serve(directory){return new Promise(resolve=>{

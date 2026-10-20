@@ -25,6 +25,6 @@ try{for(const file of files){
  if(ext==='.js')syntax(text,path.relative(root,file));
  if(ext==='.json'||ext==='.webmanifest')try{JSON.parse(text);}catch{problems.push('Invalid JSON: '+path.relative(root,file));}
 }
-for(const denied of ['design','tests','scripts','content','node_modules','games/_template','games/lowball/engine/icons/generated/source','.git','package.json','AGENTS.md'])if(fs.existsSync(path.join(root,denied)))problems.push('Development-only content included: '+denied);
+for(const denied of ['tools','game-drafts','design','tests','scripts','content','node_modules','games/_template','games/lowball/engine/icons/generated/source','.git','package.json','AGENTS.md'])if(fs.existsSync(path.join(root,denied)))problems.push('Development-only content included: '+denied);
 }finally{fs.rmSync(temp,{recursive:true,force:true});}
 if(problems.length){console.error(problems.join('\n'));process.exitCode=1;}else console.log(`PASS: ${files.length} shipped files, ${links} local references, ${scripts} parsed scripts, valid JSON and no development-only content.`);

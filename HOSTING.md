@@ -31,7 +31,7 @@ In the managed cloud environment, `/usr/bin/chromium` is already available; the 
 
 `npm test` runs these in order:
 
-1. Calendar/DST, Arcade scoring, real local profile records, question-bank checks and independent question maths.
+1. A content inventory/review report, followed by content-tool, calendar/DST, Arcade scoring, account/cloud/friend database security, real local profile, question-bank and independent-maths checks.
 2. `npm run build`: a clean plain-file artifact in `dist/`.
 3. `npm run check`: all shipped local HTML/CSS references, JSON and JavaScript syntax (including inline engines), and exclusions for development-only content.
 4. `npm run test:browser`: every non-unit browser test in `tests/`, including actual complete game flows, profile/scoring, artwork, timers, sharing, saved-state migrations, reset boundaries, keyboard/touch controls and responsive layouts. A temporary server mounts the production artifact under `/Midnight-Arcade/`, not the origin root. The template and template-parity tests use a separate source mount because the development starter is intentionally not published.
@@ -42,7 +42,7 @@ To inspect a build locally, serve `dist/` with a static server. To develop templ
 
 ## What is published
 
-The builder copies root HTML/CSS/JavaScript plus web assets in `assets/` and `games/`, preserving route names and file bytes. It excludes the development starter, tests/scripts, dependency folders, documentation, design previews and generated-image source atlases. `.nojekyll` keeps Pages from rewriting this plain-file site.
+The builder copies root HTML/CSS/JavaScript plus web assets in `assets/` and `games/`, preserving route names and file bytes. It excludes the development starter, local Content Studio (`tools/`), `game-drafts/`, content proposals, tests/scripts, dependency folders, documentation, design previews and generated-image source atlases. `.nojekyll` keeps Pages from rewriting this plain-file site.
 
 Coming-soon routes remain available; Friends now requires the additional `supabase/friends.sql` migration documented in `FRIENDS.md`. Accounts now use Supabase; see `ACCOUNTS.md` for the required owner-applied SQL, exact redirect URLs and email delivery setup. Account forms stay disabled until their JavaScript handlers are ready, and never submit credentials in query strings. Guest play and the existing local profile remain available; cloud-save activation and importing guest progress are explicit. Friend requests and private score comparisons use the same Supabase project after that separate social migration is applied.
 

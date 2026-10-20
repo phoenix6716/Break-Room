@@ -1,156 +1,74 @@
-## Friends and comparisons
-
-Real friend codes, accepted requests, score sharing, remove/block controls and Today/120-day Arcade comparisons replace the prototype feed. Apply the additional [`supabase/friends.sql`](supabase/friends.sql) migration as documented in [FRIENDS.md](FRIENDS.md). Friends see only server-derived completed Daily scores from synced saves; raw answers, guesses and emails stay private.
-
-## Accounts and cloud saves
-
-Email/password sign-up, confirmation, login, password recovery and private native-game cloud snapshots use Supabase. Guest play remains available. Activate cloud saves explicitly from `account.html`; importing this browser’s guest progress is optional. See [ACCOUNTS.md](ACCOUNTS.md) for required database/redirect/email setup, account isolation, conflict rules, offline behavior and verification limits. Public client configuration alone does not activate the database.
-
-## Hosting and continuous checks
-
-GitHub Actions now has a check-and-publish workflow for GitHub Pages. Run `npm ci` and `npm test` for the same local production-build checks; the browser runner tests the site under the repository URL path. Deployment requires Pages to be enabled with **GitHub Actions** as its source. See [HOSTING.md](HOSTING.md) for the exact activation steps, expected URL, rollback, browser-storage limits and what is published. No successful public deployment is implied by the workflow file alone.
-
-## Shared 0–100 Arcade scores
-
-Every live Daily now reports a shared Arcade score alongside native chips/points. The profile shows each game’s Arcade average and an overall average giving each played game equal weight over the same recent 120-day window, with explicit sample counts. No old saves are rewritten. Read [SCORING.md](SCORING.md) for the formulas, examples, retention limits and future-game contract.
-
-## Real local profile
-
-`profile.html` now reads completed Daily records from Lowball, Stake and Stack Up. It shows each game’s own score scale, real play counts and saved-history streaks, today’s checklist, recent results, a 14-day activity view and six achievements derived from available records. There is no sample identity or friend code. The shared Arcade average is calculated separately from the original per-game scores. Supabase accounts and cloud saves are implemented; project activation instructions are in [ACCOUNTS.md](ACCOUNTS.md). Friends and private score comparisons are implemented; see [FRIENDS.md](FRIENDS.md) for the additional database migration.
-
-`profile-records.js` is a read-only adapter; it does not start game engines, migrate saves, apply replay resets or write storage. Legacy Stake scores reconstruct the original 164-question option permutations without loading a game. Lowball lifetime plays come from its saved counter; best/average/activity use its retained score history (normally up to 121 days locally; cloud merges can preserve older results), with its stored last result as a fallback. Other incomplete, unsupported, invalid or future records are excluded. The page explains these limits and refreshes after storage changes, returning to the tab and the shared Sydney day boundary.
-
-Run `node tests/profile-records.cjs` and `ARCADE_TEST_URL=http://127.0.0.1:8000 node tests/profile.cjs`. Serve the repository root. The browser test exercises the actual three game engines and confirms profile views never change their saved records.
-
-## Current new-game layout standard
-
-**Use the centred Stake-based starter in [`games/_template/`](games/_template/README.md) for future added games.** The [layout map](design/GAME-LAYOUT.md) identifies the fixed shell and replaceable game areas; [AGENTS.md](AGENTS.md) preserves this user preference for future repository work. The starter has working shared controls and clear placeholders, with no fake engine or scores. It is not registered as a live game. Historical prototypes and the old generic game page are not the canonical new-game layout.
-
-## Stake question timer and shared popups
-
-Stake now gives 30 seconds **after a bet is placed**, when the question/choices appear. A timeout loses that bet and opens the same answer-review flow as an incorrect answer. It applies to Daily and Unlimited. Daily deadlines persist across refreshes; both modes continue counting while another mode or a popup is open. Correct/incorrect answers stop that question's timer. Choosing the next stake is not timed.
-
-Saved records retain `b`, `p`, `qs` and now also `deadline` (absolute milliseconds or null) and `rv` (answer review). A pick of `-1` means timeout and is scored/shared as a loss. Earlier pending bets receive a persisted 30-second deadline on their first upgraded load. No existing completed scores are reset.
-
-`game-dialog.css` supplies the shared cream/navy popup visuals for Stack Up and Stake. Stake's late purple popup override has been removed. Both Stake dialogs support focus trapping, focus restoration and Escape, and the guide explains timer behaviour. `games/stake/timer.css` styles the sticky question countdown.
-
-Run `ARCADE_TEST_URL=http://127.0.0.1:8000 node tests/stake-timer.cjs` for timing, penalties, persistence, mode switching, popup styling/accessibility and responsive checks. Updated screenshots are in `design/previews/stake-timer/`.
-
-## Expanded question banks
-
-Stack Up now has 112 harder sorting sets and Stake has 264 questions: 100 additions to each game, plus harder replacements for Stack Up's original twelve. Pre-answer card descriptions are blank, so weights, dates and other answer values cannot give away the order. The quantities are shown only in the result explanation. Sources, checks and exclusions are documented in [content/QUESTION-SOURCES.md](content/QUESTION-SOURCES.md).
-
-Saved runs keep question snapshots; earlier records migrate against their original banks, preserving progress and scores after content updates. New question sources are loaded locally (`games/stack-up/stacks.js` and `games/stake/questions.js`), so downloaded copies need the complete updated folder.
-
-## Stack Up is live
-
-`games/stack-up/index.html` is the production game. The homepage, game drawers and `game.html?id=stack-up` all open it directly. The original uploaded game remains archived under `design/prototypes/`.
-
-Daily selects five of 112 stacks from a date seed, with identical challenges across device timezones. Each stack has 90 seconds; points are multiplied by ten in Daily. A correct answer earns `(100 + remaining seconds × 5 + consecutive stack streak × 35) × multiplier`. A wrong guess costs 300 Daily points / 30 Infinite points and resets the stack streak. Timeout costs 400 / 40. Scores may be negative. Infinite is free practice and never enters Daily stats.
-
-Daily state is saved under `break-room:stack-up:daily:YYYY-MM-DD`. Orders, penalties, deadlines, round results and completion survive reloads and mode switches. Timers use wall-clock deadlines and continue while a stack is left open; they stop between stacks. The next Daily unlocks at midnight Australia/Sydney. Stats, best scores, play streaks and sharing are backed by completed local Daily records. Browser storage failure is shown explicitly. There is no sample leaderboard or invented point balance. Cross-device accounts and online rankings are not part of this local game engine.
-
-Sort using desktop drag-and-drop, labelled touch buttons, or arrow keys on a focused card. Dialogs support Escape, focus trapping and focus restoration. Mobile keeps the timer sticky. Run `ARCADE_TEST_URL=http://127.0.0.1:8000 node tests/stack-up.cjs` for full-run, persistence, timer, mode, sharing, keyboard, touch, storage failure, midnight and responsive coverage. Screenshots are in `design/previews/stack-up/`.
-
-## Downloaded-site navigation and replay update
-
-Game cards use explicit `games/<name>/index.html` links so opening the downloaded homepage does not navigate to a folder listing. Lowball's board uses a blue gridded mat and printed price slip. `SITE.unlimitedFree` is enabled in `games/lowball/engine/site-config.js`; Unlimited opens without a purchase flag.
-
-This update runs a one-time local migration per game (`break-room:<game>:daily-reset:2026-10-19`) to reopen the current daily. Stake removes only the current day's stored attempt. Lowball clears current progress and, if completed today, removes that day's history/completion and subtracts it from the played/streak counters while retaining older records and settings. The marker prevents repeated resets on refresh.
-
-Run `ARCADE_TEST_URL=http://127.0.0.1:8000 node tests/replay-unlimited.cjs` for explicit link targets, actual card navigation, seeded daily reset/preserved history, subsequent reload persistence, free Unlimited and responsive play-area checks. Managed Chromium blocks `file://`, so direct downloaded-file browser navigation could not be exercised here; real local HTML targets and equivalent HTTP navigation were verified.
-
 # Break Room
 
-The production site now uses the approved cream grid, navy outlines, pastel palette and hard pixel shadows. The homepage uses the approved menu; placeholder games use the Stack Up introduction layout, and Lowball/Stake use broad boards with supporting controls.
+A static daily games website with a warm cream grid, navy outlines, pastel panels and hard pixel shadows. The GitHub repository retains its original name, Midnight-Arcade.
 
-Shared styles: `break-room.css` (core pages and Stake), `menu.css` (homepage), `stack-layout.css` + `game-layout.css` + `placeholder-layout.css` (placeholder templates), and `games/lowball/engine/break-room-engine.css` (Lowball iframe). Existing storage keys and game engines are retained. Stack Up is now a full game at `games/stack-up/index.html`, with saved Daily runs, the shared Sydney reset, free Infinite practice, and real local stats.
+## Play and develop
 
-# Midnight Arcade
+The expected GitHub Pages address is [Break Room](https://phoenix6716.github.io/Midnight-Arcade/). Publication is gated by [Check and publish Break Room](https://github.com/phoenix6716/Midnight-Arcade/actions/workflows/site.yml); check its latest deployment when verifying a release.
 
-A static daily games website with the approved purple arcade styling and shared game header. The application needs no framework or runtime package installation. Development/CI uses locked npm test tools and a plain-file production packaging step; see HOSTING.md.
-
-## Run locally
-
-From this checkout:
+For a local source preview:
 
 ```sh
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-The homepage is `index.html`; each game has a standalone route in `games/<id>/`.
+Open `http://127.0.0.1:8000/index.html`. Keep the full folder structure; links use explicit `index.html` targets for downloaded copies. A local server is recommended for account features and consistent browser storage.
 
-## Current games
+| Game | Current gameplay |
+| --- | --- |
+| Lowball | Four Daily price guesses, AU/US/UK/CA selection, generated pixel-art items and free Unlimited practice. |
+| Stake | Five Daily trivia questions, 1–3-chip bets and a 30-second timer after each bet; Unlimited practice. A timeout loses the bet. |
+| Stack Up | Five Daily ordering sets, drag/touch/keyboard controls, 90 seconds per stack and position feedback; Infinite practice. |
 
-- **Lowball** — integrated price-guessing engine, four daily items, region selector, local progress/statistics, and free unlocked Unlimited practice. Daily reset is midnight in Australia/Sydney.
-- **Stake** — five daily trivia questions, chip betting, local progress/statistics, and playable Unlimited practice. Daily reset is midnight in Australia/Sydney, shared with Lowball and the homepage countdown.
-- **Coming soon** — Pixel Pairs, Word Forge, Gridlock, Number Drop, Memory Lane, and Mystery Cabinet. Their pages intentionally preserve the default game layout for future integrations. They do not accept attempts or create demonstration scores.
+All Dailies reset at midnight **Australia/Sydney**, including daylight-saving changes. Other game cards remain clearly **Coming soon** and do not create fake attempts/results. Native scores remain alongside the shared 0–100 Arcade score. See [SCORING.md](SCORING.md) for the exact formulas and equal-game average over the common 120-day window.
 
-The homepage lists Lowball and Stake first. One compact introduction and a live universal countdown lead into the original mixed game grid. Availability is shown beside the games heading rather than in separate statistics panels. Homepage effects are quieter and supporting text is larger. Friends now uses accepted code-based requests and explicit score sharing; no example players/scores remain. Login/signup now connect to Supabase; see `ACCOUNTS.md` for database and authentication activation. The profile reads real native-game results from the active browser save area. Lowball's external statistics, checkout, and restore services remain unset in `games/lowball/engine/site-config.js`.
-
-## Shared files
-
-- `styles.css`: the approved website styling and homepage cards.
-- `game-flow.css`: the approved game layout and drawer styling.
-- `navigation.js`: shared drawer behavior, focus management, and backdrop dismissal for every game page.
-- `daily-clock.js`: shared Sydney calendar, next-midnight calculation, and live homepage countdown; handles daylight-saving changes.
-- `game-config.js`: game registry. Existing browser storage namespaces are retained for compatibility.
-- `game.js`: availability controller for coming-soon pages; implemented games own their engines.
-- `assets/cabinet-badge-logo.png`: selected Cabinet Badge wordmark, displayed at its visible bounds without modifying the source PNG.
-- `assets/midnight-moon-icon.png`: matching moon badge used as the website favicon.
-
-See [GAME-INTEGRATION-PLAN.md](GAME-INTEGRATION-PLAN.md) for the template contract. The user selected option 1 (Cabinet Badge) from the latest logo explorations; that wordmark is installed. The existing moon favicon is retained. The original comparison sheet remains in `design/` as history.
-
-## Browser regression checks
-
-With the local server running, and Node.js, Playwright, and Chromium available:
+## Content tools
 
 ```sh
-node tests/smoke.cjs
+npm ci --ignore-scripts --no-audit --no-fund
+npm run content:studio
 ```
 
-The prepared cloud environment supplies these tools. `ARCADE_TEST_URL` overrides the default test server address; `ARCADE_CHROMIUM` overrides `/usr/bin/chromium`.
+Open `http://127.0.0.1:9030` on the machine running the command. Search all **264 Stake questions, 112 Stack Up sets and 100 Lowball items**, write drafts, attach factual sources, preview player/answer views and save/download JSON proposals. This is a local development tool; it does not change live banks or publish content. Remote cloud loopback addresses require an attached browser/approved forwarding, or run the checkout on your own computer.
 
-Checks cover homepage ordering/availability; drawers and keyboard focus at 320, 390, 768, and 1440 pixels; coming-soon layouts; and complete Lowball/Stake daily runs, refresh/resume, statistics, and existing Unlimited behavior in isolated browser contexts. External Google Fonts requests are blocked in these functional tests, so they use fallback fonts. Tests do not validate payment providers, authentication, real-device behavior, or production hosting.
+```sh
+npm run content:report
+npm run content:check -- content/drafts/FILE.json --reviewed
+npm run content:export -- content/drafts/FILE.json
+npm run game:new -- word-ladder "Word Ladder"
+```
 
-## Preserve when extending
+Read [CONTENT.md](CONTENT.md) for the review/integration workflow, current source and price-evidence gaps, and Lowball compatibility risks. New game scaffolds stay in `game-drafts/` until implemented and deliberately registered. They use the canonical [Stake-based starter](games/_template/README.md) and [layout map](design/GAME-LAYOUT.md). Development tools and drafts are excluded from the published site.
 
-Keep the current styling and header layout. Lowball and Stake are substantially complete; do not replace their mechanics or artwork with placeholder logic. Keep Lowball's region selector exclusive to Lowball. Browser storage is device-local, not shared account storage or server-enforced access.
+## Accounts, profiles and friends
 
-For Stake's question typography and result-copying checks, run `node tests/stake-sharing.cjs` against the same local server. This checks real clipboard contents and its fallback behavior at mobile and desktop widths.
+Guest progress stays local. Supabase email accounts support explicit cloud activation, optional guest import, account-isolated native saves and cross-device restore from the Account page. [ACCOUNTS.md](ACCOUNTS.md) explains database migrations, authentication redirects, email delivery and conflict/ownership rules. Only public client configuration belongs in `account-config.js`.
 
-## Shared daily reset
+The profile reads real completed Daily records without starting engines or rewriting saves. Missing, pending and Unlimited results are excluded; real zeroes count. Lowball's lifetime play count and retained history have different coverage, which the profile labels.
 
-All daily games use midnight **Australia/Sydney**, regardless of the device timezone. The homepage, Stake, Lowball, and future-game storage helpers use `daily-clock.js`. Countdown calculations handle 23-hour and 25-hour days. Historical storage keys and saved records are preserved. Stake now chooses its daily set and calculates streaks using the shared calendar rather than the device's local date. Lowball keeps its new-daily-ready interaction, and stale submissions after midnight load the new challenge instead of saving the previous puzzle as a new-day attempt.
+Friends use private codes, accepted requests, remove/block controls and opt-in Today/120-day score comparisons. Apply the additional database migration as documented in [FRIENDS.md](FRIENDS.md). Friends receive server-derived scores, not raw guesses, answers or email addresses. Existing browser records are origin-specific; changing domains does not automatically migrate guest saves.
 
-Run `node tests/daily-clock.cjs` for calendar/DST cases and `node tests/homepage-reset.cjs` (server running) for responsive layout and cross-timezone rollover checks. Serve the entire repository root even when opening Lowball's engine route directly, so its shared clock script remains accessible.
+## Checks and deployment
 
-### Lowball generated artwork and score receipts
+Use Node 24, Python 3.12+ and the locked dependencies:
 
-Lowball uses actual generated PNG images in `games/lowball/engine/icons/generated/`: 100 individual item illustrations and nine game icons (trophy, lock, stats, four gem colours, sound on/off). They match the original shaded pixel-art references. `item-art.js` maps each item explicitly to its image; it does not draw SVGs, match categories, or silently substitute an unrelated image. Existing items, prices, and mechanics are unchanged.
+```sh
+npm ci --ignore-scripts --no-audit --no-fund
+npx playwright install --with-deps chromium
+npm test
+```
 
-The original generated atlases are retained in `icons/generated/source/`. `manifest.json` records each asset's atlas, cell, and extraction bounds. If needed, run `node scripts/extract-lowball-images.cjs` with Sharp available to reproduce the individual transparent 192px PNGs from those atlases. This extraction only crops and sizes generated artwork; it does not draw the illustrations. A new item needs its own generated PNG and an explicit mapping in `item-art.js`.
+The suite creates a content review report, runs unit/database checks, builds `dist/`, validates shipped references/scripts and tests actual game/account/friend flows below `/Midnight-Arcade/`. Tests use isolated browser records and a local PostgreSQL implementation; mocked authentication transport does not establish live Supabase configuration or email delivery. `ARCADE_CHROMIUM` selects a browser executable; the managed environment can use `/usr/bin/chromium`.
 
-Score receipts retain the clean system sans-serif numerals, compact monospace labels, side-by-side price comparison, and small verification date. Preview images and a complete HTML catalogue are in `design/previews/lowball-images/`.
+Only the checked `dist/` artifact is published by GitHub Actions after success on `main`. See [HOSTING.md](HOSTING.md) for activation, rollout, rollback and browser-storage limits. Reports/logs are retained in `.artifacts/`; screenshot tests may regenerate tracked files under `design/previews/`. [VALIDATION.md](VALIDATION.md) records verification scope and historical changes.
 
-Run `ARCADE_TEST_URL=http://127.0.0.1:8015 node tests/lowball-art.cjs` against a local static server. It checks every asset through the actual game, all gem tiers, sound switching/persistence, and result/play layouts at four widths. The artwork needs no external image host, API key, or generation service at runtime.
+## Shared structure and preservation
 
-### Lowball counter and Stake tabletop
+- `game-shell.css`, `game-dialog.css`, `daily-reset.css` and `daily-clock.js`: canonical centred shell, shared dialogs and Sydney reset rail.
+- `navigation.js`: Menu button and left drawer, keyboard/focus management and dismissal.
+- `game-config.js`: game metadata and explicit routes; live games own their engines.
+- `arcade-score.js`, `profile-records.js`: shared scoring and read-only native record adapters.
+- `accounts.js`, `cloud-saves.js`, `friends.js`, `supabase/`: account ownership, sync and private social comparisons.
+- `games/lowball/engine/icons/generated/` and `item-art.js`: generated PNG artwork with explicit mappings. No code-drawn substitutes or unrelated fallback images.
 
-Lowball's active playing surface is styled by `games/lowball/engine/counter.css`: a large item display on a shop shelf, printed product label, cash-register price input, and a receipt reveal with a stamped verdict and perforated paper edge. Existing generated PNGs, prices, regions, score calculations, and saved rounds are retained. Personal stats sit in the header between the title and utility buttons. Lowball now uses one centred column: the countdown sits in a separate top-right rail with the region selector below it, while the sound toggle stays directly below the game at the centre. On narrower screens the settings rail moves above the game to fit without horizontal scrolling. Enter submits a price and focuses Next; Enter again moves to the next item without skipping the receipt.
-
-Stake's active surface is styled by `games/stake/table.css`: textured green felt with a stitched edge, paper question cards and category tabs, a three-chip betting dock, and chip-stack feedback. The countdown is integrated into the question card and turns coral in the last ten seconds. The score tally, 30-second deadline, timeout penalties, Daily/Unlimited state, and shared popup design remain intact. Chips stay circular at every screen width. Keyboard betting/answering retains focus inside the game, and the mode tabs support arrow keys, Home, and End.
-
-Short stepped entrance, receipt, stamp, and chip animations respect reduced-motion preferences. Previews of play, receipt, review, timeout, and final-score states are in `design/previews/game-polish/`. Run `tests/game-surfaces.cjs` against the local server for keyboard, responsive layout, long-question, chip-shape and reduced-motion checks. Continue to use `tests/smoke.cjs`, `tests/lowball-art.cjs`, `tests/stake-timer.cjs`, and `tests/stake-sharing.cjs` for gameplay, image coverage, persistence and sharing.
-
-### Restored Lowball score gems
-
-Lowball's round and final results use the original Break Room cut-corner, faceted score gems again: soft green, yellow, orange, and coral. The shared `LOWBALL_ART.gem()` renderer restores the exact earlier design and preserves existing tier thresholds and animations. Item illustrations and the trophy, lock, stats, and sound icons remain generated PNGs. The glossy square gem PNGs are archived with their source atlas but no longer mapped into the game.
-
-### Shared boxed resets and centred Stake
-
-`daily-reset.css` contains the original Stack Up reset-card appearance and is loaded last by Stack Up, Stake, and Lowball. Each reset card has the same cream background, navy border and hard shadow, heading, monospaced countdown, and “Same time. Every game.” note. The existing shared Sydney-midnight clock and Lowball's new-daily reload prompt are retained.
-
-Stake now uses the same centred responsive column as Lowball for the heading, personal stats, mode controls, progress markers, and playing surface. Its boxed reset sits independently at the top right on wide screens and above the game on narrower screens. Lowball's region remains under its boxed reset, its sound toggle stays centred below the game, and the Daily mode button now says only “Daily” (the four-round rules are unchanged).
-
-Run `ARCADE_TEST_URL=http://127.0.0.1:8025 node tests/layout-goals.cjs` against a root static server for the four requested acceptance checks. The reset comparison first disables the new stylesheet on Stack Up to read its original appearance, then compares both other games against that baseline.
+Keep the left Menu drawer, centred brand/game, header stats and tools, right reset rail, and optional working sound toggle below the game. Preserve real saves, scoring, generated artwork, circular Stake chips and game-specific mechanics. No standalone Lowball legal footer is required; universal legal pages remain future work. Read [AGENTS.md](AGENTS.md) before extending the project; older `design/prototypes/` and generic placeholder pages are historical references, not the canonical new-game standard.

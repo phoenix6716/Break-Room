@@ -11,7 +11,12 @@
     "check": "node scripts/check-site.cjs dist",
     "test:unit": "node scripts/run-checks.cjs unit",
     "test:browser": "node scripts/run-checks.cjs browser",
-    "test": "npm run test:unit && npm run build && npm run check && npm run test:browser"
+    "test": "npm run content:report && npm run test:unit && npm run build && npm run check && npm run test:browser",
+    "content:studio": "node scripts/content-studio.cjs",
+    "content:check": "node scripts/content.cjs check",
+    "content:report": "node scripts/content.cjs report",
+    "content:export": "node scripts/content.cjs export",
+    "game:new": "node scripts/new-game.cjs"
   },
   "devDependencies": {
     "@electric-sql/pglite": "0.5.10",

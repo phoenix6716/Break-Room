@@ -56,3 +56,7 @@ ARCADE_TEST_URL=http://127.0.0.1:8011 node tests/homepage-reset.cjs
 ```
 
 Use the port of the running repository-root static server. The migration tests verify preserved questions/scores after bank reordering and blank descriptions even for older saved runs. The Stack Up suite exercises complete daily/practice runs at four responsive widths, touch/keyboard/drag controls, timeouts, refresh, scoring, sharing and midnight rollover.
+
+## Authoring tools
+
+See [`CONTENT.md`](../CONTENT.md) for the local Content Studio, draft schema, factual-review checks and integration boundaries. The existing baseline generator remains authoritative; reviewed proposals are not automatically applied. Run `npm run content:report` for current inventory coverage and explicit review gaps.

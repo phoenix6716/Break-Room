@@ -38,7 +38,7 @@ let offline=false,missing=false,queue=Promise.resolve();
  await login(b,'bob');const codeB=await enable(b);
  const card=(p,name)=>p.locator('.friend-score').filter({has:p.locator('.score-name').filter({hasText:name})});
  assert.equal(await card(a,'Alice').locator('.overall strong').innerText(),'76.7');assert.equal(await card(b,'Bob').locator('.overall strong').innerText(),'50');
- async function request(p,code){await p.locator('#friend-code').fill(code);await p.locator('#request-friend button').click();await p.locator('#friend-status').filter({hasText:'Request sent'}).waitFor();}
+ async function request(p,code){await p.locator('#friend-code').fill(code);await p.locator('#request-friend button').click();await p.locator('#friend-status').filter({hasText:'Request sent'}).waitFor();await p.locator('#friend-content[aria-busy="false"]').waitFor();}
  await request(a,codeB);assert.equal(await a.locator('.friend-score').count(),1);
  await b.locator('#refresh-friends').click();await b.getByRole('button',{name:'Accept Alice',exact:true}).click();await b.waitForFunction(()=>document.querySelectorAll('.friend-score').length===2);
  await a.locator('#refresh-friends').click();await a.waitForFunction(()=>document.querySelectorAll('.friend-score').length===2);

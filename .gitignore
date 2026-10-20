@@ -7,3 +7,6 @@ dist/
 .DS_Store
 __pycache__/
 *.pyc
+
+# Local editorial drafts are proposals, not published content.
+/content/drafts/*.json

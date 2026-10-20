@@ -6,7 +6,7 @@ The visual map and invariants are in [`design/GAME-LAYOUT.md`](../../design/GAME
 
 ## Use it for a new game
 
-1. Copy this directory to `games/<new-slug>/`. Keep the same nesting so `../../` assets/links remain valid. Do not publish `_template` as a game or add it to the registry.
+1. Run `npm run game:new -- new-slug "New Game"` from the repository root to stage a copy in `game-drafts/<new-slug>/`. It remains unpublished until implemented; see [`CONTENT.md`](../../CONTENT.md). Keep the same nesting so `../../` assets/links remain valid. Once playable, move it to `games/<new-slug>/` and register deliberately. Do not publish `_template` as a game or add it to the registry.
 2. Replace `[TITLE]`, category/description and the document title; update popup titles, objective, rules and stat bindings. Remove `noindex` and `.br-template-note` when publishing a real game.
 3. Replace `#engine-slot` with the actual game. Change the decorative surface label and progress placeholder. Game-specific CSS belongs in a separate local file loaded after `game-shell.css`; preserve the surrounding layout.
 4. Keep `template.js` as shell controls (rename it and update the script tag if desired). Load the engine after it. Read `window.BREAK_ROOM_GAME_SHELL.mode` initially and listen for `break-room:mode-change`; `event.detail.mode` is `daily` or `unlimited`. The engine owns saving, seeds, scoring, game timers and completion. Switching the visual tab must not silently discard an in-progress run.
