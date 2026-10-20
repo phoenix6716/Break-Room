@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pack</title>
+<style>
+:root{--bg:#f3ead9;--card:#fffaf0;--fg:#2b2418;--mu:#6b5f4b;--bd:#c9b99a;--ac:#0e6b63;--ac2:#fff;--wn:#a3320b;color-scheme:light}
+@media(prefers-color-scheme:dark){:root{--bg:#1a1814;--card:#262320;--fg:#f1e9d8;--mu:#b3a78f;--bd:#5b523f;--ac:#5fc9bb;--ac2:#10201d;--wn:#ff9a73;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.4 system-ui,sans-serif;overflow-wrap:anywhere;padding:max(12px,env(safe-area-inset-top)) max(14px,env(safe-area-inset-right)) 0 max(14px,env(safe-area-inset-left))}
+main{max-width:520px;margin:0 auto;padding-bottom:calc(24px + env(safe-area-inset-bottom))}
+header{display:flex;justify-content:space-between;align-items:center;gap:8px}
+h1{margin:0;font-size:26px;letter-spacing:.04em}h2{margin:12px 0 4px}h3{margin:14px 0 2px;font-size:15px;color:var(--mu)}
+#st{font-weight:700;border:2px dashed var(--bd);border-radius:20px;padding:4px 10px;background:var(--card)}
+nav{display:flex;gap:6px;margin:10px 0}
+.t{flex:1;min-height:44px;border:2px solid var(--bd);border-radius:10px;background:transparent;color:inherit;font:inherit}
+.t.on{background:var(--ac);color:var(--ac2);font-weight:700;text-decoration:underline}
+.lb{font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mu);font-size:13px;margin:8px 0}
+.big{font-size:32px;margin:6px 0}
+.hud{position:sticky;top:0;background:var(--bg);padding:6px 0;z-index:2}
+.tag{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;border:2px dashed var(--bd);border-radius:12px;background:var(--card);padding:10px 12px;font-variant-numeric:tabular-nums}
+.track{height:10px;border-radius:5px;background:var(--bd);margin-top:8px;overflow:hidden}
+.track i{display:block;height:100%;background:var(--ac);width:0}.track i.bad{background:var(--wn)}
+.ov{color:var(--wn);font-weight:700;margin:4px 0;min-height:1.2em}
+.it{display:flex;align-items:center;gap:12px;width:100%;min-height:58px;margin-bottom:8px;padding:6px 12px;text-align:left;border:2px dashed var(--bd);border-radius:12px;background:var(--card);color:inherit;font:inherit}
+.it.on{border-style:solid;border-color:var(--ac);box-shadow:inset 0 0 0 1px var(--ac)}
+.em{font-size:28px}.nm{flex:1}.nm small{display:block;color:var(--mu)}
+.st{min-width:78px;text-align:center;border:1px solid var(--bd);border-radius:16px;padding:4px 8px;font-size:14px}
+.it.on .st{background:var(--ac);color:var(--ac2);border-color:var(--ac);font-weight:700}
+.bar{position:sticky;bottom:0;background:var(--bg);padding:10px 0 calc(10px + env(safe-area-inset-bottom))}
+.go{display:block;width:100%;min-height:52px;margin:8px 0;border:0;border-radius:12px;background:var(--ac);color:var(--ac2);font:inherit;font-weight:700;font-size:17px}
+.go:disabled{opacity:.5}
+.bar .go{margin:0}
+input,textarea{width:100%;min-height:48px;margin:8px 0;padding:8px 10px;font:inherit;border:2px solid var(--bd);border-radius:10px;background:var(--card);color:inherit}
+.row{padding:6px 0;border-bottom:1px dashed var(--bd)}
+.cg{display:grid;grid-template-columns:auto 1fr 1fr;gap:8px 10px;align-items:start}
+.cg small{display:block;color:var(--mu)}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+</style></head><body><main>
+<header><h1>🧳 Pack</h1><span id="st"></span></header>
+<nav role="tablist" id="tabs"></nav><div id="note"></div><div id="v" aria-live="polite"></div>
+</main><script>
+'use strict';
+// Set to the real hosted address before sharing. Used in share text and ?c=CODE links.
+const SHARE_URL='https://example.com/pack/';
+// Item pool: [name, emoji, typical kg]
+const P=[['Tent','⛺',2.4],['Sleeping bag','🛏️',1.6],['Water bottle','💧',1],['Camping stove','🍳',.8],['Rain jacket','🧥',.6],['Boots','🥾',1.4],['Laptop','💻',1.8],['Camera','📷',.9],['Headphones','🎧',.3],['Phone charger','🔌',.2],['Book','📕',.5],['Towel','🧺',.4],['Sunscreen','🧴',.3],['First aid kit','🩹',.5],['Torch','🔦',.3],['Snacks','🥜',.6],['Umbrella','☂️',.4],['Guitar','🎸',2.8],['Hair dryer','💨',.7],['Jeans','👖',.7],['Sweater','🧶',.6],['Sandals','🩴',.4],['Sunglasses','🕶️',.1],['Tablet','📱',.5],['Notebook','📓',.3],['Board game','🎲',.9],['Frisbee','🥏',.2],['Thermos','☕',.5],['Binoculars','🔭',.7],['Map','🗺️',.1],['Swimsuit','🩱',.2],['Yoga mat','🧘',1.2],['Toolkit','🔧',1.5],['Cooler','🧊',2],['Lantern','🏮',.6],['Rope','🪢',.8],['Passport pouch','🛂',.2],['Dress shoes','👞',1],['Blanket','🛋️',1.1],['Pillow','😴',.6]];
+const $=s=>document.querySelector(s);
+function h(t,a,...k){const e=document.createElement(t);for(const x in a||{}){if(x==='class')e.className=a[x];else if(x.startsWith('on'))e[x]=a[x];else e.setAttribute(x,a[x])}k.flat().forEach(c=>{if(c!=null&&c!==false)e.append(c)});return e}
+const H=s=>{let h=1779033703^s.length;for(let i=0;i<s.length;i++){h=Math.imul(h^s.charCodeAt(i),3432918353);h=h<<13|h>>>19}return h>>>0};
+const R=a=>()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296};
+const kg=w=>(w/10).toFixed(1)+' kg';
+const sum=(it,m)=>{let w=0,p=0;it.forEach((x,i)=>{if(m>>i&1){w+=x.w;p+=x.p}});return{w,p}};
+const pc=(p,b)=>p>=b?100:Math.min(99,Math.round(p/b*100));
+const em=(p,b)=>p>=b?'🟩':p/b>=.9?'🟨':'🟥';
+const lab=(p,b)=>p>=b?'Best possible':p/b>=.9?'90% or more':'Under 90%';
+const pts=(b,m)=>{const s=sum(b.it,m);return s.w>b.lim?0:s.p};
+const L=a=>a.length<2?(a[0]||''):a.slice(0,-1).join(', ')+' and '+a[a.length-1];
+const pad=n=>String(n).padStart(2,'0');
+const ymd=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+const addDays=(s,n)=>{const[y,m,d]=s.split('-').map(Number);return ymd(new Date(y,m-1,d+n))};
+const S={g(k){try{return localStorage.getItem(k)}catch(e){return null}},s(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const J=(k,d)=>{try{const v=JSON.parse(S.g(k));return v==null?d:v}catch(e){return d}};
+
+/* Bank: 66 bags generated from a fixed seed, so every player gets the same bank.
+   Each bag keeps only if exactly ONE subset reaches the max points (knapsack by brute force)
+   and the "best points per kg" greedy pick is strictly worse. Weights are in units of 0.1 kg. */
+function mk(r){for(;;){const pool=P.slice(),it=[],n=5+Math.floor(r()*4);
+ for(let k=0;k<n;k++){const[nm,e,w]=pool.splice(Math.floor(r()*pool.length),1)[0];it.push({n:nm,e,w:Math.max(1,Math.round(w*10*(.8+r()*.4))),p:2+Math.floor(r()*9)})}
+ const tot=it.reduce((a,x)=>a+x.w,0),lim=Math.round(tot*(.4+r()*.25));
+ let best=0,bm=0,cnt=0;
+ for(let m=1;m<1<<n;m++){const s=sum(it,m);if(s.w<=lim){if(s.p>best){best=s.p;bm=m;cnt=1}else if(s.p===best)cnt++}}
+ const o=it.map((_,k)=>k).sort((a,b)=>it[b].p/it[b].w-it[a].p/it[a].w);let gm=0,gw=0;
+ for(const k of o)if(gw+it[k].w<=lim){gw+=it[k].w;gm|=1<<k}
+ const gp=sum(it,gm).p;
+ if(cnt===1&&gp<best&&(bm&(bm-1)))return{it,lim,best,bm,gm,gp}}}
+const BANK=Array.from({length:66},(_,i)=>mk(R(H('pack'+i))));
+function setFor(d){const r=R(H('day'+d)),a=BANK.map((_,i)=>i);for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a.slice(0,3).map(i=>BANK[i])}
+// HOOK: archive of past days. Call setFor(date) for any earlier date and let players replay it outside the streak.
+// HOOK: sponsored themed sets. Swap setFor for a themed pool on set dates.
+
+const CODE=/^(\d{4}-\d{2}-\d{2})-([0-9a-z]{2})([0-9a-z]{2})([0-9a-z]{2})$/;
+const enc=(d,ms)=>d+'-'+ms.map(m=>m.toString(36).padStart(2,'0')).join('');
+let cur=ymd(new Date()),tab='d',run,U={o:[],p:0,n:0},PC=null;
+try{const c=(new URLSearchParams(location.search).get('c')||'').trim().toLowerCase();if(CODE.test(c))PC=c}catch(e){}
+
+// HOOK: streak freezes. In bump(), allow one missed day if the player holds a freeze.
+function streak(){const s=J('pack:s',{});return s&&s.last&&(s.last===cur||s.last===addDays(cur,-1))?s.n|0:0}
+function bump(d){const s=J('pack:s',{})||{};if(s.last===d)return;S.s('pack:s',JSON.stringify({last:d,n:s.last===addDays(d,-1)?(s.n|0)+1:1}))}
+function hdr(){const n=streak();$('#st').textContent='Streak: '+n+(n===1?' day':' days')}
+function show(...n){$('#v').replaceChildren(...n);window.scrollTo(0,0)}
+const T=[['d','Daily'],['u','Unlimited'],['c','Compare']];
+function tabs(){$('#tabs').replaceChildren(...T.map(([k,n])=>h('button',{role:'tab','aria-selected':String(k===tab),class:k===tab?'t on':'t',onclick:()=>go(k)},n)))}
+function go(k,pre){tab=k;tabs();hdr();$('#note').replaceChildren();({d:daily,u:nextU,c:cmpS})[k](pre)}
+
+function startRun(o){run=o;run.i=o.i||0;run.masks=o.masks||[];bag()}
+function bag(){const b=run.bags[run.i];let mask=0;
+ const wE=h('b'),pE=h('b'),fill=h('i'),ov=h('div',{class:'ov'}),btn=h('button',{class:'go'}),
+ bs=b.it.map((it,k)=>h('button',{class:'it','aria-pressed':'false',onclick:()=>{mask^=1<<k;upd()}},h('span',{class:'em','aria-hidden':'true'},it.e),h('span',{class:'nm'},h('b',null,it.n),h('small',null,kg(it.w)+' · '+it.p+' pts')),h('span',{class:'st'},'Add')));
+ function upd(){const s=sum(b.it,mask),over=s.w>b.lim;
+  bs.forEach((x,k)=>{const on=mask>>k&1;x.className='it'+(on?' on':'');x.setAttribute('aria-pressed',on?'true':'false');x.lastChild.textContent=on?'✓ In bag':'Add'});
+  wE.textContent=kg(s.w)+' of '+kg(b.lim);fill.style.width=Math.min(100,s.w/b.lim*100)+'%';fill.className=over?'bad':'';
+  ov.textContent=over?'⚠ Over by '+kg(s.w-b.lim):'';pE.textContent=s.p+' pts';
+  btn.disabled=!mask||over;btn.textContent=over?'Too heavy':mask?'Lock in this bag':'Add items first'}
+ btn.onclick=()=>{if(btn.disabled)return;run.masks.push(mask);if(run.onSubmit)run.onSubmit(mask);rev(b,mask)};
+ show(h('p',{class:'lb'},run.label(run.i)),
+  h('div',{class:'hud'},h('div',{class:'tag'},h('div',null,'Limit ',h('b',null,kg(b.lim))),h('div',null,'Packed ',wE),h('div',null,'Points ',pE)),h('div',{class:'track'},fill),ov),
+  ...bs,h('div',{class:'bar'},btn));upd()}
+function rev(b,m){const p=pts(b,m),bs=sum(b.it,b.bm),nm=x=>b.it.filter((_,k)=>x>>k&1).map(i=>i.n),
+ out=nm(b.gm&~b.bm),inn=nm(b.bm&~b.gm),last=run.i+1>=run.bags.length,
+ why='Choosing by most points per kg gives '+b.gp+' pts. The best pack '+(out.length?'leaves out '+L(out)+(inn.length?' and ':''):'')+(inn.length?'takes '+L(inn):'')+', which reaches '+b.best+' pts.';
+ show(h('p',{class:'lb'},'Bag result'),h('p',{class:'big'},em(p,b.best)+' '+pc(p,b.best)+'%'),
+  h('p',null,lab(p,b.best)+'. You scored '+p+' of '+b.best+' pts.'),
+  h('h3',null,'Best pack'),h('p',null,b.it.filter((_,k)=>b.bm>>k&1).map(i=>i.e+' '+i.n).join(', ')),
+  h('p',null,kg(bs.w)+' of '+kg(b.lim)+', '+b.best+' pts'),
+  h('h3',null,'Why the common pick loses'),h('p',null,why),
+  h('div',{class:'bar'},h('button',{class:'go',onclick:()=>{if(last)run.onEnd();else{run.i++;bag()}}},last?'See results':'Next bag')))}
+
+function daily(){cur=ymd(new Date());const d=cur,b=setFor(d);let m=J('pack:d:'+d,[]);
+ m=Array.isArray(m)?m.filter(Number.isInteger).slice(0,3):[];
+ if(m.length>=3)fin(d,b,m);
+ else startRun({bags:b,i:m.length,masks:m,label:i=>'Daily '+d+' · bag '+(i+1)+' of 3',
+  onSubmit(){S.s('pack:d:'+d,JSON.stringify(run.masks));if(run.masks.length===3){bump(d);hdr()}},onEnd:()=>fin(d,b,run.masks)});
+ if(PC)$('#note').replaceChildren(h('button',{class:'go',onclick:()=>{const c=PC;PC=null;go('c',c)}},'A friend sent a challenge. Open Compare'))}
+function fin(d,b,ms){const r=ms.map((m,i)=>pts(b[i],m)),tp=r.reduce((a,x)=>a+x,0),tb=b.reduce((a,x)=>a+x.best,0),
+ e=r.map((p,i)=>em(p,b[i].best)).join(''),code=enc(d,ms),txt='Pack '+d+' '+e+' '+pc(tp,tb)+'%\n'+code+'\n'+SHARE_URL+'?c='+code;
+ show(h('h2',null,'Done for today'),h('p',{class:'big'},e+' '+pc(tp,tb)+'%'),
+  ...b.map((x,i)=>h('div',{class:'row'},'Bag '+(i+1)+': '+em(r[i],x.best)+' '+r[i]+' of '+x.best+' pts, '+lab(r[i],x.best))),
+  share(txt),h('p',null,'Next set in ',h('b',{id:'cd'})),h('p',null,'Come back tomorrow for a new set.'));cnt()}
+function cnt(){const e=$('#cd');if(!e)return;const[y,m,d]=cur.split('-').map(Number),s=Math.max(0,Math.floor((new Date(y,m-1,d+1)-new Date())/1e3));e.textContent=pad(s/3600|0)+':'+pad(s/60%60|0)+':'+pad(s%60)}
+function share(t){const ta=h('textarea',{readonly:'',rows:'4','aria-label':'Result text'}),st=h('div',{'aria-live':'polite'});ta.value=t;
+ return h('div',null,ta,h('button',{class:'go',onclick:async()=>{try{await navigator.clipboard.writeText(t);st.textContent='Copied'}catch(e){ta.focus();ta.select();try{document.execCommand('copy');st.textContent='Copied'}catch(x){st.textContent='Select the text above and copy it'}}}},'Copy result'),st)}
+
+// Unlimited: separate from streak and daily storage. Cycles the whole bank, reshuffles at the end.
+function nextU(){if(U.p>=U.o.length){U.o=BANK.map((_,i)=>i);for(let i=U.o.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[U.o[i],U.o[j]]=[U.o[j],U.o[i]]}U.p=0}
+ const n=U.n;startRun({bags:[BANK[U.o[U.p++]]],label:()=>'Unlimited · bag '+(n+1)+' · '+n+' played',onSubmit(){U.n++},onEnd:nextU})}
+
+function cmpS(pre){
+ const inp=h('input',{type:'text',placeholder:'2026-10-17-1a2b3c',autocomplete:'off',autocapitalize:'off',spellcheck:'false','aria-label':'Friend code'}),msg=h('p',{class:'ov',role:'alert'});
+ inp.value=pre||'';
+ const bad=t=>{msg.textContent=t};
+ const load=()=>{bad('');const m=CODE.exec(inp.value.trim().toLowerCase());
+  if(!m)return bad('That code is not valid. It looks like 2026-10-17-1a2b3c.');
+  const d=m[1],[y,mo,da]=d.split('-').map(Number),dt=new Date(y,mo-1,da);
+  if(dt.getFullYear()!==y||dt.getMonth()!==mo-1||dt.getDate()!==da)return bad('That date does not exist.');
+  const f=[m[2],m[3],m[4]].map(x=>parseInt(x,36)),bg=setFor(d);
+  if(f.some((x,i)=>x>=1<<bg[i].it.length))return bad('That code does not fit the set for that day.');
+  const mine=d===cur?J('pack:d:'+d,[]):[];
+  if(Array.isArray(mine)&&mine.length>=3)return cmp(d,bg,f,mine);
+  show(h('h2',null,'Friend code for '+d),h('p',null,'Play that day\'s three bags, then see both results side by side.'),
+   h('button',{class:'go',onclick:()=>startRun({bags:bg,label:i=>'Compare '+d+' · bag '+(i+1)+' of 3',onEnd:()=>cmp(d,bg,f,run.masks)})},'Play this set'))};
+ show(h('h2',null,'Compare'),h('p',null,'Paste a friend\'s code to play their set and compare.'),inp,h('button',{class:'go',onclick:load},'Load code'),msg);
+ if(pre)load()}
+function cmp(d,b,f,y){const fp=f.map((m,i)=>pts(b[i],m)),yp=y.map((m,i)=>pts(b[i],m)),T=a=>a.reduce((s,x)=>s+x,0),tb=b.reduce((s,x)=>s+x.best,0),ft=T(fp),yt=T(yp),
+ cell=(p,i)=>h('div',null,em(p,b[i].best)+' '+p+'/'+b[i].best,h('small',null,lab(p,b[i].best))),
+ tot=(a,t)=>h('b',null,a.map((p,i)=>em(p,b[i].best)).join('')+' '+pc(t,tb)+'%');
+ show(h('h2',null,'Compare '+d),h('div',{class:'cg'},h('b'),h('b',null,'Friend'),h('b',null,'You'),
+  ...b.flatMap((x,i)=>[h('div',null,'Bag '+(i+1)),cell(fp[i],i),cell(yp[i],i)]),h('b',null,'Total'),tot(fp,ft),tot(yp,yt)),
+  h('p',{class:'big'},ft===yt?'Tie':yt>ft?'You win by '+(yt-ft)+' pts':'Friend wins by '+(ft-yt)+' pts'))}
+
+// Midnight rollover: new local date while open loads the new daily set (or the new countdown).
+setInterval(()=>{const n=ymd(new Date());if(n!==cur){if(tab==='d')go('d');else{cur=n;hdr()}}cnt()},1000);
+// HOOK: private leagues. Post the share code to a league endpoint and fetch standings.
+// HOOK: cosmetic themes. Add [data-theme] variable blocks and unlock them by streak or purchase.
+go('d');
+</script></body></html>
