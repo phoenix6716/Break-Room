@@ -5,7 +5,10 @@
  const base=new URL('.',document.currentScript.src),accountURL=new URL('account.html',base).href;
  const generationKey='br:cloud:generation',ownerKey='br:cloud:owner',guestKey='br:cloud:guest',cacheKey=id=>'br:cloud:cache:'+id;
  const $=id=>document.getElementById(id),isAccount=!!$('account-content'),isGame=location.pathname.includes('/games/');
- let client=null,session=null,busy=false,lastUploaded='',syncTimer=null,initialOwner=null;
+ let client=null,session=null,busy=false,lastUploaded='',syncTimer=null,initialOwner=null,redirecting=false;
+ // Auth, ownership and generation events can arrive together on logout.
+ // Navigate once so a second event cannot abort the first page load.
+ function openAccount(){if(redirecting)return;redirecting=true;location.replace(accountURL);}
  const storage=()=>window.localStorage;
  const owner=()=>storage().getItem(ownerKey);
  const snapshot=()=>saves.capture(storage());
@@ -119,8 +122,8 @@
    if($('password'))$('password').value='';
    if(form.dataset.auth==='reset'){status('If that address has an account, a password reset link will arrive shortly.');}
    else if(form.dataset.auth==='signup'&&!result.data.session){status('Check your email to confirm your account, then log in. If you already have an account, try logging in or resetting your password.');}
-   else if(form.dataset.auth==='update'){location.replace(accountURL);}
-   else location.replace(accountURL);
+   else if(form.dataset.auth==='update'){openAccount();}
+   else openAccount();
   }catch(error){status(friendly(error),true);}finally{fields.disabled=false;}
  }
  async function boot(){
@@ -131,9 +134,9 @@
    // Register listeners before enabling a form. Without JS the form stays disabled.
    for(const form of document.querySelectorAll('form[data-auth]'))form.addEventListener('submit',submit);
    const {data,error}=await client.auth.getSession();if(error)throw error;session=data.session;
-   if(owner()&&owner()!==session?.user.id){if(!isAccount){location.replace(accountURL);return;}restoreGuest();}
+   if(owner()&&owner()!==session?.user.id){if(!isAccount){openAccount();return;}restoreGuest();}
    client.auth.onAuthStateChange((event,next)=>{session=next;setTimeout(()=>{
-    if(owner()&&owner()!==next?.user.id){if(isAccount){try{restoreGuest();}catch(e){status(friendly(e),true);}}else{location.replace(accountURL);return;}}
+    if(owner()&&owner()!==next?.user.id){if(isAccount){try{restoreGuest();}catch(e){status(friendly(e),true);}}else{openAccount();return;}}
     render();
     if(event==='PASSWORD_RECOVERY'&&location.pathname.endsWith('/reset-password.html')){$('password-fields').disabled=false;status('Choose your new password.');}
    },0);});
@@ -146,8 +149,8 @@
    if($('export-saves'))$('export-saves').onclick=download;
    render();
    window.addEventListener('storage',event=>{
-    if(event.key===generationKey&&isGame){location.replace(accountURL);return;}
-    if(event.key===ownerKey&&owner()!==initialOwner){location.replace(accountURL);return;}
+    if(event.key===generationKey&&isGame){openAccount();return;}
+    if(event.key===ownerKey&&owner()!==initialOwner){openAccount();return;}
     if(event.key&&saves.games.some(g=>saves.belongs(g,event.key)))schedule();
    });
    window.addEventListener('break-room:save',schedule);

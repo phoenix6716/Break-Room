@@ -1,3 +1,9 @@
+## Account redirect race and blocked deployment (20 October 2026)
+
+The failed GitHub Actions run reported `page.waitForURL: net::ERR_ABORTED` at the cross-tab logout check. Save-generation, ownership and Supabase authentication events could each call `location.replace` before the first navigation finished. `accounts.js` now routes account navigation through one guarded helper so subsequent notifications cannot restart it. Browser checks wait for account-aware game controls, begin waiting before triggering logout/sync, assert the destination is ready and cover bursts of repeated save notifications.
+
+A new test executes the real account module with an in-flight navigation and delivers repeated generation/owner/auth events. It deterministically fails against the previous committed script and passes against the guarded version, asserting exactly one redirect. The targeted official-SDK account browser test passed. Full `npm test` then passed all 25 local suites (8 unit/database/maths, 17 browser), including all game/timer/layout/profile/security checks, 318 published files, 565 local references and 29 parsed scripts. No checks were skipped and deployment gating remains intact. The complete local log is `/tmp/break-room-navigation-fix.log`; hosted Actions/deployment status is not verified by these local results. No Supabase schema/configuration change is part of this fix.
+
 ## Supabase accounts and private cloud saves (20 October 2026)
 
 A clean `npm ci --ignore-scripts --no-audit --no-fund` followed by `npm test` passed all 24 suites (7 unit/database/maths and 17 browser) against the project-path production artifact. The build checks passed for 318 published files, 565 local references and 29 parsed scripts. The complete run is captured in the local ignored `/tmp/break-room-accounts-final.log` and `.artifacts/` logs.

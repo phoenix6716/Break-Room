@@ -54,9 +54,17 @@ const native=page=>page.evaluate(()=>window.BREAK_ROOM_CLOUD_SAVES.capture(local
  await page.goto(base+'/account.html');await page.locator('#sign-out').click();await page.locator('#signed-out').waitFor();
  const second=await browser.newContext(),p2=await second.newPage();await mock(second);await login(p2,'bob');await activate(p2);assert.ok((await native(p2)).stake['stake:d:2026-10-17']);
  // Loading remote data in another tab also stops a stale same-account engine.
- const same=await second.newPage();await same.goto(base+'/games/stack-up/index.html');await activate(p2);await same.waitForURL('**/account.html');await same.close();
+ const same=await second.newPage();await same.goto(base+'/games/stack-up/index.html');await same.locator('.game-header-account[href$="/account.html"]').waitFor();
+ await Promise.all([same.waitForURL('**/account.html'),activate(p2)]);await same.locator('#activate-cloud').waitFor();await same.close();
  // Account switching in another tab sends running games to the safe account screen.
- const game=await second.newPage();await game.goto(base+'/games/stack-up/index.html');await p2.locator('#sign-out').click();await game.waitForURL('**/account.html');
+ const game=await second.newPage();await game.goto(base+'/games/stack-up/index.html');await game.locator('.game-header-account[href$="/account.html"]').waitFor();
+ await Promise.all([game.waitForURL('**/account.html'),p2.locator('#sign-out').click()]);await game.locator('#signed-out').waitFor();
+ assert.equal(await game.evaluate(()=>localStorage.getItem('br:cloud:owner')),null);
+ // Repeated save notifications in one turn must still land on a ready account page.
+ await login(p2,'bob');await activate(p2);const burst=await second.newPage();await burst.goto(base+'/games/stack-up/index.html');await burst.locator('.game-header-account[href$="/account.html"]').waitFor();
+ await Promise.all([burst.waitForURL('**/account.html'),burst.evaluate(()=>{
+  for(let i=0;i<4;i++)window.dispatchEvent(new StorageEvent('storage',{key:'br:cloud:generation',newValue:String(i)}));
+ })]);await burst.locator('#activate-cloud').waitFor();await burst.close();
  // Sign-up confirmation, safe credentials, recovery and update forms.
  await page.goto(base+'/signup.html');await page.locator('#display-name').fill('Player');await page.locator('#email').fill('new@example.com');await page.locator('#password').fill('password123');await page.locator('button[type=submit]').click();await page.locator('[data-account-status]').filter({hasText:'Check your email'}).waitFor();assert.equal(signup,1);assert.equal(await page.locator('#password').inputValue(),'');assert.ok(!page.url().includes('password123'));
  await page.goto(base+'/forgot-password.html');await page.locator('#email').fill('alice@example.com');await page.locator('button[type=submit]').click();await page.locator('[data-account-status]').filter({hasText:'reset link'}).waitFor();assert.equal(recovery,1);
