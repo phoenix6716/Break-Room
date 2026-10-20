@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PRIOR - which came first?</title>
+<style>
+*{box-sizing:border-box}
+:root{--bg:#f4ecd8;--ink:#2a2118;--mut:#645641;--card:#fbf6e9;--line:#c9b794;--acc:#8c2f1b;--ok:#1d6b3a;--bad:#a3201a;padding:env(safe-area-inset-top,0) env(safe-area-inset-right,0) env(safe-area-inset-bottom,0) env(safe-area-inset-left,0)}
+@media(prefers-color-scheme:dark){:root{--bg:#1c1812;--ink:#f1e6cc;--mut:#b9ac90;--card:#272118;--line:#4d4230;--acc:#f0917a;--ok:#74d49a;--bad:#ff938b}}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+#app{max-width:560px;margin:0 auto;padding:16px}
+header{text-align:center;padding:8px 0 4px}
+h1{font:700 2.2rem Georgia,"Times New Roman",serif;letter-spacing:.35em;margin:0;padding-left:.35em}
+.tag{color:var(--mut);margin:2px 0}
+.rule{display:flex;align-items:center;gap:8px;color:var(--mut);font-size:.8rem;margin:6px 0 10px}
+.rule i{flex:1;border-top:2px solid var(--line)}
+.chip{display:inline-block;border:1px solid var(--line);border-radius:99px;padding:2px 12px;font-size:.9rem;background:var(--card)}
+nav{display:flex;gap:6px;margin:10px 0}
+nav button{flex:1}
+button{min-height:48px;font:inherit;font-weight:600;color:var(--ink);background:var(--card);border:2px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer}
+button.on,button.go{background:var(--acc);border-color:var(--acc);color:var(--bg)}
+button:disabled{cursor:default}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.box{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--acc);border-radius:10px;padding:14px;margin:12px 0}
+h2{font:700 1.15rem Georgia,serif;margin:0 0 6px}
+.big{font:700 2.6rem Georgia,serif;margin:0}
+.opt{display:block;width:100%;text-align:left;margin:10px 0;min-height:64px;font-size:1.05rem}
+.opt small{display:block;font-weight:400;color:var(--mut)}
+.opt.win{border-color:var(--ok)}
+.opt.lose{border-color:var(--bad)}
+.ok{color:var(--ok);font-weight:700}.bad{color:var(--bad);font-weight:700}
+.row{font-size:1.6rem;letter-spacing:.1em}
+textarea,input{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:2px solid var(--line);border-radius:10px;padding:10px}
+textarea{font-family:ui-monospace,Menlo,monospace;font-size:.9rem}
+.mut{color:var(--mut);font-size:.92rem}
+ul{padding-left:18px;margin:6px 0}
+li{margin:4px 0}
+</style></head><body>
+<div id="app"></div>
+<script>
+const SHARE_URL="https://example.com/prior"; // replace with the published link
+/* MONETISATION PLUG-INS (none active): */
+/* PLUG: archive of past days (paid) - reuse dayPairs(date) for any earlier date */
+/* PLUG: streak freezes - protect S.streak in finish() when a day is missed */
+/* PLUG: private leagues - group friends by shared codes in cmpHome() */
+/* PLUG: sponsored themed sets - swap the event bank by date in dayPairs() */
+/* PLUG: cosmetic themes - add more CSS variable sets under :root */
+const E=`Gutenberg prints his Bible|1455|One of the first major books printed with movable type in Europe
+Columbus lands in the Caribbean|1492|He landed on 12 October
+Great Fire of London|1666|It burned for about four days
+US Declaration of Independence is adopted|1776|The vote was on 4 July
+Storming of the Bastille|1789|It happened on 14 July
+Stephenson's Rocket wins the Rainhill Trials|1829|
+Bell patents the telephone|1876|
+Edison shows a practical light bulb|1879|
+Wright brothers make the first powered flight|1903|The first flight lasted 12 seconds
+The Titanic sinks|1912|It sank on its maiden voyage
+Penicillin is discovered|1928|Alexander Fleming noticed mould killing bacteria
+First modern Olympic Games in Athens|1896|
+Eiffel Tower is completed|1889|It had a permit to stand for only 20 years
+Statue of Liberty is dedicated|1886|
+Panama Canal opens|1914|
+Colosseum in Rome opens|80|
+Vesuvius buries Pompeii|79|
+Western Roman Empire falls|476|The last emperor was Romulus Augustulus
+Battle of Hastings|1066|
+Magna Carta is sealed|1215|
+Marco Polo returns to Venice|1295|
+Black Death reaches Europe|1347|
+Copernicus publishes his sun centred model|1543|
+Shakespeare dies|1616|
+Galileo sees four moons of Jupiter|1610|
+Newton publishes the Principia|1687|
+Jenner gives the first smallpox vaccine|1796|
+Darwin publishes On the Origin of Species|1859|
+Einstein publishes special relativity|1905|
+DNA double helix structure is published|1953|
+First ascent of Everest|1953|Edmund Hillary and Tenzing Norgay reached the top
+Sputnik 1 launches|1957|It was the first artificial satellite
+Yuri Gagarin orbits Earth|1961|His flight lasted about 108 minutes
+Apollo 11 lands on the Moon|1969|
+Sydney Harbour Bridge opens|1932|
+Sydney Opera House opens|1973|Queen Elizabeth II opened it
+Australia becomes a federation|1901|
+Sydney hosts the Olympic Games|2000|
+Berlin Wall falls|1989|
+First website goes online|1991|It was hosted at CERN
+Google is founded|1998|
+Facebook launches|2004|
+YouTube is founded|2005|
+First iPhone goes on sale|2007|
+Bitcoin white paper is published|2008|
+Curiosity rover lands on Mars|2012|
+Chernobyl disaster|1986|
+Dolly the sheep is born|1996|She was the first mammal cloned from an adult cell
+Human genome sequence is declared complete|2003|
+Hubble Space Telescope launches|1990|
+Euro notes and coins enter circulation|2002|
+Pluto is discovered|1930|Clyde Tombaugh found it
+Pluto is reclassified as a dwarf planet|2006|
+Krakatoa erupts|1883|
+Brooklyn Bridge opens|1883|
+Suez Canal opens|1869|
+Ford Model T is introduced|1908|
+Lindbergh flies solo across the Atlantic|1927|
+First FIFA World Cup|1930|Uruguay hosted and won it
+First network email is sent|1971|
+First cash machine opens in London|1967|
+Rubik's Cube is invented|1974|Erno Rubik invented it
+First CD player goes on sale|1982|
+Space Shuttle Columbia first launches|1981|
+First Tour de France|1903|`.split("\n").map(s=>{const[n,y,f]=s.split("|");return{n:n,y:+y,f:f}});
+const fmt=y=>y<1000?"AD "+y:""+y;
+const $=s=>document.querySelector(s);
+function el(t,c,x,k){const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;if(k)for(const a in k)e[a]=k[a];return e}
+function rng(s){let h=1779033703^s.length;for(let i=0;i<s.length;i++){h=Math.imul(h^s.charCodeAt(i),3432918353);h=h<<13|h>>>19}
+return()=>{h=Math.imul(h^h>>>16,2246822507);h=Math.imul(h^h>>>13,3266489909);h^=h>>>16;return(h>>>0)/4294967296}}
+function pairs(r,count){const a=E.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}
+const out=[];while(a.length>1&&out.length<count){const x=a.shift();const j=a.findIndex(e=>Math.abs(e.y-x.y)>=8);if(j<0)continue;out.push([x,a.splice(j,1)[0]])}return out}
+const dayPairs=d=>pairs(rng("prior"+d),5);
+const dstr=d=>{d=d||new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
+const addDays=(s,n)=>{const[y,m,d]=s.split("-").map(Number);return dstr(new Date(y,m-1,d+n))};
+const K="prior1";
+function ld(){try{const o=JSON.parse(localStorage.getItem(K));return o&&o.done?o:{done:{}}}catch(e){return{done:{}}}}
+function sv(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
+let S=ld(),tab="daily",ses=null,res=null,msg="",cur=dstr();
+const streak=()=>{const t=dstr();return S.last==t||S.last==addDays(t,-1)?S.streak||0:0};
+const early=p=>p[0].y<p[1].y?"L":"R";
+const right=(p,a)=>a==early(p);
+
+function nav(){const n=el("nav");[["daily","Daily"],["free","Unlimited"],["cmp","Compare"]].forEach(([k,l])=>{
+const b=el("button",k==tab?"on":"",l,{onclick:()=>{tab=k;ses=null;res=null;msg="";view()}});b.setAttribute("aria-pressed",k==tab);n.append(b)});return n}
+function head(){const h=el("header");h.append(el("h1","","PRIOR"),el("p","tag","Which came first?"));
+const r=el("div","rule");r.append(el("span","","earlier"),el("i"),el("span","","later"));h.append(r,el("span","chip","Streak: "+streak()+" day"+(streak()==1?"":"s")));return h}
+function view(){const a=$("#app");a.textContent="";a.append(head(),nav());const m=el("main");a.append(m);
+if(ses)return play(m);if(res)return results(m,res);
+if(tab=="daily")home(m);else if(tab=="free")freeHome(m);else cmpHome(m)}
+function start(mode,date,fr){ses={mode:mode,date:date,ps:mode=="free"?pairs(Math.random,30):dayPairs(date),ans:"",i:0,sel:null,fr:fr||null,n:0,ok:0};res=null;view()}
+function home(m){const t=dstr();
+if(S.done[t]){return results(m,{date:t,ans:S.done[t],ps:dayPairs(t),fr:null,mode:"daily"})}
+const b=el("div","box");b.append(el("h2","","Today's set: "+t),el("p","","5 pairs of events. Pick the one that came first. One try each, no retries. Everyone gets the same set."));
+b.append(el("button","go","Start today's set",{onclick:()=>start("daily",t)}));m.append(b)}
+function freeHome(m){const b=el("div","box");b.append(el("h2","","Unlimited"),el("p","","Endless pairs from the full bank, reshuffled when it runs out. This never changes your streak or daily result."));
+b.append(el("button","go","Start",{onclick:()=>start("free",dstr())}));m.append(b)}
+function cmpHome(m){const b=el("div","box");b.append(el("h2","","Compare with a friend"),el("p","","Paste their code (like 2026-01-31-LRRLL). You play that day's set, then see how you match."));
+const i=el("input","",null,{type:"text",maxLength:20,autocapitalize:"characters",placeholder:"YYYY-MM-DD-LRRLL"});i.setAttribute("aria-label","Friend code");
+const g=el("button","go","Play and compare",{onclick:()=>go(i.value)});
+b.append(i,el("p","bad",msg),g);m.append(b)}
+function go(raw){const c=raw.trim().toUpperCase();const x=/^(\d{4}-\d{2}-\d{2})-([LR]{5})$/.exec(c);
+if(!x||dstr(new Date(x[1]+"T12:00:00"))!=x[1]){msg="That code is not valid.";return view()}
+const t=dstr();if(x[1]>t){msg="That day has not started for you yet.";return view()}
+const fr={date:x[1],ans:x[2]};msg="";tab="cmp";
+if(x[1]==t&&S.done[t]){res={date:t,ans:S.done[t],ps:dayPairs(t),fr:fr,mode:"daily"};return view()}
+start(x[1]==t?"daily":"cmp",x[1],fr)}
+function play(m){const s=ses,p=s.ps[s.i];
+m.append(el("p","mut",s.mode=="free"?"Answered "+s.n+", correct "+s.ok:"Round "+(s.i+1)+" of 5"+(s.mode=="cmp"?" (practice, no streak)":"")));
+const b=el("div","box");b.append(el("h2","","Which came first?"));
+p.forEach((e,k)=>{const L=k?"R":"L",o=el("button","opt","",{disabled:s.sel!=null});o.append(document.createTextNode(e.n));
+if(s.sel!=null){const first=early(p)==L;o.classList.add(first?"win":"lose");
+o.append(el("small","",fmt(e.y)+(first?"  ✓ came first":"  ✗ came later")+(s.sel==k?"  (your pick)":"")))}
+else o.onclick=()=>pick(k);b.append(o)});
+if(s.sel!=null){const ok=right(p,s.ans[s.ans.length-1]);b.append(el("p",ok?"ok":"bad",ok?"✓ Right":"✗ Wrong"));
+b.append(el("p","","Gap: "+Math.abs(p[0].y-p[1].y)+" years."));
+p.forEach(e=>{if(e.f)b.append(el("p","mut",e.n+": "+e.f+"."))});
+const last=s.mode!="free"&&s.i>=4;b.append(el("button","go",last?"See results":"Next",{onclick:next}))}
+m.append(b)}
+function pick(k){const s=ses,p=s.ps[s.i],L=k?"R":"L";s.sel=k;s.ans+=L;s.n++;if(right(p,L))s.ok++;view()}
+function next(){const s=ses;s.i++;s.sel=null;
+if(s.mode=="free"){if(s.i>=s.ps.length){s.ps=pairs(Math.random,30);s.i=0}return view()}
+if(s.i>=5)return finish();view()}
+function finish(){const s=ses;ses=null;
+if(s.mode=="daily"){S.done[s.date]=s.ans;if(S.last!=s.date){S.streak=S.last==addDays(s.date,-1)?(S.streak||0)+1:1;S.last=s.date}sv()}
+res={date:s.date,ans:s.ans,ps:s.ps,fr:s.fr,mode:s.mode};view()}
+function results(m,s){const sc=s.ps.filter((p,i)=>right(p,s.ans[i])).length;
+const row=s.ps.map((p,i)=>right(p,s.ans[i])?"✅":"❌").join("");
+const b=el("div","box");b.append(el("h2","","Results for "+s.date),el("p","big",sc+"/5"),el("p","row",row));
+const ul=el("ul");s.ps.forEach((p,i)=>{const a=p[early(p)=="L"?0:1],z=p[early(p)=="L"?1:0];
+ul.append(el("li","",(right(p,s.ans[i])?"✓ ":"✗ ")+a.n+" ("+fmt(a.y)+") came before "+z.n+" ("+fmt(z.y)+")"))});b.append(ul);m.append(b);
+const code=s.date+"-"+s.ans,txt="PRIOR "+s.date+"\n"+row+" "+sc+"/5\n"+code+"\n"+SHARE_URL+"?c="+code;
+const sb=el("div","box");sb.append(el("h2","","Share"));const ta=el("textarea","",null,{readOnly:true,rows:4,value:txt});ta.setAttribute("aria-label","Share text");
+const st=el("p","mut","");const cb=el("button","go","Copy",{onclick:()=>{
+const fb=()=>{try{ta.focus();ta.select();st.textContent=document.execCommand("copy")?"Copied.":"Select the text above and copy it."}catch(e){st.textContent="Select the text above and copy it."}};
+try{navigator.clipboard.writeText(txt).then(()=>{st.textContent="Copied."},fb)}catch(e){fb()}}});
+sb.append(ta,cb,st);m.append(sb);
+if(s.fr){const f=s.fr;let ag=0;const cbx=el("div","box");const ul2=el("ul");
+s.ps.forEach((p,i)=>{const a=s.ans[i],c=f.ans[i];if(a==c)ag++;
+ul2.append(el("li","",(i+1)+". You: "+p[a=="L"?0:1].n+" ("+(right(p,a)?"✓ right":"✗ wrong")+"). Friend: "+p[c=="L"?0:1].n+" ("+(right(p,c)?"✓ right":"✗ wrong")+"). "+(a==c?"Same pick.":"Different pick.")))});
+cbx.append(el("h2","","You agree on "+ag+" of 5"),ul2);m.append(cbx)}
+if(s.mode=="daily"){const c=el("div","box");c.append(el("h2","","Come back tomorrow"),el("p","mut","Next set in:"),el("p","big","",{id:"cd"}));m.append(c);tick()}}
+function tick(){const e=$("#cd");if(!e)return;const n=new Date(),nx=new Date(n.getFullYear(),n.getMonth(),n.getDate()+1);
+let t=Math.max(0,Math.floor((nx-n)/1000));const p=v=>String(v).padStart(2,"0");e.textContent=p(Math.floor(t/3600))+":"+p(Math.floor(t%3600/60))+":"+p(t%60)}
+setInterval(()=>{const t=dstr();if(t!=cur){cur=t;if(!ses){if(res&&res.mode=="daily")res=null;view()}}tick()},1000);
+(function(){let q="";try{q=new URLSearchParams(location.search).get("c")||""}catch(e){}
+if(q){tab="cmp";go(q)}else view()})();
+</script></body></html>

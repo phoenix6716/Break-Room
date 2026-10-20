@@ -1,6 +1,6 @@
 # Content Studio and authoring workflow
 
-These are local development tools, not a public administration page. They help write and review proposals without changing live games, saves, schedules or Supabase data. Current inventory: **264 Stake questions, 112 Stack Up sets, 100 Lowball items**.
+These are local development tools, not a public administration page. They help write and review proposals without changing live games, saves, schedules or Supabase data. Current Studio inventory: **264 Stake questions, 112 Stack Up sets, 100 Lowball items**.
 
 ## Open the studio
 
@@ -74,3 +74,9 @@ The server binds only loopback, checks Host/Origin and a per-run token for JSON 
 ## Pack: fictional puzzle bank
 
 Pack has 180 fictional weight/usefulness puzzles, separate from the Studio’s three factual-content editors. Its authoritative source is `scripts/build-pack-puzzles.cjs`; run `node scripts/build-pack-puzzles.cjs` to rebuild `games/pack/puzzles.js`. The generator enforces unique exact optima, tier-specific greedy trade-offs and individually feasible items; `tests/pack-rules.cjs` verifies all optima independently in CI. These checks do not establish human difficulty or real-world product weights. Preserve versioned saved snapshots and stable seeds on later revisions; never reset existing Dailies. See `games/pack/README.md`.
+
+## Prior: scoped historical events
+
+Prior’s dedicated source is `content/prior-events.json` (128 events); rebuild its runtime bank with `node scripts/build-prior-events.cjs`. This is separate from the Studio’s original three editors. Use stable IDs and precise milestones, integer AD years, category, post-answer fact and an HTTPS reference. Do not put answer years in titles. Avoid approximate dates, unspecified release markets, conflicting firsts and same-year pairs; group direct related milestones with `family`. Preserve existing run snapshots when correcting data.
+
+The builder checks shape, title years and pair-band coverage. Tests check known historical anchors, deterministic no-repeat/tie-free Dailies and scoring; neither structural validation nor a reference URL proves the date. Articles were not retrieved in this environment. Dates/wording received an implementation review, and the previously deferred independent factual/human difficulty audit remains required before launch. Wider world-history coverage would improve the bank’s current Western/technology emphasis. Read `games/prior/README.md`.

@@ -1,6 +1,6 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),{PGlite}=require('@electric-sql/pglite');
 const ids=['00000000-0000-4000-8000-000000000001','00000000-0000-4000-8000-000000000002','00000000-0000-4000-8000-000000000003'];
-const context={Intl,Date,Map,Set};vm.createContext(context);for(const f of ['daily-clock.js','arcade-score.js','pack-model.js','profile-records.js'])vm.runInContext(fs.readFileSync(f,'utf8'),context);
+const context={Intl,Date,Map,Set};vm.createContext(context);for(const f of ['daily-clock.js','arcade-score.js','pack-model.js','prior-model.js','profile-records.js'])vm.runInContext(fs.readFileSync(f,'utf8'),context);
 (async()=>{const db=new PGlite();try{
  await db.exec(`create role anon;create role authenticated;create schema auth;create table auth.users(id uuid primary key);create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;grant usage on schema auth to anon,authenticated;grant execute on function auth.uid() to anon,authenticated;`);
  for(const id of ids)await db.query('insert into auth.users values ($1)',[id]);
@@ -18,6 +18,7 @@ const context={Intl,Date,Map,Set};vm.createContext(context);for(const f of ['dai
  native.stake['stake:d:'+shift(-2)]='{"b":[3],"p":[]}';native.stake['stake:d:'+shift(-3)]='{bad';
  native['stack-up']['break-room:stack-up:daily:'+today]=JSON.stringify(stack(-400));
  const bankContext={window:{}};vm.runInNewContext(fs.readFileSync('games/pack/puzzles.js','utf8'),bankContext);const pm=context.BREAK_ROOM_PACK,bags=pm.daily(bankContext.window.PACK_PUZZLES,today);native.pack={[pm.PREFIX+today]:JSON.stringify({version:1,day:today,phase:'summary',round:2,selection:0,picks:bags.map(b=>pm.solve(b).mask),bags})};
+ const prior=context.BREAK_ROOM_PRIOR,priorPairs=prior.daily(require('../content/prior-events.json').events,today),priorRun={version:1,day:today,phase:'summary',round:4,picks:priorPairs.map(prior.answer),pairs:priorPairs};native.prior={[prior.PREFIX+today]:JSON.stringify(priorRun),[prior.PREFIX+shift(-1)]:JSON.stringify({...priorRun,day:shift(-1),picks:priorPairs.map(p=>1-prior.answer(p))})};for(const n of [-119,-120,1])native.prior[prior.PREFIX+shift(n)]=JSON.stringify({...priorRun,day:shift(n)});
  const flat=Object.assign({},...Object.values(native)),map=new Map(Object.entries(flat)),storage={get length(){return map.size},key:i=>[...map.keys()][i],getItem:k=>map.get(k)??null};
  const expected=context.BREAK_ROOM_RECORDS.read(storage,today).records.filter(r=>r.date>=shift(-119)).map(r=>({game:r.game,date:r.date,arcadeScore:r.arcadeScore})).sort((a,b)=>(a.game+a.date).localeCompare(b.game+b.date));
  for(const [game,data]of Object.entries(native))await db.query('insert into public.game_saves(user_id,game,data) values($1,$2,$3)',[ids[0],game,JSON.stringify(data)]);

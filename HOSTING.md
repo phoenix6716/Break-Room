@@ -57,3 +57,7 @@ To undo a bad published change, revert its source commit on `main` and let the s
 ## Cloud access versus public hosting
 
 Codex's development environment and GitHub Pages are separate. Network access to `api.github.com` lets the agent inspect Pages settings and Actions runs; `phoenix6716.github.io` lets it verify the deployed site. Saving those environment domain requirements does not apply them or publish the website. If access is blocked, the repository administrator can still perform the Pages setting above directly in GitHub and inspect Actions there. Claim the site is live only after a successful deployment and HTTP/browser verification.
+
+## Current game migration
+
+The site now includes Lowball, Stake, Stack Up, Pack and Prior. Existing Supabase projects run `supabase/prior.sql` last after setup/social activation; it includes current Pack support. Fresh projects use updated setup then friends. Do not reapply a historical narrower per-game allowlist afterwards. Browser play does not require SQL, but live Prior cloud/Friends support does.

@@ -53,7 +53,7 @@
     const {data,error}=await client.from('game_saves').select('data,revision').eq('user_id',userId).eq('game',game).maybeSingle();if(error)throw error;
     const merged=saves.merge(game,local[game]||{},data?.data||{});result[game]=merged;
     if(JSON.stringify(merged)===JSON.stringify(data?.data||{})){done=true;break;}
-    const {data:reply,error:writeError}=await client.rpc('save_game',{p_game:game,p_data:merged,p_revision:data?.revision||0});if(writeError){if(game==='pack'&&/Invalid save|Unsupported save entry|game_saves_game_check/i.test(writeError.message||''))throw Error('Pack cloud saves need a database update. The site owner must run supabase/pack.sql in Supabase. Your browser saves are safe.');throw writeError;}
+    const {data:reply,error:writeError}=await client.rpc('save_game',{p_game:game,p_data:merged,p_revision:data?.revision||0});if(writeError){if(['pack','prior'].includes(game)&&/Invalid save|Unsupported save entry|game_saves_game_check/i.test(writeError.message||''))throw Error((game==='prior'?'Prior':'Pack')+' cloud saves need a database update. The site owner must run supabase/'+game+'.sql in Supabase. Your browser saves are safe.');throw writeError;}
     if(!reply?.conflict){done=true;break;}
    }
    if(!done)throw Error('Another device is saving. Please try syncing again shortly.');

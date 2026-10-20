@@ -132,6 +132,28 @@ exception when others then return null;
 end $$;
 revoke all on function public._friend_pack_score(jsonb,date) from public,anon,authenticated;
 
+-- Prior v1: five immutable earlier-event choices, scored from dated snapshots.
+create or replace function public._friend_prior_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare p jsonb; e jsonb; i int; j int; n numeric; years int[]; ids text[]:='{}'; titles text[]; correct int:=0; pick int;
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or v->'round' is distinct from '4'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>5 or jsonb_typeof(v->'pairs') is distinct from 'array' or jsonb_array_length(v->'pairs')<>5 then return null;end if;
+ for i in 0..4 loop
+  p=v->'pairs'->i;if jsonb_typeof(p) is distinct from 'array' or jsonb_array_length(p)<>2 then return null;end if;years='{}';titles='{}';
+  for j in 0..1 loop
+   e=p->j;
+   if jsonb_typeof(e->'id') is distinct from 'string' or char_length(e->>'id') not between 1 and 80 or jsonb_typeof(e->'title') is distinct from 'string' or char_length(e->>'title') not between 1 and 180 or jsonb_typeof(e->'category') is distinct from 'string' or char_length(e->>'category') not between 1 and 40 or jsonb_typeof(e->'fact') is distinct from 'string' or char_length(e->>'fact') not between 1 and 800 or jsonb_typeof(e->'source') is distinct from 'string' or char_length(e->>'source')>1000 or e->>'source' !~ '^[!-~]+$' or e->>'source' !~ '^https://[^[:space:]/]+/[^[:space:]]*$' or jsonb_typeof(e->'year') is distinct from 'number' then return null;end if;
+   if e->>'id'=any(ids) or e->>'title'=any(titles) then return null;end if;ids=array_append(ids,e->>'id');titles=array_append(titles,e->>'title');
+   n=(e->>'year')::numeric;if n<>trunc(n) or n<1 or n>2100 then return null;end if;years=array_append(years,n::int);
+  end loop;
+  if years[1]=years[2] or jsonb_typeof(v->'picks'->i) is distinct from 'number' then return null;end if;
+  n=(v->'picks'->>i)::numeric;if n not in (0,1) then return null;end if;pick=n;
+  if (pick=0 and years[1]<years[2]) or (pick=1 and years[2]<years[1]) then correct=correct+1;end if;
+ end loop;
+ return correct*20;
+exception when others then return null;
+end $$;
+revoke all on function public._friend_prior_score(jsonb,date) from public,anon,authenticated;
+
 create or replace function public._friend_score(g text,v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
 declare i int; j int; n numeric; bet int; pick int; answer int; total int:=0; won int:=0; legacy int[]; q jsonb; c jsonb;
 begin
@@ -154,6 +176,7 @@ begin
    end if;
    total=total+bet;if pick=answer then won=won+bet;end if;
   end loop;return won::double precision/total*100;
+ elsif g='prior' then return public._friend_prior_score(v,d);
  elsif g='pack' then return public._friend_pack_score(v,d);
  elsif g='stack-up' then
   if coalesce(v->>'version','') not in ('1','2') or v->>'day' is distinct from d::text or v->>'status' is distinct from 'complete' or v->'round' is distinct from '4'::jsonb then return null;end if;
@@ -197,7 +220,7 @@ begin
    end if;
   else
    for entry in select * from jsonb_each_text(data) loop
-    if (game='stake' and entry.key !~ '^stake:d:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='pack' and entry.key !~ '^break-room:pack:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='stack-up' and entry.key !~ '^break-room:stack-up:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') then continue;end if;
+    if (game='stake' and entry.key !~ '^stake:d:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='prior' and entry.key !~ '^break-room:prior:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='pack' and entry.key !~ '^break-room:pack:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='stack-up' and entry.key !~ '^break-room:stack-up:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') then continue;end if;
     d=public._friend_date(right(entry.key,10));if d is null or d<p_today-119 or d>p_today then continue;end if;
     v=public._friend_json(entry.value);score=public._friend_score(game,v,d);
     if score is not null then day=d;arcade_score=score;return next;end if;

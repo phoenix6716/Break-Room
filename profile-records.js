@@ -6,7 +6,8 @@
     {id:'lowball', name:'Lowball', category:'PRICE GUESSING', unit:'points', max:100, note:'Scores out of 100. Best and average use retained saved history; played includes its lifetime counter.'},
     {id:'stake', name:'Stake', category:'TRIVIA / RISK', unit:'chips', max:15, note:'Net chips from completed five-question Dailies. Scores can be negative.'},
     {id:'stack-up', name:'Stack Up', category:'SORTING / SPEED', unit:'points', max:31000, note:'Points from completed five-stack Dailies. Scores can be negative.'},
-    {id:'pack', name:'Pack', category:'PACKING / LOGIC', unit:'usefulness', max:600, note:'Total usefulness from three untimed Daily bags. Available points vary; Arcade scores compare each total with its exact optimum.'}
+    {id:'pack', name:'Pack', category:'PACKING / LOGIC', unit:'usefulness', max:600, note:'Total usefulness from three untimed Daily bags. Available points vary; Arcade scores compare each total with its exact optimum.'},
+    {id:'prior', name:'Prior', category:'HISTORY / INSTINCT', unit:'correct', max:5, note:'Correct earlier-event choices out of five untimed Daily pairs. Arcade score is correct answers × 20.'}
   ];
   const isObject = value => value && typeof value === 'object' && !Array.isArray(value);
   function dateKey(value) {
@@ -54,6 +55,7 @@
     let keys=[];
     try{for(let i=0;i<storage.length;i++)keys.push(storage.key(i));}catch{unavailable=true;}
     for(const key of keys){
+      if(key?.startsWith('break-room:prior:daily:')){const day=key.slice('break-room:prior:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_PRIOR?.record(r,day);if(record)add('prior',day,record.correct,record.correct===5,root.BREAK_ROOM_SCORE.prior(record.correct));else if(root.BREAK_ROOM_PRIOR?.valid(r,day)){if(day===today&&r.picks.length)progress.add('prior');}else skipped++;continue;}
       if(key?.startsWith('break-room:pack:daily:')){const date=key.slice('break-room:pack:daily:'.length);if(!allowed(dateKey(date))||dateKey(date)!==date){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_PACK?.record(r,date);if(record)add('pack',date,record.points,record.arcadeScore===100,root.BREAK_ROOM_SCORE.pack(record.points,record.maximum));else if(root.BREAK_ROOM_PACK?.valid(r,date)){if(date===today&&(r.picks.length||r.selection))progress.add('pack');}else skipped++;continue;}
       const game=key?.startsWith('stake:d:')?'stake':key?.startsWith('break-room:stack-up:daily:')?'stack-up':null;
       if(!game)continue;
@@ -94,6 +96,7 @@
       {id:'week',name:'Back again',detail:'Complete a Daily game on seven consecutive days in your saved history.',earned:streak.best>=7},
       {id:'lowball',name:'Spot on',detail:'Finish a Lowball Daily with an average of 100.',earned:records.some(r=>r.game==='lowball'&&r.perfect)},
       {id:'stake',name:'High roller',detail:'Finish a Stake Daily with +15 chips.',earned:records.some(r=>r.game==='stake'&&r.perfect)},
+      {id:'prior',name:'Past master',detail:'Choose the earlier event in all five Daily Prior pairs.',earned:records.some(r=>r.game==='prior'&&r.perfect)},
       {id:'pack',name:'Nothing wasted',detail:'Find the optimal selection in all three Daily Pack bags.',earned:records.some(r=>r.game==='pack'&&r.perfect)},
       {id:'stack-up',name:'Neat stack',detail:'Clear all five Daily stacks without a wrong guess or timeout.',earned:records.some(r=>r.game==='stack-up'&&r.perfect)}
     ];

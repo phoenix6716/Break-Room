@@ -9,7 +9,7 @@
   const total=bets.reduce((a,b)=>a+b,0),won=bets.reduce((sum,bet,i)=>sum+(picks[i]===answers[i]?bet:0),0);
   return won/total*100;
  }
- function summary(records,today,ids=['lowball','stake','stack-up','pack']){
+ function summary(records,today,ids=['lowball','stake','stack-up','pack','prior']){
   const from=new Date(Date.parse(today+'T00:00:00Z')-(WINDOW_DAYS-1)*86400000).toISOString().slice(0,10);
   const recent=records.filter(r=>r.date>=from&&r.date<=today&&Number.isFinite(r.arcadeScore)&&r.arcadeScore>=0&&r.arcadeScore<=100);
   const games=ids.map(id=>{
@@ -27,5 +27,5 @@
   el.append(label,number);return el;
  }
  const format=value=>value===null||!Number.isFinite(value)?'—':new Intl.NumberFormat('en-AU',{maximumFractionDigits:1}).format(value);
- root.BREAK_ROOM_SCORE=Object.freeze({version:1,STACK_MAX,WINDOW_DAYS,lowball:clamp,pack:(points,maximum)=>Number.isFinite(points)&&Number.isFinite(maximum)&&points>=0&&maximum>0?clamp(points/maximum*100):null,stake,stackUp:points=>Number.isFinite(points)?clamp(points/STACK_MAX*100):null,summary,format,badge});
+ root.BREAK_ROOM_SCORE=Object.freeze({version:1,STACK_MAX,WINDOW_DAYS,lowball:clamp,prior:correct=>Number.isInteger(correct)&&correct>=0&&correct<=5?correct*20:null,pack:(points,maximum)=>Number.isFinite(points)&&Number.isFinite(maximum)&&points>=0&&maximum>0?clamp(points/maximum*100):null,stake,stackUp:points=>Number.isFinite(points)?clamp(points/STACK_MAX*100):null,summary,format,badge});
 })(typeof window==='undefined'?globalThis:window);
