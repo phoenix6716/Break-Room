@@ -1,11 +1,12 @@
-/* Read-only adapters for the three existing engines. Never migrate or write game saves. */
+/* Read-only adapters for native game engines. Never migrate or write game saves. */
 (root => {
   'use strict';
   const DAY = 86400000, LOWBALL_EPOCH = Date.UTC(2026, 9, 1);
   const games = [
     {id:'lowball', name:'Lowball', category:'PRICE GUESSING', unit:'points', max:100, note:'Scores out of 100. Best and average use retained saved history; played includes its lifetime counter.'},
     {id:'stake', name:'Stake', category:'TRIVIA / RISK', unit:'chips', max:15, note:'Net chips from completed five-question Dailies. Scores can be negative.'},
-    {id:'stack-up', name:'Stack Up', category:'SORTING / SPEED', unit:'points', max:31000, note:'Points from completed five-stack Dailies. Scores can be negative.'}
+    {id:'stack-up', name:'Stack Up', category:'SORTING / SPEED', unit:'points', max:31000, note:'Points from completed five-stack Dailies. Scores can be negative.'},
+    {id:'pack', name:'Pack', category:'PACKING / LOGIC', unit:'usefulness', max:600, note:'Total usefulness from three untimed Daily bags. Available points vary; Arcade scores compare each total with its exact optimum.'}
   ];
   const isObject = value => value && typeof value === 'object' && !Array.isArray(value);
   function dateKey(value) {
@@ -53,6 +54,7 @@
     let keys=[];
     try{for(let i=0;i<storage.length;i++)keys.push(storage.key(i));}catch{unavailable=true;}
     for(const key of keys){
+      if(key?.startsWith('break-room:pack:daily:')){const date=key.slice('break-room:pack:daily:'.length);if(!allowed(dateKey(date))||dateKey(date)!==date){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_PACK?.record(r,date);if(record)add('pack',date,record.points,record.arcadeScore===100,root.BREAK_ROOM_SCORE.pack(record.points,record.maximum));else if(root.BREAK_ROOM_PACK?.valid(r,date)){if(date===today&&(r.picks.length||r.selection))progress.add('pack');}else skipped++;continue;}
       const game=key?.startsWith('stake:d:')?'stake':key?.startsWith('break-room:stack-up:daily:')?'stack-up':null;
       if(!game)continue;
       const rawDay=key.slice(game==='stake'?8:26), date=dateKey(rawDay);
@@ -88,10 +90,11 @@
     const streak=streaks([...days.keys()],today), total=summaries.reduce((n,g)=>n+g.played,0);
     const achievements=[
       {id:'first',name:'First break',detail:'Finish your first Daily game.',earned:total>0},
-      {id:'sweep',name:'Clean sweep',detail:'Complete all three Daily games on the same day.',earned:[...days.values()].some(g=>g.size===3)},
+      {id:'sweep',name:'Clean sweep',detail:'Complete Lowball, Stake and Stack Up on the same day.',earned:[...days.values()].some(g=>['lowball','stake','stack-up'].every(id=>g.has(id)))},
       {id:'week',name:'Back again',detail:'Complete a Daily game on seven consecutive days in your saved history.',earned:streak.best>=7},
       {id:'lowball',name:'Spot on',detail:'Finish a Lowball Daily with an average of 100.',earned:records.some(r=>r.game==='lowball'&&r.perfect)},
       {id:'stake',name:'High roller',detail:'Finish a Stake Daily with +15 chips.',earned:records.some(r=>r.game==='stake'&&r.perfect)},
+      {id:'pack',name:'Nothing wasted',detail:'Find the optimal selection in all three Daily Pack bags.',earned:records.some(r=>r.game==='pack'&&r.perfect)},
       {id:'stack-up',name:'Neat stack',detail:'Clear all five Daily stacks without a wrong guess or timeout.',earned:records.some(r=>r.game==='stack-up'&&r.perfect)}
     ];
     return {today,records,games:summaries,arcade,total,streak,days,achievements,unavailable,skipped};

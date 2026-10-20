@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const { chromium } = require('playwright');
 const base = process.env.ARCADE_TEST_URL || 'http://127.0.0.1:8000';
 const placeholderIds = ['pixel-pairs', 'word-forge', 'gridlock', 'number-drop', 'memory-lane', 'mystery-cabinet'];
-const routes = ['game.html', ...['lowball', 'stake', 'stack-up', ...placeholderIds].map(id => `games/${id}/`)];
+const routes = ['game.html', ...['lowball', 'stake', 'stack-up', 'pack', ...placeholderIds].map(id => `games/${id}/`)];
 async function lowballFrame(page) {
   const handle = await page.locator('#lowball-game-frame').elementHandle();
   const frame = await handle.contentFrame();
@@ -27,7 +27,7 @@ function check(condition, message) { assert.ok(condition, message); checks++; }
       await page.goto(base, {waitUntil: 'domcontentloaded'});
       check((await page.title()).includes('Break Room'), 'Homepage branding');
       const cards = page.locator('.game-grid .game-card');
-      check(await cards.count() === 9, 'Nine homepage cards including Stack Up');
+      check(await cards.count() === 10, 'Ten homepage cards including Pack');
       check((await cards.nth(0).locator('a').getAttribute('href')).includes('lowball'), 'Lowball first');
       check((await cards.nth(1).locator('a').getAttribute('href')).includes('stake'), 'Stake second');
       check(await page.locator('.coming-stamp').count() === 6, 'Six coming soon artworks');

@@ -4,10 +4,11 @@ const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
 const ids={alice:'00000000-0000-4000-8000-000000000001',bob:'00000000-0000-4000-8000-000000000002'},rows=new Map();
 const key='stake:d:2026-10-19',guestKey='stake:d:2026-10-18',complete=JSON.stringify({b:[1,1,1,1,1],p:[0,0,0,0,0]});
 rows.set(ids.alice+':stake',{data:{[key]:complete},revision:1});
+require('../pack-model.js');const puzzleContext={window:{}};require('node:vm').runInNewContext(require('node:fs').readFileSync('games/pack/puzzles.js','utf8'),puzzleContext);const pm=global.BREAK_ROOM_PACK,pb=pm.daily(puzzleContext.window.PACK_PUZZLES,'2026-10-19'),pk=pm.PREFIX+'2026-10-19',pr=JSON.stringify({version:1,day:'2026-10-19',phase:'summary',round:2,selection:0,picks:pb.map(b=>pm.solve(b).mask),bags:pb});rows.set(ids.alice+':pack',{data:{[pk]:pr},revision:1});
 const token=name=>[Buffer.from(JSON.stringify({alg:'HS256',typ:'JWT'})).toString('base64url'),Buffer.from(JSON.stringify({sub:ids[name],role:'authenticated',exp:Math.floor(Date.now()/1000)+3600})).toString('base64url'),'test-signature'].join('.');
 const user=name=>({id:ids[name],email:name+'@example.com',aud:'authenticated',role:'authenticated',created_at:new Date().toISOString(),app_metadata:{provider:'email'},user_metadata:{display_name:name}});
 const session=name=>({access_token:token(name),refresh_token:'refresh-'+name,token_type:'bearer',expires_in:3600,expires_at:Math.floor(Date.now()/1000)+3600,user:user(name)});
-let schemaMissing=false,networkDown=false,conflictOnce=false,signup=0,recovery=0,passwordUpdate=0,posts=[];
+let packNeedsMigration=false,schemaMissing=false,networkDown=false,conflictOnce=false,signup=0,recovery=0,passwordUpdate=0,posts=[];
 async function mock(context){await context.route('https://*.supabase.co/**',async route=>{
  if(networkDown)return route.abort('internetdisconnected');
  const req=route.request(),url=new URL(req.url()),method=req.method();
@@ -22,6 +23,7 @@ async function mock(context){await context.route('https://*.supabase.co/**',asyn
  if(url.pathname.endsWith('/logout'))return send({});
  if(url.pathname.endsWith('/game_saves')){if(schemaMissing)return send({code:'PGRST205',message:'Table missing'},404);assert.equal(url.searchParams.get('user_id'),'eq.'+ids[name]);const row=rows.get(ids[name]+':'+url.searchParams.get('game').slice(3));return send(row?[row]:[]);}
  if(url.pathname.endsWith('/rpc/save_game')){
+  if(packNeedsMigration&&body.p_game==='pack')return send({code:'P0001',message:'Invalid save'},400);
   posts.push({name,...body});assert.ok(Object.keys(body.p_data).every(k=>!k.includes('auth')&&!k.includes('cloud:')));
   const k=ids[name]+':'+body.p_game,previous=rows.get(k);
   if(conflictOnce){conflictOnce=false;rows.set(k,{data:{...previous?.data},revision:(previous?.revision||0)+1});return send({conflict:true,revision:(previous?.revision||0)+1});}
@@ -43,16 +45,20 @@ const native=page=>page.evaluate(()=>window.BREAK_ROOM_CLOUD_SAVES.capture(local
  await page.goto(base+'/login.html');await page.locator('#email').fill('alice@example.com');await page.locator('#password').fill('wrongpass');await page.locator('button[type=submit]').click();await page.locator('[data-account-status]').filter({hasText:'Email or password is incorrect'}).waitFor();assert.equal(new URL(page.url()).search,'');
  await login(page);assert.equal(new URL(page.url()).search,'');assert.equal(await page.locator('#import-guest').isChecked(),false);
  schemaMissing=true;await page.locator('#activate-cloud').click();await page.locator('[data-account-status]').filter({hasText:'not set up yet'}).waitFor();assert.equal(await page.evaluate(()=>localStorage.getItem('br:cloud:owner')),null);schemaMissing=false;
- await activate(page);let s=await native(page);assert.equal(s.stake[key],complete);assert.equal(s.stake[guestKey],undefined,'Guest data is not imported without consent');assert.ok(!rows.get(ids.alice+':stake').data[guestKey]);
+ await activate(page);let s=await native(page);assert.equal(s.stake[key],complete);assert.equal(s.pack[pk],pr);assert.equal(s.stake[guestKey],undefined,'Guest data is not imported without consent');assert.ok(!rows.get(ids.alice+':stake').data[guestKey]);
  // Offline sync fails visibly without replacing a native save.
  networkDown=true;const before=await native(page);await page.locator('#activate-cloud').click();await page.locator('[data-account-status][data-error=true]').waitFor();assert.deepEqual(await native(page),before);networkDown=false;
- await page.locator('#sign-out').click();await page.locator('#signed-out').waitFor();s=await native(page);assert.equal(s.stake[guestKey],complete);assert.equal(s.stake[key],undefined,'Logging out restores guest state');
- await login(page,'bob');conflictOnce=true;await activate(page,true);s=await native(page);assert.equal(s.stake[guestKey],complete);assert.equal(s.stake[key],undefined,'Alice data cannot leak into Bob account');assert.equal(rows.get(ids.bob+':stake').data[guestKey],complete);
+ await page.locator('#sign-out').click();await page.locator('#signed-out').waitFor();s=await native(page);assert.equal(s.stake[guestKey],complete);assert.equal(s.stake[key],undefined,'Logging out restores guest state');assert.equal(s.pack[pk],undefined,'Pack account completion is absent in guest play');
+ await page.evaluate(id=>localStorage.setItem('br:cloud:cache:'+id,JSON.stringify({stake:{},'stack-up':{},lowball:{}})),ids.bob);await login(page,'bob');conflictOnce=true;await activate(page,true);s=await native(page);assert.equal(s.stake[guestKey],complete);assert.equal(s.stake[key],undefined,'Alice data cannot leak into Bob account');assert.equal(rows.get(ids.bob+':stake').data[guestKey],complete);
+ // Pack uses the same explicit ownership and real engine upload path.
+ await page.goto(base+'/games/pack/index.html');await page.waitForFunction(()=>document.querySelector('[data-account-status]').textContent.includes('Saved to your account'));
+ packNeedsMigration=true;const uploaded=page.waitForResponse(r=>r.url().endsWith('/rpc/save_game')&&r.request().postDataJSON()?.p_game==='pack');await page.locator('.pack-item').first().click();await uploaded;await page.locator('[data-account-status]').filter({hasText:'supabase/pack.sql'}).waitFor();const unsynced=await native(page);packNeedsMigration=false;await page.evaluate(()=>BREAK_ROOM_ACCOUNTS.sync());assert.deepEqual(await native(page),unsynced,'A missing Pack migration never deletes native saves');
+ const bobPack=Object.entries((await native(page)).pack)[0];assert.ok(bobPack);assert.equal(JSON.parse(bobPack[1]).selection,1);assert.ok(!rows.get(ids.bob+':pack').data[pk],'Alice Pack data is never imported into Bob');
  // Signed-in game writes are uploaded; a second fresh browser can restore them.
  await page.goto(base+'/games/stake/index.html');await page.evaluate(()=>{localStorage.setItem('stake:d:2026-10-17',JSON.stringify({b:[2],p:[],deadline:Date.now()+30000}));window.dispatchEvent(new Event('break-room:save'));});
  await page.waitForFunction(()=>document.querySelector('[data-account-status]').textContent.includes('Saved to your account'));
  await page.goto(base+'/account.html');await page.locator('#sign-out').click();await page.locator('#signed-out').waitFor();
- const second=await browser.newContext(),p2=await second.newPage();await mock(second);await login(p2,'bob');await activate(p2);assert.ok((await native(p2)).stake['stake:d:2026-10-17']);
+ const second=await browser.newContext(),p2=await second.newPage();await mock(second);await login(p2,'bob');await activate(p2);assert.ok((await native(p2)).stake['stake:d:2026-10-17']);assert.equal((await native(p2)).pack[bobPack[0]],bobPack[1]);await p2.goto(base+'/games/pack/index.html');assert.equal(await p2.locator('.pack-item[aria-pressed=true]').count(),1);await p2.goto(base+'/account.html');
  // Loading remote data in another tab also stops a stale same-account engine.
  const same=await second.newPage();await same.goto(base+'/games/stack-up/index.html');await same.locator('.game-header-account[href$="/account.html"]').waitFor();
  await Promise.all([same.waitForURL('**/account.html'),activate(p2)]);await same.locator('#activate-cloud').waitFor();await same.close();

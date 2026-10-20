@@ -7,7 +7,7 @@
   const id = new URLSearchParams(location.search).get('id') || (route && route[1]) || 'pixel-pairs';
   const game = (window.MIDNIGHT_ARCADE_GAMES || []).find(game => game.id === id);
   if (!game) { title.textContent = 'Cabinet not found'; return; }
-  if (['lowball', 'stake', 'stack-up'].includes(game.id)) {
+  if (['lowball', 'stake', 'stack-up', 'pack'].includes(game.id)) {
     location.replace(new URL(`games/${game.id}/index.html`, location.href));
     return;
   }

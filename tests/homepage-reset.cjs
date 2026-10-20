@@ -12,7 +12,7 @@ const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
    await page.waitForFunction(()=>getComputedStyle(document.querySelector('.game-grid')).display==='grid');
    assert.equal(await page.locator('h1').count(),1);
    assert.equal(await page.locator('.arcade-marquee,.home-ticker,.stat-grid').count(),0);
-   assert.equal(await page.locator('.game-grid>.game-card').count(),9);
+   assert.equal(await page.locator('.game-grid>.game-card').count(),10);
    const columns=await page.locator('.game-grid').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length);
    assert.equal(columns,width<=820?2:3);
    assert.equal(await page.locator('.coming-stamp').count(),6);

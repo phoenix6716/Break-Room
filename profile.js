@@ -35,7 +35,7 @@
     $('activity-days').replaceChildren(...Array.from({length:14},(_,index)=>{
       const day=new Date(end-(13-index)*86400000).toISOString().slice(0,10), completed=model.days.get(day),count=completed?.size||0;
       const names=model.games.filter(g=>completed?.has(g.id)).map(g=>g.name);
-      const label=`${dateLabel(day)}: ${count} of 3 Daily games completed${names.length?' — '+names.join(', '):''}`;
+      const label=`${dateLabel(day)}: ${count} of ${model.games.length} Daily games completed${names.length?' — '+names.join(', '):''}`;
       const li=create('li','activity-day'+(day===model.today?' today':''));li.dataset.count=count;li.setAttribute('aria-label',label);li.title=label;
       if(day===model.today)li.setAttribute('aria-current','date');
       const square=create('span',null,String(count)),caption=create('small',null,day===model.today?'TODAY':day.slice(8));square.setAttribute('aria-hidden','true');caption.setAttribute('aria-hidden','true');li.append(square,caption);return li;
@@ -76,10 +76,10 @@
     $('storage-warning').hidden=!warnings.length;$('storage-warning').textContent=warnings.join(' ');
     $('profile-content').hidden=model.unavailable&&!model.total&&!model.records.length;
     $('arcade-average').textContent=window.BREAK_ROOM_SCORE.format(model.arcade.average);
-    $('arcade-basis').textContent=model.arcade.runs?`${model.arcade.gamesPlayed} of 3 games · ${model.arcade.runs} saved Daily results · last 120 days`:'No scored Daily results in the last 120 days yet.';
+    $('arcade-basis').textContent=model.arcade.runs?`${model.arcade.gamesPlayed} of ${model.games.length} games · ${model.arcade.runs} saved Daily results · last 120 days`:'No scored Daily results in the last 120 days yet.';
     $('total-runs').textContent=numbers.format(model.total);
     const completed=model.games.filter(g=>g.today==='complete').length;
-    $('today-count').textContent=completed+' / 3';$('today-caption').textContent=completed===3?'A clean sweep. Nicely done.':'Daily reset at midnight Sydney time';
+    $('today-count').textContent=completed+' / '+model.games.length;$('today-caption').textContent=completed===model.games.length?'A clean sweep. Nicely done.':'Daily reset at midnight Sydney time';
     $('overall-streak').textContent=numbers.format(model.streak.current)+(model.streak.current===1?' day':' days');
     $('streak-caption').textContent='Best in saved history: '+model.streak.best+(model.streak.best===1?' day':' days');
     $('profile-empty').hidden=model.total>0||model.unavailable;

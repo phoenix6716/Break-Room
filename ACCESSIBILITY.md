@@ -20,3 +20,7 @@ These are browser automation and structural checks, not a claim of WCAG certific
 ## Future games
 
 Load `game-access.css` after game-specific styles and use the canonical starter. Preserve visible focus, readable questions, ≥44px primary controls without overlapping targets, explicit labels/status feedback, modal focus restoration, selected tab/panel semantics and a keyboard alternative to dragging. Keep timers off continuous live announcements; announce meaningful thresholds/results. Test error, timeout and completed states as well as the empty board. Use the actual content and save adapters; do not invent demo records for accessibility UI.
+
+## Pack
+
+Pack uses real labelled toggle buttons with `aria-pressed`, live over-capacity errors, a labelled capacity meter, disabled empty/overweight submission, keyboard result focus, mode tabs and the canonical inert/trapped Help/Stats dialogs. It has no timer or fake audio control. `tests/pack.cjs` covers five widths, touch and keyboard play, focus, menus/dialogs, full Daily review/results, saved-state reload, Sydney rollover and storage failure.

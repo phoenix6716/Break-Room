@@ -18,6 +18,7 @@ Open `http://127.0.0.1:8000/index.html`. Keep the full folder structure; links u
 | --- | --- |
 | Lowball | Four Daily price guesses, AU/US/UK/CA selection, generated pixel-art items and free Unlimited practice. |
 | Stake | Five Daily trivia questions, 1–3-chip bets and a 30-second timer after each bet; Unlimited practice. A timeout loses the bet. |
+| Pack | Three untimed easy/medium/hard packing puzzles, a visual bag, personalized swaps and free Unlimited practice. 180 validated bags. |
 | Stack Up | Five Daily ordering sets, drag/touch/keyboard controls, 90 seconds per stack and position feedback; Infinite practice. |
 
 All Dailies reset at midnight **Australia/Sydney**, including daylight-saving changes. Other game cards remain clearly **Coming soon** and do not create fake attempts/results. Native scores remain alongside the shared 0–100 Arcade score. See [SCORING.md](SCORING.md) for the exact formulas and equal-game average over the common 120-day window.
@@ -80,3 +81,7 @@ Keep the left Menu drawer, centred brand/game, header stats and tools, right res
 ## Game usability
 
 The live games share larger phone controls and readable supporting text, keyboard modes/sorting, visible focus and explicit validation/result feedback. Lowball dialogs contain focus across its iframe; Stake preserves focus during inactive-mode timeouts. See [ACCESSIBILITY.md](ACCESSIBILITY.md) for the verified behaviors, tests and remaining real-device/screen-reader checks.
+
+## Pack integration
+
+Pack is now a real fourth game, with the name still provisional. See [its implementation notes](games/pack/README.md). Existing Supabase projects need the additional [Pack migration](supabase/pack.sql) in SQL Editor for cloud saves and private friend comparisons; browser play and local profiles work immediately. Fresh projects apply updated `setup.sql` then `friends.sql`. The Content Studio still edits the three factual-content banks; Pack’s fictional, solver-checked bank uses its dedicated generator.

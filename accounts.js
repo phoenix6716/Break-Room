@@ -51,9 +51,9 @@
    for(let attempt=0;attempt<4;attempt++){
     if((await authenticated()).user.id!==userId)throw Error('Account changed. Please reload this page.');
     const {data,error}=await client.from('game_saves').select('data,revision').eq('user_id',userId).eq('game',game).maybeSingle();if(error)throw error;
-    const merged=saves.merge(game,local[game],data?.data||{});result[game]=merged;
+    const merged=saves.merge(game,local[game]||{},data?.data||{});result[game]=merged;
     if(JSON.stringify(merged)===JSON.stringify(data?.data||{})){done=true;break;}
-    const {data:reply,error:writeError}=await client.rpc('save_game',{p_game:game,p_data:merged,p_revision:data?.revision||0});if(writeError)throw writeError;
+    const {data:reply,error:writeError}=await client.rpc('save_game',{p_game:game,p_data:merged,p_revision:data?.revision||0});if(writeError){if(game==='pack'&&/Invalid save|Unsupported save entry|game_saves_game_check/i.test(writeError.message||''))throw Error('Pack cloud saves need a database update. The site owner must run supabase/pack.sql in Supabase. Your browser saves are safe.');throw writeError;}
     if(!reply?.conflict){done=true;break;}
    }
    if(!done)throw Error('Another device is saving. Please try syncing again shortly.');
@@ -91,7 +91,7 @@
    if(current===id)backup(cacheKey(id),before);else backup(guestKey,before);
    const cached=loadBackup(cacheKey(id))||Object.fromEntries(saves.games.map(g=>[g,{}]));
    let local=current===id?before:cached;
-   if(!current&&$('import-guest')?.checked)local=Object.fromEntries(saves.games.map(g=>[g,saves.merge(g,before[g],cached[g])]));
+   if(!current&&$('import-guest')?.checked)local=Object.fromEntries(saves.games.map(g=>[g,saves.merge(g,before[g]||{},cached[g]||{})]));
    status('Syncing your saves…');const merged=await exchange(id,local);
    if((await authenticated()).user.id!==id||owner()!==current)throw Error('Account changed while syncing. Please try again.');
    // Keep an exact local backup before writing; installation rolls back on storage failure.

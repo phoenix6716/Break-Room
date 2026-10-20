@@ -97,6 +97,41 @@ begin
   end if;
  end loop;return answers;
 end $$;
+-- Pack v1: independently solve snapshot bags; never trust client score fields.
+create or replace function public._friend_pack_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare b jsonb; item jsonb; n numeric; i int; j int; mask int; chosen int; cap int; weight int; points int; best int; ways int; earned int:=0; maximum int:=0; weights int[]; values int[]; names text[]; name text; count_items int;
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or v->'round' is distinct from '2'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>3 or jsonb_typeof(v->'bags') is distinct from 'array' or jsonb_array_length(v->'bags')<>3 then return null;end if;
+ for i in 0..2 loop
+  b=v->'bags'->i;
+  if jsonb_typeof(b->'id') is distinct from 'string' or jsonb_typeof(b->'title') is distinct from 'string' or jsonb_typeof(b->'description') is distinct from 'string' or coalesce(b->>'difficulty','') not in ('easy','medium','hard') or jsonb_typeof(b->'limit') is distinct from 'number' or jsonb_typeof(b->'items') is distinct from 'array' then return null;end if;
+  n=(b->>'limit')::numeric;if n<>trunc(n) or n<1 or n>10000 then return null;end if;cap=n;
+  count_items=jsonb_array_length(b->'items');if count_items<5 or count_items>10 then return null;end if;
+  weights='{}';values='{}';names='{}';
+  for j in 0..count_items-1 loop
+   item=b->'items'->j;
+   if jsonb_typeof(item->'name') is distinct from 'string' or jsonb_typeof(item->'icon') is distinct from 'string' or jsonb_typeof(item->'weight') is distinct from 'number' or jsonb_typeof(item->'points') is distinct from 'number' then return null;end if;
+   name=item->>'name';if name=any(names) then return null;end if;names=array_append(names,name);
+   n=(item->>'weight')::numeric;if n<>trunc(n) or n<1 or n>cap then return null;end if;weights=array_append(weights,n::int);
+   n=(item->>'points')::numeric;if n<>trunc(n) or n<1 or n>20 then return null;end if;values=array_append(values,n::int);
+  end loop;
+  if jsonb_typeof(v->'picks'->i) is distinct from 'number' then return null;end if;
+  n=(v->'picks'->>i)::numeric;if n<>trunc(n) or n<=0 or n>=(1<<count_items) then return null;end if;chosen=n;
+  weight=0;points=0;for j in 1..count_items loop if (chosen & (1<<(j-1)))<>0 then weight=weight+weights[j];points=points+values[j];end if;end loop;
+  if weight>cap then return null;end if;earned=earned+points;best=-1;ways=0;
+  for mask in 1..(1<<count_items)-1 loop
+   weight=0;points=0;for j in 1..count_items loop if (mask & (1<<(j-1)))<>0 then weight=weight+weights[j];points=points+values[j];end if;end loop;
+   if weight<=cap then if points>best then best=points;ways=1;elsif points=best then ways=ways+1;end if;end if;
+  end loop;
+  if ways<>1 then return null;end if;maximum=maximum+best;
+ end loop;
+ if jsonb_typeof(v->'selection') is distinct from 'number' then return null;end if;
+ n=(v->>'selection')::numeric;if n<>trunc(n) or n<0 or n>=(1<<count_items) then return null;end if;
+ return earned::double precision/maximum*100;
+exception when others then return null;
+end $$;
+revoke all on function public._friend_pack_score(jsonb,date) from public,anon,authenticated;
+
 create or replace function public._friend_score(g text,v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
 declare i int; j int; n numeric; bet int; pick int; answer int; total int:=0; won int:=0; legacy int[]; q jsonb; c jsonb;
 begin
@@ -119,6 +154,7 @@ begin
    end if;
    total=total+bet;if pick=answer then won=won+bet;end if;
   end loop;return won::double precision/total*100;
+ elsif g='pack' then return public._friend_pack_score(v,d);
  elsif g='stack-up' then
   if coalesce(v->>'version','') not in ('1','2') or v->>'day' is distinct from d::text or v->>'status' is distinct from 'complete' or v->'round' is distinct from '4'::jsonb then return null;end if;
   if jsonb_typeof(v->'version') is distinct from 'number' or jsonb_typeof(v->'score') is distinct from 'number' or jsonb_typeof(v->'deadline') is distinct from 'number' then return null;end if;
@@ -161,7 +197,7 @@ begin
    end if;
   else
    for entry in select * from jsonb_each_text(data) loop
-    if (game='stake' and entry.key !~ '^stake:d:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='stack-up' and entry.key !~ '^break-room:stack-up:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') then continue;end if;
+    if (game='stake' and entry.key !~ '^stake:d:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='pack' and entry.key !~ '^break-room:pack:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='stack-up' and entry.key !~ '^break-room:stack-up:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') then continue;end if;
     d=public._friend_date(right(entry.key,10));if d is null or d<p_today-119 or d>p_today then continue;end if;
     v=public._friend_json(entry.value);score=public._friend_score(game,v,d);
     if score is not null then day=d;arcade_score=score;return next;end if;
