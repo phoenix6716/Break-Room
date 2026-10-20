@@ -5,7 +5,7 @@
  const pool=window.STACK_UP_STACKS, prefix='break-room:stack-up:daily:',version=2;
  const memory=new Map();let persistent=true,run=null,mode='daily',dialog=null,feedbackTimer=null;
  const read=key=>{if(!persistent&&memory.has(key))return memory.get(key);try{return localStorage.getItem(key)||memory.get(key)||null}catch{return memory.get(key)||null}};
- function write(key,value){memory.set(key,value);try{localStorage.setItem(key,value)}catch{persistent=false;$('save-warning').hidden=false;}}
+ function write(key,value){memory.set(key,value);try{localStorage.setItem(key,value);window.dispatchEvent(new Event("break-room:save"))}catch{persistent=false;$('save-warning').hidden=false;}}
  try{localStorage.setItem('break-room:stack-up:storage-check','1');localStorage.removeItem('break-room:stack-up:storage-check')}catch{persistent=false;$('save-warning').hidden=false;}
  const format=n=>Math.round(n).toLocaleString('en-AU');
  function seeded(seed){let h=2166136261;for(const c of seed)h=Math.imul(h^c.charCodeAt(0),16777619);return()=>{h+=0x6D2B79F5;let x=Math.imul(h^(h>>>15),1|h);x^=x+Math.imul(x^(x>>>7),61|x);return((x^(x>>>14))>>>0)/4294967296;};}

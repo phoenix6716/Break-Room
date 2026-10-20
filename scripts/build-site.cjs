@@ -1,5 +1,6 @@
 /* Build a plain static artifact; preserve every published route and image byte. */
 const fs=require('node:fs'),path=require('node:path');
+require('./bundle-auth.cjs');
 const root=path.resolve(__dirname,'..'),output=path.join(root,'dist');
 const web=new Set(['.html','.css','.js','.json','.webmanifest','.svg','.png','.jpg','.jpeg','.gif','.webp','.ico','.ttf','.woff','.woff2','.mp3','.wav','.ogg']);
 const excluded=new Set(['node_modules','.git','source','_template','__pycache__']);

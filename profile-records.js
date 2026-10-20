@@ -3,7 +3,7 @@
   'use strict';
   const DAY = 86400000, LOWBALL_EPOCH = Date.UTC(2026, 9, 1);
   const games = [
-    {id:'lowball', name:'Lowball', category:'PRICE GUESSING', unit:'points', max:100, note:'Scores out of 100. Best and average use retained history (up to 121 days); played includes its lifetime counter.'},
+    {id:'lowball', name:'Lowball', category:'PRICE GUESSING', unit:'points', max:100, note:'Scores out of 100. Best and average use retained saved history; played includes its lifetime counter.'},
     {id:'stake', name:'Stake', category:'TRIVIA / RISK', unit:'chips', max:15, note:'Net chips from completed five-question Dailies. Scores can be negative.'},
     {id:'stack-up', name:'Stack Up', category:'SORTING / SPEED', unit:'points', max:31000, note:'Points from completed five-stack Dailies. Scores can be negative.'}
   ];

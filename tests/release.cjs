@@ -1,4 +1,4 @@
-/* Public artifact routing and honest disabled account/friends prototypes. */
+/* Public artifact routing and the remaining disabled friends prototype. */
 const assert=require('node:assert/strict'),{chromium}=require('playwright');
 const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
 (async()=>{
@@ -6,7 +6,7 @@ const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
  try{for(const width of [320,390,1440]){
   const page=await browser.newPage({viewport:{width,height:1000}}),errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url());});
   await page.goto(base);assert.equal(await page.locator('.game-grid>.game-card').count(),9);
-  for(const name of ['login','signup','friends']){
+  for(const name of ['friends']){
    await page.goto(base+'/'+name+'.html');assert.ok(await page.locator('.prototype-notice').isVisible());
    assert.ok(await page.locator('fieldset.prototype-form').evaluate(fieldset=>fieldset.disabled));
    assert.equal(await page.locator('form').evaluate(form=>[...new FormData(form).keys()].length),0,'No prototype credentials/friend code enter a request');

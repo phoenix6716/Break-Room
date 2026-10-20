@@ -19,7 +19,7 @@ This gates publication, not merges. For merge protection, a repository administr
 
 ## Reproduce the checks
 
-The application remains static; npm dependencies are development/test tools only. Use Node 24 (`.node-version`), Python 3.12+ and the pinned Playwright in `package-lock.json`:
+The application remains static. The pinned Supabase client is bundled locally during the build; other npm dependencies are build/test tools. Use Node 24 (`.node-version`), Python 3.12+ and the pinned Playwright in `package-lock.json`:
 
 ```sh
 npm ci --ignore-scripts --no-audit --no-fund
@@ -44,13 +44,13 @@ To inspect a build locally, serve `dist/` with a static server. To develop templ
 
 The builder copies root HTML/CSS/JavaScript plus web assets in `assets/` and `games/`, preserving route names and file bytes. It excludes the development starter, tests/scripts, dependency folders, documentation, design previews and generated-image source atlases. `.nojekyll` keeps Pages from rewriting this plain-file site.
 
-Coming-soon game routes remain available. Login/signup and friend-add forms are disabled and marked as prototypes; no passwords are accepted or sent in URL query strings. Real local profile stats and all three live games remain available. Accounts, cloud saves and real friends are separate work.
+Coming-soon routes and the disabled friend-add prototype remain available. Accounts now use Supabase; see `ACCOUNTS.md` for the required owner-applied SQL, exact redirect URLs and email delivery setup. Account forms stay disabled until their JavaScript handlers are ready, and never submit credentials in query strings. Guest play and the existing local profile remain available; cloud-save activation and importing guest progress are explicit. Real friends remain separate work.
 
 The build fills Lowball’s social URL/image placeholders using the Pages URL; set the non-secret `SITE_URL` repository variable if a custom domain is configured later. Lowball’s copied result URL also retains the game’s project path. Keep local navigation and assets relative, with explicit `index.html` game links. Add new asset extensions to the builder only when needed, and verify their references and actual loading. Do not add secrets to client-side JavaScript or the web artifact.
 
 ## Saved progress and rollback
 
-Browser-local saves belong to their site origin. A downloaded `file://` copy and the hosted HTTPS address do not automatically share records. Moving to another domain also creates a separate browser-storage origin; records at the old address are not deleted. Cross-device/domain migration needs an explicit export/import or account-sync feature later.
+Browser-local saves belong to their site origin. A downloaded `file://` copy and the hosted HTTPS address do not automatically share records. Moving to another domain also creates a separate browser-storage origin; records at the old address are not deleted. Supabase cloud saves now support explicit account activation across devices; see `ACCOUNTS.md`. Accessing saves at a different existing origin still needs a separate migration step.
 
 To undo a bad published change, revert its source commit on `main` and let the same checks/deployment run. A failed check/deployment does not intentionally erase the previous hosted site. Don't manually edit the uploaded artifact separately from its source.
 
