@@ -2,14 +2,14 @@
 
 ## GitHub Pages and automatic checks
 
-The static site can publish from this repository using **Check and publish Break Room** in [GitHub Actions](https://github.com/phoenix6716/Midnight-Arcade/actions/workflows/site.yml).
+The static site can publish from this repository using **Check and publish Break Room** in [GitHub Actions](https://github.com/phoenix6716/Break-Room/actions/workflows/site.yml).
 
 One repository setting is required before the first deployment:
 
-1. Open [Settings → Pages](https://github.com/phoenix6716/Midnight-Arcade/settings/pages).
+1. Open [Settings → Pages](https://github.com/phoenix6716/Break-Room/settings/pages).
 2. Under **Build and deployment**, select **GitHub Actions** as the source. This requires repository administration access; the workflow's limited token cannot enable Pages itself.
 3. Push to `main`, or open the workflow above and choose **Run workflow** on `main`. If its first run was waiting for Pages, re-run it after enabling the setting.
-4. Wait for **Test the production site** and **Publish GitHub Pages** to succeed. The deployment job reports the actual site URL in the `github-pages` environment. The expected default address is `https://phoenix6716.github.io/Midnight-Arcade/`; this is not proof that a deployment has succeeded.
+4. Wait for **Test the production site** and **Publish GitHub Pages** to succeed. The deployment job reports the actual site URL in the `github-pages` environment. The expected default address is `https://phoenix6716.github.io/Break-Room/`; this is not proof that a deployment has succeeded.
 
 The repository must be eligible for GitHub Pages under its visibility/account plan, and GitHub Actions must be enabled. A custom domain is optional and not configured by this change. Do not change repository visibility to enable hosting without the owner's instruction.
 
@@ -34,7 +34,7 @@ In the managed cloud environment, `/usr/bin/chromium` is already available; the 
 1. Shared static-footer consistency and a content inventory/review report, followed by content-tool, calendar/DST, Arcade scoring, account/cloud/friend database security, real local profile, question-bank and independent-maths checks.
 2. `npm run build`: a clean plain-file artifact in `dist/`.
 3. `npm run check`: all shipped local HTML/CSS references, JSON and JavaScript syntax (including inline engines), and exclusions for development-only content.
-4. `npm run test:browser`: every non-unit browser test in `tests/`, including actual complete game flows, profile/scoring, artwork, timers, sharing, saved-state migrations, reset boundaries, keyboard/touch controls and responsive layouts. A temporary server mounts the production artifact under `/Midnight-Arcade/`, not the origin root. The template and template-parity tests use a separate source mount because the development starter is intentionally not published.
+4. `npm run test:browser`: every non-unit browser test in `tests/`, including actual complete game flows, profile/scoring, artwork, timers, sharing, saved-state migrations, reset boundaries, keyboard/touch controls and responsive layouts. A temporary server mounts the production artifact under the legacy test prefix `/Midnight-Arcade/`, not the origin root. The template and template-parity tests use a separate source mount because the development starter is intentionally not published.
 
 Child failures retain a nonzero exit code and stop the workflow. Per-check logs are saved to `.artifacts/` and uploaded by Actions for seven days, including on failure. The runner closes its own temporary servers. Existing visual tests also regenerate their documented screenshots in `design/previews/`; review or restore only those generated changes before committing unrelated work.
 
@@ -50,7 +50,7 @@ The build fills Lowball’s social URL/image placeholders using the Pages URL; s
 
 ## Saved progress and rollback
 
-Browser-local saves belong to their site origin. A downloaded `file://` copy and the hosted HTTPS address do not automatically share records. Moving to another domain also creates a separate browser-storage origin; records at the old address are not deleted. Supabase cloud saves now support explicit account activation across devices; see `ACCOUNTS.md`. Accessing saves at a different existing origin still needs a separate migration step.
+Browser-local saves belong to their site origin. The repository-path rename from `/Midnight-Arcade/` to `/Break-Room/` keeps the same HTTPS origin; it does not by itself move or erase localStorage saves. A downloaded `file://` copy and the hosted HTTPS address do not automatically share records. Moving to another domain also creates a separate browser-storage origin; records at the old address are not deleted. Supabase cloud saves now support explicit account activation across devices; see `ACCOUNTS.md`. Accessing saves at a different existing origin still needs a separate migration step.
 
 To undo a bad published change, revert its source commit on `main` and let the same checks/deployment run. A failed check/deployment does not intentionally erase the previous hosted site. Don't manually edit the uploaded artifact separately from its source.
 
@@ -60,11 +60,11 @@ Codex's development environment and GitHub Pages are separate. Network access to
 
 ## Current game migration
 
-The site now includes Lowball, Stake, Stack Up, Pack and Prior. Existing Supabase projects run `supabase/alibi-scenarios.sql` last after setup/social activation; it includes current Pack support. Fresh projects use updated setup then friends. Do not reapply a historical narrower per-game allowlist afterwards. Browser play does not require SQL, but live Prior cloud/Friends support does.
+The site includes nine playable games: Lowball, Stake, Stack Up, Pack, Prior, Laser, Alibi, Bouncer and Inner Clock. Existing Supabase projects run `supabase/inner-clock.sql` last after setup/social activation; it includes current Pack support. Fresh projects use updated setup then friends. Do not reapply a historical narrower per-game allowlist afterwards. Browser play does not require SQL, but live Prior cloud/Friends support does.
 
 ## Laser addition
 
-Laser is now the sixth integrated game, with four first-fire Daily boards, free independent Unlimited practice, and unscored retries/solution reveals. See `games/laser/README.md` for the exact snapshot, scoring, controls and tests. Arcade score is first-fire hits × 25; partials and practice do not count. Existing Supabase projects apply **`supabase/bouncer.sql` LAST** (includes Pack/Prior); this supersedes earlier per-game migration instructions above. Fresh projects use updated setup then Friends. Live SQL/deployment and human playtesting are separate from local implementation verification.
+Laser is now the sixth integrated game, with four first-fire Daily boards, free independent Unlimited practice, and unscored retries/solution reveals. See `games/laser/README.md` for the exact snapshot, scoring, controls and tests. Arcade score is first-fire hits × 25; partials and practice do not count. Existing Supabase projects apply **`supabase/inner-clock.sql` LAST** (includes Pack/Prior); this supersedes earlier per-game migration instructions above. Fresh projects use updated setup then Friends. Live SQL/deployment and human playtesting are separate from local implementation verification.
 
 ## Alibi scenarios — current contract (v2)
 
@@ -72,14 +72,14 @@ The owner approved real scenarios grounded in incidents, timelines and evidence,
 
 Eight illustrated portraits were generated as an image atlas and encoded as an optimized WebP; CSS selects a cell. New snapshots store stable, distinct random portrait assignments, unrelated to guilt. Existing original-format drafts/notes/completions/history keep their original rules and scores; new scenarios are available in Unlimited immediately and the next fresh Daily. The frozen 144-case original bank and tests remain outside production. Read `games/alibi/README.md` for exact source, schema, behavior and compatibility.
 
-**Current complete upgrade: run `supabase/bouncer.sql` LAST.** It includes Alibi scenarios and three-mirror Laser Expert, so earlier per-game updates need not be reapplied. It includes all earlier games and both Alibi parsers. Fresh projects use current setup then Friends; do not reapply old narrower migrations. Personal raw snapshots/notes remain private; Friends expose only completed normalized records through existing sharing controls. Human playtesting and the separately agreed prelaunch audit remain necessary. No billing or other game was enabled.
+**Current complete upgrade: run `supabase/inner-clock.sql` LAST.** It includes Alibi scenarios and three-mirror Laser Expert, so earlier per-game updates need not be reapplied. It includes all earlier games and both Alibi parsers. Fresh projects use current setup then Friends; do not reapply old narrower migrations. Personal raw snapshots/notes remain private; Friends expose only completed normalized records through existing sharing controls. Human playtesting and the separately agreed prelaunch audit remain necessary. No billing or other game was enabled.
 
 ## Bouncer addition
 
-Bouncer is the eighth integrated game: two untimed Daily secret spelling rules, eight words each, four free starting examples and up to four optional tests per door. Correct untested words earn one credit; tested words earn half. Native correct words out of sixteen is retained, alongside Arcade **(correct − tests/2)/16 × 100**. Only the first confirmed lists count; completed zeroes count, partials/practice do not. Existing records and achievement meanings stay intact. Read [the game contract](games/bouncer/README.md) for the 240-door bank, finite Rulebook, accessibility, snapshots and independent checks. Existing Supabase projects run **`supabase/bouncer.sql` LAST**; it includes all previous game updates without deleting saves/relationships. Fresh projects use current setup/Friends. Owner-applied live SQL and human playtesting remain separate from local checks.
+Bouncer is the eighth integrated game: two untimed Daily secret spelling rules, eight words each, four free starting examples and up to four optional tests per door. Correct untested words earn one credit; tested words earn half. Native correct words out of sixteen is retained, alongside Arcade **(correct − tests/2)/16 × 100**. Only the first confirmed lists count; completed zeroes count, partials/practice do not. Existing records and achievement meanings stay intact. Read [the game contract](games/bouncer/README.md) for the 240-door bank, finite Rulebook, accessibility, snapshots and independent checks. Existing Supabase projects run **`supabase/inner-clock.sql` LAST**; it includes all previous game updates without deleting saves/relationships. Fresh projects use current setup/Friends. Owner-applied live SQL and human playtesting remain separate from local checks.
 
 ## Inner Clock — current ninth-game contract
 
 Inner Clock (`games/inner-clock/README.md`) is the ninth playable game; its name remains provisional. Five blind Sydney-date targets use monotonic measured milliseconds, immutable stopped attempts and free cancellation of unfinished timers on interruption. Unlimited offers Mixed/Short/Medium/Long nonrepeating practice and never changes Daily history. No stopwatch animation, ticking sound or reset countdown is visible during an attempt. Native average absolute miss in seconds is lower-is-better; profile native best must use minimum and three decimals. Arcade score averages `max(0,100*(1-absoluteMiss/(target*.25)))` across five, with zero-credit 30-second safety timeouts. Header Best remains maximum Arcade score. In sync requires five misses within 2%; older achievements keep their meanings.
 
-**Current complete existing-project update: run `supabase/inner-clock.sql` LAST.** It includes all earlier games, both Alibi formats and three-mirror Laser Expert, preserves data/RLS, and supersedes earlier narrower migration instructions. Fresh setup then Friends also supports nine games. Repository tests cannot apply live owner SQL. Private comparisons derive completed scores from snapshots; raw timing data stays private. Profile/menus/homepage/accounts/Friends include nine playable games and six coming-soon cards. Public billing and prelaunch human/content/device reviews remain deferred.
+**Current complete existing-project update: run `supabase/inner-clock.sql` LAST.** It includes all earlier games, both Alibi formats and three-mirror Laser Expert, preserves data/RLS, and supersedes earlier narrower migration instructions. Fresh setup then Friends also supports nine games. Repository tests cannot apply live owner SQL. Private comparisons derive completed scores from snapshots; raw timing data stays private. Profile, menus, accounts and Friends support nine playable games. The homepage shows only those nine games; the six cancelled placeholder cards remain removed. Public billing and prelaunch human/content/device reviews remain deferred.
