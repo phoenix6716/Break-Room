@@ -205,6 +205,65 @@ exception when others then return null;
 end $$;
 revoke all on function public._friend_laser_hit(jsonb,jsonb),public._friend_laser_score(jsonb,date) from public,anon,authenticated;
 
+-- Alibi v1: validate snapshots, propagate acyclic statements for every possible culprit.
+-- This intentionally differs from the browser's exhaustive truth-table solver.
+create or replace function public._friend_alibi_culprit(p jsonb) returns integer language plpgsql immutable set search_path='' as $$
+declare n int; lv int; k int; x numeric; i int; j int; c int; pass int; a int; b int; ty text; s jsonb; v boolean; t boolean[]; marks text[]; names text[]:='{}'; statements text[]:='{}'; false_count int; winner int:=null; matches int:=0;
+begin
+ if jsonb_typeof(p) is distinct from 'object' or jsonb_typeof(p->'id') is distinct from 'string' or p->>'id' !~ '^alibi-v1-[0-3]-[0-9]+$' or char_length(p->>'id')>80 or jsonb_typeof(p->'level') is distinct from 'number' then return null;end if;
+ x=(p->>'level')::numeric;if x<>trunc(x) or x not between 0 and 3 then return null;end if;lv=x;n=case when lv=3 then 5 else 4 end;
+ if p->'n' is distinct from to_jsonb(n) or jsonb_typeof(p->'k') is distinct from 'number' then return null;end if;
+ x=(p->>'k')::numeric;if x<>trunc(x) or x not between 1 and n-1 then return null;end if;k=x;
+ foreach ty in array array['crime','detail','item'] loop
+  if jsonb_typeof(p->ty) is distinct from 'string' or char_length(trim(p->>ty))<1 or char_length(p->>ty)>(case ty when 'crime' then 140 when 'detail' then 280 else 30 end) then return null;end if;
+ end loop;
+ if jsonb_typeof(p->'names') is distinct from 'array' or jsonb_array_length(p->'names')<>n or jsonb_typeof(p->'s') is distinct from 'array' or jsonb_array_length(p->'s')<>n then return null;end if;
+ for i in 0..n-1 loop
+  if jsonb_typeof(p->'names'->i) is distinct from 'string' or char_length(trim(p->'names'->>i))<1 or char_length(p->'names'->>i)>30 or p->'names'->>i=any(names) then return null;end if;names=array_append(names,p->'names'->>i);
+  s=p->'s'->i;if jsonb_typeof(s) is distinct from 'array' or jsonb_array_length(s)<>3 or jsonb_typeof(s->0) is distinct from 'string' or coalesce(s->>0,'') not in ('is','not','tru','lie','either','both') then return null;end if;ty=s->>0;
+  for j in 1..2 loop
+   if jsonb_typeof(s->j) is distinct from 'number' then return null;end if;
+   x=(s->>j)::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;
+  end loop;a=(s->>1)::numeric;b=(s->>2)::numeric;
+  if ty not in ('is','not') and (a=i or (ty in ('either','both') and (b=i or a=b))) then return null;end if;
+  -- Numeric equality also accepts JSON 0.0 like JavaScript.
+  v=false;for j in 1..coalesce(array_length(statements,1),0) loop if (statements[j])::jsonb=s then v=true;end if;end loop;if v then return null;end if;statements=array_append(statements,s::text);
+ end loop;
+ for c in 0..n-1 loop
+  t=array_fill(null::boolean,array[n]);
+  for pass in 1..n loop
+   for i in 0..n-1 loop
+    if t[i+1] is not null then continue;end if;s=p->'s'->i;ty=s->>0;a=(s->>1)::numeric;b=(s->>2)::numeric;
+    if ty='is' then t[i+1]=(c=a);elsif ty='not' then t[i+1]=(c<>a);
+    elsif t[a+1] is not null then
+     if ty='tru' then t[i+1]=t[a+1];elsif ty='lie' then t[i+1]=not t[a+1];
+     elsif t[b+1] is not null then if ty='both' then t[i+1]=t[a+1] and t[b+1];else t[i+1]=t[a+1] or t[b+1];end if;end if;
+    end if;
+   end loop;
+  end loop;
+  if array_position(t,null::boolean) is not null then return null;end if;false_count=0;foreach v in array t loop if not v then false_count=false_count+1;end if;end loop;
+  if false_count=k then matches=matches+1;winner=c;end if;
+ end loop;
+ if matches<>1 then return null;end if;return winner;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare i int; j int; n int; x numeric; culprit int; correct int:=0; p jsonb; note jsonb; ids text[]:='{}';
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or v->'round' is distinct from '3'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or jsonb_typeof(v->'edits') is distinct from 'number' then return null;end if;
+ x=(v->>'edits')::numeric;if x<>trunc(x) or x not between 0 and 1000000 then return null;end if;
+ if jsonb_typeof(v->'cases') is distinct from 'array' or jsonb_array_length(v->'cases')<>4 or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>4 or jsonb_typeof(v->'notes') is distinct from 'array' or jsonb_array_length(v->'notes')<>4 or v->'selection' is distinct from v->'picks'->3 then return null;end if;
+ for i in 0..3 loop
+  p=v->'cases'->i;culprit=public._friend_alibi_culprit(p);if culprit is null or p->>'id'=any(ids) then return null;end if;ids=array_append(ids,p->>'id');n=(p->>'n')::numeric;
+  if jsonb_typeof(v->'picks'->i) is distinct from 'number' then return null;end if;x=(v->'picks'->>i)::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;if x=culprit then correct=correct+1;end if;
+  note=v->'notes'->i;if jsonb_typeof(note) is distinct from 'object' or jsonb_typeof(note->'truth') is distinct from 'array' or jsonb_array_length(note->'truth')<>n or jsonb_typeof(note->'excluded') is distinct from 'array' or jsonb_array_length(note->'excluded')<>n then return null;end if;
+  for j in 0..n-1 loop if jsonb_typeof(note->'truth'->j) is distinct from 'number' or (note->'truth'->>j)::numeric not in (-1,0,1) or jsonb_typeof(note->'excluded'->j) is distinct from 'boolean' then return null;end if;end loop;
+ end loop;
+ return correct*25;
+exception when others then return null;
+end $$;
+revoke all on function public._friend_alibi_culprit(jsonb),public._friend_alibi_score(jsonb,date) from public,anon,authenticated;
+
 create or replace function public._friend_score(g text,v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
 declare i int; j int; n numeric; bet int; pick int; answer int; total int:=0; won int:=0; legacy int[]; q jsonb; c jsonb;
 begin
@@ -227,6 +286,7 @@ begin
    end if;
    total=total+bet;if pick=answer then won=won+bet;end if;
   end loop;return won::double precision/total*100;
+ elsif g='alibi' then return public._friend_alibi_score(v,d);
  elsif g='laser' then return public._friend_laser_score(v,d);
  elsif g='prior' then return public._friend_prior_score(v,d);
  elsif g='pack' then return public._friend_pack_score(v,d);
@@ -272,7 +332,7 @@ begin
    end if;
   else
    for entry in select * from jsonb_each_text(data) loop
-    if (game='stake' and entry.key !~ '^stake:d:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='laser' and entry.key !~ '^break-room:laser:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='prior' and entry.key !~ '^break-room:prior:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='pack' and entry.key !~ '^break-room:pack:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='stack-up' and entry.key !~ '^break-room:stack-up:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') then continue;end if;
+    if (game='stake' and entry.key !~ '^stake:d:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='alibi' and entry.key !~ '^break-room:alibi:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='laser' and entry.key !~ '^break-room:laser:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='prior' and entry.key !~ '^break-room:prior:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='pack' and entry.key !~ '^break-room:pack:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='stack-up' and entry.key !~ '^break-room:stack-up:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') then continue;end if;
     d=public._friend_date(right(entry.key,10));if d is null or d<p_today-119 or d>p_today then continue;end if;
     v=public._friend_json(entry.value);score=public._friend_score(game,v,d);
     if score is not null then day=d;arcade_score=score;return next;end if;

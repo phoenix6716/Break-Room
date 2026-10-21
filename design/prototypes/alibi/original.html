@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Alibi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="A daily logic game. Four cases, one attempt each.">
+<style>
+/* Layout concept: a police lineup wall. Black placards with suspect letters, case-file labels in mono, hazard tape as the single loud accent. */
+:root{
+ --bg:#e6e9e4;--card:#f5f6f2;--ink:#14181a;--mute:#4a5755;--line:#aab5b0;
+ --tape:#f5c518;--tk:#14181a;--plate:#14181a;--on-plate:#f5f6f2;
+ --ok:#17603f;--bad:#a3221b;--focus:#0b57d0;
+ --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+ --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+ padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --bg:#101416;--card:#192023;--ink:#e8ece9;--mute:#9eacaa;--line:#34403f;
+ --plate:#e8ece9;--on-plate:#101416;--ok:#5fd09a;--bad:#ff8f86;--focus:#8ab4ff;color-scheme:dark}}
+:root[data-theme="dark"]{
+ --bg:#101416;--card:#192023;--ink:#e8ece9;--mute:#9eacaa;--line:#34403f;
+ --plate:#e8ece9;--on-plate:#101416;--ok:#5fd09a;--bad:#ff8f86;--focus:#8ab4ff;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 var(--sans);
+ padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 32px}
+.w{max-width:34rem;margin:0 auto}
+.tape{height:10px;margin-top:16px;background:repeating-linear-gradient(-45deg,var(--tape) 0 10px,var(--tk) 10px 20px)}
+header{display:flex;align-items:flex-end;justify-content:space-between;gap:4px 12px;flex-wrap:wrap;padding:14px 0 10px}
+h1{margin:0;font:800 1.9rem/1 var(--sans);letter-spacing:.3em;text-transform:uppercase}
+h2{margin:6px 0 10px;font:800 1.35rem/1.2 var(--sans);text-wrap:balance}
+h3,h4{margin:0}
+.lab{font:700 .72rem/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+nav{display:flex;margin:0 0 16px;border:2px solid var(--ink)}
+nav button{flex:1;min-height:44px;padding:0 4px;border:0;background:var(--card);color:var(--ink);font:700 .8rem var(--mono);letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+nav button+button{border-left:2px solid var(--ink)}
+nav button[aria-current=page]{background:var(--ink);color:var(--bg);text-decoration:underline;text-underline-offset:4px}
+.file{background:var(--card);border:2px solid var(--ink);padding:14px;margin-bottom:14px;display:grid;gap:10px}
+.file>*{margin:0}
+.fact{border:2px dashed var(--ink);padding:10px 12px;font-weight:700;background:var(--card)}
+.btn{display:block;width:100%;min-height:48px;padding:8px 16px;border:2px solid var(--ink);background:var(--tape);color:#14181a;font:800 .9rem var(--mono);letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.btn.s{background:var(--card);color:var(--ink)}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.lineup{display:grid;gap:10px}
+.sus{display:grid;grid-template-columns:3.2rem minmax(0,1fr);width:100%;min-height:64px;padding:0;text-align:left;font:inherit;color:inherit;background:var(--card);border:2px solid var(--ink)}
+button.sus{cursor:pointer}
+button.sus[aria-pressed=true]{outline:4px solid var(--tape);outline-offset:1px;background:var(--bg)}
+.pl{display:grid;place-items:center;background:var(--plate);color:var(--on-plate);font:800 1.7rem var(--mono)}
+.bd{padding:9px 12px;min-width:0;overflow-wrap:anywhere;display:grid;gap:4px;align-content:center}
+.st{font-style:italic}
+.tg{display:inline-block;margin-right:6px;padding:1px 6px;border:2px solid currentColor;font:800 .68rem/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.tg:empty{display:none}
+.tg.t{color:var(--ok)}.tg.l{color:var(--bad)}
+.vd{padding:10px 12px;border:2px solid currentColor;font-size:1.1rem}
+.vd.w{color:var(--ok)}.vd.x{color:var(--bad)}
+ol.dd{margin:0;padding-left:1.3rem;display:grid;gap:6px}
+ul.rows{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+ul.rows li{padding:8px 10px;border:1px solid var(--line)}
+pre.share{margin:0;padding:10px;white-space:pre-wrap;overflow-wrap:anywhere;font:.9rem/1.5 var(--mono);background:var(--bg);border:2px dashed var(--ink);user-select:all;-webkit-user-select:all}
+input{width:100%;min-height:48px;padding:0 12px;font:1rem var(--mono);border:2px solid var(--ink);background:var(--bg);color:var(--ink);border-radius:0}
+label{font-weight:700}
+.tbw{overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th,td{padding:8px;text-align:left;border-bottom:1px solid var(--line)}
+th{font:700 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+footer{margin-top:20px}
+</style>
+</head>
+<body>
+<div class="w">
+<div class="tape" aria-hidden="true"></div>
+<header><h1>Alibi</h1><div class="lab" id="meta"></div></header>
+<nav id="tabs" aria-label="Game modes"></nav>
+<main id="main"><noscript>Alibi needs JavaScript to run.</noscript></main>
+<footer class="lab">Cases are built on your device from the date. Nothing is sent anywhere.</footer>
+</div>
+<script>
+'use strict';
+/* ===== CONFIG ===== */
+// Address where this file is hosted. Used in share text and for ?c=CODE links. Leave empty to omit the link line.
+const SHARE_URL='';
+const NAMES=['Ava','Ben','Cara','Dev','Eli','Fay','Gus','Hana','Ivo','Jess','Kai','Lena','Milo','Nora','Omar','Pia','Quinn','Ravi','Sam','Tess','Uma','Vik','Wren','Zoe'];
+const CRIMES=['ate the last biscuit','took the last jam doughnut','finished the lemon cake','emptied the sweet jar','ate the last sausage roll','drank the last of the orange juice'];
+const L='ABCDE',SIZES=[3,4,4,5],W=['zero','one','two','three','four','five'];
+/* MONETISATION HOOKS (nothing is built in: no ads, popups or paywalls). Plug in at these points:
+   - Archive of past days: dayPuzzles(date) already works for any date. Gate a date picker here and in compare().
+   - Streak freezes: edit bump() and streak() so a spent freeze bridges one missed day.
+   - Private leagues: extend the share code in shareBox() with a league id and add a leaderboard fetch in results().
+   - Hint packs: add a hint button in caseView() before the player locks an answer.
+   - Cosmetic themes: add [data-theme] colour blocks in the CSS and a picker in render(). */
+/*PURE*/
+function xmur3(s){let h=1779033703^s.length;for(let i=0;i<s.length;i++){h=Math.imul(h^s.charCodeAt(i),3432918353);h=h<<13|h>>>19}return()=>{h=Math.imul(h^h>>>16,2246822507);h=Math.imul(h^h>>>13,3266489909);return(h^=h>>>16)>>>0}}
+function mulberry32(a){return()=>{a|=0;a=a+1831565813|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const rng=seed=>mulberry32(xmur3(seed)());
+// Statement s = [type,a,b]. t[i] is true when suspect i tells the truth, c is the culprit index.
+function ev(s,c,t){const y=s[0],a=s[1],b=s[2];return y=='is'?c==a:y=='not'?c!=a:y=='lie'?!t[a]:y=='tru'?t[a]:(t[a]||t[b])}
+// Brute force: every culprit and every truth/lie assignment where each suspect's truthfulness matches their statement.
+function solveAll(p){const o=[];for(let c=0;c<p.n;c++)for(let m=0;m<1<<p.n;m++){const t=[];for(let i=0;i<p.n;i++)t.push((m>>i&1)==1);if(t.every((v,i)=>v==ev(p.s[i],c,t)))o.push({c,t})}return o}
+const liars=t=>t.filter(v=>!v).length;
+const solve=p=>solveAll(p).filter(o=>liars(o.t)==p.k);
+function gen(seed,lv){
+ const r=rng(seed+'/'+lv),n=SIZES[lv],pk=a=>a[Math.floor(r()*a.length)];
+ const pool=NAMES.slice();for(let i=pool.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]]}
+ const names=pool.slice(0,n),crime=pk(CRIMES);
+ const types=lv<1?['is','not']:lv<2?['is','not','nb']:['is','not','lie','tru','nb'];
+ for(let tries=0;tries<100000;tries++){
+  const s=[];
+  for(let i=0;i<n;i++){
+   const y=pk(types),o=[];for(let j=0;j<n;j++)if(j!=i)o.push(j);
+   if(y=='is'||y=='not')s.push([y,Math.floor(r()*n),0]);
+   else if(y=='nb'){const a=pk(o);s.push([y,a,pk(o.filter(j=>j!=a))])}
+   else s.push([y,pk(o),0]);
+  }
+  const meta=s.filter(x=>x[0]=='lie'||x[0]=='tru').length;
+  if(meta<(lv==2?1:lv==3?2:0)||new Set(s.map(x=>x.join())).size<n)continue;
+  const p={seed,lv,n,names,crime,k:1+Math.floor(r()*(n-1)),m:r()<.5?1:0,s},q=solve(p);
+  if(q.length==1){p.c=q[0].c;return p}  // accept only when exactly one culprit fits
+ }
+ throw new Error('no puzzle')
+}
+const dayPuzzles=d=>[0,1,2,3].map(l=>gen('alibi-'+d,l));
+/*ENDPURE*/
+/* ===== DATES ===== */
+const pad=n=>String(n).padStart(2,'0');
+const ymd=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+const today=()=>ymd(new Date());
+const addDays=(s,k)=>{const a=s.split('-').map(Number);return ymd(new Date(a[0],a[1]-1,a[2]+k))};
+const nice=s=>{const a=s.split('-').map(Number);return new Date(a[0],a[1]-1,a[2]).toLocaleDateString(undefined,{weekday:'short',day:'numeric',month:'short'})};
+function cdText(){const n=new Date(),s=Math.max(0,Math.floor((new Date(n.getFullYear(),n.getMonth(),n.getDate()+1)-n)/1000));return[Math.floor(s/3600),Math.floor(s%3600/60),s%60].map(pad).join(':')}
+/* ===== STORAGE (every read and write is wrapped; the game works with none) ===== */
+const KEY='alibi.v1';
+let S={};try{S=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){S={}}
+if(typeof S!='object'||Array.isArray(S))S={};
+S.days=S.days&&typeof S.days=='object'?S.days:{};
+['streak','us','ut'].forEach(k=>S[k]=Math.max(0,parseInt(S[k])||0));
+S.last=/^\d{4}-\d{2}-\d{2}$/.test(S.last)?S.last:'';
+function save(){try{const k=Object.keys(S.days).sort();while(k.length>60)delete S.days[k.shift()];localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+function dayOf(d){const x=S.days[d];if(!x||typeof x.p!='string'||!/^[A-E]{0,4}$/.test(x.p)||x.p.split('').some((c,i)=>L.indexOf(c)>=SIZES[i]))return{p:'',s:0};x.s=Math.min(Math.max(parseInt(x.s)||0,0),x.p.length);return x}
+// p = letters picked so far, s = how many reveals the player has read.
+function bump(d){if(S.last==d)return;S.streak=(S.last==addDays(d,-1)?S.streak:0)+1;S.last=d}
+/* ===== TEXT ===== */
+const list=a=>a.length<2?(a[0]||'nobody'):a.slice(0,-1).join(', ')+' and '+a[a.length-1];
+const clue=p=>p.m?'Exactly '+W[p.n-p.k]+(p.n-p.k==1?' suspect tells':' suspects tell')+' the truth.':'Exactly '+W[p.k]+(p.k==1?' suspect lies.':' suspects lie.');
+function say(p,s){const y=s[0],N=p.names;return y=='is'?'It was '+N[s[1]]+'.':y=='not'?'It was not '+N[s[1]]+'.':y=='lie'?N[s[1]]+' is lying.':y=='tru'?N[s[1]]+' is telling the truth.':N[s[1]]+' and '+N[s[2]]+' are not both lying.'}
+function deduce(p){
+ const all=solveAll(p),o=['Rule: '+clue(p)+' So '+p.k+' of the '+p.n+' suspects lie.'];
+ for(let c=0;c<p.n;c++){
+  const ms=all.filter(x=>x.c==c),w='If it was '+p.names[c]+' ('+L[c]+'): ';
+  if(!ms.length){o.push(w+'the statements contradict each other. Ruled out.');continue}
+  const m=ms.find(x=>liars(x.t)==p.k),ln=x=>p.names.filter((_,i)=>!x.t[i]);
+  if(m){const q=ln(m);o.push(w+list(q)+(q.length==1?' lies':' lie')+'. That makes '+p.k+', as the rule says. This fits.')}
+  else if(ms.length==1)o.push(w+list(ln(ms[0]))+' would lie. That makes '+liars(ms[0].t)+', not '+p.k+'. Ruled out.');
+  else o.push(w+'the liars could number '+[...new Set(ms.map(x=>liars(x.t)))].sort().join(' or ')+', never '+p.k+'. Ruled out.');
+ }
+ return o}
+/* ===== CODES ===== */
+const CODE_RE=/(?:^|[^0-9A-Z-])(\d{4})-(\d{2})-(\d{2})-([A-E]{4})(?![A-Z0-9-])/;
+function parseCode(raw){
+ const m=CODE_RE.exec(String(raw).toUpperCase());
+ if(!m)return{err:'That is not an Alibi code. A code looks like '+today()+'-BDAC.'};
+ const date=m[1]+'-'+m[2]+'-'+m[3];
+ if(ymd(new Date(+m[1],+m[2]-1,+m[3]))!=date)return{err:'That date does not exist.'};
+ if(date>today())return{err:'That code is from a day that has not started yet.'};
+ if(date<'2025-01-01')return{err:'That code is too old.'};
+ if(m[4].split('').some((c,i)=>L.indexOf(c)>=SIZES[i]))return{err:'A letter in that code does not match a suspect in that set.'};
+ return{date,picks:m[4]}}
+/* ===== STATE ===== */
+let tab='daily',D=today(),P=[],ok=true,playing=false,sel=null,cmp=null,cmpMsg='',cmpRaw='',note='',U={p:null,pk:null};
+const streak=()=>S.last==D||S.last==addDays(D,-1)?S.streak:0;
+function selfCheck(d,ps){try{const b=dayPuzzles(d);return ps.length==4&&ps.every((p,i)=>{const q=JSON.parse(JSON.stringify(p)),s=solve(q);
+ return JSON.stringify(p)==JSON.stringify(b[i])&&s.length==1&&s[0].c==q.c&&q.n==SIZES[i]&&(i!=2||q.s.some(x=>x[0]=='lie'||x[0]=='tru'))})}catch(e){return false}}
+function prep(){try{P=dayPuzzles(D);ok=selfCheck(D,P)}catch(e){P=[];ok=false}}
+/* ===== DOM (text only, never innerHTML) ===== */
+const $=id=>document.getElementById(id);
+function h(t,a,...c){const e=document.createElement(t);for(const k in a||{}){const v=a[k];if(k=='class')e.className=v;else if(k.slice(0,2)=='on')e.addEventListener(k.slice(2),v);else if(v===true)e.setAttribute(k,'');else if(v!==false&&v!=null)e.setAttribute(k,v)}for(const x of c.flat())if(x!=null&&x!==false)e.append(x);return e}
+const plate=j=>h('span',{class:'pl'},L[j]);
+function caseView(p,i,tot,pk,lock,next,nl,lab){
+ const done=pk!=null,pi=done?L.indexOf(pk):-1;
+ const el=h('section',{class:'file'},h('div',{class:'lab'},lab+' · Level '+(p.lv+1)+' of 4'),h('h2',{},'Who '+p.crime+'?'),h('p',{class:'fact'},'Fact: '+clue(p)));
+ if(!done){
+  const btns=[],cb=h('button',{class:'btn',disabled:true,onclick:()=>lock(L[sel])},'Choose a suspect');
+  const ln=h('div',{class:'lineup',role:'group','aria-label':'Suspects'});
+  p.s.forEach((s,j)=>{const b=h('button',{class:'sus','aria-pressed':'false',onclick:()=>{sel=j;btns.forEach((x,k)=>{x.setAttribute('aria-pressed',String(k==j));x.querySelector('.mk').textContent=k==j?'✔ Selected':''});cb.disabled=false;cb.textContent='Accuse '+p.names[j]}},
+   plate(j),h('span',{class:'bd'},h('span',{},h('b',{},p.names[j]),' ',h('span',{class:'tg mk'})),h('span',{class:'st'},'“'+say(p,s)+'”')));
+   b.querySelector('.mk').textContent='';btns.push(b);ln.append(b)});
+  sel=null;el.append(h('p',{class:'lab'},'Each suspect makes one statement. Pick the culprit. The answer locks.'),ln,cb);
+ }else{
+  const t=solve(p)[0].t,win=pi==p.c;
+  el.append(h('h3',{id:'verdict',tabindex:'-1',role:'status',class:'vd '+(win?'w':'x')},(win?'✔ Correct. ':'✘ Not this time. ')+'It was '+p.names[p.c]+'.'));
+  if(!win)el.append(h('p',{},'You named '+p.names[pi]+'.'));
+  el.append(h('div',{class:'lineup'},p.s.map((s,j)=>h('div',{class:'sus'},plate(j),h('span',{class:'bd'},
+   h('span',{},h('b',{},p.names[j]),' ',h('span',{class:'tg '+(t[j]?'t':'l')},t[j]?'✔ Truth':'✘ Lie'),' ',j==p.c?h('span',{class:'tg'},'Culprit'):null,' ',j==pi?h('span',{class:'tg'},'Your pick'):null),
+   h('span',{class:'st'},'“'+say(p,s)+'”'))))),
+  h('h4',{class:'lab'},'How to solve it'),h('ol',{class:'dd'},deduce(p).map(x=>h('li',{},x))),h('button',{class:'btn',onclick:next},nl));
+ }
+ return el}
+// Runs a sequence of cases. st = {p:'picks so far',s:reveals read}. sv persists after each change.
+function playFlow(ps,st,sv,lab){
+ const open=st.p.length>st.s,i=open?st.s:st.p.length;
+ return caseView(ps[i],i,ps.length,open?st.p[st.s]:null,l=>{st.p+=l;sv();render(true)},()=>{st.s++;sv();render('top')},st.s==ps.length-1?'See results':'Next case',lab+' '+(i+1)+' of '+ps.length)}
+function shareBox(date,pk,r){
+ const c=date+'-'+pk,txt=['Alibi '+date,r.map(x=>x?'✅':'❌').join(''),'Code: '+c,SHARE_URL?SHARE_URL+(SHARE_URL.includes('?')?'&':'?')+'c='+c:''].filter(Boolean).join('\n');
+ const pre=h('pre',{class:'share',tabindex:'0'},txt),msg=h('p',{class:'lab',role:'status'},'');
+ const btn=h('button',{class:'btn s',onclick:async()=>{
+  try{await navigator.clipboard.writeText(txt);msg.textContent='Copied ✔'}
+  catch(e){const g=getSelection(),rg=document.createRange();rg.selectNodeContents(pre);g.removeAllRanges();g.addRange(rg);let d=false;try{d=document.execCommand('copy')}catch(x){}
+   msg.textContent=d?'Copied ✔':'Copy was blocked. The text is selected: copy it by hand.'}}},'Copy result');
+ return h('div',{class:'file'},h('h4',{class:'lab'},'Share (no spoilers)'),pre,btn,msg)}
+function compareView(date,ps,me,fr){
+ const sc=s=>s.split('').filter((c,i)=>L.indexOf(c)==ps[i].c).length,a=sc(me),b=sc(fr);
+ const cell=(l,i)=>l+' '+(L.indexOf(l)==ps[i].c?'✔ Solved':'✘ Missed');
+ return h('section',{class:'file'},h('div',{class:'lab'},'Side by side · '+nice(date)),
+  h('h2',{},a==b?'You both solved '+a+' of 4.':'You solved '+a+' of 4. They solved '+b+' of 4.'),
+  h('p',{},a>b?'You take this one.':a<b?'They take this one.':'A draw.'),
+  h('div',{class:'tbw'},h('table',{},h('thead',{},h('tr',{},h('th',{},'Case'),h('th',{},'You'),h('th',{},'Them'))),
+   h('tbody',{},ps.map((p,i)=>h('tr',{},h('td',{},String(i+1)),h('td',{},cell(me[i],i)),h('td',{},cell(fr[i],i))))))))}
+function results(date,ps,pk){
+ const r=ps.map((p,i)=>L.indexOf(pk[i])==p.c),sc=r.filter(Boolean).length,n=streak();
+ return h('div',{},h('section',{class:'file'},h('div',{class:'lab'},'Case file closed · '+nice(date)),h('h2',{},sc+' of 4 solved'),
+  h('ul',{class:'rows'},ps.map((p,i)=>h('li',{},'Case '+(i+1)+': '+(r[i]?'✔ Solved. ':'✘ Missed. ')+'You named '+p.names[L.indexOf(pk[i])]+' ('+pk[i]+').'+(r[i]?'':' It was '+p.names[p.c]+' ('+L[p.c]+').')))),
+  h('p',{},'Come back tomorrow for a new case file.'),h('p',{class:'lab'},'Next set in ',h('span',{class:'cd'},cdText()),' · Streak: '+n+(n==1?' day':' days'))),
+  shareBox(date,pk,r),
+  cmp&&cmp.date==date?compareView(date,ps,pk,cmp.picks):null,
+  h('button',{class:'btn s',onclick:()=>{tab='compare';render('top')}},'Compare with a friend'))}
+function daily(){
+ if(!ok)return h('p',{class:'fact'},'Today\'s cases could not be prepared. Please reload the page.');
+ const st=dayOf(D);
+ if(st.s>=4)return results(D,P,st.p);
+ if(!playing){const i=st.p.length>st.s?st.s:st.p.length,n=streak();
+  return h('section',{class:'file'},h('div',{class:'lab'},'Case file · '+nice(D)),h('h2',{},'Four cases. One attempt each.'),
+   h('p',{},'Each suspect makes one statement. The fact tells you how many of them lie. Work out who did it. Once you lock in an answer it cannot change.'),
+   h('p',{class:'lab'},'Streak: '+n+(n==1?' day':' days')),
+   h('button',{class:'btn',onclick:()=>{playing=true;render('top')}},st.p.length?'Continue: case '+(i+1)+' of 4':'Open today\'s case file'))}
+ return playFlow(P,st,()=>{S.days[D]=st;if(st.p.length==4)bump(D);save()},'Case')}
+function compare(){
+ if(!cmp){
+  const inp=h('input',{id:'cc',type:'text',autocomplete:'off',autocapitalize:'characters',spellcheck:'false',maxlength:'300',placeholder:D+'-BDAC',value:cmpRaw});
+  const go=()=>{cmpRaw=inp.value;const v=parseCode(inp.value);if(v.err)cmpMsg=v.err;else{cmp={date:v.date,picks:v.picks,st:{p:'',s:0},go:false};cmpMsg=''}render('top')};
+  inp.addEventListener('keydown',e=>{if(e.key=='Enter')go()});
+  return h('section',{class:'file'},h('div',{class:'lab'},'Compare with a friend'),h('h2',{},'Paste their code'),h('label',{for:'cc'},'Code, or the whole share text'),inp,
+   cmpMsg?h('p',{class:'fact',role:'alert'},cmpMsg):null,h('button',{class:'btn',onclick:go},'Play their set'))}
+ const ps=cmp.ps=cmp.ps||(cmp.date==D&&ok?P:dayPuzzles(cmp.date)),mine=dayOf(cmp.date),me=mine.s>=4?mine.p:cmp.st.s>=4?cmp.st.p:null;
+ const reset=h('button',{class:'btn s',onclick:()=>{cmp=null;cmpMsg='';cmpRaw='';render('top')}},'Check another code');
+ if(me)return h('div',{},compareView(cmp.date,ps,me,cmp.picks),reset);
+ if(cmp.date==D)return h('section',{class:'file'},h('div',{class:'lab'},'Friend code · '+nice(cmp.date)),h('h2',{},'Finish today\'s set first'),
+  h('p',{},'Their code is for today. Play your four cases and the side by side result appears on your results screen.'),
+  h('button',{class:'btn',onclick:()=>{tab='daily';render('top')}},'Go to today\'s cases'),reset);
+ if(!cmp.go)return h('section',{class:'file'},h('div',{class:'lab'},'Friend code · '+nice(cmp.date)),h('h2',{},'Play their set'),
+  h('p',{},'You will play the same four cases they did. This run does not touch your streak or your daily results.'),
+  h('button',{class:'btn',onclick:()=>{cmp.go=true;render('top')}},'Start'),reset);
+ // MONETISATION HOOK: archive of past days would be offered from here.
+ return playFlow(ps,cmp.st,()=>{},'Friend\'s set case')}
+function newU(){U.p=gen('u-'+Math.random().toString(36).slice(2,10),Math.floor(Math.random()*4));U.pk=null}
+function unl(){
+ if(!U.p)newU();
+ return h('div',{},h('p',{class:'lab'},'Unlimited · Solved '+S.us+' of '+S.ut+' tried · Does not affect your streak'),
+  caseView(U.p,0,1,U.pk,l=>{U.pk=l;S.ut++;if(L.indexOf(l)==U.p.c)S.us++;save();render(true)},()=>{newU();render('top')},'Next case','Unlimited case'))}
+const TABS=[['daily','Daily'],['compare','Compare'],['unl','Unlimited']];
+function render(f){
+ const n=note;note='';
+ $('meta').textContent=nice(D)+' · Streak '+streak()+(streak()==1?' day':' days');
+ $('tabs').replaceChildren(...TABS.map(t=>h('button',{'aria-current':tab==t[0]?'page':false,onclick:()=>{tab=t[0];render('top')}},t[1])));
+ $('main').replaceChildren(...[n?h('p',{class:'fact',role:'status'},n):null,tab=='daily'?daily():tab=='compare'?compare():unl()].filter(Boolean));
+ if(f=='top')scrollTo(0,0);else if(f){const v=$('verdict');if(v){v.focus();v.scrollIntoView()}}
+}
+function tick(){
+ if(today()!=D){D=today();prep();playing=false;if(tab=='daily')note='A new day has started. Fresh cases are ready.';render('top');return}
+ document.querySelectorAll('.cd').forEach(e=>e.textContent=cdText())}
+prep();
+try{const c=new URLSearchParams(location.search).get('c');if(c){tab='compare';cmpRaw=c.slice(0,300);const v=parseCode(c);if(v.err)cmpMsg=v.err;else cmp={date:v.date,picks:v.picks,st:{p:'',s:0},go:false}}}catch(e){}
+render();
+setInterval(tick,1000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)tick()});
+</script>
+</body>
+</html>

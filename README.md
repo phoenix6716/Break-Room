@@ -94,4 +94,10 @@ Prior is the fifth game, with the name still provisional. See [its implementatio
 
 ## Laser integration
 
-Laser is the sixth game. See [its implementation notes](games/laser/README.md). Existing Supabase projects now run the complete [Laser migration](supabase/laser.sql) **last**; it includes Pack/Prior and supersedes their earlier migration instructions above. Fresh projects use updated setup then Friends. Local play works immediately; live cloud/Friends support needs this owner-applied SQL. The original prototype is preserved outside the build.
+Laser is the sixth game. See [its implementation notes](games/laser/README.md). Existing Supabase projects now run the complete [latest migration](supabase/alibi.sql) **last**; it includes Pack/Prior and supersedes their earlier migration instructions above. Fresh projects use updated setup then Friends. Local play works immediately; live cloud/Friends support needs this owner-applied SQL. The original prototype is preserved outside the build.
+
+## Alibi addition — current integration and migration
+
+Alibi is the seventh integrated game, with 144 solver-checked distinct deduction cases, personal ungraded notes, four untimed graded Dailies, final confirmed accusations, concise and expandable reasoning, and independent free Changing/fixed-tier Unlimited. See `games/alibi/README.md` for the exact mechanics, snapshot contract, seven design changes and checks. Native score is correct out of four; Arcade is correct × 25. Real zeroes count; partials and practice do not. The common profile/Friends average now has **seven** available games; Case closed requires four correct and older achievements keep their meanings.
+
+**Current Supabase update: run all of `supabase/alibi.sql` LAST** (includes Pack, Prior and Laser). This supersedes earlier migration pointers above. Fresh projects use current setup then Friends. Do not reapply older narrower migrations. Local tests do not apply live SQL or prove public deployment. Personal notebook data stays inside private native/cloud saves; friend comparisons expose only completed normalized results through the existing sharing controls. The original prototype is archived outside the build. No billing or other collection game was enabled. Structural tiers still need human playtesting before launch.

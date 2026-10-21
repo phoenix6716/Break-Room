@@ -2,7 +2,7 @@ const assert=require('node:assert/strict');require('../cloud-saves.js');
 const S=global.BREAK_ROOM_CLOUD_SAVES;
 const storage=initial=>{const m=new Map(Object.entries(initial));return {get length(){return m.size;},key:i=>[...m.keys()][i],getItem:k=>m.get(k)??null,setItem:(k,v)=>m.set(k,String(v)),removeItem:k=>m.delete(k)}};
 const s=storage({'stake:d:2026-10-20':'{"b":[1],"p":[]}','br:supabase:auth':'secret','pc_pro':'1',pc_sound:'0',pc_country:'AU'});
-assert.deepEqual(S.capture(s),{stake:{'stake:d:2026-10-20':'{"b":[1],"p":[]}'},'stack-up':{},lowball:{pc_country:'AU'},pack:{},prior:{},laser:{}});
+assert.deepEqual(S.capture(s),{stake:{'stake:d:2026-10-20':'{"b":[1],"p":[]}'},'stack-up':{},lowball:{pc_country:'AU'},pack:{},prior:{},laser:{},alibi:{}});
 assert.throws(()=>S.clean('stake',{'br:supabase:auth':'oops'}));assert.throws(()=>S.clean('lowball',{pc_pro:'1'}));assert.throws(()=>S.clean('lowball',{pc_history:{}}));
 const key='stake:d:2026-10-20',a=JSON.stringify({b:[3,3],p:[0,1]}),b=JSON.stringify({b:[3,3,3],p:[0,1]});
 assert.equal(S.merge('stake',{[key]:b},{[key]:a})[key],b,'Staked next question wins; timer deadline is retained');

@@ -27,7 +27,7 @@ function check(condition, message) { assert.ok(condition, message); checks++; }
       await page.goto(base, {waitUntil: 'domcontentloaded'});
       check((await page.title()).includes('Break Room'), 'Homepage branding');
       const cards = page.locator('.game-grid .game-card');
-      check(await cards.count() === 12, 'Twelve homepage cards including Laser');
+      check(await cards.count() === 13, 'Thirteen homepage cards including Alibi');
       check((await cards.nth(0).locator('a').getAttribute('href')).includes('lowball'), 'Lowball first');
       check((await cards.nth(1).locator('a').getAttribute('href')).includes('stake'), 'Stake second');
       check(await page.locator('.coming-stamp').count() === 6, 'Six coming soon artworks');
