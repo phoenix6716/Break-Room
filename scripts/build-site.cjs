@@ -19,7 +19,7 @@ for(const entry of fs.readdirSync(root,{withFileTypes:true})){
 }
 for(const dir of ['assets','games'])tree(path.join(root,dir),dir);
 // Replace archived standalone social placeholders only in the published artifact.
-const site=new URL(process.env.SITE_URL||'https://phoenix6716.github.io/Midnight-Arcade/');
+const site=new URL(process.env.SITE_URL||'https://phoenix6716.github.io/Break-Room/');
 if(site.protocol!=='https:')throw Error('SITE_URL must be an HTTPS public URL');
 site.pathname=site.pathname.replace(/\/?$/,'/');site.search='';site.hash='';
 const engine=path.join(output,'games/lowball/engine/index.html');

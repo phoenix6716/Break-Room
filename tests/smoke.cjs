@@ -30,8 +30,8 @@ function check(condition, message) { assert.ok(condition, message); checks++; }
       check((await page.title()).includes('Break Room'), 'Homepage branding');
       const cards = page.locator('.game-grid .game-card');
       check(await cards.count() === 9, 'Nine playable homepage cards');
-      check((await cards.nth(0).locator('a').getAttribute('href')).includes('lowball'), 'Lowball first');
-      check((await cards.nth(1).locator('a').getAttribute('href')).includes('stake'), 'Stake second');
+      check((await cards.nth(0).locator('a').getAttribute('href')).includes('laser'), 'Laser first');
+      check((await cards.nth(1).locator('a').getAttribute('href')).includes('stack-up'), 'Stack Up second');
       check(await page.locator('.coming-stamp').count() === 0, 'No placeholder cards on the homepage');
       check(!await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), 'Homepage has no horizontal overflow');
       for (const route of routes) {
