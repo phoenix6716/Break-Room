@@ -38,7 +38,8 @@ async function checkLayout(page, width) {
       const page = await context.newPage(), errors = [];
       page.on('pageerror', e => errors.push(e.message));
       page.on('response', response => { if (response.status() >= 400) errors.push(`${response.status()} ${response.url()}`); });
-      await page.clock.install({ time: fixed });
+      // Start before the freeze point: clock installation itself can advance time.
+      await page.clock.install({ time: new Date(fixed.getTime() - 60_000) });
       await page.clock.pauseAt(fixed);
       await page.goto(`${base}/games/stack-up/index.html`);
       await checkLayout(page, width);
