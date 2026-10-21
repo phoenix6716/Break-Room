@@ -32,3 +32,5 @@ These are objective structural increases, not calibrated human solve rates. The 
 Run the existing baseline generator for a game as documented, or `node scripts/build-launch-content.cjs GAME` to reproduce only its additions. Supported GAME values: `pack`, `laser`, `alibi`, `bouncer`, `stack-up`. The extension removes only its own generated additions before rebuilding them and keeps original IDs/data.
 
 The full `npm test` suite must pass at the final PR head: content inventory, independent arithmetic/solvers, native saves, PostgreSQL score/security parity, reference/build checks, all game journeys and the new release-window contract. See [the audit](LAUNCH-AUDIT.md) and [ordered launch checklist](LAUNCH-CHECKLIST.md) for human, device, factual and production gates. Do not mark those gates complete from a mocked browser run.
+
+Changed models, banks and engines use a shared release query in HTML so a refreshed page does not combine a cached previous bank with a new rotation.

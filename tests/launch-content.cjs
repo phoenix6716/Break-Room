@@ -26,4 +26,11 @@ for(const start of ['2026-10-22','2026-11-07','2027-03-21']){
  const times=ds.map(d=>JSON.stringify(BREAK_ROOM_INNER_CLOCK.daily(d)));assert.equal(new Set(times).size,ds.length);
 }
 for(const name of ['pack','laser','alibi','bouncer']){const rows=banks[name];assert.equal(new Set(rows.map(p=>p.id)).size,rows.length);}
+
+const lowText=read('games/lowball/engine/index.html'),itemLiteral=lowText.match(/const ITEMS = (\[[\s\S]*?\n\]);/);assert(itemLiteral,'Lowball item source exists');
+const itemCount=vm.runInNewContext(itemLiteral[1]).length,selector=lowText.slice(lowText.indexOf('function mulberry32'),lowText.indexOf('let deck = []'));
+const low=vm.runInNewContext('const ITEMS=Array.from({length:'+itemCount+'},(_,id)=>({id})),ROUNDS_PER_DAY=4;let selectedDay=0;const dayNumber=()=>selectedDay;\n'+selector+'\n(d)=>{selectedDay=d;return pickDailyItems().map(x=>x.id)}');
+for(const start of ['2026-10-22','2026-11-07','2027-03-21']){const sets=dates(start,start==='2026-10-22'?33:32).map(d=>JSON.stringify(low(Math.floor((Date.parse(d+'T00:00:00Z')-Date.UTC(2026,9,1))/86400000))));assert.equal(new Set(sets).size,sets.length,'Lowball repeats a complete Daily');}
+assert.equal(new Set(Array.from({length:25},(_,i)=>Array.from(low(i))).flat()).size,itemCount,'Lowball preserves the 100-item cycle');
+
 console.log('PASS 22 October–23 November 2026 and later rolling windows: distinct Daily puzzles/questions, harder final tiers, no expiry. Lowball retains its existing 100-product cycle and can reuse products in different sets.');
