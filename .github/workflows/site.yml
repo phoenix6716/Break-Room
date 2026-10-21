@@ -34,17 +34,20 @@ jobs:
       - name: Install matching Chromium
         run: npx playwright install --with-deps chromium
       - name: Run all checks against a project-path build
+        shell: bash
         env:
           SITE_URL: ${{ vars.SITE_URL || format('https://{0}.github.io/{1}/', github.repository_owner, github.event.repository.name) }}
         run: |
           export ARCADE_CHROMIUM="$(node -p "require('playwright').chromium.executablePath()")"
-          npm test
+          mkdir -p .artifacts
+          npm test 2>&1 | tee .artifacts/full-check.log
       - name: Keep check logs
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: check-logs
           path: .artifacts/
+          include-hidden-files: true
           retention-days: 7
       - name: Upload the checked site
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
