@@ -52,6 +52,11 @@
       </aside>
 
       <div class="br-game-content">
+        <details class="game-quick-guide"><summary>How to play Laser</summary>
+          <p><strong>Guide the laser from the entry arrow into the bullseye.</strong></p>
+          <ol><li>Follow the beam in your head: it travels straight until a diagonal mirror turns it. Dark mirrors are fixed; striped walls block it.</li><li>Tap an empty cell to add /, tap again for \, then again to remove it. Place exactly the number shown by the mirror counter (usually two; new Expert boards use three).</li><li>Press FIRE when your route is ready. Only the first fire scores. A miss can be retried or revealed for learning, without changing that score. There is no timer.</li></ol>
+          <p class="guide-more">Open the yellow ? button for the full rules and scoring.</p>
+        </details>
         <!-- 04 FIXED: plain Daily / Unlimited mode controls. -->
         <div class="br-mode-tabs" role="tablist" aria-label="Game mode">
           <button id="mode-daily" role="tab" type="button" aria-selected="true" aria-controls="game-panel" tabindex="0" data-game-mode="daily">Daily</button>
@@ -77,9 +82,17 @@
       <button class="game-popup-close" type="button" data-popup-close aria-label="Close">×</button>
       <p class="popup-kicker">PLAYER GUIDE</p>
       <h2 id="help-popup-title">HOW TO PLAY Laser</h2>
-      <p>One beam. Find your angle.</p>
+      <p><strong>Your goal:</strong> redirect the laser from the entry arrow into the bullseye using the mirrors you place.</p>
       <div class="popup-instructions">
-        <p><strong>1. Plan your mirrors.</strong> Place two mirrors on Warm-up, Standard and Tricky; new Expert boards need three. The counter shows your board’s allowance. The beam enters at the arrow and travels in straight lines. A diagonal mirror turns it through 90 degrees. Dark mirrors are fixed; striped blocks stop the beam. The bullseye is your target.</p>
+        <p><strong>1. Plan your mirrors.</strong> Place two mirrors on Warm-up, Standard and Tricky; new Expert boards need three. The counter shows your board’s allowance. The beam enters at the arrow and travels in straight lines. A diagonal mirror turns it through 90 degrees. Dark mirrors are fixed; striped blocks stop the beam. The bullseye is your target. You cannot place mirrors on a wall, a fixed mirror or the target. Leaving the board, hitting a wall or getting trapped in a loop is a miss.</p>
+        <figure class="laser-mirror-guide">
+          <figcaption><strong>How mirrors turn the beam</strong></figcaption>
+          <svg viewBox="0 0 320 130" role="img" aria-label="A beam moving right turns up at a slash mirror, and down at a backslash mirror.">
+            <g fill="none" stroke="currentColor" stroke-width="3"><path d="M20 70H100V20 M92 30L100 20L108 30 M180 45H260V95 M252 85L260 95L268 85"/><path stroke-width="6" d="M82 88L118 52 M242 27L278 63"/></g>
+            <g fill="currentColor" font-family="sans-serif" font-size="20" text-anchor="middle"><text x="80" y="120">/ → UP</text><text x="240" y="120">\ → DOWN</text></g>
+          </svg>
+          <p>Light moving right turns up at / and down at \. From the opposite side, the turn reverses: leftward light turns down at / and up at \. Upward light turns right at / and left at \; downward light turns left at / and right at \.</p>
+        </figure>
         <p><strong>2. Tap, rotate, remove.</strong> Tap an empty square to place /, again to rotate to &#92;, again to remove. Use Undo or Clear to revise before firing. Keyboard: arrow keys move around the board, Enter/Space cycles a mirror.</p>
         <p><strong>3. Fire when ready.</strong> Your first fire is final for scoring. A hit earns one solved board; a miss earns zero. There is no timer or speed bonus. After a miss you can retry without changing your score, or reveal one valid solution.</p>
         <p><strong>4. Finish four Daily boards.</strong> The boards progress from Warm-up to Expert. Arcade score is first-fire hits × 25, out of 100. Daily answers save as you go. Every game resets at midnight Sydney time. Unlimited is free practice and stays separate from your Daily history.</p>
