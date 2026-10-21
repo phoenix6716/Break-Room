@@ -12,7 +12,7 @@ Before the accusation, the timeline keeps identities unknown. The notebook is en
 
 ## Case library and difficulty
 
-`node scripts/build-alibi-cases.cjs` deterministically builds `cases.js`: **96 scenarios, 24 per tier**. The twelve fictional incident premises include stolen birthday cake, the emergency biscuit tin, missing stationery, a swapped tea label and an edited office playlist. Locations/times are part of each case, not unused flavour. At least two possible culprits remain without the evidence; at least two remain without the accounts. Every published case has exactly one complete visit order. The same solver underlies reveal and scoring; separate person-to-time enumeration in tests and recursive SQL enumeration independently verify it.
+`node scripts/build-alibi-cases.cjs` deterministically builds `cases.js`: **155 scenarios: 33 each at Warm-up/Standard/Tricky and 56 Experts**. The twelve fictional incident premises include stolen birthday cake, the emergency biscuit tin, missing stationery, a swapped tea label and an edited office playlist. Locations/times are part of each case, not unused flavour. At least two possible culprits remain without the evidence; at least two remain without the accounts. Every published case has exactly one complete visit order. The same solver underlies reveal and scoring; separate person-to-time enumeration in tests and recursive SQL enumeration independently verify it.
 
 Warm-up uses four visits and direct time accounts. Standard adds before/after relationships. Tricky uses at least three relative/adjacent/gap accounts and at least two essential evidence records. Expert has five people, at least four relative accounts and two evidence records. A reduced sufficient clue set must have at least 3/3/4/5 constraints respectively. These are structural proxies, not measured human difficulty. No timer or speed bonus.
 
@@ -34,7 +34,7 @@ Notes/selection save via the existing monotonic edit counter. Same-origin tabs a
 
 ## Database update and security
 
-Existing Supabase projects must run **`supabase/bouncer.sql` LAST**. It includes previous games and both Alibi formats; never reapply older narrower migrations afterwards. Fresh projects run current setup then Friends. This is an owner-applied live-dashboard step, not something local tests perform. The old Alibi SQL can store native v2 saves, but its Friends parser cannot derive their scores until this update.
+Existing Supabase projects must run **`supabase/inner-clock.sql` LAST**. It includes previous games and both Alibi formats; never reapply older narrower migrations afterwards. Fresh projects run current setup then Friends. This is an owner-applied live-dashboard step, not something local tests perform. The old Alibi SQL can store native v2 saves, but its Friends parser cannot derive their scores until this update.
 
 The new private SQL helper independently reconstructs visits; the original helper continues scoring older snapshots unchanged. RLS, auth-derived ownership, revision checks and accepted/unblocked/opt-in sharing are unchanged. Friends receive only completed bounded normalized results, never raw case files, names, notes or emails. All scoring helpers are revoked from browser roles. No administrator credential belongs in client code.
 
@@ -45,3 +45,7 @@ The new private SQL helper independently reconstructs visits; the original helpe
 `tests/alibi.cjs` completes actual new Dailies at 320/390/768/1100/1440, checks generated portrait loading on every card, unknown pre-answer identities, notes/reload/mode persistence, final accusations, short/full reasoning, zeroes/copy/profile, changing/fixed practice/deck/isolation, tabs/touch, menu/dialog/focus, denied storage and Sydney rollover. It also resumes an original draft with notes, finishes its four original cases without replacing snapshots, retains its score on reload and opens new scenario practice. Account and Friends checks retain their real engine/draft/ownership/comparison coverage.
 
 Browser automation and solver checks are not measured enjoyment or real-phone/screen-reader certification. Have real players try the new evidence flow and calibrate difficulty before launch; the owner’s all-game prelaunch audit remains separate. No billing or other collection game is enabled.
+
+## Launch content release — 23 October 2026
+
+Read [the release contract](../../LAUNCH-CONTENT.md). New selection applies to fresh Dailies from 23 October 2026 and to newly requested practice rounds. Existing snapshots, drafts, native scores and completed history stay unchanged. The original banks remain available for compatibility; harder content and deterministic rotation must not regenerate an active run.
