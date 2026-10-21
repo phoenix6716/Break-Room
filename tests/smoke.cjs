@@ -19,6 +19,8 @@ function check(condition, message) { assert.ok(condition, message); checks++; }
   try {
     for (const width of [320, 390, 768, 1440]) {
       const context = await browser.newContext({viewport: {width, height: 900}});
+      // This suite checks navigation; dedicated mobile tests cover first-visit help.
+      await context.addInitScript(() => localStorage.setItem('pc_help_seen', '1'));
       // Avoid depending on Google Fonts availability for functional checks.
       await context.route('https://fonts.googleapis.com/**', route => route.abort());
       const page = await context.newPage();

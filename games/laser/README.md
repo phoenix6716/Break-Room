@@ -18,7 +18,7 @@ Daily uses midnight Australia/Sydney, one board from each level, and snapshots i
 
 Scoring/profile/cloud/Friends/game registry/homepage/drawers include Laser. Existing achievement meanings remain intact; Light work requires four first-fire Daily hits. The common 120-day equal-game average now has six available games. Sharing is spoiler-free; comparisons use existing private opt-in Friends rather than answer-encoding prototype codes. Prototype local keys are not imported or erased. The uploaded original is archived in `design/prototypes/laser/original.html`, outside the production artifact.
 
-Existing Supabase installations run **all of `supabase/alibi.sql` LAST**, after setup and Friends. It includes Pack/Prior support, preserves ownership/revision/RLS checks, and independently traces saved boards before returning only completed normalized scores to authorized friends. Never reapply older narrower per-game migrations. Fresh projects run updated setup then Friends. Missing SQL leaves browser saves intact and shows an actionable update message. The code/mocked tests do not apply or verify live SQL. No administrator key belongs in the client.
+Existing Supabase installations run **all of `supabase/alibi-scenarios.sql` LAST**, after setup and Friends. It includes Pack/Prior support, preserves ownership/revision/RLS checks, and independently traces saved boards before returning only completed normalized scores to authorized friends. Never reapply older narrower per-game migrations. Fresh projects run updated setup then Friends. Missing SQL leaves browser saves intact and shows an actionable update message. The code/mocked tests do not apply or verify live SQL. No administrator key belongs in the client.
 
 ## Verification
 

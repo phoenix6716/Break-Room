@@ -17,8 +17,8 @@
   <script src="../../arcade-score.js"></script>
   <link rel="stylesheet" href="../../arcade-score.css">
   <script defer src="../../navigation.js"></script>
-  <script src="../../pack-model.js"></script><script src="../../prior-model.js"></script><script src="../../laser-model.js"></script><script src="../../alibi-model.js"></script><script src="cases.js"></script><script defer src="shell.js"></script><script defer src="alibi.js"></script>
-<link rel="stylesheet" href="../../legal.css"><link rel="stylesheet" href="alibi.css"><link rel="stylesheet" href="../../game-access.css"><link rel="stylesheet" href="../../accounts.css"><script defer src="../../assets/vendor/supabase.js"></script><script defer src="../../account-config.js"></script><script defer src="../../cloud-saves.js"></script><script defer src="../../accounts.js"></script><link rel="stylesheet" href="../../game-feel.css"><script src="../../game-feel.js"></script><link rel="stylesheet" href="../../practice-session.css"><script src="../../practice-session.js"></script></head>
+  <script src="../../pack-model.js"></script><script src="../../prior-model.js"></script><script src="../../laser-model.js"></script><script src="../../alibi-model.js?v=2"></script><script src="cases.js?v=2"></script><script defer src="shell.js"></script><script defer src="alibi.js?v=2"></script>
+<link rel="stylesheet" href="../../legal.css"><link rel="stylesheet" href="alibi.css?v=2"><link rel="stylesheet" href="../../game-access.css"><link rel="stylesheet" href="../../accounts.css"><script defer src="../../assets/vendor/supabase.js"></script><script defer src="../../account-config.js"></script><script defer src="../../cloud-saves.js"></script><script defer src="../../accounts.js"></script><link rel="stylesheet" href="../../game-feel.css"><script src="../../game-feel.js"></script><link rel="stylesheet" href="../../practice-session.css"><script src="../../practice-session.js"></script></head>
 <body class="alibi-page">
   <!-- 01 FIXED: Menu/left drawer, centred Break Room brand, account link. -->
 <header class="site-header game-site-header"><div class="wrap game-header-inner"><button class="game-menu-toggle" id="game-menu-toggle" type="button" aria-expanded="false" aria-controls="game-menu"><span class="hamburger-lines" aria-hidden="true">☰</span><span class="menu-toggle-label">MENU</span></button><a class="brand" href="../../index.html" aria-label="Break Room — back to all games"><span class="break-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="break-wordmark">BREAK ROOM</span></a><a class="game-header-account" href="../../login.html">ACCOUNT</a></div><nav class="game-menu" id="game-menu" aria-label="Break Room menu" aria-hidden="true" hidden>
@@ -31,7 +31,7 @@
       <section class="br-game-heading" aria-labelledby="game-title">
         <div class="br-game-title-group">
           <h1 id="game-title" data-template-slot="title">Alibi</h1>
-          <p data-template-slot="description">DEDUCTION / MYSTERY · Every story has a hole.</p>
+          <p data-template-slot="description">DEDUCTION / MYSTERY · The evidence tells a story.</p>
         </div>
         <section class="quick-stats" aria-label="Your game stats">
           <div class="quick-stat"><strong data-summary-stat="streak">—</strong><span>Streak</span></div>
@@ -77,13 +77,14 @@
       <button class="game-popup-close" type="button" data-popup-close aria-label="Close">×</button>
       <p class="popup-kicker">PLAYER GUIDE</p>
       <h2 id="help-popup-title">HOW TO PLAY Alibi</h2>
-      <p>One culprit. Conflicting stories. Every story has a hole.</p>
+      <p>Small office mysteries. Real clues. One story that does not fit.</p>
       <div class="popup-instructions">
-        <p><strong>1. Read the case.</strong> Exactly one suspect did it. Each suspect makes one statement. The case tells you exactly how many statements are false. The culprit can tell the truth; an innocent person can lie.</p>
-        <p><strong>2. Follow the statements.</strong> “Ava’s statement is false” refers to Ava’s whole statement. “At least one” includes the possibility that both are true. “Both” requires two true statements. Use only the statements and the false-statement count; names and office details are not clues.</p>
-        <p><strong>3. Use your notebook.</strong> Mark assumptions true or false and cross out suspects. These are your own notes: the notebook never checks them or changes your score. You can still accuse someone you crossed out.</p>
-        <p><strong>4. Make an accusation.</strong> Select a suspect, then confirm. Your first confirmed accusation is final. See the culprit, each statement’s truth and a short explanation afterwards; open Full reasoning to examine every possibility.</p>
-        <p><strong>5. Close four Daily cases.</strong> Warm-up → Standard → Tricky → Expert. There is no timer or speed bonus. Each correct accusation earns 25 Arcade points, alongside a native score out of four. Progress and notes save as you go. Every game resets at midnight Sydney time. Unlimited is free practice, separate from Daily history, with changing or fixed difficulty.</p>
+        <p><strong>1. Read the incident.</strong> Something happened in a specific place between the last confirmed check and its discovery. Only one logged visit falls inside that window.</p>
+        <p><strong>2. Reconstruct the visits.</strong> Each suspect made exactly one visit, at one of the listed times. These are all the visits; nobody else entered during this period. Times are exact. Use verified records, sightings and the suspects’ accounts to work out who visited when.</p>
+        <p><strong>3. Spot the false alibi.</strong> Only the culprit gave a false account. Every other account and every verified record is accurate. “Next visitor after” means nobody visited between them; a stated minute gap compares the exact start times. A portrait, name or expression is never a clue.</p>
+        <p><strong>4. Use your notebook.</strong> Mark accounts as assumptions and cross out suspects. These are your own notes: no automatic checking, hints or score changes. Select a suspect, then Confirm accusation. Your first confirmation is final. Afterwards, see the reconstructed timeline, the false alibi and full reasoning.</p>
+        <p><strong>5. Close four Daily cases.</strong> Warm-up → Standard → Tricky → Expert. No timer or speed bonus. Each correct accusation earns 25 Arcade points, alongside your correct cases out of four. Sydney-midnight reset, free Changing/fixed-difficulty Unlimited and private saved notes are unchanged.</p>
+        <p><strong>Resuming an older case?</strong> Existing Daily files keep their original rules: exactly the displayed number of false statements, and the culprit can tell the truth. Finish that saved set as before; new scenarios are available in Unlimited and the next fresh Daily.</p>
       </div>
       <button class="button pink popup-done" type="button" data-popup-close>GOT IT</button>
     </section>

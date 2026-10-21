@@ -207,7 +207,7 @@ revoke all on function public._friend_laser_hit(jsonb,jsonb),public._friend_lase
 
 -- Alibi v1: validate snapshots, propagate acyclic statements for every possible culprit.
 -- This intentionally differs from the browser's exhaustive truth-table solver.
-create or replace function public._friend_alibi_culprit(p jsonb) returns integer language plpgsql immutable set search_path='' as $$
+create or replace function public._friend_alibi_v1_culprit(p jsonb) returns integer language plpgsql immutable set search_path='' as $$
 declare n int; lv int; k int; x numeric; i int; j int; c int; pass int; a int; b int; ty text; s jsonb; v boolean; t boolean[]; marks text[]; names text[]:='{}'; statements text[]:='{}'; false_count int; winner int:=null; matches int:=0;
 begin
  if jsonb_typeof(p) is distinct from 'object' or jsonb_typeof(p->'id') is distinct from 'string' or p->>'id' !~ '^alibi-v1-[0-3]-[0-9]+$' or char_length(p->>'id')>80 or jsonb_typeof(p->'level') is distinct from 'number' then return null;end if;
@@ -247,6 +247,61 @@ begin
  if matches<>1 then return null;end if;return winner;
 exception when others then return null;
 end $$;
+-- Scenario v2 predicates: positions are zero-based visit indices, independent of client scores.
+create or replace function public._friend_alibi_visit_rule(p jsonb,s jsonb,positions int[]) returns boolean language plpgsql immutable set search_path='' as $$
+declare a int; b int; gap int; ty text;
+begin
+ ty=s->>0;a=(s->>1)::numeric;b=(s->>2)::numeric;gap=(s->>3)::numeric;
+ if ty='at' then return positions[a+1]=b;elsif ty='notat' then return positions[a+1]<>b;elsif ty='before' then return positions[a+1]<positions[b+1];elsif ty='after' then return positions[a+1]>positions[b+1];elsif ty='next' then return positions[a+1]=positions[b+1]+1;elsif ty='gap' then return (p->'times'->>positions[a+1])::numeric-(p->'times'->>positions[b+1])::numeric=gap;end if;return null;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_scenario(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+declare n int; lv int; i int; j int; a int; b int; z int; x numeric; ty text; s jsonb; e jsonb; names text[]:='{}'; portrait_ids int[]:='{}'; rules text[]:='{}'; moment int:=-1; window_a int; window_b int; visit_times int[]:='{}'; portrait_id int; ordered int[]; positions int[]; who int; fits boolean; winners int:=0; winner int;
+begin
+ if jsonb_typeof(p) is distinct from 'object' or p->'version' is distinct from '2'::jsonb or jsonb_typeof(p->'id') is distinct from 'string' or p->>'id' !~ '^alibi-v2-[0-3]-[0-9]+$' or char_length(p->>'id')>80 or jsonb_typeof(p->'level') is distinct from 'number' then return null;end if;
+ x=(p->>'level')::numeric;if x<>trunc(x) or x not between 0 and 3 then return null;end if;lv=x;n=case when lv=3 then 5 else 4 end;
+ if p->'n' is distinct from to_jsonb(n) then return null;end if;
+ foreach ty in array array['crime','detail','item','place','visit'] loop
+  if jsonb_typeof(p->ty) is distinct from 'string' or char_length(trim(p->>ty))<1 or char_length(p->>ty)>(case ty when 'crime' then 140 when 'detail' then 500 when 'place' then 60 when 'visit' then 80 else 30 end) then return null;end if;
+ end loop;
+ foreach ty in array array['names','portraits','times','s'] loop if jsonb_typeof(p->ty) is distinct from 'array' or jsonb_array_length(p->ty)<>n then return null;end if;end loop;
+ if jsonb_typeof(p->'window') is distinct from 'array' or jsonb_array_length(p->'window')<>2 or jsonb_typeof(p->'evidence') is distinct from 'array' or jsonb_array_length(p->'evidence') not between 1 and 4 then return null;end if;
+ for i in 0..1 loop if jsonb_typeof(p->'window'->i) is distinct from 'number' then return null;end if;x=(p->'window'->>i)::numeric;if x<>trunc(x) or x not between 0 and 1439 then return null;end if;end loop;window_a=(p->'window'->>0)::numeric;window_b=(p->'window'->>1)::numeric;if window_a>=window_b then return null;end if;
+ for i in 0..n-1 loop
+  if jsonb_typeof(p->'names'->i) is distinct from 'string' or char_length(trim(p->'names'->>i))<1 or char_length(p->'names'->>i)>30 or p->'names'->>i=any(names) then return null;end if;names=array_append(names,p->'names'->>i);
+  if jsonb_typeof(p->'portraits'->i) is distinct from 'number' or jsonb_typeof(p->'times'->i) is distinct from 'number' then return null;end if;
+  x=(p->'portraits'->>i)::numeric;if x<>trunc(x) or x not between 0 and 7 then return null;end if;portrait_id=x;if portrait_id=any(portrait_ids) then return null;end if;portrait_ids=array_append(portrait_ids,portrait_id);
+  x=(p->'times'->>i)::numeric;if x<>trunc(x) or x not between 0 and 1439 or (i>0 and x<=visit_times[i]+1) or x in (window_a,window_b) then return null;end if;visit_times=array_append(visit_times,x::int);
+  if x>window_a and x<window_b then if moment<>-1 then return null;end if;moment=i;end if;
+  if p->'s'->i->1 is distinct from to_jsonb(i) then return null;end if;
+ end loop;
+ if moment=-1 or visit_times[n]-visit_times[1]>60 then return null;end if;
+ -- Validate every account and evidence predicate before enumerating any visit order.
+ for s in select value from jsonb_array_elements(p->'s') union all select value->'rule' from jsonb_array_elements(p->'evidence') loop
+  if jsonb_typeof(s) is distinct from 'array' or jsonb_array_length(s)<>4 or jsonb_typeof(s->0) is distinct from 'string' or coalesce(s->>0,'') not in ('at','notat','before','after','next','gap') then return null;end if;ty=s->>0;
+  for j in 1..3 loop if jsonb_typeof(s->j) is distinct from 'number' then return null;end if;x=(s->>j)::numeric;if x<>trunc(x) or x<0 or x>(case when j=3 then 60 else n-1 end) then return null;end if;end loop;a=(s->>1)::numeric;b=(s->>2)::numeric;z=(s->>3)::numeric;
+  if ty in ('at','notat') then if z<>0 then return null;end if;elsif a=b or (ty='gap' and z<1) or (ty<>'gap' and z<>0) then return null;end if;
+ end loop;
+ for e in select value from jsonb_array_elements(p->'evidence') loop
+  if jsonb_typeof(e) is distinct from 'object' or jsonb_typeof(e->'title') is distinct from 'string' or char_length(trim(e->>'title'))<1 or char_length(e->>'title')>60 or jsonb_typeof(e->'detail') is distinct from 'string' or char_length(trim(e->>'detail'))<1 or char_length(e->>'detail')>280 then return null;end if;
+  foreach ty in array rules loop if ty::jsonb=e->'rule' then return null;end if;end loop;rules=array_append(rules,(e->'rule')::text);
+ end loop;
+ -- SQL builds person orders recursively; the JS solver uses cached permutations.
+ for ordered in with recursive arrangement(ord) as (select '{}'::int[] union all select ar.ord||g.person from arrangement ar cross join generate_series(0,n-1) as g(person) where cardinality(ar.ord)<n and not g.person=any(ar.ord)) select ord from arrangement where cardinality(ord)=n loop
+  positions=array_fill(0,array[n]);for i in 1..n loop positions[ordered[i]+1]=i-1;end loop;who=ordered[moment+1];fits=true;
+  for e in select value from jsonb_array_elements(p->'evidence') loop if public._friend_alibi_visit_rule(p,e->'rule',positions) is not true then fits=false;exit;end if;end loop;if not fits then continue;end if;
+  for i in 0..n-1 loop if public._friend_alibi_visit_rule(p,p->'s'->i,positions) is distinct from (i<>who) then fits=false;exit;end if;end loop;
+  if fits then winners=winners+1;winner=who;if winners>1 then return null;end if;end if;
+ end loop;
+ if winners<>1 then return null;end if;return winner;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_culprit(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+begin
+ if p->'version'='2'::jsonb then return public._friend_alibi_scenario(p);end if;return public._friend_alibi_v1_culprit(p);
+end $$;
+revoke all on function public._friend_alibi_v1_culprit(jsonb),public._friend_alibi_visit_rule(jsonb,jsonb,int[]),public._friend_alibi_scenario(jsonb),public._friend_alibi_culprit(jsonb) from public,anon,authenticated;
+
 create or replace function public._friend_alibi_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
 declare i int; j int; n int; x numeric; culprit int; correct int:=0; p jsonb; note jsonb; ids text[]:='{}';
 begin
