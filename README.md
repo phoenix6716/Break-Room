@@ -94,7 +94,7 @@ Prior is the fifth game, with the name still provisional. See [its implementatio
 
 ## Laser integration
 
-Laser is the sixth game. See [its implementation notes](games/laser/README.md). Existing Supabase projects now run the complete [latest migration](supabase/alibi-scenarios.sql) **last**; it includes Pack/Prior and supersedes their earlier migration instructions above. Fresh projects use updated setup then Friends. Local play works immediately; live cloud/Friends support needs this owner-applied SQL. The original prototype is preserved outside the build.
+Laser is the sixth game. See [its implementation notes](games/laser/README.md). Existing Supabase projects now run the complete [Alibi migration](supabase/alibi-scenarios.sql), followed by the additive [Laser Expert migration](supabase/laser-expert.sql) **last**; it includes Pack/Prior and supersedes their earlier migration instructions above. Fresh projects use updated setup then Friends. Local play works immediately; live cloud/Friends support needs this owner-applied SQL. The original prototype is preserved outside the build.
 
 ## Alibi scenarios — current contract (v2)
 
@@ -102,4 +102,4 @@ The owner approved real scenarios grounded in incidents, timelines and evidence,
 
 Eight illustrated portraits were generated as an image atlas and encoded as an optimized WebP; CSS selects a cell. New snapshots store stable, distinct random portrait assignments, unrelated to guilt. Existing original-format drafts/notes/completions/history keep their original rules and scores; new scenarios are available in Unlimited immediately and the next fresh Daily. The frozen 144-case original bank and tests remain outside production. Read `games/alibi/README.md` for exact source, schema, behavior and compatibility.
 
-**Latest Supabase update: run all of `supabase/alibi-scenarios.sql` LAST.** It includes all earlier games and both Alibi parsers. Fresh projects use current setup then Friends; do not reapply old narrower migrations. Personal raw snapshots/notes remain private; Friends expose only completed normalized records through existing sharing controls. Human playtesting and the separately agreed prelaunch audit remain necessary. No billing or other game was enabled.
+**Current upgrade order: run `supabase/alibi-scenarios.sql`, then `supabase/laser-expert.sql` LAST.** If the Alibi update is already applied, run only the Expert update. It includes all earlier games and both Alibi parsers. Fresh projects use current setup then Friends; do not reapply old narrower migrations. Personal raw snapshots/notes remain private; Friends expose only completed normalized records through existing sharing controls. Human playtesting and the separately agreed prelaunch audit remain necessary. No billing or other game was enabled.
