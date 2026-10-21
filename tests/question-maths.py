@@ -25,6 +25,7 @@ for row in audit['stack_up']:
   if key in ['Pentagon','Hexagon','Heptagon','Octagon','Nonagon','Decagon']:
    n={'Pentagon':5,'Hexagon':6,'Heptagon':7,'Octagon':8,'Nonagon':9,'Decagon':10}[key]
    expected=n*(n-3)//2 if '/2' in row['calculations'][key] else 180-360/n
+  elif '/' in key and all(part.isdigit() for part in key.split('/')):expected=Fraction(key)
   else:expected=values[key]
   assert math.isclose(float(expected),item['value'],rel_tol=1e-12),(key,expected,item['value'])
-print('PASS: independent expected answers confirm all 20 numerical trivia questions and 10 numerical sorting sets.')
+print('PASS: independent expected answers confirm all 20 numerical trivia questions and 74 numerical sorting sets.')

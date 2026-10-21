@@ -4,7 +4,7 @@ Four untimed Daily optical puzzles: place exactly two diagonal mirrors on Warm-u
 
 ## Boards and controls
 
-The current library has **216 boards**: the original forty each at Warm-up (5×5, two fixed mirrors), Standard (6×6, three fixed) and Tricky (6×6, three fixed, two walls), plus **96 new Expert boards** (7×7, six fixed mirrors, four walls, three player mirrors). Expert remains untimed. Its counter and instructions state the three-mirror budget.
+The current library has **248 boards**: the original forty each at Warm-up (5×5, two fixed mirrors), Standard (6×6, three fixed) and Tricky (6×6, three fixed, two walls), plus **128 Expert boards**, including 32 new advanced routes (7×7, six fixed mirrors, four walls, three player mirrors). Expert remains untimed. Its counter and instructions state the three-mirror budget.
 
 Expert v2 replaces the repetitive mandatory entry staircase with entries across all seven rows. Every board has exactly one solution, needs all three placements, traverses at least eighteen cells and uses at least four fixed mirrors (at least seven necessary turns). Zero/one/two-mirror shortcuts are rejected. Vertically reflected duplicates are rejected too. This is a structural increase in challenge, not a measured human solve rate; further player feedback should guide calibration before adding another tier.
 
@@ -22,12 +22,16 @@ Daily uses midnight Australia/Sydney, one board from each level, and snapshots i
 
 Scoring/profile/cloud/Friends/game registry/homepage/drawers include Laser. Existing achievement meanings remain intact; Light work requires four first-fire Daily hits. The common 120-day equal-game average now has six available games. Sharing is spoiler-free; comparisons use existing private opt-in Friends rather than answer-encoding prototype codes. Prototype local keys are not imported or erased. The uploaded original is archived in `design/prototypes/laser/original.html`, outside the production artifact.
 
-Existing Supabase installations first complete the current `supabase/alibi-scenarios.sql` update after setup/Friends, then run **`supabase/laser-expert.sql` LAST**. If the Alibi update is already applied, only the new Expert script is needed. The new script only extends the private Laser scorer, preserves Alibi and all other games plus ownership/revision/RLS checks, and independently traces saved boards before returning only completed normalized scores to authorized friends. Never reapply older narrower per-game migrations. Fresh projects run updated setup then Friends. The existing save allowlist already accepts these snapshots, so browser/cloud play works without this scorer update. Until applied, private Friends comparisons omit new-format Laser completions; the SQL update is needed for those comparisons, not to unlock gameplay. The code/mocked tests do not apply or verify live SQL. No administrator key belongs in the client.
+Existing setup/Friends installations use the complete `supabase/inner-clock.sql` update last. It already handles both Laser formats and the existing scoring contract used by these new boards. This bank expansion adds no SQL schema or score version. Fresh projects use current setup then Friends. Do not reapply narrower historical migrations. Repository tests do not verify live SQL or dashboard settings.
 
 ## Verification
 
-`tests/laser-rules.cjs`: all 216 current boards plus all 160 originals, exhaustive independent placement enumeration (including three-mirror uniqueness and no shortcuts), all sixteen Daily hit/miss patterns, 400 seeded Dailies, malformed snapshots, zeros/partials, stable bank ordering, native cloud merge/profile behavior, actual PostgreSQL/JS parity and repeatable migration/security tests.
+`tests/laser-rules.cjs`: all 248 current boards plus all 160 originals, exhaustive independent placement enumeration (including three-mirror uniqueness and no shortcuts), all sixteen Daily hit/miss patterns, 400 seeded Dailies, malformed snapshots, zeros/partials, stable bank ordering, native cloud merge/profile behavior, actual PostgreSQL/JS parity and repeatable migration/security tests.
 
 `tests/laser.cjs`: full real Daily at five widths, saved drafts/reviews/results, target geometry, immutable retries/solutions, copy/profile integration, practice settings/deck/isolation, keyboard/touch, modal/menu behavior, Sydney rollover, shared tabs, denied storage and manual clipboard fallback. Account tests restore actual Laser drafts on another browser, preserve user isolation and show a missing-migration error. Friends database tests include Laser at the exact comparison-window boundary and test sharing/outsider/blocking behavior.
 
 These checks establish implementation behavior, not long-term player enjoyment, physical-phone usability or calibrated difficulty. Human playtesting is the next game-design gate.
+
+## Launch content release — 23 October 2026
+
+Read [the release contract](../../LAUNCH-CONTENT.md). New selection applies to fresh Dailies from 23 October 2026 and to newly requested practice rounds. Existing snapshots, drafts, native scores and completed history stay unchanged. The original banks remain available for compatibility; harder content and deterministic rotation must not regenerate an active run.

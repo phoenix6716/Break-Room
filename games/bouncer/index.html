@@ -17,14 +17,14 @@
   <script src="../../arcade-score.js?v=4"></script>
   <link rel="stylesheet" href="../../arcade-score.css">
   <script defer src="../../navigation.js"></script>
-  <script src="../../pack-model.js"></script><script src="../../prior-model.js"></script><script src="../../laser-model.js?v=2"></script><script src="../../alibi-model.js?v=2"></script><script src="../../bouncer-model.js"></script><script src="../../inner-clock-model.js"></script><script src="puzzles.js"></script><script defer src="shell.js"></script><script defer src="bouncer.js"></script>
+  <script src="../../pack-model.js?v=launch-20261023"></script><script src="../../prior-model.js?v=launch-20261023"></script><script src="../../laser-model.js?v=launch-20261023"></script><script src="../../alibi-model.js?v=launch-20261023"></script><script src="../../bouncer-model.js?v=launch-20261023"></script><script src="../../inner-clock-model.js"></script><script src="puzzles.js?v=launch-20261023"></script><script defer src="shell.js"></script><script defer src="bouncer.js?v=launch-20261023"></script>
 <link rel="stylesheet" href="../../legal.css"><link rel="stylesheet" href="bouncer.css"><link rel="stylesheet" href="../../game-access.css"><link rel="stylesheet" href="../../accounts.css"><script defer src="../../assets/vendor/supabase.js"></script><script defer src="../../account-config.js"></script><script defer src="../../cloud-saves.js?v=4"></script><script defer src="../../accounts.js?v=4"></script><link rel="stylesheet" href="../../game-feel.css"><script src="../../game-feel.js"></script><link rel="stylesheet" href="../../practice-session.css"><script src="../../practice-session.js"></script></head>
 <body class="bouncer-page">
   <!-- 01 FIXED: Menu/left drawer, centred Break Room brand, account link. -->
 <header class="site-header game-site-header"><div class="wrap game-header-inner"><button class="game-menu-toggle" id="game-menu-toggle" type="button" aria-expanded="false" aria-controls="game-menu"><span class="hamburger-lines" aria-hidden="true">☰</span><span class="menu-toggle-label">MENU</span></button><a class="brand" href="../../index.html" aria-label="Break Room — back to all games"><span class="break-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="break-wordmark">BREAK ROOM</span></a><a class="game-header-account" href="../../login.html">ACCOUNT</a></div><nav class="game-menu" id="game-menu" aria-label="Break Room menu" aria-hidden="true" hidden>
 <div class="game-menu-heading"><span class="section-meta">BREAK ROOM</span><button class="game-menu-close" id="game-menu-close" type="button" aria-label="Close menu">×</button></div>
 <div class="game-menu-content"><div class="game-menu-group"><span class="section-meta">PLAY NOW</span><a href="../../index.html#daily-games">All games</a><a href="../../games/laser/index.html">Laser</a><a href="../../games/stack-up/index.html">Stack Up</a><a href="../../games/stake/index.html">Stake</a><a href="../../games/alibi/index.html">Alibi</a><a href="../../games/pack/index.html">Pack</a><a href="../../games/bouncer/index.html">Bouncer</a><a href="../../games/prior/index.html">Prior</a><a href="../../games/lowball/index.html">Lowball</a><a href="../../games/inner-clock/index.html">Inner Clock</a></div>
-<div class="game-menu-group"><span class="section-meta">YOUR ARCADE</span><a href="../../profile.html">My stats</a><a href="../../friends.html">Friends</a><a href="../../login.html">Account / sign in</a></div></div></nav></header>
+<div class="game-menu-group"><span class="section-meta">YOUR BREAK ROOM</span><a href="../../profile.html">My stats</a><a href="../../friends.html">Friends</a><a href="../../login.html">Account / sign in</a></div></div></nav></header>
   <main class="br-game-page">
     <div class="br-game-shell">
       <!-- 02 FIXED GEOMETRY: title left, stats centred, ?/trophy right. -->
@@ -88,7 +88,7 @@
         <p><strong>2. Test if you need to.</strong> Before sorting, test up to four of the eight words. The answer locks in and that word earns half credit. Tests are optional and cannot be undone. Starting examples are free.</p>
         <p><strong>3. Write your list.</strong> Mark the remaining words IN or OUT. There is no fixed number of each. You can revise until you press Lock this list. Your first confirmed list is final; answers stay hidden until then.</p>
         <p><strong>4. See the policy.</strong> The reveal explains the exact rule and checks every word. AND requires both conditions. OR allows either or both. “OR, but not both” requires exactly one condition.</p>
-        <p><strong>5. Close two Daily doors.</strong> Standard, then Tricky. Native score is correct words out of sixteen. Correct untested words earn one credit; tested words earn half. Arcade score = credits ÷ 16 × 100. No timer or speed bonus. Unlimited has four difficulty levels, stays separate from Daily records, and is free.</p>
+        <p><strong>5. Close two Daily doors.</strong> Standard, then Expert. Resumed earlier sets keep their original difficulty. Native score is correct words out of sixteen. Correct untested words earn one credit; tested words earn half. Arcade score = credits ÷ 16 × 100. No timer or speed bonus. Unlimited has four difficulty levels, stays separate from Daily records, and is free.</p>
       </div>
       <button class="button pink popup-done" type="button" data-popup-close>GOT IT</button>
     </section>
@@ -96,7 +96,7 @@
   <div class="game-popup-backdrop" id="stats-popup" hidden>
     <section class="game-popup" role="dialog" aria-modal="true" aria-labelledby="stats-popup-title">
       <button class="game-popup-close" type="button" data-popup-close aria-label="Close">×</button>
-      <p class="popup-kicker">CABINET RECORD</p>
+      <p class="popup-kicker">YOUR RECORD</p>
       <h2 id="stats-popup-title">EXTENDED STATS</h2>
       <p class="stats-popup-game">Bouncer · WORD / DEDUCTION</p>
       <div class="extended-stats-grid" data-template-slot="extended-stats">

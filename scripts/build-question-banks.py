@@ -167,3 +167,7 @@ dump(Path('games/stack-up/stacks.js'),stacks,'window.STACK_UP_STACKS')
 dump(Path('games/stake/questions.js'),trivia,'window.STAKE_QUESTION_ADDITIONS')
 (ROOT/'content/question-audit.json').write_text(json.dumps({'stack_up':audit,'stake':triviaAudit},ensure_ascii=False,indent=2)+'\n')
 print(f'Built {len(stacks)} harder Stack Up sets (12 replacements + 100 additions) and {len(trivia)} Stake additions.')
+
+# Append exact/reference-backed launch comparisons after rebuilding the frozen baseline.
+import subprocess
+subprocess.run(['node',str(ROOT/'scripts/build-launch-content.cjs'),'stack-up'],cwd=ROOT,check=True)

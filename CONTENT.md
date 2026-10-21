@@ -1,6 +1,6 @@
 # Content Studio and authoring workflow
 
-These are local development tools, not a public administration page. They help write and review proposals without changing live games, saves, schedules or Supabase data. Current Studio inventory: **264 Stake questions, 112 Stack Up sets, 100 Lowball items**.
+These are local development tools, not a public administration page. They help write and review proposals without changing live games, saves, schedules or Supabase data. Current Studio inventory: **264 Stake questions, 208 Stack Up sets, 100 Lowball items**.
 
 ## Open the studio
 
@@ -102,3 +102,7 @@ Bouncer is the eighth integrated game: two untimed Daily secret spelling rules, 
 Inner Clock (`games/inner-clock/README.md`) is the ninth playable game; its name remains provisional. Five blind Sydney-date targets use monotonic measured milliseconds, immutable stopped attempts and free cancellation of unfinished timers on interruption. Unlimited offers Mixed/Short/Medium/Long nonrepeating practice and never changes Daily history. No stopwatch animation, ticking sound or reset countdown is visible during an attempt. Native average absolute miss in seconds is lower-is-better; profile native best must use minimum and three decimals. Arcade score averages `max(0,100*(1-absoluteMiss/(target*.25)))` across five, with zero-credit 30-second safety timeouts. Header Best remains maximum Arcade score. In sync requires five misses within 2%; older achievements keep their meanings.
 
 **Current complete existing-project update: run `supabase/inner-clock.sql` LAST.** It includes all earlier games, both Alibi formats and three-mirror Laser Expert, preserves data/RLS, and supersedes earlier narrower migration instructions. Fresh setup then Friends also supports nine games. Repository tests cannot apply live owner SQL. Private comparisons derive completed scores from snapshots; raw timing data stays private. Profile/menus/homepage/accounts/Friends include nine playable games and six coming-soon cards. Public billing and prelaunch human/content/device reviews remain deferred.
+
+## Current proposed launch extension
+
+Read `LAUNCH-CONTENT.md` for revised bank counts, the additive generator, exact-fraction Stack Up content, harder final tiers, repeat-free rotation and compatibility rules. The full factual/price audit remains outstanding; adding arithmetic or solver-checked puzzles does not verify inherited real-world facts or prices.

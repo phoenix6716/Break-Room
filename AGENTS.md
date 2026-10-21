@@ -102,3 +102,9 @@ Inner Clock (`games/inner-clock/README.md`) is the ninth playable game; its name
 ## Homepage shelf — owner decision
 
 The owner cancelled all six old placeholder games and requested their removal from the homepage. The homepage now lists only the nine playable games, with no Coming Soon cards/count. Do not restore those cards when adding games. Archived placeholder routes and the reusable development template remain separate from this homepage change.
+
+## Owner-authorised launch audit — 22 October 2026
+
+The owner requested an audit of all nine games, every public menu/control/asset, fixes for clear bugs, player-perspective ranking applied to homepage cards, a month of content, harder highest tiers with easier tiers retained, and an ordered public-launch checklist. Leave all changes in PRs; do not merge or deploy. The editorial order is Laser → Stack Up → Stake → Alibi → Pack → Bouncer → Prior → Lowball → Inner Clock, subject to later human playtesting. Cancelled games must not reappear in drawers.
+
+`LAUNCH-CONTENT.md` is the proposed current content/rotation contract and supersedes earlier bank-count/difficulty notes once that release is merged. Existing saves, native/Arcade formulas, artwork and scoring remain protected. New Expert Alibi minimum-clue claims require exhaustive subset enumeration; the original greedy estimate is only a frozen-bank compatibility heuristic. See `LAUNCH-AUDIT.md` for evidence/limits and `LAUNCH-CHECKLIST.md` for launch gates. These documents do not establish live configuration or deployment.

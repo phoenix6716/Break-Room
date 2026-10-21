@@ -7,10 +7,10 @@ vm.runInContext(fs.readFileSync('games/stack-up/stacks.js','utf8'),sandbox);
 vm.runInContext(fs.readFileSync('games/stake/questions.js','utf8'),sandbox);
 const stacks=JSON.parse(JSON.stringify(sandbox.window.STACK_UP_STACKS));
 const additions=JSON.parse(JSON.stringify(sandbox.window.STAKE_QUESTION_ADDITIONS));
-assert.equal(stacks.length,112);assert.equal(additions.length,100);
-assert.equal(audit.stack_up.filter(x=>x.kind==='expanded').length,100);
+assert.equal(stacks.length,208);assert.equal(additions.length,100);
+assert.equal(audit.stack_up.filter(x=>x.kind==='expanded').length,196);
 assert.equal(audit.stack_up.filter(x=>x.kind==='replacement').length,12);
-assert.equal(new Set(stacks.map(x=>x.id)).size,112);
+assert.equal(new Set(stacks.map(x=>x.id)).size,208);
 const signatures=new Set();
 for(const stack of stacks){
  const row=audit.stack_up.find(x=>x.id===stack.id);assert(row,stack.id);
@@ -41,4 +41,4 @@ for(const q of additions){
  else if(row.source==='books')assert.equal(q.o[0],reference.books[row.key].author);
  else if(row.source==='movies')assert.equal(q.o[0],String(reference.movies[row.key].year));
 }
-assert.equal(oldQuestions.length,164);assert.equal(seen.size,264);console.log('PASS: 112 unique harder Stack Up sets, 264 unique Stake questions, blank pre-answer descriptions, all reference-backed orders and factual answer keys.');
+assert.equal(oldQuestions.length,164);assert.equal(seen.size,264);console.log('PASS: 208 unique harder Stack Up sets, 264 unique Stake questions, blank pre-answer descriptions, all reference-backed orders and factual answer keys.');

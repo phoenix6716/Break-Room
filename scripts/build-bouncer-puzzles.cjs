@@ -13,3 +13,5 @@ for(let level=0;level<4;level++)for(let index=0;index<60;index++){
  if(!found)throw Error('No uniquely clued puzzle '+chosen.id);if(!M.puzzle(found))throw Error('Invalid generated puzzle');out.push(found);
 }
 const file='games/bouncer/puzzles.js';fs.writeFileSync(file+'.tmp','/* Spelling-verified puzzles; examples identify one rule in the published rulebook. */\nwindow.BOUNCER_RULES='+JSON.stringify(source.rules)+';\nwindow.BOUNCER_PUZZLES='+JSON.stringify(out)+';\n');fs.renameSync(file+'.tmp',file);console.log('Built '+out.length+' uniquely clued Bouncer doors.');
+
+require('node:child_process').execFileSync(process.execPath,['scripts/build-launch-content.cjs','bouncer'],{stdio:'inherit'});
