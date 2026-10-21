@@ -1,11 +1,11 @@
 /* Native-save adapters. No credentials, DOM, engine initialization or storage writes. */
 (root => {
  'use strict';
- const games=['stake','stack-up','lowball','pack','prior','laser','alibi'];
+ const games=['stake','stack-up','lowball','pack','prior','laser','alibi','bouncer'];
  const lowKeys=['pc_history','pc_progress','pc_last','pc_last_avg','pc_last_share','pc_streak','pc_best','pc_played','pc_country'];
  const object=v=>v&&typeof v==='object'&&!Array.isArray(v);
  const parse=v=>{try{return JSON.parse(v);}catch{return null;}};
- function belongs(game,key){return game==='alibi'?/^break-room:alibi:daily:\d{4}-\d{2}-\d{2}$/.test(key):game==='laser'?/^break-room:laser:daily:\d{4}-\d{2}-\d{2}$/.test(key):game==='prior'?/^break-room:prior:daily:\d{4}-\d{2}-\d{2}$/.test(key):game==='pack'?/^break-room:pack:daily:\d{4}-\d{2}-\d{2}$/.test(key):game==='stake'?/^stake:d:\d{4}-\d{2}-\d{2}$/.test(key)||key==='stake:streak':game==='stack-up'?/^break-room:stack-up:daily:\d{4}-\d{2}-\d{2}$/.test(key):game==='lowball'&&lowKeys.includes(key);}
+ function belongs(game,key){return game==='bouncer'?/^break-room:bouncer:daily:\d{4}-\d{2}-\d{2}$/.test(key):game==='alibi'?/^break-room:alibi:daily:\d{4}-\d{2}-\d{2}$/.test(key):game==='laser'?/^break-room:laser:daily:\d{4}-\d{2}-\d{2}$/.test(key):game==='prior'?/^break-room:prior:daily:\d{4}-\d{2}-\d{2}$/.test(key):game==='pack'?/^break-room:pack:daily:\d{4}-\d{2}-\d{2}$/.test(key):game==='stake'?/^stake:d:\d{4}-\d{2}-\d{2}$/.test(key)||key==='stake:streak':game==='stack-up'?/^break-room:stack-up:daily:\d{4}-\d{2}-\d{2}$/.test(key):game==='lowball'&&lowKeys.includes(key);}
  function clean(game,data){
   if(!games.includes(game)||!object(data))throw Error('Invalid cloud save.');
   const out={};
@@ -23,6 +23,7 @@
  }
  function rank(game,raw,key){
   const v=parse(raw);if(!object(v))return -1;
+  if(game==='bouncer')return root.BREAK_ROOM_BOUNCER?.valid(v,key.slice(-10))?v.picks.length===2?999999:v.round*100000+({test:10000,sort:20000,review:30000}[v.phase]||0)+v.edits/1000000:-1;
   if(game==='alibi')return root.BREAK_ROOM_ALIBI?.valid(v,key.slice(-10))?v.picks.length===4?999999:v.round*100000+(v.phase==='review'?20000:10000)+v.edits/1000000:-1;
   if(game==='laser')return root.BREAK_ROOM_LASER?.valid(v,key.slice(-10))?v.picks.length===4?999999:v.round*100000+(v.phase==='review'?20000:10000)+v.edits/1000000:-1;
   if(game==='prior')return root.BREAK_ROOM_PRIOR?.valid(v,key.slice(-10))?v.picks.length===5?999999:v.round*100+(v.phase==='review'?20:10):-1;

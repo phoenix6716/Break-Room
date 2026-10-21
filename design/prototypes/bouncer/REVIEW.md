@@ -1,0 +1,7 @@
+# Bouncer collection review and integration
+
+The collection ranking was Laser, Alibi, then Bouncer. The owner explicitly requested number three after integrating the first two. Bouncer is worth pursuing: testing a word to infer a hidden policy gives players a clear hypothesis/reveal loop and broadens the arcade beyond trivia and optical puzzles.
+
+The prototype's biggest weaknesses were an empty starting evidence set, semantic ambiguity, contradictory score copy ("fewer tests is better" without a real penalty), and answer-bearing comparison URLs. Repeated properties also risk making practice predictable. The implementation adds four free starting examples that isolate one policy from the published Rulebook, spelling-only rules with no debatable categories, real half-credit research, adjustable classifications before explicit final confirmation, stronger compound tiers and separate rule/puzzle practice decks. It keeps the word-club identity, two Daily doors and independent endless play.
+
+The 240-board bank is mathematical/spelling-verified, not proof of human enjoyment, difficulty or paid demand. Two-example columns may feel too revealing on simple rules; use player observation before adjusting them or claiming calibration. Names and the eventual launch roster remain provisional. The prototype's monetization hooks, streak freezes, archive paywalls, themes/sponsors and comparison-code mechanics were not authorized and were not activated. See `games/bouncer/README.md` for the implemented contract.

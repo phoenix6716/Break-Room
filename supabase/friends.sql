@@ -319,6 +319,84 @@ exception when others then return null;
 end $$;
 revoke all on function public._friend_alibi_culprit(jsonb),public._friend_alibi_score(jsonb,date) from public,anon,authenticated;
 
+-- Bouncer: evaluate a bounded spelling-rule tree. NULL means malformed data, not OUT.
+create or replace function public._friend_bouncer_eval(r jsonb,w text,depth int default 0) returns boolean language plpgsql immutable set search_path='' as $$
+declare k text; a jsonb; arg text; x numeric; left_result boolean; right_result boolean; i int; count_vowels int;
+begin
+ if w is null or w !~ '^[a-z]{3,12}$' or jsonb_typeof(r) is distinct from 'array' or jsonb_array_length(r)<>2 or jsonb_typeof(r->0) is distinct from 'string' then return null;end if;
+ k=r->>0;a=r->1;
+ if k in ('and','or','xor') then
+  if depth<>0 or jsonb_typeof(a) is distinct from 'array' or jsonb_array_length(a)<>2 or a->0=a->1 then return null;end if;
+  left_result=public._friend_bouncer_eval(a->0,w,1);right_result=public._friend_bouncer_eval(a->1,w,1);
+  if left_result is null or right_result is null then return null;end if;
+  return case k when 'and' then left_result and right_result when 'or' then left_result or right_result else left_result<>right_result end;
+ end if;
+ if k in ('length','vowels') then
+  if jsonb_typeof(a) is distinct from 'number' then return null;end if;x=a::text::numeric;
+  if x<>trunc(x) or (k='length' and x not between 3 and 12) or (k='vowels' and x not between 0 and 6) then return null;end if;
+  return case k when 'length' then char_length(w)=x else char_length(regexp_replace(w,'[^aeiou]','','g'))=x end;
+ elsif k in ('contains','prefix','suffix') then
+  if jsonb_typeof(a) is distinct from 'string' then return null;end if;arg=r->>1;if arg !~ '^[a-z]{1,3}$' then return null;end if;
+  return case k when 'contains' then position(arg in w)>0 when 'prefix' then left(w,char_length(arg))=arg else right(w,char_length(arg))=arg end;
+ end if;
+ if a is distinct from '0'::jsonb then return null;end if;
+ case k
+ when 'double' then return w ~ '(.)\1';
+ when 'unique' then return (select count(distinct letter)=char_length(w) from regexp_split_to_table(w,'') as letter);
+ when 'palindrome' then return w=reverse(w);
+ when 'sameEnds' then return left(w,1)=right(w,1);
+ when 'vowelPair' then return w ~ '[aeiou]{2}';
+ when 'startsVowel' then return w ~ '^[aeiou]';
+ when 'endsVowel' then return w ~ '[aeiou]$';
+ when 'forward' then for i in 2..char_length(w) loop if ascii(substr(w,i-1,1))>ascii(substr(w,i,1)) then return false;end if;end loop;return true;
+ when 'backward' then for i in 2..char_length(w) loop if ascii(substr(w,i-1,1))<ascii(substr(w,i,1)) then return false;end if;end loop;return true;
+ when 'firstBeforeLast' then return ascii(left(w,1))<ascii(right(w,1));
+ when 'rare' then return w ~ '[jqxz]';
+ else return null;
+ end case;
+exception when others then return null;
+end $$;
+create or replace function public._friend_bouncer_puzzle(p jsonb) returns boolean language plpgsql immutable set search_path='' as $$
+declare all_words text[]:='{}'; item jsonb; group_words jsonb; w text; result boolean; positives int:=0; i int; j int; lv numeric;
+begin
+ if jsonb_typeof(p) is distinct from 'object' or jsonb_typeof(p->'id') is distinct from 'string' or p->>'id' !~ '^bouncer-v1-[0-3]-[0-9]+$' or char_length(p->>'id')>80 or jsonb_typeof(p->'level') is distinct from 'number' then return false;end if;
+ lv=(p->>'level')::numeric;if lv<>trunc(lv) or lv not between 0 and 3 or split_part(p->>'id','-',3)<>lv::int::text then return false;end if;
+ for i in 0..2 loop
+  group_words=case i when 0 then p->'ins' when 1 then p->'outs' else p->'words' end;
+  if jsonb_typeof(group_words) is distinct from 'array' or jsonb_array_length(group_words)<>(case when i=2 then 8 else 2 end) then return false;end if;
+  for item in select value from jsonb_array_elements(group_words) loop
+   if jsonb_typeof(item) is distinct from 'string' then return false;end if;w=item#>>'{}';if w !~ '^[a-z]{3,12}$' or w=any(all_words) then return false;end if;all_words=array_append(all_words,w);
+   result=public._friend_bouncer_eval(p->'rule',w);if result is null or (i=0 and not result) or (i=1 and result) then return false;end if;
+   if i=2 and result then positives=positives+1;end if;
+  end loop;
+ end loop;
+ return positives between 3 and 5;
+exception when others then return false;
+end $$;
+create or replace function public._friend_bouncer_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare p jsonb; picks jsonb; probes jsonb; ids text[]:='{}'; seen int[]; i int; j int; item jsonb; x numeric; idx int; correct int:=0; tests int:=0; actual boolean;
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or jsonb_typeof(v->'edits') is distinct from 'number' or (v->>'edits')::numeric not between 0 and 1000000 or (v->>'edits')::numeric<>trunc((v->>'edits')::numeric) or v->'round' is distinct from '1'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or jsonb_typeof(v->'doors') is distinct from 'array' or jsonb_array_length(v->'doors')<>2 or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>2 or jsonb_typeof(v->'probes') is distinct from 'array' or jsonb_array_length(v->'probes')<>2 or v->'answers' is distinct from v->'picks'->1 then return null;end if;
+ for i in 0..1 loop
+  p=v->'doors'->i;if not public._friend_bouncer_puzzle(p) or p->>'id'=any(ids) then return null;end if;ids=array_append(ids,p->>'id');
+  picks=v->'picks'->i;probes=v->'probes'->i;
+  if jsonb_typeof(picks) is distinct from 'array' or jsonb_array_length(picks)<>8 or jsonb_typeof(probes) is distinct from 'array' or jsonb_array_length(probes)>4 then return null;end if;
+  for j in 0..7 loop
+   if jsonb_typeof(picks->j) is distinct from 'boolean' then return null;end if;actual=public._friend_bouncer_eval(p->'rule',p->'words'->>j);
+   if (picks->>j)::boolean=actual then correct=correct+1;end if;
+  end loop;
+  seen='{}';
+  for item in select value from jsonb_array_elements(probes) loop
+   if jsonb_typeof(item) is distinct from 'number' then return null;end if;x=item::text::numeric;if x<>trunc(x) or x not between 0 and 7 then return null;end if;idx=x;
+   if idx=any(seen) or (picks->>idx)::boolean<>public._friend_bouncer_eval(p->'rule',p->'words'->>idx) then return null;end if;
+   seen=array_append(seen,idx);tests=tests+1;
+  end loop;
+ end loop;
+ return (correct-tests/2.0)::double precision/16*100;
+exception when others then return null;
+end $$;
+revoke all on function public._friend_bouncer_eval(jsonb,text,int),public._friend_bouncer_puzzle(jsonb),public._friend_bouncer_score(jsonb,date) from public,anon,authenticated;
+
 create or replace function public._friend_score(g text,v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
 declare i int; j int; n numeric; bet int; pick int; answer int; total int:=0; won int:=0; legacy int[]; q jsonb; c jsonb;
 begin
@@ -341,6 +419,7 @@ begin
    end if;
    total=total+bet;if pick=answer then won=won+bet;end if;
   end loop;return won::double precision/total*100;
+ elsif g='bouncer' then return public._friend_bouncer_score(v,d);
  elsif g='alibi' then return public._friend_alibi_score(v,d);
  elsif g='laser' then return public._friend_laser_score(v,d);
  elsif g='prior' then return public._friend_prior_score(v,d);
@@ -387,7 +466,7 @@ begin
    end if;
   else
    for entry in select * from jsonb_each_text(data) loop
-    if (game='stake' and entry.key !~ '^stake:d:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='alibi' and entry.key !~ '^break-room:alibi:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='laser' and entry.key !~ '^break-room:laser:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='prior' and entry.key !~ '^break-room:prior:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='pack' and entry.key !~ '^break-room:pack:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='stack-up' and entry.key !~ '^break-room:stack-up:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') then continue;end if;
+    if (game='stake' and entry.key !~ '^stake:d:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='bouncer' and entry.key !~ '^break-room:bouncer:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='alibi' and entry.key !~ '^break-room:alibi:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='laser' and entry.key !~ '^break-room:laser:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='prior' and entry.key !~ '^break-room:prior:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='pack' and entry.key !~ '^break-room:pack:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='stack-up' and entry.key !~ '^break-room:stack-up:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') then continue;end if;
     d=public._friend_date(right(entry.key,10));if d is null or d<p_today-119 or d>p_today then continue;end if;
     v=public._friend_json(entry.value);score=public._friend_score(game,v,d);
     if score is not null then day=d;arcade_score=score;return next;end if;

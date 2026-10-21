@@ -34,7 +34,7 @@ Notes/selection save via the existing monotonic edit counter. Same-origin tabs a
 
 ## Database update and security
 
-Existing Supabase projects must run **`supabase/alibi-scenarios.sql`, then `supabase/laser-expert.sql` LAST**. It includes previous games and both Alibi formats; never reapply older narrower migrations afterwards. Fresh projects run current setup then Friends. This is an owner-applied live-dashboard step, not something local tests perform. The old Alibi SQL can store native v2 saves, but its Friends parser cannot derive their scores until this update.
+Existing Supabase projects must run **`supabase/bouncer.sql` LAST**. It includes previous games and both Alibi formats; never reapply older narrower migrations afterwards. Fresh projects run current setup then Friends. This is an owner-applied live-dashboard step, not something local tests perform. The old Alibi SQL can store native v2 saves, but its Friends parser cannot derive their scores until this update.
 
 The new private SQL helper independently reconstructs visits; the original helper continues scoring older snapshots unchanged. RLS, auth-derived ownership, revision checks and accepted/unblocked/opt-in sharing are unchanged. Friends receive only completed bounded normalized results, never raw case files, names, notes or emails. All scoring helpers are revoked from browser roles. No administrator credential belongs in client code.
 

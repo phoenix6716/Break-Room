@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bouncer</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+/* Layout: one centred column, one decision per screen, velvet rope header with brass posts. */
+:root{--bg:#efe8ec;--card:#fbf7f9;--ink:#1d1218;--mute:#6a5860;--line:#d8c9d0;--velvet:#6b1230;--velvet2:#8c1d44;--onv:#fbeef2;--brass:#8a6a10;--in:#17683f;--out:#a8231b;--serif:Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#150a10;--card:#231219;--ink:#f3e7ea;--mute:#b5a0a8;--line:#3d2630;--velvet:#a02850;--velvet2:#c23a63;--onv:#fff2f6;--brass:#e0b64e;--in:#6fd79b;--out:#ff9088;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#150a10;--card:#231219;--ink:#f3e7ea;--mute:#b5a0a8;--line:#3d2630;--velvet:#a02850;--velvet2:#c23a63;--onv:#fff2f6;--brass:#e0b64e;--in:#6fd79b;--out:#ff9088;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.45 var(--sans);padding-block:12px 28px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+#app{max-width:480px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+header{display:flex;flex-direction:column;align-items:center;gap:6px}
+.rope{display:flex;align-items:flex-start;width:100%;height:30px}
+.post{width:14px;height:30px;background:linear-gradient(90deg,var(--brass),var(--bg) 140%);border-radius:7px 7px 2px 2px;flex:none;position:relative}
+.post:before{content:"";position:absolute;left:-2px;top:-5px;width:18px;height:11px;border-radius:50%;background:var(--brass)}
+.cord{flex:1;height:22px;margin:3px -2px 0;border-bottom:5px solid var(--velvet);border-radius:0 0 50% 50%/0 0 100% 100%}
+h1{margin:0;font:700 2rem/1 var(--serif);letter-spacing:.28em;text-transform:uppercase;padding-left:.28em}
+.sub{margin:0;color:var(--mute);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
+nav{display:flex;gap:8px}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer;min-height:44px;min-width:44px;border-radius:10px;border:2px solid var(--line);background:var(--card);padding:8px 14px}
+button:focus-visible,input:focus-visible{outline:3px solid var(--brass);outline-offset:2px}
+button:disabled{opacity:.55;cursor:default}
+nav button{flex:1;font-weight:600}
+nav button[aria-selected="true"]{background:var(--velvet);color:var(--onv);border-color:var(--velvet)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:12px}
+.velvet{background:linear-gradient(160deg,var(--velvet2),var(--velvet));color:var(--onv);border:0}
+h2{margin:0;font:700 1.35rem/1.2 var(--serif);text-wrap:balance}
+p{margin:0}
+.mute{color:var(--mute);font-size:.9rem}
+.primary{background:var(--velvet);color:var(--onv);border-color:var(--velvet);font-weight:700}
+.velvet .primary,.velvet button{background:var(--bg);color:var(--ink);border-color:var(--bg)}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row>*{flex:1 1 120px}
+.words{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.w{display:flex;justify-content:space-between;align-items:center;gap:6px;font-weight:700;font-size:1.05rem;min-height:52px;text-align:left}
+.w small{font-size:.75rem;white-space:nowrap}
+.w.in{border-color:var(--in)}.w.in small{color:var(--in)}
+.w.out{border-color:var(--out)}.w.out small{color:var(--out)}
+.say{min-height:2.6em;font-weight:600}
+.big{font:700 2.4rem/1.1 var(--serif);text-align:center;padding:26px 0;overflow-wrap:anywhere}
+.ans button{min-height:60px;font-weight:800;font-size:1.1rem}
+.bin{border-color:var(--in);color:var(--in)}.bout{border-color:var(--out);color:var(--out)}
+.pill{display:inline-block;border:2px solid currentColor;border-radius:99px;padding:0 10px;font-size:.8rem;font-weight:700}
+.list{display:flex;flex-direction:column;gap:6px;margin:0;padding:0;list-style:none}
+.list li{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:6px 0;border-bottom:1px solid var(--line)}
+.ok{color:var(--in)}.no{color:var(--out)}
+.score{font:700 2.2rem/1 var(--serif)}
+.share{width:100%;min-height:150px;font:14px/1.4 ui-monospace,Menlo,monospace;background:var(--bg);color:var(--ink);border:2px solid var(--line);border-radius:10px;padding:10px;resize:vertical}
+input[type=text]{width:100%;min-height:44px;background:var(--bg);border:2px solid var(--line);border-radius:10px;padding:8px 12px;letter-spacing:.02em}
+.tiny{font-size:.8rem;color:var(--mute)}
+.bar{display:flex;justify-content:space-between;gap:8px;font-size:.85rem;color:var(--mute)}
+@media (prefers-reduced-motion:no-preference){.card{animation:rise .25s ease-out}@keyframes rise{from{opacity:.4;transform:translateY(6px)}}}
+</style>
+</head>
+<body>
+
+<div id="app"></div>
+<script>
+/* Bouncer: a daily word game. No backend, no dependencies.
+   Set SHARE_URL to wherever you host this file. Share links append ?c=CODE. */
+const SHARE_URL="https://example.com/bouncer";
+/* MONETISATION HOOKS (none active, no ads, popups or paywalls):
+   [HOOK archive] past days: makeSet(date) is pure, so any past date can be replayed. Gate a date picker here.
+   [HOOK freeze]  streak freezes: see finishDaily(), a freeze could bridge one missed day in the streak maths.
+   [HOOK leagues] private leagues: a league id could be part of the share code, scores posted from shareText().
+   [HOOK sponsor] sponsored themed sets: add rules to RD or CATS with a sponsor tag and let makeSet pick them on set dates.
+   [HOOK themes]  cosmetic themes: all colours are CSS variables on :root, so a theme is a block of variables. */
+/* ===== CONTENT BANK ===== */
+const S=s=>s.split(' ');
+const BASE=S(`able about above accept across act add after again age agree air all almost alone along also always among angle any appear area around art ask away baby badge bake ball band bank base beach begin below best bet big bill bless blind block blow board bonus book boom boss both bottle box boy brave bread break bridge bright bring broad budget build bulb bunch burn busy but buy cabin cable cake call calm camp can candle canvas card care carry case cash castle catch cause cave cell centre chair chalk chance change charge chart chase cheap check child choice circle city claim class clean clear clever click climb clock close club coast code coin comic common cook copy corner cost count course cover craft crash crazy cross crowd cry cup curve daily dance danger dark date dawn day dear debt deep delay desk dial diary diet dinner dirty dish doctor dollar door doubt down draft dream drink drive drop dry dust eager early earth easy eat edge egg elder empty end enjoy enter equal error even event ever every exact exit extra fact fair faith fall false fame family fancy far farm fast fault fear feast fee feel fence field film final find fine fire firm fit fix flag flame flash flat flight float floor flour flow focus fold folk follow food fool force forest forget form fort frame free fresh friend front fuel full fun funny future gain game gap garden gas gate gift give glad glass glow goal grace grade grain grand grant grass great group grow guard guess guest guide habit half hall hammer handy happy hard harm haste have hello help here hide high hill hint hobby hold hole holiday home honest hope host hotel hour house huge human humor hunt hurry idea image inch inner iron issue item jar job join joke joy judge juice jump jury just keen keep key kind king kit kitchen knife knock know label lace lack lady lake lamp land large last late laugh law lazy lead learn leave left lesson letter level life lift light like limit line link list little live load loan local lock logic lonely long look loop loose lord lose loss lot loud love low lucky lunch magic maid mail main major make male mall map mark market match math may maybe meal mean meat meet melt memo menu mercy merry metal middle might mild mile milk mind mine minor minus minute mirror miss mix model moment money month moon moral more morning most motor mount move movie much music must name narrow nasty nation near neat need neither nest net never new news next nice night noble noise none noon normal north note novel now nurse oak ocean odd offer office often oil only open orbit order other outer over owner pace pack page pain paint pair palace paper park part party pass past path pause peace pen penny people phone photo piece pilot pin pipe pizza place plain plan plant plate play plus point pole poll pond pool poor port post pot pound power press price pride prime print prize pulse pure push quick quiet quite quote race radio raise range rapid rare rate reach read ready real reason rent rest rich ride right ring rise risk river road rock roll roof room root rope round route royal rule rush sad safe salad salt save scale scene school score screen sea seat seed sell send sense serve shade shake shape share sharp sheet shelf shell shift shine shop short show shut sick side sight sign silk simple since sing sink sir site size skill sleep slide slow small smart smile smoke smooth snack soap soft soil solid solve some song soon sorry sort soul sound soup south space spare speak speed spell spend spice spirit split spot spring square stable staff stage stair stamp stand star start state stay steam steel step stick still stock stone stop store story straw street stress strict strike string strong study stuff style sugar summer sure sweet swing table take tale talk tall tape task taste tax tea teach team tell tent term test text thank theme thing think thought thread tight time tiny tip tired title today token tool top total touch tour tower town toy trace track trade trail trap travel treat tree trial trick trip trouble true trust truth try tube tune turn twice type uncle under unit until upon upper urban use usual value video view visit voice vote wage wait wake walk wall wash waste watch water wave way wealth weak wear week weight well west wheel when where which while whole why wide wife wild will win winner wise wish with woman wonder wood word work world worth write wrong yard year young youth zone
+mom dad level radar civic refer madam racecar rotor tenet pop wow bib did deed peep toot tot pup mum nan eve gig huh pep stats redder sees kayak eye noon
+zebra jacket jeans quiz quilt jazz size zero maze crazy fuzzy razor puzzle pizza relax sixty
+spoon wolf good pond fond pole role told sold hold gold tube sled used spoke poke toed rod red old one toe ton tone shed sold
+begin almost biopsy chimps ghost empty abort adopt agony billowy chops deny dot egg film glow hit him hint lot mop not opt art ant any bit boy but cry dry act add all ill`);
+const SETS={
+body:S(`arm leg hand foot head neck knee elbow ankle wrist finger thumb toe nose ear eye mouth lip tooth teeth feet tongue chin cheek brow hip back chest heel shin skin rib spine palm nail shoulder thigh belly waist throat jaw face hair lung heart liver brain kidney bone muscle knuckle calf stomach`),
+animal:S(`dog cat horse cow pig sheep goat duck hen fox wolf bear lion tiger zebra whale shark frog snake mouse rabbit eagle owl bee ant crab deer camel koala seal otter panda monkey turtle lizard spider goose donkey kangaroo ewe`),
+colour:S(`red blue green yellow orange purple pink brown black white grey gold silver tan beige navy teal maroon cream indigo crimson scarlet turquoise amber`),
+food:S(`apple banana grape mango melon pear kiwi lemon orange berry carrot potato onion pea bean corn leek beet celery cabbage lettuce spinach pumpkin tomato radish garlic kale turnip`),
+clothes:S(`shirt sock hat coat dress skirt scarf glove jacket jeans shorts boot shoe tie belt sweater cap vest suit robe apron shawl mitten pants sandal hoodie`),
+music:S(`piano guitar violin drum flute harp cello trumpet tuba banjo organ clarinet bugle fiddle cymbal ukulele trombone piccolo saxophone harmonica oboe sitar bongo accordion xylophone`),
+weather:S(`rain snow wind storm cloud hail fog mist sleet thunder breeze drizzle frost gale haze dew flood shower lightning rainbow blizzard tornado`),
+number:S(`one two three four five six seven eight nine ten eleven twelve twenty hundred thousand zero dozen million thirty forty fifty`),
+sport:S(`tennis golf rugby soccer cricket hockey boxing rowing diving surfing cycling netball squash karate judo archery skiing fencing bowling running swimming sailing baseball softball skating wrestling darts polo curling football`),
+vehicle:S(`car bus train truck boat ship plane bike tram van taxi ferry jet scooter rocket yacht canoe kayak wagon cart tractor subway sled helicopter bicycle`)};
+const ALL=[...new Set([...BASE,...Object.values(SETS).flat()])].filter(w=>/^[a-z]{3,10}$/.test(w));
+const vc=w=>(w.match(/[aeiou]/g)||[]).length;
+const has=r=>w=>r.test(w);
+const first=w=>w[0],last=w=>w[w.length-1];
+/* name, test function, fun fact */
+const RD=[
+["has a double letter",has(/(.)\1/),"Bookkeeper is the only common English word with three double letters in a row."],
+["has its letters in alphabetical order",w=>[...w].every((c,i)=>!i||w[i-1]<=c),"Words like almost are called abecedarian words."],
+["starts and ends with the same letter",w=>first(w)==last(w),"Dad, noon and stats all start and end alike."],
+["has exactly 2 vowels",w=>vc(w)==2,"Only A, E, I, O and U count here. Y can act as a vowel but is not counted."],
+["is a palindrome",w=>w==[...w].reverse().join(""),"Palindrome comes from Greek words meaning running back again."],
+["has exactly 5 letters",w=>w.length==5,"Five letters is the length used by many popular daily word guessing games."],
+["has 4 letters or fewer",w=>w.length<=4,"Many of the most common English words are short."],
+["has 7 letters or more",w=>w.length>=7,"The average English word is around five letters, so these are the long ones."],
+["starts with a vowel",has(/^[aeiou]/),"We say an before vowel sounds, which is why it is an hour but a university."],
+["ends in the letter E",has(/e$/),"A silent final E often makes the vowel before it long, as in hop and hope."],
+["contains J, Q, X or Z",has(/[jqxz]/),"J, Q, X and Z are among the least used letters in English."],
+["has exactly 1 vowel",w=>vc(w)==1,"Strengths packs seven consonants around a single vowel."],
+["has 3 or more vowels",w=>vc(w)>=3,"Queue has five letters and four of them are vowels."],
+["contains the letter E",has(/e/),"E is the most common letter in English."],
+["has no letter E",w=>!/e/.test(w),"The 1939 novel Gadsby runs to about 50,000 words without using E."],
+["ends in the letter S",has(/s$/),"S ends many words because of plurals."],
+["ends in the letter Y",has(/y$/),"Y can act as a vowel at the end of a word like happy."],
+["starts with the letter S",has(/^s/),"S begins more English dictionary entries than any other letter."],
+["starts with the letter T",has(/^t/),"T is the most common first letter in running English text, thanks to the word the."],
+["contains TH",has(/th/),"TH is the most common pair of letters in English."],
+["ends in ING",has(/ing$/),"The ing ending often turns a verb into an ongoing action."],
+["ends in ED",has(/ed$/),"Many English past tense verbs end in ed."],
+["contains OU",has(/ou/),"OU is pronounced differently in tough, though, through and thought."],
+["contains EA",has(/ea/),"EA sounds different in bread, beach and break."],
+["contains ER",has(/er/),"Many job words end in er, like baker and teacher."],
+["has no repeated letters",w=>new Set(w).size==w.length,"A word with no repeated letter is called an isogram."],
+["contains both A and E",w=>/a/.test(w)&&/e/.test(w),"A and E are two of the three most common letters in English."],
+["has its letters in reverse alphabetical order",w=>[...w].every((c,i)=>!i||w[i-1]>=c),"Spoon and wolf run backwards through the alphabet."],
+["has more consonants than vowels",w=>w.length-vc(w)>vc(w),"English uses 21 consonant letters and only 5 vowel letters."],
+["has two vowels side by side",has(/[aeiou]{2}/),"Vowel pairs like EA and OO are called digraphs when they make one sound."],
+["contains the letter O",has(/o/),"O is one of the five most common letters in English."],
+["contains the letter A",has(/a/),"A is one of the three most common letters in English."],
+["contains the letter R",has(/r/),"R is one of the ten most common letters in English."],
+["contains the letter L",has(/l/),"L doubles up in many words like ball, bell and hill."],
+["contains the letter S",has(/s/),"S ends more words than most letters, thanks to plurals."],
+["contains the letter T",has(/t/),"T is the second most common letter in English."],
+["contains the letter U",has(/u/),"In English, Q is almost always followed by U."],
+["contains the letter I",has(/i/),"The dot on the i was added in medieval times to tell it apart from nearby strokes."],
+["contains the letter W",has(/w/),"W is the only letter whose name has three syllables."],
+["has a first letter earlier in the alphabet than its last",w=>first(w)<last(w),"Cat goes from C to T, forward through the alphabet."],
+["has a first letter later in the alphabet than its last",w=>first(w)>last(w),"Tea runs from T back to A."],
+["starts with the letter C",has(/^c/),"C can sound like K or like S."],
+["starts with the letter B",has(/^b/),"The B is silent in debt and doubt."],
+["starts with the letter P",has(/^p/),"The P is silent at the start of psychology and pneumonia."],
+["starts with the letter M",has(/^m/),"M is the 13th letter, the midpoint of the alphabet."],
+["ends in the letter T",has(/t$/),"Verbs like spent, left and slept use a T for the past tense."],
+["ends in the letter R",has(/r$/),"Many person words end in er or or, like baker and doctor."],
+["ends in the letter D",has(/d$/),"D is also the Roman numeral for 500."],
+["ends in the letter N",has(/n$/),"N is the 14th letter of the alphabet."],
+["ends in the letter K",has(/k$/),"The K sound at the end of a word is often spelt CK, as in back and clock."],
+["ends in the letter L",has(/l$/),"A final L often doubles, as in bell, ball and hill."],
+["has a vowel as its second letter",has(/^.[aeiou]/),"The consonant, vowel, consonant pattern is the backbone of English spelling."],
+["ends in a double letter",has(/(.)\1$/),"Buzz, glass and odd all end with a double letter."],
+["contains CK",has(/ck/),"CK never starts an English word."],
+["contains SH",has(/sh/),"SH is a digraph, two letters making one sound."],
+["contains CH",has(/ch/),"CH makes a different sound in chair, chef and choir."],
+["contains OO",has(/oo/),"OO sounds different in book and moon."],
+["starts with ST",has(/^st/),"ST is one of the most common ways to start an English word."],
+["starts with a letter in the first half of the alphabet (A to M)",has(/^[a-m]/),"The alphabet splits at M and N, 13 letters each side."]
+];
+const CATS=[["is a body part","body","Body parts hide inside other words, like chin in machine and ear in heart."],
+["is an animal","animal","Many animal words are also verbs, like duck, seal and bear."],
+["is a colour","colour","Orange was a fruit name in English before it was a colour name."],
+["is a fruit or vegetable","food","Botanically a tomato is a fruit, but cooks treat it as a vegetable."],
+["is something you wear","clothes","The word jeans comes from Genoa, a city in Italy."],
+["is a musical instrument","music","Piano is short for pianoforte, meaning soft loud."],
+["is a weather word","weather","Drizzle and breeze are among the many English words for light weather."],
+["is a number word","number","Dozen comes from the old French word for twelve."],
+["is a sport","sport","Rugby is named after a school in the town of Rugby, England."],
+["is a vehicle","vehicle","Kayak is both a vehicle and a palindrome."]];
+/* ===== SELF-CHECK AND RULES ===== */
+const mk=(name,fn,fact,pass,fail)=>({name,fn,fact,pass,fail});
+let RULES=[...RD.map(([n,f,t])=>mk(n,f,t,ALL.filter(f),ALL.filter(w=>!f(w)))),
+ ...CATS.map(([n,k,t])=>{const s=new Set(SETS[k]),f=w=>s.has(w);return mk(n,f,t,SETS[k].filter(w=>ALL.includes(w)),ALL.filter(w=>!s.has(w)))})];
+const REPORT=[];
+RULES=RULES.filter(r=>{const p=r.pass.length,q=r.fail.length;
+ r.pass=r.pass.filter(w=>r.fn(w));r.fail=r.fail.filter(w=>!r.fn(w));
+ const bad=p-r.pass.length+q-r.fail.length,ok=r.pass.length>=20&&r.fail.length>=20;
+ if(bad||!ok)REPORT.push(r.name+": removed "+bad+" mismatches, pools "+r.pass.length+"/"+r.fail.length+(ok?"":" DROPPED"));
+ return ok});
+/* ===== RANDOM, DATES, STORAGE ===== */
+const xm=s=>{let h=1779033703^s.length;for(let i=0;i<s.length;i++){h=Math.imul(h^s.charCodeAt(i),3432918353);h=h<<13|h>>>19}h=Math.imul(h^h>>>16,2246822507);h=Math.imul(h^h>>>13,3266489909);return(h^h>>>16)>>>0};
+const rng=s=>{let a=xm(s);return()=>{a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}};
+const shuf=(a,r)=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const p2=n=>String(n).padStart(2,"0");
+const fmt=d=>d.getFullYear()+"-"+p2(d.getMonth()+1)+"-"+p2(d.getDate());
+const today=()=>fmt(new Date());
+const parseD=s=>{const[y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d)};
+const addDays=(s,n)=>{const d=parseD(s);d.setDate(d.getDate()+n);return fmt(d)};
+const mem={};
+const ST={get(k){try{const v=localStorage.getItem(k);if(v!==null)return v}catch(e){}return k in mem?mem[k]:null},
+ set(k,v){mem[k]=v;try{localStorage.setItem(k,v)}catch(e){}}};
+const jget=k=>{try{return JSON.parse(ST.get(k))}catch(e){return null}};
+const jset=(k,v)=>ST.set(k,JSON.stringify(v));
+/* ===== SET GENERATION ===== */
+function build(A,B,r,extra){ // 4 IN and 4 OUT per rule, no word passes both rules
+ const used=new Set(),out=[];
+ for(const[X,Y]of[[A,B],[B,A]]){
+  const ins=shuf(X.pass.filter(w=>!Y.fn(w)&&!used.has(w)),r).slice(0,4);ins.forEach(w=>used.add(w));
+  const outs=shuf(X.fail.filter(w=>!used.has(w)),r).slice(0,4);outs.forEach(w=>used.add(w));
+  if(ins.length<4||outs.length<4)return null;
+  out.push(shuf([...ins.map(w=>({w,t:true})),...outs.map(w=>({w,t:false}))],r));
+ }return out}
+function makeSet(date){
+ const r=rng("bouncer|"+date);
+ for(let n=0;n<500;n++){
+  const a=Math.floor(r()*RULES.length),b=Math.floor(r()*RULES.length);
+  if(a==b)continue;
+  const w=build(RULES[a],RULES[b],r);
+  if(w)return[{ri:a,words:w[0]},{ri:b,words:w[1]}];
+ }throw new Error("no set")}
+function makeOne(ri){const r=rng("free|"+Math.random()+Date.now()),R=RULES[ri];
+ const ins=shuf(R.pass,r).slice(0,4),outs=shuf(R.fail,r).slice(0,4);
+ return[{ri,words:shuf([...ins.map(w=>({w,t:true})),...outs.map(w=>({w,t:false}))],r)}]}
+/* ===== SCORING, SHARING, COMPARE ===== */
+const scoreOf=(run,i)=>run.sets[i].words.reduce((n,x,j)=>n+(run.a[i][j]===x.t?1:0),0);
+const flat=run=>run.a.flat().map(v=>v?"1":"0").join("");
+const codeOf=(date,run)=>date+"-"+flat(run);
+function shareText(date,run){
+ const rows=run.sets.map((s,i)=>"Rule "+(i+1)+": "+s.words.map((x,j)=>run.a[i][j]===x.t?"✅":"❌").join("")+" "+scoreOf(run,i)+"/8, "+run.t[i].length+" tests");
+ const tot=run.sets.reduce((n,_,i)=>n+scoreOf(run,i),0),tests=run.t.reduce((n,x)=>n+x.length,0),c=codeOf(date,run);
+ return["Bouncer "+date,...rows,"Total "+tot+"/16 with "+tests+" tests","Code: "+c,SHARE_URL+"?c="+c].join("\n")}
+const CODE_RE=/^(\d{4}-\d{2}-\d{2})-([01]{16})$/;
+function parseCode(text){
+ const m=String(text||"").match(/(\d{4}-\d{2}-\d{2}-[01]{16})(?![\d])/);
+ const c=m&&m[1].match(CODE_RE);if(!c)return null;
+ const d=parseD(c[1]);if(fmt(d)!==c[1])return null; // rejects 2026-02-31 and similar
+ return{date:c[1],ans:c[2]}}
+/* ===== STREAK AND DAILY STORAGE ===== */
+const RK=d=>"bouncer.run."+d;
+function streakNow(){const s=jget("bouncer.streak");if(!s||!s.last)return 0;const t=today();return(s.last==t||s.last==addDays(t,-1))?s.n|0:0}
+function finishDaily(date){ // [HOOK freeze] bridge a single missed day here
+ const s=jget("bouncer.streak")||{last:"",n:0};
+ if(s.last==date)return;
+ jset("bouncer.streak",{last:date,n:s.last==addDays(date,-1)?(s.n|0)+1:1})}
+function newRun(mode,date,sets){return{mode,date,sets,ri:0,ph:"test",t:sets.map(()=>[]),a:sets.map(s=>s.words.map(()=>null))}}
+function loadDaily(date){
+ const run=newRun("daily",date,makeSet(date)),s=jget(RK(date));
+ if(s&&Array.isArray(s.a)&&s.a.length==2&&s.a.every(x=>x.length==8)){run.t=s.t;run.a=s.a;run.ri=s.ri|0;run.ph=s.ph||"test"}
+ return run}
+const saveRun=run=>{if(run.mode=="daily")jset(RK(run.date),{t:run.t,a:run.a,ri:run.ri,ph:run.ph})};
+const isDone=run=>run.ri>=run.sets.length;
+/* ===== UI (text nodes only, user input is never parsed as HTML) ===== */
+const h=(t,a,...c)=>{const e=document.createElement(t);for(const k in a||{}){const v=a[k];if(k=="class")e.className=v;else if(k.startsWith("aria-"))e.setAttribute(k,String(v));else if(k.startsWith("on"))e.addEventListener(k.slice(2),v);else if(v!==false&&v!=null)e.setAttribute(k,v===true?"":v)}
+ for(const x of c.flat())if(x!=null&&x!==false)e.append(x.nodeType?x:document.createTextNode(String(x)));return e};
+const V={tab:"daily",run:null,day:today(),stale:false,pending:null,cmp:null,free:{deck:[],pos:0,played:0,round:0},say:""};
+const app=()=>document.getElementById("app");
+const IN="IN ✓",OUT="OUT ✕";
+function header(){
+ const tab=(id,label)=>h("button",{role:"tab","aria-selected":V.tab==id,onclick:()=>{V.tab=id;if(V.run&&V.run.mode!="daily")V.run=null;if(id=="free")V.run=null;V.cmp=null;render()}},label);
+ return h("header",{},
+  h("div",{class:"rope","aria-hidden":"true"},h("div",{class:"post"}),h("div",{class:"cord"}),h("div",{class:"post"})),
+  h("h1",{},"Bouncer"),h("p",{class:"sub"},"Guess the door rule"),
+  h("nav",{role:"tablist"},tab("daily","Daily"),tab("free","Unlimited")))}
+function render(){
+ const m=V.tab=="free"?freeView():V.run&&!isDone(V.run)?playView():V.cmp?cmpView():homeView();
+ app().replaceChildren(header(),m);
+ const f=app().querySelector("[data-focus]");if(f)f.focus({preventScroll:true})}
+/* --- play screens --- */
+function playView(){
+ const run=V.run,i=run.ri,set=run.sets[i],R=RULES[set.ri],n=run.sets.length;
+ const label=run.mode=="free"?"Rule "+(V.free.played+1)+" this session":"Rule "+(i+1)+" of "+n;
+ const tag=run.mode=="cmp"?" (compare run)":"";
+ const top=h("div",{class:"bar"},h("span",{},label+tag),h("span",{},"Tests used: "+run.t[i].length+" of 4"));
+ const note=V.stale&&run.mode=="daily"?h("p",{class:"tiny",role:"status"},"A new day has started. Finish this set, then play the new one."):null;
+ let body;
+ if(run.ph=="test"){
+  const left=4-run.t[i].length;
+  body=h("div",{class:"card"},h("h2",{},"The bouncer has a secret rule"),
+   h("p",{class:"mute"},"Tap up to 4 words to test them. Each test is locked in and counts toward your score."),
+   h("div",{class:"words"},set.words.map((x,j)=>{const tested=run.t[i].includes(j);
+    return h("button",{class:"w"+(tested?(x.t?" in":" out"):""),disabled:tested||left<=0,"aria-label":x.w+(tested?(x.t?", tested, IN":", tested, OUT"):""),
+     onclick:()=>{run.t[i].push(j);run.a[i][j]=x.t;V.say="Bouncer: "+x.w.toUpperCase()+" is "+(x.t?"IN ✓":"OUT ✕");saveRun(run);render()}},
+     h("span",{},x.w),tested?h("small",{},x.t?IN:OUT):null)})),
+   h("p",{class:"say",role:"status","aria-live":"polite"},V.say),
+   h("button",{class:"primary","data-focus":"1",onclick:()=>{run.ph="sort";V.say="";saveRun(run);render()}},"Start sorting ("+(8-run.t[i].length)+" words left, "+left+" tests unused)"))}
+ else if(run.ph=="sort"){
+  const todo=set.words.map((x,j)=>j).filter(j=>run.a[i][j]===null),cur=todo[0],x=set.words[cur];
+  const total=8-run.t[i].length,done=total-todo.length;
+  body=h("div",{class:"card"},h("p",{class:"mute"},"Word "+(done+1)+" of "+total+". Answers lock once chosen."),
+   h("div",{class:"big",role:"status","aria-live":"polite"},x.w),
+   h("div",{class:"row ans"},
+    h("button",{class:"bin",onclick:()=>pick(cur,true)},IN),h("button",{class:"bout",onclick:()=>pick(cur,false)},OUT)),
+   run.t[i].length?h("p",{class:"tiny"},"Tested: "+run.t[i].map(j=>set.words[j].w+" "+(set.words[j].t?"IN":"OUT")).join(", ")):null)}
+ else{
+  const sc=scoreOf(run,i),last=i==n-1;
+  body=h("div",{class:"card velvet"},h("p",{class:"tiny",style:"color:inherit;opacity:.8"},"The rule was"),h("h2",{},"It "+R.name),
+   h("div",{class:"score"},sc+"/8 words, "+run.t[i].length+" tests"),
+   h("ul",{class:"list"},set.words.map((w,j)=>{const t=run.t[i].includes(j),ok=run.a[i][j]===w.t;
+    return h("li",{},h("strong",{},w.w),h("span",{},(w.t?"fits ✓":"does not fit ✕")+" · "+(t?"tested":ok?"you were right":"you were wrong")))})),
+   h("p",{},"Fun fact: "+R.fact),
+   h("button",{class:"primary","data-focus":"1",onclick:next},run.mode=="free"?"Next rule":last?"See results":"Next rule"))}
+ return h("div",{style:"display:flex;flex-direction:column;gap:14px"},top,note,body)}
+function pick(j,v){const run=V.run;run.a[run.ri][j]=v;
+ if(run.a[run.ri].every(x=>x!==null))run.ph="reveal";saveRun(run);render()}
+function next(){const run=V.run;V.say="";
+ if(run.mode=="free"){V.free.played++;V.run=null;return startFree()}
+ run.ri++;run.ph="test";saveRun(run);
+ if(isDone(run)){
+  if(run.mode=="daily")finishDaily(run.date);
+  if(run.mode=="cmp"){V.cmp={date:run.date,run,code:V.pending};V.run=null;V.pending=null}
+ }render()}
+/* --- results, share, compare --- */
+function copyBtn(ta,status){
+ return h("button",{onclick:async()=>{try{await navigator.clipboard.writeText(ta.value);status.textContent="Copied."}
+  catch(e){ta.focus();ta.select();status.textContent="Copy was blocked. The text is selected, press and hold to copy."}}},"Copy results")}
+function resultsCard(run){
+ const text=shareText(run.date,run),ta=h("textarea",{class:"share",readonly:true,id:"sharebox","aria-label":"Share text"});ta.value=text;
+ const st=h("p",{class:"tiny",role:"status"},"");
+ const tot=run.sets.reduce((n,_,i)=>n+scoreOf(run,i),0),tests=run.t.reduce((n,x)=>n+x.length,0);
+ return h("div",{class:"card"},h("h2",{},"Tonight's door is closed"),
+  h("div",{class:"score"},tot+"/16 words, "+tests+" tests"),
+  run.sets.map((s,i)=>h("p",{},"Rule "+(i+1)+": it "+RULES[s.ri].name+" ("+scoreOf(run,i)+"/8, "+run.t[i].length+" tests)")),
+  ta,h("div",{class:"row"},copyBtn(ta,st)),st)}
+function compareBox(){
+ const inp=h("input",{type:"text",id:"cmpcode",placeholder:"2026-10-18-1011001100110011","aria-label":"Friend's code",autocomplete:"off",autocapitalize:"off",spellcheck:"false"}),
+  msg=h("p",{class:"tiny",role:"status"},"");
+ const go=()=>{const c=parseCode(inp.value);if(!c){msg.textContent="That code is not valid. It looks like 2026-10-18-1011001100110011.";return}startCompare(c,msg)};
+ inp.addEventListener("keydown",e=>{if(e.key=="Enter")go()});
+ return h("div",{class:"card"},h("h2",{},"Compare with a friend"),h("p",{class:"mute"},"Paste a friend's code or their whole share text. You play their day's set, then see how your answers match."),
+  inp,h("button",{onclick:go},"Play and compare"),msg)}
+function startCompare(c,msg){
+ const t=today();V.tab="daily";
+ if(c.date>t){if(msg)msg.textContent="That code is from a future day.";return}
+ if(c.date==t){const d=loadDaily(t);
+  if(isDone(d)){V.cmp={date:t,run:d,code:c};V.run=null;return render()}
+  V.pending=c;V.run=d;return render()}
+ V.pending=c;V.run=newRun("cmp",c.date,makeSet(c.date));render()}
+function cmpBody(date,run,code){
+ const f=code.ans.split("").map(x=>x=="1");let same=0,fr=0,me=0;const secs=[];
+ run.sets.forEach((s,i)=>{secs.push(h("h2",{},"Rule "+(i+1)+": it "+RULES[s.ri].name),
+  h("ul",{class:"list"},s.words.map((w,j)=>{const mine=run.a[i][j],fa=f[i*8+j],eq=mine===fa;if(eq)same++;if(mine===w.t)me++;if(fa===w.t)fr++;
+   const l=(v)=>(v?"IN":"OUT")+(v===w.t?" ✓":" ✕");
+   return h("li",{},h("strong",{},w.w),h("span",{},"You: "+l(mine)+" · Friend: "+l(fa)+" · "+(eq?"Same":"Different")))})))});
+ return h("div",{class:"card"},h("h2",{},"You agree on "+same+" of 16 words"),
+  h("p",{class:"mute"},"Set for "+date+". You got "+me+"/16 right and your friend got "+fr+"/16 right."),secs)}
+function cmpView(){const c=V.cmp;
+ return h("div",{style:"display:flex;flex-direction:column;gap:14px"},cmpBody(c.date,c.run,c.code),
+  h("button",{class:"primary","data-focus":"1",onclick:()=>{V.cmp=null;render()}},"Back"))}
+/* --- daily home --- */
+function cdText(){const n=new Date(),m=new Date(n.getFullYear(),n.getMonth(),n.getDate()+1),s=Math.max(0,Math.floor((m-n)/1000));
+ return p2(Math.floor(s/3600))+":"+p2(Math.floor(s%3600/60))+":"+p2(s%60)}
+function homeView(){
+ V.stale=false;const t=V.day=today(),run=loadDaily(t),done=isDone(run),sk=streakNow(),started=run.t.some(x=>x.length)||run.a.some(x=>x.some(v=>v!==null));
+ const streak=h("p",{class:"bar"},h("span",{},"Streak: "+sk+(sk==1?" day":" days")),h("span",{},t));
+ const parts=[streak];
+ if(!done){parts.push(h("div",{class:"card velvet"},h("h2",{},"Tonight's door"),
+  h("p",{},"Two secret rules. Eight words each. Test up to 4 words, then sort the rest into IN or OUT. Fewer tests is a better score."),
+  h("button",{class:"primary","data-focus":"1",onclick:()=>{V.run=run;render()}},started?"Continue tonight's set":"Open the door")))}
+ else{parts.push(resultsCard(run),h("div",{class:"card"},h("h2",{},"Come back tomorrow"),h("p",{class:"mute"},"Your next set opens in"),
+  h("div",{class:"score",id:"cd","aria-live":"off"},cdText())));
+  if(V.pending&&V.pending.date==t){parts.push(cmpBody(t,run,V.pending))}}
+ parts.push(compareBox());
+ return h("div",{style:"display:flex;flex-direction:column;gap:14px"},parts)}
+/* --- unlimited --- */
+function startFree(){const F=V.free;
+ if(F.pos>=F.deck.length){F.deck=shuf(RULES.map((_,i)=>i),rng("deck|"+Math.random()));F.pos=0;F.round++}
+ V.run=newRun("free","",makeOne(F.deck[F.pos++]));render()}
+function freeView(){const F=V.free;
+ if(V.run&&V.run.mode=="free"&&!isDone(V.run))return playView();
+ return h("div",{class:"card velvet"},h("h2",{},"Unlimited"),
+  h("p",{},"One rule at a time, as many as you like. This never changes your streak or your daily results."),
+  h("p",{},"Rules played this session: "+F.played+(F.round?" · Round "+F.round+" of the "+RULES.length+" rule deck":"")),
+  h("button",{class:"primary","data-focus":"1",onclick:startFree},F.played?"Next rule":"Start"))}
+/* ===== BOOT ===== */
+function boot(){
+ const q=(()=>{try{return new URLSearchParams(location.search).get("c")}catch(e){return null}})();
+ const c=q&&parseCode(q);
+ if(c)startCompare(c);else render();
+ setInterval(()=>{const t=today();
+  if(t!=V.day){const playing=V.run&&!isDone(V.run);
+   if(playing)V.stale=true;else{V.day=t;V.stale=false;V.pending=null;render()}}
+  const cd=document.getElementById("cd");if(cd)cd.textContent=cdText()},1000)}
+if(typeof document!="undefined")boot();
+</script>
+
+</body>
+</html>

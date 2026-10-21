@@ -9,6 +9,7 @@
     {id:'pack', name:'Pack', category:'PACKING / LOGIC', unit:'usefulness', max:600, note:'Total usefulness from three untimed Daily bags. Available points vary; Arcade scores compare each total with its exact optimum.'},
     {id:'prior', name:'Prior', category:'HISTORY / INSTINCT', unit:'correct', max:5, note:'Correct earlier-event choices out of five untimed Daily pairs. Arcade score is correct answers × 20.'},
     {id:'laser', name:'Laser', category:'LIGHT / LOGIC', unit:'solved', max:4, note:'First-fire hits out of four Daily boards. Retries and solution reveals never change the score.'},
+    {id:'bouncer',name:'Bouncer',category:'WORD / DEDUCTION',unit:'correct',max:16,note:'Correct words out of sixteen. Tested words earn half credit for the Arcade score; untested correct words earn full credit.'},
     {id:'alibi', name:'Alibi', category:'DEDUCTION / MYSTERY', unit:'correct', max:4, note:'Correct first accusations out of four untimed Daily cases. Notes never affect scoring.'}
   ];
   const isObject = value => value && typeof value === 'object' && !Array.isArray(value);
@@ -57,6 +58,7 @@
     let keys=[];
     try{for(let i=0;i<storage.length;i++)keys.push(storage.key(i));}catch{unavailable=true;}
     for(const key of keys){
+      if(key?.startsWith('break-room:bouncer:daily:')){const day=key.slice('break-room:bouncer:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_BOUNCER?.record(r,day);if(record)add('bouncer',day,record.correct,record.arcadeScore===100,root.BREAK_ROOM_SCORE.bouncer(record.correct,record.tests));else if(root.BREAK_ROOM_BOUNCER?.valid(r,day)){if(day===today&&(r.picks.length||r.probes.some(p=>p.length)||r.phase==='sort'||r.answers.some(v=>v!==null)))progress.add('bouncer');}else skipped++;continue;}
       if(key?.startsWith('break-room:alibi:daily:')){const day=key.slice('break-room:alibi:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_ALIBI?.record(r,day);if(record)add('alibi',day,record.correct,record.correct===4,root.BREAK_ROOM_SCORE.alibi(record.correct));else if(root.BREAK_ROOM_ALIBI?.valid(r,day)){if(day===today&&(r.picks.length||r.selection>=0||r.notes.some(n=>n.truth.some(Boolean)||n.excluded.some(Boolean))))progress.add('alibi');}else skipped++;continue;}
       if(key?.startsWith('break-room:laser:daily:')){const day=key.slice('break-room:laser:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_LASER?.record(r,day);if(record)add('laser',day,record.solved,record.solved===4,root.BREAK_ROOM_SCORE.laser(record.solved));else if(root.BREAK_ROOM_LASER?.valid(r,day)){if(day===today&&(r.picks.length||r.mirrors.length))progress.add('laser');}else skipped++;continue;}
       if(key?.startsWith('break-room:prior:daily:')){const day=key.slice('break-room:prior:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_PRIOR?.record(r,day);if(record)add('prior',day,record.correct,record.correct===5,root.BREAK_ROOM_SCORE.prior(record.correct));else if(root.BREAK_ROOM_PRIOR?.valid(r,day)){if(day===today&&r.picks.length)progress.add('prior');}else skipped++;continue;}
@@ -95,6 +97,7 @@
     const days=new Map();for(const record of records){if(!days.has(record.date))days.set(record.date,new Set());days.get(record.date).add(record.game);}
     const streak=streaks([...days.keys()],today), total=summaries.reduce((n,g)=>n+g.played,0);
     const achievements=[
+      {id:'bouncer',name:'On the list',detail:'Sort all sixteen Daily Bouncer words correctly without testing.',earned:records.some(r=>r.game==='bouncer'&&r.perfect)},
       {id:'first',name:'First break',detail:'Finish your first Daily game.',earned:total>0},
       {id:'sweep',name:'Clean sweep',detail:'Complete Lowball, Stake and Stack Up on the same day.',earned:[...days.values()].some(g=>['lowball','stake','stack-up'].every(id=>g.has(id)))},
       {id:'week',name:'Back again',detail:'Complete a Daily game on seven consecutive days in your saved history.',earned:streak.best>=7},
