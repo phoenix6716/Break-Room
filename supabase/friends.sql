@@ -154,16 +154,16 @@ exception when others then return null;
 end $$;
 revoke all on function public._friend_prior_score(jsonb,date) from public,anon,authenticated;
 
--- Laser v1: derive first-fire hits from board/mirror snapshots, never claimed scores.
+-- Laser v1/v2: derive first-fire hits from board/mirror snapshots, never claimed scores.
 create or replace function public._friend_laser_hit(b jsonb,p jsonb) returns boolean language plpgsql immutable set search_path='' as $$
-declare n int; lv int; cfg int[]; q jsonb; x numeric; rr int; cc int; ori text; coords text[]:='{}'; legal text[]:='{}'; mirrors jsonb:='{}'; walls text[]:='{}'; target text; k text; r int; c int:=-1; dx int:=1; dy int:=0; tmp int; seen text[]:='{}'; state text;
+declare n int; lv int; cfg int[]; required int:=2; upgraded boolean; q jsonb; x numeric; rr int; cc int; ori text; coords text[]:='{}'; legal text[]:='{}'; mirrors jsonb:='{}'; walls text[]:='{}'; target text; k text; r int; c int:=-1; dx int:=1; dy int:=0; tmp int; seen text[]:='{}'; state text;
 begin
- if jsonb_typeof(b) is distinct from 'object' or jsonb_typeof(b->'id') is distinct from 'string' or b->>'id' !~ '^laser-v1-[0-3]-[0-9]+$' or char_length(b->>'id')>80 or jsonb_typeof(b->'level') is distinct from 'number' then return null;end if;
+ if jsonb_typeof(b) is distinct from 'object' or jsonb_typeof(b->'id') is distinct from 'string' or b->>'id' !~ '^(laser-v1-[0-3]-[0-9]+|laser-v2-3-[0-9]+)$' or char_length(b->>'id')>80 or jsonb_typeof(b->'level') is distinct from 'number' then return null;end if;
  x=(b->>'level')::numeric;if x<>trunc(x) or x not between 0 and 3 then return null;end if;lv=x;
- cfg=case lv when 0 then array[5,2,0] when 1 then array[6,3,0] when 2 then array[6,3,2] else array[7,4,3] end;n=cfg[1];
+ cfg=case lv when 0 then array[5,2,0] when 1 then array[6,3,0] when 2 then array[6,3,2] else array[7,4,3] end;upgraded=(b->>'id') like 'laser-v2-%';if upgraded then if lv<>3 then return null;end if;cfg=array[7,6,4];required=3;end if;n=cfg[1];
  if b->'n' is distinct from to_jsonb(n) or jsonb_typeof(b->'row') is distinct from 'number' then return null;end if;
  x=(b->>'row')::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;r=x;
- if jsonb_typeof(b->'t') is distinct from 'array' or jsonb_array_length(b->'t')<>2 or jsonb_typeof(b->'fx') is distinct from 'array' or jsonb_array_length(b->'fx')<>cfg[2] or jsonb_typeof(b->'w') is distinct from 'array' or jsonb_array_length(b->'w')<>cfg[3] or jsonb_typeof(p) is distinct from 'array' or jsonb_array_length(p)<>2 then return null;end if;
+ if jsonb_typeof(b->'t') is distinct from 'array' or jsonb_array_length(b->'t')<>2 or jsonb_typeof(b->'fx') is distinct from 'array' or jsonb_array_length(b->'fx')<>cfg[2] or jsonb_typeof(b->'w') is distinct from 'array' or jsonb_array_length(b->'w')<>cfg[3] or jsonb_typeof(p) is distinct from 'array' or jsonb_array_length(p)<>required then return null;end if;
  -- Validate disjoint layout coordinates before tracing.
  for q in select value from jsonb_array_elements(jsonb_build_array(b->'t')||(b->'fx')||(b->'w')) loop
   if jsonb_typeof(q) is distinct from 'array' or jsonb_array_length(q) not in (2,3) then return null;end if;
