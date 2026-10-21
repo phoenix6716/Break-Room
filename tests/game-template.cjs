@@ -88,7 +88,7 @@ const previews = path.join(root, 'design/previews/game-template');
       // Check downloaded-copy links and local dependencies without relying on server directory indexes.
       for (const url of await page.locator('[href],[src]').evaluateAll(elements => elements.map(e => e.getAttribute('href') || e.getAttribute('src')))) {
         if (/^(https?:|data:|#)/.test(url)) continue;
-        const target = path.resolve(root, 'games/_template', url.split('#')[0]);
+        const target = path.resolve(root, 'games/_template', decodeURIComponent(url.split(/[?#]/)[0]));
         assert.ok(fs.existsSync(target), `Missing template dependency/link: ${url}`);
         if (!path.extname(target)) assert.fail(`Use an explicit file link: ${url}`);
       }
