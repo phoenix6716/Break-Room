@@ -5,7 +5,7 @@ const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
  const browser=await chromium.launch({executablePath:process.env.ARCADE_CHROMIUM||'/usr/bin/chromium',args:['--no-sandbox']});
  try{for(const width of [320,390,1440]){
   const page=await browser.newPage({viewport:{width,height:1000}}),errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url());});
-  await page.goto(base);assert.equal(await page.locator('.game-grid>.game-card').count(),14);
+  await page.goto(base);assert.equal(await page.locator('.game-grid>.game-card').count(),15);
   await page.goto(base+'/friends.html');await page.locator('#friend-guest').waitFor();
   assert.equal(await page.locator('.prototype-notice,.feed-scores').count(),0,'No example friends or scores ship');
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);

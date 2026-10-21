@@ -11,6 +11,7 @@
   let model=null,limit=10,signature='';
   function score(value,game,average=false){
     if(value===null)return '—';
+    if(game==='inner-clock')return value.toFixed(3);
     const number=average?Math.round(value*10)/10:value;
     return (game==='stake'&&number>0?'+':'')+numbers.format(number);
   }

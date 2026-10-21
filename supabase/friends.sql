@@ -397,6 +397,24 @@ exception when others then return null;
 end $$;
 revoke all on function public._friend_bouncer_eval(jsonb,text,int),public._friend_bouncer_puzzle(jsonb),public._friend_bouncer_score(jsonb,date) from public,anon,authenticated;
 
+-- Inner Clock v1: derive relative accuracy from measured milliseconds; never trust claimed scores.
+create or replace function public._friend_inner_clock_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare i int; t numeric; e numeric; n numeric; a jsonb; seen numeric[]:='{}'; total double precision:=0;
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or v->'round' is distinct from '4'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or v->'startedAt' is distinct from 'null'::jsonb or jsonb_typeof(v->'edits') is distinct from 'number' or jsonb_typeof(v->'targets') is distinct from 'array' or jsonb_array_length(v->'targets')<>5 or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>5 then return null;end if;
+ n=(v->>'edits')::numeric;if n<>trunc(n) or n<0 or n>1000000 then return null;end if;
+ for i in 0..4 loop
+  if jsonb_typeof(v->'targets'->i) is distinct from 'number' then return null;end if;
+  t=(v->'targets'->>i)::numeric;if t<>trunc(t) or t<2000 or t>12000 or mod(t,100)<>0 or t=any(seen) then return null;end if;seen=array_append(seen,t);
+  a=v->'picks'->i;if jsonb_typeof(a) is distinct from 'object' or jsonb_typeof(a->'kind') is distinct from 'string' or a->>'kind' not in ('stop','timeout') or jsonb_typeof(a->'elapsed') is distinct from 'number' then return null;end if;
+  e=(a->>'elapsed')::numeric;if e<>trunc(e) or e<0 or e>30000 or (a->>'kind'='timeout' and e<>30000) then return null;end if;
+  if a->>'kind'='stop' then total=total+greatest(0,100*(1-abs(e-t)/(t*.25)));end if;
+ end loop;
+ return total/5;
+exception when others then return null;
+end $$;
+revoke all on function public._friend_inner_clock_score(jsonb,date) from public,anon,authenticated;
+
 create or replace function public._friend_score(g text,v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
 declare i int; j int; n numeric; bet int; pick int; answer int; total int:=0; won int:=0; legacy int[]; q jsonb; c jsonb;
 begin
@@ -419,6 +437,7 @@ begin
    end if;
    total=total+bet;if pick=answer then won=won+bet;end if;
   end loop;return won::double precision/total*100;
+ elsif g='inner-clock' then return public._friend_inner_clock_score(v,d);
  elsif g='bouncer' then return public._friend_bouncer_score(v,d);
  elsif g='alibi' then return public._friend_alibi_score(v,d);
  elsif g='laser' then return public._friend_laser_score(v,d);
@@ -466,7 +485,7 @@ begin
    end if;
   else
    for entry in select * from jsonb_each_text(data) loop
-    if (game='stake' and entry.key !~ '^stake:d:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='bouncer' and entry.key !~ '^break-room:bouncer:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='alibi' and entry.key !~ '^break-room:alibi:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='laser' and entry.key !~ '^break-room:laser:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='prior' and entry.key !~ '^break-room:prior:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='pack' and entry.key !~ '^break-room:pack:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='stack-up' and entry.key !~ '^break-room:stack-up:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') then continue;end if;
+    if (game='stake' and entry.key !~ '^stake:d:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='inner-clock' and entry.key !~ '^break-room:inner-clock:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='bouncer' and entry.key !~ '^break-room:bouncer:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='alibi' and entry.key !~ '^break-room:alibi:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='laser' and entry.key !~ '^break-room:laser:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='prior' and entry.key !~ '^break-room:prior:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='pack' and entry.key !~ '^break-room:pack:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='stack-up' and entry.key !~ '^break-room:stack-up:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') then continue;end if;
     d=public._friend_date(right(entry.key,10));if d is null or d<p_today-119 or d>p_today then continue;end if;
     v=public._friend_json(entry.value);score=public._friend_score(game,v,d);
     if score is not null then day=d;arcade_score=score;return next;end if;

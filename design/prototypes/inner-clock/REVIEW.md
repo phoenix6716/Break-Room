@@ -1,0 +1,5 @@
+# Inner Clock prototype assessment
+
+Worth adding: a distinct, immediately understandable timing break that does not compete with the existing deduction games. The risk is repetition: without varied target lengths and clear early/late feedback it becomes a single novelty rather than satisfying practice. Preserve the simple blind Start/Stop loop and static instrument; do not add moving hands, pulse rhythms or a live countdown that answers the challenge.
+
+Implemented: five Sydney-date targets, relative normalized score alongside average absolute miss, shuffled practice lengths, clear measured target/actual/miss, immutable stopped attempts, no-penalty cancellation for interrupted unfinished timers, safety timeout, canonical shell/profile/accounts/friends, and real keyboard/touch input. Removed prototype billing hooks, unverified timing trivia, compare-code format and local-date reset assumptions. The source file is preserved unchanged for reference only. Human playtesting must establish difficulty and retention before launch; engineering tests do not establish either.

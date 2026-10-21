@@ -9,7 +9,11 @@
   const total=bets.reduce((a,b)=>a+b,0),won=bets.reduce((sum,bet,i)=>sum+(picks[i]===answers[i]?bet:0),0);
   return won/total*100;
  }
- function summary(records,today,ids=['lowball','stake','stack-up','pack','prior','laser','alibi','bouncer']){
+ function innerClock(targets,picks){
+  if(!Array.isArray(targets)||targets.length!==5||new Set(targets).size!==5||!targets.every(t=>Number.isInteger(t)&&t>=2000&&t<=12000&&t%100===0)||!Array.isArray(picks)||picks.length!==5||!picks.every(a=>a&&Number.isInteger(a.elapsed)&&a.elapsed>=0&&a.elapsed<=30000&&['stop','timeout'].includes(a.kind)&&(a.kind!=='timeout'||a.elapsed===30000)))return null;
+  return picks.reduce((n,a,i)=>n+(a.kind==='timeout'?0:Math.max(0,100*(1-Math.abs(a.elapsed-targets[i])/(targets[i]*.25)))),0)/5;
+ }
+ function summary(records,today,ids=['lowball','stake','stack-up','pack','prior','laser','alibi','bouncer','inner-clock']){
   const from=new Date(Date.parse(today+'T00:00:00Z')-(WINDOW_DAYS-1)*86400000).toISOString().slice(0,10);
   const recent=records.filter(r=>r.date>=from&&r.date<=today&&Number.isFinite(r.arcadeScore)&&r.arcadeScore>=0&&r.arcadeScore<=100);
   const games=ids.map(id=>{
@@ -27,5 +31,5 @@
   el.append(label,number);return el;
  }
  const format=value=>value===null||!Number.isFinite(value)?'—':new Intl.NumberFormat('en-AU',{maximumFractionDigits:1}).format(value);
- root.BREAK_ROOM_SCORE=Object.freeze({version:1,STACK_MAX,WINDOW_DAYS,lowball:clamp,bouncer:(correct,tests)=>Number.isInteger(correct)&&Number.isInteger(tests)&&tests>=0&&tests<=8&&correct>=tests&&correct<=16?(correct-tests/2)/16*100:null,alibi:correct=>Number.isInteger(correct)&&correct>=0&&correct<=4?correct*25:null,laser:solved=>Number.isInteger(solved)&&solved>=0&&solved<=4?solved*25:null,prior:correct=>Number.isInteger(correct)&&correct>=0&&correct<=5?correct*20:null,pack:(points,maximum)=>Number.isFinite(points)&&Number.isFinite(maximum)&&points>=0&&maximum>0?clamp(points/maximum*100):null,stake,stackUp:points=>Number.isFinite(points)?clamp(points/STACK_MAX*100):null,summary,format,badge});
+ root.BREAK_ROOM_SCORE=Object.freeze({version:1,innerClock,STACK_MAX,WINDOW_DAYS,lowball:clamp,bouncer:(correct,tests)=>Number.isInteger(correct)&&Number.isInteger(tests)&&tests>=0&&tests<=8&&correct>=tests&&correct<=16?(correct-tests/2)/16*100:null,alibi:correct=>Number.isInteger(correct)&&correct>=0&&correct<=4?correct*25:null,laser:solved=>Number.isInteger(solved)&&solved>=0&&solved<=4?solved*25:null,prior:correct=>Number.isInteger(correct)&&correct>=0&&correct<=5?correct*20:null,pack:(points,maximum)=>Number.isFinite(points)&&Number.isFinite(maximum)&&points>=0&&maximum>0?clamp(points/maximum*100):null,stake,stackUp:points=>Number.isFinite(points)?clamp(points/STACK_MAX*100):null,summary,format,badge});
 })(typeof window==='undefined'?globalThis:window);

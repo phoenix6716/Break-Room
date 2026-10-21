@@ -9,6 +9,7 @@
     {id:'pack', name:'Pack', category:'PACKING / LOGIC', unit:'usefulness', max:600, note:'Total usefulness from three untimed Daily bags. Available points vary; Arcade scores compare each total with its exact optimum.'},
     {id:'prior', name:'Prior', category:'HISTORY / INSTINCT', unit:'correct', max:5, note:'Correct earlier-event choices out of five untimed Daily pairs. Arcade score is correct answers × 20.'},
     {id:'laser', name:'Laser', category:'LIGHT / LOGIC', unit:'solved', max:4, note:'First-fire hits out of four Daily boards. Retries and solution reveals never change the score.'},
+    {id:'inner-clock',name:'Inner Clock',category:'TIMING / INSTINCT',unit:'seconds miss',max:30,lowerBetter:true,note:'Average absolute timing miss in seconds: lower is better. Arcade score measures misses relative to each target length.'},
     {id:'bouncer',name:'Bouncer',category:'WORD / DEDUCTION',unit:'correct',max:16,note:'Correct words out of sixteen. Tested words earn half credit for the Arcade score; untested correct words earn full credit.'},
     {id:'alibi', name:'Alibi', category:'DEDUCTION / MYSTERY', unit:'correct', max:4, note:'Correct first accusations out of four untimed Daily cases. Notes never affect scoring.'}
   ];
@@ -58,6 +59,7 @@
     let keys=[];
     try{for(let i=0;i<storage.length;i++)keys.push(storage.key(i));}catch{unavailable=true;}
     for(const key of keys){
+      if(key?.startsWith('break-room:inner-clock:daily:')){const day=key.slice('break-room:inner-clock:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_INNER_CLOCK?.record(r,day);if(record)add('inner-clock',day,record.points,record.inSync===5,root.BREAK_ROOM_SCORE.innerClock(r.targets,r.picks));else if(root.BREAK_ROOM_INNER_CLOCK?.valid(r,day)){if(day===today&&(r.picks.length||r.phase==='running'))progress.add('inner-clock');}else skipped++;continue;}
       if(key?.startsWith('break-room:bouncer:daily:')){const day=key.slice('break-room:bouncer:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_BOUNCER?.record(r,day);if(record)add('bouncer',day,record.correct,record.arcadeScore===100,root.BREAK_ROOM_SCORE.bouncer(record.correct,record.tests));else if(root.BREAK_ROOM_BOUNCER?.valid(r,day)){if(day===today&&(r.picks.length||r.probes.some(p=>p.length)||r.phase==='sort'||r.answers.some(v=>v!==null)))progress.add('bouncer');}else skipped++;continue;}
       if(key?.startsWith('break-room:alibi:daily:')){const day=key.slice('break-room:alibi:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_ALIBI?.record(r,day);if(record)add('alibi',day,record.correct,record.correct===4,root.BREAK_ROOM_SCORE.alibi(record.correct));else if(root.BREAK_ROOM_ALIBI?.valid(r,day)){if(day===today&&(r.picks.length||r.selection>=0||r.notes.some(n=>n.truth.some(Boolean)||n.excluded.some(Boolean))))progress.add('alibi');}else skipped++;continue;}
       if(key?.startsWith('break-room:laser:daily:')){const day=key.slice('break-room:laser:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_LASER?.record(r,day);if(record)add('laser',day,record.solved,record.solved===4,root.BREAK_ROOM_SCORE.laser(record.solved));else if(root.BREAK_ROOM_LASER?.valid(r,day)){if(day===today&&(r.picks.length||r.mirrors.length))progress.add('laser');}else skipped++;continue;}
@@ -91,12 +93,13 @@
     const summaries=games.map(game=>{
       const own=records.filter(r=>r.game===game.id), scores=own.map(r=>r.score), streak=streaks(own.map(r=>r.date),today);
       return {...game,arcade:arcade.games.find(g=>g.id===game.id),records:own,played:game.id==='lowball'&&Number.isSafeInteger(lifetime)?Math.max(lifetime,own.length):own.length,
-        average:scores.length?scores.reduce((a,b)=>a+b,0)/scores.length:null,best:scores.length?Math.max(...scores):null,
+        average:scores.length?scores.reduce((a,b)=>a+b,0)/scores.length:null,best:scores.length?(game.lowerBetter?Math.min(...scores):Math.max(...scores)):null,
         streak:streak.current,bestStreak:streak.best,today:own.some(r=>r.date===today)?'complete':progress.has(game.id)?'progress':'ready'};
     });
     const days=new Map();for(const record of records){if(!days.has(record.date))days.set(record.date,new Set());days.get(record.date).add(record.game);}
     const streak=streaks([...days.keys()],today), total=summaries.reduce((n,g)=>n+g.played,0);
     const achievements=[
+      {id:'inner-clock',name:'In sync',detail:'Stop all five Daily Inner Clock targets within 2%.',earned:records.some(r=>r.game==='inner-clock'&&r.perfect)},
       {id:'bouncer',name:'On the list',detail:'Sort all sixteen Daily Bouncer words correctly without testing.',earned:records.some(r=>r.game==='bouncer'&&r.perfect)},
       {id:'first',name:'First break',detail:'Finish your first Daily game.',earned:total>0},
       {id:'sweep',name:'Clean sweep',detail:'Complete Lowball, Stake and Stack Up on the same day.',earned:[...days.values()].some(g=>['lowball','stake','stack-up'].every(id=>g.has(id)))},

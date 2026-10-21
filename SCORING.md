@@ -4,6 +4,8 @@ Every completed Daily has a shared **0–100 Arcade score**, alongside its origi
 
 | Game | Arcade score | Examples |
 | --- | --- | --- |
+| Inner Clock | Mean of five `max(0,100*(1-absoluteMiss/(target*.25)))` round scores | 5% miss → 80/100. Native average absolute miss in seconds is lower-is-better. |
+| Bouncer | `(correct − tests/2) ÷ 16 × 100` | 16 correct with 2 tests → 93.75/100. |
 | Lowball | The existing completed Daily average | 75 points → 75/100 |
 | Stake | `100 × chips staked on correct answers ÷ total chips staked` | Five correct 1-chip bets → 100/100 and +5 chips. Three correct out of five equal bets → 60/100. All wrong/timeouts → 0/100. |
 | Pack | `100 × total usefulness earned ÷ total optimal usefulness across three bags` | 72 of 90 usefulness → 80/100. All three optimal → 100/100. |
@@ -27,7 +29,7 @@ The profile uses **120 Sydney calendar dates, including today**, for every game'
 3. Average the means of games with at least one included result. Each game has equal weight, independent of how often it was played.
 4. Show the number of games and completed results supporting the average. A real zero counts; an unplayed game does not count as a zero. No included results means “—”.
 
-For example, 100 Lowball runs averaging 80, one Stake run scoring 0 and one Stack Up run scoring 50 produce `(80 + 0 + 50) / 3 = 43.3`, rather than letting Lowball dominate the result count. If only Lowball has results, the average is based on **1 of 7 games**, clearly labelled.
+For example, 100 Lowball runs averaging 80, one Stake run scoring 0 and one Stack Up run scoring 50 produce `(80 + 0 + 50) / 3 = 43.3`, rather than letting Lowball dominate the result count. If only Lowball has results, the average is based on **1 of 9 games**, clearly labelled.
 
 This is a deterministic shared performance scale. It is not a player percentile or evidence that all games have identical difficulty. Difficulty calibration would need real player outcome data. Browser storage may omit older results; neither old lifetime counters nor missing days are invented into score history.
 
@@ -66,3 +68,9 @@ New Expert boards require three player mirrors. Native first-fire hits and Arcad
 ## Bouncer addition
 
 Bouncer is the eighth integrated game: two untimed Daily secret spelling rules, eight words each, four free starting examples and up to four optional tests per door. Correct untested words earn one credit; tested words earn half. Native correct words out of sixteen is retained, alongside Arcade **(correct − tests/2)/16 × 100**. Only the first confirmed lists count; completed zeroes count, partials/practice do not. Existing records and achievement meanings stay intact. Read [the game contract](games/bouncer/README.md) for the 240-door bank, finite Rulebook, accessibility, snapshots and independent checks. Existing Supabase projects run **`supabase/bouncer.sql` LAST**; it includes all previous game updates without deleting saves/relationships. Fresh projects use current setup/Friends. Owner-applied live SQL and human playtesting remain separate from local checks.
+
+## Inner Clock — current ninth-game contract
+
+Inner Clock (`games/inner-clock/README.md`) is the ninth playable game; its name remains provisional. Five blind Sydney-date targets use monotonic measured milliseconds, immutable stopped attempts and free cancellation of unfinished timers on interruption. Unlimited offers Mixed/Short/Medium/Long nonrepeating practice and never changes Daily history. No stopwatch animation, ticking sound or reset countdown is visible during an attempt. Native average absolute miss in seconds is lower-is-better; profile native best must use minimum and three decimals. Arcade score averages `max(0,100*(1-absoluteMiss/(target*.25)))` across five, with zero-credit 30-second safety timeouts. Header Best remains maximum Arcade score. In sync requires five misses within 2%; older achievements keep their meanings.
+
+**Current complete existing-project update: run `supabase/inner-clock.sql` LAST.** It includes all earlier games, both Alibi formats and three-mirror Laser Expert, preserves data/RLS, and supersedes earlier narrower migration instructions. Fresh setup then Friends also supports nine games. Repository tests cannot apply live owner SQL. Private comparisons derive completed scores from snapshots; raw timing data stays private. Profile/menus/homepage/accounts/Friends include nine playable games and six coming-soon cards. Public billing and prelaunch human/content/device reviews remain deferred.

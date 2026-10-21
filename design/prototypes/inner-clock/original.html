@@ -1,0 +1,360 @@
+<title>Inner Clock</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: one column, one decision at a time. A sundial-style dial holds the target, a single wide button runs the attempt. */
+:root{--bg:#EDF0EB;--card:#F8F9F5;--fg:#17201B;--mut:#56625B;--line:#C5CCC3;--acc:#8A5800;--on:#F8F9F5;--g:#1F7A33;--c:#8A6D00;--o:#B04A00;--m:#B3261E;
+--disp:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1613;--card:#17201C;--fg:#E8EDE6;--mut:#9BA89F;--line:#2C3832;--acc:#E6B450;--on:#10160F;--g:#6FD083;--c:#E8C547;--o:#F29B4B;--m:#FF7D74;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0F1613;--card:#17201C;--fg:#E8EDE6;--mut:#9BA89F;--line:#2C3832;--acc:#E6B450;--on:#10160F;--g:#6FD083;--c:#E8C547;--o:#F29B4B;--m:#FF7D74;color-scheme:dark}
+/* MONETISATION HOOK (cosmetic themes): add more token sets as :root[data-theme="name"] blocks and unlock them per user. */
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{height:100%}
+body{min-height:100%;margin:0 auto;max-width:30rem;display:flex;flex-direction:column;gap:12px;background:var(--bg);color:var(--fg);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-block:14px 18px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+h1{margin:0;font:600 1.5rem var(--disp);letter-spacing:.02em}
+h2{margin:0;font:600 1.6rem/1.2 var(--disp);text-wrap:balance}
+#streak{font:600 .8rem var(--mono);color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+#tabs{display:grid;grid-template-columns:repeat(3,1fr);border:2px solid var(--fg);border-radius:10px;overflow:hidden}
+#tabs button{min-height:44px;border:0;background:transparent;color:var(--fg);font:600 .9rem var(--mono);letter-spacing:.04em;cursor:pointer}
+#tabs button[aria-selected="true"]{background:var(--fg);color:var(--bg);text-decoration:underline;text-underline-offset:4px}
+main{flex:1;display:flex;flex-direction:column;min-height:0}
+section{display:flex;flex-direction:column;gap:12px;flex:1}
+#play{align-items:center;text-align:center}
+#lab{margin:0;font:600 .8rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+#pips{display:flex;gap:8px}
+#pips span{width:2.4rem;height:2.4rem;display:grid;place-items:center;border:2px solid var(--line);border-radius:50%;font:700 1rem var(--mono);color:var(--mut)}
+#pips .cur{border-color:var(--fg);color:var(--fg)}
+.dial{margin-block:auto;width:min(68vw,17rem);aspect-ratio:1;border-radius:50%;display:grid;align-content:center;justify-items:center;border:2px solid var(--fg);background:radial-gradient(circle closest-side,var(--card) 78%,transparent calc(78% + 1px)),repeating-conic-gradient(from -.6deg,var(--fg) 0 1.2deg,transparent 1.2deg 30deg)}
+#big{font:500 clamp(3.2rem,19vw,4.8rem)/1 var(--disp);font-variant-numeric:tabular-nums}
+#sub{font:600 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin-top:.4rem;max-width:70%}
+#band{margin:0;font:700 1.1rem var(--mono)}
+.b0{color:var(--g)}.b1{color:var(--c)}.b2{color:var(--o)}.b3{color:var(--m)}
+#fact{margin:0;max-width:26rem}
+#msg{margin:0;color:var(--mut);min-height:1.45em}
+#go{width:100%;min-height:4.5rem;border:2px solid var(--fg);border-radius:14px;background:var(--fg);color:var(--bg);font:700 1.5rem var(--mono);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+#go[data-s="run"]{background:var(--acc);color:var(--on);border-color:var(--acc)}
+#go[data-s="lock"]{background:transparent;color:var(--fg)}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.note{margin:0;font-size:.8rem;color:var(--mut)}
+.btn{min-height:44px;padding:0 1.2rem;border:2px solid var(--fg);border-radius:10px;background:var(--fg);color:var(--bg);font:700 .95rem var(--mono);cursor:pointer;touch-action:manipulation}
+label{font:600 .8rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+textarea{width:100%;font:.85rem/1.4 var(--mono);color:var(--fg);background:var(--card);border:2px solid var(--line);border-radius:10px;padding:.6rem;resize:vertical}
+#err,#cm{margin:0;font-weight:600}
+#err{color:var(--m)}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font:.9rem var(--mono);font-variant-numeric:tabular-nums}
+th,td{padding:.45rem .4rem;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-weight:600;color:var(--mut);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em}
+#dpips{display:flex;gap:8px}
+@media (prefers-reduced-motion:no-preference){#go{transition:background .15s}}
+</style>
+
+<header><h1>Inner Clock</h1><span id="streak"></span></header>
+<nav id="tabs" role="tablist" aria-label="Mode">
+<button role="tab" data-m="daily">Daily</button>
+<button role="tab" data-m="unl">Unlimited</button>
+<button role="tab" data-m="cmp">Compare</button>
+</nav>
+<main>
+<section id="cin" hidden>
+<h2>Beat a friend</h2>
+<label for="code">Paste a friend's code</label>
+<textarea id="code" rows="3" spellcheck="false" placeholder="2026-10-18-+12,-45,+8,+130,-7"></textarea>
+<button class="btn" id="load" type="button">Play that day's set</button>
+<p id="err" role="alert"></p>
+<p class="note">You play the same five targets, then see each one side by side.</p>
+</section>
+<section id="play" hidden>
+<p id="lab"></p>
+<div id="pips"></div>
+<div class="dial"><div id="big"></div><div id="sub"></div></div>
+<p id="band" hidden></p>
+<p id="fact" hidden></p>
+<p id="msg" role="status" aria-live="polite"></p>
+<button id="go" type="button"></button>
+<p class="note">Phone taps add about 30 to 80 ms of delay, the same for every player.</p>
+</section>
+<section id="done" hidden>
+<h2 id="dt"></h2>
+<p id="ds" style="margin:0"></p>
+<div class="tw"><table id="tb"></table></div>
+<p class="note">G gold hit ★, C close ●, O off ▲, M miss ✕. Minus means early, plus means late.</p>
+<div id="shr" hidden>
+<label for="sx">Share text, no spoilers</label>
+<textarea id="sx" rows="6" readonly></textarea>
+<button class="btn" id="cp" type="button">Copy</button>
+<p id="cm" role="status"></p>
+</div>
+<p id="cd" style="margin:0;font-weight:600"></p>
+<button class="btn" id="again" type="button" hidden>Compare another code</button>
+</section>
+</main>
+<script>
+"use strict";
+const SHARE_URL = ""; // Set to the hosted address. Empty means the current page address is used.
+const $ = id => document.getElementById(id);
+const el = (t, x, c) => { const e = document.createElement(t); if (x != null) e.textContent = x; if (c) e.className = c; return e; };
+const pad = x => String(x).padStart(2, "0");
+const n = (x, d = 0) => x.toLocaleString("en-US", { maximumFractionDigits: d });
+const B = [
+  { k: "G", e: "🟩", s: "★", n: "Gold hit" },
+  { k: "C", e: "🟨", s: "●", n: "Close" },
+  { k: "O", e: "🟧", s: "▲", n: "Off" },
+  { k: "M", e: "🟥", s: "✕", n: "Miss" }
+];
+const band = c => { const a = Math.abs(c); return a < 15 ? 0 : a < 40 ? 1 : a < 100 ? 2 : 3; };
+const fmt = c => (c < 0 ? "-" : "+") + (Math.abs(c) / 100).toFixed(2) + " s";
+const avg = r => (r.reduce((s, c) => s + Math.abs(c), 0) / r.length / 100).toFixed(2);
+const dk = (d = new Date()) => d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+const yest = k => { const [y, m, d] = k.split("-").map(Number); return dk(new Date(y, m - 1, d - 1)); };
+const ld = (k, f) => { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : f; } catch (e) { return f; } };
+const sv = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { } };
+
+/* Seeded random: xmur3 string hash feeding mulberry32. Same date gives the same set on every device. */
+function xmur3(s) { let h = 1779033703 ^ s.length; for (let i = 0; i < s.length; i++) { h = Math.imul(h ^ s.charCodeAt(i), 3432918353); h = h << 13 | h >>> 19; } return () => { h = Math.imul(h ^ h >>> 16, 2246822507); h = Math.imul(h ^ h >>> 13, 3266489909); return (h ^= h >>> 16) >>> 0; }; }
+function mul(a) { return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+/* MONETISATION HOOK (sponsored themed sets): swap this generator for a themed set keyed by campaign id plus date. */
+function targets(k) { const r = mul(xmur3("inner-clock:" + k)()); return [0, 1, 2, 3, 4].map(i => (20 + 20 * i + Math.floor(r() * 20)) / 10); }
+const rt = () => (20 + Math.floor(Math.random() * 101)) / 10;
+
+/* Fun facts: [min target s, max target s (exclusive), text, values(t)]. {t} is the target, {0} and {1} come from values. */
+const F = [
+[2,12,"An adult heart at rest beats about 70 times a minute, so roughly {0} beats in {t} s.",t=>[n(t*70/60)]],
+[2,12,"At rest your heart pumps about 5 litres of blood a minute, roughly {0} mL in {t} s.",t=>[n(t*5000/60)]],
+[2,12,"Your bone marrow makes about 2 million red blood cells every second, so around {0} million in {t} s.",t=>[n(2*t)]],
+[8,12,"Adults blink 15 to 20 times a minute, so an adult blinks about {0} times in {t} s.",t=>[n(17.5*t/60)]],
+[6,12,"At rest an adult takes 12 to 20 breaths a minute, so roughly {0} breaths in {t} s.",t=>[n(16*t/60)]],
+[2,12,"Your eyes jump between fixation points about 3 times a second, roughly {0} jumps in {t} s.",t=>[n(3*t)]],
+[2,4,"A typical visual reaction time is about 0.25 s, so {t} s is long enough for about {0} reactions in a row.",t=>[n(t/.25)]],
+[2,12,"A typist at 60 words a minute hits about 5 keys a second, around {0} keys in {t} s.",t=>[n(5*t)]],
+[4,12,"A resting elephant's heart beats about 30 times a minute, so only about {0} beats in {t} s.",t=>[n(t/2)]],
+[2,12,"A mouse heart beats around 600 times a minute, so about {0} beats in {t} s.",t=>[n(10*t)]],
+[2,12,"A ruby-throated hummingbird beats its wings around 50 times a second, so about {0} times in {t} s.",t=>[n(50*t)]],
+[2,12,"A honeybee beats its wings about 230 times a second, so around {0} times in {t} s.",t=>[n(230*t)]],
+[2,12,"A mosquito beats its wings roughly 500 times a second, so about {0} times in {t} s.",t=>[n(500*t)]],
+[2,12,"A dragonfly's wings beat about 30 times a second, so around {0} times in {t} s.",t=>[n(30*t)]],
+[2,12,"In {t} s light travels about {0} km, which is {1} laps around the Earth at the equator.",t=>[n(Math.round(299792*t/1000)*1000),n(t*7.48)]],
+[2,3,"Light takes about 1.3 s to reach the Moon, so a radio message there and back takes about 2.6 s."],
+[2,12,"The Moon moves along its orbit at about 1 km every second, so around {0} km in {t} s.",t=>[n(1.02*t)]],
+[2,12,"Earth moves around the Sun at about 30 km every second, so about {0} km in {t} s.",t=>[n(29.8*t)]],
+[2,12,"Earth's spin carries a spot on the equator at about 465 m every second, so around {0} m in {t} s.",t=>[n(465*t)]],
+[2,12,"The Sun turns about 4 million tonnes of matter into energy every second, so around {0} million tonnes in {t} s.",t=>[n(4.26*t)]],
+[2,12,"A satellite in low Earth orbit moves at about 7.7 km every second, so roughly {0} km in {t} s.",t=>[n(7.66*t)]],
+[2,12,"Leaving Earth for good takes a speed of about 11.2 km every second, so about {0} km in {t} s.",t=>[n(11.2*t)]],
+[2,12,"Voyager 1 moves at around 17 km every second relative to the Sun, so about {0} km in {t} s.",t=>[n(17*t)]],
+[2,12,"Mercury orbits the Sun at about 47 km every second, so around {0} km in {t} s.",t=>[n(47.4*t)]],
+[2,12,"A point on Jupiter's equator moves at about 12.6 km every second as the planet spins, so about {0} km in {t} s.",t=>[n(12.6*t)]],
+[2,12,"The Sun travels around the centre of the Milky Way at roughly 220 km every second, so about {0} km in {t} s.",t=>[n(220*t)]],
+[2,12,"Earth turns by only about 0.004 degrees each second, so {0} degrees in {t} s.",t=>[n(.00417*t,3)]],
+[2,5,"Dropped from rest, and ignoring air resistance, an object falls about {0} m in {t} s.",t=>[n(4.905*t*t)]],
+[2,5,"On the Moon, where gravity is about a sixth of Earth's, a dropped object falls only {0} m in {t} s.",t=>[n(.81*t*t,1)]],
+[2,12,"A pendulum has to be about {0} m long to take {t} s for one full swing back and forth.",t=>[n(.2485*t*t,1)]],
+[2,12,"Sound in air at 20 degrees Celsius travels about 343 m every second, so around {0} m in {t} s.",t=>[n(343*t)]],
+[2,12,"If thunder arrives {t} s after the flash, the lightning struck about {0} km away.",t=>[n(.343*t,1)]],
+[2,12,"Sound in water travels about 1.5 km every second, so around {0} km in {t} s.",t=>[n(1.5*t,1)]],
+[2,12,"Sound in steel travels about 5 km every second, so around {0} km in {t} s.",t=>[n(5*t)]],
+[2,12,"The note A above middle C is 440 vibrations a second, so a string sounding it vibrates {0} times in {t} s.",t=>[n(440*t)]],
+[2,12,"A song at 120 beats a minute has 2 beats every second, so {0} beats in {t} s.",t=>[n(2*t)]],
+[2,12,"Cinema has traditionally run at 24 frames a second, so {t} s is about {0} frames.",t=>[n(24*t)]],
+[2,12,"Since 1967 the second has been defined as 9,192,631,770 cycles of radiation from a caesium atom, so {t} s is about {0} billion cycles.",t=>[n(9.19263*t,1)]],
+[2,12,"A quartz watch crystal vibrates 32,768 times a second, so {0} times in {t} s.",t=>[n(32768*t)]],
+[2,12,"Mains power in many countries alternates 50 times a second, so {0} cycles in {t} s.",t=>[n(50*t)]],
+[2,12,"A screen that refreshes 60 times a second draws {0} frames in {t} s.",t=>[n(60*t)]],
+[2,12,"A processor running at 3 GHz completes about {0} billion cycles in {t} s.",t=>[n(3*t,1)]],
+[2,12,"Light in optical fibre travels about 200,000 km every second, so around {0} km in {t} s.",t=>[n(200000*t)]],
+[2,12,"A car at 100 km/h covers about {0} m in {t} s.",t=>[n(27.78*t)]],
+[2,4,"Road safety guides advise a gap of at least 2 to 3 seconds to the car ahead."],
+[2,12,"An airliner cruising at about 900 km/h covers around {0} m in {t} s.",t=>[n(250*t)]],
+[2,12,"A train at 300 km/h covers about {0} m in {t} s.",t=>[n(83.3*t)]],
+[2,12,"Walking at 5 km/h you cover about {0} m in {t} s.",t=>[n(1.39*t)]],
+[2,12,"Adults walking at an easy pace take about 100 to 120 steps a minute, so roughly {0} steps in {t} s.",t=>[n(1.83*t)]],
+[2,12,"A jogger running at 10 km/h covers about {0} m in {t} s.",t=>[n(2.78*t)]],
+[2,12,"A cheetah sprinting at about 100 km/h covers roughly {0} m in {t} s.",t=>[n(27.8*t)]],
+[2,12,"A red kangaroo can bound at about 55 km/h in short bursts, covering about {0} m in {t} s.",t=>[n(15.3*t)]],
+[2,12,"A peregrine falcon in a dive can pass 300 km/h, covering over {0} m in {t} s.",t=>[n(83.3*t)]],
+[6,12,"A skydiver falling belly down reaches about 200 km/h, which is about 55 m every second."],
+[2,12,"A vinyl LP spins at 33 and a third turns a minute, so it makes about {0} turns in {t} s.",t=>[n(t/1.8,1)]],
+[2,12,"Earth sees roughly 40 lightning flashes every second, so about {0} in {t} s.",t=>[n(40*t)]],
+[2,12,"Air molecules at room temperature move at roughly 450 m a second and collide with each other billions of times every second."],
+[2,12,"Signals in the fastest human nerve fibres travel up to about 120 m every second, so up to {0} m in {t} s.",t=>[n(120*t)]],
+[2,12,"A metronome set to 60 beats a minute ticks once a second, so about {0} ticks in {t} s.",t=>[n(t)]],
+[10,12,"Swell from distant storms often reaches the coast with 10 to 15 seconds between wave crests."],
+[2,5,"Small wind waves on a bay often arrive 2 to 5 seconds apart."],
+[4,8,"An average yawn lasts about 6 seconds."],
+[10,12,"Elite men finish a 100 m sprint in under 10 seconds, so this target is longer than a world class sprint."]
+];
+function fact(t) {
+  const c = F.filter(f => t >= f[0] && t < f[1]), f = c[Math.floor(Math.random() * c.length)], v = f[3] ? f[3](t) : [];
+  return f[2].replace(/\{(\w)\}/g, (m, k) => k === "t" ? t.toFixed(1) : v[k]).replace(/(\d) (s|m|km|mL)\b/g, "$1\u00a0$2");
+}
+</script>
+<script>
+"use strict";
+let today = dk(), mode = "daily", hold = 0, lastPtr = 0;
+const ses = { daily: null, unl: null, cmp: null };
+const mk = (m, key, tg, res = []) => ({ mode: m, key, targets: tg, res, i: res.length, ph: m !== "unl" && res.length >= 5 ? "done" : "idle", note: "", fact: "", t0: 0, their: null });
+
+/* MONETISATION HOOK (archive of past days): call loadDaily(pastKey) from a date list and store results under ic.arch.<date>. */
+function loadDaily() {
+  const v = ld("ic.day", {});
+  let m = [];
+  if (v && v.d === today && Array.isArray(v.m)) m = v.m.filter(Number.isFinite).slice(0, 5);
+  return mk("daily", today, targets(today), m);
+}
+/* MONETISATION HOOK (streak freezes): in bump(), a spent freeze token could keep the streak when one day was missed. */
+function bump(key) {
+  const s = ld("ic.streak", {});
+  if (s.last === key) return;
+  sv("ic.streak", { last: key, n: s.last === yest(key) ? (+s.n || 0) + 1 : 1 });
+}
+function streak() {
+  const s = ld("ic.streak", {});
+  return s.last === today || s.last === yest(today) ? (+s.n || 0) : 0;
+}
+
+/* Compare codes look like 2026-10-18-+12,-45,+8,+130,-7 (five signed misses in centiseconds). */
+const RX = /(\d{4})-(\d{2})-(\d{2})-([+-]\d{1,4}(?:,[+-]\d{1,4}){4})/;
+function parse(s) {
+  s = String(s || "");
+  try { s = decodeURIComponent(s); } catch (e) { }
+  const m = RX.exec(s.replace(/ /g, "+"));
+  if (!m) return null;
+  const key = m[1] + "-" + m[2] + "-" + m[3], d = new Date(+m[1], +m[2] - 1, +m[3]);
+  if (dk(d) !== key || key > today || +m[1] < 2024) return null;
+  return { key, a: m[4].split(",").map(Number) };
+}
+function loadCode(v) {
+  const p = parse(v);
+  if (!p) return fail("That is not a valid code. It should look like 2026-10-18-+12,-45,+8,+130,-7.");
+  const tg = targets(p.key);
+  if (p.a.some((c, i) => c < -Math.round(tg[i] * 100))) return fail("This code does not match that day's set.");
+  const dd = ses.daily, s = mk("cmp", p.key, tg, dd.ph === "done" && dd.key === p.key ? dd.res.slice() : []);
+  s.their = p.a;
+  ses.cmp = s;
+  $("err").textContent = "";
+  render();
+}
+function fail(t) { $("err").textContent = t; }
+
+function lose() {
+  const S = ses[mode];
+  if (S && S.ph === "run") { S.ph = "idle"; S.note = "Attempt cancelled because the page lost focus. Tap Start to retry this target. No penalty."; render(); }
+}
+function stop(S, now) {
+  const t = S.targets[S.i], cs = Math.round(((now - S.t0) / 1000 - t) * 100);
+  S.res[S.i] = cs; S.ph = "lock"; S.note = ""; S.fact = fact(t);
+  if (S.mode === "daily") { sv("ic.day", { d: S.key, m: S.res }); if (S.res.length >= 5) bump(S.key); }
+}
+function next(S) {
+  S.i++; S.note = "";
+  if (S.mode === "unl") S.targets.push(rt());
+  S.ph = S.mode !== "unl" && S.i >= 5 ? "done" : "idle";
+}
+function act() {
+  const S = ses[mode], now = performance.now();
+  if (!S || S.ph === "done" || now < hold) return;
+  if (S.ph === "idle") { S.t0 = now; S.ph = "run"; S.note = ""; hold = now + 250; }
+  else if (S.ph === "run") { stop(S, now); hold = now + 600; }
+  else { next(S); hold = now + 400; }
+  render();
+}
+
+function table(head, rows) {
+  const t = $("tb"), tr = el("tr");
+  t.textContent = "";
+  head.forEach(h => tr.appendChild(el("th", h)));
+  t.appendChild(el("thead")).appendChild(tr);
+  const tb = t.appendChild(el("tbody"));
+  rows.forEach(r => { const x = el("tr"); r.forEach(c => x.appendChild(el("td", c))); tb.appendChild(x); });
+}
+const cell = c => B[band(c)].s + " " + B[band(c)].k + " " + fmt(c);
+function shareText(S) {
+  const code = S.key + "-" + S.res.map(c => (c < 0 ? "-" : "+") + Math.abs(c)).join(",");
+  return "Inner Clock " + S.key + "\n" + S.res.map(c => B[band(c)].e + B[band(c)].k).join(" ") + "\nAverage miss " + avg(S.res) + " s\n" + code + "\nCompare: " + (SHARE_URL || location.href.split(/[?#]/)[0]) + "?c=" + encodeURIComponent(code);
+}
+function renderDone(S) {
+  const cmp = S.mode === "cmp", tg = S.targets;
+  $("shr").hidden = cmp; $("cd").hidden = cmp; $("again").hidden = !cmp;
+  if (cmp) {
+    let w = 0, l = 0, e = 0;
+    const rows = tg.map((t, i) => {
+      const a = Math.abs(S.res[i]), b = Math.abs(S.their[i]), r = a < b ? "You" : a > b ? "Friend" : "Tie";
+      r === "You" ? w++ : r === "Friend" ? l++ : e++;
+      return [i + 1, t.toFixed(1) + " s", cell(S.res[i]), cell(S.their[i]), r];
+    });
+    $("dt").textContent = "You won " + w + " of 5 targets";
+    $("ds").textContent = "Friend won " + l + (e ? ", tied " + e : "") + ". Average miss: you " + avg(S.res) + " s, friend " + avg(S.their) + " s. Set of " + S.key + ".";
+    table(["#", "Target", "You", "Friend", "Winner"], rows);
+    return;
+  }
+  $("dt").textContent = "Today is done";
+  $("ds").textContent = "Average miss " + avg(S.res) + " s. Streak " + streak() + (streak() === 1 ? " day." : " days.");
+  table(["#", "Target", "Miss"], tg.map((t, i) => [i + 1, t.toFixed(1) + " s", cell(S.res[i])]));
+  $("sx").value = shareText(S);
+  tickCd();
+}
+function renderPlay(S) {
+  const t = S.targets[S.i], lock = S.ph === "lock", unl = S.mode === "unl", cs = S.res[S.i];
+  $("lab").textContent = unl ? "Unlimited. Played " + S.res.length + (S.res.length ? ". Average miss " + avg(S.res) + " s" : "")
+    : (S.mode === "cmp" ? "Friend's set " + S.key + ". " : "") + "Target " + (S.i + 1) + " of 5";
+  const p = $("pips"); p.hidden = unl; p.textContent = "";
+  if (!unl) for (let i = 0; i < 5; i++) {
+    const d = S.res[i] !== undefined && (i < S.i || lock), b = d ? band(S.res[i]) : -1;
+    const sp = el("span", d ? B[b].s : i + 1, d ? "b" + b : i === S.i ? "cur" : "");
+    sp.setAttribute("aria-label", "Target " + (i + 1) + (d ? ": " + B[b].n : ""));
+    p.appendChild(sp);
+  }
+  $("big").textContent = lock ? (Math.abs(cs) / 100).toFixed(2) : t.toFixed(1);
+  $("sub").textContent = lock ? (cs === 0 ? "seconds, dead on" : "seconds " + (cs < 0 ? "early" : "late")) : S.ph === "run" ? "timing" : "second target";
+  const bd = $("band"), ft = $("fact");
+  bd.hidden = ft.hidden = !lock;
+  if (lock) { const b = band(cs); bd.textContent = B[b].s + " " + B[b].n; bd.className = "b" + b; ft.textContent = S.fact; }
+  $("msg").textContent = S.note || (S.ph === "idle" ? "Tap Start, then tap Stop when you think " + t.toFixed(1) + " s have passed." : S.ph === "run" ? "Nothing is counting. Trust your inner clock." : "");
+  const g = $("go");
+  g.dataset.s = S.ph;
+  g.textContent = S.ph === "idle" ? "Start" : S.ph === "run" ? "Stop" : !unl && S.i >= 4 ? "See results" : "Next target";
+}
+function render() {
+  const S = ses[mode], done = S && S.ph === "done";
+  document.querySelectorAll("#tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.m === mode));
+  $("cin").hidden = !(mode === "cmp" && !S);
+  $("play").hidden = !S || done;
+  $("done").hidden = !done;
+  tickStreak();
+  if (S) done ? renderDone(S) : renderPlay(S);
+}
+function tickStreak() { const s = streak(); $("streak").textContent = "Streak " + s + (s === 1 ? " day" : " days"); }
+function tickCd() {
+  const S = ses.daily, nw = new Date(), ms = new Date(nw.getFullYear(), nw.getMonth(), nw.getDate() + 1) - nw, s = Math.max(0, Math.floor(ms / 1000));
+  $("cd").textContent = "Next set in " + pad(Math.floor(s / 3600)) + ":" + pad(Math.floor(s % 3600 / 60)) + ":" + pad(s % 60) + ". Come back tomorrow.";
+}
+/* Handles the date rolling over at midnight while the page is open. */
+function tick() {
+  const t = dk();
+  if (t !== today) { today = t; ses.daily = loadDaily(); render(); return; }
+  if (mode === "daily" && ses.daily.ph === "done") tickCd();
+}
+
+ses.daily = loadDaily();
+ses.unl = mk("unl", null, [rt()]);
+document.querySelectorAll("#tabs button").forEach(b => b.onclick = () => { lose(); mode = b.dataset.m; render(); });
+const go = $("go");
+go.addEventListener("pointerdown", e => { e.preventDefault(); lastPtr = performance.now(); act(); });
+go.addEventListener("click", () => { if (performance.now() - lastPtr > 800) act(); });
+$("load").onclick = () => loadCode($("code").value);
+$("again").onclick = () => { ses.cmp = null; $("code").value = ""; render(); };
+$("cp").onclick = async () => {
+  const ta = $("sx");
+  try { await navigator.clipboard.writeText(ta.value); $("cm").textContent = "Copied."; }
+  catch (e) { ta.focus(); ta.select(); $("cm").textContent = "Copy was blocked. The text is selected, so copy it by hand."; }
+};
+document.addEventListener("visibilitychange", () => { document.hidden ? lose() : tick(); });
+addEventListener("blur", lose);
+addEventListener("pagehide", lose);
+setInterval(tick, 1000);
+try { const c = new URLSearchParams(location.search).get("c"); if (c) { mode = "cmp"; $("code").value = c; loadCode(c); } } catch (e) { }
+/* MONETISATION HOOK (private leagues): group codes could wrap several friends' codes and rank them in renderDone for cmp. */
+render();
+</script>
