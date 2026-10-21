@@ -58,3 +58,24 @@ if(game==='laser'){
  }
  if(rows.length!==248)throw Error('Insufficient advanced routes');save('laser','boards','LASER_BOARDS',rows);
 }
+
+if(game==='stack-up'){
+ const rows=bank('stack-up','stacks','STACK_UP_STACKS').rows.filter(s=>!s.id.startsWith('stack-launch-')),audit=JSON.parse(fs.readFileSync('content/question-audit.json','utf8'));audit.stack_up=audit.stack_up.filter(s=>!s.id.startsWith('stack-launch-'));
+ const gcd=(a,b)=>b?gcd(b,a%b):a,pool=[],seen=new Set(rows.map(s=>s.cards.map(c=>c.name).sort().join('|')));
+ for(let d=11;d<=43;d++)for(let n=1;n<d;n++)if(gcd(n,d)===1&&n/d>=.48&&n/d<=.68)pool.push({n,d});
+ for(let i=0;i<64;i++){let chosen;for(let a=0;a<pool.length*3;a++){const start=i*17+a*11,r=Array.from({length:5},(_,j)=>pool[(start+j*(13+i%9))%pool.length]).sort((a,b)=>a.n*b.d-b.n*a.d);
+ if(new Set(r.map(x=>x.n+'/'+x.d)).size<5||r.at(-1).n/r.at(-1).d-r[0].n/r[0].d>.14)continue;const sig=r.map(x=>x.n+'/'+x.d).sort().join('|');if(seen.has(sig))continue;seen.add(sig);chosen=r;break;}if(!chosen)throw Error('Insufficient fraction sets');
+ const id='stack-launch-'+String(i+1).padStart(3,'0'),names=chosen.map(x=>x.n+'/'+x.d),values=chosen.map(x=>x.n/x.d);
+ rows.push({id,difficulty:'hard',category:'NUMBER SENSE',prompt:'Order these fractions from smallest to largest.',ends:['SMALLER','LARGER'],fact:names.map((n,j)=>n+': '+values[j].toFixed(4)).join('; ')+'.',cards:names.map((name,j)=>({name,detail:'',value:j+1,symbol:'∑'})),source:'math'});
+ audit.stack_up.push({id,kind:'expanded',source:'math',measure:'result',unit:'',ordered:names.map((key,j)=>({key,name:key,value:values[j]})),calculations:Object.fromEntries(names.map(x=>[x,x]))});
+ }
+ const families=new Map();for(const s of rows.filter(s=>!s.id.startsWith('stack-launch-'))){const row=audit.stack_up.find(a=>a.id===s.id);if(row.source==='math')continue;const key=row.source+':'+row.measure;if(!families.has(key))families.set(key,{s,row,items:new Map()});for(const x of row.ordered)families.get(key).items.set(x.key,x);}
+ const groups=[...families.values()];
+ for(let i=0;i<32;i++){const f=groups[i%groups.length],items=[...f.items.values()];let chosen;
+ for(let a=0;a<10000;a++){let state=104729+i*7919+a*65537;const copy=items.slice();for(let j=copy.length-1;j>0;j--){state=(Math.imul(state,1664525)+1013904223)>>>0;const k=state%(j+1);[copy[j],copy[k]]=[copy[k],copy[j]];}const r=copy.slice(0,5).sort((a,b)=>a.value-b.value),gap={number:1,melt:20,density_g_cm3:.2,area:1500,year:1,latitude:1,longitude:2,elevation_ft:150}[f.row.measure];
+ if(r.some((x,j)=>j&&x.value-r[j-1].value<gap))continue;const sig=r.map(x=>x.name).sort().join('|');if(seen.has(sig))continue;seen.add(sig);chosen=r;break;}
+ if(!chosen)throw Error('Insufficient sourced sets');const id='stack-launch-fact-'+String(i+1).padStart(3,'0'),row={...f.row,id,kind:'expanded',ordered:chosen};
+ rows.push({...f.s,id,fact:chosen.map(x=>x.name+': '+x.value+(row.unit?' '+row.unit:'')).join('; ')+'.',cards:chosen.map((x,j)=>({name:x.name,detail:'',value:j+1,symbol:f.s.cards[0].symbol}))});audit.stack_up.push(row);
+ }
+ save('stack-up','stacks','STACK_UP_STACKS',rows);fs.writeFileSync('content/question-audit.json',JSON.stringify(audit,null,2)+'\n');
+}
