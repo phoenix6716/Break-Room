@@ -4,7 +4,7 @@ const box={window:{}};vm.runInNewContext(fs.readFileSync('games/pack/puzzles.js'
 // Independent capacity-indexed dynamic programme, not the engine's subset solver.
 function optimum(b){const dp=Array(b.limit+1).fill(-Infinity);dp[0]=0;for(const item of b.items)for(let w=b.limit;w>=item.weight;w--)dp[w]=Math.max(dp[w],dp[w-item.weight]+item.points);return Math.max(...dp);}
 const day='2026-10-20',bags=structuredClone(M.daily(bank,day)),run={version:1,day,phase:'summary',round:2,selection:0,picks:bags.map(b=>M.solve(b).mask),bags};
-assert.equal(bank.length,180);assert.equal(new Set(bank.map(b=>b.id)).size,180);
+assert.equal(bank.length,212);assert.equal(new Set(bank.map(b=>b.id)).size,212);
 for(const b of bank){assert(M.validBag(b));const best=M.solve(b);assert.equal(best.points,optimum(b));assert.equal(best.count,1);let used=0,greedy=0;for(const item of b.items.slice().sort((a,b)=>b.points/b.weight-a.points/a.weight))if(used+item.weight<=b.limit){used+=item.weight;greedy+=item.points;}const gap=1-greedy/best.points;assert(gap>=({easy:.03,medium:.08,hard:.14}[b.difficulty]));assert(M.total(b,(1<<b.items.length)-1).weight>b.limit);}
 assert.equal(M.record(run,day).arcadeScore,100);assert.equal(M.valid({...run,day:undefined},undefined),false);assert.equal(M.valid({...run,day:'2026-02-30'},'2026-02-30'),false);assert.equal(M.score(bags,[1,1,1]).points,bags.reduce((s,b)=>s+b.items[0].points,0));assert(M.score(bags,[1,1,1]).arcadeScore<100);
 const key=M.PREFIX+day,raw=JSON.stringify(run),pending={...run,round:0,phase:'play',picks:[],selection:1},review={...pending,phase:'review',picks:[run.picks[0]]},next={...pending,round:1,picks:review.picks};
@@ -27,7 +27,7 @@ for(const r of bad)assert.equal(M.record(r,day),null);
  await db.exec("alter table public.game_saves drop constraint game_saves_game_check;alter table public.game_saves add constraint game_saves_game_check check(game in ('stake','stack-up','lowball'));");
  await db.exec(fs.readFileSync('supabase/pack.sql','utf8'));await db.exec(fs.readFileSync('supabase/pack.sql','utf8'));
  const sql=async r=>(await db.query('select public._friend_score($1,$2,$3) as s',['pack',JSON.stringify(r),day])).rows[0].s;
- for(let i=0;i<bank.length;i+=3){const bags=bank.slice(i,i+3),r={...run,bags,picks:bags.map(b=>M.solve(b).mask)};assert.equal(await sql(r),100);r.picks=[1,1,1];assert(Math.abs(await sql(r)-M.record(r,day).arcadeScore)<1e-9);}
+ for(let i=0;i<bank.length;i+=3){const bags=Array.from({length:3},(_,j)=>bank[(i+j)%bank.length]),r={...run,bags,picks:bags.map(b=>M.solve(b).mask)};assert.equal(await sql(r),100);r.picks=[1,1,1];assert(Math.abs(await sql(r)-M.record(r,day).arcadeScore)<1e-9);}
  for(const r of bad)assert.equal(await sql(r),null,'SQL rejects malformed/incomplete records');assert.equal(await sql({...run,score:900000,arcadeScore:-10}),100,'Ignore self-reported score fields');
  const ids=['00000000-0000-4000-8000-000000000001','00000000-0000-4000-8000-000000000002'];for(const id of ids)await db.query('insert into auth.users values($1)',[id]);
  await db.exec('set role authenticated');await db.query("select set_config('request.jwt.claim.sub',$1,false)",[ids[0]]);
@@ -35,5 +35,5 @@ for(const r of bad)assert.equal(M.record(r,day),null);
  assert.equal((await db.query('select count(*)::int as n from public.game_saves')).rows[0].n,1);await assert.rejects(db.query('select public._friend_pack_score($1,$2)',[raw,day]),/permission denied/);await assert.rejects(db.query('select public.save_game($1,$2,$3)',['pack','{"pc_history":"{}"}',1]),/Unsupported/);
  await db.query("select set_config('request.jwt.claim.sub',$1,false)",[ids[1]]);assert.equal((await db.query('select count(*)::int as n from public.game_saves')).rows[0].n,0);
  await db.exec('reset role;set role anon');await assert.rejects(db.query('select public.save_game($1,$2,$3)',['pack','{}',0]),/permission denied/);
- console.log('PASS Pack: 180 independent exact optima, graded greedy trade-offs, native records/shared averages, progress merge order, malformed records, SQL/JS parity across every bag, repeatable existing-project migration and account privacy.');
+ console.log('PASS Pack: 212 independent exact optima, graded greedy trade-offs, native records/shared averages, progress merge order, malformed records, SQL/JS parity across every bag, repeatable existing-project migration and account privacy.');
 }finally{await db.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

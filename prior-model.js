@@ -11,6 +11,14 @@
  function random(seed){let h=2166136261;for(const c of seed)h=Math.imul(h^c.charCodeAt(0),16777619);return()=>{h+=0x6D2B79F5;let t=Math.imul(h^h>>>15,1|h);t^=t+Math.imul(t^t>>>7,61|t);return((t^t>>>14)>>>0)/4294967296;};}
  function candidates(bank,tier,used=new Set()){const pairs=[];for(let i=0;i<bank.length;i++)for(let j=i+1;j<bank.length;j++){const a=bank[i],b=bank[j],p=[a,b];if(used.has(a.id)||used.has(b.id)||a.year===b.year||(a.family&&a.family===b.family)||gap(p)>600||level(p)!==tier)continue;pairs.push(p);}return pairs;}
  function pick(bank,tier,r,used){const options=candidates(bank,tier,used);if(!options.length)throw Error('Prior needs more distinct '+tier+' pairs.');const p=options[Math.floor(r()*options.length)];return r()<.5?p:p.slice().reverse();}
- function daily(bank,day){const r=random('prior:v1:'+day),used=new Set();return levels.map(tier=>{const p=pick(bank,tier,r,used);p.forEach(e=>used.add(e.id));return p;});}
+ let monthBank=null,monthDeck=null;
+ function launchPairs(bank,day){
+  if(monthBank!==bank){const sorted=bank.slice().sort((a,b)=>a.id.localeCompare(b.id)),rnd=random('prior:rotation:v2'),usedPairs=new Set(daily(bank,'2026-10-22').map(p=>p.map(e=>e.id).sort().join('|'))),pools=Object.fromEntries(['easy','medium','hard'].map(t=>[t,candidates(sorted,t).filter(p=>t!=='hard'||gap(p)<=3)]));
+   for(const pool of Object.values(pools))for(let i=pool.length-1;i>0;i--){const j=Math.floor(rnd()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]];}
+   monthDeck=Array.from({length:32},()=>{const used=new Set();return levels.map(t=>{const p=pools[t].find(p=>!used.has(p[0].id)&&!used.has(p[1].id)&&!usedPairs.has(p.map(e=>e.id).sort().join('|')));if(!p)throw Error('Prior needs more fresh '+t+' pairs');p.forEach(e=>used.add(e.id));usedPairs.add(p.map(e=>e.id).sort().join('|'));return p;});});monthBank=bank;
+  }
+  const ordinal=Math.floor(Date.parse(day+'T00:00:00Z')/86400000),rnd=random('prior:sides:v2:'+day);return monthDeck[ordinal%32].map(p=>rnd()<.5?p:p.slice().reverse());
+ }
+ function daily(bank,day){if(day>='2026-10-23')return launchPairs(bank,day);const r=random('prior:v1:'+day),used=new Set();return levels.map(tier=>{const p=pick(bank,tier,r,used);p.forEach(e=>used.add(e.id));return p;});}
  root.BREAK_ROOM_PRIOR=Object.freeze({PREFIX,levels,date,event,pair,answer,gap,level,valid,record,random,candidates,daily,pick});
 })(typeof window==='undefined'?globalThis:window);

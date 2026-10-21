@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),{PGlite}=require('@electric-sql/pglite');
 for(const f of ['daily-clock','arcade-score','pack-model','prior-model','laser-model','cloud-saves','profile-records'])require('../'+f+'.js');
 const M=global.BREAK_ROOM_LASER,C=global.BREAK_ROOM_CLOUD_SAVES,S=global.BREAK_ROOM_SCORE,ctx={window:{}};vm.runInNewContext(fs.readFileSync('games/laser/boards.js','utf8'),ctx);const bank=JSON.parse(JSON.stringify(ctx.window.LASER_BOARDS));
-assert.equal(bank.length,216);assert.equal(new Set(bank.map(b=>b.id)).size,216);assert(bank.every(M.board));
+assert.equal(bank.length,248);assert.equal(new Set(bank.map(b=>b.id)).size,248);assert(bank.every(M.board));
 // Independent ray implementation uses vector transformations rather than the engine's lookup/trace.
 function ray(b,ps){let row=b.row,col=-1,d=[0,1];const seen=new Set();for(let k=0;k<4*b.n*b.n+1;k++){row+=d[0];col+=d[1];if(row<0||col<0||row>=b.n||col>=b.n)return false;if(row===b.t[0]&&col===b.t[1])return true;const key=[row,col,...d].join();if(seen.has(key))return false;seen.add(key);if(b.w.some(p=>p[0]===row&&p[1]===col))return false;const mirror=[...b.fx,...ps].find(p=>p[0]===row&&p[1]===col);if(mirror)d=mirror[2]==='/'?[-d[1],-d[0]]:[d[1],d[0]];}throw Error('Unbounded trace');}
 // Exhaustive independent enumeration: numeric cells/directions, no engine trace/solver.
@@ -32,7 +32,7 @@ for(const b of [...bank,...legacy.filter(b=>b.level===3)]){
  if(upgraded){assert.equal(b.fx.length,6);assert.equal(b.w.length,4);assert(!b.fx.some(p=>p[0]===b.row&&p[1]===0));}
  assert(M.trace(b,solutions[0]).path.length<=b.n*b.n*4);
 }
-assert.equal(bank.filter(b=>M.budget(b)===3).length,96);assert.equal(new Set(bank.filter(b=>b.level===3).map(b=>b.row)).size,7,'All entry rows occur');
+assert.equal(bank.filter(b=>M.budget(b)===3).length,128);assert.equal(new Set(bank.filter(b=>b.level===3).map(b=>b.row)).size,7,'All entry rows occur');
 for(let i=0;i<400;i++){const day=new Date(Date.UTC(2026,0,1+i)).toISOString().slice(0,10),boards=M.daily(bank,day);assert.deepEqual(boards.map(b=>b.level),[0,1,2,3]);assert.deepEqual(M.daily(bank.slice().reverse(),day),boards,'Bank order is not part of the Daily seed');}
 const day='2026-10-20',boards=M.daily(bank,day),yes=boards.map(b=>M.solve(b)[0]);function miss(b){const e=M.empty(b);for(let i=0;i<e.length;i++)for(let j=i+1;j<e.length;j++){const cells=[e[i],e[j],...e.filter((_,k)=>k!==i&&k!==j)].slice(0,M.budget(b)),p=cells.map(p=>[...p,'/']);if(!ray(b,p))return p;}}const no=boards.map(miss),make=mask=>{const picks=boards.map((b,i)=>mask&(1<<i)?yes[i]:no[i]);return{version:1,edits:0,day,boards,picks,mirrors:picks[3],round:3,phase:'summary'};},run=make(15),key=M.PREFIX+day;
 for(let mask=0;mask<16;mask++){const r=make(mask),score=[0,1,2,3].filter(i=>mask&(1<<i)).length*25;assert.equal(M.record(r,day).arcadeScore,score);assert.equal(S.laser(score/25),score);}

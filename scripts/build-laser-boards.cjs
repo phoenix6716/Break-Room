@@ -18,3 +18,5 @@ for(let attempts=0;out.length<216&&attempts<6000000;attempts++){
 }
 if(out.length!==216)throw Error('Could not generate the full unique Expert library.');
 const destination='games/laser/boards.js',temporary=destination+'.tmp';fs.writeFileSync(temporary,'/* Frozen v1 Warm-up/Standard/Tricky; solver-checked v2 three-mirror Expert. */\nwindow.LASER_BOARDS='+JSON.stringify(out)+';\n');fs.renameSync(temporary,destination);console.log('Built 216 boards: 120 unchanged easier boards and 96 new three-mirror Experts.');
+
+require('node:child_process').execFileSync(process.execPath,['scripts/build-launch-content.cjs','laser'],{stdio:'inherit'});

@@ -2,7 +2,7 @@
 (()=>{'use strict';
  const P=window.BREAK_ROOM_PRACTICE,F=window.BREAK_ROOM_FEEL,M=window.BREAK_ROOM_PRIOR,C=window.MIDNIGHT_ARCADE_CLOCK,S=window.BREAK_ROOM_SCORE,$=id=>document.getElementById(id),bank=window.PRIOR_EVENTS;
  const h=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;},fmt=S.format,year=y=>y<1000?'AD '+y:String(y);
- const memory=new Map();let mode='daily',daily,practice,persistent=true,practiceCount=0,practiceCorrect=0,practiceUsed=[];let practiceLevel='mixed',practiceStreak=0,practiceBest=0;const pairDeck=P.deck(p=>p.map(e=>e.id).sort().join('|')),pairPools=Object.fromEntries(['easy','medium','hard'].map(tier=>[tier,M.candidates(bank,tier)]));
+ const memory=new Map();let mode='daily',daily,practice,persistent=true,practiceCount=0,practiceCorrect=0,practiceUsed=[];let practiceLevel='mixed',practiceStreak=0,practiceBest=0;const pairDeck=P.deck(p=>p.map(e=>e.id).sort().join('|')),pairPools=Object.fromEntries(['easy','medium','hard'].map(tier=>[tier,M.candidates(bank,tier).filter(p=>tier!=='hard'||M.gap(p)<=3)]));
  function get(k){try{return !persistent&&memory.has(k)?memory.get(k):localStorage.getItem(k)||memory.get(k)||null;}catch{return memory.get(k)||null;}}
  function read(day){try{const r=JSON.parse(get(M.PREFIX+day));return M.valid(r,day)?r:null;}catch{return null;}}
  function save(r){if(mode!=='daily')return;const k=M.PREFIX+r.day,s=JSON.stringify(r);memory.set(k,s);try{localStorage.setItem(k,s);window.dispatchEvent(new Event('break-room:save'));}catch{persistent=false;$('save-warning').hidden=false;}stats();}

@@ -17,3 +17,5 @@ const bank=[];for(const [level,n,gap]of [['easy',6,.03],['medium',7,.08],['hard'
  }if(!accepted)throw Error('No puzzle found: '+level+' '+index);bank.push(accepted);
 }
 fs.writeFileSync('games/pack/puzzles.js','/* Generated, exactly solved fictional game values. Rebuild with scripts/build-pack-puzzles.cjs. */\nwindow.PACK_PUZZLES='+JSON.stringify(bank)+';\n');console.log('Generated '+bank.length+' exactly solved puzzles: 60 per difficulty.');
+
+require('node:child_process').execFileSync(process.execPath,['scripts/build-launch-content.cjs','pack'],{stdio:'inherit'});

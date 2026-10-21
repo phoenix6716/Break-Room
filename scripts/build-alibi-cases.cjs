@@ -17,7 +17,8 @@ const themes=[
 const people=[['Ben',0],['Dev',1],['Hari',2],['Owen',3],['Ava',4],['Cleo',5],['Gia',6],['Frankie',7]];
 function shuffle(a,r){for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function candidates(p,types){const list=[];for(let a=0;a<p.n;a++)for(let b=0;b<p.n;b++)for(const type of types){if(['at','notat'].includes(type))list.push([type,a,b,0]);else if(a!==b){if(type==='gap'){for(let x=0;x<p.n;x++)for(let y=0;y<x;y++)list.push([type,a,b,p.times[x]-p.times[y]]);}else list.push([type,a,b,0]);}}return [...new Map(list.map(s=>[s.join(),s])).values()];}
-function clueMetrics(p){const rows=M.reconstruct(p,{accounts:false,evidence:[]}).map(w=>({culprit:w.culprit,ok:[...p.evidence.map(e=>M.claim(p,e.rule,w.order)),...w.truth.map((t,i)=>t!==(i===w.culprit))]}));let keep=Array.from({length:p.evidence.length+p.n},(_,i)=>i);for(const i of [...keep]){const trial=keep.filter(j=>j!==i),possible=new Set(rows.filter(w=>trial.every(j=>w.ok[j])).map(w=>w.culprit));if(possible.size===1)keep=trial;}return keep.length;}
+// Frozen baseline estimate; the launch extension checks every clue subset.
+function historicalGreedyCore(p){const rows=M.reconstruct(p,{accounts:false,evidence:[]}).map(w=>({culprit:w.culprit,ok:[...p.evidence.map(e=>M.claim(p,e.rule,w.order)),...w.truth.map((t,i)=>t!==(i===w.culprit))]}));let keep=Array.from({length:p.evidence.length+p.n},(_,i)=>i);for(const i of [...keep]){const trial=keep.filter(j=>j!==i),possible=new Set(rows.filter(w=>trial.every(j=>w.ok[j])).map(w=>w.culprit));if(possible.size===1)keep=trial;}return keep.length;}
 const output=[],seen=new Set(),counts=[24,24,24,24];
 for(let level=0;level<4;level++){
  const r=M.random('alibi:scenario:curation:v2:'+level),n=M.SIZES[level];let found=0;
@@ -30,7 +31,7 @@ for(let level=0;level<4;level++){
   for(const rule of ep){const prior=M.reconstruct(p).length;p.evidence.push({rule,title:'Record',detail:'Verified visit record.'});const next=M.reconstruct(p);if(next.length===prior){p.evidence.pop();continue;}if(next.length===1||p.evidence.length===3)break;}
   if(M.reconstruct(p).length!==1)continue;
   for(let i=p.evidence.length-1;i>=0;i--){const trial=p.evidence.filter((_,j)=>j!==i);if(M.reconstruct(p,{evidence:trial}).length===1)p.evidence=trial;}
-  if(p.evidence.length<[1,1,2,2][level]||new Set(M.reconstruct(p,{evidence:[]}).map(w=>w.culprit)).size<2||new Set(M.reconstruct(p,{accounts:false}).map(w=>w.culprit)).size<2||clueMetrics(p)<[3,3,4,5][level])continue;
+  if(p.evidence.length<[1,1,2,2][level]||new Set(M.reconstruct(p,{evidence:[]}).map(w=>w.culprit)).size<2||new Set(M.reconstruct(p,{accounts:false}).map(w=>w.culprit)).size<2||historicalGreedyCore(p)<[3,3,4,5][level])continue;
   const sig=M.signature(p);if(seen.has(sig))continue;seen.add(sig);
   let cast=shuffle([...people],r).slice(0,n);if(cast.filter(x=>x[1]<4).length<2||cast.filter(x=>x[1]>=4).length<2){cast=shuffle([...shuffle(people.slice(0,4),r).slice(0,2),...shuffle(people.slice(4),r).slice(0,n-2)],r);}
   const theme=themes[(found+level*3)%themes.length];Object.assign(p,{names:cast.map(x=>x[0]),portraits:(()=>{const male=shuffle([0,1,2,3],r),female=shuffle([4,5,6,7],r);return cast.map(x=>(x[1]<4?male:female).pop());})(),crime:theme.crime,item:theme.item,place:theme.place,visit:theme.visit,detail:theme.detail.replace('{a}',M.clock(p.window[0])).replace('{b}',M.clock(p.window[1]))});
@@ -41,3 +42,5 @@ for(let level=0;level<4;level++){
  console.log(M.LEVELS[level]+': '+found+' unique evidence-dependent scenarios');
 }
 fs.writeFileSync('games/alibi/cases.js','/* Scenario v2: reconstruct visits from verified evidence. Rebuild scripts/build-alibi-cases.cjs. */\nwindow.ALIBI_CASES='+JSON.stringify(output)+';\n');
+
+require('node:child_process').execFileSync(process.execPath,['scripts/build-launch-content.cjs','alibi'],{stdio:'inherit'});
