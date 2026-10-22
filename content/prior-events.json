@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "reviewNote": "Independent web-source screening performed 22 October 2026 for all 128 event years and milestone scopes. Evidence strength and remaining detail checks are recorded per event in content/factual-review.json; search extracts are distinguished from full-page review. LEGO filing, Mendeleev presentation, Space Invaders unveiling and Wright flight-location wording corrected without changing years or IDs. Saved pairs remain authoritative.",
+  "reviewNote": "All 128 years, milestone scopes and post-answer explanations received editorial review on 22 October 2026, with per-event web crosschecks in content/factual-review.json. Institutional/originator sources replace generic links where retrieved; this is a content review, not a legal or historical certification. Existing snapshot years/IDs and scoring are retained.",
   "events": [
     {
       "id": "columbus",
@@ -8,7 +8,7 @@
       "category": "World",
       "title": "Columbus reaches the Caribbean",
       "fact": "His first Atlantic expedition reached the Bahamas in October.",
-      "source": "https://en.wikipedia.org/wiki/Christopher_Columbus"
+      "source": "https://christophercolumbus.org/wp-content/uploads/2019/01/2005.pdf"
     },
     {
       "id": "london-fire",
@@ -24,7 +24,7 @@
       "category": "World",
       "title": "The US Declaration of Independence is adopted",
       "fact": "Congress adopted the declaration in Philadelphia on 4 July.",
-      "source": "https://en.wikipedia.org/wiki/United_States_Declaration_of_Independence"
+      "source": "https://www.archives.gov/milestone-documents/declaration-of-independence"
     },
     {
       "id": "bastille",
@@ -32,7 +32,7 @@
       "category": "World",
       "title": "The Bastille is stormed",
       "fact": "The storming of the Paris fortress took place on 14 July.",
-      "source": "https://en.wikipedia.org/wiki/Storming_of_the_Bastille"
+      "source": "https://www.getty.edu/cona/CONAIconographyRecord.aspx?iconid=901000248"
     },
     {
       "id": "rocket",
@@ -40,7 +40,7 @@
       "category": "Science",
       "title": "Stephenson’s Rocket competes at the Rainhill Trials",
       "fact": "The locomotive won the trials held to choose engines for the Liverpool and Manchester Railway.",
-      "source": "https://en.wikipedia.org/wiki/Stephenson%27s_Rocket"
+      "source": "https://www.rainhilltrials.org/the-trials-history.html"
     },
     {
       "id": "telephone",
@@ -48,7 +48,7 @@
       "category": "Science",
       "title": "Alexander Graham Bell receives his US telephone patent",
       "fact": "Bell's US patent was granted in March; this is a patent milestone, not a claim that no earlier telephone existed.",
-      "source": "https://en.wikipedia.org/wiki/Alexander_Graham_Bell"
+      "source": "https://www.loc.gov/everyday-mysteries/categories/technology/item/who-is-credited-with-inventing-the-telephone"
     },
     {
       "id": "edison",
@@ -56,7 +56,7 @@
       "category": "Science",
       "title": "Edison demonstrates his practical incandescent lamp",
       "fact": "Edison's Menlo Park team publicly demonstrated its lighting system in December.",
-      "source": "https://en.wikipedia.org/wiki/Incandescent_light_bulb"
+      "source": "https://repository.si.edu/bitstream/handle/10088/23643/SMC_76_Schroeder_1923_2_1-94.pdf"
     },
     {
       "id": "wright",
@@ -64,7 +64,7 @@
       "category": "Science",
       "title": "The Wright brothers fly the Wright Flyer",
       "fact": "Their controlled, sustained powered flights took place at Kill Devil Hills, near Kitty Hawk, in December.",
-      "source": "https://www.nps.gov/places/000/first-flight-landing.htm"
+      "source": "https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/the-wilbur-and-orville-wright-timeline-1846-to-1948/1901-to-1910/"
     },
     {
       "id": "titanic",
@@ -72,7 +72,7 @@
       "category": "World",
       "title": "The Titanic sinks",
       "fact": "The ship sank in the North Atlantic on 15 April during its maiden voyage.",
-      "source": "https://en.wikipedia.org/wiki/Sinking_of_the_Titanic"
+      "source": "https://www.noaa.gov/rms-titanic"
     },
     {
       "id": "penicillin",
@@ -80,7 +80,7 @@
       "category": "Science",
       "title": "Fleming discovers penicillin’s antibacterial effect",
       "fact": "He observed mould inhibiting bacteria; the finding was published the following year.",
-      "source": "https://en.wikipedia.org/wiki/Discovery_of_penicillin"
+      "source": "https://www.nms.ac.uk/discover-catalogue/how-a-ceramic-object-fueled-a-medical-breakthrough"
     },
     {
       "id": "olympics",
@@ -88,7 +88,7 @@
       "category": "Sport",
       "title": "Athens hosts the first modern Olympic Games",
       "fact": "The modern international Games opened in Athens in April.",
-      "source": "https://en.wikipedia.org/wiki/1896_Summer_Olympics"
+      "source": "https://library.olympics.com/Default/basicfilesdownload.ashx?itemGuid=2ECE9BE9-EA5F-4F0F-97DF-84C75B6BC60A"
     },
     {
       "id": "eiffel",
@@ -96,7 +96,7 @@
       "category": "World",
       "title": "The Eiffel Tower is inaugurated",
       "fact": "Its inauguration took place in March, ahead of the Paris world's fair.",
-      "source": "https://en.wikipedia.org/wiki/Eiffel_Tower"
+      "source": "https://www.toureiffel.paris/en/news/130-years/1889-2019-130-years-amazement"
     },
     {
       "id": "liberty",
@@ -104,7 +104,7 @@
       "category": "World",
       "title": "The Statue of Liberty is dedicated",
       "fact": "The New York monument was dedicated in October.",
-      "source": "https://en.wikipedia.org/wiki/Statue_of_Liberty"
+      "source": "https://www.nps.gov/stli/learn/statue-of-liberty-facts.htm"
     },
     {
       "id": "panama",
@@ -112,7 +112,7 @@
       "category": "World",
       "title": "The Panama Canal officially opens",
       "fact": "The SS Ancon made the official opening transit in August.",
-      "source": "https://en.wikipedia.org/wiki/Panama_Canal"
+      "source": "https://pancanal.com/en/history-in-pictures-107-years-of-the-panama-canal/"
     },
     {
       "id": "colosseum",
@@ -120,7 +120,7 @@
       "category": "World",
       "title": "Rome’s Colosseum opens",
       "fact": "The inaugural games were held under Emperor Titus.",
-      "source": "https://en.wikipedia.org/wiki/Colosseum"
+      "source": "https://www.pbs.org/empires/romans/special/timeline_26.html"
     },
     {
       "id": "pompeii",
@@ -144,7 +144,7 @@
       "category": "World",
       "title": "The Battle of Hastings takes place",
       "fact": "William of Normandy defeated Harold's English army in October.",
-      "source": "https://en.wikipedia.org/wiki/Battle_of_Hastings"
+      "source": "https://www.royal.uk/harold-ii-r-jan-oct-1066"
     },
     {
       "id": "magna-carta",
@@ -152,7 +152,7 @@
       "category": "World",
       "title": "King John seals Magna Carta",
       "fact": "The original charter was agreed at Runnymede in June.",
-      "source": "https://en.wikipedia.org/wiki/Magna_Carta"
+      "source": "https://www.loc.gov/exhibits/magna-carta-muse-and-mentor/rebellion-and-the-great-charter.html"
     },
     {
       "id": "polo",
@@ -160,7 +160,7 @@
       "category": "World",
       "title": "Marco Polo returns to Venice",
       "fact": "His long journey through Asia ended with his return to Venice.",
-      "source": "https://en.wikipedia.org/wiki/Marco_Polo"
+      "source": "https://mostre.museogalileo.it/framauro/en/cosmography-and-sources-m/merchants-and-travelers/second-voyage-the-return-of-the-polos.html"
     },
     {
       "id": "black-death",
@@ -168,7 +168,7 @@
       "category": "World",
       "title": "The Black Death reaches Sicily",
       "fact": "Plague arrived at the port of Messina, an early entry point to Mediterranean Europe.",
-      "source": "https://en.wikipedia.org/wiki/Black_Death"
+      "source": "https://www.pbs.org/video/how-the-black-death-set-sail-for-europe-j5rwon/"
     },
     {
       "id": "copernicus",
@@ -176,7 +176,7 @@
       "category": "Science",
       "title": "Copernicus publishes De revolutionibus",
       "fact": "His work set out a heliocentric model and was published in the year of his death.",
-      "source": "https://en.wikipedia.org/wiki/De_revolutionibus_orbium_coelestium"
+      "source": "https://www.gla.ac.uk/myglasgow/archivespecialcollections/digitisedcollections/revolutionsinastronomy/copernicusderevolutionibus/"
     },
     {
       "id": "shakespeare",
@@ -192,7 +192,7 @@
       "category": "Science",
       "title": "Galileo observes Jupiter’s four largest moons",
       "fact": "His telescopic observations began in January.",
-      "source": "https://en.wikipedia.org/wiki/Galilean_moons"
+      "source": "https://www.nasa.gov/general/415-years-ago-astronomer-galileo-discovers-jupiters-moons/"
     },
     {
       "id": "newton",
@@ -200,7 +200,7 @@
       "category": "Science",
       "title": "Newton publishes the Principia",
       "fact": "The book presented his laws of motion and universal gravitation.",
-      "source": "https://en.wikipedia.org/wiki/Philosophi%C3%A6_Naturalis_Principia_Mathematica"
+      "source": "https://www.loc.gov/item/2021667054/"
     },
     {
       "id": "jenner",
@@ -208,7 +208,7 @@
       "category": "Science",
       "title": "Jenner tests his smallpox vaccination method",
       "fact": "He inoculated James Phipps with material from cowpox lesions.",
-      "source": "https://en.wikipedia.org/wiki/Edward_Jenner"
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1200696/"
     },
     {
       "id": "darwin",
@@ -216,7 +216,7 @@
       "category": "Science",
       "title": "On the Origin of Species is published",
       "fact": "Darwin's book was first published in London in November.",
-      "source": "https://en.wikipedia.org/wiki/On_the_Origin_of_Species"
+      "source": "https://darwin-editorial.darwinproject.ac.uk/about-darwin/origin-species"
     },
     {
       "id": "einstein",
@@ -224,7 +224,7 @@
       "category": "Science",
       "title": "Einstein publishes special relativity",
       "fact": "His paper On the Electrodynamics of Moving Bodies appeared in September.",
-      "source": "https://en.wikipedia.org/wiki/Annus_mirabilis_papers",
+      "source": "https://physicstoday.aip.org/news/einsteins-special-relativity-paper-arrives-at-annalen-der-physik",
       "family": "einstein"
     },
     {
@@ -233,7 +233,7 @@
       "category": "Science",
       "title": "Watson and Crick publish their DNA structure paper",
       "fact": "Their double-helix model appeared in Nature in April alongside related DNA research.",
-      "source": "https://en.wikipedia.org/wiki/Molecular_Structure_of_Nucleic_Acids:_A_Structure_for_Deoxyribose_Nucleic_Acid",
+      "source": "https://www.genome.gov/25520255/online-education-kit-1953-dna-double-helix",
       "family": "genetics"
     },
     {
@@ -242,7 +242,7 @@
       "category": "Sport",
       "title": "Hillary and Tenzing reach Everest’s summit",
       "fact": "Their ascent on 29 May is the first confirmed successful summit of Everest.",
-      "source": "https://en.wikipedia.org/wiki/1953_British_Mount_Everest_expedition"
+      "source": "https://nzhistory.govt.nz/edmund-hillary-and-tensing-norgay-reach-summit-of-everest"
     },
     {
       "id": "sputnik",
@@ -250,7 +250,7 @@
       "category": "Science",
       "title": "Sputnik 1 launches",
       "fact": "The Soviet satellite became the first artificial satellite to orbit Earth.",
-      "source": "https://en.wikipedia.org/wiki/Sputnik_1"
+      "source": "https://www.nasa.gov/history/dawn-of-the-space-age/"
     },
     {
       "id": "gagarin",
@@ -258,7 +258,7 @@
       "category": "Science",
       "title": "Yuri Gagarin orbits Earth",
       "fact": "Vostok 1 carried the first human into space in April.",
-      "source": "https://en.wikipedia.org/wiki/Vostok_1"
+      "source": "https://www.fai.org/page/history-manned-spaceflight-pioneers"
     },
     {
       "id": "apollo",
@@ -266,7 +266,7 @@
       "category": "Science",
       "title": "Apollo 11 lands on the Moon",
       "fact": "The lunar module landed in July; Armstrong and Aldrin walked on the surface.",
-      "source": "https://en.wikipedia.org/wiki/Apollo_11"
+      "source": "https://www.nasa.gov/mission/apollo-11/"
     },
     {
       "id": "harbour",
@@ -282,7 +282,7 @@
       "category": "Culture",
       "title": "The Sydney Opera House opens",
       "fact": "Queen Elizabeth II formally opened the building in October.",
-      "source": "https://en.wikipedia.org/wiki/Sydney_Opera_House"
+      "source": "https://www.sydneyoperahouse.com/sites/default/files/collaborodam_assets/soh-cmp-interactive-1.pdf"
     },
     {
       "id": "federation",
@@ -298,7 +298,7 @@
       "category": "Sport",
       "title": "Sydney hosts the Summer Olympic Games",
       "fact": "The Games opened in September at Stadium Australia.",
-      "source": "https://en.wikipedia.org/wiki/2000_Summer_Olympics"
+      "source": "https://www.olympics.com.au/games/sydney-2000/"
     },
     {
       "id": "berlin-falls",
@@ -315,7 +315,7 @@
       "category": "Science",
       "title": "The World Wide Web is announced publicly on the Internet",
       "fact": "Tim Berners-Lee posted about the project to the alt.hypertext newsgroup in August; development began earlier.",
-      "source": "https://en.wikipedia.org/wiki/History_of_the_World_Wide_Web"
+      "source": "https://www.w3.org/People/Berners-Lee/History.html"
     },
     {
       "id": "google",
@@ -323,7 +323,7 @@
       "category": "Everyday",
       "title": "Google is incorporated",
       "fact": "Larry Page and Sergey Brin incorporated the company in September.",
-      "source": "https://en.wikipedia.org/wiki/Google"
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312519305505/d843403dex991.htm"
     },
     {
       "id": "facebook",
@@ -355,7 +355,7 @@
       "category": "Science",
       "title": "The Bitcoin white paper is published",
       "fact": "The paper appeared in October; the Bitcoin network began operating the following year.",
-      "source": "https://en.wikipedia.org/wiki/Bitcoin"
+      "source": "https://btcpaper.org/"
     },
     {
       "id": "curiosity",
@@ -363,7 +363,7 @@
       "category": "Science",
       "title": "Curiosity lands on Mars",
       "fact": "The rover landed in Gale Crater in August.",
-      "source": "https://en.wikipedia.org/wiki/Curiosity_(rover)"
+      "source": "https://www.jpl.nasa.gov/missions/mars-science-laboratory-curiosity-rover-msl/"
     },
     {
       "id": "chernobyl",
@@ -371,7 +371,7 @@
       "category": "World",
       "title": "The Chernobyl reactor disaster occurs",
       "fact": "Reactor four exploded during a test in April.",
-      "source": "https://en.wikipedia.org/wiki/Chernobyl_disaster"
+      "source": "https://www.nrc.gov/regulations-legislation/fact-sheets-brochures/backgrounder-on-chernobyl-nuclear-power-plant-accident"
     },
     {
       "id": "dolly",
@@ -379,7 +379,7 @@
       "category": "Science",
       "title": "Dolly the sheep is born",
       "fact": "Dolly was cloned from an adult somatic cell; her birth preceded the public announcement the following year.",
-      "source": "https://en.wikipedia.org/wiki/Dolly_(sheep)"
+      "source": "https://www.nms.ac.uk/discover-catalogue/the-story-of-dolly-the-sheep"
     },
     {
       "id": "genome",
@@ -387,7 +387,7 @@
       "category": "Science",
       "title": "The Human Genome Project declares completion",
       "fact": "This was the project's completion milestone, not a claim of a completely gapless human genome.",
-      "source": "https://en.wikipedia.org/wiki/Human_Genome_Project",
+      "source": "https://www.genome.gov/about-genomics/educational-resources/fact-sheets/human-genome-project",
       "family": "genetics"
     },
     {
@@ -396,7 +396,7 @@
       "category": "Science",
       "title": "The Hubble Space Telescope launches",
       "fact": "Space Shuttle Discovery carried the telescope into orbit in April.",
-      "source": "https://en.wikipedia.org/wiki/Hubble_Space_Telescope",
+      "source": "https://science.nasa.gov/mission/hubble/overview/hubble-timeline/hubble-history-timeline-full-text/",
       "family": "hubble"
     },
     {
@@ -405,7 +405,7 @@
       "category": "Everyday",
       "title": "Euro banknotes and coins enter circulation",
       "fact": "Euro cash entered circulation in January; the currency's non-cash introduction was earlier.",
-      "source": "https://en.wikipedia.org/wiki/Euro"
+      "source": "https://www.ecb.europa.eu/euro/changeover/2002/html/index.en.html"
     },
     {
       "id": "pluto",
@@ -413,7 +413,7 @@
       "category": "Science",
       "title": "Clyde Tombaugh discovers Pluto",
       "fact": "Tombaugh identified Pluto in photographic plates at Lowell Observatory.",
-      "source": "https://en.wikipedia.org/wiki/Pluto",
+      "source": "https://www.usni.org/magazines/proceedings/1931/october/pluto",
       "family": "pluto"
     },
     {
@@ -422,7 +422,7 @@
       "category": "Science",
       "title": "The IAU classifies Pluto as a dwarf planet",
       "fact": "The International Astronomical Union adopted its new planet definition in August.",
-      "source": "https://en.wikipedia.org/wiki/IAU_definition_of_planet",
+      "source": "https://www.iau.org/IAU/Iau/News/PR2006/iau-2006-general-assembly-resolution-votes.aspx",
       "family": "pluto"
     },
     {
@@ -431,7 +431,7 @@
       "category": "World",
       "title": "Krakatoa’s catastrophic eruption occurs",
       "fact": "The volcano's most destructive explosions took place in August.",
-      "source": "https://en.wikipedia.org/wiki/1883_eruption_of_Krakatoa"
+      "source": "https://pubs.usgs.gov/publication/70168593"
     },
     {
       "id": "brooklyn",
@@ -439,7 +439,7 @@
       "category": "World",
       "title": "The Brooklyn Bridge opens",
       "fact": "The bridge opened to the public in May.",
-      "source": "https://en.wikipedia.org/wiki/Brooklyn_Bridge"
+      "source": "https://www.pbs.org/wgbh/buildingbig/wonder/structure/brooklyn.html"
     },
     {
       "id": "suez",
@@ -447,7 +447,7 @@
       "category": "World",
       "title": "The Suez Canal opens",
       "fact": "The canal's formal opening took place in November.",
-      "source": "https://en.wikipedia.org/wiki/Suez_Canal"
+      "source": "https://www.suezcanal.gov.eg/Arabic/About/SuezCanal/Pages/CanalHistory.aspx"
     },
     {
       "id": "model-t",
@@ -455,7 +455,7 @@
       "category": "Everyday",
       "title": "Ford introduces the Model T",
       "fact": "The first production Model T was completed in the autumn.",
-      "source": "https://en.wikipedia.org/wiki/Ford_Model_T"
+      "source": "https://www.fordpiquetteplant.org/about/history/"
     },
     {
       "id": "lindbergh",
@@ -463,7 +463,7 @@
       "category": "Science",
       "title": "Lindbergh completes his solo New York–Paris flight",
       "fact": "The Spirit of St. Louis landed near Paris in May after the nonstop solo crossing.",
-      "source": "https://en.wikipedia.org/wiki/Spirit_of_St._Louis"
+      "source": "https://www.si.edu/object/barograph-spirit-st-louis-charles-lindbergh-ny-paris-flight-may-1927%3Anasm_A19310028000"
     },
     {
       "id": "world-cup",
@@ -471,7 +471,7 @@
       "category": "Sport",
       "title": "The first men’s FIFA World Cup takes place",
       "fact": "Uruguay hosted and won the inaugural tournament.",
-      "source": "https://en.wikipedia.org/wiki/1930_FIFA_World_Cup"
+      "source": "https://guides.loc.gov/world-cup/uruguay-1930"
     },
     {
       "id": "email",
@@ -479,7 +479,7 @@
       "category": "Science",
       "title": "Ray Tomlinson sends ARPANET network email",
       "fact": "His work enabled email between computers and popularized the at-sign addressing format.",
-      "source": "https://en.wikipedia.org/wiki/Ray_Tomlinson"
+      "source": "https://lemelson.mit.edu/resources/ray-tomlinson"
     },
     {
       "id": "cash-machine",
@@ -487,7 +487,7 @@
       "category": "Everyday",
       "title": "Barclays installs its Enfield cash dispenser",
       "fact": "The London dispenser was opened in June; this specific installation avoids competing claims about earlier banking machines.",
-      "source": "https://en.wikipedia.org/wiki/Automated_teller_machine"
+      "source": "https://www.govinfo.gov/content/pkg/USCOURTS-caDC-14-07006/pdf/USCOURTS-caDC-14-07006-1.pdf"
     },
     {
       "id": "rubik",
@@ -495,7 +495,7 @@
       "category": "Everyday",
       "title": "Ernő Rubik invents his cube",
       "fact": "The puzzle's invention predates its later international release as Rubik's Cube.",
-      "source": "https://en.wikipedia.org/wiki/Rubik%27s_Cube"
+      "source": "https://www.museumofplay.org/toys/rubiks-cube/"
     },
     {
       "id": "cd-player",
@@ -503,7 +503,7 @@
       "category": "Everyday",
       "title": "Sony’s CDP-101 CD player goes on sale in Japan",
       "fact": "The commercial CD player was released in Japan in October.",
-      "source": "https://en.wikipedia.org/wiki/Sony_CDP-101"
+      "source": "https://www.sony.com/en/SonyInfo/CorporateInfo/History/SonyHistory/2-07.html"
     },
     {
       "id": "columbia",
@@ -511,7 +511,7 @@
       "category": "Science",
       "title": "Space Shuttle Columbia makes its first launch",
       "fact": "The STS-1 mission launched in April.",
-      "source": "https://en.wikipedia.org/wiki/STS-1"
+      "source": "https://www.nasa.gov/mission/sts-1/"
     },
     {
       "id": "tour",
@@ -535,7 +535,7 @@
       "category": "Culture",
       "title": "The first part of Don Quixote is published",
       "fact": "Cervantes' novel first appeared in Madrid; its second part was published later.",
-      "source": "https://en.wikipedia.org/wiki/Don_Quixote"
+      "source": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/F2BCFE3AC531DC4F57038EB7C2E80F8E/S2056467800002012a.pdf/cervantes_and_don_quixote_de_la_mancha.pdf"
     },
     {
       "id": "royal-society",
@@ -543,7 +543,7 @@
       "category": "Science",
       "title": "The Royal Society is founded",
       "fact": "A meeting at Gresham College in London began the scientific society.",
-      "source": "https://en.wikipedia.org/wiki/Royal_Society"
+      "source": "https://royalsociety.org/about-us/who-we-are/history/?from=homefeature"
     },
     {
       "id": "piano",
@@ -551,7 +551,7 @@
       "category": "Culture",
       "title": "Cristofori’s piano is recorded in a Medici inventory",
       "fact": "The inventory documents an early piano; it is a dated record rather than a precisely known invention day.",
-      "source": "https://en.wikipedia.org/wiki/Bartolomeo_Cristofori"
+      "source": "https://www.metmuseum.org/it/essays/the-piano-the-pianofortes-of-bartolomeo-cristofori-1655-1731"
     },
     {
       "id": "robinson",
@@ -559,7 +559,7 @@
       "category": "Culture",
       "title": "Robinson Crusoe is first published",
       "fact": "Daniel Defoe's novel appeared in April.",
-      "source": "https://en.wikipedia.org/wiki/Robinson_Crusoe"
+      "source": "https://university-collections.wp.st-andrews.ac.uk/2019/04/23/300-years-of-the-life-and-strange-surprizing-adventures-of-robinson-crusoe/"
     },
     {
       "id": "steam",
@@ -567,7 +567,7 @@
       "category": "Science",
       "title": "James Watt patents his separate condenser",
       "fact": "The patent covered an important improvement to the steam engine, not its original invention.",
-      "source": "https://en.wikipedia.org/wiki/James_Watt"
+      "source": "https://upload.wikimedia.org/wikipedia/commons/f/f0/James_Watt_%28IA_jameswatt01carn%29.pdf"
     },
     {
       "id": "balloon",
@@ -575,7 +575,7 @@
       "category": "Science",
       "title": "The first untethered crewed hot-air balloon flight takes place",
       "fact": "Pilâtre de Rozier and d'Arlandes flew over Paris in November.",
-      "source": "https://en.wikipedia.org/wiki/Montgolfier_brothers"
+      "source": "https://www.vam.ac.uk/blog/creating-new-europe-1600-1800-galleries/flying-high-230-years-ago-today"
     },
     {
       "id": "mozart",
@@ -583,7 +583,7 @@
       "category": "Culture",
       "title": "The Magic Flute premieres",
       "fact": "Mozart's opera first appeared in Vienna in September.",
-      "source": "https://en.wikipedia.org/wiki/The_Magic_Flute"
+      "source": "https://mozarteum.at/en/wolfgang-amade-mozart"
     },
     {
       "id": "frankenstein",
@@ -591,7 +591,7 @@
       "category": "Culture",
       "title": "Frankenstein is first published",
       "fact": "Mary Shelley's novel was initially published anonymously.",
-      "source": "https://en.wikipedia.org/wiki/Frankenstein"
+      "source": "https://www.nlm.nih.gov/exhibition/frankenstein/exhibition1.html"
     },
     {
       "id": "beethoven",
@@ -599,7 +599,7 @@
       "category": "Culture",
       "title": "Beethoven’s Ninth Symphony premieres",
       "fact": "The symphony premiered in Vienna in May.",
-      "source": "https://en.wikipedia.org/wiki/Symphony_No._9_(Beethoven)"
+      "source": "https://www.bso.org/works/symphony-no-9-in-d-minor-op-125-cho"
     },
     {
       "id": "morse",
@@ -607,7 +607,7 @@
       "category": "Science",
       "title": "Morse sends “What hath God wrought” by telegraph",
       "fact": "The demonstration linked Washington, DC and Baltimore in May.",
-      "source": "https://en.wikipedia.org/wiki/Samuel_Morse"
+      "source": "https://www.loc.gov/item/mmorse000107/"
     },
     {
       "id": "alice",
@@ -615,7 +615,7 @@
       "category": "Culture",
       "title": "Alice’s Adventures in Wonderland is published",
       "fact": "Lewis Carroll's book first appeared in London.",
-      "source": "https://en.wikipedia.org/wiki/Alice%27s_Adventures_in_Wonderland"
+      "source": "https://www.themorgan.org/printed-books/246978"
     },
     {
       "id": "periodic",
@@ -623,7 +623,7 @@
       "category": "Science",
       "title": "Mendeleev’s periodic table is presented to the Russian Chemical Society",
       "fact": "A colleague presented Mendeleev's work to the society in March; Mendeleev did not deliver the presentation himself.",
-      "source": "https://blog.oup.com/2012/03/mendeleev-periodic-table/"
+      "source": "https://webserver.lemoyne.edu/~giunta/EA/MENDELEEVann.HTML"
     },
     {
       "id": "impressionism",
@@ -631,7 +631,7 @@
       "category": "Culture",
       "title": "The first Impressionist exhibition opens in Paris",
       "fact": "The independent group exhibited in photographer Nadar's former studio.",
-      "source": "https://en.wikipedia.org/wiki/First_Impressionist_Exhibition"
+      "source": "https://www.nga.gov/stories/articles/1874-birth-impressionism"
     },
     {
       "id": "coca-cola",
@@ -639,7 +639,7 @@
       "category": "Everyday",
       "title": "Coca-Cola is first sold in Atlanta",
       "fact": "John Pemberton's drink was first served at Jacobs' Pharmacy in May.",
-      "source": "https://en.wikipedia.org/wiki/Coca-Cola"
+      "source": "https://pubmed.ncbi.nlm.nih.gov/29559091/"
     },
     {
       "id": "nobel",
@@ -647,7 +647,7 @@
       "category": "Science",
       "title": "The first Nobel Prizes are awarded",
       "fact": "The first ceremonies took place on 10 December.",
-      "source": "https://en.wikipedia.org/wiki/Nobel_Prize"
+      "source": "https://www.nobelprize.org/ceremony/the-nobel-prize-award-ceremonies-and-banquets/?print=1"
     },
     {
       "id": "peter-rabbit",
@@ -655,7 +655,7 @@
       "category": "Culture",
       "title": "The commercial edition of The Tale of Peter Rabbit appears",
       "fact": "Beatrix Potter had printed a private edition earlier; this refers to the Frederick Warne edition.",
-      "source": "https://en.wikipedia.org/wiki/The_Tale_of_Peter_Rabbit"
+      "source": "https://www.vam.ac.uk/articles/peter-rabbit-the-tale-of-the-tale"
     },
     {
       "id": "relativity-general",
@@ -663,7 +663,7 @@
       "category": "Science",
       "title": "Einstein presents the field equations of general relativity",
       "fact": "He presented the final equations to the Prussian Academy in November.",
-      "source": "https://en.wikipedia.org/wiki/General_relativity",
+      "source": "https://assets.cambridge.org/97805218/83467/excerpt/9780521883467_excerpt.pdf",
       "family": "einstein"
     },
     {
@@ -672,7 +672,7 @@
       "category": "World",
       "title": "Howard Carter’s team discovers Tutankhamun’s tomb",
       "fact": "The team found the tomb's entrance in November.",
-      "source": "https://en.wikipedia.org/wiki/Discovery_of_the_tomb_of_Tutankhamun"
+      "source": "https://tutankhamun.griffith.ox.ac.uk/seasons/1st-season-1922-1923"
     },
     {
       "id": "radio-bbc",
@@ -680,7 +680,7 @@
       "category": "Everyday",
       "title": "The BBC begins regular radio broadcasts",
       "fact": "The British Broadcasting Company began its radio service in November.",
-      "source": "https://en.wikipedia.org/wiki/BBC"
+      "source": "https://eandt.theiet.org/content/articles/2022/11/bbc-broadcast-tech-then-and-now/"
     },
     {
       "id": "mickey",
@@ -688,7 +688,7 @@
       "category": "Culture",
       "title": "Steamboat Willie is released",
       "fact": "The synchronized-sound Mickey Mouse short premiered in November.",
-      "source": "https://en.wikipedia.org/wiki/Steamboat_Willie"
+      "source": "https://d23.com/this-day/steamboat-willie-premieres/"
     },
     {
       "id": "moma",
@@ -696,7 +696,7 @@
       "category": "Culture",
       "title": "New York’s Museum of Modern Art opens",
       "fact": "MoMA opened in November in rented space on Fifth Avenue.",
-      "source": "https://en.wikipedia.org/wiki/Museum_of_Modern_Art"
+      "source": "https://press.moma.org/wp-content/uploads/2024/10/2024-LPB-SectionTexts-FINAL.pdf"
     },
     {
       "id": "empire",
@@ -704,7 +704,7 @@
       "category": "World",
       "title": "The Empire State Building opens",
       "fact": "The New York skyscraper opened in May.",
-      "source": "https://en.wikipedia.org/wiki/Empire_State_Building"
+      "source": "https://www.loc.gov/item/today-in-history/may-01/"
     },
     {
       "id": "monopoly",
@@ -712,7 +712,7 @@
       "category": "Everyday",
       "title": "Parker Brothers publishes Monopoly",
       "fact": "This refers to the Parker Brothers release, not the invention of earlier property-trading games.",
-      "source": "https://en.wikipedia.org/wiki/Monopoly_(game)"
+      "source": "https://guides.loc.gov/this-month-in-business-history/december/game-of-monopoly-patent"
     },
     {
       "id": "snow-white",
@@ -720,7 +720,7 @@
       "category": "Culture",
       "title": "Disney’s Snow White premieres",
       "fact": "The animated feature premiered in Los Angeles in December.",
-      "source": "https://en.wikipedia.org/wiki/Snow_White_and_the_Seven_Dwarfs_(1937_film)"
+      "source": "https://d23.com/wda-a-look-back-at-the-oscars-snow-white-and-the-seven-dwarfs/"
     },
     {
       "id": "superman",
@@ -728,7 +728,7 @@
       "category": "Culture",
       "title": "Superman debuts in Action Comics",
       "fact": "The character appeared in Action Comics issue one, cover-dated June.",
-      "source": "https://en.wikipedia.org/wiki/Action_Comics_1"
+      "source": "https://fanac.org/conpubs/Worldcon/LoneStarCon%203/LSC3%20Hugo%20Ceremony%20program.pdf"
     },
     {
       "id": "wizard-oz",
@@ -736,7 +736,7 @@
       "category": "Culture",
       "title": "The Wizard of Oz film is released",
       "fact": "The MGM film starring Judy Garland reached cinemas in August.",
-      "source": "https://en.wikipedia.org/wiki/The_Wizard_of_Oz_(1939_film)"
+      "source": "https://www.census.gov/about/history/stories/monthly/2023/august-2023.html"
     },
     {
       "id": "fanta",
@@ -744,7 +744,7 @@
       "category": "Everyday",
       "title": "Fanta is introduced in Germany",
       "fact": "The brand began as a drink made for the German market during wartime shortages.",
-      "source": "https://en.wikipedia.org/wiki/Fanta"
+      "source": "https://www.coca-cola.com/ch/de/about-us/die-geschichte-von-fanta"
     },
     {
       "id": "un",
@@ -752,7 +752,7 @@
       "category": "World",
       "title": "The United Nations comes into existence",
       "fact": "The UN Charter entered into force in October.",
-      "source": "https://en.wikipedia.org/wiki/United_Nations"
+      "source": "https://www.un.org/en/about-us/un-charter"
     },
     {
       "id": "india",
@@ -760,7 +760,7 @@
       "category": "World",
       "title": "India becomes independent from British rule",
       "fact": "Independence took effect on 15 August.",
-      "source": "https://en.wikipedia.org/wiki/Indian_independence_movement"
+      "source": "https://history.state.gov/countries/india"
     },
     {
       "id": "lego",
@@ -768,7 +768,7 @@
       "category": "Everyday",
       "title": "LEGO files its stud-and-tube brick patent application",
       "fact": "The LEGO Group submitted its application on 28 January; this milestone is the filing, not a patent grant.",
-      "source": "https://www.lego.com/en-us/history/articles/d-the-stud-and-tube-principle"
+      "source": "https://ttabvue.uspto.gov/ttabvue/ttabvue-92075254-CAN-124.pdf"
     },
     {
       "id": "barbie",
@@ -776,7 +776,7 @@
       "category": "Everyday",
       "title": "Barbie debuts at the New York toy fair",
       "fact": "Mattel introduced the doll in March.",
-      "source": "https://en.wikipedia.org/wiki/Barbie"
+      "source": "https://guides.loc.gov/this-month-in-business-history/march/ruth-handler-introduces-barbie"
     },
     {
       "id": "laser",
@@ -784,7 +784,7 @@
       "category": "Science",
       "title": "Theodore Maiman operates a working laser",
       "fact": "His ruby laser demonstration took place in May.",
-      "source": "https://en.wikipedia.org/wiki/Laser"
+      "source": "https://engineering.stanford.edu/about/history/heroes/2012-heroes/theodore-maiman"
     },
     {
       "id": "berlin-built",
@@ -792,7 +792,7 @@
       "category": "World",
       "title": "Construction of the Berlin Wall begins",
       "fact": "East Germany began sealing the border in August.",
-      "source": "https://en.wikipedia.org/wiki/Berlin_Wall",
+      "source": "https://www.archives.gov/files/research/foreign-policy/cold-war/berlin-wall-1962-1987/dvd/pdfs/essays/PP-21.pdf",
       "family": "berlin"
     },
     {
@@ -809,7 +809,7 @@
       "category": "Science",
       "title": "Valentina Tereshkova flies into space",
       "fact": "Vostok 6 carried the first woman into space in June.",
-      "source": "https://en.wikipedia.org/wiki/Vostok_6"
+      "source": "https://airandspace.si.edu/stories/editorial/reaching-new-heights-space"
     },
     {
       "id": "beatles",
@@ -817,7 +817,7 @@
       "category": "Culture",
       "title": "The Beatles make their first Ed Sullivan Show appearance",
       "fact": "Their first live appearance on the US show took place in February.",
-      "source": "https://en.wikipedia.org/wiki/The_Beatles_on_The_Ed_Sullivan_Show"
+      "source": "https://www.edsullivan.com/timeline/the-beatles-first-appearance/"
     },
     {
       "id": "spacewalk",
@@ -825,7 +825,7 @@
       "category": "Science",
       "title": "Alexei Leonov makes the first spacewalk",
       "fact": "He left the Voskhod 2 spacecraft in March.",
-      "source": "https://en.wikipedia.org/wiki/Voskhod_2"
+      "source": "https://airandspace.si.edu/exhibition/outside-spacecraft/floating.html"
     },
     {
       "id": "england-cup",
@@ -833,7 +833,7 @@
       "category": "Sport",
       "title": "England wins the men’s FIFA World Cup",
       "fact": "England defeated West Germany at Wembley in July.",
-      "source": "https://en.wikipedia.org/wiki/1966_FIFA_World_Cup"
+      "source": "https://guides.loc.gov/world-cup/england-1966"
     },
     {
       "id": "olympics-mexico",
@@ -841,7 +841,7 @@
       "category": "Sport",
       "title": "Mexico City hosts the Summer Olympics",
       "fact": "The Games opened in October.",
-      "source": "https://en.wikipedia.org/wiki/1968_Summer_Olympics"
+      "source": "https://www.olympedia.org/editions/17"
     },
     {
       "id": "pong",
@@ -849,7 +849,7 @@
       "category": "Everyday",
       "title": "Atari releases Pong",
       "fact": "The arcade game became an early commercial video-game success.",
-      "source": "https://en.wikipedia.org/wiki/Pong"
+      "source": "https://www.museumofplay.org/games/pong/"
     },
     {
       "id": "jaws",
@@ -865,7 +865,7 @@
       "category": "Science",
       "title": "Viking 1 lands on Mars",
       "fact": "NASA's lander reached the surface in July.",
-      "source": "https://en.wikipedia.org/wiki/Viking_1"
+      "source": "https://science.nasa.gov/planetary-science/programs/mars-exploration/mission-timeline/how-we-land-on-mars/"
     },
     {
       "id": "star-wars",
@@ -881,7 +881,7 @@
       "category": "Everyday",
       "title": "Taito unveils Space Invaders in Japan",
       "fact": "The game was publicly introduced at Taito's new-product presentation on 16 June; this is the unveiling milestone.",
-      "source": "https://spaceinvaders.jp/whats.html"
+      "source": "https://taito.co.jp/70th/history"
     },
     {
       "id": "walkman",
@@ -889,7 +889,7 @@
       "category": "Everyday",
       "title": "Sony launches the Walkman in Japan",
       "fact": "The TPS-L2 portable cassette player went on sale in July.",
-      "source": "https://en.wikipedia.org/wiki/Walkman"
+      "source": "https://www.sony.com/en/SonyInfo/News/Press/199907/99-059/"
     },
     {
       "id": "pacman",
@@ -905,15 +905,15 @@
       "category": "Everyday",
       "title": "Alexey Pajitnov creates Tetris",
       "fact": "The puzzle game was developed on an Electronika 60 computer.",
-      "source": "https://en.wikipedia.org/wiki/Tetris"
+      "source": "https://tetris.com/news/the-history-of-tetris?trk=article-ssr-frontend-pulse_little-text-block"
     },
     {
       "id": "mario",
       "year": 1985,
       "category": "Everyday",
       "title": "Super Mario Bros. is released in Japan",
-      "fact": "Nintendo's NES platform game was released in September.",
-      "source": "https://en.wikipedia.org/wiki/Super_Mario_Bros."
+      "fact": "Nintendo's Famicom platform game was released in Japan in September.",
+      "source": "https://www.nintendo.com/jp/character/mario/en/history/smb/index.html"
     },
     {
       "id": "zelda",
@@ -921,7 +921,7 @@
       "category": "Everyday",
       "title": "The Legend of Zelda is released in Japan",
       "fact": "The original game debuted on the Famicom Disk System in February.",
-      "source": "https://en.wikipedia.org/wiki/The_Legend_of_Zelda_(video_game)"
+      "source": "https://collection.rcgs.jp/page/PACKAGE0000063"
     },
     {
       "id": "simpsons",
@@ -929,7 +929,7 @@
       "category": "Culture",
       "title": "The Simpsons begins as a half-hour series",
       "fact": "The series premiered in December; the earlier short segments began before this.",
-      "source": "https://en.wikipedia.org/wiki/The_Simpsons"
+      "source": "https://www.stason.org/TULARC/tv/simpsons/02-The-Simpsons-Basic-History.html"
     },
     {
       "id": "hubble-fix",
@@ -937,7 +937,7 @@
       "category": "Science",
       "title": "Astronauts carry out Hubble’s first servicing mission",
       "fact": "STS-61 installed corrective optics and a new camera in December.",
-      "source": "https://en.wikipedia.org/wiki/STS-61",
+      "source": "https://esahubble.org/about/history/servicing_mission_1/",
       "family": "hubble"
     },
     {
@@ -946,7 +946,7 @@
       "category": "Everyday",
       "title": "The original PlayStation launches in Japan",
       "fact": "Sony released the console in December.",
-      "source": "https://en.wikipedia.org/wiki/PlayStation_(console)"
+      "source": "https://www.playstation.com/ja-jp/playstation-history/1994-ps-one/"
     },
     {
       "id": "toy-story",
@@ -962,7 +962,7 @@
       "category": "Everyday",
       "title": "Pokémon Red and Green launch in Japan",
       "fact": "The original Game Boy role-playing games were released in February.",
-      "source": "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Red,_Blue,_and_Yellow"
+      "source": "https://apps.apple.com/jp/story/id1563336846?l=en-US"
     },
     {
       "id": "harry-potter",
@@ -970,7 +970,7 @@
       "category": "Culture",
       "title": "The first Harry Potter novel is published in the UK",
       "fact": "Bloomsbury published Harry Potter and the Philosopher's Stone in June.",
-      "source": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone"
+      "source": "https://www.bloomsbury-ir.co.uk/docs/librariesprovider16/archives/annual_reports/annual-report-and-accounts-2021.pdf"
     },
     {
       "id": "wikipedia",
@@ -978,7 +978,7 @@
       "category": "Everyday",
       "title": "Wikipedia launches",
       "fact": "The online encyclopedia launched in January.",
-      "source": "https://en.wikipedia.org/wiki/Wikipedia"
+      "source": "https://wikimediafoundation.org/news/2016/01/14/wikipedia-15-foundation-endowment/"
     },
     {
       "id": "steam-store",
@@ -986,7 +986,7 @@
       "category": "Everyday",
       "title": "Valve launches Steam",
       "fact": "The PC software platform launched in September.",
-      "source": "https://en.wikipedia.org/wiki/Steam_(service)"
+      "source": "https://store.steampowered.com/oldnews/183"
     },
     {
       "id": "new-horizons",
@@ -994,7 +994,7 @@
       "category": "Science",
       "title": "New Horizons flies past Pluto",
       "fact": "The spacecraft made its closest approach in July.",
-      "source": "https://en.wikipedia.org/wiki/New_Horizons",
+      "source": "https://www.nasa.gov/history/15-years-ago-new-horizons-launched-to-pluto-and-beyond/",
       "family": "pluto"
     },
     {
@@ -1003,7 +1003,7 @@
       "category": "Science",
       "title": "LIGO announces its first gravitational-wave detection",
       "fact": "The announcement was made in February; the waves were recorded in the previous year.",
-      "source": "https://en.wikipedia.org/wiki/First_observation_of_gravitational_waves"
+      "source": "https://www.ligo.mit.edu/feb_2016_news.html"
     },
     {
       "id": "black-hole",
@@ -1011,7 +1011,7 @@
       "category": "Science",
       "title": "The first image of a black hole’s shadow is released",
       "fact": "The Event Horizon Telescope collaboration released its M87 image in April.",
-      "source": "https://en.wikipedia.org/wiki/Event_Horizon_Telescope"
+      "source": "https://science.nasa.gov/resource/first-image-of-a-black-hole/"
     },
     {
       "id": "jwst",
@@ -1019,7 +1019,7 @@
       "category": "Science",
       "title": "The James Webb Space Telescope launches",
       "fact": "The telescope launched on an Ariane 5 rocket in December.",
-      "source": "https://en.wikipedia.org/wiki/James_Webb_Space_Telescope"
+      "source": "https://science.nasa.gov/mission/webb/launch/"
     },
     {
       "id": "artemis",
@@ -1027,7 +1027,7 @@
       "category": "Science",
       "title": "Artemis I launches",
       "fact": "The uncrewed Orion test mission lifted off in November.",
-      "source": "https://en.wikipedia.org/wiki/Artemis_1"
+      "source": "https://www.nasa.gov/mission/artemis-i/"
     },
     {
       "id": "chandrayaan",
@@ -1035,7 +1035,7 @@
       "category": "Science",
       "title": "Chandrayaan-3 lands near the Moon’s south pole",
       "fact": "India's lander touched down in August in the southern polar region.",
-      "source": "https://en.wikipedia.org/wiki/Chandrayaan-3"
+      "source": "https://science.nasa.gov/mission/chandrayaan-3/"
     }
   ]
 }

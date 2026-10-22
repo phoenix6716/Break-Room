@@ -6,6 +6,8 @@ const pick=vm.runInNewContext('const ITEMS='+literal+',ROUNDS_PER_DAY=4;let sele
 let date,stampIndex;
 for(let i=23;i<123;i++){const names=pick(i).map(x=>x.name);if(names.includes('Standard stamp')){date=new Date(Date.UTC(2026,9,1+i)).toISOString().slice(0,10);stampIndex=names.indexOf('Standard stamp');break;}}
 assert(date);
+const priceBox={};vm.runInNewContext(fs.readFileSync('games/lowball/engine/reference-prices.js','utf8'),priceBox);
+const P=priceBox.BREAK_ROOM_LOWBALL_PRICES,baseline=JSON.parse(JSON.stringify(vm.runInNewContext(literal))),scopedItems=['Movie ticket popcorn combo','Pint of beer','Uber short ride','Band-Aids box'].map(name=>P.current(baseline.find(x=>x.name===name),'2026-10-24'));
 (async()=>{
  const browser=await chromium.launch({executablePath:process.env.ARCADE_CHROMIUM||'/usr/bin/chromium',args:['--no-sandbox']});
  try{
@@ -50,6 +52,26 @@ assert(date);
     assert.equal(await f.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
     assert.deepEqual(errors,[]);await context.close();
    }
+   const scopedContext=await browser.newContext({viewport:{width,height:1000},reducedMotion:'reduce'}),scopedPage=await scopedContext.newPage(),scopedErrors=[];
+   scopedPage.on('pageerror',e=>scopedErrors.push(e.message));
+   await scopedPage.clock.setFixedTime(new Date(date+'T01:00:00Z'));
+   await scopedContext.addInitScript(({date,scopedItems})=>{
+    localStorage.setItem('pc_help_seen','1');localStorage.setItem('pc_sound','0');localStorage.setItem('pc_country','UK');
+    localStorage.setItem('pc_progress',JSON.stringify({day:date,idx:0,scores:[],guesses:[],pending:null,items:scopedItems}));
+   },{date,scopedItems});
+   await scopedPage.goto(base+'/games/lowball/index.html');
+   const sf=await(await scopedPage.locator('#lowball-game-frame').elementHandle()).contentFrame();
+   await sf.locator('#submitBtn').waitFor();
+   for(const [i,item]of scopedItems.entries()){
+    assert.equal(await sf.locator('#itemName').innerText(),P.label(item));
+    assert.match(await sf.locator('#itemDetail').innerText(),/Reference checked 22 Oct 2026/);
+    assert.equal(await sf.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'Scoped details must fit');
+    await sf.locator('#guessInput').fill(String(item.prices.UK));await sf.locator('#submitBtn').click();
+    assert.equal(await sf.locator('#resultScore').innerText(),'100');
+    if(i===0){assert.equal(await sf.locator('#resultFacts a').count(),2);assert.match(await sf.locator('#resultFacts a').nth(1).getAttribute('href'),/BAR-PRICE-LIST/);}
+    if(i<scopedItems.length-1)await sf.locator('#nextBtn').click();
+   }
+   assert.deepEqual(scopedErrors,[]);await scopedContext.close();
    console.log('PASS Lowball price release '+width+'px: fresh/legacy drafts, all-day snapshots, region scope, pending receipt reload and practice isolation.');
   }
  }finally{await browser.close();}

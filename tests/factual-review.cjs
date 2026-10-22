@@ -54,6 +54,43 @@ for(const item of items)for(const region of ['AU','US','UK','CA']){
  assert.equal(modern.prices[region],row.reviewedTarget??row.inheritedTarget,'Only evidence-backed regional targets may change');
  assert.equal(Boolean(P.evidence(modern,region)),row.reviewedTarget!==undefined);
 }
-assert.equal(prices.regions.filter(r=>r.status==='corrected-dated-reference').length,157);
-assert.equal(prices.regions.filter(r=>r.reviewedTarget!==undefined).length,193);
+assert.equal(prices.regions.filter(r=>r.status==='corrected-dated-reference').length,345);
+assert.equal(prices.regions.filter(r=>r.reviewedTarget!==undefined).length,400);
+const reference=JSON.parse(read('content/reference-data.json')),audit=JSON.parse(read('content/question-audit.json'));
+assert.equal(Object.keys(vm.runInContext('REVIEWED_FACTS',box)).length,16);
+for(const index of [7,10,17,40,149,163]){
+ const old=vm.runInContext('bq('+index+',()=>0,false)',box),modern=vm.runInContext('bq('+index+',()=>0,true)',box);
+ assert.deepEqual(old.o,modern.o);assert.equal(old.a,modern.a);assert.notEqual(old.f,modern.f);
+}
+assert.equal(reference.countries.Ecuador.area,257217);
+assert.equal(reference.countries.Finland.area,336884);
+assert.equal(reference.elements.Tungsten.melt,3687);
+assert.equal(reference.elements.Tin.density_g_cm3,7.287);
+assert.equal(reference.airports.FRA.elevation_ft,364);
+assert.equal(reference.airports.UIO.elevation_ft,7910);
+assert.equal(reference.airports.YYC.elevation_ft,3606);
+assert.equal(ledger.measurementReview.elements.subjects.length,30);
+assert.equal(ledger.measurementReview.countries.subjects.length,25);
+assert(ledger.measurementReview.changedSets.every(x=>!x.orderChanged),'Measurement edits must not reinterpret ordered saved cards');
+const prior=JSON.parse(read('content/prior-events.json')).events;
+assert.equal(prior.length,128);
+for(const event of prior){
+ const review=ledger.prior.find(x=>x.id===event.id);
+ assert.equal(event.year,review.year);
+ assert.equal(event.fact,review.explanationReview.fact);
+ assert(review.explanationReview.crosscheckLinks.length>0,event.id);
+}
+assert.match(prior.find(x=>x.id==='mario').fact,/Famicom/);
+const files=new Map(['content/reference-data.json','content/question-audit.json','games/stack-up/stacks.js'].map(p=>[p,read(p)])),before=new Map(files);
+const fakeFs={readFileSync:p=>files.get(p),writeFileSync:(p,value)=>files.set(p,value)};
+vm.runInNewContext(read('scripts/review-question-banks.cjs'),{require:id=>{if(id==='node:fs')return fakeFs;if(id==='node:vm')return vm;throw Error(id);}});
+for(const [path,original]of before)assert.equal(files.get(path),original,'Reconciliation must be idempotent: '+path);
+for(const name of ['Pint of beer','Uber short ride','Band-Aids box']){
+ const item=items.find(x=>x.name===name),modern=P.current(item,P.effectiveDay);
+ assert.equal(modern.name,item.name,'Display clarification must preserve art and save identity');
+ assert.notEqual(P.label(modern),name);
+}
+const combo=P.current(items.find(x=>x.name==='Movie ticket popcorn combo'),P.effectiveDay);
+assert.match(P.evidence(combo,'UK').supportingSources[0],/BAR-PRICE-LIST/);
+assert.equal(P.daily([combo,...fresh.slice(0,3)],{items:[combo,...fresh.slice(0,3)]},'2027-01-01')[0].prices.UK,17.4);
 console.log('PASS factual review: frozen legacy Stake options, scoped modern wording, dated Lowball targets, draft/snapshot/zero/cloud compatibility and per-region evidence.');

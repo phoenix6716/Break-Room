@@ -1,72 +1,41 @@
 # Facts and regional price audit
 
-Reviewed **22 October 2026 (Australia/Sydney)** against main commit `87564cac1b06b99db3989fa333d62d8a82047bc6`. Proposed changes are in PR #4; a green PR check is not publication.
+Reviewed **22 October 2026** against main `87564cac1b06b99db3989fa333d62d8a82047bc6`. Changes are proposed in [PR #4](https://github.com/phoenix6716/Break-Room/pull/4); passing PR checks do not publish them.
 
-## Result
+## Result and limits
 
-The audit inventories **264 Stake questions, 208 Stack Up sets, 128 Prior events and 400 Lowball regional targets**. It found misleading scopes and unsupported price claims, rather than a widespread failure of the answer keys.
+Completed editorial review of **264 Stake questions, 208 Stack Up sets, 128 Prior events and 400 Lowball regional targets**. The previous 13-reference/387-unresolved report was an interim result and is superseded by this review.
 
-This is a completed inventory-wide screening pass, **not a certificate that every fact and price is launch-ready**. Stable answers/years were compared with retrieved specialist, institutional and secondary references. Much of the evidence is a web search extract rather than a primary document read in full. Incidental explanations and exact measurement conventions still need the specific follow-up below. A search result, the existing data audit and a passing test are different kinds of evidence.
+Evidence quality is recorded rather than overstated: institutional/publisher documents, retailer listings and some indexed extracts or third-party menu/price references. This is a completed content review with corrections, not blanket primary-document certification or a guarantee of perpetual accuracy. Tests establish consistency and compatibility, not factual truth or human enjoyment.
 
-The other five games use fictional puzzles, spelling rules or timing targets. Their existing solver/gameplay tests cover those rules; they do not need invented historical or retail citations.
+The five other games use fictional puzzles, spelling rules or timing targets; their solver/gameplay tests remain the appropriate engineering checks.
 
-## Corrections proposed
+## Factual corrections
 
-| Area | Finding | Change and compatibility |
-| --- | --- | --- |
-| Stake | Mongol empire's contiguous-territory record overstated as an overall record; rounded light speed stated as an exact answer; “no Rh markers”; unsupported absolute African-elephant record; conventional Roman endpoint; traditional Homer attribution; capsaicin taste/burn distinction; exposed-land scope; football maximum; usual Olympic cycle | Ten wording/explanation overrides for new snapshots and practice. All answer choices and correct-option positions stay the same. The original 164 rows and legacy reconstruction remain frozen. |
-| Prior | LEGO patent filing described as a grant; Mendeleev implied to present in person; Space Invaders unveiling conflated with commercial release; Wright flights' location imprecise | Clarify four milestones and link their supporting sources. No year, ID, native score or saved pair changes. |
-| Stack Up | Ecuador's inherited 276,841 figure does not match the current stated national total area | Use **256,370 km²** from Ecuador's foreign ministry in the reference and the two affected reveals (`stack-046`, `stack-049`). Card order stays the same. Correct unused Monsters, Inc. director metadata to Pete Docter against AFI. Clarify all 15 book prompts as first book publication in the original language, avoiding an implication that Kafka completed his novels. |
-| Lowball | Three stamp targets outdated; Australian iPhone 16 target differs from Apple's list; unsupported global “prices checked” date; 500ml serving named a pint | Four dated target corrections, per-region evidence, truthful estimate labels and Beer (500ml) presentation. Preserve all original item identities, artwork, pool/order, saved scores and unfinished targets. |
+- **Stake:** 16 overlays clarify scopes and explanations, including fresh *surface* water at Lake Baikal, typical adult bone count, boiling at standard atmospheric pressure, Beethoven's hearing loss, the Great Red Spot's confirmed observation history, byte/kilobyte distinctions and the original ten wording fixes. Choices and correct-option positions remain unchanged. The original 164 rows and legacy `dayQs(day,164)` reconstruction remain frozen; overlays apply to new snapshots/practice.
+- **Stack Up:** reconcile all 30 used elements against RSC fact boxes (melting kelvin at standard pressure, density near room temperature); 34 scalar entries change, including precision reconciliation. Reconcile the 25 used country areas to a coherent UNdata **2023 surface-area** snapshot; 19 entries change. Finland excludes Åland and Argentina excludes Antarctic area. Ecuador **257,217 km²** supersedes the interim ministry-only 256,370 override. Correct six airport field elevations in metadata; distinguish field elevation from weather-station/reference-point or runway-threshold heights. Frankfurt stays **364ft**. All 208 sets retain IDs, subjects and card order; 89 sets receive value, explanation or scope updates. All 74 arithmetic comparisons and 20 Stake arithmetic answers were checked separately. Book prompts specify first book publication in the original language; unused Monsters, Inc. director metadata is corrected to Pete Docter.
+- **Prior:** read and crosscheck all 128 full explanations as well as years/milestones. Clarify LEGO patent *filing*, Mendeleev's colleague's presentation, Space Invaders' unveiling and the Wright flights' location. The Japanese Super Mario Bros. explanation now names the **Famicom**, and 111 source links are improved. All years, IDs and saved-pair scoring remain unchanged.
 
-Supporting correction sources include [NIST light speed](https://physics.nist.gov/cuu/Constants/Value/c.html), [NHS Blood Donation on RhD](https://www.blood.co.uk/news-and-campaigns/the-donor/latest-stories/what-makes-o-negative-universal/), [Guinness gestation record](https://www.guinnessworldrecords.com/world-records/70491-longest-gestation-period-mammal), [LEGO's application history](https://www.lego.com/en-us/history/articles/d-the-stud-and-tube-principle), [Oxford University Press on Mendeleev's presentation](https://blog.oup.com/2012/03/mendeleev-periodic-table/), [Taito's unveiling account](https://spaceinvaders.jp/whats.html), [the Wright landing site](https://www.nps.gov/places/000/first-flight-landing.htm), and [Ecuador's foreign ministry](https://www.cancilleria.gob.ec/italia/informacion-pais/).
+Per-record evidence, methods and explanations are retained in [content/factual-review.json](content/factual-review.json). Measurement sources and territorial conventions are in [content/reference-data.json](content/reference-data.json), with retained puzzle measurements in [content/question-audit.json](content/question-audit.json).
 
-## Lowball: what is actually supported
+## Lowball: defined dated references
 
-The baseline has 100 items ×4 countries. All400 target records and their definition problems are in [the regional ledger](content/lowball-price-review.json). The following **13** dated references have sufficiently clear scopes to retain in the game:
+All **100 existing items × four regions** now have a named reference and evidence: **345 changed amounts, 55 unchanged matches, zero inherited regional-definition gaps**. The original 100 identities, order and generated-art mappings remain intact.
 
-| Item | AU | US | UK | CA | Basis |
-| --- | ---: | ---: | ---: | ---: | --- |
-| AirPods Pro 3 |429 |249 |219 |329 | Apple regular advertised price |
-| Spotify Premium |15.99 |12.99 |12.99 |13.99 | Individual, normal monthly price after promotions |
-| Domestic stamp |**1.85** |**0.82** |**1.80** |1.44 | Defined local service, weight and single-stamp basis |
-| iPhone 16 |**1349** |Open |Open |Open | Apple 128GB unlocked outright, AU only |
+Every [regional ledger entry](content/lowball-price-review.json) retains its inherited amount, reviewed amount, upfront definition, evidence URL and check date. The definition identifies the product/model/pack, provider/service or published reference average/offer, with purchase channel and fee/tax qualifications. A Canadian single stamp is distinct from a booklet stamp; a fortnightly gym debit is distinct from a monthly membership; a pack is distinct from one unit.
 
-Amounts use the column's local currency. Bold values change the inherited target. These are advertised reference amounts checked 22 October, not an assertion about every checkout total: optional extras/delivery and separately added taxes are outside the target. The Canadian 1.44 is a single stamp; a booklet/coil stamp is a different product and rate.
+These are **dated references**, not universal national checkout prices. Some references deliberately use a publisher RRP, listed regular price, advertised starting offer, retailer base menu serving, unit conversion, historical tariff or published average. This is disclosed before guessing. Uber's published city/destination averages replace the unsupported generic 5km assumption; the display says **Uber ride**. Current beer servings display as **Beer** with the regional portion in the detail. Original internal identities and artwork are preserved. Base menu listings retain the published default serving rather than inventing an unsupported size.
 
-Direct sources: [Apple AU iPhone 16](https://www.apple.com/au/shop/buy-iphone/iphone-16), [Apple AirPods AU](https://www.apple.com/au/shop/buy-airpods/airpods-pro-3), [US](https://www.apple.com/shop/buy-airpods/airpods-pro-3), [UK](https://www.apple.com/uk/shop/buy-airpods/airpods-pro-3), [CA](https://www.apple.com/ca/shop/buy-airpods/airpods-pro-3); [Spotify AU](https://www.spotify.com/au/premium/), [US](https://www.spotify.com/us/premium/), [UK](https://www.spotify.com/uk/premium/), [CA](https://www.spotify.com/ca-en/premium/); [Australia Post](https://auspost.com.au/disruptions-and-updates/pricing-updates/bpr-letter-pricing-update), [USPS](https://store.usps.com/store/product/buy-stamps/us-flag-2026-stamps-S_130104), [Royal Mail](https://www.royalmail.com/sending/uk/1st-class) and [Canada Post](https://www.canadapost-postescanada.ca/cpc/en/support/articles/lettermail/pricing.page).
+The evidence retrieval date is **22 October 2026**; source observation periods are separately stated where relevant (for example the July Big Mac Index, weekly petrol reports and June AirportLink tariff). Search indexing and advertised prices do not guarantee stock, branch participation or today's final checkout total. Recheck volatile references before a public release. Do not represent the whole bank as live prices.
 
-**387 regional targets remain unresolved:** 324 need a defined product/provider, 32 need an exact variant, 16 need a branch/channel and 15 need further country-specific evidence. Examples include a “basic haircut”, unspecified zoo/cinema tickets, “mid-range” wine, a generic LEGO set, iPad/Watch generations and local transport fares. Looking up one arbitrary shop does not validate a national category.
+Fresh Dailies use these definitions from **24 October 2026 Sydney**. All four complete item/price objects are captured in `pc_progress.items` before the first guess. Existing valid snapshots remain authoritative, and snapshotless old drafts retain baseline targets. New practice draws use the dated reference model; carrying an existing practice queue does not rewrite its prices. Historical scores, zeroes, pending receipts and cloud saves retain their native meaning.
 
-Additional findings are retained as observations rather than silently adopted:
-- A US iPhone “from” price can depend on carrier connection.
-- Netflix's generic help page returned US prices during other-country searches. It cannot establish four regional prices.
-- Disney+ plan names, bundles, regular monthly prices and temporary offers differ by region.
-- Nintendo's AU 699.95 launch announcement is superseded by its September 2026 revision to 769.95; the game already has the latter.
-- Nike variants carry different prices; a rounded 110 GBP target is not an exact SKU quote.
+Product details and the reference-check date appear before guessing; receipts say **Reference price** and provide source links, including the second source where a ticket/popcorn calculation needs it. Historical estimates retain their explicit estimate label.
 
-The safe implementation uses fresh-Daily corrections from **24 October 2026 Sydney**. Opening a new Daily freezes all four full item/price objects in `pc_progress.items` before the first guess. Existing valid snapshots win; snapshotless drafts keep original baseline targets. Pending receipts, mode switches, cloud transfers and final scores retain their targets. New practice items use dated references while an existing session keeps its already drawn items.
+## Rebuilding and validation
 
-Receipts now say **Reference price** and show only the applicable dated source, or “Game estimate; not independently verified.” The unsupported global date is removed. No pool shrink, artwork replacement, scoring change, native-key change or live SQL update is introduced.
+`node scripts/review-question-banks.cjs` reconciles retained measurements without redrawing puzzles at existing IDs. The baseline Python generator and additive Stack Up generator delegate to this reconciliation for the reviewed bank. Prior still builds from `content/prior-events.json`; Lowball runtime and Content Studio share the same reference overlay.
 
-## Factual coverage and limits
+Regression coverage checks frozen Stake options, every regional target/evidence pair, dated cutover and snapshot/cloud compatibility, measurement anchors, Prior explanation consistency and byte-identical reconciliation output. Browser checks cover receipt/region/reload/practice behavior and all nine games at the project's responsive widths.
 
-[The factual ledger](content/factual-review.json) includes every question/set/event, the checked answer or measurement subjects, review method, crosscheck links and corrections. It deliberately uses “screened” rather than “verified” when the evidence is an extract or exact definitions remain unresolved.
-
-- **Stake:** all 264 prompts/options screened; 20 added calculations independently recalculated. No answer-key change proposed. Frozen originals remain usable for old records.
-- **Stack Up:** all 208 orders screened; all 74 arithmetic sets independently evaluated, including exact integer cross-multiplication for adjacent fractions. External crosschecks cover 30 element subjects, 34 countries, 27 books, 28 movies and 48 airports shared with Stake. Country/airport/element numerical values can differ by epoch, scope, reference point and rounding. **Exact-value reconciliation remains open**, even where the five-card rank is stable.
-- **Prior:** all 128 event years/milestones received separate searches; no year changes proposed. Distinguish announcement, publication, patent filing, opening and specific release markets. For example, Einstein's special-relativity paper was received in June but published in September; one popular summary conflates those dates. The existing September wording is retained. Ancient or conventional dates are not newly certified by an attractive result snippet.
-- **Explanations:** remaining incidental detail checks must be supported by full-page evidence before advertising complete factual verification. The ledger's crosscheck links are an audit trail, not a substitute for reading the relevant passage.
-
-## Remaining launch work, in order
-
-1. Review PR #4, let its final complete CI run pass, merge only after review and confirm the resulting Pages deployment.
-2. Define the 387 unresolved Lowball references and retain exact seller/model/portion/region/tax/date evidence. Alternatively, make an explicit product decision to launch Lowball as an estimate-based game; this audit does not make that decision for the owner.
-3. Reconcile Stack Up's precise measurement conventions and remaining factual explanation details. Use a coherent dated source; avoid moving saved targets or reinterpreting old answers.
-4. Run mixed-skill human playtests and real-device/accessibility checks already listed in [the launch checklist](LAUNCH-CHECKLIST.md). Source accuracy does not establish challenge or enjoyment.
-
-## Validation record
-
-The first implementation commit is `5855d494c23cfc534929a2b5deb03630fed25d6c`; final validation is recorded in the PR description and Actions checks. The managed executor was unavailable, so no local shell/build/test run is claimed. Connector-side JavaScript checks found zero calculation failures across 74 Stack Up sets and 20 Stake additions. GitHub Actions provides the authoritative full production-build/unit/PostgreSQL/browser result at the final PR head.
-
-New regression coverage checks legacy Stake option positions, dated price cutover, snapshotless/zero/pending progress, snapshot immutability, whole-record cloud merge, unsafe evidence URLs, five responsive widths, region detail changes, receipt source/date, reload and Daily/Unlimited isolation. Existing suites continue to cover all nine games, scoring parity, old saves and reset behavior. These tests do not verify retail web pages or live Supabase configuration.
+The managed workspace failed to start during this task, so full Node/PostgreSQL/browser validation runs through GitHub Actions. Confirm the latest PR head's checks before merging; earlier green runs do not validate later commits. No merge or deployment is part of this audit.

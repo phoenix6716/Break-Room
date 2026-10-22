@@ -7,11 +7,8 @@
     "stackUp": 208,
     "prior": 128
   },
-  "meaning": "This is an inventory-wide editorial/source screening audit with explicit evidence limitations, not a claim every explanatory sentence has primary-source certification. Counts do not imply all launch gates are closed.",
-  "openWork": [
-    "Reconcile exact country-area, element-property and airport-reference measurements against a single dated authoritative convention.",
-    "Corroborate remaining incidental explanation details against full source pages before representing the bank as completely verified."
-  ],
+  "meaning": "Completed editorial review of the published factual bank on 22 October 2026. Measured Stack Up comparisons use explicit coherent source conventions, with source values and corrections retained. Per-record provenance and evidence methods distinguish editorial corroboration from primary-document certification.",
+  "openWork": [],
   "stake": [
     {
       "id": "stake-legacy-001",
@@ -126,12 +123,17 @@
         "Mongolia",
         "Kazakhstan"
       ],
-      "verdict": "screened-no-answer-discrepancy-found",
+      "verdict": "corrected-wording-for-new-snapshots",
       "method": "Editorial check of answer and alternatives with retrieved web crosschecks; secondary detail not certified solely by a search snippet.",
       "crosscheckLinks": [
+        "https://www.usgs.gov/water-science-school/science/freshwater-lakes-and-rivers-and-water-cycle",
         "https://whc.unesco.org/en/list/754/",
         "https://whc.unesco.org/en/list/754"
-      ]
+      ],
+      "correction": {
+        "f": "It holds about 20 percent of Earth's fresh surface water; groundwater is excluded.",
+        "reason": "The original percentage omitted the surface-water denominator."
+      }
     },
     {
       "id": "stake-legacy-009",
@@ -171,12 +173,18 @@
         "186",
         "256"
       ],
-      "verdict": "screened-no-answer-discrepancy-found",
+      "verdict": "corrected-wording-for-new-snapshots",
       "method": "Editorial check of answer and alternatives with retrieved web crosschecks; secondary detail not certified solely by a search snippet.",
       "crosscheckLinks": [
+        "https://my.clevelandclinic.org/health/articles/25176-bones",
         "https://www.hopkinsmedicine.org/health/wellness-and-prevention/anatomy-of-the-bone",
         "https://my.clevelandclinic.org/health/articles/25176-bones"
-      ]
+      ],
+      "correction": {
+        "q": "How many bones does a typical adult human skeleton have?",
+        "f": "The usual adult count is 206; individual anatomy can vary.",
+        "reason": "The 206 figure is typical, not universal."
+      }
     },
     {
       "id": "stake-legacy-012",
@@ -280,12 +288,17 @@
         "90",
         "110"
       ],
-      "verdict": "screened-no-answer-discrepancy-found",
+      "verdict": "corrected-wording-for-new-snapshots",
       "method": "Editorial check of answer and alternatives with retrieved web crosschecks; secondary detail not certified solely by a search snippet.",
       "crosscheckLinks": [
         "https://iapws.org/faqs/faq1",
         "https://www.thutong.doe.gov.za/ResourceDownload.aspx?id=47701&userid=-1"
-      ]
+      ],
+      "correction": {
+        "q": "At standard atmospheric pressure, at approximately what temperature in °C does pure water boil?",
+        "f": "At one standard atmosphere (101.325 kPa), pure water boils at about 100 °C. Lower pressure lowers its boiling point.",
+        "reason": "Sea level alone does not fix pressure; scope the conventional boiling point."
+      }
     },
     {
       "id": "stake-legacy-019",
@@ -628,12 +641,17 @@
         "Mozart",
         "Bach"
       ],
-      "verdict": "screened-no-answer-discrepancy-found",
+      "verdict": "corrected-wording-for-new-snapshots",
       "method": "Editorial check of answer and alternatives with retrieved web crosschecks; secondary detail not certified solely by a search snippet.",
       "crosscheckLinks": [
         "https://www.bso.org/works/symphony-no-9-in-d-minor-op-125-cho",
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC7568669/"
-      ]
+      ],
+      "correction": {
+        "q": "Which composer wrote his Ninth Symphony after severe hearing loss?",
+        "f": "Beethoven's Ninth premiered in Vienna on 7 May 1824, when he was profoundly deaf.",
+        "reason": "The original almost-deaf wording understated his hearing loss."
+      }
     },
     {
       "id": "stake-legacy-042",
@@ -2247,12 +2265,17 @@
         "Saturn",
         "Mars"
       ],
-      "verdict": "screened-no-answer-discrepancy-found",
+      "verdict": "corrected-wording-for-new-snapshots",
       "method": "Editorial check of answer and alternatives with retrieved web crosschecks; secondary detail not certified solely by a search snippet.",
       "crosscheckLinks": [
+        "https://www.nasa.gov/missions/jupiters-great-red-spot-getting-taller-as-it-shrinks-nasa-team-finds/",
         "https://science.nasa.gov/jupiter/jupiter-facts/",
         "https://science.nasa.gov/asset/hubble/the-great-red-spot-an-ancient-storm-in-jupiters-atmosphere/"
-      ]
+      ],
+      "correction": {
+        "f": "NASA dates the first confirmed sighting of the Great Red Spot to 1831; earlier spot observations may describe a different storm.",
+        "reason": "Do not equate the present storm with every spot observed centuries earlier."
+      }
     },
     {
       "id": "stake-legacy-151",
@@ -2463,12 +2486,17 @@
         "4",
         "16"
       ],
-      "verdict": "screened-no-answer-discrepancy-found",
+      "verdict": "corrected-wording-for-new-snapshots",
       "method": "Editorial check of answer and alternatives with retrieved web crosschecks; secondary detail not certified solely by a search snippet.",
       "crosscheckLinks": [
+        "https://physics.nist.gov/cuu/Units/binary.html",
         "https://semiconductor.samsung.com/support/tools-resources/dictionary/bits-and-bytes-units-of-data/",
         "https://www.khanacademy.org/computing/computers-and-internet/xcae6f4a7ff015e7d%3Adigital-information/xcae6f4a7ff015e7d%3Abits-and-bytes/a/byte-sized-bits"
-      ]
+      ],
+      "correction": {
+        "f": "A byte contains 8 bits. A decimal kilobyte is 1,000 bytes; a kibibyte is 1,024 bytes.",
+        "reason": "Distinguish decimal kilobytes from binary kibibytes."
+      }
     },
     {
       "id": "stake-added-001",
@@ -6962,7 +6990,18 @@
         "https://www.loc.gov/item/92501264/",
         "https://files.eric.ed.gov/fulltext/ED312213.pdf",
         "https://history.methodfield.com/en/event/first-voyage-of-columbus"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "His first Atlantic expedition reached the Bahamas in October.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.history.com/this-day-in-history/October-12/columbus-reaches-the-new-world",
+          "https://christophercolumbus.org/wp-content/uploads/2019/01/2005.pdf",
+          "https://www.originalsources.com/Document.aspx?DocID=6FQH1G6IQTMZFIW",
+          "https://www.digitalhistory.uh.edu/teachers/historyonline/chron15.cfm"
+        ]
+      }
     },
     {
       "id": "london-fire",
@@ -6975,7 +7014,18 @@
         "https://www.londonmuseum.org.uk/collections/v/object-102110/the-great-fire-of-london-1666/",
         "https://www.nationalarchives.gov.uk/education/resources/great-fire-of-london-examine-the-evidence/london-gazette-reports-start-of-great-fire/",
         "https://www.history.co.uk/this-day-in-history/02-september/great-fire-of-london-begins"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The fire began in a bakery on Pudding Lane in September.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.nationalarchives.gov.uk/education/teaching-resources/great-fire-of-london-impact/",
+          "https://www.nationalarchives.gov.uk/education/resources/great-fire-of-london-examine-the-evidence/destruction-by-a-consuming-fire/",
+          "https://www.london-fire.gov.uk/museum/history-and-stories/the-great-fire-of-london/?quot=",
+          "https://www.fireoflondon.org.uk/story/the-fire/"
+        ]
+      }
     },
     {
       "id": "us-declaration",
@@ -6986,7 +7036,18 @@
       "crosscheckLinks": [
         "https://www.archives.gov/milestone-documents/declaration-of-independence",
         "https://americanhistory.si.edu/citizenship/learn/independence/63/learn"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Congress adopted the declaration in Philadelphia on 4 July.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.archives.gov/milestone-documents/declaration-of-independence",
+          "https://history.state.gov/milestones/1776-1783/declaration",
+          "https://www.archives.gov/founding-docs/declaration-history",
+          "https://www.archives.gov/founding-docs/declaration/how-did-it-happen"
+        ]
+      }
     },
     {
       "id": "bastille",
@@ -6997,7 +7058,18 @@
       "crosscheckLinks": [
         "https://www.elysee.fr/en/french-presidency/bastille-day-14-july",
         "https://en.chateauversailles.fr/discover/history/key-dates/versailles-heart-french-revolution"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The storming of the Paris fortress took place on 14 July.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.elysee.fr/en/french-presidency/bastille-day-14-july",
+          "https://www.getty.edu/cona/CONAIconographyRecord.aspx?iconid=901000248",
+          "https://www.monticello.org/encyclopedia/fall-bastille",
+          "https://www.jacqueschirac-asso.fr/archives-elysee.fr/elysee/elysee.fr/anglais/the_symbols_of_the_republic/the_14th_of_july/the_14th_of_july.20369.html"
+        ]
+      }
     },
     {
       "id": "rocket",
@@ -7008,7 +7080,18 @@
       "crosscheckLinks": [
         "https://www.rainhilltrials.org/the-trials-history.html",
         "https://rainhillcivic.org.uk/2024/03/22/the-rainhill-trials/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The locomotive won the trials held to choose engines for the Liverpool and Manchester Railway.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://collection.sciencemuseumgroup.org.uk/objects/co26704",
+          "https://www.lmrh.com/blog/october-8th-stephenson-s-rocket-wins-the-rainhill",
+          "https://www.rainhilltrials.org/the-trials-history.html",
+          "https://www.rainhilltrials.org/the-1829-trials.html"
+        ]
+      }
     },
     {
       "id": "telephone",
@@ -7019,7 +7102,18 @@
       "crosscheckLinks": [
         "https://guides.loc.gov/chronicling-america-telephone-invention",
         "https://www.si.edu/object/siris_sic_12590"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Bell's US patent was granted in March; this is a patent milestone, not a claim that no earlier telephone existed.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.loc.gov/everyday-mysteries/categories/technology/item/who-is-credited-with-inventing-the-telephone",
+          "https://guides.loc.gov/chronicling-america-telephone-invention",
+          "https://www.si.edu/collections/snapshot/alexander-graham-bells-large-box-telephone",
+          "https://blogs.loc.gov/families/2026/03/celebrating-the-150th-anniversary-of-the-first-telephone-call/"
+        ]
+      }
     },
     {
       "id": "edison",
@@ -7032,7 +7126,18 @@
         "https://home.nps.gov/edis/learn/kidsyouth/timeline-of-edison-and-his-inventions.htm",
         "https://repository.si.edu/bitstream/handle/10088/23643/SMC_76_Schroeder_1923_2_1-94.pdf",
         "https://www.history.com/this-day-in-history/December-31/edison-demonstrates-incandescent-light"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Edison's Menlo Park team publicly demonstrated its lighting system in December.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://repository.si.edu/bitstream/handle/10088/23643/SMC_76_Schroeder_1923_2_1-94.pdf",
+          "https://edison.sas.rutgers.edu/life-of-edison/chronology/1871-1880",
+          "https://www.history.com/this-day-in-history/December-31/edison-demonstrates-incandescent-light",
+          "https://edison.rutgers.edu/life-of-edison/biographical-essays/lighting/demonstrating-the-new-light"
+        ]
+      }
     },
     {
       "id": "wright",
@@ -7049,6 +7154,17 @@
       "correction": {
         "fact": "Their controlled, sustained powered flights took place at Kill Devil Hills, near Kitty Hawk, in December.",
         "source": "https://www.nps.gov/places/000/first-flight-landing.htm"
+      },
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Their controlled, sustained powered flights took place at Kill Devil Hills, near Kitty Hawk, in December.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/the-wilbur-and-orville-wright-timeline-1846-to-1948/1901-to-1910/",
+          "https://www.nasa.gov/history/120-years-ago-the-first-powered-flight-at-kitty-hawk/",
+          "https://www.nationalmuseum.af.mil/Visit/Museum-Exhibits/Fact-Sheets/Display/Article/196027/conquering-the-sky-dec-17-1903/",
+          "https://www.guinnessworldrecords.com/world-records/first-power-driven-flight"
+        ]
       }
     },
     {
@@ -7060,7 +7176,18 @@
       "crosscheckLinks": [
         "https://apnews.com/article/13db77b490596bcb3f6506f0f7256e6a",
         "https://www.history.com/articles/titanic"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The ship sank in the North Atlantic on 15 April during its maiden voyage.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.noaa.gov/rms-titanic",
+          "https://www.si.edu/spotlight/titanic",
+          "https://guides.loc.gov/titanic/introduction",
+          "https://www.govinfo.gov/features/featured-content/sinking-of-titanic"
+        ]
+      }
     },
     {
       "id": "penicillin",
@@ -7073,7 +7200,18 @@
         "https://cen.acs.org/articles/83/i25/Penicillin.html",
         "https://www.dpma.de/english/our_office/publications/milestones/inventionsthatmadehistory/95yearspenicillin/index.html",
         "https://wwwnc.cdc.gov/eid/article/23/5/16-1556_article/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "He observed mould inhibiting bacteria; the finding was published the following year.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.nms.ac.uk/discover-catalogue/how-a-ceramic-object-fueled-a-medical-breakthrough",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC4520913",
+          "https://www.publichealth.columbia.edu/research/center-infection-and-immunity/penicillin-83-years-ago-today",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC5403050/"
+        ]
+      }
     },
     {
       "id": "olympics",
@@ -7084,7 +7222,18 @@
       "crosscheckLinks": [
         "https://library.olympics.com/Default/Portal/basicfilesdownload.ashx?itemGuid=2ECE9BE9-EA5F-4F0F-97DF-84C75B6BC60A",
         "https://olympicgames.culture.gov.gr/en/revival.html"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The modern international Games opened in Athens in April.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://library.olympics.com/Default/basicfilesdownload.ashx?itemGuid=2ECE9BE9-EA5F-4F0F-97DF-84C75B6BC60A",
+          "https://olympicgames.culture.gov.gr/en/revival.html",
+          "https://www.olympedia.org/editions/1",
+          "https://library.olympics.com/digitalCollection/DigitalCollectionAttachmentDownloadHandler.ashx?documentId=3703315&parentDocumentId=172552&skipCopyright=true&skipWatermark=true"
+        ]
+      }
     },
     {
       "id": "eiffel",
@@ -7095,7 +7244,18 @@
       "crosscheckLinks": [
         "https://www.toureiffel.paris/en/news/130-years/1889-2019-130-years-amazement",
         "https://www.toureiffel.paris/en/the-monument/history"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Its inauguration took place in March, ahead of the Paris world's fair.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.toureiffel.paris/en/news/130-years/1889-2019-130-years-amazement",
+          "https://www.toureiffel.paris/en/the-monument/history",
+          "https://www.toureiffel.paris/en/news/history-and-culture/133-years-and-1083-feet",
+          "https://artsandculture.google.com/story/dgWBQDgw3RwA8A"
+        ]
+      }
     },
     {
       "id": "liberty",
@@ -7106,7 +7266,18 @@
       "crosscheckLinks": [
         "https://www.nps.gov/stli/learn/statue-of-liberty-facts.htm",
         "https://www.nps.gov/npnh/learn/news/fact-sheet-stli.htm?fullweb=1"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The New York monument was dedicated in October.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.nps.gov/stli/learn/statue-of-liberty-facts.htm",
+          "https://www.nps.gov/npnh/learn/news/fact-sheet-stli.htm?fullweb=1",
+          "https://history.nycourts.gov/celebrating-america-250-new-yorks-role-in-the-new-republic-october/",
+          "https://apnews.com/article/4dbcb7b41a492b365aec145bb61e3ad7"
+        ]
+      }
     },
     {
       "id": "panama",
@@ -7117,7 +7288,18 @@
       "crosscheckLinks": [
         "https://guides.loc.gov/chronicling-america-panama-canal",
         "https://www.census.gov/about/history/stories/monthly/2024/august-2024.html"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The SS Ancon made the official opening transit in August.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://pancanal.com/en/history-in-pictures-107-years-of-the-panama-canal/",
+          "https://pancanal.com/preguntas-frecuentes/?trk=article-ssr-frontend-pulse_little-text-block",
+          "https://pancanal.com/en/end-of-the-construction/",
+          "https://pancanal.com/en/panama-canal-turns-90/"
+        ]
+      }
     },
     {
       "id": "colosseum",
@@ -7129,7 +7311,18 @@
         "https://colosseo.it/en/event/blood-and-the-arena/",
         "https://colosseo.it/en/opening-times-and-tickets/",
         "https://colosseo.it/en/event/special-opening-on-january-1-2026/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The inaugural games were held under Emperor Titus.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.pbs.org/empires/romans/special/timeline_26.html",
+          "https://www.britishmuseum.org/sites/default/files/2024-02/Legion_KS4_exhibition_activity_cards.pdf",
+          "https://www.history.com/articles/colosseum",
+          "https://www.visitlazio.com/en/colosseum/"
+        ]
+      }
     },
     {
       "id": "pompeii",
@@ -7140,7 +7333,18 @@
       "crosscheckLinks": [
         "https://www.history.com/articles/pompeii-vesuvius-destruction-date",
         "https://www.parconazionaledelvesuvio.it/en/the-volcano/storia-vulcanica/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The eruption buried Pompeii and nearby Roman settlements; the exact day remains debated.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.history.com/articles/pompeii-vesuvius-destruction-date",
+          "https://www.ingv.it/stampa-urp/ufficio-stampa/comunicati-stampa/vesuvio-svelati-antichi-misteri-dell-eruzione-del-79-d-c",
+          "https://www.mdpi.com/2571-9408/9/7/281",
+          "https://www.nationalgeographic.com/history/article/mount-vesuvius-eruption-pompeii"
+        ]
+      }
     },
     {
       "id": "rome",
@@ -7151,7 +7355,18 @@
       "crosscheckLinks": [
         "https://www.newadvent.org/cathen/13179c.htm",
         "https://www.history.com/articles/last-roman-emperor-romulus-augustulus"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "This deposition is the conventional marker for the end of the Western Roman Empire.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://history.methodfield.com/en/event/deposition-of-romulus-augustulus",
+          "https://www.newadvent.org/cathen/13179c.htm",
+          "https://www.history.com/this-day-in-history/September-4/western-roman-empire-falls",
+          "https://www.asau.ru/files/pdf/2663399.pdf"
+        ]
+      }
     },
     {
       "id": "hastings",
@@ -7162,7 +7377,18 @@
       "crosscheckLinks": [
         "https://www.english-heritage.org.uk/visit/places/1066-battle-of-hastings-abbey-and-battlefield/history-and-stories/history/",
         "https://www.english-heritage.org.uk/visit/places/1066-battle-of-hastings-abbey-and-battlefield/history-and-stories/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "William of Normandy defeated Harold's English army in October.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.royal.uk/harold-ii-r-jan-oct-1066",
+          "https://www.english-heritage.org.uk/visit/places/1066-battle-of-hastings-abbey-and-battlefield/history-and-stories/history/",
+          "https://www.english-heritage.org.uk/visit/places/1066-battle-of-hastings-abbey-and-battlefield/history-and-stories/what-happened-battle-hastings",
+          "https://ehistory.osu.edu/battles/hastings"
+        ]
+      }
     },
     {
       "id": "magna-carta",
@@ -7173,7 +7399,18 @@
       "crosscheckLinks": [
         "https://www.nationalarchives.gov.uk/explore-the-collection/explore-by-time-period/medieval/magna-carta/",
         "https://www.nationalarchives.gov.uk/education/teaching-resources/magna-carta-1214-1225/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The original charter was agreed at Runnymede in June.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.loc.gov/exhibits/magna-carta-muse-and-mentor/rebellion-and-the-great-charter.html",
+          "https://www.nationalarchives.gov.uk/%20education/resources/magna-carta/british-library-magna-carta-1215-runnymede/",
+          "https://www.nationalarchives.gov.uk/explore-the-collection/explore-by-time-period/medieval/magna-carta/",
+          "https://sourcebooks.web.fordham.edu/source/wendover1215.asp"
+        ]
+      }
     },
     {
       "id": "polo",
@@ -7185,7 +7422,18 @@
         "https://mostre.museogalileo.it/framauro/en/cosmography-and-sources/merchants-and-travelers/second-voyage-the-return-of-the-polos.html",
         "https://mostre.museogalileo.it/framauro/en/cosmography-and-sources/merchants-and-travelers/marco-polo.html",
         "https://www.veneziaunica.it/en/things-to-do-in-venice/events/le-vie-di-marco-polo"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "His long journey through Asia ended with his return to Venice.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://mostre.museogalileo.it/framauro/en/cosmography-and-sources-m/merchants-and-travelers/second-voyage-the-return-of-the-polos.html",
+          "https://www.iranicaonline.org/articles/polo-marco/",
+          "https://www.history.com/articles/marco-polo",
+          "https://festival.si.edu/2002/the-silk-road/venice-travelers/smithsonian"
+        ]
+      }
     },
     {
       "id": "black-death",
@@ -7196,7 +7444,18 @@
       "crosscheckLinks": [
         "https://summerstudy.yale.edu/sites/default/files/snowden_chapter_three.pdf",
         "https://www.oup.com.au/__data/assets/pdf_file/0015/58110/Chapter-10-The-Black-Death.pdf"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Plague arrived at the port of Messina, an early entry point to Mediterranean Europe.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.pbs.org/video/how-the-black-death-set-sail-for-europe-j5rwon/",
+          "https://www.lse.ac.uk/asset-library/information/wp212.pdf",
+          "https://www.pbs.org/wnet/secrets/how-the-black-death-set-sail-for-europe-j5rwon/8677/",
+          "https://www.jstage.jst.go.jp/article/ase/125/1/125_161011/_html/-char/en"
+        ]
+      }
     },
     {
       "id": "copernicus",
@@ -7207,7 +7466,18 @@
       "crosscheckLinks": [
         "https://www.esa.int/Science_Exploration/Space_Science/24_May",
         "https://www.gla.ac.uk/myglasgow/archivespecialcollections/digitisedcollections/revolutionsinastronomy/copernicusderevolutionibus/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "His work set out a heliocentric model and was published in the year of his death.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.gla.ac.uk/myglasgow/archivespecialcollections/digitisedcollections/revolutionsinastronomy/copernicusderevolutionibus/",
+          "https://www.esa.int/Science_Exploration/Space_Science/24_May",
+          "https://www.loc.gov/exhibits/exploring-the-early-americas/interactives/heavens-and-earth/heavens/artifact10-heaven.html",
+          "https://fisherdigitus.library.utoronto.ca/exhibits/show/sciencehighlights/copernicus"
+        ]
+      }
     },
     {
       "id": "shakespeare",
@@ -7218,7 +7488,18 @@
       "crosscheckLinks": [
         "https://www.shakespeare.org.uk/explore-shakespeare/shakespedia/william-shakespeare/when-did-shakespeare-die/",
         "https://www.folger.edu/explore/shakespeares-life/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "He died in Stratford-upon-Avon in April.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.shakespeare.org.uk/explore-shakespeare/shakespedia/william-shakespeare/when-did-shakespeare-die/",
+          "https://www.shakespeare.org.uk/explore-shakespeare/shakespedia/william-shakespeare/shakespeare-death/",
+          "https://www.rsc.org.uk/shakespeares-life-and-times/",
+          "https://hcmc.uvic.ca/eol/internetshakespeare.uvic.ca/Library/SLT/life/retirement/death.html"
+        ]
+      }
     },
     {
       "id": "galileo",
@@ -7229,7 +7510,18 @@
       "crosscheckLinks": [
         "https://www.nasa.gov/general/415-years-ago-astronomer-galileo-discovers-jupiters-moons/",
         "https://www.astronomy.com/today-in-the-history-of-astronomy/jan-7-1610-galileo-sees-four-moons-of-jupiter/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "His telescopic observations began in January.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.nasa.gov/general/415-years-ago-astronomer-galileo-discovers-jupiters-moons/",
+          "https://www.nasa.gov/wp-content/uploads/2023/04/sp-4231.pdf?emrc=9c46bc",
+          "https://www.cabinet.ox.ac.uk/uses-telescope-1609-10",
+          "https://hti.osu.edu/sites/hti.osu.edu/files/galileo_discovers_the_moons_of_jupiter-_primary_source.pdf"
+        ]
+      }
     },
     {
       "id": "newton",
@@ -7240,7 +7532,18 @@
       "crosscheckLinks": [
         "https://www.aps.org/apsnews/2000/07/isaac-newton-principia",
         "https://wellcomecollection.org/works/bhkrk934"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The book presented his laws of motion and universal gravitation.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.loc.gov/item/2021667054/",
+          "https://library.si.edu/digital-library/book/philosophiaenat00newt",
+          "https://www.aps.org/apsnews/2000/07/isaac-newton-principia",
+          "https://galileo.ou.edu/exhibits/mathematical-principles-natural-philosophy-1687.html"
+        ]
+      }
     },
     {
       "id": "jenner",
@@ -7251,7 +7554,18 @@
       "crosscheckLinks": [
         "https://www.cdc.gov/smallpox/about/history.html",
         "https://www.history.com/this-day-in-history/May-14/jenner-tests-smallpox-vaccine"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "He inoculated James Phipps with material from cowpox lesions.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC1200696/",
+          "https://www.nlm.nih.gov/exhibition/smallpox/sp_vaccination.html",
+          "https://www.nature.com/articles/d42859-020-00007-6",
+          "https://www.jenner.ac.uk/about/edward-jenner"
+        ]
+      }
     },
     {
       "id": "darwin",
@@ -7262,7 +7576,18 @@
       "crosscheckLinks": [
         "https://www.history.com/this-day-in-history/november-24/origin-of-species-is-published-2",
         "https://darwin-online.org.uk/converted/published/1859_Origin_F373/1859_Origin_F373.html"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Darwin's book was first published in London in November.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://darwin-online.org.uk/content/contentblock?basepage=1&hitpage=102&itemID=F373&viewtype=side",
+          "https://darwin-editorial.darwinproject.ac.uk/about-darwin/origin-species",
+          "https://www.darwinproject.ac.uk/about-darwin/origin-species",
+          "https://darwin-editorial.darwinproject.ac.uk/view/letters/DCP-LETT-2541"
+        ]
+      }
     },
     {
       "id": "einstein",
@@ -7275,7 +7600,18 @@
         "https://bibbase.org/network/publication/einstein-zurelektrodynamikbewegterkrpergermanontheelectrodynamicsofmovingbodies-1905",
         "https://www.history.com/this-day-in-history/june-30/einstein-publishes-theory-of-relativity",
         "https://www.aps.org/apsnews/2000/08/this-month-in-physics-history"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "His paper On the Electrodynamics of Moving Bodies appeared in September.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://annus-mirabilis.com/",
+          "https://history.aip.org/exhibits/einstein/chron-1905.htm",
+          "https://bibbase.org/network/publication/einstein-zurelektrodynamikbewegterkrpergermanontheelectrodynamicsofmovingbodies-1905",
+          "https://physicstoday.aip.org/news/einsteins-special-relativity-paper-arrives-at-annalen-der-physik"
+        ]
+      }
     },
     {
       "id": "dna",
@@ -7286,7 +7622,18 @@
       "crosscheckLinks": [
         "https://www.nature.com/articles/171964b0",
         "https://doi.org/10.1038/171737a0"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Their double-helix model appeared in Nature in April alongside related DNA research.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.nature.com/articles/171964b0",
+          "https://www.nature.com/articles/171737a0",
+          "https://www.genome.gov/25520255/online-education-kit-1953-dna-double-helix",
+          "https://pubmed.ncbi.nlm.nih.gov/4599080/"
+        ]
+      }
     },
     {
       "id": "everest",
@@ -7297,7 +7644,18 @@
       "crosscheckLinks": [
         "https://nzhistory.govt.nz/edmund-hillary-and-tensing-norgay-reach-summit-of-everest",
         "https://www.guinnessworldrecords.com/world-records/first-ascent-of-mount-everest"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Their ascent on 29 May is the first confirmed successful summit of Everest.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://nzhistory.govt.nz/edmund-hillary-and-tensing-norgay-reach-summit-of-everest",
+          "https://www.guinnessworldrecords.com/world-records/first-ascent-of-mount-everest",
+          "https://www.history.com/this-day-in-history/May-29/hillary-and-tenzing-reach-everest-summit",
+          "https://science.nasa.gov/earth/earth-observatory/mt-everest/"
+        ]
+      }
     },
     {
       "id": "sputnik",
@@ -7308,7 +7666,18 @@
       "crosscheckLinks": [
         "https://www.nasa.gov/history/sputnik/sputorig.html",
         "https://www.guinnessworldrecords.com/world-records/first-artificial-satellite"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The Soviet satellite became the first artificial satellite to orbit Earth.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.nasa.gov/history/dawn-of-the-space-age/",
+          "https://history.state.gov/milestones/1953-1960/sputnik",
+          "https://www.nasa.gov/history/sputnik/sputorig.html",
+          "https://history.nasa.gov/wp-content/uploads/static/history/sputnik.html"
+        ]
+      }
     },
     {
       "id": "gagarin",
@@ -7319,7 +7688,18 @@
       "crosscheckLinks": [
         "https://www.guinnessworldrecords.com/news/2026/4/its-been-65-years-since-humans-went-to-space-for-the-first-time-ever",
         "https://www.fai.org/page/history-manned-spaceflight-pioneers"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Vostok 1 carried the first human into space in April.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.fai.org/page/history-manned-spaceflight-pioneers",
+          "https://www.nasa.gov/wp-content/uploads/static/history/SP-4225/documentation/mhh/mirheritage.pdf",
+          "https://www.nasa.gov/image-article/april-1961-first-human-entered-space/",
+          "https://www.esa.int/About_Us/50_years_of_ESA/50_years_of_humans_in_space/The_flight_of_Vostok_1"
+        ]
+      }
     },
     {
       "id": "apollo",
@@ -7330,7 +7710,18 @@
       "crosscheckLinks": [
         "https://www.nasa.gov/mission/apollo-11/",
         "https://www.nasa.gov/specials/apollo50th/missions.html"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The lunar module landed in July; Armstrong and Aldrin walked on the surface.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.nasa.gov/mission/apollo-11/",
+          "https://www.nasa.gov/wp-content/uploads/2023/03/sp-4009vol4.pdf",
+          "https://airandspace.si.edu/explore/stories/apollo-missions/apollo-11-moon-landing/apollo-11-timeline",
+          "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo11info.html"
+        ]
+      }
     },
     {
       "id": "harbour",
@@ -7341,7 +7732,18 @@
       "crosscheckLinks": [
         "https://www.transport.nsw.gov.au/system/files/media/documents/2023/harbour-bridge-history.pdf",
         "https://www.nma.gov.au/exhibitions/defining-symbols-australia/sydney-harbour-bridge"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The bridge's official opening took place in March.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.transport.nsw.gov.au/system/files/media/documents/2023/harbour-bridge-history.pdf",
+          "https://www.nma.gov.au/exhibitions/defining-symbols-australia/sydney-harbour-bridge",
+          "https://archives.cityofsydney.nsw.gov.au/nodes/view/1724371",
+          "https://www.nma.gov.au/defining-moments/resources/sydney-harbour-bridge-opens"
+        ]
+      }
     },
     {
       "id": "opera",
@@ -7352,7 +7754,18 @@
       "crosscheckLinks": [
         "https://www.sydneyoperahouse.com/sites/default/files/collaborodam_assets/soh-cmp-interactive-1.pdf",
         "https://www.history.com/this-day-in-history/October-20/sydney-opera-house-opens"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Queen Elizabeth II formally opened the building in October.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.sydneyoperahouse.com/sites/default/files/collaborodam_assets/soh-cmp-interactive-1.pdf",
+          "https://mhnsw.au/stories/on-this-day/20-october-1973/",
+          "https://www.nsw.gov.au/about-nsw/state-services/vale-her-majesty-queen-elizabeth",
+          "https://www.nfsa.gov.au/collection/item/queen-opera-house-opening-ceremony"
+        ]
+      }
     },
     {
       "id": "federation",
@@ -7363,7 +7776,18 @@
       "crosscheckLinks": [
         "https://peo.gov.au/understand-our-parliament/history-of-parliament/history-milestones/australian-parliament-history-timeline/events/creation-of-australia",
         "https://peo.gov.au/understand-our-parliament/history-of-parliament/federation/federation"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The Commonwealth of Australia came into being on 1 January.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://peo.gov.au/understand-our-parliament/history-of-parliament/federation/federation",
+          "https://peo.gov.au/understand-our-parliament/history-of-parliament/history-milestones/australian-parliament-history-timeline/events/creation-of-australia",
+          "https://peo.gov.au/understand-our-parliament/history-of-parliament/federation/the-federation-of-australia",
+          "https://firstparliament.senate.gov.au/origins/declaration/"
+        ]
+      }
     },
     {
       "id": "sydney-games",
@@ -7374,7 +7798,18 @@
       "crosscheckLinks": [
         "https://www.olympedia.org/editions/25",
         "https://www.parliament.nsw.gov.au/tp/files/7019/62_Sydney_Olympic_Games.pdf"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The Games opened in September at Stadium Australia.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.olympics.com.au/games/sydney-2000/",
+          "https://olympic-collection.ru/olympiad/sidney/?lang=en",
+          "https://www.olympedia.org/editions/25",
+          "https://en.wikipedia.org/wiki/2000_Summer_Olympics"
+        ]
+      }
     },
     {
       "id": "berlin-falls",
@@ -7385,7 +7820,18 @@
       "crosscheckLinks": [
         "https://www.bundesregierung.de/breg-de/schwerpunkte/deutsche-einheit/die-mauer-ist-offen--403858",
         "https://www.berlin.de/en/history/8482274-8619314-opening-and-fall-of-the-berlin-wall.en.html"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "East German border crossings opened on the evening of 9 November.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.bundesregierung.de/breg-de/schwerpunkte/deutsche-einheit/die-mauer-ist-offen--403858",
+          "https://www.bpb.de/kurz-knapp/hintergrund-aktuell/194561/als-die-mauer-fiel-der-9-november-1989/",
+          "https://www.bpb.de/themen/deutsche-einheit/deutsche-teilung-deutsche-einheit/43731/der-9-november-1989/",
+          "https://www.bundesregierung.de/breg-en/service/archive/archive/9-november-a-historically-signficant-date-411370"
+        ]
+      }
     },
     {
       "id": "web",
@@ -7396,7 +7842,18 @@
       "crosscheckLinks": [
         "https://developer.mozilla.org/en-US/docs/Glossary/World_Wide_Web",
         "https://webhistories.org/timeline/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Tim Berners-Lee posted about the project to the alt.hypertext newsgroup in August; development began earlier.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.w3.org/People/Berners-Lee/History.html",
+          "https://web30.web.cern.ch/web-history.html",
+          "https://www.w3.org/blog/2016/25-years-ago-the-world-changed-forever/",
+          "https://timeline-upgrade.web.cern.ch/timeline-header/90"
+        ]
+      }
     },
     {
       "id": "google",
@@ -7407,7 +7864,18 @@
       "crosscheckLinks": [
         "https://about.google/company-info/our-story/",
         "https://blog.google/company-news/inside-google/company-announcements/marking-20ish-years-google/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Larry Page and Sergey Brin incorporated the company in September.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://blog.google/company-news/inside-google/company-announcements/marking-20ish-years-google/",
+          "https://about.google/intl/ALL_en/our-story/",
+          "https://kesq.com/news/national-world/cnn-national/2026/08/24/google-fast-facts-6/",
+          "https://www.sec.gov/Archives/edgar/data/1652044/000119312519305505/d843403dex991.htm"
+        ]
+      }
     },
     {
       "id": "facebook",
@@ -7418,7 +7886,18 @@
       "crosscheckLinks": [
         "https://www.history.com/this-day-in-history/february-4/facebook-launches-mark-zuckerberg",
         "https://assets.aeaweb.org/asset-server/files/17593.pdf"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The site initially launched as TheFacebook in February.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.thecrimson.com/article/2014/2/4/facebook-ten-years-feature-1/",
+          "https://www.thecrimson.com/article/2005/2/24/how-they-got-here-in-just/",
+          "https://www.wired.com/2004/06/college-facebook-mugs-go-online",
+          "https://www.history.com/this-day-in-history/february-4/facebook-launches-mark-zuckerberg"
+        ]
+      }
     },
     {
       "id": "youtube",
@@ -7431,7 +7910,18 @@
         "https://blog.youtube/news-and-events/youtube-receives-35m-in-funding-from/",
         "https://blog.youtube/news-and-events/celebrating-10-years-of-youtube/",
         "https://youtube.googleblog.com/2020/02/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The video-sharing company was founded in February; its first upload followed in April.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://youtube.googleblog.com/2020/02/",
+          "https://blog.youtube/news-and-events/youtube-at-15-my-personal-journey/?hl=uk",
+          "https://en.wikipedia.org/wiki/YouTube",
+          "https://www.itpro.com/620707/timeline-five-years-of-youtube"
+        ]
+      }
     },
     {
       "id": "iphone",
@@ -7442,7 +7932,18 @@
       "crosscheckLinks": [
         "https://www.history.com/this-day-in-history/january-9/steve-jobs-debuts-the-iphone",
         "https://www.apple.com/newsroom/2007/06/28iPhone-Premieres-This-Friday-Night-at-Apple-Retail-Stores/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The original iPhone reached US stores in June, after its January announcement.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.apple.com/newsroom/2007/06/28iPhone-Premieres-This-Friday-Night-at-Apple-Retail-Stores/",
+          "https://www.history.com/this-day-in-history/january-9/steve-jobs-debuts-the-iphone",
+          "https://www.apple.com/newsroom/2007/01/09Apple-Reinvents-the-Phone-with-iPhone/",
+          "https://money.cnn.com/2007/06/29/technology/iphone_launches/index.htm"
+        ]
+      }
     },
     {
       "id": "bitcoin",
@@ -7453,7 +7954,18 @@
       "crosscheckLinks": [
         "https://www.thebitcoinpaper.org/white-paper/",
         "https://www.theblock.co/news/ecosystems/2021-10-31-bitcoins-white-paper-was-published-13-years-ago-today-122703"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The paper appeared in October; the Bitcoin network began operating the following year.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.thebitcoinpaper.org/white-paper/",
+          "https://btcpaper.org/",
+          "https://www.theblock.co/news/ecosystems/2021-10-31-bitcoins-white-paper-was-published-13-years-ago-today-122703",
+          "https://help.blockstream.com/education/fundamentals/getting-started/who-created-bitcoin"
+        ]
+      }
     },
     {
       "id": "curiosity",
@@ -7464,7 +7976,18 @@
       "crosscheckLinks": [
         "https://science.nasa.gov/mission/msl-curiosity/",
         "https://prod.mars.jpllab.net/msl/mission/overview/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The rover landed in Gale Crater in August.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.jpl.nasa.gov/missions/mars-science-laboratory-curiosity-rover-msl/",
+          "https://ares.jsc.nasa.gov/missions/msl/",
+          "https://mars.nasa.gov/internal_resources/824/",
+          "https://mars.nasa.gov/files/mep/CuriosityPoster.pdf"
+        ]
+      }
     },
     {
       "id": "chernobyl",
@@ -7475,7 +7998,18 @@
       "crosscheckLinks": [
         "https://chnpp.gov.ua/en/about/42-about/accident-of-1986",
         "https://tdb.oecd-nea.org/jcms/pl_28271/chernobyl-chapter-i-the-site-and-accident-sequence"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Reactor four exploded during a test in April.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.chnpp.gov.ua/en/about/history-of-the-chnpp/accident-of-1986",
+          "https://www.nrc.gov/regulations-legislation/fact-sheets-brochures/backgrounder-on-chernobyl-nuclear-power-plant-accident",
+          "https://chnpp.gov.ua/en/about/42-about/accident-of-1986",
+          "https://www2.chnpp.gov.ua/en/42-about/accident-of-1986/429-assumptions-86429"
+        ]
+      }
     },
     {
       "id": "dolly",
@@ -7486,7 +8020,18 @@
       "crosscheckLinks": [
         "https://www.history.com/this-day-in-history/July-5/first-successful-cloning-of-a-mammal",
         "https://apnews.com/article/e99f7c8ab6e9749997b15324dd35efcc"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Dolly was cloned from an adult somatic cell; her birth preceded the public announcement the following year.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.nms.ac.uk/discover-catalogue/the-story-of-dolly-the-sheep",
+          "https://vet.ed.ac.uk/roslin/about/history/dolly/facts/life-of-dolly",
+          "https://www.aph.gov.au/parliamentary_business/committees/house_of_representatives_committees?url=laca%2Fhumancloning%2Freport.pdf",
+          "https://www.guinnessworldrecords.com/world-records/first-animal-cloned-from-an-adult-cell"
+        ]
+      }
     },
     {
       "id": "genome",
@@ -7497,7 +8042,18 @@
       "crosscheckLinks": [
         "https://www.genome.gov/human-genome-project/timeline",
         "https://www.genome.gov/about-genomics/educational-resources/fact-sheets/human-genome-project"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "This was the project's completion milestone, not a claim of a completely gapless human genome.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.genome.gov/about-genomics/educational-resources/fact-sheets/human-genome-project",
+          "https://www.genome.gov/human-genome-project/timeline",
+          "https://www.genome.gov/human-genome-project/results",
+          "https://www.genome.gov/25520492/online-education-kit-2003-human-genome-project-completed"
+        ]
+      }
     },
     {
       "id": "hubble",
@@ -7508,7 +8064,18 @@
       "crosscheckLinks": [
         "https://esahubble.org/about/history/launch_1990/",
         "https://science.nasa.gov/mission/hubble/overview/hubble-timeline/hubble-history-timeline-full-text/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Space Shuttle Discovery carried the telescope into orbit in April.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://science.nasa.gov/mission/hubble/overview/hubble-timeline/hubble-history-timeline-full-text/",
+          "https://science.nasa.gov/missions/hubble/30-years-ago-hubble-launched-to-unlock-the-secrets-of-the-universe/",
+          "https://www.nasa.gov/history/celebrating-hubble-space-telescopes-30-years-in-service/",
+          "https://science.nasa.gov/mission/hubble/observatory/missions-to-hubble/deployment/"
+        ]
+      }
     },
     {
       "id": "euro",
@@ -7519,7 +8086,18 @@
       "crosscheckLinks": [
         "https://www.bankofgreece.gr/en/the-euro/history-of-the-euro",
         "https://www.ecb.europa.eu/euro/changeover/2002/html/index.en.html"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Euro cash entered circulation in January; the currency's non-cash introduction was earlier.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.ecb.europa.eu/euro/changeover/2002/html/index.en.html",
+          "https://www.bankofgreece.gr/en/the-euro/history-of-the-euro",
+          "https://economy-finance.ec.europa.eu/euro/enlargement-euro-area/scenarios-adopting-euro_en",
+          "https://www.bde.es/wbe/en/sobre-banco/actividad-europea/eurosistema-sebc/historia-eurosistema/euro/introduccion-euro/"
+        ]
+      }
     },
     {
       "id": "pluto",
@@ -7530,7 +8108,18 @@
       "crosscheckLinks": [
         "https://www.aps.org/apsnews/2009/03/tombaugh-discovery-pluto-1930",
         "https://libexhibits.nmsu.edu/onlinexhibits/tombaugh/index.html"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Tombaugh identified Pluto in photographic plates at Lowell Observatory.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://collectionslowellobservatory.omeka.net/items/show/1430",
+          "https://collectionslowellobservatory.omeka.net/exhibits/show/pluto/the-discovery",
+          "https://www.usni.org/magazines/proceedings/1931/october/pluto",
+          "https://collectionslowellobservatory.omeka.net/exhibits/show/historic-buildings/pluto-discovery-telescope-dome"
+        ]
+      }
     },
     {
       "id": "pluto-class",
@@ -7541,7 +8130,18 @@
       "crosscheckLinks": [
         "https://www.iau.org/IAU/Iau/News/PR2006/iau-2006-general-assembly-resolution-votes.aspx",
         "https://science.nasa.gov/dwarf-planets/pluto/facts/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The International Astronomical Union adopted its new planet definition in August.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.iau.org/IAU/Iau/News/PR2006/iau-2006-general-assembly-resolution-votes.aspx",
+          "https://iau.org/IAU/Astronomy-FAQs/FAQs.aspx",
+          "https://www.astronomy2006.com/press-release-resolution-24-8-2006.html",
+          "https://www.astro.com/swisseph/iau_pr.htm?cid=g4rBiGOY781xE-u1716565078&nho2=868204&nhor=868204"
+        ]
+      }
     },
     {
       "id": "krakatoa",
@@ -7552,7 +8152,18 @@
       "crosscheckLinks": [
         "https://guides.loc.gov/chronicling-america-krakatoa-volcano",
         "https://www.usgs.gov/publications/krakatau-1883"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The volcano's most destructive explosions took place in August.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://pubs.usgs.gov/publication/70168593",
+          "https://www.usgs.gov/publications/krakatau-1883",
+          "https://usgs.science/record/usgs%3A70168593/krakatau-1883",
+          "https://volcano.si.edu/volcano.cfm?bgvn=1&snum=krakatau&vn=262000"
+        ]
+      }
     },
     {
       "id": "brooklyn",
@@ -7563,7 +8174,18 @@
       "crosscheckLinks": [
         "https://guides.loc.gov/chronicling-america-brooklyn-bridge",
         "https://www.history.com/this-day-in-history/may-24/brooklyn-bridge-opens"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The bridge opened to the public in May.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.history.com/this-day-in-history/may-24/brooklyn-bridge-opens",
+          "https://blog.oup.com/2012/05/the-brooklyn-bridge-opens/",
+          "https://www.pbs.org/wgbh/buildingbig/wonder/structure/brooklyn.html",
+          "https://brooklynbridge.us/bbridgefacts/bbridgefacts"
+        ]
+      }
     },
     {
       "id": "suez",
@@ -7574,7 +8196,18 @@
       "crosscheckLinks": [
         "https://www.suezcanal.gov.eg/Arabic/About/SuezCanal/Pages/CanalHistory.aspx",
         "https://www.suezcanal.gov.eg/English/About/SuezCanal/Pages/CanalHistory.aspx"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The canal's formal opening took place in November.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.suezcanal.gov.eg/Arabic/About/SuezCanal/Pages/CanalHistory.aspx",
+          "https://www.suezcanal.gov.eg/English/About/SuezCanal/Pages/CanalHistory.aspx",
+          "https://www.suezcanal.gov.eg/English/About/SuezCanal/Pages/CanalHistory.aspx?trk=public_post_comment-text",
+          "https://www.napoleon.org/wp-content/themes/napoleon/annexes/hors-serie/suez/en/html-content/inauguration/ceremonie/ceremonie2.html"
+        ]
+      }
     },
     {
       "id": "model-t",
@@ -7585,7 +8218,18 @@
       "crosscheckLinks": [
         "https://corporate.ford.com/articles/history/the-model-t.html",
         "https://www.history.com/this-day-in-history/october-1/ford-motor-company-unveils-the-model-t"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The first production Model T was completed in the autumn.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://corporate.ford.com/articles/history/the-model-t.html",
+          "https://www.fordpiquetteplant.org/about/history/",
+          "https://www.history.com/this-day-in-history/october-1/ford-motor-company-unveils-the-model-t",
+          "https://www.history.com/this-day-in-history/October-1/ford-motor-company-unveils-the-model-t"
+        ]
+      }
     },
     {
       "id": "lindbergh",
@@ -7596,7 +8240,18 @@
       "crosscheckLinks": [
         "https://www.history.com/this-day-in-history/May-21/lindbergh-lands-in-paris",
         "https://www.fai.org/athlete/charles-lindbergh"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The Spirit of St. Louis landed near Paris in May after the nonstop solo crossing.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.si.edu/object/barograph-spirit-st-louis-charles-lindbergh-ny-paris-flight-may-1927%3Anasm_A19310028000",
+          "https://airandspace.si.edu/collection-objects/barograph-spirit-st-louis-charles-lindbergh-ny-paris-flight-may-1927/nasm_A19310028000",
+          "https://airandspace.si.edu/collection-objects/ryan-nyp-spirit-st-louis-charles-lindbergh/nasm_A19280021000",
+          "https://www.guinnessworldrecords.com/world-records/first-solo-transatlantic-flight"
+        ]
+      }
     },
     {
       "id": "world-cup",
@@ -7607,7 +8262,18 @@
       "crosscheckLinks": [
         "https://www.guinnessworldrecords.com/world-records/481465-first-fifa-world-cup-tournament",
         "https://www.fifa.com/en/tournaments/mens/worldcup/articles/1930-world-cup-quiz"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Uruguay hosted and won the inaugural tournament.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.fifa.com/en/de/mens/worldcup/articles/world-cup-champions-1930-1978-uruguay-italy-germany-brazil-england-argentina",
+          "https://www.guinnessworldrecords.com/world-records/481465-first-fifa-world-cup-tournament",
+          "https://guides.loc.gov/world-cup/uruguay-1930",
+          "https://www.reuters.com/sports/soccer/list-world-cup-winners-2026-07-19/"
+        ]
+      }
     },
     {
       "id": "email",
@@ -7618,7 +8284,18 @@
       "crosscheckLinks": [
         "https://www.guinnessworldrecords.com/world-records/first-email",
         "https://www.pbs.org/newshour/science/internet-got-started-simple-hello"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "His work enabled email between computers and popularized the at-sign addressing format.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://lemelson.mit.edu/resources/ray-tomlinson",
+          "https://raytheon.mediaroom.com/index.php?item=2085",
+          "https://www.smithsonianmag.com/science-nature/the-accidental-history-of-the-symbol-18054936/",
+          "https://www.pbs.org/newshour/science/internet-got-started-simple-hello"
+        ]
+      }
     },
     {
       "id": "cash-machine",
@@ -7629,7 +8306,18 @@
       "crosscheckLinks": [
         "https://www.guinnessworldrecords.com/world-records/first-cash-dispenser",
         "https://www.enfield.gov.uk/__data/assets/pdf_file/0020/4691/blueplaque-december-planning.pdf"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The London dispenser was opened in June; this specific installation avoids competing claims about earlier banking machines.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://historicengland.org.uk/whats-new/news/enfield-bank-listed/",
+          "https://www.bankofengland.co.uk/museum/online-collections/blog/the-williams-and-glyn-card",
+          "https://www.govinfo.gov/content/pkg/USCOURTS-caDC-14-07006/pdf/USCOURTS-caDC-14-07006-1.pdf",
+          "https://www.guinnessworldrecords.com/world-records/first-cash-dispenser"
+        ]
+      }
     },
     {
       "id": "rubik",
@@ -7640,7 +8328,18 @@
       "crosscheckLinks": [
         "https://rubiks.com/history",
         "https://www.museumofplay.org/toys/rubiks-cube/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The puzzle's invention predates its later international release as Rubik's Cube.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://rubiks.com/history",
+          "https://www.museumofplay.org/toys/rubiks-cube/",
+          "https://www.cs.brandeis.edu/~storer/JimPuzzles/RUBIK/000RUBIK/WEBPAGES/RubikCubeChronology.pdf",
+          "https://cube.stanford.edu/class/files/slideshow_week2.pdf"
+        ]
+      }
     },
     {
       "id": "cd-player",
@@ -7651,7 +8350,18 @@
       "crosscheckLinks": [
         "https://www.sony.com/en/SonyInfo/CorporateInfo/History/SonyHistory/2-07.html",
         "https://japaneserecords.org/japanese-records/6433/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The commercial CD player was released in Japan in October.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.sony.com/en/SonyInfo/CorporateInfo/History/SonyHistory/2-07.html",
+          "https://www.sony.com/ja/SonyInfo/CorporateInfo/History/SonyHistory/2-07.html",
+          "https://sts.kahaku.go.jp/sts/detail.php?c=&city=&dt1=&dt2=&id=&no=104810541043&org=&p=774&pref=&word=&y1=&y2=",
+          "https://japaneserecords.org/japanese-records/6433/"
+        ]
+      }
     },
     {
       "id": "columbia",
@@ -7662,7 +8372,18 @@
       "crosscheckLinks": [
         "https://www.nasa.gov/mission/sts-1/",
         "https://www.nasa.gov/wp-content/uploads/2023/03/sp-4541.pdf"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The STS-1 mission launched in April.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.nasa.gov/mission/sts-1/",
+          "https://www.nasa.gov/history/40-years-ago-columbia-takes-flight/",
+          "https://www.nasa.gov/wp-content/uploads/2023/03/sp-4541.pdf",
+          "https://www.nasa.gov/history/sts1/"
+        ]
+      }
     },
     {
       "id": "tour",
@@ -7675,7 +8396,18 @@
         "https://www.letour.fr/en/news/2024/the-tour-de--in-the-land-of-the-giants/1316875",
         "https://www.history.com/articles/the-birth-of-the-tour-de-france",
         "https://www.fpa.es/en/princess-of-asturias-awards/laureates/2003-the-tour-de-france/?texto=trayectoria"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Maurice Garin won the inaugural cycling race.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.cyclist.co.uk/in-depth/how-maurice-garin-won-the-first-tour-de-france",
+          "https://www.procyclingstats.com/key-event/start-of-first-tour-de-france",
+          "https://www.fpa.es/en/princess-of-asturias-awards/laureates/2003-the-tour-de-france/?texto=trayectoria",
+          "https://en.wikipedia.org/wiki/1903_Tour_de_France"
+        ]
+      }
     },
     {
       "id": "sistine",
@@ -7686,7 +8418,18 @@
       "crosscheckLinks": [
         "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina/volta.html",
         "https://www.history.com/this-day-in-history/november-1/sistine-chapel-ceiling-opens-to-public"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The painted ceiling was shown to the public on All Saints' Day.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina/storia-cappella-sistina.html",
+          "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina/volta.html",
+          "https://blog.oup.com/2011/11/sistine/",
+          "https://www.vatican.va/content/vatican/pl/ra/cappella-sistina.html"
+        ]
+      }
     },
     {
       "id": "don-quixote",
@@ -7697,7 +8440,18 @@
       "crosscheckLinks": [
         "https://www.history.com/this-day-in-history/January-16/don-quixote-novel-first-published",
         "https://www.bne.es/es/colecciones/cervantes/ingenioso-hidalgo-don-quixote-mancha"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Cervantes' novel first appeared in Madrid; its second part was published later.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.bne.es/es/colecciones/cervantes/ingenioso-hidalgo-don-quixote-mancha",
+          "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/F2BCFE3AC531DC4F57038EB7C2E80F8E/S2056467800002012a.pdf/cervantes_and_don_quixote_de_la_mancha.pdf",
+          "https://exhibitions.library.columbia.edu/exhibits/show/lit_hum/cervantes",
+          "https://museocasanataldecervantes.org/don-quixote-of-la-mancha-parts-i-and-ii/"
+        ]
+      }
     },
     {
       "id": "royal-society",
@@ -7708,7 +8462,18 @@
       "crosscheckLinks": [
         "https://royalsociety.org/about-us/who-we-are/history/?from=homefeature",
         "https://www.nma.gov.au/exhibitions/exploration-and-endeavour/royal-society-london"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "A meeting at Gresham College in London began the scientific society.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.nma.gov.au/exhibitions/exploration-and-endeavour/royal-society-london",
+          "https://royalsociety.org/about-us/who-we-are/history/?from=homefeature",
+          "https://royalsociety.org/-/media/journals/publishing/des8158_publishing_history-of-science_flyer_digital-%283%29.pdf",
+          "https://collection.sciencemuseumgroup.org.uk/people/cp17351/the-royal-society"
+        ]
+      }
     },
     {
       "id": "piano",
@@ -7719,7 +8484,18 @@
       "crosscheckLinks": [
         "https://api.pageplace.de/preview/DT0400.9781108162302_A30260690/preview-9781108162302_A30260690.pdf",
         "https://www.metmuseum.org/it/essays/the-piano-the-pianofortes-of-bartolomeo-cristofori-1655-1731"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The inventory documents an early piano; it is a dated record rather than a precisely known invention day.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://api.pageplace.de/preview/DT0400.9781108162302_A30260690/preview-9781108162302_A30260690.pdf",
+          "https://www.metmuseum.org/it/essays/the-piano-the-pianofortes-of-bartolomeo-cristofori-1655-1731",
+          "https://amis.mircat.org/jamis/1984_032.pdf",
+          "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-piano/piano-to-c1770/B955FB503C5D670D35B60315D422E4DB"
+        ]
+      }
     },
     {
       "id": "robinson",
@@ -7730,7 +8506,18 @@
       "crosscheckLinks": [
         "https://www.history.com/this-day-in-history/april-25/robinson-crusoe-is-published",
         "https://www.gutenberg.org/ebooks/70841"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Daniel Defoe's novel appeared in April.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://onlineonly.christies.com/s/selections-library-lorenzo-h-zambrano-latin-americana-science/robinson-crusoe-first-english-novel-18/87434",
+          "https://www.history.com/this-day-in-history/April-25/robinson-crusoe-is-published",
+          "https://www.history.com/this-day-in-history/april-25/robinson-crusoe-is-published",
+          "https://university-collections.wp.st-andrews.ac.uk/2019/04/23/300-years-of-the-life-and-strange-surprizing-adventures-of-robinson-crusoe/"
+        ]
+      }
     },
     {
       "id": "steam",
@@ -7741,7 +8528,18 @@
       "crosscheckLinks": [
         "https://collection.powerhouse.com.au/object/119115",
         "https://blog.sciencemuseum.org.uk/james-watt-and-the-separate-condenser/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The patent covered an important improvement to the steam engine, not its original invention.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://blog.sciencemuseum.org.uk/james-watt-and-the-separate-condenser/",
+          "https://inner-forth-futures.s3.eu-west-2.amazonaws.com/files/On%20This%20Day/1_James_Watt_patents_seperate_condense.pdf",
+          "https://upload.wikimedia.org/wikipedia/commons/f/f0/James_Watt_%28IA_jameswatt01carn%29.pdf",
+          "https://en.wikisource.org/wiki/Dictionary_of_National_Biography%2C_1885-1900/Watt%2C_James_%281736-1819%29"
+        ]
+      }
     },
     {
       "id": "balloon",
@@ -7752,7 +8550,18 @@
       "crosscheckLinks": [
         "https://www.guinnessworldrecords.com/world-records/385167-first-free-manned-balloon-flight",
         "https://en.chateauversailles.fr/discover/history/key-dates/first-hot-air-balloon-flight"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Pilâtre de Rozier and d'Arlandes flew over Paris in November.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.guinnessworldrecords.com/world-records/385167-first-free-manned-balloon-flight",
+          "https://www.vam.ac.uk/blog/creating-new-europe-1600-1800-galleries/flying-high-230-years-ago-today",
+          "https://www.history.com/this-day-in-history/november-21/men-fly-over-paris",
+          "https://ntrs.nasa.gov/api/citations/20240004989/downloads/50th%20Anniversary%20Ed%20Scientific%20Ballooning%20Handbook.pdf"
+        ]
+      }
     },
     {
       "id": "mozart",
@@ -7763,7 +8572,18 @@
       "crosscheckLinks": [
         "https://www.rbo.org.uk/opera-essentials-the-magic-flute",
         "https://mozarteum.at/en/wolfgang-amade-mozart"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Mozart's opera first appeared in Vienna in September.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://mozarteum.at/en/wolfgang-amade-mozart",
+          "https://www.rbo.org.uk/opera-essentials-the-magic-flute",
+          "https://www.mediathek.at/en/mozart/die-zauberfloete-1791/",
+          "https://mozarteum.at/static/3032079dbafe3ccc28199c9f6967dfba/ISM_ZF_Sponsoringbroschuere_EN_WEB.pdf"
+        ]
+      }
     },
     {
       "id": "frankenstein",
@@ -7774,7 +8594,18 @@
       "crosscheckLinks": [
         "https://www.sparknotes.com/lit/frankenstein/facts/",
         "https://www.history.com/this-day-in-history/january-1/frankenstein-published"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Mary Shelley's novel was initially published anonymously.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.nlm.nih.gov/exhibition/frankenstein/exhibition1.html",
+          "https://academic.oup.com/dsh/article/38/2/750/6773078",
+          "https://english.web.ox.ac.uk/ten-minute-book-club/shelley-frankenstein",
+          "https://crossref-it.info/textguide/frankenstein/7/331"
+        ]
+      }
     },
     {
       "id": "beethoven",
@@ -7785,7 +8616,18 @@
       "crosscheckLinks": [
         "https://www.history.com/this-day-in-history/May-7/beethoven-ninth-symphony-debuts-vienna",
         "https://www.beethoven.de/en/work/view/5556714292117504/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The symphony premiered in Vienna in May.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.bso.org/works/symphony-no-9-in-d-minor-op-125-cho",
+          "https://www.beethoven.de/en/work/view/5556714292117504/",
+          "https://www.esm.rochester.edu/beethoven/symphony-no-9/",
+          "https://www.wienerphilharmoniker.at/en/orchestra/exhibitions/exhibition1"
+        ]
+      }
     },
     {
       "id": "morse",
@@ -7796,7 +8638,18 @@
       "crosscheckLinks": [
         "https://www.loc.gov/item/mcc.019/",
         "https://www.loc.gov/item/mmorse000107/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The demonstration linked Washington, DC and Baltimore in May.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.loc.gov/item/mmorse000107/",
+          "https://www.loc.gov/item/mcc.019/",
+          "https://www.si.edu/object/what-hath-god-wrought-telegraph-message%3Anmah_713485",
+          "https://www.senate.gov/artandhistory/senate-stories/morses-telegraph-in-the-capitol.htm"
+        ]
+      }
     },
     {
       "id": "alice",
@@ -7807,7 +8660,18 @@
       "crosscheckLinks": [
         "https://www.themorgan.org/exhibitions/online/alice",
         "https://www.themorgan.org/printed-books/246978"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Lewis Carroll's book first appeared in London.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.themorgan.org/printed-books/246978",
+          "https://lewiscarrollsociety.org.uk/publishing-of-alice/",
+          "https://www.themorgan.org/printed-books/169545",
+          "https://www.slv.vic.gov.au/get-involved/first-edition-alices-adventures-wonderland"
+        ]
+      }
     },
     {
       "id": "periodic",
@@ -7823,6 +8687,17 @@
         "title": "Mendeleev’s periodic table is presented to the Russian Chemical Society",
         "fact": "A colleague presented Mendeleev's work to the society in March; Mendeleev did not deliver the presentation himself.",
         "source": "https://blog.oup.com/2012/03/mendeleev-periodic-table/"
+      },
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "A colleague presented Mendeleev's work to the society in March; Mendeleev did not deliver the presentation himself.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://blog.oup.com/2012/03/mendeleev-periodic-table/",
+          "https://academic.oup.com/book/40668/chapter-abstract/348354016",
+          "https://webserver.lemoyne.edu/~giunta/EA/MENDELEEVann.HTML",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC7435142/"
+        ]
       }
     },
     {
@@ -7834,7 +8709,18 @@
       "crosscheckLinks": [
         "https://www.nga.gov/stories/articles/1874-birth-impressionism",
         "https://www.khanacademy.org/humanities/becoming-modern/avant-gardefrance/impressionism/a/how-the-impressionists-got-their-name"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The independent group exhibited in photographer Nadar's former studio.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.nga.gov/stories/articles/1874-birth-impressionism",
+          "https://www.culture.gouv.fr/thematiques/musees/Les-musees-en-France/les-collections-des-musees-de-france/decouvrir-les-collections/les-huit-expositions-impressionnistes-1874-1886/1874-premiere-exposition?switchTo=ara-SA",
+          "https://www.khanacademy.org/humanities/becoming-modern/avant-gardefrance/impressionism/a/how-the-impressionists-got-their-name",
+          "https://www.nga.gov/press/birth-impressionism-explored-exhibition-musee-dorsay-and-national-gallery-art-washington"
+        ]
+      }
     },
     {
       "id": "coca-cola",
@@ -7845,7 +8731,18 @@
       "crosscheckLinks": [
         "https://www.coca-cola.com/in/en/about-us/history",
         "https://www.coca-colacompany.com/about-us/history"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "John Pemberton's drink was first served at Jacobs' Pharmacy in May.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.georgiahistory.com/ghmi_marker_updated/birthplace-of-coca-cola/",
+          "https://www.coca-colacompany.com/about-us/history/the-birth-of-a-refreshing-idea?trk=article-ssr-frontend-pulse_little-text-block",
+          "https://www.coca-colacompany.com/about-us/history",
+          "https://pubmed.ncbi.nlm.nih.gov/29559091/"
+        ]
+      }
     },
     {
       "id": "nobel",
@@ -7856,7 +8753,18 @@
       "crosscheckLinks": [
         "https://www.nobelprize.org/nobel_organizations/nobelfoundation/history/",
         "https://www.guinnessworldrecords.com/world-records/first-nobel-prize"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The first ceremonies took place on 10 December.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.nobelprize.org/ceremony/the-nobel-prize-award-ceremonies-and-banquets/?print=1",
+          "https://www.nobelprize.org/ceremony/from-the-first-nobel-prize-award-ceremony-1901/",
+          "https://www.nobelprize.org/prizes/themes/the-very-first-nobel-prizes/?section=backStory",
+          "https://www.guinnessworldrecords.com/world-records/first-nobel-prize"
+        ]
+      }
     },
     {
       "id": "peter-rabbit",
@@ -7868,7 +8776,18 @@
         "https://www.vam.ac.uk/articles/peter-rabbit-the-tale-of-the-tale",
         "https://www.vam.ac.uk/articles/introducing-beatrix-potter",
         "https://tpl.ca/blogs/post/the-tale-of-beatrix-potters-peter-rabbit/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Beatrix Potter had printed a private edition earlier; this refers to the Frederick Warne edition.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.vam.ac.uk/articles/peter-rabbit-the-tale-of-the-tale",
+          "https://www.christies.com/en/lot/lot-1522435",
+          "https://www.christies.com/PDF/catalog/2021/NYR19151_SaleCat.pdf",
+          "https://www.christies.com/lot/potter-beatrix-1866-1943-the-tale-of-peter-6542886/?intObjectID=6542886&lid=1"
+        ]
+      }
     },
     {
       "id": "relativity-general",
@@ -7881,7 +8800,18 @@
         "https://www.einstein-online.info/en/explandict/einsteins-equation/",
         "https://historysearch.co.uk/factsheet/archive/united-states-of-america/science/physics/general-relativity-field-equations/",
         "https://i-scholar.in/index.php/CURS/article/viewFile/92066/81586"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "He presented the final equations to the Prussian Academy in November.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://assets.cambridge.org/97805218/83467/excerpt/9780521883467_excerpt.pdf",
+          "https://www.einstein.caltech.edu/news/one-hundred-years-of-einsteins-field-equations-and-of-the-explanation-of-mercurys-perihelion",
+          "https://historysearch.co.uk/factsheet/archive/united-states-of-america/science/physics/general-relativity-field-equations/",
+          "https://books.tarbaweya.org/static/documents/uploads/pdf/physics/PHYSICS%20BEFORE%20AND%20AFTER%20EINSTEIN.pdf"
+        ]
+      }
     },
     {
       "id": "tutankhamun",
@@ -7892,7 +8822,18 @@
       "crosscheckLinks": [
         "https://tutankhamun.griffith.ox.ac.uk/seasons/1st-season-1922-1923",
         "https://www.history.org.uk/primary/resource/10530/significant-anniversaries-the-discovery-of-tutank"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The team found the tomb's entrance in November.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://tutankhamun.griffith.ox.ac.uk/seasons/1st-season-1922-1923",
+          "https://tutankhamun.griffith.ox.ac.uk/journals-and-diaries/1st-season-taa-i2125-53-carter",
+          "https://smarthistory.org/tutankhamuns-tomb-innermost-coffin-and-death-mask/",
+          "https://www.nationalgeographic.com/history/history-magazine/article/findingkingtutstomb"
+        ]
+      }
     },
     {
       "id": "radio-bbc",
@@ -7903,7 +8844,18 @@
       "crosscheckLinks": [
         "https://tollbit.historyextra.com/period/20th-century/bbc-british-broadcasting-coroporation-history-beginning-when/",
         "https://blog.scienceandmediamuseum.org.uk/this-week-in-broadcasting-history-the-bbc-began-daily-transmissions/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The British Broadcasting Company began its radio service in November.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://downloads.bbc.co.uk/historyofthebbc/1920s.pdf",
+          "https://eandt.theiet.org/content/articles/2022/11/bbc-broadcast-tech-then-and-now/",
+          "https://api.pageplace.de/preview/DT0400.9780192653642_A43259061/preview-9780192653642_A43259061.pdf",
+          "https://blog.scienceandmediamuseum.org.uk/this-week-in-broadcasting-history-the-bbc-began-daily-transmissions/"
+        ]
+      }
     },
     {
       "id": "mickey",
@@ -7914,7 +8866,18 @@
       "crosscheckLinks": [
         "https://www.loc.gov/static/programs/national-film-preservation-board/documents/steamboat_willie.pdf?loclr=blogflt",
         "https://www.moma.org/momaorg/shared/flattened_pages/moma_learning/walt-disney-ub-iwerks-steamboat-willie-1928/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The synchronized-sound Mickey Mouse short premiered in November.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://d23.com/this-day/steamboat-willie-premieres/",
+          "https://www.waltdisney.org/blog/birth-mouse",
+          "https://www.moma.org/momaorg/shared/flattened_pages/moma_learning/walt-disney-ub-iwerks-steamboat-willie-1928/",
+          "https://www.moma.org/collection/works/302797?art_term_slug=film&sov_referrer=art_term"
+        ]
+      }
     },
     {
       "id": "moma",
@@ -7925,7 +8888,18 @@
       "crosscheckLinks": [
         "https://production-gcp.moma.org/calendar/about/exhibition-history",
         "https://press.moma.org/wp-content/uploads/2024/10/2024-LPB-SectionTexts-FINAL.pdf"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "MoMA opened in November in rented space on Fifth Avenue.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://press.moma.org/wp-content/uploads/2024/10/2024-LPB-SectionTexts-FINAL.pdf",
+          "https://www.moma.org/momaorg/shared/pdfs/docs/press_archives/2585/releases/MOMA_1959_0151.pdf",
+          "https://www.moma.org/momaorg/shared/pdfs/docs/press_archives/1470/releases/MOMA_1950_0079_1950-11-14_501214-68.pdf",
+          "https://www.moma.org/momaorg/shared/pdfs/docs/press_archives/1083/releases/MOMA_1946-1947_0065_1947-01-17_47117-3.pdf"
+        ]
+      }
     },
     {
       "id": "empire",
@@ -7936,7 +8910,18 @@
       "crosscheckLinks": [
         "https://www.loc.gov/item/today-in-history/may-01/",
         "https://www.esbnyc.com/about/history?CFID=32836329&CFTOKEN=23612990"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The New York skyscraper opened in May.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.loc.gov/item/today-in-history/may-01/",
+          "https://www.history.com/articles/empire-state-building-construction",
+          "https://www.newyorkexplained.com/history/on-this-day/05-01/",
+          "https://www.esbnyc.com/about/history?CFID=32836329&CFTOKEN=23612990"
+        ]
+      }
     },
     {
       "id": "monopoly",
@@ -7947,7 +8932,18 @@
       "crosscheckLinks": [
         "https://guides.loc.gov/this-month-in-business-history/december/game-of-monopoly-patent",
         "https://artsandculture.google.com/asset/mQEUuUMq9PbQ8w?childAssetId=SQHr5GECrQOxyQ"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "This refers to the Parker Brothers release, not the invention of earlier property-trading games.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://guides.loc.gov/this-month-in-business-history/december/game-of-monopoly-patent",
+          "https://adena.com/adena/mo/mo12.htm",
+          "https://www.hasbro.com/common/instruct/monopolydeluxeedition.pdf",
+          "https://monopoly.cdbpdx.com/BoxTops/"
+        ]
+      }
     },
     {
       "id": "snow-white",
@@ -7958,7 +8954,18 @@
       "crosscheckLinks": [
         "https://movies.disney.com/snow-white-and-the-seven-dwarfs",
         "https://www.history.com/articles/disney-snow-white-full-length-animated-feature-film?om_rid=%2Fsize"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The animated feature premiered in Los Angeles in December.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://d23.com/wda-a-look-back-at-the-oscars-snow-white-and-the-seven-dwarfs/",
+          "https://snowwhitemuseum.com/about-the-film/events/snow-white-and-the-seven-dwarfs-release-dates/",
+          "https://d23.com/a-to-z/snow-white-and-the-seven-dwarfs-film/",
+          "https://movies.disney.com/snow-white-and-the-seven-dwarfs"
+        ]
+      }
     },
     {
       "id": "superman",
@@ -7969,7 +8976,18 @@
       "crosscheckLinks": [
         "https://www.si.edu/object/action-comics-no-1%3Anmah_2044596",
         "https://www.dcuguide.com/Superman_%28Clark_Kent%29_%28Golden_Age%29_Chronology"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The character appeared in Action Comics issue one, cover-dated June.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.dcuguide.com/Action_Comics_1",
+          "https://dcuguide.com/Action_Comics_1",
+          "https://fanac.org/conpubs/Worldcon/LoneStarCon%203/LSC3%20Hugo%20Ceremony%20program.pdf",
+          "https://en.wikipedia.org/wiki/Action_Comics_1"
+        ]
+      }
     },
     {
       "id": "wizard-oz",
@@ -7980,7 +8998,18 @@
       "crosscheckLinks": [
         "https://www.history.com/this-day-in-history/August-25/the-wizard-of-oz-debuts",
         "https://www.history.com/this-day-in-history/August-10/the-wizard-of-oz-movie-premieres-in-wisconsin"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The MGM film starring Judy Garland reached cinemas in August.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.boxofficemojo.com/title/tt0032138/",
+          "https://www.history.com/this-day-in-history/august-25/the-wizard-of-oz-debuts",
+          "https://www.history.com/this-day-in-history/August-10/the-wizard-of-oz-movie-premieres-in-wisconsin",
+          "https://www.census.gov/about/history/stories/monthly/2023/august-2023.html"
+        ]
+      }
     },
     {
       "id": "fanta",
@@ -7991,7 +9020,18 @@
       "crosscheckLinks": [
         "https://www.coca-cola.com/de/de/social/1940",
         "https://www.coca-cola.com/ch/de/about-us/die-geschichte-von-fanta"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The brand began as a drink made for the German market during wartime shortages.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://fantabrand.com/about-us/",
+          "https://www.brandslex.de/markenlexikon/cover/f/markenlexikon-fanta",
+          "https://www.coca-cola.com/ch/de/about-us/die-geschichte-von-fanta",
+          "https://de.wikipedia.org/wiki/Fanta"
+        ]
+      }
     },
     {
       "id": "un",
@@ -8002,7 +9042,18 @@
       "crosscheckLinks": [
         "https://www.un.org/en/about-us/history-of-the-un",
         "https://www.un.org/en/observances/un-day"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The UN Charter entered into force in October.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.un.org/en/about-us/un-charter",
+          "https://www.un.org/en/about-us/un-charter/",
+          "https://www.un.org/en/about-us/history-of-the-un",
+          "https://treaties.un.org/pages/ViewDetails.aspx?chapter=1&clang=_en&mtdsg_no=I-1&src=IND"
+        ]
+      }
     },
     {
       "id": "india",
@@ -8013,7 +9064,18 @@
       "crosscheckLinks": [
         "https://www.pib.gov.in/FeaturesDeatils.aspx?ModuleId=2&NoteId=157078&id=157078&lang=2&reg=3",
         "https://www.census.gov/newsroom/stories/india-independence-day.html"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Independence took effect on 15 August.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://history.state.gov/countries/india",
+          "https://www.pib.gov.in/FeaturesDeatils.aspx?ModuleId=2&NoteId=157078&id=157078&lang=2&reg=3",
+          "https://www.census.gov/newsroom/stories/india-independence-day.html",
+          "https://www.legislation.gov.uk/ukpga/Geo6/10-11/30"
+        ]
+      }
     },
     {
       "id": "lego",
@@ -8029,6 +9091,17 @@
         "title": "LEGO files its stud-and-tube brick patent application",
         "fact": "The LEGO Group submitted its application on 28 January; this milestone is the filing, not a patent grant.",
         "source": "https://www.lego.com/en-us/history/articles/d-the-stud-and-tube-principle"
+      },
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The LEGO Group submitted its application on 28 January; this milestone is the filing, not a patent grant.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.lego.com/en-us/history/articles/d-the-stud-and-tube-principle?_rsc=1u47h",
+          "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/4528894.pdf",
+          "https://ttabvue.uspto.gov/ttabvue/ttabvue-92075254-CAN-124.pdf",
+          "https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/20/71/76/05/2020717605/2020717605.pdf"
+        ]
       }
     },
     {
@@ -8042,7 +9115,18 @@
         "https://corporate.mattel.com/contact-us",
         "https://www.history.com/this-day-in-history/march-9/barbie-makes-her-debut",
         "https://www.history.com/this-day-in-history/March-9/barbie-makes-her-debut"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Mattel introduced the doll in March.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://guides.loc.gov/this-month-in-business-history/march/ruth-handler-introduces-barbie",
+          "https://www.history.com/this-day-in-history/march-9/barbie-makes-her-debut",
+          "https://www.history.com/this-day-in-history/March-9/barbie-makes-her-debut",
+          "https://newyorkexplained.com/history/on-this-day/03-09/"
+        ]
+      }
     },
     {
       "id": "laser",
@@ -8053,7 +9137,18 @@
       "crosscheckLinks": [
         "https://engineering.stanford.edu/about/history/heroes/2012-heroes/theodore-maiman",
         "https://www.optica.org/history/milestones/laser_60th/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "His ruby laser demonstration took place in May.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://engineering.stanford.edu/about/history/heroes/2012-heroes/theodore-maiman",
+          "https://www.si.edu/object/ruby-crystal-maiman-laser%3Anmah_711120",
+          "https://americanhistory.si.edu/collections/object/nmah_712855",
+          "https://www.americanhistory.si.edu/collections/object/nmah_711120"
+        ]
+      }
     },
     {
       "id": "berlin-built",
@@ -8064,7 +9159,18 @@
       "crosscheckLinks": [
         "https://www.bundesregierung.de/breg-en/service/archive/construction-berlin-wall-1777024",
         "https://www.aufarbeitung-berlin.de/fileadmin/user_upload/Dokumente/Publikationen/BAB_LZPB_Berlin_questions_and_answers_II_screen.pdf"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "East Germany began sealing the border in August.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.archives.gov/files/research/foreign-policy/cold-war/berlin-wall-1962-1987/dvd/pdfs/essays/PP-21.pdf",
+          "https://www.bundesregierung.de/breg-en/service/archive/construction-berlin-wall-1777024",
+          "https://www.bpb.de/themen/deutschlandarchiv/340062/the-wall-1961-2021-part-one/",
+          "https://www.deutschlandmuseum.de/en/history/calendar/1961-08-13-construction-of-the-berlin-wall/"
+        ]
+      }
     },
     {
       "id": "bond",
@@ -8075,7 +9181,18 @@
       "crosscheckLinks": [
         "https://www.mgm.com/movies/dr-no",
         "https://catalog.afi.com/Film/22934-DR-NO?cp=1&pos=0&sid=51f10738-006a-4d73-8f42-11b55efa60af&sr=0.12718372"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The film starring Sean Connery premiered in London in October.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.filmretrospect.com/dr-no-premiere-in-london-on-this-day-october-5th-1962",
+          "https://www.007magazine.co.uk/london_calling.htm",
+          "https://www.imdb.com/title/tt0055928/releaseinfo/",
+          "https://www.laemmle.com/film/dr-no"
+        ]
+      }
     },
     {
       "id": "valentina",
@@ -8086,7 +9203,18 @@
       "crosscheckLinks": [
         "https://www.history.com/this-day-in-history/june-16/first-woman-in-space",
         "https://www.esa.int/About_Us/50_years_of_ESA/50_years_of_humans_in_space/First_woman_in_space_Valentina"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Vostok 6 carried the first woman into space in June.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.esa.int/About_Us/50_years_of_ESA/50_years_of_humans_in_space/First_woman_in_space_Valentina",
+          "https://www.history.com/this-day-in-history/june-16/first-woman-in-space",
+          "https://airandspace.si.edu/stories/editorial/reaching-new-heights-space",
+          "https://www.nasa.gov/wp-content/uploads/2023/04/sp-4004-1963.pdf"
+        ]
+      }
     },
     {
       "id": "beatles",
@@ -8097,7 +9225,18 @@
       "crosscheckLinks": [
         "https://www.edsullivan.com/timeline/the-beatles-first-appearance/",
         "https://www.si.edu/collections/snapshot/beatles-first-appearance-ed-sullivan-show"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Their first live appearance on the US show took place in February.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.edsullivan.com/timeline/the-beatles-first-appearance/",
+          "https://www.si.edu/collections/snapshot/beatles-first-appearance-ed-sullivan-show",
+          "https://www.edsullivan.com/artists/the-beatles/",
+          "https://www.thebeatles.com/ladies-and-gentlemen-beatles"
+        ]
+      }
     },
     {
       "id": "spacewalk",
@@ -8108,7 +9247,18 @@
       "crosscheckLinks": [
         "https://www.guinnessworldrecords.com/world-records/first-spacewalk",
         "https://starwalk.space/en/news/first-spacewalk"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "He left the Voskhod 2 spacecraft in March.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.esa.int/Science_Exploration/Space_Science/18_March",
+          "https://airandspace.si.edu/exhibition/outside-spacecraft/floating.html",
+          "https://starwalk.space/en/news/first-spacewalk",
+          "https://www.esa.int/About_Us/50_years_of_ESA/Alexei_Leonov_The_artistic_spaceman"
+        ]
+      }
     },
     {
       "id": "england-cup",
@@ -8119,7 +9269,18 @@
       "crosscheckLinks": [
         "https://www.englandfootball.com/england/mens-senior-team/Legacy",
         "https://www.englandfootball.com/articles/2026/Jul/30/watch-highlights-of-england-1966-world-cup-win-20263007"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "England defeated West Germany at Wembley in July.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.thefa.com/news/2014/Jul/29/england-west-germany-world-cup-final-1966-4-2",
+          "https://www.englandfootball.com/articles/2026/Jul/30/watch-highlights-of-england-1966-world-cup-win-20263007",
+          "https://guides.loc.gov/world-cup/england-1966",
+          "https://en.wikipedia.org/wiki/1966_FIFA_World_Cup"
+        ]
+      }
     },
     {
       "id": "olympics-mexico",
@@ -8130,7 +9291,18 @@
       "crosscheckLinks": [
         "https://www.olympedia.org/editions/17",
         "https://library.olympics.com/Default/basicfilesdownload.ashx?itemGuid=2ECE9BE9-EA5F-4F0F-97DF-84C75B6BC60A"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The Games opened in October.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.olympedia.org/editions/17",
+          "https://library.olympics.com/Default/basicfilesdownload.ashx?itemGuid=2ECE9BE9-EA5F-4F0F-97DF-84C75B6BC60A",
+          "https://en.wikipedia.org/wiki/1968_Summer_Olympics",
+          "https://www.olympedia.org/editions"
+        ]
+      }
     },
     {
       "id": "pong",
@@ -8141,7 +9313,18 @@
       "crosscheckLinks": [
         "https://www.history.com/this-day-in-history/November-29/pong-released",
         "https://www.museumofplay.org/games/pong/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The arcade game became an early commercial video-game success.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.museumofplay.org/games/pong/",
+          "https://atari.com/pages/history",
+          "https://www.history.com/this-day-in-history/November-29/pong-released",
+          "https://www.guinnessworldrecords.com/world-records/111877-first-commercially-successful-arcade-videogame"
+        ]
+      }
     },
     {
       "id": "jaws",
@@ -8152,7 +9335,18 @@
       "crosscheckLinks": [
         "https://www.history.com/this-day-in-history/june-20/jaws-released-2",
         "https://apnews.com/article/a2490a06da79660a19de4ac2bb4bd710"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Steven Spielberg's film opened in June.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.history.com/this-day-in-history/June-20/jaws-released-2",
+          "https://apnews.com/article/a2490a06da79660a19de4ac2bb4bd710",
+          "https://www.washingtonpost.com/archive/local/2004/06/22/the-big-fish-at-the-box-office/69d54a60-76bb-490d-8356-f2b7790e1b71/",
+          "https://www.history.com/this-day-in-history/june-20/jaws-released-2?kx_EmailCampaignID=13428&kx_EmailCampaignName=email-hist-tdih-2017-0620-06202017&kx_EmailRecipientID=064ed9841dd6be452c703d9d67dc02ed3e35dc7c846e7861bd3c1f9a8466d8c5&om_mid=203393816&om_rid=064ed9841dd6be452c703d9d67dc02ed3e35dc7c846e7861bd3c1f9a8466d8c5"
+        ]
+      }
     },
     {
       "id": "viking",
@@ -8163,7 +9357,18 @@
       "crosscheckLinks": [
         "https://science.nasa.gov/planetary-science/programs/mars-exploration/mission-timeline/how-we-land-on-mars/",
         "https://science.nasa.gov/astrobiology/missions/viking-project/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "NASA's lander reached the surface in July.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://science.nasa.gov/planetary-science/programs/mars-exploration/mission-timeline/how-we-land-on-mars/",
+          "https://science.nasa.gov/mission/viking-1/",
+          "https://science.nasa.gov/astrobiology/missions/viking-project/",
+          "https://www.nasa.gov/history/45-years-ago-viking-1-and-2-off-to-mars/"
+        ]
+      }
     },
     {
       "id": "star-wars",
@@ -8174,7 +9379,18 @@
       "crosscheckLinks": [
         "https://production.royalmintmuseum.org.uk/star-wars/r2-d2-and-c-3po/star-wars-a-pop-culture-phenomenon/",
         "https://www.history.com/this-day-in-history/may-25/star-wars-opens?kx_EmailCampaignID=21679&kx_EmailCampaignName=email-hist-tdih-2018-0525-05252018&kx_EmailRecipientID=2391417f735e799be853c2e63f8bb3f48b59e92b207f981f7ea5f665d2437bdf&om_mid=380310982&om_rid=2391417f735e799be853c2e63f8bb3f48b59e92b207f981f7ea5f665d2437bdf"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The film opened in May, later receiving the subtitle A New Hope.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://abcnews.com/GMA/Culture/star-wars-premieres-changed-1977/story?id=67764250",
+          "https://www.kaltura.com/index.php/extwidget/preview/partner_id/2007921/uiconf_id/38997531/entry_id/0_gni4sd37/embed/auto?flashvars%5BstreamerType%5D=auto",
+          "https://www.lucasfilm.com/productions/episode-iv/",
+          "https://www.cbsnews.com/pictures/star-wars-052577-a-day-long-remembered/1/"
+        ]
+      }
     },
     {
       "id": "space-invaders",
@@ -8190,6 +9406,17 @@
         "title": "Taito unveils Space Invaders in Japan",
         "fact": "The game was publicly introduced at Taito's new-product presentation on 16 June; this is the unveiling milestone.",
         "source": "https://spaceinvaders.jp/whats.html"
+      },
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The game was publicly introduced at Taito's new-product presentation on 16 June; this is the unveiling milestone.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://taito.co.jp/70th/history",
+          "https://www.taito.co.jp/70th/history",
+          "https://spaceinvaders.jp/whats.html",
+          "https://www.taito.co.jp/en/corporate/about/history"
+        ]
       }
     },
     {
@@ -8201,7 +9428,18 @@
       "crosscheckLinks": [
         "https://www.sony.com/en/SonyInfo/CorporateInfo/History/sonyhistory-e.html?trk=article-ssr-frontend-pulse_little-text-block",
         "https://www.history.com/this-day-in-history/july-1/the-first-sony-walkman-goes-on-sale"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The TPS-L2 portable cassette player went on sale in July.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.sony.com/en/SonyInfo/News/Press/199907/99-059/",
+          "https://www.crutchfield.com/learn/sony-walkman-history.html",
+          "https://www.sony.com/ja/SonyInfo/CorporateInfo/History/sonyhistory-e.html",
+          "https://www.suruga-ya.jp/product/detail/701103787"
+        ]
+      }
     },
     {
       "id": "pacman",
@@ -8212,7 +9450,18 @@
       "crosscheckLinks": [
         "https://www.pacman.com/en/history/",
         "https://www.pacman.com/jp/history/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Namco's maze game was released in Japan before its US launch.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.pacman.com/en/history/",
+          "https://www.bandainamcoent.co.jp/corporate/press/pdf/en_20100624.pdf",
+          "https://www.pacman.com/jp/history/",
+          "https://retro.chiba.tw/en/consoles/pac-man-arcade/"
+        ]
+      }
     },
     {
       "id": "tetris",
@@ -8223,7 +9472,18 @@
       "crosscheckLinks": [
         "https://tetris.com/corporate-bios",
         "https://www.moma.org/collection/works/152403"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The puzzle game was developed on an Electronika 60 computer.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://tetris.com/news/the-history-of-tetris?trk=article-ssr-frontend-pulse_little-text-block",
+          "https://games.kikizo.com/features/tetris_iv_dec07_p2.asp",
+          "https://www.moma.org/collection/works/152403",
+          "https://www.tetris.com/about"
+        ]
+      }
     },
     {
       "id": "mario",
@@ -8234,7 +9494,19 @@
       "crosscheckLinks": [
         "https://www.nintendo.com/jp/character/mario/en/history/smb/index.html",
         "https://www.nintendo.com/jp/character/mario/en/history/smb/index.html?trk=article-ssr-frontend-pulse_little-text-block"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Nintendo's Famicom platform game was released in Japan in September.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.nintendo.com/jp/character/mario/en/history/smb/index.html",
+          "https://www.nintendo.com/jp/character/mario/en/history/smb/index.html?trk=article-ssr-frontend-pulse_little-text-block",
+          "https://www.nintendo.co.jp/kessan/annual0603e.pdf",
+          "https://www.nintendo.co.jp/kessan/annual0503e.pdf"
+        ],
+        "correction": "Use the Japanese Famicom name for the Japanese release; NES was the export branding."
+      }
     },
     {
       "id": "zelda",
@@ -8247,7 +9519,18 @@
         "https://www.nintendo.com/tw/character/zelda/history/index.html",
         "https://collection.rcgs.jp/page/PACKAGE0000063",
         "https://en.wikipedia.org/wiki/The_Legend_of_Zelda"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The original game debuted on the Famicom Disk System in February.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://collection.rcgs.jp/page/PACKAGE0000063",
+          "https://www.imdb.com/title/tt0176925/releaseinfo/",
+          "https://en.wikipedia.org/wiki/The_Legend_of_Zelda",
+          "https://en.wikipedia.org/wiki/The_Legend_of_Zelda_%28video_game%29"
+        ]
+      }
     },
     {
       "id": "simpsons",
@@ -8258,7 +9541,18 @@
       "crosscheckLinks": [
         "https://www.history.com/this-day-in-history/may-20/the-simpsons-airs-400th-episode",
         "https://www.simpsonsarchive.com/other/articles/briefhistory.html"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The series premiered in December; the earlier short segments began before this.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.stason.org/TULARC/tv/simpsons/02-The-Simpsons-Basic-History.html",
+          "https://en.wikipedia.org/wiki/The_Simpsons_%28franchise%29",
+          "https://about.ebsco.com/research-starters/arts-and-entertainment/simpsons-debuts-anchoring-fledgling-fox-network",
+          "https://www.latimes.com/archives/la-xpm-1989-12-07-ca-570-story.html"
+        ]
+      }
     },
     {
       "id": "hubble-fix",
@@ -8269,7 +9563,18 @@
       "crosscheckLinks": [
         "https://science.nasa.gov/mission/hubble/observatory/missions-to-hubble/servicing-mission-1-timeline-full-text/",
         "https://science.nasa.gov/mission/hubble/overview/hubble-timeline/hubble-history-timeline-full-text/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "STS-61 installed corrective optics and a new camera in December.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://esahubble.org/about/history/servicing_mission_1/",
+          "https://science.nasa.gov/wp-content/uploads/2023/04/hst-servicing-missions-fact-sheet.pdf",
+          "https://www.nasa.gov/history/30-years-ago-sts-61-the-first-hubble-servicing-mission/",
+          "https://www.nasa.gov/history/30-years-ago-hubble-launched-to-unlock-the-secrets-of-the-universe/"
+        ]
+      }
     },
     {
       "id": "playstation",
@@ -8280,7 +9585,18 @@
       "crosscheckLinks": [
         "https://www.playstation.com/ja-jp/playstation-history/1994-ps-one/",
         "https://sonyinteractive.com/en/our-company/expanded-company-timeline/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Sony released the console in December.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.playstation.com/ja-jp/playstation-history/1994-ps-one/",
+          "https://sonyinteractive.com/en/our-company/expanded-company-timeline/",
+          "https://www.sony.com/ja/SonyInfo/CorporateInfo/History/SonyHistory/2-09.html",
+          "https://www.playstation.com/en-us/playstation-history/1994-ps-one/?sf275620891=1"
+        ]
+      }
     },
     {
       "id": "toy-story",
@@ -8291,7 +9607,18 @@
       "crosscheckLinks": [
         "https://movies.disney.com/toy-story",
         "https://thewaltdisneycompany.com/news/toy-story-pixar-history/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Pixar's feature film opened in November.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://thewaltdisneycompany.com/news/toy-story-pixar-history/",
+          "https://catalog.afi.com/Film/55210-TOY-STORY",
+          "https://movies.disney.com/toy-story",
+          "https://parallax-pixar.squarespace.com/our-story-pixar"
+        ]
+      }
     },
     {
       "id": "pokemon",
@@ -8302,7 +9629,18 @@
       "crosscheckLinks": [
         "https://www.nintendo.co.jp/n02/dmg/apajapbj/index.html",
         "https://apps.apple.com/jp/story/id1563336846?l=en-US"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The original Game Boy role-playing games were released in February.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://bulbapedia.bulbagarden.net/wiki/Pokemon_Green",
+          "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Red_%28Japanese%29",
+          "https://apps.apple.com/jp/story/id1563336846?l=en-US",
+          "https://w.atwiki.jp/nitendo/pages/5543.html"
+        ]
+      }
     },
     {
       "id": "harry-potter",
@@ -8315,7 +9653,18 @@
         "https://www.bloomsbury.com/us/author/jk-rowling/",
         "https://www.theguardian.com/books/2022/jun/18/riot-kings-cross-oral-history-harry-potter-philosophers-stone-25-publishers",
         "https://www.bloomsbury-ir.co.uk/docs/librariesprovider16/archives/annual_reports/annual-report-and-accounts-2021.pdf"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "Bloomsbury published Harry Potter and the Philosopher's Stone in June.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone",
+          "https://literatureatlas.com/childrens-book/harry-potter-and-the-philosophers-stone/",
+          "https://openlibrary.org/books/OL7961604M/Harry_Potter_and_the_Philosopher%27s_Stone",
+          "https://www.bloomsbury-ir.co.uk/docs/librariesprovider16/archives/annual_reports/annual-report-and-accounts-2021.pdf"
+        ]
+      }
     },
     {
       "id": "wikipedia",
@@ -8326,7 +9675,18 @@
       "crosscheckLinks": [
         "https://en.wikipedia.org/wiki/Wikipedia",
         "https://www.history.com/this-day-in-history/january-15/wikipedia-launches"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The online encyclopedia launched in January.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://en.wikipedia.org/wiki/Wikipedia",
+          "https://wikimediafoundation.org/news/2016/01/14/wikipedia-15-foundation-endowment/",
+          "https://en.wikipedia.org/wiki/English_Wikipedia",
+          "https://www.history.com/this-day-in-history/january-15/wikipedia-launches"
+        ]
+      }
     },
     {
       "id": "steam-store",
@@ -8339,7 +9699,18 @@
         "https://store.steampowered.com/oldnews/183?l=koreana",
         "https://media.steampowered.com/apps/valve/2022/steamDeck_booklet_EN.pdf",
         "https://www.gamespot.com/articles/steam-update-from-valve/1100-6074697/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The PC software platform launched in September.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.gamespot.com/articles/gdc-2002-valve-unveils-steam/1100-2857298/",
+          "https://store.steampowered.com/oldnews/183?curator_clanid=9730205",
+          "https://www.gamespot.com/articles/steam-update-from-valve/1100-6074697/",
+          "https://media.steampowered.com/apps/valve/2022/steamDeck_booklet_EN.pdf"
+        ]
+      }
     },
     {
       "id": "new-horizons",
@@ -8352,7 +9723,18 @@
         "https://science.nasa.gov/wp-content/uploads/2023/04/GREEN_July_SC_PSD_TAGGED.pdf",
         "https://www.nasa.gov/history/15-years-ago-new-horizons-launched-to-pluto-and-beyond/",
         "https://science.nasa.gov/mission/new-horizons/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The spacecraft made its closest approach in July.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.guinnessworldrecords.com/world-records/416009-first-flyby-of-pluto",
+          "https://www.nasa.gov/history/15-years-ago-new-horizons-launched-to-pluto-and-beyond/",
+          "https://science.nasa.gov/mission/new-horizons/",
+          "https://science.nasa.gov/mission/new-horizons/?id=346976"
+        ]
+      }
     },
     {
       "id": "grav-waves",
@@ -8363,7 +9745,18 @@
       "crosscheckLinks": [
         "https://ligo.org/ligo-resumes-search-for-gravitational-waves/",
         "https://ligo.org/detections/gw150914/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The announcement was made in February; the waves were recorded in the previous year.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.ligo.mit.edu/feb_2016_news.html",
+          "https://www.ligo.caltech.edu/system/media_files/binaries/302/original/detection-press-release.pdf",
+          "https://ligo.org/detections/gw150914/",
+          "https://www.ligo.caltech.edu/LA/news/ligo20160211"
+        ]
+      }
     },
     {
       "id": "black-hole",
@@ -8374,7 +9767,18 @@
       "crosscheckLinks": [
         "https://www.guinnessworldrecords.com/world-records/568438-first-direct-image-of-a-black-hole",
         "https://science.nasa.gov/resource/first-image-of-a-black-hole/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The Event Horizon Telescope collaboration released its M87 image in April.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://science.nasa.gov/resource/first-image-of-a-black-hole/",
+          "https://eventhorizontelescope.org/press-release-april-10-2019-astronomers-capture-first-image-black-hole",
+          "https://www.nasa.gov/universe/black-hole-image-makes-history-nasa-telescopes-coordinated-observations/",
+          "https://eventhorizontelescope.org/faq/do-you-have-black-hole-image-yet-when-will-real-images-become-available"
+        ]
+      }
     },
     {
       "id": "jwst",
@@ -8385,7 +9789,18 @@
       "crosscheckLinks": [
         "https://science.nasa.gov/mission/webb/webb-mission-timeline/",
         "https://science.nasa.gov/mission/webb/faqs-full/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The telescope launched on an Ariane 5 rocket in December.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://science.nasa.gov/mission/webb/launch/",
+          "https://www.esa.int/Newsroom/Press_Releases/Webb_liftoff_on_Ariane_5_to_unlock_secrets_of_the_Universe",
+          "https://science.nasa.gov/asset/webb/james-webb-space-telescope-launch-highlights/",
+          "https://science.nasa.gov/missions/webb/nasas-webb-telescope-launches-to-see-first-galaxies-distant-worlds/"
+        ]
+      }
     },
     {
       "id": "artemis",
@@ -8396,7 +9811,18 @@
       "crosscheckLinks": [
         "https://www.nasa.gov/mission/artemis-i/",
         "https://www.nasa.gov/reference/artemis-i-mission-timeline/"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "The uncrewed Orion test mission lifted off in November.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.nasa.gov/mission/artemis-i/",
+          "https://www.nasa.gov/blogs/missions/2022/11/16/artemis-i-liftoff/",
+          "https://www.nasa.gov/reference/artemis-i-mission-timeline/",
+          "https://www.nasa.gov/news-release/liftoff-nasas-artemis-i-mega-rocket-launches-orion-to-moon/"
+        ]
+      }
     },
     {
       "id": "chandrayaan",
@@ -8407,7 +9833,18 @@
       "crosscheckLinks": [
         "https://science.nasa.gov/mission/chandrayaan-3/",
         "https://www.esa.int/Enabling_Support/Operations/India_s_Chandrayaan-3_successfully_lands_on_the_Moon"
-      ]
+      ],
+      "explanationReview": {
+        "checkedAt": "2026-10-22",
+        "fact": "India's lander touched down in August in the southern polar region.",
+        "method": "Read the full bank explanation and searched its complete dated claim; assessed milestone/calendar/market scope, with institutional/publisher crosschecks where available.",
+        "crosscheckLinks": [
+          "https://www.esa.int/Enabling_Support/Operations/India_s_Chandrayaan-3_successfully_lands_on_the_Moon",
+          "https://science.nasa.gov/mission/chandrayaan-3/",
+          "https://pradan.issdc.gov.in/ch3/",
+          "https://www.nature.com/articles/d41586-023-02690-7"
+        ]
+      }
     }
   ],
   "referenceSubjects": {
@@ -8418,7 +9855,7 @@
           "name": "Titanium",
           "symbol": "Ti",
           "number": 22,
-          "melt": 1941,
+          "melt": 1943,
           "density_g_cm3": 4.506,
           "phase": "Solid"
         },
@@ -8449,7 +9886,7 @@
           "symbol": "Cr",
           "number": 24,
           "melt": 2180,
-          "density_g_cm3": 7.19,
+          "density_g_cm3": 7.15,
           "phase": "Solid"
         },
         "crosscheckLinks": [
@@ -8464,7 +9901,7 @@
           "symbol": "Mn",
           "number": 25,
           "melt": 1519,
-          "density_g_cm3": 7.21,
+          "density_g_cm3": 7.3,
           "phase": "Solid"
         },
         "crosscheckLinks": [
@@ -8479,7 +9916,7 @@
           "symbol": "Fe",
           "number": 26,
           "melt": 1811,
-          "density_g_cm3": 7.874,
+          "density_g_cm3": 7.87,
           "phase": "Solid"
         },
         "crosscheckLinks": [
@@ -8494,7 +9931,7 @@
           "symbol": "Ag",
           "number": 47,
           "melt": 1234.93,
-          "density_g_cm3": 10.49,
+          "density_g_cm3": 10.5,
           "phase": "Solid"
         },
         "crosscheckLinks": [
@@ -8539,7 +9976,7 @@
           "symbol": "Ni",
           "number": 28,
           "melt": 1728,
-          "density_g_cm3": 8.908,
+          "density_g_cm3": 8.9,
           "phase": "Solid"
         },
         "crosscheckLinks": [
@@ -8553,8 +9990,8 @@
           "name": "Zinc",
           "symbol": "Zn",
           "number": 30,
-          "melt": 692.68,
-          "density_g_cm3": 7.14,
+          "melt": 692.677,
+          "density_g_cm3": 7.134,
           "phase": "Solid"
         },
         "crosscheckLinks": [
@@ -8568,8 +10005,8 @@
           "name": "Tin",
           "symbol": "Sn",
           "number": 50,
-          "melt": 505.08,
-          "density_g_cm3": 7.365,
+          "melt": 505.078,
+          "density_g_cm3": 7.287,
           "phase": "Solid"
         },
         "crosscheckLinks": [
@@ -8583,7 +10020,7 @@
           "name": "Zirconium",
           "symbol": "Zr",
           "number": 40,
-          "melt": 2128,
+          "melt": 2127,
           "density_g_cm3": 6.52,
           "phase": "Solid"
         },
@@ -8613,8 +10050,8 @@
           "name": "Molybdenum",
           "symbol": "Mo",
           "number": 42,
-          "melt": 2896,
-          "density_g_cm3": 10.28,
+          "melt": 2895,
+          "density_g_cm3": 10.2,
           "phase": "Solid"
         },
         "crosscheckLinks": [
@@ -8628,8 +10065,8 @@
           "name": "Palladium",
           "symbol": "Pd",
           "number": 46,
-          "melt": 1828.05,
-          "density_g_cm3": 12.023,
+          "melt": 1828,
+          "density_g_cm3": 12,
           "phase": "Solid"
         },
         "crosscheckLinks": [
@@ -8643,8 +10080,8 @@
           "name": "Bismuth",
           "symbol": "Bi",
           "number": 83,
-          "melt": 544.7,
-          "density_g_cm3": 9.78,
+          "melt": 544.556,
+          "density_g_cm3": 9.79,
           "phase": "Solid"
         },
         "crosscheckLinks": [
@@ -8658,8 +10095,8 @@
           "name": "Cadmium",
           "symbol": "Cd",
           "number": 48,
-          "melt": 594.22,
-          "density_g_cm3": 8.65,
+          "melt": 594.219,
+          "density_g_cm3": 8.69,
           "phase": "Solid"
         },
         "crosscheckLinks": [
@@ -8673,8 +10110,8 @@
           "name": "Lead",
           "symbol": "Pb",
           "number": 82,
-          "melt": 600.61,
-          "density_g_cm3": 11.34,
+          "melt": 600.612,
+          "density_g_cm3": 11.3,
           "phase": "Solid"
         },
         "crosscheckLinks": [
@@ -8689,7 +10126,7 @@
           "symbol": "Mg",
           "number": 12,
           "melt": 923,
-          "density_g_cm3": 1.738,
+          "density_g_cm3": 1.74,
           "phase": "Solid"
         },
         "crosscheckLinks": [
@@ -8703,8 +10140,8 @@
           "name": "Antimony",
           "symbol": "Sb",
           "number": 51,
-          "melt": 903.78,
-          "density_g_cm3": 6.697,
+          "melt": 903.778,
+          "density_g_cm3": 6.68,
           "phase": "Solid"
         },
         "crosscheckLinks": [
@@ -8719,7 +10156,7 @@
           "symbol": "Pt",
           "number": 78,
           "melt": 2041.4,
-          "density_g_cm3": 21.45,
+          "density_g_cm3": 21.5,
           "phase": "Solid"
         },
         "crosscheckLinks": [
@@ -8734,7 +10171,7 @@
           "symbol": "Co",
           "number": 27,
           "melt": 1768,
-          "density_g_cm3": 8.9,
+          "density_g_cm3": 8.86,
           "phase": "Solid"
         },
         "crosscheckLinks": [
@@ -8748,8 +10185,8 @@
           "name": "Tungsten",
           "symbol": "W",
           "number": 74,
-          "melt": 3695,
-          "density_g_cm3": 19.25,
+          "melt": 3687,
+          "density_g_cm3": 19.3,
           "phase": "Solid"
         },
         "crosscheckLinks": [
@@ -8763,7 +10200,7 @@
           "name": "Aluminium",
           "symbol": "Al",
           "number": 13,
-          "melt": 933.47,
+          "melt": 933.473,
           "density_g_cm3": 2.7,
           "phase": "Solid"
         },
@@ -8779,7 +10216,7 @@
           "symbol": "Hg",
           "number": 80,
           "melt": 234.321,
-          "density_g_cm3": 13.534,
+          "density_g_cm3": 13.5336,
           "phase": "Liquid"
         },
         "crosscheckLinks": [
@@ -8794,7 +10231,7 @@
           "symbol": "K",
           "number": 19,
           "melt": 336.7,
-          "density_g_cm3": 0.862,
+          "density_g_cm3": 0.89,
           "phase": "Solid"
         },
         "crosscheckLinks": [
@@ -8809,7 +10246,7 @@
           "symbol": "Xe",
           "number": 54,
           "melt": 161.4,
-          "density_g_cm3": 0.005894,
+          "density_g_cm3": 0.005366,
           "phase": "Gas"
         },
         "crosscheckLinks": [
@@ -8824,7 +10261,7 @@
           "symbol": "Kr",
           "number": 36,
           "melt": 115.78,
-          "density_g_cm3": 0.003749,
+          "density_g_cm3": 0.003425,
           "phase": "Gas"
         },
         "crosscheckLinks": [
@@ -8839,7 +10276,7 @@
           "symbol": "Rb",
           "number": 37,
           "melt": 312.45,
-          "density_g_cm3": 1.532,
+          "density_g_cm3": 1.53,
           "phase": "Solid"
         },
         "crosscheckLinks": [
@@ -8868,7 +10305,7 @@
         "key": "Ireland",
         "reference": {
           "name": "Ireland",
-          "area": 70273,
+          "area": 69825,
           "capital": [
             "Dublin"
           ]
@@ -8882,7 +10319,7 @@
         "key": "Austria",
         "reference": {
           "name": "Austria",
-          "area": 83871,
+          "area": 83878,
           "capital": [
             "Vienna"
           ]
@@ -8896,7 +10333,7 @@
         "key": "Portugal",
         "reference": {
           "name": "Portugal",
-          "area": 92090,
+          "area": 92226,
           "capital": [
             "Lisbon"
           ]
@@ -8910,7 +10347,7 @@
         "key": "Hungary",
         "reference": {
           "name": "Hungary",
-          "area": 93028,
+          "area": 93023,
           "capital": [
             "Budapest"
           ]
@@ -8938,7 +10375,7 @@
         "key": "Czechia",
         "reference": {
           "name": "Czechia",
-          "area": 78865,
+          "area": 78871,
           "capital": [
             "Prague"
           ]
@@ -8952,7 +10389,7 @@
         "key": "New Zealand",
         "reference": {
           "name": "New Zealand",
-          "area": 270467,
+          "area": 268107,
           "capital": [
             "Wellington"
           ]
@@ -8966,7 +10403,7 @@
         "key": "Germany",
         "reference": {
           "name": "Germany",
-          "area": 357114,
+          "area": 357581,
           "capital": [
             "Berlin"
           ]
@@ -8994,7 +10431,7 @@
         "key": "United Kingdom",
         "reference": {
           "name": "United Kingdom",
-          "area": 242900,
+          "area": 242495,
           "capital": [
             "London"
           ]
@@ -9008,7 +10445,7 @@
         "key": "Malaysia",
         "reference": {
           "name": "Malaysia",
-          "area": 330803,
+          "area": 330621,
           "capital": [
             "Kuala Lumpur"
           ]
@@ -9036,7 +10473,7 @@
         "key": "Sweden",
         "reference": {
           "name": "Sweden",
-          "area": 450295,
+          "area": 438574,
           "capital": [
             "Stockholm"
           ]
@@ -9050,7 +10487,7 @@
         "key": "Kazakhstan",
         "reference": {
           "name": "Kazakhstan",
-          "area": 2724900,
+          "area": 2724902,
           "capital": [
             "Astana"
           ]
@@ -9064,7 +10501,7 @@
         "key": "Ecuador",
         "reference": {
           "name": "Ecuador",
-          "area": 276841,
+          "area": 257217,
           "capital": [
             "Quito"
           ]
@@ -9094,7 +10531,7 @@
         "key": "Bulgaria",
         "reference": {
           "name": "Bulgaria",
-          "area": 110879,
+          "area": 110372,
           "capital": [
             "Sofia"
           ]
@@ -9108,7 +10545,7 @@
         "key": "Spain",
         "reference": {
           "name": "Spain",
-          "area": 505992,
+          "area": 506008,
           "capital": [
             "Madrid"
           ]
@@ -9122,7 +10559,7 @@
         "key": "Argentina",
         "reference": {
           "name": "Argentina",
-          "area": 2780400,
+          "area": 2796427,
           "capital": [
             "Buenos Aires"
           ]
@@ -9136,7 +10573,7 @@
         "key": "Vietnam",
         "reference": {
           "name": "Vietnam",
-          "area": 331212,
+          "area": 331317,
           "capital": [
             "Hanoi"
           ]
@@ -9150,7 +10587,7 @@
         "key": "Finland",
         "reference": {
           "name": "Finland",
-          "area": 338424,
+          "area": 336884,
           "capital": [
             "Helsinki"
           ]
@@ -9164,7 +10601,7 @@
         "key": "Greece",
         "reference": {
           "name": "Greece",
-          "area": 131990,
+          "area": 131957,
           "capital": [
             "Athens"
           ]
@@ -9178,7 +10615,7 @@
         "key": "Mongolia",
         "reference": {
           "name": "Mongolia",
-          "area": 1564110,
+          "area": 1564116,
           "capital": [
             "Ulan Bator"
           ]
@@ -10129,7 +11566,7 @@
           "icao": "KDEN",
           "latitude": 39.860027,
           "longitude": -104.673792,
-          "elevation_ft": 5431
+          "elevation_ft": 5434
         },
         "crosscheckLinks": [
           "https://www.flightaware.com/resources/airport/KDEN",
@@ -10241,7 +11678,7 @@
           "icao": "LPPT",
           "latitude": 38.7813,
           "longitude": -9.13592,
-          "elevation_ft": 374
+          "elevation_ft": 355
         },
         "crosscheckLinks": [
           "https://ais.nav.pt/wp-content/uploads/AIS_Files/eAIP_Current/eAIP_Online/eAIP/html/eAIP/LP-AD-2.LPPT-en-PT.html",
@@ -10353,7 +11790,7 @@
           "icao": "LKPR",
           "latitude": 50.100874,
           "longitude": 14.259911,
-          "elevation_ft": 1247
+          "elevation_ft": 1234
         },
         "crosscheckLinks": [
           "https://www.airportdata.com/search-data/airport-details/icao/lkpr",
@@ -10385,7 +11822,7 @@
           "icao": "CYYC",
           "latitude": 51.118822,
           "longitude": -114.009933,
-          "elevation_ft": 3557
+          "elevation_ft": 3606
         },
         "crosscheckLinks": [
           "https://www.airportdata.com/search-data/airport-details/icao/cyyc",
@@ -10433,7 +11870,7 @@
           "icao": "SEQM",
           "latitude": -0.125399,
           "longitude": -78.354306,
-          "elevation_ft": 7841
+          "elevation_ft": 7910
         },
         "crosscheckLinks": [
           "https://www.airportdata.com/search-data/airport-details/icao/seqm",
@@ -10481,7 +11918,7 @@
           "icao": "VIDP",
           "latitude": 28.55563,
           "longitude": 77.09519,
-          "elevation_ft": 777
+          "elevation_ft": 778
         },
         "crosscheckLinks": [
           "https://aim-india.aai.aero/eaip-v2-07-2023/eAIP/IN-AD%202.1VIDP-en-GB.html",
@@ -10782,5 +12219,1070 @@
     "stackSets": 74,
     "stakeAdditions": 20,
     "failures": []
+  },
+  "measurementReview": {
+    "checkedAt": "2026-10-22",
+    "elements": {
+      "checkedAt": "2026-10-22",
+      "convention": "RSC Periodic Table fact-box values: melting point in kelvin at standard pressure, density in g/cm³ at room temperature. Reported precision retained; source links per reviewed element.",
+      "subjects": [
+        {
+          "key": "Titanium",
+          "url": "https://periodic-table.rsc.org/element/22/titanium",
+          "melt": 1943,
+          "density_g_cm3": 4.506
+        },
+        {
+          "key": "Vanadium",
+          "url": "https://periodic-table.rsc.org/element/23/vanadium",
+          "melt": 2183,
+          "density_g_cm3": 6
+        },
+        {
+          "key": "Chromium",
+          "url": "https://periodic-table.rsc.org/element/24/chromium",
+          "melt": 2180,
+          "density_g_cm3": 7.15
+        },
+        {
+          "key": "Manganese",
+          "url": "https://periodic-table.rsc.org/element/25/manganese",
+          "melt": 1519,
+          "density_g_cm3": 7.3
+        },
+        {
+          "key": "Iron",
+          "url": "https://periodic-table.rsc.org/element/26/iron",
+          "melt": 1811,
+          "density_g_cm3": 7.87
+        },
+        {
+          "key": "Silver",
+          "url": "https://periodic-table.rsc.org/element/47/silver",
+          "melt": 1234.93,
+          "density_g_cm3": 10.5
+        },
+        {
+          "key": "Gold",
+          "url": "https://periodic-table.rsc.org/element/79/gold",
+          "melt": 1337.33,
+          "density_g_cm3": 19.3
+        },
+        {
+          "key": "Copper",
+          "url": "https://periodic-table.rsc.org/element/29/copper",
+          "melt": 1357.77,
+          "density_g_cm3": 8.96
+        },
+        {
+          "key": "Nickel",
+          "url": "https://periodic-table.rsc.org/element/28/nickel",
+          "melt": 1728,
+          "density_g_cm3": 8.9
+        },
+        {
+          "key": "Zinc",
+          "url": "https://periodic-table.rsc.org/element/30/zinc",
+          "melt": 692.677,
+          "density_g_cm3": 7.134
+        },
+        {
+          "key": "Tin",
+          "url": "https://periodic-table.rsc.org/element/50/tin",
+          "melt": 505.078,
+          "density_g_cm3": 7.287
+        },
+        {
+          "key": "Zirconium",
+          "url": "https://periodic-table.rsc.org/element/40/zirconium",
+          "melt": 2127,
+          "density_g_cm3": 6.52
+        },
+        {
+          "key": "Niobium",
+          "url": "https://periodic-table.rsc.org/element/41/niobium",
+          "melt": 2750,
+          "density_g_cm3": 8.57
+        },
+        {
+          "key": "Molybdenum",
+          "url": "https://periodic-table.rsc.org/element/42/molybdenum",
+          "melt": 2895,
+          "density_g_cm3": 10.2
+        },
+        {
+          "key": "Palladium",
+          "url": "https://periodic-table.rsc.org/element/46/palladium",
+          "melt": 1828,
+          "density_g_cm3": 12
+        },
+        {
+          "key": "Bismuth",
+          "url": "https://periodic-table.rsc.org/element/83/bismuth",
+          "melt": 544.556,
+          "density_g_cm3": 9.79
+        },
+        {
+          "key": "Cadmium",
+          "url": "https://periodic-table.rsc.org/element/48/cadmium",
+          "melt": 594.219,
+          "density_g_cm3": 8.69
+        },
+        {
+          "key": "Lead",
+          "url": "https://periodic-table.rsc.org/element/82/lead",
+          "melt": 600.612,
+          "density_g_cm3": 11.3
+        },
+        {
+          "key": "Magnesium",
+          "url": "https://periodic-table.rsc.org/element/12/magnesium",
+          "melt": 923,
+          "density_g_cm3": 1.74
+        },
+        {
+          "key": "Antimony",
+          "url": "https://periodic-table.rsc.org/element/51/antimony",
+          "melt": 903.778,
+          "density_g_cm3": 6.68
+        },
+        {
+          "key": "Platinum",
+          "url": "https://periodic-table.rsc.org/element/78/platinum",
+          "melt": 2041.4,
+          "density_g_cm3": 21.5
+        },
+        {
+          "key": "Cobalt",
+          "url": "https://periodic-table.rsc.org/element/27/cobalt",
+          "melt": 1768,
+          "density_g_cm3": 8.86
+        },
+        {
+          "key": "Tungsten",
+          "url": "https://periodic-table.rsc.org/element/74/tungsten",
+          "melt": 3687,
+          "density_g_cm3": 19.3
+        },
+        {
+          "key": "Aluminium",
+          "url": "https://periodic-table.rsc.org/element/13/aluminium",
+          "melt": 933.473,
+          "density_g_cm3": 2.7
+        },
+        {
+          "key": "Mercury",
+          "url": "https://periodic-table.rsc.org/element/80/mercury",
+          "melt": 234.321,
+          "density_g_cm3": 13.5336
+        },
+        {
+          "key": "Potassium",
+          "url": "https://periodic-table.rsc.org/element/19/potassium",
+          "melt": 336.7,
+          "density_g_cm3": 0.89
+        },
+        {
+          "key": "Xenon",
+          "url": "https://periodic-table.rsc.org/element/54/xenon",
+          "melt": 161.4,
+          "density_g_cm3": 0.005366
+        },
+        {
+          "key": "Krypton",
+          "url": "https://periodic-table.rsc.org/element/36/krypton",
+          "melt": 115.78,
+          "density_g_cm3": 0.003425
+        },
+        {
+          "key": "Rubidium",
+          "url": "https://periodic-table.rsc.org/element/37/rubidium",
+          "melt": 312.45,
+          "density_g_cm3": 1.53
+        },
+        {
+          "key": "Strontium",
+          "url": "https://periodic-table.rsc.org/element/38/strontium",
+          "melt": 1050,
+          "density_g_cm3": 2.64
+        }
+      ],
+      "corrections": [
+        {
+          "key": "Titanium",
+          "field": "melt",
+          "from": 1941,
+          "value": 1943
+        },
+        {
+          "key": "Chromium",
+          "field": "density_g_cm3",
+          "from": 7.19,
+          "value": 7.15
+        },
+        {
+          "key": "Manganese",
+          "field": "density_g_cm3",
+          "from": 7.21,
+          "value": 7.3
+        },
+        {
+          "key": "Iron",
+          "field": "density_g_cm3",
+          "from": 7.874,
+          "value": 7.87
+        },
+        {
+          "key": "Silver",
+          "field": "density_g_cm3",
+          "from": 10.49,
+          "value": 10.5
+        },
+        {
+          "key": "Nickel",
+          "field": "density_g_cm3",
+          "from": 8.908,
+          "value": 8.9
+        },
+        {
+          "key": "Zinc",
+          "field": "melt",
+          "from": 692.68,
+          "value": 692.677
+        },
+        {
+          "key": "Zinc",
+          "field": "density_g_cm3",
+          "from": 7.14,
+          "value": 7.134
+        },
+        {
+          "key": "Tin",
+          "field": "melt",
+          "from": 505.08,
+          "value": 505.078
+        },
+        {
+          "key": "Tin",
+          "field": "density_g_cm3",
+          "from": 7.365,
+          "value": 7.287
+        },
+        {
+          "key": "Zirconium",
+          "field": "melt",
+          "from": 2128,
+          "value": 2127
+        },
+        {
+          "key": "Molybdenum",
+          "field": "melt",
+          "from": 2896,
+          "value": 2895
+        },
+        {
+          "key": "Molybdenum",
+          "field": "density_g_cm3",
+          "from": 10.28,
+          "value": 10.2
+        },
+        {
+          "key": "Palladium",
+          "field": "melt",
+          "from": 1828.05,
+          "value": 1828
+        },
+        {
+          "key": "Palladium",
+          "field": "density_g_cm3",
+          "from": 12.023,
+          "value": 12
+        },
+        {
+          "key": "Bismuth",
+          "field": "melt",
+          "from": 544.7,
+          "value": 544.556
+        },
+        {
+          "key": "Bismuth",
+          "field": "density_g_cm3",
+          "from": 9.78,
+          "value": 9.79
+        },
+        {
+          "key": "Cadmium",
+          "field": "melt",
+          "from": 594.22,
+          "value": 594.219
+        },
+        {
+          "key": "Cadmium",
+          "field": "density_g_cm3",
+          "from": 8.65,
+          "value": 8.69
+        },
+        {
+          "key": "Lead",
+          "field": "melt",
+          "from": 600.61,
+          "value": 600.612
+        },
+        {
+          "key": "Lead",
+          "field": "density_g_cm3",
+          "from": 11.34,
+          "value": 11.3
+        },
+        {
+          "key": "Magnesium",
+          "field": "density_g_cm3",
+          "from": 1.738,
+          "value": 1.74
+        },
+        {
+          "key": "Antimony",
+          "field": "melt",
+          "from": 903.78,
+          "value": 903.778
+        },
+        {
+          "key": "Antimony",
+          "field": "density_g_cm3",
+          "from": 6.697,
+          "value": 6.68
+        },
+        {
+          "key": "Platinum",
+          "field": "density_g_cm3",
+          "from": 21.45,
+          "value": 21.5
+        },
+        {
+          "key": "Cobalt",
+          "field": "density_g_cm3",
+          "from": 8.9,
+          "value": 8.86
+        },
+        {
+          "key": "Tungsten",
+          "field": "melt",
+          "from": 3695,
+          "value": 3687
+        },
+        {
+          "key": "Tungsten",
+          "field": "density_g_cm3",
+          "from": 19.25,
+          "value": 19.3
+        },
+        {
+          "key": "Aluminium",
+          "field": "melt",
+          "from": 933.47,
+          "value": 933.473
+        },
+        {
+          "key": "Mercury",
+          "field": "density_g_cm3",
+          "from": 13.534,
+          "value": 13.5336
+        },
+        {
+          "key": "Potassium",
+          "field": "density_g_cm3",
+          "from": 0.862,
+          "value": 0.89
+        },
+        {
+          "key": "Xenon",
+          "field": "density_g_cm3",
+          "from": 0.005894,
+          "value": 0.005366
+        },
+        {
+          "key": "Krypton",
+          "field": "density_g_cm3",
+          "from": 0.003749,
+          "value": 0.003425
+        },
+        {
+          "key": "Rubidium",
+          "field": "density_g_cm3",
+          "from": 1.532,
+          "value": 1.53
+        }
+      ]
+    },
+    "countries": {
+      "checkedAt": "2026-10-22",
+      "convention": "UNdata 2025 country profiles, surface area for 2023 in km². Includes inland water and profile territorial notes; Finland excludes Åland Islands; Argentina excludes Antarctic area. This coherent comparison supersedes the isolated Ecuador ministry override.",
+      "subjects": [
+        {
+          "key": "Ireland",
+          "area": 69825,
+          "url": "https://data.un.org/legacy/en/iso/ie.html"
+        },
+        {
+          "key": "Austria",
+          "area": 83878,
+          "url": "https://data.un.org/legacy/en/iso/at.html"
+        },
+        {
+          "key": "Portugal",
+          "area": 92226,
+          "url": "https://data.un.org/legacy/en/iso/pt.html"
+        },
+        {
+          "key": "Hungary",
+          "area": 93023,
+          "url": "https://data.un.org/legacy/en/iso/hu.html"
+        },
+        {
+          "key": "Iceland",
+          "area": 103000,
+          "url": "https://data.un.org/legacy/en/iso/is.html"
+        },
+        {
+          "key": "Czechia",
+          "area": 78871,
+          "url": "https://data.un.org/legacy/en/iso/cz.html"
+        },
+        {
+          "key": "New Zealand",
+          "area": 268107,
+          "url": "https://data.un.org/legacy/en/iso/nz.html"
+        },
+        {
+          "key": "Germany",
+          "area": 357581,
+          "url": "https://data.un.org/legacy/en/iso/de.html"
+        },
+        {
+          "key": "Bolivia",
+          "area": 1098581,
+          "url": "https://data.un.org/legacy/en/iso/bo.html"
+        },
+        {
+          "key": "United Kingdom",
+          "area": 242495,
+          "url": "https://data.un.org/legacy/en/iso/gb.html"
+        },
+        {
+          "key": "Malaysia",
+          "area": 330621,
+          "url": "https://data.un.org/legacy/en/iso/my.html"
+        },
+        {
+          "key": "Japan",
+          "area": 377930,
+          "url": "https://data.un.org/legacy/en/iso/jp.html"
+        },
+        {
+          "key": "Sweden",
+          "area": 438574,
+          "url": "https://data.un.org/legacy/en/iso/se.html"
+        },
+        {
+          "key": "Kazakhstan",
+          "area": 2724902,
+          "url": "https://data.un.org/legacy/en/iso/kz.html"
+        },
+        {
+          "key": "Ecuador",
+          "area": 257217,
+          "url": "https://data.un.org/legacy/en/iso/ec.html"
+        },
+        {
+          "key": "Peru",
+          "area": 1285216,
+          "url": "https://data.un.org/legacy/en/iso/pe.html"
+        },
+        {
+          "key": "Bulgaria",
+          "area": 110372,
+          "url": "https://data.un.org/legacy/en/iso/bg.html"
+        },
+        {
+          "key": "Spain",
+          "area": 506008,
+          "url": "https://data.un.org/legacy/en/iso/es.html"
+        },
+        {
+          "key": "Argentina",
+          "area": 2796427,
+          "url": "https://data.un.org/legacy/en/iso/ar.html"
+        },
+        {
+          "key": "Vietnam",
+          "area": 331317,
+          "url": "https://data.un.org/legacy/en/iso/vn.html"
+        },
+        {
+          "key": "Finland",
+          "area": 336884,
+          "url": "https://data.un.org/legacy/en/iso/fi.html"
+        },
+        {
+          "key": "Greece",
+          "area": 131957,
+          "url": "https://data.un.org/legacy/en/iso/gr.html"
+        },
+        {
+          "key": "Mongolia",
+          "area": 1564116,
+          "url": "https://data.un.org/legacy/en/iso/mn.html"
+        },
+        {
+          "key": "Poland",
+          "area": 312679,
+          "url": "https://data.un.org/legacy/en/iso/pl.html"
+        },
+        {
+          "key": "Romania",
+          "area": 238391,
+          "url": "https://data.un.org/legacy/en/iso/ro.html"
+        }
+      ],
+      "corrections": [
+        {
+          "key": "Ireland",
+          "field": "area",
+          "from": 70273,
+          "value": 69825
+        },
+        {
+          "key": "Austria",
+          "field": "area",
+          "from": 83871,
+          "value": 83878
+        },
+        {
+          "key": "Portugal",
+          "field": "area",
+          "from": 92090,
+          "value": 92226
+        },
+        {
+          "key": "Hungary",
+          "field": "area",
+          "from": 93028,
+          "value": 93023
+        },
+        {
+          "key": "Czechia",
+          "field": "area",
+          "from": 78865,
+          "value": 78871
+        },
+        {
+          "key": "New Zealand",
+          "field": "area",
+          "from": 270467,
+          "value": 268107
+        },
+        {
+          "key": "Germany",
+          "field": "area",
+          "from": 357114,
+          "value": 357581
+        },
+        {
+          "key": "United Kingdom",
+          "field": "area",
+          "from": 242900,
+          "value": 242495
+        },
+        {
+          "key": "Malaysia",
+          "field": "area",
+          "from": 330803,
+          "value": 330621
+        },
+        {
+          "key": "Sweden",
+          "field": "area",
+          "from": 450295,
+          "value": 438574
+        },
+        {
+          "key": "Kazakhstan",
+          "field": "area",
+          "from": 2724900,
+          "value": 2724902
+        },
+        {
+          "key": "Ecuador",
+          "field": "area",
+          "from": 256370,
+          "value": 257217
+        },
+        {
+          "key": "Bulgaria",
+          "field": "area",
+          "from": 110879,
+          "value": 110372
+        },
+        {
+          "key": "Spain",
+          "field": "area",
+          "from": 505992,
+          "value": 506008
+        },
+        {
+          "key": "Argentina",
+          "field": "area",
+          "from": 2780400,
+          "value": 2796427
+        },
+        {
+          "key": "Vietnam",
+          "field": "area",
+          "from": 331212,
+          "value": 331317
+        },
+        {
+          "key": "Finland",
+          "field": "area",
+          "from": 338424,
+          "value": 336884
+        },
+        {
+          "key": "Greece",
+          "field": "area",
+          "from": 131990,
+          "value": 131957
+        },
+        {
+          "key": "Mongolia",
+          "field": "area",
+          "from": 1564110,
+          "value": 1564116
+        }
+      ]
+    },
+    "airports": {
+      "checkedAt": "2026-10-22",
+      "convention": "Aerodrome field elevation above mean sea level, not terminal/weather-station or individual runway threshold elevation. Latitude/longitude are approximate airport reference coordinates, not city coordinates.",
+      "corrections": [
+        {
+          "key": "UIO",
+          "field": "elevation_ft",
+          "from": 7841,
+          "value": 7910,
+          "url": "https://www.ais.aviacioncivil.gob.ec/ifis3/aip/AD%202%20SEQM",
+          "note": "Aerodrome elevation 2411m /7910ft, not a lower runway threshold."
+        },
+        {
+          "key": "PRG",
+          "field": "elevation_ft",
+          "from": 1247,
+          "value": 1234,
+          "url": "https://aim.rlp.cz/ais_data/aip/data/valid/g2-7.pdf",
+          "note": "Published airport elevation 1234ft /376m."
+        },
+        {
+          "key": "YYC",
+          "field": "elevation_ft",
+          "from": 3557,
+          "value": 3606,
+          "url": "https://www.canada.ca/content/dam/eccc/documents/pdf/msc-manualscircularsbulletins/AIR_4-2020_ENG.pdf",
+          "note": "Canadian aviation reference gives airport elevation 3606ft; 3557ft is a lower threshold-related value."
+        },
+        {
+          "key": "DEN",
+          "field": "elevation_ft",
+          "from": 5431,
+          "value": 5434,
+          "url": "https://www.faa.gov/air_traffic/publications/media/aip_amd_3_dtd_10-5-23.pdf",
+          "note": "FAA airport diagram field elevation rounded to whole feet."
+        },
+        {
+          "key": "LIS",
+          "field": "elevation_ft",
+          "from": 374,
+          "value": 355,
+          "url": "https://ais.nav.pt/wp-content/uploads/AIS_Files/eAIP_Current/eAIP_Online/eAIP/html/eAIP/LP-AD-2.LPPT-en-PT.html",
+          "note": "Published aerodrome elevation 108m /355ft."
+        },
+        {
+          "key": "DEL",
+          "field": "elevation_ft",
+          "from": 777,
+          "value": 778,
+          "url": "https://aim-india.aai.aero/eaip/eaip-v2-09-2026/eAIP/IN-AD%202.1VIDP-en-GB.html",
+          "note": "Published aerodrome elevation 778ft."
+        }
+      ],
+      "retainedFRA": {
+        "elevation_ft": 364,
+        "note": "364ft field elevation retained. Fraport's 328ft figure describes a reference point; it must not replace aerodrome field elevation.",
+        "url": "https://www.dwd.de/DE/fachnutzer/luftfahrt/download/produkte/regionale_flugklimatologie/regionale_flugklimatologie.pdf?__blob=publicationFile&v=7"
+      }
+    },
+    "changedSets": [
+      {
+        "id": "stack-002",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-003",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-004",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-011",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-012",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-023",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-024",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-025",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-026",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-027",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-028",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-029",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-030",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-031",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-032",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-033",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-034",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-035",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-036",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-037",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-038",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-039",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-040",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-041",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-042",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-043",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-044",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-045",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-046",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-047",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-048",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-049",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-050",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-051",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-052",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-launch-fact-002",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-launch-fact-003",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-launch-fact-004",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-launch-fact-011",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-launch-fact-012",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-launch-fact-013",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-launch-fact-020",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-launch-fact-021",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-launch-fact-022",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-launch-fact-029",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-launch-fact-030",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-launch-fact-031",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-007",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-008",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-009",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-073",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-074",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-075",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-076",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-077",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-078",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-079",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-080",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-081",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-082",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-083",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-084",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-085",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-086",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-087",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-088",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-089",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-090",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-091",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-092",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-093",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-094",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-095",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-096",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-097",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-098",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-099",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-100",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-101",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-102",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-launch-fact-007",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-launch-fact-008",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-launch-fact-009",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-launch-fact-016",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-launch-fact-017",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-launch-fact-018",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-launch-fact-025",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-launch-fact-026",
+        "orderChanged": false
+      },
+      {
+        "id": "stack-launch-fact-027",
+        "orderChanged": false
+      }
+    ]
+  },
+  "explanationReview": {
+    "checkedAt": "2026-10-22",
+    "stakeLegacy": "Read all 164 original explanations; retain frozen rows and apply 16 targeted wording/explanation overrides only in new snapshots. Additional math claims checked by exact arithmetic. Per-record links record corroboration, not blanket primary certification.",
+    "prior": "Read all 128 full explanations and queried each complete dated claim, including month/venue/edition/market. Preserve all event years and IDs; correct the Super Mario Bros. Japanese Famicom branding.",
+    "limitations": "Source quality and publication dates vary. Search indexing is distinct from live retail availability. Future edits require source review; no blanket certification or perpetual accuracy is claimed."
   }
 }

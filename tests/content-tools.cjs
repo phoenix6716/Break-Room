@@ -1,8 +1,8 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path'),api=require('../scripts/content-lib.cjs'),{scaffold}=require('../scripts/new-game.cjs');
 const catalog=api.load(undefined,'2026-10-22'),report=api.report(catalog);assert.deepEqual(report.counts,{stake:264,'stack-up':208,lowball:100});assert.deepEqual(report.errors,[]);assert.equal(report.reviewCoverage.lowballWithPriceEvidence,0);assert.match(report.warnings.join(' '),/estimated/);
 const reviewed=api.load(undefined,'2026-10-24'),reviewedReport=api.report(reviewed);
-assert.equal(reviewedReport.reviewCoverage.lowballWithPriceEvidence,29);
-assert.equal(reviewedReport.reviewCoverage.lowballRegionsWithPriceEvidence,193);
+assert.equal(reviewedReport.reviewCoverage.lowballWithPriceEvidence,100);
+assert.equal(reviewedReport.reviewCoverage.lowballRegionsWithPriceEvidence,400);
 assert.equal(reviewed.records.find(r=>r.fields.name==='Standard stamp').fields.prices.AU,1.85);
 assert.equal(catalog.records.find(r=>r.fields.name==='Standard stamp').fields.prices.AU,1.70);
 const make=(game,fields)=>({format:'break-room-content-draft',version:1,mode:'new',id:'new-'+game,game,baseFingerprint:catalog.fingerprint,fields,review:{sources:['https://example.org/reference'],checkedOn:'2026-10-01',verified:true,notes:'Test-only evidence record.'},evidence:{}});

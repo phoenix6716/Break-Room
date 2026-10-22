@@ -172,6 +172,11 @@
       "price": 4.79,
       "detail": "Metro Lactantia PurFiltre 3.25% Milk, 1L; regular online price before offer",
       "source": "https://www.metro.ca/en/online-grocery/aisles/dairy-eggs/milk-cream-butter/2-whole-milk/3-25-homogenized-milk/p/068200010014"
+    },
+    "US": {
+      "price": 3.7,
+      "detail": "Walmart Parmalat UHT Whole Milk: price PER 1 LITRE, prorated from one 32 US fl oz carton (not carton price)",
+      "source": "https://www.walmart.com/ip/151857624"
     }
   },
   "Loaf of bread": {
@@ -255,6 +260,11 @@
       "price": 1.99,
       "detail": "Food Basics Hass Avocado, sold individually; advertised online price",
       "source": "https://www.foodbasics.ca/aisles/fruits-vegetables/fruits/avocadoes-exotic-fruits/hass-avocado/p/4770"
+    },
+    "US": {
+      "price": 0.79,
+      "detail": "El Super online delivery listing, one Hass avocado; delivery fees and separately added tax excluded",
+      "source": "https://www.elsupermarkets.com/store/el-super/products/3251376-hass-avocado-each"
     }
   },
   "Bananas": {
@@ -267,6 +277,16 @@
       "price": 0.9,
       "detail": "Tesco loose bananas, price for 1kg; advertised online price",
       "source": "https://www.tesco.com/shop/en-GB/products/253555203"
+    },
+    "CA": {
+      "price": 1.96,
+      "detail": "Metro loose bananas, price for 1kg; advertised unit price",
+      "source": "https://www.metro.ca/en/online-grocery/aisles/fruits-vegetables/fruits/bananas-plantains/banana/p/4011"
+    },
+    "US": {
+      "price": 1.1,
+      "detail": "Walmart loose fresh bananas: price for 1kg, converted from the retailer's per-pound price and rounded to cents",
+      "source": "https://www.walmart.com/ip/44390948"
     }
   },
   "Cheddar cheese block": {
@@ -394,6 +414,11 @@
       "price": 15.99,
       "detail": "Disney+ Standard, regular monthly standalone subscription",
       "source": "https://www.disneyplus.com/en-ca"
+    },
+    "US": {
+      "price": 21.49,
+      "detail": "Disney+ Premium without ads, direct US monthly billing; new listed rate from 21 Oct 2026 billing cycle, tax excluded",
+      "source": "https://help.disneyplus.com/article/disneyplus-es-es-price"
     }
   },
   "Breakfast cereal": {
@@ -401,6 +426,21 @@
       "price": 4.98,
       "detail": "Walmart Kellogg's Corn Flakes, 18 oz family-size box; online price",
       "source": "https://www.walmart.com/ip/10818608"
+    },
+    "CA": {
+      "price": 6.97,
+      "detail": "Walmart Kellogg's Corn Flakes, 600g box; regular price before rollback",
+      "source": "https://www.walmart.ca/en/c/brand/kellogg-s-corn-flakes"
+    },
+    "AU": {
+      "price": 2.45,
+      "detail": "Coles Simply Corn Flakes, 440g; regular online price",
+      "source": "https://www.coles.com.au/product/coles-simply-corn-flakes-440g-6751469"
+    },
+    "UK": {
+      "price": 0.95,
+      "detail": "Tesco Corn Flakes, 500g; regular online price",
+      "source": "https://www.tesco.com/shop/en-GB/search?query=corn+flake"
     }
   },
   "Chocolate block": {
@@ -413,6 +453,16 @@
       "price": 6.49,
       "detail": "Metro Cadbury Dairy Milk, 200g; online price before tax",
       "source": "https://www.metro.ca/en/online-grocery/aisles/snacks/sweet-snacks-candy/chocolate/milk-chocolate-bar/p/061200003802"
+    },
+    "AU": {
+      "price": 8,
+      "detail": "BIG W Cadbury Dairy Milk Chocolate Block, 180g; advertised price",
+      "source": "https://www.bigw.com.au/product/cadbury-dairy-milk-chocolate-block-180g/p/814479"
+    },
+    "US": {
+      "price": 4.79,
+      "detail": "Target Hershey's Milk Chocolate Giant Candy Bar, 7.56 oz; advertised price",
+      "source": "https://www.target.com/p/-/A-80316575"
     }
   },
   "Potato chips": {
@@ -425,6 +475,16 @@
       "price": 3.47,
       "detail": "Walmart Lay's Classic Potato Chips, 235g; online price",
       "source": "https://www.walmart.ca/en/ip/Lay-s-Classic-potato-chips/6000201210244"
+    },
+    "AU": {
+      "price": 5.25,
+      "detail": "BIG W Smith's Original Crinkle Cut Potato Chips, 170g bag; regular online price",
+      "source": "https://www.bigw.com.au/product/smith-s-crinkle-cut-potato-potato-chips-original-170g/p/826730"
+    },
+    "UK": {
+      "price": 1.5,
+      "detail": "Tesco Walkers Ready Salted Sharing Crisps, 175g bag; regular online price",
+      "source": "https://www.tesco.com/shop/en-GB/products/295652554"
     }
   },
   "Orange juice": {
@@ -442,6 +502,11 @@
       "price": 1.4,
       "detail": "Tesco Smooth Orange Juice, 1L, ambient; regular price before multibuy",
       "source": "https://www.tesco.com/shop/en-GB/products/254859516"
+    },
+    "CA": {
+      "price": 6.49,
+      "detail": "Metro Tropicana Pure Premium 100% Orange Juice, 1.54L; advertised price",
+      "source": "https://www.metro.ca/en/online-grocery/aisles/beverages/juices-drinks/refrigerated-juices-drinks/100-pure-orange-juice/p/048500203545"
     }
   },
   "Toilet paper": {
@@ -459,6 +524,11 @@
       "price": 12.96,
       "detail": "Walmart Great Value Ultra Soft Toilet Paper, 12 mega rolls; online price",
       "source": "https://www.walmart.com/ip/1422667978"
+    },
+    "AU": {
+      "price": 9.5,
+      "detail": "Coles So Soft 4-ply Toilet Paper, 12-pack; regular online price",
+      "source": "https://www.coles.com.au/browse/cleaning-laundry/toilet-paper-tissues-paper-towels/toilet-paper"
     }
   },
   "Dishwashing liquid": {
@@ -488,6 +558,21 @@
       "price": 2,
       "detail": "Coles Simply Cotton Fresh Laundry Liquid, 2L; advertised online price",
       "source": "https://www.coles.com.au/product/coles-simply-cotton-fresh-laundry-liquid-2l-1388805"
+    },
+    "UK": {
+      "price": 2.99,
+      "detail": "Tesco Non Bio Super Concentrated Liquid Detergent, 60 washes, 1.5L; regular price",
+      "source": "https://www.tesco.com/groceries/en-GB/products/315965401"
+    },
+    "CA": {
+      "price": 4.97,
+      "detail": "Walmart Great Value OXI 4-in-1 Liquid Laundry Detergent, 43 washes, 1.92L; one-time price",
+      "source": "https://www.walmart.ca/en/ip/Great-Value-Liquid-Laundry-Detergent-OXI-4-in-1-43-wash-1-92L/2DCC865C1BOU?classType=REGULAR"
+    },
+    "US": {
+      "price": 8.24,
+      "detail": "Walmart Tide Simply Refreshing Breeze liquid detergent, 84 US fl oz / 64 loads; advertised price before tax",
+      "source": "https://www.walmart.com/ip/5057509914"
     }
   },
   "Tissues": {
@@ -500,6 +585,16 @@
       "price": 1.94,
       "detail": "Walmart Great Value 2-Ply Facial Tissues, one box of 126; one-time purchase",
       "source": "https://www.walmart.ca/en/ip/great-value--facial-tissues--1-flat-box--126-tissues-per-box/6000200007015"
+    },
+    "UK": {
+      "price": 0.9,
+      "detail": "Tesco Springforce Facial Tissues, one 180-sheet 2-ply box; listed price",
+      "source": "https://www.tesco.com/shop/en-GB/products/315842057"
+    },
+    "US": {
+      "price": 1.93,
+      "detail": "Walmart Great Value Soft Facial Tissues; SINGLE 160-tissue 2-ply flat carton variant, listed regular price, tax excluded",
+      "source": "https://www.walmart.com/ip/173095972"
     }
   },
   "AA batteries": {
@@ -556,6 +651,16 @@
       "price": 4.97,
       "detail": "Walmart Ban Unscented Roll-On Antiperspirant, 3.5 US fl oz; online price",
       "source": "https://www.walmart.com/ip/10295374"
+    },
+    "UK": {
+      "price": 4.4,
+      "detail": "Notino Nivea Pearl & Beauty Roll-On, 50mL; regular price without discount code",
+      "source": "https://www.notino.co.uk/nivea/pearl-beauty-roll-on-antiperspirant/"
+    },
+    "CA": {
+      "price": 5.97,
+      "detail": "Walmart Ban Unscented roll-on antiperspirant deodorant, 100mL; advertised price before tax",
+      "source": "https://www.walmart.ca/en/c/brand/ban"
     }
   },
   "Razor refills": {
@@ -590,6 +695,16 @@
       "price": 159.99,
       "detail": "Argos Kindle Paperwhite (2024), 16GB Wi-Fi, black, 7-inch; advertised online price",
       "source": "https://www.argos.co.uk/product/4462149/"
+    },
+    "US": {
+      "price": 159.99,
+      "detail": "Best Buy Amazon Kindle Paperwhite, 2024 16GB Black, B0CFPJYX7P; advertised price before tax",
+      "source": "https://www.bestbuy.com/site/amazon-kindle-paperwhite-16-gb-2024-black/6602737.p"
+    },
+    "CA": {
+      "price": 279.99,
+      "detail": "Best Buy Amazon Kindle Paperwhite, 12th Gen, 7-inch, 16GB Black, 18487161; advertised price before tax",
+      "source": "https://www.bestbuy.ca/en-ca/product/amazon-kindle-paperwhite-12th-gen-7-digital-ereader-16gb-for-poolside-reading-black/18487161"
     }
   },
   "Toothbrush": {
@@ -607,6 +722,11 @@
       "price": 1.46,
       "detail": "Walmart Colgate Extra Clean Medium Toothbrush, single; regular price before rollback",
       "source": "https://www.walmart.ca/en/ip/colgate-extra-clean-toothbrush-medium/10220113"
+    },
+    "UK": {
+      "price": 1.5,
+      "detail": "Boots Colgate Extra Clean Medium Toothbrushes, THREE-PACK, 10345319; listed price",
+      "source": "https://www.boots.com/colgate/colgate-manual-toothbrushes/colgate-extra-clean-toothbrush-10345319"
     }
   },
   "Lip balm": {
@@ -619,6 +739,16 @@
       "price": 2,
       "detail": "Tesco Nivea Original Care Lip Balm, 4.8g; regular price without Clubcard",
       "source": "https://www.tesco.com/shop/en-GB/search?query=nivea+lip+balm"
+    },
+    "CA": {
+      "price": 4.68,
+      "detail": "Walmart Blistex Complete Moisture Lip Balm, 4.25g single; one-time price",
+      "source": "https://www.walmart.ca/en/ip/Blistex-Complete-Moisture-Lip-Balm/6000191025951?selectedSellerId=0"
+    },
+    "US": {
+      "price": 3.89,
+      "detail": "Target ChapStick Classic Original lip balm, 3 sticks / 0.45oz total; pack price, not one stick; tax excluded",
+      "source": "https://www.target.com/s/original%2Bchapstick"
     }
   },
   "Hand soap": {
@@ -680,6 +810,11 @@
       "price": 4.37,
       "detail": "Walmart Band-Aid Flexible Fabric Adhesive Bandages, one-size, 30 count; online price",
       "source": "https://www.walmart.com/ip/10316205"
+    },
+    "CA": {
+      "price": 7.99,
+      "detail": "Rexall online delivery listing, Band-Aid Flexible Fabric BR45, 30 count; tax and delivery fees excluded",
+      "source": "https://shop.rexall.ca/store/rexall/products/24508485-br45-flex-fab-band-30-ct"
     }
   },
   "Cotton t-shirt": {
@@ -692,6 +827,16 @@
       "price": 7,
       "detail": "Walmart George Men's Crew-Neck T-Shirt, natural; regular online price",
       "source": "https://www.walmart.ca/en/ip/george-mens-crew-neck-t-shirt-natural/1TMX13J313PT"
+    },
+    "AU": {
+      "price": 19.9,
+      "detail": "UNIQLO U Cotton Crew Neck T-Shirt, unisex; regular price",
+      "source": "https://www.uniqlo.com/au/en/women/tops/t-shirts"
+    },
+    "US": {
+      "price": 14,
+      "detail": "Hanes Beefy-T Unisex Pocket T-Shirt, style 5190; regular price before offer",
+      "source": "https://www.hanes.com/products/hanes-beefy-t-pocket-t-shirt-h5190/5190"
     }
   },
   "Hoodie": {
@@ -699,6 +844,21 @@
       "price": 18,
       "detail": "Walmart George Men's Fleece Hoodie, black; regular online price",
       "source": "https://www.walmart.ca/en/ip/george-mens-popover-hoodie-black/6000207661848"
+    },
+    "UK": {
+      "price": 35,
+      "detail": "M&S Cotton Rich Hoodie, product clp60750422; regular advertised price",
+      "source": "https://www.marksandspencer.com/cotton-rich-hoodie/p/clp60750422"
+    },
+    "US": {
+      "price": 28,
+      "detail": "Hanes EcoSmart Unisex Full-Zip Fleece Hoodie; listed regular price before offer, tax excluded",
+      "source": "https://www.hanes.com/"
+    },
+    "AU": {
+      "price": 14,
+      "detail": "BIG W Allgood Men’s Basic Hoodie, black; advertised online price",
+      "source": "https://www.bigw.com.au/mens-clothing-accessories/mens-clothing/hoodies-sweatshirts/c/6812105"
     }
   },
   "Socks": {
@@ -711,6 +871,16 @@
       "price": 10,
       "detail": "Walmart George Men's Crew Socks, 3 pairs, grey; online price",
       "source": "https://www.walmart.ca/en/ip/george-mens-crew-socks-3-pack-grey/6000206663899"
+    },
+    "AU": {
+      "price": 2.75,
+      "detail": "BIG W Brilliant Basics men's trainer socks, three pairs, black, size 7-12; regular price",
+      "source": "https://www.bigw.com.au/product/brilliant-basics-mens-trainer-socks-3-pack-black/p/1604345-black"
+    },
+    "UK": {
+      "price": 10,
+      "detail": "M&S Thermal Sumptuously Soft Ankle High Socks, three pairs, clp60194371; regular price",
+      "source": "https://www.marksandspencer.com/3-pair-pack-sumptuously-soft-ankle-high-socks/p/clp60194371"
     }
   },
   "Bottled water": {
@@ -750,6 +920,11 @@
       "price": 5.47,
       "detail": "Walmart Red Rose Orange Pekoe Tea, 72 bags; online price",
       "source": "https://www.walmart.ca/en/ip/RR-ORANGE-PEKOE/3UQTKWT7RU7O"
+    },
+    "UK": {
+      "price": 1.39,
+      "detail": "Tesco Decaff Original Tea, 80 bags, 250g; regular online price",
+      "source": "https://www.tesco.com/shop/en-GB/products/250712610"
     }
   },
   "Ice cream tub": {
@@ -767,6 +942,11 @@
       "price": 7.99,
       "detail": "Metro Breyers Creamery Style Natural Vanilla Ice Cream, 1.66L tub; online price",
       "source": "https://www.metro.ca/en/online-grocery/aisles/frozen/ice-cream-treats/ice-cream/natural-vanilla-ice-cream/p/058779133733"
+    },
+    "AU": {
+      "price": 13,
+      "detail": "Coles Connoisseur Classic Vanilla Ice Cream Tub, 1L; regular online price",
+      "source": "https://www.coles.com.au/brands/connoisseur-3829372172"
     }
   },
   "Energy drink": {
@@ -801,6 +981,16 @@
       "price": 5.98,
       "detail": "Walmart Dr. Oetker Ristorante Mozzarella Pizza, 325g; regular price before rollback",
       "source": "https://www.walmart.ca/en/ip/Dr-Oetker-Ristorante-Mozzarella-Pizza/10260145"
+    },
+    "UK": {
+      "price": 3.25,
+      "detail": "Tesco Dr. Oetker Ristorante Mozzarella Pizza, 335g; regular price before Clubcard offers",
+      "source": "https://www.tesco.com/shop/en-GB/buylists/ristorante-ttw/ristorante-ttw/ristorante-ttw"
+    },
+    "AU": {
+      "price": 9.5,
+      "detail": "Coles Dr Oetker Ristorante Mozzarella frozen pizza, 355g; Coles listed reference reported by Grovena, not the cheapest competing store",
+      "source": "https://grovena.com.au/product/10174-dr-oetker-ristorante-mozzarella-pizza-355g"
     }
   },
   "USB-C cable": {
@@ -874,6 +1064,21 @@
       "price": 139.95,
       "detail": "Levi's men's 501 Original Jeans, style 005010101; regular manufacturer price",
       "source": "https://levis.com.au/products/levis-mens-501-original-jeans-005010101"
+    },
+    "CA": {
+      "price": 118,
+      "detail": "Levi's Canada Premium 501 Original Men's Jeans; listed original price before promotional discounts, tax excluded",
+      "source": "https://www.levi.com/CA/en_CA/jeans-by-fit-number/men/jeans/501/501-original/c/levi_jeans_by_fit_number_men_jeans_501_original/facets/feature-fit_name/501%C2%AE"
+    },
+    "UK": {
+      "price": 110,
+      "detail": "Levi's UK 501 Original Jeans; advertised regular price",
+      "source": "https://www.levi.com/GB/en_GB/levis-501/c/levi_clothing_501"
+    },
+    "US": {
+      "price": 79.5,
+      "detail": "Levi’s US 501 Original Fit Men’s Jeans, style 005013406; listed original price before sale, tax excluded",
+      "source": "https://www.levi.com/US/en_US/clothing/men/jeans/straight/501-original-fit-mens-jeans/p/005013406"
     }
   },
   "Electric kettle": {
@@ -891,6 +1096,11 @@
       "price": 54.98,
       "detail": "Walmart Black+Decker Stainless Steel Cordless Kettle, 1.7L; online price",
       "source": "https://www.walmart.ca/en/ip/Black-Decker-1-7L-Stainless-Steel-Electric-Cordless-Kettle/6000208258036"
+    },
+    "UK": {
+      "price": 9,
+      "detail": "Argos Cookworks Kettle, white, 1.7L, product 3362910; advertised price, delivery excluded",
+      "source": "https://www.argos.co.uk/product/3362910/"
     }
   },
   "Toaster": {
@@ -925,6 +1135,16 @@
       "price": 19.98,
       "detail": "Walmart Mainstays 16-inch Stand Fan, black; sold by Walmart, online price",
       "source": "https://www.walmart.ca/en/ip/mainstays-16-stand-fan-black/6000207032188?selectedSellerId=0"
+    },
+    "AU": {
+      "price": 17,
+      "detail": "BIG W Brilliant Basics Pedestal Fan, 40cm White; advertised online price",
+      "source": "https://www.bigw.com.au/home/appliances/fans/pedestal-fans/c/65191050206"
+    },
+    "UK": {
+      "price": 75,
+      "detail": "Argos Philips White Pedestal Fan, 15-inch, product 7631582; advertised price, delivery excluded",
+      "source": "https://www.argos.co.uk/product/7631582"
     }
   },
   "Pillow": {
@@ -932,6 +1152,21 @@
       "price": 3.44,
       "detail": "Walmart Mainstays Comfort Complete Pillow, Standard/Queen, one pillow; online price",
       "source": "https://www.walmart.com/ip/744932389"
+    },
+    "UK": {
+      "price": 5,
+      "detail": "Argos Home Essentials Everyday Soft Pillows, two-pack, 7878039; advertised price",
+      "source": "https://www.argos.co.uk/product/7878039?clickSR=slp%3Aterm%3Afrozen+bedding%3A1444%3A3202%3A2"
+    },
+    "CA": {
+      "price": 4.47,
+      "detail": "Walmart Mainstays Comfort Complete Standard Bed Pillow, white, one pillow; online price",
+      "source": "https://www.walmart.ca/en/ip/mainstays-comfort-complete-white/4BSLC5VWVT0I?selectedSellerId=0"
+    },
+    "AU": {
+      "price": 43,
+      "detail": "BIG W Tontine Big & Bouncy Pillow, one pillow; regular price before half-price offer",
+      "source": "https://www.bigw.com.au/home/bedding/pillows-pillowcases/pillows/c/6512103"
     }
   },
   "Soccer ball": {
@@ -949,6 +1184,11 @@
       "price": 21.99,
       "detail": "Home Hardware Wilson Traditional Soccer Ball, size 5; advertised price",
       "source": "https://www.homehardware.ca/en/traditional-sized-soccer-ball-size-5/p/7152012"
+    },
+    "UK": {
+      "price": 4.99,
+      "detail": "Decathlon Kipsta Size 5 Football, yellow, ID 8676298; advertised price, shipping excluded",
+      "source": "https://www.decathlon.co.uk/p/size-5-football-yellow/334351/c22m8676298"
     }
   },
   "Yoga mat": {
@@ -961,6 +1201,16 @@
       "price": 10,
       "detail": "Argos Opti PVC Yoga Exercise Mat, 4mm, blue, 8473127; regular price before offers",
       "source": "https://www.argos.co.uk/product/8473127?tag=ar%3Abrowse%3Aclp%3Asportsandleisure%3Am010%3Atop-sports-and-leisure-products"
+    },
+    "CA": {
+      "price": 15,
+      "detail": "Decathlon Kimjaly Gentle Yoga Mat Essential, 4mm; regular advertised price",
+      "source": "https://www.decathlon.ca/en/p/gentle-yoga-mat-4-mm-essential/141487/c117m8506526"
+    },
+    "AU": {
+      "price": 26.99,
+      "detail": "Bunnings marketplace, sold by Decathlon Australia; Essential yoga mat 172×58cm, 4mm, dark green; delivery excluded",
+      "source": "https://www.bunnings.com.au/decathlon-essential-yoga-mat-172cm-x-58cm-x-4mm-dark-green-one-size_p1114530"
     }
   },
   "Jigsaw puzzle": {
@@ -978,6 +1228,11 @@
       "price": 24.98,
       "detail": "Walmart Ravensburger Disney & Pixar Toy Store Puzzle, 1000 pieces; online price",
       "source": "https://www.walmart.ca/en/ip/RAVENSBURGER-Disney-Pixar-Toy-Store-1000-pc-Puzzle/6000208009277"
+    },
+    "US": {
+      "price": 11.93,
+      "detail": "Walmart Buffalo Games Chuck Pinson Cottage by the Sea, 1000-piece jigsaw; online price",
+      "source": "https://www.walmart.com/ip/685531241"
     }
   },
   "LEGO set": {
@@ -1039,6 +1294,11 @@
       "price": 819.99,
       "detail": "Visions PlayStation 5 Slim, 1TB, disc drive, 1000049888; regular online price",
       "source": "https://www.visions.ca/playstation-5-console-model-group-slim-v2-1000049888"
+    },
+    "AU": {
+      "price": 999,
+      "detail": "JB Hi-Fi PlayStation 5 Slim Console, 1TB, disc drive; advertised price",
+      "source": "https://www.jbhifi.com.au/products/ps5-playstation-5-slim-console"
     }
   },
   "Minced beef": {
@@ -1056,6 +1316,11 @@
       "price": 8.92,
       "detail": "Walmart Your Fresh Market Lean Ground Beef, 450g; online price",
       "source": "https://www.walmart.ca/en/ip/Lean-Ground-Beef-Your-Fresh-Market-450-g/6000191288138"
+    },
+    "AU": {
+      "price": 7.7,
+      "detail": "Coles No Added Hormone Beef Regular Mince, 500g tray; regular online price",
+      "source": "https://www.coles.com.au/product/coles-no-added-hormone-beef-regular-mince-500g-9012814"
     }
   },
   "Monopoly board game": {
@@ -1073,6 +1338,11 @@
       "price": 24.99,
       "detail": "Chaos Cards Monopoly Classic Board Game; listed RRP before retailer discount",
       "source": "https://www.chaoscards.co.uk/prod/all-board-games/monopoly-classic"
+    },
+    "CA": {
+      "price": 27.99,
+      "detail": "Best Buy Monopoly Classic, Hasbro barcode 195166286488; listed offer reported by Shopbot Canada, tax and shipping excluded",
+      "source": "https://www.shopbot.ca/product/Monopoly-Classic-Board-Game.html"
     }
   },
   "Sunscreen bottle": {
@@ -1090,6 +1360,853 @@
       "price": 14.99,
       "detail": "Save-On-Foods Banana Boat Ultra Sport Lotion SPF50, 240mL; regular price before offer",
       "source": "https://www.saveonfoods.com/product/banana-boat-ultra-sport-lotion-spf50-id-00079656030440"
+    },
+    "US": {
+      "price": 3.5,
+      "detail": "Five Below Banana Boat Sport Ultra SPF50 Sunscreen Lotion, 8 US fl oz; advertised price",
+      "source": "https://www.fivebelow.com/products/banana-boat-sport-ultra-spf50-sunscreen-lotion-8oz-9235220"
+    }
+  },
+  "Nike Air Force 1": {
+    "AU": {
+      "price": 180,
+      "detail": "Nike men's Air Force 1 '07, White/White, CW2288-111; regular manufacturer price",
+      "source": "https://www.nike.com/au/t/air-force-1-07-mens-shoes-cvS6DOBf/CW2288-111"
+    },
+    "US": {
+      "price": 115,
+      "detail": "Nike men's Air Force 1 '07, White/White, CW2288-111; regular manufacturer price",
+      "source": "https://www.nike.com/t/air-force-1-07-mens-shoes-XVPIszaq/CW2288-111"
+    },
+    "UK": {
+      "price": 109.99,
+      "detail": "Nike men's Air Force 1 '07, Black/White, CT2302-002; regular manufacturer price",
+      "source": "https://www.nike.com/gb/t/air-force-1-07-herrenschuh-n8juM1H2/CT2302-002"
+    },
+    "CA": {
+      "price": 150,
+      "detail": "Nike men's Air Force 1 '07, White/White, CW2288-111; regular manufacturer price",
+      "source": "https://www.nike.com/ca/t/air-force-1-07-mens-shoes-8MPI3T2W/CW2288-111"
+    }
+  },
+  "Zoo ticket": {
+    "AU": {
+      "price": 57,
+      "detail": "Taronga Zoo Sydney, standard adult gate admission; no online discount",
+      "source": "https://www.taronga.org.au/sydney-zoo/plan/visitor-information/ticket-prices"
+    },
+    "US": {
+      "price": 22.95,
+      "detail": "Central Park Zoo, New York, adult 13+, Zoo Admission including one 4-D Theater entry",
+      "source": "https://centralparkzoo.com/plan-your-visit/hours-and-rates"
+    },
+    "UK": {
+      "price": 31.8,
+      "detail": "London Zoo, adult 16-64, Standard day online before 10am; no voluntary donation",
+      "source": "https://www.londonzoo.org/plan-your-visit/london-zoo-tickets"
+    },
+    "CA": {
+      "price": 38,
+      "detail": "Greater Vancouver Zoo, Aldergrove BC; adult age 18–64 day admission, parking and train excluded; separately added tax excluded",
+      "source": "https://gvzoo.com/visit/hours-rates-getting-here/"
+    }
+  },
+  "Gym membership": {
+    "AU": {
+      "price": 51.5,
+      "detail": "KGV Recreation Centre, The Rocks, Sydney: standard gym pass, non-contract fortnightly debit (two weeks)",
+      "source": "https://www.cityofsydney.nsw.gov.au/gyms/kgv-gym"
+    },
+    "CA": {
+      "price": 7.99,
+      "detail": "Fit4Less 4Less Card, advertised recurring dues every TWO WEEKS, before tax and annual/joining fees",
+      "source": "https://www.fit4less.ca/"
+    },
+    "UK": {
+      "price": 27.99,
+      "detail": "The Gym Group Walthamstow, Off-peak plan; advertised starting monthly dues only, one-off joining fee excluded",
+      "source": "https://www.thegymgroup.com/find-a-gym/east-london-gyms/walthamstow/"
+    },
+    "US": {
+      "price": 15,
+      "detail": "Planet Fitness Classic membership; advertised US starting monthly dues only, joining/annual fees and tax excluded; location prices vary",
+      "source": "https://www.planetfitness.com/gym-memberships"
+    }
+  },
+  "Haircut": {
+    "AU": {
+      "price": 51,
+      "detail": "Sydney Barbers, Sydney CBD: Signature cut, 20 minutes; listed service price",
+      "source": "https://sydneybarbers.com.au/services"
+    },
+    "CA": {
+      "price": 40,
+      "detail": "Crowsnest Barbershop, Anndore House, 15 Charles St East, Toronto: Cut; before tax/tip",
+      "source": "https://www.crowsnestbarbershop.com/toronto-anndore"
+    },
+    "US": {
+      "price": 40,
+      "detail": "Signature Barbershop, 164 E 56th St NYC; Regular Haircut & Style, 20 minutes; tax and tip excluded",
+      "source": "https://signaturebarbershopnyc.setmore.com/"
+    },
+    "UK": {
+      "price": 25,
+      "detail": "Barber House, 212 West End Lane London; Gents cut with style, finish, ears and brows, 25 minutes; no skin fade",
+      "source": "https://booksy.com/en-gb/113171_barber-house_barber_311817_london"
+    }
+  },
+  "Dry cleaning": {
+    "AU": {
+      "price": 13,
+      "detail": "WashMate Surry Hills/Leichhardt, Sydney: business shirt dry cleaned, starting price; delivery excluded",
+      "source": "https://washmate.com.au/dry-cleaning-prices-sydney-guide/"
+    },
+    "US": {
+      "price": 22,
+      "detail": "Clean NYC: one shirt/blouse DRY CLEANED, not laundered; before tax/delivery",
+      "source": "https://www.clean.nyc/price-list"
+    },
+    "UK": {
+      "price": 4.99,
+      "detail": "Pimlico Dry Cleaners, London: Shirt DRY CLN; listed garment price, delivery excluded",
+      "source": "https://pimlicodrycleaners.co.uk/pricing/"
+    },
+    "CA": {
+      "price": 7.99,
+      "detail": "Door2Door Toronto: dry-cleaned shirt unit price within a $50 minimum order; before tax/delivery",
+      "source": "https://door2doordrycleaning.ca/pricing/"
+    }
+  },
+  "Car wash": {
+    "UK": {
+      "price": 15,
+      "detail": "Park Royal Car Wash, London: Bronze outside-only wash, small/medium car; listed service price",
+      "source": "https://www.parkroyalcarwash.com/prices"
+    },
+    "AU": {
+      "price": 19,
+      "detail": "Kwik & Ezy, 2 Crescent Ave Taree NSW; one Express automatic wash",
+      "source": "https://kwiknezytaree.com.au/services/"
+    },
+    "US": {
+      "price": 10,
+      "detail": "Mister Car Wash, 1009 Del Prado Blvd S, Cape Coral FL; Base Exterior single wash, branch menu checked 17 Oct 2026 by CarWashCompass; tax excluded",
+      "source": "https://carwashcompass.com/stores/mister-car-wash-cape-coral-fl-3ca2230317"
+    },
+    "CA": {
+      "price": 16.99,
+      "detail": "Petro-Canada single car wash ticket; published website reference price, local prices and tax may differ",
+      "source": "https://www.petro-canada.ca/en/personal/car-wash"
+    }
+  },
+  "Public transport fare": {
+    "US": {
+      "price": 3,
+      "detail": "New York MTA subway/local bus, adult base fare with OMNY, effective 4 Jan 2026",
+      "source": "https://www.mta.info/document/186881"
+    },
+    "UK": {
+      "price": 1.75,
+      "detail": "London TfL adult bus/tram pay-as-you-go Hopper fare, as at 22 Oct 2026 (before 1 Nov rise)",
+      "source": "https://tfl.gov.uk/fares/find-fares/bus-and-tram-fares?intcmp=79996"
+    },
+    "CA": {
+      "price": 3.35,
+      "detail": "Toronto TTC adult one-way CASH fare; exact change, not PRESTO discounted fare",
+      "source": "https://www.ttc.ca/en/Fares-and-passes"
+    },
+    "AU": {
+      "price": 22.94,
+      "detail": "Sydney AirportLink adult peak Opal/contactless fare between city and an airport station; rail journey plus station Gate Pass, published June 2026 tariff",
+      "source": "https://airportlink.com.au/trip-information/price/"
+    }
+  },
+  "Sunglasses": {
+    "AU": {
+      "price": 29.9,
+      "detail": "UNIQLO Rectangle Sunglasses, unisex; regular advertised price",
+      "source": "https://www.uniqlo.com/au/en/women/accessories/sunglasses"
+    },
+    "US": {
+      "price": 24.9,
+      "detail": "UNIQLO Rectangle Sunglasses, unisex; regular advertised price",
+      "source": "https://www.uniqlo.com/us/en/women/accessories-and-shoes/sunglasses"
+    },
+    "UK": {
+      "price": 19.9,
+      "detail": "UNIQLO Rectangle Sunglasses, unisex; regular advertised price",
+      "source": "https://www.uniqlo.com/uk/en/women/uv-protection/accessories"
+    },
+    "CA": {
+      "price": 29.9,
+      "detail": "UNIQLO Rectangle Sunglasses, unisex; regular advertised price",
+      "source": "https://www.uniqlo.com/ca/en/women/uv-protection/sunglasses"
+    }
+  },
+  "Backpack": {
+    "AU": {
+      "price": 31.99,
+      "detail": "Decathlon Quechua NH Arpenaz 100, 20L hiking backpack; Bunnings marketplace, delivery excluded",
+      "source": "https://www.bunnings.com.au/decathlon-hiking-backpack-20-l-nh-arpenaz-100-20l_p0648196"
+    },
+    "UK": {
+      "price": 11.99,
+      "detail": "Decathlon Quechua NH100 Arpenaz, 20L, blue; regular price before offers",
+      "source": "https://www.decathlon.co.uk/p/20-l-hiking-backpack-nh100-arpenaz-blue/_/R-p-301674?c=blue"
+    },
+    "US": {
+      "price": 25.09,
+      "detail": "Eastsport Aero Core Backpack; advertised manufacturer online price before tax and shipping",
+      "source": "https://eastsport.com/collections/backpacks"
+    },
+    "CA": {
+      "price": 24.97,
+      "detail": "Walmart George 3-piece backpack set with water bottle and pencil case; listed regular price before clearance, tax excluded",
+      "source": "https://www.walmart.ca/en/ip/George-multi-piece-Backpack-Set/6000201080049"
+    }
+  },
+  "Bluetooth speaker": {
+    "US": {
+      "price": 149.95,
+      "detail": "JBL Flip 7 portable Bluetooth speaker; regular manufacturer price before offers",
+      "source": "https://www.jbl.com/FLIP-7.html?dwvar_FLIP-7_color=Sand-AM-Current"
+    },
+    "UK": {
+      "price": 129,
+      "detail": "Currys JBL Flip 7 portable Bluetooth speaker, black; regular advertised price",
+      "source": "https://www.currys.co.uk/products/jbl-flip-7-portable-bluetooth-speaker-black-10278564.html"
+    },
+    "CA": {
+      "price": 189.99,
+      "detail": "Canada Computers JBL Flip 7 portable Bluetooth speaker, black; advertised price",
+      "source": "https://www.canadacomputers.com/en/portable-bluetooth-speakers/278274/jbl-flip-7-portable-bluetooth-speaker-black-jblflip7blkam.html"
+    },
+    "AU": {
+      "price": 179.95,
+      "detail": "JBL Flip 7 portable Bluetooth speaker; listed Australian regular manufacturer price before sale",
+      "source": "https://www.jbl.com.au/bluetooth-speakers/FLIP-7.html"
+    }
+  },
+  "Cat food": {
+    "AU": {
+      "price": 13,
+      "detail": "Coles Whiskas Favourites Mixed in Gravy, twelve 85g pouches; regular online price",
+      "source": "https://www.coles.com.au/product/whiskas-favourites-mixed-in-gravy-cat-food-12x85g-12-pack-5172626"
+    },
+    "UK": {
+      "price": 4,
+      "detail": "Tesco Whiskas 1+ Pure Delight Fish & Meat Selection, twelve 85g pouches; online price",
+      "source": "https://www.tesco.com/groceries/en-GB/products/302295349"
+    },
+    "US": {
+      "price": 0.99,
+      "detail": "Family Dollar via Instacart, Purina Friskies Pâté Mixed Grill wet cat food, one 5.5 oz can; tax and delivery fees excluded",
+      "source": "https://www.instacart.com/products/38854-friskies-pate-wet-cat-food-pate-mixed-grill-5-5-oz?retailerSlug=family-dollar"
+    },
+    "CA": {
+      "price": 0.99,
+      "detail": "Food Basics Friskies Pâté Chicken wet cat food, one 156g can; regular price before separately added tax",
+      "source": "https://www.foodbasics.ca/aisles/pet-care/cats/canned-cat-food/chicken-wet-cat-food/p/056366006866"
+    }
+  },
+  "Dog food bag": {
+    "CA": {
+      "price": 24.98,
+      "detail": "Walmart Pedigree Vitality+ roasted chicken & vegetable dry adult dog food, 8kg; one-time purchase",
+      "source": "https://www.walmart.ca/en/ip/PEDIGREE-VITALITY-Dry-Food-For-Adult-Dogs-Roasted-Chicken-Vegetable-Flavour-Supports-Strong-Bones-and-Healthy-Teeth-With-Calcium/10036440"
+    },
+    "AU": {
+      "price": 15,
+      "detail": "Coles Pedigree Adult Dry Dog Food with Real Beef, 3kg; regular online price",
+      "source": "https://www.coles.com.au/product/pedigree-adult-dry-dog-food-with-real-beef-3kg-7976078"
+    },
+    "US": {
+      "price": 5,
+      "detail": "Tractor Supply via Instacart, Pedigree Complete Nutrition Adult Roasted Chicken & Vegetable, 3.5 lb bag; tax and delivery fees excluded",
+      "source": "https://www.instacart.com/products/37704-pedigree-complete-nutrition-adult-dry-dog-food-roasted-chicken-rice-vegetable-flavor-3-5-lb?retailerSlug=tractor-supply"
+    },
+    "UK": {
+      "price": 7.99,
+      "detail": "Pets at Home Pedigree Complete Adult Poultry & Vegetables dry dog food, 3kg; one-time purchase, no subscription discount",
+      "source": "https://www.petsathome.com/product/7145016P?productId=7145016&purchaseType=one-time&weight=3kg"
+    }
+  },
+  "Paperback novel": {
+    "US": {
+      "price": 18,
+      "detail": "Barnes & Noble The Thursday Murder Club by Richard Osman, standard paperback; listed price",
+      "source": "https://www.barnesandnoble.com/w/the-thursday-murder-club-richard-osman/1136398985"
+    },
+    "CA": {
+      "price": 24.95,
+      "detail": "Indigo The Thursday Murder Club Netflix Tie-In by Richard Osman, paperback (2025); listed price",
+      "source": "https://www.indigo.ca/products/the-thursday-murder-club-netflix-tie-in"
+    },
+    "AU": {
+      "price": 24.99,
+      "detail": "Richard Osman, The Thursday Murder Club; paperback ISBN 9781405985840, Penguin Australia publisher RRP",
+      "source": "https://www.penguin.com.au/books/the-thursday-murder-club-9781405985840"
+    },
+    "UK": {
+      "price": 9.99,
+      "detail": "Richard Osman, The Thursday Murder Club; paperback ISBN 9780241988268, Penguin UK publisher price",
+      "source": "https://www.penguin.co.uk/books/315815/the-thursday-murder-club-by-osman-richard/9780241988268"
+    }
+  },
+  "Bottle of wine": {
+    "US": {
+      "price": 5.99,
+      "detail": "Total Wine Yellow Tail Shiraz, 750mL; single-bottle price, not Mix 6",
+      "source": "https://www.totalwine.com/wine/red-wine/syrahshiraz/yellow-tail-shiraz/p/93193750"
+    },
+    "UK": {
+      "price": 9.95,
+      "detail": "Co-op Yellow Tail Shiraz, 75cL; single-bottle listed price",
+      "source": "https://www.coop.co.uk/products/yellow-tail-shiraz-841906"
+    },
+    "AU": {
+      "price": 9.99,
+      "detail": "Dan Murphy’s Yellow Tail Shiraz, one 750mL bottle; listed single-bottle price, no six-bottle discount",
+      "source": "https://www.danmurphys.com.au/product/DM_904872"
+    },
+    "CA": {
+      "price": 14.95,
+      "detail": "LCBO Yellow Tail Shiraz, one 750mL bottle, SKU 624544; advertised Ontario price, delivery excluded",
+      "source": "https://www.lcbo.com/en/yellow-tail-shiraz-624544"
+    }
+  },
+  "Six-pack of beer": {
+    "CA": {
+      "price": 17.95,
+      "detail": "LCBO Corona Extra, six 330mL bottles; listed pack price",
+      "source": "https://www.lcbo.com/en/corona-extra-17818"
+    },
+    "UK": {
+      "price": 8,
+      "detail": "Tesco Peroni Nastro Azzurro, 6×330mL bottles; regular online price",
+      "source": "https://www.tesco.com/shop/en-GB/products/303434530"
+    },
+    "US": {
+      "price": 9.49,
+      "detail": "Total Wine & More Corona Extra Mexican Lager, 6×12 US fl oz bottles; listed online price before tax and any deposit",
+      "source": "https://www.totalwine.com/beer/brand/corona"
+    },
+    "AU": {
+      "price": 23.49,
+      "detail": "Dan Murphy’s Victoria Bitter Lager CANS, 6×375mL; advertised six-pack price, not bottle/case or member multibuy",
+      "source": "https://www.danmurphys.com.au/list/victoria-bitter"
+    }
+  },
+  "Coffee capsules box": {
+    "US": {
+      "price": 9.79,
+      "detail": "Target Peet's Caramel Dark Roast Espresso Capsules, 10 count, Nespresso Original compatible; regular price before sale",
+      "source": "https://www.target.com/c/espresso-coffee-beverages-grocery/peet-s-coffee/-/N-2dpp9Z8romv"
+    },
+    "CA": {
+      "price": 12.99,
+      "detail": "Food Basics Starbucks Dark Roast Nespresso Espresso coffee pods, 10 capsules; listed regular price before offer",
+      "source": "https://www.foodbasics.ca/aisles/beverages/coffee/coffee-pods/dark-roast-nespresso-espresso-coffee-pods/p/8445291834736"
+    },
+    "AU": {
+      "price": 8.6,
+      "detail": "Coles Starbucks by Nespresso Blonde Espresso Roast, 10 capsules; single-pack regular price, no multibuy",
+      "source": "https://www.coles.com.au/product/starbucks-by-nespresso-blonde-espresso-roast-capsules-10-pack-3613061"
+    },
+    "UK": {
+      "price": 4.6,
+      "detail": "Tesco Starbucks by Nespresso Espresso Roast, 10 capsules / 57g; regular non-Clubcard single-pack price",
+      "source": "https://www.tesco.com/shop/en-GB/products/316196290"
+    }
+  },
+  "PS5 game": {
+    "US": {
+      "price": 59.99,
+      "detail": "PlayStation Store ASTRO BOT, PS5 Standard Edition digital; full price",
+      "source": "https://www.playstation.com/en-us/games/astro-bot/"
+    },
+    "UK": {
+      "price": 59.99,
+      "detail": "PlayStation Store ASTRO BOT, PS5 Standard Edition digital; full price",
+      "source": "https://www.playstation.com/en-gb/games/astro-bot/"
+    },
+    "CA": {
+      "price": 79.99,
+      "detail": "PlayStation Store ASTRO BOT, PS5 Standard Edition digital; full price",
+      "source": "https://store.playstation.com/en-ca/concept/10002684"
+    },
+    "AU": {
+      "price": 109.95,
+      "detail": "PlayStation Store Australia ASTRO BOT, PS5 standard digital edition; regular price",
+      "source": "https://store.playstation.com/en-au/product/EP9000-PPSA21567_00-0000000000000000"
+    }
+  },
+  "Flat white": {
+    "US": {
+      "price": 4.1,
+      "detail": "Frenchy Coffee NYC, Flat White, 8 US fl oz; menu price before tax/tip",
+      "source": "https://frenchycoffeenyc.com/food-menu"
+    },
+    "CA": {
+      "price": 4.5,
+      "detail": "Petit Delights, Scarborough, Toronto: Flat White, 8 oz; menu price before tax/tip",
+      "source": "https://petitdelights.ca/ajax-petit-delights/"
+    },
+    "UK": {
+      "price": 3.5,
+      "detail": "No 1 Coffee London, Flat White 8oz; Uber Eats menu price, delivery and service fees excluded",
+      "source": "https://www.ubereats.com/gb/store/no-1-coffee-london/dQeQIaU6Uka8pwkaEb5y3A"
+    },
+    "AU": {
+      "price": 5,
+      "detail": "Hester’s Sydney CBD, Flat White; first-listed standard coffee serving with regular milk, extras excluded",
+      "source": "https://www.hesters.com.au/menu"
+    }
+  },
+  "External SSD": {
+    "US": {
+      "price": 274.99,
+      "detail": "Samsung T7 Portable SSD 1TB, MU-PC1T0T/AM; manufacturer MSRP effective June 2026",
+      "source": "https://images.samsung.com/is/content/samsung/assets/us/business/solutions/industries/government/msrp-price-sheets/SamsungMemory_StorageMSRPPriceFileJune2026.pdf"
+    },
+    "AU": {
+      "price": 499,
+      "detail": "Officeworks Samsung T7 portable SSD, 1TB Grey, SASSD1TBGY; advertised online price",
+      "source": "https://www.officeworks.com.au/shop/officeworks/p/samsung-t7-portable-ssd-drive-1tb-grey-sassd1tbgy"
+    },
+    "UK": {
+      "price": 239.99,
+      "detail": "Currys Samsung T7 portable external SSD, 1TB Blue, 10217183; advertised online price",
+      "source": "https://www.currys.co.uk/products/samsung-t7-portable-external-ssd-1-tb-blue-10217183.html"
+    },
+    "CA": {
+      "price": 374.99,
+      "detail": "Best Buy Samsung T7 1TB Grey, MU-PC1T0T/AM; advertised 1TB variant price before tax",
+      "source": "https://www.bestbuy.ca/en-ca/product/samsung-t7-1tb-usb-3-2-external-solid-state-drive-mu-pc1t0t-am-grey-english/14683402"
+    }
+  },
+  "LED light bulb": {
+    "AU": {
+      "price": 18.6,
+      "detail": "Bunnings Philips A60 B22 LED, 910lm warm white, 8W, TWO-PACK; advertised price",
+      "source": "https://www.bunnings.com.au/philips-a60-b22-led-910lm-warm-white-8w-globe-2-pack_p0122033"
+    },
+    "UK": {
+      "price": 4,
+      "detail": "IKEA SOLHETTA E27 LED, 806lm, 4000K opal white, TWO-PACK, 00591516; listed price",
+      "source": "https://www.ikea.com/gb/en/p/solhetta-led-bulb-e27-806-lumen-globe-opal-white-00591516/"
+    },
+    "CA": {
+      "price": 6.99,
+      "detail": "IKEA SOLHETTA E26 LED, 800lm, dimmable opal white, TWO-PACK, 30583925; listed price",
+      "source": "https://www.ikea.com/ca/en/p/solhetta-led-bulb-e26-800-lumen-dimmable-globe-opal-white-30583925/"
+    },
+    "US": {
+      "price": 4.99,
+      "detail": "IKEA SOLHETTA E26 LED, 800lm dimmable opal, TWO-PACK, 60583943; listed price",
+      "source": "https://www.ikea.com/us/en/p/solhetta-led-bulb-e26-800-lumen-dimmable-globe-opal-60583943/"
+    }
+  },
+  "Big Mac": {
+    "AU": {
+      "price": 8.5,
+      "detail": "McDonald's single Big Mac; The Economist Big Mac Index national reference, July 2026 (not a particular branch quote)",
+      "source": "https://github.com/TheEconomist/big-mac-data/blob/master/output-data/big-mac-full-index.csv"
+    },
+    "US": {
+      "price": 6.22,
+      "detail": "McDonald's single Big Mac; The Economist Big Mac Index national reference, July 2026 (not a particular branch quote)",
+      "source": "https://github.com/TheEconomist/big-mac-data/blob/master/output-data/big-mac-full-index.csv"
+    },
+    "UK": {
+      "price": 5.49,
+      "detail": "McDonald's single Big Mac; The Economist Big Mac Index national reference, July 2026 (not a particular branch quote)",
+      "source": "https://github.com/TheEconomist/big-mac-data/blob/master/output-data/big-mac-full-index.csv"
+    },
+    "CA": {
+      "price": 8.17,
+      "detail": "McDonald's single Big Mac; The Economist Big Mac Index national reference, July 2026 (not a particular branch quote)",
+      "source": "https://github.com/TheEconomist/big-mac-data/blob/master/output-data/big-mac-full-index.csv"
+    }
+  },
+  "Umbrella": {
+    "AU": {
+      "price": 19.99,
+      "detail": "BIG W marketplace Sandro Compact Umbrella, black; delivery excluded",
+      "source": "https://www.bigw.com.au/product/sandro-compact-umbrella-black/p/9904315629"
+    },
+    "UK": {
+      "price": 10,
+      "detail": "Boots Totes Slim Round Compact Umbrella, plain black, 10280584; advertised price",
+      "source": "https://www.boots.com/totes-slim-round-black-10280584"
+    },
+    "CA": {
+      "price": 14.97,
+      "detail": "Walmart Air Canada Micro Compact Travel Umbrella, UPF50, black; online price",
+      "source": "https://www.walmart.ca/en/ip/Air-Canada-Micro-Compact-Travel-Umbrella-with-UPF-50-Sun-Protection-Black-One-Size/6S8ZZFXL6RDW"
+    },
+    "US": {
+      "price": 9.99,
+      "detail": "Target Totes Super Mini Manual ECO Compact Umbrella, black; advertised price before tax",
+      "source": "https://www.target.com/s/totes%2Bcompact%2Bumbrellas"
+    }
+  },
+  "Cinema ticket": {
+    "AU": {
+      "price": 27.5,
+      "detail": "Ritz Cinemas Randwick, regular non-member adult ticket at box office; standard session, online fee excluded",
+      "source": "https://www.ritzcinemas.com.au/ticket-prices"
+    },
+    "US": {
+      "price": 13,
+      "detail": "The Grand Cinema, Tacoma WA; regular adult ticket, before separately added tax if applicable",
+      "source": "https://grandcinema.com/all-about-the-grand/"
+    },
+    "UK": {
+      "price": 14.5,
+      "detail": "Prince Charles Cinema, London; non-member evening/weekend standard single performance, box office; online booking fee excluded",
+      "source": "https://princecharlescinema.com/faq/"
+    },
+    "CA": {
+      "price": 14.5,
+      "detail": "Princess Cinemas, Waterloo ON; regular non-member admission at box office, no special event",
+      "source": "https://princesscinemas.com/princess-cinemas-ticket-prices"
+    }
+  },
+  "Movie popcorn": {
+    "US": {
+      "price": 9,
+      "detail": "The Grand Cinema, Tacoma WA; large popcorn at concession counter",
+      "source": "https://grandcinema.com/all-about-the-grand/"
+    },
+    "UK": {
+      "price": 3.9,
+      "detail": "Prince Charles Cinema, London; large popcorn, published 2026 bar menu",
+      "source": "https://princecharlescinema.com/wp-content/uploads/2026/03/BAR-PRICE-LIST_2026.pdf"
+    },
+    "CA": {
+      "price": 9.75,
+      "detail": "Cineplex Cinemas Coquitlam and VIP, BC; large popcorn, advertised concession price before tax",
+      "source": "https://www.cineplex.com/snacks/theatre/1412/menu"
+    },
+    "AU": {
+      "price": 7,
+      "detail": "Tivoli West Wyalong NSW candy bar; large popcorn, regular menu serving",
+      "source": "https://www.tivoliwestwyalong.com.au/candy-bar"
+    }
+  },
+  "Movie ticket popcorn combo": {
+    "US": {
+      "price": 19,
+      "detail": "The Grand Cinema, Tacoma WA; one regular adult ticket plus one small popcorn, separately priced; tax excluded",
+      "source": "https://grandcinema.com/all-about-the-grand/"
+    },
+    "AU": {
+      "price": 40,
+      "detail": "Event Cinemas Adult Combo ePackage: one Original adult ticket, small popcorn, small drink and choc top; standard-format restrictions apply",
+      "source": "https://giftshop.eventcinemas.com.au/products/AdultCombo"
+    },
+    "UK": {
+      "price": 17.4,
+      "detail": "Prince Charles Cinema, London; one non-member evening standard ticket plus one small popcorn, separately priced; online booking fee excluded",
+      "source": "https://princecharlescinema.com/faq/",
+      "supportingSources": [
+        "https://princecharlescinema.com/wp-content/uploads/2026/03/BAR-PRICE-LIST_2026.pdf"
+      ]
+    },
+    "CA": {
+      "price": 19.5,
+      "detail": "Valley Drive In, Cambridge NS; one Single admission plus small popcorn, separately priced; advertised gate ticket includes tax, no online fee",
+      "source": "https://www.valleydrivein.com/",
+      "supportingSources": [
+        "https://www.valleydrivein.com/canteen"
+      ]
+    }
+  },
+  "Petrol per litre": {
+    "US": {
+      "price": 1.13,
+      "detail": "AAA national regular gasoline average, 21 Oct 2026; PER LITRE, converted from US gallons and rounded to cents",
+      "source": "https://gasprices.aaa.com/?state=US"
+    },
+    "CA": {
+      "price": 1.71,
+      "detail": "CAA national regular gasoline average, 22 Oct 2026; one litre, rounded to cents",
+      "source": "https://www.caa.ca/gas-prices/"
+    },
+    "AU": {
+      "price": 2.42,
+      "detail": "AIP Australian national average retail unleaded petrol, week ending 18 Oct 2026; one litre, rounded to cents",
+      "source": "https://aip.com.au/wp-content/uploads/2026/10/Weekly-Petrol-Prices-Report-18-October-2026.pdf"
+    },
+    "UK": {
+      "price": 1.75,
+      "detail": "Fuel Crisis England dashboard of DESNZ UK national weekly unleaded pump average, week of 19 Oct 2026; one litre rounded to pence",
+      "source": "https://www.fuelcrisisengland.co.uk/fuel-prices"
+    }
+  },
+  "Parking": {
+    "AU": {
+      "price": 16,
+      "detail": "Wilson Parking The Domain, Sydney; weekday drive-up car parking, first hour from 6am; no event tariff",
+      "source": "https://www.wilsonparking.com.au/parking-locations/new-south-wales/sydney-cbd/the-domain-car-park/"
+    },
+    "CA": {
+      "price": 5,
+      "detail": "Green P Carpark 404, 95 Beecroft Road Toronto; one hour at the published half-hour rate, regular tariff",
+      "source": "https://parking.greenp.com/carpark/404_95-beecroft-road/"
+    },
+    "US": {
+      "price": 5.5,
+      "detail": "NYC DOT Zone M1, Midtown Core/Lower Manhattan; first hour at an All Vehicles meter during paid hours, not commercial-only meter",
+      "source": "https://www.nyc.gov/html/dot/html/motorist/parking-rates.shtml"
+    },
+    "UK": {
+      "price": 5.68,
+      "detail": "Lambeth Brixton Popes Road car park; Band A non-diesel vehicle, one off-peak hour (before 10am or after 1pm), published 2026/27 tariff; app extras excluded",
+      "source": "https://www.lambeth.gov.uk/parking/emission-based-parking-charges/street-car-park-charges"
+    }
+  },
+  "Tennis balls": {
+    "UK": {
+      "price": 3.49,
+      "detail": "Decathlon TB160 pressureless yellow tennis balls, 3-pack, ID 8600512; shipping excluded",
+      "source": "https://www.decathlon.co.uk/p/tennis-ball-tri-pack-yellow-tb160/327414/m8600512"
+    },
+    "AU": {
+      "price": 8,
+      "detail": "BIG W Wilson Grand Slam tennis balls, 3-pack; advertised price",
+      "source": "https://www.bigw.com.au/sports-leisure/sports-equipment/tennis-gear/tennis-balls/c/6710109100"
+    },
+    "US": {
+      "price": 5.99,
+      "detail": "Walmart Penn Championship Extra Duty tennis balls, one can of 3; listed regular price before rollback, tax excluded",
+      "source": "https://www.wal-mart.com/ip/Penn-Championship-Extra-Duty-Tennis-Balls-1-Can-3-balls/9906177"
+    },
+    "CA": {
+      "price": 12.51,
+      "detail": "Walmart Canada marketplace Wilson T1003 Championship regular-duty tennis balls, 3-pack; advertised price before tax and shipping",
+      "source": "https://www.walmart.ca/en/ip/Wilson-Tennis-Balls-T1003-Championship-Tennis-Ball-3-Pack/6MJI6E9SD1D5"
+    }
+  },
+  "McDonald's fries": {
+    "UK": {
+      "price": 1.99,
+      "detail": "McDonald's, 2 Trafalgar Way London; Medium Fries, app pickup menu checked by Drive Thru Index on 14 Oct 2026",
+      "source": "https://drivethruindex.com/restaurants/uk/eng/london/mcdonalds-e145sp-2-trafalgar-way"
+    },
+    "CA": {
+      "price": 4.29,
+      "detail": "McDonald’s Toronto, medium World Famous Fries; CostDB published October 2026 Toronto menu reference, before tax; branch prices vary",
+      "source": "https://costdb.com/store/mcdonalds"
+    },
+    "AU": {
+      "price": 4.1,
+      "detail": "McDonald’s Bankstown Centro Food Court NSW; Medium Fries, pickup menu checked 16 Oct 2026 by Drive Thru Index; no delivery markup",
+      "source": "https://drivethruindex.com/restaurants/au/nsw/bankstown/mcdonalds-951195"
+    },
+    "US": {
+      "price": 5.49,
+      "detail": "McDonald’s, 160 Broadway NYC; Medium French Fries, Uber Eats delivery menu price, before tax and delivery/service fees",
+      "source": "https://www.ubereats.com/store/mcdonalds-fidi-160-broadway/Cn7rm31RTym93cHeWFUSow"
+    }
+  },
+  "Air fryer": {
+    "CA": {
+      "price": 99.98,
+      "detail": "Walmart Gourmia 3.7L / 4qt digital air fryer, 12 functions; listed regular price before offer, tax excluded",
+      "source": "https://www.walmart.ca/en/ip/Gourmia-3-7-L-4-Qt-Digital-Air-Fryer-with-12-Functions-and-Guided-Cooking/6000204881654"
+    },
+    "AU": {
+      "price": 49,
+      "detail": "Kmart Anko 4L Space Saving air fryer, AF4002; Australian CHOICE review’s listed reference price",
+      "source": "https://www.choice.com.au/products/home-and-living/kitchen/benchtop-cooking/kmart-anko-4l-air-fryer-space-saving-af4002"
+    },
+    "UK": {
+      "price": 49.99,
+      "detail": "Tower Vortx Digital Air Fryer, 4.2L Black, T17147; advertised manufacturer price",
+      "source": "https://www.towerhousewares.co.uk/air-fryers/vortx-42-litre-digital-air-fryer-1400w-1"
+    },
+    "US": {
+      "price": 69.99,
+      "detail": "Walmart online listing, Gourmia GAF486 4qt digital air fryer with guided cooking; selected 4qt variant, tax and shipping excluded",
+      "source": "https://www.walmart.com/ip/316564798"
+    }
+  },
+  "Robot vacuum": {
+    "US": {
+      "price": 479.99,
+      "detail": "Target eufy C10 self-emptying robot vacuum; listed regular price before sale, tax excluded",
+      "source": "https://www.target.com/p/-/A-1008579832"
+    },
+    "AU": {
+      "price": 249.95,
+      "detail": "BIG W marketplace MyGenie Laser Sonic AI Robot Vacuum & Mop; advertised price, delivery excluded",
+      "source": "https://www.bigw.com.au/product/mygenie-laser-sonic-ai-robot-vacuum-mop-smart-mapping-hepa-wet-dry/p/9901024562"
+    },
+    "CA": {
+      "price": 999.99,
+      "detail": "Canadian Tire Roborock QR798 robot vacuum and mop, self-empty, white, 043-7632-2; listed regular price before sale, tax excluded",
+      "source": "https://www.canadiantire.ca/en/cat/home/appliances/vacuum-cleaners/robot-vacuums-DC0000678.html"
+    },
+    "UK": {
+      "price": 499,
+      "detail": "eufy UK Omni C20 Robot Vacuum with All-in-One Station; advertised manufacturer price",
+      "source": "https://www.eufy.com/uk/products/t2292211"
+    }
+  },
+  "Chicken breast": {
+    "CA": {
+      "price": 31.94,
+      "detail": "Metro Maple Leaf Prime boneless skinless chicken breast, raised without antibiotics; PER 1KG, not price of an average tray",
+      "source": "https://www.metro.ca/en/online-grocery/aisles/meat-poultry/chicken-turkey/breasts/boneless-chicken-breast/p/234383"
+    },
+    "UK": {
+      "price": 6.9,
+      "detail": "Tesco British Chicken Breast Fillets, 1kg pack; regular online price",
+      "source": "https://www.tesco.com/shop/en-GB/search?query=tesco+chicken+breast+fillet+1kg"
+    },
+    "AU": {
+      "price": 11,
+      "detail": "Coles RSPCA Approved Chicken Breast Fillets Large Pack, approx. 1.4kg; PER 1KG unit price, not total tray price",
+      "source": "https://www.coles.com.au/browse/meat-seafood/poultry/breast-fillets"
+    },
+    "US": {
+      "price": 8.84,
+      "detail": "Walmart Perdue Harvestland Perfect Portions fresh boneless skinless chicken breast; 1.65 lb pack, not a per-kg price; tax excluded",
+      "source": "https://www.walmart.com/browse/food/chicken-breasts/976759_9569500_1001443_8161643"
+    }
+  },
+  "Fish and chips": {
+    "US": {
+      "price": 22,
+      "detail": "Loreley Beer Garden, Lower East Side NYC; lightly battered fresh cod with French fries, main menu price before tax and tip",
+      "source": "https://www.loreleynyc.com/menu/fish-chips"
+    },
+    "AU": {
+      "price": 13,
+      "detail": "Old English Fish ’N’ Chips, Forestville NSW; regular Fish & Chips pack, no crumbed upgrade; Good Friday special menu excluded",
+      "source": "https://oldenglishfishnchips.com.au/menu/"
+    },
+    "UK": {
+      "price": 21.99,
+      "detail": "Poppies London main menu; regular cod meal with chips and homemade tartare sauce; optional service charge excluded",
+      "source": "https://poppiesfishandchips.co.uk/menu/"
+    },
+    "CA": {
+      "price": 18,
+      "detail": "Len Duckworth Toronto take-out menu; one haddock plus one Fresh Cut Chips side, separately priced; tax excluded",
+      "source": "https://lenduckworthfishandchips.ca/"
+    }
+  },
+  "Domino's pizza": {
+    "US": {
+      "price": 13.99,
+      "detail": "Domino’s, 45 Catherine Street NYC; Large 14-inch Hand Tossed Pizza, app pickup menu checked 22 Oct 2026 by Drive Thru Index; tax excluded",
+      "source": "https://drivethruindex.com/restaurants/us/ny/new-york/dominos-3695"
+    },
+    "UK": {
+      "price": 22.99,
+      "detail": "Domino’s, 194 Kentish Town Road London; Original Cheese & Tomato Large 13.5-inch, app pickup menu checked 21 Oct 2026 by Drive Thru Index",
+      "source": "https://drivethruindex.com/restaurants/uk/eng/london/dominos-29011"
+    },
+    "AU": {
+      "price": 6,
+      "detail": "Domino’s Australia advertised STARTING offer: one Large Value Range pizza for pickup at participating stores, voucher as advertised; upgrades excluded",
+      "source": "https://www.dominos.com.au/menu/"
+    },
+    "CA": {
+      "price": 12.99,
+      "detail": "Domino’s Canada advertised Large 2-Topping Pizza offer; pickup at participating stores, per pizza, no upgrades; tax excluded",
+      "source": "https://www.dominos.ca/"
+    }
+  },
+  "Footlong sub sandwich": {
+    "US": {
+      "price": 10.49,
+      "detail": "Subway Midtown West (7th Ave), NYC; Veggie Delite Footlong, Uber Eats menu price, tax and delivery/service fees excluded",
+      "source": "https://www.ubereats.com/store/subway-midtown-west-7th-ave/h5NbdPP4RPKuEDa8OFpX8Q"
+    },
+    "CA": {
+      "price": 8.59,
+      "detail": "Subway Canada online store 24923-0; Veggie Delite Footlong, default bread and toppings, no add-ons; tax excluded",
+      "source": "https://www.subway.com/en-ca/restaurant/24923-0/customizer/productsummary/1016/category/sandwiches"
+    },
+    "AU": {
+      "price": 8,
+      "detail": "Subway Beverly Hills NSW 2209, Sydney; Meatball Footlong as listed in MenuWeb’s published branch-menu reference; no upgrades/delivery",
+      "source": "https://apac-cdn.menuweb.menu/storage/media/companies_menu_pdf/114450616/subway-sydney-menu.pdf"
+    },
+    "UK": {
+      "price": 8,
+      "detail": "Subway, 2 Market Street Wolverhampton; Veggie Delite Footlong as listed in MenuWeb’s published branch-menu reference; no upgrades/delivery",
+      "source": "https://weur-cdn.menuweb.menu/storage/media/companies_menu_pdf/114749712/subway-birmingham-menu.pdf"
+    }
+  },
+  "Pint of beer": {
+    "AU": {
+      "price": 13,
+      "detail": "Taphouse Sydney, Hawke’s Lager 4.2% draught; one Australian pint (570mL), regular menu price, public-holiday surcharge excluded",
+      "source": "https://taphousesydney.com.au/menu/"
+    },
+    "UK": {
+      "price": 6,
+      "detail": "Southgate Masonic Centre bar, London; Regular Lager, one imperial pint (568mL), published January 2026 bar menu",
+      "source": "https://www.southgatemasoniccentre.co.uk/menus"
+    },
+    "CA": {
+      "price": 5.99,
+      "detail": "Round Table Tavern, Toronto; Molson Canadian draught, one menu pint (20oz); tax and tip excluded",
+      "source": "https://roundtabletavern.ca/menu/"
+    },
+    "US": {
+      "price": 10,
+      "detail": "The Elgin, Midtown West NYC; Elgin Lager, standard draft-list serving; tax and tip excluded",
+      "source": "https://www.elginnyc.com/menu/beer-list-1/"
+    }
+  },
+  "Starbucks latte": {
+    "AU": {
+      "price": 6.8,
+      "detail": "Starbucks George Street, Sydney; hot Latte, Uber Eats base listed serving with regular milk, no size upgrade/add-ons; delivery/service fees excluded",
+      "source": "https://www.ubereats.com/au/store/starbucks-george-street/BA2vIaHpWdmkWkkNwzTjvw"
+    },
+    "US": {
+      "price": 6.65,
+      "detail": "Starbucks NYC DoorDash store 34312444; hot Caffè Latte base listed serving, no size upgrade/add-ons; tax, delivery/service fees excluded",
+      "source": "https://www.doordash.com/en/store/starbucks-new-york-34312444/"
+    },
+    "UK": {
+      "price": 5.1,
+      "detail": "Starbucks Victoria Street, London; hot Caffè Latte, Deliveroo base listed serving, no size upgrade/add-ons; delivery/service fees excluded",
+      "source": "https://deliveroo.co.uk/menu/london/westminster/12061-starbucks-victoria-street-27"
+    },
+    "CA": {
+      "price": 5.65,
+      "detail": "Starbucks 203 College Street, Toronto; hot Caffè Latte, Uber Eats base listed serving, no size upgrade/add-ons; tax, delivery/service fees excluded",
+      "source": "https://www.ubereats.com/ca/store/starbucks-203-college-street/MgB4zgKSVt2lhcZlRnrMww"
+    }
+  },
+  "Uber short ride": {
+    "AU": {
+      "price": 29,
+      "detail": "Uber’s published Sydney average for a 16-minute ride; city reference average, not a fixed route, 5km fare or live quote",
+      "source": "https://www.uber.com/au/en/r/cities/taxi/sydney-nsw-au/"
+    },
+    "US": {
+      "price": 31,
+      "detail": "Uber’s published NYC average for a 19-minute ride; city reference average, not a fixed route, 5km fare or live quote",
+      "source": "https://www.uber.com/us/en/r/cities/taxi/new-york-city-new-york-city-us/"
+    },
+    "UK": {
+      "price": 20,
+      "detail": "Uber London published average UberX fare to Paddington Train Station; starting points vary, not a fixed 5km fare or live quote",
+      "source": "https://www.uber.com/global/en/r/cities/london-eng-gb/"
+    },
+    "CA": {
+      "price": 15,
+      "detail": "Uber Toronto published average UberX fare to CF Toronto Eaton Centre; starting points vary, not a fixed 5km fare or live quote",
+      "source": "https://www.uber.com/global/en/r/cities/toronto-on-ca/"
     }
   }
 };
@@ -1104,15 +2221,18 @@
   for(const [region,e]of Object.entries(reviewed[item.name]||{})){
    out.prices[region]=e.price;
    (out.priceDetails||={})[region]=e.detail;
-   (out.priceEvidence||={})[region]={checkedAt,source:e.source};
+   (out.priceEvidence||={})[region]={checkedAt,source:e.source,...(e.supportingSources?{supportingSources:e.supportingSources}: {})};
   }
+  if(item.name==='Pint of beer')out.displayName='Beer';
+  if(item.name==='Uber short ride')out.displayName='Uber ride';
+  if(item.name==='Band-Aids box')out.displayName='Adhesive plasters';
   return out;
  }
  function daily(originals,saved,day){
   if(saved)return validItems(saved.items)?clone(saved.items):clone(originals);
   return originals.map(item=>current(item,day));
  }
- function label(item){return item.name==='Pint of beer'&&item.detail.includes('500ml')?'Beer (500ml)':item.name;}
+ function label(item){if(text(item.displayName)&&item.displayName)return item.displayName;return item.name==='Pint of beer'&&item.detail.includes('500ml')?'Beer (500ml)':item.name;}
  function detail(item,region){return text(item.priceDetails?.[region])?item.priceDetails[region]:item.detail;}
  function evidence(item,region){
   const e=item.priceEvidence?.[region];

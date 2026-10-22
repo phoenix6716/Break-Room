@@ -225,7 +225,63 @@ Tech|Which language has the most native speakers?|Mandarin Chinese|English|Spani
 Tech|How many bits are in a byte?|8|4|16|A kilobyte is roughly 1,000 bytes.`.trim().split("\n").map(l=>{const a=l.split("|");return{c:a[0],q:a[1],o:[a[2],a[3],a[4]],f:a[5]}});
 const LEGACY_BANK_SIZE=164;
 // Apply reviewed wording only to new snapshots/practice; keep the frozen legacy bank above intact.
-const REVIEWED_FACTS={"14":{"q":"Approximately how fast does light travel in a vacuum?","f":"The exact speed is 299,792.458 km/s; 300,000 km/s is the rounded answer."},"34":{"f":"It became the largest contiguous land empire in history."},"68":{"q":"Which is the lowest exposed point on dry land?","f":"The Dead Sea shore is below sea level; its elevation changes as the water level falls."},"83":{"f":"O negative red cells lack A, B and RhD antigens; other blood-group antigens can still be present."},"98":{"q":"Which of these mammals has a pregnancy lasting about 22 months?","f":"Elephant pregnancies last roughly 22 months; the question compares the three animals listed."},"108":{"q":"Which year conventionally marks the fall of the Western Roman Empire?","f":"Odoacer deposed Romulus Augustulus in 476. Julius Nepos retained a rival imperial claim until 480."},"120":{"q":"Who is traditionally credited with the epic poem The Odyssey?"},"142":{"f":"Birds are much less sensitive to capsaicin's burning sensation than mammals."},"156":{"q":"What is the maximum number of players per side on the pitch in association football?"},"157":{"q":"How often are the Summer Olympics normally scheduled?"}};
+const REVIEWED_FACTS={
+  "7": {
+    "f": "It holds about 20 percent of Earth's fresh surface water; groundwater is excluded."
+  },
+  "10": {
+    "q": "How many bones does a typical adult human skeleton have?",
+    "f": "The usual adult count is 206; individual anatomy can vary."
+  },
+  "14": {
+    "q": "Approximately how fast does light travel in a vacuum?",
+    "f": "The exact speed is 299,792.458 km/s; 300,000 km/s is the rounded answer."
+  },
+  "17": {
+    "q": "At standard atmospheric pressure, at approximately what temperature in °C does pure water boil?",
+    "f": "At one standard atmosphere (101.325 kPa), pure water boils at about 100 °C. Lower pressure lowers its boiling point."
+  },
+  "34": {
+    "f": "It became the largest contiguous land empire in history."
+  },
+  "40": {
+    "q": "Which composer wrote his Ninth Symphony after severe hearing loss?",
+    "f": "Beethoven's Ninth premiered in Vienna on 7 May 1824, when he was profoundly deaf."
+  },
+  "68": {
+    "q": "Which is the lowest exposed point on dry land?",
+    "f": "The Dead Sea shore is below sea level; its elevation changes as the water level falls."
+  },
+  "83": {
+    "f": "O negative red cells lack A, B and RhD antigens; other blood-group antigens can still be present."
+  },
+  "98": {
+    "q": "Which of these mammals has a pregnancy lasting about 22 months?",
+    "f": "Elephant pregnancies last roughly 22 months; the question compares the three animals listed."
+  },
+  "108": {
+    "q": "Which year conventionally marks the fall of the Western Roman Empire?",
+    "f": "Odoacer deposed Romulus Augustulus in 476. Julius Nepos retained a rival imperial claim until 480."
+  },
+  "120": {
+    "q": "Who is traditionally credited with the epic poem The Odyssey?"
+  },
+  "142": {
+    "f": "Birds are much less sensitive to capsaicin's burning sensation than mammals."
+  },
+  "149": {
+    "f": "NASA dates the first confirmed sighting of the Great Red Spot to 1831; earlier spot observations may describe a different storm."
+  },
+  "156": {
+    "q": "What is the maximum number of players per side on the pitch in association football?"
+  },
+  "157": {
+    "q": "How often are the Summer Olympics normally scheduled?"
+  },
+  "163": {
+    "f": "A byte contains 8 bits. A decimal kilobyte is 1,000 bytes; a kibibyte is 1,024 bytes."
+  }
+};
 BANK.push(...window.STAKE_QUESTION_ADDITIONS);
 const today=()=>window.MIDNIGHT_ARCADE_CLOCK.dayKey();
 const prev=key=>window.MIDNIGHT_ARCADE_CLOCK.previousDay(key);

@@ -5,6 +5,14 @@ import ast,itertools,json,math,random
 ROOT=Path(__file__).resolve().parents[1]
 R=json.loads((ROOT/'content/reference-data.json').read_text())
 
+# The reviewed release freezes question IDs and subject sets. Reconcile measurements
+# against that retained selection instead of redrawing the random baseline at old IDs.
+if R.get('sources',{}).get('elements',{}).get('review'):
+    import subprocess
+    subprocess.run(['node',str(ROOT/'scripts/review-question-banks.cjs')],cwd=ROOT,check=True)
+    print('Reconciled the retained reviewed bank without replacing IDs or subjects.')
+    raise SystemExit(0)
+
 def calc(expr):
     tree=ast.parse(expr,mode='eval')
     funcs={'factorial':math.factorial,'gcd':math.gcd,'lcm':math.lcm,'sqrt':math.sqrt}

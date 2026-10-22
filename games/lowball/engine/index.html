@@ -698,7 +698,7 @@
       <div class="how-step"><span class="how-n">1</span><span>See an everyday item.</span></div>
       <div class="how-step"><span class="how-n">2</span><span>Guess its reference price in your selected currency.</span></div>
       <div class="how-step"><span class="how-n">3</span><span>The closer you are in either direction, the higher you score. A 1% miss costs about one point.</span></div>
-      <p class="modal-copy">Prices are game reference estimates, not live retailer quotes. Each region has its own prices. Unlimited is free practice and never changes your Daily record.</p>
+      <p class="modal-copy">Guess the dated reference for the product, serving or service shown. Check the pack size, retailer, fees and whether the amount is a regular price, offer or published average. Prices vary by place and date; source links appear after your guess. Unlimited is free practice and never changes your Daily record.</p>
       <button class="btn-gold" id="helpClose">GOT IT</button>
     </div>
   </div>
@@ -1234,7 +1234,7 @@ function showItem() {
   emojiEl.innerHTML = LOWBALL_ART.markup(currentItem);
   document.getElementById("itemName").textContent = PRICE_REFERENCES.label(currentItem);
   document.getElementById("counterItemNumber").textContent = mode === "normal" ? "ITEM " + String(roundIndex + 1).padStart(2, "0") + " / " + String(ROUNDS_PER_DAY).padStart(2, "0") : "PRACTICE / ITEM " + String(deckIndex + 1).padStart(2, "0");
-  document.getElementById("itemDetail").textContent = PRICE_REFERENCES.detail(currentItem,country);
+  document.getElementById("itemDetail").textContent = itemPriceDetail(currentItem,country);
   document.getElementById("currencySymbol").textContent = CURRENCY[country].symbol;
   guessInput.value = "";
   guessInput.removeAttribute("aria-invalid");
@@ -1307,6 +1307,11 @@ function submitGuess() {
   renderResult(guess, country, true);
 }
 
+function itemPriceDetail(item,region){
+  const evidence=PRICE_REFERENCES.evidence(item,region);
+  return PRICE_REFERENCES.detail(item,region)+(evidence?" · Reference checked "+prettyDate(evidence.checkedAt):" · Original game estimate");
+}
+
 function renderResult(guess, ctry, animate) {
   const actual = currentItem.prices[ctry];
   const { pctOff, score } = computeScore(guess, actual);
@@ -1328,6 +1333,7 @@ function renderResult(guess, ctry, animate) {
   const note=document.createElement("p");note.className="result-note";
   note.textContent=evidence?"Published reference checked "+prettyDate(evidence.checkedAt)+". ":"Game estimate; not independently verified.";
   if(evidence){const link=document.createElement("a");link.href=evidence.source;link.target="_blank";link.rel="noopener noreferrer";link.textContent="Source";note.append(link);}
+  if(evidence)for(const [i,url]of (evidence.supportingSources||[]).entries()){if(typeof url!=="string"||!/^https:\/\/[^\s]+$/.test(url))continue;note.append(" · ");const link=document.createElement("a");link.href=url;link.target="_blank";link.rel="noopener noreferrer";link.textContent="Supporting source "+(i+1);note.append(link);}
   document.getElementById("resultFacts").append(note);
   document.getElementById("nextBtn").textContent = mode === "normal" && roundIndex === ROUNDS_PER_DAY - 1 ? "SEE DAILY RESULTS →" : "NEXT ITEM →";
   const sq = document.getElementById("squares");
@@ -1811,7 +1817,7 @@ countrySelect.addEventListener("change", (e) => {
   safeSet("pc_country", country);
   if (playArea.style.display !== "none" && currentItem) {
     document.getElementById("currencySymbol").textContent = CURRENCY[country].symbol;
-    document.getElementById("itemDetail").textContent = PRICE_REFERENCES.detail(currentItem,country);
+    document.getElementById("itemDetail").textContent = itemPriceDetail(currentItem,country);
   }
 });
 
