@@ -67,6 +67,6 @@ Receipts now say **Reference price** and show only the applicable dated source, 
 
 ## Validation record
 
-The first implementation commit is `5855d494c23cfc534929a2b5deb03630fed25d6c`; final validation is recorded in the PR description and Actions checks. The managed executor was unavailable, so no local shell/build/test run is claimed. Connector-side JavaScript checks found zero calculation failures across 74 Stack Up sets and20 Stake additions. GitHub Actions provides the authoritative full production-build/unit/PostgreSQL/browser result at the final PR head.
+The first implementation commit is `5855d494c23cfc534929a2b5deb03630fed25d6c`; final validation is recorded in the PR description and Actions checks. The managed executor was unavailable, so no local shell/build/test run is claimed. Connector-side JavaScript checks found zero calculation failures across 74 Stack Up sets and 20 Stake additions. GitHub Actions provides the authoritative full production-build/unit/PostgreSQL/browser result at the final PR head.
 
 New regression coverage checks legacy Stake option positions, dated price cutover, snapshotless/zero/pending progress, snapshot immutability, whole-record cloud merge, unsafe evidence URLs, five responsive widths, region detail changes, receipt source/date, reload and Daily/Unlimited isolation. Existing suites continue to cover all nine games, scoring parity, old saves and reset behavior. These tests do not verify retail web pages or live Supabase configuration.

@@ -36,7 +36,7 @@ assert(date);
     await f.locator('#guessInput').fill(String(price));await f.locator('#submitBtn').click();
     assert.equal(await f.locator('#resultScore').innerText(),'100');
     const receipt=await f.locator('#resultFacts').innerText();
-    assert.match(receipt,/Reference price/);assert.match(receipt,legacy?/not independently verified/:/22 Oct 2026/);
+    assert.match(receipt,/Reference price/i);assert.match(receipt,legacy?/not independently verified/:/22 Oct 2026/);
     if(!legacy)assert.match(await f.locator('#resultFacts a').getAttribute('href'),/^https:\/\/auspost.com.au\//);
     assert(!receipt.includes('15 Oct 2026'));
     const saved=await f.evaluate(()=>localStorage.getItem('pc_progress'));
