@@ -54,6 +54,6 @@ for(const item of items)for(const region of ['AU','US','UK','CA']){
  assert.equal(modern.prices[region],row.reviewedTarget??row.inheritedTarget,'Only evidence-backed regional targets may change');
  assert.equal(Boolean(P.evidence(modern,region)),row.reviewedTarget!==undefined);
 }
-assert.equal(prices.regions.filter(r=>r.status==='corrected-dated-reference').length,4);
-assert.equal(prices.regions.filter(r=>r.reviewedTarget!==undefined).length,13);
+assert.equal(prices.regions.filter(r=>r.status==='corrected-dated-reference').length,157);
+assert.equal(prices.regions.filter(r=>r.reviewedTarget!==undefined).length,193);
 console.log('PASS factual review: frozen legacy Stake options, scoped modern wording, dated Lowball targets, draft/snapshot/zero/cloud compatibility and per-region evidence.');
