@@ -28,7 +28,17 @@
     "movies": {
       "url": "https://raw.githubusercontent.com/vega/vega-datasets/main/data/movies.json",
       "retrieved_utc": "2026-10-19T04:32:17.860314+00:00",
-      "sha256": "e63c499759e3b07b49563e036f55290f87feb56def8703ec049ca305ab1523d3"
+      "sha256": "e63c499759e3b07b49563e036f55290f87feb56def8703ec049ca305ab1523d3",
+      "corrections": [
+        {
+          "key": "Monsters, Inc.",
+          "field": "director",
+          "value": "Pete Docter",
+          "checkedAt": "2026-10-22",
+          "url": "https://catalog.afi.com/Catalog/moviedetails/62121",
+          "note": "AFI lists Pete Docter as director. This corrects unused reference metadata; no published card labels or dates change."
+        }
+      ]
     },
     "airports": {
       "url": "https://raw.githubusercontent.com/datasets/airport-codes/master/data/airport-codes.csv",
@@ -2600,7 +2610,7 @@
     "Monsters, Inc.": {
       "title": "Monsters, Inc.",
       "year": 2001,
-      "director": "David Silverman"
+      "director": "Pete Docter"
     },
     "The Incredibles": {
       "title": "The Incredibles",

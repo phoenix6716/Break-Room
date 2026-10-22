@@ -9828,12 +9828,12 @@
         "reference": {
           "title": "Monsters, Inc.",
           "year": 2001,
-          "director": "David Silverman"
+          "director": "Pete Docter"
         },
         "crosscheckLinks": [
-          "https://catalog.afi.com/Catalog/moviedetails/62121",
-          "https://catalog.afi.com/Film/62121-MONSTERS-INC?cp=1&cxt=Filmography1&pos=1&sid=7cc62e06-84b7-48cc-9b74-9cc898750569&sr=0.18266846"
-        ]
+          "https://catalog.afi.com/Catalog/moviedetails/62121"
+        ],
+        "correction": "Director metadata corrected from David Silverman to Pete Docter against AFI. The director field is not used on this game's current cards; year and snapshots are unchanged."
       },
       {
         "key": "Rocky",
