@@ -535,12 +535,15 @@
         "Ottoman Empire",
         "Persian Empire"
       ],
-      "verdict": "screened-no-answer-discrepancy-found",
+      "verdict": "wording-corrected",
       "method": "Editorial check of answer and alternatives with retrieved web crosschecks; secondary detail not certified solely by a search snippet.",
       "crosscheckLinks": [
-        "https://education.nationalgeographic.org/resource/mongol-khans/",
-        "https://www.khanacademy.org/humanities/ap-world-history/600-1450-regional-and-interregional-interactions/v/genghis-khan-and-the-mongol-empire"
-      ]
+        "https://www.guinnessworldrecords.com/world-records/86621-largest-empire-contiguous"
+      ],
+      "correction": {
+        "f": "It became the largest contiguous land empire in history.",
+        "reason": "The British Empire was larger overall; the Mongol record is for contiguous territory."
+      }
     },
     {
       "id": "stake-legacy-036",

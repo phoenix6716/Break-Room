@@ -33,6 +33,7 @@ for(const [index,original]of [[14,'What is the speed of light in a vacuum?'],[83
  assert.equal(old.q,original);assert.deepEqual(old.o,modern.o);assert.equal(old.a,modern.a);
  if(index===83)assert.match(modern.f,/RhD/);else assert.notEqual(modern.q,old.q);
 }
+assert.match(vm.runInContext('bq(34,()=>0,true).f',box),/largest contiguous land empire/);
 const day=Array.from({length:22},(_,i)=>'2026-10-'+String(i+1).padStart(2,'0')).find(d=>!vm.runInContext('dayQs('+JSON.stringify(d)+',164)',box).some(q=>q.q==='Which mammal has the longest pregnancy?'));
 assert(day);
 const practicePool=stake.split('\n').find(l=>l.startsWith('function practicePool('));
