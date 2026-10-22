@@ -2236,7 +2236,9 @@
  function detail(item,region){return text(item.priceDetails?.[region])?item.priceDetails[region]:item.detail;}
  function evidence(item,region){
   const e=item.priceEvidence?.[region];
-  return e&&/^\d{4}-\d{2}-\d{2}$/.test(e.checkedAt)&&typeof e.source==='string'&&/^https:\/\/[^\s]+$/.test(e.source)?e:null;
+  if(!e||!/^\d{4}-\d{2}-\d{2}$/.test(e.checkedAt)||typeof e.source!=='string'||!/^https:\/\/[^\s]+$/.test(e.source))return null;
+  const supportingSources=Array.isArray(e.supportingSources)?e.supportingSources.filter(url=>typeof url==='string'&&/^https:\/\/[^\s]+$/.test(url)).slice(0,4):[];
+  return {checkedAt:e.checkedAt,source:e.source,...(supportingSources.length?{supportingSources}:{})};
  }
  root.BREAK_ROOM_LOWBALL_PRICES=Object.freeze({effectiveDay,checkedAt,current,daily,validItems,label,detail,evidence});
 })(typeof window!=='undefined'?window:globalThis);

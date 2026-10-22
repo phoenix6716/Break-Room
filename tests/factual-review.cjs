@@ -92,5 +92,9 @@ for(const name of ['Pint of beer','Uber short ride','Band-Aids box']){
 }
 const combo=P.current(items.find(x=>x.name==='Movie ticket popcorn combo'),P.effectiveDay);
 assert.match(P.evidence(combo,'UK').supportingSources[0],/BAR-PRICE-LIST/);
+const badLinks={priceEvidence:{UK:{checkedAt:'2026-10-22',source:'https://example.org/price',supportingSources:{unexpected:true}}}};
+assert.equal(P.evidence(badLinks,'UK').supportingSources,undefined,'Malformed optional metadata cannot break restored receipts');
+badLinks.priceEvidence.UK.supportingSources=['javascript:alert(1)',null,'https://example.org/second'];
+assert.deepEqual(P.evidence(badLinks,'UK').supportingSources,['https://example.org/second']);
 assert.equal(P.daily([combo,...fresh.slice(0,3)],{items:[combo,...fresh.slice(0,3)]},'2027-01-01')[0].prices.UK,17.4);
 console.log('PASS factual review: frozen legacy Stake options, scoped modern wording, dated Lowball targets, draft/snapshot/zero/cloud compatibility and per-region evidence.');
