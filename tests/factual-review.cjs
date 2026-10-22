@@ -33,6 +33,13 @@ for(const [index,original]of [[14,'What is the speed of light in a vacuum?'],[83
  assert.equal(old.q,original);assert.deepEqual(old.o,modern.o);assert.equal(old.a,modern.a);
  if(index===83)assert.match(modern.f,/RhD/);else assert.notEqual(modern.q,old.q);
 }
+const day=Array.from({length:22},(_,i)=>'2026-10-'+String(i+1).padStart(2,'0')).find(d=>!vm.runInContext('dayQs('+JSON.stringify(d)+',164)',box).some(q=>q.q==='Which mammal has the longest pregnancy?'));
+assert(day);
+const practicePool=stake.split('\n').find(l=>l.startsWith('function practicePool('));
+vm.runInContext('const today=()=>'+JSON.stringify(day)+';let run={date:today(),qs:[bq(98,()=>0,true)]};\n'+practicePool,box);
+assert(!vm.runInContext('practicePool().includes(98)',box),'Corrected Daily wording must still hold the same original question out of practice');
+vm.runInContext('run.qs=[bq(98,()=>0,false)]',box);
+assert(!vm.runInContext('practicePool().includes(98)',box),'Historical Daily wording is also held out');
 const ledger=JSON.parse(read('content/factual-review.json')),prices=JSON.parse(read('content/lowball-price-review.json'));
 assert.equal(ledger.stake.length,264);assert.equal(ledger.stackUp.length,208);assert.equal(ledger.prior.length,128);
 assert.equal(prices.regions.length,400);assert.equal(new Set(prices.regions.map(r=>r.itemId+':'+r.region)).size,400);
