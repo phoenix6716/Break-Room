@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "reviewNote": "Dates and precise milestone wording checked during implementation. Reference URLs are supplied for review; this environment has not retrieved those articles. Complete the owner-agreed independent factual audit before launch. The ambiguous Niépce photograph (1826/1827) is excluded. The approximately dated Gutenberg Bible is also excluded from exact-year pairs.",
+  "reviewNote": "Independent web-source screening performed 22 October 2026 for all 128 event years and milestone scopes. Evidence strength and remaining detail checks are recorded per event in content/factual-review.json; search extracts are distinguished from full-page review. LEGO filing, Mendeleev presentation, Space Invaders unveiling and Wright flight-location wording corrected without changing years or IDs. Saved pairs remain authoritative.",
   "events": [
     {
       "id": "columbus",
@@ -63,8 +63,8 @@
       "year": 1903,
       "category": "Science",
       "title": "The Wright brothers fly the Wright Flyer",
-      "fact": "Their controlled, sustained powered flights took place at Kitty Hawk in December.",
-      "source": "https://en.wikipedia.org/wiki/Wright_Flyer"
+      "fact": "Their controlled, sustained powered flights took place at Kill Devil Hills, near Kitty Hawk, in December.",
+      "source": "https://www.nps.gov/places/000/first-flight-landing.htm"
     },
     {
       "id": "titanic",
@@ -621,9 +621,9 @@
       "id": "periodic",
       "year": 1869,
       "category": "Science",
-      "title": "Mendeleev presents his periodic table",
-      "fact": "He published an early version of his periodic arrangement of the elements.",
-      "source": "https://en.wikipedia.org/wiki/Dmitri_Mendeleev"
+      "title": "Mendeleev’s periodic table is presented to the Russian Chemical Society",
+      "fact": "A colleague presented Mendeleev's work to the society in March; Mendeleev did not deliver the presentation himself.",
+      "source": "https://blog.oup.com/2012/03/mendeleev-periodic-table/"
     },
     {
       "id": "impressionism",
@@ -766,9 +766,9 @@
       "id": "lego",
       "year": 1958,
       "category": "Everyday",
-      "title": "LEGO patents its stud-and-tube brick design",
-      "fact": "This patent milestone concerns the modern interlocking brick, not the company's founding.",
-      "source": "https://en.wikipedia.org/wiki/Lego"
+      "title": "LEGO files its stud-and-tube brick patent application",
+      "fact": "The LEGO Group submitted its application on 28 January; this milestone is the filing, not a patent grant.",
+      "source": "https://www.lego.com/en-us/history/articles/d-the-stud-and-tube-principle"
     },
     {
       "id": "barbie",
@@ -879,9 +879,9 @@
       "id": "space-invaders",
       "year": 1978,
       "category": "Everyday",
-      "title": "Space Invaders is released in Japan",
-      "fact": "Taito released the arcade game in June.",
-      "source": "https://en.wikipedia.org/wiki/Space_Invaders"
+      "title": "Taito unveils Space Invaders in Japan",
+      "fact": "The game was publicly introduced at Taito's new-product presentation on 16 June; this is the unveiling milestone.",
+      "source": "https://spaceinvaders.jp/whats.html"
     },
     {
       "id": "walkman",

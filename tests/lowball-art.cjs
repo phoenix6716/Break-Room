@@ -73,7 +73,7 @@ const assetRoot = path.resolve(__dirname, '../games/lowball/engine/icons/generat
       await page.setViewportSize({width,height:1000});
       await page.evaluate(() => renderResult(currentItem.prices[country], country, false));
       assert.equal(await page.locator('#resultScore').innerText(), '100');
-      assert.match(await page.locator('#resultFacts').innerText(), /Your guess[\s\S]*Actual price[\s\S]*Spot on/i);
+      assert.match(await page.locator('#resultFacts').innerText(), /Your guess[\s\S]*Reference price[\s\S]*Spot on/i);
       assert.equal(await page.locator('#squares svg.gem').count(), 5);
       assert(await page.locator('.result-note').evaluate(el=>parseFloat(getComputedStyle(el).fontSize)<=12));
       assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth));

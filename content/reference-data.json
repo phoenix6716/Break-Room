@@ -8,7 +8,17 @@
     "countries": {
       "url": "https://raw.githubusercontent.com/mledoze/countries/master/countries.json",
       "retrieved_utc": "2026-10-19T04:32:17.859443+00:00",
-      "sha256": "913e5d716f9dc6b59881ee23488d47f5fda52070d1a34cac5fa327c9e61d8f7c"
+      "sha256": "913e5d716f9dc6b59881ee23488d47f5fda52070d1a34cac5fa327c9e61d8f7c",
+      "corrections": [
+        {
+          "key": "Ecuador",
+          "field": "area",
+          "value": 256370,
+          "checkedAt": "2026-10-22",
+          "url": "https://www.cancilleria.gob.ec/italia/informacion-pais/",
+          "note": "The inherited 276841 was not a current total-area value; use the Ecuadorian foreign ministry's stated national area."
+        }
+      ]
     },
     "books": {
       "url": "https://raw.githubusercontent.com/benoitvallon/100-best-books/master/books.json",
@@ -40,7 +50,7 @@
       "symbol": "H",
       "number": 1,
       "melt": 13.99,
-      "density_g_cm3": 8.988e-05,
+      "density_g_cm3": 0.00008988,
       "phase": "Gas"
     },
     "Helium": {
@@ -1125,7 +1135,7 @@
     },
     "Ecuador": {
       "name": "Ecuador",
-      "area": 276841,
+      "area": 256370,
       "capital": [
         "Quito"
       ]
@@ -2641,7 +2651,7 @@
       "icao": "EGLL",
       "latitude": 51.470748,
       "longitude": -0.459909,
-      "elevation_ft": 83.0
+      "elevation_ft": 83
     },
     "CDG": {
       "name": "Charles de Gaulle International Airport",
@@ -2650,7 +2660,7 @@
       "icao": "LFPG",
       "latitude": 49.00896,
       "longitude": 2.554117,
-      "elevation_ft": 392.0
+      "elevation_ft": 392
     },
     "FRA": {
       "name": "Frankfurt Main Airport",
@@ -2659,7 +2669,7 @@
       "icao": "EDDF",
       "latitude": 50.026706,
       "longitude": 8.55835,
-      "elevation_ft": 364.0
+      "elevation_ft": 364
     },
     "MAD": {
       "name": "Adolfo Suárez Madrid–Barajas Airport",
@@ -2668,7 +2678,7 @@
       "icao": "LEMD",
       "latitude": 40.493407,
       "longitude": -3.572249,
-      "elevation_ft": 1998.0
+      "elevation_ft": 1998
     },
     "FCO": {
       "name": "Rome–Fiumicino Leonardo da Vinci International Airport",
@@ -2677,7 +2687,7 @@
       "icao": "LIRF",
       "latitude": 41.804532,
       "longitude": 12.251998,
-      "elevation_ft": 13.0
+      "elevation_ft": 13
     },
     "AMS": {
       "name": "Amsterdam Airport Schiphol",
@@ -2686,7 +2696,7 @@
       "icao": "EHAM",
       "latitude": 52.308601,
       "longitude": 4.76389,
-      "elevation_ft": -11.0
+      "elevation_ft": -11
     },
     "OSL": {
       "name": "Oslo-Gardermoen International Airport",
@@ -2695,7 +2705,7 @@
       "icao": "ENGM",
       "latitude": 60.193901,
       "longitude": 11.1004,
-      "elevation_ft": 681.0
+      "elevation_ft": 681
     },
     "HEL": {
       "name": "Helsinki Vantaa Airport",
@@ -2704,7 +2714,7 @@
       "icao": "EFHK",
       "latitude": 60.318363,
       "longitude": 24.963341,
-      "elevation_ft": 179.0
+      "elevation_ft": 179
     },
     "DUB": {
       "name": "Dublin Airport",
@@ -2713,7 +2723,7 @@
       "icao": "EIDW",
       "latitude": 53.428713,
       "longitude": -6.262121,
-      "elevation_ft": 242.0
+      "elevation_ft": 242
     },
     "VIE": {
       "name": "Vienna International Airport",
@@ -2722,7 +2732,7 @@
       "icao": "LOWW",
       "latitude": 48.110298,
       "longitude": 16.5697,
-      "elevation_ft": 600.0
+      "elevation_ft": 600
     },
     "ATH": {
       "name": "Athens Eleftherios Venizelos International Airport",
@@ -2731,7 +2741,7 @@
       "icao": "LGAV",
       "latitude": 37.936401,
       "longitude": 23.9445,
-      "elevation_ft": 308.0
+      "elevation_ft": 308
     },
     "IST": {
       "name": "İstanbul Airport",
@@ -2740,7 +2750,7 @@
       "icao": "LTFM",
       "latitude": 41.274874,
       "longitude": 28.732136,
-      "elevation_ft": 325.0
+      "elevation_ft": 325
     },
     "PRG": {
       "name": "Václav Havel Airport Prague",
@@ -2749,7 +2759,7 @@
       "icao": "LKPR",
       "latitude": 50.100874,
       "longitude": 14.259911,
-      "elevation_ft": 1247.0
+      "elevation_ft": 1247
     },
     "WAW": {
       "name": "Warsaw Chopin Airport",
@@ -2758,7 +2768,7 @@
       "icao": "EPWA",
       "latitude": 52.165699,
       "longitude": 20.9671,
-      "elevation_ft": 362.0
+      "elevation_ft": 362
     },
     "CPH": {
       "name": "Copenhagen Kastrup Airport",
@@ -2767,7 +2777,7 @@
       "icao": "EKCH",
       "latitude": 55.617900848389,
       "longitude": 12.656000137329,
-      "elevation_ft": 17.0
+      "elevation_ft": 17
     },
     "ARN": {
       "name": "Stockholm-Arlanda Airport",
@@ -2776,7 +2786,7 @@
       "icao": "ESSA",
       "latitude": 59.64849,
       "longitude": 17.928829,
-      "elevation_ft": 137.0
+      "elevation_ft": 137
     },
     "ZRH": {
       "name": "Zürich Airport",
@@ -2785,7 +2795,7 @@
       "icao": "LSZH",
       "latitude": 47.458056,
       "longitude": 8.548056,
-      "elevation_ft": 1417.0
+      "elevation_ft": 1417
     },
     "LIS": {
       "name": "Lisbon Humberto Delgado Airport",
@@ -2794,7 +2804,7 @@
       "icao": "LPPT",
       "latitude": 38.7813,
       "longitude": -9.13592,
-      "elevation_ft": 374.0
+      "elevation_ft": 374
     },
     "BUD": {
       "name": "Budapest Liszt Ferenc International Airport",
@@ -2803,7 +2813,7 @@
       "icao": "LHBP",
       "latitude": 47.43018,
       "longitude": 19.262393,
-      "elevation_ft": 495.0
+      "elevation_ft": 495
     },
     "BER": {
       "name": "Berlin Brandenburg Airport",
@@ -2812,7 +2822,7 @@
       "icao": "EDDB",
       "latitude": 52.361738,
       "longitude": 13.502341,
-      "elevation_ft": 157.0
+      "elevation_ft": 157
     },
     "DEN": {
       "name": "Denver International Airport",
@@ -2821,7 +2831,7 @@
       "icao": "KDEN",
       "latitude": 39.860027,
       "longitude": -104.673792,
-      "elevation_ft": 5431.0
+      "elevation_ft": 5431
     },
     "JNB": {
       "name": "O.R. Tambo International Airport",
@@ -2830,7 +2840,7 @@
       "icao": "FAOR",
       "latitude": -26.140081,
       "longitude": 28.246801,
-      "elevation_ft": 5558.0
+      "elevation_ft": 5558
     },
     "BOG": {
       "name": "El Dorado International Airport",
@@ -2839,7 +2849,7 @@
       "icao": "SKBO",
       "latitude": 4.70159,
       "longitude": -74.1469,
-      "elevation_ft": 8361.0
+      "elevation_ft": 8361
     },
     "MEX": {
       "name": "Mexico City Benito Juárez International Airport",
@@ -2848,7 +2858,7 @@
       "icao": "MMMX",
       "latitude": 19.435822,
       "longitude": -99.07033,
-      "elevation_ft": 7316.0
+      "elevation_ft": 7316
     },
     "UIO": {
       "name": "Mariscal Sucre International Airport",
@@ -2857,7 +2867,7 @@
       "icao": "SEQM",
       "latitude": -0.125399,
       "longitude": -78.354306,
-      "elevation_ft": 7841.0
+      "elevation_ft": 7841
     },
     "LPB": {
       "name": "El Alto International Airport",
@@ -2866,7 +2876,7 @@
       "icao": "SLLP",
       "latitude": -16.510272,
       "longitude": -68.189416,
-      "elevation_ft": 13355.0
+      "elevation_ft": 13355
     },
     "ADD": {
       "name": "Addis Ababa Bole International Airport",
@@ -2875,7 +2885,7 @@
       "icao": "HAAB",
       "latitude": 8.97789,
       "longitude": 38.799301,
-      "elevation_ft": 7630.0
+      "elevation_ft": 7630
     },
     "NBO": {
       "name": "Jomo Kenyatta International Airport",
@@ -2884,7 +2894,7 @@
       "icao": "HKJK",
       "latitude": -1.318886,
       "longitude": 36.928233,
-      "elevation_ft": 5330.0
+      "elevation_ft": 5330
     },
     "KTM": {
       "name": "Tribhuvan International Airport",
@@ -2893,7 +2903,7 @@
       "icao": "VNKT",
       "latitude": 27.6966,
       "longitude": 85.3591,
-      "elevation_ft": 4390.0
+      "elevation_ft": 4390
     },
     "SCL": {
       "name": "Comodoro Arturo Merino Benítez International Airport",
@@ -2902,7 +2912,7 @@
       "icao": "SCEL",
       "latitude": -33.393001556396484,
       "longitude": -70.78579711914062,
-      "elevation_ft": 1555.0
+      "elevation_ft": 1555
     },
     "LAS": {
       "name": "Harry Reid International Airport",
@@ -2911,7 +2921,7 @@
       "icao": "KLAS",
       "latitude": 36.083361,
       "longitude": -115.151817,
-      "elevation_ft": 2181.0
+      "elevation_ft": 2181
     },
     "PHX": {
       "name": "Phoenix Sky Harbor International Airport",
@@ -2920,7 +2930,7 @@
       "icao": "KPHX",
       "latitude": 33.435302,
       "longitude": -112.005905,
-      "elevation_ft": 1135.0
+      "elevation_ft": 1135
     },
     "ABQ": {
       "name": "Albuquerque International Sunport",
@@ -2929,7 +2939,7 @@
       "icao": "KABQ",
       "latitude": 35.039976,
       "longitude": -106.608925,
-      "elevation_ft": 5355.0
+      "elevation_ft": 5355
     },
     "RNO": {
       "name": "Reno Tahoe International Airport",
@@ -2938,7 +2948,7 @@
       "icao": "KRNO",
       "latitude": 39.4991,
       "longitude": -119.767998,
-      "elevation_ft": 4415.0
+      "elevation_ft": 4415
     },
     "YYC": {
       "name": "Calgary International Airport",
@@ -2947,7 +2957,7 @@
       "icao": "CYYC",
       "latitude": 51.118822,
       "longitude": -114.009933,
-      "elevation_ft": 3557.0
+      "elevation_ft": 3557
     },
     "SLC": {
       "name": "Salt Lake City International Airport",
@@ -2956,7 +2966,7 @@
       "icao": "KSLC",
       "latitude": 40.78886,
       "longitude": -111.979866,
-      "elevation_ft": 4227.0
+      "elevation_ft": 4227
     },
     "SYD": {
       "name": "Sydney Kingsford Smith International Airport",
@@ -2965,7 +2975,7 @@
       "icao": "YSSY",
       "latitude": -33.946098,
       "longitude": 151.177002,
-      "elevation_ft": 21.0
+      "elevation_ft": 21
     },
     "NRT": {
       "name": "Narita International Airport",
@@ -2974,7 +2984,7 @@
       "icao": "RJAA",
       "latitude": 35.76858,
       "longitude": 140.388714,
-      "elevation_ft": 141.0
+      "elevation_ft": 141
     },
     "JFK": {
       "name": "John F. Kennedy International Airport",
@@ -2983,7 +2993,7 @@
       "icao": "KJFK",
       "latitude": 40.639447,
       "longitude": -73.779317,
-      "elevation_ft": 13.0
+      "elevation_ft": 13
     },
     "LAX": {
       "name": "Los Angeles International Airport",
@@ -2992,7 +3002,7 @@
       "icao": "KLAX",
       "latitude": 33.942501,
       "longitude": -118.407997,
-      "elevation_ft": 125.0
+      "elevation_ft": 125
     },
     "SIN": {
       "name": "Singapore Changi Airport",
@@ -3001,7 +3011,7 @@
       "icao": "WSSS",
       "latitude": 1.35019,
       "longitude": 103.994003,
-      "elevation_ft": 22.0
+      "elevation_ft": 22
     },
     "HND": {
       "name": "Tokyo Haneda International Airport",
@@ -3010,7 +3020,7 @@
       "icao": "RJTT",
       "latitude": 35.549678,
       "longitude": 139.786958,
-      "elevation_ft": 35.0
+      "elevation_ft": 35
     },
     "ICN": {
       "name": "Incheon International Airport",
@@ -3019,7 +3029,7 @@
       "icao": "RKSI",
       "latitude": 37.469101,
       "longitude": 126.450996,
-      "elevation_ft": 23.0
+      "elevation_ft": 23
     },
     "AKL": {
       "name": "Auckland International Airport",
@@ -3028,7 +3038,7 @@
       "icao": "NZAA",
       "latitude": -37.01199,
       "longitude": 174.786331,
-      "elevation_ft": 23.0
+      "elevation_ft": 23
     },
     "DXB": {
       "name": "Dubai International Airport",
@@ -3037,7 +3047,7 @@
       "icao": "OMDB",
       "latitude": 25.24979,
       "longitude": 55.370992,
-      "elevation_ft": 62.0
+      "elevation_ft": 62
     },
     "CAI": {
       "name": "Cairo International Airport",
@@ -3046,7 +3056,7 @@
       "icao": "HECA",
       "latitude": 30.111534,
       "longitude": 31.396694,
-      "elevation_ft": 322.0
+      "elevation_ft": 322
     },
     "DEL": {
       "name": "Indira Gandhi International Airport",
@@ -3055,7 +3065,7 @@
       "icao": "VIDP",
       "latitude": 28.55563,
       "longitude": 77.09519,
-      "elevation_ft": 777.0
+      "elevation_ft": 777
     },
     "BKK": {
       "name": "Suvarnabhumi Airport",
@@ -3064,7 +3074,7 @@
       "icao": "VTBS",
       "latitude": 13.6811,
       "longitude": 100.747002,
-      "elevation_ft": 5.0
+      "elevation_ft": 5
     },
     "GRU": {
       "name": "São Paulo/Guarulhos–Governor André Franco Montoro International Airport",
@@ -3073,7 +3083,7 @@
       "icao": "SBGR",
       "latitude": -23.431274,
       "longitude": -46.469954,
-      "elevation_ft": 2461.0
+      "elevation_ft": 2461
     },
     "HKG": {
       "name": "Hong Kong International Airport",
@@ -3082,7 +3092,7 @@
       "icao": "VHHH",
       "latitude": 22.31184,
       "longitude": 113.914862,
-      "elevation_ft": 28.0
+      "elevation_ft": 28
     }
   }
 }

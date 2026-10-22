@@ -17,7 +17,8 @@ for(const [start,n]of [['2026-10-22',33],['2026-11-07',32],['2027-03-21',32]]){
 }
 const stakeText=read('games/stake/index.html'),quote=String.fromCharCode(96),legacy=stakeText.split('const BANK='+quote)[1].split(quote+'.trim()')[0].trim().split('\n').map(l=>{const a=l.split('|');return{c:a[0],q:a[1],o:a.slice(2,5),f:a[5]};});
 vm.runInNewContext(read('games/stake/questions.js'),box);const BANK=[...legacy,...JSON.parse(JSON.stringify(box.window.STAKE_QUESTION_ADDITIONS))],stakeFunctions=stakeText.split('\n').filter(l=>/^function (mk|shuf|bq|dayQs)\(/.test(l)).join('\n');
-const stake=vm.runInNewContext('const BANK='+JSON.stringify(BANK)+';const LEGACY_BANK_SIZE=164;const idxs=()=>BANK.map((_,i)=>i);\n'+stakeFunctions+'\ndayQs');
+const reviewedFacts=stakeText.split('\n').find(l=>l.startsWith('const REVIEWED_FACTS='));
+const stake=vm.runInNewContext(reviewedFacts+'\nconst BANK='+JSON.stringify(BANK)+';const LEGACY_BANK_SIZE=164;const idxs=()=>BANK.map((_,i)=>i);\n'+stakeFunctions+'\ndayQs');
 vm.runInNewContext(read('games/stack-up/stacks.js'),box);const pool=JSON.parse(JSON.stringify(box.window.STACK_UP_STACKS)),stackFunctions=read('games/stack-up/stack-up.js').split('\n').filter(l=>/^ function (seeded|shuffle|dailySet)\(/.test(l)).join('\n'),stack=vm.runInNewContext('const pool='+JSON.stringify(pool)+';\n'+stackFunctions+'\ndailySet');
 for(const start of ['2026-10-22','2026-11-07','2027-03-21']){
  const ds=dates(start,start==='2026-10-22'?33:32),questions=ds.flatMap(d=>Array.from(stake(d))).map(q=>q.q),sets=ds.flatMap(d=>Array.from(stack(d))).map(i=>pool[i].id);

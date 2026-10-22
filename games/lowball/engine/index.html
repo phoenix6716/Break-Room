@@ -724,6 +724,7 @@
 
 <script src="site-config.js"></script>
 <script src="item-art.js"></script>
+<script src="reference-prices.js?v=facts-20261022"></script>
 <script>
 document.getElementById("statsArt").innerHTML = LOWBALL_ART.markup({ art: "stats" });
 document.getElementById("trophyArt").innerHTML = LOWBALL_ART.markup({ art: "trophy" });
@@ -844,9 +845,8 @@ const CURRENCY = {
 
 const ROUNDS_PER_DAY = 4;
 
-// Date the prices were last checked against real shops, as "YYYY-MM-DD".
-// Leave empty until a check has been done. The result screen shows it when set.
-const PRICES_CHECKED = "2026-10-15";
+// Verification is per item and region; the inherited global check date had no evidence.
+const PRICE_REFERENCES = window.BREAK_ROOM_LOWBALL_PRICES;
 const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 function prettyDate(iso) {
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || "");
@@ -1048,7 +1048,7 @@ let deckIndex = 0;
 let practiceQueue = [], practiceRecent = [], practiceSnapshot = null, practicePending = null, dailyDraft = null;
 function newDeck() {
   const excluded = new Set(pickDailyItems().map(item => item.name));
-  const allowed = ITEMS.filter(item => !excluded.has(item.name));
+  const allowed = ITEMS.filter(item => !excluded.has(item.name)).map(item => PRICE_REFERENCES.current(item,getTodayKey()));
   const remainder = practiceQueue.filter(item => !excluded.has(item.name));
   practiceQueue = [];
   if (remainder.length) return remainder;
@@ -1089,7 +1089,7 @@ function safeSet(key, val) {
 }
 function saveProgress(pending) {
   if (mode !== "normal") return;
-  safeSet("pc_progress", JSON.stringify({ day: getTodayKey(), idx: roundIndex, scores: roundScores, guesses: roundGuesses, pending: pending || null }));
+  safeSet("pc_progress", JSON.stringify({ day: getTodayKey(), idx: roundIndex, scores: roundScores, guesses: roundGuesses, items: roundItems, pending: pending || null }));
 }
 function loadProgress() {
   try {
@@ -1234,7 +1234,7 @@ function showItem() {
   emojiEl.innerHTML = LOWBALL_ART.markup(currentItem);
   document.getElementById("itemName").textContent = currentItem.name;
   document.getElementById("counterItemNumber").textContent = mode === "normal" ? "ITEM " + String(roundIndex + 1).padStart(2, "0") + " / " + String(ROUNDS_PER_DAY).padStart(2, "0") : "PRACTICE / ITEM " + String(deckIndex + 1).padStart(2, "0");
-  document.getElementById("itemDetail").textContent = currentItem.detail;
+  document.getElementById("itemDetail").textContent = PRICE_REFERENCES.detail(currentItem,country);
   document.getElementById("currencySymbol").textContent = CURRENCY[country].symbol;
   guessInput.value = "";
   guessInput.removeAttribute("aria-invalid");
@@ -1320,12 +1320,15 @@ function renderResult(guess, ctry, animate) {
   scoreEl.className = "result-score mono " + classForScore(score);
   document.getElementById("resultLabel").textContent = labelForScore(score);
   const symbol = CURRENCY[ctry].symbol;
-  const checked = prettyDate(PRICES_CHECKED);
+  const evidence = PRICE_REFERENCES.evidence(currentItem,ctry);
   document.getElementById("resultFacts").innerHTML =
     '<dl class="price-comparison"><div><dt>Your guess</dt><dd>' + symbol + guess.toFixed(2) + '</dd></div>' +
-    '<div><dt>Actual price</dt><dd>' + symbol + actual.toFixed(2) + '</dd></div></dl>' +
-    '<p class="price-difference">' + offByText(guess, actual, pctOff, symbol) + '</p>' +
-    (checked ? '<p class="result-note">Reference prices · ' + checked + '</p>' : '');
+    '<div><dt>Reference price</dt><dd>' + symbol + actual.toFixed(2) + '</dd></div></dl>' +
+    '<p class="price-difference">' + offByText(guess, actual, pctOff, symbol) + '</p>';
+  const note=document.createElement("p");note.className="result-note";
+  note.textContent=evidence?"Published reference checked "+prettyDate(evidence.checkedAt)+". ":"Game estimate; not independently verified.";
+  if(evidence){const link=document.createElement("a");link.href=evidence.source;link.target="_blank";link.rel="noopener noreferrer";link.textContent="Source";note.append(link);}
+  document.getElementById("resultFacts").append(note);
   document.getElementById("nextBtn").textContent = mode === "normal" && roundIndex === ROUNDS_PER_DAY - 1 ? "SEE DAILY RESULTS →" : "NEXT ITEM →";
   const sq = document.getElementById("squares");
   sq.classList.remove("pop");
@@ -1341,7 +1344,7 @@ function renderResult(guess, ctry, animate) {
   }
   renderDots();
   updatePracticePanel();
-  if (animate) announceLowball(currentItem.name + ": " + score + " out of 100. Your guess " + symbol + guess.toFixed(2) + ". Actual price " + symbol + actual.toFixed(2) + ". " + offByText(guess, actual, pctOff, symbol) + ".");
+  if (animate) announceLowball(currentItem.name + ": " + score + " out of 100. Your guess " + symbol + guess.toFixed(2) + ". Reference price " + symbol + actual.toFixed(2) + ". " + offByText(guess, actual, pctOff, symbol) + ".");
 }
 
 document.getElementById("nextBtn").addEventListener("click", () => {
@@ -1711,7 +1714,8 @@ function startNormalMode() {
 
   const todayKey = getTodayKey();
   const stats = loadStats();
-  roundItems = pickDailyItems();
+  const saved = loadProgress();
+  roundItems = PRICE_REFERENCES.daily(pickDailyItems(),saved,todayKey);
 
   if (stats.lastPlayed === todayKey) {
     // already completed today
@@ -1736,13 +1740,13 @@ function startNormalMode() {
     return;
   }
   document.getElementById("shareBtn").style.display = "block";
-  const saved = loadProgress();
   if (saved) {
     roundIndex = saved.idx;
     roundScores = saved.scores.slice();
     roundGuesses = Array.isArray(saved.guesses) ? saved.guesses.slice() : [];
     if (saved.pending && CURRENCY[saved.pending.country] && roundScores.length === roundIndex + 1) {
       currentItem = roundItems[roundIndex];
+      saveProgress(saved.pending);
       finalScreen.classList.remove("show");
       renderResult(saved.pending.guess, saved.pending.country, false);
       return;
@@ -1754,6 +1758,7 @@ function startNormalMode() {
     roundScores = [];
     roundGuesses = [];
   }
+  saveProgress(null); // Freeze targets as soon as this Daily is opened, before the first guess.
   showItem();
   if (dailyDraft && dailyDraft.day === todayKey && dailyDraft.index === roundIndex) guessInput.value = dailyDraft.value;
 }
@@ -1806,6 +1811,7 @@ countrySelect.addEventListener("change", (e) => {
   safeSet("pc_country", country);
   if (playArea.style.display !== "none" && currentItem) {
     document.getElementById("currencySymbol").textContent = CURRENCY[country].symbol;
+    document.getElementById("itemDetail").textContent = PRICE_REFERENCES.detail(currentItem,country);
   }
 });
 
