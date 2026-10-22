@@ -5272,8 +5272,29 @@
         "US",
         "CA"
       ],
-      "finding": "CW2288-111 men's white/white examples match 180/115/150 respectively; the game still needs an explicit SKU/gender and all four regional sources.",
-      "sources": [
+      "initialFinding": "CW2288-111 men's white/white examples match 180/115/150 respectively; the game still needs an explicit SKU/gender and all four regional sources.",
+      "status": "resolved-scoped-reference",
+      "resolution": [
+        {
+          "region": "AU",
+          "detail": "Nike men's Air Force 1 '07, White/White, CW2288-111; regular manufacturer price",
+          "price": 180,
+          "source": "https://www.nike.com/au/t/air-force-1-07-mens-shoes-cvS6DOBf/CW2288-111"
+        },
+        {
+          "region": "US",
+          "detail": "Nike men's Air Force 1 '07, White/White, CW2288-111; regular manufacturer price",
+          "price": 115,
+          "source": "https://www.nike.com/t/air-force-1-07-mens-shoes-XVPIszaq/CW2288-111"
+        },
+        {
+          "region": "CA",
+          "detail": "Nike men's Air Force 1 '07, White/White, CW2288-111; regular manufacturer price",
+          "price": 150,
+          "source": "https://www.nike.com/ca/t/air-force-1-07-mens-shoes-8MPI3T2W/CW2288-111"
+        }
+      ],
+      "initialSources": [
         "https://www.nike.com/au/t/air-force-1-07-mens-shoes-cvS6DOBf/CW2288-111",
         "https://www.nike.com/t/air-force-1-07-mens-shoes-XVPIszaq/CW2288-111",
         "https://www.nike.com/ca/t/air-force-1-07-mens-shoes-8MPI3T2W/CW2288-111"
@@ -5284,8 +5305,17 @@
       "regions": [
         "UK"
       ],
-      "finding": "A CT2302-100 listing shows GBP109.99, while a different 'Low 07' SKU shows119.99. GBP110 is rounded and the item is under-specified; do not invent a single corrected price without selecting the SKU.",
-      "sources": [
+      "initialFinding": "A CT2302-100 listing shows GBP109.99, while a different 'Low 07' SKU shows119.99. GBP110 is rounded and the item is under-specified; do not invent a single corrected price without selecting the SKU.",
+      "status": "resolved-scoped-reference",
+      "resolution": [
+        {
+          "region": "UK",
+          "detail": "Nike men's Air Force 1 '07, Black/White, CT2302-002; regular manufacturer price",
+          "price": 109.99,
+          "source": "https://www.nike.com/gb/t/air-force-1-07-herrenschuh-n8juM1H2/CT2302-002"
+        }
+      ],
+      "initialSources": [
         "https://www.nike.com/gb/t/air-force-1-07-mens-shoe-n8juM1H2/CT2302-100"
       ]
     },
@@ -5294,8 +5324,17 @@
       "regions": [
         "US"
       ],
-      "finding": "The retrieved US Help Center shows Standard USD19.99/month before applicable taxes. This does not corroborate the other three countries.",
-      "sources": [
+      "initialFinding": "The retrieved US Help Center shows Standard USD19.99/month before applicable taxes. This does not corroborate the other three countries.",
+      "status": "resolved-scoped-reference",
+      "resolution": [
+        {
+          "region": "US",
+          "detail": "Netflix Standard without ads, regular monthly plan",
+          "price": 19.99,
+          "source": "https://help.netflix.com/en/node/24926"
+        }
+      ],
+      "initialSources": [
         "https://help.netflix.com/en/node/24926"
       ]
     },
@@ -5306,8 +5345,29 @@
         "UK",
         "CA"
       ],
-      "finding": "Regional public extracts show Standard17.99 AUD,11.99 GBP and15.99 CAD; the UK page separates a temporary9.99 saver offer from11.99 regular monthly. US Standard is not an equivalent named plan.",
-      "sources": [
+      "initialFinding": "Regional public extracts show Standard17.99 AUD,11.99 GBP and15.99 CAD; the UK page separates a temporary9.99 saver offer from11.99 regular monthly. US Standard is not an equivalent named plan.",
+      "status": "resolved-scoped-reference",
+      "resolution": [
+        {
+          "region": "AU",
+          "detail": "Disney+ Standard, regular monthly subscription, no ads in on-demand movies/series",
+          "price": 17.99,
+          "source": "https://www.disney.com.au/disney-plus"
+        },
+        {
+          "region": "UK",
+          "detail": "Disney+ Standard, regular monthly subscription after offers, no minimum term",
+          "price": 11.99,
+          "source": "https://www.disneyplus.com/en-gb"
+        },
+        {
+          "region": "CA",
+          "detail": "Disney+ Standard, regular monthly standalone subscription",
+          "price": 15.99,
+          "source": "https://www.disneyplus.com/en-ca"
+        }
+      ],
+      "initialSources": [
         "https://www.disneyplus.com/en-au/explore/what-is-disneyplus",
         "https://www.disneyplus.com/en-gb",
         "https://www.disneyplus.com/en-ca"
@@ -5319,8 +5379,23 @@
         "AU",
         "US"
       ],
-      "finding": "Manufacturer revisions effective1 September2026 support769.95 AUD and499.99 USD console-only; the original AU699.95 launch announcement is obsolete. UK/CA remain open.",
-      "sources": [
+      "initialFinding": "Manufacturer revisions effective1 September2026 support769.95 AUD and499.99 USD console-only; the original AU699.95 launch announcement is obsolete. UK/CA remain open.",
+      "status": "resolved-scoped-reference",
+      "resolution": [
+        {
+          "region": "AU",
+          "detail": "Nintendo Switch 2 console only, 256GB; manufacturer suggested price from 1 Sep 2026",
+          "price": 769.95,
+          "source": "https://www.nintendo.com/au/support/articles/price-revision-for-nintendo-switch-2-console/"
+        },
+        {
+          "region": "US",
+          "detail": "Nintendo Switch 2 console only, 256GB; manufacturer suggested price from 1 Sep 2026",
+          "price": 499.99,
+          "source": "https://www.nintendo.com/us/whatsnew/price-revision-for-nintendo-switch-2-system/"
+        }
+      ],
+      "initialSources": [
         "https://www.nintendo.com/au/support/articles/price-revision-for-nintendo-switch-2-console/",
         "https://www.nintendo.com/us/whatsnew/price-revision-for-nintendo-switch-2-system/"
       ]
@@ -5332,8 +5407,29 @@
         "CA",
         "US"
       ],
-      "finding": "Apple regional extracts show128GB 'from'799 GBP and1149 CAD. The US799 starting quote includes carrier context; review unconditional unlocked pricing. Only the unambiguous AU1349 correction is integrated.",
-      "sources": [
+      "initialFinding": "Apple regional extracts show128GB 'from'799 GBP and1149 CAD. The US799 starting quote includes carrier context; review unconditional unlocked pricing. Only the unambiguous AU1349 correction is integrated.",
+      "status": "resolved-scoped-reference",
+      "resolution": [
+        {
+          "region": "UK",
+          "detail": "Apple iPhone 16, 128GB unlocked, outright; no trade-in",
+          "price": 799,
+          "source": "https://www.apple.com/uk/shop/buy-iphone/iphone-16"
+        },
+        {
+          "region": "CA",
+          "detail": "Apple iPhone 16, 128GB unlocked, outright; no trade-in",
+          "price": 1149,
+          "source": "https://www.apple.com/ca/shop/buy-iphone/iphone-16"
+        },
+        {
+          "region": "US",
+          "detail": "Apple iPhone 16, 128GB unlocked, outright; no trade-in, connect to any carrier later",
+          "price": 829,
+          "source": "https://www.apple.com/shop/buy-iphone/iphone-16"
+        }
+      ],
+      "initialSources": [
         "https://www.apple.com/uk/shop/buy-iphone/iphone-16",
         "https://www.apple.com/ca/shop/buy-iphone/iphone-16",
         "https://www.apple.com/shop/buy-iphone/iphone-16?storage=128gb"
@@ -5346,8 +5442,29 @@
         "UK",
         "CA"
       ],
-      "finding": "Current manufacturer lists and April2026 changes identify current-generation disc/digital/Pro models separately. The game needs the exact1TB disc model and date; raw search price formatting drops cents, so no cent-level correction is inferred.",
-      "sources": [
+      "initialFinding": "Current manufacturer lists and April2026 changes identify current-generation disc/digital/Pro models separately. The game needs the exact1TB disc model and date; raw search price formatting drops cents, so no cent-level correction is inferred.",
+      "status": "resolved-scoped-reference",
+      "resolution": [
+        {
+          "region": "US",
+          "detail": "Sony PlayStation 5 Slim, 1TB, disc drive; regular manufacturer price from 2 Apr 2026",
+          "price": 649.99,
+          "source": "https://blog.playstation.com/2026/03/27/new-price-changes-for-ps5-ps5-pro-and-playstation-portal-remote-player"
+        },
+        {
+          "region": "UK",
+          "detail": "Sony PlayStation 5 Slim, 1TB, disc drive; regular manufacturer price from 2 Apr 2026",
+          "price": 569.99,
+          "source": "https://blog.playstation.com/2026/03/27/new-price-changes-for-ps5-ps5-pro-and-playstation-portal-remote-player"
+        },
+        {
+          "region": "CA",
+          "detail": "Visions PlayStation 5 Slim, 1TB, disc drive, 1000049888; regular online price",
+          "price": 819.99,
+          "source": "https://www.visions.ca/playstation-5-console-model-group-slim-v2-1000049888"
+        }
+      ],
+      "initialSources": [
         "https://direct.playstation.com/en-us/hardware/ps5",
         "https://direct.playstation.com/en-gb/hardware/ps5",
         "https://blog.playstation.com/2026/03/27/new-price-changes-for-ps5-ps5-pro-and-playstation-portal-remote-player"
