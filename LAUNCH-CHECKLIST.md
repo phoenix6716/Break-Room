@@ -29,6 +29,8 @@ Exit: coverage supported by generated reports and harder content supported by ob
 
 ## 3. Complete the deferred factual and price review — editorial/owner
 
+The 22 October screening pass and PR #4 are documented in [FACTS-AND-PRICES-AUDIT.md](FACTS-AND-PRICES-AUDIT.md). All 600 factual records and 400 regional targets are inventoried; exact measurement/detail checks and 387 price targets remain open. Do not tick these full-verification gates merely because the inventory is complete or the correction tests pass.
+
 - [ ] Stake: independently verify all 264 questions, correct/wrong options, scopes and explanations; preserve the original 164 rows' legacy interpretation.
 - [ ] Stack Up: independently verify factual ordering, units, release markets, ambiguous titles and measurement dates; check new arithmetic separately with exact calculations.
 - [ ] Prior: retrieve reliable references for every milestone/date, avoid conflicting firsts and add broader geographic/cultural coverage where useful.

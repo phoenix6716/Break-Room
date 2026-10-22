@@ -20,6 +20,7 @@ assert.deepEqual(JSON.parse(S.merge('lowball',local,remote).pc_progress),saved,'
 assert.equal(S.clean('lowball',remote).pc_progress,remote.pc_progress);
 assert.match(P.detail(fresh[0],'CA'),/single.*30g.*not a booklet/);
 assert.match(P.detail(fresh[0],'UK'),/First Class.*100g/);
+assert.equal(P.label(items.find(x=>x.name==='Pint of beer')),'Beer (500ml)');
 assert.equal(P.evidence(originals[0],'AU'),null);
 assert.equal(P.evidence(fresh[0],'AU').checkedAt,'2026-10-22');
 assert.equal(P.evidence({priceEvidence:{AU:{checkedAt:'2026-10-22',source:'javascript:alert(1)'}}},'AU'),null);
@@ -32,4 +33,19 @@ for(const [index,original]of [[14,'What is the speed of light in a vacuum?'],[83
  assert.equal(old.q,original);assert.deepEqual(old.o,modern.o);assert.equal(old.a,modern.a);
  if(index===83)assert.match(modern.f,/RhD/);else assert.notEqual(modern.q,old.q);
 }
+const ledger=JSON.parse(read('content/factual-review.json')),prices=JSON.parse(read('content/lowball-price-review.json'));
+assert.equal(ledger.stake.length,264);assert.equal(ledger.stackUp.length,208);assert.equal(ledger.prior.length,128);
+assert.equal(prices.regions.length,400);assert.equal(new Set(prices.regions.map(r=>r.itemId+':'+r.region)).size,400);
+for(const row of ledger.stake.filter(r=>r.id.startsWith('stake-legacy-'))){
+ const index=Number(row.id.slice(-3))-1,raw=vm.runInContext('BANK['+index+']',box);
+ assert.equal(raw.q,row.originalQuestion);assert.deepEqual(Array.from(raw.o),[row.answer,...row.wrongAnswers]);
+}
+for(const item of items)for(const region of ['AU','US','UK','CA']){
+ const row=prices.regions.find(r=>r.name===item.name&&r.region===region),modern=P.current(item,P.effectiveDay);
+ assert.equal(item.prices[region],row.inheritedTarget,'Frozen inherited price changed');
+ assert.equal(modern.prices[region],row.reviewedTarget??row.inheritedTarget,'Only evidence-backed regional targets may change');
+ assert.equal(Boolean(P.evidence(modern,region)),row.reviewedTarget!==undefined);
+}
+assert.equal(prices.regions.filter(r=>r.status==='corrected-dated-reference').length,4);
+assert.equal(prices.regions.filter(r=>r.reviewedTarget!==undefined).length,13);
 console.log('PASS factual review: frozen legacy Stake options, scoped modern wording, dated Lowball targets, draft/snapshot/zero/cloud compatibility and per-region evidence.');

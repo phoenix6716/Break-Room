@@ -1,0 +1,4177 @@
+{
+  "version": 1,
+  "reviewedAt": "2026-10-22",
+  "sourceCommit": "87564cac1b06b99db3989fa333d62d8a82047bc6",
+  "totalItems": 100,
+  "totalRegionalTargets": 400,
+  "summary": {
+    "datedReferences": 13,
+    "correctedTargets": 4,
+    "unchangedDatedMatches": 9,
+    "remainingTargets": 387
+  },
+  "scope": "All 100 item definitions and all 400 inherited targets were inventoried and assessed for verifiability. Undefined generic prices are not falsely reported as verified or silently replaced by an arbitrary shop quote.",
+  "priceConvention": "Store dated advertised reference amounts in each local currency. Record the seller/plan/service/portion, exclude optional extras and delivery, and disclose separately added taxes. This is not a live national average or universal checkout total.",
+  "remainingGate": "Before public launch as a factual retail-price game, resolve every non-reviewed region with an exact defensible scope and evidence, or make an explicit owner decision to launch Lowball as an estimate-based reference-price game.",
+  "regions": [
+    {
+      "itemId": "lowball-001",
+      "name": "Big Mac",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "McDonald's, single burger",
+      "inheritedTarget": 8.5,
+      "status": "needs-location-channel",
+      "issue": "Choose the branch/city, portion/size, direct-purchase channel and date; delivery markups and local prices differ."
+    },
+    {
+      "itemId": "lowball-001",
+      "name": "Big Mac",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "McDonald's, single burger",
+      "inheritedTarget": 6.22,
+      "status": "needs-location-channel",
+      "issue": "Choose the branch/city, portion/size, direct-purchase channel and date; delivery markups and local prices differ."
+    },
+    {
+      "itemId": "lowball-001",
+      "name": "Big Mac",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "McDonald's, single burger",
+      "inheritedTarget": 5.49,
+      "status": "needs-location-channel",
+      "issue": "Choose the branch/city, portion/size, direct-purchase channel and date; delivery markups and local prices differ."
+    },
+    {
+      "itemId": "lowball-001",
+      "name": "Big Mac",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "McDonald's, single burger",
+      "inheritedTarget": 8.17,
+      "status": "needs-location-channel",
+      "issue": "Choose the branch/city, portion/size, direct-purchase channel and date; delivery markups and local prices differ."
+    },
+    {
+      "itemId": "lowball-002",
+      "name": "Netflix Standard",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "monthly, ads removed",
+      "inheritedTarget": 20.99,
+      "status": "needs-regional-evidence",
+      "issue": "Confirm country-specific Standard (without ads), direct monthly billing, effective date and tax. The unqualified Help Center page exposed US pricing for multiple country searches; do not treat it as AU/UK/CA evidence."
+    },
+    {
+      "itemId": "lowball-002",
+      "name": "Netflix Standard",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "monthly, ads removed",
+      "inheritedTarget": 19.99,
+      "status": "needs-regional-evidence",
+      "issue": "Confirm country-specific Standard (without ads), direct monthly billing, effective date and tax. The unqualified Help Center page exposed US pricing for multiple country searches; do not treat it as AU/UK/CA evidence."
+    },
+    {
+      "itemId": "lowball-002",
+      "name": "Netflix Standard",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "monthly, ads removed",
+      "inheritedTarget": 13.99,
+      "status": "needs-regional-evidence",
+      "issue": "Confirm country-specific Standard (without ads), direct monthly billing, effective date and tax. The unqualified Help Center page exposed US pricing for multiple country searches; do not treat it as AU/UK/CA evidence."
+    },
+    {
+      "itemId": "lowball-002",
+      "name": "Netflix Standard",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "monthly, ads removed",
+      "inheritedTarget": 19.99,
+      "status": "needs-regional-evidence",
+      "issue": "Confirm country-specific Standard (without ads), direct monthly billing, effective date and tax. The unqualified Help Center page exposed US pricing for multiple country searches; do not treat it as AU/UK/CA evidence."
+    },
+    {
+      "itemId": "lowball-003",
+      "name": "Spotify Premium",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "individual plan, monthly",
+      "inheritedTarget": 15.99,
+      "status": "matched-dated-reference",
+      "reviewedTarget": 15.99,
+      "scope": "Spotify Premium Individual, regular monthly price after promotions",
+      "source": "https://www.spotify.com/au/premium/",
+      "checkedAt": "2026-10-22",
+      "effectiveForFreshDaily": "2026-10-24",
+      "basis": "Advertised reference amount, not a live checkout total. Exclude optional extras/delivery; applicable separately charged tax is outside the reference."
+    },
+    {
+      "itemId": "lowball-003",
+      "name": "Spotify Premium",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "individual plan, monthly",
+      "inheritedTarget": 12.99,
+      "status": "matched-dated-reference",
+      "reviewedTarget": 12.99,
+      "scope": "Spotify Premium Individual, regular monthly price after promotions",
+      "source": "https://www.spotify.com/us/premium/",
+      "checkedAt": "2026-10-22",
+      "effectiveForFreshDaily": "2026-10-24",
+      "basis": "Advertised reference amount, not a live checkout total. Exclude optional extras/delivery; applicable separately charged tax is outside the reference."
+    },
+    {
+      "itemId": "lowball-003",
+      "name": "Spotify Premium",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "individual plan, monthly",
+      "inheritedTarget": 12.99,
+      "status": "matched-dated-reference",
+      "reviewedTarget": 12.99,
+      "scope": "Spotify Premium Individual, regular monthly price after promotions",
+      "source": "https://www.spotify.com/uk/premium/",
+      "checkedAt": "2026-10-22",
+      "effectiveForFreshDaily": "2026-10-24",
+      "basis": "Advertised reference amount, not a live checkout total. Exclude optional extras/delivery; applicable separately charged tax is outside the reference."
+    },
+    {
+      "itemId": "lowball-003",
+      "name": "Spotify Premium",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "individual plan, monthly",
+      "inheritedTarget": 13.99,
+      "status": "matched-dated-reference",
+      "reviewedTarget": 13.99,
+      "scope": "Spotify Premium Individual, regular monthly price after promotions",
+      "source": "https://www.spotify.com/ca-en/premium/",
+      "checkedAt": "2026-10-22",
+      "effectiveForFreshDaily": "2026-10-24",
+      "basis": "Advertised reference amount, not a live checkout total. Exclude optional extras/delivery; applicable separately charged tax is outside the reference."
+    },
+    {
+      "itemId": "lowball-004",
+      "name": "iPhone 16",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "128GB, outright",
+      "inheritedTarget": 1399,
+      "status": "corrected-dated-reference",
+      "reviewedTarget": 1349,
+      "scope": "Apple iPhone 16, 128GB unlocked, advertised outright price",
+      "source": "https://www.apple.com/au/shop/buy-iphone/iphone-16",
+      "checkedAt": "2026-10-22",
+      "effectiveForFreshDaily": "2026-10-24",
+      "basis": "Advertised reference amount, not a live checkout total. Exclude optional extras/delivery; applicable separately charged tax is outside the reference."
+    },
+    {
+      "itemId": "lowball-004",
+      "name": "iPhone 16",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "128GB, outright",
+      "inheritedTarget": 799,
+      "status": "needs-regional-evidence",
+      "issue": "Specify Apple 128GB unlocked, outright, no trade-in. The US 'from' price can depend on carrier connection, so do not copy it as an unconditional unlocked price."
+    },
+    {
+      "itemId": "lowball-004",
+      "name": "iPhone 16",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "128GB, outright",
+      "inheritedTarget": 799,
+      "status": "needs-regional-evidence",
+      "issue": "Specify Apple 128GB unlocked, outright, no trade-in. The US 'from' price can depend on carrier connection, so do not copy it as an unconditional unlocked price."
+    },
+    {
+      "itemId": "lowball-004",
+      "name": "iPhone 16",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "128GB, outright",
+      "inheritedTarget": 1149,
+      "status": "needs-regional-evidence",
+      "issue": "Specify Apple 128GB unlocked, outright, no trade-in. The US 'from' price can depend on carrier connection, so do not copy it as an unconditional unlocked price."
+    },
+    {
+      "itemId": "lowball-005",
+      "name": "Coca-Cola bottle",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "around 500-600ml",
+      "inheritedTarget": 4.2,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-005",
+      "name": "Coca-Cola bottle",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "around 500-600ml",
+      "inheritedTarget": 2.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-005",
+      "name": "Coca-Cola bottle",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "around 500-600ml",
+      "inheritedTarget": 2,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-005",
+      "name": "Coca-Cola bottle",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "around 500-600ml",
+      "inheritedTarget": 3,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-006",
+      "name": "Dozen eggs",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "free range, supermarket",
+      "inheritedTarget": 7.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Specify egg size, husbandry standard, retailer and actual 12-pack; generic supermarket prices are not one national answer."
+    },
+    {
+      "itemId": "lowball-006",
+      "name": "Dozen eggs",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "free range, supermarket",
+      "inheritedTarget": 4.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Specify egg size, husbandry standard, retailer and actual 12-pack; generic supermarket prices are not one national answer."
+    },
+    {
+      "itemId": "lowball-006",
+      "name": "Dozen eggs",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "free range, supermarket",
+      "inheritedTarget": 3.25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Specify egg size, husbandry standard, retailer and actual 12-pack; generic supermarket prices are not one national answer."
+    },
+    {
+      "itemId": "lowball-006",
+      "name": "Dozen eggs",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "free range, supermarket",
+      "inheritedTarget": 6,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Specify egg size, husbandry standard, retailer and actual 12-pack; generic supermarket prices are not one national answer."
+    },
+    {
+      "itemId": "lowball-007",
+      "name": "Cinema ticket",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "standard adult, evening",
+      "inheritedTarget": 21,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-007",
+      "name": "Cinema ticket",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "standard adult, evening",
+      "inheritedTarget": 13,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-007",
+      "name": "Cinema ticket",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "standard adult, evening",
+      "inheritedTarget": 10,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-007",
+      "name": "Cinema ticket",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "standard adult, evening",
+      "inheritedTarget": 16,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-008",
+      "name": "PlayStation 5",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "disc edition",
+      "inheritedTarget": 999.95,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-008",
+      "name": "PlayStation 5",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "disc edition",
+      "inheritedTarget": 649.99,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-008",
+      "name": "PlayStation 5",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "disc edition",
+      "inheritedTarget": 569.99,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-008",
+      "name": "PlayStation 5",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "disc edition",
+      "inheritedTarget": 819.99,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-009",
+      "name": "McDonald's fries",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "medium, single item",
+      "inheritedTarget": 4.5,
+      "status": "needs-location-channel",
+      "issue": "Choose the branch/city, portion/size, direct-purchase channel and date; delivery markups and local prices differ."
+    },
+    {
+      "itemId": "lowball-009",
+      "name": "McDonald's fries",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "medium, single item",
+      "inheritedTarget": 3.5,
+      "status": "needs-location-channel",
+      "issue": "Choose the branch/city, portion/size, direct-purchase channel and date; delivery markups and local prices differ."
+    },
+    {
+      "itemId": "lowball-009",
+      "name": "McDonald's fries",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "medium, single item",
+      "inheritedTarget": 2.5,
+      "status": "needs-location-channel",
+      "issue": "Choose the branch/city, portion/size, direct-purchase channel and date; delivery markups and local prices differ."
+    },
+    {
+      "itemId": "lowball-009",
+      "name": "McDonald's fries",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "medium, single item",
+      "inheritedTarget": 4.5,
+      "status": "needs-location-channel",
+      "issue": "Choose the branch/city, portion/size, direct-purchase channel and date; delivery markups and local prices differ."
+    },
+    {
+      "itemId": "lowball-010",
+      "name": "Loaf of bread",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "white, 700g, supermarket",
+      "inheritedTarget": 3.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose a named brand, weight and retailer in each region; 700g is not a universal sold pack."
+    },
+    {
+      "itemId": "lowball-010",
+      "name": "Loaf of bread",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "white, 700g, supermarket",
+      "inheritedTarget": 3,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose a named brand, weight and retailer in each region; 700g is not a universal sold pack."
+    },
+    {
+      "itemId": "lowball-010",
+      "name": "Loaf of bread",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "white, 700g, supermarket",
+      "inheritedTarget": 1.2,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose a named brand, weight and retailer in each region; 700g is not a universal sold pack."
+    },
+    {
+      "itemId": "lowball-010",
+      "name": "Loaf of bread",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "white, 700g, supermarket",
+      "inheritedTarget": 3.75,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose a named brand, weight and retailer in each region; 700g is not a universal sold pack."
+    },
+    {
+      "itemId": "lowball-011",
+      "name": "Litre of milk",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "full cream, supermarket",
+      "inheritedTarget": 2.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "A US price normalised per litre must be labelled as a conversion from a specified sold pack, rather than pretending that exact package is sold."
+    },
+    {
+      "itemId": "lowball-011",
+      "name": "Litre of milk",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "full cream, supermarket",
+      "inheritedTarget": 1.1,
+      "status": "needs-product-or-provider-definition",
+      "issue": "A US price normalised per litre must be labelled as a conversion from a specified sold pack, rather than pretending that exact package is sold."
+    },
+    {
+      "itemId": "lowball-011",
+      "name": "Litre of milk",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "full cream, supermarket",
+      "inheritedTarget": 1.25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "A US price normalised per litre must be labelled as a conversion from a specified sold pack, rather than pretending that exact package is sold."
+    },
+    {
+      "itemId": "lowball-011",
+      "name": "Litre of milk",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "full cream, supermarket",
+      "inheritedTarget": 3,
+      "status": "needs-product-or-provider-definition",
+      "issue": "A US price normalised per litre must be labelled as a conversion from a specified sold pack, rather than pretending that exact package is sold."
+    },
+    {
+      "itemId": "lowball-012",
+      "name": "Starbucks latte",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "medium, dine-in",
+      "inheritedTarget": 6.5,
+      "status": "needs-location-channel",
+      "issue": "Choose the branch/city, portion/size, direct-purchase channel and date; delivery markups and local prices differ."
+    },
+    {
+      "itemId": "lowball-012",
+      "name": "Starbucks latte",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "medium, dine-in",
+      "inheritedTarget": 5.25,
+      "status": "needs-location-channel",
+      "issue": "Choose the branch/city, portion/size, direct-purchase channel and date; delivery markups and local prices differ."
+    },
+    {
+      "itemId": "lowball-012",
+      "name": "Starbucks latte",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "medium, dine-in",
+      "inheritedTarget": 4.25,
+      "status": "needs-location-channel",
+      "issue": "Choose the branch/city, portion/size, direct-purchase channel and date; delivery markups and local prices differ."
+    },
+    {
+      "itemId": "lowball-012",
+      "name": "Starbucks latte",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "medium, dine-in",
+      "inheritedTarget": 5.75,
+      "status": "needs-location-channel",
+      "issue": "Choose the branch/city, portion/size, direct-purchase channel and date; delivery markups and local prices differ."
+    },
+    {
+      "itemId": "lowball-013",
+      "name": "Movie popcorn",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "large, cinema",
+      "inheritedTarget": 12.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-013",
+      "name": "Movie popcorn",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "large, cinema",
+      "inheritedTarget": 9,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-013",
+      "name": "Movie popcorn",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "large, cinema",
+      "inheritedTarget": 7,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-013",
+      "name": "Movie popcorn",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "large, cinema",
+      "inheritedTarget": 10,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-014",
+      "name": "AirPods Pro 3",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "outright price",
+      "inheritedTarget": 429,
+      "status": "matched-dated-reference",
+      "reviewedTarget": 429,
+      "scope": "Apple AirPods Pro 3, regular advertised price",
+      "source": "https://www.apple.com/au/shop/buy-airpods/airpods-pro-3",
+      "checkedAt": "2026-10-22",
+      "effectiveForFreshDaily": "2026-10-24",
+      "basis": "Advertised reference amount, not a live checkout total. Exclude optional extras/delivery; applicable separately charged tax is outside the reference."
+    },
+    {
+      "itemId": "lowball-014",
+      "name": "AirPods Pro 3",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "outright price",
+      "inheritedTarget": 249,
+      "status": "matched-dated-reference",
+      "reviewedTarget": 249,
+      "scope": "Apple AirPods Pro 3, regular advertised price",
+      "source": "https://www.apple.com/shop/buy-airpods/airpods-pro-3",
+      "checkedAt": "2026-10-22",
+      "effectiveForFreshDaily": "2026-10-24",
+      "basis": "Advertised reference amount, not a live checkout total. Exclude optional extras/delivery; applicable separately charged tax is outside the reference."
+    },
+    {
+      "itemId": "lowball-014",
+      "name": "AirPods Pro 3",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "outright price",
+      "inheritedTarget": 219,
+      "status": "matched-dated-reference",
+      "reviewedTarget": 219,
+      "scope": "Apple AirPods Pro 3, regular advertised price",
+      "source": "https://www.apple.com/uk/shop/buy-airpods/airpods-pro-3",
+      "checkedAt": "2026-10-22",
+      "effectiveForFreshDaily": "2026-10-24",
+      "basis": "Advertised reference amount, not a live checkout total. Exclude optional extras/delivery; applicable separately charged tax is outside the reference."
+    },
+    {
+      "itemId": "lowball-014",
+      "name": "AirPods Pro 3",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "outright price",
+      "inheritedTarget": 329,
+      "status": "matched-dated-reference",
+      "reviewedTarget": 329,
+      "scope": "Apple AirPods Pro 3, regular advertised price",
+      "source": "https://www.apple.com/ca/shop/buy-airpods/airpods-pro-3",
+      "checkedAt": "2026-10-22",
+      "effectiveForFreshDaily": "2026-10-24",
+      "basis": "Advertised reference amount, not a live checkout total. Exclude optional extras/delivery; applicable separately charged tax is outside the reference."
+    },
+    {
+      "itemId": "lowball-015",
+      "name": "Nintendo Switch 2",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "console only",
+      "inheritedTarget": 769.95,
+      "status": "needs-regional-evidence",
+      "issue": "Use console-only regional manufacturer SRP/MSRP for a stated date, not a bundle or old launch announcement."
+    },
+    {
+      "itemId": "lowball-015",
+      "name": "Nintendo Switch 2",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "console only",
+      "inheritedTarget": 499.99,
+      "status": "needs-regional-evidence",
+      "issue": "Use console-only regional manufacturer SRP/MSRP for a stated date, not a bundle or old launch announcement."
+    },
+    {
+      "itemId": "lowball-015",
+      "name": "Nintendo Switch 2",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "console only",
+      "inheritedTarget": 419.99,
+      "status": "needs-regional-evidence",
+      "issue": "Use console-only regional manufacturer SRP/MSRP for a stated date, not a bundle or old launch announcement."
+    },
+    {
+      "itemId": "lowball-015",
+      "name": "Nintendo Switch 2",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "console only",
+      "inheritedTarget": 679.99,
+      "status": "needs-regional-evidence",
+      "issue": "Use console-only regional manufacturer SRP/MSRP for a stated date, not a bundle or old launch announcement."
+    },
+    {
+      "itemId": "lowball-016",
+      "name": "Domino's pizza",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "large, value range",
+      "inheritedTarget": 8.95,
+      "status": "needs-location-channel",
+      "issue": "Choose the branch/city, portion/size, direct-purchase channel and date; delivery markups and local prices differ."
+    },
+    {
+      "itemId": "lowball-016",
+      "name": "Domino's pizza",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "large, value range",
+      "inheritedTarget": 9.99,
+      "status": "needs-location-channel",
+      "issue": "Choose the branch/city, portion/size, direct-purchase channel and date; delivery markups and local prices differ."
+    },
+    {
+      "itemId": "lowball-016",
+      "name": "Domino's pizza",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "large, value range",
+      "inheritedTarget": 14,
+      "status": "needs-location-channel",
+      "issue": "Choose the branch/city, portion/size, direct-purchase channel and date; delivery markups and local prices differ."
+    },
+    {
+      "itemId": "lowball-016",
+      "name": "Domino's pizza",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "large, value range",
+      "inheritedTarget": 12.99,
+      "status": "needs-location-channel",
+      "issue": "Choose the branch/city, portion/size, direct-purchase channel and date; delivery markups and local prices differ."
+    },
+    {
+      "itemId": "lowball-017",
+      "name": "Petrol per litre",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "unleaded 91",
+      "inheritedTarget": 1.85,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose a city, outlet, date and local fuel grade. Australian 91 RON is not a universal label; US posted gallon prices need an explicit US-gallon conversion."
+    },
+    {
+      "itemId": "lowball-017",
+      "name": "Petrol per litre",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "unleaded 91",
+      "inheritedTarget": 0.9,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose a city, outlet, date and local fuel grade. Australian 91 RON is not a universal label; US posted gallon prices need an explicit US-gallon conversion."
+    },
+    {
+      "itemId": "lowball-017",
+      "name": "Petrol per litre",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "unleaded 91",
+      "inheritedTarget": 1.45,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose a city, outlet, date and local fuel grade. Australian 91 RON is not a universal label; US posted gallon prices need an explicit US-gallon conversion."
+    },
+    {
+      "itemId": "lowball-017",
+      "name": "Petrol per litre",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "unleaded 91",
+      "inheritedTarget": 1.56,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose a city, outlet, date and local fuel grade. Australian 91 RON is not a universal label; US posted gallon prices need an explicit US-gallon conversion."
+    },
+    {
+      "itemId": "lowball-018",
+      "name": "Gym membership",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "basic, monthly",
+      "inheritedTarget": 78,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-018",
+      "name": "Gym membership",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "basic, monthly",
+      "inheritedTarget": 40,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-018",
+      "name": "Gym membership",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "basic, monthly",
+      "inheritedTarget": 35,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-018",
+      "name": "Gym membership",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "basic, monthly",
+      "inheritedTarget": 58,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-019",
+      "name": "Avocado",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "single, supermarket",
+      "inheritedTarget": 2.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-019",
+      "name": "Avocado",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "single, supermarket",
+      "inheritedTarget": 1.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-019",
+      "name": "Avocado",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "single, supermarket",
+      "inheritedTarget": 1,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-019",
+      "name": "Avocado",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "single, supermarket",
+      "inheritedTarget": 2,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-020",
+      "name": "Uber short ride",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "approx 5km trip",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-020",
+      "name": "Uber short ride",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "approx 5km trip",
+      "inheritedTarget": 12,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-020",
+      "name": "Uber short ride",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "approx 5km trip",
+      "inheritedTarget": 12,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-020",
+      "name": "Uber short ride",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "approx 5km trip",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-021",
+      "name": "Toothpaste tube",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "standard, supermarket",
+      "inheritedTarget": 5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-021",
+      "name": "Toothpaste tube",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "standard, supermarket",
+      "inheritedTarget": 4,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-021",
+      "name": "Toothpaste tube",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "standard, supermarket",
+      "inheritedTarget": 2.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-021",
+      "name": "Toothpaste tube",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "standard, supermarket",
+      "inheritedTarget": 4,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-022",
+      "name": "Band-Aids box",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "standard pack",
+      "inheritedTarget": 4.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-022",
+      "name": "Band-Aids box",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "standard pack",
+      "inheritedTarget": 4,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-022",
+      "name": "Band-Aids box",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "standard pack",
+      "inheritedTarget": 2.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-022",
+      "name": "Band-Aids box",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "standard pack",
+      "inheritedTarget": 5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-023",
+      "name": "Kindle Paperwhite",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "base model",
+      "inheritedTarget": 297,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-023",
+      "name": "Kindle Paperwhite",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "base model",
+      "inheritedTarget": 159.99,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-023",
+      "name": "Kindle Paperwhite",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "base model",
+      "inheritedTarget": 159.99,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-023",
+      "name": "Kindle Paperwhite",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "base model",
+      "inheritedTarget": 199.99,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-024",
+      "name": "Standard stamp",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "domestic letter",
+      "inheritedTarget": 1.7,
+      "status": "corrected-dated-reference",
+      "reviewedTarget": 1.85,
+      "scope": "Australia Post ordinary small letter up to 250g, regular service",
+      "source": "https://auspost.com.au/disruptions-and-updates/pricing-updates/bpr-letter-pricing-update",
+      "checkedAt": "2026-10-22",
+      "effectiveForFreshDaily": "2026-10-24",
+      "basis": "Advertised reference amount, not a live checkout total. Exclude optional extras/delivery; applicable separately charged tax is outside the reference."
+    },
+    {
+      "itemId": "lowball-024",
+      "name": "Standard stamp",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "domestic letter",
+      "inheritedTarget": 0.78,
+      "status": "corrected-dated-reference",
+      "reviewedTarget": 0.82,
+      "scope": "USPS Forever postage for a domestic 1 oz letter",
+      "source": "https://store.usps.com/store/product/buy-stamps/us-flag-2026-stamps-S_130104",
+      "checkedAt": "2026-10-22",
+      "effectiveForFreshDaily": "2026-10-24",
+      "basis": "Advertised reference amount, not a live checkout total. Exclude optional extras/delivery; applicable separately charged tax is outside the reference."
+    },
+    {
+      "itemId": "lowball-024",
+      "name": "Standard stamp",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "domestic letter",
+      "inheritedTarget": 1.7,
+      "status": "corrected-dated-reference",
+      "reviewedTarget": 1.8,
+      "scope": "Royal Mail First Class standard letter up to 100g",
+      "source": "https://www.royalmail.com/sending/uk/1st-class",
+      "checkedAt": "2026-10-22",
+      "effectiveForFreshDaily": "2026-10-24",
+      "basis": "Advertised reference amount, not a live checkout total. Exclude optional extras/delivery; applicable separately charged tax is outside the reference."
+    },
+    {
+      "itemId": "lowball-024",
+      "name": "Standard stamp",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "domestic letter",
+      "inheritedTarget": 1.44,
+      "status": "matched-dated-reference",
+      "reviewedTarget": 1.44,
+      "scope": "Canada Post single domestic stamp up to 30g, not a booklet",
+      "source": "https://www.canadapost-postescanada.ca/cpc/en/support/articles/lettermail/pricing.page",
+      "checkedAt": "2026-10-22",
+      "effectiveForFreshDaily": "2026-10-24",
+      "basis": "Advertised reference amount, not a live checkout total. Exclude optional extras/delivery; applicable separately charged tax is outside the reference."
+    },
+    {
+      "itemId": "lowball-025",
+      "name": "Movie ticket popcorn combo",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "ticket + small popcorn",
+      "inheritedTarget": 27,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-025",
+      "name": "Movie ticket popcorn combo",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "ticket + small popcorn",
+      "inheritedTarget": 21,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-025",
+      "name": "Movie ticket popcorn combo",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "ticket + small popcorn",
+      "inheritedTarget": 17,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-025",
+      "name": "Movie ticket popcorn combo",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "ticket + small popcorn",
+      "inheritedTarget": 25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-026",
+      "name": "Levi's 501 jeans",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "men's, full price",
+      "inheritedTarget": 139.95,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-026",
+      "name": "Levi's 501 jeans",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "men's, full price",
+      "inheritedTarget": 79.5,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-026",
+      "name": "Levi's 501 jeans",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "men's, full price",
+      "inheritedTarget": 100,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-026",
+      "name": "Levi's 501 jeans",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "men's, full price",
+      "inheritedTarget": 98,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-027",
+      "name": "Dog food bag",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "4kg bag, dry food",
+      "inheritedTarget": 20,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-027",
+      "name": "Dog food bag",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "4kg bag, dry food",
+      "inheritedTarget": 25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-027",
+      "name": "Dog food bag",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "4kg bag, dry food",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-027",
+      "name": "Dog food bag",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "4kg bag, dry food",
+      "inheritedTarget": 25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-028",
+      "name": "Haircut",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "men's, basic salon",
+      "inheritedTarget": 35,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-028",
+      "name": "Haircut",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "men's, basic salon",
+      "inheritedTarget": 25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-028",
+      "name": "Haircut",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "men's, basic salon",
+      "inheritedTarget": 18,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-028",
+      "name": "Haircut",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "men's, basic salon",
+      "inheritedTarget": 30,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-029",
+      "name": "Umbrella",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "standard compact",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-029",
+      "name": "Umbrella",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "standard compact",
+      "inheritedTarget": 12,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-029",
+      "name": "Umbrella",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "standard compact",
+      "inheritedTarget": 10,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-029",
+      "name": "Umbrella",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "standard compact",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-030",
+      "name": "Coffee capsules box",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "10 pack, supermarket",
+      "inheritedTarget": 6.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-030",
+      "name": "Coffee capsules box",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "10 pack, supermarket",
+      "inheritedTarget": 7,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-030",
+      "name": "Coffee capsules box",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "10 pack, supermarket",
+      "inheritedTarget": 4.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-030",
+      "name": "Coffee capsules box",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "10 pack, supermarket",
+      "inheritedTarget": 8,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-031",
+      "name": "Monopoly board game",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "classic edition",
+      "inheritedTarget": 35,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-031",
+      "name": "Monopoly board game",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "classic edition",
+      "inheritedTarget": 20,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-031",
+      "name": "Monopoly board game",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "classic edition",
+      "inheritedTarget": 20,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-031",
+      "name": "Monopoly board game",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "classic edition",
+      "inheritedTarget": 30,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-032",
+      "name": "Sunscreen bottle",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "SPF50, 200ml",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-032",
+      "name": "Sunscreen bottle",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "SPF50, 200ml",
+      "inheritedTarget": 12,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-032",
+      "name": "Sunscreen bottle",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "SPF50, 200ml",
+      "inheritedTarget": 7,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-032",
+      "name": "Sunscreen bottle",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "SPF50, 200ml",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-033",
+      "name": "Bananas",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "1kg, supermarket",
+      "inheritedTarget": 3.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-033",
+      "name": "Bananas",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "1kg, supermarket",
+      "inheritedTarget": 1.7,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-033",
+      "name": "Bananas",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "1kg, supermarket",
+      "inheritedTarget": 1.2,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-033",
+      "name": "Bananas",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "1kg, supermarket",
+      "inheritedTarget": 2,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-034",
+      "name": "Cheddar cheese block",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "500g, supermarket",
+      "inheritedTarget": 7,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-034",
+      "name": "Cheddar cheese block",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "500g, supermarket",
+      "inheritedTarget": 5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-034",
+      "name": "Cheddar cheese block",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "500g, supermarket",
+      "inheritedTarget": 3.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-034",
+      "name": "Cheddar cheese block",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "500g, supermarket",
+      "inheritedTarget": 7,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-035",
+      "name": "Butter",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "250g block",
+      "inheritedTarget": 3.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-035",
+      "name": "Butter",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "250g block",
+      "inheritedTarget": 3,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-035",
+      "name": "Butter",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "250g block",
+      "inheritedTarget": 2,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-035",
+      "name": "Butter",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "250g block",
+      "inheritedTarget": 4,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-036",
+      "name": "Chicken breast",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "1kg, supermarket",
+      "inheritedTarget": 12,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-036",
+      "name": "Chicken breast",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "1kg, supermarket",
+      "inheritedTarget": 11,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-036",
+      "name": "Chicken breast",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "1kg, supermarket",
+      "inheritedTarget": 7,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-036",
+      "name": "Chicken breast",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "1kg, supermarket",
+      "inheritedTarget": 14,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-037",
+      "name": "Minced beef",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "500g, supermarket",
+      "inheritedTarget": 7,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-037",
+      "name": "Minced beef",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "500g, supermarket",
+      "inheritedTarget": 5.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-037",
+      "name": "Minced beef",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "500g, supermarket",
+      "inheritedTarget": 3.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-037",
+      "name": "Minced beef",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "500g, supermarket",
+      "inheritedTarget": 8.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-038",
+      "name": "Rice",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "1kg, white",
+      "inheritedTarget": 3,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-038",
+      "name": "Rice",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "1kg, white",
+      "inheritedTarget": 2.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-038",
+      "name": "Rice",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "1kg, white",
+      "inheritedTarget": 1.8,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-038",
+      "name": "Rice",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "1kg, white",
+      "inheritedTarget": 4.9,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-039",
+      "name": "Pasta",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "500g, dried",
+      "inheritedTarget": 1.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-039",
+      "name": "Pasta",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "500g, dried",
+      "inheritedTarget": 1.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-039",
+      "name": "Pasta",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "500g, dried",
+      "inheritedTarget": 1,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-039",
+      "name": "Pasta",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "500g, dried",
+      "inheritedTarget": 2,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-040",
+      "name": "Peanut butter",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "400g jar",
+      "inheritedTarget": 4.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-040",
+      "name": "Peanut butter",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "400g jar",
+      "inheritedTarget": 3.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-040",
+      "name": "Peanut butter",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "400g jar",
+      "inheritedTarget": 2.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-040",
+      "name": "Peanut butter",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "400g jar",
+      "inheritedTarget": 4.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-041",
+      "name": "Breakfast cereal",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "500g box",
+      "inheritedTarget": 6,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-041",
+      "name": "Breakfast cereal",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "500g box",
+      "inheritedTarget": 5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-041",
+      "name": "Breakfast cereal",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "500g box",
+      "inheritedTarget": 3.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-041",
+      "name": "Breakfast cereal",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "500g box",
+      "inheritedTarget": 6,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-042",
+      "name": "Chocolate block",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "200g, milk chocolate",
+      "inheritedTarget": 5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-042",
+      "name": "Chocolate block",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "200g, milk chocolate",
+      "inheritedTarget": 3.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-042",
+      "name": "Chocolate block",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "200g, milk chocolate",
+      "inheritedTarget": 2,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-042",
+      "name": "Chocolate block",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "200g, milk chocolate",
+      "inheritedTarget": 4.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-043",
+      "name": "Potato chips",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "200g bag",
+      "inheritedTarget": 5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-043",
+      "name": "Potato chips",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "200g bag",
+      "inheritedTarget": 4,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-043",
+      "name": "Potato chips",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "200g bag",
+      "inheritedTarget": 2.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-043",
+      "name": "Potato chips",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "200g bag",
+      "inheritedTarget": 4,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-044",
+      "name": "Orange juice",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "2L, supermarket",
+      "inheritedTarget": 5.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-044",
+      "name": "Orange juice",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "2L, supermarket",
+      "inheritedTarget": 5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-044",
+      "name": "Orange juice",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "2L, supermarket",
+      "inheritedTarget": 3.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-044",
+      "name": "Orange juice",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "2L, supermarket",
+      "inheritedTarget": 6,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-045",
+      "name": "Bottled water",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "1.5L",
+      "inheritedTarget": 2.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-045",
+      "name": "Bottled water",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "1.5L",
+      "inheritedTarget": 2,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-045",
+      "name": "Bottled water",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "1.5L",
+      "inheritedTarget": 1.2,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-045",
+      "name": "Bottled water",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "1.5L",
+      "inheritedTarget": 2,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-046",
+      "name": "Tea bags",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "100 pack",
+      "inheritedTarget": 5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-046",
+      "name": "Tea bags",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "100 pack",
+      "inheritedTarget": 5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-046",
+      "name": "Tea bags",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "100 pack",
+      "inheritedTarget": 3,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-046",
+      "name": "Tea bags",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "100 pack",
+      "inheritedTarget": 6,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-047",
+      "name": "Ice cream tub",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "1L, supermarket",
+      "inheritedTarget": 6,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-047",
+      "name": "Ice cream tub",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "1L, supermarket",
+      "inheritedTarget": 5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-047",
+      "name": "Ice cream tub",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "1L, supermarket",
+      "inheritedTarget": 3.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-047",
+      "name": "Ice cream tub",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "1L, supermarket",
+      "inheritedTarget": 7,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-048",
+      "name": "Pint of beer",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "500ml, pub",
+      "inheritedTarget": 12,
+      "status": "needs-product-or-provider-definition",
+      "issue": "The name says pint but detail says 500ml. An imperial pint is approximately 568ml and a US liquid pint approximately 473ml; choose an actual serving and venue.",
+      "presentationFix": "Display Beer (500ml), retaining the original internal art/save identity; pub/price scope remains unresolved."
+    },
+    {
+      "itemId": "lowball-048",
+      "name": "Pint of beer",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "500ml, pub",
+      "inheritedTarget": 7,
+      "status": "needs-product-or-provider-definition",
+      "issue": "The name says pint but detail says 500ml. An imperial pint is approximately 568ml and a US liquid pint approximately 473ml; choose an actual serving and venue.",
+      "presentationFix": "Display Beer (500ml), retaining the original internal art/save identity; pub/price scope remains unresolved."
+    },
+    {
+      "itemId": "lowball-048",
+      "name": "Pint of beer",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "500ml, pub",
+      "inheritedTarget": 6,
+      "status": "needs-product-or-provider-definition",
+      "issue": "The name says pint but detail says 500ml. An imperial pint is approximately 568ml and a US liquid pint approximately 473ml; choose an actual serving and venue.",
+      "presentationFix": "Display Beer (500ml), retaining the original internal art/save identity; pub/price scope remains unresolved."
+    },
+    {
+      "itemId": "lowball-048",
+      "name": "Pint of beer",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "500ml, pub",
+      "inheritedTarget": 9,
+      "status": "needs-product-or-provider-definition",
+      "issue": "The name says pint but detail says 500ml. An imperial pint is approximately 568ml and a US liquid pint approximately 473ml; choose an actual serving and venue.",
+      "presentationFix": "Display Beer (500ml), retaining the original internal art/save identity; pub/price scope remains unresolved."
+    },
+    {
+      "itemId": "lowball-049",
+      "name": "Bottle of wine",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "mid-range, supermarket",
+      "inheritedTarget": 18,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-049",
+      "name": "Bottle of wine",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "mid-range, supermarket",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-049",
+      "name": "Bottle of wine",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "mid-range, supermarket",
+      "inheritedTarget": 9,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-049",
+      "name": "Bottle of wine",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "mid-range, supermarket",
+      "inheritedTarget": 17,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-050",
+      "name": "Six-pack of beer",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "supermarket",
+      "inheritedTarget": 24,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-050",
+      "name": "Six-pack of beer",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "supermarket",
+      "inheritedTarget": 12,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-050",
+      "name": "Six-pack of beer",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "supermarket",
+      "inheritedTarget": 10,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-050",
+      "name": "Six-pack of beer",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "supermarket",
+      "inheritedTarget": 17,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-051",
+      "name": "Flat white",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "cafe",
+      "inheritedTarget": 5.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-051",
+      "name": "Flat white",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "cafe",
+      "inheritedTarget": 4,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-051",
+      "name": "Flat white",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "cafe",
+      "inheritedTarget": 3.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-051",
+      "name": "Flat white",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "cafe",
+      "inheritedTarget": 4.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-052",
+      "name": "Footlong sub sandwich",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 16,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-052",
+      "name": "Footlong sub sandwich",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 10,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-052",
+      "name": "Footlong sub sandwich",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 8,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-052",
+      "name": "Footlong sub sandwich",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 14,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-053",
+      "name": "Frozen pizza",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "supermarket",
+      "inheritedTarget": 7,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-053",
+      "name": "Frozen pizza",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "supermarket",
+      "inheritedTarget": 5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-053",
+      "name": "Frozen pizza",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "supermarket",
+      "inheritedTarget": 3.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-053",
+      "name": "Frozen pizza",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "supermarket",
+      "inheritedTarget": 7,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-054",
+      "name": "Fish and chips",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "takeaway",
+      "inheritedTarget": 18,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-054",
+      "name": "Fish and chips",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "takeaway",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-054",
+      "name": "Fish and chips",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "takeaway",
+      "inheritedTarget": 10,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-054",
+      "name": "Fish and chips",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "takeaway",
+      "inheritedTarget": 17,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-055",
+      "name": "Energy drink",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "500ml can",
+      "inheritedTarget": 4.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-055",
+      "name": "Energy drink",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "500ml can",
+      "inheritedTarget": 3,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-055",
+      "name": "Energy drink",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "500ml can",
+      "inheritedTarget": 2,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-055",
+      "name": "Energy drink",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "500ml can",
+      "inheritedTarget": 3.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-056",
+      "name": "Toilet paper",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "12 rolls",
+      "inheritedTarget": 10,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-056",
+      "name": "Toilet paper",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "12 rolls",
+      "inheritedTarget": 8,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-056",
+      "name": "Toilet paper",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "12 rolls",
+      "inheritedTarget": 6,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-056",
+      "name": "Toilet paper",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "12 rolls",
+      "inheritedTarget": 10,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-057",
+      "name": "Dishwashing liquid",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "500ml",
+      "inheritedTarget": 4,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-057",
+      "name": "Dishwashing liquid",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "500ml",
+      "inheritedTarget": 3,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-057",
+      "name": "Dishwashing liquid",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "500ml",
+      "inheritedTarget": 2,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-057",
+      "name": "Dishwashing liquid",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "500ml",
+      "inheritedTarget": 4,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-058",
+      "name": "Laundry detergent",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "2L",
+      "inheritedTarget": 12,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-058",
+      "name": "Laundry detergent",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "2L",
+      "inheritedTarget": 10,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-058",
+      "name": "Laundry detergent",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "2L",
+      "inheritedTarget": 7,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-058",
+      "name": "Laundry detergent",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "2L",
+      "inheritedTarget": 12,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-059",
+      "name": "Tissues",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "one box",
+      "inheritedTarget": 3,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-059",
+      "name": "Tissues",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "one box",
+      "inheritedTarget": 2.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-059",
+      "name": "Tissues",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "one box",
+      "inheritedTarget": 2,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-059",
+      "name": "Tissues",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "one box",
+      "inheritedTarget": 3,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-060",
+      "name": "AA batteries",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "4 pack",
+      "inheritedTarget": 7,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-060",
+      "name": "AA batteries",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "4 pack",
+      "inheritedTarget": 6,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-060",
+      "name": "AA batteries",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "4 pack",
+      "inheritedTarget": 4,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-060",
+      "name": "AA batteries",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "4 pack",
+      "inheritedTarget": 7,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-061",
+      "name": "LED light bulb",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "single",
+      "inheritedTarget": 5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-061",
+      "name": "LED light bulb",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "single",
+      "inheritedTarget": 4,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-061",
+      "name": "LED light bulb",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "single",
+      "inheritedTarget": 3,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-061",
+      "name": "LED light bulb",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "single",
+      "inheritedTarget": 5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-062",
+      "name": "Shampoo",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "400ml",
+      "inheritedTarget": 8,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-062",
+      "name": "Shampoo",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "400ml",
+      "inheritedTarget": 6,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-062",
+      "name": "Shampoo",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "400ml",
+      "inheritedTarget": 4,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-062",
+      "name": "Shampoo",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "400ml",
+      "inheritedTarget": 7,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-063",
+      "name": "Deodorant",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "roll-on",
+      "inheritedTarget": 6,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-063",
+      "name": "Deodorant",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "roll-on",
+      "inheritedTarget": 4,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-063",
+      "name": "Deodorant",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "roll-on",
+      "inheritedTarget": 3,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-063",
+      "name": "Deodorant",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "roll-on",
+      "inheritedTarget": 5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-064",
+      "name": "Razor refills",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "4 pack",
+      "inheritedTarget": 25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-064",
+      "name": "Razor refills",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "4 pack",
+      "inheritedTarget": 18,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-064",
+      "name": "Razor refills",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "4 pack",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-064",
+      "name": "Razor refills",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "4 pack",
+      "inheritedTarget": 22,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-065",
+      "name": "Toothbrush",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "manual, single",
+      "inheritedTarget": 4,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-065",
+      "name": "Toothbrush",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "manual, single",
+      "inheritedTarget": 3,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-065",
+      "name": "Toothbrush",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "manual, single",
+      "inheritedTarget": 2,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-065",
+      "name": "Toothbrush",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "manual, single",
+      "inheritedTarget": 3,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-066",
+      "name": "Lip balm",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "single stick",
+      "inheritedTarget": 5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-066",
+      "name": "Lip balm",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "single stick",
+      "inheritedTarget": 3,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-066",
+      "name": "Lip balm",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "single stick",
+      "inheritedTarget": 2,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-066",
+      "name": "Lip balm",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "single stick",
+      "inheritedTarget": 4,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-067",
+      "name": "Hand soap",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "pump bottle",
+      "inheritedTarget": 4,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-067",
+      "name": "Hand soap",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "pump bottle",
+      "inheritedTarget": 3,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-067",
+      "name": "Hand soap",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "pump bottle",
+      "inheritedTarget": 2,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-067",
+      "name": "Hand soap",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "pump bottle",
+      "inheritedTarget": 4,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-068",
+      "name": "Cotton t-shirt",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "basic",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-068",
+      "name": "Cotton t-shirt",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "basic",
+      "inheritedTarget": 12,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-068",
+      "name": "Cotton t-shirt",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "basic",
+      "inheritedTarget": 8,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-068",
+      "name": "Cotton t-shirt",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "basic",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-069",
+      "name": "Socks",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "3 pack",
+      "inheritedTarget": 12,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-069",
+      "name": "Socks",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "3 pack",
+      "inheritedTarget": 10,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-069",
+      "name": "Socks",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "3 pack",
+      "inheritedTarget": 6,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-069",
+      "name": "Socks",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "3 pack",
+      "inheritedTarget": 12,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-070",
+      "name": "Hoodie",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "mid-range",
+      "inheritedTarget": 60,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-070",
+      "name": "Hoodie",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "mid-range",
+      "inheritedTarget": 45,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-070",
+      "name": "Hoodie",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "mid-range",
+      "inheritedTarget": 35,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-070",
+      "name": "Hoodie",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "mid-range",
+      "inheritedTarget": 55,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-071",
+      "name": "Nike Air Force 1",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "sneakers, full price",
+      "inheritedTarget": 180,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-071",
+      "name": "Nike Air Force 1",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "sneakers, full price",
+      "inheritedTarget": 115,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-071",
+      "name": "Nike Air Force 1",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "sneakers, full price",
+      "inheritedTarget": 110,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-071",
+      "name": "Nike Air Force 1",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "sneakers, full price",
+      "inheritedTarget": 150,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-072",
+      "name": "Sunglasses",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "basic",
+      "inheritedTarget": 20,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-072",
+      "name": "Sunglasses",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "basic",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-072",
+      "name": "Sunglasses",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "basic",
+      "inheritedTarget": 10,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-072",
+      "name": "Sunglasses",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "basic",
+      "inheritedTarget": 20,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-073",
+      "name": "Backpack",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "everyday, 25L",
+      "inheritedTarget": 50,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-073",
+      "name": "Backpack",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "everyday, 25L",
+      "inheritedTarget": 40,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-073",
+      "name": "Backpack",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "everyday, 25L",
+      "inheritedTarget": 30,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-073",
+      "name": "Backpack",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "everyday, 25L",
+      "inheritedTarget": 50,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-074",
+      "name": "Wireless mouse",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "basic",
+      "inheritedTarget": 25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-074",
+      "name": "Wireless mouse",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "basic",
+      "inheritedTarget": 20,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-074",
+      "name": "Wireless mouse",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "basic",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-074",
+      "name": "Wireless mouse",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "basic",
+      "inheritedTarget": 25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-075",
+      "name": "USB-C cable",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "1m",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-075",
+      "name": "USB-C cable",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "1m",
+      "inheritedTarget": 10,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-075",
+      "name": "USB-C cable",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "1m",
+      "inheritedTarget": 8,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-075",
+      "name": "USB-C cable",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "1m",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-076",
+      "name": "Phone case",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-076",
+      "name": "Phone case",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 20,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-076",
+      "name": "Phone case",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-076",
+      "name": "Phone case",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-077",
+      "name": "Bluetooth speaker",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "portable, mid-range",
+      "inheritedTarget": 100,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-077",
+      "name": "Bluetooth speaker",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "portable, mid-range",
+      "inheritedTarget": 80,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-077",
+      "name": "Bluetooth speaker",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "portable, mid-range",
+      "inheritedTarget": 70,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-077",
+      "name": "Bluetooth speaker",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "portable, mid-range",
+      "inheritedTarget": 100,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-078",
+      "name": "iPad",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "base model",
+      "inheritedTarget": 599,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-078",
+      "name": "iPad",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "base model",
+      "inheritedTarget": 449,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-078",
+      "name": "iPad",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "base model",
+      "inheritedTarget": 429,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-078",
+      "name": "iPad",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "base model",
+      "inheritedTarget": 649,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-079",
+      "name": "Apple Watch SE",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "base model",
+      "inheritedTarget": 399,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-079",
+      "name": "Apple Watch SE",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "base model",
+      "inheritedTarget": 249,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-079",
+      "name": "Apple Watch SE",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "base model",
+      "inheritedTarget": 219,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-079",
+      "name": "Apple Watch SE",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "base model",
+      "inheritedTarget": 329,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-080",
+      "name": "External SSD",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "1TB",
+      "inheritedTarget": 150,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-080",
+      "name": "External SSD",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "1TB",
+      "inheritedTarget": 100,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-080",
+      "name": "External SSD",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "1TB",
+      "inheritedTarget": 90,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-080",
+      "name": "External SSD",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "1TB",
+      "inheritedTarget": 140,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-081",
+      "name": "Air fryer",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "4L",
+      "inheritedTarget": 100,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-081",
+      "name": "Air fryer",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "4L",
+      "inheritedTarget": 80,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-081",
+      "name": "Air fryer",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "4L",
+      "inheritedTarget": 60,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-081",
+      "name": "Air fryer",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "4L",
+      "inheritedTarget": 100,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-082",
+      "name": "Electric kettle",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 35,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-082",
+      "name": "Electric kettle",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-082",
+      "name": "Electric kettle",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 20,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-082",
+      "name": "Electric kettle",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 35,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-083",
+      "name": "Toaster",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "2-slice",
+      "inheritedTarget": 35,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-083",
+      "name": "Toaster",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "2-slice",
+      "inheritedTarget": 25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-083",
+      "name": "Toaster",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "2-slice",
+      "inheritedTarget": 20,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-083",
+      "name": "Toaster",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "2-slice",
+      "inheritedTarget": 35,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-084",
+      "name": "Robot vacuum",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "entry-level",
+      "inheritedTarget": 300,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-084",
+      "name": "Robot vacuum",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "entry-level",
+      "inheritedTarget": 250,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-084",
+      "name": "Robot vacuum",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "entry-level",
+      "inheritedTarget": 200,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-084",
+      "name": "Robot vacuum",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "entry-level",
+      "inheritedTarget": 300,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-085",
+      "name": "Pillow",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-085",
+      "name": "Pillow",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 20,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-085",
+      "name": "Pillow",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-085",
+      "name": "Pillow",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-086",
+      "name": "Pedestal fan",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 40,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-086",
+      "name": "Pedestal fan",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 30,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-086",
+      "name": "Pedestal fan",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-086",
+      "name": "Pedestal fan",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 40,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-087",
+      "name": "Disney+",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "standard plan, monthly",
+      "inheritedTarget": 17.99,
+      "status": "needs-regional-evidence",
+      "issue": "Specify the actual plan name per country. The US naming differs from the international Standard tier; exclude bundles, limited-term offers and annual-rate equivalents."
+    },
+    {
+      "itemId": "lowball-087",
+      "name": "Disney+",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "standard plan, monthly",
+      "inheritedTarget": 15.99,
+      "status": "needs-regional-evidence",
+      "issue": "Specify the actual plan name per country. The US naming differs from the international Standard tier; exclude bundles, limited-term offers and annual-rate equivalents."
+    },
+    {
+      "itemId": "lowball-087",
+      "name": "Disney+",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "standard plan, monthly",
+      "inheritedTarget": 11.99,
+      "status": "needs-regional-evidence",
+      "issue": "Specify the actual plan name per country. The US naming differs from the international Standard tier; exclude bundles, limited-term offers and annual-rate equivalents."
+    },
+    {
+      "itemId": "lowball-087",
+      "name": "Disney+",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "standard plan, monthly",
+      "inheritedTarget": 15.99,
+      "status": "needs-regional-evidence",
+      "issue": "Specify the actual plan name per country. The US naming differs from the international Standard tier; exclude bundles, limited-term offers and annual-rate equivalents."
+    },
+    {
+      "itemId": "lowball-088",
+      "name": "Paperback novel",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "new release",
+      "inheritedTarget": 25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-088",
+      "name": "Paperback novel",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "new release",
+      "inheritedTarget": 20,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-088",
+      "name": "Paperback novel",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "new release",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-088",
+      "name": "Paperback novel",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "new release",
+      "inheritedTarget": 25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-089",
+      "name": "Zoo ticket",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "adult",
+      "inheritedTarget": 55,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-089",
+      "name": "Zoo ticket",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "adult",
+      "inheritedTarget": 35,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-089",
+      "name": "Zoo ticket",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "adult",
+      "inheritedTarget": 25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-089",
+      "name": "Zoo ticket",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "adult",
+      "inheritedTarget": 40,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-090",
+      "name": "Public transport fare",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "single trip, city",
+      "inheritedTarget": 5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-090",
+      "name": "Public transport fare",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "single trip, city",
+      "inheritedTarget": 2.9,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-090",
+      "name": "Public transport fare",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "single trip, city",
+      "inheritedTarget": 2.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-090",
+      "name": "Public transport fare",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "single trip, city",
+      "inheritedTarget": 3.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-091",
+      "name": "Car wash",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "basic",
+      "inheritedTarget": 20,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-091",
+      "name": "Car wash",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "basic",
+      "inheritedTarget": 12,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-091",
+      "name": "Car wash",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "basic",
+      "inheritedTarget": 8,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-091",
+      "name": "Car wash",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "basic",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-092",
+      "name": "Dry cleaning",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "one shirt",
+      "inheritedTarget": 8,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-092",
+      "name": "Dry cleaning",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "one shirt",
+      "inheritedTarget": 5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-092",
+      "name": "Dry cleaning",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "one shirt",
+      "inheritedTarget": 3.5,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-092",
+      "name": "Dry cleaning",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "one shirt",
+      "inheritedTarget": 6,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-093",
+      "name": "Parking",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "1 hour, city",
+      "inheritedTarget": 12,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-093",
+      "name": "Parking",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "1 hour, city",
+      "inheritedTarget": 10,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-093",
+      "name": "Parking",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "1 hour, city",
+      "inheritedTarget": 6,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-093",
+      "name": "Parking",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "1 hour, city",
+      "inheritedTarget": 8,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-094",
+      "name": "PS5 game",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "new, full price",
+      "inheritedTarget": 125,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-094",
+      "name": "PS5 game",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "new, full price",
+      "inheritedTarget": 70,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-094",
+      "name": "PS5 game",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "new, full price",
+      "inheritedTarget": 70,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-094",
+      "name": "PS5 game",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "new, full price",
+      "inheritedTarget": 90,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-095",
+      "name": "LEGO set",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "about 500 pieces",
+      "inheritedTarget": 60,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-095",
+      "name": "LEGO set",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "about 500 pieces",
+      "inheritedTarget": 40,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-095",
+      "name": "LEGO set",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "about 500 pieces",
+      "inheritedTarget": 35,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-095",
+      "name": "LEGO set",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "about 500 pieces",
+      "inheritedTarget": 55,
+      "status": "needs-exact-variant",
+      "issue": "Choose exact generation/model/SKU, variant, retailer, region and date before judging the target."
+    },
+    {
+      "itemId": "lowball-096",
+      "name": "Jigsaw puzzle",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "1000 pieces",
+      "inheritedTarget": 25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-096",
+      "name": "Jigsaw puzzle",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "1000 pieces",
+      "inheritedTarget": 20,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-096",
+      "name": "Jigsaw puzzle",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "1000 pieces",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-096",
+      "name": "Jigsaw puzzle",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "1000 pieces",
+      "inheritedTarget": 25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-097",
+      "name": "Soccer ball",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "size 5",
+      "inheritedTarget": 25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-097",
+      "name": "Soccer ball",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "size 5",
+      "inheritedTarget": 20,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-097",
+      "name": "Soccer ball",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "size 5",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-097",
+      "name": "Soccer ball",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "size 5",
+      "inheritedTarget": 25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-098",
+      "name": "Yoga mat",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-098",
+      "name": "Yoga mat",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 20,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-098",
+      "name": "Yoga mat",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-098",
+      "name": "Yoga mat",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "standard",
+      "inheritedTarget": 25,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-099",
+      "name": "Tennis balls",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "3 pack",
+      "inheritedTarget": 10,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-099",
+      "name": "Tennis balls",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "3 pack",
+      "inheritedTarget": 7,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-099",
+      "name": "Tennis balls",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "3 pack",
+      "inheritedTarget": 6,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-099",
+      "name": "Tennis balls",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "3 pack",
+      "inheritedTarget": 10,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-100",
+      "name": "Cat food",
+      "region": "AU",
+      "currency": "AUD",
+      "inheritedDetail": "12 pack, wet",
+      "inheritedTarget": 20,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-100",
+      "name": "Cat food",
+      "region": "US",
+      "currency": "USD",
+      "inheritedDetail": "12 pack, wet",
+      "inheritedTarget": 15,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-100",
+      "name": "Cat food",
+      "region": "UK",
+      "currency": "GBP",
+      "inheritedDetail": "12 pack, wet",
+      "inheritedTarget": 10,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    },
+    {
+      "itemId": "lowball-100",
+      "name": "Cat food",
+      "region": "CA",
+      "currency": "CAD",
+      "inheritedDetail": "12 pack, wet",
+      "inheritedTarget": 18,
+      "status": "needs-product-or-provider-definition",
+      "issue": "Choose an exact product/portion or provider, retailer/location, tax convention and check date. A generic national category has no unique retail price."
+    }
+  ],
+  "observations": [
+    {
+      "name": "Nike Air Force 1",
+      "regions": [
+        "AU",
+        "US",
+        "CA"
+      ],
+      "finding": "CW2288-111 men's white/white examples match 180/115/150 respectively; the game still needs an explicit SKU/gender and all four regional sources.",
+      "sources": [
+        "https://www.nike.com/au/t/air-force-1-07-mens-shoes-cvS6DOBf/CW2288-111",
+        "https://www.nike.com/t/air-force-1-07-mens-shoes-XVPIszaq/CW2288-111",
+        "https://www.nike.com/ca/t/air-force-1-07-mens-shoes-8MPI3T2W/CW2288-111"
+      ]
+    },
+    {
+      "name": "Nike Air Force 1",
+      "regions": [
+        "UK"
+      ],
+      "finding": "A CT2302-100 listing shows GBP109.99, while a different 'Low 07' SKU shows119.99. GBP110 is rounded and the item is under-specified; do not invent a single corrected price without selecting the SKU.",
+      "sources": [
+        "https://www.nike.com/gb/t/air-force-1-07-mens-shoe-n8juM1H2/CT2302-100"
+      ]
+    },
+    {
+      "name": "Netflix Standard",
+      "regions": [
+        "US"
+      ],
+      "finding": "The retrieved US Help Center shows Standard USD19.99/month before applicable taxes. This does not corroborate the other three countries.",
+      "sources": [
+        "https://help.netflix.com/en/node/24926"
+      ]
+    },
+    {
+      "name": "Disney+",
+      "regions": [
+        "AU",
+        "UK",
+        "CA"
+      ],
+      "finding": "Regional public extracts show Standard17.99 AUD,11.99 GBP and15.99 CAD; the UK page separates a temporary9.99 saver offer from11.99 regular monthly. US Standard is not an equivalent named plan.",
+      "sources": [
+        "https://www.disneyplus.com/en-au/explore/what-is-disneyplus",
+        "https://www.disneyplus.com/en-gb",
+        "https://www.disneyplus.com/en-ca"
+      ]
+    },
+    {
+      "name": "Nintendo Switch 2",
+      "regions": [
+        "AU",
+        "US"
+      ],
+      "finding": "Manufacturer revisions effective1 September2026 support769.95 AUD and499.99 USD console-only; the original AU699.95 launch announcement is obsolete. UK/CA remain open.",
+      "sources": [
+        "https://www.nintendo.com/au/support/articles/price-revision-for-nintendo-switch-2-console/",
+        "https://www.nintendo.com/us/whatsnew/price-revision-for-nintendo-switch-2-system/"
+      ]
+    },
+    {
+      "name": "iPhone 16",
+      "regions": [
+        "UK",
+        "CA",
+        "US"
+      ],
+      "finding": "Apple regional extracts show128GB 'from'799 GBP and1149 CAD. The US799 starting quote includes carrier context; review unconditional unlocked pricing. Only the unambiguous AU1349 correction is integrated.",
+      "sources": [
+        "https://www.apple.com/uk/shop/buy-iphone/iphone-16",
+        "https://www.apple.com/ca/shop/buy-iphone/iphone-16",
+        "https://www.apple.com/shop/buy-iphone/iphone-16?storage=128gb"
+      ]
+    },
+    {
+      "name": "PlayStation 5",
+      "regions": [
+        "US",
+        "UK",
+        "CA"
+      ],
+      "finding": "Current manufacturer lists and April2026 changes identify current-generation disc/digital/Pro models separately. The game needs the exact1TB disc model and date; raw search price formatting drops cents, so no cent-level correction is inferred.",
+      "sources": [
+        "https://direct.playstation.com/en-us/hardware/ps5",
+        "https://direct.playstation.com/en-gb/hardware/ps5",
+        "https://blog.playstation.com/2026/03/27/new-price-changes-for-ps5-ps5-pro-and-playstation-portal-remote-player"
+      ]
+    }
+  ]
+}

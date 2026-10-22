@@ -29,7 +29,7 @@ const assetRoot = path.resolve(__dirname, '../games/lowball/engine/icons/generat
     for (let index = 0; index < 100; index++) {
       const expected = await page.evaluate(index => {
         mode = 'unlimited'; deck = ITEMS.slice(); deckIndex = index; showItem();
-        return {name: currentItem.name, source: LOWBALL_ART.source(currentItem)};
+        return {name: PRICE_REFERENCES.label(currentItem), source: LOWBALL_ART.source(currentItem)};
       }, index);
       const img = page.locator('#itemEmoji img');
       await img.evaluate(image => image.decode());

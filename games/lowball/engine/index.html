@@ -1232,7 +1232,7 @@ function showItem() {
   if (mode === "unlimited") practicePending = null;
   const emojiEl = document.getElementById("itemEmoji");
   emojiEl.innerHTML = LOWBALL_ART.markup(currentItem);
-  document.getElementById("itemName").textContent = currentItem.name;
+  document.getElementById("itemName").textContent = PRICE_REFERENCES.label(currentItem);
   document.getElementById("counterItemNumber").textContent = mode === "normal" ? "ITEM " + String(roundIndex + 1).padStart(2, "0") + " / " + String(ROUNDS_PER_DAY).padStart(2, "0") : "PRACTICE / ITEM " + String(deckIndex + 1).padStart(2, "0");
   document.getElementById("itemDetail").textContent = PRICE_REFERENCES.detail(currentItem,country);
   document.getElementById("currencySymbol").textContent = CURRENCY[country].symbol;
@@ -1314,7 +1314,7 @@ function renderResult(guess, ctry, animate) {
   playArea.style.display = "none";
   resultArea.classList.add("show");
   resultArea.dataset.tier = classForScore(score);
-  document.getElementById("receiptItemName").textContent = currentItem.name;
+  document.getElementById("receiptItemName").textContent = PRICE_REFERENCES.label(currentItem);
 
   const scoreEl = document.getElementById("resultScore");
   scoreEl.className = "result-score mono " + classForScore(score);
@@ -1344,7 +1344,7 @@ function renderResult(guess, ctry, animate) {
   }
   renderDots();
   updatePracticePanel();
-  if (animate) announceLowball(currentItem.name + ": " + score + " out of 100. Your guess " + symbol + guess.toFixed(2) + ". Reference price " + symbol + actual.toFixed(2) + ". " + offByText(guess, actual, pctOff, symbol) + ".");
+  if (animate) announceLowball(PRICE_REFERENCES.label(currentItem) + ": " + score + " out of 100. Your guess " + symbol + guess.toFixed(2) + ". Reference price " + symbol + actual.toFixed(2) + ". " + offByText(guess, actual, pctOff, symbol) + ".");
 }
 
 document.getElementById("nextBtn").addEventListener("click", () => {
@@ -1482,7 +1482,7 @@ function buildDailyShare(scores, avg) {
   let w = 0;
   scores.forEach((sc, i) => { if (sc < scores[w]) w = i; });
   const item = roundItems[w], g = roundGuesses[w];
-  if (scores[w] < 80 && item && typeof g === "number") out += "\nWorst miss: " + item.name + " (I said " + CURRENCY[country].symbol + fmtMoney(g) + ")";
+  if (scores[w] < 80 && item && typeof g === "number") out += "\nWorst miss: " + PRICE_REFERENCES.label(item) + " (I said " + CURRENCY[country].symbol + fmtMoney(g) + ")";
   return out;
 }
 

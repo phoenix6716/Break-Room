@@ -4,14 +4,14 @@ const ROOT=path.resolve(__dirname,'..'),read=(root,file)=>fs.readFileSync(path.j
 const hash=text=>crypto.createHash('sha256').update(text).digest('hex');
 const optionKey=s=>String(s||'').normalize('NFKC').trim().toLowerCase().replace(/−/g,'-').replace(/\s+/g,' ');
 const normalize=s=>String(s||'').toLowerCase().replace(/[^\p{L}\p{N}]/gu,'');
-function load(root=ROOT){
+function load(root=ROOT,asOf=new Intl.DateTimeFormat('en-CA',{timeZone:'Australia/Sydney',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())){
  const sandbox={window:{}};vm.createContext(sandbox);
- for(const file of ['games/stake/questions.js','games/stack-up/stacks.js','games/lowball/engine/item-art.js'])vm.runInContext(read(root,file),sandbox);
+ for(const file of ['games/stake/questions.js','games/stack-up/stacks.js','games/lowball/engine/item-art.js','games/lowball/engine/reference-prices.js'])vm.runInContext(read(root,file),sandbox);
  const stakeHTML=read(root,'games/stake/index.html'),lowHTML=read(root,'games/lowball/engine/index.html');
  const baseline=stakeHTML.split('const BANK=`')[1]?.split('`.trim()')[0];if(!baseline)throw Error('Cannot find the frozen Stake bank.');
  const legacy=baseline.trim().split('\n').map((line,i)=>{const [c,q,a,b,d,f]=line.split('|');return{id:'stake-legacy-'+String(i+1).padStart(3,'0'),c,q,o:[a,b,d],f};});
  const lowSource=lowHTML.match(/const ITEMS = (\[[\s\S]*?\n\]);/);if(!lowSource)throw Error('Cannot find Lowball item pool.');
- const items=vm.runInNewContext('('+lowSource[1]+')');
+ const items=vm.runInNewContext('('+lowSource[1]+')').map(item=>sandbox.window.BREAK_ROOM_LOWBALL_PRICES.current(item,asOf));
  const audit=JSON.parse(read(root,'content/question-audit.json')),refs=JSON.parse(read(root,'content/reference-data.json'));
  const records=[...legacy.map(q=>({game:'stake',id:q.id,legacy:true,fields:q,review:null})),...sandbox.window.STAKE_QUESTION_ADDITIONS.map(q=>({game:'stake',id:q.id,fields:q,review:audit.stake.find(a=>a.id===q.id)||null})),...sandbox.window.STACK_UP_STACKS.map(s=>({game:'stack-up',id:s.id,fields:s,review:audit.stack_up.find(a=>a.id===s.id)||null})),...items.map((item,i)=>({game:'lowball',id:'lowball-'+String(i+1).padStart(3,'0'),fields:{...item,art:sandbox.window.LOWBALL_ART.items[item.name]},review:null}))];
  const json=JSON.parse(JSON.stringify(records));return{version:1,fingerprint:hash(JSON.stringify(json)),records:json,sources:refs.sources,reference:refs,art:[...new Set([...Object.values(sandbox.window.LOWBALL_ART.items),...fs.readdirSync(path.join(root,'games/lowball/engine/icons/generated')).filter(n=>/^[a-z0-9-]+\.png$/.test(n)&&!Object.values(sandbox.window.LOWBALL_ART.utilities).includes(n))])].sort(),inheritedPriceDate:lowHTML.match(/const PRICES_CHECKED = "([^"]*)"/)?.[1]||null};
@@ -76,8 +76,9 @@ function report(catalog,root=ROOT){
   }
   if(r.game==='lowball'){for(const region of ['AU','US','UK','CA'])if(!Number.isFinite(r.fields.prices[region])||r.fields.prices[region]<=0)errors.push('Missing/invalid '+region+' price: '+r.id);if(!r.fields.art||!fs.existsSync(path.join(root,'games/lowball/engine/icons/generated',r.fields.art)))errors.push('Missing art: '+r.id);}
  }
- warnings.push('164 original Stake questions have no checked-in per-question source audit. Their order is frozen for legacy saves.');
- warnings.push(counts.lowball+' Lowball items inherit estimated regional prices without stored shop-source evidence. The inherited '+(catalog.inheritedPriceDate||'unset')+' display date is not new verification. Review local prices before launch.');
- return{version:1,counts,errors,warnings,reviewCoverage:{sourcedStake:catalog.records.filter(r=>r.game==='stake'&&r.review).length,sourcedStacks:catalog.records.filter(r=>r.game==='stack-up'&&r.review).length,lowballWithPriceEvidence:0},fingerprint:catalog.fingerprint};
+ warnings.push('164 original Stake questions stay frozen for legacy saves. Reviewed new-run wording and source-screening limits are recorded in content/factual-review.json.');
+ const regions=['AU','US','UK','CA'],low=catalog.records.filter(r=>r.game==='lowball'),checkedRegions=low.reduce((n,r)=>n+regions.filter(c=>r.fields.priceEvidence?.[c]).length,0),checkedItems=low.filter(r=>regions.every(c=>r.fields.priceEvidence?.[c])).length;
+ warnings.push((counts.lowball-checkedItems)+' Lowball items still have at least one estimated/unverified regional target; '+checkedRegions+' of '+counts.lowball*4+' regional references have retained source evidence. Evidence is dated, not a live quote. Review remaining prices and product scopes before launch.');
+ return{version:1,counts,errors,warnings,reviewCoverage:{sourcedStake:catalog.records.filter(r=>r.game==='stake'&&r.review).length,sourcedStacks:catalog.records.filter(r=>r.game==='stack-up'&&r.review).length,lowballWithPriceEvidence:checkedItems,lowballRegionsWithPriceEvidence:checkedRegions},fingerprint:catalog.fingerprint};
 }
 module.exports={ROOT,load,validate,report,hash};
