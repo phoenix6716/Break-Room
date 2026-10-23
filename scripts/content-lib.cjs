@@ -3,7 +3,7 @@ const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),cryp
 const ROOT=path.resolve(__dirname,'..'),read=(root,file)=>fs.readFileSync(path.join(root,file),'utf8');
 const hash=text=>crypto.createHash('sha256').update(text).digest('hex');
 const optionKey=s=>String(s||'').normalize('NFKC').trim().toLowerCase().replace(/−/g,'-').replace(/\s+/g,' ');
-const normalize=s=>String(s||'').toLowerCase().replace(/[^\p{L}\p{N}]/gu,'');
+const normalize=s=>String(s||'').toLowerCase().replace(/[+−×÷]/g,c=>({'+':'plus','−':'minus','×':'times','÷':'dividedby'}[c])).replace(/[^\p{L}\p{N}]/gu,'');
 function load(root=ROOT,asOf=new Intl.DateTimeFormat('en-CA',{timeZone:'Australia/Sydney',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())){
  const sandbox={window:{}};vm.createContext(sandbox);
  for(const file of ['games/stake/questions.js','games/stack-up/stacks.js','games/stack-up/familiar-stacks.js','games/lowball/engine/item-art.js','games/lowball/engine/reference-prices.js'])vm.runInContext(read(root,file),sandbox);

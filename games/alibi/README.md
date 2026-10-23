@@ -12,7 +12,7 @@ A first confirmed accusation is final. The reveal explains the physical match/ca
 
 ## Content and selection
 
-`node scripts/build-alibi-evidence.cjs` deterministically emits `evidence-cases.js`: **128 files**, 32 per tier, eight of each mechanism per tier, with 16 authored premises. Fresh Dailies from 23 October 2026 select one of each mechanism across Warm-up/Standard/Tricky/Expert; each 32-day window is repeat-free. Unlimited defaults to new evidence files, excludes today's files and retains changing/fixed difficulty and tab-local session continuity.
+`node scripts/build-alibi-evidence.cjs` deterministically emits `evidence-cases.js`: **128 files**, 32 per tier, eight of each mechanism per tier, with 32 authored premises. Fresh Dailies from 23 October 2026 select one of each mechanism across Warm-up/Standard/Tricky/Expert; each 32-day window is repeat-free. Unlimited defaults to new evidence files, excludes today's files and retains changing/fixed difficulty and tab-local session continuity.
 
 Every file has one complete owner assignment, verified by independent enumeration and a propagation proof without guesses. Exhaustive clue subsets require at least 2/3/4/5 constraints by tier. These are structural difficulty checks; repeat human playtesting remains necessary.
 

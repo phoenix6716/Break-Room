@@ -4,7 +4,7 @@ The owner reported that Alibi was boring/confusing, relied only on incident-time
 
 ## Alibi
 
-New files use four evidence mechanisms: paired marks on forged seals, intersecting badge permissions, independently measured inventory differences and the first broken link in a seal-custody chain. The 16 authored premises include a forged festival pass, a missing audition recording, a vanished prototype and an altered master drawing.
+New files use four evidence mechanisms: paired marks on forged seals, intersecting badge permissions, independently measured inventory differences and the first broken link in a seal-custody chain. The 32 authored premises include a forged festival pass, a missing audition recording, a vanished prototype and an altered master drawing.
 
 There are **128 new v3 files**, 32 per tier and eight per mechanism/tier. Each fresh Daily contains four different mechanisms, in Warm-up → Standard → Tricky → Expert order. A deterministic 32-day rotation avoids repeated files. Unlimited uses new files immediately and keeps changing/fixed difficulty.
 
