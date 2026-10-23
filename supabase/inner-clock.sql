@@ -451,7 +451,7 @@ create or replace function public._friend_alibi_evidence(p jsonb) returns int la
 declare n int; lv int; i int; j int; a int; b int; k int; x numeric; ty text; s jsonb; e jsonb; o jsonb; clue jsonb; mechanism text;
  names text[]:='{}'; portraits int[]:='{}'; object_names text[]:='{}'; rules text[]:='{}'; moment int:=-1; positions int[]; fits boolean; solutions int:=0; winner int; before_mass int; after_mass int; broken boolean:=false;
 begin
- if jsonb_typeof(p) is distinct from 'object' or p->'version' is distinct from '3'::jsonb or jsonb_typeof(p->'id') is distinct from 'string' or p->>'id' !~ '^alibi-v3-[0-3]-[0-9]+ or char_length(p->>'id')>80 or jsonb_typeof(p->'level') is distinct from 'number' then return null;end if;
+ if jsonb_typeof(p) is distinct from 'object' or p->'version' is distinct from '3'::jsonb or jsonb_typeof(p->'id') is distinct from 'string' or p->>'id' !~ '^alibi-v3-[0-3]-[0-9]+$' or char_length(p->>'id')>80 or jsonb_typeof(p->'level') is distinct from 'number' then return null;end if;
  x=(p->>'level')::numeric;if x<>trunc(x) or x not between 0 and 3 then return null;end if;lv=x;n=case when lv=3 then 5 else 4 end;
  if p->'n' is distinct from to_jsonb(n) or coalesce(p->>'mechanism','') not in ('trace','access','inventory','custody') then return null;end if;mechanism=p->>'mechanism';
  foreach ty in array array['crime','detail','item','assignment','catalogue'] loop
@@ -529,4 +529,6 @@ begin
  return correct*25;
 exception when others then return null;
 end $$;
+
+revoke all on function public._friend_alibi_score(jsonb,date) from public,anon,authenticated;
 commit;

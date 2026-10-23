@@ -1,17 +1,24 @@
-name: Temporary player-feedback unit validation
+name: Temporary player-feedback validation
 on:
   pull_request:
 permissions:
   contents: read
 jobs:
-  unit:
+  validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version-file: .node-version
           cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - run: npm ci --ignore-scripts --no-audit --no-fund
-      - run: npm run legal:check && npm run content:report && npm run test:unit && npm run build && npm run check
+      - run: |
+          export ARCADE_CHROMIUM="$(command -v google-chrome)"
+          npm test
