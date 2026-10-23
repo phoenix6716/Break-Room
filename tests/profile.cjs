@@ -53,7 +53,7 @@ const snapshot=page=>page.evaluate(()=>Object.fromEntries(Object.keys(localStora
    const legacy=await page.evaluate(()=>({day:'2026-10-19',b:[1,2,3,1,2],p:[0,1,-1,2,1]}));
    const legacyScore=await page.evaluate(r=>sc({...r,qs:dayQs(r.day,164)}),legacy);
    await page.evaluate(r=>localStorage.setItem('stake:d:'+r.day,JSON.stringify({b:r.b,p:r.p})),legacy);
-   await page.goto(base+'/games/stack-up/index.html');await page.locator('[data-start-mode=daily]').click();
+   await page.goto(base+'/games/stack-up/index.html');await page.locator('[data-mode=daily]').click();
    for(let i=0;i<5;i++){await reorder(page);await page.locator('#check-button').click();await page.locator('#next-button').click();}
    const before=await snapshot(page);await page.goto(base+'/profile.html');
    assert.equal(await page.locator('#total-runs').innerText(),'4');assert.equal(await page.locator('#today-count').innerText(),'3 / 9');

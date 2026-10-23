@@ -1,0 +1,5287 @@
+{
+  "version": 1,
+  "reviewedAt": "2026-10-23",
+  "note": "Familiar default progression; old challenge bank remains available. Values stay behind the answer reveal.",
+  "stacks": [
+    {
+      "id": "stack-familiar-0-001",
+      "source": "EVERYDAY",
+      "unit": "",
+      "sources": [
+        "https://www.timeanddate.com/calendar/months/"
+      ],
+      "ordered": [
+        {
+          "name": "Monday",
+          "value": 1
+        },
+        {
+          "name": "Thursday",
+          "value": 4
+        },
+        {
+          "name": "Friday",
+          "value": 5
+        },
+        {
+          "name": "Saturday",
+          "value": 6
+        },
+        {
+          "name": "Sunday",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-002",
+      "source": "EVERYDAY",
+      "unit": "",
+      "sources": [
+        "https://www.timeanddate.com/calendar/months/"
+      ],
+      "ordered": [
+        {
+          "name": "Monday",
+          "value": 1
+        },
+        {
+          "name": "Wednesday",
+          "value": 3
+        },
+        {
+          "name": "Thursday",
+          "value": 4
+        },
+        {
+          "name": "Saturday",
+          "value": 6
+        },
+        {
+          "name": "Sunday",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-003",
+      "source": "EVERYDAY",
+      "unit": "",
+      "sources": [
+        "https://www.timeanddate.com/calendar/months/"
+      ],
+      "ordered": [
+        {
+          "name": "Monday",
+          "value": 1
+        },
+        {
+          "name": "Tuesday",
+          "value": 2
+        },
+        {
+          "name": "Friday",
+          "value": 5
+        },
+        {
+          "name": "Saturday",
+          "value": 6
+        },
+        {
+          "name": "Sunday",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-004",
+      "source": "EVERYDAY",
+      "unit": "",
+      "sources": [
+        "https://www.timeanddate.com/calendar/months/"
+      ],
+      "ordered": [
+        {
+          "name": "Monday",
+          "value": 1
+        },
+        {
+          "name": "Tuesday",
+          "value": 2
+        },
+        {
+          "name": "Wednesday",
+          "value": 3
+        },
+        {
+          "name": "Friday",
+          "value": 5
+        },
+        {
+          "name": "Sunday",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-005",
+      "source": "EVERYDAY",
+      "unit": "",
+      "sources": [
+        "https://www.timeanddate.com/calendar/months/"
+      ],
+      "ordered": [
+        {
+          "name": "Monday",
+          "value": 1
+        },
+        {
+          "name": "Wednesday",
+          "value": 3
+        },
+        {
+          "name": "Thursday",
+          "value": 4
+        },
+        {
+          "name": "Friday",
+          "value": 5
+        },
+        {
+          "name": "Sunday",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-006",
+      "source": "EVERYDAY",
+      "unit": "",
+      "sources": [
+        "https://www.timeanddate.com/calendar/months/"
+      ],
+      "ordered": [
+        {
+          "name": "Monday",
+          "value": 1
+        },
+        {
+          "name": "Tuesday",
+          "value": 2
+        },
+        {
+          "name": "Thursday",
+          "value": 4
+        },
+        {
+          "name": "Saturday",
+          "value": 6
+        },
+        {
+          "name": "Sunday",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-007",
+      "source": "EVERYDAY",
+      "unit": "",
+      "sources": [
+        "https://www.timeanddate.com/calendar/months/"
+      ],
+      "ordered": [
+        {
+          "name": "Monday",
+          "value": 1
+        },
+        {
+          "name": "Tuesday",
+          "value": 2
+        },
+        {
+          "name": "Wednesday",
+          "value": 3
+        },
+        {
+          "name": "Thursday",
+          "value": 4
+        },
+        {
+          "name": "Saturday",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-008",
+      "source": "EVERYDAY",
+      "unit": "",
+      "sources": [
+        "https://www.timeanddate.com/calendar/months/"
+      ],
+      "ordered": [
+        {
+          "name": "Tuesday",
+          "value": 2
+        },
+        {
+          "name": "Wednesday",
+          "value": 3
+        },
+        {
+          "name": "Thursday",
+          "value": 4
+        },
+        {
+          "name": "Friday",
+          "value": 5
+        },
+        {
+          "name": "Sunday",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-009",
+      "source": "EVERYDAY",
+      "unit": "",
+      "sources": [
+        "https://www.timeanddate.com/calendar/months/"
+      ],
+      "ordered": [
+        {
+          "name": "February",
+          "value": 2
+        },
+        {
+          "name": "April",
+          "value": 4
+        },
+        {
+          "name": "July",
+          "value": 7
+        },
+        {
+          "name": "September",
+          "value": 9
+        },
+        {
+          "name": "November",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-010",
+      "source": "EVERYDAY",
+      "unit": "",
+      "sources": [
+        "https://www.timeanddate.com/calendar/months/"
+      ],
+      "ordered": [
+        {
+          "name": "February",
+          "value": 2
+        },
+        {
+          "name": "March",
+          "value": 3
+        },
+        {
+          "name": "June",
+          "value": 6
+        },
+        {
+          "name": "September",
+          "value": 9
+        },
+        {
+          "name": "November",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-011",
+      "source": "EVERYDAY",
+      "unit": "",
+      "sources": [
+        "https://www.timeanddate.com/calendar/months/"
+      ],
+      "ordered": [
+        {
+          "name": "January",
+          "value": 1
+        },
+        {
+          "name": "February",
+          "value": 2
+        },
+        {
+          "name": "May",
+          "value": 5
+        },
+        {
+          "name": "June",
+          "value": 6
+        },
+        {
+          "name": "October",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-012",
+      "source": "EVERYDAY",
+      "unit": "",
+      "sources": [
+        "https://www.timeanddate.com/calendar/months/"
+      ],
+      "ordered": [
+        {
+          "name": "February",
+          "value": 2
+        },
+        {
+          "name": "July",
+          "value": 7
+        },
+        {
+          "name": "October",
+          "value": 10
+        },
+        {
+          "name": "November",
+          "value": 11
+        },
+        {
+          "name": "December",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-013",
+      "source": "EVERYDAY",
+      "unit": "",
+      "sources": [
+        "https://www.timeanddate.com/calendar/months/"
+      ],
+      "ordered": [
+        {
+          "name": "May",
+          "value": 5
+        },
+        {
+          "name": "July",
+          "value": 7
+        },
+        {
+          "name": "October",
+          "value": 10
+        },
+        {
+          "name": "November",
+          "value": 11
+        },
+        {
+          "name": "December",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-014",
+      "source": "EVERYDAY",
+      "unit": "",
+      "sources": [
+        "https://www.timeanddate.com/calendar/months/"
+      ],
+      "ordered": [
+        {
+          "name": "January",
+          "value": 1
+        },
+        {
+          "name": "February",
+          "value": 2
+        },
+        {
+          "name": "August",
+          "value": 8
+        },
+        {
+          "name": "October",
+          "value": 10
+        },
+        {
+          "name": "November",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-015",
+      "source": "EVERYDAY",
+      "unit": "",
+      "sources": [
+        "https://www.timeanddate.com/calendar/months/"
+      ],
+      "ordered": [
+        {
+          "name": "March",
+          "value": 3
+        },
+        {
+          "name": "May",
+          "value": 5
+        },
+        {
+          "name": "June",
+          "value": 6
+        },
+        {
+          "name": "July",
+          "value": 7
+        },
+        {
+          "name": "August",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-016",
+      "source": "EVERYDAY",
+      "unit": "",
+      "sources": [
+        "https://www.timeanddate.com/calendar/months/"
+      ],
+      "ordered": [
+        {
+          "name": "January",
+          "value": 1
+        },
+        {
+          "name": "April",
+          "value": 4
+        },
+        {
+          "name": "August",
+          "value": 8
+        },
+        {
+          "name": "October",
+          "value": 10
+        },
+        {
+          "name": "December",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-017",
+      "source": "EVERYDAY",
+      "unit": "",
+      "sources": [
+        "https://www.timeanddate.com/calendar/months/"
+      ],
+      "ordered": [
+        {
+          "name": "January",
+          "value": 1
+        },
+        {
+          "name": "June",
+          "value": 6
+        },
+        {
+          "name": "August",
+          "value": 8
+        },
+        {
+          "name": "September",
+          "value": 9
+        },
+        {
+          "name": "November",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-018",
+      "source": "EVERYDAY",
+      "unit": "",
+      "sources": [
+        "https://www.timeanddate.com/calendar/months/"
+      ],
+      "ordered": [
+        {
+          "name": "January",
+          "value": 1
+        },
+        {
+          "name": "May",
+          "value": 5
+        },
+        {
+          "name": "June",
+          "value": 6
+        },
+        {
+          "name": "September",
+          "value": 9
+        },
+        {
+          "name": "December",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-019",
+      "source": "EVERYDAY",
+      "unit": "",
+      "sources": [
+        "https://www.timeanddate.com/calendar/months/"
+      ],
+      "ordered": [
+        {
+          "name": "February",
+          "value": 2
+        },
+        {
+          "name": "June",
+          "value": 6
+        },
+        {
+          "name": "August",
+          "value": 8
+        },
+        {
+          "name": "September",
+          "value": 9
+        },
+        {
+          "name": "October",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-020",
+      "source": "EVERYDAY",
+      "unit": "",
+      "sources": [
+        "https://www.timeanddate.com/calendar/months/"
+      ],
+      "ordered": [
+        {
+          "name": "January",
+          "value": 1
+        },
+        {
+          "name": "April",
+          "value": 4
+        },
+        {
+          "name": "June",
+          "value": 6
+        },
+        {
+          "name": "August",
+          "value": 8
+        },
+        {
+          "name": "September",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-021",
+      "source": "EVERYDAY",
+      "unit": "seconds",
+      "sources": [
+        "https://www.bipm.org/en/publications/si-brochure"
+      ],
+      "ordered": [
+        {
+          "name": "One second",
+          "value": 1
+        },
+        {
+          "name": "Quarter of an hour",
+          "value": 900
+        },
+        {
+          "name": "Half an hour",
+          "value": 1800
+        },
+        {
+          "name": "One week",
+          "value": 604800
+        },
+        {
+          "name": "One fortnight",
+          "value": 1209600
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-022",
+      "source": "EVERYDAY",
+      "unit": "seconds",
+      "sources": [
+        "https://www.bipm.org/en/publications/si-brochure"
+      ],
+      "ordered": [
+        {
+          "name": "One minute",
+          "value": 60
+        },
+        {
+          "name": "Half an hour",
+          "value": 1800
+        },
+        {
+          "name": "One hour",
+          "value": 3600
+        },
+        {
+          "name": "One week",
+          "value": 604800
+        },
+        {
+          "name": "One fortnight",
+          "value": 1209600
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-023",
+      "source": "EVERYDAY",
+      "unit": "seconds",
+      "sources": [
+        "https://www.bipm.org/en/publications/si-brochure"
+      ],
+      "ordered": [
+        {
+          "name": "One second",
+          "value": 1
+        },
+        {
+          "name": "Quarter of an hour",
+          "value": 900
+        },
+        {
+          "name": "Half an hour",
+          "value": 1800
+        },
+        {
+          "name": "One hour",
+          "value": 3600
+        },
+        {
+          "name": "One fortnight",
+          "value": 1209600
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-024",
+      "source": "EVERYDAY",
+      "unit": "seconds",
+      "sources": [
+        "https://www.bipm.org/en/publications/si-brochure"
+      ],
+      "ordered": [
+        {
+          "name": "One second",
+          "value": 1
+        },
+        {
+          "name": "One minute",
+          "value": 60
+        },
+        {
+          "name": "One day",
+          "value": 86400
+        },
+        {
+          "name": "One fortnight",
+          "value": 1209600
+        },
+        {
+          "name": "One 365-day year",
+          "value": 31536000
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-025",
+      "source": "EVERYDAY",
+      "unit": "seconds",
+      "sources": [
+        "https://www.bipm.org/en/publications/si-brochure"
+      ],
+      "ordered": [
+        {
+          "name": "One second",
+          "value": 1
+        },
+        {
+          "name": "Half an hour",
+          "value": 1800
+        },
+        {
+          "name": "One hour",
+          "value": 3600
+        },
+        {
+          "name": "One week",
+          "value": 604800
+        },
+        {
+          "name": "One 365-day year",
+          "value": 31536000
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-026",
+      "source": "EVERYDAY",
+      "unit": "seconds",
+      "sources": [
+        "https://www.bipm.org/en/publications/si-brochure"
+      ],
+      "ordered": [
+        {
+          "name": "One second",
+          "value": 1
+        },
+        {
+          "name": "One minute",
+          "value": 60
+        },
+        {
+          "name": "Quarter of an hour",
+          "value": 900
+        },
+        {
+          "name": "One hour",
+          "value": 3600
+        },
+        {
+          "name": "One 365-day year",
+          "value": 31536000
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-027",
+      "source": "EVERYDAY",
+      "unit": "seconds",
+      "sources": [
+        "https://www.bipm.org/en/publications/si-brochure"
+      ],
+      "ordered": [
+        {
+          "name": "One second",
+          "value": 1
+        },
+        {
+          "name": "Quarter of an hour",
+          "value": 900
+        },
+        {
+          "name": "One hour",
+          "value": 3600
+        },
+        {
+          "name": "One day",
+          "value": 86400
+        },
+        {
+          "name": "One 365-day year",
+          "value": 31536000
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-028",
+      "source": "EVERYDAY",
+      "unit": "seconds",
+      "sources": [
+        "https://www.bipm.org/en/publications/si-brochure"
+      ],
+      "ordered": [
+        {
+          "name": "One second",
+          "value": 1
+        },
+        {
+          "name": "One minute",
+          "value": 60
+        },
+        {
+          "name": "Half an hour",
+          "value": 1800
+        },
+        {
+          "name": "One hour",
+          "value": 3600
+        },
+        {
+          "name": "One fortnight",
+          "value": 1209600
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-029",
+      "source": "EVERYDAY",
+      "unit": "seconds",
+      "sources": [
+        "https://www.bipm.org/en/publications/si-brochure"
+      ],
+      "ordered": [
+        {
+          "name": "One second",
+          "value": 1
+        },
+        {
+          "name": "Half an hour",
+          "value": 1800
+        },
+        {
+          "name": "One day",
+          "value": 86400
+        },
+        {
+          "name": "One week",
+          "value": 604800
+        },
+        {
+          "name": "One fortnight",
+          "value": 1209600
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-030",
+      "source": "EVERYDAY",
+      "unit": "seconds",
+      "sources": [
+        "https://www.bipm.org/en/publications/si-brochure"
+      ],
+      "ordered": [
+        {
+          "name": "One second",
+          "value": 1
+        },
+        {
+          "name": "Quarter of an hour",
+          "value": 900
+        },
+        {
+          "name": "One hour",
+          "value": 3600
+        },
+        {
+          "name": "One day",
+          "value": 86400
+        },
+        {
+          "name": "One week",
+          "value": 604800
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-031",
+      "source": "EVERYDAY",
+      "unit": "seconds",
+      "sources": [
+        "https://www.bipm.org/en/publications/si-brochure"
+      ],
+      "ordered": [
+        {
+          "name": "One minute",
+          "value": 60
+        },
+        {
+          "name": "Quarter of an hour",
+          "value": 900
+        },
+        {
+          "name": "One day",
+          "value": 86400
+        },
+        {
+          "name": "One week",
+          "value": 604800
+        },
+        {
+          "name": "One 365-day year",
+          "value": 31536000
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-032",
+      "source": "EVERYDAY",
+      "unit": "seconds",
+      "sources": [
+        "https://www.bipm.org/en/publications/si-brochure"
+      ],
+      "ordered": [
+        {
+          "name": "One minute",
+          "value": 60
+        },
+        {
+          "name": "Quarter of an hour",
+          "value": 900
+        },
+        {
+          "name": "Half an hour",
+          "value": 1800
+        },
+        {
+          "name": "One hour",
+          "value": 3600
+        },
+        {
+          "name": "One week",
+          "value": 604800
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-001",
+      "source": "SCIENCE",
+      "unit": "(planet from the Sun)",
+      "sources": [
+        "https://science.nasa.gov/solar-system/planets/"
+      ],
+      "ordered": [
+        {
+          "name": "Venus",
+          "value": 2
+        },
+        {
+          "name": "Earth",
+          "value": 3
+        },
+        {
+          "name": "Mars",
+          "value": 4
+        },
+        {
+          "name": "Jupiter",
+          "value": 5
+        },
+        {
+          "name": "Uranus",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-002",
+      "source": "SCIENCE",
+      "unit": "(planet from the Sun)",
+      "sources": [
+        "https://science.nasa.gov/solar-system/planets/"
+      ],
+      "ordered": [
+        {
+          "name": "Earth",
+          "value": 3
+        },
+        {
+          "name": "Jupiter",
+          "value": 5
+        },
+        {
+          "name": "Saturn",
+          "value": 6
+        },
+        {
+          "name": "Uranus",
+          "value": 7
+        },
+        {
+          "name": "Neptune",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-003",
+      "source": "SCIENCE",
+      "unit": "(planet from the Sun)",
+      "sources": [
+        "https://science.nasa.gov/solar-system/planets/"
+      ],
+      "ordered": [
+        {
+          "name": "Mercury",
+          "value": 1
+        },
+        {
+          "name": "Earth",
+          "value": 3
+        },
+        {
+          "name": "Jupiter",
+          "value": 5
+        },
+        {
+          "name": "Uranus",
+          "value": 7
+        },
+        {
+          "name": "Neptune",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-004",
+      "source": "SCIENCE",
+      "unit": "(planet from the Sun)",
+      "sources": [
+        "https://science.nasa.gov/solar-system/planets/"
+      ],
+      "ordered": [
+        {
+          "name": "Mercury",
+          "value": 1
+        },
+        {
+          "name": "Venus",
+          "value": 2
+        },
+        {
+          "name": "Saturn",
+          "value": 6
+        },
+        {
+          "name": "Uranus",
+          "value": 7
+        },
+        {
+          "name": "Neptune",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-005",
+      "source": "SCIENCE",
+      "unit": "(planet from the Sun)",
+      "sources": [
+        "https://science.nasa.gov/solar-system/planets/"
+      ],
+      "ordered": [
+        {
+          "name": "Mercury",
+          "value": 1
+        },
+        {
+          "name": "Mars",
+          "value": 4
+        },
+        {
+          "name": "Jupiter",
+          "value": 5
+        },
+        {
+          "name": "Saturn",
+          "value": 6
+        },
+        {
+          "name": "Uranus",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-006",
+      "source": "SCIENCE",
+      "unit": "(planet from the Sun)",
+      "sources": [
+        "https://science.nasa.gov/solar-system/planets/"
+      ],
+      "ordered": [
+        {
+          "name": "Mercury",
+          "value": 1
+        },
+        {
+          "name": "Venus",
+          "value": 2
+        },
+        {
+          "name": "Earth",
+          "value": 3
+        },
+        {
+          "name": "Jupiter",
+          "value": 5
+        },
+        {
+          "name": "Saturn",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-007",
+      "source": "SCIENCE",
+      "unit": "(planet from the Sun)",
+      "sources": [
+        "https://science.nasa.gov/solar-system/planets/"
+      ],
+      "ordered": [
+        {
+          "name": "Mercury",
+          "value": 1
+        },
+        {
+          "name": "Mars",
+          "value": 4
+        },
+        {
+          "name": "Saturn",
+          "value": 6
+        },
+        {
+          "name": "Uranus",
+          "value": 7
+        },
+        {
+          "name": "Neptune",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-008",
+      "source": "SCIENCE",
+      "unit": "(planet from the Sun)",
+      "sources": [
+        "https://science.nasa.gov/solar-system/planets/"
+      ],
+      "ordered": [
+        {
+          "name": "Venus",
+          "value": 2
+        },
+        {
+          "name": "Mars",
+          "value": 4
+        },
+        {
+          "name": "Jupiter",
+          "value": 5
+        },
+        {
+          "name": "Saturn",
+          "value": 6
+        },
+        {
+          "name": "Uranus",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-009",
+      "source": "SCIENCE",
+      "unit": "(planet from the Sun)",
+      "sources": [
+        "https://science.nasa.gov/solar-system/planets/"
+      ],
+      "ordered": [
+        {
+          "name": "Mercury",
+          "value": 1
+        },
+        {
+          "name": "Venus",
+          "value": 2
+        },
+        {
+          "name": "Jupiter",
+          "value": 5
+        },
+        {
+          "name": "Saturn",
+          "value": 6
+        },
+        {
+          "name": "Uranus",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-010",
+      "source": "SCIENCE",
+      "unit": "(planet from the Sun)",
+      "sources": [
+        "https://science.nasa.gov/solar-system/planets/"
+      ],
+      "ordered": [
+        {
+          "name": "Mercury",
+          "value": 1
+        },
+        {
+          "name": "Venus",
+          "value": 2
+        },
+        {
+          "name": "Mars",
+          "value": 4
+        },
+        {
+          "name": "Saturn",
+          "value": 6
+        },
+        {
+          "name": "Neptune",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-011",
+      "source": "SCIENCE",
+      "unit": "(planet from the Sun)",
+      "sources": [
+        "https://science.nasa.gov/solar-system/planets/"
+      ],
+      "ordered": [
+        {
+          "name": "Mercury",
+          "value": 1
+        },
+        {
+          "name": "Earth",
+          "value": 3
+        },
+        {
+          "name": "Saturn",
+          "value": 6
+        },
+        {
+          "name": "Uranus",
+          "value": 7
+        },
+        {
+          "name": "Neptune",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-012",
+      "source": "SCIENCE",
+      "unit": "(planet from the Sun)",
+      "sources": [
+        "https://science.nasa.gov/solar-system/planets/"
+      ],
+      "ordered": [
+        {
+          "name": "Mercury",
+          "value": 1
+        },
+        {
+          "name": "Earth",
+          "value": 3
+        },
+        {
+          "name": "Mars",
+          "value": 4
+        },
+        {
+          "name": "Saturn",
+          "value": 6
+        },
+        {
+          "name": "Neptune",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-013",
+      "source": "SCIENCE",
+      "unit": "(planet from the Sun)",
+      "sources": [
+        "https://science.nasa.gov/solar-system/planets/"
+      ],
+      "ordered": [
+        {
+          "name": "Mercury",
+          "value": 1
+        },
+        {
+          "name": "Earth",
+          "value": 3
+        },
+        {
+          "name": "Mars",
+          "value": 4
+        },
+        {
+          "name": "Jupiter",
+          "value": 5
+        },
+        {
+          "name": "Uranus",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-014",
+      "source": "SCIENCE",
+      "unit": "(planet from the Sun)",
+      "sources": [
+        "https://science.nasa.gov/solar-system/planets/"
+      ],
+      "ordered": [
+        {
+          "name": "Mercury",
+          "value": 1
+        },
+        {
+          "name": "Venus",
+          "value": 2
+        },
+        {
+          "name": "Mars",
+          "value": 4
+        },
+        {
+          "name": "Jupiter",
+          "value": 5
+        },
+        {
+          "name": "Uranus",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-015",
+      "source": "SCIENCE",
+      "unit": "(planet from the Sun)",
+      "sources": [
+        "https://science.nasa.gov/solar-system/planets/"
+      ],
+      "ordered": [
+        {
+          "name": "Venus",
+          "value": 2
+        },
+        {
+          "name": "Mars",
+          "value": 4
+        },
+        {
+          "name": "Jupiter",
+          "value": 5
+        },
+        {
+          "name": "Saturn",
+          "value": 6
+        },
+        {
+          "name": "Neptune",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-016",
+      "source": "SCIENCE",
+      "unit": "(planet from the Sun)",
+      "sources": [
+        "https://science.nasa.gov/solar-system/planets/"
+      ],
+      "ordered": [
+        {
+          "name": "Mercury",
+          "value": 1
+        },
+        {
+          "name": "Venus",
+          "value": 2
+        },
+        {
+          "name": "Mars",
+          "value": 4
+        },
+        {
+          "name": "Uranus",
+          "value": 7
+        },
+        {
+          "name": "Neptune",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-017",
+      "source": "SCIENCE",
+      "unit": "metres",
+      "sources": [
+        "https://www.bipm.org/en/measurement-units/si-prefixes"
+      ],
+      "ordered": [
+        {
+          "name": "One millimetre",
+          "value": 0.001
+        },
+        {
+          "name": "One metre",
+          "value": 1
+        },
+        {
+          "name": "One hundred metres",
+          "value": 100
+        },
+        {
+          "name": "One kilometre",
+          "value": 1000
+        },
+        {
+          "name": "Five kilometres",
+          "value": 5000
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-018",
+      "source": "SCIENCE",
+      "unit": "metres",
+      "sources": [
+        "https://www.bipm.org/en/measurement-units/si-prefixes"
+      ],
+      "ordered": [
+        {
+          "name": "Five centimetres",
+          "value": 0.05
+        },
+        {
+          "name": "Ten centimetres",
+          "value": 0.1
+        },
+        {
+          "name": "Half a metre",
+          "value": 0.5
+        },
+        {
+          "name": "One metre",
+          "value": 1
+        },
+        {
+          "name": "One hundred metres",
+          "value": 100
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-019",
+      "source": "SCIENCE",
+      "unit": "metres",
+      "sources": [
+        "https://www.bipm.org/en/measurement-units/si-prefixes"
+      ],
+      "ordered": [
+        {
+          "name": "One millimetre",
+          "value": 0.001
+        },
+        {
+          "name": "Five centimetres",
+          "value": 0.05
+        },
+        {
+          "name": "Ten centimetres",
+          "value": 0.1
+        },
+        {
+          "name": "One metre",
+          "value": 1
+        },
+        {
+          "name": "One kilometre",
+          "value": 1000
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-020",
+      "source": "SCIENCE",
+      "unit": "metres",
+      "sources": [
+        "https://www.bipm.org/en/measurement-units/si-prefixes"
+      ],
+      "ordered": [
+        {
+          "name": "One millimetre",
+          "value": 0.001
+        },
+        {
+          "name": "Five centimetres",
+          "value": 0.05
+        },
+        {
+          "name": "Ten centimetres",
+          "value": 0.1
+        },
+        {
+          "name": "Half a metre",
+          "value": 0.5
+        },
+        {
+          "name": "One metre",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-021",
+      "source": "SCIENCE",
+      "unit": "metres",
+      "sources": [
+        "https://www.bipm.org/en/measurement-units/si-prefixes"
+      ],
+      "ordered": [
+        {
+          "name": "One millimetre",
+          "value": 0.001
+        },
+        {
+          "name": "Ten centimetres",
+          "value": 0.1
+        },
+        {
+          "name": "One hundred metres",
+          "value": 100
+        },
+        {
+          "name": "One kilometre",
+          "value": 1000
+        },
+        {
+          "name": "Five kilometres",
+          "value": 5000
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-022",
+      "source": "SCIENCE",
+      "unit": "metres",
+      "sources": [
+        "https://www.bipm.org/en/measurement-units/si-prefixes"
+      ],
+      "ordered": [
+        {
+          "name": "One millimetre",
+          "value": 0.001
+        },
+        {
+          "name": "Ten centimetres",
+          "value": 0.1
+        },
+        {
+          "name": "Half a metre",
+          "value": 0.5
+        },
+        {
+          "name": "One kilometre",
+          "value": 1000
+        },
+        {
+          "name": "Five kilometres",
+          "value": 5000
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-023",
+      "source": "SCIENCE",
+      "unit": "metres",
+      "sources": [
+        "https://www.bipm.org/en/measurement-units/si-prefixes"
+      ],
+      "ordered": [
+        {
+          "name": "Five centimetres",
+          "value": 0.05
+        },
+        {
+          "name": "One metre",
+          "value": 1
+        },
+        {
+          "name": "One hundred metres",
+          "value": 100
+        },
+        {
+          "name": "One kilometre",
+          "value": 1000
+        },
+        {
+          "name": "Five kilometres",
+          "value": 5000
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-024",
+      "source": "SCIENCE",
+      "unit": "metres",
+      "sources": [
+        "https://www.bipm.org/en/measurement-units/si-prefixes"
+      ],
+      "ordered": [
+        {
+          "name": "One millimetre",
+          "value": 0.001
+        },
+        {
+          "name": "Half a metre",
+          "value": 0.5
+        },
+        {
+          "name": "One metre",
+          "value": 1
+        },
+        {
+          "name": "One hundred metres",
+          "value": 100
+        },
+        {
+          "name": "One kilometre",
+          "value": 1000
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-025",
+      "source": "TECH",
+      "unit": "bytes",
+      "sources": [
+        "https://www.nist.gov/pml/owm/metric-si-prefixes"
+      ],
+      "ordered": [
+        {
+          "name": "One byte",
+          "value": 1
+        },
+        {
+          "name": "One kilobyte",
+          "value": 1000
+        },
+        {
+          "name": "One megabyte",
+          "value": 1000000
+        },
+        {
+          "name": "Two gigabytes",
+          "value": 2000000000
+        },
+        {
+          "name": "One terabyte",
+          "value": 1000000000000
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-026",
+      "source": "TECH",
+      "unit": "bytes",
+      "sources": [
+        "https://www.nist.gov/pml/owm/metric-si-prefixes"
+      ],
+      "ordered": [
+        {
+          "name": "One byte",
+          "value": 1
+        },
+        {
+          "name": "One kilobyte",
+          "value": 1000
+        },
+        {
+          "name": "One gigabyte",
+          "value": 1000000000
+        },
+        {
+          "name": "Two gigabytes",
+          "value": 2000000000
+        },
+        {
+          "name": "One terabyte",
+          "value": 1000000000000
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-027",
+      "source": "TECH",
+      "unit": "bytes",
+      "sources": [
+        "https://www.nist.gov/pml/owm/metric-si-prefixes"
+      ],
+      "ordered": [
+        {
+          "name": "One byte",
+          "value": 1
+        },
+        {
+          "name": "One megabyte",
+          "value": 1000000
+        },
+        {
+          "name": "One gigabyte",
+          "value": 1000000000
+        },
+        {
+          "name": "Two gigabytes",
+          "value": 2000000000
+        },
+        {
+          "name": "One terabyte",
+          "value": 1000000000000
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-028",
+      "source": "TECH",
+      "unit": "bytes",
+      "sources": [
+        "https://www.nist.gov/pml/owm/metric-si-prefixes"
+      ],
+      "ordered": [
+        {
+          "name": "One byte",
+          "value": 1
+        },
+        {
+          "name": "One kilobyte",
+          "value": 1000
+        },
+        {
+          "name": "One megabyte",
+          "value": 1000000
+        },
+        {
+          "name": "One gigabyte",
+          "value": 1000000000
+        },
+        {
+          "name": "One terabyte",
+          "value": 1000000000000
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-029",
+      "source": "TECH",
+      "unit": "bytes",
+      "sources": [
+        "https://www.nist.gov/pml/owm/metric-si-prefixes"
+      ],
+      "ordered": [
+        {
+          "name": "One kilobyte",
+          "value": 1000
+        },
+        {
+          "name": "One megabyte",
+          "value": 1000000
+        },
+        {
+          "name": "One gigabyte",
+          "value": 1000000000
+        },
+        {
+          "name": "Two gigabytes",
+          "value": 2000000000
+        },
+        {
+          "name": "One terabyte",
+          "value": 1000000000000
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-030",
+      "source": "TECH",
+      "unit": "bytes",
+      "sources": [
+        "https://www.nist.gov/pml/owm/metric-si-prefixes"
+      ],
+      "ordered": [
+        {
+          "name": "One byte",
+          "value": 1
+        },
+        {
+          "name": "One kilobyte",
+          "value": 1000
+        },
+        {
+          "name": "One megabyte",
+          "value": 1000000
+        },
+        {
+          "name": "One gigabyte",
+          "value": 1000000000
+        },
+        {
+          "name": "Two gigabytes",
+          "value": 2000000000
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-031",
+      "source": "SCIENCE",
+      "unit": "grams",
+      "sources": [
+        "https://www.bipm.org/en/measurement-units/si-prefixes"
+      ],
+      "ordered": [
+        {
+          "name": "One gram",
+          "value": 1
+        },
+        {
+          "name": "Two hundred grams",
+          "value": 200
+        },
+        {
+          "name": "Five hundred grams",
+          "value": 500
+        },
+        {
+          "name": "One kilogram",
+          "value": 1000
+        },
+        {
+          "name": "Two kilograms",
+          "value": 2000
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-032",
+      "source": "SCIENCE",
+      "unit": "grams",
+      "sources": [
+        "https://www.bipm.org/en/measurement-units/si-prefixes"
+      ],
+      "ordered": [
+        {
+          "name": "One gram",
+          "value": 1
+        },
+        {
+          "name": "Fifty grams",
+          "value": 50
+        },
+        {
+          "name": "Two hundred grams",
+          "value": 200
+        },
+        {
+          "name": "Five hundred grams",
+          "value": 500
+        },
+        {
+          "name": "One kilogram",
+          "value": 1000
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-001",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "Jaws",
+          "value": 1975
+        },
+        {
+          "name": "Back to the Future",
+          "value": 1985
+        },
+        {
+          "name": "Jurassic Park",
+          "value": 1993
+        },
+        {
+          "name": "The Matrix",
+          "value": 1999
+        },
+        {
+          "name": "The Incredibles",
+          "value": 2004
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-002",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "Back to the Future",
+          "value": 1985
+        },
+        {
+          "name": "Finding Nemo",
+          "value": 2003
+        },
+        {
+          "name": "Ratatouille",
+          "value": 2007
+        },
+        {
+          "name": "The Dark Knight",
+          "value": 2008
+        },
+        {
+          "name": "Up",
+          "value": 2009
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-003",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "Back to the Future",
+          "value": 1985
+        },
+        {
+          "name": "Jurassic Park",
+          "value": 1993
+        },
+        {
+          "name": "Toy Story",
+          "value": 1995
+        },
+        {
+          "name": "Titanic",
+          "value": 1997
+        },
+        {
+          "name": "Up",
+          "value": 2009
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-004",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "The Truman Show",
+          "value": 1998
+        },
+        {
+          "name": "The Matrix",
+          "value": 1999
+        },
+        {
+          "name": "Shrek",
+          "value": 2001
+        },
+        {
+          "name": "The Dark Knight",
+          "value": 2008
+        },
+        {
+          "name": "Up",
+          "value": 2009
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-005",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "Back to the Future",
+          "value": 1985
+        },
+        {
+          "name": "Jurassic Park",
+          "value": 1993
+        },
+        {
+          "name": "The Lion King",
+          "value": 1994
+        },
+        {
+          "name": "Toy Story",
+          "value": 1995
+        },
+        {
+          "name": "Up",
+          "value": 2009
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-006",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "Back to the Future",
+          "value": 1985
+        },
+        {
+          "name": "Jurassic Park",
+          "value": 1993
+        },
+        {
+          "name": "Monsters, Inc.",
+          "value": 2001
+        },
+        {
+          "name": "Ratatouille",
+          "value": 2007
+        },
+        {
+          "name": "Up",
+          "value": 2009
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-007",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "Jaws",
+          "value": 1975
+        },
+        {
+          "name": "Monsters, Inc.",
+          "value": 2001
+        },
+        {
+          "name": "Finding Nemo",
+          "value": 2003
+        },
+        {
+          "name": "Ratatouille",
+          "value": 2007
+        },
+        {
+          "name": "Up",
+          "value": 2009
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-008",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "Jaws",
+          "value": 1975
+        },
+        {
+          "name": "Titanic",
+          "value": 1997
+        },
+        {
+          "name": "The Truman Show",
+          "value": 1998
+        },
+        {
+          "name": "The Matrix",
+          "value": 1999
+        },
+        {
+          "name": "Shrek",
+          "value": 2001
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-009",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "Back to the Future",
+          "value": 1985
+        },
+        {
+          "name": "Jurassic Park",
+          "value": 1993
+        },
+        {
+          "name": "The Truman Show",
+          "value": 1998
+        },
+        {
+          "name": "Monsters, Inc.",
+          "value": 2001
+        },
+        {
+          "name": "The Dark Knight",
+          "value": 2008
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-010",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "Jaws",
+          "value": 1975
+        },
+        {
+          "name": "The Matrix",
+          "value": 1999
+        },
+        {
+          "name": "Monsters, Inc.",
+          "value": 2001
+        },
+        {
+          "name": "The Incredibles",
+          "value": 2004
+        },
+        {
+          "name": "Up",
+          "value": 2009
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-011",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "The Lion King",
+          "value": 1994
+        },
+        {
+          "name": "Titanic",
+          "value": 1997
+        },
+        {
+          "name": "The Matrix",
+          "value": 1999
+        },
+        {
+          "name": "The Dark Knight",
+          "value": 2008
+        },
+        {
+          "name": "Up",
+          "value": 2009
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-012",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "Titanic",
+          "value": 1997
+        },
+        {
+          "name": "The Matrix",
+          "value": 1999
+        },
+        {
+          "name": "Monsters, Inc.",
+          "value": 2001
+        },
+        {
+          "name": "The Incredibles",
+          "value": 2004
+        },
+        {
+          "name": "Up",
+          "value": 2009
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-013",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "Toy Story",
+          "value": 1995
+        },
+        {
+          "name": "Titanic",
+          "value": 1997
+        },
+        {
+          "name": "Shrek",
+          "value": 2001
+        },
+        {
+          "name": "The Incredibles",
+          "value": 2004
+        },
+        {
+          "name": "Up",
+          "value": 2009
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-014",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "Back to the Future",
+          "value": 1985
+        },
+        {
+          "name": "The Matrix",
+          "value": 1999
+        },
+        {
+          "name": "Monsters, Inc.",
+          "value": 2001
+        },
+        {
+          "name": "The Incredibles",
+          "value": 2004
+        },
+        {
+          "name": "The Dark Knight",
+          "value": 2008
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-015",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "Jurassic Park",
+          "value": 1993
+        },
+        {
+          "name": "Titanic",
+          "value": 1997
+        },
+        {
+          "name": "The Truman Show",
+          "value": 1998
+        },
+        {
+          "name": "Monsters, Inc.",
+          "value": 2001
+        },
+        {
+          "name": "Finding Nemo",
+          "value": 2003
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-016",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "Jaws",
+          "value": 1975
+        },
+        {
+          "name": "Back to the Future",
+          "value": 1985
+        },
+        {
+          "name": "Toy Story",
+          "value": 1995
+        },
+        {
+          "name": "The Incredibles",
+          "value": 2004
+        },
+        {
+          "name": "The Dark Knight",
+          "value": 2008
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-017",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "Jurassic Park",
+          "value": 1993
+        },
+        {
+          "name": "The Lion King",
+          "value": 1994
+        },
+        {
+          "name": "Titanic",
+          "value": 1997
+        },
+        {
+          "name": "Shrek",
+          "value": 2001
+        },
+        {
+          "name": "The Dark Knight",
+          "value": 2008
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-018",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "Jurassic Park",
+          "value": 1993
+        },
+        {
+          "name": "The Truman Show",
+          "value": 1998
+        },
+        {
+          "name": "The Incredibles",
+          "value": 2004
+        },
+        {
+          "name": "Ratatouille",
+          "value": 2007
+        },
+        {
+          "name": "Up",
+          "value": 2009
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-019",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "The Terminator",
+          "value": 1984
+        },
+        {
+          "name": "Titanic",
+          "value": 1997
+        },
+        {
+          "name": "The Matrix",
+          "value": 1999
+        },
+        {
+          "name": "Finding Nemo",
+          "value": 2003
+        },
+        {
+          "name": "Ratatouille",
+          "value": 2007
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-020",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "The Terminator",
+          "value": 1984
+        },
+        {
+          "name": "Titanic",
+          "value": 1997
+        },
+        {
+          "name": "The Matrix",
+          "value": 1999
+        },
+        {
+          "name": "Shrek",
+          "value": 2001
+        },
+        {
+          "name": "The Dark Knight",
+          "value": 2008
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-021",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "Back to the Future",
+          "value": 1985
+        },
+        {
+          "name": "Jurassic Park",
+          "value": 1993
+        },
+        {
+          "name": "The Truman Show",
+          "value": 1998
+        },
+        {
+          "name": "The Matrix",
+          "value": 1999
+        },
+        {
+          "name": "Ratatouille",
+          "value": 2007
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-022",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "Jaws",
+          "value": 1975
+        },
+        {
+          "name": "Jurassic Park",
+          "value": 1993
+        },
+        {
+          "name": "Titanic",
+          "value": 1997
+        },
+        {
+          "name": "The Matrix",
+          "value": 1999
+        },
+        {
+          "name": "Shrek",
+          "value": 2001
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-023",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "The Terminator",
+          "value": 1984
+        },
+        {
+          "name": "The Lion King",
+          "value": 1994
+        },
+        {
+          "name": "Shrek",
+          "value": 2001
+        },
+        {
+          "name": "The Incredibles",
+          "value": 2004
+        },
+        {
+          "name": "Up",
+          "value": 2009
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-024",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "The Terminator",
+          "value": 1984
+        },
+        {
+          "name": "Back to the Future",
+          "value": 1985
+        },
+        {
+          "name": "Toy Story",
+          "value": 1995
+        },
+        {
+          "name": "Shrek",
+          "value": 2001
+        },
+        {
+          "name": "The Dark Knight",
+          "value": 2008
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-025",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "The Terminator",
+          "value": 1984
+        },
+        {
+          "name": "Back to the Future",
+          "value": 1985
+        },
+        {
+          "name": "Ratatouille",
+          "value": 2007
+        },
+        {
+          "name": "The Dark Knight",
+          "value": 2008
+        },
+        {
+          "name": "Up",
+          "value": 2009
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-026",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "Jurassic Park",
+          "value": 1993
+        },
+        {
+          "name": "The Lion King",
+          "value": 1994
+        },
+        {
+          "name": "Monsters, Inc.",
+          "value": 2001
+        },
+        {
+          "name": "Finding Nemo",
+          "value": 2003
+        },
+        {
+          "name": "Ratatouille",
+          "value": 2007
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-027",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "Back to the Future",
+          "value": 1985
+        },
+        {
+          "name": "Toy Story",
+          "value": 1995
+        },
+        {
+          "name": "Titanic",
+          "value": 1997
+        },
+        {
+          "name": "Monsters, Inc.",
+          "value": 2001
+        },
+        {
+          "name": "Up",
+          "value": 2009
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-028",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "The Terminator",
+          "value": 1984
+        },
+        {
+          "name": "Jurassic Park",
+          "value": 1993
+        },
+        {
+          "name": "The Lion King",
+          "value": 1994
+        },
+        {
+          "name": "The Truman Show",
+          "value": 1998
+        },
+        {
+          "name": "The Dark Knight",
+          "value": 2008
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-029",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "Jurassic Park",
+          "value": 1993
+        },
+        {
+          "name": "The Matrix",
+          "value": 1999
+        },
+        {
+          "name": "Monsters, Inc.",
+          "value": 2001
+        },
+        {
+          "name": "Ratatouille",
+          "value": 2007
+        },
+        {
+          "name": "Up",
+          "value": 2009
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-030",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "The Terminator",
+          "value": 1984
+        },
+        {
+          "name": "Back to the Future",
+          "value": 1985
+        },
+        {
+          "name": "Toy Story",
+          "value": 1995
+        },
+        {
+          "name": "Titanic",
+          "value": 1997
+        },
+        {
+          "name": "Ratatouille",
+          "value": 2007
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-031",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "Titanic",
+          "value": 1997
+        },
+        {
+          "name": "The Truman Show",
+          "value": 1998
+        },
+        {
+          "name": "The Matrix",
+          "value": 1999
+        },
+        {
+          "name": "Monsters, Inc.",
+          "value": 2001
+        },
+        {
+          "name": "Up",
+          "value": 2009
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-2-032",
+      "source": "SCREEN TIME",
+      "unit": "",
+      "sources": [
+        "https://www.afi.com/afi-catalog/"
+      ],
+      "ordered": [
+        {
+          "name": "The Lion King",
+          "value": 1994
+        },
+        {
+          "name": "Toy Story",
+          "value": 1995
+        },
+        {
+          "name": "Monsters, Inc.",
+          "value": 2001
+        },
+        {
+          "name": "Finding Nemo",
+          "value": 2003
+        },
+        {
+          "name": "Up",
+          "value": 2009
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-001",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "18 − 11",
+          "value": 7
+        },
+        {
+          "name": "2 + 7",
+          "value": 9
+        },
+        {
+          "name": "16 − 5",
+          "value": 11
+        },
+        {
+          "name": "9 + 4",
+          "value": 13
+        },
+        {
+          "name": "7 + 7",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-002",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "18 − 11",
+          "value": 7
+        },
+        {
+          "name": "3 + 5",
+          "value": 8
+        },
+        {
+          "name": "22 − 11",
+          "value": 11
+        },
+        {
+          "name": "10 + 3",
+          "value": 13
+        },
+        {
+          "name": "12 + 11",
+          "value": 23
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-003",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "13 − 7",
+          "value": 6
+        },
+        {
+          "name": "17 − 10",
+          "value": 7
+        },
+        {
+          "name": "2 + 7",
+          "value": 9
+        },
+        {
+          "name": "9 + 6",
+          "value": 15
+        },
+        {
+          "name": "12 + 6",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-004",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "12 − 7",
+          "value": 5
+        },
+        {
+          "name": "3 + 3",
+          "value": 6
+        },
+        {
+          "name": "4 + 4",
+          "value": 8
+        },
+        {
+          "name": "7 + 2",
+          "value": 9
+        },
+        {
+          "name": "12 + 10",
+          "value": 22
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-005",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "11 − 7",
+          "value": 4
+        },
+        {
+          "name": "3 + 3",
+          "value": 6
+        },
+        {
+          "name": "6 + 5",
+          "value": 11
+        },
+        {
+          "name": "8 + 6",
+          "value": 14
+        },
+        {
+          "name": "12 + 4",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-006",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "16 − 8",
+          "value": 8
+        },
+        {
+          "name": "21 − 10",
+          "value": 11
+        },
+        {
+          "name": "3 + 9",
+          "value": 12
+        },
+        {
+          "name": "5 + 8",
+          "value": 13
+        },
+        {
+          "name": "7 + 10",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-007",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "13 − 7",
+          "value": 6
+        },
+        {
+          "name": "21 − 11",
+          "value": 10
+        },
+        {
+          "name": "19 − 8",
+          "value": 11
+        },
+        {
+          "name": "10 + 6",
+          "value": 16
+        },
+        {
+          "name": "10 + 7",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-008",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "11 − 7",
+          "value": 4
+        },
+        {
+          "name": "17 − 10",
+          "value": 7
+        },
+        {
+          "name": "14 − 4",
+          "value": 10
+        },
+        {
+          "name": "8 + 11",
+          "value": 19
+        },
+        {
+          "name": "11 + 11",
+          "value": 22
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-009",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "12 − 10",
+          "value": 2
+        },
+        {
+          "name": "6 − 2",
+          "value": 4
+        },
+        {
+          "name": "10 − 2",
+          "value": 8
+        },
+        {
+          "name": "18 − 8",
+          "value": 10
+        },
+        {
+          "name": "5 + 11",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-010",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "9 − 7",
+          "value": 2
+        },
+        {
+          "name": "8 − 2",
+          "value": 6
+        },
+        {
+          "name": "12 − 4",
+          "value": 8
+        },
+        {
+          "name": "18 − 7",
+          "value": 11
+        },
+        {
+          "name": "8 + 7",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-011",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "8 − 6",
+          "value": 2
+        },
+        {
+          "name": "19 − 8",
+          "value": 11
+        },
+        {
+          "name": "10 + 5",
+          "value": 15
+        },
+        {
+          "name": "6 + 10",
+          "value": 16
+        },
+        {
+          "name": "10 + 9",
+          "value": 19
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-012",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "12 − 10",
+          "value": 2
+        },
+        {
+          "name": "14 − 8",
+          "value": 6
+        },
+        {
+          "name": "20 − 10",
+          "value": 10
+        },
+        {
+          "name": "2 + 10",
+          "value": 12
+        },
+        {
+          "name": "10 + 10",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-013",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "7 − 5",
+          "value": 2
+        },
+        {
+          "name": "13 − 6",
+          "value": 7
+        },
+        {
+          "name": "6 + 3",
+          "value": 9
+        },
+        {
+          "name": "4 + 7",
+          "value": 11
+        },
+        {
+          "name": "7 + 5",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-014",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "7 − 5",
+          "value": 2
+        },
+        {
+          "name": "15 − 11",
+          "value": 4
+        },
+        {
+          "name": "11 − 3",
+          "value": 8
+        },
+        {
+          "name": "2 + 8",
+          "value": 10
+        },
+        {
+          "name": "16 − 5",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-015",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "13 − 11",
+          "value": 2
+        },
+        {
+          "name": "13 − 7",
+          "value": 6
+        },
+        {
+          "name": "8 + 2",
+          "value": 10
+        },
+        {
+          "name": "7 + 4",
+          "value": 11
+        },
+        {
+          "name": "9 + 8",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-016",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "10 − 7",
+          "value": 3
+        },
+        {
+          "name": "6 − 2",
+          "value": 4
+        },
+        {
+          "name": "16 − 6",
+          "value": 10
+        },
+        {
+          "name": "22 − 11",
+          "value": 11
+        },
+        {
+          "name": "23 − 11",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-017",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "60 ÷ 10",
+          "value": 6
+        },
+        {
+          "name": "77 ÷ 11",
+          "value": 7
+        },
+        {
+          "name": "13 − 5",
+          "value": 8
+        },
+        {
+          "name": "20 − 10",
+          "value": 10
+        },
+        {
+          "name": "33 ÷ 3",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-018",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "16 ÷ 4",
+          "value": 4
+        },
+        {
+          "name": "16 − 9",
+          "value": 7
+        },
+        {
+          "name": "20 − 9",
+          "value": 11
+        },
+        {
+          "name": "4 + 8",
+          "value": 12
+        },
+        {
+          "name": "2 × 9",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-019",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "22 ÷ 11",
+          "value": 2
+        },
+        {
+          "name": "100 ÷ 10",
+          "value": 10
+        },
+        {
+          "name": "21 − 9",
+          "value": 12
+        },
+        {
+          "name": "9 × 6",
+          "value": 54
+        },
+        {
+          "name": "7 × 11",
+          "value": 77
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-020",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "7 − 3",
+          "value": 4
+        },
+        {
+          "name": "10 − 2",
+          "value": 8
+        },
+        {
+          "name": "20 ÷ 2",
+          "value": 10
+        },
+        {
+          "name": "7 + 8",
+          "value": 15
+        },
+        {
+          "name": "6 × 4",
+          "value": 24
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-021",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "4 − 2",
+          "value": 2
+        },
+        {
+          "name": "8 − 5",
+          "value": 3
+        },
+        {
+          "name": "24 ÷ 6",
+          "value": 4
+        },
+        {
+          "name": "6 × 2",
+          "value": 12
+        },
+        {
+          "name": "3 × 11",
+          "value": 33
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-022",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "10 ÷ 2",
+          "value": 5
+        },
+        {
+          "name": "2 + 10",
+          "value": 12
+        },
+        {
+          "name": "5 + 9",
+          "value": 14
+        },
+        {
+          "name": "3 × 7",
+          "value": 21
+        },
+        {
+          "name": "11 × 7",
+          "value": 77
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-023",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "10 − 8",
+          "value": 2
+        },
+        {
+          "name": "24 ÷ 6",
+          "value": 4
+        },
+        {
+          "name": "14 − 7",
+          "value": 7
+        },
+        {
+          "name": "9 + 10",
+          "value": 19
+        },
+        {
+          "name": "8 × 4",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-024",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "10 − 8",
+          "value": 2
+        },
+        {
+          "name": "63 ÷ 9",
+          "value": 7
+        },
+        {
+          "name": "100 ÷ 10",
+          "value": 10
+        },
+        {
+          "name": "5 + 11",
+          "value": 16
+        },
+        {
+          "name": "11 × 3",
+          "value": 33
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-025",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "12 − 8",
+          "value": 4
+        },
+        {
+          "name": "8 − 3",
+          "value": 5
+        },
+        {
+          "name": "12 − 2",
+          "value": 10
+        },
+        {
+          "name": "7 × 5",
+          "value": 35
+        },
+        {
+          "name": "11 × 8",
+          "value": 88
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-026",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "2 + 2",
+          "value": 4
+        },
+        {
+          "name": "55 ÷ 11",
+          "value": 5
+        },
+        {
+          "name": "48 ÷ 8",
+          "value": 6
+        },
+        {
+          "name": "88 ÷ 8",
+          "value": 11
+        },
+        {
+          "name": "2 × 11",
+          "value": 22
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-027",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "6 + 2",
+          "value": 8
+        },
+        {
+          "name": "4 + 8",
+          "value": 12
+        },
+        {
+          "name": "6 + 7",
+          "value": 13
+        },
+        {
+          "name": "12 × 3",
+          "value": 36
+        },
+        {
+          "name": "9 × 6",
+          "value": 54
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-028",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "9 − 5",
+          "value": 4
+        },
+        {
+          "name": "3 + 4",
+          "value": 7
+        },
+        {
+          "name": "88 ÷ 11",
+          "value": 8
+        },
+        {
+          "name": "110 ÷ 10",
+          "value": 11
+        },
+        {
+          "name": "2 × 10",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-029",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "12 ÷ 2",
+          "value": 6
+        },
+        {
+          "name": "13 − 6",
+          "value": 7
+        },
+        {
+          "name": "60 ÷ 5",
+          "value": 12
+        },
+        {
+          "name": "6 + 7",
+          "value": 13
+        },
+        {
+          "name": "10 × 2",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-030",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "9 − 3",
+          "value": 6
+        },
+        {
+          "name": "20 − 11",
+          "value": 9
+        },
+        {
+          "name": "40 ÷ 4",
+          "value": 10
+        },
+        {
+          "name": "9 + 6",
+          "value": 15
+        },
+        {
+          "name": "2 × 9",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-031",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "12 − 6",
+          "value": 6
+        },
+        {
+          "name": "11 − 4",
+          "value": 7
+        },
+        {
+          "name": "9 + 2",
+          "value": 11
+        },
+        {
+          "name": "17 − 5",
+          "value": 12
+        },
+        {
+          "name": "6 + 7",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-3-032",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact arithmetic; operands retained in each card."
+      ],
+      "ordered": [
+        {
+          "name": "10 ÷ 5",
+          "value": 2
+        },
+        {
+          "name": "24 ÷ 3",
+          "value": 8
+        },
+        {
+          "name": "50 ÷ 5",
+          "value": 10
+        },
+        {
+          "name": "9 + 4",
+          "value": 13
+        },
+        {
+          "name": "9 + 8",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-001",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "1/4",
+          "numerator": 1,
+          "denominator": 4,
+          "value": 0.25,
+          "display": "1/4"
+        },
+        {
+          "name": "1/2",
+          "numerator": 1,
+          "denominator": 2,
+          "value": 0.5,
+          "display": "1/2"
+        },
+        {
+          "name": "60%",
+          "numerator": 3,
+          "denominator": 5,
+          "value": 0.6,
+          "display": "3/5"
+        },
+        {
+          "name": "2/3",
+          "numerator": 2,
+          "denominator": 3,
+          "value": 0.6666666666666666,
+          "display": "2/3"
+        },
+        {
+          "name": "3/4",
+          "numerator": 3,
+          "denominator": 4,
+          "value": 0.75,
+          "display": "3/4"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-002",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "1/8",
+          "numerator": 1,
+          "denominator": 8,
+          "value": 0.125,
+          "display": "1/8"
+        },
+        {
+          "name": "20%",
+          "numerator": 1,
+          "denominator": 5,
+          "value": 0.2,
+          "display": "1/5"
+        },
+        {
+          "name": "2/3",
+          "numerator": 2,
+          "denominator": 3,
+          "value": 0.6666666666666666,
+          "display": "2/3"
+        },
+        {
+          "name": "5/6",
+          "numerator": 5,
+          "denominator": 6,
+          "value": 0.8333333333333334,
+          "display": "5/6"
+        },
+        {
+          "name": "One whole",
+          "numerator": 1,
+          "denominator": 1,
+          "value": 1,
+          "display": "1/1"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-003",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "80%",
+          "numerator": 4,
+          "denominator": 5,
+          "value": 0.8,
+          "display": "4/5"
+        },
+        {
+          "name": "5/6",
+          "numerator": 5,
+          "denominator": 6,
+          "value": 0.8333333333333334,
+          "display": "5/6"
+        },
+        {
+          "name": "7/8",
+          "numerator": 7,
+          "denominator": 8,
+          "value": 0.875,
+          "display": "7/8"
+        },
+        {
+          "name": "90%",
+          "numerator": 9,
+          "denominator": 10,
+          "value": 0.9,
+          "display": "9/10"
+        },
+        {
+          "name": "One whole",
+          "numerator": 1,
+          "denominator": 1,
+          "value": 1,
+          "display": "1/1"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-004",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "1/6",
+          "numerator": 1,
+          "denominator": 6,
+          "value": 0.16666666666666666,
+          "display": "1/6"
+        },
+        {
+          "name": "1/4",
+          "numerator": 1,
+          "denominator": 4,
+          "value": 0.25,
+          "display": "1/4"
+        },
+        {
+          "name": "40%",
+          "numerator": 2,
+          "denominator": 5,
+          "value": 0.4,
+          "display": "2/5"
+        },
+        {
+          "name": "3/4",
+          "numerator": 3,
+          "denominator": 4,
+          "value": 0.75,
+          "display": "3/4"
+        },
+        {
+          "name": "One whole",
+          "numerator": 1,
+          "denominator": 1,
+          "value": 1,
+          "display": "1/1"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-005",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "1/6",
+          "numerator": 1,
+          "denominator": 6,
+          "value": 0.16666666666666666,
+          "display": "1/6"
+        },
+        {
+          "name": "1/3",
+          "numerator": 1,
+          "denominator": 3,
+          "value": 0.3333333333333333,
+          "display": "1/3"
+        },
+        {
+          "name": "1/2",
+          "numerator": 1,
+          "denominator": 2,
+          "value": 0.5,
+          "display": "1/2"
+        },
+        {
+          "name": "7/8",
+          "numerator": 7,
+          "denominator": 8,
+          "value": 0.875,
+          "display": "7/8"
+        },
+        {
+          "name": "One whole",
+          "numerator": 1,
+          "denominator": 1,
+          "value": 1,
+          "display": "1/1"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-006",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "30%",
+          "numerator": 3,
+          "denominator": 10,
+          "value": 0.3,
+          "display": "3/10"
+        },
+        {
+          "name": "1/3",
+          "numerator": 1,
+          "denominator": 3,
+          "value": 0.3333333333333333,
+          "display": "1/3"
+        },
+        {
+          "name": "40%",
+          "numerator": 2,
+          "denominator": 5,
+          "value": 0.4,
+          "display": "2/5"
+        },
+        {
+          "name": "1/2",
+          "numerator": 1,
+          "denominator": 2,
+          "value": 0.5,
+          "display": "1/2"
+        },
+        {
+          "name": "90%",
+          "numerator": 9,
+          "denominator": 10,
+          "value": 0.9,
+          "display": "9/10"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-007",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "1/6",
+          "numerator": 1,
+          "denominator": 6,
+          "value": 0.16666666666666666,
+          "display": "1/6"
+        },
+        {
+          "name": "2/3",
+          "numerator": 2,
+          "denominator": 3,
+          "value": 0.6666666666666666,
+          "display": "2/3"
+        },
+        {
+          "name": "3/4",
+          "numerator": 3,
+          "denominator": 4,
+          "value": 0.75,
+          "display": "3/4"
+        },
+        {
+          "name": "5/6",
+          "numerator": 5,
+          "denominator": 6,
+          "value": 0.8333333333333334,
+          "display": "5/6"
+        },
+        {
+          "name": "One whole",
+          "numerator": 1,
+          "denominator": 1,
+          "value": 1,
+          "display": "1/1"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-008",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "1/8",
+          "numerator": 1,
+          "denominator": 8,
+          "value": 0.125,
+          "display": "1/8"
+        },
+        {
+          "name": "1/6",
+          "numerator": 1,
+          "denominator": 6,
+          "value": 0.16666666666666666,
+          "display": "1/6"
+        },
+        {
+          "name": "20%",
+          "numerator": 1,
+          "denominator": 5,
+          "value": 0.2,
+          "display": "1/5"
+        },
+        {
+          "name": "30%",
+          "numerator": 3,
+          "denominator": 10,
+          "value": 0.3,
+          "display": "3/10"
+        },
+        {
+          "name": "40%",
+          "numerator": 2,
+          "denominator": 5,
+          "value": 0.4,
+          "display": "2/5"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-009",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "1/8",
+          "numerator": 1,
+          "denominator": 8,
+          "value": 0.125,
+          "display": "1/8"
+        },
+        {
+          "name": "1/6",
+          "numerator": 1,
+          "denominator": 6,
+          "value": 0.16666666666666666,
+          "display": "1/6"
+        },
+        {
+          "name": "20%",
+          "numerator": 1,
+          "denominator": 5,
+          "value": 0.2,
+          "display": "1/5"
+        },
+        {
+          "name": "30%",
+          "numerator": 3,
+          "denominator": 10,
+          "value": 0.3,
+          "display": "3/10"
+        },
+        {
+          "name": "60%",
+          "numerator": 3,
+          "denominator": 5,
+          "value": 0.6,
+          "display": "3/5"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-010",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "1/8",
+          "numerator": 1,
+          "denominator": 8,
+          "value": 0.125,
+          "display": "1/8"
+        },
+        {
+          "name": "20%",
+          "numerator": 1,
+          "denominator": 5,
+          "value": 0.2,
+          "display": "1/5"
+        },
+        {
+          "name": "1/4",
+          "numerator": 1,
+          "denominator": 4,
+          "value": 0.25,
+          "display": "1/4"
+        },
+        {
+          "name": "40%",
+          "numerator": 2,
+          "denominator": 5,
+          "value": 0.4,
+          "display": "2/5"
+        },
+        {
+          "name": "7/8",
+          "numerator": 7,
+          "denominator": 8,
+          "value": 0.875,
+          "display": "7/8"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-011",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "1/8",
+          "numerator": 1,
+          "denominator": 8,
+          "value": 0.125,
+          "display": "1/8"
+        },
+        {
+          "name": "20%",
+          "numerator": 1,
+          "denominator": 5,
+          "value": 0.2,
+          "display": "1/5"
+        },
+        {
+          "name": "1/4",
+          "numerator": 1,
+          "denominator": 4,
+          "value": 0.25,
+          "display": "1/4"
+        },
+        {
+          "name": "60%",
+          "numerator": 3,
+          "denominator": 5,
+          "value": 0.6,
+          "display": "3/5"
+        },
+        {
+          "name": "One whole",
+          "numerator": 1,
+          "denominator": 1,
+          "value": 1,
+          "display": "1/1"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-012",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "40%",
+          "numerator": 2,
+          "denominator": 5,
+          "value": 0.4,
+          "display": "2/5"
+        },
+        {
+          "name": "2/3",
+          "numerator": 2,
+          "denominator": 3,
+          "value": 0.6666666666666666,
+          "display": "2/3"
+        },
+        {
+          "name": "80%",
+          "numerator": 4,
+          "denominator": 5,
+          "value": 0.8,
+          "display": "4/5"
+        },
+        {
+          "name": "5/6",
+          "numerator": 5,
+          "denominator": 6,
+          "value": 0.8333333333333334,
+          "display": "5/6"
+        },
+        {
+          "name": "7/8",
+          "numerator": 7,
+          "denominator": 8,
+          "value": 0.875,
+          "display": "7/8"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-013",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "1/8",
+          "numerator": 1,
+          "denominator": 8,
+          "value": 0.125,
+          "display": "1/8"
+        },
+        {
+          "name": "1/6",
+          "numerator": 1,
+          "denominator": 6,
+          "value": 0.16666666666666666,
+          "display": "1/6"
+        },
+        {
+          "name": "40%",
+          "numerator": 2,
+          "denominator": 5,
+          "value": 0.4,
+          "display": "2/5"
+        },
+        {
+          "name": "1/2",
+          "numerator": 1,
+          "denominator": 2,
+          "value": 0.5,
+          "display": "1/2"
+        },
+        {
+          "name": "2/3",
+          "numerator": 2,
+          "denominator": 3,
+          "value": 0.6666666666666666,
+          "display": "2/3"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-014",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "30%",
+          "numerator": 3,
+          "denominator": 10,
+          "value": 0.3,
+          "display": "3/10"
+        },
+        {
+          "name": "1/2",
+          "numerator": 1,
+          "denominator": 2,
+          "value": 0.5,
+          "display": "1/2"
+        },
+        {
+          "name": "60%",
+          "numerator": 3,
+          "denominator": 5,
+          "value": 0.6,
+          "display": "3/5"
+        },
+        {
+          "name": "3/4",
+          "numerator": 3,
+          "denominator": 4,
+          "value": 0.75,
+          "display": "3/4"
+        },
+        {
+          "name": "90%",
+          "numerator": 9,
+          "denominator": 10,
+          "value": 0.9,
+          "display": "9/10"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-015",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "1/8",
+          "numerator": 1,
+          "denominator": 8,
+          "value": 0.125,
+          "display": "1/8"
+        },
+        {
+          "name": "1/4",
+          "numerator": 1,
+          "denominator": 4,
+          "value": 0.25,
+          "display": "1/4"
+        },
+        {
+          "name": "1/3",
+          "numerator": 1,
+          "denominator": 3,
+          "value": 0.3333333333333333,
+          "display": "1/3"
+        },
+        {
+          "name": "80%",
+          "numerator": 4,
+          "denominator": 5,
+          "value": 0.8,
+          "display": "4/5"
+        },
+        {
+          "name": "90%",
+          "numerator": 9,
+          "denominator": 10,
+          "value": 0.9,
+          "display": "9/10"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-016",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "1/8",
+          "numerator": 1,
+          "denominator": 8,
+          "value": 0.125,
+          "display": "1/8"
+        },
+        {
+          "name": "1/6",
+          "numerator": 1,
+          "denominator": 6,
+          "value": 0.16666666666666666,
+          "display": "1/6"
+        },
+        {
+          "name": "30%",
+          "numerator": 3,
+          "denominator": 10,
+          "value": 0.3,
+          "display": "3/10"
+        },
+        {
+          "name": "90%",
+          "numerator": 9,
+          "denominator": 10,
+          "value": 0.9,
+          "display": "9/10"
+        },
+        {
+          "name": "One whole",
+          "numerator": 1,
+          "denominator": 1,
+          "value": 1,
+          "display": "1/1"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-017",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "30%",
+          "numerator": 3,
+          "denominator": 10,
+          "value": 0.3,
+          "display": "3/10"
+        },
+        {
+          "name": "1/2",
+          "numerator": 1,
+          "denominator": 2,
+          "value": 0.5,
+          "display": "1/2"
+        },
+        {
+          "name": "2/3",
+          "numerator": 2,
+          "denominator": 3,
+          "value": 0.6666666666666666,
+          "display": "2/3"
+        },
+        {
+          "name": "80%",
+          "numerator": 4,
+          "denominator": 5,
+          "value": 0.8,
+          "display": "4/5"
+        },
+        {
+          "name": "5/6",
+          "numerator": 5,
+          "denominator": 6,
+          "value": 0.8333333333333334,
+          "display": "5/6"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-018",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "1/6",
+          "numerator": 1,
+          "denominator": 6,
+          "value": 0.16666666666666666,
+          "display": "1/6"
+        },
+        {
+          "name": "80%",
+          "numerator": 4,
+          "denominator": 5,
+          "value": 0.8,
+          "display": "4/5"
+        },
+        {
+          "name": "5/6",
+          "numerator": 5,
+          "denominator": 6,
+          "value": 0.8333333333333334,
+          "display": "5/6"
+        },
+        {
+          "name": "90%",
+          "numerator": 9,
+          "denominator": 10,
+          "value": 0.9,
+          "display": "9/10"
+        },
+        {
+          "name": "One whole",
+          "numerator": 1,
+          "denominator": 1,
+          "value": 1,
+          "display": "1/1"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-019",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "1/8",
+          "numerator": 1,
+          "denominator": 8,
+          "value": 0.125,
+          "display": "1/8"
+        },
+        {
+          "name": "20%",
+          "numerator": 1,
+          "denominator": 5,
+          "value": 0.2,
+          "display": "1/5"
+        },
+        {
+          "name": "60%",
+          "numerator": 3,
+          "denominator": 5,
+          "value": 0.6,
+          "display": "3/5"
+        },
+        {
+          "name": "3/4",
+          "numerator": 3,
+          "denominator": 4,
+          "value": 0.75,
+          "display": "3/4"
+        },
+        {
+          "name": "90%",
+          "numerator": 9,
+          "denominator": 10,
+          "value": 0.9,
+          "display": "9/10"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-020",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "20%",
+          "numerator": 1,
+          "denominator": 5,
+          "value": 0.2,
+          "display": "1/5"
+        },
+        {
+          "name": "40%",
+          "numerator": 2,
+          "denominator": 5,
+          "value": 0.4,
+          "display": "2/5"
+        },
+        {
+          "name": "60%",
+          "numerator": 3,
+          "denominator": 5,
+          "value": 0.6,
+          "display": "3/5"
+        },
+        {
+          "name": "2/3",
+          "numerator": 2,
+          "denominator": 3,
+          "value": 0.6666666666666666,
+          "display": "2/3"
+        },
+        {
+          "name": "80%",
+          "numerator": 4,
+          "denominator": 5,
+          "value": 0.8,
+          "display": "4/5"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-021",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "1/8",
+          "numerator": 1,
+          "denominator": 8,
+          "value": 0.125,
+          "display": "1/8"
+        },
+        {
+          "name": "1/6",
+          "numerator": 1,
+          "denominator": 6,
+          "value": 0.16666666666666666,
+          "display": "1/6"
+        },
+        {
+          "name": "60%",
+          "numerator": 3,
+          "denominator": 5,
+          "value": 0.6,
+          "display": "3/5"
+        },
+        {
+          "name": "2/3",
+          "numerator": 2,
+          "denominator": 3,
+          "value": 0.6666666666666666,
+          "display": "2/3"
+        },
+        {
+          "name": "One whole",
+          "numerator": 1,
+          "denominator": 1,
+          "value": 1,
+          "display": "1/1"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-022",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "20%",
+          "numerator": 1,
+          "denominator": 5,
+          "value": 0.2,
+          "display": "1/5"
+        },
+        {
+          "name": "1/4",
+          "numerator": 1,
+          "denominator": 4,
+          "value": 0.25,
+          "display": "1/4"
+        },
+        {
+          "name": "1/3",
+          "numerator": 1,
+          "denominator": 3,
+          "value": 0.3333333333333333,
+          "display": "1/3"
+        },
+        {
+          "name": "1/2",
+          "numerator": 1,
+          "denominator": 2,
+          "value": 0.5,
+          "display": "1/2"
+        },
+        {
+          "name": "90%",
+          "numerator": 9,
+          "denominator": 10,
+          "value": 0.9,
+          "display": "9/10"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-023",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "1/3",
+          "numerator": 1,
+          "denominator": 3,
+          "value": 0.3333333333333333,
+          "display": "1/3"
+        },
+        {
+          "name": "40%",
+          "numerator": 2,
+          "denominator": 5,
+          "value": 0.4,
+          "display": "2/5"
+        },
+        {
+          "name": "60%",
+          "numerator": 3,
+          "denominator": 5,
+          "value": 0.6,
+          "display": "3/5"
+        },
+        {
+          "name": "5/6",
+          "numerator": 5,
+          "denominator": 6,
+          "value": 0.8333333333333334,
+          "display": "5/6"
+        },
+        {
+          "name": "One whole",
+          "numerator": 1,
+          "denominator": 1,
+          "value": 1,
+          "display": "1/1"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-024",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "1/8",
+          "numerator": 1,
+          "denominator": 8,
+          "value": 0.125,
+          "display": "1/8"
+        },
+        {
+          "name": "40%",
+          "numerator": 2,
+          "denominator": 5,
+          "value": 0.4,
+          "display": "2/5"
+        },
+        {
+          "name": "1/2",
+          "numerator": 1,
+          "denominator": 2,
+          "value": 0.5,
+          "display": "1/2"
+        },
+        {
+          "name": "60%",
+          "numerator": 3,
+          "denominator": 5,
+          "value": 0.6,
+          "display": "3/5"
+        },
+        {
+          "name": "5/6",
+          "numerator": 5,
+          "denominator": 6,
+          "value": 0.8333333333333334,
+          "display": "5/6"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-025",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "1/6",
+          "numerator": 1,
+          "denominator": 6,
+          "value": 0.16666666666666666,
+          "display": "1/6"
+        },
+        {
+          "name": "1/4",
+          "numerator": 1,
+          "denominator": 4,
+          "value": 0.25,
+          "display": "1/4"
+        },
+        {
+          "name": "1/2",
+          "numerator": 1,
+          "denominator": 2,
+          "value": 0.5,
+          "display": "1/2"
+        },
+        {
+          "name": "5/6",
+          "numerator": 5,
+          "denominator": 6,
+          "value": 0.8333333333333334,
+          "display": "5/6"
+        },
+        {
+          "name": "One whole",
+          "numerator": 1,
+          "denominator": 1,
+          "value": 1,
+          "display": "1/1"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-026",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "20%",
+          "numerator": 1,
+          "denominator": 5,
+          "value": 0.2,
+          "display": "1/5"
+        },
+        {
+          "name": "1/4",
+          "numerator": 1,
+          "denominator": 4,
+          "value": 0.25,
+          "display": "1/4"
+        },
+        {
+          "name": "30%",
+          "numerator": 3,
+          "denominator": 10,
+          "value": 0.3,
+          "display": "3/10"
+        },
+        {
+          "name": "80%",
+          "numerator": 4,
+          "denominator": 5,
+          "value": 0.8,
+          "display": "4/5"
+        },
+        {
+          "name": "5/6",
+          "numerator": 5,
+          "denominator": 6,
+          "value": 0.8333333333333334,
+          "display": "5/6"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-027",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "1/6",
+          "numerator": 1,
+          "denominator": 6,
+          "value": 0.16666666666666666,
+          "display": "1/6"
+        },
+        {
+          "name": "60%",
+          "numerator": 3,
+          "denominator": 5,
+          "value": 0.6,
+          "display": "3/5"
+        },
+        {
+          "name": "3/4",
+          "numerator": 3,
+          "denominator": 4,
+          "value": 0.75,
+          "display": "3/4"
+        },
+        {
+          "name": "80%",
+          "numerator": 4,
+          "denominator": 5,
+          "value": 0.8,
+          "display": "4/5"
+        },
+        {
+          "name": "5/6",
+          "numerator": 5,
+          "denominator": 6,
+          "value": 0.8333333333333334,
+          "display": "5/6"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-028",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "1/8",
+          "numerator": 1,
+          "denominator": 8,
+          "value": 0.125,
+          "display": "1/8"
+        },
+        {
+          "name": "30%",
+          "numerator": 3,
+          "denominator": 10,
+          "value": 0.3,
+          "display": "3/10"
+        },
+        {
+          "name": "3/4",
+          "numerator": 3,
+          "denominator": 4,
+          "value": 0.75,
+          "display": "3/4"
+        },
+        {
+          "name": "7/8",
+          "numerator": 7,
+          "denominator": 8,
+          "value": 0.875,
+          "display": "7/8"
+        },
+        {
+          "name": "One whole",
+          "numerator": 1,
+          "denominator": 1,
+          "value": 1,
+          "display": "1/1"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-029",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "1/8",
+          "numerator": 1,
+          "denominator": 8,
+          "value": 0.125,
+          "display": "1/8"
+        },
+        {
+          "name": "30%",
+          "numerator": 3,
+          "denominator": 10,
+          "value": 0.3,
+          "display": "3/10"
+        },
+        {
+          "name": "40%",
+          "numerator": 2,
+          "denominator": 5,
+          "value": 0.4,
+          "display": "2/5"
+        },
+        {
+          "name": "1/2",
+          "numerator": 1,
+          "denominator": 2,
+          "value": 0.5,
+          "display": "1/2"
+        },
+        {
+          "name": "7/8",
+          "numerator": 7,
+          "denominator": 8,
+          "value": 0.875,
+          "display": "7/8"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-030",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "20%",
+          "numerator": 1,
+          "denominator": 5,
+          "value": 0.2,
+          "display": "1/5"
+        },
+        {
+          "name": "1/4",
+          "numerator": 1,
+          "denominator": 4,
+          "value": 0.25,
+          "display": "1/4"
+        },
+        {
+          "name": "3/4",
+          "numerator": 3,
+          "denominator": 4,
+          "value": 0.75,
+          "display": "3/4"
+        },
+        {
+          "name": "5/6",
+          "numerator": 5,
+          "denominator": 6,
+          "value": 0.8333333333333334,
+          "display": "5/6"
+        },
+        {
+          "name": "One whole",
+          "numerator": 1,
+          "denominator": 1,
+          "value": 1,
+          "display": "1/1"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-031",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "1/4",
+          "numerator": 1,
+          "denominator": 4,
+          "value": 0.25,
+          "display": "1/4"
+        },
+        {
+          "name": "30%",
+          "numerator": 3,
+          "denominator": 10,
+          "value": 0.3,
+          "display": "3/10"
+        },
+        {
+          "name": "2/3",
+          "numerator": 2,
+          "denominator": 3,
+          "value": 0.6666666666666666,
+          "display": "2/3"
+        },
+        {
+          "name": "5/6",
+          "numerator": 5,
+          "denominator": 6,
+          "value": 0.8333333333333334,
+          "display": "5/6"
+        },
+        {
+          "name": "90%",
+          "numerator": 9,
+          "denominator": 10,
+          "value": 0.9,
+          "display": "9/10"
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-032",
+      "source": "NUMBER SENSE",
+      "unit": "",
+      "sources": [
+        "Exact rational values retained in the audit."
+      ],
+      "ordered": [
+        {
+          "name": "20%",
+          "numerator": 1,
+          "denominator": 5,
+          "value": 0.2,
+          "display": "1/5"
+        },
+        {
+          "name": "1/3",
+          "numerator": 1,
+          "denominator": 3,
+          "value": 0.3333333333333333,
+          "display": "1/3"
+        },
+        {
+          "name": "60%",
+          "numerator": 3,
+          "denominator": 5,
+          "value": 0.6,
+          "display": "3/5"
+        },
+        {
+          "name": "3/4",
+          "numerator": 3,
+          "denominator": 4,
+          "value": 0.75,
+          "display": "3/4"
+        },
+        {
+          "name": "One whole",
+          "numerator": 1,
+          "denominator": 1,
+          "value": 1,
+          "display": "1/1"
+        }
+      ]
+    }
+  ]
+}

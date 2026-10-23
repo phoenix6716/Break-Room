@@ -64,7 +64,7 @@ async function checkLayout(page, width) {
         assert.equal(await page.locator('main').evaluate(e => e.inert), false);
       }
 
-      await page.locator('[data-start-mode=daily]').click();
+      await page.locator('[data-mode=daily]').click();
       await checkLayout(page, width);
       assert.equal(await page.locator('.sort-card').count(), 5);
       const fill = await page.locator('#timer-fill').boundingBox();
@@ -85,15 +85,15 @@ async function checkLayout(page, width) {
       // Use the engine's saved snapshot shape; no migration, reset flag or new storage key.
       await page.evaluate(() => {
         const key = 'break-room:stack-up:daily:2026-10-19', run = JSON.parse(localStorage.getItem(key));
-        Object.assign(run, { round: 4, score: 31000, streak: 5, status: 'complete', results: Array.from({length: 5}, () => ({correct: true, points: 6200, seconds: 90, mistakes: 0})) });
+        Object.assign(run, { round: 4, score: 3100, streak: 5, status: 'complete', results: Array.from({length: 5}, () => ({correct: true, points: 620, seconds: 90, mistakes: 0})) });
         localStorage.setItem(key, JSON.stringify(run));
       });
       await page.reload();
       assert.ok(await page.locator('#daily-summary').isVisible());
-      assert.equal(await page.locator('#record-best').innerText(), '31,000');
+      assert.equal(await page.locator('#record-best').innerText(), '100');
       assert.equal(await page.locator('#record-streak').innerText(), '1');
       assert.equal(await page.locator('#record-played').innerText(), '1');
-      assert.equal(await page.locator('#stat-best').innerText(), '31,000');
+      assert.equal(await page.locator('#stat-best').innerText(), '100');
       await checkLayout(page, width);
       assert.ok(await page.locator('#record-best').evaluate(e => {
         const range = document.createRange(); range.selectNodeContents(e);

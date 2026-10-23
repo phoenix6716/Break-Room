@@ -6,14 +6,18 @@ const optionKey=s=>String(s||'').normalize('NFKC').trim().toLowerCase().replace(
 const normalize=s=>String(s||'').toLowerCase().replace(/[^\p{L}\p{N}]/gu,'');
 function load(root=ROOT,asOf=new Intl.DateTimeFormat('en-CA',{timeZone:'Australia/Sydney',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())){
  const sandbox={window:{}};vm.createContext(sandbox);
- for(const file of ['games/stake/questions.js','games/stack-up/stacks.js','games/lowball/engine/item-art.js','games/lowball/engine/reference-prices.js'])vm.runInContext(read(root,file),sandbox);
+ for(const file of ['games/stake/questions.js','games/stack-up/stacks.js','games/stack-up/familiar-stacks.js','games/lowball/engine/item-art.js','games/lowball/engine/reference-prices.js'])vm.runInContext(read(root,file),sandbox);
  const stakeHTML=read(root,'games/stake/index.html'),lowHTML=read(root,'games/lowball/engine/index.html');
  const baseline=stakeHTML.split('const BANK=`')[1]?.split('`.trim()')[0];if(!baseline)throw Error('Cannot find the frozen Stake bank.');
  const legacy=baseline.trim().split('\n').map((line,i)=>{const [c,q,a,b,d,f]=line.split('|');return{id:'stake-legacy-'+String(i+1).padStart(3,'0'),c,q,o:[a,b,d],f};});
  const lowSource=lowHTML.match(/const ITEMS = (\[[\s\S]*?\n\]);/);if(!lowSource)throw Error('Cannot find Lowball item pool.');
  const items=vm.runInNewContext('('+lowSource[1]+')').map(item=>sandbox.window.BREAK_ROOM_LOWBALL_PRICES.current(item,asOf));
  const audit=JSON.parse(read(root,'content/question-audit.json')),refs=JSON.parse(read(root,'content/reference-data.json'));
- const records=[...legacy.map(q=>({game:'stake',id:q.id,legacy:true,fields:q,review:null})),...sandbox.window.STAKE_QUESTION_ADDITIONS.map(q=>({game:'stake',id:q.id,fields:q,review:audit.stake.find(a=>a.id===q.id)||null})),...sandbox.window.STACK_UP_STACKS.map(s=>({game:'stack-up',id:s.id,fields:s,review:audit.stack_up.find(a=>a.id===s.id)||null})),...items.map((item,i)=>({game:'lowball',id:'lowball-'+String(i+1).padStart(3,'0'),fields:{...item,art:sandbox.window.LOWBALL_ART.items[item.name]},review:null}))];
+ const familiar=JSON.parse(read(root,'content/stack-up-familiar.json'));
+ refs.familiar=Object.fromEntries(familiar.stacks.flatMap(r=>r.ordered.map((o,i)=>[r.id+':'+i,{value:o.value}])));
+ refs.sources.familiar={checkedAt:familiar.reviewedAt,convention:familiar.note};
+ const familiarAudit=familiar.stacks.map(r=>({...r,source:'familiar',measure:'value',ordered:r.ordered.map((o,i)=>({...o,key:r.id+':'+i}))}));
+ const records=[...legacy.map(q=>({game:'stake',id:q.id,legacy:true,fields:q,review:null})),...sandbox.window.STAKE_QUESTION_ADDITIONS.map(q=>({game:'stake',id:q.id,fields:q,review:audit.stake.find(a=>a.id===q.id)||null})),...[...sandbox.window.STACK_UP_STACKS,...sandbox.window.STACK_UP_FAMILIAR_STACKS].map(s=>({game:'stack-up',id:s.id,fields:s,review:[...audit.stack_up,...familiarAudit].find(a=>a.id===s.id)||null})),...items.map((item,i)=>({game:'lowball',id:'lowball-'+String(i+1).padStart(3,'0'),fields:{...item,art:sandbox.window.LOWBALL_ART.items[item.name]},review:null}))];
  const json=JSON.parse(JSON.stringify(records));return{version:1,fingerprint:hash(JSON.stringify(json)),records:json,sources:refs.sources,reference:refs,art:[...new Set([...Object.values(sandbox.window.LOWBALL_ART.items),...fs.readdirSync(path.join(root,'games/lowball/engine/icons/generated')).filter(n=>/^[a-z0-9-]+\.png$/.test(n)&&!Object.values(sandbox.window.LOWBALL_ART.utilities).includes(n))])].sort(),inheritedPriceDate:lowHTML.match(/const PRICES_CHECKED = "([^"]*)"/)?.[1]||null};
 }
 const string=(v,max=2000)=>typeof v==='string'&&v.trim().length>0&&v.length<=max;

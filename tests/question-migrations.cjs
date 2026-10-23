@@ -19,7 +19,7 @@ const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
   await page.evaluate(()=>STACK_UP_STACKS.reverse());await page.locator('[data-mode=daily]').click();
   assert.deepEqual((await page.locator('.card-name').allTextContents()).sort(),oldNames.sort());
   // Start tomorrow's entirely new run and verify that its snapshots contain the harder bank.
-  await page.evaluate(day=>localStorage.removeItem('break-room:stack-up:daily:'+day),day);await page.reload();await page.locator('[data-start-mode=daily]').click();
+  await page.evaluate(day=>localStorage.removeItem('break-room:stack-up:daily:'+day),day);await page.reload();await page.locator('[data-mode=daily]').click();
   const before=await page.locator('#prompt').innerText();await page.evaluate(()=>STACK_UP_STACKS.reverse());await page.locator('[data-mode=daily]').click();assert.equal(await page.locator('#prompt').innerText(),before);
   assert((await page.locator('.card-detail').allTextContents()).every(t=>t===''));
   // Stress every prompt/card label at narrow and wide widths using disposable run fixtures.
@@ -27,9 +27,9 @@ const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
    await page.setViewportSize({width,height:1000});
    const problems=await page.evaluate(day=>{
     const bad=[];
-    for(const stack of STACK_UP_STACKS){
+    for(const stack of [...STACK_UP_STACKS,...STACK_UP_FAMILIAR_STACKS]){
      const fixture={version:2,day,round:0,score:0,streak:0,results:[],order:[5,4,3,2,1],deadline:Date.now()+90000,mistakes:0,status:'playing',stacks:Array(5).fill(stack)};
-     localStorage.setItem('break-room:stack-up:daily:'+day,JSON.stringify(fixture));
+     localStorage.setItem('break-room:stack-up:daily:'+day,JSON.stringify(fixture));window.dispatchEvent(new StorageEvent('storage',{key:'break-room:stack-up:daily:'+day}));
      document.querySelector('[data-mode=daily]').click();
      if(document.documentElement.scrollWidth>innerWidth)bad.push(stack.id);
      if([...document.querySelectorAll('.card-detail')].some(e=>e.textContent))bad.push(stack.id+':description');
