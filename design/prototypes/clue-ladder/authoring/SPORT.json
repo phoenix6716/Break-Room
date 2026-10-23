@@ -1,0 +1,122 @@
+[
+  {
+    "category": "SPORT",
+    "row": "Football|soccer,association football|Players usually avoid using their hands.|Matches normally have two halves.|A team has eleven players on the field.|Goalkeepers defend nets.|I am the sport also called soccer.|Offside limits where attackers can position themselves."
+  },
+  {
+    "category": "SPORT",
+    "row": "Basketball|basket ball|Dribbling allows moving with the ball.|A team has five on-court players.|Shots beyond an arc earn extra points.|Players throw through raised hoops.|I am the team sport associated with slam dunks.|The standard rim is ten feet above the floor."
+  },
+  {
+    "category": "SPORT",
+    "row": "Tennis|lawn tennis|Scoring uses love, fifteen, thirty and forty.|A serve starts a point.|Singles and doubles are forms of me.|Rackets hit a ball across a net.|I am the sport played at Wimbledon.|Tiebreaks can decide close sets."
+  },
+  {
+    "category": "SPORT",
+    "row": "Badminton|badminton sport|My projectile slows quickly due to its shape.|Serves cross the court diagonally.|I have singles and doubles.|Light rackets are used.|I am the net sport using a shuttlecock.|Shuttles can use feathers or synthetic materials."
+  },
+  {
+    "category": "SPORT",
+    "row": "Table tennis|ping pong,pingpong|Serving has specific bouncing rules.|Small solid bats are used.|A low net divides my surface.|I am played on a rectangular table.|I am the sport commonly called ping-pong.|My lightweight ball makes fast rallies on a small surface."
+  },
+  {
+    "category": "SPORT",
+    "row": "Volleyball|volley ball|Teams have limited contacts before returning the ball.|A specialist may wear a different shirt.|Players set, spike and block.|The ball must not touch the floor.|I am the team sport hitting a ball across a high net.|The contrasting-shirt defensive specialist is a libero."
+  },
+  {
+    "category": "SPORT",
+    "row": "Rugby|rugby union,rugby football|Players can run carrying the ball.|Hand passes generally go backwards.|Grounding beyond the line can score.|My union form includes scrums.|I am the oval-ball contact sport scoring tries.|Union and league are major forms."
+  },
+  {
+    "category": "SPORT",
+    "row": "Cricket|cricket sport|Overs group deliveries.|Two batters can occupy the middle.|Running between ends scores.|A bowler aims at a wicket.|I am the bat-and-ball sport with stumps and bails.|Formats range from a few hours to several days."
+  },
+  {
+    "category": "SPORT",
+    "row": "Baseball|base ball|My infield is diamond-shaped.|Pitchers throw towards batters.|Runners advance around four bases.|A shot beyond the fence can be a home run.|I am the bat-and-ball sport of innings and home runs.|Standard professional games have nine innings."
+  },
+  {
+    "category": "SPORT",
+    "row": "Golf|golf game|Different clubs suit different distances.|Courses contain successive targets.|A putting surface is a green.|Fewer strokes make a better result.|I am the sport hitting a small ball into holes.|One below par on a hole is a birdie."
+  },
+  {
+    "category": "SPORT",
+    "row": "Field hockey|grass hockey|My sticks have curved ends.|A goalkeeper guards a large net.|My ball is hard and small.|Grass or artificial turf supports play.|I am the outdoor stick-and-ball sport with a striking circle.|The flat stick face is normally used to play the ball."
+  },
+  {
+    "category": "SPORT",
+    "row": "Ice hockey|icehockey|Players take short shifts.|Goalkeepers wear heavy protection.|My projectile is a rubber disc.|Players use sticks while skating.|I am the rink sport played with a puck.|The puck travels quickly over the frozen surface."
+  },
+  {
+    "category": "SPORT",
+    "row": "Swimming|swim,competitive swimming|Races prescribe different movements.|Butterfly and backstroke are styles.|A medley combines strokes.|Competitors race in water.|I am the sport propelling yourself through water using strokes.|Streamlining reduces resistance."
+  },
+  {
+    "category": "SPORT",
+    "row": "Surfing|surf|Riders read changing water conditions.|Paddling reaches moving swells.|Balance is needed on a board.|Ocean waves provide propulsion.|I am the sport riding breaking waves on a board.|Board shape and size affect its ride."
+  },
+  {
+    "category": "SPORT",
+    "row": "Skiing|ski,snow skiing|My forms include downhill and cross-country.|Bindings connect footwear to equipment.|Poles help balance and propulsion.|Each foot rests on a long narrow runner.|I am the snow sport using two long runners underfoot.|Turning controls direction and speed on a slope."
+  },
+  {
+    "category": "SPORT",
+    "row": "Snowboarding|snowboard,snow boarding|Riders usually stand sideways.|Bindings hold both feet.|Edges control speed and turns.|Both feet share one broad runner.|I am the sport riding one board down snow.|Different stances put different feet in front."
+  },
+  {
+    "category": "SPORT",
+    "row": "Skateboarding|skateboard,skate boarding|Riders use ramps and street obstacles.|An ollie lifts equipment without grabbing it.|Foot position controls movement.|My deck has four small wheels.|I am the sport riding and doing tricks on a wheeled deck.|Turning assemblies beneath the deck are trucks."
+  },
+  {
+    "category": "SPORT",
+    "row": "Boxing|box,pugilism|Contests have timed rounds.|Officials can stop a bout.|Competitors wear padded gloves.|Punches are the main strikes.|I am the combat sport of gloved fists in a ring.|Weight divisions match similar-sized competitors."
+  },
+  {
+    "category": "SPORT",
+    "row": "Fencing|sport fencing|The weapon affects scoring rules.|Masks protect faces.|My weapons include foil and épée.|Specialised blades touch opponents to score.|I am the modern sport of sword fighting.|My three weapons have different valid targets."
+  },
+  {
+    "category": "SPORT",
+    "row": "Archery|bow shooting|Posture and release control results.|Bending equipment stores energy.|Targets often have concentric rings.|My equipment includes arrows.|I am the sport firing arrows from a bow at targets.|A consistent release improves repeatability."
+  },
+  {
+    "category": "SPORT",
+    "row": "Cycling|bicycle racing,bike racing,cycle racing|My races use roads, tracks or rough terrain.|Following riders reduces drag.|Gears match effort to terrain.|Pedals drive two-wheeled vehicles.|I am the sport of bicycle racing.|Slipstreaming reduces air resistance."
+  },
+  {
+    "category": "SPORT",
+    "row": "Marathon|marathon running|My name comes from a Greek place.|My modern distance was standardised last century.|I test sustained running endurance.|My official length is 42.195 kilometres.|I am the road race a little over forty-two kilometres long.|The modern distance was standardised in 1921."
+  },
+  {
+    "category": "SPORT",
+    "row": "Triathlon|triathalon|Transitions count towards total time.|Several disciplines require different equipment.|My normal order starts in water.|A bicycle leg precedes running.|I am the sport combining swimming, cycling and running.|Good transitions save time between disciplines."
+  },
+  {
+    "category": "SPORT",
+    "row": "Gymnastics|gymnastic|Judges consider difficulty and execution.|Balance, strength and flexibility matter.|Some disciplines use apparatus.|Artistic forms include beam, rings and uneven bars.|I am the sport of tumbling, vaulting and apparatus routines.|Artistic competition categories use different apparatus."
+  },
+  {
+    "category": "SPORT",
+    "row": "Curling|curling sport|Strategy includes obstacles and clearing paths.|My circular target is the house.|Players slide polished stones.|Teammates sweep ahead of moving stones.|I am the ice sport with heavy stones and brushes.|Sweeping affects the stone's travel over the ice."
+  },
+  {
+    "category": "SPORT",
+    "row": "Bowling|ten pin bowling,tenpin bowling,tenpin|My ten-pin form has frames.|Clearing all targets on the first delivery has a special name.|The heavy ball has finger holes.|Pins stand at a lane's end.|I am the sport where a rolled ball can score a strike.|Lane oil affects the ball's path."
+  },
+  {
+    "category": "SPORT",
+    "row": "Darts|dart throwing|My sectors have different values.|Narrow rings multiply scores.|My board has twenty numbered sectors.|Players throw small pointed projectiles.|I am the pub sport with a circular board and bullseye.|Many standard games require a double to finish."
+  },
+  {
+    "category": "SPORT",
+    "row": "Billiards|pool,billiards sport,cue sports|A cue supplies the initial shot.|Angles and rebounds shape strategy.|Some forms use pockets.|Balls move on a cloth-covered table.|I am the cue-sport family that includes pool.|Spin affects how a ball behaves after contact."
+  },
+  {
+    "category": "SPORT",
+    "row": "Wrestling|wrestle|Body position matters more than striking.|Competitors grapple.|Styles restrict permitted holds.|A pin can end a contest.|I am the combat sport controlling or pinning opponents.|Freestyle and Greco-Roman differ in permitted leg attacks."
+  },
+  {
+    "category": "SPORT",
+    "row": "Rowing|crew,rowing sport|Crew timing must be coordinated.|Racing shells are long and narrow.|Sliding seats help many forms.|Oars push against water.|I am the boat-racing sport whose athletes usually face backwards while pulling oars.|Oars pivot at fittings attached to the boat."
+  }
+]
