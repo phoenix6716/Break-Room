@@ -23,7 +23,7 @@
  }
  function rank(game,raw,key){
   const v=parse(raw);if(!object(v))return -1;
-  if(game==='time-drop')return root.BREAK_ROOM_TIME_DROP?.valid(v,key.slice(-10))?v.picks.length===10?999999:v.round*100000+(v.phase==='review'?30000:10000)+v.edits/1000000:-1;
+  if(game==='time-drop')return root.BREAK_ROOM_TIME_DROP?.valid(v,key.slice(-10))?v.picks.length===root.BREAK_ROOM_TIME_DROP.rounds(v)?999999:v.round*100000+(v.phase==='review'?30000:10000)+v.edits/1000000:-1;
   if(game==='inner-clock')return root.BREAK_ROOM_INNER_CLOCK?.valid(v,key.slice(-10))?v.picks.length===5?999999:v.round*100000+(v.phase==='review'?30000:10000)+v.edits/1000000:-1;
   if(game==='bouncer')return root.BREAK_ROOM_BOUNCER?.valid(v,key.slice(-10))?v.picks.length===2?999999:v.round*100000+({test:10000,sort:20000,review:30000}[v.phase]||0)+v.edits/1000000:-1;
   if(game==='alibi')return root.BREAK_ROOM_ALIBI?.valid(v,key.slice(-10))?v.picks.length===4?999999:v.round*100000+(v.phase==='review'?20000:10000)+v.edits/1000000:-1;

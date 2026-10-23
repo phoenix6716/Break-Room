@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f4eddc">
-  <meta name="description" content="Guess the year of ten Daily events, or explore hundreds of events in free Unlimited practice.">
+  <meta name="description" content="Guess the year of five Daily events, or explore hundreds of events in free Unlimited practice.">
   <title>Time Drop — Break Room</title>
   <link rel="icon" type="image/svg+xml" href="../../assets/break-room-icon.svg">
   <link rel="stylesheet" href="../../styles.css">
@@ -58,14 +58,14 @@
           <button id="mode-unlimited" role="tab" type="button" aria-selected="false" aria-controls="game-panel" tabindex="-1" data-game-mode="unlimited">Unlimited</button>
         </div>
         <!-- 05 REPLACE: progress content/round count; preserve the centred slot. -->
-        <div class="br-game-progress" id="game-progress" data-template-slot="progress" aria-label="Daily progress">EVENT 1 / 10</div>
+        <div class="br-game-progress" id="game-progress" data-template-slot="progress" aria-label="Daily progress">EVENT 1 / 5</div>
         <!-- 06 REPLACE: ONLY this area is the game's playing surface/engine. -->
         <section class="br-game-board" id="game-panel" role="tabpanel" aria-labelledby="mode-daily" tabindex="0">
           <p id="save-warning" role="status" hidden>Saving is unavailable. Your progress stays in memory while this page remains open.</p>
           <p id="td-notice" role="status"></p>
           <div id="practice-settings" hidden><label>Topic <select id="practice-category"><option value="all">Mixed topics</option><option>World</option><option>Science</option><option>Culture</option><option>Sport</option><option>Everyday</option></select></label><label>Period <select id="practice-era"><option value="all">All periods</option><option value="early">Before 1700</option><option value="middle">1700–1899</option><option value="modern">1900 onward</option></select></label><p id="practice-note" role="status">Settings apply to your next event. Practice resumes in this browser tab.</p></div>
           <div id="engine-slot"></div>
-          <p id="mode-description" class="game-sr-only" role="status">Daily · Ten untimed events.</p>
+          <p id="mode-description" class="game-sr-only" role="status">Daily · Five untimed events.</p>
         </section>
       </div>
 
@@ -81,9 +81,9 @@
       <p>One event. Your best guess at its year.</p>
       <div class="popup-instructions">
         <p><strong>1. Guess the year.</strong> Read the event, then use the timeline, ±100/10/1 buttons or type a whole year. Select BCE for years before the common era. There is no year zero.</p>
-        <p><strong>2. Lock it in.</strong> Your first submitted guess is final. There are no lives, no timer and no early elimination. All ten Daily events can be finished. Every answer reveals its year, your distance, points, explanation and source.</p>
+        <p><strong>2. Lock it in.</strong> Your first submitted guess is final. There are no lives, no timer and no early elimination. All five Daily events can be finished. Every answer reveals its year, your distance, points, explanation and source.</p>
         <p><strong>3. Closer earns more.</strong> Exact years and guesses inside an explicitly accepted approximate range earn 1,000 points. Otherwise points fall evenly to zero over 50 years for events from 1900; 100 years for 1700–1899; 150 for 1000–1699; 250 for 1–999 CE; and 500 for BCE events. These are fixed bands, not changing ages. Three years away from a modern event earns 940 points. Only an exact year is called a Bullseye.</p>
-        <p><strong>4. Finish the Daily.</strong> Ten events, 10,000 possible native points. Arcade score is total points ÷ 100, out of 100. Only completed Dailies count toward stats, Profile and Friends. Everyone uses the same Sydney-date set, resetting at midnight Australia/Sydney. Guesses, answers and event snapshots save as you go.</p>
+        <p><strong>4. Finish the Daily.</strong> Five events, 5,000 possible native points. Arcade score is total points ÷ 50, out of 100. Only completed Dailies count toward stats, Profile and Friends. Everyone uses the same Sydney-date set, resetting at midnight Australia/Sydney. Guesses, answers and event snapshots save as you go.</p>
         <p><strong>5. Practise in Unlimited.</strong> A shuffled 330-event bank supplies free ongoing practice, excluding today’s Daily events and avoiding repeats until your eligible pool is exhausted. Topic/period changes apply to the next event. Your practice session resumes in this tab and stays separate from Daily/cloud records. Cloud saves require activation on Account.</p>
       </div>
       <button class="button pink popup-done" type="button" data-popup-close>GOT IT</button>

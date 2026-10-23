@@ -17,14 +17,14 @@
   const keys=new Set(mem.keys());try{for(let i=0;i<localStorage.length;i++)keys.add(localStorage.key(i));}catch{persistent=false;}
   const rs=[...keys].filter(k=>k?.startsWith(M.PREFIX)).map(k=>{const d=k.slice(M.PREFIX.length),r=M.date(d)&&d<=C.dayKey()?M.record(read(d),d):null;return r&&{day:d,...r};}).filter(Boolean).sort((a,b)=>a.day.localeCompare(b.day));
   const days=new Set(rs.map(r=>r.day));let d=C.dayKey(),streak=0;if(!days.has(d))d=C.previousDay(d);while(days.has(d)){streak++;d=C.previousDay(d);}
-  const scores=rs.map(r=>r.arcadeScore),format=BREAK_ROOM_SCORE.format,values={streak,played:rs.length,best:scores.length?format(Math.max(...scores)):'—',average:scores.length?format(scores.reduce((a,b)=>a+b,0)/scores.length):'—',achievement:rs.filter(r=>r.exact===10).length,last:scores.length?format(scores.at(-1)):'—'};
+  const scores=rs.map(r=>r.arcadeScore),format=BREAK_ROOM_SCORE.format,values={streak,played:rs.length,best:scores.length?format(Math.max(...scores)):'—',average:scores.length?format(scores.reduce((a,b)=>a+b,0)/scores.length):'—',achievement:rs.filter(r=>r.exact===r.rounds).length,last:scores.length?format(scores.at(-1)):'—'};
   for(const[k,v]of Object.entries(values))document.querySelectorAll('[data-summary-stat="'+k+'"],[data-detail-stat="'+k+'"]').forEach(e=>e.textContent=v);
  }
- function current(){if(loadedDay===C.dayKey())return true;fresh();$('td-notice').textContent='A new Sydney day has begun. Earlier results are saved; today’s ten events are ready.';if(mode==='daily')render();return false;}
+ function current(){if(loadedDay===C.dayKey())return true;fresh();$('td-notice').textContent='A new Sydney day has begun. Earlier results are saved; today’s five events are ready.';if(mode==='daily')render();return false;}
  function sync(){
   if(!current()||blocked)return false;if(mode!=='daily')return true;
   const other=read(daily.day);
-  if(other&&(other.picks.length>daily.picks.length||other.round>daily.round||other.edits>daily.edits||other.picks.length===10&&JSON.stringify(other)!==JSON.stringify(daily))){daily=other;render();$('td-notice').textContent='Newer Daily progress was loaded from your other tab.';return false;}return true;
+  if(other&&(other.picks.length>daily.picks.length||other.round>daily.round||other.edits>daily.edits||other.picks.length===M.rounds(other)&&JSON.stringify(other)!==JSON.stringify(daily))){daily=other;render();$('td-notice').textContent='Newer Daily progress was loaded from your other tab.';return false;}return true;
  }
  function savePractice(){try{sessionStorage.setItem(practiceKey,JSON.stringify(practice));}catch{$('practice-note').textContent='Practice stays in memory while this tab remains open.';}}
  function pool(){const excluded=new Set(daily?.events.map(e=>e.id)||M.daily(B,C.dayKey()).map(e=>e.id));return B.filter(e=>!excluded.has(e.id)&&(practice.category==='all'||e.category===practice.category)&&(practice.era==='all'||practice.era==='early'&&e.year<1700||practice.era==='middle'&&e.year>=1700&&e.year<1900||practice.era==='modern'&&e.year>=1900));}
@@ -47,7 +47,7 @@
   if(mode==='daily'){M.guess(daily,y);M.lock(daily);saveDaily();}else{practice.guess=y;practice.pick=y;practice.count++;practice.points+=M.result(practice.event,y).points;savePractice();}render(true);
  }
  function next(){if(!sync()||active().pick===null)return;if(mode==='daily'){M.next(daily);saveDaily();}else nextPractice();render(true);}
- function share(){const record=M.record(daily,daily.day),squares=record.results.map(r=>r.points>=900?'🟩':r.points>=400?'🟨':'🟥').join(''),text='Time Drop '+daily.day+'\n'+squares+'\n'+record.points.toLocaleString()+'/10,000 points · Arcade '+BREAK_ROOM_SCORE.format(record.arcadeScore)+'/100\n'+new URL('index.html',location.href).href;
+ function share(){const record=M.record(daily,daily.day),squares=record.results.map(r=>r.points>=900?'🟩':r.points>=400?'🟨':'🟥').join(''),text='Time Drop '+daily.day+'\n'+squares+'\n'+record.points.toLocaleString()+'/'+record.maximum.toLocaleString()+' points · Arcade '+BREAK_ROOM_SCORE.format(record.arcadeScore)+'/100\n'+new URL('index.html',location.href).href;
   const fallback=()=>{const box=h('textarea','td-share');box.value=text;box.readOnly=true;box.setAttribute('aria-label','Result to copy manually');$('share-status').textContent='Could not copy automatically. Select and copy the result below.';$('share-box').replaceChildren(box);box.focus();box.select();};
   try{navigator.clipboard.writeText(text).then(()=>$('share-status').textContent='Copied!',fallback);}catch{fallback();}
  }
@@ -62,10 +62,10 @@
   const submit=h('button','button td-lock','LOCK IN GUESS →');submit.id='lock-guess';submit.type='submit';set.append(submit);form.append(set);form.addEventListener('submit',lock);return form;
  }
  function render(moveFocus=false){
-  const out=$('engine-slot');out.replaceChildren();warning();$('practice-settings').hidden=mode!=='unlimited';$('game-progress').textContent=mode==='daily'?(daily?'EVENT '+Math.min(10,daily.round+1)+' / 10':'DAILY'):'UNLIMITED · '+practice.count+' GUESSED · '+practice.points.toLocaleString()+' SESSION POINTS';
+  const out=$('engine-slot');out.replaceChildren();warning();$('practice-settings').hidden=mode!=='unlimited';$('game-progress').textContent=mode==='daily'?(daily?'EVENT '+Math.min(M.rounds(daily),daily.round+1)+' / '+M.rounds(daily):'DAILY'):'UNLIMITED · '+practice.count+' GUESSED · '+practice.points.toLocaleString()+' SESSION POINTS';
   if(blocked&&mode==='daily'){out.append(h('h2',null,'Your saved Daily needs attention'),h('p',null,'The existing save was kept unchanged. Export your browser saves from Account before asking for help.'));return;}
   if(mode==='daily'&&daily.phase==='summary'){
-   const record=M.record(daily,daily.day),title=h('h2',null,'All ten guessed.');title.id='td-summary';title.tabIndex=-1;out.append(h('p','td-kicker','DAILY COMPLETE'),title,h('p','td-total',record.points.toLocaleString()+' / 10,000 points'),BREAK_ROOM_SCORE.badge(record.arcadeScore),h('p',null,record.exact+' exact '+(record.exact===1?'year':'years')+' · No timer or speed bonus.'));
+   const record=M.record(daily,daily.day),title=h('h2',null,'All '+M.rounds(daily)+' guessed.');title.id='td-summary';title.tabIndex=-1;out.append(h('p','td-kicker','DAILY COMPLETE'),title,h('p','td-total',record.points.toLocaleString()+' / '+record.maximum.toLocaleString()+' points'),BREAK_ROOM_SCORE.badge(record.arcadeScore),h('p',null,record.exact+' exact '+(record.exact===1?'year':'years')+' · No timer or speed bonus.'));
    const shareStatus=h('p');shareStatus.id='share-status';shareStatus.setAttribute('role','status');const shareBox=h('div');shareBox.id='share-box';out.append(button('COPY RESULT','copy-result',share),button('PLAY UNLIMITED','play-practice',()=>BREAK_ROOM_GAME_SHELL.selectMode('unlimited')),shareStatus,shareBox);
    const list=h('ol','td-history');daily.events.forEach((e,i)=>{const r=record.results[i],item=h('li');item.append(h('strong',null,e.title),h('span',null,'You: '+M.format(daily.picks[i])+' · '+answer(e)+' · '+r.points+' points'));const source=h('a',null,'Read the source');source.href=sourceURL(e);source.target='_blank';source.rel='noopener noreferrer';source.setAttribute('aria-label','Read the source for '+e.title+' (opens in a new tab)');item.append(source);list.append(item);});out.append(list);
   }else{
@@ -73,7 +73,7 @@
    stage.append(deco,eraTag,h('p','td-kicker',a.event.category.toUpperCase()+' · WHEN DID THIS HAPPEN?'),title,controls(a));out.append(stage);
    if(a.pick!==null){const r=M.result(a.event,a.pick),review=h('section','td-review'),heading=h('h3',null,answer(a.event));heading.id='td-review-heading';heading.tabIndex=-1;
     review.append(heading,h('p','td-credit',r.band+' · +'+r.points+' points'),h('p',null,'You guessed '+M.format(a.pick)+'. '+(r.error===0?(a.event.earliest===a.event.latest?'Exactly right.':'Inside the accepted date range.'):r.error+' '+(r.error===1?'year':'years')+' from the accepted answer.')),h('p',null,a.event.fact));
-    const source=h('a',null,'Read the source ↗');source.href=sourceURL(a.event);source.target='_blank';source.rel='noopener noreferrer';source.setAttribute('aria-label','Read the source (opens in a new tab)');review.append(source,button(mode==='daily'&&daily.picks.length===10?'SEE DAILY RESULT →':'NEXT EVENT →','next-event',next));out.append(review);
+    const source=h('a',null,'Read the source ↗');source.href=sourceURL(a.event);source.target='_blank';source.rel='noopener noreferrer';source.setAttribute('aria-label','Read the source (opens in a new tab)');review.append(source,button(mode==='daily'&&daily.picks.length===M.rounds(daily)?'SEE DAILY RESULT →':'NEXT EVENT →','next-event',next));out.append(review);
    }
    paintGuess();
   }

@@ -9,7 +9,7 @@
     if(!['daily','unlimited'].includes(next))throw new RangeError('Unknown game mode');
     mode=next;
     tabs.forEach(tab=>{const active=tab.dataset.gameMode===mode;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;if(active){panel.setAttribute('aria-labelledby',tab.id);if(focus)tab.focus()}});
-    modeDescription.textContent=mode==='daily'?'Daily · Ten untimed events.':'Unlimited · Free practice. No Daily score.';
+    modeDescription.textContent=mode==='daily'?'Daily · Five untimed events.':'Unlimited · Free practice. No Daily score.';
     document.dispatchEvent(new CustomEvent('break-room:mode-change',{detail:{mode}}));
   }
   tabs.forEach(tab=>tab.addEventListener('click',()=>selectMode(tab.dataset.gameMode)));
