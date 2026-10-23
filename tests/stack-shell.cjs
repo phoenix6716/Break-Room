@@ -42,6 +42,8 @@ async function checkLayout(page, width) {
       await page.clock.install({ time: new Date(fixed.getTime() - 60_000) });
       await page.clock.pauseAt(fixed);
       await page.goto(`${base}/games/stack-up/index.html`);
+      assert.equal(await page.locator('.game-quick-guide').count(), 0);
+      assert.equal(await page.getByRole('button', { name: 'How to play', exact: true }).count(), 1);
       await checkLayout(page, width);
       assert.equal(await page.locator('#mode-unlimited').innerText(), 'Unlimited');
       assert.equal(await page.locator('#game-panel').getAttribute('aria-labelledby'), 'mode-daily');

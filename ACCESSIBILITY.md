@@ -33,6 +33,10 @@ Prior uses two large real choice buttons, with dates/facts/references revealed o
 
 Laser is now the sixth integrated game, with four first-fire Daily boards, free independent Unlimited practice, and unscored retries/solution reveals. See `games/laser/README.md` for the exact snapshot, scoring, controls and tests. Arcade score is first-fire hits × 25; partials and practice do not count. Existing Supabase projects apply **`supabase/bouncer.sql` LAST** (includes Pack/Prior); this supersedes earlier per-game migration instructions above. Fresh projects use updated setup then Friends. Live SQL/deployment and human playtesting are separate from local implementation verification.
 
+## Single help entry across all games
+
+All nine games use their existing header **?** button for How to play. Duplicate expandable guides have been removed from Stack Up, Pack, Prior, Laser, Bouncer and Inner Clock, following Alibi. Preserve full dialog instructions, Laser’s mirror diagrams, keyboard opening, focus trapping, Escape and focus restoration. The affected game suites check that only one help button exists and no duplicate quick guide remains.
+
 ## Alibi evidence files and help
 
 Alibi uses the header **?** button as its only How to play entry. The full shared help dialog retains a labelled modal, keyboard opening, inert background, focus trapping, Escape dismissal and focus restoration. Do not add a duplicate expandable quick guide.
