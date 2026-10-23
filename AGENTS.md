@@ -118,3 +118,8 @@ Lowball's 100 identities/order/art stay frozen. From 24 October 2026 Sydney, fre
 ## Owner playtest direction — 23 October 2026
 
 The owner says Alibi is boring/confusing and needs deductions beyond being present at an incident, with concrete explanations. Stack Up is too obscure/hard, must open straight into play and must remove the Daily 10× bonus. Read `PLAYTEST-FEEDBACK.md`, `games/alibi/README.md` and `games/stack-up/README.md`; this supersedes the forced-hard-Daily guidance for these games. New Alibi v3 files use verified observations and four physical-evidence mechanisms, with assignment notes and actual step-by-step proofs; preserve all v1/v2 snapshots and their rules. Keep the original generated portraits. New Stack Up Dailies use the 160 familiar lane-based stacks; retain the 208-set harder bank as optional Challenge mix/topic practice. No intro screen. New `scoreVersion:2` Dailies use base points and a 3,100 Arcade denominator; untagged old records and unfinished runs retain their original 31,000 scale. Never rewrite stored old scores or mix denominators in profile/Friends. The schema update is `supabase/playtest-feedback.sql` after the existing Inner Clock update, or the updated complete `inner-clock.sql`; apply live SQL before deployment. Fresh setup then current Friends includes it. Keep changes in PRs, do not merge/deploy without a new instruction.
+
+
+## Alibi instructions entry — owner decision, 23 October 2026
+
+Use only the existing header **?** button to open Alibi’s How to play dialog. Remove the duplicate expandable guide from Alibi; do not reintroduce a second instructions entry. Keep the full instructions, keyboard opening, modal focus trapping, Escape dismissal and focus restoration in the shared help dialog.
