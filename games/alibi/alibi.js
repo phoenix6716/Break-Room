@@ -1,4 +1,4 @@
-/* Alibi: personal assumptions before the accusation; evidence only after it is final. */
+/* Alibi: verified evidence, personal notes and explanations after the verdict. */
 (()=>{'use strict';
  const M=window.BREAK_ROOM_ALIBI,C=window.MIDNIGHT_ARCADE_CLOCK,S=window.BREAK_ROOM_SCORE,P=window.BREAK_ROOM_PRACTICE,F=window.BREAK_ROOM_FEEL,$=id=>document.getElementById(id),bank=[...window.ALIBI_CASES,...window.ALIBI_EVIDENCE_CASES];
  const h=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;};
