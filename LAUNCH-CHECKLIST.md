@@ -27,16 +27,20 @@ Exit: a reproducible release candidate with passing checks and no unresolved dat
 
 Exit: coverage supported by generated reports and harder content supported by objective checks, with human calibration still pending.
 
-## 3. Complete the deferred factual and price review — editorial/owner
+## 3. Review the factual and price release — editorial/engineering
 
-- [ ] Stake: independently verify all 264 questions, correct/wrong options, scopes and explanations; preserve the original 164 rows' legacy interpretation.
-- [ ] Stack Up: independently verify factual ordering, units, release markets, ambiguous titles and measurement dates; check new arithmetic separately with exact calculations.
-- [ ] Prior: retrieve reliable references for every milestone/date, avoid conflicting firsts and add broader geographic/cultural coverage where useful.
-- [ ] Lowball: specify exact product/model/portion, seller/market, AU/US/UK/CA currency, tax convention and price-check date; retain evidence for every published price.
-- [ ] Fix or remove ambiguous/unverifiable content through a snapshot-compatible release. Do not replace estimates with invented “verified” numbers.
-- [ ] Review all game names, content, fonts, generated-art provenance and asset licences before public marketing.
+The completed 22 October editorial review and PR #4 are documented in [FACTS-AND-PRICES-AUDIT.md](FACTS-AND-PRICES-AUDIT.md). It covers all 600 factual records and all 400 regional targets. The earlier 387-open report is superseded; per-record methods retain the distinction between corroboration, full documents and indexed extracts.
 
-Exit: the site can substantiate its answers and pricing claims; unresolved questions are excluded or clearly scoped.
+- [x] Stake: review all 264 answers/alternatives and scopes; read the 164 inherited explanations and apply 16 targeted overlays without changing legacy options.
+- [x] Stack Up: reconcile factual measurements and conventions, scopes and book milestones; verify arithmetic independently. Keep all 208 IDs, subjects and ordered cards.
+- [x] Prior: review all 128 milestones, years and full explanations; improve links and clarify dates/markets without changing years or IDs.
+- [x] Lowball: replace undefined inherited categories with 400 dated regional references and upfront product/service/pack/offer/average definitions, source evidence and fee/tax conventions. Preserve the 100-item pool and saved targets.
+- [ ] Merge the reviewed correction PR only after its final head passes the complete CI suite; check the deployed candidate separately.
+- [ ] Recheck volatile prices, current offers/tariffs, source availability and observation dates for the public release. Retain dated-reference wording; do not advertise universal/live prices.
+- [ ] Calibrate difficulty and breadth with players; broader Prior world-history coverage remains useful, separate from factual correctness.
+- [ ] Review game names, fonts, generated-art provenance and asset licences before public marketing.
+
+Exit: source-backed, clearly scoped answers and dated price references are deployed with passing compatibility checks; claims accurately reflect their evidence and date.
 
 ## 4. Verify hosting and live accounts — owner with engineering support
 

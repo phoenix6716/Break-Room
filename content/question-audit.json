@@ -83,22 +83,22 @@
         {
           "key": "Zinc",
           "name": "Zinc",
-          "value": 7.14
+          "value": 7.134
         },
         {
           "key": "Tin",
           "name": "Tin",
-          "value": 7.365
+          "value": 7.287
         },
         {
           "key": "Iron",
           "name": "Iron",
-          "value": 7.874
+          "value": 7.87
         },
         {
           "key": "Silver",
           "name": "Silver",
-          "value": 10.49
+          "value": 10.5
         }
       ]
     },
@@ -112,29 +112,30 @@
         {
           "key": "Ireland",
           "name": "Ireland",
-          "value": 70273
+          "value": 69825
         },
         {
           "key": "Austria",
           "name": "Austria",
-          "value": 83871
+          "value": 83878
         },
         {
           "key": "Portugal",
           "name": "Portugal",
-          "value": 92090
+          "value": 92226
         },
         {
           "key": "Hungary",
           "name": "Hungary",
-          "value": 93028
+          "value": 93023
         },
         {
           "key": "Iceland",
           "name": "Iceland",
           "value": 103000
         }
-      ]
+      ],
+      "convention": "UNdata country profiles, 2023 surface area in km²; national profile territory notes apply."
     },
     {
       "id": "stack-005",
@@ -287,7 +288,7 @@
         {
           "key": "DEN",
           "name": "Denver (DEN)",
-          "value": 5431
+          "value": 5434
         },
         {
           "key": "JNB",
@@ -350,27 +351,27 @@
         {
           "key": "Tin",
           "name": "Tin",
-          "value": 505.08
+          "value": 505.078
         },
         {
           "key": "Bismuth",
           "name": "Bismuth",
-          "value": 544.7
+          "value": 544.556
         },
         {
           "key": "Cadmium",
           "name": "Cadmium",
-          "value": 594.22
+          "value": 594.219
         },
         {
           "key": "Lead",
           "name": "Lead",
-          "value": 600.61
+          "value": 600.612
         },
         {
           "key": "Zinc",
           "name": "Zinc",
-          "value": 692.68
+          "value": 692.677
         }
       ]
     },
@@ -384,27 +385,27 @@
         {
           "key": "Tin",
           "name": "Tin",
-          "value": 7.365
+          "value": 7.287
         },
         {
           "key": "Iron",
           "name": "Iron",
-          "value": 7.874
+          "value": 7.87
         },
         {
           "key": "Bismuth",
           "name": "Bismuth",
-          "value": 9.78
+          "value": 9.79
         },
         {
           "key": "Silver",
           "name": "Silver",
-          "value": 10.49
+          "value": 10.5
         },
         {
           "key": "Lead",
           "name": "Lead",
-          "value": 11.34
+          "value": 11.3
         }
       ]
     },
@@ -778,7 +779,7 @@
         {
           "key": "Tungsten",
           "name": "Tungsten",
-          "value": 3695
+          "value": 3687
         }
       ]
     },
@@ -792,7 +793,7 @@
         {
           "key": "Aluminium",
           "name": "Aluminium",
-          "value": 933.47
+          "value": 933.473
         },
         {
           "key": "Copper",
@@ -807,7 +808,7 @@
         {
           "key": "Titanium",
           "name": "Titanium",
-          "value": 1941
+          "value": 1943
         },
         {
           "key": "Platinum",
@@ -826,17 +827,17 @@
         {
           "key": "Zinc",
           "name": "Zinc",
-          "value": 692.68
+          "value": 692.677
         },
         {
           "key": "Aluminium",
           "name": "Aluminium",
-          "value": 933.47
+          "value": 933.473
         },
         {
           "key": "Titanium",
           "name": "Titanium",
-          "value": 1941
+          "value": 1943
         },
         {
           "key": "Vanadium",
@@ -846,7 +847,7 @@
         {
           "key": "Tungsten",
           "name": "Tungsten",
-          "value": 3695
+          "value": 3687
         }
       ]
     },
@@ -860,12 +861,12 @@
         {
           "key": "Bismuth",
           "name": "Bismuth",
-          "value": 544.7
+          "value": 544.556
         },
         {
           "key": "Zinc",
           "name": "Zinc",
-          "value": 692.68
+          "value": 692.677
         },
         {
           "key": "Copper",
@@ -875,7 +876,7 @@
         {
           "key": "Palladium",
           "name": "Palladium",
-          "value": 1828.05
+          "value": 1828
         },
         {
           "key": "Chromium",
@@ -894,12 +895,12 @@
         {
           "key": "Tin",
           "name": "Tin",
-          "value": 505.08
+          "value": 505.078
         },
         {
           "key": "Aluminium",
           "name": "Aluminium",
-          "value": 933.47
+          "value": 933.473
         },
         {
           "key": "Copper",
@@ -914,7 +915,7 @@
         {
           "key": "Molybdenum",
           "name": "Molybdenum",
-          "value": 2896
+          "value": 2895
         }
       ]
     },
@@ -928,7 +929,7 @@
         {
           "key": "Tin",
           "name": "Tin",
-          "value": 505.08
+          "value": 505.078
         },
         {
           "key": "Gold",
@@ -962,17 +963,17 @@
         {
           "key": "Bismuth",
           "name": "Bismuth",
-          "value": 544.7
+          "value": 544.556
         },
         {
           "key": "Lead",
           "name": "Lead",
-          "value": 600.61
+          "value": 600.612
         },
         {
           "key": "Zinc",
           "name": "Zinc",
-          "value": 692.68
+          "value": 692.677
         },
         {
           "key": "Copper",
@@ -982,7 +983,7 @@
         {
           "key": "Titanium",
           "name": "Titanium",
-          "value": 1941
+          "value": 1943
         }
       ]
     },
@@ -1006,7 +1007,7 @@
         {
           "key": "Titanium",
           "name": "Titanium",
-          "value": 1941
+          "value": 1943
         },
         {
           "key": "Chromium",
@@ -1050,7 +1051,7 @@
         {
           "key": "Molybdenum",
           "name": "Molybdenum",
-          "value": 2896
+          "value": 2895
         }
       ]
     },
@@ -1064,12 +1065,12 @@
         {
           "key": "Lead",
           "name": "Lead",
-          "value": 600.61
+          "value": 600.612
         },
         {
           "key": "Aluminium",
           "name": "Aluminium",
-          "value": 933.47
+          "value": 933.473
         },
         {
           "key": "Gold",
@@ -1084,7 +1085,7 @@
         {
           "key": "Molybdenum",
           "name": "Molybdenum",
-          "value": 2896
+          "value": 2895
         }
       ]
     },
@@ -1108,17 +1109,17 @@
         {
           "key": "Tin",
           "name": "Tin",
-          "value": 7.365
+          "value": 7.287
         },
         {
           "key": "Cadmium",
           "name": "Cadmium",
-          "value": 8.65
+          "value": 8.69
         },
         {
           "key": "Silver",
           "name": "Silver",
-          "value": 10.49
+          "value": 10.5
         }
       ]
     },
@@ -1142,17 +1143,17 @@
         {
           "key": "Silver",
           "name": "Silver",
-          "value": 10.49
+          "value": 10.5
         },
         {
           "key": "Palladium",
           "name": "Palladium",
-          "value": 12.023
+          "value": 12
         },
         {
           "key": "Tungsten",
           "name": "Tungsten",
-          "value": 19.25
+          "value": 19.3
         }
       ]
     },
@@ -1171,7 +1172,7 @@
         {
           "key": "Iron",
           "name": "Iron",
-          "value": 7.874
+          "value": 7.87
         },
         {
           "key": "Niobium",
@@ -1181,12 +1182,12 @@
         {
           "key": "Tungsten",
           "name": "Tungsten",
-          "value": 19.25
+          "value": 19.3
         },
         {
           "key": "Platinum",
           "name": "Platinum",
-          "value": 21.45
+          "value": 21.5
         }
       ]
     },
@@ -1200,27 +1201,27 @@
         {
           "key": "Magnesium",
           "name": "Magnesium",
-          "value": 1.738
+          "value": 1.74
         },
         {
           "key": "Antimony",
           "name": "Antimony",
-          "value": 6.697
+          "value": 6.68
         },
         {
           "key": "Manganese",
           "name": "Manganese",
-          "value": 7.21
+          "value": 7.3
         },
         {
           "key": "Molybdenum",
           "name": "Molybdenum",
-          "value": 10.28
+          "value": 10.2
         },
         {
           "key": "Platinum",
           "name": "Platinum",
-          "value": 21.45
+          "value": 21.5
         }
       ]
     },
@@ -1239,22 +1240,22 @@
         {
           "key": "Antimony",
           "name": "Antimony",
-          "value": 6.697
+          "value": 6.68
         },
         {
           "key": "Cadmium",
           "name": "Cadmium",
-          "value": 8.65
+          "value": 8.69
         },
         {
           "key": "Lead",
           "name": "Lead",
-          "value": 11.34
+          "value": 11.3
         },
         {
           "key": "Tungsten",
           "name": "Tungsten",
-          "value": 19.25
+          "value": 19.3
         }
       ]
     },
@@ -1273,22 +1274,22 @@
         {
           "key": "Chromium",
           "name": "Chromium",
-          "value": 7.19
+          "value": 7.15
         },
         {
           "key": "Iron",
           "name": "Iron",
-          "value": 7.874
+          "value": 7.87
         },
         {
           "key": "Cobalt",
           "name": "Cobalt",
-          "value": 8.9
+          "value": 8.86
         },
         {
           "key": "Molybdenum",
           "name": "Molybdenum",
-          "value": 10.28
+          "value": 10.2
         }
       ]
     },
@@ -1307,7 +1308,7 @@
         {
           "key": "Tin",
           "name": "Tin",
-          "value": 7.365
+          "value": 7.287
         },
         {
           "key": "Copper",
@@ -1317,12 +1318,12 @@
         {
           "key": "Silver",
           "name": "Silver",
-          "value": 10.49
+          "value": 10.5
         },
         {
           "key": "Palladium",
           "name": "Palladium",
-          "value": 12.023
+          "value": 12
         }
       ]
     },
@@ -1336,27 +1337,27 @@
         {
           "key": "Antimony",
           "name": "Antimony",
-          "value": 6.697
+          "value": 6.68
         },
         {
           "key": "Chromium",
           "name": "Chromium",
-          "value": 7.19
+          "value": 7.15
         },
         {
           "key": "Nickel",
           "name": "Nickel",
-          "value": 8.908
+          "value": 8.9
         },
         {
           "key": "Silver",
           "name": "Silver",
-          "value": 10.49
+          "value": 10.5
         },
         {
           "key": "Tungsten",
           "name": "Tungsten",
-          "value": 19.25
+          "value": 19.3
         }
       ]
     },
@@ -1380,12 +1381,12 @@
         {
           "key": "Zinc",
           "name": "Zinc",
-          "value": 7.14
+          "value": 7.134
         },
         {
           "key": "Bismuth",
           "name": "Bismuth",
-          "value": 9.78
+          "value": 9.79
         },
         {
           "key": "Gold",
@@ -1404,7 +1405,7 @@
         {
           "key": "Magnesium",
           "name": "Magnesium",
-          "value": 1.738
+          "value": 1.74
         },
         {
           "key": "Titanium",
@@ -1414,7 +1415,7 @@
         {
           "key": "Zinc",
           "name": "Zinc",
-          "value": 7.14
+          "value": 7.134
         },
         {
           "key": "Niobium",
@@ -1438,29 +1439,30 @@
         {
           "key": "Czechia",
           "name": "Czechia",
-          "value": 78865
+          "value": 78871
         },
         {
           "key": "Austria",
           "name": "Austria",
-          "value": 83871
+          "value": 83878
         },
         {
           "key": "New Zealand",
           "name": "New Zealand",
-          "value": 270467
+          "value": 268107
         },
         {
           "key": "Germany",
           "name": "Germany",
-          "value": 357114
+          "value": 357581
         },
         {
           "key": "Bolivia",
           "name": "Bolivia",
           "value": 1098581
         }
-      ]
+      ],
+      "convention": "UNdata country profiles, 2023 surface area in km²; national profile territory notes apply."
     },
     {
       "id": "stack-044",
@@ -1472,17 +1474,17 @@
         {
           "key": "Austria",
           "name": "Austria",
-          "value": 83871
+          "value": 83878
         },
         {
           "key": "United Kingdom",
           "name": "United Kingdom",
-          "value": 242900
+          "value": 242495
         },
         {
           "key": "Malaysia",
           "name": "Malaysia",
-          "value": 330803
+          "value": 330621
         },
         {
           "key": "Japan",
@@ -1492,9 +1494,10 @@
         {
           "key": "Sweden",
           "name": "Sweden",
-          "value": 450295
+          "value": 438574
         }
-      ]
+      ],
+      "convention": "UNdata country profiles, 2023 surface area in km²; national profile territory notes apply."
     },
     {
       "id": "stack-045",
@@ -1506,17 +1509,17 @@
         {
           "key": "Portugal",
           "name": "Portugal",
-          "value": 92090
+          "value": 92226
         },
         {
           "key": "United Kingdom",
           "name": "United Kingdom",
-          "value": 242900
+          "value": 242495
         },
         {
           "key": "Germany",
           "name": "Germany",
-          "value": 357114
+          "value": 357581
         },
         {
           "key": "Bolivia",
@@ -1526,9 +1529,10 @@
         {
           "key": "Kazakhstan",
           "name": "Kazakhstan",
-          "value": 2724900
+          "value": 2724902
         }
-      ]
+      ],
+      "convention": "UNdata country profiles, 2023 surface area in km²; national profile territory notes apply."
     },
     {
       "id": "stack-046",
@@ -1540,12 +1544,12 @@
         {
           "key": "Czechia",
           "name": "Czechia",
-          "value": 78865
+          "value": 78871
         },
         {
           "key": "Ecuador",
           "name": "Ecuador",
-          "value": 276841
+          "value": 257217
         },
         {
           "key": "Japan",
@@ -1560,9 +1564,10 @@
         {
           "key": "Kazakhstan",
           "name": "Kazakhstan",
-          "value": 2724900
+          "value": 2724902
         }
-      ]
+      ],
+      "convention": "UNdata country profiles, 2023 surface area in km²; national profile territory notes apply."
     },
     {
       "id": "stack-047",
@@ -1579,12 +1584,12 @@
         {
           "key": "Bulgaria",
           "name": "Bulgaria",
-          "value": 110879
+          "value": 110372
         },
         {
           "key": "Spain",
           "name": "Spain",
-          "value": 505992
+          "value": 506008
         },
         {
           "key": "Bolivia",
@@ -1594,9 +1599,10 @@
         {
           "key": "Argentina",
           "name": "Argentina",
-          "value": 2780400
+          "value": 2796427
         }
-      ]
+      ],
+      "convention": "UNdata country profiles, 2023 surface area in km²; national profile territory notes apply."
     },
     {
       "id": "stack-048",
@@ -1608,29 +1614,30 @@
         {
           "key": "Ireland",
           "name": "Ireland",
-          "value": 70273
+          "value": 69825
         },
         {
           "key": "Hungary",
           "name": "Hungary",
-          "value": 93028
+          "value": 93023
         },
         {
           "key": "Vietnam",
           "name": "Vietnam",
-          "value": 331212
+          "value": 331317
         },
         {
           "key": "Germany",
           "name": "Germany",
-          "value": 357114
+          "value": 357581
         },
         {
           "key": "Argentina",
           "name": "Argentina",
-          "value": 2780400
+          "value": 2796427
         }
-      ]
+      ],
+      "convention": "UNdata country profiles, 2023 surface area in km²; national profile territory notes apply."
     },
     {
       "id": "stack-049",
@@ -1642,29 +1649,30 @@
         {
           "key": "Portugal",
           "name": "Portugal",
-          "value": 92090
+          "value": 92226
         },
         {
           "key": "Ecuador",
           "name": "Ecuador",
-          "value": 276841
+          "value": 257217
         },
         {
           "key": "Vietnam",
           "name": "Vietnam",
-          "value": 331212
+          "value": 331317
         },
         {
           "key": "Finland",
           "name": "Finland",
-          "value": 338424
+          "value": 336884
         },
         {
           "key": "Sweden",
           "name": "Sweden",
-          "value": 450295
+          "value": 438574
         }
-      ]
+      ],
+      "convention": "UNdata country profiles, 2023 surface area in km²; national profile territory notes apply."
     },
     {
       "id": "stack-050",
@@ -1676,17 +1684,17 @@
         {
           "key": "Portugal",
           "name": "Portugal",
-          "value": 92090
+          "value": 92226
         },
         {
           "key": "Greece",
           "name": "Greece",
-          "value": 131990
+          "value": 131957
         },
         {
           "key": "Malaysia",
           "name": "Malaysia",
-          "value": 330803
+          "value": 330621
         },
         {
           "key": "Japan",
@@ -1696,9 +1704,10 @@
         {
           "key": "Mongolia",
           "name": "Mongolia",
-          "value": 1564110
+          "value": 1564116
         }
-      ]
+      ],
+      "convention": "UNdata country profiles, 2023 surface area in km²; national profile territory notes apply."
     },
     {
       "id": "stack-051",
@@ -1710,12 +1719,12 @@
         {
           "key": "Czechia",
           "name": "Czechia",
-          "value": 78865
+          "value": 78871
         },
         {
           "key": "Portugal",
           "name": "Portugal",
-          "value": 92090
+          "value": 92226
         },
         {
           "key": "Iceland",
@@ -1730,9 +1739,10 @@
         {
           "key": "Vietnam",
           "name": "Vietnam",
-          "value": 331212
+          "value": 331317
         }
-      ]
+      ],
+      "convention": "UNdata country profiles, 2023 surface area in km²; national profile territory notes apply."
     },
     {
       "id": "stack-052",
@@ -1744,7 +1754,7 @@
         {
           "key": "Ireland",
           "name": "Ireland",
-          "value": 70273
+          "value": 69825
         },
         {
           "key": "Iceland",
@@ -1759,14 +1769,15 @@
         {
           "key": "United Kingdom",
           "name": "United Kingdom",
-          "value": 242900
+          "value": 242495
         },
         {
           "key": "Peru",
           "name": "Peru",
           "value": 1285216
         }
-      ]
+      ],
+      "convention": "UNdata country profiles, 2023 surface area in km²; national profile territory notes apply."
     },
     {
       "id": "stack-053",
@@ -3153,7 +3164,7 @@
         {
           "key": "UIO",
           "name": "Quito (UIO)",
-          "value": 7841
+          "value": 7910
         },
         {
           "key": "LPB",
@@ -3221,7 +3232,7 @@
         {
           "key": "UIO",
           "name": "Quito (UIO)",
-          "value": 7841
+          "value": 7910
         },
         {
           "key": "LPB",
@@ -3274,7 +3285,7 @@
         {
           "key": "PRG",
           "name": "Prague (PRG)",
-          "value": 1247
+          "value": 1234
         },
         {
           "key": "GRU",
@@ -3294,7 +3305,7 @@
         {
           "key": "UIO",
           "name": "Quito (UIO)",
-          "value": 7841
+          "value": 7910
         }
       ]
     },
@@ -3328,7 +3339,7 @@
         {
           "key": "UIO",
           "name": "Quito (UIO)",
-          "value": 7841
+          "value": 7910
         }
       ]
     },
@@ -3342,12 +3353,12 @@
         {
           "key": "YYC",
           "name": "Calgary (YYC)",
-          "value": 3557
+          "value": 3606
         },
         {
           "key": "DEN",
           "name": "Denver (DEN)",
-          "value": 5431
+          "value": 5434
         },
         {
           "key": "ADD",
@@ -3357,7 +3368,7 @@
         {
           "key": "UIO",
           "name": "Quito (UIO)",
-          "value": 7841
+          "value": 7910
         },
         {
           "key": "BOG",
@@ -3410,7 +3421,7 @@
         {
           "key": "PRG",
           "name": "Prague (PRG)",
-          "value": 1247
+          "value": 1234
         },
         {
           "key": "ZRH",
@@ -3430,7 +3441,7 @@
         {
           "key": "UIO",
           "name": "Quito (UIO)",
-          "value": 7841
+          "value": 7910
         }
       ]
     },
@@ -3449,7 +3460,7 @@
         {
           "key": "YYC",
           "name": "Calgary (YYC)",
-          "value": 3557
+          "value": 3606
         },
         {
           "key": "ADD",
@@ -3459,7 +3470,7 @@
         {
           "key": "UIO",
           "name": "Quito (UIO)",
-          "value": 7841
+          "value": 7910
         },
         {
           "key": "LPB",
@@ -6546,7 +6557,7 @@
         {
           "key": "Zinc",
           "name": "Zinc",
-          "value": 692.68
+          "value": 692.677
         },
         {
           "key": "Silver",
@@ -6556,17 +6567,17 @@
         {
           "key": "Palladium",
           "name": "Palladium",
-          "value": 1828.05
+          "value": 1828
         },
         {
           "key": "Titanium",
           "name": "Titanium",
-          "value": 1941
+          "value": 1943
         },
         {
           "key": "Tungsten",
           "name": "Tungsten",
-          "value": 3695
+          "value": 3687
         }
       ]
     },
@@ -6580,7 +6591,7 @@
         {
           "key": "Magnesium",
           "name": "Magnesium",
-          "value": 1.738
+          "value": 1.74
         },
         {
           "key": "Titanium",
@@ -6595,12 +6606,12 @@
         {
           "key": "Cadmium",
           "name": "Cadmium",
-          "value": 8.65
+          "value": 8.69
         },
         {
           "key": "Platinum",
           "name": "Platinum",
-          "value": 21.45
+          "value": 21.5
         }
       ]
     },
@@ -6614,29 +6625,30 @@
         {
           "key": "Austria",
           "name": "Austria",
-          "value": 83871
+          "value": 83878
         },
         {
           "key": "Bulgaria",
           "name": "Bulgaria",
-          "value": 110879
+          "value": 110372
         },
         {
           "key": "Finland",
           "name": "Finland",
-          "value": 338424
+          "value": 336884
         },
         {
           "key": "Germany",
           "name": "Germany",
-          "value": 357114
+          "value": 357581
         },
         {
           "key": "Mongolia",
           "name": "Mongolia",
-          "value": 1564110
+          "value": 1564116
         }
-      ]
+      ],
+      "convention": "UNdata country profiles, 2023 surface area in km²; national profile territory notes apply."
     },
     {
       "id": "stack-launch-fact-005",
@@ -6794,7 +6806,7 @@
         {
           "key": "DEN",
           "name": "Denver (DEN)",
-          "value": 5431
+          "value": 5434
         },
         {
           "key": "ADD",
@@ -6852,12 +6864,12 @@
         {
           "key": "Bismuth",
           "name": "Bismuth",
-          "value": 544.7
+          "value": 544.556
         },
         {
           "key": "Lead",
           "name": "Lead",
-          "value": 600.61
+          "value": 600.612
         },
         {
           "key": "Silver",
@@ -6896,17 +6908,17 @@
         {
           "key": "Manganese",
           "name": "Manganese",
-          "value": 7.21
+          "value": 7.3
         },
         {
           "key": "Cobalt",
           "name": "Cobalt",
-          "value": 8.9
+          "value": 8.86
         },
         {
           "key": "Lead",
           "name": "Lead",
-          "value": 11.34
+          "value": 11.3
         }
       ]
     },
@@ -6920,12 +6932,12 @@
         {
           "key": "Ireland",
           "name": "Ireland",
-          "value": 70273
+          "value": 69825
         },
         {
           "key": "Portugal",
           "name": "Portugal",
-          "value": 92090
+          "value": 92226
         },
         {
           "key": "Iceland",
@@ -6935,14 +6947,15 @@
         {
           "key": "Bulgaria",
           "name": "Bulgaria",
-          "value": 110879
+          "value": 110372
         },
         {
           "key": "Bolivia",
           "name": "Bolivia",
           "value": 1098581
         }
-      ]
+      ],
+      "convention": "UNdata country profiles, 2023 surface area in km²; national profile territory notes apply."
     },
     {
       "id": "stack-launch-fact-014",
@@ -7158,17 +7171,17 @@
         {
           "key": "Tin",
           "name": "Tin",
-          "value": 505.08
+          "value": 505.078
         },
         {
           "key": "Bismuth",
           "name": "Bismuth",
-          "value": 544.7
+          "value": 544.556
         },
         {
           "key": "Cadmium",
           "name": "Cadmium",
-          "value": 594.22
+          "value": 594.219
         },
         {
           "key": "Platinum",
@@ -7192,7 +7205,7 @@
         {
           "key": "Magnesium",
           "name": "Magnesium",
-          "value": 1.738
+          "value": 1.74
         },
         {
           "key": "Aluminium",
@@ -7202,17 +7215,17 @@
         {
           "key": "Cobalt",
           "name": "Cobalt",
-          "value": 8.9
+          "value": 8.86
         },
         {
           "key": "Bismuth",
           "name": "Bismuth",
-          "value": 9.78
+          "value": 9.79
         },
         {
           "key": "Lead",
           "name": "Lead",
-          "value": 11.34
+          "value": 11.3
         }
       ]
     },
@@ -7226,29 +7239,30 @@
         {
           "key": "Ireland",
           "name": "Ireland",
-          "value": 70273
+          "value": 69825
         },
         {
           "key": "Hungary",
           "name": "Hungary",
-          "value": 93028
+          "value": 93023
         },
         {
           "key": "Malaysia",
           "name": "Malaysia",
-          "value": 330803
+          "value": 330621
         },
         {
           "key": "Spain",
           "name": "Spain",
-          "value": 505992
+          "value": 506008
         },
         {
           "key": "Peru",
           "name": "Peru",
           "value": 1285216
         }
-      ]
+      ],
+      "convention": "UNdata country profiles, 2023 surface area in km²; national profile territory notes apply."
     },
     {
       "id": "stack-launch-fact-023",
@@ -7411,7 +7425,7 @@
         {
           "key": "UIO",
           "name": "Quito (UIO)",
-          "value": 7841
+          "value": 7910
         },
         {
           "key": "BOG",
@@ -7464,7 +7478,7 @@
         {
           "key": "Zinc",
           "name": "Zinc",
-          "value": 692.68
+          "value": 692.677
         },
         {
           "key": "Gold",
@@ -7479,7 +7493,7 @@
         {
           "key": "Titanium",
           "name": "Titanium",
-          "value": 1941
+          "value": 1943
         },
         {
           "key": "Niobium",
@@ -7508,7 +7522,7 @@
         {
           "key": "Iron",
           "name": "Iron",
-          "value": 7.874
+          "value": 7.87
         },
         {
           "key": "Niobium",
@@ -7518,7 +7532,7 @@
         {
           "key": "Bismuth",
           "name": "Bismuth",
-          "value": 9.78
+          "value": 9.79
         }
       ]
     },
@@ -7532,7 +7546,7 @@
         {
           "key": "Portugal",
           "name": "Portugal",
-          "value": 92090
+          "value": 92226
         },
         {
           "key": "Iceland",
@@ -7542,19 +7556,20 @@
         {
           "key": "Bulgaria",
           "name": "Bulgaria",
-          "value": 110879
+          "value": 110372
         },
         {
           "key": "New Zealand",
           "name": "New Zealand",
-          "value": 270467
+          "value": 268107
         },
         {
           "key": "Spain",
           "name": "Spain",
-          "value": 505992
+          "value": 506008
         }
-      ]
+      ],
+      "convention": "UNdata country profiles, 2023 surface area in km²; national profile territory notes apply."
     },
     {
       "id": "stack-launch-fact-032",

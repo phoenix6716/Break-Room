@@ -60,6 +60,8 @@ if(game==='laser'){
 }
 
 if(game==='stack-up'){
+ const retained=bank('stack-up','stacks','STACK_UP_STACKS').rows;
+ if(retained.length===208&&retained.filter(s=>s.id.startsWith('stack-launch-')).length===96){require('./review-question-banks.cjs');}else{
  const rows=bank('stack-up','stacks','STACK_UP_STACKS').rows.filter(s=>!s.id.startsWith('stack-launch-')),audit=JSON.parse(fs.readFileSync('content/question-audit.json','utf8'));audit.stack_up=audit.stack_up.filter(s=>!s.id.startsWith('stack-launch-'));
  const gcd=(a,b)=>b?gcd(b,a%b):a,pool=[],seen=new Set(rows.map(s=>s.cards.map(c=>c.name).sort().join('|')));
  for(let d=11;d<=43;d++)for(let n=1;n<d;n++)if(gcd(n,d)===1&&n/d>=.48&&n/d<=.68)pool.push({n,d});
@@ -78,4 +80,5 @@ if(game==='stack-up'){
  rows.push({...f.s,id,fact:chosen.map(x=>x.name+': '+x.value+(row.unit?' '+row.unit:'')).join('; ')+'.',cards:chosen.map((x,j)=>({name:x.name,detail:'',value:j+1,symbol:f.s.cards[0].symbol}))});audit.stack_up.push(row);
  }
  save('stack-up','stacks','STACK_UP_STACKS',rows);fs.writeFileSync('content/question-audit.json',JSON.stringify(audit,null,2)+'\n');
+ }
 }

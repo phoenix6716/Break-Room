@@ -5,6 +5,14 @@ import ast,itertools,json,math,random
 ROOT=Path(__file__).resolve().parents[1]
 R=json.loads((ROOT/'content/reference-data.json').read_text())
 
+# The reviewed release freezes question IDs and subject sets. Reconcile measurements
+# against that retained selection instead of redrawing the random baseline at old IDs.
+if R.get('sources',{}).get('elements',{}).get('review'):
+    import subprocess
+    subprocess.run(['node',str(ROOT/'scripts/review-question-banks.cjs')],cwd=ROOT,check=True)
+    print('Reconciled the retained reviewed bank without replacing IDs or subjects.')
+    raise SystemExit(0)
+
 def calc(expr):
     tree=ast.parse(expr,mode='eval')
     funcs={'factorial':math.factorial,'gcd':math.gcd,'lcm':math.lcm,'sqrt':math.sqrt}
@@ -67,7 +75,7 @@ core_specs=[
  ('METALS','Order these pure metals by increasing melting point at standard pressure.',['LOWER','HIGHER'],R['elements'],'melt',['Silver','Gold','Copper','Nickel','Iron'],'K','▦',None),
  ('MATERIALS','Order these pure solid elements by increasing density near room temperature.',['LESS DENSE','DENSER'],R['elements'],'density_g_cm3',['Titanium','Zinc','Tin','Iron','Silver'],'g/cm³','■',None),
  ('GEOGRAPHY','Order these countries from smallest to largest total area.',['SMALLER','LARGER'],R['countries'],'area',['Portugal','Hungary','Austria','Ireland','Iceland'],'km²','◇',None),
- ('BOOKS','Order these novels by their first complete book publication, earliest first (original language).',['EARLIER','LATER'],R['books'],'year',['The Trial','The Castle','To the Lighthouse','The Sound and the Fury','The Stranger'],'','Aa',None),
+ ('BOOKS','Order these novels by first book publication in the original language, earliest first.',['EARLIER','LATER'],R['books'],'year',['The Trial','The Castle','To the Lighthouse','The Sound and the Fury','The Stranger'],'','Aa',None),
  ('CINEMA','Order these films by US release year, earliest first.',['EARLIER','LATER'],R['movies'],'year',['Alien','Blade Runner','The Terminator','Back to the Future','Jurassic Park'],'','▣',None),
  ('AIRPORTS','Order these airports from south to north by latitude.',['SOUTH','NORTH'],R['airports'],'latitude',['FCO','VIE','CDG','FRA','LHR'],'° latitude','↑',airLabel),
  ('AIRPORTS','Order these airports west to east by signed longitude, from 180°W to 180°E.',['WEST','EAST'],R['airports'],'longitude',['LHR','CDG','AMS','FRA','VIE'],'° longitude','→',airLabel),
@@ -84,7 +92,7 @@ families=[
  ('METALS','Order these pure metals by increasing melting point at standard pressure.',['LOWER','HIGHER'],R['elements'],'melt',chem,'K','▦',2,None,20),
  ('MATERIALS','Order these pure solid elements by increasing density near room temperature.',['LESS DENSE','DENSER'],R['elements'],'density_g_cm3',chem,'g/cm³','■',3,None,.2),
  ('GEOGRAPHY','Order these countries from smallest to largest total area.',['SMALLER','LARGER'],R['countries'],'area',countryNames,'km²','◇',4,None,1500),
- ('BOOKS','Order these novels by their first complete book publication, earliest first (original language).',['EARLIER','LATER'],R['books'],'year',bookNames,'','Aa',5,None,1),
+ ('BOOKS','Order these novels by first book publication in the original language, earliest first.',['EARLIER','LATER'],R['books'],'year',bookNames,'','Aa',5,None,1),
  ('CINEMA','Order these films by US release year, earliest first.',['EARLIER','LATER'],R['movies'],'year',list(R['movies']),'','▣',6,None,1),
  ('AIRPORTS','Order these airports from south to north by latitude.',['SOUTH','NORTH'],R['airports'],'latitude',airportCodes,'° latitude','↑',7,airLabel,1),
  ('AIRPORTS','Order these airports west to east by signed longitude, from 180°W to 180°E.',['WEST','EAST'],R['airports'],'longitude',airportCodes,'° longitude','→',8,airLabel,2),

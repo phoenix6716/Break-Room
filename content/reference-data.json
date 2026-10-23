@@ -3,12 +3,661 @@
     "elements": {
       "url": "https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master/PeriodicTableJSON.json",
       "retrieved_utc": "2026-10-19T04:32:17.859177+00:00",
-      "sha256": "361bc5b62b646dd9c4ec870e9b5b81fc2f46ebb7d06eb4324c788db5ab768c97"
+      "sha256": "361bc5b62b646dd9c4ec870e9b5b81fc2f46ebb7d06eb4324c788db5ab768c97",
+      "review": {
+        "checkedAt": "2026-10-22",
+        "convention": "RSC Periodic Table fact-box values: melting point in kelvin at standard pressure, density in g/cm³ at room temperature. Reported precision retained; source links per reviewed element.",
+        "subjects": [
+          {
+            "key": "Titanium",
+            "url": "https://periodic-table.rsc.org/element/22/titanium",
+            "melt": 1943,
+            "density_g_cm3": 4.506
+          },
+          {
+            "key": "Vanadium",
+            "url": "https://periodic-table.rsc.org/element/23/vanadium",
+            "melt": 2183,
+            "density_g_cm3": 6
+          },
+          {
+            "key": "Chromium",
+            "url": "https://periodic-table.rsc.org/element/24/chromium",
+            "melt": 2180,
+            "density_g_cm3": 7.15
+          },
+          {
+            "key": "Manganese",
+            "url": "https://periodic-table.rsc.org/element/25/manganese",
+            "melt": 1519,
+            "density_g_cm3": 7.3
+          },
+          {
+            "key": "Iron",
+            "url": "https://periodic-table.rsc.org/element/26/iron",
+            "melt": 1811,
+            "density_g_cm3": 7.87
+          },
+          {
+            "key": "Silver",
+            "url": "https://periodic-table.rsc.org/element/47/silver",
+            "melt": 1234.93,
+            "density_g_cm3": 10.5
+          },
+          {
+            "key": "Gold",
+            "url": "https://periodic-table.rsc.org/element/79/gold",
+            "melt": 1337.33,
+            "density_g_cm3": 19.3
+          },
+          {
+            "key": "Copper",
+            "url": "https://periodic-table.rsc.org/element/29/copper",
+            "melt": 1357.77,
+            "density_g_cm3": 8.96
+          },
+          {
+            "key": "Nickel",
+            "url": "https://periodic-table.rsc.org/element/28/nickel",
+            "melt": 1728,
+            "density_g_cm3": 8.9
+          },
+          {
+            "key": "Zinc",
+            "url": "https://periodic-table.rsc.org/element/30/zinc",
+            "melt": 692.677,
+            "density_g_cm3": 7.134
+          },
+          {
+            "key": "Tin",
+            "url": "https://periodic-table.rsc.org/element/50/tin",
+            "melt": 505.078,
+            "density_g_cm3": 7.287
+          },
+          {
+            "key": "Zirconium",
+            "url": "https://periodic-table.rsc.org/element/40/zirconium",
+            "melt": 2127,
+            "density_g_cm3": 6.52
+          },
+          {
+            "key": "Niobium",
+            "url": "https://periodic-table.rsc.org/element/41/niobium",
+            "melt": 2750,
+            "density_g_cm3": 8.57
+          },
+          {
+            "key": "Molybdenum",
+            "url": "https://periodic-table.rsc.org/element/42/molybdenum",
+            "melt": 2895,
+            "density_g_cm3": 10.2
+          },
+          {
+            "key": "Palladium",
+            "url": "https://periodic-table.rsc.org/element/46/palladium",
+            "melt": 1828,
+            "density_g_cm3": 12
+          },
+          {
+            "key": "Bismuth",
+            "url": "https://periodic-table.rsc.org/element/83/bismuth",
+            "melt": 544.556,
+            "density_g_cm3": 9.79
+          },
+          {
+            "key": "Cadmium",
+            "url": "https://periodic-table.rsc.org/element/48/cadmium",
+            "melt": 594.219,
+            "density_g_cm3": 8.69
+          },
+          {
+            "key": "Lead",
+            "url": "https://periodic-table.rsc.org/element/82/lead",
+            "melt": 600.612,
+            "density_g_cm3": 11.3
+          },
+          {
+            "key": "Magnesium",
+            "url": "https://periodic-table.rsc.org/element/12/magnesium",
+            "melt": 923,
+            "density_g_cm3": 1.74
+          },
+          {
+            "key": "Antimony",
+            "url": "https://periodic-table.rsc.org/element/51/antimony",
+            "melt": 903.778,
+            "density_g_cm3": 6.68
+          },
+          {
+            "key": "Platinum",
+            "url": "https://periodic-table.rsc.org/element/78/platinum",
+            "melt": 2041.4,
+            "density_g_cm3": 21.5
+          },
+          {
+            "key": "Cobalt",
+            "url": "https://periodic-table.rsc.org/element/27/cobalt",
+            "melt": 1768,
+            "density_g_cm3": 8.86
+          },
+          {
+            "key": "Tungsten",
+            "url": "https://periodic-table.rsc.org/element/74/tungsten",
+            "melt": 3687,
+            "density_g_cm3": 19.3
+          },
+          {
+            "key": "Aluminium",
+            "url": "https://periodic-table.rsc.org/element/13/aluminium",
+            "melt": 933.473,
+            "density_g_cm3": 2.7
+          },
+          {
+            "key": "Mercury",
+            "url": "https://periodic-table.rsc.org/element/80/mercury",
+            "melt": 234.321,
+            "density_g_cm3": 13.5336
+          },
+          {
+            "key": "Potassium",
+            "url": "https://periodic-table.rsc.org/element/19/potassium",
+            "melt": 336.7,
+            "density_g_cm3": 0.89
+          },
+          {
+            "key": "Xenon",
+            "url": "https://periodic-table.rsc.org/element/54/xenon",
+            "melt": 161.4,
+            "density_g_cm3": 0.005366
+          },
+          {
+            "key": "Krypton",
+            "url": "https://periodic-table.rsc.org/element/36/krypton",
+            "melt": 115.78,
+            "density_g_cm3": 0.003425
+          },
+          {
+            "key": "Rubidium",
+            "url": "https://periodic-table.rsc.org/element/37/rubidium",
+            "melt": 312.45,
+            "density_g_cm3": 1.53
+          },
+          {
+            "key": "Strontium",
+            "url": "https://periodic-table.rsc.org/element/38/strontium",
+            "melt": 1050,
+            "density_g_cm3": 2.64
+          }
+        ],
+        "corrections": [
+          {
+            "key": "Titanium",
+            "field": "melt",
+            "from": 1941,
+            "value": 1943
+          },
+          {
+            "key": "Chromium",
+            "field": "density_g_cm3",
+            "from": 7.19,
+            "value": 7.15
+          },
+          {
+            "key": "Manganese",
+            "field": "density_g_cm3",
+            "from": 7.21,
+            "value": 7.3
+          },
+          {
+            "key": "Iron",
+            "field": "density_g_cm3",
+            "from": 7.874,
+            "value": 7.87
+          },
+          {
+            "key": "Silver",
+            "field": "density_g_cm3",
+            "from": 10.49,
+            "value": 10.5
+          },
+          {
+            "key": "Nickel",
+            "field": "density_g_cm3",
+            "from": 8.908,
+            "value": 8.9
+          },
+          {
+            "key": "Zinc",
+            "field": "melt",
+            "from": 692.68,
+            "value": 692.677
+          },
+          {
+            "key": "Zinc",
+            "field": "density_g_cm3",
+            "from": 7.14,
+            "value": 7.134
+          },
+          {
+            "key": "Tin",
+            "field": "melt",
+            "from": 505.08,
+            "value": 505.078
+          },
+          {
+            "key": "Tin",
+            "field": "density_g_cm3",
+            "from": 7.365,
+            "value": 7.287
+          },
+          {
+            "key": "Zirconium",
+            "field": "melt",
+            "from": 2128,
+            "value": 2127
+          },
+          {
+            "key": "Molybdenum",
+            "field": "melt",
+            "from": 2896,
+            "value": 2895
+          },
+          {
+            "key": "Molybdenum",
+            "field": "density_g_cm3",
+            "from": 10.28,
+            "value": 10.2
+          },
+          {
+            "key": "Palladium",
+            "field": "melt",
+            "from": 1828.05,
+            "value": 1828
+          },
+          {
+            "key": "Palladium",
+            "field": "density_g_cm3",
+            "from": 12.023,
+            "value": 12
+          },
+          {
+            "key": "Bismuth",
+            "field": "melt",
+            "from": 544.7,
+            "value": 544.556
+          },
+          {
+            "key": "Bismuth",
+            "field": "density_g_cm3",
+            "from": 9.78,
+            "value": 9.79
+          },
+          {
+            "key": "Cadmium",
+            "field": "melt",
+            "from": 594.22,
+            "value": 594.219
+          },
+          {
+            "key": "Cadmium",
+            "field": "density_g_cm3",
+            "from": 8.65,
+            "value": 8.69
+          },
+          {
+            "key": "Lead",
+            "field": "melt",
+            "from": 600.61,
+            "value": 600.612
+          },
+          {
+            "key": "Lead",
+            "field": "density_g_cm3",
+            "from": 11.34,
+            "value": 11.3
+          },
+          {
+            "key": "Magnesium",
+            "field": "density_g_cm3",
+            "from": 1.738,
+            "value": 1.74
+          },
+          {
+            "key": "Antimony",
+            "field": "melt",
+            "from": 903.78,
+            "value": 903.778
+          },
+          {
+            "key": "Antimony",
+            "field": "density_g_cm3",
+            "from": 6.697,
+            "value": 6.68
+          },
+          {
+            "key": "Platinum",
+            "field": "density_g_cm3",
+            "from": 21.45,
+            "value": 21.5
+          },
+          {
+            "key": "Cobalt",
+            "field": "density_g_cm3",
+            "from": 8.9,
+            "value": 8.86
+          },
+          {
+            "key": "Tungsten",
+            "field": "melt",
+            "from": 3695,
+            "value": 3687
+          },
+          {
+            "key": "Tungsten",
+            "field": "density_g_cm3",
+            "from": 19.25,
+            "value": 19.3
+          },
+          {
+            "key": "Aluminium",
+            "field": "melt",
+            "from": 933.47,
+            "value": 933.473
+          },
+          {
+            "key": "Mercury",
+            "field": "density_g_cm3",
+            "from": 13.534,
+            "value": 13.5336
+          },
+          {
+            "key": "Potassium",
+            "field": "density_g_cm3",
+            "from": 0.862,
+            "value": 0.89
+          },
+          {
+            "key": "Xenon",
+            "field": "density_g_cm3",
+            "from": 0.005894,
+            "value": 0.005366
+          },
+          {
+            "key": "Krypton",
+            "field": "density_g_cm3",
+            "from": 0.003749,
+            "value": 0.003425
+          },
+          {
+            "key": "Rubidium",
+            "field": "density_g_cm3",
+            "from": 1.532,
+            "value": 1.53
+          }
+        ]
+      }
     },
     "countries": {
       "url": "https://raw.githubusercontent.com/mledoze/countries/master/countries.json",
       "retrieved_utc": "2026-10-19T04:32:17.859443+00:00",
-      "sha256": "913e5d716f9dc6b59881ee23488d47f5fda52070d1a34cac5fa327c9e61d8f7c"
+      "sha256": "913e5d716f9dc6b59881ee23488d47f5fda52070d1a34cac5fa327c9e61d8f7c",
+      "corrections": [
+        {
+          "key": "Ecuador",
+          "field": "area",
+          "value": 256370,
+          "checkedAt": "2026-10-22",
+          "url": "https://www.cancilleria.gob.ec/italia/informacion-pais/",
+          "note": "The inherited 276841 was not a current total-area value; use the Ecuadorian foreign ministry's stated national area."
+        }
+      ],
+      "review": {
+        "checkedAt": "2026-10-22",
+        "convention": "UNdata 2025 country profiles, surface area for 2023 in km². Includes inland water and profile territorial notes; Finland excludes Åland Islands; Argentina excludes Antarctic area. This coherent comparison supersedes the isolated Ecuador ministry override.",
+        "subjects": [
+          {
+            "key": "Ireland",
+            "area": 69825,
+            "url": "https://data.un.org/legacy/en/iso/ie.html"
+          },
+          {
+            "key": "Austria",
+            "area": 83878,
+            "url": "https://data.un.org/legacy/en/iso/at.html"
+          },
+          {
+            "key": "Portugal",
+            "area": 92226,
+            "url": "https://data.un.org/legacy/en/iso/pt.html"
+          },
+          {
+            "key": "Hungary",
+            "area": 93023,
+            "url": "https://data.un.org/legacy/en/iso/hu.html"
+          },
+          {
+            "key": "Iceland",
+            "area": 103000,
+            "url": "https://data.un.org/legacy/en/iso/is.html"
+          },
+          {
+            "key": "Czechia",
+            "area": 78871,
+            "url": "https://data.un.org/legacy/en/iso/cz.html"
+          },
+          {
+            "key": "New Zealand",
+            "area": 268107,
+            "url": "https://data.un.org/legacy/en/iso/nz.html"
+          },
+          {
+            "key": "Germany",
+            "area": 357581,
+            "url": "https://data.un.org/legacy/en/iso/de.html"
+          },
+          {
+            "key": "Bolivia",
+            "area": 1098581,
+            "url": "https://data.un.org/legacy/en/iso/bo.html"
+          },
+          {
+            "key": "United Kingdom",
+            "area": 242495,
+            "url": "https://data.un.org/legacy/en/iso/gb.html"
+          },
+          {
+            "key": "Malaysia",
+            "area": 330621,
+            "url": "https://data.un.org/legacy/en/iso/my.html"
+          },
+          {
+            "key": "Japan",
+            "area": 377930,
+            "url": "https://data.un.org/legacy/en/iso/jp.html"
+          },
+          {
+            "key": "Sweden",
+            "area": 438574,
+            "url": "https://data.un.org/legacy/en/iso/se.html"
+          },
+          {
+            "key": "Kazakhstan",
+            "area": 2724902,
+            "url": "https://data.un.org/legacy/en/iso/kz.html"
+          },
+          {
+            "key": "Ecuador",
+            "area": 257217,
+            "url": "https://data.un.org/legacy/en/iso/ec.html"
+          },
+          {
+            "key": "Peru",
+            "area": 1285216,
+            "url": "https://data.un.org/legacy/en/iso/pe.html"
+          },
+          {
+            "key": "Bulgaria",
+            "area": 110372,
+            "url": "https://data.un.org/legacy/en/iso/bg.html"
+          },
+          {
+            "key": "Spain",
+            "area": 506008,
+            "url": "https://data.un.org/legacy/en/iso/es.html"
+          },
+          {
+            "key": "Argentina",
+            "area": 2796427,
+            "url": "https://data.un.org/legacy/en/iso/ar.html"
+          },
+          {
+            "key": "Vietnam",
+            "area": 331317,
+            "url": "https://data.un.org/legacy/en/iso/vn.html"
+          },
+          {
+            "key": "Finland",
+            "area": 336884,
+            "url": "https://data.un.org/legacy/en/iso/fi.html"
+          },
+          {
+            "key": "Greece",
+            "area": 131957,
+            "url": "https://data.un.org/legacy/en/iso/gr.html"
+          },
+          {
+            "key": "Mongolia",
+            "area": 1564116,
+            "url": "https://data.un.org/legacy/en/iso/mn.html"
+          },
+          {
+            "key": "Poland",
+            "area": 312679,
+            "url": "https://data.un.org/legacy/en/iso/pl.html"
+          },
+          {
+            "key": "Romania",
+            "area": 238391,
+            "url": "https://data.un.org/legacy/en/iso/ro.html"
+          }
+        ],
+        "corrections": [
+          {
+            "key": "Ireland",
+            "field": "area",
+            "from": 70273,
+            "value": 69825
+          },
+          {
+            "key": "Austria",
+            "field": "area",
+            "from": 83871,
+            "value": 83878
+          },
+          {
+            "key": "Portugal",
+            "field": "area",
+            "from": 92090,
+            "value": 92226
+          },
+          {
+            "key": "Hungary",
+            "field": "area",
+            "from": 93028,
+            "value": 93023
+          },
+          {
+            "key": "Czechia",
+            "field": "area",
+            "from": 78865,
+            "value": 78871
+          },
+          {
+            "key": "New Zealand",
+            "field": "area",
+            "from": 270467,
+            "value": 268107
+          },
+          {
+            "key": "Germany",
+            "field": "area",
+            "from": 357114,
+            "value": 357581
+          },
+          {
+            "key": "United Kingdom",
+            "field": "area",
+            "from": 242900,
+            "value": 242495
+          },
+          {
+            "key": "Malaysia",
+            "field": "area",
+            "from": 330803,
+            "value": 330621
+          },
+          {
+            "key": "Sweden",
+            "field": "area",
+            "from": 450295,
+            "value": 438574
+          },
+          {
+            "key": "Kazakhstan",
+            "field": "area",
+            "from": 2724900,
+            "value": 2724902
+          },
+          {
+            "key": "Ecuador",
+            "field": "area",
+            "from": 256370,
+            "value": 257217
+          },
+          {
+            "key": "Bulgaria",
+            "field": "area",
+            "from": 110879,
+            "value": 110372
+          },
+          {
+            "key": "Spain",
+            "field": "area",
+            "from": 505992,
+            "value": 506008
+          },
+          {
+            "key": "Argentina",
+            "field": "area",
+            "from": 2780400,
+            "value": 2796427
+          },
+          {
+            "key": "Vietnam",
+            "field": "area",
+            "from": 331212,
+            "value": 331317
+          },
+          {
+            "key": "Finland",
+            "field": "area",
+            "from": 338424,
+            "value": 336884
+          },
+          {
+            "key": "Greece",
+            "field": "area",
+            "from": 131990,
+            "value": 131957
+          },
+          {
+            "key": "Mongolia",
+            "field": "area",
+            "from": 1564110,
+            "value": 1564116
+          }
+        ]
+      }
     },
     "books": {
       "url": "https://raw.githubusercontent.com/benoitvallon/100-best-books/master/books.json",
@@ -18,12 +667,81 @@
     "movies": {
       "url": "https://raw.githubusercontent.com/vega/vega-datasets/main/data/movies.json",
       "retrieved_utc": "2026-10-19T04:32:17.860314+00:00",
-      "sha256": "e63c499759e3b07b49563e036f55290f87feb56def8703ec049ca305ab1523d3"
+      "sha256": "e63c499759e3b07b49563e036f55290f87feb56def8703ec049ca305ab1523d3",
+      "corrections": [
+        {
+          "key": "Monsters, Inc.",
+          "field": "director",
+          "value": "Pete Docter",
+          "checkedAt": "2026-10-22",
+          "url": "https://catalog.afi.com/Catalog/moviedetails/62121",
+          "note": "AFI lists Pete Docter as director. This corrects unused reference metadata; no published card labels or dates change."
+        }
+      ]
     },
     "airports": {
       "url": "https://raw.githubusercontent.com/datasets/airport-codes/master/data/airport-codes.csv",
       "retrieved_utc": "2026-10-19T04:32:17.861069+00:00",
-      "sha256": "52545fe3cbd7806f4d06c84fc2f93d805bb5f4cef60c463600fe586cd5ff47cf"
+      "sha256": "52545fe3cbd7806f4d06c84fc2f93d805bb5f4cef60c463600fe586cd5ff47cf",
+      "review": {
+        "checkedAt": "2026-10-22",
+        "convention": "Aerodrome field elevation above mean sea level, not terminal/weather-station or individual runway threshold elevation. Latitude/longitude are approximate airport reference coordinates, not city coordinates.",
+        "corrections": [
+          {
+            "key": "UIO",
+            "field": "elevation_ft",
+            "from": 7841,
+            "value": 7910,
+            "url": "https://www.ais.aviacioncivil.gob.ec/ifis3/aip/AD%202%20SEQM",
+            "note": "Aerodrome elevation 2411m /7910ft, not a lower runway threshold."
+          },
+          {
+            "key": "PRG",
+            "field": "elevation_ft",
+            "from": 1247,
+            "value": 1234,
+            "url": "https://aim.rlp.cz/ais_data/aip/data/valid/g2-7.pdf",
+            "note": "Published airport elevation 1234ft /376m."
+          },
+          {
+            "key": "YYC",
+            "field": "elevation_ft",
+            "from": 3557,
+            "value": 3606,
+            "url": "https://www.canada.ca/content/dam/eccc/documents/pdf/msc-manualscircularsbulletins/AIR_4-2020_ENG.pdf",
+            "note": "Canadian aviation reference gives airport elevation 3606ft; 3557ft is a lower threshold-related value."
+          },
+          {
+            "key": "DEN",
+            "field": "elevation_ft",
+            "from": 5431,
+            "value": 5434,
+            "url": "https://www.faa.gov/air_traffic/publications/media/aip_amd_3_dtd_10-5-23.pdf",
+            "note": "FAA airport diagram field elevation rounded to whole feet."
+          },
+          {
+            "key": "LIS",
+            "field": "elevation_ft",
+            "from": 374,
+            "value": 355,
+            "url": "https://ais.nav.pt/wp-content/uploads/AIS_Files/eAIP_Current/eAIP_Online/eAIP/html/eAIP/LP-AD-2.LPPT-en-PT.html",
+            "note": "Published aerodrome elevation 108m /355ft."
+          },
+          {
+            "key": "DEL",
+            "field": "elevation_ft",
+            "from": 777,
+            "value": 778,
+            "url": "https://aim-india.aai.aero/eaip/eaip-v2-09-2026/eAIP/IN-AD%202.1VIDP-en-GB.html",
+            "note": "Published aerodrome elevation 778ft."
+          }
+        ],
+        "retainedFRA": {
+          "elevation_ft": 364,
+          "note": "364ft field elevation retained. Fraport's 328ft figure describes a reference point; it must not replace aerodrome field elevation.",
+          "url": "https://www.dwd.de/DE/fachnutzer/luftfahrt/download/produkte/regionale_flugklimatologie/regionale_flugklimatologie.pdf?__blob=publicationFile&v=7"
+        }
+      }
     },
     "airport-crosscheck": {
       "url": "https://raw.githubusercontent.com/mwgg/Airports/master/airports.json",
@@ -40,7 +758,7 @@
       "symbol": "H",
       "number": 1,
       "melt": 13.99,
-      "density_g_cm3": 8.988e-05,
+      "density_g_cm3": 0.00008988,
       "phase": "Gas"
     },
     "Helium": {
@@ -128,14 +846,14 @@
       "symbol": "Mg",
       "number": 12,
       "melt": 923,
-      "density_g_cm3": 1.738,
+      "density_g_cm3": 1.74,
       "phase": "Solid"
     },
     "Aluminium": {
       "name": "Aluminium",
       "symbol": "Al",
       "number": 13,
-      "melt": 933.47,
+      "melt": 933.473,
       "density_g_cm3": 2.7,
       "phase": "Solid"
     },
@@ -184,7 +902,7 @@
       "symbol": "K",
       "number": 19,
       "melt": 336.7,
-      "density_g_cm3": 0.862,
+      "density_g_cm3": 0.89,
       "phase": "Solid"
     },
     "Calcium": {
@@ -207,7 +925,7 @@
       "name": "Titanium",
       "symbol": "Ti",
       "number": 22,
-      "melt": 1941,
+      "melt": 1943,
       "density_g_cm3": 4.506,
       "phase": "Solid"
     },
@@ -224,7 +942,7 @@
       "symbol": "Cr",
       "number": 24,
       "melt": 2180,
-      "density_g_cm3": 7.19,
+      "density_g_cm3": 7.15,
       "phase": "Solid"
     },
     "Manganese": {
@@ -232,7 +950,7 @@
       "symbol": "Mn",
       "number": 25,
       "melt": 1519,
-      "density_g_cm3": 7.21,
+      "density_g_cm3": 7.3,
       "phase": "Solid"
     },
     "Iron": {
@@ -240,7 +958,7 @@
       "symbol": "Fe",
       "number": 26,
       "melt": 1811,
-      "density_g_cm3": 7.874,
+      "density_g_cm3": 7.87,
       "phase": "Solid"
     },
     "Cobalt": {
@@ -248,7 +966,7 @@
       "symbol": "Co",
       "number": 27,
       "melt": 1768,
-      "density_g_cm3": 8.9,
+      "density_g_cm3": 8.86,
       "phase": "Solid"
     },
     "Nickel": {
@@ -256,7 +974,7 @@
       "symbol": "Ni",
       "number": 28,
       "melt": 1728,
-      "density_g_cm3": 8.908,
+      "density_g_cm3": 8.9,
       "phase": "Solid"
     },
     "Copper": {
@@ -271,8 +989,8 @@
       "name": "Zinc",
       "symbol": "Zn",
       "number": 30,
-      "melt": 692.68,
-      "density_g_cm3": 7.14,
+      "melt": 692.677,
+      "density_g_cm3": 7.134,
       "phase": "Solid"
     },
     "Gallium": {
@@ -320,7 +1038,7 @@
       "symbol": "Kr",
       "number": 36,
       "melt": 115.78,
-      "density_g_cm3": 0.003749,
+      "density_g_cm3": 0.003425,
       "phase": "Gas"
     },
     "Rubidium": {
@@ -328,7 +1046,7 @@
       "symbol": "Rb",
       "number": 37,
       "melt": 312.45,
-      "density_g_cm3": 1.532,
+      "density_g_cm3": 1.53,
       "phase": "Solid"
     },
     "Strontium": {
@@ -351,7 +1069,7 @@
       "name": "Zirconium",
       "symbol": "Zr",
       "number": 40,
-      "melt": 2128,
+      "melt": 2127,
       "density_g_cm3": 6.52,
       "phase": "Solid"
     },
@@ -367,8 +1085,8 @@
       "name": "Molybdenum",
       "symbol": "Mo",
       "number": 42,
-      "melt": 2896,
-      "density_g_cm3": 10.28,
+      "melt": 2895,
+      "density_g_cm3": 10.2,
       "phase": "Solid"
     },
     "Technetium": {
@@ -399,8 +1117,8 @@
       "name": "Palladium",
       "symbol": "Pd",
       "number": 46,
-      "melt": 1828.05,
-      "density_g_cm3": 12.023,
+      "melt": 1828,
+      "density_g_cm3": 12,
       "phase": "Solid"
     },
     "Silver": {
@@ -408,15 +1126,15 @@
       "symbol": "Ag",
       "number": 47,
       "melt": 1234.93,
-      "density_g_cm3": 10.49,
+      "density_g_cm3": 10.5,
       "phase": "Solid"
     },
     "Cadmium": {
       "name": "Cadmium",
       "symbol": "Cd",
       "number": 48,
-      "melt": 594.22,
-      "density_g_cm3": 8.65,
+      "melt": 594.219,
+      "density_g_cm3": 8.69,
       "phase": "Solid"
     },
     "Indium": {
@@ -431,16 +1149,16 @@
       "name": "Tin",
       "symbol": "Sn",
       "number": 50,
-      "melt": 505.08,
-      "density_g_cm3": 7.365,
+      "melt": 505.078,
+      "density_g_cm3": 7.287,
       "phase": "Solid"
     },
     "Antimony": {
       "name": "Antimony",
       "symbol": "Sb",
       "number": 51,
-      "melt": 903.78,
-      "density_g_cm3": 6.697,
+      "melt": 903.778,
+      "density_g_cm3": 6.68,
       "phase": "Solid"
     },
     "Tellurium": {
@@ -464,7 +1182,7 @@
       "symbol": "Xe",
       "number": 54,
       "melt": 161.4,
-      "density_g_cm3": 0.005894,
+      "density_g_cm3": 0.005366,
       "phase": "Gas"
     },
     "Cesium": {
@@ -623,8 +1341,8 @@
       "name": "Tungsten",
       "symbol": "W",
       "number": 74,
-      "melt": 3695,
-      "density_g_cm3": 19.25,
+      "melt": 3687,
+      "density_g_cm3": 19.3,
       "phase": "Solid"
     },
     "Rhenium": {
@@ -656,7 +1374,7 @@
       "symbol": "Pt",
       "number": 78,
       "melt": 2041.4,
-      "density_g_cm3": 21.45,
+      "density_g_cm3": 21.5,
       "phase": "Solid"
     },
     "Gold": {
@@ -672,7 +1390,7 @@
       "symbol": "Hg",
       "number": 80,
       "melt": 234.321,
-      "density_g_cm3": 13.534,
+      "density_g_cm3": 13.5336,
       "phase": "Liquid"
     },
     "Thallium": {
@@ -687,16 +1405,16 @@
       "name": "Lead",
       "symbol": "Pb",
       "number": 82,
-      "melt": 600.61,
-      "density_g_cm3": 11.34,
+      "melt": 600.612,
+      "density_g_cm3": 11.3,
       "phase": "Solid"
     },
     "Bismuth": {
       "name": "Bismuth",
       "symbol": "Bi",
       "number": 83,
-      "melt": 544.7,
-      "density_g_cm3": 9.78,
+      "melt": 544.556,
+      "density_g_cm3": 9.79,
       "phase": "Solid"
     },
     "Polonium": {
@@ -810,7 +1528,7 @@
     },
     "Argentina": {
       "name": "Argentina",
-      "area": 2780400,
+      "area": 2796427,
       "capital": [
         "Buenos Aires"
       ]
@@ -838,7 +1556,7 @@
     },
     "Austria": {
       "name": "Austria",
-      "area": 83871,
+      "area": 83878,
       "capital": [
         "Vienna"
       ]
@@ -887,7 +1605,7 @@
     },
     "Bulgaria": {
       "name": "Bulgaria",
-      "area": 110879,
+      "area": 110372,
       "capital": [
         "Sofia"
       ]
@@ -1076,14 +1794,14 @@
     },
     "Czechia": {
       "name": "Czechia",
-      "area": 78865,
+      "area": 78871,
       "capital": [
         "Prague"
       ]
     },
     "Germany": {
       "name": "Germany",
-      "area": 357114,
+      "area": 357581,
       "capital": [
         "Berlin"
       ]
@@ -1125,7 +1843,7 @@
     },
     "Ecuador": {
       "name": "Ecuador",
-      "area": 276841,
+      "area": 257217,
       "capital": [
         "Quito"
       ]
@@ -1146,7 +1864,7 @@
     },
     "Spain": {
       "name": "Spain",
-      "area": 505992,
+      "area": 506008,
       "capital": [
         "Madrid"
       ]
@@ -1167,7 +1885,7 @@
     },
     "Finland": {
       "name": "Finland",
-      "area": 338424,
+      "area": 336884,
       "capital": [
         "Helsinki"
       ]
@@ -1202,7 +1920,7 @@
     },
     "United Kingdom": {
       "name": "United Kingdom",
-      "area": 242900,
+      "area": 242495,
       "capital": [
         "London"
       ]
@@ -1251,7 +1969,7 @@
     },
     "Greece": {
       "name": "Greece",
-      "area": 131990,
+      "area": 131957,
       "capital": [
         "Athens"
       ]
@@ -1300,7 +2018,7 @@
     },
     "Hungary": {
       "name": "Hungary",
-      "area": 93028,
+      "area": 93023,
       "capital": [
         "Budapest"
       ]
@@ -1321,7 +2039,7 @@
     },
     "Ireland": {
       "name": "Ireland",
-      "area": 70273,
+      "area": 69825,
       "capital": [
         "Dublin"
       ]
@@ -1384,7 +2102,7 @@
     },
     "Kazakhstan": {
       "name": "Kazakhstan",
-      "area": 2724900,
+      "area": 2724902,
       "capital": [
         "Astana"
       ]
@@ -1601,7 +2319,7 @@
     },
     "Mongolia": {
       "name": "Mongolia",
-      "area": 1564110,
+      "area": 1564116,
       "capital": [
         "Ulan Bator"
       ]
@@ -1636,7 +2354,7 @@
     },
     "Malaysia": {
       "name": "Malaysia",
-      "area": 330803,
+      "area": 330621,
       "capital": [
         "Kuala Lumpur"
       ]
@@ -1699,7 +2417,7 @@
     },
     "New Zealand": {
       "name": "New Zealand",
-      "area": 270467,
+      "area": 268107,
       "capital": [
         "Wellington"
       ]
@@ -1769,7 +2487,7 @@
     },
     "Portugal": {
       "name": "Portugal",
-      "area": 92090,
+      "area": 92226,
       "capital": [
         "Lisbon"
       ]
@@ -1916,7 +2634,7 @@
     },
     "Sweden": {
       "name": "Sweden",
-      "area": 450295,
+      "area": 438574,
       "capital": [
         "Stockholm"
       ]
@@ -2084,7 +2802,7 @@
     },
     "Vietnam": {
       "name": "Vietnam",
-      "area": 331212,
+      "area": 331317,
       "capital": [
         "Hanoi"
       ]
@@ -2590,7 +3308,7 @@
     "Monsters, Inc.": {
       "title": "Monsters, Inc.",
       "year": 2001,
-      "director": "David Silverman"
+      "director": "Pete Docter"
     },
     "The Incredibles": {
       "title": "The Incredibles",
@@ -2641,7 +3359,7 @@
       "icao": "EGLL",
       "latitude": 51.470748,
       "longitude": -0.459909,
-      "elevation_ft": 83.0
+      "elevation_ft": 83
     },
     "CDG": {
       "name": "Charles de Gaulle International Airport",
@@ -2650,7 +3368,7 @@
       "icao": "LFPG",
       "latitude": 49.00896,
       "longitude": 2.554117,
-      "elevation_ft": 392.0
+      "elevation_ft": 392
     },
     "FRA": {
       "name": "Frankfurt Main Airport",
@@ -2659,7 +3377,7 @@
       "icao": "EDDF",
       "latitude": 50.026706,
       "longitude": 8.55835,
-      "elevation_ft": 364.0
+      "elevation_ft": 364
     },
     "MAD": {
       "name": "Adolfo Suárez Madrid–Barajas Airport",
@@ -2668,7 +3386,7 @@
       "icao": "LEMD",
       "latitude": 40.493407,
       "longitude": -3.572249,
-      "elevation_ft": 1998.0
+      "elevation_ft": 1998
     },
     "FCO": {
       "name": "Rome–Fiumicino Leonardo da Vinci International Airport",
@@ -2677,7 +3395,7 @@
       "icao": "LIRF",
       "latitude": 41.804532,
       "longitude": 12.251998,
-      "elevation_ft": 13.0
+      "elevation_ft": 13
     },
     "AMS": {
       "name": "Amsterdam Airport Schiphol",
@@ -2686,7 +3404,7 @@
       "icao": "EHAM",
       "latitude": 52.308601,
       "longitude": 4.76389,
-      "elevation_ft": -11.0
+      "elevation_ft": -11
     },
     "OSL": {
       "name": "Oslo-Gardermoen International Airport",
@@ -2695,7 +3413,7 @@
       "icao": "ENGM",
       "latitude": 60.193901,
       "longitude": 11.1004,
-      "elevation_ft": 681.0
+      "elevation_ft": 681
     },
     "HEL": {
       "name": "Helsinki Vantaa Airport",
@@ -2704,7 +3422,7 @@
       "icao": "EFHK",
       "latitude": 60.318363,
       "longitude": 24.963341,
-      "elevation_ft": 179.0
+      "elevation_ft": 179
     },
     "DUB": {
       "name": "Dublin Airport",
@@ -2713,7 +3431,7 @@
       "icao": "EIDW",
       "latitude": 53.428713,
       "longitude": -6.262121,
-      "elevation_ft": 242.0
+      "elevation_ft": 242
     },
     "VIE": {
       "name": "Vienna International Airport",
@@ -2722,7 +3440,7 @@
       "icao": "LOWW",
       "latitude": 48.110298,
       "longitude": 16.5697,
-      "elevation_ft": 600.0
+      "elevation_ft": 600
     },
     "ATH": {
       "name": "Athens Eleftherios Venizelos International Airport",
@@ -2731,7 +3449,7 @@
       "icao": "LGAV",
       "latitude": 37.936401,
       "longitude": 23.9445,
-      "elevation_ft": 308.0
+      "elevation_ft": 308
     },
     "IST": {
       "name": "İstanbul Airport",
@@ -2740,7 +3458,7 @@
       "icao": "LTFM",
       "latitude": 41.274874,
       "longitude": 28.732136,
-      "elevation_ft": 325.0
+      "elevation_ft": 325
     },
     "PRG": {
       "name": "Václav Havel Airport Prague",
@@ -2749,7 +3467,7 @@
       "icao": "LKPR",
       "latitude": 50.100874,
       "longitude": 14.259911,
-      "elevation_ft": 1247.0
+      "elevation_ft": 1234
     },
     "WAW": {
       "name": "Warsaw Chopin Airport",
@@ -2758,7 +3476,7 @@
       "icao": "EPWA",
       "latitude": 52.165699,
       "longitude": 20.9671,
-      "elevation_ft": 362.0
+      "elevation_ft": 362
     },
     "CPH": {
       "name": "Copenhagen Kastrup Airport",
@@ -2767,7 +3485,7 @@
       "icao": "EKCH",
       "latitude": 55.617900848389,
       "longitude": 12.656000137329,
-      "elevation_ft": 17.0
+      "elevation_ft": 17
     },
     "ARN": {
       "name": "Stockholm-Arlanda Airport",
@@ -2776,7 +3494,7 @@
       "icao": "ESSA",
       "latitude": 59.64849,
       "longitude": 17.928829,
-      "elevation_ft": 137.0
+      "elevation_ft": 137
     },
     "ZRH": {
       "name": "Zürich Airport",
@@ -2785,7 +3503,7 @@
       "icao": "LSZH",
       "latitude": 47.458056,
       "longitude": 8.548056,
-      "elevation_ft": 1417.0
+      "elevation_ft": 1417
     },
     "LIS": {
       "name": "Lisbon Humberto Delgado Airport",
@@ -2794,7 +3512,7 @@
       "icao": "LPPT",
       "latitude": 38.7813,
       "longitude": -9.13592,
-      "elevation_ft": 374.0
+      "elevation_ft": 355
     },
     "BUD": {
       "name": "Budapest Liszt Ferenc International Airport",
@@ -2803,7 +3521,7 @@
       "icao": "LHBP",
       "latitude": 47.43018,
       "longitude": 19.262393,
-      "elevation_ft": 495.0
+      "elevation_ft": 495
     },
     "BER": {
       "name": "Berlin Brandenburg Airport",
@@ -2812,7 +3530,7 @@
       "icao": "EDDB",
       "latitude": 52.361738,
       "longitude": 13.502341,
-      "elevation_ft": 157.0
+      "elevation_ft": 157
     },
     "DEN": {
       "name": "Denver International Airport",
@@ -2821,7 +3539,7 @@
       "icao": "KDEN",
       "latitude": 39.860027,
       "longitude": -104.673792,
-      "elevation_ft": 5431.0
+      "elevation_ft": 5434
     },
     "JNB": {
       "name": "O.R. Tambo International Airport",
@@ -2830,7 +3548,7 @@
       "icao": "FAOR",
       "latitude": -26.140081,
       "longitude": 28.246801,
-      "elevation_ft": 5558.0
+      "elevation_ft": 5558
     },
     "BOG": {
       "name": "El Dorado International Airport",
@@ -2839,7 +3557,7 @@
       "icao": "SKBO",
       "latitude": 4.70159,
       "longitude": -74.1469,
-      "elevation_ft": 8361.0
+      "elevation_ft": 8361
     },
     "MEX": {
       "name": "Mexico City Benito Juárez International Airport",
@@ -2848,7 +3566,7 @@
       "icao": "MMMX",
       "latitude": 19.435822,
       "longitude": -99.07033,
-      "elevation_ft": 7316.0
+      "elevation_ft": 7316
     },
     "UIO": {
       "name": "Mariscal Sucre International Airport",
@@ -2857,7 +3575,7 @@
       "icao": "SEQM",
       "latitude": -0.125399,
       "longitude": -78.354306,
-      "elevation_ft": 7841.0
+      "elevation_ft": 7910
     },
     "LPB": {
       "name": "El Alto International Airport",
@@ -2866,7 +3584,7 @@
       "icao": "SLLP",
       "latitude": -16.510272,
       "longitude": -68.189416,
-      "elevation_ft": 13355.0
+      "elevation_ft": 13355
     },
     "ADD": {
       "name": "Addis Ababa Bole International Airport",
@@ -2875,7 +3593,7 @@
       "icao": "HAAB",
       "latitude": 8.97789,
       "longitude": 38.799301,
-      "elevation_ft": 7630.0
+      "elevation_ft": 7630
     },
     "NBO": {
       "name": "Jomo Kenyatta International Airport",
@@ -2884,7 +3602,7 @@
       "icao": "HKJK",
       "latitude": -1.318886,
       "longitude": 36.928233,
-      "elevation_ft": 5330.0
+      "elevation_ft": 5330
     },
     "KTM": {
       "name": "Tribhuvan International Airport",
@@ -2893,7 +3611,7 @@
       "icao": "VNKT",
       "latitude": 27.6966,
       "longitude": 85.3591,
-      "elevation_ft": 4390.0
+      "elevation_ft": 4390
     },
     "SCL": {
       "name": "Comodoro Arturo Merino Benítez International Airport",
@@ -2902,7 +3620,7 @@
       "icao": "SCEL",
       "latitude": -33.393001556396484,
       "longitude": -70.78579711914062,
-      "elevation_ft": 1555.0
+      "elevation_ft": 1555
     },
     "LAS": {
       "name": "Harry Reid International Airport",
@@ -2911,7 +3629,7 @@
       "icao": "KLAS",
       "latitude": 36.083361,
       "longitude": -115.151817,
-      "elevation_ft": 2181.0
+      "elevation_ft": 2181
     },
     "PHX": {
       "name": "Phoenix Sky Harbor International Airport",
@@ -2920,7 +3638,7 @@
       "icao": "KPHX",
       "latitude": 33.435302,
       "longitude": -112.005905,
-      "elevation_ft": 1135.0
+      "elevation_ft": 1135
     },
     "ABQ": {
       "name": "Albuquerque International Sunport",
@@ -2929,7 +3647,7 @@
       "icao": "KABQ",
       "latitude": 35.039976,
       "longitude": -106.608925,
-      "elevation_ft": 5355.0
+      "elevation_ft": 5355
     },
     "RNO": {
       "name": "Reno Tahoe International Airport",
@@ -2938,7 +3656,7 @@
       "icao": "KRNO",
       "latitude": 39.4991,
       "longitude": -119.767998,
-      "elevation_ft": 4415.0
+      "elevation_ft": 4415
     },
     "YYC": {
       "name": "Calgary International Airport",
@@ -2947,7 +3665,7 @@
       "icao": "CYYC",
       "latitude": 51.118822,
       "longitude": -114.009933,
-      "elevation_ft": 3557.0
+      "elevation_ft": 3606
     },
     "SLC": {
       "name": "Salt Lake City International Airport",
@@ -2956,7 +3674,7 @@
       "icao": "KSLC",
       "latitude": 40.78886,
       "longitude": -111.979866,
-      "elevation_ft": 4227.0
+      "elevation_ft": 4227
     },
     "SYD": {
       "name": "Sydney Kingsford Smith International Airport",
@@ -2965,7 +3683,7 @@
       "icao": "YSSY",
       "latitude": -33.946098,
       "longitude": 151.177002,
-      "elevation_ft": 21.0
+      "elevation_ft": 21
     },
     "NRT": {
       "name": "Narita International Airport",
@@ -2974,7 +3692,7 @@
       "icao": "RJAA",
       "latitude": 35.76858,
       "longitude": 140.388714,
-      "elevation_ft": 141.0
+      "elevation_ft": 141
     },
     "JFK": {
       "name": "John F. Kennedy International Airport",
@@ -2983,7 +3701,7 @@
       "icao": "KJFK",
       "latitude": 40.639447,
       "longitude": -73.779317,
-      "elevation_ft": 13.0
+      "elevation_ft": 13
     },
     "LAX": {
       "name": "Los Angeles International Airport",
@@ -2992,7 +3710,7 @@
       "icao": "KLAX",
       "latitude": 33.942501,
       "longitude": -118.407997,
-      "elevation_ft": 125.0
+      "elevation_ft": 125
     },
     "SIN": {
       "name": "Singapore Changi Airport",
@@ -3001,7 +3719,7 @@
       "icao": "WSSS",
       "latitude": 1.35019,
       "longitude": 103.994003,
-      "elevation_ft": 22.0
+      "elevation_ft": 22
     },
     "HND": {
       "name": "Tokyo Haneda International Airport",
@@ -3010,7 +3728,7 @@
       "icao": "RJTT",
       "latitude": 35.549678,
       "longitude": 139.786958,
-      "elevation_ft": 35.0
+      "elevation_ft": 35
     },
     "ICN": {
       "name": "Incheon International Airport",
@@ -3019,7 +3737,7 @@
       "icao": "RKSI",
       "latitude": 37.469101,
       "longitude": 126.450996,
-      "elevation_ft": 23.0
+      "elevation_ft": 23
     },
     "AKL": {
       "name": "Auckland International Airport",
@@ -3028,7 +3746,7 @@
       "icao": "NZAA",
       "latitude": -37.01199,
       "longitude": 174.786331,
-      "elevation_ft": 23.0
+      "elevation_ft": 23
     },
     "DXB": {
       "name": "Dubai International Airport",
@@ -3037,7 +3755,7 @@
       "icao": "OMDB",
       "latitude": 25.24979,
       "longitude": 55.370992,
-      "elevation_ft": 62.0
+      "elevation_ft": 62
     },
     "CAI": {
       "name": "Cairo International Airport",
@@ -3046,7 +3764,7 @@
       "icao": "HECA",
       "latitude": 30.111534,
       "longitude": 31.396694,
-      "elevation_ft": 322.0
+      "elevation_ft": 322
     },
     "DEL": {
       "name": "Indira Gandhi International Airport",
@@ -3055,7 +3773,7 @@
       "icao": "VIDP",
       "latitude": 28.55563,
       "longitude": 77.09519,
-      "elevation_ft": 777.0
+      "elevation_ft": 778
     },
     "BKK": {
       "name": "Suvarnabhumi Airport",
@@ -3064,7 +3782,7 @@
       "icao": "VTBS",
       "latitude": 13.6811,
       "longitude": 100.747002,
-      "elevation_ft": 5.0
+      "elevation_ft": 5
     },
     "GRU": {
       "name": "São Paulo/Guarulhos–Governor André Franco Montoro International Airport",
@@ -3073,7 +3791,7 @@
       "icao": "SBGR",
       "latitude": -23.431274,
       "longitude": -46.469954,
-      "elevation_ft": 2461.0
+      "elevation_ft": 2461
     },
     "HKG": {
       "name": "Hong Kong International Airport",
@@ -3082,7 +3800,7 @@
       "icao": "VHHH",
       "latitude": 22.31184,
       "longitude": 113.914862,
-      "elevation_ft": 28.0
+      "elevation_ft": 28
     }
   }
 }
