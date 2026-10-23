@@ -27,31 +27,7 @@ begin
  for k in select jsonb_object_keys(p_data) loop
   if jsonb_typeof(p_data->k)<>'string' or not (
    (p_game='stake' and (k ~ '^stake:d:[0-9]{4}-[0-9]{2}-[0-9]{2}$' or k='stake:streak')) or
-   (p_game='time-drop' and k ~ '^break-room:time-drop:daily:[0-9]{4}-[0-9]{2}-[0-9]{2} '^break-room:inner-clock:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
-   (p_game='bouncer' and k ~ '^break-room:bouncer:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
-   (p_game='alibi' and k ~ '^break-room:alibi:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
-   (p_game='laser' and k ~ '^break-room:laser:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
-   (p_game='prior' and k ~ '^break-room:prior:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
-   (p_game='pack' and k ~ '^break-room:pack:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
-   (p_game='stack-up' and k ~ '^break-room:stack-up:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
-   (p_game='lowball' and k=any(array['pc_history','pc_progress','pc_last','pc_last_avg','pc_last_share','pc_streak','pc_best','pc_played','pc_country']))
-  ) then raise exception 'Unsupported save entry'; end if;
- end loop;
- -- Serialize first inserts as well as updates for this user/game.
- perform pg_advisory_xact_lock(hashtextextended(owner_id::text||':'||p_game,0));
- select * into stored from public.game_saves where user_id=owner_id and game=p_game for update;
- if coalesce(stored.revision,0)<>p_revision then
-  return jsonb_build_object('conflict',true,'revision',coalesce(stored.revision,0));
- end if;
- insert into public.game_saves(user_id,game,data,revision) values(owner_id,p_game,p_data,1)
- on conflict(user_id,game) do update set data=excluded.data,revision=game_saves.revision+1,updated_at=now()
- returning * into stored;
- return jsonb_build_object('conflict',false,'revision',stored.revision);
-end $$;
-revoke all on function public.save_game(text,jsonb,bigint) from public,anon;
-grant execute on function public.save_game(text,jsonb,bigint) to authenticated;
-commit;
-) or
+   (p_game='time-drop' and k ~ '^break-room:time-drop:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
    (p_game='inner-clock' and k ~ '^break-room:inner-clock:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
    (p_game='bouncer' and k ~ '^break-room:bouncer:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
    (p_game='alibi' and k ~ '^break-room:alibi:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
