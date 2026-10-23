@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Seating Chart</title>
+<style>
+:root{--bg:#fbf5e9;--card:#fffdf7;--ink:#3b2f2f;--mut:#7a6a5f;--acc:#a8576b;--ln:#dccdb0;--bad:#b3341f;--cl:#f3e6cf}
+@media(prefers-color-scheme:dark){:root{--bg:#1e1a1c;--card:#2a2427;--ink:#f1e8dc;--mut:#b3a595;--acc:#e093a7;--ln:#4a3f43;--bad:#ff8a78;--cl:#3a3035}}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body{padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+main{max-width:480px;margin:0 auto;padding:12px;overflow-x:hidden}
+h1{font:italic 700 2rem "Snell Roundhand","Apple Chancery","Brush Script MT",Georgia,serif;text-align:center;margin:.2em 0;color:var(--acc)}
+.tabs{display:flex;gap:8px;justify-content:center;margin-bottom:6px}
+.tabs button{min-height:44px;padding:0 16px;background:none;border:0;border-bottom:3px solid transparent;color:var(--mut);font:600 1rem system-ui;cursor:pointer}
+.tabs button.on{color:var(--ink);border-color:var(--acc)}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:14px;padding:12px;margin:10px 0}
+.btn{min-height:44px;padding:0 18px;border-radius:22px;border:2px solid var(--acc);background:var(--acc);color:var(--bg);font:600 1rem system-ui;cursor:pointer}
+.btn.alt{background:none;color:var(--acc)}
+.btn:disabled{opacity:.45;cursor:default}
+.row{display:flex;gap:10px;justify-content:center;margin:10px 0}
+.hint{color:var(--mut);font-size:.85rem;text-align:center;margin:6px 0}
+.chips{list-style:none;padding:0;margin:8px 0 0;display:flex;flex-direction:column;gap:6px}
+.chips li{background:var(--bg);border:1px solid var(--ln);border-radius:10px;padding:6px 10px;font-size:.9rem}
+.chips small{display:block;color:var(--mut)}
+.ring{--w:320px;position:relative;width:var(--w);height:var(--w);margin:8px auto;max-width:100%}
+.ring.sm{--w:200px}.ring.xs{--w:140px;margin:4px auto}
+.cloth{position:absolute;inset:20%;border-radius:50%;background:var(--cl);border:3px double var(--acc)}
+.seat{position:absolute;transform:translate(-50%,-50%);width:calc(var(--w)*.2);height:calc(var(--w)*.2);border-radius:50%;border:2px solid var(--acc);background:var(--card);color:var(--ink);font:600 clamp(8px,calc(var(--w)*.05),13px) system-ui;padding:0;display:flex;align-items:center;justify-content:center}
+button.seat{cursor:pointer}
+.seat.empty{border-style:dashed;color:var(--mut)}
+.seat.sel{background:var(--acc);color:var(--bg)}
+.bd{position:absolute;top:-6px;right:-6px;font-style:normal;font-size:calc(var(--w)*.055);line-height:1;background:var(--card);color:var(--bad);border:1.5px solid var(--bad);border-radius:50%;padding:1px}
+.pool{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.pool button{min-height:44px;min-width:44px;padding:0 12px;border-radius:22px;border:2px solid var(--acc);background:var(--card);color:var(--ink);font:600 1rem system-ui;cursor:pointer}
+.pool button.sel{background:var(--acc);color:var(--bg)}
+.rv{padding:0;margin:8px 0}.rv li{list-style:none;margin:8px 0;animation:in .5s both}
+@keyframes in{from{opacity:0;transform:translateY(6px)}}
+@media(prefers-reduced-motion:reduce){.rv li{animation:none}}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:8px;text-align:center;font-size:.85rem}
+input,textarea{width:100%;min-height:44px;border:1px solid var(--ln);border-radius:10px;background:var(--bg);color:var(--ink);font:1rem system-ui;padding:8px;margin:6px 0}
+</style></head><body><main id="app"></main>
+<script>
+/* Seating Chart. One file, no backend. */
+const SHARE_URL='https://example.com/seating-chart/'; // set to the published address
+/* MONETISATION HOOKS (none active, no ads or paywalls):
+   1. Archive of past days: tables(date) already works for any date, so a paid archive can call it.
+   2. Streak freezes: plug into bump() and streak() below.
+   3. Private leagues: extend the share code with a league id and a results endpoint.
+   4. Sponsored themed weddings: add a theme field to gen() that swaps names and disaster lines.
+   5. Cosmetic table themes: swap the CSS variables on :root or the .cloth style. */
+const L='ABCDEFGHIJ',$=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const LS={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const pad=n=>String(n).padStart(2,'0'),ymd=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+const NAMES='Ada Ben Cora Dev Eli Fern Gus Hana Ivy Jack Kai Lena Milo Nora Otis Pia Quinn Rosa Sam Tess Uma Vic Wren Xavi Yara Zane Alma Bram Cleo Dani Elsa Finn Gwen Hugo Iris Joss Kira Leo Mara Nico Olga Pete Ruth Seth Tara Ulla Vera Walt Yuri Zoe Abel Bea Carl Dora Egon Faye Gil Hope Ines Jem'.split(' ');
+const FR=['split the last slice of cake in 1998','argued about a parking spot','disagree about pineapple on pizza','swapped holiday cards with rude notes','still dispute a board game from 2011','never returned a borrowed ladder','fought over a window seat on a train','sang different songs at karaoke on purpose','wore the same hat to a party','argue about loading the dishwasher','both claim they invented the family recipe','raced for the same taxi','wrote opposite reviews of the same cafe','compete over the best garden tomato','clashed over the group chat name','have disagreed about one joke for six years','both cried foul at a chess match','claimed the same sunbed on holiday','argue about the thermostat','shared an umbrella and one got soaked'];
+const BR=['finish each other\'s sentences','share one umbrella on rainy days','have matching lucky socks','planned this wedding together','grew up on the same street','start every day with the same coffee','tell the same joke in unison','swap lunches on Fridays','run a book club for two','sing in the same choir','carpool to everything','share a secret handshake','learned to swim together','keep a joint recipe notebook','text each other every night','once got lost in the same forest','are partners in a pub quiz','share one dessert at every meal','walk dogs together at dawn','promised to dance together tonight'];
+const DIS={F:['{a} hurled a bread roll at {b} during the toast.','{a} and {b} argued about who cut the cake wrong.','{b} found {a}\'s elbow in their soup.','{a} loudly corrected {b}\'s speech in the middle of it.','{a} and {b} held a staring contest through the whole main course.','{b} swapped the place cards and {a} noticed.','{a} told {b} the cake was dry. The band stopped playing.','{a} and {b} both reached for the last dumpling and neither let go.','{b} stole {a}\'s chair while {a} was dancing.','{a} sighed at {b} so loudly that a candle went out.','{a} and {b} turned a polite chat into a debate about gravy.','{a} fed {b}\'s napkin to the centrepiece.','{a} and {b} each demanded a new seat, but only one chair was free.','{b} sat on {a}\'s jacket and refused to apologise.','{a} poured {b} a glass of water, very slowly, onto {b}\'s shoes.'],
+I:['{a} spent dinner waving at {b} across the table.','{b} cried a little because {a} sat too far away.','{a} and {b} passed notes through three other guests.','{a} crawled under the table to reach {b}.','{b} shouted a joke at {a} and the cake wobbled.','{a} and {b} missed their shared dessert plan completely.','{a} left the table four times to check on {b}.','{b} sulked behind the flowers, far from {a}.','{a} and {b} tried to share one plate from opposite sides of the table.','{a} carried {b}\'s soup across the room and spilled most of it.','{b} whistled for {a} through the entire speech.','{a} and {b} sent text messages to each other across the table.','{a} swapped seats with a stranger to reach {b}, but it did not work.','{b} gave up and ate dinner standing next to {a}\'s chair.','{a} and {b} tried to hold hands over three other guests.'],
+C:['{a} told {b} every detail of a three hour hiking trip.','{b} tried to nap while {a} read out the whole menu.','{a} talked straight through {b}\'s only quiet moment.','{b} hid behind a menu card and {a} kept going.','{a} asked {b} 40 questions before the soup arrived.','{b} fell asleep in the salad and {a} carried on with the story.','{a} whispered loudly at {b} for the whole speech.','{b} put napkins in both ears and {a} kept talking.','{a} woke {b} up four times to finish a story.','{b} dreamed of a quiet forest. {a} described the forest in detail.','{a} gave {b} a full lecture on beekeeping.','{b} closed their eyes and {a} took it as a sign to talk louder.','{a} read the whole guest list aloud to {b}.','{b} asked for silence. {a} gave a long speech about silence.','{a} hummed show tunes at {b} until the cake came.'],
+G:['Gran {a} could not see {b} and refused to eat the soup.','Gran {a} called the waiter to find {b}. Twice.','Gran {a} stood up and demanded {b} at once.','Gran {a} threw a bread roll at the seating plan. {b} was meant to be there.','Gran {a} told everybody about {b} until the main course arrived.','Gran {a} refused to cut the cake without {b} beside her.','Gran {a} left her hearing aid on the table and shouted for {b}.','Gran {a} swapped three place cards to get {b} nearby and made it worse.','Gran {a} ate nothing. {b} was too far away to tell her it was fine.','Gran {a} sent the waiter on a mission to fetch {b}.','Gran {a} sulked into her tea and missed {b}.','Gran {a} told the band to stop until {b} sat beside her.','Gran {a} gave the whole table the cold shoulder. {b} was nowhere near.','Gran {a} wrote a complaint on a napkin about {b}\'s seat.','Gran {a} danced alone and looked for {b}.']};
+const WARM=['Everyone clinked glasses and the table glowed.','Not one bread roll was thrown. The couple cried happy tears.','The table was calm, kind and a little sleepy. Perfect.','Guests swapped stories and compliments all evening.','Toasts were sweet, the cake was soft and nobody left early.'];
+
+function R(s){let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}let a=h>>>0;return()=>{a=a+1831565813|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function shuffle(a,r){a=a.slice();for(let i=a.length-1;i>0;i--){const j=r()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a}
+const P=new Array(10);
+const bad1=(x,a)=>(x.t=='I'||x.t=='G')?!a:a;
+function cost(o,rs,g){for(let i=0;i<g;i++)P[o[i]]=i;let c=0;for(const x of rs){const d=Math.abs(P[x.a]-P[x.b]);if(bad1(x,d==1||d==g-1))c++}return c}
+function broken(o,rs,g){for(let i=0;i<g;i++)P[o[i]]=i;return rs.filter(x=>{const d=Math.abs(P[x.a]-P[x.b]);return bad1(x,d==1||d==g-1)})}
+function badSet(o,t){const s=new Set();broken(o,t.rules,t.g).forEach(x=>{s.add(x.a);s.add(x.b)});return s}
+function solve(g,rs){let best=99,bo=null;const o=[0],u=Array(g).fill(0);u[0]=1;
+ (function f(){if(o.length==g){const c=cost(o,rs,g);if(c<best){best=c;bo=o.slice()}return}
+ for(let i=1;i<g;i++)if(!u[i]){u[i]=1;o.push(i);f();o.pop();u[i]=0;if(best<=0)return}})();
+ return{best,bo}}
+function gen(seed,n){
+ const g=n+5,nr=[3,5,6,8,9][n-1];
+ for(let k=0;k<400;k++){
+  const sd=seed+'|'+n,r=R(sd+'|'+k),pk=a=>a[r()*a.length|0];
+  const nm=shuffle(NAMES,r).slice(0,g),hp=shuffle([...Array(g).keys()],r),rules=[],used=new Set(),adj=[];
+  hp.forEach((x,i)=>adj[x]=i);
+  const key=(a,b)=>a<b?a+'-'+b:b+'-'+a,at=i=>hp[((i%g)+g)%g];
+  const isAdj=(a,b)=>{const d=Math.abs(adj[a]-adj[b]);return d==1||d==g-1};
+  const add=(t,a,b)=>{rules.push({t,a,b,why:t=='F'?pk(FR):t=='I'?pk(BR):''});used.add(key(a,b))};
+  const tri=s=>{const A=at(s),B=at(s+1),C=at(s+2);add('I',A,B);add('I',B,C);add('I',A,C)};
+  /* tables 4 and 5 get an unavoidable clash: a triangle of Inseparable pairs or one guest wanted by three others */
+  if(n==4){if(r()<.5)tri(0);else{add('I',at(1),at(0));add('I',at(1),at(2));add('I',at(1),at(4))}}
+  if(n==5){tri(0);tri(4)}
+  for(let z=0;rules.length<nr&&z<400;z++){
+   const t=pk(n==1?'IIGGFC':'IGFC'),a=r()*g|0,b=r()*g|0;
+   if(a==b||used.has(key(a,b)))continue;
+   if((t=='I'||t=='G')?isAdj(a,b):!isAdj(a,b))add(t,a,b)}
+  if(rules.length<nr)continue;
+  const rs=shuffle(rules,r),s=solve(g,rs);
+  if(n<4?s.best!=0:(s.best<1||s.best>2))continue;
+  let tot=0;for(let i=0;i<300;i++)tot+=cost(shuffle([...Array(g).keys()],r),rs,g);
+  const avg=tot/300;
+  if(avg<(n==1?1.4:2))continue; /* table 1 has only 3 rules on 6 guests, so 2.0 is out of reach there */
+  return{n,g,nm,rules:rs,best:s.best,bo:s.bo,avg,seed:sd}}
+ return gen(seed+'x',n)}
+const TC={};
+const tables=d=>TC[d]||(TC[d]=[1,2,3,4,5].map(n=>gen(d,n)));
+
+let D=ymd(new Date()),mode='daily',run=null,view='home',S={seats:[],sel:-1},U={n:0,over:0};
+const yest=()=>{const y=new Date();y.setDate(y.getDate()-1);return ymd(y)};
+function sread(){try{return JSON.parse(LS.get('sc:streak'))||{}}catch(e){return{}}}
+function streak(){const s=sread();return s.last==D||s.last==yest()?(s.n||0):0}
+function bump(){const s=sread();if(s.last==D)return;LS.set('sc:streak',JSON.stringify({last:D,n:s.last==yest()?(s.n||0)+1:1}))}
+function load(){try{const a=JSON.parse(LS.get('sc:day:'+D));return Array.isArray(a)?a.filter(Array.isArray).slice(0,5):[]}catch(e){return[]}}
+const emo=(d,b)=>d==b?'🟩':d==b+1?'🟨':'💥';
+const label=(d,b)=>d==b?'best':d==b+1?'one above best':'two or more above best';
+
+function chip(x,nm){const A=esc(nm[x.a]),B=esc(nm[x.b]);
+ const m={F:`<b>✖ Feud:</b> ${A} and ${B} must not sit together`,I:`<b>♥ Inseparable:</b> ${A} and ${B} must sit together`,C:`<b>🗣 Chatterbox</b> ${A} and <b>😴 Light Sleeper</b> ${B} must not sit together`,G:`<b>♛ Gran</b> ${A} needs ${B} on one side`};
+ return`<li>${m[x.t]}${x.why?`<small>They ${x.why}</small>`:''}</li>`}
+function ring(s,t,bad,cls,sel,click){const tag=click?'button':'span';
+ return`<div class="ring ${cls||''}"><div class="cloth"></div>`+s.map((g,i)=>{const a=-Math.PI/2+6.2832*i/t.g,x=50+38*Math.cos(a),y=50+38*Math.sin(a);
+ return`<${tag} class="seat${g<0?' empty':''}${click&&sel==g&&g>=0?' sel':''}" style="left:${x}%;top:${y}%"${click?` data-s="${i}" aria-label="Seat ${i+1}${g>=0?', '+esc(t.nm[g]):', empty'}"`:''}>${g<0?i+1:esc(t.nm[g])}${bad&&bad.has(g)?'<i class="bd" aria-label="Drama here">⚠</i>':''}</${tag}>`}).join('')+'</div>'}
+function line(x,t){const l=DIS[x.t],i=R(t.seed+x.t+x.a+x.b)()*l.length|0;return l[i].replace(/\{a\}/g,esc(t.nm[x.a])).replace(/\{b\}/g,esc(t.nm[x.b]))}
+
+function shell(inner){$('#app').innerHTML='<h1>Seating Chart</h1><nav class="tabs"><button data-tab="daily"'+(mode=='daily'?' class="on" aria-current="page"':'')+'>Daily</button><button data-tab="unl"'+(mode=='unl'?' class="on" aria-current="page"':'')+'>Unlimited</button></nav>'+inner}
+function cmpBox(){return'<div class="card"><b>Compare with a friend</b><p class="hint">Paste their code to play the same 5 tables.</p><input id="cc" maxlength="80" placeholder="2026-10-21-ABCDEF.ABCDEFG..." aria-label="Friend code" autocomplete="off"><button class="btn alt" data-act="cmp">Compare</button><p id="ce" role="alert"></p></div>'}
+function home(){view='home';run=null;D=ymd(new Date());
+ if(mode=='unl')return shell(`<div class="card"><p>Practice tables with 6 to 10 guests. No limit. Your streak and daily results stay untouched.</p><p>Tables seated: ${U.n}<br>Average drama above best: ${U.n?(U.over/U.n).toFixed(2):'0.00'}</p><button class="btn" data-act="unl">New table</button></div>`);
+ const done=load();
+ if(done.length>=5)return shell(results(tables(D),done));
+ shell(`<div class="card"><p>You are the wedding planner. Seat the guests at 5 tables, then watch the reception. Fewer drama points is better. One try per table.</p><p>Streak: ${streak()} day${streak()==1?'':'s'}</p><button class="btn" data-act="start">${done.length?'Continue today':'Start today'}</button></div>`+cmpBox())}
+function results(T,done){
+ const ds=T.map((t,i)=>cost(done[i],t.rules,t.g)),tot=ds.reduce((a,b)=>a+b,0),bt=T.reduce((a,t)=>a+t.best,0);
+ const code=D+'-'+done.map(s=>s.map(i=>L[i]).join('')).join('.');
+ const txt=`Seating Chart ${D}\n${ds.map((d,i)=>emo(d,T[i].best)).join('')}\n${tot} drama, best was ${bt}\n${code}\n${SHARE_URL}?c=${code}`;
+ return`<div class="card"><b>Today's reception</b><ul class="chips">${ds.map((d,i)=>`<li>${emo(d,T[i].best)} Table ${i+1}: ${d} drama, best ${T[i].best} (${label(d,T[i].best)})</li>`).join('')}</ul><p><b>Total: ${tot} drama, best was ${bt}</b></p><p>Streak: ${streak()} day${streak()==1?'':'s'}</p><p>Come back tomorrow for a new set. Next set in <b id="cd"></b></p></div><div class="card"><b>Share</b><textarea id="sh" rows="6" readonly>${esc(txt)}</textarea><button class="btn" data-act="copy">Copy</button><p id="msg" role="status"></p></div>`+cmpBox()}
+const cur=()=>run.tables[run.i];
+function play(){view='play';const t=cur();S={seats:Array(t.g).fill(-1),sel:-1};drawPlay()}
+function drawPlay(){const t=cur(),s=S.seats,left=[...Array(t.g).keys()].filter(i=>!s.includes(i));
+ shell(`<div class="card"><b>Table ${run.u?run.k:run.i+1}${run.u?'':' of 5'}</b>, ${t.g} guests<ul class="chips">${t.rules.map(x=>chip(x,t.nm)).join('')}</ul></div><p class="hint">Tap a guest, then tap a seat. Tap a seated guest to move or swap.</p>${ring(s,t,null,'',S.sel,true)}<div class="pool">${left.map(i=>`<button data-g="${i}" class="${S.sel==i?'sel':''}">${esc(t.nm[i])}</button>`).join('')}</div><div class="row"><button class="btn alt" data-act="reset">Reset</button><button class="btn" data-act="go"${left.length?' disabled':''}>Start Reception</button></div>`)}
+function go(){const t=cur(),o=S.seats.slice();run.res[run.i]=o;
+ if(run.daily)LS.set('sc:day:'+D,JSON.stringify(run.res));
+ const b=broken(o,t.rules,t.g),d=b.length,bad=badSet(o,t),last=!run.u&&run.i+1>=run.tables.length;
+ if(run.u){U.n++;U.over+=d-t.best}
+ const ls=d?b.map((x,j)=>`<li style="animation-delay:${j*.6}s">⚠ ${line(x,t)}</li>`).join(''):`<li>🥂 ${WARM[R(t.seed)()*WARM.length|0]}</li>`;
+ view='rev';
+ shell(`<div class="card"><b>Reception at table ${run.u?run.k:run.i+1}</b><ul class="rv">${ls}</ul></div><div class="card"><p><b>Drama caused: ${d}</b>. Best possible: ${t.best}.</p><p class="hint">Your seating (⚠ marks a broken rule)</p>${ring(o,t,bad,'sm')}<p class="hint">One best seating</p>${ring(t.bo,t,null,'sm')}</div><div class="row"><button class="btn" data-act="next">${last?'See results':'Next table'}</button></div>`)}
+function fin(){if(run.daily){bump();home()}else if(run.cmp)showCmp(run.tables,run.res,run.cmp.s)}
+function newUnl(){const t=gen('u'+Math.random(),1+(Math.random()*5|0));run={tables:[t],i:0,res:[],u:1,k:U.n+1};play()}
+function parse(c){const m=/^(\d{4}-\d{2}-\d{2})-([A-J]{6}\.[A-J]{7}\.[A-J]{8}\.[A-J]{9}\.[A-J]{10})$/.exec(c);if(!m)return null;
+ const r=m[2].split('.').map((s,i)=>{const a=[...s].map(ch=>L.indexOf(ch));return new Set(a).size==a.length&&a.every(x=>x<i+6)?a:null});
+ return r.includes(null)?null:{d:m[1],s:r}}
+function startCmp(p){const T=tables(p.d);mode='daily';
+ if(p.d==D&&load().length>=5)return showCmp(T,load(),p.s);
+ run={tables:T,i:0,res:[],cmp:p};play()}
+function showCmp(T,mine,theirs){view='cmp';let w=0,tie=0;
+ const rows=T.map((t,i)=>{const a=cost(mine[i],t.rules,t.g),b=cost(theirs[i],t.rules,t.g);if(a<b)w++;else if(a==b)tie++;
+  return`<div class="card"><b>Table ${i+1}</b> (best ${t.best})<div class="duo"><div>You: ${a} drama${ring(mine[i],t,badSet(mine[i],t),'xs')}</div><div>Friend: ${b} drama${ring(theirs[i],t,badSet(theirs[i],t),'xs')}</div></div></div>`}).join('');
+ shell(`<div class="card"><b>Your guests caused less drama at ${w} of 5 tables</b>${tie?` and tied at ${tie}`:''}.</div>${rows}<div class="row"><button class="btn" data-act="home">Back</button></div>`)}
+
+$('#app').addEventListener('click',async e=>{
+ const b=e.target.closest('[data-s],[data-g],[data-act],[data-tab]');if(!b)return;const d=b.dataset;
+ if(d.tab){mode=d.tab;return home()}
+ if(d.s!==undefined){const s=+d.s,q=S.seats;
+  if(S.sel>=0){const g=S.sel,from=q.indexOf(g),other=q[s];if(other!==g){q[s]=g;if(from>=0)q[from]=other}S.sel=-1}
+  else if(q[s]>=0)S.sel=q[s];
+  return drawPlay()}
+ if(d.g!==undefined){S.sel=S.sel==+d.g?-1:+d.g;return drawPlay()}
+ switch(d.act){
+  case'start':run={tables:tables(D),i:load().length,res:load(),daily:true};play();break;
+  case'reset':play();break;
+  case'go':go();break;
+  case'next':if(run.u)newUnl();else if(run.i+1<run.tables.length){run.i++;play()}else fin();break;
+  case'unl':newUnl();break;
+  case'home':home();break;
+  case'cmp':{const p=parse($('#cc').value.trim());if(p)startCmp(p);else $('#ce').textContent='That code does not look right.';break}
+  case'copy':{const ta=$('#sh'),m=$('#msg');try{await navigator.clipboard.writeText(ta.value);m.textContent='Copied.'}catch(x){ta.focus();ta.select();m.textContent='Copy was blocked. The text is selected, so copy it by hand.'}break}
+ }});
+setInterval(()=>{const n=new Date(),c=$('#cd');
+ if(c){const s=(new Date(n.getFullYear(),n.getMonth(),n.getDate()+1)-n)/1e3|0;c.textContent=pad(s/3600|0)+':'+pad(s/60%60|0)+':'+pad(s%60)}
+ if(ymd(n)!==D&&view=='home'&&mode=='daily')home()},1000);
+
+const qp=new URLSearchParams(location.search);
+if(qp.get('debug')=='1')console.log('Seating Chart debug '+D,tables(D).map(t=>({table:t.n,guests:t.g,rules:t.rules.length,best:t.best,avgRandom:+t.avg.toFixed(2)})));
+const cp=qp.get('c'),pp=cp&&parse(cp.trim());
+if(pp)startCmp(pp);else home();
+</script></body></html>
