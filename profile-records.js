@@ -3,6 +3,7 @@
   'use strict';
   const DAY = 86400000, LOWBALL_EPOCH = Date.UTC(2026, 9, 1);
   const games = [
+    {id:'seating-chart',name:'Seating Chart',category:'SEATING / LOGIC',unit:'drama',max:60,lowerBetter:true,note:'Total broken guest requests across five tables: lower is better. Arcade credit penalises only avoidable drama above each table’s optimum.'},
     {id:'lowball', name:'Lowball', category:'PRICE GUESSING', unit:'points', max:100, note:'Scores out of 100. Best and average use retained saved history; played includes its lifetime counter.'},
     {id:'stake', name:'Stake', category:'TRIVIA / RISK', unit:'chips', max:15, note:'Net chips from completed five-question Dailies. Scores can be negative.'},
     {id:'stack-up', name:'Stack Up', category:'SORTING / SPEED', unit:'points', max:31000, note:'Native points from completed five-stack Dailies; older runs used the original higher scale. Arcade scores compare both versions. Points can be negative.'},
@@ -61,6 +62,7 @@
     let keys=[];
     try{for(let i=0;i<storage.length;i++)keys.push(storage.key(i));}catch{unavailable=true;}
     for(const key of keys){
+      if(key?.startsWith('break-room:seating-chart:daily:')){const day=key.slice('break-room:seating-chart:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_SEATING_CHART?.record(r,day);if(record)add('seating-chart',day,record.drama,record.perfect===5,root.BREAK_ROOM_SCORE.seatingChart(r));else if(root.BREAK_ROOM_SEATING_CHART?.valid(r,day)){if(day===today&&(r.picks.length||r.edits>0))progress.add('seating-chart');}else skipped++;continue;}
       if(key?.startsWith('break-room:clue-ladder:daily:')){const day=key.slice('break-room:clue-ladder:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_CLUE_LADDER?.record(r,day);if(record)add('clue-ladder',day,record.points,record.first===5,root.BREAK_ROOM_SCORE.clueLadder(r));else if(root.BREAK_ROOM_CLUE_LADDER?.valid(r,day)){if(day===today&&(r.picks.length||r.edits>0))progress.add('clue-ladder');}else skipped++;continue;}
       if(key?.startsWith('break-room:time-drop:daily:')){const day=key.slice('break-room:time-drop:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_TIME_DROP?.record(r,day);if(record)add('time-drop',day,record.points,record.exact===record.rounds,root.BREAK_ROOM_SCORE.timeDrop(r));else if(root.BREAK_ROOM_TIME_DROP?.valid(r,day)){if(day===today&&(r.picks.length||r.edits>0))progress.add('time-drop');}else skipped++;continue;}
       if(key?.startsWith('break-room:inner-clock:daily:')){const day=key.slice('break-room:inner-clock:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_INNER_CLOCK?.record(r,day);if(record)add('inner-clock',day,record.points,record.inSync===5,root.BREAK_ROOM_SCORE.innerClock(r.targets,r.picks));else if(root.BREAK_ROOM_INNER_CLOCK?.valid(r,day)){if(day===today&&(r.picks.length||r.phase==='running'))progress.add('inner-clock');}else skipped++;continue;}
@@ -104,6 +106,7 @@
     const days=new Map();for(const record of records){if(!days.has(record.date))days.set(record.date,new Set());days.get(record.date).add(record.game);}
     const streak=streaks([...days.keys()],today), total=summaries.reduce((n,g)=>n+g.played,0);
     const achievements=[
+      {id:'seating-chart',name:'Perfect host',detail:'Match the minimum drama at all five Daily Seating Chart tables.',earned:records.some(r=>r.game==='seating-chart'&&r.perfect)},
       {id:'clue-ladder',name:'First rung',detail:'Solve all five Daily Clue Ladder puzzles on their first clue.',earned:records.some(r=>r.game==='clue-ladder'&&r.perfect)},
       {id:'time-drop',name:'On the dot',detail:'Guess every Daily Time Drop year exactly.',earned:records.some(r=>r.game==='time-drop'&&r.perfect)},
       {id:'inner-clock',name:'In sync',detail:'Stop all five Daily Inner Clock targets within 2%.',earned:records.some(r=>r.game==='inner-clock'&&r.perfect)},

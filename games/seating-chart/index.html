@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f4eddc">
+  <meta name="description" content="Seat the wedding guests, satisfy their requests and keep avoidable drama low. Five untimed Daily tables and free Unlimited.">
+  <title>Seating Chart — Break Room</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/break-room-icon.svg">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../game-flow.css">
+  <link rel="stylesheet" href="../../break-room.css">
+  <link rel="stylesheet" href="../../game-shell.css">
+  <link rel="stylesheet" href="../../game-dialog.css">
+  <link rel="stylesheet" href="../../daily-reset.css">
+  <script src="../../daily-clock.js"></script>
+  <script src="../../arcade-score.js?v=seating-chart-20261023"></script>
+  <link rel="stylesheet" href="../../arcade-score.css">
+  <script defer src="../../navigation.js"></script>
+  <script src="../../pack-model.js?v=launch-20261023"></script><script src="../../prior-model.js?v=launch-20261023"></script><script src="../../laser-model.js?v=launch-20261023"></script><script src="../../alibi-model.js?v=playtest-20261023"></script><script src="../../bouncer-model.js?v=launch-20261023"></script><script src="../../inner-clock-model.js"></script><script defer src="shell.js"></script><script src="../../time-drop-model.js"></script><script src="../../clue-ladder-model.js"></script><script src="../../seating-chart-model.js"></script><script defer src="puzzles.js"></script><script defer src="seating-chart.js"></script>
+<link rel="stylesheet" href="../../legal.css"><link rel="stylesheet" href="seating-chart.css"><link rel="stylesheet" href="../../game-access.css"><link rel="stylesheet" href="../../accounts.css"><script defer src="../../assets/vendor/supabase.js"></script><script defer src="../../account-config.js"></script><script defer src="../../cloud-saves.js?v=seating-chart-20261023"></script><script defer src="../../accounts.js?v=seating-chart-20261023"></script></head>
+<body class="seating-chart-page">
+  <!-- 01 FIXED: Menu/left drawer, centred Break Room brand, account link. -->
+<header class="site-header game-site-header"><div class="wrap game-header-inner"><button class="game-menu-toggle" id="game-menu-toggle" type="button" aria-expanded="false" aria-controls="game-menu"><span class="hamburger-lines" aria-hidden="true">☰</span><span class="menu-toggle-label">MENU</span></button><a class="brand" href="../../index.html" aria-label="Break Room — back to all games"><span class="break-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="break-wordmark">BREAK ROOM</span></a><a class="game-header-account" href="../../login.html">ACCOUNT</a></div><nav class="game-menu" id="game-menu" aria-label="Break Room menu" aria-hidden="true" hidden>
+<div class="game-menu-heading"><span class="section-meta">BREAK ROOM</span><button class="game-menu-close" id="game-menu-close" type="button" aria-label="Close menu">×</button></div>
+<div class="game-menu-content"><div class="game-menu-group"><span class="section-meta">PLAY NOW</span><a href="../../index.html#daily-games">All games</a><a href="../../games/laser/index.html">Laser</a><a href="../../games/stack-up/index.html">Stack Up</a><a href="../../games/stake/index.html">Stake</a><a href="../../games/alibi/index.html">Alibi</a><a href="../../games/pack/index.html">Pack</a><a href="../../games/bouncer/index.html">Bouncer</a><a href="../../games/prior/index.html">Prior</a><a href="../../games/lowball/index.html">Lowball</a><a href="../../games/inner-clock/index.html">Inner Clock</a></div>
+<div class="game-menu-group"><span class="section-meta">YOUR BREAK ROOM</span><a href="../../profile.html">My stats</a><a href="../../friends.html">Friends</a><a href="../../login.html">Account / sign in</a></div></div></nav></header>
+  <main class="br-game-page">
+    <div class="br-game-shell">
+      <!-- 02 FIXED GEOMETRY: title left, stats centred, ?/trophy right. -->
+      <section class="br-game-heading" aria-labelledby="game-title">
+        <div class="br-game-title-group">
+          <h1 id="game-title" data-template-slot="title">Seating Chart</h1>
+          <p data-template-slot="description">SEATING / LOGIC · Keep the reception calm.</p>
+        </div>
+        <section class="quick-stats" aria-label="Your game stats">
+          <div class="quick-stat"><strong data-summary-stat="streak">—</strong><span>Streak</span></div>
+          <div class="quick-stat"><strong data-summary-stat="best">—</strong><span>Best</span></div>
+          <div class="quick-stat"><strong data-summary-stat="played">—</strong><span>Played</span></div>
+        </section>
+        <div class="br-game-tools">
+          <button class="mini-tool" id="help-popup-open" type="button" aria-label="How to play" title="How to play">?</button>
+          <button class="mini-tool" id="stats-popup-open" type="button" aria-label="Extended game stats" title="Extended game stats"><img src="../../assets/icons/trophy.svg" alt=""></button>
+        </div>
+      </section>
+
+      <!-- 03 FIXED: shared boxed Sydney-midnight reset, independent of game centring. -->
+      <aside class="timer-card daily-reset-card br-reset-rail" aria-label="Daily reset">
+        <div class="card-heading">NEXT DAILY RESET</div>
+        <div class="reset-clock" data-daily-countdown>--:--:--</div>
+        <p>Same time. Every game.</p>
+      </aside>
+
+      <div class="br-game-content">
+        <!-- 04 FIXED: plain Daily / Unlimited mode controls. -->
+        <div class="br-mode-tabs" role="tablist" aria-label="Game mode">
+          <button id="mode-daily" role="tab" type="button" aria-selected="true" aria-controls="game-panel" tabindex="0" data-game-mode="daily">Daily</button>
+          <button id="mode-unlimited" role="tab" type="button" aria-selected="false" aria-controls="game-panel" tabindex="-1" data-game-mode="unlimited">Unlimited</button>
+        </div>
+        <!-- 05 REPLACE: progress content/round count; preserve the centred slot. -->
+        <div class="br-game-progress" id="game-progress" data-template-slot="progress" aria-label="Daily progress">TABLE 1 / 5</div>
+        <!-- 06 REPLACE: ONLY this area is the game's playing surface/engine. -->
+        <section class="br-game-board" id="game-panel" role="tabpanel" aria-labelledby="mode-daily" tabindex="0">
+          <p id="save-warning" role="status" hidden>Saving is unavailable. Your progress stays in memory while this page remains open.</p>
+          <p id="sc-notice" role="status"></p>
+          <div id="practice-settings" hidden><label>Table difficulty <select id="practice-tier"><option value="all">Mixed tables</option><option value="1">Easy · 6 guests</option><option value="2">Standard · 7 guests</option><option value="3">Tricky · 8 guests</option><option value="4">Hard · 9 guests</option><option value="5">Expert · 10 guests</option></select></label><p id="practice-note" role="status">Changes apply to the next table. Practice resumes in this tab.</p></div><div id="engine-slot"></div>
+          <p id="mode-description" class="game-sr-only" role="status">Daily · Five untimed tables.</p>
+        </section>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- 08 FIXED POPUP VISUALS AND BEHAVIOUR; replace title/rules/stat bindings. -->
+  <div class="game-popup-backdrop" id="help-popup" hidden>
+    <section class="game-popup" role="dialog" aria-modal="true" aria-labelledby="help-popup-title">
+      <button class="game-popup-close" type="button" data-popup-close aria-label="Close">×</button>
+      <p class="popup-kicker">PLAYER GUIDE</p>
+      <h2 id="help-popup-title">HOW TO PLAY Seating Chart</h2>
+      <p>You are the wedding planner. Find the calmest seating arrangement.</p>
+<div class="popup-instructions">
+<p><strong>1. Place the guests.</strong> Select a guest, then a numbered seat. Select a seated guest and another seat to move or swap. Every seat is equal: rotating or reflecting an arrangement does not change its score. The first and last seats are neighbours.</p>
+<p><strong>2. Read the requests.</strong> Next to means immediate neighbours. Apart means not neighbours. One between means exactly one guest on the shorter path. Opposite means directly across an even-sized table. Every broken request creates one drama point. Select a guest to highlight their requests.</p>
+<p><strong>3. Aim for the stated minimum.</strong> Some hard tables have conflicting requests. Minimum drama is shown before you play; matching it is a perfect table, even when it is above zero. Every optimal arrangement counts.</p>
+<p><strong>4. Start the reception.</strong> Fill every seat, then commit once. The result locks immediately. Review each request, the reception mishaps and one optimal seating with its explanation. Undo and Reset are free before committing.</p>
+<p><strong>5. Five untimed Daily tables.</strong> Native score is total drama (lower is better). Arcade credit per table is 100 minus 20 for each avoidable drama point, floored at zero. Daily Arcade is the average of five tables. No timer, lives or speed bonus. Completed results, including zeroes, count towards stats, Profile and Friends.</p>
+<p><strong>6. Saves and reset.</strong> Seating, selection, undo and locked results save as you go. Everyone gets the same set, resetting at midnight Australia/Sydney. There are 360 tables: 72 Daily sets before the deck repeats.</p>
+<p><strong>7. Unlimited.</strong> Free practice excludes today's five tables and does not repeat eligible table IDs until the chosen pool is exhausted. Difficulty changes apply next table. Practice is saved in this tab for the current account and stays separate from Daily/cloud history. Use the site's private Friends comparisons after completing Daily.</p></div>
+<button class="button pink popup-done" type="button" data-popup-close>GOT IT</button>
+    </section>
+  </div>
+  <div class="game-popup-backdrop" id="stats-popup" hidden>
+    <section class="game-popup" role="dialog" aria-modal="true" aria-labelledby="stats-popup-title">
+      <button class="game-popup-close" type="button" data-popup-close aria-label="Close">×</button>
+      <p class="popup-kicker">YOUR RECORD</p>
+      <h2 id="stats-popup-title">EXTENDED STATS</h2>
+      <p class="stats-popup-game">Seating Chart · SEATING / LOGIC</p>
+      <div class="extended-stats-grid" data-template-slot="extended-stats">
+        <div><strong data-detail-stat="played">—</strong><span>RUNS PLAYED</span></div>
+        <div><strong data-detail-stat="best">—</strong><span>BEST SCORE</span></div>
+        <div><strong data-detail-stat="average">—</strong><span>AVERAGE SCORE</span></div>
+        <div><strong data-detail-stat="streak">—</strong><span>CURRENT STREAK</span></div>
+        <div><strong data-detail-stat="achievement">—</strong><span>FIVE OPTIMAL TABLES</span></div>
+        <div><strong data-detail-stat="last">—</strong><span>LAST SCORE</span></div>
+      </div>
+      <p class="popup-footnote">Best, average and last use your Daily Arcade score out of 100. Only completed Dailies count; Unlimited is practice.</p>
+      <button class="button pink popup-done" type="button" data-popup-close>BACK TO GAME</button>
+    </section>
+  </div>
+
+  <!-- 09 SHARED SITE FOOTER ONLY. Do not add standalone per-game legal links. -->
+  <p class="game-cloud-note"><span data-account-status>Guest play · Saved in this browser.</span> <a href="../../account.html">Account &amp; cloud saves →</a></p><!-- shared-legal-footer:start -->
+<footer class="br-site-footer"><div class="br-footer-inner"><p class="br-footer-note">BREAK ROOM · A LITTLE BREAK. A FEW GOOD GAMES.</p><nav class="br-footer-nav" aria-label="Footer"><a href="../../index.html">All games</a><a href="../../privacy.html">Privacy</a><a href="../../terms.html">Terms</a><a href="../../contact.html">Contact &amp; data help</a></nav></div></footer>
+<!-- shared-legal-footer:end -->
+</body>
+</html>

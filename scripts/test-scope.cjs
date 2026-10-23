@@ -1,9 +1,10 @@
 /* Pure changed-file selection. Full game sweeps require an explicit --full request. */
-const UNITS=["clue-ladder-rules.cjs","time-drop-rules.cjs","test-scope.cjs","playtest-feedback.cjs","factual-review.cjs","launch-content.cjs","inner-clock-rules.cjs","bouncer-rules.cjs","alibi-scenarios.cjs","alibi-rules.cjs","laser-rules.cjs","practice-session-rules.cjs","prior-rules.cjs","pack-rules.cjs","content-tools.cjs","friends-database.cjs","account-navigation.cjs","cloud-saves.cjs","cloud-database.cjs","arcade-score.cjs","daily-clock.cjs","profile-records.cjs","question-banks.cjs"];
+const UNITS=["seating-chart-rules.cjs","clue-ladder-rules.cjs","time-drop-rules.cjs","test-scope.cjs","playtest-feedback.cjs","factual-review.cjs","launch-content.cjs","inner-clock-rules.cjs","bouncer-rules.cjs","alibi-scenarios.cjs","alibi-rules.cjs","laser-rules.cjs","practice-session-rules.cjs","prior-rules.cjs","pack-rules.cjs","content-tools.cjs","friends-database.cjs","account-navigation.cjs","cloud-saves.cjs","cloud-database.cjs","arcade-score.cjs","daily-clock.cjs","profile-records.cjs","question-banks.cjs"];
 
 const PLACEHOLDERS=['pixel-pairs','word-forge','gridlock','number-drop','memory-lane','mystery-cabinet'];
-const GAMES=['clue-ladder','lowball','stake','stack-up','pack','prior','laser','alibi','bouncer','inner-clock','time-drop'];
+const GAMES=['seating-chart','clue-ladder','lowball','stake','stack-up','pack','prior','laser','alibi','bouncer','inner-clock','time-drop'];
 const GAME_UI={
+ 'seating-chart':['seating-chart.cjs'],
  'clue-ladder':['clue-ladder.cjs'],
  'time-drop':['time-drop.cjs'],
  lowball:['price-reference.cjs','lowball-art.cjs'],
@@ -13,6 +14,7 @@ const GAME_UI={
  bouncer:['bouncer.cjs'],'inner-clock':['inner-clock.cjs']
 };
 const GAME_RULES={
+ 'seating-chart':['seating-chart-rules.cjs'],
  'clue-ladder':['clue-ladder-rules.cjs'],
  'time-drop':['time-drop-rules.cjs'],
  lowball:['question-banks.cjs','factual-review.cjs'],
@@ -40,7 +42,7 @@ function selectChecks(changed,available,{full=false}={}){
   if(file==='tests/question-maths.py'){python=true;continue;}
   if(file.startsWith('tests/fixtures/')){if(file.includes('alibi'))game('alibi',true);else throw Error('Add a test scope for fixture '+file);continue;}
   const own=file.match(/^games\/([^/]+)\//);
-  const model=file.match(/^(pack|prior|laser|alibi|bouncer|inner-clock|time-drop|clue-ladder)-model\.js$/);
+  const model=file.match(/^(pack|prior|laser|alibi|bouncer|inner-clock|time-drop|clue-ladder|seating-chart)-model\.js$/);
   if(own){
    if(own[1]==='_template')add('game-template.cjs');
    else if(PLACEHOLDERS.includes(own[1]))add('smoke.cjs');
@@ -52,7 +54,8 @@ function selectChecks(changed,available,{full=false}={}){
   else if(/^supabase\//.test(file)){add('friends-database.cjs','cloud-database.cjs','playtest-feedback.cjs');}
   else if(/^content\//.test(file)){
    content=true;add('content-tools.cjs');
-   if(/clue-ladder/.test(file))game('clue-ladder',true);
+   if(/seating-chart/.test(file))game('seating-chart',true);
+   else if(/clue-ladder/.test(file))game('clue-ladder',true);
    else if(/time-drop/.test(file))game('time-drop',true);
    else if(/alibi/.test(file))game('alibi',true);
    else if(/bouncer/.test(file))game('bouncer',true);
@@ -62,8 +65,8 @@ function selectChecks(changed,available,{full=false}={}){
    else if(/stack-up-familiar/.test(file))game('stack-up',true);
    else if(/lowball|price/.test(file))game('lowball',true);
    else{add('question-banks.cjs','factual-review.cjs','question-migrations.cjs');python=true;}
-  }else if(/^scripts\/build-(?:clue-ladder|time-drop|alibi|bouncer|laser|pack|prior)/.test(file)){
-   const id=file.match(/^scripts\/build-(clue-ladder|time-drop|alibi|bouncer|laser|pack|prior)/)[1];game(id,true);content=true;
+  }else if(/^scripts\/build-(?:seating-chart|clue-ladder|time-drop|alibi|bouncer|laser|pack|prior)/.test(file)){
+   const id=file.match(/^scripts\/build-(seating-chart|clue-ladder|time-drop|alibi|bouncer|laser|pack|prior)/)[1];game(id,true);content=true;
   }else if(file==='scripts/build-familiar-stacks.cjs'){game('stack-up',true);content=true;}
   else if(/scripts\/(?:build-launch-content|build-question-banks|review-question-banks)/.test(file)){add('launch-content.cjs','question-banks.cjs','factual-review.cjs');content=true;python=true;}
   else if(/^scripts\/(?:content|new-game)/.test(file)||/^tools\//.test(file)){add('content-tools.cjs','content-studio.cjs');content=true;}
