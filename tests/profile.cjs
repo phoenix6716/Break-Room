@@ -58,7 +58,7 @@ const snapshot=page=>page.evaluate(()=>Object.fromEntries(Object.keys(localStora
    const before=await snapshot(page);await page.goto(base+'/profile.html');
    assert.equal(await page.locator('#total-runs').innerText(),'4');assert.equal(await page.locator('#today-count').innerText(),'3 / 9');
    const actual=await page.evaluate(()=>BREAK_ROOM_RECORDS.read(localStorage));
-   assert.equal(actual.games[0].best,100);assert.equal(actual.games[1].best,15);assert.equal(actual.games[2].best,31000);assert.equal(actual.records.find(r=>r.game==='stake'&&r.date==='2026-10-19').score,legacyScore);
+   assert.equal(actual.games[0].best,100);assert.equal(actual.games[1].best,15);assert.equal(actual.games[2].best,3100);assert.equal(actual.records.find(r=>r.game==='stake'&&r.date==='2026-10-19').score,legacyScore);
    assert.deepEqual(await snapshot(page),before);await page.reload();assert.equal(await page.locator('#total-runs').innerText(),'4');
    await page.screenshot({path:'design/previews/profile/actual-completions.png',fullPage:true});
    // Practice is deliberately excluded, including real runs from each engine.

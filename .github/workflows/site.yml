@@ -32,7 +32,8 @@ jobs:
       - name: Install locked test dependencies
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Install matching Chromium
-        run: npx playwright install --with-deps chromium
+        # Ubuntu runners include Chrome and its system libraries; avoid a redundant apt upgrade.
+        run: npx playwright install chromium
       - name: Run all checks against a project-path build
         shell: bash
         env:

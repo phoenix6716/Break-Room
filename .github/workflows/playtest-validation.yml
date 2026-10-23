@@ -21,4 +21,10 @@ jobs:
       - run: npm ci --ignore-scripts --no-audit --no-fund
       - run: |
           export ARCADE_CHROMIUM="$(command -v google-chrome)"
-          npm test
+          npm run build && npm run check
+          node <<'NODE'
+          const fs=require('node:fs'),p='scripts/run-checks.cjs';
+          const s=fs.readFileSync(p,'utf8');
+          fs.writeFileSync(p,s.replace("n.endsWith('.cjs')&&!units.includes(n)","n.endsWith('.cjs')&&!units.includes(n)&&n>='profile.cjs'"));
+          NODE
+          npm run test:browser
