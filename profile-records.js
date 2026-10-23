@@ -12,6 +12,7 @@
     {id:'inner-clock',name:'Inner Clock',category:'TIMING / INSTINCT',unit:'seconds miss',max:30,lowerBetter:true,note:'Average absolute timing miss in seconds: lower is better. Arcade score measures misses relative to each target length.'},
     {id:'bouncer',name:'Bouncer',category:'WORD / DEDUCTION',unit:'correct',max:16,note:'Correct words out of sixteen. Tested words earn half credit for the Arcade score; untested correct words earn full credit.'},
     {id:'alibi', name:'Alibi', category:'DEDUCTION / MYSTERY', unit:'correct', max:4, note:'Correct first accusations out of four untimed Daily cases. Notes never affect scoring.'}
+    ,{id:'time-drop',name:'Time Drop',category:'HISTORY / INSTINCT',unit:'points',max:10000,note:'Points from ten first-lock year guesses. Accepted approximate ranges earn full credit. Arcade score is points divided by 100.'},
   ];
   const isObject = value => value && typeof value === 'object' && !Array.isArray(value);
   function dateKey(value) {
@@ -59,6 +60,7 @@
     let keys=[];
     try{for(let i=0;i<storage.length;i++)keys.push(storage.key(i));}catch{unavailable=true;}
     for(const key of keys){
+      if(key?.startsWith('break-room:time-drop:daily:')){const day=key.slice('break-room:time-drop:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_TIME_DROP?.record(r,day);if(record)add('time-drop',day,record.points,record.exact===10,root.BREAK_ROOM_SCORE.timeDrop(r));else if(root.BREAK_ROOM_TIME_DROP?.valid(r,day)){if(day===today&&(r.picks.length||r.edits>0))progress.add('time-drop');}else skipped++;continue;}
       if(key?.startsWith('break-room:inner-clock:daily:')){const day=key.slice('break-room:inner-clock:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_INNER_CLOCK?.record(r,day);if(record)add('inner-clock',day,record.points,record.inSync===5,root.BREAK_ROOM_SCORE.innerClock(r.targets,r.picks));else if(root.BREAK_ROOM_INNER_CLOCK?.valid(r,day)){if(day===today&&(r.picks.length||r.phase==='running'))progress.add('inner-clock');}else skipped++;continue;}
       if(key?.startsWith('break-room:bouncer:daily:')){const day=key.slice('break-room:bouncer:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_BOUNCER?.record(r,day);if(record)add('bouncer',day,record.correct,record.arcadeScore===100,root.BREAK_ROOM_SCORE.bouncer(record.correct,record.tests));else if(root.BREAK_ROOM_BOUNCER?.valid(r,day)){if(day===today&&(r.picks.length||r.probes.some(p=>p.length)||r.phase==='sort'||r.answers.some(v=>v!==null)))progress.add('bouncer');}else skipped++;continue;}
       if(key?.startsWith('break-room:alibi:daily:')){const day=key.slice('break-room:alibi:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_ALIBI?.record(r,day);if(record)add('alibi',day,record.correct,record.correct===4,root.BREAK_ROOM_SCORE.alibi(record.correct));else if(root.BREAK_ROOM_ALIBI?.valid(r,day)){if(day===today&&(r.picks.length||r.selection>=0||r.notes.some(n=>n.truth.some(Boolean)||n.excluded.some(Boolean)||n.objects?.some(x=>x>=0))))progress.add('alibi');}else skipped++;continue;}
@@ -100,6 +102,7 @@
     const days=new Map();for(const record of records){if(!days.has(record.date))days.set(record.date,new Set());days.get(record.date).add(record.game);}
     const streak=streaks([...days.keys()],today), total=summaries.reduce((n,g)=>n+g.played,0);
     const achievements=[
+      {id:'time-drop',name:'On the dot',detail:'Guess all ten Daily Time Drop years exactly.',earned:records.some(r=>r.game==='time-drop'&&r.perfect)},
       {id:'inner-clock',name:'In sync',detail:'Stop all five Daily Inner Clock targets within 2%.',earned:records.some(r=>r.game==='inner-clock'&&r.perfect)},
       {id:'bouncer',name:'On the list',detail:'Sort all sixteen Daily Bouncer words correctly without testing.',earned:records.some(r=>r.game==='bouncer'&&r.perfect)},
       {id:'first',name:'First break',detail:'Finish your first Daily game.',earned:total>0},

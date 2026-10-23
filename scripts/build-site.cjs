@@ -7,7 +7,7 @@ const excluded=new Set(['node_modules','.git','source','_template','__pycache__'
 let count=0,total=0;
 function copy(file,relative){
  const target=path.join(output,relative);fs.mkdirSync(path.dirname(target),{recursive:true});if(path.extname(file).toLowerCase()==='.html'){
-  const html=fs.readFileSync(file,'utf8').replace(/<nav\b[^>]*class="[^"]*\bgame-menu\b[^"]*"[^>]*>[\s\S]*?<\/nav>/g,nav=>nav.replace(/<a\b[^>]*href="[^"]*games\/(?:alibi|bouncer|prior)\/index\.html"[^>]*>[\s\S]*?<\/a>/g,''));
+  const html=fs.readFileSync(file,'utf8').replace(/<nav\b[^>]*class="[^"]*\bgame-menu\b[^"]*"[^>]*>[\s\S]*?<\/nav>/g,nav=>nav.replace(/<a\b[^>]*href="[^"]*games\/(?:alibi|bouncer|prior)\/index\.html"[^>]*>[\s\S]*?<\/a>/g,'').replace(/(<a\b[^>]*href="([^"]*)games\/laser\/index\.html"[^>]*>[\s\S]*?<\/a>)/,(_,link,prefix)=>link+'<a href="'+prefix+'games/time-drop/index.html">Time Drop</a>'));
   fs.writeFileSync(target,html);
  }else fs.copyFileSync(file,target);
  count++;total+=fs.statSync(target).size;

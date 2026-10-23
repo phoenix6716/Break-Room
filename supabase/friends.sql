@@ -415,7 +415,37 @@ exception when others then return null;
 end $$;
 revoke all on function public._friend_inner_clock_score(jsonb,date) from public,anon,authenticated;
 
-create or replace function public._friend_score(g text,v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+-- Private reconstruction: never trust client-reported points.
+create or replace function public._friend_time_drop_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare i int; e jsonb; x numeric; field text; ids text[]:='{}'; y int; lo int; hi int; g int; a int; b int; error int; allowance int; points int:=0;
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->'scoreVersion' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or v->'round' is distinct from '9'::jsonb or coalesce(v->>'phase','') not in ('review','summary') then return null;end if;
+ if jsonb_typeof(v->'edits') is distinct from 'number' then return null;end if;x=(v->>'edits')::numeric;if x<>trunc(x) or x<0 or x>1000000 then return null;end if;
+ if jsonb_typeof(v->'events') is distinct from 'array' or jsonb_array_length(v->'events')<>10 or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>10 or v->'guess' is distinct from v->'picks'->9 then return null;end if;
+ for i in 0..9 loop
+  e=v->'events'->i;
+  if jsonb_typeof(e) is distinct from 'object' then return null;end if;
+  foreach field in array array['id','title','fact','category','source'] loop
+   if jsonb_typeof(e->field) is distinct from 'string' or char_length(trim(e->>field))=0 or char_length(e->>field)>(case field when 'id' then 100 when 'title' then 180 when 'fact' then 1000 when 'category' then 40 else 2000 end) then return null;end if;
+  end loop;
+  if e->>'id' !~ '^[a-z0-9-]+$' or e->>'source' !~ '^https://' or e->>'id'=any(ids) then return null;end if;ids=array_append(ids,e->>'id');
+  foreach field in array array['year','earliest','latest'] loop
+   if jsonb_typeof(e->field) is distinct from 'number' then return null;end if;x=(e->>field)::numeric;if x<>trunc(x) or x=0 or x< -4000 or x>2100 then return null;end if;
+  end loop;
+  y=(e->>'year')::int;lo=(e->>'earliest')::int;hi=(e->>'latest')::int;
+  if lo>y or y>hi or (hi-case when hi>0 then 1 else 0 end)-(lo-case when lo>0 then 1 else 0 end)>200 then return null;end if;
+  if jsonb_typeof(v->'picks'->i) is distinct from 'number' then return null;end if;x=(v->'picks'->>i)::numeric;if x<>trunc(x) or x=0 or x< -4000 or x>2100 then return null;end if;g=x;
+  error=0;if g<lo then a=lo;b=g;elsif g>hi then a=g;b=hi;else a=0;b=0;end if;
+  if a<>0 then error=(a-case when a>0 then 1 else 0 end)-(b-case when b>0 then 1 else 0 end);end if;
+  allowance=case when y<0 then 500 when y<1000 then 250 when y<1700 then 150 when y<1900 then 100 else 50 end;
+  points=points+greatest(0,round(1000*(1-error::numeric/allowance))::int);
+ end loop;
+ return points/100.0;
+exception when others then return null;
+end $$;
+revoke all on function public._friend_time_drop_score(jsonb,date) from public,anon,authenticated;
+
+create or replace function public._friend_score(g text,v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $
 declare i int; j int; n numeric; bet int; pick int; answer int; total int:=0; won int:=0; legacy int[]; q jsonb; c jsonb;
 begin
  if jsonb_typeof(v) is distinct from 'object' then return null;end if;
@@ -437,6 +467,7 @@ begin
    end if;
    total=total+bet;if pick=answer then won=won+bet;end if;
   end loop;return won::double precision/total*100;
+ elsif g='time-drop' then return public._friend_time_drop_score(v,d);
  elsif g='inner-clock' then return public._friend_inner_clock_score(v,d);
  elsif g='bouncer' then return public._friend_bouncer_score(v,d);
  elsif g='alibi' then return public._friend_alibi_score(v,d);
@@ -461,9 +492,9 @@ begin
   return greatest(0,least(100,(v->>'score')::double precision/(case when v->'scoreVersion'='2'::jsonb then 3100 else 31000 end)*100));
  end if;return null;
 exception when others then return null;
-end $$;
+end $;
 create or replace function public._friend_records(p_user uuid,p_today date)
-returns table(game text,day date,arcade_score double precision) language plpgsql stable set search_path='' as $$
+returns table(game text,day date,arcade_score double precision) language plpgsql stable set search_path='' as $
 declare rowdata record; entry record; data jsonb; v jsonb; h jsonb; d date; n numeric; score double precision; lastday date;
 begin
  for rowdata in select s.game,s.data from public.game_saves s where s.user_id=p_user loop
@@ -471,7 +502,118 @@ begin
   if game='lowball' then
    h=public._friend_json(data->>'pc_history');if jsonb_typeof(h) is distinct from 'object' then h='{}';end if;
    for entry in select * from jsonb_each(h) loop
-    if length(entry.key)>10 or entry.key !~ '^-?[0-9]+$' or jsonb_typeof(entry.value)<>'number' then continue;end if;
+    if length(entry.key)>10 or entry.key !~ '^-?[0-9]+
+
+create or replace function public.friend_scores() returns jsonb language plpgsql stable security definer set search_path='' as $$
+declare me uuid:=auth.uid(); today date:=timezone('Australia/Sydney',now())::date; result jsonb;
+begin
+ if me is null then raise exception 'Sign in required' using errcode='42501';end if;
+ if not exists(select 1 from public.friend_profiles where user_id=me) then return jsonb_build_object('today',today,'records','[]'::jsonb);end if;
+ select coalesce(jsonb_agg(jsonb_build_object('user_id',p.user_id,'game',r.game,'date',r.day,'arcadeScore',r.arcade_score) order by p.user_id,r.day,r.game),'[]'::jsonb) into result
+ from public.friend_profiles p cross join lateral public._friend_records(p.user_id,today) r
+ where p.user_id=me or (p.share_scores and exists(select 1 from public.friend_links f where f.status='accepted' and ((f.requester=me and f.recipient=p.user_id) or (f.recipient=me and f.requester=p.user_id))) and not exists(select 1 from public.friend_blocks b where (b.owner_id=me and b.target_id=p.user_id) or (b.owner_id=p.user_id and b.target_id=me)));
+ return jsonb_build_object('today',today,'records',result);
+end $$;
+revoke all on function public._friend_json(text),public._friend_date(text),public._friend_mul(bigint,bigint),public._friend_legacy(date),public._friend_score(text,jsonb,date),public._friend_records(uuid,date),public.friend_scores() from public,anon,authenticated;
+grant execute on function public.friend_scores() to authenticated;
+
+-- Evidence v3: all observations are verified; solve catalogue ownership independently.
+create or replace function public._friend_alibi_evidence_rule(s jsonb,positions int[]) returns boolean language plpgsql immutable set search_path='' as $$
+declare a int; b int; k int; ty text;
+begin
+ ty=s->>0;a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;
+ if ty='oneof' then return (b & (1 << positions[a+1]))<>0;
+ elsif ty='left' then return positions[a+1]<positions[b+1];
+ elsif ty='next' then return positions[a+1]=positions[b+1]+1;
+ elsif ty='apart' then return abs(positions[a+1]-positions[b+1])=k;end if;return null;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_evidence(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+declare n int; lv int; i int; j int; a int; b int; k int; x numeric; ty text; s jsonb; e jsonb; o jsonb; clue jsonb; mechanism text;
+ names text[]:='{}'; portraits int[]:='{}'; object_names text[]:='{}'; rules text[]:='{}'; moment int:=-1; positions int[]; fits boolean; solutions int:=0; winner int; before_mass int; after_mass int; broken boolean:=false;
+begin
+ if jsonb_typeof(p) is distinct from 'object' or p->'version' is distinct from '3'::jsonb or jsonb_typeof(p->'id') is distinct from 'string' or p->>'id' !~ '^alibi-v3-[0-3]-[0-9]+$' or char_length(p->>'id')>80 or jsonb_typeof(p->'level') is distinct from 'number' then return null;end if;
+ x=(p->>'level')::numeric;if x<>trunc(x) or x not between 0 and 3 then return null;end if;lv=x;n=case when lv=3 then 5 else 4 end;
+ if p->'n' is distinct from to_jsonb(n) or coalesce(p->>'mechanism','') not in ('trace','access','inventory','custody') then return null;end if;mechanism=p->>'mechanism';
+ foreach ty in array array['crime','detail','item','assignment','catalogue'] loop
+  if jsonb_typeof(p->ty) is distinct from 'string' or char_length(trim(p->>ty))<1 or char_length(p->>ty)>(case ty when 'crime' then 140 when 'detail' then 800 when 'assignment' then 50 when 'catalogue' then 160 else 30 end) then return null;end if;
+ end loop;
+ foreach ty in array array['names','portraits','objects','s'] loop if jsonb_typeof(p->ty) is distinct from 'array' or jsonb_array_length(p->ty)<>n then return null;end if;end loop;
+ if jsonb_typeof(p->'evidence') is distinct from 'array' or jsonb_array_length(p->'evidence') not between 1 and 4 or jsonb_typeof(p->'trace') is distinct from 'object' then return null;end if;
+ clue=p->'trace';
+ foreach ty in array array['title','detail'] loop if jsonb_typeof(clue->ty) is distinct from 'string' or char_length(trim(clue->>ty))<1 or char_length(clue->>ty)>(case when ty='title' then 100 else 500 end) then return null;end if;end loop;
+ if mechanism in ('trace','access') then
+  if jsonb_typeof(clue->'marks') is distinct from 'array' or jsonb_array_length(clue->'marks')<>2 or clue->'marks'->0=clue->'marks'->1 then return null;end if;
+  for e in select value from jsonb_array_elements(clue->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+ elsif mechanism='inventory' then
+  foreach ty in array array['before','after'] loop if jsonb_typeof(clue->ty) is distinct from 'number' then return null;end if;x=(clue->>ty)::numeric;if x<>trunc(x) or x not between 0 and 10000 then return null;end if;end loop;
+  before_mass=(clue->>'before')::int;after_mass=(clue->>'after')::int;if after_mass<=before_mass then return null;end if;
+ else
+  if jsonb_typeof(clue->'checks') is distinct from 'array' or jsonb_array_length(clue->'checks')<>n then return null;end if;
+  for i in 0..n-1 loop
+   if clue->'checks'->i='"broken"'::jsonb then if not broken then moment=i;end if;broken=true;
+   elsif clue->'checks'->i is distinct from '"intact"'::jsonb or broken then return null;end if;
+  end loop;if moment=-1 then return null;end if;
+ end if;
+ for i in 0..n-1 loop
+  if jsonb_typeof(p->'names'->i) is distinct from 'string' or char_length(trim(p->'names'->>i))<1 or char_length(p->'names'->>i)>30 or p->'names'->>i=any(names) then return null;end if;names=array_append(names,p->'names'->>i);
+  if jsonb_typeof(p->'portraits'->i) is distinct from 'number' then return null;end if;x=(p->'portraits'->>i)::numeric;if x<>trunc(x) or x not between 0 and 7 or x::int=any(portraits) then return null;end if;portraits=array_append(portraits,x::int);
+  o=p->'objects'->i;if jsonb_typeof(o) is distinct from 'object' or jsonb_typeof(o->'name') is distinct from 'string' or char_length(trim(o->>'name'))<1 or char_length(o->>'name')>70 or o->>'name'=any(object_names) then return null;end if;object_names=array_append(object_names,o->>'name');
+  if jsonb_typeof(o->'marks') is distinct from 'array' or jsonb_array_length(o->'marks')>4 or jsonb_typeof(o->'grams') is distinct from 'number' then return null;end if;
+  x=(o->>'grams')::numeric;if x<>trunc(x) or x not between 1 and 1000 then return null;end if;
+  for e in select value from jsonb_array_elements(o->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+  if (mechanism in ('trace','access') and (o->'marks') @> (clue->'marks')) or (mechanism='inventory' and x=after_mass-before_mass) then if moment<>-1 then return null;end if;moment=i;end if;
+  if p->'s'->i->1 is distinct from to_jsonb(i) then return null;end if;
+ end loop;if moment=-1 then return null;end if;
+ for s in select value from jsonb_array_elements(p->'s') union all select value->'rule' from jsonb_array_elements(p->'evidence') loop
+  if jsonb_typeof(s) is distinct from 'array' or jsonb_array_length(s)<>4 or jsonb_typeof(s->0) is distinct from 'string' or coalesce(s->>0,'') not in ('oneof','left','next','apart') then return null;end if;ty=s->>0;
+  for j in 1..3 loop if jsonb_typeof(s->j) is distinct from 'number' then return null;end if;x=(s->>j)::numeric;if x<>trunc(x) or x<0 or x>31 then return null;end if;end loop;
+  a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;if a>=n then return null;end if;
+  if ty='oneof' then if b<1 or b>=(1<<n) or k<>0 then return null;end if;
+  elsif b>=n or a=b or (ty='apart' and k not between 1 and n-1) or (ty<>'apart' and k<>0) then return null;end if;
+  if s::text=any(rules) then return null;end if;rules=array_append(rules,s::text);
+ end loop;
+ for e in select value from jsonb_array_elements(p->'evidence') loop
+  foreach ty in array array['title','detail'] loop if jsonb_typeof(e->ty) is distinct from 'string' or char_length(trim(e->>ty))<1 or char_length(e->>ty)>(case when ty='title' then 60 else 300 end) then return null;end if;end loop;
+ end loop;
+ for positions in with recursive ownership(pos) as (select '{}'::int[] union all select ow.pos||g.entry from ownership ow cross join generate_series(0,n-1) as g(entry) where cardinality(ow.pos)<n and not g.entry=any(ow.pos)) select pos from ownership where cardinality(pos)=n loop
+  fits=true;foreach ty in array rules loop if public._friend_alibi_evidence_rule(ty::jsonb,positions) is not true then fits=false;exit;end if;end loop;
+  if fits then solutions=solutions+1;winner=array_position(positions,moment)-1;if solutions>1 then return null;end if;end if;
+ end loop;
+ if solutions<>1 then return null;end if;return winner;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_culprit(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+begin
+ if p->'version'='3'::jsonb then return public._friend_alibi_evidence(p);end if;
+ if p->'version'='2'::jsonb then return public._friend_alibi_scenario(p);end if;
+ return public._friend_alibi_v1_culprit(p);
+end $$;
+revoke all on function public._friend_alibi_evidence_rule(jsonb,int[]),public._friend_alibi_evidence(jsonb),public._friend_alibi_culprit(jsonb) from public,anon,authenticated;
+
+create or replace function public._friend_alibi_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare i int; j int; n int; x numeric; culprit int; correct int:=0; p jsonb; note jsonb; ids text[]:='{}';
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or v->'round' is distinct from '3'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or jsonb_typeof(v->'edits') is distinct from 'number' then return null;end if;
+ x=(v->>'edits')::numeric;if x<>trunc(x) or x not between 0 and 1000000 then return null;end if;
+ if jsonb_typeof(v->'cases') is distinct from 'array' or jsonb_array_length(v->'cases')<>4 or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>4 or jsonb_typeof(v->'notes') is distinct from 'array' or jsonb_array_length(v->'notes')<>4 or v->'selection' is distinct from v->'picks'->3 then return null;end if;
+ for i in 0..3 loop
+  p=v->'cases'->i;culprit=public._friend_alibi_culprit(p);if culprit is null or p->>'id'=any(ids) then return null;end if;ids=array_append(ids,p->>'id');n=(p->>'n')::numeric;
+  if jsonb_typeof(v->'picks'->i) is distinct from 'number' then return null;end if;x=(v->'picks'->>i)::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;if x=culprit then correct=correct+1;end if;
+  note=v->'notes'->i;if jsonb_typeof(note) is distinct from 'object' or jsonb_typeof(note->'truth') is distinct from 'array' or jsonb_array_length(note->'truth')<>n or jsonb_typeof(note->'excluded') is distinct from 'array' or jsonb_array_length(note->'excluded')<>n then return null;end if;
+  if p->'version'='3'::jsonb then
+   if jsonb_typeof(note->'objects') is distinct from 'array' or jsonb_array_length(note->'objects')<>n then return null;end if;
+   for j in 0..n-1 loop if jsonb_typeof(note->'objects'->j) is distinct from 'number' then return null;end if;x=(note->'objects'->>j)::numeric;if x<>trunc(x) or x not between -1 and n-1 then return null;end if;end loop;
+  end if;
+  for j in 0..n-1 loop if jsonb_typeof(note->'truth'->j) is distinct from 'number' or (note->'truth'->>j)::numeric not in (-1,0,1) or jsonb_typeof(note->'excluded'->j) is distinct from 'boolean' then return null;end if;end loop;
+ end loop;
+ return correct*25;
+exception when others then return null;
+end $$;
+
+revoke all on function public._friend_alibi_score(jsonb,date) from public,anon,authenticated;
+commit;
+ or jsonb_typeof(entry.value)<>'number' then continue;end if;
     n=entry.key::numeric;if n<(p_today-119-date '2026-10-01') or n>(p_today-date '2026-10-01') then continue;end if;
     if entry.value::text::numeric<0 or entry.value::text::numeric>100 then continue;end if;score=entry.value::text::numeric::double precision;
     day=date '2026-10-01'+n::integer;arcade_score=score;return next;
@@ -486,14 +628,1797 @@ begin
    end if;
   else
    for entry in select * from jsonb_each_text(data) loop
-    if (game='stake' and entry.key !~ '^stake:d:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='inner-clock' and entry.key !~ '^break-room:inner-clock:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='bouncer' and entry.key !~ '^break-room:bouncer:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='alibi' and entry.key !~ '^break-room:alibi:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='laser' and entry.key !~ '^break-room:laser:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='prior' and entry.key !~ '^break-room:prior:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='pack' and entry.key !~ '^break-room:pack:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='stack-up' and entry.key !~ '^break-room:stack-up:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') then continue;end if;
+    if (game='time-drop' and entry.key !~ '^break-room:time-drop:daily:[0-9]{4}-[0-9]{2}-[0-9]{2} and entry.key !~ '^stake:d:[0-9]{4}-[0-9]{2}-[0-9]{2}
+
+create or replace function public.friend_scores() returns jsonb language plpgsql stable security definer set search_path='' as $$
+declare me uuid:=auth.uid(); today date:=timezone('Australia/Sydney',now())::date; result jsonb;
+begin
+ if me is null then raise exception 'Sign in required' using errcode='42501';end if;
+ if not exists(select 1 from public.friend_profiles where user_id=me) then return jsonb_build_object('today',today,'records','[]'::jsonb);end if;
+ select coalesce(jsonb_agg(jsonb_build_object('user_id',p.user_id,'game',r.game,'date',r.day,'arcadeScore',r.arcade_score) order by p.user_id,r.day,r.game),'[]'::jsonb) into result
+ from public.friend_profiles p cross join lateral public._friend_records(p.user_id,today) r
+ where p.user_id=me or (p.share_scores and exists(select 1 from public.friend_links f where f.status='accepted' and ((f.requester=me and f.recipient=p.user_id) or (f.recipient=me and f.requester=p.user_id))) and not exists(select 1 from public.friend_blocks b where (b.owner_id=me and b.target_id=p.user_id) or (b.owner_id=p.user_id and b.target_id=me)));
+ return jsonb_build_object('today',today,'records',result);
+end $$;
+revoke all on function public._friend_json(text),public._friend_date(text),public._friend_mul(bigint,bigint),public._friend_legacy(date),public._friend_score(text,jsonb,date),public._friend_records(uuid,date),public.friend_scores() from public,anon,authenticated;
+grant execute on function public.friend_scores() to authenticated;
+
+-- Evidence v3: all observations are verified; solve catalogue ownership independently.
+create or replace function public._friend_alibi_evidence_rule(s jsonb,positions int[]) returns boolean language plpgsql immutable set search_path='' as $$
+declare a int; b int; k int; ty text;
+begin
+ ty=s->>0;a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;
+ if ty='oneof' then return (b & (1 << positions[a+1]))<>0;
+ elsif ty='left' then return positions[a+1]<positions[b+1];
+ elsif ty='next' then return positions[a+1]=positions[b+1]+1;
+ elsif ty='apart' then return abs(positions[a+1]-positions[b+1])=k;end if;return null;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_evidence(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+declare n int; lv int; i int; j int; a int; b int; k int; x numeric; ty text; s jsonb; e jsonb; o jsonb; clue jsonb; mechanism text;
+ names text[]:='{}'; portraits int[]:='{}'; object_names text[]:='{}'; rules text[]:='{}'; moment int:=-1; positions int[]; fits boolean; solutions int:=0; winner int; before_mass int; after_mass int; broken boolean:=false;
+begin
+ if jsonb_typeof(p) is distinct from 'object' or p->'version' is distinct from '3'::jsonb or jsonb_typeof(p->'id') is distinct from 'string' or p->>'id' !~ '^alibi-v3-[0-3]-[0-9]+$' or char_length(p->>'id')>80 or jsonb_typeof(p->'level') is distinct from 'number' then return null;end if;
+ x=(p->>'level')::numeric;if x<>trunc(x) or x not between 0 and 3 then return null;end if;lv=x;n=case when lv=3 then 5 else 4 end;
+ if p->'n' is distinct from to_jsonb(n) or coalesce(p->>'mechanism','') not in ('trace','access','inventory','custody') then return null;end if;mechanism=p->>'mechanism';
+ foreach ty in array array['crime','detail','item','assignment','catalogue'] loop
+  if jsonb_typeof(p->ty) is distinct from 'string' or char_length(trim(p->>ty))<1 or char_length(p->>ty)>(case ty when 'crime' then 140 when 'detail' then 800 when 'assignment' then 50 when 'catalogue' then 160 else 30 end) then return null;end if;
+ end loop;
+ foreach ty in array array['names','portraits','objects','s'] loop if jsonb_typeof(p->ty) is distinct from 'array' or jsonb_array_length(p->ty)<>n then return null;end if;end loop;
+ if jsonb_typeof(p->'evidence') is distinct from 'array' or jsonb_array_length(p->'evidence') not between 1 and 4 or jsonb_typeof(p->'trace') is distinct from 'object' then return null;end if;
+ clue=p->'trace';
+ foreach ty in array array['title','detail'] loop if jsonb_typeof(clue->ty) is distinct from 'string' or char_length(trim(clue->>ty))<1 or char_length(clue->>ty)>(case when ty='title' then 100 else 500 end) then return null;end if;end loop;
+ if mechanism in ('trace','access') then
+  if jsonb_typeof(clue->'marks') is distinct from 'array' or jsonb_array_length(clue->'marks')<>2 or clue->'marks'->0=clue->'marks'->1 then return null;end if;
+  for e in select value from jsonb_array_elements(clue->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+ elsif mechanism='inventory' then
+  foreach ty in array array['before','after'] loop if jsonb_typeof(clue->ty) is distinct from 'number' then return null;end if;x=(clue->>ty)::numeric;if x<>trunc(x) or x not between 0 and 10000 then return null;end if;end loop;
+  before_mass=(clue->>'before')::int;after_mass=(clue->>'after')::int;if after_mass<=before_mass then return null;end if;
+ else
+  if jsonb_typeof(clue->'checks') is distinct from 'array' or jsonb_array_length(clue->'checks')<>n then return null;end if;
+  for i in 0..n-1 loop
+   if clue->'checks'->i='"broken"'::jsonb then if not broken then moment=i;end if;broken=true;
+   elsif clue->'checks'->i is distinct from '"intact"'::jsonb or broken then return null;end if;
+  end loop;if moment=-1 then return null;end if;
+ end if;
+ for i in 0..n-1 loop
+  if jsonb_typeof(p->'names'->i) is distinct from 'string' or char_length(trim(p->'names'->>i))<1 or char_length(p->'names'->>i)>30 or p->'names'->>i=any(names) then return null;end if;names=array_append(names,p->'names'->>i);
+  if jsonb_typeof(p->'portraits'->i) is distinct from 'number' then return null;end if;x=(p->'portraits'->>i)::numeric;if x<>trunc(x) or x not between 0 and 7 or x::int=any(portraits) then return null;end if;portraits=array_append(portraits,x::int);
+  o=p->'objects'->i;if jsonb_typeof(o) is distinct from 'object' or jsonb_typeof(o->'name') is distinct from 'string' or char_length(trim(o->>'name'))<1 or char_length(o->>'name')>70 or o->>'name'=any(object_names) then return null;end if;object_names=array_append(object_names,o->>'name');
+  if jsonb_typeof(o->'marks') is distinct from 'array' or jsonb_array_length(o->'marks')>4 or jsonb_typeof(o->'grams') is distinct from 'number' then return null;end if;
+  x=(o->>'grams')::numeric;if x<>trunc(x) or x not between 1 and 1000 then return null;end if;
+  for e in select value from jsonb_array_elements(o->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+  if (mechanism in ('trace','access') and (o->'marks') @> (clue->'marks')) or (mechanism='inventory' and x=after_mass-before_mass) then if moment<>-1 then return null;end if;moment=i;end if;
+  if p->'s'->i->1 is distinct from to_jsonb(i) then return null;end if;
+ end loop;if moment=-1 then return null;end if;
+ for s in select value from jsonb_array_elements(p->'s') union all select value->'rule' from jsonb_array_elements(p->'evidence') loop
+  if jsonb_typeof(s) is distinct from 'array' or jsonb_array_length(s)<>4 or jsonb_typeof(s->0) is distinct from 'string' or coalesce(s->>0,'') not in ('oneof','left','next','apart') then return null;end if;ty=s->>0;
+  for j in 1..3 loop if jsonb_typeof(s->j) is distinct from 'number' then return null;end if;x=(s->>j)::numeric;if x<>trunc(x) or x<0 or x>31 then return null;end if;end loop;
+  a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;if a>=n then return null;end if;
+  if ty='oneof' then if b<1 or b>=(1<<n) or k<>0 then return null;end if;
+  elsif b>=n or a=b or (ty='apart' and k not between 1 and n-1) or (ty<>'apart' and k<>0) then return null;end if;
+  if s::text=any(rules) then return null;end if;rules=array_append(rules,s::text);
+ end loop;
+ for e in select value from jsonb_array_elements(p->'evidence') loop
+  foreach ty in array array['title','detail'] loop if jsonb_typeof(e->ty) is distinct from 'string' or char_length(trim(e->>ty))<1 or char_length(e->>ty)>(case when ty='title' then 60 else 300 end) then return null;end if;end loop;
+ end loop;
+ for positions in with recursive ownership(pos) as (select '{}'::int[] union all select ow.pos||g.entry from ownership ow cross join generate_series(0,n-1) as g(entry) where cardinality(ow.pos)<n and not g.entry=any(ow.pos)) select pos from ownership where cardinality(pos)=n loop
+  fits=true;foreach ty in array rules loop if public._friend_alibi_evidence_rule(ty::jsonb,positions) is not true then fits=false;exit;end if;end loop;
+  if fits then solutions=solutions+1;winner=array_position(positions,moment)-1;if solutions>1 then return null;end if;end if;
+ end loop;
+ if solutions<>1 then return null;end if;return winner;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_culprit(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+begin
+ if p->'version'='3'::jsonb then return public._friend_alibi_evidence(p);end if;
+ if p->'version'='2'::jsonb then return public._friend_alibi_scenario(p);end if;
+ return public._friend_alibi_v1_culprit(p);
+end $$;
+revoke all on function public._friend_alibi_evidence_rule(jsonb,int[]),public._friend_alibi_evidence(jsonb),public._friend_alibi_culprit(jsonb) from public,anon,authenticated;
+
+create or replace function public._friend_alibi_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare i int; j int; n int; x numeric; culprit int; correct int:=0; p jsonb; note jsonb; ids text[]:='{}';
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or v->'round' is distinct from '3'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or jsonb_typeof(v->'edits') is distinct from 'number' then return null;end if;
+ x=(v->>'edits')::numeric;if x<>trunc(x) or x not between 0 and 1000000 then return null;end if;
+ if jsonb_typeof(v->'cases') is distinct from 'array' or jsonb_array_length(v->'cases')<>4 or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>4 or jsonb_typeof(v->'notes') is distinct from 'array' or jsonb_array_length(v->'notes')<>4 or v->'selection' is distinct from v->'picks'->3 then return null;end if;
+ for i in 0..3 loop
+  p=v->'cases'->i;culprit=public._friend_alibi_culprit(p);if culprit is null or p->>'id'=any(ids) then return null;end if;ids=array_append(ids,p->>'id');n=(p->>'n')::numeric;
+  if jsonb_typeof(v->'picks'->i) is distinct from 'number' then return null;end if;x=(v->'picks'->>i)::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;if x=culprit then correct=correct+1;end if;
+  note=v->'notes'->i;if jsonb_typeof(note) is distinct from 'object' or jsonb_typeof(note->'truth') is distinct from 'array' or jsonb_array_length(note->'truth')<>n or jsonb_typeof(note->'excluded') is distinct from 'array' or jsonb_array_length(note->'excluded')<>n then return null;end if;
+  if p->'version'='3'::jsonb then
+   if jsonb_typeof(note->'objects') is distinct from 'array' or jsonb_array_length(note->'objects')<>n then return null;end if;
+   for j in 0..n-1 loop if jsonb_typeof(note->'objects'->j) is distinct from 'number' then return null;end if;x=(note->'objects'->>j)::numeric;if x<>trunc(x) or x not between -1 and n-1 then return null;end if;end loop;
+  end if;
+  for j in 0..n-1 loop if jsonb_typeof(note->'truth'->j) is distinct from 'number' or (note->'truth'->>j)::numeric not in (-1,0,1) or jsonb_typeof(note->'excluded'->j) is distinct from 'boolean' then return null;end if;end loop;
+ end loop;
+ return correct*25;
+exception when others then return null;
+end $$;
+
+revoke all on function public._friend_alibi_score(jsonb,date) from public,anon,authenticated;
+commit;
+) or (game='inner-clock' and entry.key !~ '^break-room:inner-clock:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}
+
+create or replace function public.friend_scores() returns jsonb language plpgsql stable security definer set search_path='' as $$
+declare me uuid:=auth.uid(); today date:=timezone('Australia/Sydney',now())::date; result jsonb;
+begin
+ if me is null then raise exception 'Sign in required' using errcode='42501';end if;
+ if not exists(select 1 from public.friend_profiles where user_id=me) then return jsonb_build_object('today',today,'records','[]'::jsonb);end if;
+ select coalesce(jsonb_agg(jsonb_build_object('user_id',p.user_id,'game',r.game,'date',r.day,'arcadeScore',r.arcade_score) order by p.user_id,r.day,r.game),'[]'::jsonb) into result
+ from public.friend_profiles p cross join lateral public._friend_records(p.user_id,today) r
+ where p.user_id=me or (p.share_scores and exists(select 1 from public.friend_links f where f.status='accepted' and ((f.requester=me and f.recipient=p.user_id) or (f.recipient=me and f.requester=p.user_id))) and not exists(select 1 from public.friend_blocks b where (b.owner_id=me and b.target_id=p.user_id) or (b.owner_id=p.user_id and b.target_id=me)));
+ return jsonb_build_object('today',today,'records',result);
+end $$;
+revoke all on function public._friend_json(text),public._friend_date(text),public._friend_mul(bigint,bigint),public._friend_legacy(date),public._friend_score(text,jsonb,date),public._friend_records(uuid,date),public.friend_scores() from public,anon,authenticated;
+grant execute on function public.friend_scores() to authenticated;
+
+-- Evidence v3: all observations are verified; solve catalogue ownership independently.
+create or replace function public._friend_alibi_evidence_rule(s jsonb,positions int[]) returns boolean language plpgsql immutable set search_path='' as $$
+declare a int; b int; k int; ty text;
+begin
+ ty=s->>0;a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;
+ if ty='oneof' then return (b & (1 << positions[a+1]))<>0;
+ elsif ty='left' then return positions[a+1]<positions[b+1];
+ elsif ty='next' then return positions[a+1]=positions[b+1]+1;
+ elsif ty='apart' then return abs(positions[a+1]-positions[b+1])=k;end if;return null;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_evidence(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+declare n int; lv int; i int; j int; a int; b int; k int; x numeric; ty text; s jsonb; e jsonb; o jsonb; clue jsonb; mechanism text;
+ names text[]:='{}'; portraits int[]:='{}'; object_names text[]:='{}'; rules text[]:='{}'; moment int:=-1; positions int[]; fits boolean; solutions int:=0; winner int; before_mass int; after_mass int; broken boolean:=false;
+begin
+ if jsonb_typeof(p) is distinct from 'object' or p->'version' is distinct from '3'::jsonb or jsonb_typeof(p->'id') is distinct from 'string' or p->>'id' !~ '^alibi-v3-[0-3]-[0-9]+$' or char_length(p->>'id')>80 or jsonb_typeof(p->'level') is distinct from 'number' then return null;end if;
+ x=(p->>'level')::numeric;if x<>trunc(x) or x not between 0 and 3 then return null;end if;lv=x;n=case when lv=3 then 5 else 4 end;
+ if p->'n' is distinct from to_jsonb(n) or coalesce(p->>'mechanism','') not in ('trace','access','inventory','custody') then return null;end if;mechanism=p->>'mechanism';
+ foreach ty in array array['crime','detail','item','assignment','catalogue'] loop
+  if jsonb_typeof(p->ty) is distinct from 'string' or char_length(trim(p->>ty))<1 or char_length(p->>ty)>(case ty when 'crime' then 140 when 'detail' then 800 when 'assignment' then 50 when 'catalogue' then 160 else 30 end) then return null;end if;
+ end loop;
+ foreach ty in array array['names','portraits','objects','s'] loop if jsonb_typeof(p->ty) is distinct from 'array' or jsonb_array_length(p->ty)<>n then return null;end if;end loop;
+ if jsonb_typeof(p->'evidence') is distinct from 'array' or jsonb_array_length(p->'evidence') not between 1 and 4 or jsonb_typeof(p->'trace') is distinct from 'object' then return null;end if;
+ clue=p->'trace';
+ foreach ty in array array['title','detail'] loop if jsonb_typeof(clue->ty) is distinct from 'string' or char_length(trim(clue->>ty))<1 or char_length(clue->>ty)>(case when ty='title' then 100 else 500 end) then return null;end if;end loop;
+ if mechanism in ('trace','access') then
+  if jsonb_typeof(clue->'marks') is distinct from 'array' or jsonb_array_length(clue->'marks')<>2 or clue->'marks'->0=clue->'marks'->1 then return null;end if;
+  for e in select value from jsonb_array_elements(clue->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+ elsif mechanism='inventory' then
+  foreach ty in array array['before','after'] loop if jsonb_typeof(clue->ty) is distinct from 'number' then return null;end if;x=(clue->>ty)::numeric;if x<>trunc(x) or x not between 0 and 10000 then return null;end if;end loop;
+  before_mass=(clue->>'before')::int;after_mass=(clue->>'after')::int;if after_mass<=before_mass then return null;end if;
+ else
+  if jsonb_typeof(clue->'checks') is distinct from 'array' or jsonb_array_length(clue->'checks')<>n then return null;end if;
+  for i in 0..n-1 loop
+   if clue->'checks'->i='"broken"'::jsonb then if not broken then moment=i;end if;broken=true;
+   elsif clue->'checks'->i is distinct from '"intact"'::jsonb or broken then return null;end if;
+  end loop;if moment=-1 then return null;end if;
+ end if;
+ for i in 0..n-1 loop
+  if jsonb_typeof(p->'names'->i) is distinct from 'string' or char_length(trim(p->'names'->>i))<1 or char_length(p->'names'->>i)>30 or p->'names'->>i=any(names) then return null;end if;names=array_append(names,p->'names'->>i);
+  if jsonb_typeof(p->'portraits'->i) is distinct from 'number' then return null;end if;x=(p->'portraits'->>i)::numeric;if x<>trunc(x) or x not between 0 and 7 or x::int=any(portraits) then return null;end if;portraits=array_append(portraits,x::int);
+  o=p->'objects'->i;if jsonb_typeof(o) is distinct from 'object' or jsonb_typeof(o->'name') is distinct from 'string' or char_length(trim(o->>'name'))<1 or char_length(o->>'name')>70 or o->>'name'=any(object_names) then return null;end if;object_names=array_append(object_names,o->>'name');
+  if jsonb_typeof(o->'marks') is distinct from 'array' or jsonb_array_length(o->'marks')>4 or jsonb_typeof(o->'grams') is distinct from 'number' then return null;end if;
+  x=(o->>'grams')::numeric;if x<>trunc(x) or x not between 1 and 1000 then return null;end if;
+  for e in select value from jsonb_array_elements(o->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+  if (mechanism in ('trace','access') and (o->'marks') @> (clue->'marks')) or (mechanism='inventory' and x=after_mass-before_mass) then if moment<>-1 then return null;end if;moment=i;end if;
+  if p->'s'->i->1 is distinct from to_jsonb(i) then return null;end if;
+ end loop;if moment=-1 then return null;end if;
+ for s in select value from jsonb_array_elements(p->'s') union all select value->'rule' from jsonb_array_elements(p->'evidence') loop
+  if jsonb_typeof(s) is distinct from 'array' or jsonb_array_length(s)<>4 or jsonb_typeof(s->0) is distinct from 'string' or coalesce(s->>0,'') not in ('oneof','left','next','apart') then return null;end if;ty=s->>0;
+  for j in 1..3 loop if jsonb_typeof(s->j) is distinct from 'number' then return null;end if;x=(s->>j)::numeric;if x<>trunc(x) or x<0 or x>31 then return null;end if;end loop;
+  a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;if a>=n then return null;end if;
+  if ty='oneof' then if b<1 or b>=(1<<n) or k<>0 then return null;end if;
+  elsif b>=n or a=b or (ty='apart' and k not between 1 and n-1) or (ty<>'apart' and k<>0) then return null;end if;
+  if s::text=any(rules) then return null;end if;rules=array_append(rules,s::text);
+ end loop;
+ for e in select value from jsonb_array_elements(p->'evidence') loop
+  foreach ty in array array['title','detail'] loop if jsonb_typeof(e->ty) is distinct from 'string' or char_length(trim(e->>ty))<1 or char_length(e->>ty)>(case when ty='title' then 60 else 300 end) then return null;end if;end loop;
+ end loop;
+ for positions in with recursive ownership(pos) as (select '{}'::int[] union all select ow.pos||g.entry from ownership ow cross join generate_series(0,n-1) as g(entry) where cardinality(ow.pos)<n and not g.entry=any(ow.pos)) select pos from ownership where cardinality(pos)=n loop
+  fits=true;foreach ty in array rules loop if public._friend_alibi_evidence_rule(ty::jsonb,positions) is not true then fits=false;exit;end if;end loop;
+  if fits then solutions=solutions+1;winner=array_position(positions,moment)-1;if solutions>1 then return null;end if;end if;
+ end loop;
+ if solutions<>1 then return null;end if;return winner;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_culprit(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+begin
+ if p->'version'='3'::jsonb then return public._friend_alibi_evidence(p);end if;
+ if p->'version'='2'::jsonb then return public._friend_alibi_scenario(p);end if;
+ return public._friend_alibi_v1_culprit(p);
+end $$;
+revoke all on function public._friend_alibi_evidence_rule(jsonb,int[]),public._friend_alibi_evidence(jsonb),public._friend_alibi_culprit(jsonb) from public,anon,authenticated;
+
+create or replace function public._friend_alibi_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare i int; j int; n int; x numeric; culprit int; correct int:=0; p jsonb; note jsonb; ids text[]:='{}';
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or v->'round' is distinct from '3'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or jsonb_typeof(v->'edits') is distinct from 'number' then return null;end if;
+ x=(v->>'edits')::numeric;if x<>trunc(x) or x not between 0 and 1000000 then return null;end if;
+ if jsonb_typeof(v->'cases') is distinct from 'array' or jsonb_array_length(v->'cases')<>4 or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>4 or jsonb_typeof(v->'notes') is distinct from 'array' or jsonb_array_length(v->'notes')<>4 or v->'selection' is distinct from v->'picks'->3 then return null;end if;
+ for i in 0..3 loop
+  p=v->'cases'->i;culprit=public._friend_alibi_culprit(p);if culprit is null or p->>'id'=any(ids) then return null;end if;ids=array_append(ids,p->>'id');n=(p->>'n')::numeric;
+  if jsonb_typeof(v->'picks'->i) is distinct from 'number' then return null;end if;x=(v->'picks'->>i)::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;if x=culprit then correct=correct+1;end if;
+  note=v->'notes'->i;if jsonb_typeof(note) is distinct from 'object' or jsonb_typeof(note->'truth') is distinct from 'array' or jsonb_array_length(note->'truth')<>n or jsonb_typeof(note->'excluded') is distinct from 'array' or jsonb_array_length(note->'excluded')<>n then return null;end if;
+  if p->'version'='3'::jsonb then
+   if jsonb_typeof(note->'objects') is distinct from 'array' or jsonb_array_length(note->'objects')<>n then return null;end if;
+   for j in 0..n-1 loop if jsonb_typeof(note->'objects'->j) is distinct from 'number' then return null;end if;x=(note->'objects'->>j)::numeric;if x<>trunc(x) or x not between -1 and n-1 then return null;end if;end loop;
+  end if;
+  for j in 0..n-1 loop if jsonb_typeof(note->'truth'->j) is distinct from 'number' or (note->'truth'->>j)::numeric not in (-1,0,1) or jsonb_typeof(note->'excluded'->j) is distinct from 'boolean' then return null;end if;end loop;
+ end loop;
+ return correct*25;
+exception when others then return null;
+end $$;
+
+revoke all on function public._friend_alibi_score(jsonb,date) from public,anon,authenticated;
+commit;
+) or (game='bouncer' and entry.key !~ '^break-room:bouncer:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}
+
+create or replace function public.friend_scores() returns jsonb language plpgsql stable security definer set search_path='' as $$
+declare me uuid:=auth.uid(); today date:=timezone('Australia/Sydney',now())::date; result jsonb;
+begin
+ if me is null then raise exception 'Sign in required' using errcode='42501';end if;
+ if not exists(select 1 from public.friend_profiles where user_id=me) then return jsonb_build_object('today',today,'records','[]'::jsonb);end if;
+ select coalesce(jsonb_agg(jsonb_build_object('user_id',p.user_id,'game',r.game,'date',r.day,'arcadeScore',r.arcade_score) order by p.user_id,r.day,r.game),'[]'::jsonb) into result
+ from public.friend_profiles p cross join lateral public._friend_records(p.user_id,today) r
+ where p.user_id=me or (p.share_scores and exists(select 1 from public.friend_links f where f.status='accepted' and ((f.requester=me and f.recipient=p.user_id) or (f.recipient=me and f.requester=p.user_id))) and not exists(select 1 from public.friend_blocks b where (b.owner_id=me and b.target_id=p.user_id) or (b.owner_id=p.user_id and b.target_id=me)));
+ return jsonb_build_object('today',today,'records',result);
+end $$;
+revoke all on function public._friend_json(text),public._friend_date(text),public._friend_mul(bigint,bigint),public._friend_legacy(date),public._friend_score(text,jsonb,date),public._friend_records(uuid,date),public.friend_scores() from public,anon,authenticated;
+grant execute on function public.friend_scores() to authenticated;
+
+-- Evidence v3: all observations are verified; solve catalogue ownership independently.
+create or replace function public._friend_alibi_evidence_rule(s jsonb,positions int[]) returns boolean language plpgsql immutable set search_path='' as $$
+declare a int; b int; k int; ty text;
+begin
+ ty=s->>0;a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;
+ if ty='oneof' then return (b & (1 << positions[a+1]))<>0;
+ elsif ty='left' then return positions[a+1]<positions[b+1];
+ elsif ty='next' then return positions[a+1]=positions[b+1]+1;
+ elsif ty='apart' then return abs(positions[a+1]-positions[b+1])=k;end if;return null;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_evidence(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+declare n int; lv int; i int; j int; a int; b int; k int; x numeric; ty text; s jsonb; e jsonb; o jsonb; clue jsonb; mechanism text;
+ names text[]:='{}'; portraits int[]:='{}'; object_names text[]:='{}'; rules text[]:='{}'; moment int:=-1; positions int[]; fits boolean; solutions int:=0; winner int; before_mass int; after_mass int; broken boolean:=false;
+begin
+ if jsonb_typeof(p) is distinct from 'object' or p->'version' is distinct from '3'::jsonb or jsonb_typeof(p->'id') is distinct from 'string' or p->>'id' !~ '^alibi-v3-[0-3]-[0-9]+$' or char_length(p->>'id')>80 or jsonb_typeof(p->'level') is distinct from 'number' then return null;end if;
+ x=(p->>'level')::numeric;if x<>trunc(x) or x not between 0 and 3 then return null;end if;lv=x;n=case when lv=3 then 5 else 4 end;
+ if p->'n' is distinct from to_jsonb(n) or coalesce(p->>'mechanism','') not in ('trace','access','inventory','custody') then return null;end if;mechanism=p->>'mechanism';
+ foreach ty in array array['crime','detail','item','assignment','catalogue'] loop
+  if jsonb_typeof(p->ty) is distinct from 'string' or char_length(trim(p->>ty))<1 or char_length(p->>ty)>(case ty when 'crime' then 140 when 'detail' then 800 when 'assignment' then 50 when 'catalogue' then 160 else 30 end) then return null;end if;
+ end loop;
+ foreach ty in array array['names','portraits','objects','s'] loop if jsonb_typeof(p->ty) is distinct from 'array' or jsonb_array_length(p->ty)<>n then return null;end if;end loop;
+ if jsonb_typeof(p->'evidence') is distinct from 'array' or jsonb_array_length(p->'evidence') not between 1 and 4 or jsonb_typeof(p->'trace') is distinct from 'object' then return null;end if;
+ clue=p->'trace';
+ foreach ty in array array['title','detail'] loop if jsonb_typeof(clue->ty) is distinct from 'string' or char_length(trim(clue->>ty))<1 or char_length(clue->>ty)>(case when ty='title' then 100 else 500 end) then return null;end if;end loop;
+ if mechanism in ('trace','access') then
+  if jsonb_typeof(clue->'marks') is distinct from 'array' or jsonb_array_length(clue->'marks')<>2 or clue->'marks'->0=clue->'marks'->1 then return null;end if;
+  for e in select value from jsonb_array_elements(clue->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+ elsif mechanism='inventory' then
+  foreach ty in array array['before','after'] loop if jsonb_typeof(clue->ty) is distinct from 'number' then return null;end if;x=(clue->>ty)::numeric;if x<>trunc(x) or x not between 0 and 10000 then return null;end if;end loop;
+  before_mass=(clue->>'before')::int;after_mass=(clue->>'after')::int;if after_mass<=before_mass then return null;end if;
+ else
+  if jsonb_typeof(clue->'checks') is distinct from 'array' or jsonb_array_length(clue->'checks')<>n then return null;end if;
+  for i in 0..n-1 loop
+   if clue->'checks'->i='"broken"'::jsonb then if not broken then moment=i;end if;broken=true;
+   elsif clue->'checks'->i is distinct from '"intact"'::jsonb or broken then return null;end if;
+  end loop;if moment=-1 then return null;end if;
+ end if;
+ for i in 0..n-1 loop
+  if jsonb_typeof(p->'names'->i) is distinct from 'string' or char_length(trim(p->'names'->>i))<1 or char_length(p->'names'->>i)>30 or p->'names'->>i=any(names) then return null;end if;names=array_append(names,p->'names'->>i);
+  if jsonb_typeof(p->'portraits'->i) is distinct from 'number' then return null;end if;x=(p->'portraits'->>i)::numeric;if x<>trunc(x) or x not between 0 and 7 or x::int=any(portraits) then return null;end if;portraits=array_append(portraits,x::int);
+  o=p->'objects'->i;if jsonb_typeof(o) is distinct from 'object' or jsonb_typeof(o->'name') is distinct from 'string' or char_length(trim(o->>'name'))<1 or char_length(o->>'name')>70 or o->>'name'=any(object_names) then return null;end if;object_names=array_append(object_names,o->>'name');
+  if jsonb_typeof(o->'marks') is distinct from 'array' or jsonb_array_length(o->'marks')>4 or jsonb_typeof(o->'grams') is distinct from 'number' then return null;end if;
+  x=(o->>'grams')::numeric;if x<>trunc(x) or x not between 1 and 1000 then return null;end if;
+  for e in select value from jsonb_array_elements(o->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+  if (mechanism in ('trace','access') and (o->'marks') @> (clue->'marks')) or (mechanism='inventory' and x=after_mass-before_mass) then if moment<>-1 then return null;end if;moment=i;end if;
+  if p->'s'->i->1 is distinct from to_jsonb(i) then return null;end if;
+ end loop;if moment=-1 then return null;end if;
+ for s in select value from jsonb_array_elements(p->'s') union all select value->'rule' from jsonb_array_elements(p->'evidence') loop
+  if jsonb_typeof(s) is distinct from 'array' or jsonb_array_length(s)<>4 or jsonb_typeof(s->0) is distinct from 'string' or coalesce(s->>0,'') not in ('oneof','left','next','apart') then return null;end if;ty=s->>0;
+  for j in 1..3 loop if jsonb_typeof(s->j) is distinct from 'number' then return null;end if;x=(s->>j)::numeric;if x<>trunc(x) or x<0 or x>31 then return null;end if;end loop;
+  a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;if a>=n then return null;end if;
+  if ty='oneof' then if b<1 or b>=(1<<n) or k<>0 then return null;end if;
+  elsif b>=n or a=b or (ty='apart' and k not between 1 and n-1) or (ty<>'apart' and k<>0) then return null;end if;
+  if s::text=any(rules) then return null;end if;rules=array_append(rules,s::text);
+ end loop;
+ for e in select value from jsonb_array_elements(p->'evidence') loop
+  foreach ty in array array['title','detail'] loop if jsonb_typeof(e->ty) is distinct from 'string' or char_length(trim(e->>ty))<1 or char_length(e->>ty)>(case when ty='title' then 60 else 300 end) then return null;end if;end loop;
+ end loop;
+ for positions in with recursive ownership(pos) as (select '{}'::int[] union all select ow.pos||g.entry from ownership ow cross join generate_series(0,n-1) as g(entry) where cardinality(ow.pos)<n and not g.entry=any(ow.pos)) select pos from ownership where cardinality(pos)=n loop
+  fits=true;foreach ty in array rules loop if public._friend_alibi_evidence_rule(ty::jsonb,positions) is not true then fits=false;exit;end if;end loop;
+  if fits then solutions=solutions+1;winner=array_position(positions,moment)-1;if solutions>1 then return null;end if;end if;
+ end loop;
+ if solutions<>1 then return null;end if;return winner;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_culprit(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+begin
+ if p->'version'='3'::jsonb then return public._friend_alibi_evidence(p);end if;
+ if p->'version'='2'::jsonb then return public._friend_alibi_scenario(p);end if;
+ return public._friend_alibi_v1_culprit(p);
+end $$;
+revoke all on function public._friend_alibi_evidence_rule(jsonb,int[]),public._friend_alibi_evidence(jsonb),public._friend_alibi_culprit(jsonb) from public,anon,authenticated;
+
+create or replace function public._friend_alibi_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare i int; j int; n int; x numeric; culprit int; correct int:=0; p jsonb; note jsonb; ids text[]:='{}';
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or v->'round' is distinct from '3'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or jsonb_typeof(v->'edits') is distinct from 'number' then return null;end if;
+ x=(v->>'edits')::numeric;if x<>trunc(x) or x not between 0 and 1000000 then return null;end if;
+ if jsonb_typeof(v->'cases') is distinct from 'array' or jsonb_array_length(v->'cases')<>4 or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>4 or jsonb_typeof(v->'notes') is distinct from 'array' or jsonb_array_length(v->'notes')<>4 or v->'selection' is distinct from v->'picks'->3 then return null;end if;
+ for i in 0..3 loop
+  p=v->'cases'->i;culprit=public._friend_alibi_culprit(p);if culprit is null or p->>'id'=any(ids) then return null;end if;ids=array_append(ids,p->>'id');n=(p->>'n')::numeric;
+  if jsonb_typeof(v->'picks'->i) is distinct from 'number' then return null;end if;x=(v->'picks'->>i)::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;if x=culprit then correct=correct+1;end if;
+  note=v->'notes'->i;if jsonb_typeof(note) is distinct from 'object' or jsonb_typeof(note->'truth') is distinct from 'array' or jsonb_array_length(note->'truth')<>n or jsonb_typeof(note->'excluded') is distinct from 'array' or jsonb_array_length(note->'excluded')<>n then return null;end if;
+  if p->'version'='3'::jsonb then
+   if jsonb_typeof(note->'objects') is distinct from 'array' or jsonb_array_length(note->'objects')<>n then return null;end if;
+   for j in 0..n-1 loop if jsonb_typeof(note->'objects'->j) is distinct from 'number' then return null;end if;x=(note->'objects'->>j)::numeric;if x<>trunc(x) or x not between -1 and n-1 then return null;end if;end loop;
+  end if;
+  for j in 0..n-1 loop if jsonb_typeof(note->'truth'->j) is distinct from 'number' or (note->'truth'->>j)::numeric not in (-1,0,1) or jsonb_typeof(note->'excluded'->j) is distinct from 'boolean' then return null;end if;end loop;
+ end loop;
+ return correct*25;
+exception when others then return null;
+end $$;
+
+revoke all on function public._friend_alibi_score(jsonb,date) from public,anon,authenticated;
+commit;
+) or (game='alibi' and entry.key !~ '^break-room:alibi:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}
+
+create or replace function public.friend_scores() returns jsonb language plpgsql stable security definer set search_path='' as $$
+declare me uuid:=auth.uid(); today date:=timezone('Australia/Sydney',now())::date; result jsonb;
+begin
+ if me is null then raise exception 'Sign in required' using errcode='42501';end if;
+ if not exists(select 1 from public.friend_profiles where user_id=me) then return jsonb_build_object('today',today,'records','[]'::jsonb);end if;
+ select coalesce(jsonb_agg(jsonb_build_object('user_id',p.user_id,'game',r.game,'date',r.day,'arcadeScore',r.arcade_score) order by p.user_id,r.day,r.game),'[]'::jsonb) into result
+ from public.friend_profiles p cross join lateral public._friend_records(p.user_id,today) r
+ where p.user_id=me or (p.share_scores and exists(select 1 from public.friend_links f where f.status='accepted' and ((f.requester=me and f.recipient=p.user_id) or (f.recipient=me and f.requester=p.user_id))) and not exists(select 1 from public.friend_blocks b where (b.owner_id=me and b.target_id=p.user_id) or (b.owner_id=p.user_id and b.target_id=me)));
+ return jsonb_build_object('today',today,'records',result);
+end $$;
+revoke all on function public._friend_json(text),public._friend_date(text),public._friend_mul(bigint,bigint),public._friend_legacy(date),public._friend_score(text,jsonb,date),public._friend_records(uuid,date),public.friend_scores() from public,anon,authenticated;
+grant execute on function public.friend_scores() to authenticated;
+
+-- Evidence v3: all observations are verified; solve catalogue ownership independently.
+create or replace function public._friend_alibi_evidence_rule(s jsonb,positions int[]) returns boolean language plpgsql immutable set search_path='' as $$
+declare a int; b int; k int; ty text;
+begin
+ ty=s->>0;a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;
+ if ty='oneof' then return (b & (1 << positions[a+1]))<>0;
+ elsif ty='left' then return positions[a+1]<positions[b+1];
+ elsif ty='next' then return positions[a+1]=positions[b+1]+1;
+ elsif ty='apart' then return abs(positions[a+1]-positions[b+1])=k;end if;return null;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_evidence(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+declare n int; lv int; i int; j int; a int; b int; k int; x numeric; ty text; s jsonb; e jsonb; o jsonb; clue jsonb; mechanism text;
+ names text[]:='{}'; portraits int[]:='{}'; object_names text[]:='{}'; rules text[]:='{}'; moment int:=-1; positions int[]; fits boolean; solutions int:=0; winner int; before_mass int; after_mass int; broken boolean:=false;
+begin
+ if jsonb_typeof(p) is distinct from 'object' or p->'version' is distinct from '3'::jsonb or jsonb_typeof(p->'id') is distinct from 'string' or p->>'id' !~ '^alibi-v3-[0-3]-[0-9]+$' or char_length(p->>'id')>80 or jsonb_typeof(p->'level') is distinct from 'number' then return null;end if;
+ x=(p->>'level')::numeric;if x<>trunc(x) or x not between 0 and 3 then return null;end if;lv=x;n=case when lv=3 then 5 else 4 end;
+ if p->'n' is distinct from to_jsonb(n) or coalesce(p->>'mechanism','') not in ('trace','access','inventory','custody') then return null;end if;mechanism=p->>'mechanism';
+ foreach ty in array array['crime','detail','item','assignment','catalogue'] loop
+  if jsonb_typeof(p->ty) is distinct from 'string' or char_length(trim(p->>ty))<1 or char_length(p->>ty)>(case ty when 'crime' then 140 when 'detail' then 800 when 'assignment' then 50 when 'catalogue' then 160 else 30 end) then return null;end if;
+ end loop;
+ foreach ty in array array['names','portraits','objects','s'] loop if jsonb_typeof(p->ty) is distinct from 'array' or jsonb_array_length(p->ty)<>n then return null;end if;end loop;
+ if jsonb_typeof(p->'evidence') is distinct from 'array' or jsonb_array_length(p->'evidence') not between 1 and 4 or jsonb_typeof(p->'trace') is distinct from 'object' then return null;end if;
+ clue=p->'trace';
+ foreach ty in array array['title','detail'] loop if jsonb_typeof(clue->ty) is distinct from 'string' or char_length(trim(clue->>ty))<1 or char_length(clue->>ty)>(case when ty='title' then 100 else 500 end) then return null;end if;end loop;
+ if mechanism in ('trace','access') then
+  if jsonb_typeof(clue->'marks') is distinct from 'array' or jsonb_array_length(clue->'marks')<>2 or clue->'marks'->0=clue->'marks'->1 then return null;end if;
+  for e in select value from jsonb_array_elements(clue->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+ elsif mechanism='inventory' then
+  foreach ty in array array['before','after'] loop if jsonb_typeof(clue->ty) is distinct from 'number' then return null;end if;x=(clue->>ty)::numeric;if x<>trunc(x) or x not between 0 and 10000 then return null;end if;end loop;
+  before_mass=(clue->>'before')::int;after_mass=(clue->>'after')::int;if after_mass<=before_mass then return null;end if;
+ else
+  if jsonb_typeof(clue->'checks') is distinct from 'array' or jsonb_array_length(clue->'checks')<>n then return null;end if;
+  for i in 0..n-1 loop
+   if clue->'checks'->i='"broken"'::jsonb then if not broken then moment=i;end if;broken=true;
+   elsif clue->'checks'->i is distinct from '"intact"'::jsonb or broken then return null;end if;
+  end loop;if moment=-1 then return null;end if;
+ end if;
+ for i in 0..n-1 loop
+  if jsonb_typeof(p->'names'->i) is distinct from 'string' or char_length(trim(p->'names'->>i))<1 or char_length(p->'names'->>i)>30 or p->'names'->>i=any(names) then return null;end if;names=array_append(names,p->'names'->>i);
+  if jsonb_typeof(p->'portraits'->i) is distinct from 'number' then return null;end if;x=(p->'portraits'->>i)::numeric;if x<>trunc(x) or x not between 0 and 7 or x::int=any(portraits) then return null;end if;portraits=array_append(portraits,x::int);
+  o=p->'objects'->i;if jsonb_typeof(o) is distinct from 'object' or jsonb_typeof(o->'name') is distinct from 'string' or char_length(trim(o->>'name'))<1 or char_length(o->>'name')>70 or o->>'name'=any(object_names) then return null;end if;object_names=array_append(object_names,o->>'name');
+  if jsonb_typeof(o->'marks') is distinct from 'array' or jsonb_array_length(o->'marks')>4 or jsonb_typeof(o->'grams') is distinct from 'number' then return null;end if;
+  x=(o->>'grams')::numeric;if x<>trunc(x) or x not between 1 and 1000 then return null;end if;
+  for e in select value from jsonb_array_elements(o->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+  if (mechanism in ('trace','access') and (o->'marks') @> (clue->'marks')) or (mechanism='inventory' and x=after_mass-before_mass) then if moment<>-1 then return null;end if;moment=i;end if;
+  if p->'s'->i->1 is distinct from to_jsonb(i) then return null;end if;
+ end loop;if moment=-1 then return null;end if;
+ for s in select value from jsonb_array_elements(p->'s') union all select value->'rule' from jsonb_array_elements(p->'evidence') loop
+  if jsonb_typeof(s) is distinct from 'array' or jsonb_array_length(s)<>4 or jsonb_typeof(s->0) is distinct from 'string' or coalesce(s->>0,'') not in ('oneof','left','next','apart') then return null;end if;ty=s->>0;
+  for j in 1..3 loop if jsonb_typeof(s->j) is distinct from 'number' then return null;end if;x=(s->>j)::numeric;if x<>trunc(x) or x<0 or x>31 then return null;end if;end loop;
+  a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;if a>=n then return null;end if;
+  if ty='oneof' then if b<1 or b>=(1<<n) or k<>0 then return null;end if;
+  elsif b>=n or a=b or (ty='apart' and k not between 1 and n-1) or (ty<>'apart' and k<>0) then return null;end if;
+  if s::text=any(rules) then return null;end if;rules=array_append(rules,s::text);
+ end loop;
+ for e in select value from jsonb_array_elements(p->'evidence') loop
+  foreach ty in array array['title','detail'] loop if jsonb_typeof(e->ty) is distinct from 'string' or char_length(trim(e->>ty))<1 or char_length(e->>ty)>(case when ty='title' then 60 else 300 end) then return null;end if;end loop;
+ end loop;
+ for positions in with recursive ownership(pos) as (select '{}'::int[] union all select ow.pos||g.entry from ownership ow cross join generate_series(0,n-1) as g(entry) where cardinality(ow.pos)<n and not g.entry=any(ow.pos)) select pos from ownership where cardinality(pos)=n loop
+  fits=true;foreach ty in array rules loop if public._friend_alibi_evidence_rule(ty::jsonb,positions) is not true then fits=false;exit;end if;end loop;
+  if fits then solutions=solutions+1;winner=array_position(positions,moment)-1;if solutions>1 then return null;end if;end if;
+ end loop;
+ if solutions<>1 then return null;end if;return winner;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_culprit(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+begin
+ if p->'version'='3'::jsonb then return public._friend_alibi_evidence(p);end if;
+ if p->'version'='2'::jsonb then return public._friend_alibi_scenario(p);end if;
+ return public._friend_alibi_v1_culprit(p);
+end $$;
+revoke all on function public._friend_alibi_evidence_rule(jsonb,int[]),public._friend_alibi_evidence(jsonb),public._friend_alibi_culprit(jsonb) from public,anon,authenticated;
+
+create or replace function public._friend_alibi_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare i int; j int; n int; x numeric; culprit int; correct int:=0; p jsonb; note jsonb; ids text[]:='{}';
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or v->'round' is distinct from '3'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or jsonb_typeof(v->'edits') is distinct from 'number' then return null;end if;
+ x=(v->>'edits')::numeric;if x<>trunc(x) or x not between 0 and 1000000 then return null;end if;
+ if jsonb_typeof(v->'cases') is distinct from 'array' or jsonb_array_length(v->'cases')<>4 or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>4 or jsonb_typeof(v->'notes') is distinct from 'array' or jsonb_array_length(v->'notes')<>4 or v->'selection' is distinct from v->'picks'->3 then return null;end if;
+ for i in 0..3 loop
+  p=v->'cases'->i;culprit=public._friend_alibi_culprit(p);if culprit is null or p->>'id'=any(ids) then return null;end if;ids=array_append(ids,p->>'id');n=(p->>'n')::numeric;
+  if jsonb_typeof(v->'picks'->i) is distinct from 'number' then return null;end if;x=(v->'picks'->>i)::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;if x=culprit then correct=correct+1;end if;
+  note=v->'notes'->i;if jsonb_typeof(note) is distinct from 'object' or jsonb_typeof(note->'truth') is distinct from 'array' or jsonb_array_length(note->'truth')<>n or jsonb_typeof(note->'excluded') is distinct from 'array' or jsonb_array_length(note->'excluded')<>n then return null;end if;
+  if p->'version'='3'::jsonb then
+   if jsonb_typeof(note->'objects') is distinct from 'array' or jsonb_array_length(note->'objects')<>n then return null;end if;
+   for j in 0..n-1 loop if jsonb_typeof(note->'objects'->j) is distinct from 'number' then return null;end if;x=(note->'objects'->>j)::numeric;if x<>trunc(x) or x not between -1 and n-1 then return null;end if;end loop;
+  end if;
+  for j in 0..n-1 loop if jsonb_typeof(note->'truth'->j) is distinct from 'number' or (note->'truth'->>j)::numeric not in (-1,0,1) or jsonb_typeof(note->'excluded'->j) is distinct from 'boolean' then return null;end if;end loop;
+ end loop;
+ return correct*25;
+exception when others then return null;
+end $$;
+
+revoke all on function public._friend_alibi_score(jsonb,date) from public,anon,authenticated;
+commit;
+) or (game='laser' and entry.key !~ '^break-room:laser:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}
+
+create or replace function public.friend_scores() returns jsonb language plpgsql stable security definer set search_path='' as $$
+declare me uuid:=auth.uid(); today date:=timezone('Australia/Sydney',now())::date; result jsonb;
+begin
+ if me is null then raise exception 'Sign in required' using errcode='42501';end if;
+ if not exists(select 1 from public.friend_profiles where user_id=me) then return jsonb_build_object('today',today,'records','[]'::jsonb);end if;
+ select coalesce(jsonb_agg(jsonb_build_object('user_id',p.user_id,'game',r.game,'date',r.day,'arcadeScore',r.arcade_score) order by p.user_id,r.day,r.game),'[]'::jsonb) into result
+ from public.friend_profiles p cross join lateral public._friend_records(p.user_id,today) r
+ where p.user_id=me or (p.share_scores and exists(select 1 from public.friend_links f where f.status='accepted' and ((f.requester=me and f.recipient=p.user_id) or (f.recipient=me and f.requester=p.user_id))) and not exists(select 1 from public.friend_blocks b where (b.owner_id=me and b.target_id=p.user_id) or (b.owner_id=p.user_id and b.target_id=me)));
+ return jsonb_build_object('today',today,'records',result);
+end $$;
+revoke all on function public._friend_json(text),public._friend_date(text),public._friend_mul(bigint,bigint),public._friend_legacy(date),public._friend_score(text,jsonb,date),public._friend_records(uuid,date),public.friend_scores() from public,anon,authenticated;
+grant execute on function public.friend_scores() to authenticated;
+
+-- Evidence v3: all observations are verified; solve catalogue ownership independently.
+create or replace function public._friend_alibi_evidence_rule(s jsonb,positions int[]) returns boolean language plpgsql immutable set search_path='' as $$
+declare a int; b int; k int; ty text;
+begin
+ ty=s->>0;a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;
+ if ty='oneof' then return (b & (1 << positions[a+1]))<>0;
+ elsif ty='left' then return positions[a+1]<positions[b+1];
+ elsif ty='next' then return positions[a+1]=positions[b+1]+1;
+ elsif ty='apart' then return abs(positions[a+1]-positions[b+1])=k;end if;return null;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_evidence(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+declare n int; lv int; i int; j int; a int; b int; k int; x numeric; ty text; s jsonb; e jsonb; o jsonb; clue jsonb; mechanism text;
+ names text[]:='{}'; portraits int[]:='{}'; object_names text[]:='{}'; rules text[]:='{}'; moment int:=-1; positions int[]; fits boolean; solutions int:=0; winner int; before_mass int; after_mass int; broken boolean:=false;
+begin
+ if jsonb_typeof(p) is distinct from 'object' or p->'version' is distinct from '3'::jsonb or jsonb_typeof(p->'id') is distinct from 'string' or p->>'id' !~ '^alibi-v3-[0-3]-[0-9]+$' or char_length(p->>'id')>80 or jsonb_typeof(p->'level') is distinct from 'number' then return null;end if;
+ x=(p->>'level')::numeric;if x<>trunc(x) or x not between 0 and 3 then return null;end if;lv=x;n=case when lv=3 then 5 else 4 end;
+ if p->'n' is distinct from to_jsonb(n) or coalesce(p->>'mechanism','') not in ('trace','access','inventory','custody') then return null;end if;mechanism=p->>'mechanism';
+ foreach ty in array array['crime','detail','item','assignment','catalogue'] loop
+  if jsonb_typeof(p->ty) is distinct from 'string' or char_length(trim(p->>ty))<1 or char_length(p->>ty)>(case ty when 'crime' then 140 when 'detail' then 800 when 'assignment' then 50 when 'catalogue' then 160 else 30 end) then return null;end if;
+ end loop;
+ foreach ty in array array['names','portraits','objects','s'] loop if jsonb_typeof(p->ty) is distinct from 'array' or jsonb_array_length(p->ty)<>n then return null;end if;end loop;
+ if jsonb_typeof(p->'evidence') is distinct from 'array' or jsonb_array_length(p->'evidence') not between 1 and 4 or jsonb_typeof(p->'trace') is distinct from 'object' then return null;end if;
+ clue=p->'trace';
+ foreach ty in array array['title','detail'] loop if jsonb_typeof(clue->ty) is distinct from 'string' or char_length(trim(clue->>ty))<1 or char_length(clue->>ty)>(case when ty='title' then 100 else 500 end) then return null;end if;end loop;
+ if mechanism in ('trace','access') then
+  if jsonb_typeof(clue->'marks') is distinct from 'array' or jsonb_array_length(clue->'marks')<>2 or clue->'marks'->0=clue->'marks'->1 then return null;end if;
+  for e in select value from jsonb_array_elements(clue->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+ elsif mechanism='inventory' then
+  foreach ty in array array['before','after'] loop if jsonb_typeof(clue->ty) is distinct from 'number' then return null;end if;x=(clue->>ty)::numeric;if x<>trunc(x) or x not between 0 and 10000 then return null;end if;end loop;
+  before_mass=(clue->>'before')::int;after_mass=(clue->>'after')::int;if after_mass<=before_mass then return null;end if;
+ else
+  if jsonb_typeof(clue->'checks') is distinct from 'array' or jsonb_array_length(clue->'checks')<>n then return null;end if;
+  for i in 0..n-1 loop
+   if clue->'checks'->i='"broken"'::jsonb then if not broken then moment=i;end if;broken=true;
+   elsif clue->'checks'->i is distinct from '"intact"'::jsonb or broken then return null;end if;
+  end loop;if moment=-1 then return null;end if;
+ end if;
+ for i in 0..n-1 loop
+  if jsonb_typeof(p->'names'->i) is distinct from 'string' or char_length(trim(p->'names'->>i))<1 or char_length(p->'names'->>i)>30 or p->'names'->>i=any(names) then return null;end if;names=array_append(names,p->'names'->>i);
+  if jsonb_typeof(p->'portraits'->i) is distinct from 'number' then return null;end if;x=(p->'portraits'->>i)::numeric;if x<>trunc(x) or x not between 0 and 7 or x::int=any(portraits) then return null;end if;portraits=array_append(portraits,x::int);
+  o=p->'objects'->i;if jsonb_typeof(o) is distinct from 'object' or jsonb_typeof(o->'name') is distinct from 'string' or char_length(trim(o->>'name'))<1 or char_length(o->>'name')>70 or o->>'name'=any(object_names) then return null;end if;object_names=array_append(object_names,o->>'name');
+  if jsonb_typeof(o->'marks') is distinct from 'array' or jsonb_array_length(o->'marks')>4 or jsonb_typeof(o->'grams') is distinct from 'number' then return null;end if;
+  x=(o->>'grams')::numeric;if x<>trunc(x) or x not between 1 and 1000 then return null;end if;
+  for e in select value from jsonb_array_elements(o->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+  if (mechanism in ('trace','access') and (o->'marks') @> (clue->'marks')) or (mechanism='inventory' and x=after_mass-before_mass) then if moment<>-1 then return null;end if;moment=i;end if;
+  if p->'s'->i->1 is distinct from to_jsonb(i) then return null;end if;
+ end loop;if moment=-1 then return null;end if;
+ for s in select value from jsonb_array_elements(p->'s') union all select value->'rule' from jsonb_array_elements(p->'evidence') loop
+  if jsonb_typeof(s) is distinct from 'array' or jsonb_array_length(s)<>4 or jsonb_typeof(s->0) is distinct from 'string' or coalesce(s->>0,'') not in ('oneof','left','next','apart') then return null;end if;ty=s->>0;
+  for j in 1..3 loop if jsonb_typeof(s->j) is distinct from 'number' then return null;end if;x=(s->>j)::numeric;if x<>trunc(x) or x<0 or x>31 then return null;end if;end loop;
+  a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;if a>=n then return null;end if;
+  if ty='oneof' then if b<1 or b>=(1<<n) or k<>0 then return null;end if;
+  elsif b>=n or a=b or (ty='apart' and k not between 1 and n-1) or (ty<>'apart' and k<>0) then return null;end if;
+  if s::text=any(rules) then return null;end if;rules=array_append(rules,s::text);
+ end loop;
+ for e in select value from jsonb_array_elements(p->'evidence') loop
+  foreach ty in array array['title','detail'] loop if jsonb_typeof(e->ty) is distinct from 'string' or char_length(trim(e->>ty))<1 or char_length(e->>ty)>(case when ty='title' then 60 else 300 end) then return null;end if;end loop;
+ end loop;
+ for positions in with recursive ownership(pos) as (select '{}'::int[] union all select ow.pos||g.entry from ownership ow cross join generate_series(0,n-1) as g(entry) where cardinality(ow.pos)<n and not g.entry=any(ow.pos)) select pos from ownership where cardinality(pos)=n loop
+  fits=true;foreach ty in array rules loop if public._friend_alibi_evidence_rule(ty::jsonb,positions) is not true then fits=false;exit;end if;end loop;
+  if fits then solutions=solutions+1;winner=array_position(positions,moment)-1;if solutions>1 then return null;end if;end if;
+ end loop;
+ if solutions<>1 then return null;end if;return winner;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_culprit(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+begin
+ if p->'version'='3'::jsonb then return public._friend_alibi_evidence(p);end if;
+ if p->'version'='2'::jsonb then return public._friend_alibi_scenario(p);end if;
+ return public._friend_alibi_v1_culprit(p);
+end $$;
+revoke all on function public._friend_alibi_evidence_rule(jsonb,int[]),public._friend_alibi_evidence(jsonb),public._friend_alibi_culprit(jsonb) from public,anon,authenticated;
+
+create or replace function public._friend_alibi_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare i int; j int; n int; x numeric; culprit int; correct int:=0; p jsonb; note jsonb; ids text[]:='{}';
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or v->'round' is distinct from '3'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or jsonb_typeof(v->'edits') is distinct from 'number' then return null;end if;
+ x=(v->>'edits')::numeric;if x<>trunc(x) or x not between 0 and 1000000 then return null;end if;
+ if jsonb_typeof(v->'cases') is distinct from 'array' or jsonb_array_length(v->'cases')<>4 or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>4 or jsonb_typeof(v->'notes') is distinct from 'array' or jsonb_array_length(v->'notes')<>4 or v->'selection' is distinct from v->'picks'->3 then return null;end if;
+ for i in 0..3 loop
+  p=v->'cases'->i;culprit=public._friend_alibi_culprit(p);if culprit is null or p->>'id'=any(ids) then return null;end if;ids=array_append(ids,p->>'id');n=(p->>'n')::numeric;
+  if jsonb_typeof(v->'picks'->i) is distinct from 'number' then return null;end if;x=(v->'picks'->>i)::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;if x=culprit then correct=correct+1;end if;
+  note=v->'notes'->i;if jsonb_typeof(note) is distinct from 'object' or jsonb_typeof(note->'truth') is distinct from 'array' or jsonb_array_length(note->'truth')<>n or jsonb_typeof(note->'excluded') is distinct from 'array' or jsonb_array_length(note->'excluded')<>n then return null;end if;
+  if p->'version'='3'::jsonb then
+   if jsonb_typeof(note->'objects') is distinct from 'array' or jsonb_array_length(note->'objects')<>n then return null;end if;
+   for j in 0..n-1 loop if jsonb_typeof(note->'objects'->j) is distinct from 'number' then return null;end if;x=(note->'objects'->>j)::numeric;if x<>trunc(x) or x not between -1 and n-1 then return null;end if;end loop;
+  end if;
+  for j in 0..n-1 loop if jsonb_typeof(note->'truth'->j) is distinct from 'number' or (note->'truth'->>j)::numeric not in (-1,0,1) or jsonb_typeof(note->'excluded'->j) is distinct from 'boolean' then return null;end if;end loop;
+ end loop;
+ return correct*25;
+exception when others then return null;
+end $$;
+
+revoke all on function public._friend_alibi_score(jsonb,date) from public,anon,authenticated;
+commit;
+) or (game='prior' and entry.key !~ '^break-room:prior:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}
+
+create or replace function public.friend_scores() returns jsonb language plpgsql stable security definer set search_path='' as $$
+declare me uuid:=auth.uid(); today date:=timezone('Australia/Sydney',now())::date; result jsonb;
+begin
+ if me is null then raise exception 'Sign in required' using errcode='42501';end if;
+ if not exists(select 1 from public.friend_profiles where user_id=me) then return jsonb_build_object('today',today,'records','[]'::jsonb);end if;
+ select coalesce(jsonb_agg(jsonb_build_object('user_id',p.user_id,'game',r.game,'date',r.day,'arcadeScore',r.arcade_score) order by p.user_id,r.day,r.game),'[]'::jsonb) into result
+ from public.friend_profiles p cross join lateral public._friend_records(p.user_id,today) r
+ where p.user_id=me or (p.share_scores and exists(select 1 from public.friend_links f where f.status='accepted' and ((f.requester=me and f.recipient=p.user_id) or (f.recipient=me and f.requester=p.user_id))) and not exists(select 1 from public.friend_blocks b where (b.owner_id=me and b.target_id=p.user_id) or (b.owner_id=p.user_id and b.target_id=me)));
+ return jsonb_build_object('today',today,'records',result);
+end $$;
+revoke all on function public._friend_json(text),public._friend_date(text),public._friend_mul(bigint,bigint),public._friend_legacy(date),public._friend_score(text,jsonb,date),public._friend_records(uuid,date),public.friend_scores() from public,anon,authenticated;
+grant execute on function public.friend_scores() to authenticated;
+
+-- Evidence v3: all observations are verified; solve catalogue ownership independently.
+create or replace function public._friend_alibi_evidence_rule(s jsonb,positions int[]) returns boolean language plpgsql immutable set search_path='' as $$
+declare a int; b int; k int; ty text;
+begin
+ ty=s->>0;a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;
+ if ty='oneof' then return (b & (1 << positions[a+1]))<>0;
+ elsif ty='left' then return positions[a+1]<positions[b+1];
+ elsif ty='next' then return positions[a+1]=positions[b+1]+1;
+ elsif ty='apart' then return abs(positions[a+1]-positions[b+1])=k;end if;return null;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_evidence(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+declare n int; lv int; i int; j int; a int; b int; k int; x numeric; ty text; s jsonb; e jsonb; o jsonb; clue jsonb; mechanism text;
+ names text[]:='{}'; portraits int[]:='{}'; object_names text[]:='{}'; rules text[]:='{}'; moment int:=-1; positions int[]; fits boolean; solutions int:=0; winner int; before_mass int; after_mass int; broken boolean:=false;
+begin
+ if jsonb_typeof(p) is distinct from 'object' or p->'version' is distinct from '3'::jsonb or jsonb_typeof(p->'id') is distinct from 'string' or p->>'id' !~ '^alibi-v3-[0-3]-[0-9]+$' or char_length(p->>'id')>80 or jsonb_typeof(p->'level') is distinct from 'number' then return null;end if;
+ x=(p->>'level')::numeric;if x<>trunc(x) or x not between 0 and 3 then return null;end if;lv=x;n=case when lv=3 then 5 else 4 end;
+ if p->'n' is distinct from to_jsonb(n) or coalesce(p->>'mechanism','') not in ('trace','access','inventory','custody') then return null;end if;mechanism=p->>'mechanism';
+ foreach ty in array array['crime','detail','item','assignment','catalogue'] loop
+  if jsonb_typeof(p->ty) is distinct from 'string' or char_length(trim(p->>ty))<1 or char_length(p->>ty)>(case ty when 'crime' then 140 when 'detail' then 800 when 'assignment' then 50 when 'catalogue' then 160 else 30 end) then return null;end if;
+ end loop;
+ foreach ty in array array['names','portraits','objects','s'] loop if jsonb_typeof(p->ty) is distinct from 'array' or jsonb_array_length(p->ty)<>n then return null;end if;end loop;
+ if jsonb_typeof(p->'evidence') is distinct from 'array' or jsonb_array_length(p->'evidence') not between 1 and 4 or jsonb_typeof(p->'trace') is distinct from 'object' then return null;end if;
+ clue=p->'trace';
+ foreach ty in array array['title','detail'] loop if jsonb_typeof(clue->ty) is distinct from 'string' or char_length(trim(clue->>ty))<1 or char_length(clue->>ty)>(case when ty='title' then 100 else 500 end) then return null;end if;end loop;
+ if mechanism in ('trace','access') then
+  if jsonb_typeof(clue->'marks') is distinct from 'array' or jsonb_array_length(clue->'marks')<>2 or clue->'marks'->0=clue->'marks'->1 then return null;end if;
+  for e in select value from jsonb_array_elements(clue->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+ elsif mechanism='inventory' then
+  foreach ty in array array['before','after'] loop if jsonb_typeof(clue->ty) is distinct from 'number' then return null;end if;x=(clue->>ty)::numeric;if x<>trunc(x) or x not between 0 and 10000 then return null;end if;end loop;
+  before_mass=(clue->>'before')::int;after_mass=(clue->>'after')::int;if after_mass<=before_mass then return null;end if;
+ else
+  if jsonb_typeof(clue->'checks') is distinct from 'array' or jsonb_array_length(clue->'checks')<>n then return null;end if;
+  for i in 0..n-1 loop
+   if clue->'checks'->i='"broken"'::jsonb then if not broken then moment=i;end if;broken=true;
+   elsif clue->'checks'->i is distinct from '"intact"'::jsonb or broken then return null;end if;
+  end loop;if moment=-1 then return null;end if;
+ end if;
+ for i in 0..n-1 loop
+  if jsonb_typeof(p->'names'->i) is distinct from 'string' or char_length(trim(p->'names'->>i))<1 or char_length(p->'names'->>i)>30 or p->'names'->>i=any(names) then return null;end if;names=array_append(names,p->'names'->>i);
+  if jsonb_typeof(p->'portraits'->i) is distinct from 'number' then return null;end if;x=(p->'portraits'->>i)::numeric;if x<>trunc(x) or x not between 0 and 7 or x::int=any(portraits) then return null;end if;portraits=array_append(portraits,x::int);
+  o=p->'objects'->i;if jsonb_typeof(o) is distinct from 'object' or jsonb_typeof(o->'name') is distinct from 'string' or char_length(trim(o->>'name'))<1 or char_length(o->>'name')>70 or o->>'name'=any(object_names) then return null;end if;object_names=array_append(object_names,o->>'name');
+  if jsonb_typeof(o->'marks') is distinct from 'array' or jsonb_array_length(o->'marks')>4 or jsonb_typeof(o->'grams') is distinct from 'number' then return null;end if;
+  x=(o->>'grams')::numeric;if x<>trunc(x) or x not between 1 and 1000 then return null;end if;
+  for e in select value from jsonb_array_elements(o->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+  if (mechanism in ('trace','access') and (o->'marks') @> (clue->'marks')) or (mechanism='inventory' and x=after_mass-before_mass) then if moment<>-1 then return null;end if;moment=i;end if;
+  if p->'s'->i->1 is distinct from to_jsonb(i) then return null;end if;
+ end loop;if moment=-1 then return null;end if;
+ for s in select value from jsonb_array_elements(p->'s') union all select value->'rule' from jsonb_array_elements(p->'evidence') loop
+  if jsonb_typeof(s) is distinct from 'array' or jsonb_array_length(s)<>4 or jsonb_typeof(s->0) is distinct from 'string' or coalesce(s->>0,'') not in ('oneof','left','next','apart') then return null;end if;ty=s->>0;
+  for j in 1..3 loop if jsonb_typeof(s->j) is distinct from 'number' then return null;end if;x=(s->>j)::numeric;if x<>trunc(x) or x<0 or x>31 then return null;end if;end loop;
+  a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;if a>=n then return null;end if;
+  if ty='oneof' then if b<1 or b>=(1<<n) or k<>0 then return null;end if;
+  elsif b>=n or a=b or (ty='apart' and k not between 1 and n-1) or (ty<>'apart' and k<>0) then return null;end if;
+  if s::text=any(rules) then return null;end if;rules=array_append(rules,s::text);
+ end loop;
+ for e in select value from jsonb_array_elements(p->'evidence') loop
+  foreach ty in array array['title','detail'] loop if jsonb_typeof(e->ty) is distinct from 'string' or char_length(trim(e->>ty))<1 or char_length(e->>ty)>(case when ty='title' then 60 else 300 end) then return null;end if;end loop;
+ end loop;
+ for positions in with recursive ownership(pos) as (select '{}'::int[] union all select ow.pos||g.entry from ownership ow cross join generate_series(0,n-1) as g(entry) where cardinality(ow.pos)<n and not g.entry=any(ow.pos)) select pos from ownership where cardinality(pos)=n loop
+  fits=true;foreach ty in array rules loop if public._friend_alibi_evidence_rule(ty::jsonb,positions) is not true then fits=false;exit;end if;end loop;
+  if fits then solutions=solutions+1;winner=array_position(positions,moment)-1;if solutions>1 then return null;end if;end if;
+ end loop;
+ if solutions<>1 then return null;end if;return winner;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_culprit(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+begin
+ if p->'version'='3'::jsonb then return public._friend_alibi_evidence(p);end if;
+ if p->'version'='2'::jsonb then return public._friend_alibi_scenario(p);end if;
+ return public._friend_alibi_v1_culprit(p);
+end $$;
+revoke all on function public._friend_alibi_evidence_rule(jsonb,int[]),public._friend_alibi_evidence(jsonb),public._friend_alibi_culprit(jsonb) from public,anon,authenticated;
+
+create or replace function public._friend_alibi_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare i int; j int; n int; x numeric; culprit int; correct int:=0; p jsonb; note jsonb; ids text[]:='{}';
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or v->'round' is distinct from '3'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or jsonb_typeof(v->'edits') is distinct from 'number' then return null;end if;
+ x=(v->>'edits')::numeric;if x<>trunc(x) or x not between 0 and 1000000 then return null;end if;
+ if jsonb_typeof(v->'cases') is distinct from 'array' or jsonb_array_length(v->'cases')<>4 or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>4 or jsonb_typeof(v->'notes') is distinct from 'array' or jsonb_array_length(v->'notes')<>4 or v->'selection' is distinct from v->'picks'->3 then return null;end if;
+ for i in 0..3 loop
+  p=v->'cases'->i;culprit=public._friend_alibi_culprit(p);if culprit is null or p->>'id'=any(ids) then return null;end if;ids=array_append(ids,p->>'id');n=(p->>'n')::numeric;
+  if jsonb_typeof(v->'picks'->i) is distinct from 'number' then return null;end if;x=(v->'picks'->>i)::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;if x=culprit then correct=correct+1;end if;
+  note=v->'notes'->i;if jsonb_typeof(note) is distinct from 'object' or jsonb_typeof(note->'truth') is distinct from 'array' or jsonb_array_length(note->'truth')<>n or jsonb_typeof(note->'excluded') is distinct from 'array' or jsonb_array_length(note->'excluded')<>n then return null;end if;
+  if p->'version'='3'::jsonb then
+   if jsonb_typeof(note->'objects') is distinct from 'array' or jsonb_array_length(note->'objects')<>n then return null;end if;
+   for j in 0..n-1 loop if jsonb_typeof(note->'objects'->j) is distinct from 'number' then return null;end if;x=(note->'objects'->>j)::numeric;if x<>trunc(x) or x not between -1 and n-1 then return null;end if;end loop;
+  end if;
+  for j in 0..n-1 loop if jsonb_typeof(note->'truth'->j) is distinct from 'number' or (note->'truth'->>j)::numeric not in (-1,0,1) or jsonb_typeof(note->'excluded'->j) is distinct from 'boolean' then return null;end if;end loop;
+ end loop;
+ return correct*25;
+exception when others then return null;
+end $$;
+
+revoke all on function public._friend_alibi_score(jsonb,date) from public,anon,authenticated;
+commit;
+) or (game='pack' and entry.key !~ '^break-room:pack:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}
+
+create or replace function public.friend_scores() returns jsonb language plpgsql stable security definer set search_path='' as $$
+declare me uuid:=auth.uid(); today date:=timezone('Australia/Sydney',now())::date; result jsonb;
+begin
+ if me is null then raise exception 'Sign in required' using errcode='42501';end if;
+ if not exists(select 1 from public.friend_profiles where user_id=me) then return jsonb_build_object('today',today,'records','[]'::jsonb);end if;
+ select coalesce(jsonb_agg(jsonb_build_object('user_id',p.user_id,'game',r.game,'date',r.day,'arcadeScore',r.arcade_score) order by p.user_id,r.day,r.game),'[]'::jsonb) into result
+ from public.friend_profiles p cross join lateral public._friend_records(p.user_id,today) r
+ where p.user_id=me or (p.share_scores and exists(select 1 from public.friend_links f where f.status='accepted' and ((f.requester=me and f.recipient=p.user_id) or (f.recipient=me and f.requester=p.user_id))) and not exists(select 1 from public.friend_blocks b where (b.owner_id=me and b.target_id=p.user_id) or (b.owner_id=p.user_id and b.target_id=me)));
+ return jsonb_build_object('today',today,'records',result);
+end $$;
+revoke all on function public._friend_json(text),public._friend_date(text),public._friend_mul(bigint,bigint),public._friend_legacy(date),public._friend_score(text,jsonb,date),public._friend_records(uuid,date),public.friend_scores() from public,anon,authenticated;
+grant execute on function public.friend_scores() to authenticated;
+
+-- Evidence v3: all observations are verified; solve catalogue ownership independently.
+create or replace function public._friend_alibi_evidence_rule(s jsonb,positions int[]) returns boolean language plpgsql immutable set search_path='' as $$
+declare a int; b int; k int; ty text;
+begin
+ ty=s->>0;a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;
+ if ty='oneof' then return (b & (1 << positions[a+1]))<>0;
+ elsif ty='left' then return positions[a+1]<positions[b+1];
+ elsif ty='next' then return positions[a+1]=positions[b+1]+1;
+ elsif ty='apart' then return abs(positions[a+1]-positions[b+1])=k;end if;return null;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_evidence(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+declare n int; lv int; i int; j int; a int; b int; k int; x numeric; ty text; s jsonb; e jsonb; o jsonb; clue jsonb; mechanism text;
+ names text[]:='{}'; portraits int[]:='{}'; object_names text[]:='{}'; rules text[]:='{}'; moment int:=-1; positions int[]; fits boolean; solutions int:=0; winner int; before_mass int; after_mass int; broken boolean:=false;
+begin
+ if jsonb_typeof(p) is distinct from 'object' or p->'version' is distinct from '3'::jsonb or jsonb_typeof(p->'id') is distinct from 'string' or p->>'id' !~ '^alibi-v3-[0-3]-[0-9]+$' or char_length(p->>'id')>80 or jsonb_typeof(p->'level') is distinct from 'number' then return null;end if;
+ x=(p->>'level')::numeric;if x<>trunc(x) or x not between 0 and 3 then return null;end if;lv=x;n=case when lv=3 then 5 else 4 end;
+ if p->'n' is distinct from to_jsonb(n) or coalesce(p->>'mechanism','') not in ('trace','access','inventory','custody') then return null;end if;mechanism=p->>'mechanism';
+ foreach ty in array array['crime','detail','item','assignment','catalogue'] loop
+  if jsonb_typeof(p->ty) is distinct from 'string' or char_length(trim(p->>ty))<1 or char_length(p->>ty)>(case ty when 'crime' then 140 when 'detail' then 800 when 'assignment' then 50 when 'catalogue' then 160 else 30 end) then return null;end if;
+ end loop;
+ foreach ty in array array['names','portraits','objects','s'] loop if jsonb_typeof(p->ty) is distinct from 'array' or jsonb_array_length(p->ty)<>n then return null;end if;end loop;
+ if jsonb_typeof(p->'evidence') is distinct from 'array' or jsonb_array_length(p->'evidence') not between 1 and 4 or jsonb_typeof(p->'trace') is distinct from 'object' then return null;end if;
+ clue=p->'trace';
+ foreach ty in array array['title','detail'] loop if jsonb_typeof(clue->ty) is distinct from 'string' or char_length(trim(clue->>ty))<1 or char_length(clue->>ty)>(case when ty='title' then 100 else 500 end) then return null;end if;end loop;
+ if mechanism in ('trace','access') then
+  if jsonb_typeof(clue->'marks') is distinct from 'array' or jsonb_array_length(clue->'marks')<>2 or clue->'marks'->0=clue->'marks'->1 then return null;end if;
+  for e in select value from jsonb_array_elements(clue->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+ elsif mechanism='inventory' then
+  foreach ty in array array['before','after'] loop if jsonb_typeof(clue->ty) is distinct from 'number' then return null;end if;x=(clue->>ty)::numeric;if x<>trunc(x) or x not between 0 and 10000 then return null;end if;end loop;
+  before_mass=(clue->>'before')::int;after_mass=(clue->>'after')::int;if after_mass<=before_mass then return null;end if;
+ else
+  if jsonb_typeof(clue->'checks') is distinct from 'array' or jsonb_array_length(clue->'checks')<>n then return null;end if;
+  for i in 0..n-1 loop
+   if clue->'checks'->i='"broken"'::jsonb then if not broken then moment=i;end if;broken=true;
+   elsif clue->'checks'->i is distinct from '"intact"'::jsonb or broken then return null;end if;
+  end loop;if moment=-1 then return null;end if;
+ end if;
+ for i in 0..n-1 loop
+  if jsonb_typeof(p->'names'->i) is distinct from 'string' or char_length(trim(p->'names'->>i))<1 or char_length(p->'names'->>i)>30 or p->'names'->>i=any(names) then return null;end if;names=array_append(names,p->'names'->>i);
+  if jsonb_typeof(p->'portraits'->i) is distinct from 'number' then return null;end if;x=(p->'portraits'->>i)::numeric;if x<>trunc(x) or x not between 0 and 7 or x::int=any(portraits) then return null;end if;portraits=array_append(portraits,x::int);
+  o=p->'objects'->i;if jsonb_typeof(o) is distinct from 'object' or jsonb_typeof(o->'name') is distinct from 'string' or char_length(trim(o->>'name'))<1 or char_length(o->>'name')>70 or o->>'name'=any(object_names) then return null;end if;object_names=array_append(object_names,o->>'name');
+  if jsonb_typeof(o->'marks') is distinct from 'array' or jsonb_array_length(o->'marks')>4 or jsonb_typeof(o->'grams') is distinct from 'number' then return null;end if;
+  x=(o->>'grams')::numeric;if x<>trunc(x) or x not between 1 and 1000 then return null;end if;
+  for e in select value from jsonb_array_elements(o->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+  if (mechanism in ('trace','access') and (o->'marks') @> (clue->'marks')) or (mechanism='inventory' and x=after_mass-before_mass) then if moment<>-1 then return null;end if;moment=i;end if;
+  if p->'s'->i->1 is distinct from to_jsonb(i) then return null;end if;
+ end loop;if moment=-1 then return null;end if;
+ for s in select value from jsonb_array_elements(p->'s') union all select value->'rule' from jsonb_array_elements(p->'evidence') loop
+  if jsonb_typeof(s) is distinct from 'array' or jsonb_array_length(s)<>4 or jsonb_typeof(s->0) is distinct from 'string' or coalesce(s->>0,'') not in ('oneof','left','next','apart') then return null;end if;ty=s->>0;
+  for j in 1..3 loop if jsonb_typeof(s->j) is distinct from 'number' then return null;end if;x=(s->>j)::numeric;if x<>trunc(x) or x<0 or x>31 then return null;end if;end loop;
+  a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;if a>=n then return null;end if;
+  if ty='oneof' then if b<1 or b>=(1<<n) or k<>0 then return null;end if;
+  elsif b>=n or a=b or (ty='apart' and k not between 1 and n-1) or (ty<>'apart' and k<>0) then return null;end if;
+  if s::text=any(rules) then return null;end if;rules=array_append(rules,s::text);
+ end loop;
+ for e in select value from jsonb_array_elements(p->'evidence') loop
+  foreach ty in array array['title','detail'] loop if jsonb_typeof(e->ty) is distinct from 'string' or char_length(trim(e->>ty))<1 or char_length(e->>ty)>(case when ty='title' then 60 else 300 end) then return null;end if;end loop;
+ end loop;
+ for positions in with recursive ownership(pos) as (select '{}'::int[] union all select ow.pos||g.entry from ownership ow cross join generate_series(0,n-1) as g(entry) where cardinality(ow.pos)<n and not g.entry=any(ow.pos)) select pos from ownership where cardinality(pos)=n loop
+  fits=true;foreach ty in array rules loop if public._friend_alibi_evidence_rule(ty::jsonb,positions) is not true then fits=false;exit;end if;end loop;
+  if fits then solutions=solutions+1;winner=array_position(positions,moment)-1;if solutions>1 then return null;end if;end if;
+ end loop;
+ if solutions<>1 then return null;end if;return winner;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_culprit(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+begin
+ if p->'version'='3'::jsonb then return public._friend_alibi_evidence(p);end if;
+ if p->'version'='2'::jsonb then return public._friend_alibi_scenario(p);end if;
+ return public._friend_alibi_v1_culprit(p);
+end $$;
+revoke all on function public._friend_alibi_evidence_rule(jsonb,int[]),public._friend_alibi_evidence(jsonb),public._friend_alibi_culprit(jsonb) from public,anon,authenticated;
+
+create or replace function public._friend_alibi_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare i int; j int; n int; x numeric; culprit int; correct int:=0; p jsonb; note jsonb; ids text[]:='{}';
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or v->'round' is distinct from '3'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or jsonb_typeof(v->'edits') is distinct from 'number' then return null;end if;
+ x=(v->>'edits')::numeric;if x<>trunc(x) or x not between 0 and 1000000 then return null;end if;
+ if jsonb_typeof(v->'cases') is distinct from 'array' or jsonb_array_length(v->'cases')<>4 or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>4 or jsonb_typeof(v->'notes') is distinct from 'array' or jsonb_array_length(v->'notes')<>4 or v->'selection' is distinct from v->'picks'->3 then return null;end if;
+ for i in 0..3 loop
+  p=v->'cases'->i;culprit=public._friend_alibi_culprit(p);if culprit is null or p->>'id'=any(ids) then return null;end if;ids=array_append(ids,p->>'id');n=(p->>'n')::numeric;
+  if jsonb_typeof(v->'picks'->i) is distinct from 'number' then return null;end if;x=(v->'picks'->>i)::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;if x=culprit then correct=correct+1;end if;
+  note=v->'notes'->i;if jsonb_typeof(note) is distinct from 'object' or jsonb_typeof(note->'truth') is distinct from 'array' or jsonb_array_length(note->'truth')<>n or jsonb_typeof(note->'excluded') is distinct from 'array' or jsonb_array_length(note->'excluded')<>n then return null;end if;
+  if p->'version'='3'::jsonb then
+   if jsonb_typeof(note->'objects') is distinct from 'array' or jsonb_array_length(note->'objects')<>n then return null;end if;
+   for j in 0..n-1 loop if jsonb_typeof(note->'objects'->j) is distinct from 'number' then return null;end if;x=(note->'objects'->>j)::numeric;if x<>trunc(x) or x not between -1 and n-1 then return null;end if;end loop;
+  end if;
+  for j in 0..n-1 loop if jsonb_typeof(note->'truth'->j) is distinct from 'number' or (note->'truth'->>j)::numeric not in (-1,0,1) or jsonb_typeof(note->'excluded'->j) is distinct from 'boolean' then return null;end if;end loop;
+ end loop;
+ return correct*25;
+exception when others then return null;
+end $$;
+
+revoke all on function public._friend_alibi_score(jsonb,date) from public,anon,authenticated;
+commit;
+) or (game='stack-up' and entry.key !~ '^break-room:stack-up:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}
+
+create or replace function public.friend_scores() returns jsonb language plpgsql stable security definer set search_path='' as $$
+declare me uuid:=auth.uid(); today date:=timezone('Australia/Sydney',now())::date; result jsonb;
+begin
+ if me is null then raise exception 'Sign in required' using errcode='42501';end if;
+ if not exists(select 1 from public.friend_profiles where user_id=me) then return jsonb_build_object('today',today,'records','[]'::jsonb);end if;
+ select coalesce(jsonb_agg(jsonb_build_object('user_id',p.user_id,'game',r.game,'date',r.day,'arcadeScore',r.arcade_score) order by p.user_id,r.day,r.game),'[]'::jsonb) into result
+ from public.friend_profiles p cross join lateral public._friend_records(p.user_id,today) r
+ where p.user_id=me or (p.share_scores and exists(select 1 from public.friend_links f where f.status='accepted' and ((f.requester=me and f.recipient=p.user_id) or (f.recipient=me and f.requester=p.user_id))) and not exists(select 1 from public.friend_blocks b where (b.owner_id=me and b.target_id=p.user_id) or (b.owner_id=p.user_id and b.target_id=me)));
+ return jsonb_build_object('today',today,'records',result);
+end $$;
+revoke all on function public._friend_json(text),public._friend_date(text),public._friend_mul(bigint,bigint),public._friend_legacy(date),public._friend_score(text,jsonb,date),public._friend_records(uuid,date),public.friend_scores() from public,anon,authenticated;
+grant execute on function public.friend_scores() to authenticated;
+
+-- Evidence v3: all observations are verified; solve catalogue ownership independently.
+create or replace function public._friend_alibi_evidence_rule(s jsonb,positions int[]) returns boolean language plpgsql immutable set search_path='' as $$
+declare a int; b int; k int; ty text;
+begin
+ ty=s->>0;a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;
+ if ty='oneof' then return (b & (1 << positions[a+1]))<>0;
+ elsif ty='left' then return positions[a+1]<positions[b+1];
+ elsif ty='next' then return positions[a+1]=positions[b+1]+1;
+ elsif ty='apart' then return abs(positions[a+1]-positions[b+1])=k;end if;return null;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_evidence(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+declare n int; lv int; i int; j int; a int; b int; k int; x numeric; ty text; s jsonb; e jsonb; o jsonb; clue jsonb; mechanism text;
+ names text[]:='{}'; portraits int[]:='{}'; object_names text[]:='{}'; rules text[]:='{}'; moment int:=-1; positions int[]; fits boolean; solutions int:=0; winner int; before_mass int; after_mass int; broken boolean:=false;
+begin
+ if jsonb_typeof(p) is distinct from 'object' or p->'version' is distinct from '3'::jsonb or jsonb_typeof(p->'id') is distinct from 'string' or p->>'id' !~ '^alibi-v3-[0-3]-[0-9]+$' or char_length(p->>'id')>80 or jsonb_typeof(p->'level') is distinct from 'number' then return null;end if;
+ x=(p->>'level')::numeric;if x<>trunc(x) or x not between 0 and 3 then return null;end if;lv=x;n=case when lv=3 then 5 else 4 end;
+ if p->'n' is distinct from to_jsonb(n) or coalesce(p->>'mechanism','') not in ('trace','access','inventory','custody') then return null;end if;mechanism=p->>'mechanism';
+ foreach ty in array array['crime','detail','item','assignment','catalogue'] loop
+  if jsonb_typeof(p->ty) is distinct from 'string' or char_length(trim(p->>ty))<1 or char_length(p->>ty)>(case ty when 'crime' then 140 when 'detail' then 800 when 'assignment' then 50 when 'catalogue' then 160 else 30 end) then return null;end if;
+ end loop;
+ foreach ty in array array['names','portraits','objects','s'] loop if jsonb_typeof(p->ty) is distinct from 'array' or jsonb_array_length(p->ty)<>n then return null;end if;end loop;
+ if jsonb_typeof(p->'evidence') is distinct from 'array' or jsonb_array_length(p->'evidence') not between 1 and 4 or jsonb_typeof(p->'trace') is distinct from 'object' then return null;end if;
+ clue=p->'trace';
+ foreach ty in array array['title','detail'] loop if jsonb_typeof(clue->ty) is distinct from 'string' or char_length(trim(clue->>ty))<1 or char_length(clue->>ty)>(case when ty='title' then 100 else 500 end) then return null;end if;end loop;
+ if mechanism in ('trace','access') then
+  if jsonb_typeof(clue->'marks') is distinct from 'array' or jsonb_array_length(clue->'marks')<>2 or clue->'marks'->0=clue->'marks'->1 then return null;end if;
+  for e in select value from jsonb_array_elements(clue->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+ elsif mechanism='inventory' then
+  foreach ty in array array['before','after'] loop if jsonb_typeof(clue->ty) is distinct from 'number' then return null;end if;x=(clue->>ty)::numeric;if x<>trunc(x) or x not between 0 and 10000 then return null;end if;end loop;
+  before_mass=(clue->>'before')::int;after_mass=(clue->>'after')::int;if after_mass<=before_mass then return null;end if;
+ else
+  if jsonb_typeof(clue->'checks') is distinct from 'array' or jsonb_array_length(clue->'checks')<>n then return null;end if;
+  for i in 0..n-1 loop
+   if clue->'checks'->i='"broken"'::jsonb then if not broken then moment=i;end if;broken=true;
+   elsif clue->'checks'->i is distinct from '"intact"'::jsonb or broken then return null;end if;
+  end loop;if moment=-1 then return null;end if;
+ end if;
+ for i in 0..n-1 loop
+  if jsonb_typeof(p->'names'->i) is distinct from 'string' or char_length(trim(p->'names'->>i))<1 or char_length(p->'names'->>i)>30 or p->'names'->>i=any(names) then return null;end if;names=array_append(names,p->'names'->>i);
+  if jsonb_typeof(p->'portraits'->i) is distinct from 'number' then return null;end if;x=(p->'portraits'->>i)::numeric;if x<>trunc(x) or x not between 0 and 7 or x::int=any(portraits) then return null;end if;portraits=array_append(portraits,x::int);
+  o=p->'objects'->i;if jsonb_typeof(o) is distinct from 'object' or jsonb_typeof(o->'name') is distinct from 'string' or char_length(trim(o->>'name'))<1 or char_length(o->>'name')>70 or o->>'name'=any(object_names) then return null;end if;object_names=array_append(object_names,o->>'name');
+  if jsonb_typeof(o->'marks') is distinct from 'array' or jsonb_array_length(o->'marks')>4 or jsonb_typeof(o->'grams') is distinct from 'number' then return null;end if;
+  x=(o->>'grams')::numeric;if x<>trunc(x) or x not between 1 and 1000 then return null;end if;
+  for e in select value from jsonb_array_elements(o->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+  if (mechanism in ('trace','access') and (o->'marks') @> (clue->'marks')) or (mechanism='inventory' and x=after_mass-before_mass) then if moment<>-1 then return null;end if;moment=i;end if;
+  if p->'s'->i->1 is distinct from to_jsonb(i) then return null;end if;
+ end loop;if moment=-1 then return null;end if;
+ for s in select value from jsonb_array_elements(p->'s') union all select value->'rule' from jsonb_array_elements(p->'evidence') loop
+  if jsonb_typeof(s) is distinct from 'array' or jsonb_array_length(s)<>4 or jsonb_typeof(s->0) is distinct from 'string' or coalesce(s->>0,'') not in ('oneof','left','next','apart') then return null;end if;ty=s->>0;
+  for j in 1..3 loop if jsonb_typeof(s->j) is distinct from 'number' then return null;end if;x=(s->>j)::numeric;if x<>trunc(x) or x<0 or x>31 then return null;end if;end loop;
+  a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;if a>=n then return null;end if;
+  if ty='oneof' then if b<1 or b>=(1<<n) or k<>0 then return null;end if;
+  elsif b>=n or a=b or (ty='apart' and k not between 1 and n-1) or (ty<>'apart' and k<>0) then return null;end if;
+  if s::text=any(rules) then return null;end if;rules=array_append(rules,s::text);
+ end loop;
+ for e in select value from jsonb_array_elements(p->'evidence') loop
+  foreach ty in array array['title','detail'] loop if jsonb_typeof(e->ty) is distinct from 'string' or char_length(trim(e->>ty))<1 or char_length(e->>ty)>(case when ty='title' then 60 else 300 end) then return null;end if;end loop;
+ end loop;
+ for positions in with recursive ownership(pos) as (select '{}'::int[] union all select ow.pos||g.entry from ownership ow cross join generate_series(0,n-1) as g(entry) where cardinality(ow.pos)<n and not g.entry=any(ow.pos)) select pos from ownership where cardinality(pos)=n loop
+  fits=true;foreach ty in array rules loop if public._friend_alibi_evidence_rule(ty::jsonb,positions) is not true then fits=false;exit;end if;end loop;
+  if fits then solutions=solutions+1;winner=array_position(positions,moment)-1;if solutions>1 then return null;end if;end if;
+ end loop;
+ if solutions<>1 then return null;end if;return winner;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_culprit(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+begin
+ if p->'version'='3'::jsonb then return public._friend_alibi_evidence(p);end if;
+ if p->'version'='2'::jsonb then return public._friend_alibi_scenario(p);end if;
+ return public._friend_alibi_v1_culprit(p);
+end $$;
+revoke all on function public._friend_alibi_evidence_rule(jsonb,int[]),public._friend_alibi_evidence(jsonb),public._friend_alibi_culprit(jsonb) from public,anon,authenticated;
+
+create or replace function public._friend_alibi_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare i int; j int; n int; x numeric; culprit int; correct int:=0; p jsonb; note jsonb; ids text[]:='{}';
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or v->'round' is distinct from '3'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or jsonb_typeof(v->'edits') is distinct from 'number' then return null;end if;
+ x=(v->>'edits')::numeric;if x<>trunc(x) or x not between 0 and 1000000 then return null;end if;
+ if jsonb_typeof(v->'cases') is distinct from 'array' or jsonb_array_length(v->'cases')<>4 or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>4 or jsonb_typeof(v->'notes') is distinct from 'array' or jsonb_array_length(v->'notes')<>4 or v->'selection' is distinct from v->'picks'->3 then return null;end if;
+ for i in 0..3 loop
+  p=v->'cases'->i;culprit=public._friend_alibi_culprit(p);if culprit is null or p->>'id'=any(ids) then return null;end if;ids=array_append(ids,p->>'id');n=(p->>'n')::numeric;
+  if jsonb_typeof(v->'picks'->i) is distinct from 'number' then return null;end if;x=(v->'picks'->>i)::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;if x=culprit then correct=correct+1;end if;
+  note=v->'notes'->i;if jsonb_typeof(note) is distinct from 'object' or jsonb_typeof(note->'truth') is distinct from 'array' or jsonb_array_length(note->'truth')<>n or jsonb_typeof(note->'excluded') is distinct from 'array' or jsonb_array_length(note->'excluded')<>n then return null;end if;
+  if p->'version'='3'::jsonb then
+   if jsonb_typeof(note->'objects') is distinct from 'array' or jsonb_array_length(note->'objects')<>n then return null;end if;
+   for j in 0..n-1 loop if jsonb_typeof(note->'objects'->j) is distinct from 'number' then return null;end if;x=(note->'objects'->>j)::numeric;if x<>trunc(x) or x not between -1 and n-1 then return null;end if;end loop;
+  end if;
+  for j in 0..n-1 loop if jsonb_typeof(note->'truth'->j) is distinct from 'number' or (note->'truth'->>j)::numeric not in (-1,0,1) or jsonb_typeof(note->'excluded'->j) is distinct from 'boolean' then return null;end if;end loop;
+ end loop;
+ return correct*25;
+exception when others then return null;
+end $$;
+
+revoke all on function public._friend_alibi_score(jsonb,date) from public,anon,authenticated;
+commit;
+) then continue;end if;
     d=public._friend_date(right(entry.key,10));if d is null or d<p_today-119 or d>p_today then continue;end if;
     v=public._friend_json(entry.value);score=public._friend_score(game,v,d);
     if score is not null then day=d;arcade_score=score;return next;end if;
    end loop;
   end if;
  end loop;
+end $;) or (game='stake' and entry.key !~ '^stake:d:[0-9]{4}-[0-9]{2}-[0-9]{2}
+
+create or replace function public.friend_scores() returns jsonb language plpgsql stable security definer set search_path='' as $$
+declare me uuid:=auth.uid(); today date:=timezone('Australia/Sydney',now())::date; result jsonb;
+begin
+ if me is null then raise exception 'Sign in required' using errcode='42501';end if;
+ if not exists(select 1 from public.friend_profiles where user_id=me) then return jsonb_build_object('today',today,'records','[]'::jsonb);end if;
+ select coalesce(jsonb_agg(jsonb_build_object('user_id',p.user_id,'game',r.game,'date',r.day,'arcadeScore',r.arcade_score) order by p.user_id,r.day,r.game),'[]'::jsonb) into result
+ from public.friend_profiles p cross join lateral public._friend_records(p.user_id,today) r
+ where p.user_id=me or (p.share_scores and exists(select 1 from public.friend_links f where f.status='accepted' and ((f.requester=me and f.recipient=p.user_id) or (f.recipient=me and f.requester=p.user_id))) and not exists(select 1 from public.friend_blocks b where (b.owner_id=me and b.target_id=p.user_id) or (b.owner_id=p.user_id and b.target_id=me)));
+ return jsonb_build_object('today',today,'records',result);
 end $$;
+revoke all on function public._friend_json(text),public._friend_date(text),public._friend_mul(bigint,bigint),public._friend_legacy(date),public._friend_score(text,jsonb,date),public._friend_records(uuid,date),public.friend_scores() from public,anon,authenticated;
+grant execute on function public.friend_scores() to authenticated;
+
+-- Evidence v3: all observations are verified; solve catalogue ownership independently.
+create or replace function public._friend_alibi_evidence_rule(s jsonb,positions int[]) returns boolean language plpgsql immutable set search_path='' as $$
+declare a int; b int; k int; ty text;
+begin
+ ty=s->>0;a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;
+ if ty='oneof' then return (b & (1 << positions[a+1]))<>0;
+ elsif ty='left' then return positions[a+1]<positions[b+1];
+ elsif ty='next' then return positions[a+1]=positions[b+1]+1;
+ elsif ty='apart' then return abs(positions[a+1]-positions[b+1])=k;end if;return null;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_evidence(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+declare n int; lv int; i int; j int; a int; b int; k int; x numeric; ty text; s jsonb; e jsonb; o jsonb; clue jsonb; mechanism text;
+ names text[]:='{}'; portraits int[]:='{}'; object_names text[]:='{}'; rules text[]:='{}'; moment int:=-1; positions int[]; fits boolean; solutions int:=0; winner int; before_mass int; after_mass int; broken boolean:=false;
+begin
+ if jsonb_typeof(p) is distinct from 'object' or p->'version' is distinct from '3'::jsonb or jsonb_typeof(p->'id') is distinct from 'string' or p->>'id' !~ '^alibi-v3-[0-3]-[0-9]+$' or char_length(p->>'id')>80 or jsonb_typeof(p->'level') is distinct from 'number' then return null;end if;
+ x=(p->>'level')::numeric;if x<>trunc(x) or x not between 0 and 3 then return null;end if;lv=x;n=case when lv=3 then 5 else 4 end;
+ if p->'n' is distinct from to_jsonb(n) or coalesce(p->>'mechanism','') not in ('trace','access','inventory','custody') then return null;end if;mechanism=p->>'mechanism';
+ foreach ty in array array['crime','detail','item','assignment','catalogue'] loop
+  if jsonb_typeof(p->ty) is distinct from 'string' or char_length(trim(p->>ty))<1 or char_length(p->>ty)>(case ty when 'crime' then 140 when 'detail' then 800 when 'assignment' then 50 when 'catalogue' then 160 else 30 end) then return null;end if;
+ end loop;
+ foreach ty in array array['names','portraits','objects','s'] loop if jsonb_typeof(p->ty) is distinct from 'array' or jsonb_array_length(p->ty)<>n then return null;end if;end loop;
+ if jsonb_typeof(p->'evidence') is distinct from 'array' or jsonb_array_length(p->'evidence') not between 1 and 4 or jsonb_typeof(p->'trace') is distinct from 'object' then return null;end if;
+ clue=p->'trace';
+ foreach ty in array array['title','detail'] loop if jsonb_typeof(clue->ty) is distinct from 'string' or char_length(trim(clue->>ty))<1 or char_length(clue->>ty)>(case when ty='title' then 100 else 500 end) then return null;end if;end loop;
+ if mechanism in ('trace','access') then
+  if jsonb_typeof(clue->'marks') is distinct from 'array' or jsonb_array_length(clue->'marks')<>2 or clue->'marks'->0=clue->'marks'->1 then return null;end if;
+  for e in select value from jsonb_array_elements(clue->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+ elsif mechanism='inventory' then
+  foreach ty in array array['before','after'] loop if jsonb_typeof(clue->ty) is distinct from 'number' then return null;end if;x=(clue->>ty)::numeric;if x<>trunc(x) or x not between 0 and 10000 then return null;end if;end loop;
+  before_mass=(clue->>'before')::int;after_mass=(clue->>'after')::int;if after_mass<=before_mass then return null;end if;
+ else
+  if jsonb_typeof(clue->'checks') is distinct from 'array' or jsonb_array_length(clue->'checks')<>n then return null;end if;
+  for i in 0..n-1 loop
+   if clue->'checks'->i='"broken"'::jsonb then if not broken then moment=i;end if;broken=true;
+   elsif clue->'checks'->i is distinct from '"intact"'::jsonb or broken then return null;end if;
+  end loop;if moment=-1 then return null;end if;
+ end if;
+ for i in 0..n-1 loop
+  if jsonb_typeof(p->'names'->i) is distinct from 'string' or char_length(trim(p->'names'->>i))<1 or char_length(p->'names'->>i)>30 or p->'names'->>i=any(names) then return null;end if;names=array_append(names,p->'names'->>i);
+  if jsonb_typeof(p->'portraits'->i) is distinct from 'number' then return null;end if;x=(p->'portraits'->>i)::numeric;if x<>trunc(x) or x not between 0 and 7 or x::int=any(portraits) then return null;end if;portraits=array_append(portraits,x::int);
+  o=p->'objects'->i;if jsonb_typeof(o) is distinct from 'object' or jsonb_typeof(o->'name') is distinct from 'string' or char_length(trim(o->>'name'))<1 or char_length(o->>'name')>70 or o->>'name'=any(object_names) then return null;end if;object_names=array_append(object_names,o->>'name');
+  if jsonb_typeof(o->'marks') is distinct from 'array' or jsonb_array_length(o->'marks')>4 or jsonb_typeof(o->'grams') is distinct from 'number' then return null;end if;
+  x=(o->>'grams')::numeric;if x<>trunc(x) or x not between 1 and 1000 then return null;end if;
+  for e in select value from jsonb_array_elements(o->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+  if (mechanism in ('trace','access') and (o->'marks') @> (clue->'marks')) or (mechanism='inventory' and x=after_mass-before_mass) then if moment<>-1 then return null;end if;moment=i;end if;
+  if p->'s'->i->1 is distinct from to_jsonb(i) then return null;end if;
+ end loop;if moment=-1 then return null;end if;
+ for s in select value from jsonb_array_elements(p->'s') union all select value->'rule' from jsonb_array_elements(p->'evidence') loop
+  if jsonb_typeof(s) is distinct from 'array' or jsonb_array_length(s)<>4 or jsonb_typeof(s->0) is distinct from 'string' or coalesce(s->>0,'') not in ('oneof','left','next','apart') then return null;end if;ty=s->>0;
+  for j in 1..3 loop if jsonb_typeof(s->j) is distinct from 'number' then return null;end if;x=(s->>j)::numeric;if x<>trunc(x) or x<0 or x>31 then return null;end if;end loop;
+  a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;if a>=n then return null;end if;
+  if ty='oneof' then if b<1 or b>=(1<<n) or k<>0 then return null;end if;
+  elsif b>=n or a=b or (ty='apart' and k not between 1 and n-1) or (ty<>'apart' and k<>0) then return null;end if;
+  if s::text=any(rules) then return null;end if;rules=array_append(rules,s::text);
+ end loop;
+ for e in select value from jsonb_array_elements(p->'evidence') loop
+  foreach ty in array array['title','detail'] loop if jsonb_typeof(e->ty) is distinct from 'string' or char_length(trim(e->>ty))<1 or char_length(e->>ty)>(case when ty='title' then 60 else 300 end) then return null;end if;end loop;
+ end loop;
+ for positions in with recursive ownership(pos) as (select '{}'::int[] union all select ow.pos||g.entry from ownership ow cross join generate_series(0,n-1) as g(entry) where cardinality(ow.pos)<n and not g.entry=any(ow.pos)) select pos from ownership where cardinality(pos)=n loop
+  fits=true;foreach ty in array rules loop if public._friend_alibi_evidence_rule(ty::jsonb,positions) is not true then fits=false;exit;end if;end loop;
+  if fits then solutions=solutions+1;winner=array_position(positions,moment)-1;if solutions>1 then return null;end if;end if;
+ end loop;
+ if solutions<>1 then return null;end if;return winner;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_culprit(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+begin
+ if p->'version'='3'::jsonb then return public._friend_alibi_evidence(p);end if;
+ if p->'version'='2'::jsonb then return public._friend_alibi_scenario(p);end if;
+ return public._friend_alibi_v1_culprit(p);
+end $$;
+revoke all on function public._friend_alibi_evidence_rule(jsonb,int[]),public._friend_alibi_evidence(jsonb),public._friend_alibi_culprit(jsonb) from public,anon,authenticated;
+
+create or replace function public._friend_alibi_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare i int; j int; n int; x numeric; culprit int; correct int:=0; p jsonb; note jsonb; ids text[]:='{}';
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or v->'round' is distinct from '3'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or jsonb_typeof(v->'edits') is distinct from 'number' then return null;end if;
+ x=(v->>'edits')::numeric;if x<>trunc(x) or x not between 0 and 1000000 then return null;end if;
+ if jsonb_typeof(v->'cases') is distinct from 'array' or jsonb_array_length(v->'cases')<>4 or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>4 or jsonb_typeof(v->'notes') is distinct from 'array' or jsonb_array_length(v->'notes')<>4 or v->'selection' is distinct from v->'picks'->3 then return null;end if;
+ for i in 0..3 loop
+  p=v->'cases'->i;culprit=public._friend_alibi_culprit(p);if culprit is null or p->>'id'=any(ids) then return null;end if;ids=array_append(ids,p->>'id');n=(p->>'n')::numeric;
+  if jsonb_typeof(v->'picks'->i) is distinct from 'number' then return null;end if;x=(v->'picks'->>i)::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;if x=culprit then correct=correct+1;end if;
+  note=v->'notes'->i;if jsonb_typeof(note) is distinct from 'object' or jsonb_typeof(note->'truth') is distinct from 'array' or jsonb_array_length(note->'truth')<>n or jsonb_typeof(note->'excluded') is distinct from 'array' or jsonb_array_length(note->'excluded')<>n then return null;end if;
+  if p->'version'='3'::jsonb then
+   if jsonb_typeof(note->'objects') is distinct from 'array' or jsonb_array_length(note->'objects')<>n then return null;end if;
+   for j in 0..n-1 loop if jsonb_typeof(note->'objects'->j) is distinct from 'number' then return null;end if;x=(note->'objects'->>j)::numeric;if x<>trunc(x) or x not between -1 and n-1 then return null;end if;end loop;
+  end if;
+  for j in 0..n-1 loop if jsonb_typeof(note->'truth'->j) is distinct from 'number' or (note->'truth'->>j)::numeric not in (-1,0,1) or jsonb_typeof(note->'excluded'->j) is distinct from 'boolean' then return null;end if;end loop;
+ end loop;
+ return correct*25;
+exception when others then return null;
+end $$;
+
+revoke all on function public._friend_alibi_score(jsonb,date) from public,anon,authenticated;
+commit;
+) or (game='inner-clock' and entry.key !~ '^break-room:inner-clock:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}
+
+create or replace function public.friend_scores() returns jsonb language plpgsql stable security definer set search_path='' as $$
+declare me uuid:=auth.uid(); today date:=timezone('Australia/Sydney',now())::date; result jsonb;
+begin
+ if me is null then raise exception 'Sign in required' using errcode='42501';end if;
+ if not exists(select 1 from public.friend_profiles where user_id=me) then return jsonb_build_object('today',today,'records','[]'::jsonb);end if;
+ select coalesce(jsonb_agg(jsonb_build_object('user_id',p.user_id,'game',r.game,'date',r.day,'arcadeScore',r.arcade_score) order by p.user_id,r.day,r.game),'[]'::jsonb) into result
+ from public.friend_profiles p cross join lateral public._friend_records(p.user_id,today) r
+ where p.user_id=me or (p.share_scores and exists(select 1 from public.friend_links f where f.status='accepted' and ((f.requester=me and f.recipient=p.user_id) or (f.recipient=me and f.requester=p.user_id))) and not exists(select 1 from public.friend_blocks b where (b.owner_id=me and b.target_id=p.user_id) or (b.owner_id=p.user_id and b.target_id=me)));
+ return jsonb_build_object('today',today,'records',result);
+end $$;
+revoke all on function public._friend_json(text),public._friend_date(text),public._friend_mul(bigint,bigint),public._friend_legacy(date),public._friend_score(text,jsonb,date),public._friend_records(uuid,date),public.friend_scores() from public,anon,authenticated;
+grant execute on function public.friend_scores() to authenticated;
+
+-- Evidence v3: all observations are verified; solve catalogue ownership independently.
+create or replace function public._friend_alibi_evidence_rule(s jsonb,positions int[]) returns boolean language plpgsql immutable set search_path='' as $$
+declare a int; b int; k int; ty text;
+begin
+ ty=s->>0;a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;
+ if ty='oneof' then return (b & (1 << positions[a+1]))<>0;
+ elsif ty='left' then return positions[a+1]<positions[b+1];
+ elsif ty='next' then return positions[a+1]=positions[b+1]+1;
+ elsif ty='apart' then return abs(positions[a+1]-positions[b+1])=k;end if;return null;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_evidence(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+declare n int; lv int; i int; j int; a int; b int; k int; x numeric; ty text; s jsonb; e jsonb; o jsonb; clue jsonb; mechanism text;
+ names text[]:='{}'; portraits int[]:='{}'; object_names text[]:='{}'; rules text[]:='{}'; moment int:=-1; positions int[]; fits boolean; solutions int:=0; winner int; before_mass int; after_mass int; broken boolean:=false;
+begin
+ if jsonb_typeof(p) is distinct from 'object' or p->'version' is distinct from '3'::jsonb or jsonb_typeof(p->'id') is distinct from 'string' or p->>'id' !~ '^alibi-v3-[0-3]-[0-9]+$' or char_length(p->>'id')>80 or jsonb_typeof(p->'level') is distinct from 'number' then return null;end if;
+ x=(p->>'level')::numeric;if x<>trunc(x) or x not between 0 and 3 then return null;end if;lv=x;n=case when lv=3 then 5 else 4 end;
+ if p->'n' is distinct from to_jsonb(n) or coalesce(p->>'mechanism','') not in ('trace','access','inventory','custody') then return null;end if;mechanism=p->>'mechanism';
+ foreach ty in array array['crime','detail','item','assignment','catalogue'] loop
+  if jsonb_typeof(p->ty) is distinct from 'string' or char_length(trim(p->>ty))<1 or char_length(p->>ty)>(case ty when 'crime' then 140 when 'detail' then 800 when 'assignment' then 50 when 'catalogue' then 160 else 30 end) then return null;end if;
+ end loop;
+ foreach ty in array array['names','portraits','objects','s'] loop if jsonb_typeof(p->ty) is distinct from 'array' or jsonb_array_length(p->ty)<>n then return null;end if;end loop;
+ if jsonb_typeof(p->'evidence') is distinct from 'array' or jsonb_array_length(p->'evidence') not between 1 and 4 or jsonb_typeof(p->'trace') is distinct from 'object' then return null;end if;
+ clue=p->'trace';
+ foreach ty in array array['title','detail'] loop if jsonb_typeof(clue->ty) is distinct from 'string' or char_length(trim(clue->>ty))<1 or char_length(clue->>ty)>(case when ty='title' then 100 else 500 end) then return null;end if;end loop;
+ if mechanism in ('trace','access') then
+  if jsonb_typeof(clue->'marks') is distinct from 'array' or jsonb_array_length(clue->'marks')<>2 or clue->'marks'->0=clue->'marks'->1 then return null;end if;
+  for e in select value from jsonb_array_elements(clue->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+ elsif mechanism='inventory' then
+  foreach ty in array array['before','after'] loop if jsonb_typeof(clue->ty) is distinct from 'number' then return null;end if;x=(clue->>ty)::numeric;if x<>trunc(x) or x not between 0 and 10000 then return null;end if;end loop;
+  before_mass=(clue->>'before')::int;after_mass=(clue->>'after')::int;if after_mass<=before_mass then return null;end if;
+ else
+  if jsonb_typeof(clue->'checks') is distinct from 'array' or jsonb_array_length(clue->'checks')<>n then return null;end if;
+  for i in 0..n-1 loop
+   if clue->'checks'->i='"broken"'::jsonb then if not broken then moment=i;end if;broken=true;
+   elsif clue->'checks'->i is distinct from '"intact"'::jsonb or broken then return null;end if;
+  end loop;if moment=-1 then return null;end if;
+ end if;
+ for i in 0..n-1 loop
+  if jsonb_typeof(p->'names'->i) is distinct from 'string' or char_length(trim(p->'names'->>i))<1 or char_length(p->'names'->>i)>30 or p->'names'->>i=any(names) then return null;end if;names=array_append(names,p->'names'->>i);
+  if jsonb_typeof(p->'portraits'->i) is distinct from 'number' then return null;end if;x=(p->'portraits'->>i)::numeric;if x<>trunc(x) or x not between 0 and 7 or x::int=any(portraits) then return null;end if;portraits=array_append(portraits,x::int);
+  o=p->'objects'->i;if jsonb_typeof(o) is distinct from 'object' or jsonb_typeof(o->'name') is distinct from 'string' or char_length(trim(o->>'name'))<1 or char_length(o->>'name')>70 or o->>'name'=any(object_names) then return null;end if;object_names=array_append(object_names,o->>'name');
+  if jsonb_typeof(o->'marks') is distinct from 'array' or jsonb_array_length(o->'marks')>4 or jsonb_typeof(o->'grams') is distinct from 'number' then return null;end if;
+  x=(o->>'grams')::numeric;if x<>trunc(x) or x not between 1 and 1000 then return null;end if;
+  for e in select value from jsonb_array_elements(o->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+  if (mechanism in ('trace','access') and (o->'marks') @> (clue->'marks')) or (mechanism='inventory' and x=after_mass-before_mass) then if moment<>-1 then return null;end if;moment=i;end if;
+  if p->'s'->i->1 is distinct from to_jsonb(i) then return null;end if;
+ end loop;if moment=-1 then return null;end if;
+ for s in select value from jsonb_array_elements(p->'s') union all select value->'rule' from jsonb_array_elements(p->'evidence') loop
+  if jsonb_typeof(s) is distinct from 'array' or jsonb_array_length(s)<>4 or jsonb_typeof(s->0) is distinct from 'string' or coalesce(s->>0,'') not in ('oneof','left','next','apart') then return null;end if;ty=s->>0;
+  for j in 1..3 loop if jsonb_typeof(s->j) is distinct from 'number' then return null;end if;x=(s->>j)::numeric;if x<>trunc(x) or x<0 or x>31 then return null;end if;end loop;
+  a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;if a>=n then return null;end if;
+  if ty='oneof' then if b<1 or b>=(1<<n) or k<>0 then return null;end if;
+  elsif b>=n or a=b or (ty='apart' and k not between 1 and n-1) or (ty<>'apart' and k<>0) then return null;end if;
+  if s::text=any(rules) then return null;end if;rules=array_append(rules,s::text);
+ end loop;
+ for e in select value from jsonb_array_elements(p->'evidence') loop
+  foreach ty in array array['title','detail'] loop if jsonb_typeof(e->ty) is distinct from 'string' or char_length(trim(e->>ty))<1 or char_length(e->>ty)>(case when ty='title' then 60 else 300 end) then return null;end if;end loop;
+ end loop;
+ for positions in with recursive ownership(pos) as (select '{}'::int[] union all select ow.pos||g.entry from ownership ow cross join generate_series(0,n-1) as g(entry) where cardinality(ow.pos)<n and not g.entry=any(ow.pos)) select pos from ownership where cardinality(pos)=n loop
+  fits=true;foreach ty in array rules loop if public._friend_alibi_evidence_rule(ty::jsonb,positions) is not true then fits=false;exit;end if;end loop;
+  if fits then solutions=solutions+1;winner=array_position(positions,moment)-1;if solutions>1 then return null;end if;end if;
+ end loop;
+ if solutions<>1 then return null;end if;return winner;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_culprit(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+begin
+ if p->'version'='3'::jsonb then return public._friend_alibi_evidence(p);end if;
+ if p->'version'='2'::jsonb then return public._friend_alibi_scenario(p);end if;
+ return public._friend_alibi_v1_culprit(p);
+end $$;
+revoke all on function public._friend_alibi_evidence_rule(jsonb,int[]),public._friend_alibi_evidence(jsonb),public._friend_alibi_culprit(jsonb) from public,anon,authenticated;
+
+create or replace function public._friend_alibi_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare i int; j int; n int; x numeric; culprit int; correct int:=0; p jsonb; note jsonb; ids text[]:='{}';
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or v->'round' is distinct from '3'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or jsonb_typeof(v->'edits') is distinct from 'number' then return null;end if;
+ x=(v->>'edits')::numeric;if x<>trunc(x) or x not between 0 and 1000000 then return null;end if;
+ if jsonb_typeof(v->'cases') is distinct from 'array' or jsonb_array_length(v->'cases')<>4 or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>4 or jsonb_typeof(v->'notes') is distinct from 'array' or jsonb_array_length(v->'notes')<>4 or v->'selection' is distinct from v->'picks'->3 then return null;end if;
+ for i in 0..3 loop
+  p=v->'cases'->i;culprit=public._friend_alibi_culprit(p);if culprit is null or p->>'id'=any(ids) then return null;end if;ids=array_append(ids,p->>'id');n=(p->>'n')::numeric;
+  if jsonb_typeof(v->'picks'->i) is distinct from 'number' then return null;end if;x=(v->'picks'->>i)::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;if x=culprit then correct=correct+1;end if;
+  note=v->'notes'->i;if jsonb_typeof(note) is distinct from 'object' or jsonb_typeof(note->'truth') is distinct from 'array' or jsonb_array_length(note->'truth')<>n or jsonb_typeof(note->'excluded') is distinct from 'array' or jsonb_array_length(note->'excluded')<>n then return null;end if;
+  if p->'version'='3'::jsonb then
+   if jsonb_typeof(note->'objects') is distinct from 'array' or jsonb_array_length(note->'objects')<>n then return null;end if;
+   for j in 0..n-1 loop if jsonb_typeof(note->'objects'->j) is distinct from 'number' then return null;end if;x=(note->'objects'->>j)::numeric;if x<>trunc(x) or x not between -1 and n-1 then return null;end if;end loop;
+  end if;
+  for j in 0..n-1 loop if jsonb_typeof(note->'truth'->j) is distinct from 'number' or (note->'truth'->>j)::numeric not in (-1,0,1) or jsonb_typeof(note->'excluded'->j) is distinct from 'boolean' then return null;end if;end loop;
+ end loop;
+ return correct*25;
+exception when others then return null;
+end $$;
+
+revoke all on function public._friend_alibi_score(jsonb,date) from public,anon,authenticated;
+commit;
+) or (game='bouncer' and entry.key !~ '^break-room:bouncer:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}
+
+create or replace function public.friend_scores() returns jsonb language plpgsql stable security definer set search_path='' as $$
+declare me uuid:=auth.uid(); today date:=timezone('Australia/Sydney',now())::date; result jsonb;
+begin
+ if me is null then raise exception 'Sign in required' using errcode='42501';end if;
+ if not exists(select 1 from public.friend_profiles where user_id=me) then return jsonb_build_object('today',today,'records','[]'::jsonb);end if;
+ select coalesce(jsonb_agg(jsonb_build_object('user_id',p.user_id,'game',r.game,'date',r.day,'arcadeScore',r.arcade_score) order by p.user_id,r.day,r.game),'[]'::jsonb) into result
+ from public.friend_profiles p cross join lateral public._friend_records(p.user_id,today) r
+ where p.user_id=me or (p.share_scores and exists(select 1 from public.friend_links f where f.status='accepted' and ((f.requester=me and f.recipient=p.user_id) or (f.recipient=me and f.requester=p.user_id))) and not exists(select 1 from public.friend_blocks b where (b.owner_id=me and b.target_id=p.user_id) or (b.owner_id=p.user_id and b.target_id=me)));
+ return jsonb_build_object('today',today,'records',result);
+end $$;
+revoke all on function public._friend_json(text),public._friend_date(text),public._friend_mul(bigint,bigint),public._friend_legacy(date),public._friend_score(text,jsonb,date),public._friend_records(uuid,date),public.friend_scores() from public,anon,authenticated;
+grant execute on function public.friend_scores() to authenticated;
+
+-- Evidence v3: all observations are verified; solve catalogue ownership independently.
+create or replace function public._friend_alibi_evidence_rule(s jsonb,positions int[]) returns boolean language plpgsql immutable set search_path='' as $$
+declare a int; b int; k int; ty text;
+begin
+ ty=s->>0;a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;
+ if ty='oneof' then return (b & (1 << positions[a+1]))<>0;
+ elsif ty='left' then return positions[a+1]<positions[b+1];
+ elsif ty='next' then return positions[a+1]=positions[b+1]+1;
+ elsif ty='apart' then return abs(positions[a+1]-positions[b+1])=k;end if;return null;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_evidence(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+declare n int; lv int; i int; j int; a int; b int; k int; x numeric; ty text; s jsonb; e jsonb; o jsonb; clue jsonb; mechanism text;
+ names text[]:='{}'; portraits int[]:='{}'; object_names text[]:='{}'; rules text[]:='{}'; moment int:=-1; positions int[]; fits boolean; solutions int:=0; winner int; before_mass int; after_mass int; broken boolean:=false;
+begin
+ if jsonb_typeof(p) is distinct from 'object' or p->'version' is distinct from '3'::jsonb or jsonb_typeof(p->'id') is distinct from 'string' or p->>'id' !~ '^alibi-v3-[0-3]-[0-9]+$' or char_length(p->>'id')>80 or jsonb_typeof(p->'level') is distinct from 'number' then return null;end if;
+ x=(p->>'level')::numeric;if x<>trunc(x) or x not between 0 and 3 then return null;end if;lv=x;n=case when lv=3 then 5 else 4 end;
+ if p->'n' is distinct from to_jsonb(n) or coalesce(p->>'mechanism','') not in ('trace','access','inventory','custody') then return null;end if;mechanism=p->>'mechanism';
+ foreach ty in array array['crime','detail','item','assignment','catalogue'] loop
+  if jsonb_typeof(p->ty) is distinct from 'string' or char_length(trim(p->>ty))<1 or char_length(p->>ty)>(case ty when 'crime' then 140 when 'detail' then 800 when 'assignment' then 50 when 'catalogue' then 160 else 30 end) then return null;end if;
+ end loop;
+ foreach ty in array array['names','portraits','objects','s'] loop if jsonb_typeof(p->ty) is distinct from 'array' or jsonb_array_length(p->ty)<>n then return null;end if;end loop;
+ if jsonb_typeof(p->'evidence') is distinct from 'array' or jsonb_array_length(p->'evidence') not between 1 and 4 or jsonb_typeof(p->'trace') is distinct from 'object' then return null;end if;
+ clue=p->'trace';
+ foreach ty in array array['title','detail'] loop if jsonb_typeof(clue->ty) is distinct from 'string' or char_length(trim(clue->>ty))<1 or char_length(clue->>ty)>(case when ty='title' then 100 else 500 end) then return null;end if;end loop;
+ if mechanism in ('trace','access') then
+  if jsonb_typeof(clue->'marks') is distinct from 'array' or jsonb_array_length(clue->'marks')<>2 or clue->'marks'->0=clue->'marks'->1 then return null;end if;
+  for e in select value from jsonb_array_elements(clue->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+ elsif mechanism='inventory' then
+  foreach ty in array array['before','after'] loop if jsonb_typeof(clue->ty) is distinct from 'number' then return null;end if;x=(clue->>ty)::numeric;if x<>trunc(x) or x not between 0 and 10000 then return null;end if;end loop;
+  before_mass=(clue->>'before')::int;after_mass=(clue->>'after')::int;if after_mass<=before_mass then return null;end if;
+ else
+  if jsonb_typeof(clue->'checks') is distinct from 'array' or jsonb_array_length(clue->'checks')<>n then return null;end if;
+  for i in 0..n-1 loop
+   if clue->'checks'->i='"broken"'::jsonb then if not broken then moment=i;end if;broken=true;
+   elsif clue->'checks'->i is distinct from '"intact"'::jsonb or broken then return null;end if;
+  end loop;if moment=-1 then return null;end if;
+ end if;
+ for i in 0..n-1 loop
+  if jsonb_typeof(p->'names'->i) is distinct from 'string' or char_length(trim(p->'names'->>i))<1 or char_length(p->'names'->>i)>30 or p->'names'->>i=any(names) then return null;end if;names=array_append(names,p->'names'->>i);
+  if jsonb_typeof(p->'portraits'->i) is distinct from 'number' then return null;end if;x=(p->'portraits'->>i)::numeric;if x<>trunc(x) or x not between 0 and 7 or x::int=any(portraits) then return null;end if;portraits=array_append(portraits,x::int);
+  o=p->'objects'->i;if jsonb_typeof(o) is distinct from 'object' or jsonb_typeof(o->'name') is distinct from 'string' or char_length(trim(o->>'name'))<1 or char_length(o->>'name')>70 or o->>'name'=any(object_names) then return null;end if;object_names=array_append(object_names,o->>'name');
+  if jsonb_typeof(o->'marks') is distinct from 'array' or jsonb_array_length(o->'marks')>4 or jsonb_typeof(o->'grams') is distinct from 'number' then return null;end if;
+  x=(o->>'grams')::numeric;if x<>trunc(x) or x not between 1 and 1000 then return null;end if;
+  for e in select value from jsonb_array_elements(o->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+  if (mechanism in ('trace','access') and (o->'marks') @> (clue->'marks')) or (mechanism='inventory' and x=after_mass-before_mass) then if moment<>-1 then return null;end if;moment=i;end if;
+  if p->'s'->i->1 is distinct from to_jsonb(i) then return null;end if;
+ end loop;if moment=-1 then return null;end if;
+ for s in select value from jsonb_array_elements(p->'s') union all select value->'rule' from jsonb_array_elements(p->'evidence') loop
+  if jsonb_typeof(s) is distinct from 'array' or jsonb_array_length(s)<>4 or jsonb_typeof(s->0) is distinct from 'string' or coalesce(s->>0,'') not in ('oneof','left','next','apart') then return null;end if;ty=s->>0;
+  for j in 1..3 loop if jsonb_typeof(s->j) is distinct from 'number' then return null;end if;x=(s->>j)::numeric;if x<>trunc(x) or x<0 or x>31 then return null;end if;end loop;
+  a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;if a>=n then return null;end if;
+  if ty='oneof' then if b<1 or b>=(1<<n) or k<>0 then return null;end if;
+  elsif b>=n or a=b or (ty='apart' and k not between 1 and n-1) or (ty<>'apart' and k<>0) then return null;end if;
+  if s::text=any(rules) then return null;end if;rules=array_append(rules,s::text);
+ end loop;
+ for e in select value from jsonb_array_elements(p->'evidence') loop
+  foreach ty in array array['title','detail'] loop if jsonb_typeof(e->ty) is distinct from 'string' or char_length(trim(e->>ty))<1 or char_length(e->>ty)>(case when ty='title' then 60 else 300 end) then return null;end if;end loop;
+ end loop;
+ for positions in with recursive ownership(pos) as (select '{}'::int[] union all select ow.pos||g.entry from ownership ow cross join generate_series(0,n-1) as g(entry) where cardinality(ow.pos)<n and not g.entry=any(ow.pos)) select pos from ownership where cardinality(pos)=n loop
+  fits=true;foreach ty in array rules loop if public._friend_alibi_evidence_rule(ty::jsonb,positions) is not true then fits=false;exit;end if;end loop;
+  if fits then solutions=solutions+1;winner=array_position(positions,moment)-1;if solutions>1 then return null;end if;end if;
+ end loop;
+ if solutions<>1 then return null;end if;return winner;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_culprit(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+begin
+ if p->'version'='3'::jsonb then return public._friend_alibi_evidence(p);end if;
+ if p->'version'='2'::jsonb then return public._friend_alibi_scenario(p);end if;
+ return public._friend_alibi_v1_culprit(p);
+end $$;
+revoke all on function public._friend_alibi_evidence_rule(jsonb,int[]),public._friend_alibi_evidence(jsonb),public._friend_alibi_culprit(jsonb) from public,anon,authenticated;
+
+create or replace function public._friend_alibi_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare i int; j int; n int; x numeric; culprit int; correct int:=0; p jsonb; note jsonb; ids text[]:='{}';
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or v->'round' is distinct from '3'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or jsonb_typeof(v->'edits') is distinct from 'number' then return null;end if;
+ x=(v->>'edits')::numeric;if x<>trunc(x) or x not between 0 and 1000000 then return null;end if;
+ if jsonb_typeof(v->'cases') is distinct from 'array' or jsonb_array_length(v->'cases')<>4 or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>4 or jsonb_typeof(v->'notes') is distinct from 'array' or jsonb_array_length(v->'notes')<>4 or v->'selection' is distinct from v->'picks'->3 then return null;end if;
+ for i in 0..3 loop
+  p=v->'cases'->i;culprit=public._friend_alibi_culprit(p);if culprit is null or p->>'id'=any(ids) then return null;end if;ids=array_append(ids,p->>'id');n=(p->>'n')::numeric;
+  if jsonb_typeof(v->'picks'->i) is distinct from 'number' then return null;end if;x=(v->'picks'->>i)::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;if x=culprit then correct=correct+1;end if;
+  note=v->'notes'->i;if jsonb_typeof(note) is distinct from 'object' or jsonb_typeof(note->'truth') is distinct from 'array' or jsonb_array_length(note->'truth')<>n or jsonb_typeof(note->'excluded') is distinct from 'array' or jsonb_array_length(note->'excluded')<>n then return null;end if;
+  if p->'version'='3'::jsonb then
+   if jsonb_typeof(note->'objects') is distinct from 'array' or jsonb_array_length(note->'objects')<>n then return null;end if;
+   for j in 0..n-1 loop if jsonb_typeof(note->'objects'->j) is distinct from 'number' then return null;end if;x=(note->'objects'->>j)::numeric;if x<>trunc(x) or x not between -1 and n-1 then return null;end if;end loop;
+  end if;
+  for j in 0..n-1 loop if jsonb_typeof(note->'truth'->j) is distinct from 'number' or (note->'truth'->>j)::numeric not in (-1,0,1) or jsonb_typeof(note->'excluded'->j) is distinct from 'boolean' then return null;end if;end loop;
+ end loop;
+ return correct*25;
+exception when others then return null;
+end $$;
+
+revoke all on function public._friend_alibi_score(jsonb,date) from public,anon,authenticated;
+commit;
+) or (game='alibi' and entry.key !~ '^break-room:alibi:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}
+
+create or replace function public.friend_scores() returns jsonb language plpgsql stable security definer set search_path='' as $$
+declare me uuid:=auth.uid(); today date:=timezone('Australia/Sydney',now())::date; result jsonb;
+begin
+ if me is null then raise exception 'Sign in required' using errcode='42501';end if;
+ if not exists(select 1 from public.friend_profiles where user_id=me) then return jsonb_build_object('today',today,'records','[]'::jsonb);end if;
+ select coalesce(jsonb_agg(jsonb_build_object('user_id',p.user_id,'game',r.game,'date',r.day,'arcadeScore',r.arcade_score) order by p.user_id,r.day,r.game),'[]'::jsonb) into result
+ from public.friend_profiles p cross join lateral public._friend_records(p.user_id,today) r
+ where p.user_id=me or (p.share_scores and exists(select 1 from public.friend_links f where f.status='accepted' and ((f.requester=me and f.recipient=p.user_id) or (f.recipient=me and f.requester=p.user_id))) and not exists(select 1 from public.friend_blocks b where (b.owner_id=me and b.target_id=p.user_id) or (b.owner_id=p.user_id and b.target_id=me)));
+ return jsonb_build_object('today',today,'records',result);
+end $$;
+revoke all on function public._friend_json(text),public._friend_date(text),public._friend_mul(bigint,bigint),public._friend_legacy(date),public._friend_score(text,jsonb,date),public._friend_records(uuid,date),public.friend_scores() from public,anon,authenticated;
+grant execute on function public.friend_scores() to authenticated;
+
+-- Evidence v3: all observations are verified; solve catalogue ownership independently.
+create or replace function public._friend_alibi_evidence_rule(s jsonb,positions int[]) returns boolean language plpgsql immutable set search_path='' as $$
+declare a int; b int; k int; ty text;
+begin
+ ty=s->>0;a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;
+ if ty='oneof' then return (b & (1 << positions[a+1]))<>0;
+ elsif ty='left' then return positions[a+1]<positions[b+1];
+ elsif ty='next' then return positions[a+1]=positions[b+1]+1;
+ elsif ty='apart' then return abs(positions[a+1]-positions[b+1])=k;end if;return null;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_evidence(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+declare n int; lv int; i int; j int; a int; b int; k int; x numeric; ty text; s jsonb; e jsonb; o jsonb; clue jsonb; mechanism text;
+ names text[]:='{}'; portraits int[]:='{}'; object_names text[]:='{}'; rules text[]:='{}'; moment int:=-1; positions int[]; fits boolean; solutions int:=0; winner int; before_mass int; after_mass int; broken boolean:=false;
+begin
+ if jsonb_typeof(p) is distinct from 'object' or p->'version' is distinct from '3'::jsonb or jsonb_typeof(p->'id') is distinct from 'string' or p->>'id' !~ '^alibi-v3-[0-3]-[0-9]+$' or char_length(p->>'id')>80 or jsonb_typeof(p->'level') is distinct from 'number' then return null;end if;
+ x=(p->>'level')::numeric;if x<>trunc(x) or x not between 0 and 3 then return null;end if;lv=x;n=case when lv=3 then 5 else 4 end;
+ if p->'n' is distinct from to_jsonb(n) or coalesce(p->>'mechanism','') not in ('trace','access','inventory','custody') then return null;end if;mechanism=p->>'mechanism';
+ foreach ty in array array['crime','detail','item','assignment','catalogue'] loop
+  if jsonb_typeof(p->ty) is distinct from 'string' or char_length(trim(p->>ty))<1 or char_length(p->>ty)>(case ty when 'crime' then 140 when 'detail' then 800 when 'assignment' then 50 when 'catalogue' then 160 else 30 end) then return null;end if;
+ end loop;
+ foreach ty in array array['names','portraits','objects','s'] loop if jsonb_typeof(p->ty) is distinct from 'array' or jsonb_array_length(p->ty)<>n then return null;end if;end loop;
+ if jsonb_typeof(p->'evidence') is distinct from 'array' or jsonb_array_length(p->'evidence') not between 1 and 4 or jsonb_typeof(p->'trace') is distinct from 'object' then return null;end if;
+ clue=p->'trace';
+ foreach ty in array array['title','detail'] loop if jsonb_typeof(clue->ty) is distinct from 'string' or char_length(trim(clue->>ty))<1 or char_length(clue->>ty)>(case when ty='title' then 100 else 500 end) then return null;end if;end loop;
+ if mechanism in ('trace','access') then
+  if jsonb_typeof(clue->'marks') is distinct from 'array' or jsonb_array_length(clue->'marks')<>2 or clue->'marks'->0=clue->'marks'->1 then return null;end if;
+  for e in select value from jsonb_array_elements(clue->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+ elsif mechanism='inventory' then
+  foreach ty in array array['before','after'] loop if jsonb_typeof(clue->ty) is distinct from 'number' then return null;end if;x=(clue->>ty)::numeric;if x<>trunc(x) or x not between 0 and 10000 then return null;end if;end loop;
+  before_mass=(clue->>'before')::int;after_mass=(clue->>'after')::int;if after_mass<=before_mass then return null;end if;
+ else
+  if jsonb_typeof(clue->'checks') is distinct from 'array' or jsonb_array_length(clue->'checks')<>n then return null;end if;
+  for i in 0..n-1 loop
+   if clue->'checks'->i='"broken"'::jsonb then if not broken then moment=i;end if;broken=true;
+   elsif clue->'checks'->i is distinct from '"intact"'::jsonb or broken then return null;end if;
+  end loop;if moment=-1 then return null;end if;
+ end if;
+ for i in 0..n-1 loop
+  if jsonb_typeof(p->'names'->i) is distinct from 'string' or char_length(trim(p->'names'->>i))<1 or char_length(p->'names'->>i)>30 or p->'names'->>i=any(names) then return null;end if;names=array_append(names,p->'names'->>i);
+  if jsonb_typeof(p->'portraits'->i) is distinct from 'number' then return null;end if;x=(p->'portraits'->>i)::numeric;if x<>trunc(x) or x not between 0 and 7 or x::int=any(portraits) then return null;end if;portraits=array_append(portraits,x::int);
+  o=p->'objects'->i;if jsonb_typeof(o) is distinct from 'object' or jsonb_typeof(o->'name') is distinct from 'string' or char_length(trim(o->>'name'))<1 or char_length(o->>'name')>70 or o->>'name'=any(object_names) then return null;end if;object_names=array_append(object_names,o->>'name');
+  if jsonb_typeof(o->'marks') is distinct from 'array' or jsonb_array_length(o->'marks')>4 or jsonb_typeof(o->'grams') is distinct from 'number' then return null;end if;
+  x=(o->>'grams')::numeric;if x<>trunc(x) or x not between 1 and 1000 then return null;end if;
+  for e in select value from jsonb_array_elements(o->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+  if (mechanism in ('trace','access') and (o->'marks') @> (clue->'marks')) or (mechanism='inventory' and x=after_mass-before_mass) then if moment<>-1 then return null;end if;moment=i;end if;
+  if p->'s'->i->1 is distinct from to_jsonb(i) then return null;end if;
+ end loop;if moment=-1 then return null;end if;
+ for s in select value from jsonb_array_elements(p->'s') union all select value->'rule' from jsonb_array_elements(p->'evidence') loop
+  if jsonb_typeof(s) is distinct from 'array' or jsonb_array_length(s)<>4 or jsonb_typeof(s->0) is distinct from 'string' or coalesce(s->>0,'') not in ('oneof','left','next','apart') then return null;end if;ty=s->>0;
+  for j in 1..3 loop if jsonb_typeof(s->j) is distinct from 'number' then return null;end if;x=(s->>j)::numeric;if x<>trunc(x) or x<0 or x>31 then return null;end if;end loop;
+  a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;if a>=n then return null;end if;
+  if ty='oneof' then if b<1 or b>=(1<<n) or k<>0 then return null;end if;
+  elsif b>=n or a=b or (ty='apart' and k not between 1 and n-1) or (ty<>'apart' and k<>0) then return null;end if;
+  if s::text=any(rules) then return null;end if;rules=array_append(rules,s::text);
+ end loop;
+ for e in select value from jsonb_array_elements(p->'evidence') loop
+  foreach ty in array array['title','detail'] loop if jsonb_typeof(e->ty) is distinct from 'string' or char_length(trim(e->>ty))<1 or char_length(e->>ty)>(case when ty='title' then 60 else 300 end) then return null;end if;end loop;
+ end loop;
+ for positions in with recursive ownership(pos) as (select '{}'::int[] union all select ow.pos||g.entry from ownership ow cross join generate_series(0,n-1) as g(entry) where cardinality(ow.pos)<n and not g.entry=any(ow.pos)) select pos from ownership where cardinality(pos)=n loop
+  fits=true;foreach ty in array rules loop if public._friend_alibi_evidence_rule(ty::jsonb,positions) is not true then fits=false;exit;end if;end loop;
+  if fits then solutions=solutions+1;winner=array_position(positions,moment)-1;if solutions>1 then return null;end if;end if;
+ end loop;
+ if solutions<>1 then return null;end if;return winner;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_culprit(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+begin
+ if p->'version'='3'::jsonb then return public._friend_alibi_evidence(p);end if;
+ if p->'version'='2'::jsonb then return public._friend_alibi_scenario(p);end if;
+ return public._friend_alibi_v1_culprit(p);
+end $$;
+revoke all on function public._friend_alibi_evidence_rule(jsonb,int[]),public._friend_alibi_evidence(jsonb),public._friend_alibi_culprit(jsonb) from public,anon,authenticated;
+
+create or replace function public._friend_alibi_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare i int; j int; n int; x numeric; culprit int; correct int:=0; p jsonb; note jsonb; ids text[]:='{}';
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or v->'round' is distinct from '3'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or jsonb_typeof(v->'edits') is distinct from 'number' then return null;end if;
+ x=(v->>'edits')::numeric;if x<>trunc(x) or x not between 0 and 1000000 then return null;end if;
+ if jsonb_typeof(v->'cases') is distinct from 'array' or jsonb_array_length(v->'cases')<>4 or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>4 or jsonb_typeof(v->'notes') is distinct from 'array' or jsonb_array_length(v->'notes')<>4 or v->'selection' is distinct from v->'picks'->3 then return null;end if;
+ for i in 0..3 loop
+  p=v->'cases'->i;culprit=public._friend_alibi_culprit(p);if culprit is null or p->>'id'=any(ids) then return null;end if;ids=array_append(ids,p->>'id');n=(p->>'n')::numeric;
+  if jsonb_typeof(v->'picks'->i) is distinct from 'number' then return null;end if;x=(v->'picks'->>i)::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;if x=culprit then correct=correct+1;end if;
+  note=v->'notes'->i;if jsonb_typeof(note) is distinct from 'object' or jsonb_typeof(note->'truth') is distinct from 'array' or jsonb_array_length(note->'truth')<>n or jsonb_typeof(note->'excluded') is distinct from 'array' or jsonb_array_length(note->'excluded')<>n then return null;end if;
+  if p->'version'='3'::jsonb then
+   if jsonb_typeof(note->'objects') is distinct from 'array' or jsonb_array_length(note->'objects')<>n then return null;end if;
+   for j in 0..n-1 loop if jsonb_typeof(note->'objects'->j) is distinct from 'number' then return null;end if;x=(note->'objects'->>j)::numeric;if x<>trunc(x) or x not between -1 and n-1 then return null;end if;end loop;
+  end if;
+  for j in 0..n-1 loop if jsonb_typeof(note->'truth'->j) is distinct from 'number' or (note->'truth'->>j)::numeric not in (-1,0,1) or jsonb_typeof(note->'excluded'->j) is distinct from 'boolean' then return null;end if;end loop;
+ end loop;
+ return correct*25;
+exception when others then return null;
+end $$;
+
+revoke all on function public._friend_alibi_score(jsonb,date) from public,anon,authenticated;
+commit;
+) or (game='laser' and entry.key !~ '^break-room:laser:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}
+
+create or replace function public.friend_scores() returns jsonb language plpgsql stable security definer set search_path='' as $$
+declare me uuid:=auth.uid(); today date:=timezone('Australia/Sydney',now())::date; result jsonb;
+begin
+ if me is null then raise exception 'Sign in required' using errcode='42501';end if;
+ if not exists(select 1 from public.friend_profiles where user_id=me) then return jsonb_build_object('today',today,'records','[]'::jsonb);end if;
+ select coalesce(jsonb_agg(jsonb_build_object('user_id',p.user_id,'game',r.game,'date',r.day,'arcadeScore',r.arcade_score) order by p.user_id,r.day,r.game),'[]'::jsonb) into result
+ from public.friend_profiles p cross join lateral public._friend_records(p.user_id,today) r
+ where p.user_id=me or (p.share_scores and exists(select 1 from public.friend_links f where f.status='accepted' and ((f.requester=me and f.recipient=p.user_id) or (f.recipient=me and f.requester=p.user_id))) and not exists(select 1 from public.friend_blocks b where (b.owner_id=me and b.target_id=p.user_id) or (b.owner_id=p.user_id and b.target_id=me)));
+ return jsonb_build_object('today',today,'records',result);
+end $$;
+revoke all on function public._friend_json(text),public._friend_date(text),public._friend_mul(bigint,bigint),public._friend_legacy(date),public._friend_score(text,jsonb,date),public._friend_records(uuid,date),public.friend_scores() from public,anon,authenticated;
+grant execute on function public.friend_scores() to authenticated;
+
+-- Evidence v3: all observations are verified; solve catalogue ownership independently.
+create or replace function public._friend_alibi_evidence_rule(s jsonb,positions int[]) returns boolean language plpgsql immutable set search_path='' as $$
+declare a int; b int; k int; ty text;
+begin
+ ty=s->>0;a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;
+ if ty='oneof' then return (b & (1 << positions[a+1]))<>0;
+ elsif ty='left' then return positions[a+1]<positions[b+1];
+ elsif ty='next' then return positions[a+1]=positions[b+1]+1;
+ elsif ty='apart' then return abs(positions[a+1]-positions[b+1])=k;end if;return null;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_evidence(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+declare n int; lv int; i int; j int; a int; b int; k int; x numeric; ty text; s jsonb; e jsonb; o jsonb; clue jsonb; mechanism text;
+ names text[]:='{}'; portraits int[]:='{}'; object_names text[]:='{}'; rules text[]:='{}'; moment int:=-1; positions int[]; fits boolean; solutions int:=0; winner int; before_mass int; after_mass int; broken boolean:=false;
+begin
+ if jsonb_typeof(p) is distinct from 'object' or p->'version' is distinct from '3'::jsonb or jsonb_typeof(p->'id') is distinct from 'string' or p->>'id' !~ '^alibi-v3-[0-3]-[0-9]+$' or char_length(p->>'id')>80 or jsonb_typeof(p->'level') is distinct from 'number' then return null;end if;
+ x=(p->>'level')::numeric;if x<>trunc(x) or x not between 0 and 3 then return null;end if;lv=x;n=case when lv=3 then 5 else 4 end;
+ if p->'n' is distinct from to_jsonb(n) or coalesce(p->>'mechanism','') not in ('trace','access','inventory','custody') then return null;end if;mechanism=p->>'mechanism';
+ foreach ty in array array['crime','detail','item','assignment','catalogue'] loop
+  if jsonb_typeof(p->ty) is distinct from 'string' or char_length(trim(p->>ty))<1 or char_length(p->>ty)>(case ty when 'crime' then 140 when 'detail' then 800 when 'assignment' then 50 when 'catalogue' then 160 else 30 end) then return null;end if;
+ end loop;
+ foreach ty in array array['names','portraits','objects','s'] loop if jsonb_typeof(p->ty) is distinct from 'array' or jsonb_array_length(p->ty)<>n then return null;end if;end loop;
+ if jsonb_typeof(p->'evidence') is distinct from 'array' or jsonb_array_length(p->'evidence') not between 1 and 4 or jsonb_typeof(p->'trace') is distinct from 'object' then return null;end if;
+ clue=p->'trace';
+ foreach ty in array array['title','detail'] loop if jsonb_typeof(clue->ty) is distinct from 'string' or char_length(trim(clue->>ty))<1 or char_length(clue->>ty)>(case when ty='title' then 100 else 500 end) then return null;end if;end loop;
+ if mechanism in ('trace','access') then
+  if jsonb_typeof(clue->'marks') is distinct from 'array' or jsonb_array_length(clue->'marks')<>2 or clue->'marks'->0=clue->'marks'->1 then return null;end if;
+  for e in select value from jsonb_array_elements(clue->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+ elsif mechanism='inventory' then
+  foreach ty in array array['before','after'] loop if jsonb_typeof(clue->ty) is distinct from 'number' then return null;end if;x=(clue->>ty)::numeric;if x<>trunc(x) or x not between 0 and 10000 then return null;end if;end loop;
+  before_mass=(clue->>'before')::int;after_mass=(clue->>'after')::int;if after_mass<=before_mass then return null;end if;
+ else
+  if jsonb_typeof(clue->'checks') is distinct from 'array' or jsonb_array_length(clue->'checks')<>n then return null;end if;
+  for i in 0..n-1 loop
+   if clue->'checks'->i='"broken"'::jsonb then if not broken then moment=i;end if;broken=true;
+   elsif clue->'checks'->i is distinct from '"intact"'::jsonb or broken then return null;end if;
+  end loop;if moment=-1 then return null;end if;
+ end if;
+ for i in 0..n-1 loop
+  if jsonb_typeof(p->'names'->i) is distinct from 'string' or char_length(trim(p->'names'->>i))<1 or char_length(p->'names'->>i)>30 or p->'names'->>i=any(names) then return null;end if;names=array_append(names,p->'names'->>i);
+  if jsonb_typeof(p->'portraits'->i) is distinct from 'number' then return null;end if;x=(p->'portraits'->>i)::numeric;if x<>trunc(x) or x not between 0 and 7 or x::int=any(portraits) then return null;end if;portraits=array_append(portraits,x::int);
+  o=p->'objects'->i;if jsonb_typeof(o) is distinct from 'object' or jsonb_typeof(o->'name') is distinct from 'string' or char_length(trim(o->>'name'))<1 or char_length(o->>'name')>70 or o->>'name'=any(object_names) then return null;end if;object_names=array_append(object_names,o->>'name');
+  if jsonb_typeof(o->'marks') is distinct from 'array' or jsonb_array_length(o->'marks')>4 or jsonb_typeof(o->'grams') is distinct from 'number' then return null;end if;
+  x=(o->>'grams')::numeric;if x<>trunc(x) or x not between 1 and 1000 then return null;end if;
+  for e in select value from jsonb_array_elements(o->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+  if (mechanism in ('trace','access') and (o->'marks') @> (clue->'marks')) or (mechanism='inventory' and x=after_mass-before_mass) then if moment<>-1 then return null;end if;moment=i;end if;
+  if p->'s'->i->1 is distinct from to_jsonb(i) then return null;end if;
+ end loop;if moment=-1 then return null;end if;
+ for s in select value from jsonb_array_elements(p->'s') union all select value->'rule' from jsonb_array_elements(p->'evidence') loop
+  if jsonb_typeof(s) is distinct from 'array' or jsonb_array_length(s)<>4 or jsonb_typeof(s->0) is distinct from 'string' or coalesce(s->>0,'') not in ('oneof','left','next','apart') then return null;end if;ty=s->>0;
+  for j in 1..3 loop if jsonb_typeof(s->j) is distinct from 'number' then return null;end if;x=(s->>j)::numeric;if x<>trunc(x) or x<0 or x>31 then return null;end if;end loop;
+  a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;if a>=n then return null;end if;
+  if ty='oneof' then if b<1 or b>=(1<<n) or k<>0 then return null;end if;
+  elsif b>=n or a=b or (ty='apart' and k not between 1 and n-1) or (ty<>'apart' and k<>0) then return null;end if;
+  if s::text=any(rules) then return null;end if;rules=array_append(rules,s::text);
+ end loop;
+ for e in select value from jsonb_array_elements(p->'evidence') loop
+  foreach ty in array array['title','detail'] loop if jsonb_typeof(e->ty) is distinct from 'string' or char_length(trim(e->>ty))<1 or char_length(e->>ty)>(case when ty='title' then 60 else 300 end) then return null;end if;end loop;
+ end loop;
+ for positions in with recursive ownership(pos) as (select '{}'::int[] union all select ow.pos||g.entry from ownership ow cross join generate_series(0,n-1) as g(entry) where cardinality(ow.pos)<n and not g.entry=any(ow.pos)) select pos from ownership where cardinality(pos)=n loop
+  fits=true;foreach ty in array rules loop if public._friend_alibi_evidence_rule(ty::jsonb,positions) is not true then fits=false;exit;end if;end loop;
+  if fits then solutions=solutions+1;winner=array_position(positions,moment)-1;if solutions>1 then return null;end if;end if;
+ end loop;
+ if solutions<>1 then return null;end if;return winner;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_culprit(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+begin
+ if p->'version'='3'::jsonb then return public._friend_alibi_evidence(p);end if;
+ if p->'version'='2'::jsonb then return public._friend_alibi_scenario(p);end if;
+ return public._friend_alibi_v1_culprit(p);
+end $$;
+revoke all on function public._friend_alibi_evidence_rule(jsonb,int[]),public._friend_alibi_evidence(jsonb),public._friend_alibi_culprit(jsonb) from public,anon,authenticated;
+
+create or replace function public._friend_alibi_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare i int; j int; n int; x numeric; culprit int; correct int:=0; p jsonb; note jsonb; ids text[]:='{}';
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or v->'round' is distinct from '3'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or jsonb_typeof(v->'edits') is distinct from 'number' then return null;end if;
+ x=(v->>'edits')::numeric;if x<>trunc(x) or x not between 0 and 1000000 then return null;end if;
+ if jsonb_typeof(v->'cases') is distinct from 'array' or jsonb_array_length(v->'cases')<>4 or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>4 or jsonb_typeof(v->'notes') is distinct from 'array' or jsonb_array_length(v->'notes')<>4 or v->'selection' is distinct from v->'picks'->3 then return null;end if;
+ for i in 0..3 loop
+  p=v->'cases'->i;culprit=public._friend_alibi_culprit(p);if culprit is null or p->>'id'=any(ids) then return null;end if;ids=array_append(ids,p->>'id');n=(p->>'n')::numeric;
+  if jsonb_typeof(v->'picks'->i) is distinct from 'number' then return null;end if;x=(v->'picks'->>i)::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;if x=culprit then correct=correct+1;end if;
+  note=v->'notes'->i;if jsonb_typeof(note) is distinct from 'object' or jsonb_typeof(note->'truth') is distinct from 'array' or jsonb_array_length(note->'truth')<>n or jsonb_typeof(note->'excluded') is distinct from 'array' or jsonb_array_length(note->'excluded')<>n then return null;end if;
+  if p->'version'='3'::jsonb then
+   if jsonb_typeof(note->'objects') is distinct from 'array' or jsonb_array_length(note->'objects')<>n then return null;end if;
+   for j in 0..n-1 loop if jsonb_typeof(note->'objects'->j) is distinct from 'number' then return null;end if;x=(note->'objects'->>j)::numeric;if x<>trunc(x) or x not between -1 and n-1 then return null;end if;end loop;
+  end if;
+  for j in 0..n-1 loop if jsonb_typeof(note->'truth'->j) is distinct from 'number' or (note->'truth'->>j)::numeric not in (-1,0,1) or jsonb_typeof(note->'excluded'->j) is distinct from 'boolean' then return null;end if;end loop;
+ end loop;
+ return correct*25;
+exception when others then return null;
+end $$;
+
+revoke all on function public._friend_alibi_score(jsonb,date) from public,anon,authenticated;
+commit;
+) or (game='prior' and entry.key !~ '^break-room:prior:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}
+
+create or replace function public.friend_scores() returns jsonb language plpgsql stable security definer set search_path='' as $$
+declare me uuid:=auth.uid(); today date:=timezone('Australia/Sydney',now())::date; result jsonb;
+begin
+ if me is null then raise exception 'Sign in required' using errcode='42501';end if;
+ if not exists(select 1 from public.friend_profiles where user_id=me) then return jsonb_build_object('today',today,'records','[]'::jsonb);end if;
+ select coalesce(jsonb_agg(jsonb_build_object('user_id',p.user_id,'game',r.game,'date',r.day,'arcadeScore',r.arcade_score) order by p.user_id,r.day,r.game),'[]'::jsonb) into result
+ from public.friend_profiles p cross join lateral public._friend_records(p.user_id,today) r
+ where p.user_id=me or (p.share_scores and exists(select 1 from public.friend_links f where f.status='accepted' and ((f.requester=me and f.recipient=p.user_id) or (f.recipient=me and f.requester=p.user_id))) and not exists(select 1 from public.friend_blocks b where (b.owner_id=me and b.target_id=p.user_id) or (b.owner_id=p.user_id and b.target_id=me)));
+ return jsonb_build_object('today',today,'records',result);
+end $$;
+revoke all on function public._friend_json(text),public._friend_date(text),public._friend_mul(bigint,bigint),public._friend_legacy(date),public._friend_score(text,jsonb,date),public._friend_records(uuid,date),public.friend_scores() from public,anon,authenticated;
+grant execute on function public.friend_scores() to authenticated;
+
+-- Evidence v3: all observations are verified; solve catalogue ownership independently.
+create or replace function public._friend_alibi_evidence_rule(s jsonb,positions int[]) returns boolean language plpgsql immutable set search_path='' as $$
+declare a int; b int; k int; ty text;
+begin
+ ty=s->>0;a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;
+ if ty='oneof' then return (b & (1 << positions[a+1]))<>0;
+ elsif ty='left' then return positions[a+1]<positions[b+1];
+ elsif ty='next' then return positions[a+1]=positions[b+1]+1;
+ elsif ty='apart' then return abs(positions[a+1]-positions[b+1])=k;end if;return null;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_evidence(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+declare n int; lv int; i int; j int; a int; b int; k int; x numeric; ty text; s jsonb; e jsonb; o jsonb; clue jsonb; mechanism text;
+ names text[]:='{}'; portraits int[]:='{}'; object_names text[]:='{}'; rules text[]:='{}'; moment int:=-1; positions int[]; fits boolean; solutions int:=0; winner int; before_mass int; after_mass int; broken boolean:=false;
+begin
+ if jsonb_typeof(p) is distinct from 'object' or p->'version' is distinct from '3'::jsonb or jsonb_typeof(p->'id') is distinct from 'string' or p->>'id' !~ '^alibi-v3-[0-3]-[0-9]+$' or char_length(p->>'id')>80 or jsonb_typeof(p->'level') is distinct from 'number' then return null;end if;
+ x=(p->>'level')::numeric;if x<>trunc(x) or x not between 0 and 3 then return null;end if;lv=x;n=case when lv=3 then 5 else 4 end;
+ if p->'n' is distinct from to_jsonb(n) or coalesce(p->>'mechanism','') not in ('trace','access','inventory','custody') then return null;end if;mechanism=p->>'mechanism';
+ foreach ty in array array['crime','detail','item','assignment','catalogue'] loop
+  if jsonb_typeof(p->ty) is distinct from 'string' or char_length(trim(p->>ty))<1 or char_length(p->>ty)>(case ty when 'crime' then 140 when 'detail' then 800 when 'assignment' then 50 when 'catalogue' then 160 else 30 end) then return null;end if;
+ end loop;
+ foreach ty in array array['names','portraits','objects','s'] loop if jsonb_typeof(p->ty) is distinct from 'array' or jsonb_array_length(p->ty)<>n then return null;end if;end loop;
+ if jsonb_typeof(p->'evidence') is distinct from 'array' or jsonb_array_length(p->'evidence') not between 1 and 4 or jsonb_typeof(p->'trace') is distinct from 'object' then return null;end if;
+ clue=p->'trace';
+ foreach ty in array array['title','detail'] loop if jsonb_typeof(clue->ty) is distinct from 'string' or char_length(trim(clue->>ty))<1 or char_length(clue->>ty)>(case when ty='title' then 100 else 500 end) then return null;end if;end loop;
+ if mechanism in ('trace','access') then
+  if jsonb_typeof(clue->'marks') is distinct from 'array' or jsonb_array_length(clue->'marks')<>2 or clue->'marks'->0=clue->'marks'->1 then return null;end if;
+  for e in select value from jsonb_array_elements(clue->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+ elsif mechanism='inventory' then
+  foreach ty in array array['before','after'] loop if jsonb_typeof(clue->ty) is distinct from 'number' then return null;end if;x=(clue->>ty)::numeric;if x<>trunc(x) or x not between 0 and 10000 then return null;end if;end loop;
+  before_mass=(clue->>'before')::int;after_mass=(clue->>'after')::int;if after_mass<=before_mass then return null;end if;
+ else
+  if jsonb_typeof(clue->'checks') is distinct from 'array' or jsonb_array_length(clue->'checks')<>n then return null;end if;
+  for i in 0..n-1 loop
+   if clue->'checks'->i='"broken"'::jsonb then if not broken then moment=i;end if;broken=true;
+   elsif clue->'checks'->i is distinct from '"intact"'::jsonb or broken then return null;end if;
+  end loop;if moment=-1 then return null;end if;
+ end if;
+ for i in 0..n-1 loop
+  if jsonb_typeof(p->'names'->i) is distinct from 'string' or char_length(trim(p->'names'->>i))<1 or char_length(p->'names'->>i)>30 or p->'names'->>i=any(names) then return null;end if;names=array_append(names,p->'names'->>i);
+  if jsonb_typeof(p->'portraits'->i) is distinct from 'number' then return null;end if;x=(p->'portraits'->>i)::numeric;if x<>trunc(x) or x not between 0 and 7 or x::int=any(portraits) then return null;end if;portraits=array_append(portraits,x::int);
+  o=p->'objects'->i;if jsonb_typeof(o) is distinct from 'object' or jsonb_typeof(o->'name') is distinct from 'string' or char_length(trim(o->>'name'))<1 or char_length(o->>'name')>70 or o->>'name'=any(object_names) then return null;end if;object_names=array_append(object_names,o->>'name');
+  if jsonb_typeof(o->'marks') is distinct from 'array' or jsonb_array_length(o->'marks')>4 or jsonb_typeof(o->'grams') is distinct from 'number' then return null;end if;
+  x=(o->>'grams')::numeric;if x<>trunc(x) or x not between 1 and 1000 then return null;end if;
+  for e in select value from jsonb_array_elements(o->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+  if (mechanism in ('trace','access') and (o->'marks') @> (clue->'marks')) or (mechanism='inventory' and x=after_mass-before_mass) then if moment<>-1 then return null;end if;moment=i;end if;
+  if p->'s'->i->1 is distinct from to_jsonb(i) then return null;end if;
+ end loop;if moment=-1 then return null;end if;
+ for s in select value from jsonb_array_elements(p->'s') union all select value->'rule' from jsonb_array_elements(p->'evidence') loop
+  if jsonb_typeof(s) is distinct from 'array' or jsonb_array_length(s)<>4 or jsonb_typeof(s->0) is distinct from 'string' or coalesce(s->>0,'') not in ('oneof','left','next','apart') then return null;end if;ty=s->>0;
+  for j in 1..3 loop if jsonb_typeof(s->j) is distinct from 'number' then return null;end if;x=(s->>j)::numeric;if x<>trunc(x) or x<0 or x>31 then return null;end if;end loop;
+  a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;if a>=n then return null;end if;
+  if ty='oneof' then if b<1 or b>=(1<<n) or k<>0 then return null;end if;
+  elsif b>=n or a=b or (ty='apart' and k not between 1 and n-1) or (ty<>'apart' and k<>0) then return null;end if;
+  if s::text=any(rules) then return null;end if;rules=array_append(rules,s::text);
+ end loop;
+ for e in select value from jsonb_array_elements(p->'evidence') loop
+  foreach ty in array array['title','detail'] loop if jsonb_typeof(e->ty) is distinct from 'string' or char_length(trim(e->>ty))<1 or char_length(e->>ty)>(case when ty='title' then 60 else 300 end) then return null;end if;end loop;
+ end loop;
+ for positions in with recursive ownership(pos) as (select '{}'::int[] union all select ow.pos||g.entry from ownership ow cross join generate_series(0,n-1) as g(entry) where cardinality(ow.pos)<n and not g.entry=any(ow.pos)) select pos from ownership where cardinality(pos)=n loop
+  fits=true;foreach ty in array rules loop if public._friend_alibi_evidence_rule(ty::jsonb,positions) is not true then fits=false;exit;end if;end loop;
+  if fits then solutions=solutions+1;winner=array_position(positions,moment)-1;if solutions>1 then return null;end if;end if;
+ end loop;
+ if solutions<>1 then return null;end if;return winner;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_culprit(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+begin
+ if p->'version'='3'::jsonb then return public._friend_alibi_evidence(p);end if;
+ if p->'version'='2'::jsonb then return public._friend_alibi_scenario(p);end if;
+ return public._friend_alibi_v1_culprit(p);
+end $$;
+revoke all on function public._friend_alibi_evidence_rule(jsonb,int[]),public._friend_alibi_evidence(jsonb),public._friend_alibi_culprit(jsonb) from public,anon,authenticated;
+
+create or replace function public._friend_alibi_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare i int; j int; n int; x numeric; culprit int; correct int:=0; p jsonb; note jsonb; ids text[]:='{}';
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or v->'round' is distinct from '3'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or jsonb_typeof(v->'edits') is distinct from 'number' then return null;end if;
+ x=(v->>'edits')::numeric;if x<>trunc(x) or x not between 0 and 1000000 then return null;end if;
+ if jsonb_typeof(v->'cases') is distinct from 'array' or jsonb_array_length(v->'cases')<>4 or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>4 or jsonb_typeof(v->'notes') is distinct from 'array' or jsonb_array_length(v->'notes')<>4 or v->'selection' is distinct from v->'picks'->3 then return null;end if;
+ for i in 0..3 loop
+  p=v->'cases'->i;culprit=public._friend_alibi_culprit(p);if culprit is null or p->>'id'=any(ids) then return null;end if;ids=array_append(ids,p->>'id');n=(p->>'n')::numeric;
+  if jsonb_typeof(v->'picks'->i) is distinct from 'number' then return null;end if;x=(v->'picks'->>i)::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;if x=culprit then correct=correct+1;end if;
+  note=v->'notes'->i;if jsonb_typeof(note) is distinct from 'object' or jsonb_typeof(note->'truth') is distinct from 'array' or jsonb_array_length(note->'truth')<>n or jsonb_typeof(note->'excluded') is distinct from 'array' or jsonb_array_length(note->'excluded')<>n then return null;end if;
+  if p->'version'='3'::jsonb then
+   if jsonb_typeof(note->'objects') is distinct from 'array' or jsonb_array_length(note->'objects')<>n then return null;end if;
+   for j in 0..n-1 loop if jsonb_typeof(note->'objects'->j) is distinct from 'number' then return null;end if;x=(note->'objects'->>j)::numeric;if x<>trunc(x) or x not between -1 and n-1 then return null;end if;end loop;
+  end if;
+  for j in 0..n-1 loop if jsonb_typeof(note->'truth'->j) is distinct from 'number' or (note->'truth'->>j)::numeric not in (-1,0,1) or jsonb_typeof(note->'excluded'->j) is distinct from 'boolean' then return null;end if;end loop;
+ end loop;
+ return correct*25;
+exception when others then return null;
+end $$;
+
+revoke all on function public._friend_alibi_score(jsonb,date) from public,anon,authenticated;
+commit;
+) or (game='pack' and entry.key !~ '^break-room:pack:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}
+
+create or replace function public.friend_scores() returns jsonb language plpgsql stable security definer set search_path='' as $$
+declare me uuid:=auth.uid(); today date:=timezone('Australia/Sydney',now())::date; result jsonb;
+begin
+ if me is null then raise exception 'Sign in required' using errcode='42501';end if;
+ if not exists(select 1 from public.friend_profiles where user_id=me) then return jsonb_build_object('today',today,'records','[]'::jsonb);end if;
+ select coalesce(jsonb_agg(jsonb_build_object('user_id',p.user_id,'game',r.game,'date',r.day,'arcadeScore',r.arcade_score) order by p.user_id,r.day,r.game),'[]'::jsonb) into result
+ from public.friend_profiles p cross join lateral public._friend_records(p.user_id,today) r
+ where p.user_id=me or (p.share_scores and exists(select 1 from public.friend_links f where f.status='accepted' and ((f.requester=me and f.recipient=p.user_id) or (f.recipient=me and f.requester=p.user_id))) and not exists(select 1 from public.friend_blocks b where (b.owner_id=me and b.target_id=p.user_id) or (b.owner_id=p.user_id and b.target_id=me)));
+ return jsonb_build_object('today',today,'records',result);
+end $$;
+revoke all on function public._friend_json(text),public._friend_date(text),public._friend_mul(bigint,bigint),public._friend_legacy(date),public._friend_score(text,jsonb,date),public._friend_records(uuid,date),public.friend_scores() from public,anon,authenticated;
+grant execute on function public.friend_scores() to authenticated;
+
+-- Evidence v3: all observations are verified; solve catalogue ownership independently.
+create or replace function public._friend_alibi_evidence_rule(s jsonb,positions int[]) returns boolean language plpgsql immutable set search_path='' as $$
+declare a int; b int; k int; ty text;
+begin
+ ty=s->>0;a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;
+ if ty='oneof' then return (b & (1 << positions[a+1]))<>0;
+ elsif ty='left' then return positions[a+1]<positions[b+1];
+ elsif ty='next' then return positions[a+1]=positions[b+1]+1;
+ elsif ty='apart' then return abs(positions[a+1]-positions[b+1])=k;end if;return null;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_evidence(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+declare n int; lv int; i int; j int; a int; b int; k int; x numeric; ty text; s jsonb; e jsonb; o jsonb; clue jsonb; mechanism text;
+ names text[]:='{}'; portraits int[]:='{}'; object_names text[]:='{}'; rules text[]:='{}'; moment int:=-1; positions int[]; fits boolean; solutions int:=0; winner int; before_mass int; after_mass int; broken boolean:=false;
+begin
+ if jsonb_typeof(p) is distinct from 'object' or p->'version' is distinct from '3'::jsonb or jsonb_typeof(p->'id') is distinct from 'string' or p->>'id' !~ '^alibi-v3-[0-3]-[0-9]+$' or char_length(p->>'id')>80 or jsonb_typeof(p->'level') is distinct from 'number' then return null;end if;
+ x=(p->>'level')::numeric;if x<>trunc(x) or x not between 0 and 3 then return null;end if;lv=x;n=case when lv=3 then 5 else 4 end;
+ if p->'n' is distinct from to_jsonb(n) or coalesce(p->>'mechanism','') not in ('trace','access','inventory','custody') then return null;end if;mechanism=p->>'mechanism';
+ foreach ty in array array['crime','detail','item','assignment','catalogue'] loop
+  if jsonb_typeof(p->ty) is distinct from 'string' or char_length(trim(p->>ty))<1 or char_length(p->>ty)>(case ty when 'crime' then 140 when 'detail' then 800 when 'assignment' then 50 when 'catalogue' then 160 else 30 end) then return null;end if;
+ end loop;
+ foreach ty in array array['names','portraits','objects','s'] loop if jsonb_typeof(p->ty) is distinct from 'array' or jsonb_array_length(p->ty)<>n then return null;end if;end loop;
+ if jsonb_typeof(p->'evidence') is distinct from 'array' or jsonb_array_length(p->'evidence') not between 1 and 4 or jsonb_typeof(p->'trace') is distinct from 'object' then return null;end if;
+ clue=p->'trace';
+ foreach ty in array array['title','detail'] loop if jsonb_typeof(clue->ty) is distinct from 'string' or char_length(trim(clue->>ty))<1 or char_length(clue->>ty)>(case when ty='title' then 100 else 500 end) then return null;end if;end loop;
+ if mechanism in ('trace','access') then
+  if jsonb_typeof(clue->'marks') is distinct from 'array' or jsonb_array_length(clue->'marks')<>2 or clue->'marks'->0=clue->'marks'->1 then return null;end if;
+  for e in select value from jsonb_array_elements(clue->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+ elsif mechanism='inventory' then
+  foreach ty in array array['before','after'] loop if jsonb_typeof(clue->ty) is distinct from 'number' then return null;end if;x=(clue->>ty)::numeric;if x<>trunc(x) or x not between 0 and 10000 then return null;end if;end loop;
+  before_mass=(clue->>'before')::int;after_mass=(clue->>'after')::int;if after_mass<=before_mass then return null;end if;
+ else
+  if jsonb_typeof(clue->'checks') is distinct from 'array' or jsonb_array_length(clue->'checks')<>n then return null;end if;
+  for i in 0..n-1 loop
+   if clue->'checks'->i='"broken"'::jsonb then if not broken then moment=i;end if;broken=true;
+   elsif clue->'checks'->i is distinct from '"intact"'::jsonb or broken then return null;end if;
+  end loop;if moment=-1 then return null;end if;
+ end if;
+ for i in 0..n-1 loop
+  if jsonb_typeof(p->'names'->i) is distinct from 'string' or char_length(trim(p->'names'->>i))<1 or char_length(p->'names'->>i)>30 or p->'names'->>i=any(names) then return null;end if;names=array_append(names,p->'names'->>i);
+  if jsonb_typeof(p->'portraits'->i) is distinct from 'number' then return null;end if;x=(p->'portraits'->>i)::numeric;if x<>trunc(x) or x not between 0 and 7 or x::int=any(portraits) then return null;end if;portraits=array_append(portraits,x::int);
+  o=p->'objects'->i;if jsonb_typeof(o) is distinct from 'object' or jsonb_typeof(o->'name') is distinct from 'string' or char_length(trim(o->>'name'))<1 or char_length(o->>'name')>70 or o->>'name'=any(object_names) then return null;end if;object_names=array_append(object_names,o->>'name');
+  if jsonb_typeof(o->'marks') is distinct from 'array' or jsonb_array_length(o->'marks')>4 or jsonb_typeof(o->'grams') is distinct from 'number' then return null;end if;
+  x=(o->>'grams')::numeric;if x<>trunc(x) or x not between 1 and 1000 then return null;end if;
+  for e in select value from jsonb_array_elements(o->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+  if (mechanism in ('trace','access') and (o->'marks') @> (clue->'marks')) or (mechanism='inventory' and x=after_mass-before_mass) then if moment<>-1 then return null;end if;moment=i;end if;
+  if p->'s'->i->1 is distinct from to_jsonb(i) then return null;end if;
+ end loop;if moment=-1 then return null;end if;
+ for s in select value from jsonb_array_elements(p->'s') union all select value->'rule' from jsonb_array_elements(p->'evidence') loop
+  if jsonb_typeof(s) is distinct from 'array' or jsonb_array_length(s)<>4 or jsonb_typeof(s->0) is distinct from 'string' or coalesce(s->>0,'') not in ('oneof','left','next','apart') then return null;end if;ty=s->>0;
+  for j in 1..3 loop if jsonb_typeof(s->j) is distinct from 'number' then return null;end if;x=(s->>j)::numeric;if x<>trunc(x) or x<0 or x>31 then return null;end if;end loop;
+  a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;if a>=n then return null;end if;
+  if ty='oneof' then if b<1 or b>=(1<<n) or k<>0 then return null;end if;
+  elsif b>=n or a=b or (ty='apart' and k not between 1 and n-1) or (ty<>'apart' and k<>0) then return null;end if;
+  if s::text=any(rules) then return null;end if;rules=array_append(rules,s::text);
+ end loop;
+ for e in select value from jsonb_array_elements(p->'evidence') loop
+  foreach ty in array array['title','detail'] loop if jsonb_typeof(e->ty) is distinct from 'string' or char_length(trim(e->>ty))<1 or char_length(e->>ty)>(case when ty='title' then 60 else 300 end) then return null;end if;end loop;
+ end loop;
+ for positions in with recursive ownership(pos) as (select '{}'::int[] union all select ow.pos||g.entry from ownership ow cross join generate_series(0,n-1) as g(entry) where cardinality(ow.pos)<n and not g.entry=any(ow.pos)) select pos from ownership where cardinality(pos)=n loop
+  fits=true;foreach ty in array rules loop if public._friend_alibi_evidence_rule(ty::jsonb,positions) is not true then fits=false;exit;end if;end loop;
+  if fits then solutions=solutions+1;winner=array_position(positions,moment)-1;if solutions>1 then return null;end if;end if;
+ end loop;
+ if solutions<>1 then return null;end if;return winner;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_culprit(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+begin
+ if p->'version'='3'::jsonb then return public._friend_alibi_evidence(p);end if;
+ if p->'version'='2'::jsonb then return public._friend_alibi_scenario(p);end if;
+ return public._friend_alibi_v1_culprit(p);
+end $$;
+revoke all on function public._friend_alibi_evidence_rule(jsonb,int[]),public._friend_alibi_evidence(jsonb),public._friend_alibi_culprit(jsonb) from public,anon,authenticated;
+
+create or replace function public._friend_alibi_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare i int; j int; n int; x numeric; culprit int; correct int:=0; p jsonb; note jsonb; ids text[]:='{}';
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or v->'round' is distinct from '3'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or jsonb_typeof(v->'edits') is distinct from 'number' then return null;end if;
+ x=(v->>'edits')::numeric;if x<>trunc(x) or x not between 0 and 1000000 then return null;end if;
+ if jsonb_typeof(v->'cases') is distinct from 'array' or jsonb_array_length(v->'cases')<>4 or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>4 or jsonb_typeof(v->'notes') is distinct from 'array' or jsonb_array_length(v->'notes')<>4 or v->'selection' is distinct from v->'picks'->3 then return null;end if;
+ for i in 0..3 loop
+  p=v->'cases'->i;culprit=public._friend_alibi_culprit(p);if culprit is null or p->>'id'=any(ids) then return null;end if;ids=array_append(ids,p->>'id');n=(p->>'n')::numeric;
+  if jsonb_typeof(v->'picks'->i) is distinct from 'number' then return null;end if;x=(v->'picks'->>i)::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;if x=culprit then correct=correct+1;end if;
+  note=v->'notes'->i;if jsonb_typeof(note) is distinct from 'object' or jsonb_typeof(note->'truth') is distinct from 'array' or jsonb_array_length(note->'truth')<>n or jsonb_typeof(note->'excluded') is distinct from 'array' or jsonb_array_length(note->'excluded')<>n then return null;end if;
+  if p->'version'='3'::jsonb then
+   if jsonb_typeof(note->'objects') is distinct from 'array' or jsonb_array_length(note->'objects')<>n then return null;end if;
+   for j in 0..n-1 loop if jsonb_typeof(note->'objects'->j) is distinct from 'number' then return null;end if;x=(note->'objects'->>j)::numeric;if x<>trunc(x) or x not between -1 and n-1 then return null;end if;end loop;
+  end if;
+  for j in 0..n-1 loop if jsonb_typeof(note->'truth'->j) is distinct from 'number' or (note->'truth'->>j)::numeric not in (-1,0,1) or jsonb_typeof(note->'excluded'->j) is distinct from 'boolean' then return null;end if;end loop;
+ end loop;
+ return correct*25;
+exception when others then return null;
+end $$;
+
+revoke all on function public._friend_alibi_score(jsonb,date) from public,anon,authenticated;
+commit;
+) or (game='stack-up' and entry.key !~ '^break-room:stack-up:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}
+
+create or replace function public.friend_scores() returns jsonb language plpgsql stable security definer set search_path='' as $$
+declare me uuid:=auth.uid(); today date:=timezone('Australia/Sydney',now())::date; result jsonb;
+begin
+ if me is null then raise exception 'Sign in required' using errcode='42501';end if;
+ if not exists(select 1 from public.friend_profiles where user_id=me) then return jsonb_build_object('today',today,'records','[]'::jsonb);end if;
+ select coalesce(jsonb_agg(jsonb_build_object('user_id',p.user_id,'game',r.game,'date',r.day,'arcadeScore',r.arcade_score) order by p.user_id,r.day,r.game),'[]'::jsonb) into result
+ from public.friend_profiles p cross join lateral public._friend_records(p.user_id,today) r
+ where p.user_id=me or (p.share_scores and exists(select 1 from public.friend_links f where f.status='accepted' and ((f.requester=me and f.recipient=p.user_id) or (f.recipient=me and f.requester=p.user_id))) and not exists(select 1 from public.friend_blocks b where (b.owner_id=me and b.target_id=p.user_id) or (b.owner_id=p.user_id and b.target_id=me)));
+ return jsonb_build_object('today',today,'records',result);
+end $$;
+revoke all on function public._friend_json(text),public._friend_date(text),public._friend_mul(bigint,bigint),public._friend_legacy(date),public._friend_score(text,jsonb,date),public._friend_records(uuid,date),public.friend_scores() from public,anon,authenticated;
+grant execute on function public.friend_scores() to authenticated;
+
+-- Evidence v3: all observations are verified; solve catalogue ownership independently.
+create or replace function public._friend_alibi_evidence_rule(s jsonb,positions int[]) returns boolean language plpgsql immutable set search_path='' as $$
+declare a int; b int; k int; ty text;
+begin
+ ty=s->>0;a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;
+ if ty='oneof' then return (b & (1 << positions[a+1]))<>0;
+ elsif ty='left' then return positions[a+1]<positions[b+1];
+ elsif ty='next' then return positions[a+1]=positions[b+1]+1;
+ elsif ty='apart' then return abs(positions[a+1]-positions[b+1])=k;end if;return null;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_evidence(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+declare n int; lv int; i int; j int; a int; b int; k int; x numeric; ty text; s jsonb; e jsonb; o jsonb; clue jsonb; mechanism text;
+ names text[]:='{}'; portraits int[]:='{}'; object_names text[]:='{}'; rules text[]:='{}'; moment int:=-1; positions int[]; fits boolean; solutions int:=0; winner int; before_mass int; after_mass int; broken boolean:=false;
+begin
+ if jsonb_typeof(p) is distinct from 'object' or p->'version' is distinct from '3'::jsonb or jsonb_typeof(p->'id') is distinct from 'string' or p->>'id' !~ '^alibi-v3-[0-3]-[0-9]+$' or char_length(p->>'id')>80 or jsonb_typeof(p->'level') is distinct from 'number' then return null;end if;
+ x=(p->>'level')::numeric;if x<>trunc(x) or x not between 0 and 3 then return null;end if;lv=x;n=case when lv=3 then 5 else 4 end;
+ if p->'n' is distinct from to_jsonb(n) or coalesce(p->>'mechanism','') not in ('trace','access','inventory','custody') then return null;end if;mechanism=p->>'mechanism';
+ foreach ty in array array['crime','detail','item','assignment','catalogue'] loop
+  if jsonb_typeof(p->ty) is distinct from 'string' or char_length(trim(p->>ty))<1 or char_length(p->>ty)>(case ty when 'crime' then 140 when 'detail' then 800 when 'assignment' then 50 when 'catalogue' then 160 else 30 end) then return null;end if;
+ end loop;
+ foreach ty in array array['names','portraits','objects','s'] loop if jsonb_typeof(p->ty) is distinct from 'array' or jsonb_array_length(p->ty)<>n then return null;end if;end loop;
+ if jsonb_typeof(p->'evidence') is distinct from 'array' or jsonb_array_length(p->'evidence') not between 1 and 4 or jsonb_typeof(p->'trace') is distinct from 'object' then return null;end if;
+ clue=p->'trace';
+ foreach ty in array array['title','detail'] loop if jsonb_typeof(clue->ty) is distinct from 'string' or char_length(trim(clue->>ty))<1 or char_length(clue->>ty)>(case when ty='title' then 100 else 500 end) then return null;end if;end loop;
+ if mechanism in ('trace','access') then
+  if jsonb_typeof(clue->'marks') is distinct from 'array' or jsonb_array_length(clue->'marks')<>2 or clue->'marks'->0=clue->'marks'->1 then return null;end if;
+  for e in select value from jsonb_array_elements(clue->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+ elsif mechanism='inventory' then
+  foreach ty in array array['before','after'] loop if jsonb_typeof(clue->ty) is distinct from 'number' then return null;end if;x=(clue->>ty)::numeric;if x<>trunc(x) or x not between 0 and 10000 then return null;end if;end loop;
+  before_mass=(clue->>'before')::int;after_mass=(clue->>'after')::int;if after_mass<=before_mass then return null;end if;
+ else
+  if jsonb_typeof(clue->'checks') is distinct from 'array' or jsonb_array_length(clue->'checks')<>n then return null;end if;
+  for i in 0..n-1 loop
+   if clue->'checks'->i='"broken"'::jsonb then if not broken then moment=i;end if;broken=true;
+   elsif clue->'checks'->i is distinct from '"intact"'::jsonb or broken then return null;end if;
+  end loop;if moment=-1 then return null;end if;
+ end if;
+ for i in 0..n-1 loop
+  if jsonb_typeof(p->'names'->i) is distinct from 'string' or char_length(trim(p->'names'->>i))<1 or char_length(p->'names'->>i)>30 or p->'names'->>i=any(names) then return null;end if;names=array_append(names,p->'names'->>i);
+  if jsonb_typeof(p->'portraits'->i) is distinct from 'number' then return null;end if;x=(p->'portraits'->>i)::numeric;if x<>trunc(x) or x not between 0 and 7 or x::int=any(portraits) then return null;end if;portraits=array_append(portraits,x::int);
+  o=p->'objects'->i;if jsonb_typeof(o) is distinct from 'object' or jsonb_typeof(o->'name') is distinct from 'string' or char_length(trim(o->>'name'))<1 or char_length(o->>'name')>70 or o->>'name'=any(object_names) then return null;end if;object_names=array_append(object_names,o->>'name');
+  if jsonb_typeof(o->'marks') is distinct from 'array' or jsonb_array_length(o->'marks')>4 or jsonb_typeof(o->'grams') is distinct from 'number' then return null;end if;
+  x=(o->>'grams')::numeric;if x<>trunc(x) or x not between 1 and 1000 then return null;end if;
+  for e in select value from jsonb_array_elements(o->'marks') loop if jsonb_typeof(e) is distinct from 'string' or char_length(trim(e#>>'{}'))<1 or char_length(e#>>'{}')>40 then return null;end if;end loop;
+  if (mechanism in ('trace','access') and (o->'marks') @> (clue->'marks')) or (mechanism='inventory' and x=after_mass-before_mass) then if moment<>-1 then return null;end if;moment=i;end if;
+  if p->'s'->i->1 is distinct from to_jsonb(i) then return null;end if;
+ end loop;if moment=-1 then return null;end if;
+ for s in select value from jsonb_array_elements(p->'s') union all select value->'rule' from jsonb_array_elements(p->'evidence') loop
+  if jsonb_typeof(s) is distinct from 'array' or jsonb_array_length(s)<>4 or jsonb_typeof(s->0) is distinct from 'string' or coalesce(s->>0,'') not in ('oneof','left','next','apart') then return null;end if;ty=s->>0;
+  for j in 1..3 loop if jsonb_typeof(s->j) is distinct from 'number' then return null;end if;x=(s->>j)::numeric;if x<>trunc(x) or x<0 or x>31 then return null;end if;end loop;
+  a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;if a>=n then return null;end if;
+  if ty='oneof' then if b<1 or b>=(1<<n) or k<>0 then return null;end if;
+  elsif b>=n or a=b or (ty='apart' and k not between 1 and n-1) or (ty<>'apart' and k<>0) then return null;end if;
+  if s::text=any(rules) then return null;end if;rules=array_append(rules,s::text);
+ end loop;
+ for e in select value from jsonb_array_elements(p->'evidence') loop
+  foreach ty in array array['title','detail'] loop if jsonb_typeof(e->ty) is distinct from 'string' or char_length(trim(e->>ty))<1 or char_length(e->>ty)>(case when ty='title' then 60 else 300 end) then return null;end if;end loop;
+ end loop;
+ for positions in with recursive ownership(pos) as (select '{}'::int[] union all select ow.pos||g.entry from ownership ow cross join generate_series(0,n-1) as g(entry) where cardinality(ow.pos)<n and not g.entry=any(ow.pos)) select pos from ownership where cardinality(pos)=n loop
+  fits=true;foreach ty in array rules loop if public._friend_alibi_evidence_rule(ty::jsonb,positions) is not true then fits=false;exit;end if;end loop;
+  if fits then solutions=solutions+1;winner=array_position(positions,moment)-1;if solutions>1 then return null;end if;end if;
+ end loop;
+ if solutions<>1 then return null;end if;return winner;
+exception when others then return null;
+end $$;
+create or replace function public._friend_alibi_culprit(p jsonb) returns int language plpgsql immutable set search_path='' as $$
+begin
+ if p->'version'='3'::jsonb then return public._friend_alibi_evidence(p);end if;
+ if p->'version'='2'::jsonb then return public._friend_alibi_scenario(p);end if;
+ return public._friend_alibi_v1_culprit(p);
+end $$;
+revoke all on function public._friend_alibi_evidence_rule(jsonb,int[]),public._friend_alibi_evidence(jsonb),public._friend_alibi_culprit(jsonb) from public,anon,authenticated;
+
+create or replace function public._friend_alibi_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
+declare i int; j int; n int; x numeric; culprit int; correct int:=0; p jsonb; note jsonb; ids text[]:='{}';
+begin
+ if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or v->'round' is distinct from '3'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or jsonb_typeof(v->'edits') is distinct from 'number' then return null;end if;
+ x=(v->>'edits')::numeric;if x<>trunc(x) or x not between 0 and 1000000 then return null;end if;
+ if jsonb_typeof(v->'cases') is distinct from 'array' or jsonb_array_length(v->'cases')<>4 or jsonb_typeof(v->'picks') is distinct from 'array' or jsonb_array_length(v->'picks')<>4 or jsonb_typeof(v->'notes') is distinct from 'array' or jsonb_array_length(v->'notes')<>4 or v->'selection' is distinct from v->'picks'->3 then return null;end if;
+ for i in 0..3 loop
+  p=v->'cases'->i;culprit=public._friend_alibi_culprit(p);if culprit is null or p->>'id'=any(ids) then return null;end if;ids=array_append(ids,p->>'id');n=(p->>'n')::numeric;
+  if jsonb_typeof(v->'picks'->i) is distinct from 'number' then return null;end if;x=(v->'picks'->>i)::numeric;if x<>trunc(x) or x not between 0 and n-1 then return null;end if;if x=culprit then correct=correct+1;end if;
+  note=v->'notes'->i;if jsonb_typeof(note) is distinct from 'object' or jsonb_typeof(note->'truth') is distinct from 'array' or jsonb_array_length(note->'truth')<>n or jsonb_typeof(note->'excluded') is distinct from 'array' or jsonb_array_length(note->'excluded')<>n then return null;end if;
+  if p->'version'='3'::jsonb then
+   if jsonb_typeof(note->'objects') is distinct from 'array' or jsonb_array_length(note->'objects')<>n then return null;end if;
+   for j in 0..n-1 loop if jsonb_typeof(note->'objects'->j) is distinct from 'number' then return null;end if;x=(note->'objects'->>j)::numeric;if x<>trunc(x) or x not between -1 and n-1 then return null;end if;end loop;
+  end if;
+  for j in 0..n-1 loop if jsonb_typeof(note->'truth'->j) is distinct from 'number' or (note->'truth'->>j)::numeric not in (-1,0,1) or jsonb_typeof(note->'excluded'->j) is distinct from 'boolean' then return null;end if;end loop;
+ end loop;
+ return correct*25;
+exception when others then return null;
+end $$;
+
+revoke all on function public._friend_alibi_score(jsonb,date) from public,anon,authenticated;
+commit;
+) then continue;end if;
+    d=public._friend_date(right(entry.key,10));if d is null or d<p_today-119 or d>p_today then continue;end if;
+    v=public._friend_json(entry.value);score=public._friend_score(game,v,d);
+    if score is not null then day=d;arcade_score=score;return next;end if;
+   end loop;
+  end if;
+ end loop;
+end $;
 
 create or replace function public.friend_scores() returns jsonb language plpgsql stable security definer set search_path='' as $$
 declare me uuid:=auth.uid(); today date:=timezone('Australia/Sydney',now())::date; result jsonb;
