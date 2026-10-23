@@ -24,7 +24,7 @@ Open `http://127.0.0.1:8000/index.html`. Keep the full folder structure; links u
 | Alibi | Four untimed evidence-based Daily cases, personal notes, illustrated suspects and free Unlimited practice. |
 | Bouncer | Two untimed Daily secret spelling rules, optional half-credit probes and free Unlimited practice. |
 | Inner Clock | Five blind Daily timing targets, native average miss and free Unlimited practice. |
-| Stack Up | Five Daily ordering sets, drag/touch/keyboard controls, 90 seconds per stack and position feedback; Infinite practice. |
+| Stack Up | Five familiar Daily ordering sets, 90 seconds per stack and drag/touch/keyboard controls; optional Challenge mix in free Unlimited. |
 
 All Dailies reset at midnight **Australia/Sydney**, including daylight-saving changes. The homepage lists only the nine playable games; all six cancelled placeholder cards have been removed. Native scores remain alongside the shared 0–100 Arcade score. See [SCORING.md](SCORING.md) for the exact formulas and equal-game average over the common 120-day window.
 
@@ -35,7 +35,7 @@ npm ci --ignore-scripts --no-audit --no-fund
 npm run content:studio
 ```
 
-Open `http://127.0.0.1:9030` on the machine running the command. Search all **264 Stake questions, 112 Stack Up sets and 100 Lowball items**, write drafts, attach factual sources, preview player/answer views and save/download JSON proposals. This is a local development tool; it does not change live banks or publish content. Remote cloud loopback addresses require an attached browser/approved forwarding, or run the checkout on your own computer.
+Open `http://127.0.0.1:9030` on the machine running the command. Search all **264 Stake questions, 368 Stack Up sets and 100 Lowball items**, write drafts, attach factual sources, preview player/answer views and save/download JSON proposals. This is a local development tool; it does not change live banks or publish content. Remote cloud loopback addresses require an attached browser/approved forwarding, or run the checkout on your own computer.
 
 ```sh
 npm run content:report
@@ -99,13 +99,13 @@ Prior is the fifth game, with the name still provisional. See [its implementatio
 
 Laser is the sixth game. See [its implementation notes](games/laser/README.md). Existing Supabase projects now run the complete [nine-game migration](supabase/inner-clock.sql) **last**, after setup/Friends; it includes both Laser formats and all other games. Fresh projects use updated setup then Friends. Local play works immediately; live cloud/Friends support needs this owner-applied SQL. The original prototype is preserved outside the build.
 
-## Alibi scenarios — current contract (v2)
+## Alibi evidence files — current contract (v3)
 
-The owner approved real scenarios grounded in incidents, timelines and evidence, plus generated men’s/women’s portraits. Alibi now selects **96 new evidence-dependent visit-reconstruction cases**, 24 per tier. Only the culprit’s account is false; everyone else’s account and the verified records are accurate. The incident window determines the relevant visit. Both records and accounts are necessary, and each case has one complete reconstruction. This supersedes the original abstract false-count rules for **new** cases. Personal notes remain ungraded; four untimed Dailies, first-confirmation finality and correct × 25 Arcade scoring are unchanged.
+New games use **128 evidence-led files**, 32 per tier, across stamp matches, paired badge permissions, inventory differences and seal custody. All observations are verified; players match the physical evidence to a catalogue entry and deduce its owner. Each fresh Daily uses all four methods, with a 32-day rotation. Assignment notes are ungraded, and reveals explain the evidence match and deductions. Four untimed cases, first-confirmation finality and correct × 25 Arcade scoring remain.
 
-Eight illustrated portraits were generated as an image atlas and encoded as an optimized WebP; CSS selects a cell. New snapshots store stable, distinct random portrait assignments, unrelated to guilt. Existing original-format drafts/notes/completions/history keep their original rules and scores; new scenarios are available in Unlimited immediately and the next fresh Daily. The frozen 144-case original bank and tests remain outside production. Read `games/alibi/README.md` for exact source, schema, behavior and compatibility.
+The 155 v2 visit scenarios and original v1 snapshots retain their original rules, notes, choices and scores. The existing eight-person portrait atlas is unchanged. See [the current Alibi contract](games/alibi/README.md) and [the player-feedback release](PLAYTEST-FEEDBACK.md) for sources, validation and limits.
 
-**Current complete upgrade: run `supabase/inner-clock.sql` LAST.** It includes Alibi scenarios and three-mirror Laser Expert, so earlier per-game updates need not be reapplied. It includes all earlier games and both Alibi parsers. Fresh projects use current setup then Friends; do not reapply old narrower migrations. Personal raw snapshots/notes remain private; Friends expose only completed normalized records through existing sharing controls. Human playtesting and the separately agreed prelaunch audit remain necessary. No billing or other game was enabled.
+Before deploying this release to an existing project, apply **`supabase/playtest-feedback.sql` after the previous Inner Clock migration**, or use the updated complete `supabase/inner-clock.sql`. Fresh projects use current setup then Friends. These repeatable migrations support all three Alibi formats and versioned Stack Up scores without rewriting saves, RLS, relationships or sharing settings. Live SQL and deployment are separate from passing repository tests.
 
 ## Bouncer addition
 
