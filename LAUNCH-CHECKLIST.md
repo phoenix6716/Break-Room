@@ -8,7 +8,7 @@ Nine active games: Laser, Time Drop, Clue Ladder, Seating Chart, Stack Up, Stake
 
 - [x] Seating Chart: 360 offline-generated tables, 72 Daily sets, exhaustive optima and conflicting-request lower bounds, five browser widths, Daily save/lock/Undo and a complete Unlimited refill checked in [run 40040627565](https://github.com/phoenix6716/Break-Room/actions/runs/40040627565).
 - [x] Seating Chart live database migration applied and independently verified; existing saves/RLS preserved.
-- [ ] Confirm the new release's main-branch Pages publication separately.
+- [x] Main checks and Pages publication confirmed in [run 40041643342](https://github.com/phoenix6716/Break-Room/actions/runs/40041643342), feature commit 24e6edb84c4520055b7abb02dd0f1495b7cdffe6. The web tool could not open the public page; CI browser checks exercised the production artifact.
 - [ ] Playtest Seating Chart on real phones and with people at different skill levels; calibrate Expert challenge and session length. Structural solver checks are not human difficulty certification.
 
 ## 1. Stabilise the release candidate — engineering

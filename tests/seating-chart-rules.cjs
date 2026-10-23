@@ -2,6 +2,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),{PGlite}=require('@electric-sql/pglite');
 for(const f of ['daily-clock.js','seating-chart-model.js','arcade-score.js','profile-records.js','cloud-saves.js'])require('../'+f);
 const M=BREAK_ROOM_SEATING_CHART,B=require('../content/seating-chart-puzzles.json').tables,day='2026-10-25',key=M.PREFIX+day,encode=JSON.stringify,clone=structuredClone;
+const runtime={window:{}};require('node:vm').runInNewContext(fs.readFileSync('games/seating-chart/puzzles.js','utf8'),runtime);assert.deepEqual(JSON.parse(JSON.stringify(runtime.window.SEATING_CHART_PUZZLES)),B,'Shipped library matches the exhaustively checked source');
 assert.equal(B.length,360);assert(B.every(M.puzzle));assert.equal(new Set(B.map(t=>t.id)).size,360);
 assert.deepEqual(require('../scripts/build-seating-chart-puzzles.cjs').buildSeatingBank(),B,'Reproducible frozen bank');
 const ids=[];for(let i=0;i<72;i++){const d=new Date(Date.UTC(2026,9,24+i)).toISOString().slice(0,10),ts=M.daily(B,d);assert.deepEqual(ts,M.daily([...B].reverse(),d));assert.deepEqual(ts.map(t=>t.tier),[1,2,3,4,5]);ids.push(...ts.map(t=>t.id));}assert.equal(new Set(ids).size,360);
