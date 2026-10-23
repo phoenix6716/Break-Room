@@ -29,12 +29,27 @@ npm test
 
 In the managed cloud environment, `/usr/bin/chromium` is already available; the runner uses it unless `ARCADE_CHROMIUM` points to another executable. GitHub Actions downloads Chromium matching the locked Playwright version. Its Ubuntu runner already includes Chrome’s system libraries, so CI skips the redundant system-package installation; fresh local machines can use the `--with-deps` command above. In restricted workspaces use a writable npm cache, for example `npm_config_cache=/tmp/break-room-npm-cache npm ci --ignore-scripts --no-audit --no-fund`.
 
-`npm test` runs these in order:
+`npm test` uses focused checks by default, as requested by the owner on 23 October 2026. `scripts/affected-checks.cjs` reads changed paths and `scripts/test-scope.cjs` maps them to affected tests. CI compares the PR base or previous main commit with the current commit, including both sides of renames/deletions. It saves the exact plan to `.artifacts/check-plan.json` and installs Chromium/Python only when selected checks need them.
+
+Examples:
+
+```sh
+npm test -- --files games/alibi/index.html
+npm test -- --base origin/main
+node scripts/affected-checks.cjs --plan --files profile.js
+npm run test:all  # Only when a full audit is explicitly wanted.
+```
+
+Without an explicit base, local checks cover staged/unstaged and untracked changes against `HEAD`. Documentation-only changes run the quick artifact build/reference check with no game sessions. A game page/style edit selects that game’s existing UI checks; engine/model/data edits also select relevant rules/save checks. Shared navigation, layout, clocks, account and scoring changes select their dependent component tests. Newly added runtime paths must have a scope mapping; an unknown path fails with an explanation rather than starting an unrequested full sweep. Changes to an individual test run that test.
+
+The workflow’s manual **full_suite** input and `npm run test:all` retain the complete audit. Automatic main deployments also use focused selection rather than rerunning every game after each merge.
+
+The explicitly requested full suite runs these in order:
 
 1. Shared static-footer consistency and a content inventory/review report, followed by content-tool, calendar/DST, Arcade scoring, account/cloud/friend database security, real local profile, question-bank and independent-maths checks.
 2. `npm run build`: a clean plain-file artifact in `dist/`.
 3. `npm run check`: all shipped local HTML/CSS references, JSON and JavaScript syntax (including inline engines), and exclusions for development-only content.
-4. `npm run test:browser`: every non-unit browser test in `tests/`, including actual complete game flows, profile/scoring, artwork, timers, sharing, saved-state migrations, reset boundaries, keyboard/touch controls and responsive layouts. A temporary server mounts the production artifact under the legacy test prefix `/Midnight-Arcade/`, not the origin root. The template and template-parity tests use a separate source mount because the development starter is intentionally not published.
+4. The full browser selection (or explicit `npm run test:browser`): every non-unit browser test in `tests/`, including actual complete game flows, profile/scoring, artwork, timers, sharing, saved-state migrations, reset boundaries, keyboard/touch controls and responsive layouts. A temporary server mounts the production artifact under the legacy test prefix `/Midnight-Arcade/`, not the origin root. The template and template-parity tests use a separate source mount because the development starter is intentionally not published.
 
 Child failures retain a nonzero exit code and stop the workflow. Per-check logs are saved to `.artifacts/` and uploaded by Actions for seven days, including on failure. The runner closes its own temporary servers. Existing visual tests also regenerate their documented screenshots in `design/previews/`; review or restore only those generated changes before committing unrelated work.
 
