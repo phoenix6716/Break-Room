@@ -3,7 +3,6 @@
   'use strict';
   const DAY = 86400000, LOWBALL_EPOCH = Date.UTC(2026, 9, 1);
   const games = [
-    {id:'seating-chart',name:'Seating Chart',category:'SEATING / LOGIC',unit:'drama',max:60,lowerBetter:true,note:'Total broken guest requests across five tables: lower is better. Arcade credit penalises only avoidable drama above each table’s optimum.'},
     {id:'lowball', name:'Lowball', category:'PRICE GUESSING', unit:'points', max:100, note:'Scores out of 100. Best and average use retained saved history; played includes its lifetime counter.'},
     {id:'stake', name:'Stake', category:'TRIVIA / RISK', unit:'chips', max:15, note:'Net chips from completed five-question Dailies. Scores can be negative.'},
     {id:'stack-up', name:'Stack Up', category:'SORTING / SPEED', unit:'points', max:31000, note:'Native points from completed five-stack Dailies; older runs used the original higher scale. Arcade scores compare both versions. Points can be negative.'},
@@ -15,6 +14,7 @@
     {id:'alibi', name:'Alibi', category:'DEDUCTION / MYSTERY', unit:'correct', max:4, note:'Correct first accusations out of four untimed Daily cases. Notes never affect scoring.'}
     ,{id:'time-drop',name:'Time Drop',category:'HISTORY / INSTINCT',unit:'points',max:5000,note:'Points from five first-lock year guesses (5,000 maximum). Older ten-round saves retain their 10,000-point scale. Arcade scores normalize each run against its own maximum.'},
     {id:'clue-ladder',name:'Clue Ladder',category:'CLUES / KNOWLEDGE',unit:'points',max:5000,note:'Five untimed puzzles. Solves earn 1,000 / 800 / 600 / 400 / 200 by clue used; unsolved scores zero. Arcade score = Daily points divided by 50.'},
+    {id:'seating-chart',name:'Seating Chart',category:'SEATING / LOGIC',unit:'drama',max:60,lowerBetter:true,note:'Total broken guest requests across five tables: lower is better. Arcade credit penalises only avoidable drama above each table’s optimum.'},
   ];
   const isObject = value => value && typeof value === 'object' && !Array.isArray(value);
   function dateKey(value) {
