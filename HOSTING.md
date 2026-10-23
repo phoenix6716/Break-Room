@@ -17,6 +17,10 @@ Pull requests run the checks but do **not** deploy. A newer PR commit cancels ob
 
 This gates publication, not merges. For merge protection, a repository administrator can additionally require **Test the production site** in the branch rules for `main`.
 
+## Automatic releases — owner decision, 23 October 2026
+
+Completed requested changes are authorised for automatic deployment after focused checks. The agent handles commits, any PR merge, and verification of the main Pages deployment without requiring the owner to manage PRs or repeat release approval. This supersedes previous PR-only holds. PRs are optional; direct main commits may use the existing CI publication gate. Failed checks still block publication. Report whether changes are committed, deployed, and independently verified; disclose unavailable live browser access.
+
 ## Reproduce the checks
 
 The application remains static. The pinned Supabase client is bundled locally during the build; other npm dependencies are build/test tools. Use Node 24 (`.node-version`), Python 3.12+ and the pinned Playwright in `package-lock.json`:
