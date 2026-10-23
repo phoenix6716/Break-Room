@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#f4eddc" />
+<title>Time Drop — guess the year</title>
+<style>
+:root{--paper:#f4eddc;--paper-deep:#e9dfc8;--ink:#17263a;--ink-soft:#526273;--blue:#91c7dc;--blue-deep:#3e86a5;--lime:#b8d957;--green:#6cae72;--coral:#ee6557;--orange:#f2a44a;--line:#bed0cd;--white:#fffdf5;color-scheme:light;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink)}
+*{box-sizing:border-box}
+body{min-width:320px;margin:0;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);background-color:var(--paper);background-image:linear-gradient(90deg,rgba(23,38,58,.045) 50%,transparent 50%),linear-gradient(rgba(23,38,58,.045) 50%,transparent 50%);background-size:10px 10px;image-rendering:pixelated}
+button{font:inherit;cursor:pointer}[hidden]{display:none!important}h1,h2{margin:0}
+.site-frame{max-width:1440px;min-height:100vh;margin:0 auto;padding:0 52px 46px}
+.topbar{height:102px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;border-bottom:3px solid var(--ink)}
+.brand{display:inline-flex;align-items:center;gap:12px;width:max-content;color:var(--ink);text-decoration:none;font-family:"Courier New",ui-monospace,monospace;font-size:23px;font-weight:900;letter-spacing:-1.8px;text-shadow:2px 2px 0 rgba(145,199,220,.8)}
+.brand-mark{width:30px;height:27px;display:flex;flex-direction:column;justify-content:space-between}.brand-mark i{display:block;height:6px;border:2px solid var(--ink);background:var(--blue-deep)}.brand-mark i:nth-child(2){background:var(--coral);width:70%}.brand-mark i:nth-child(3){background:var(--green);width:40%}
+.hub-link{justify-self:center;color:var(--ink-soft);font-size:14px;font-weight:800;text-decoration:none;padding:14px 17px}.hub-link:hover{color:var(--ink)}
+.chip{justify-self:end;font-family:ui-monospace,monospace;font-size:10px;font-weight:900;letter-spacing:.6px;color:var(--ink-soft)}.chip strong{display:block;color:var(--ink);font-size:16px;letter-spacing:-.5px}
+.intro{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);gap:56px;align-items:center;min-height:calc(100vh - 102px);padding:40px 0}
+.kicker{display:flex;align-items:center;gap:9px;margin:0 0 18px;color:var(--coral);font-family:ui-monospace,monospace;font-size:11px;font-weight:900;letter-spacing:1px}.kicker span{width:9px;height:9px;background:var(--coral)}
+.intro h1{font-family:"Courier New",ui-monospace,monospace;font-size:clamp(42px,5.4vw,74px);font-weight:900;letter-spacing:-5px;line-height:.92;text-shadow:4px 4px 0 var(--blue)}.intro h1 em{color:var(--coral);font-style:normal;text-shadow:4px 4px 0 #f6cf9b}
+.lede{max-width:520px;margin:24px 0;color:var(--ink-soft);font-size:16px;line-height:1.45}
+.steps{display:grid;gap:10px;max-width:520px;margin-bottom:24px}.step{display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:center;padding:10px 12px;border:1.5px solid var(--ink);background:rgba(255,253,245,.75)}.step>span{display:grid;place-items:center;width:34px;height:34px;border:1.5px solid var(--ink);background:var(--blue);font-family:ui-monospace,monospace;font-size:12px;font-weight:900}.step p{margin:0;color:var(--ink-soft);font-size:12px;line-height:1.35}.step b{color:var(--ink)}
+.btns{display:flex;gap:12px;flex-wrap:wrap}.note{margin:14px 0 0;color:var(--ink-soft);font-size:11px;max-width:520px}
+.btn{border:2px solid var(--ink);background:var(--lime);color:var(--ink);padding:14px 18px;box-shadow:3px 3px 0 var(--ink);font-family:ui-monospace,monospace;font-size:12px;font-weight:900;transition:transform .1s,box-shadow .1s}.btn:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}.btn.alt{background:var(--white)}
+.art{border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);background:var(--white);padding:22px 20px 22px 44px;position:relative}.art::before{content:"";position:absolute;left:22px;top:22px;bottom:22px;width:4px;background:var(--ink)}
+.art div{position:relative;margin:0 0 12px;padding:10px 12px;border:2px solid var(--ink);background:var(--paper)}.art div::before{content:"";position:absolute;left:-28px;top:50%;width:14px;height:14px;margin-top:-7px;border:2px solid var(--ink);background:var(--blue)}.art b{font-family:ui-monospace,monospace;font-size:12px}.art small{display:block;color:var(--ink-soft);font-size:11px}
+.art .q{border-style:dashed;background:#fffbe9;text-align:center;font-family:ui-monospace,monospace;font-size:11px;font-weight:900;color:var(--coral);margin-bottom:0}.art .q::before{background:var(--coral)}
+.game{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:30px;padding:34px 0}
+.mode-strip p{margin:0 0 6px;color:var(--coral);font-family:ui-monospace,monospace;font-size:10px;font-weight:900;letter-spacing:1px}.mode-strip h1{font-family:"Courier New",ui-monospace,monospace;font-size:clamp(26px,3.2vw,38px);font-weight:900;letter-spacing:-2.2px;margin-bottom:16px}
+.q-card{position:relative;padding:34px 26px 26px;border:3px solid var(--ink);background:var(--white);box-shadow:8px 8px 0 var(--ink)}
+.q-card::before{content:"";position:absolute;left:0;right:0;top:0;height:12px;border-bottom:3px solid var(--ink);background:var(--blue)}
+.q-tag{font-family:ui-monospace,monospace;font-size:10px;font-weight:900;letter-spacing:1px;color:var(--ink-soft)}
+.q-name{margin:8px 0 0;font-size:clamp(26px,3.6vw,42px);font-weight:900;letter-spacing:-1.6px;line-height:1.08}
+.readout{display:flex;align-items:baseline;justify-content:center;gap:10px;margin:22px 0 4px;padding:12px 8px;border:2px solid var(--ink);background:var(--paper);font-family:"Courier New",ui-monospace,monospace;font-size:clamp(46px,8vw,80px);font-weight:900;letter-spacing:-4px;line-height:1}.readout small{font-size:22px;letter-spacing:0;color:var(--coral)}
+.controls{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.step-btn{min-width:54px;border:2px solid var(--ink);background:var(--white);color:var(--ink);padding:9px 8px;box-shadow:2px 2px 0 var(--ink);font-family:ui-monospace,monospace;font-size:12px;font-weight:900}.step-btn:hover{background:var(--blue)}.step-btn:active{transform:translate(2px,2px);box-shadow:none}
+.yr-row{display:flex;gap:10px;justify-content:center;align-items:center;margin-bottom:8px;font-family:ui-monospace,monospace;font-size:10px;font-weight:900;color:var(--ink-soft);letter-spacing:.6px}
+.yr-row input{width:120px;border:2px solid var(--ink);background:var(--white);padding:9px 10px;font-family:ui-monospace,monospace;font-size:16px;font-weight:900;color:var(--ink)}
+.strip{position:relative;height:104px;margin:14px 28px 0}
+.strip .base{position:absolute;left:0;right:0;top:44px;height:6px;background:var(--ink)}
+.strip .tick{position:absolute;top:38px;width:2px;height:18px;background:var(--ink);transform:translateX(-1px)}
+.strip .lab{position:absolute;top:18px;transform:translateX(-50%);font-family:ui-monospace,monospace;font-size:9px;font-weight:900;color:var(--ink-soft);white-space:nowrap}
+.slide{position:absolute;left:-12px;top:34px;width:calc(100% + 24px);height:26px;margin:0;background:transparent;-webkit-appearance:none;appearance:none;cursor:pointer}
+.slide::-webkit-slider-runnable-track{height:26px;background:transparent}.slide::-moz-range-track{height:26px;background:transparent}
+.slide::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:26px;border:3px solid var(--ink);background:var(--orange);box-shadow:2px 2px 0 var(--ink)}.slide::-moz-range-thumb{width:18px;height:20px;border:3px solid var(--ink);border-radius:0;background:var(--orange)}
+.pin{position:absolute;transform:translateX(-50%);padding:2px 7px;font-family:ui-monospace,monospace;font-size:10px;font-weight:900;color:#fff;border:2px solid var(--ink);white-space:nowrap;pointer-events:none}
+.pin::before{content:"▲";position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-size:9px;line-height:1;color:var(--ink)}
+.pin.you{top:64px;background:var(--blue-deep)}.pin.ans{top:84px;background:var(--green)}
+.btn.lock{display:block;width:100%;margin-top:14px;padding:16px;font-size:14px}
+.q-card.locked .controls,.q-card.locked .yr-row,.q-card.locked .slide{pointer-events:none;opacity:.5}.q-card.locked .lock{display:none}
+.reveal{margin-top:18px;padding:16px 18px;border:3px solid var(--ink);background:var(--white);box-shadow:5px 5px 0 var(--ink)}
+.reveal.t-g{background:#e3f1d3}.reveal.t-y{background:#fbeccb}.reveal.t-r{background:#f9d9d3}
+.reveal h2{font-family:"Courier New",ui-monospace,monospace;font-size:38px;font-weight:900;letter-spacing:-2px}.reveal .tl{margin:6px 0 0;font-size:13px}.reveal .tl b{font-family:ui-monospace,monospace;letter-spacing:.3px}.reveal .fact{margin:10px 0 0;padding-top:10px;border-top:2px dashed rgba(23,38,58,.35);font-size:13px;line-height:1.45}.reveal .btn{margin-top:14px}
+.side{display:flex;flex-direction:column;gap:14px}.card{border:2px solid var(--ink);background:var(--white);box-shadow:4px 4px 0 var(--ink);padding:16px 17px}
+.heading{display:flex;align-items:center;gap:8px;color:var(--ink-soft);font-family:ui-monospace,monospace;font-size:10px;font-weight:900;letter-spacing:.7px}.heading i{display:block;width:8px;height:8px;background:var(--coral)}
+.lives{display:flex;gap:10px;margin-top:12px}.lives svg.lost{animation:thud .5s ease}@keyframes thud{30%{transform:scale(1.25) rotate(-8deg)}100%{transform:none}}
+.big{margin-top:10px;font-family:ui-monospace,monospace;font-size:34px;font-weight:900;letter-spacing:-2px}
+.pips{display:flex;gap:4px;flex-wrap:wrap;margin-top:12px}.pips i{width:16px;height:16px;border:2px solid var(--ink);background:var(--paper-deep)}.pips i.g{background:var(--green)}.pips i.y{background:var(--orange)}.pips i.r{background:var(--coral)}
+.log{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:7px;max-height:330px;overflow:auto}.log li{display:grid;grid-template-columns:1fr auto;gap:2px 8px;padding:7px 9px;border:1.5px solid var(--ink);border-left-width:7px;font-size:11px;background:var(--paper)}.log li.g{border-left-color:var(--green)}.log li.y{border-left-color:var(--orange)}.log li.r{border-left-color:var(--coral)}.log b{font-size:12px}.log small{color:var(--ink-soft)}.log em{font-style:normal;font-family:ui-monospace,monospace;font-weight:900;align-self:center;grid-row:span 2;grid-column:2}.log .empty{border:1.5px dashed var(--line);border-left-width:1.5px;color:var(--ink-soft);background:transparent}
+.legend{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:6px;font-size:11px;color:var(--ink-soft)}.legend b{color:var(--ink)}
+.modal{position:fixed;z-index:10;display:grid;place-items:center;inset:0;padding:20px;background:rgba(23,38,58,.65);opacity:0;pointer-events:none;transition:opacity .2s}.modal.open{opacity:1;pointer-events:all}
+.modal-card{width:min(100%,420px);padding:32px 28px 24px;border:2px solid var(--ink);background:var(--white);box-shadow:8px 8px 0 var(--ink);text-align:center}
+.modal-card .k{margin:0 0 8px;color:var(--coral);font-family:ui-monospace,monospace;font-size:10px;font-weight:900;letter-spacing:1px}.modal-card h2{font-size:30px;letter-spacing:-1.4px}.modal-card .sub{margin:8px 0 16px;color:var(--ink-soft);font-size:13px;line-height:1.4}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}.stats div{padding:9px 4px;border:1.5px solid var(--ink);background:#e8f2f0}.stats span{display:block;color:var(--ink-soft);font-family:ui-monospace,monospace;font-size:9px;font-weight:900}.stats b{display:block;margin-top:5px;font-family:ui-monospace,monospace;font-size:20px}
+.grid{margin:0 0 16px;line-height:0}.sq{display:inline-block;width:24px;height:24px;margin:3px;border:2px solid var(--ink);background:var(--paper-deep)}.sq.g{background:var(--green)}.sq.y{background:var(--orange)}.sq.r{background:var(--coral)}.m-hearts{display:flex;justify-content:center;gap:10px;margin:0 0 14px}.m-hearts svg{width:52px;height:47px}
+.q-card{--px:3px}.deco{position:absolute;inset:0;pointer-events:none;z-index:2}
+.dc{position:absolute;transform-origin:50% 100%;animation:grow .45s ease both}.dc.l{left:calc(var(--px)*-6)}.dc.r{right:calc(var(--px)*-6)}.vn{position:absolute;top:14px;bottom:6px;width:calc(var(--px)*5);height:calc(100% - 20px);overflow:visible}.vn.l{left:calc(var(--px)*-2.5)}.vn.r{right:calc(var(--px)*-2.5)}.q-card{padding-left:42px;padding-right:42px}
+.dc svg{display:block;shape-rendering:crispEdges;animation:sway 3.6s ease-in-out infinite alternate;transform-origin:50% 100%}
+@keyframes grow{from{transform:scale(0)}to{transform:scale(1)}}@keyframes sway{from{transform:rotate(-2.5deg)}to{transform:rotate(2.5deg)}}
+.wb{position:absolute;width:calc(var(--px)*20);height:calc(var(--px)*20);opacity:.7}.wb svg{display:block;width:100%;height:100%;animation:grow .6s ease both;transform-origin:0 0}.wb.tl{top:15px;left:3px}.wb.tr{top:15px;right:3px;transform:scaleX(-1)}.wb.bl{bottom:3px;left:3px;transform:scaleY(-1)}.wb.br{bottom:3px;right:3px;transform:scale(-1,-1)}
+.era-tag{position:absolute;right:20px;top:26px;font-family:ui-monospace,monospace;font-size:10px;font-weight:900;letter-spacing:1px;color:var(--coral)}
+@media(max-width:620px){.q-card{--px:2px}.era-tag{display:none}}.modal-card .btns{justify-content:center}
+@media(max-width:900px){.site-frame{padding:0 22px 35px}.intro,.game{grid-template-columns:1fr}.intro{min-height:auto;gap:34px}.side{display:grid;grid-template-columns:1fr 1fr}.side .span2{grid-column:1/-1}.side .first{order:-1}}
+@media(max-width:620px){.site-frame{padding:0 14px 26px}.topbar{height:74px;grid-template-columns:1fr auto}.hub-link{display:none}.brand{font-size:19px}.intro h1{letter-spacing:-3.5px}.q-card{padding:32px 16px 18px}.strip{margin:14px 22px 0}.side{grid-template-columns:1fr}.stats b{font-size:16px}.readout{letter-spacing:-3px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="site-frame">
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>TIME DROP</span></a>
+    <a class="hub-link" href="#" id="hub-link">← All games</a>
+    <div class="chip"><span>BEST ENDLESS<strong id="best-top">0</strong></span></div>
+  </header>
+  <main>
+    <section class="intro" id="intro">
+      <div>
+        <p class="kicker"><span></span>A GAME OF WHEN</p>
+        <h1>Guess the<br /><em>year.</em></h1>
+        <p class="lede">One event at a time, from anywhere in history. Slide or type your guess, lock it in, and see exactly how close you got.</p>
+        <div class="steps">
+          <article class="step"><span>01</span><p><b>READ</b> the event. It could be ancient or from last decade.</p></article>
+          <article class="step"><span>02</span><p><b>GUESS</b> the year with the slider, the buttons or the keyboard.</p></article>
+          <article class="step"><span>03</span><p><b>SCORE.</b> Closer is better. A wildly wrong guess costs a heart. Lose three and it ends.</p></article>
+        </div>
+        <div class="btns"><button class="btn" id="go-daily" type="button">PLAY DAILY →</button><button class="btn alt" id="go-endless" type="button">ENDLESS MODE</button></div>
+        <p class="note">Daily is the same ten events for everyone. Some ancient dates are traditional or approximate.</p>
+      </div>
+      <div class="art" aria-hidden="true">
+        <div><small>WHEN DID THIS HAPPEN?</small><b>First Moon landing</b></div>
+        <div class="q">19 ? ?</div>
+        <div style="margin-top:12px"><small>YOU WERE OFF BY</small><b>3 years · SPOT ON</b></div>
+      </div>
+    </section>
+
+    <div class="game" id="game" hidden>
+      <section>
+        <div class="mode-strip"><p id="eyebrow">DAILY</p><h1>When did this happen?</h1></div>
+        <div class="q-card" id="qcard">
+          <div class="deco" id="deco" aria-hidden="true"></div><span class="era-tag" id="era-tag"></span>
+          <span class="q-tag" id="q-tag">EVENT</span>
+          <h2 class="q-name" id="q-name">…</h2>
+          <div class="readout" id="readout"></div>
+          <div class="controls" id="controls">
+            <button class="step-btn" data-d="-100" type="button">−100</button><button class="step-btn" data-d="-10" type="button">−10</button><button class="step-btn" data-d="-1" type="button">−1</button>
+            <button class="step-btn" data-d="1" type="button">+1</button><button class="step-btn" data-d="10" type="button">+10</button><button class="step-btn" data-d="100" type="button">+100</button>
+          </div>
+          <div class="yr-row"><span>OR TYPE A YEAR</span><input id="yr" type="number" min="1" max="2600" inputmode="numeric" aria-label="Year" /><button class="step-btn" id="era" type="button">AD</button></div>
+          <div class="strip" id="strip"></div>
+          <button class="btn lock" id="lock" type="button">LOCK IN GUESS →</button>
+        </div>
+        <div class="reveal" id="reveal" hidden></div>
+      </section>
+      <aside class="side" aria-label="Your status">
+        <section class="card first"><div class="heading"><span>HEARTS</span><i></i></div><div class="lives" id="lives"></div></section>
+        <section class="card first"><div class="heading"><span>SCORE</span><i></i></div><div class="big" id="score">0</div><div class="pips" id="pips"></div></section>
+        <section class="card span2"><div class="heading"><span>GUESS LOG</span><i></i></div><ul class="log" id="log"></ul></section>
+        <section class="card span2"><div class="heading"><span>HOW SCORING WORKS</span><i></i></div>
+          <ul class="legend"><li>Up to <b>1,000 points</b> per event. The closer you are, the more you earn.</li><li>Older events are judged more generously than recent ones.</li><li><b>Way off</b> guesses cost a heart.</li></ul>
+        </section>
+      </aside>
+    </div>
+  </main>
+</div>
+
+<div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <p class="k" id="m-kicker">DAILY COMPLETE</p><h2 id="m-title">All ten guessed.</h2><p class="sub" id="m-sub"></p>
+    <div class="m-hearts" id="m-hearts"></div><div class="grid" id="m-grid"></div>
+    <div class="stats"><div><span>SCORE</span><b id="m-score">0</b></div><div><span>ROUNDS</span><b id="m-placed">0</b></div><div><span>SPOT ON</span><b id="m-exact">0</b></div></div>
+    <div class="btns"><button class="btn alt" id="m-copy" type="button">COPY RESULT</button><button class="btn" id="m-again" type="button">ENDLESS MODE →</button></div>
+  </div>
+</div>
+
+<script>
+var $=function(id){return document.getElementById(id)};
+var EV=[
+[-2560,"Great Pyramid of Giza completed","It was the tallest human-made structure on Earth for nearly 4,000 years."],
+[-776,"First recorded ancient Olympic Games","Records of the Games at Olympia begin in 776 BC."],
+[-44,"Julius Caesar is assassinated","It happened in the Roman Senate on the Ides of March."],
+[80,"Colosseum opens in Rome","It could hold tens of thousands of spectators."],
+[105,"Paper invented in China (traditional date)","Court official Cai Lun is credited with the process."],
+[476,"Western Roman Empire falls","Traditionally dated to the removal of its last emperor."],
+[1206,"Genghis Khan founds the Mongol Empire","It grew into the largest connected land empire in history."],
+[1295,"Marco Polo returns to Venice","He had spent about 24 years travelling in Asia."],
+[1347,"Black Death reaches Europe","It killed a huge share of the population within a few years."],
+[1453,"Fall of Constantinople","The Ottomans captured the Byzantine capital."],
+[1455,"Gutenberg Bible printed","Movable-type printing helped books spread across Europe."],
+[1492,"Columbus reaches the Americas","His first voyage landed in the Caribbean."],
+[1498,"Vasco da Gama reaches India by sea","He sailed around Africa to arrive at Calicut."],
+[1522,"First circumnavigation of the globe completed","Magellan died on the way; Elcano’s crew finished the trip."],
+[1543,"Copernicus publishes his Sun-centred model","It placed the Sun, not Earth, at the centre."],
+[1610,"Galileo spots Jupiter’s moons","His telescope revealed four moons orbiting Jupiter."],
+[1687,"Newton publishes the Principia","It set out the laws of motion and gravity."],
+[1769,"Watt patents his improved steam engine","It helped power the Industrial Revolution."],
+[1796,"Jenner performs the first vaccination","He used cowpox to protect against smallpox."],
+[1799,"Rosetta Stone found","It helped scholars decipher Egyptian hieroglyphs."],
+[1829,"Stephenson’s Rocket wins the Rainhill Trials","This steam locomotive helped launch the railway age."],
+[1844,"First long-distance telegraph message sent","Samuel Morse sent it between Washington and Baltimore."],
+[1859,"Darwin publishes On the Origin of Species","It laid out evolution by natural selection."],
+[1869,"Suez Canal opens","It linked the Mediterranean and Red Seas."],
+[1876,"Telephone patented","Alexander Graham Bell filed the patent."],
+[1879,"Edison’s practical light bulb tested","One test bulb burned for over 13 hours."],
+[1889,"Eiffel Tower completed","It was the world’s tallest structure until 1930."],
+[1895,"X-rays discovered","Wilhelm Röntgen found them by accident."],
+[1896,"First modern Olympic Games","They were held in Athens."],
+[1901,"First Nobel Prizes awarded","They were funded by the will of Alfred Nobel."],
+[1903,"Wright brothers’ first powered flight","That first flight lasted 12 seconds."],
+[1905,"Einstein publishes special relativity","It was one of four famous papers he wrote that year."],
+[1912,"Titanic sinks","It hit an iceberg on its very first voyage."],
+[1914,"World War I begins","It lasted until 1918."],
+[1928,"Penicillin discovered","Alexander Fleming noticed mould killing bacteria."],
+[1930,"First FIFA World Cup","Uruguay hosted it and won."],
+[1939,"World War II begins","It lasted until 1945."],
+[1945,"World War II ends","The war ended in Europe in May and in Asia in September."],
+[1947,"Transistor invented","Built at Bell Labs, it underpins modern electronics."],
+[1953,"Mount Everest first climbed","Edmund Hillary and Tenzing Norgay reached the summit."],
+[1955,"Polio vaccine announced safe and effective","Jonas Salk’s vaccine was a major breakthrough."],
+[1957,"Sputnik 1 launched","It was the first artificial satellite."],
+[1961,"Yuri Gagarin becomes the first person in space","His flight lasted about 108 minutes."],
+[1969,"First Moon landing","Apollo 11 landed Neil Armstrong and Buzz Aldrin."],
+[1971,"First email sent","Ray Tomlinson chose the @ sign for addresses."],
+[1974,"Rubik’s Cube invented","Ernő Rubik built it as a teaching tool."],
+[1979,"Sony Walkman launched","It made portable personal music popular."],
+[1986,"Chernobyl disaster","It was the worst nuclear power plant accident in history."],
+[1989,"Berlin Wall falls","It had divided the city for 28 years."],
+[1990,"Hubble Space Telescope launched","It orbits above the blurring effect of Earth’s atmosphere."],
+[1996,"Dolly the sheep born","She was the first mammal cloned from an adult cell."],
+[1998,"Google founded","It began as a university research project."],
+[2003,"Human Genome Project completed","It mapped the full set of human DNA."],
+[2004,"Facebook launched","It started out at a single university."],
+[2005,"YouTube founded","Its first video was uploaded in April 2005."],
+[2006,"Pluto reclassified as a dwarf planet","The International Astronomical Union made the decision."],
+[2007,"First iPhone released","It went on sale in June 2007."],
+[2009,"Bitcoin network launched","Its first block was mined in January 2009."],
+[2012,"Higgs boson discovery announced","CERN announced the finding in July 2012."],
+[2015,"Paris climate agreement adopted","Nearly 200 countries signed on."],
+[2019,"First image of a black hole","It showed the black hole at the centre of galaxy M87."],
+[2020,"COVID-19 declared a pandemic","The World Health Organization made the declaration in March."],
+[2021,"James Webb Space Telescope launched","It observes the universe in infrared light."],
+[2022,"ChatGPT released","It reached a huge audience within weeks."]
+].map(function(e){return{y:e[0],n:e[1],f:e[2]}});
+var ROUNDS=10,NOW=2026,KEY_DONE="timeDropDailyV2",KEY_BEST="timeDropBestV2",S,G=1900;
+var TICKS=[[-2500,"2500BC"],[-1000,"1000BC"],[1,"AD 1"],[1000,"1000"],[1500,"1500"],[1800,"1800"],[1950,"1950"],[2020,"2020"]];
+function dayKey(){var d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+function seeded(t){var h=1779033703^t.length,i;for(i=0;i<t.length;i++){h=Math.imul(h^t.charCodeAt(i),3432918353);h=(h<<13)|(h>>>19)}return function(){h=Math.imul(h^(h>>>16),2246822507);h=Math.imul(h^(h>>>13),3266489909);h^=h>>>16;return(h>>>0)/4294967296}}
+function shuffle(a,r){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor((r||Math.random)()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
+function fmt(y){return y<0?Math.abs(y)+" BC":y<1000?"AD "+y:String(y)}
+function span(a,b){var d=Math.abs(a-b);if((a<0)!==(b<0))d-=1;return d}
+function get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}}
+function put(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+function paintBest(){$("best-top").textContent=get(KEY_BEST)||0}
+var HEART=["..ooo.ooo..",".ohrrorrro.","ohhrrrrrrdo","orrrrrrrrdo","orrrrrrrrdo",".orrrrrrdo.","..orrrrdo..","...orrdo...","....odo....",".....o....."];
+function heart(on,lost){var c=on?{o:"#17263a",r:"#ee6557",h:"#ffd6cc",d:"#b8372c"}:{o:"#8d98a3",r:"#e2d9c2",h:"#f1ead8",d:"#c9bfa4"},r="";
+  HEART.forEach(function(row,y){for(var x=0;x<11;x++){var k=row[x];if(k!==".")r+='<rect x="'+x+'" y="'+y+'" width="1" height="1" fill="'+c[k]+'"/>'}});
+  return'<svg class="'+(lost?"lost":"")+'" viewBox="0 0 11 10" width="44" height="40" style="shape-rendering:crispEdges">'+r+'</svg>'}
+function toPos(y){return 1-Math.cbrt(Math.min(4600,Math.max(0,NOW-y))/4600)}
+function fromPos(p){return Math.round(NOW-4600*Math.pow(1-p,3))}
+function norm(y){y=Math.round(y);if(y>NOW)y=NOW;if(y<-2600)y=-2600;if(y===0)y=1;return y}
+function buildStrip(){
+  var h='<div class="base"></div>';
+  TICKS.forEach(function(t){var p=toPos(t[0])*100;h+='<i class="tick" style="left:'+p+'%"></i><span class="lab" style="left:'+p+'%">'+t[1]+'</span>'});
+  h+='<input class="slide" id="slide" type="range" min="0" max="1000" step="1" aria-label="Year slider" /><div id="pins"></div>';
+  $("strip").innerHTML=h;
+  $("slide").addEventListener("input",function(){setGuess(fromPos(Number(this.value)/1000),true)});
+}
+function setGuess(y,fromSlide,fromInput){
+  G=norm(y);
+  $("readout").innerHTML=Math.abs(G)+" <small>"+(G<0?"BC":G<1000?"AD":"")+"</small>";
+  if(!fromInput)$("yr").value=Math.abs(G);
+  $("era").textContent=G<0?"BC":"AD";
+  if(!fromSlide)$("slide").value=Math.round(toPos(G)*1000);
+  pins();
+}
+var SPR={
+phone:[".oooooooo.","osssssssso","osccccccso","oscbbbbcso","osccccccso","oscpcgcyso","osccccccso","oscbcpcgso","osccccccso","oscycbcpso","osccccccso","osccwwccso","osssssssso","osssskksso",".oooooooo."],
+laptop:["..oooooooooooo..","..osccccccccso..","..oscbbbbbbcso..","..oscbpbgbycso..","..osccccccccso..","..oscbbbbbbcso..","..osccccccccso..","..oooooooooooo..","oooooooooooooooo","oskkkkkkkkkkkkso",".oooooooooooooo."],
+plant:["....gg..gg....","..gmlgg.glgg..",".gmllggggllmg.",".ggmlgddgmlgg.","..gggdggdggg..","....gdggdg....",".....dggd.....","....gdggdg....","...ggdggdgg...",".....dggd.....","..oaaaaaaaao..","..oenneennno..","...onnnnnno...","...onnaanno...","....onnnno....",".....oooo....."],
+sunflower:["....yy","..yyjy",".yjyaa",".yyaan","yjyann","yyyann",".yyaan",".yjyaa","..yyjy","....yy",".....d","..gg.d",".gmggd","..ggmd",".oaaaa","..oenn","...ooo"],
+rotary:["..rrrr",".rjjrr",".ro...","..oooo",".orrrr","orrkkk","orkwkw","orkkkk","orrkwk","orrrkk","orrrrr",".ooooo"],
+bulb:["...oo","..oyy",".oyjj","oyjwj","oyjjy","oyyyy",".oyyy","..oyy","...ok","...oa","...ok","...oa","...ok","....o"],
+radio:["..........k...",".........k....","oooooooooooooo","onnnnnnnnnnnno","onkkkkkonjjjno","onkokokonjyjno","onkkkkkonjjjno","onkokokonnnnno","onkkkkkonpnpno","onnnnnnnnnnnno","oooooooooooooo",".oo........oo."],
+books:["..oooooooooo..",".orrrrrrrrrro.",".orjjrrrrjjro.",".oooooooooooo.","obbbbbbbbbbbbo","obccbbbbbbccbo","oooooooooooooo",".oggggggggggo.",".ogmmggggggmo.",".oooooooooooo."],
+candle:["....y","...yj","...yj","....o","..ttt","..tjt","..tjt","..tjt","..ttt",".yyyy","yjjyy",".yyyy","..yaa","...oo"],
+globe:["...oooooo...","..ocbbbbbo..",".obggbbbbbo.","obgggbbbgggo","obggbbbbgggo","obbbbbggbbbo","obbbbggggbbo","obgbbbgggbbo",".obgbbbggbo.",".obbbbbbbbo.","..obbbbbbo..","...oooooo...","....oaao....","...oaaaao...","..oooooooo.."],
+column:["hhhhhh","fiiiii",".hffff","..iffh","..iffh","..iffh","..ifhh","..iffh","..iffh","..iffh","..iffh",".hffff","fiiiii","ffffff","hhhhhh"],
+amphora:["..ooo","..onn","...on","..oen","oonnn","onoen",".onnn","onjjj","onnnn","onaaa","onnnn",".onnn","..onn","...oo"],
+fishfossil:["oooooooooooooooo","ohhhhhhhhhhhhhho","ohhhhhhihihihhho","ohiiihhihihihiho","oiiwiiiiiiiiiiio","ohiiihhihihihiho","ohhhhhhihihihhho","ohhhhhhhhhhhhhho","oooooooooooooooo"],
+femur:[".hff....","hfiif...","hfffffff","hffiiiii","hfffffff","hfiif...",".hff...."],
+spider:["o.o..","oo.oo","..ooo","ooooo","..ooo",".o.oo","o.o.."]};
+var SYM={sunflower:1,rotary:1,bulb:1,candle:1,column:1,amphora:1,femur:1,spider:1};
+var PAL={o:"#17263a",g:"#6cae72",d:"#3f7a49",l:"#b8d957",m:"#8fcf8f",n:"#b5733d",a:"#7d4a22",e:"#e3c08d",p:"#ee6557",y:"#f2a44a",j:"#ffe08a",b:"#3e86a5",c:"#91c7dc",w:"#fffdf5",k:"#8d98a3",s:"#526273",t:"#d9c79a",r:"#c9473a",f:"#a89674",h:"#6e6144",i:"#cbbd9a"},DRY={g:"#b9a36b",d:"#8a7a4a",l:"#cdbb7e",m:"#cdbb7e",p:"#c9b98a",y:"#b9a36b",j:"#d9c79a"};
+var WEB=(function(){var d="M0 0H60M0 0V60M0 0L58 18M0 0L50 36M0 0L36 50M0 0L18 58",dew="",rs=[7,14,21,28,36,45,54],i;
+  rs.forEach(function(r){d+="M"+r+" 0Q"+(r*0.42).toFixed(1)+" "+(r*0.42).toFixed(1)+" 0 "+r;dew+='<circle cx="'+(r*0.36).toFixed(1)+'" cy="'+(r*0.36).toFixed(1)+'" r="1.1" fill="#91c7dc"/>'});
+  return'<svg viewBox="0 0 60 60"><path d="'+d+'" fill="none" stroke="#8d98a3" stroke-width="1.1"/>'+dew+'</svg>'})();
+var ERA=[
+{n:"DIGITAL AGE",v:["#3f7a49","#6cae72",1],s:["phone","plant","sunflower","laptop","plant","sunflower","plant","phone","laptop","sunflower"]},
+{n:"INDUSTRIAL AGE",v:["#3f7a49","#8fcf8f",0],s:["rotary","plant","bulb","radio","sunflower","bulb","plant","rotary","radio","plant"]},
+{n:"OLD WORLD",v:["#8a7a4a","#cdbb7e",0],s:["books","candle","globe","dry:plant","candle","books","dry:sunflower","globe","candle","dry:plant"]},
+{n:"ANCIENT WORLD",v:["#7d4a22","",0],s:["column","amphora","dry:plant","column","amphora","dry:sunflower","amphora","column","dry:plant","amphora"]},
+{n:"PRIMEVAL",v:null,s:["fishfossil","femur","spider","femur","fishfossil","spider","femur","fishfossil","spider","femur"]}],curStage=-1;
+function spr(key){var dry=key.indexOf("dry:")===0,name=dry?key.slice(4):key,rows=SPR[name].map(function(r){return SYM[name]?r+r.split("").reverse().join(""):r}),
+  w=Math.max.apply(null,rows.map(function(r){return r.length})),c=Object.assign({},PAL,dry?DRY:{}),r="";
+  rows.forEach(function(row,y){for(var x=0;x<row.length;x++){var k=row[x];if(k!==".")r+='<rect x="'+x+'" y="'+y+'" width="1" height="1" fill="'+c[k]+'"/>'}});
+  return'<svg viewBox="0 0 '+w+' '+rows.length+'" style="width:calc('+w+'*var(--px));height:calc('+rows.length+'*var(--px))">'+r+'</svg>'}
+function vine(v,side){var d="M7 0",lv="",i,y,x,rot;
+  for(i=0;i<14;i++){y=i*10;x=i%2?3.5:10.5;rot=i%2?-30:30;d+="C"+(i%2?2:12)+" "+(y+3)+","+(i%2?2:12)+" "+(y+7)+",7 "+(y+10);
+    if(v[1]){lv+='<ellipse cx="'+x+'" cy="'+(y+5)+'" rx="3" ry="1.6" fill="'+v[1]+'" transform="rotate('+rot+' '+x+' '+(y+5)+')"/>';
+      if(v[2]&&i%3===1)lv+='<circle cx="'+x+'" cy="'+(y+3)+'" r="1.7" fill="#ee6557"/><circle cx="'+x+'" cy="'+(y+3)+'" r=".6" fill="#ffe08a"/>'}}
+  return'<svg class="vn '+side+'" viewBox="0 0 14 140" preserveAspectRatio="none"><path d="'+d+'" fill="none" stroke="'+v[0]+'" stroke-width="1.5"/>'+lv+'</svg>'}
+function drawDeco(y){
+  var st=y>=1980?0:y>=1850?1:y>=1000?2:y>=-500?3:4;if(st===curStage)return;curStage=st;
+  var E=ERA[st],h="",tops=[8,27,46,65,84];
+  if(E.v)h+=vine(E.v,"l")+vine(E.v,"r");
+  E.s.forEach(function(k,i){var side=i<5?"l":"r",t=tops[i%5]+(side==="r"?5:0);h+='<span class="dc '+side+'" style="top:'+t+'%;animation-delay:'+(i*55)+'ms">'+spr(k)+'</span>'});
+  (st===4?["tl","tr","bl","br"]:st===3?["tl"]:[]).forEach(function(c){h+='<span class="wb '+c+'">'+WEB+'</span>'});
+  $("deco").innerHTML=h;$("era-tag").textContent=E.n}
+function pins(){
+  drawDeco(S&&S.phase==="result"?S.cur.y:G);
+  var h='<span class="pin you" style="left:'+toPos(G)*100+'%">YOU '+fmt(G)+'</span>';
+  if(S&&S.phase==="result")h+='<span class="pin ans" style="left:'+toPos(S.cur.y)*100+'%">ANSWER '+fmt(S.cur.y)+'</span>';
+  $("pins").innerHTML=h;
+}
+function start(mode){
+  var pool=mode==="daily"?shuffle(EV,seeded("time-drop-"+dayKey())).slice(0,ROUNDS):shuffle(EV);
+  S={mode:mode,pool:pool,cur:pool.shift(),lives:3,score:0,spot:0,done:0,grid:[],log:[],phase:"guess",lost:false};
+  $("intro").hidden=true;$("game").hidden=false;$("modal").classList.remove("open");
+  if(!$("slide"))buildStrip();
+  setGuess(1900);render();try{window.scrollTo(0,0)}catch(e){}
+}
+function lock(){
+  if(S.phase!=="guess")return;
+  var c=S.cur,e=span(G,c.y),age=Math.max(1,NOW-c.y),s=Math.max(4,age*0.08),r=e/s,pts=Math.round(1000*Math.exp(-r)),
+  tier=e<=Math.floor(s*0.1)?"Bullseye":r<=0.5?"Spot on":r<=1.5?"Close":r<=4?"Off":"Way off",
+  cls=r<=0.5||e<=Math.floor(s*0.1)?"g":r<=4?"y":"r";
+  S.score+=pts;S.done++;S.grid.push(cls);if(cls==="g")S.spot++;
+  S.lost=tier==="Way off";if(S.lost)S.lives--;
+  S.last={tier:tier,cls:cls,pts:pts,e:e,g:G};S.log.unshift({n:c.n,y:c.y,g:G,t:tier,cls:cls,pts:pts});
+  S.phase="result";render();
+}
+function advance(){
+  var last=S.lives<=0||(S.mode==="daily"&&S.done>=ROUNDS)||!S.pool.length;
+  if(last){endGame(S.lives<=0?"over":"done");return}
+  S.cur=S.pool.shift();S.phase="guess";S.lost=false;setGuess(1900);render();
+}
+function endGame(why){
+  if(S.mode==="daily")put(KEY_DONE,{day:dayKey(),score:S.score,grid:S.grid,spot:S.spot,done:S.done,why:why});
+  else{var b=get(KEY_BEST)||0;if(S.score>b)put(KEY_BEST,S.score);paintBest()}
+  showEnd(S.mode,S.score,S.done,S.spot,S.grid,why);
+}
+function showEnd(mode,score,done,spot,gridArr,why){
+  var sq={g:"🟩",y:"🟨",r:"🟥"},grid=gridArr.map(function(x){return sq[x]}).join("");
+  $("m-kicker").textContent=mode==="daily"?"DAILY "+(why==="over"?"OVER":"COMPLETE"):"ENDLESS RUN OVER";
+  $("m-title").textContent=why==="over"?"Out of hearts.":"All guessed.";
+  $("m-sub").textContent=mode==="daily"?"A new set of ten events arrives tomorrow.":"You guessed "+done+" events. Beat that next time.";
+  var wayoff=gridArr.filter(function(x){return x==="r"}).length,left=Math.max(0,3-wayoff),mh="";for(var q=0;q<3;q++)mh+=heart(q<left,false);$("m-hearts").innerHTML=mh;$("m-grid").innerHTML=gridArr.map(function(x){return'<i class="sq '+x+'"></i>'}).join("");$("m-score").textContent=score.toLocaleString();$("m-placed").textContent=done;$("m-exact").textContent=spot;
+  $("m-again").textContent=mode==="daily"?"ENDLESS MODE →":"PLAY AGAIN →";
+  $("m-copy").dataset.text="Time Drop "+(mode==="daily"?dayKey():"Endless")+"\n"+grid+"\nScore "+score+" · "+spot+" spot on";
+  $("m-copy").textContent="COPY RESULT";
+  $("modal").classList.add("open");$("modal").setAttribute("aria-hidden","false");
+}
+function render(){
+  var res=S.phase==="result",daily=S.mode==="daily";
+  $("eyebrow").textContent=daily?"DAILY · EVENT "+Math.min(S.done+(res?0:1),ROUNDS)+" OF "+ROUNDS:"ENDLESS · "+S.done+" GUESSED";
+  $("q-tag").textContent="WHEN DID THIS HAPPEN?";$("q-name").textContent=S.cur.n;
+  $("qcard").classList.toggle("locked",res);
+  var r=$("reveal");r.hidden=!res;
+  if(res){
+    var L=S.last,last=S.lives<=0||(daily&&S.done>=ROUNDS)||!S.pool.length;
+    r.className="reveal t-"+L.cls;
+    r.innerHTML='<h2>'+fmt(S.cur.y)+'</h2><p class="tl"><b>'+L.tier.toUpperCase()+'</b> · you guessed '+fmt(L.g)+', '+(L.e===0?"exactly right":L.e+" year"+(L.e===1?"":"s")+" off")+' · <b>+'+L.pts+'</b>'+(S.lost?" · you lose a heart":"")+'</p><p class="fact">'+S.cur.f+'</p><button class="btn" id="next" type="button">'+(last?"SEE RESULT →":"NEXT EVENT →")+'</button>';
+    $("next").addEventListener("click",advance);
+    setTimeout(function(){r.scrollIntoView({behavior:"smooth",block:"nearest"})},60);
+  }
+  pins();
+  var lv="";for(var k=0;k<3;k++)lv+=heart(k<S.lives,S.lost&&k===S.lives);$("lives").innerHTML=lv;
+  $("score").textContent=S.score.toLocaleString();
+  var pp="";S.grid.forEach(function(g){pp+='<i class="'+g+'"></i>'});if(daily)for(var j=S.grid.length;j<ROUNDS;j++)pp+="<i></i>";$("pips").innerHTML=pp;
+  $("log").innerHTML=S.log.length?S.log.map(function(x){return'<li class="'+x.cls+'"><b>'+x.n+'</b><em>+'+x.pts+'</em><small>You '+fmt(x.g)+' · Actual '+fmt(x.y)+' · '+x.t+'</small></li>'}).join(""):'<li class="empty"><small>Your guesses will show up here.</small></li>';
+}
+document.querySelectorAll("#controls .step-btn").forEach(function(b){b.addEventListener("click",function(){setGuess(G+Number(b.dataset.d))})});
+$("yr").addEventListener("input",function(){var v=parseInt(this.value,10);if(isNaN(v)||v<1)return;setGuess((G<0?-1:1)*v,false,true)});
+$("yr").addEventListener("blur",function(){setGuess(G)});
+$("era").addEventListener("click",function(){setGuess(-G)});
+$("lock").addEventListener("click",lock);
+$("go-daily").addEventListener("click",function(){
+  var d=get(KEY_DONE);
+  if(d&&d.day===dayKey()){$("intro").hidden=true;showEnd("daily",d.score,d.done,d.spot,d.grid,d.why);return}
+  start("daily");
+});
+$("go-endless").addEventListener("click",function(){start("endless")});
+$("m-again").addEventListener("click",function(){start("endless")});
+$("m-copy").addEventListener("click",function(){
+  var t=$("m-copy").dataset.text,b=$("m-copy");
+  try{navigator.clipboard.writeText(t).then(function(){b.textContent="COPIED ✓"},function(){b.textContent="COPY MANUALLY"})}catch(e){b.textContent="COPY MANUALLY"}
+});
+document.addEventListener("keydown",function(e){
+  if(!S||$("modal").classList.contains("open")||e.key!=="Enter")return;
+  if(S.phase==="result")advance();else lock();
+});
+paintBest();
+</script>
+</body>
+</html>
