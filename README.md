@@ -1,5 +1,11 @@
 # Break Room
 
+## Prior shelved; preserve its content — owner decision, 23 October 2026
+
+Prior joins Alibi and Bouncer outside the active lineup. The six current games are Laser, Stack Up, Stake, Pack, Lowball and Inner Clock. Remove Prior from the shelf, drawers and current Friends comparisons; keep archived profile history, earned achievements, saves, scoring compatibility and direct routes. The current Daily checklist uses six games.
+
+Preserve `content/prior-events.json` in full, including stable event IDs, dates, explanations and source links, plus `scripts/build-prior-events.cjs` and existing generated content. The owner wants a similar event-based replacement that can reuse this material. Its design is not decided; do not invent rules, alter the bank or add a replacement card yet. This supersedes the earlier seven-game roster below.
+
 A static daily games website with a warm cream grid, navy outlines, pastel panels and hard pixel shadows. The repository is `phoenix6716/Break-Room`, formerly `Midnight-Arcade`.
 
 ## Play and develop
@@ -19,12 +25,11 @@ Open `http://127.0.0.1:8000/index.html`. Keep the full folder structure; links u
 | Lowball | Four Daily price guesses, AU/US/UK/CA selection, generated pixel-art items and free Unlimited practice. |
 | Stake | Five Daily trivia questions, 1–3-chip bets and a 30-second timer after each bet; Unlimited practice. A timeout loses the bet. |
 | Laser | Four untimed mirror puzzles, first-fire Daily scoring, unscored retries/solutions and free practice. 216 solver-checked boards, including 96 three-mirror Experts. |
-| Prior | Five untimed earlier-event choices, progressive gap bands, timeline/date reveals and free endless practice. 128 scoped events. |
 | Pack | Three untimed easy/medium/hard packing puzzles, a visual bag, personalized swaps and free Unlimited practice. 180 validated bags. |
 | Inner Clock | Five blind Daily timing targets, native average miss and free Unlimited practice. |
 | Stack Up | Five familiar Daily ordering sets, 90 seconds per stack and drag/touch/keyboard controls; optional Challenge mix in free Unlimited. |
 
-All Dailies reset at midnight **Australia/Sydney**, including daylight-saving changes. The homepage lists seven current games. Alibi and Bouncer are shelved; their engines, direct routes and saved history are preserved. All six cancelled placeholder cards remain removed. Native scores remain alongside the shared 0–100 Arcade score. See [SCORING.md](SCORING.md) for the exact formulas and equal-game average over the common 120-day window.
+All Dailies reset at midnight **Australia/Sydney**, including daylight-saving changes. The homepage lists six current games. Prior, Alibi and Bouncer are shelved; their engines, direct routes and saved history are preserved. All six cancelled placeholder cards remain removed. Native scores remain alongside the shared 0–100 Arcade score. See [SCORING.md](SCORING.md) for the exact formulas and equal-game average over the common 120-day window.
 
 ## Current lineup — owner decision, 23 October 2026
 

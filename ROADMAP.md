@@ -1,6 +1,12 @@
 # Break Room launch roadmap
 
-Current development scope: seven active games, with Alibi and Bouncer shelved. Three replacements are intended; one owner-supplied prototype is pending review and the other two concepts remain unselected.
+## Prior shelved; preserve its content — owner decision, 23 October 2026
+
+Prior joins Alibi and Bouncer outside the active lineup. The six current games are Laser, Stack Up, Stake, Pack, Lowball and Inner Clock. Remove Prior from the shelf, drawers and current Friends comparisons; keep archived profile history, earned achievements, saves, scoring compatibility and direct routes. The current Daily checklist uses six games.
+
+Preserve `content/prior-events.json` in full, including stable event IDs, dates, explanations and source links, plus `scripts/build-prior-events.cjs` and existing generated content. The owner wants a similar event-based replacement that can reuse this material. Its design is not decided; do not invent rules, alter the bank or add a replacement card yet. This supersedes the earlier seven-game roster below.
+
+Current development scope: six active games, with Prior, Alibi and Bouncer shelved. Three replacements are intended; one owner-supplied prototype is pending review and the other two concepts remain unselected.
 
 ## Current lineup — owner decision, 23 October 2026
 

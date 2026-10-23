@@ -7,7 +7,7 @@
   const numbers=new Intl.NumberFormat('en-AU',{maximumFractionDigits:1});
   const dates=new Intl.DateTimeFormat('en-AU',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'});
   const dateLabel=day=>dates.format(new Date(day+'T00:00:00Z'));
-  const archived = new Set(['alibi','bouncer']);
+  const archived = new Set(['alibi','bouncer','prior']);
   const url=game=>'games/'+game+'/index.html';
   let model=null,limit=10,signature='';
   function score(value,game,average=false){

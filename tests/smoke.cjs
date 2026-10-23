@@ -29,18 +29,18 @@ function check(condition, message) { assert.ok(condition, message); checks++; }
       await page.goto(base, {waitUntil: 'domcontentloaded'});
       check((await page.title()).includes('Break Room'), 'Homepage branding');
       const cards = page.locator('.game-grid .game-card');
-      check(await cards.count() === 7, 'Seven active homepage cards');
+      check(await cards.count() === 6, 'Six active homepage cards');
       check((await cards.nth(0).locator('a').getAttribute('href')).includes('laser'), 'Laser first');
       check((await cards.nth(1).locator('a').getAttribute('href')).includes('stack-up'), 'Stack Up second');
       check(await page.locator('.coming-stamp').count() === 0, 'No placeholder cards on the homepage');
       check(!await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), 'Homepage has no horizontal overflow');
-      check(await cards.locator('a[href*="/alibi/"],a[href*="/bouncer/"]').count() === 0, 'Shelved games absent from shelf');
+      check(await cards.locator('a[href*="/alibi/"],a[href*="/bouncer/"],a[href*="/prior/"]').count() === 0, 'Shelved games absent from shelf');
       for (const route of routes) {
         await page.goto(`${base}/${route}`, {waitUntil: 'domcontentloaded'});
         const wordmark = await page.locator('header .brand').boundingBox();
         check(wordmark.width > 0 && wordmark.x >= 0, `Visible branding: ${route} at ${width}`);
         check(!await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), `No overflow: ${route} at ${width}`);
-        check(await page.locator('#game-menu a[href*="/alibi/"],#game-menu a[href*="/bouncer/"]').count() === 0, 'Shelved games absent from drawer');
+        check(await page.locator('#game-menu a[href*="/alibi/"],#game-menu a[href*="/bouncer/"],#game-menu a[href*="/prior/"]').count() === 0, 'Shelved games absent from drawer');
         await page.locator('#game-menu-toggle').click();
         await page.locator('#game-menu-close').click();
         check(await page.locator('#game-menu').isHidden(), `Drawer close button: ${route}`);

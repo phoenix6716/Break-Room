@@ -1,5 +1,11 @@
 # Hosting Break Room
 
+## Prior shelved; preserve its content — owner decision, 23 October 2026
+
+Prior joins Alibi and Bouncer outside the active lineup. The six current games are Laser, Stack Up, Stake, Pack, Lowball and Inner Clock. Remove Prior from the shelf, drawers and current Friends comparisons; keep archived profile history, earned achievements, saves, scoring compatibility and direct routes. The current Daily checklist uses six games.
+
+Preserve `content/prior-events.json` in full, including stable event IDs, dates, explanations and source links, plus `scripts/build-prior-events.cjs` and existing generated content. The owner wants a similar event-based replacement that can reuse this material. Its design is not decided; do not invent rules, alter the bank or add a replacement card yet. This supersedes the earlier seven-game roster below.
+
 ## GitHub Pages and automatic checks
 
 The static site can publish from this repository using **Check and publish Break Room** in [GitHub Actions](https://github.com/phoenix6716/Break-Room/actions/workflows/site.yml).
@@ -85,7 +91,7 @@ The owner wants three better replacement games, with one prototype already lined
 
 ## Current game migration
 
-Seven games are in the active lineup; the nine-game storage/schema support, including archived Alibi and Bouncer, remains for compatibility. Existing Supabase projects run `supabase/inner-clock.sql` last after setup/social activation; it includes current Pack support. Fresh projects use updated setup then friends. Do not reapply a historical narrower per-game allowlist afterwards. Browser play does not require SQL, but live Prior cloud/Friends support does.
+Six games are in the active lineup; the nine-game storage/schema support, including archived Alibi and Bouncer, remains for compatibility. Existing Supabase projects run `supabase/inner-clock.sql` last after setup/social activation; it includes current Pack support. Fresh projects use updated setup then friends. Do not reapply a historical narrower per-game allowlist afterwards. Browser play does not require SQL, but live Prior cloud/Friends support does.
 
 ## Laser addition
 
