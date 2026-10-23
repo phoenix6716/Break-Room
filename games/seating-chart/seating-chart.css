@@ -1,0 +1,39 @@
+/* Seating Chart inside the canonical Break Room shell. */
+.seating-chart-page #game-panel{padding:clamp(12px,3vw,24px);background:#faf5e8;color:#18263a}
+.seating-chart-page #engine-slot{min-width:0}
+.sc-kicker{font:700 .75rem var(--font-mono,monospace);letter-spacing:.06em;text-transform:uppercase;margin:0 0 8px}
+.sc-objective{padding:10px 12px;background:#e4edcf;border:2px solid #18263a;box-shadow:3px 3px 0 #18263a;margin:12px 0;font-weight:700}
+.sc-instructions,.sc-selection{font-size:.92rem;line-height:1.5}
+.sc-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;gap:18px}
+.sc-ring{position:relative;width:min(100%,340px);aspect-ratio:1;margin:16px auto 24px;isolation:isolate}
+.sc-cloth{position:absolute;inset:23%;border:3px solid #18263a;border-radius:50%;background:repeating-linear-gradient(45deg,#d8e1cb 0 10px,#e4e9d8 10px 20px);box-shadow:3px 3px 0 #18263a;display:grid;place-content:center;text-align:center;font:700 .8rem monospace}
+.sc-seat{position:absolute;transform:translate(-50%,-50%);width:54px;height:54px;border:2px solid #18263a;border-radius:50%;background:#fffaf0;color:#18263a;font:700 .82rem system-ui;padding:2px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:2px 2px 0 #18263a}
+.sc-seat small{font-size:.65rem;font-weight:400}
+.sc-seat.empty{border-style:dashed;background:#f4eddc}
+.sc-seat.selected,.sc-pool button.selected{background:#b8d9e5}
+.sc-seat.related{outline:3px solid #b8d9e5;outline-offset:2px}
+.sc-seat.broken{border-color:#a24036;background:#f5d4c4}
+.sc-pool{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.sc-pool button{min-width:44px;min-height:44px;padding:8px 10px;background:#faf5e8;border:2px solid #18263a;box-shadow:2px 2px 0 #18263a;color:#18263a;font:600 .9rem system-ui}
+.sc-pool button[aria-pressed=true]{background:#b8d9e5}
+.sc-pool button small{display:block;font-size:.7rem;font-weight:400}
+.sc-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:18px 0}
+.sc-actions .button{min-height:44px}
+.sc-rules{margin:0;padding-left:22px;display:grid;gap:8px}
+.sc-rules li{padding:8px;background:#fffaf0;border:1px solid #18263a;line-height:1.4;font-size:.93rem;text-align:left}
+.sc-rules li.related{background:#dceaf0;border:2px solid #18263a}
+.sc-rules small{display:block;margin-top:4px;font-size:.8rem}
+.sc-rules .sc-verdict{font-weight:700}
+.sc-review{margin-top:20px;padding-top:16px;border-top:2px solid #18263a}
+.sc-review h3,.sc-summary h2{scroll-margin-top:90px}
+.sc-review .sc-rules,.sc-summary ol{margin:14px 0}
+.sc-mishaps{padding-left:22px;line-height:1.6;text-align:left}
+.sc-native{font-size:1.2rem;font-weight:700}
+.sc-share{width:100%;min-height:140px;margin-top:12px;color:#18263a;background:#fffaf0;border:2px solid #18263a}
+#practice-settings{padding:10px;border:2px solid #18263a;background:#f1e6ca;margin-bottom:16px}
+#practice-settings label{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center}
+#practice-settings select{min-height:44px;max-width:100%;padding:6px;background:#fffaf0;border:2px solid #18263a;color:#18263a}
+#practice-note,#save-warning,#sc-notice{font-size:.85rem;line-height:1.4}
+@media(max-width:700px){.sc-layout{grid-template-columns:minmax(0,1fr)}.sc-seat{width:44px;height:44px;font-size:.73rem}.sc-ring{max-width:300px}.sc-rules{gap:6px}.sc-cloth{font-size:.7rem}}
+
+.sc-review summary{min-height:44px;padding:12px 4px;cursor:pointer;font-weight:700;line-height:1.5;text-align:left}.sc-review summary:focus-visible{outline:3px solid #17263a;outline-offset:3px}

@@ -2,15 +2,24 @@
 
 Prepared 22 October 2026 (Australia/Sydney). Unchecked means evidence is still required. Code present, a pushed commit, green CI and a confirmed public deployment are separate milestones.
 
+## Current roster and Seating Chart evidence — 24 October 2026
+
+Nine active games: Laser, Time Drop, Clue Ladder, Seating Chart, Stack Up, Stake, Pack, Lowball and Inner Clock. Alibi, Bouncer and Prior retain archived routes/history; twelve native cloud formats remain supported. Older audit-era counts and PR holds below are superseded by the current owner decisions in AGENTS.md.
+
+- [x] Seating Chart: 360 offline-generated tables, 72 Daily sets, exhaustive optima and conflicting-request lower bounds, five browser widths, Daily save/lock/Undo and a complete Unlimited refill checked in [run 40040627565](https://github.com/phoenix6716/Break-Room/actions/runs/40040627565).
+- [x] Seating Chart live database migration applied and independently verified; existing saves/RLS preserved.
+- [ ] Confirm the new release's main-branch Pages publication separately.
+- [ ] Playtest Seating Chart on real phones and with people at different skill levels; calibrate Expert challenge and session length. Structural solver checks are not human difficulty certification.
+
 ## 1. Stabilise the release candidate — engineering
 
-- [ ] Review PR #1 documentation cleanup and PR #2 navigation/theme/ranking cleanup; resolve overlaps before merging.
+- [ ] Review the final release-candidate diff, including current navigation, theme and game roster; resolve any conflicts with the latest AGENTS.md decisions.
 - [ ] Finish and review the content/difficulty PR. Confirm the final file diff contains no unintended engine, artwork, billing or save-format changes.
-- [ ] Run the full locked-dependency `npm test` suite, including build/reference checks, all game journeys, PostgreSQL scoring/security parity and new release-window checks.
+- [ ] Run locked-dependency `npm test` with focused checks for changed components and actual shared dependencies, including build/reference, affected game journeys and relevant PostgreSQL scoring/security parity. A full sweep requires an explicit audit request.
 - [ ] Record each check's commit/run URL. Fix failing checks; do not mark a mocked interaction as a live service test.
 - [ ] Confirm no frozen legacy Stake rows or existing game snapshots are reinterpreted. Test old drafts/completions, zero scores, active deadlines, guest saves and cloud restores.
 - [ ] Remove all cancelled-game advertising from reachable menus. Keep archived routes out of prominent navigation.
-- [ ] Decide the candidate commit and prepare a revert commit/rollback procedure. Leave these audit changes in PRs until owner review.
+- [ ] Decide the candidate commit and prepare a revert commit/rollback procedure. Completed requested changes are authorised for automatic publication after affected checks; PRs do not require another owner approval.
 
 Exit: a reproducible release candidate with passing checks and no unresolved data-loss, scoring, navigation or inaccessible-control defects.
 
@@ -20,8 +29,8 @@ Exit: a reproducible release candidate with passing checks and no unresolved dat
 - [ ] Check individual puzzle/question repetition and logical duplicate signatures, not just unique IDs or whole-run hashes.
 - [ ] Record bank counts by tier, pool/deck exhaustion behaviour and whether practice can deplete or alter a Daily.
 - [ ] Confirm easier tiers remain accessible and settings never replace a round already in progress.
-- [ ] Independently solve new Pack/Laser/Alibi/Bouncer content; test unique solutions, no shortcuts and JS/SQL result parity.
-- [ ] Verify advanced Alibi minimum clue requirements across all subsets, rather than a greedy removal order.
+- [ ] Independently solve current Pack/Laser/Seating Chart content; test optimum bounds, tier constraints and JS/SQL parity. Seating Chart accepts every optimal arrangement; it does not require one hidden seating order.
+- [ ] Preserve archived Alibi/Bouncer/Prior progress and score compatibility. For Seating Chart, retain the independent exhaustive minima and conflicting-request subset checks.
 - [ ] Recheck source/regeneration output so future content builds retain additions and original IDs.
 - [ ] Explicitly label Lowball's 100-product limit and Inner Clock's recurring timing ingredients. If unique individual ingredients are required for a month, treat expansion as unfinished work.
 
@@ -35,7 +44,7 @@ The completed 22 October editorial review and PR #4 are documented in [FACTS-AND
 - [x] Stack Up: reconcile factual measurements and conventions, scopes and book milestones; verify arithmetic independently. Keep all 208 IDs, subjects and ordered cards.
 - [x] Prior: review all 128 milestones, years and full explanations; improve links and clarify dates/markets without changing years or IDs.
 - [x] Lowball: replace undefined inherited categories with 400 dated regional references and upfront product/service/pack/offer/average definitions, source evidence and fee/tax conventions. Preserve the 100-item pool and saved targets.
-- [ ] Merge the reviewed correction PR only after its final head passes the complete CI suite; check the deployed candidate separately.
+- [ ] Confirm the reviewed factual/price corrections remain in the release candidate and its affected checks pass; verify the deployed candidate separately.
 - [ ] Recheck volatile prices, current offers/tariffs, source availability and observation dates for the public release. Retain dated-reference wording; do not advertise universal/live prices.
 - [ ] Calibrate difficulty and breadth with players; broader Prior world-history coverage remains useful, separate from factual correctness.
 - [ ] Review game names, fonts, generated-art provenance and asset licences before public marketing.

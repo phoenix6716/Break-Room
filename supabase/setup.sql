@@ -2,14 +2,14 @@
 begin;
 create table if not exists public.game_saves (
  user_id uuid not null references auth.users(id) on delete cascade,
- game text not null check (game in ('stake','stack-up','lowball','pack','prior','laser','alibi','bouncer','inner-clock','time-drop','clue-ladder')),
+ game text not null check (game in ('stake','stack-up','lowball','pack','prior','laser','alibi','bouncer','inner-clock','time-drop','clue-ladder','seating-chart')),
  data jsonb not null default '{}'::jsonb check (jsonb_typeof(data)='object' and octet_length(data::text)<=2000000),
  revision bigint not null default 1 check (revision>0),
  updated_at timestamptz not null default now(),
  primary key(user_id,game)
 );
 alter table public.game_saves drop constraint if exists game_saves_game_check;
-alter table public.game_saves add constraint game_saves_game_check check (game in ('stake','stack-up','lowball','pack','prior','laser','alibi','bouncer','inner-clock','time-drop','clue-ladder'));
+alter table public.game_saves add constraint game_saves_game_check check (game in ('stake','stack-up','lowball','pack','prior','laser','alibi','bouncer','inner-clock','time-drop','clue-ladder','seating-chart'));
 alter table public.game_saves enable row level security;
 revoke all on public.game_saves from public,anon,authenticated;
 grant select on public.game_saves to authenticated;
@@ -23,10 +23,11 @@ returns jsonb language plpgsql security definer set search_path='' as $$
 declare owner_id uuid:=auth.uid(); stored public.game_saves; k text;
 begin
  if owner_id is null then raise exception 'Sign in required' using errcode='42501'; end if;
- if p_game is null or p_game not in ('stake','stack-up','lowball','pack','prior','laser','alibi','bouncer','inner-clock','time-drop','clue-ladder') or p_revision is null or p_revision<0 or p_data is null or jsonb_typeof(p_data)<>'object' or octet_length(p_data::text)>2000000 then raise exception 'Invalid save'; end if;
+ if p_game is null or p_game not in ('stake','stack-up','lowball','pack','prior','laser','alibi','bouncer','inner-clock','time-drop','clue-ladder','seating-chart') or p_revision is null or p_revision<0 or p_data is null or jsonb_typeof(p_data)<>'object' or octet_length(p_data::text)>2000000 then raise exception 'Invalid save'; end if;
  for k in select jsonb_object_keys(p_data) loop
   if jsonb_typeof(p_data->k)<>'string' or not (
    (p_game='stake' and (k ~ '^stake:d:[0-9]{4}-[0-9]{2}-[0-9]{2}$' or k='stake:streak')) or
+   (p_game='seating-chart' and k ~ '^break-room:seating-chart:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
    (p_game='clue-ladder' and k ~ '^break-room:clue-ladder:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
    (p_game='time-drop' and k ~ '^break-room:time-drop:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
    (p_game='inner-clock' and k ~ '^break-room:inner-clock:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or

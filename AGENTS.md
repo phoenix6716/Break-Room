@@ -1,5 +1,14 @@
 # Break Room project memory
 
+## Seating Chart — owner-approved build, 24 October 2026
+
+Seating Chart is the ninth active game, placed after Clue Ladder: Laser → Time Drop → Clue Ladder → Seating Chart → Stack Up → Stake → Pack → Lowball → Inner Clock. Three archived games retain their routes/history; twelve native cloud formats remain supported. This supersedes older roster totals below. Read [the Seating Chart contract](games/seating-chart/README.md).
+
+Five untimed Daily tables use neighbours, not-neighbours, exactly one guest between, and opposite seats. Varied harder conflicts show their minimum upfront; every optimal arrangement earns full credit. Native total drama is lower-is-better; table Arcade credit is max(0,100 − 20 × avoidable drama), averaged across five. First reception locks immediately; fifth counts before final Next. Preserve snapshots, free Undo/Reset before commit, immediate draft saving, owner-scoped Unlimited, shared Sydney reset and ?-only Stake shell. The 360-table offline-generated deck provides 72 Daily sets. Solver checks are not human difficulty certification. Keep the original prototype outside production; do not activate its monetization hooks or rehearsal Compare route.
+
+Existing projects apply `supabase/seating-chart.sql` after Clue Ladder, or latest complete Inner Clock update. Fresh setup/Friends includes it. Verify live migration and Pages separately from passing CI. Automatic deployment remains authorised after affected checks.
+
+
 ## Clue Ladder — owner-approved build, 23 October 2026
 
 Clue Ladder is the eighth active game: Laser → Time Drop → Clue Ladder → Stack Up → Stake → Pack → Lowball → Inner Clock. Alibi, Bouncer and Prior remain archived; eleven native save formats are supported. This supersedes older roster counts below.

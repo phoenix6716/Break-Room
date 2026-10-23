@@ -29,8 +29,8 @@ function check(condition, message) { assert.ok(condition, message); checks++; }
       await page.goto(base, {waitUntil: 'domcontentloaded'});
       check((await page.title()).includes('Break Room'), 'Homepage branding');
       const cards = page.locator('.game-grid .game-card');
-      check(await cards.count() === 8, 'Eight active homepage cards');
-      check((await page.locator('.section-head p').innerText()).includes('08 DAILY GAMES'), 'Shelf label matches current lineup');
+      check(await cards.count() === 9, 'Nine active homepage cards');
+      check((await page.locator('.section-head p').innerText()).includes('09 DAILY GAMES'), 'Shelf label matches current lineup');
       check((await cards.nth(0).locator('a').getAttribute('href')).includes('laser'), 'Laser first');
       check((await cards.nth(1).locator('a').getAttribute('href')).includes('time-drop'), 'Time Drop second');
       check(await page.locator('.coming-stamp').count() === 0, 'No placeholder cards on the homepage');

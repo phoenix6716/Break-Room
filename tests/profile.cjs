@@ -12,7 +12,7 @@ const snapshot=page=>page.evaluate(()=>Object.fromEntries(Object.keys(localStora
    const context=await browser.newContext({viewport:{width,height:1000},reducedMotion:'reduce'}),page=await context.newPage(),errors=[];
    page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url());});await page.clock.install({time:fixed});await page.clock.pauseAt(new Date(fixed.getTime()+1000));await page.clock.setSystemTime(fixed);
    await page.goto(base+'/profile.html');assert(await page.locator('#profile-empty').isVisible());assert.equal(await page.locator('#total-runs').innerText(),'0');assert.equal(await page.locator('.profile-achievement.earned').count(),0);
-   assert.equal(await page.locator('.profile-game').count(),8);assert.equal(await page.locator('.profile-game[data-game=prior],.profile-game[data-game=alibi],.profile-game[data-game=bouncer]').count(),0,'No archived play prompts for new players');assert.equal(await page.locator('.friend-code').count(),0);assert.equal(await page.locator('.profile-game [href*="pixel-pairs"]').count(),0);
+   assert.equal(await page.locator('.profile-game').count(),9);assert.equal(await page.locator('.profile-game[data-game=prior],.profile-game[data-game=alibi],.profile-game[data-game=bouncer]').count(),0,'No archived play prompts for new players');assert.equal(await page.locator('.friend-code').count(),0);assert.equal(await page.locator('.profile-game [href*="pixel-pairs"]').count(),0);
    if(width===1440)await page.screenshot({path:'design/previews/profile/empty-desktop.png',fullPage:true});
    const fixture={pc_played:'120',pc_last:'2026-10-20',pc_last_avg:'100',pc_history:{},'insert-coin:attempt:2026-10-20:pixel-pairs':{score:84}};
    for(let i=0;i<14;i++){
@@ -22,7 +22,7 @@ const snapshot=page=>page.evaluate(()=>Object.fromEntries(Object.keys(localStora
    }
    await page.evaluate(f=>{for(const [key,value]of Object.entries(f))localStorage.setItem(key,typeof value==='string'?value:JSON.stringify(value));},fixture);
    const before=await snapshot(page);await page.reload();
-   assert.equal(await page.locator('#total-runs').innerText(),'148');assert.equal(await page.locator('#today-count').innerText(),'3 / 8');assert.equal(await page.locator('#overall-streak').innerText(),'14 days');
+   assert.equal(await page.locator('#total-runs').innerText(),'148');assert.equal(await page.locator('#today-count').innerText(),'3 / 9');assert.equal(await page.locator('#overall-streak').innerText(),'14 days');
    assert.equal(await page.locator('.profile-achievement.earned').count(),6);assert.equal(await page.locator('.activity-day[data-count="3"]').count(),14);
    assert.equal(await page.locator('.profile-result').count(),10);await page.locator('#more-results').click();assert.equal(await page.locator('.profile-result').count(),20);
    await page.locator('#result-filter').selectOption('stake');assert.equal(await page.locator('.profile-result').count(),10);assert.equal(await page.locator('.profile-result:not([data-game=stake])').count(),0);await page.locator('#more-results').click();assert.equal(await page.locator('.profile-result').count(),14);assert.equal(await page.locator('#more-results').isVisible(),false);
@@ -36,8 +36,8 @@ const snapshot=page=>page.evaluate(()=>Object.fromEntries(Object.keys(localStora
    if([390,1440].includes(width))await page.screenshot({path:`design/previews/profile/${width===390?'mobile':'desktop'}.png`,fullPage:true});
    // A storage event refreshes another open tab; stale streaks clear after the shared Sydney day changes.
    await page.evaluate(()=>{localStorage.removeItem('stake:d:2026-10-20');window.dispatchEvent(new StorageEvent('storage',{key:'stake:d:2026-10-20'}));});
-   assert.equal(await page.locator('#today-count').innerText(),'2 / 8');
-   await page.clock.setSystemTime(new Date(fixed.getTime()+86400000*2));await page.clock.runFor(30000);assert.equal(await page.locator('#today-count').innerText(),'0 / 8');assert.equal(await page.locator('#overall-streak').innerText(),'0 days');
+   assert.equal(await page.locator('#today-count').innerText(),'2 / 9');
+   await page.clock.setSystemTime(new Date(fixed.getTime()+86400000*2));await page.clock.runFor(30000);assert.equal(await page.locator('#today-count').innerText(),'0 / 9');assert.equal(await page.locator('#overall-streak').innerText(),'0 days');
    assert.deepEqual(errors,[]);await context.close();console.log(`PASS ${width}px: empty/populated profile, exact real-format stats, six earned achievements, filters/pagination, live refresh/day rollover, read-only saves and no overflow/errors.`);
   }
   // Actual engines write the records: profile has no game-engine imports or sample scores.
@@ -56,7 +56,7 @@ const snapshot=page=>page.evaluate(()=>Object.fromEntries(Object.keys(localStora
    await page.goto(base+'/games/stack-up/index.html');await page.locator('[data-mode=daily]').click();
    for(let i=0;i<5;i++){await reorder(page);await page.locator('#check-button').click();await page.locator('#next-button').click();}
    const before=await snapshot(page);await page.goto(base+'/profile.html');
-   assert.equal(await page.locator('#total-runs').innerText(),'4');assert.equal(await page.locator('#today-count').innerText(),'3 / 8');
+   assert.equal(await page.locator('#total-runs').innerText(),'4');assert.equal(await page.locator('#today-count').innerText(),'3 / 9');
    const actual=await page.evaluate(()=>BREAK_ROOM_RECORDS.read(localStorage));
    assert.equal(actual.games[0].best,100);assert.equal(actual.games[1].best,15);assert.equal(actual.games[2].best,3100);assert.equal(actual.records.find(r=>r.game==='stake'&&r.date==='2026-10-19').score,legacyScore);
    assert.deepEqual(await snapshot(page),before);await page.reload();assert.equal(await page.locator('#total-runs').innerText(),'4');
