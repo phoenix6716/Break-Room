@@ -27,7 +27,7 @@
  function savePractice(){try{sessionStorage.setItem(practiceKey,JSON.stringify(practice));}catch{$('practice-note').textContent='Practice stays in memory while this tab remains open.';}}
  function pool(){const excluded=new Set(daily?.events.map(e=>e.id)||M.daily(B,C.dayKey()).map(e=>e.id));return B.filter(e=>!excluded.has(e.id)&&(practice.category==='all'||e.category===practice.category)&&(practice.era==='all'||practice.era==='early'&&e.year<1700||practice.era==='middle'&&e.year>=1700&&e.year<1900||practice.era==='modern'&&e.year>=1900));}
  function nextPractice(){
-  let choices=pool();if(!choices.length){practice.category='all';practice.era='all';choices=pool();}
+  let choices=pool();if(!choices.length){practice.category='all';practice.era='all';$('practice-category').value='all';$('practice-era').value='all';$('practice-note').textContent='No eligible events matched those settings. Switched to Mixed topics and All periods.';choices=pool();}
   let eligible=choices.filter(e=>!practice.seen.includes(e.id));if(!eligible.length){practice.seen=[];eligible=choices.filter(e=>e.id!==practice.event?.id);if(!eligible.length)eligible=choices;}
   const event=eligible[Math.floor(Math.random()*eligible.length)];practice.seen.push(event.id);practice.event=structuredClone(event);practice.guess=1900;practice.pick=null;savePractice();
  }
