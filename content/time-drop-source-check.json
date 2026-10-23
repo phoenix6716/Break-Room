@@ -1,0 +1,1022 @@
+{
+  "checkedAt": "2026-10-23",
+  "scope": "202 newly authored events, 194 distinct original citation URLs. Batched page retrieval checks source availability, not full independent factual certification. Two dead pages were replaced; an intermittent insulin redirect and a holiday-only Sudan citation were upgraded to institutional sources. Frozen year/ID/order/scoring data and all original Prior sources remain unchanged.",
+  "replacements": {
+    "https://en.wikipedia.org/wiki/Discovery_of_X-rays": "https://www.aps.org/apsnews/2001/11/1895-roentgens-discovery-xrays",
+    "https://en.wikipedia.org/wiki/1909_Nobel_Prize_in_Physics": "https://lemelson.mit.edu/resources/guglielmo-marconi",
+    "https://en.wikipedia.org/wiki/Discovery_of_insulin": "https://fisherdigitus.library.utoronto.ca/exhibits/show/insulin100/summerof1921",
+    "https://en.wikipedia.org/wiki/Independence_Day_(South_Sudan)": "https://www.gov.uk/government/news/south-sudan-becomes-independent"
+  },
+  "events": [
+    {
+      "id": "td-001",
+      "source": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-002",
+      "source": "https://en.wikipedia.org/wiki/Ancient_Olympic_Games",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-003",
+      "source": "https://en.wikipedia.org/wiki/Battle_of_Marathon",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-004",
+      "source": "https://en.wikipedia.org/wiki/Battle_of_Thermopylae",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-005",
+      "source": "https://en.wikipedia.org/wiki/Battle_of_Plataea",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-006",
+      "source": "https://en.wikipedia.org/wiki/Peloponnesian_War",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-007",
+      "source": "https://en.wikipedia.org/wiki/Trial_of_Socrates",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-008",
+      "source": "https://en.wikipedia.org/wiki/Battle_of_Chaeronea",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-009",
+      "source": "https://en.wikipedia.org/wiki/Alexander_the_Great",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-010",
+      "source": "https://en.wikipedia.org/wiki/Battle_of_Gaugamela",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-011",
+      "source": "https://en.wikipedia.org/wiki/Alexander_the_Great",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-012",
+      "source": "https://en.wikipedia.org/wiki/Qin_Shi_Huang",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-013",
+      "source": "https://en.wikipedia.org/wiki/Hannibal%27s_crossing_of_the_Alps",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-014",
+      "source": "https://en.wikipedia.org/wiki/Battle_of_Zama",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-015",
+      "source": "https://en.wikipedia.org/wiki/Siege_of_Carthage_(Third_Punic_War)",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-016",
+      "source": "https://en.wikipedia.org/wiki/Assassination_of_Julius_Caesar",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-017",
+      "source": "https://en.wikipedia.org/wiki/Battle_of_Actium",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-018",
+      "source": "https://en.wikipedia.org/wiki/Augustus",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-019",
+      "source": "https://en.wikipedia.org/wiki/Great_Fire_of_Rome",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-020",
+      "source": "https://en.wikipedia.org/wiki/Trajan%27s_Dacian_Wars",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-021",
+      "source": "https://en.wikipedia.org/wiki/Hadrian%27s_Wall",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-022",
+      "source": "https://en.wikipedia.org/wiki/Edict_of_Milan",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-023",
+      "source": "https://en.wikipedia.org/wiki/First_Council_of_Nicaea",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-024",
+      "source": "https://en.wikipedia.org/wiki/Constantinople",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-025",
+      "source": "https://en.wikipedia.org/wiki/Hijrah",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-026",
+      "source": "https://en.wikipedia.org/wiki/Muhammad",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-027",
+      "source": "https://en.wikipedia.org/wiki/Umayyad_conquest_of_Hispania",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-028",
+      "source": "https://en.wikipedia.org/wiki/Abbasid_Revolution",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-029",
+      "source": "https://en.wikipedia.org/wiki/History_of_Baghdad",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-030",
+      "source": "https://en.wikipedia.org/wiki/Charlemagne",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-031",
+      "source": "https://en.wikipedia.org/wiki/Treaty_of_Verdun",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-032",
+      "source": "https://idp.bl.uk/discover/learning/buddhism-on-the-silk-roads/articles/buddhism-on-the-ground/buddhist-texts-the-diamond-sutra/",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-033",
+      "source": "https://en.wikipedia.org/wiki/Song_dynasty",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-034",
+      "source": "https://en.wikipedia.org/wiki/Leif_Erikson",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-035",
+      "source": "https://en.wikipedia.org/wiki/East%E2%80%93West_Schism",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-036",
+      "source": "https://en.wikipedia.org/wiki/Siege_of_Jerusalem_(1099)",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-037",
+      "source": "https://en.wikipedia.org/wiki/Siege_of_Jerusalem_(1187)",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-038",
+      "source": "https://en.wikipedia.org/wiki/Genghis_Khan",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-039",
+      "source": "https://en.wikipedia.org/wiki/Siege_of_Baghdad_(1258)",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-040",
+      "source": "https://en.wikipedia.org/wiki/Yuan_dynasty",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-041",
+      "source": "https://en.wikipedia.org/wiki/Mansa_Musa",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-042",
+      "source": "https://en.wikipedia.org/wiki/Hundred_Years%27_War",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-043",
+      "source": "https://en.wikipedia.org/wiki/Ming_dynasty",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-044",
+      "source": "https://en.wikipedia.org/wiki/Zheng_He",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-045",
+      "source": "https://en.wikipedia.org/wiki/Joan_of_Arc",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-046",
+      "source": "https://en.wikipedia.org/wiki/Fall_of_Constantinople",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-047",
+      "source": "https://en.wikipedia.org/wiki/Treaty_of_Tordesillas",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-048",
+      "source": "https://en.wikipedia.org/wiki/Vasco_da_Gama",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-049",
+      "source": "https://en.wikipedia.org/wiki/Pedro_%C3%81lvares_Cabral",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-050",
+      "source": "https://en.wikipedia.org/wiki/Ninety-five_Theses",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-051",
+      "source": "https://en.wikipedia.org/wiki/Fall_of_Tenochtitlan",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-052",
+      "source": "https://en.wikipedia.org/wiki/Magellan_expedition",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-053",
+      "source": "https://en.wikipedia.org/wiki/Battle_of_Cajamarca",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-054",
+      "source": "https://en.wikipedia.org/wiki/Battle_of_Lepanto",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-055",
+      "source": "https://en.wikipedia.org/wiki/Spanish_Armada",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-056",
+      "source": "https://en.wikipedia.org/wiki/East_India_Company",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-057",
+      "source": "https://en.wikipedia.org/wiki/Tokugawa_Ieyasu",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-058",
+      "source": "https://en.wikipedia.org/wiki/Jamestown,_Virginia",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-059",
+      "source": "https://en.wikipedia.org/wiki/Transition_from_Ming_to_Qing",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-060",
+      "source": "https://en.wikipedia.org/wiki/Peace_of_Westphalia",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-061",
+      "source": "https://en.wikipedia.org/wiki/History_of_Cape_Town",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-062",
+      "source": "https://en.wikipedia.org/wiki/Glorious_Revolution",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-063",
+      "source": "https://en.wikipedia.org/wiki/Acts_of_Union_1707",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-064",
+      "source": "https://en.wikipedia.org/wiki/Battle_of_Plassey",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-065",
+      "source": "https://en.wikipedia.org/wiki/First_voyage_of_James_Cook",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-066",
+      "source": "https://en.wikipedia.org/wiki/First_Fleet",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-067",
+      "source": "https://en.wikipedia.org/wiki/Haitian_Revolution",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-068",
+      "source": "https://en.wikipedia.org/wiki/Haitian_Declaration_of_Independence",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-069",
+      "source": "https://en.wikipedia.org/wiki/Battle_of_Trafalgar",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-070",
+      "source": "https://en.wikipedia.org/wiki/Cry_of_Dolores",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-071",
+      "source": "https://en.wikipedia.org/wiki/Battle_of_Waterloo",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-072",
+      "source": "https://en.wikipedia.org/wiki/Peruvian_War_of_Independence",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-073",
+      "source": "https://en.wikipedia.org/wiki/Independence_of_Brazil",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-074",
+      "source": "https://en.wikipedia.org/wiki/Treaty_of_Waitangi",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-075",
+      "source": "https://en.wikipedia.org/wiki/Seneca_Falls_Convention",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-076",
+      "source": "https://en.wikipedia.org/wiki/Great_Exhibition",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-077",
+      "source": "https://en.wikipedia.org/wiki/American_Civil_War",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-078",
+      "source": "https://en.wikipedia.org/wiki/Thirteenth_Amendment_to_the_United_States_Constitution",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-079",
+      "source": "https://en.wikipedia.org/wiki/Canadian_Confederation",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-080",
+      "source": "https://en.wikipedia.org/wiki/Meiji_Restoration",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-081",
+      "source": "https://en.wikipedia.org/wiki/Unification_of_Germany",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-082",
+      "source": "https://en.wikipedia.org/wiki/Women%27s_suffrage_in_New_Zealand",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-083",
+      "source": "https://en.wikipedia.org/wiki/Second_Boer_War",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-084",
+      "source": "https://en.wikipedia.org/wiki/1911_Revolution",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-085",
+      "source": "https://en.wikipedia.org/wiki/World_War_I",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-086",
+      "source": "https://en.wikipedia.org/wiki/October_Revolution",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-087",
+      "source": "https://en.wikipedia.org/wiki/Armistice_of_11_November_1918",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-088",
+      "source": "https://en.wikipedia.org/wiki/Treaty_of_Versailles",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-089",
+      "source": "https://en.wikipedia.org/wiki/League_of_Nations",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-090",
+      "source": "https://en.wikipedia.org/wiki/Republic_Day_(Turkey)",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-091",
+      "source": "https://en.wikipedia.org/wiki/Invasion_of_Poland",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-092",
+      "source": "https://en.wikipedia.org/wiki/Proclamation_of_Indonesian_Independence",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-093",
+      "source": "https://en.wikipedia.org/wiki/Universal_Declaration_of_Human_Rights",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-094",
+      "source": "https://en.wikipedia.org/wiki/Proclamation_of_the_People%27s_Republic_of_China",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-095",
+      "source": "https://en.wikipedia.org/wiki/Egyptian_revolution_of_1952",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-096",
+      "source": "https://www.un.org/dppa/decolonization/en/history/former-trust-and-nsgts",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-097",
+      "source": "https://www.un.org/dppa/decolonization/en/history/former-trust-and-nsgts",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-098",
+      "source": "https://www.un.org/dppa/decolonization/en/history/former-trust-and-nsgts",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-099",
+      "source": "https://en.wikipedia.org/wiki/Independence_of_Singapore",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-100",
+      "source": "https://en.wikipedia.org/wiki/Bangladesh_Liberation_War",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-101",
+      "source": "https://en.wikipedia.org/wiki/Independence_Day_(Mozambique)",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-102",
+      "source": "https://en.wikipedia.org/wiki/Independence_Day_(Zimbabwe)",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-103",
+      "source": "https://www.un.org/dppa/decolonization/en/history/former-trust-and-nsgts",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-104",
+      "source": "https://en.wikipedia.org/wiki/1994_South_African_general_election",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-105",
+      "source": "https://en.wikipedia.org/wiki/History_of_East_Timor",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-106",
+      "source": "https://www.gov.uk/government/news/south-sudan-becomes-independent",
+      "method": "institutional source crosscheck"
+    },
+    {
+      "id": "td-107",
+      "source": "https://en.wikipedia.org/wiki/Sally_Ride",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-108",
+      "source": "https://en.wikipedia.org/wiki/Mae_Jemison",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-109",
+      "source": "https://www.nasa.gov/history/25-years-of-continuous-robotic-mars-exploration-from-pathfinder-to-perseverance/",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-110",
+      "source": "https://en.wikipedia.org/wiki/Cassini%E2%80%93Huygens",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-111",
+      "source": "https://en.wikipedia.org/wiki/Huygens_(spacecraft)",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-112",
+      "source": "https://en.wikipedia.org/wiki/Philae_(spacecraft)",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-113",
+      "source": "https://www.nasa.gov/history/25-years-of-continuous-robotic-mars-exploration-from-pathfinder-to-perseverance/",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-114",
+      "source": "https://science.nasa.gov/mission/Dart/",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-115",
+      "source": "https://en.wikipedia.org/wiki/Voyager_1",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-116",
+      "source": "https://en.wikipedia.org/wiki/Apollo_17",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-117",
+      "source": "https://en.wikipedia.org/wiki/Luna_9",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-118",
+      "source": "https://en.wikipedia.org/wiki/John_Glenn",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-119",
+      "source": "https://en.wikipedia.org/wiki/Alan_Shepard",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-120",
+      "source": "https://en.wikipedia.org/wiki/NASA",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-121",
+      "source": "https://en.wikipedia.org/wiki/Voltaic_pile",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-122",
+      "source": "https://en.wikipedia.org/wiki/Richard_Trevithick",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-123",
+      "source": "https://en.wikipedia.org/wiki/Hans_Christian_%C3%98rsted",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-124",
+      "source": "https://en.wikipedia.org/wiki/Electromagnetic_induction",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-125",
+      "source": "https://en.wikipedia.org/wiki/Discovery_of_Neptune",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-126",
+      "source": "https://www.aps.org/apsnews/2001/11/1895-roentgens-discovery-xrays",
+      "method": "institutional source crosscheck"
+    },
+    {
+      "id": "td-127",
+      "source": "https://en.wikipedia.org/wiki/Radium",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-128",
+      "source": "https://lemelson.mit.edu/resources/guglielmo-marconi",
+      "method": "institutional source crosscheck"
+    },
+    {
+      "id": "td-129",
+      "source": "https://en.wikipedia.org/wiki/Rutherford_model",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-130",
+      "source": "https://fisherdigitus.library.utoronto.ca/exhibits/show/insulin100/summerof1921",
+      "method": "institutional source crosscheck"
+    },
+    {
+      "id": "td-131",
+      "source": "https://en.wikipedia.org/wiki/Discovery_of_the_neutron",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-132",
+      "source": "https://en.wikipedia.org/wiki/Discovery_of_nuclear_fission",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-133",
+      "source": "https://en.wikipedia.org/wiki/CERN",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-134",
+      "source": "https://en.wikipedia.org/wiki/Kidney_transplantation",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-135",
+      "source": "https://en.wikipedia.org/wiki/Christiaan_Barnard",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-136",
+      "source": "https://en.wikipedia.org/wiki/Louise_Brown",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-137",
+      "source": "https://en.wikipedia.org/wiki/Eradication_of_smallpox",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-138",
+      "source": "https://en.wikipedia.org/wiki/Ozone_depletion",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-139",
+      "source": "https://en.wikipedia.org/wiki/51_Pegasi_b",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-140",
+      "source": "https://en.wikipedia.org/wiki/Kyoto_Protocol",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-141",
+      "source": "https://en.wikipedia.org/wiki/Higgs_boson",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-142",
+      "source": "https://en.wikipedia.org/wiki/COVID-19_pandemic",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-143",
+      "source": "https://en.wikipedia.org/wiki/Paris_Agreement",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-144",
+      "source": "https://en.wikipedia.org/wiki/Jane_Eyre",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-145",
+      "source": "https://en.wikipedia.org/wiki/Wuthering_Heights",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-146",
+      "source": "https://en.wikipedia.org/wiki/Moby-Dick",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-147",
+      "source": "https://en.wikipedia.org/wiki/Les_Mis%C3%A9rables",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-148",
+      "source": "https://en.wikipedia.org/wiki/A_Study_in_Scarlet",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-149",
+      "source": "https://en.wikipedia.org/wiki/Dracula",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-150",
+      "source": "https://en.wikipedia.org/wiki/The_Great_Gatsby",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-151",
+      "source": "https://en.wikipedia.org/wiki/The_Hobbit",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-152",
+      "source": "https://en.wikipedia.org/wiki/The_Little_Prince",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-153",
+      "source": "https://en.wikipedia.org/wiki/Nineteen_Eighty-Four",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-154",
+      "source": "https://en.wikipedia.org/wiki/The_Fellowship_of_the_Ring",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-155",
+      "source": "https://en.wikipedia.org/wiki/Things_Fall_Apart",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-156",
+      "source": "https://en.wikipedia.org/wiki/To_Kill_a_Mockingbird",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-157",
+      "source": "https://en.wikipedia.org/wiki/One_Hundred_Years_of_Solitude",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-158",
+      "source": "https://en.wikipedia.org/wiki/Midnight%27s_Children",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-159",
+      "source": "https://en.wikipedia.org/wiki/The_Alchemist_(novel)",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-160",
+      "source": "https://en.wikipedia.org/wiki/Sonic_the_Hedgehog_(1991_video_game)",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-161",
+      "source": "https://en.wikipedia.org/wiki/Doom_(1993_video_game)",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-162",
+      "source": "https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-163",
+      "source": "https://en.wikipedia.org/wiki/Shrek",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-164",
+      "source": "https://en.wikipedia.org/wiki/Spirited_Away",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-165",
+      "source": "https://en.wikipedia.org/wiki/Minecraft",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-166",
+      "source": "https://en.wikipedia.org/wiki/Frozen_(2013_film)",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-167",
+      "source": "https://en.wikipedia.org/wiki/Black_Panther_(film)",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-168",
+      "source": "https://en.wikipedia.org/wiki/Parasite_(2019_film)",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-169",
+      "source": "https://en.wikipedia.org/wiki/Parasite_(2019_film)",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-170",
+      "source": "https://en.wikipedia.org/wiki/Wii",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-171",
+      "source": "https://en.wikipedia.org/wiki/Nintendo_DS",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-172",
+      "source": "https://en.wikipedia.org/wiki/Xbox_(console)",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-173",
+      "source": "https://en.wikipedia.org/wiki/PlayStation_2",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-174",
+      "source": "https://en.wikipedia.org/wiki/Super_Mario_World",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-175",
+      "source": "https://en.wikipedia.org/wiki/Nintendo_Entertainment_System",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-176",
+      "source": "https://en.wikipedia.org/wiki/Game_Boy",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-177",
+      "source": "https://en.wikipedia.org/wiki/E.T._the_Extra-Terrestrial",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-178",
+      "source": "https://en.wikipedia.org/wiki/Back_to_the_Future",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-179",
+      "source": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-180",
+      "source": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-181",
+      "source": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-182",
+      "source": "https://en.wikipedia.org/wiki/Finding_Nemo",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-183",
+      "source": "https://en.wikipedia.org/wiki/2008_Summer_Olympics",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-184",
+      "source": "https://en.wikipedia.org/wiki/2012_Summer_Olympics",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-185",
+      "source": "https://www.olympedia.org/editions",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-186",
+      "source": "https://www.olympedia.org/editions",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-187",
+      "source": "https://www.olympedia.org/editions",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-188",
+      "source": "https://en.wikipedia.org/wiki/1995_Rugby_World_Cup",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-189",
+      "source": "https://en.wikipedia.org/wiki/1987_Rugby_World_Cup",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-190",
+      "source": "https://en.wikipedia.org/wiki/1991_FIFA_Women%27s_World_Cup",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-191",
+      "source": "https://en.wikipedia.org/wiki/1999_FIFA_Women%27s_World_Cup",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-192",
+      "source": "https://en.wikipedia.org/wiki/2002_FIFA_World_Cup",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-193",
+      "source": "https://en.wikipedia.org/wiki/2010_FIFA_World_Cup",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-194",
+      "source": "https://en.wikipedia.org/wiki/2022_FIFA_World_Cup",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-195",
+      "source": "https://en.wikipedia.org/wiki/2011_FIFA_Women%27s_World_Cup",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-196",
+      "source": "https://en.wikipedia.org/wiki/2015_Rugby_World_Cup",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-197",
+      "source": "https://en.wikipedia.org/wiki/2019_Cricket_World_Cup",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-198",
+      "source": "https://en.wikipedia.org/wiki/2023_Cricket_World_Cup",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-199",
+      "source": "https://en.wikipedia.org/wiki/Jesse_Owens",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-200",
+      "source": "https://en.wikipedia.org/wiki/Abebe_Bikila",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-201",
+      "source": "https://en.wikipedia.org/wiki/1984_Summer_Olympics",
+      "method": "page retrieval, content-level editorial review remains separate"
+    },
+    {
+      "id": "td-202",
+      "source": "https://en.wikipedia.org/wiki/Usain_Bolt",
+      "method": "page retrieval, content-level editorial review remains separate"
+    }
+  ]
+}

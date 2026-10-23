@@ -15,3 +15,7 @@ Read-only live fixtures returned Arcade 94 for ten modern guesses three years aw
 The merged candidate is gated again by the main Pages workflow. The final shipped SHA/run and confirmed publication are recorded in [PR #7](https://github.com/phoenix6716/Break-Room/pull/7). The game route is `games/time-drop/index.html`. CI screenshots are retained with the check logs.
 
 Physical-phone/screen-reader testing and full independent editorial certification of the 202 new event additions remain distinct from browser automation and sampled source crosschecks.
+
+## Source-link pass
+
+The 202 new events' 194 distinct original reference URLs were checked through batched web retrieval. Two missing pages were replaced with American Physical Society/MIT references; the insulin and South Sudan citations were upgraded to University of Toronto and UK government records. The client also resolves those corrected URLs for previously captured snapshots, without changing their facts, guesses, scores or raw saves. See `content/time-drop-source-check.json`. Page retrieval does not independently certify every historical assertion.

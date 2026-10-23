@@ -4,6 +4,8 @@
  const h=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;};
  const button=(text,id,fn)=>{const e=h('button','button',text);if(id)e.id=id;e.type='button';e.addEventListener('click',fn);return e;};
  let loadedDay='',mode='daily',daily=null,blocked=false,practice=null,persistent=true;
+ const sourceCorrections={"https://en.wikipedia.org/wiki/Discovery_of_X-rays":"https://www.aps.org/apsnews/2001/11/1895-roentgens-discovery-xrays","https://en.wikipedia.org/wiki/1909_Nobel_Prize_in_Physics":"https://lemelson.mit.edu/resources/guglielmo-marconi","https://en.wikipedia.org/wiki/Discovery_of_insulin":"https://fisherdigitus.library.utoronto.ca/exhibits/show/insulin100/summerof1921","https://en.wikipedia.org/wiki/Independence_Day_(South_Sudan)":"https://www.gov.uk/government/news/south-sudan-becomes-independent"};
+ const sourceURL=e=>sourceCorrections[e.source]||e.source;
  const owner=()=>{try{return localStorage.getItem('br:cloud:owner')||'guest';}catch{return'guest';}};
  const practiceKey='break-room:time-drop:practice:'+owner();
  function raw(key){try{return !persistent&&mem.has(key)?mem.get(key):localStorage.getItem(key)||mem.get(key)||null;}catch{persistent=false;return mem.get(key)||null;}}
@@ -65,13 +67,13 @@
   if(mode==='daily'&&daily.phase==='summary'){
    const record=M.record(daily,daily.day),title=h('h2',null,'All ten guessed.');title.id='td-summary';title.tabIndex=-1;out.append(h('p','td-kicker','DAILY COMPLETE'),title,h('p','td-total',record.points.toLocaleString()+' / 10,000 points'),BREAK_ROOM_SCORE.badge(record.arcadeScore),h('p',null,record.exact+' exact '+(record.exact===1?'year':'years')+' · No timer or speed bonus.'));
    const shareStatus=h('p');shareStatus.id='share-status';shareStatus.setAttribute('role','status');const shareBox=h('div');shareBox.id='share-box';out.append(button('COPY RESULT','copy-result',share),button('PLAY UNLIMITED','play-practice',()=>BREAK_ROOM_GAME_SHELL.selectMode('unlimited')),shareStatus,shareBox);
-   const list=h('ol','td-history');daily.events.forEach((e,i)=>{const r=record.results[i],item=h('li');item.append(h('strong',null,e.title),h('span',null,'You: '+M.format(daily.picks[i])+' · '+answer(e)+' · '+r.points+' points'));const source=h('a',null,'Read the source');source.href=e.source;source.target='_blank';source.rel='noopener noreferrer';source.setAttribute('aria-label','Read the source for '+e.title+' (opens in a new tab)');item.append(source);list.append(item);});out.append(list);
+   const list=h('ol','td-history');daily.events.forEach((e,i)=>{const r=record.results[i],item=h('li');item.append(h('strong',null,e.title),h('span',null,'You: '+M.format(daily.picks[i])+' · '+answer(e)+' · '+r.points+' points'));const source=h('a',null,'Read the source');source.href=sourceURL(e);source.target='_blank';source.rel='noopener noreferrer';source.setAttribute('aria-label','Read the source for '+e.title+' (opens in a new tab)');item.append(source);list.append(item);});out.append(list);
   }else{
    const a=active();out.dataset.eventId=a.event.id;out.dataset.phase=a.pick===null?'guess':'review';const stage=h('div','q-card td-card'),deco=h('div','deco');deco.id='deco';deco.setAttribute('aria-hidden','true');const eraTag=h('span','era-tag');eraTag.id='era-tag';const title=h('h2','td-question',a.event.title);title.id='td-question';title.tabIndex=-1;
    stage.append(deco,eraTag,h('p','td-kicker',a.event.category.toUpperCase()+' · WHEN DID THIS HAPPEN?'),title,controls(a));out.append(stage);
    if(a.pick!==null){const r=M.result(a.event,a.pick),review=h('section','td-review'),heading=h('h3',null,answer(a.event));heading.id='td-review-heading';heading.tabIndex=-1;
     review.append(heading,h('p','td-credit',r.band+' · +'+r.points+' points'),h('p',null,'You guessed '+M.format(a.pick)+'. '+(r.error===0?(a.event.earliest===a.event.latest?'Exactly right.':'Inside the accepted date range.'):r.error+' '+(r.error===1?'year':'years')+' from the accepted answer.')),h('p',null,a.event.fact));
-    const source=h('a',null,'Read the source ↗');source.href=a.event.source;source.target='_blank';source.rel='noopener noreferrer';source.setAttribute('aria-label','Read the source (opens in a new tab)');review.append(source,button(mode==='daily'&&daily.picks.length===10?'SEE DAILY RESULT →':'NEXT EVENT →','next-event',next));out.append(review);
+    const source=h('a',null,'Read the source ↗');source.href=sourceURL(a.event);source.target='_blank';source.rel='noopener noreferrer';source.setAttribute('aria-label','Read the source (opens in a new tab)');review.append(source,button(mode==='daily'&&daily.picks.length===10?'SEE DAILY RESULT →':'NEXT EVENT →','next-event',next));out.append(review);
    }
    paintGuess();
   }
