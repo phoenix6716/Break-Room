@@ -13,7 +13,7 @@ The original content release was merged. Player feedback on 23 October supersede
 | Laser | 248 boards: original 120 easier + 96 previous Experts + 32 advanced Experts | New Expert routes use the same three-mirror budget, at least 24 traced cells and five visited fixed mirrors, a unique solution and no lower-budget shortcut. |
 | Alibi | 128 new physical-evidence cases; 155 visit files retained for compatibility | Four evidence mechanisms per Daily, verified clues, assignment notes and actual deduction proofs. New Expert files require five independently necessary constraints; older snapshots retain their own rules. |
 | Bouncer | 272 doors: original 240 + 32 advanced Experts | Fresh Daily uses Standard then Expert. Expert practice uses the new target lists, which exercise all four truth combinations of the two existing rule properties. All 48 rule meanings and easier practice tiers remain. |
-| Lowball | Same 100 products, generated artwork and inherited prices | Preserve the existing item cycle. Different four-product Dailies cover a month; individual products recur after a full pool. Independent price verification remains a launch blocker. |
+| Lowball | Same 100 products/artwork with 400 dated regional references | The factual/price audit is deployed; fresh references start 24 October Sydney. Preserve captured old targets and recheck volatile references before public launch. |
 | Inner Clock | Deterministic timing-target combinations | Retain the existing short/medium/long ranges and scoring. Longer waiting is not claimed as deeper gameplay; physical-device input and human challenge calibration remain outstanding. |
 
 These are objective structural increases, not calibrated human solve rates. The per-game audit explains remaining design weaknesses and improvement opportunities.
@@ -22,7 +22,7 @@ These are objective structural increases, not calibrated human solve rates. The 
 
 - Current and earlier Dailies retain their old bank selections. New runs snapshot their actual questions, boards, targets and choices; existing snapshots are never replaced by a bank lookup.
 - New rotation holds out the cutover-eve puzzles and supplies 32 further distinct Dailies. Tests also cover later rolling windows, bank reversal and old snapshots.
-- Native save keys and outer versions stay unchanged; Alibi scoring stays unchanged and Stack Up uses explicit per-run score versions. Preserve first-answer finality, timer deadlines, account consent and private Friends boundaries are unchanged.
+- Native save keys and outer versions stay unchanged; Alibi scoring stays unchanged and Stack Up uses explicit per-run score versions. First-answer finality, timer deadlines, account consent and private Friends boundaries remain unchanged.
 - Alibi's original clue heuristic is kept only to reproduce the frozen bank. It was a greedy sufficient-set estimate, not a proof of the smallest sufficient set. New Expert generation and regression checks exhaustively enumerate subsets.
 - A new bank does not prove live Supabase configuration. Apply `playtest-feedback.sql` after the prior Inner Clock update, or use the updated complete Inner Clock SQL, for new Alibi and Stack Up score-version comparisons.
 - Lowball products and timing durations may recur in different sets. This release does not claim 128 independently priced products or 32 entirely new timing ingredients.
