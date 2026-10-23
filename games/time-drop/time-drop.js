@@ -39,8 +39,8 @@
  function updateGuess(y){if(!sync()||!M.year(y)||active().pick!==null)return false;if(mode==='daily'){if(!M.guess(daily,y))return false;saveDaily();}else{practice.guess=y;savePractice();}paintGuess();return true;}
  function paintGuess(){const a=active();$('td-readout').textContent=M.format(a.guess);$('year-input').value=Math.abs(a.guess);$('year-era').value=a.guess<0?'bce':'ce';$('year-slider').value=pos(a.guess);$('year-slider').setAttribute('aria-valuetext',M.format(a.guess));BREAK_ROOM_TIME_DROP_ART.draw(a.pick===null?a.guess:a.event.year);}
  function typedGuess(){const value=$('year-input').valueAsNumber,sign=$('year-era').value==='bce'?-1:1;return Number.isInteger(value)&&value>0&&M.year(sign*value)?sign*value:null;}
- function input(){const y=typedGuess();$('lock-guess').disabled=y===null;$('year-error').textContent=y===null?'Enter a whole year from 1 to '+($('year-era').value==='bce'?'4000 BCE.':'2100 CE.'):'';
-  if(y!==null){if(!sync()||active().pick!==null)return;if(mode==='daily'){M.guess(daily,y);saveDaily();}else{practice.guess=y;savePractice();}$('td-readout').textContent=M.format(y);$('year-slider').value=pos(y);$('year-slider').setAttribute('aria-valuetext',M.format(y));BREAK_ROOM_TIME_DROP_ART.draw(y);}}
+ function input(){if(!sync()||active().pick!==null)return;const y=typedGuess();$('lock-guess').disabled=y===null;$('year-error').textContent=y===null?'Enter a whole year from 1 to '+($('year-era').value==='bce'?'4000 BCE.':'2100 CE.'):'';
+  if(y!==null){if(mode==='daily'){M.guess(daily,y);saveDaily();}else{practice.guess=y;savePractice();}$('td-readout').textContent=M.format(y);$('year-slider').value=pos(y);$('year-slider').setAttribute('aria-valuetext',M.format(y));BREAK_ROOM_TIME_DROP_ART.draw(y);}}
  function lock(event){event?.preventDefault();if(!sync()||active().pick!==null)return;const y=typedGuess();if(y===null){input();$('year-input').focus();return;}
   if(mode==='daily'){M.guess(daily,y);M.lock(daily);saveDaily();}else{practice.guess=y;practice.pick=y;practice.count++;practice.points+=M.result(practice.event,y).points;savePractice();}render(true);
  }
