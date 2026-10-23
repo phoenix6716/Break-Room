@@ -5,6 +5,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      full_suite:
+        description: Run the complete suite for an explicitly requested audit
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -19,23 +24,33 @@ jobs:
     name: Test the production site
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      ARCADE_DIFF_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+      ARCADE_DIFF_HEAD: ${{ github.sha }}
+      ARCADE_FULL_CHECKS: ${{ github.event_name == 'workflow_dispatch' && inputs.full_suite && '1' || '0' }}
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version-file: .node-version
           cache: npm
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
       - name: Install locked test dependencies
         run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Select checks for changed files
+        id: scope
+        run: node scripts/affected-checks.cjs --plan
+      - uses: actions/setup-python@v5
+        if: steps.scope.outputs.python == 'true'
+        with:
+          python-version: '3.12'
       - name: Install matching Chromium
+        if: steps.scope.outputs.browser == 'true'
         # Ubuntu runners include Chrome and its system libraries; avoid a redundant apt upgrade.
         run: npx playwright install chromium
-      - name: Run all checks against a project-path build
+      - name: Run selected checks against a project-path build
         shell: bash
         env:
           SITE_URL: ${{ vars.SITE_URL || format('https://{0}.github.io/{1}/', github.repository_owner, github.event.repository.name) }}

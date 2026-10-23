@@ -31,3 +31,8 @@ The generated eight-person portrait atlas and optimized `assets/coworkers.webp` 
 Before deploying to an existing project, apply **`supabase/playtest-feedback.sql` after the current Inner Clock update**, or use the updated complete `supabase/inner-clock.sql`. Fresh projects use setup then current Friends. The private SQL solver independently enumerates ownership; old scorers remain available. RLS, consent, revisions and sharing boundaries are unchanged. This code does not establish that live SQL was applied.
 
 `tests/playtest-feedback.cjs` checks all new files independently, proof chains, minimum clue cores, variety, all outcomes, malformed records, reproducible generation and PostgreSQL privacy/parity. The matching UI test covers modern flows at five widths. Existing Alibi suites retain original/visit compatibility, menus/dialogs, portraits, notes/reloads, keyboard/touch, sharing, accounts and Sydney rollover. Solver/browser success is not a claim that players will enjoy the revised mysteries.
+
+
+## Help entry
+
+The header **?** button is Alibi’s only How to play entry, as requested by the owner on 23 October 2026. It opens the full shared help dialog; there is no separate expandable quick guide. Keep keyboard opening, focus trapping, Escape dismissal and focus restoration.

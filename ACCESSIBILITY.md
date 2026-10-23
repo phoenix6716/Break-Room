@@ -33,13 +33,13 @@ Prior uses two large real choice buttons, with dates/facts/references revealed o
 
 Laser is now the sixth integrated game, with four first-fire Daily boards, free independent Unlimited practice, and unscored retries/solution reveals. See `games/laser/README.md` for the exact snapshot, scoring, controls and tests. Arcade score is first-fire hits × 25; partials and practice do not count. Existing Supabase projects apply **`supabase/bouncer.sql` LAST** (includes Pack/Prior); this supersedes earlier per-game migration instructions above. Fresh projects use updated setup then Friends. Live SQL/deployment and human playtesting are separate from local implementation verification.
 
-## Alibi scenarios — current contract (v2)
+## Alibi evidence files and help
 
-The owner approved real scenarios grounded in incidents, timelines and evidence, plus generated men’s/women’s portraits. Alibi now selects **96 new evidence-dependent visit-reconstruction cases**, 24 per tier. Only the culprit’s account is false; everyone else’s account and the verified records are accurate. The incident window determines the relevant visit. Both records and accounts are necessary, and each case has one complete reconstruction. This supersedes the original abstract false-count rules for **new** cases. Personal notes remain ungraded; four untimed Dailies, first-confirmation finality and correct × 25 Arcade scoring are unchanged.
+Alibi uses the header **?** button as its only How to play entry. The full shared help dialog retains a labelled modal, keyboard opening, inert background, focus trapping, Escape dismissal and focus restoration. Do not add a duplicate expandable quick guide.
 
-Eight illustrated portraits were generated as an image atlas and encoded as an optimized WebP; CSS selects a cell. New snapshots store stable, distinct random portrait assignments, unrelated to guilt. Existing original-format drafts/notes/completions/history keep their original rules and scores; new scenarios are available in Unlimited immediately and the next fresh Daily. The frozen 144-case original bank and tests remain outside production. Read `games/alibi/README.md` for exact source, schema, behavior and compatibility.
+New v3 files use verified observations and four physical-evidence methods, with readable catalogue marks/measurements, assignment notes and explicit culprit explanations. Names, portraits and colours alone are never clues. Existing v1/v2 snapshots retain their displayed rules and notes. See [the current game contract](games/alibi/README.md) for the bank, scoring, compatibility and database migration guidance.
 
-**Current complete upgrade: run `supabase/bouncer.sql` LAST.** It includes Alibi scenarios and three-mirror Laser Expert, so earlier per-game updates need not be reapplied. It includes all earlier games and both Alibi parsers. Fresh projects use current setup then Friends; do not reapply old narrower migrations. Personal raw snapshots/notes remain private; Friends expose only completed normalized records through existing sharing controls. Human playtesting and the separately agreed prelaunch audit remain necessary. No billing or other game was enabled.
+`tests/alibi.cjs` checks the single help entry and keyboard opening/closing alongside full legacy game flows at five widths. `tests/playtest-feedback-ui.cjs` covers modern evidence cases, notes, saved state, explanations and responsive layouts.
 
 ## Bouncer addition
 
