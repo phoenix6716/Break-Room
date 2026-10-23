@@ -28,6 +28,7 @@ function buildSeatingBank(start=0,end=360){
    found={id:'sc-'+tier+'-'+String(number+1).padStart(3,'0'),tier,g,names:shuffle(names,r).slice(0,g),rules:shuffle(rules,r),best:s.best,solution:s.solution};
   }
   if(!found)throw Error('Unable to generate '+index);
+  let core=found.rules.map((_,i)=>i);if(found.best>0){for(const i of [...core]){const next=core.filter(j=>j!==i);if(solve(g,next.map(j=>found.rules[j])).best===found.best)core=next;}}else core=[];found.conflict=core;
   out.push(found);
  }
  return out;

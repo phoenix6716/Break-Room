@@ -729,32 +729,7 @@ begin
  for k in select jsonb_object_keys(p_data) loop
   if jsonb_typeof(p_data->k)<>'string' or not (
    (p_game='stake' and (k ~ '^stake:d:[0-9]{4}-[0-9]{2}-[0-9]{2}$' or k='stake:streak')) or
-   (p_game='seating-chart' and k ~ '^break-room:seating-chart:daily:[0-9]{4}-[0-9]{2}-[0-9]{2} and k ~ '^break-room:clue-ladder:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
-   (p_game='time-drop' and k ~ '^break-room:time-drop:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
-   (p_game='inner-clock' and k ~ '^break-room:inner-clock:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
-   (p_game='bouncer' and k ~ '^break-room:bouncer:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
-   (p_game='alibi' and k ~ '^break-room:alibi:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
-   (p_game='laser' and k ~ '^break-room:laser:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
-   (p_game='prior' and k ~ '^break-room:prior:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
-   (p_game='pack' and k ~ '^break-room:pack:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
-   (p_game='stack-up' and k ~ '^break-room:stack-up:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
-   (p_game='lowball' and k=any(array['pc_history','pc_progress','pc_last','pc_last_avg','pc_last_share','pc_streak','pc_best','pc_played','pc_country']))
-  ) then raise exception 'Unsupported save entry'; end if;
- end loop;
- -- Serialize first inserts as well as updates for this user/game.
- perform pg_advisory_xact_lock(hashtextextended(owner_id::text||':'||p_game,0));
- select * into stored from public.game_saves where user_id=owner_id and game=p_game for update;
- if coalesce(stored.revision,0)<>p_revision then
-  return jsonb_build_object('conflict',true,'revision',coalesce(stored.revision,0));
- end if;
- insert into public.game_saves(user_id,game,data,revision) values(owner_id,p_game,p_data,1)
- on conflict(user_id,game) do update set data=excluded.data,revision=game_saves.revision+1,updated_at=now()
- returning * into stored;
- return jsonb_build_object('conflict',false,'revision',stored.revision);
-end $$;
-revoke all on function public.save_game(text,jsonb,bigint) from public,anon;
-grant execute on function public.save_game(text,jsonb,bigint) to authenticated;
-) or
+   (p_game='seating-chart' and k ~ '^break-room:seating-chart:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
    (p_game='clue-ladder' and k ~ '^break-room:clue-ladder:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
    (p_game='time-drop' and k ~ '^break-room:time-drop:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
    (p_game='inner-clock' and k ~ '^break-room:inner-clock:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or
@@ -817,6 +792,9 @@ begin
  if jsonb_typeof(r) is distinct from 'object' or jsonb_typeof(r->'type') is distinct from 'string' or r->>'type' not in ('A','N','D','O') or not public._sc_int(r->'a',0,g-1) or not public._sc_int(r->'b',0,g-1) or r->'a'=r->'b' or (r->>'type'='O' and g%2<>0) or jsonb_typeof(r->'story') is distinct from 'string' or char_length(r->>'story')>180 then return false;end if;
  a=(r->>'a')::int;b=(r->>'b')::int;k=(r->>'type')||':'||least(a,b)||':'||greatest(a,b);if k=any(seen) then return false;end if;seen=array_append(seen,k);
  end loop;
+ if jsonb_typeof(t->'conflict') is distinct from 'array' or (t->>'best'='0' and jsonb_array_length(t->'conflict')<>0) or (t->>'best'<>'0' and jsonb_array_length(t->'conflict')<2) then return false;end if;seen='{}';
+ for x in select value from jsonb_array_elements(t->'conflict') loop
+ if not public._sc_int(x,0,jsonb_array_length(t->'rules')-1) or (x#>>'{}')=any(seen) then return false;end if;seen=array_append(seen,x#>>'{}');end loop;
  if not public._sc_order(t->'solution',g) then return false;end if;
  return public._sc_cost(t,t->'solution')=(t->>'best')::int;
 exception when others then return false;
@@ -910,17 +888,7 @@ begin
    end if;
   else
    for entry in select * from jsonb_each_text(data) loop
-    if (game='seating-chart' and entry.key !~ '^break-room:seating-chart:daily:[0-9]{4}-[0-9]{2}-[0-9]{2} and entry.key !~ '^break-room:clue-ladder:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='time-drop' and entry.key !~ '^break-room:time-drop:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='stake' and entry.key !~ '^stake:d:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='inner-clock' and entry.key !~ '^break-room:inner-clock:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='bouncer' and entry.key !~ '^break-room:bouncer:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='alibi' and entry.key !~ '^break-room:alibi:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='laser' and entry.key !~ '^break-room:laser:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='prior' and entry.key !~ '^break-room:prior:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='pack' and entry.key !~ '^break-room:pack:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='stack-up' and entry.key !~ '^break-room:stack-up:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') then continue;end if;
-    d=public._friend_date(right(entry.key,10));if d is null or d<p_today-119 or d>p_today then continue;end if;
-    v=public._friend_json(entry.value);score=public._friend_score(game,v,d);
-    if score is not null then day=d;arcade_score=score;return next;end if;
-   end loop;
-  end if;
- end loop;
-end $$;
-revoke all on function public._friend_score(text,jsonb,date),public._friend_records(uuid,date) from public,anon,authenticated;
-commit;
-) or (game='clue-ladder' and entry.key !~ '^break-room:clue-ladder:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='time-drop' and entry.key !~ '^break-room:time-drop:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='stake' and entry.key !~ '^stake:d:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='inner-clock' and entry.key !~ '^break-room:inner-clock:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='bouncer' and entry.key !~ '^break-room:bouncer:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='alibi' and entry.key !~ '^break-room:alibi:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='laser' and entry.key !~ '^break-room:laser:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='prior' and entry.key !~ '^break-room:prior:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='pack' and entry.key !~ '^break-room:pack:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='stack-up' and entry.key !~ '^break-room:stack-up:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') then continue;end if;
+    if (game='seating-chart' and entry.key !~ '^break-room:seating-chart:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='clue-ladder' and entry.key !~ '^break-room:clue-ladder:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='time-drop' and entry.key !~ '^break-room:time-drop:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='stake' and entry.key !~ '^stake:d:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='inner-clock' and entry.key !~ '^break-room:inner-clock:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='bouncer' and entry.key !~ '^break-room:bouncer:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='alibi' and entry.key !~ '^break-room:alibi:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='laser' and entry.key !~ '^break-room:laser:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='prior' and entry.key !~ '^break-room:prior:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='pack' and entry.key !~ '^break-room:pack:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') or (game='stack-up' and entry.key !~ '^break-room:stack-up:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$') then continue;end if;
     d=public._friend_date(right(entry.key,10));if d is null or d<p_today-119 or d>p_today then continue;end if;
     v=public._friend_json(entry.value);score=public._friend_score(game,v,d);
     if score is not null then day=d;arcade_score=score;return next;end if;
