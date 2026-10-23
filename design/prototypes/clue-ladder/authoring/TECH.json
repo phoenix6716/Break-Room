@@ -1,0 +1,162 @@
+[
+  {
+    "category": "TECH",
+    "row": "Compass|magnetic compass|My needle pivots freely.|Earth's magnetic field affects me.|I have directional markings.|Navigators use me to find north.|I am the instrument whose needle points towards magnetic north.|Magnetic and geographic north differ."
+  },
+  {
+    "category": "TECH",
+    "row": "Microscope|microscopes|My optical forms use lenses.|A specimen often rests on a slide.|I magnify very small objects.|Biologists use me to study cells.|I am the instrument for viewing things too small for unaided eyes.|Some advanced forms use electrons instead of light."
+  },
+  {
+    "category": "TECH",
+    "row": "Telescope|telescopes|I gather radiation from distant sources.|My optical forms use mirrors or lenses.|A larger opening collects more light.|Astronomers point me into the sky.|I am the instrument used to study distant stars and planets.|Some versions observe radio waves."
+  },
+  {
+    "category": "TECH",
+    "row": "Camera|cameras|Exposure controls the light I record.|My shutter controls exposure duration.|A lens forms my image.|Film or a digital sensor captures it.|I am the device used to take photographs.|Smaller apertures can increase depth of field."
+  },
+  {
+    "category": "TECH",
+    "row": "Printer|printers|I receive information from another device.|I may use ink or toner.|I produce text and pictures.|I turn documents into physical pages.|I am the machine putting computer documents onto paper.|Laser versions use electrostatic charges to position toner."
+  },
+  {
+    "category": "TECH",
+    "row": "Keyboard|computer keyboard,keyboards|Individual switches provide my input.|Layouts vary between countries.|I include function keys and a space bar.|QWERTY is a familiar arrangement.|I am the device used to type text into a computer.|QWERTY names the first six letters of one row."
+  },
+  {
+    "category": "TECH",
+    "row": "Computer mouse|mouse,computer mice|My movement controls an onscreen pointer.|Older versions used a rolling ball.|Modern ones often track optically.|I have buttons and often a scroll wheel.|I am the handheld computer controller named after a rodent.|Pointer travel can differ from physical travel."
+  },
+  {
+    "category": "TECH",
+    "row": "Computer|desktop computer,pc|I process instructions represented as data.|Different programs give me different tasks.|Memory and a processor are key parts.|Desktop forms use a separate display.|I am the general-purpose electronic machine for programs, work and games.|Software lets the same hardware perform different jobs."
+  },
+  {
+    "category": "TECH",
+    "row": "Laptop|notebook computer,laptop computer|I combine components in a portable unit.|My battery allows unplugged use.|My screen folds shut.|My typing board is built in.|I am the portable computer opening like a book.|My name describes a place a user might rest me."
+  },
+  {
+    "category": "TECH",
+    "row": "Smartphone|smart phone,smartphones|Sensors detect my movement and orientation.|An operating system runs my apps.|I combine calling, photography and internet access.|My interface usually uses a touchscreen.|I am the pocket computer used for calls, photos and apps.|Many modern forms include satellite navigation."
+  },
+  {
+    "category": "TECH",
+    "row": "Telephone|phone,landline,landline telephone|I transmit speech across distance.|Operators once connected my calls.|My receiver lets a caller hear.|Numbers select another line.|I am the device used to make distant voice calls.|Traditional forms converted sound into electrical signals."
+  },
+  {
+    "category": "TECH",
+    "row": "Radio|radio receiver|I receive information carried by electromagnetic waves.|Users tune me to select a station.|AM and FM are broadcasting methods.|I provide music and news without pictures.|I am the receiver for listening to broadcast stations.|Signals can reach listeners without a wire to each receiver."
+  },
+  {
+    "category": "TECH",
+    "row": "Television|tv,telly|I display rapidly refreshed pictures.|Early versions were monochrome.|A remote commonly selects channels.|I combine moving images and sound.|I am the household screen used for broadcast programmes.|Modern displays commonly use liquid crystals or light-emitting pixels."
+  },
+  {
+    "category": "TECH",
+    "row": "Satellite|artificial satellite,satellites|My path is an orbit.|Some stay above roughly one longitude.|I help communications, weather or navigation.|Humans launch me around a planet.|I am the artificial Earth-orbiting object gathering data or relaying signals.|Some orbits circle Earth several times a day."
+  },
+  {
+    "category": "TECH",
+    "row": "Rocket|rockets,space rocket|I expel material backwards to move.|I carry oxidiser for airless operation.|Stages can separate as I ascend.|I can launch spacecraft beyond the atmosphere.|I am the vehicle blasting into space on exhaust jets.|My engine does not need surrounding air to push against."
+  },
+  {
+    "category": "TECH",
+    "row": "Airplane|aeroplane,plane|My wings produce lift.|Control surfaces steer and climb.|Many versions use runways.|Passengers often travel in a pressurised cabin.|I am the fixed-wing vehicle for air travel.|Lift depends on wing shape, speed and surrounding air."
+  },
+  {
+    "category": "TECH",
+    "row": "Helicopter|chopper,helicopters|My lifting surfaces rotate.|I can take off vertically.|I can hover in place.|A tail rotor often helps control direction.|I am the aircraft with large spinning blades overhead.|Changing blade angles changes the lift produced."
+  },
+  {
+    "category": "TECH",
+    "row": "Submarine|sub,submarines|Ballast tanks control my buoyancy.|A pressure-resistant hull protects my interior.|Some versions use a periscope.|I travel beneath the sea surface.|I am the vessel designed to operate underwater.|Water-filled ballast tanks reduce buoyancy."
+  },
+  {
+    "category": "TECH",
+    "row": "Train|trains,railway train|My wheels follow a fixed route.|Connected vehicles travel together.|A locomotive or onboard motors provide power.|I stop at railway stations.|I am the passenger or freight vehicle running on rails.|Steel wheels on rails have low rolling resistance."
+  },
+  {
+    "category": "TECH",
+    "row": "Bicycle|bike,bicycles,push bike|My rider balances while moving.|A chain commonly drives my rear wheel.|Gears help with hills.|Pedals supply my usual power.|I am the two-wheeled vehicle powered by a rider's legs.|Steering and forward motion both contribute to balance."
+  },
+  {
+    "category": "TECH",
+    "row": "Elevator|lift,elevators|Guide rails constrain my path.|Safety systems limit uncontrolled movement.|I travel vertically inside buildings.|My doors open at a floor landing.|I am the moving cabin also called a lift.|Counterweights can reduce the energy needed to move me."
+  },
+  {
+    "category": "TECH",
+    "row": "Escalator|escalators|My linked steps form a continuous loop.|My handrail moves with riders.|My steps flatten at each end.|I am common in stations and shops.|I am the moving staircase carrying people between levels.|The linked steps circulate beneath the visible surface."
+  },
+  {
+    "category": "TECH",
+    "row": "Refrigerator|fridge,refrigerators|I move heat into the surrounding room.|A circulating fluid helps my cycle.|Low temperatures slow food spoilage.|My shelves hold groceries.|I am the kitchen appliance keeping food cold.|My outside can feel warm because removed heat must go somewhere."
+  },
+  {
+    "category": "TECH",
+    "row": "Microwave oven|microwave,microwaves|Electromagnetic waves fill my chamber.|A turntable helps distribute heating.|My waves interact with water in food.|I reheat meals rapidly.|I am the kitchen appliance heating food with high-frequency waves.|My door mesh helps keep radiation inside."
+  },
+  {
+    "category": "TECH",
+    "row": "Toaster|toasters|My heating elements glow.|A timer or sensor controls me.|Some versions lift food when finished.|Slots hold slices upright.|I am the appliance browning slices of bread.|Browning reactions create new flavours."
+  },
+  {
+    "category": "TECH",
+    "row": "Washing machine|washer,laundry machine|I combine detergent, water and movement.|My cycle includes rinsing.|My drum rotates.|I remove dirt from fabrics.|I am the household machine cleaning clothes.|Fast spinning removes some water before drying."
+  },
+  {
+    "category": "TECH",
+    "row": "Dishwasher|dish washer,dishwashers|Rotating arms spray hot water.|My detergent suits my cleaning cycle.|Racks separate the contents.|I clean cutlery, plates and glasses.|I am the kitchen machine washing dishes.|Good loading keeps items from blocking spray."
+  },
+  {
+    "category": "TECH",
+    "row": "Vacuum cleaner|vacuum,hoover|My motor creates a pressure difference.|Air carries particles into a container.|Filters retain dust.|I use a hose or floor head.|I am the household appliance sucking up dirt.|Air flows towards the lower-pressure region."
+  },
+  {
+    "category": "TECH",
+    "row": "Solar panel|photovoltaic panel,solar panels|I generate direct current.|Semiconductors form my cells.|Roofs are common locations for me.|Light supplies my energy.|I am the flat device turning sunlight into electricity.|An inverter converts my output for many household uses."
+  },
+  {
+    "category": "TECH",
+    "row": "Wind turbine|wind turbines|Moving air supplies my energy.|A generator converts rotation into electricity.|I often stand in groups on land or sea.|Long blades rotate above the ground.|I am the tall spinning machine generating power from wind.|Output depends on wind conditions and controls."
+  },
+  {
+    "category": "TECH",
+    "row": "Battery|batteries,electric battery|I store energy chemically.|Terminals connect to a circuit.|Some types recharge.|I power devices away from sockets.|I am the portable power source sold as AA and AAA types.|Chemical reactions produce a voltage between my terminals."
+  },
+  {
+    "category": "TECH",
+    "row": "Light bulb|lightbulb,bulb,light bulbs|Older versions heated a thin filament.|Efficient modern versions use diodes.|I fit a lamp socket.|I convert electricity into illumination.|I am the replaceable glowing component inside many lamps.|LED versions waste less energy as heat than incandescent ones."
+  },
+  {
+    "category": "TECH",
+    "row": "Thermometer|thermometers|A sensor's physical property affects my reading.|Older versions used expanding liquid.|I may use Celsius or Fahrenheit.|I help check for fever.|I am the instrument measuring temperature.|Different designs use different physical effects."
+  },
+  {
+    "category": "TECH",
+    "row": "Stethoscope|stethoscopes|My chest piece transmits vibrations.|Tubes connect to two earpieces.|Clinicians place me against the body.|I reveal heart and lung sounds.|I am the listening instrument doctors wear around their necks.|Different chest-piece surfaces suit different frequencies."
+  },
+  {
+    "category": "TECH",
+    "row": "X-ray machine|x ray machine,xray machine,x ray,xray|My radiation passes through soft tissue.|Dense materials absorb more of my beam.|I reveal some internal injuries.|Bones show clearly in my images.|I am the medical imaging machine checking broken bones.|Different absorption creates image contrast."
+  },
+  {
+    "category": "TECH",
+    "row": "Barcode|bar code,barcodes|I encode scannable information.|A database links my number to a product.|My familiar retail form is one-dimensional.|Black lines vary in width.|I am the striped code scanned at supermarket checkouts.|My number usually identifies a product rather than storing its price."
+  },
+  {
+    "category": "TECH",
+    "row": "QR code|qr,qrcode,quick response code|I encode data in two dimensions.|Position markers help align a reader.|Phone cameras read me.|My square contains smaller black and white blocks.|I am the square scannable code often opening a website.|Error correction can tolerate some damaged areas."
+  },
+  {
+    "category": "TECH",
+    "row": "GPS|global positioning system|Receivers compare precisely timed signals.|My transmitters orbit Earth.|I help measure position, speed and time.|Navigation apps use me outdoors.|I am the satellite-based system helping phones locate you.|Multiple transmitter signals are needed for a position fix."
+  },
+  {
+    "category": "TECH",
+    "row": "Internet|the internet|I connect separate networks.|Addressed packets carry information.|The World Wide Web uses me.|I let computers communicate globally.|I am the worldwide network for websites, email and online games.|The Web is one service on my underlying network."
+  },
+  {
+    "category": "TECH",
+    "row": "Robot|robots|I perform programmed physical actions.|Sensors help me respond.|Factories use me for repetitive tasks.|Fictional forms often resemble humans.|I am the programmable machine performing tasks automatically.|I do not need a human shape."
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "category": "FOOD",
+    "row": "Chocolate|chocolates|My main ingredient comes from a tropical tree.|Fermentation helps develop my flavour.|My fat melts near body temperature.|I have dark, milk and white varieties.|I am the sweet cacao treat sold in bars.|My seeds grow inside large pods."
+  },
+  {
+    "category": "FOOD",
+    "row": "Bread|loaf,loaf of bread|Bubbles help determine my texture.|Yeast makes many versions rise.|Wheat flour is a common ingredient.|I am baked into loaves.|I am the staple sliced for toast and sandwiches.|Yeast produces carbon dioxide during fermentation."
+  },
+  {
+    "category": "FOOD",
+    "row": "Cheese|cheeses|My texture ranges from soft to hard.|Some varieties develop edible mould.|My making separates curds from whey.|Milk is my starting ingredient.|I am the dairy food sold as cheddar and brie.|Ageing changes my flavour and texture."
+  },
+  {
+    "category": "FOOD",
+    "row": "Yogurt|yoghurt,yoghurts,yogurts|Bacteria are central to my production.|I am often eaten with granola.|I may be strained to thicken.|My flavour is usually tangy.|I am the cultured dairy food sold in breakfast pots.|Bacteria turn some milk sugar into lactic acid."
+  },
+  {
+    "category": "FOOD",
+    "row": "Butter|salted butter,unsalted butter|Temperature greatly changes my consistency.|I am used in baking.|Churning cream helps produce me.|I am sold in pale yellow blocks.|I am the dairy spread melted over hot toast.|Traditional churning also produces buttermilk."
+  },
+  {
+    "category": "FOOD",
+    "row": "Ice cream|icecream,gelato|Air is incorporated during my production.|Churning limits the size of ice crystals.|Common flavours include vanilla and strawberry.|I am served in scoops.|I am the frozen dessert often eaten from a cone.|Small crystals help produce my smooth texture."
+  },
+  {
+    "category": "FOOD",
+    "row": "Pizza|pizzas|My familiar modern form developed in Naples.|My base starts as flattened dough.|I am baked with savoury toppings.|Tomato and melted cheese often cover me.|I am the Italian dish cut into slices from a round base.|A margherita traditionally uses tomato, mozzarella and basil."
+  },
+  {
+    "category": "FOOD",
+    "row": "Pasta|italian pasta|I can be fresh or dried.|My shapes hold different sauces.|Wheat is a common main ingredient.|Many versions are boiled.|I am the Italian staple sold as spaghetti, penne and fusilli.|Different shapes suit different textures of sauce."
+  },
+  {
+    "category": "FOOD",
+    "row": "Sushi|sushis|My defining ingredient is seasoned with vinegar.|My fillings need not be raw.|I may be rolled or hand-shaped.|Seaweed wraps many versions.|I am the Japanese dish built around vinegared rice.|Cooked and vegetarian fillings are also used."
+  },
+  {
+    "category": "FOOD",
+    "row": "Ramen|ramen noodles|Miso or soy sauce can season my broth.|Alkaline ingredients affect my strands.|Egg and sliced meat are common toppings.|I am served hot in a deep bowl.|I am the Japanese noodle soup eaten with chopsticks.|Alkaline salts affect my noodles' springiness."
+  },
+  {
+    "category": "FOOD",
+    "row": "Dumpling|dumplings|My relatives appear in many cuisines.|My outer layer is dough.|I may be steamed, boiled or fried.|Many versions enclose meat or vegetables.|I am the dough parcel whose relatives include wontons and gyoza.|Some versions are unfilled pieces of cooked dough."
+  },
+  {
+    "category": "FOOD",
+    "row": "Curry|curries|My versions vary across South Asia and beyond.|Spices provide much of my flavour.|I may contain meat, vegetables or pulses.|Rice or flatbread often accompanies me.|I am the spiced dish commonly served with a rich sauce.|My name covers many dishes rather than one recipe."
+  },
+  {
+    "category": "FOOD",
+    "row": "Taco|tacos|I originated in Mexico.|My filling can include beans or meat.|Salsa is a common topping.|A small tortilla forms my wrapper.|I am the Mexican handheld dish with a tortilla folded around filling.|Traditional versions often use soft tortillas."
+  },
+  {
+    "category": "FOOD",
+    "row": "Burrito|burritos|I feature in Mexican and Mexican-American cooking.|My fillings can include rice and beans.|My wrapper usually uses wheat flour.|My ends fold in to contain everything.|I am the large rolled tortilla parcel filled with a meal.|Folded ends make me easier to carry."
+  },
+  {
+    "category": "FOOD",
+    "row": "Falafel|falafels|Herbs can make my inside green.|Chickpeas or broad beans are ground to make me.|I am shaped before frying.|Pita and tahini often accompany me.|I am the crisp Middle Eastern ball made from ground pulses.|Soaked uncooked pulses are commonly used."
+  },
+  {
+    "category": "FOOD",
+    "row": "Hummus|houmous,humus|My ingredients are blended smooth.|Lemon and garlic commonly flavour me.|Sesame paste adds richness.|Chickpeas are my main ingredient.|I am the Middle Eastern chickpea dip served with pita.|Tahini is the sesame paste often used in me."
+  },
+  {
+    "category": "FOOD",
+    "row": "Paella|paellas|My name comes from my cooking pan.|Saffron can give me a golden colour.|A crisp layer can form underneath.|I am associated with Valencia.|I am the Spanish rice dish cooked in a broad shallow pan.|Seafood is not required in every traditional version."
+  },
+  {
+    "category": "FOOD",
+    "row": "Risotto|risottos|Stirring helps create my texture.|Short-grain rice is commonly used.|Stock is added during cooking.|I am often finished with butter and cheese.|I am the creamy Italian rice dish cooked gradually with broth.|Starch can provide creaminess without added cream."
+  },
+  {
+    "category": "FOOD",
+    "row": "Croissant|croissants|Repeated folding makes thin layers.|My dough contains yeast and butter.|Baking makes me light and flaky.|I am associated with French breakfasts.|I am the buttery crescent-shaped pastry.|Lamination alternates dough and fat layers."
+  },
+  {
+    "category": "FOOD",
+    "row": "Bagel|bagels|My preparation differs from an ordinary roll.|I am boiled briefly before baking.|My texture is often chewy.|Cream cheese is a popular spread.|I am the ring-shaped bread roll with a central hole.|Boiling helps form my characteristic crust."
+  },
+  {
+    "category": "FOOD",
+    "row": "Pretzel|pretzels|An alkaline wash colours my surface.|I may be soft or crisp.|Coarse salt often covers me.|I am associated with German baking.|I am the baked snack twisted into a knot.|Surface treatment contributes to my dark crust."
+  },
+  {
+    "category": "FOOD",
+    "row": "Pancake|pancakes,hotcake,hotcakes|My batter meets a hot flat surface.|I may be thin or thick.|I am turned to cook both sides.|Maple syrup is a popular topping.|I am the flat round breakfast food served in stacks.|Versions exist in many cultures."
+  },
+  {
+    "category": "FOOD",
+    "row": "Waffle|waffles|My batter cooks between heated plates.|My outside can become crisp.|A special iron shapes me.|My square pockets hold toppings.|I am the breakfast food with a grid of deep indentations.|The plates cook both sides at once."
+  },
+  {
+    "category": "FOOD",
+    "row": "Popcorn|pop corn|Moisture is trapped inside my hard shell.|Heat makes internal pressure build.|My interior expands when the shell bursts.|I am served salted or buttered.|I am the puffed maize snack associated with cinemas.|Only certain maize varieties reliably burst this way."
+  },
+  {
+    "category": "FOOD",
+    "row": "Peanut|peanuts,groundnut,groundnuts|I belong to the legume family.|My pods develop underground.|I am sold roasted or in a spread.|My shells often contain two seeds.|I am the snack ground into a spread eaten with jam.|Botanically, I am closer to beans than tree nuts."
+  },
+  {
+    "category": "FOOD",
+    "row": "Almond|almonds|My fruit has a tough outer covering.|I am used in marzipan.|Blanching removes my brown skin.|My pale edible seed has a tapered shape.|I am the nut-like seed often sold flaked for cakes.|The edible part is a seed inside a stone fruit."
+  },
+  {
+    "category": "FOOD",
+    "row": "Coconut|coconuts|My outer layer has thick fibres.|I can contain a clear drinkable liquid.|My white flesh is grated or pressed.|I grow on a tropical palm.|I am the hard-shelled tropical fruit opened for its water.|My fibrous husk can make coir."
+  },
+  {
+    "category": "FOOD",
+    "row": "Pineapple|pineapples|Many small flowers join to form me.|My rough exterior has patterned eyes.|I grow near the ground.|A spiky crown tops my yellow flesh.|I am the tropical fruit sliced into sweet yellow rings.|My crown can grow into a new plant."
+  },
+  {
+    "category": "FOOD",
+    "row": "Mango|mangoes,mangos|I have a large flat stone.|My skin can be green, yellow or red.|My flesh is often orange-yellow.|I flavour chutney and lassi.|I am the sweet tropical stone fruit strongly associated with India.|Varieties differ in flavour and fibre."
+  },
+  {
+    "category": "FOOD",
+    "row": "Avocado|avocados,avocado pear|My flesh contains relatively high fat levels.|I normally contain one large seed.|I soften as I ripen after harvest.|I am mashed with lime and seasoning.|I am the green-fleshed fruit used for guacamole.|Botanically, I am a fruit rather than a vegetable."
+  },
+  {
+    "category": "FOOD",
+    "row": "Banana|bananas|My plant is a giant herb.|My clusters are called hands.|My skin protects pale soft flesh.|People peel me by hand.|I am the curved fruit that usually turns yellow when ripe.|Many cultivated varieties have tiny undeveloped seeds."
+  },
+  {
+    "category": "FOOD",
+    "row": "Lemon|lemons|My peel contains scented oils.|My juice is highly acidic.|My zest flavours cakes.|I am a yellow citrus fruit.|I am the sour yellow fruit squeezed into tea or over fish.|Citric acid contributes to my sourness."
+  },
+  {
+    "category": "FOOD",
+    "row": "Strawberry|strawberries|My visible specks are individual dry fruits.|My flesh develops from the flower base.|I am often served with cream.|I turn red and have green leaves on top.|I am the red fruit covered in tiny seed-like specks.|I am not botanically a true berry."
+  },
+  {
+    "category": "FOOD",
+    "row": "Watermelon|watermelons|My wild relatives originated in Africa.|My rind is thick.|My flesh contains much water.|I am served in red or pink wedges.|I am the enormous green-skinned summer fruit with watery sweet flesh.|Yellow-fleshed varieties also exist."
+  },
+  {
+    "category": "FOOD",
+    "row": "Carrot|carrots|My root stores energy underground.|I am related to parsley.|My leaves are finely divided.|My roots are commonly orange.|I am the crunchy tapered root associated with rabbits.|Beta-carotene contributes to the orange colour."
+  },
+  {
+    "category": "FOOD",
+    "row": "Potato|potatoes,spud,spuds|I am a swollen underground stem.|Eyes on me can grow shoots.|I originated in the Andes.|I am baked, mashed or roasted.|I am the starchy tuber used for chips and fries.|Green areas can indicate increased natural toxins."
+  },
+  {
+    "category": "FOOD",
+    "row": "Onion|onions|I store nutrients in layered leaf bases.|Cell damage releases irritating chemicals.|I flavour many savoury dishes.|Cutting me often causes tears.|I am the layered bulb sold in red, white and brown varieties.|The tear-provoking substance forms after my cells are cut."
+  },
+  {
+    "category": "FOOD",
+    "row": "Garlic|garlic bulb|Roasting softens and sweetens my flavour.|I am related to other edible bulbs.|My bulb separates into segments.|Those segments are called cloves.|I am the pungent bulb associated with repelling vampires.|Crushing starts reactions that develop my aroma."
+  },
+  {
+    "category": "FOOD",
+    "row": "Honey|raw honey|Low water content helps preserve me.|My flavour depends partly on flowers.|I am stored in wax cells.|Insects make me from nectar.|I am the thick sweet substance produced by bees.|Different flower sources can give very different colours."
+  },
+  {
+    "category": "FOOD",
+    "row": "Maple syrup|maple sirup|My production concentrates a dilute tree liquid.|Much starting liquid evaporates.|I am associated with Canada.|Tree sap is collected and boiled.|I am the sweet tree-derived topping poured over pancakes.|Most collected sap is water."
+  }
+]
