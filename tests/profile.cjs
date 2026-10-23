@@ -12,7 +12,7 @@ const snapshot=page=>page.evaluate(()=>Object.fromEntries(Object.keys(localStora
    const context=await browser.newContext({viewport:{width,height:1000},reducedMotion:'reduce'}),page=await context.newPage(),errors=[];
    page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url());});await page.clock.install({time:fixed});await page.clock.pauseAt(new Date(fixed.getTime()+1000));await page.clock.setSystemTime(fixed);
    await page.goto(base+'/profile.html');assert(await page.locator('#profile-empty').isVisible());assert.equal(await page.locator('#total-runs').innerText(),'0');assert.equal(await page.locator('.profile-achievement.earned').count(),0);
-   assert.equal(await page.locator('.profile-game').count(),6);assert.equal(await page.locator('.friend-code').count(),0);assert.equal(await page.locator('.profile-game [href*="pixel-pairs"]').count(),0);
+   assert.equal(await page.locator('.profile-game').count(),6);assert.equal(await page.locator('.profile-game[data-game=prior],.profile-game[data-game=alibi],.profile-game[data-game=bouncer]').count(),0,'No archived play prompts for new players');assert.equal(await page.locator('.friend-code').count(),0);assert.equal(await page.locator('.profile-game [href*="pixel-pairs"]').count(),0);
    if(width===1440)await page.screenshot({path:'design/previews/profile/empty-desktop.png',fullPage:true});
    const fixture={pc_played:'120',pc_last:'2026-10-20',pc_last_avg:'100',pc_history:{},'insert-coin:attempt:2026-10-20:pixel-pairs':{score:84}};
    for(let i=0;i<14;i++){

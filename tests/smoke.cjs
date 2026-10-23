@@ -30,6 +30,7 @@ function check(condition, message) { assert.ok(condition, message); checks++; }
       check((await page.title()).includes('Break Room'), 'Homepage branding');
       const cards = page.locator('.game-grid .game-card');
       check(await cards.count() === 6, 'Six active homepage cards');
+      check((await page.locator('.section-head p').innerText()).includes('06 DAILY GAMES'), 'Shelf label matches current lineup');
       check((await cards.nth(0).locator('a').getAttribute('href')).includes('laser'), 'Laser first');
       check((await cards.nth(1).locator('a').getAttribute('href')).includes('stack-up'), 'Stack Up second');
       check(await page.locator('.coming-stamp').count() === 0, 'No placeholder cards on the homepage');
