@@ -7,7 +7,7 @@ assert.deepEqual(alibi.browser,['alibi.cjs']);assert.deepEqual(alibi.unit,[]);as
 const docs=plan(['AGENTS.md','HOSTING.md']);assert.deepEqual(docs.browser,[]);assert.deepEqual(docs.unit,[]);
 for(const game of GAMES){const p=plan(['games/'+game+'/index.html']);assert.deepEqual(p.games,[game]);assert(p.browser.length>0);assert(!p.browser.includes('extended-play.cjs'));assert(!p.browser.includes('accounts.cjs'));}
 const engine=plan(['games/alibi/alibi.js']);assert(engine.browser.includes('alibi.cjs')&&engine.browser.includes('playtest-feedback-ui.cjs'));assert(!engine.browser.includes('stack-up.cjs'));assert.deepEqual(engine.games,['alibi']);
-const clock=plan(['daily-clock.js']);assert.equal(clock.games.length,9);assert(clock.unit.includes('daily-clock.cjs'));assert(!clock.browser.includes('extended-play.cjs'));
+const clock=plan(['daily-clock.js']);assert.equal(clock.games.length,10);assert(clock.unit.includes('daily-clock.cjs'));assert(!clock.browser.includes('extended-play.cjs'));
 const css=plan(['game-shell.css']);assert(css.browser.includes('game-surfaces.cjs'));assert(!css.browser.includes('extended-play.cjs'));
 const auth=plan(['accounts.js']);assert(auth.browser.includes('accounts.cjs'));assert(!auth.browser.includes('alibi.cjs'));
 const profile=plan(['profile.js']);assert.deepEqual(profile.browser,['profile.cjs']);

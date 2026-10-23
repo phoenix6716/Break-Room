@@ -7,6 +7,7 @@
   menu.querySelectorAll('a[href]').forEach(link => {
     if (/\/games\/(?:alibi|bouncer|prior)\//.test(new URL(link.href).pathname)) link.remove();
   });
+  if(!menu.querySelector('a[href*="/games/time-drop/"]')){const link=document.createElement('a');link.href=new URL('games/time-drop/index.html',new URL('.',document.currentScript.src)).href;link.textContent='Time Drop';const laser=menu.querySelector('a[href*="/games/laser/"]');if(laser)laser.after(link);}
   document.body.appendChild(menu);
   const backdrop = document.createElement('div');
   backdrop.className = 'game-menu-backdrop';

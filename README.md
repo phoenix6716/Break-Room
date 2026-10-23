@@ -1,5 +1,13 @@
 # Break Room
 
+## Time Drop — owner direction, 23 October 2026
+
+Time Drop replaces Prior in the active lineup: Laser → Time Drop → Stack Up → Stake → Pack → Lowball → Inner Clock. Alibi, Bouncer and Prior remain shelved with their engines, sources and historical saves preserved. Seven active games; ten supported native save formats including archives.
+
+The owner requested no hearts anywhere in Time Drop, reasonable partial-credit scoring, expanded/balanced content, reliable saves and locked answers, a large ongoing Unlimited mode (never call it Endless), and the canonical Stake layout. Read `games/time-drop/README.md` for the exact 330-event/33-day deck, fixed era-based linear scoring, accepted date ranges, native 10,000-point / Arcade 100-point scales, first-lock saves and tab-owned practice. Preserve Prior's source and legacy results rather than reinterpreting them. Keep the original uploaded prototype outside the production artifact.
+
+Existing live projects apply `supabase/time-drop.sql` after the current Inner Clock/player-feedback migration. Updated `supabase/inner-clock.sql` includes it; fresh setup then friends supports all ten formats. Do not reapply historical narrower migrations. Publication is already authorised automatically after affected checks; verify live SQL separately from CI and deployment.
+
 ## Prior shelved; preserve its content — owner decision, 23 October 2026
 
 Prior joins Alibi and Bouncer outside the active lineup. The six current games are Laser, Stack Up, Stake, Pack, Lowball and Inner Clock. Remove Prior from the shelf, drawers and current Friends comparisons; keep archived profile history, earned achievements, saves, scoring compatibility and direct routes. The current Daily checklist uses six games.
@@ -27,9 +35,10 @@ Open `http://127.0.0.1:8000/index.html`. Keep the full folder structure; links u
 | Laser | Four untimed mirror puzzles, first-fire Daily scoring, unscored retries/solutions and free practice. 216 solver-checked boards, including 96 three-mirror Experts. |
 | Pack | Three untimed easy/medium/hard packing puzzles, a visual bag, personalized swaps and free Unlimited practice. 180 validated bags. |
 | Inner Clock | Five blind Daily timing targets, native average miss and free Unlimited practice. |
+| Time Drop | Ten untimed event-year guesses, fixed partial-credit points, era-changing art and 330-event free Unlimited practice. |
 | Stack Up | Five familiar Daily ordering sets, 90 seconds per stack and drag/touch/keyboard controls; optional Challenge mix in free Unlimited. |
 
-All Dailies reset at midnight **Australia/Sydney**, including daylight-saving changes. The homepage lists six current games. Prior, Alibi and Bouncer are shelved; their engines, direct routes and saved history are preserved. All six cancelled placeholder cards remain removed. Native scores remain alongside the shared 0–100 Arcade score. See [SCORING.md](SCORING.md) for the exact formulas and equal-game average over the common 120-day window.
+All Dailies reset at midnight **Australia/Sydney**, including daylight-saving changes. The homepage lists seven current games. Prior, Alibi and Bouncer are shelved; their engines, direct routes and saved history are preserved. All six cancelled placeholder cards remain removed. Native scores remain alongside the shared 0–100 Arcade score. See [SCORING.md](SCORING.md) for the exact formulas and equal-game average over the common 120-day window.
 
 ## Current lineup — owner decision, 23 October 2026
 

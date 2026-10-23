@@ -1,5 +1,13 @@
 # Friends and score comparisons
 
+## Time Drop — owner direction, 23 October 2026
+
+Time Drop replaces Prior in the active lineup: Laser → Time Drop → Stack Up → Stake → Pack → Lowball → Inner Clock. Alibi, Bouncer and Prior remain shelved with their engines, sources and historical saves preserved. Seven active games; ten supported native save formats including archives.
+
+The owner requested no hearts anywhere in Time Drop, reasonable partial-credit scoring, expanded/balanced content, reliable saves and locked answers, a large ongoing Unlimited mode (never call it Endless), and the canonical Stake layout. Read `games/time-drop/README.md` for the exact 330-event/33-day deck, fixed era-based linear scoring, accepted date ranges, native 10,000-point / Arcade 100-point scales, first-lock saves and tab-owned practice. Preserve Prior's source and legacy results rather than reinterpreting them. Keep the original uploaded prototype outside the production artifact.
+
+Existing live projects apply `supabase/time-drop.sql` after the current Inner Clock/player-feedback migration. Updated `supabase/inner-clock.sql` includes it; fresh setup then friends supports all ten formats. Do not reapply historical narrower migrations. Publication is already authorised automatically after affected checks; verify live SQL separately from CI and deployment.
+
 ## Activation
 
 The site code uses the existing Supabase sign-in client and cloud saves. Run the entire [`supabase/friends.sql`](supabase/friends.sql) in **Supabase → SQL Editor → New query → Run**, after the existing `setup.sql` has already been applied. This adds social tables and constrained RPCs; it does not replace or reset `game_saves`, change auth URLs, or require new client secrets. Fresh projects use current `setup.sql` then `friends.sql`. Existing setup/Friends installations apply the complete [`supabase/inner-clock.sql`](supabase/inner-clock.sql) update last; it preserves saves, friend codes and relationships. Do not reapply older narrower per-game migrations.

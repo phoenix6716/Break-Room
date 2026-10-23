@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f4eddc">
+  <meta name="description" content="Guess the year of ten Daily events, or explore hundreds of events in free Unlimited practice.">
+  <title>Time Drop — Break Room</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/break-room-icon.svg">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../game-flow.css">
+  <link rel="stylesheet" href="../../break-room.css">
+  <link rel="stylesheet" href="../../game-shell.css">
+  <link rel="stylesheet" href="../../game-dialog.css">
+  <link rel="stylesheet" href="../../daily-reset.css">
+  <script src="../../daily-clock.js"></script>
+  <script src="../../arcade-score.js?v=time-drop-20261023"></script>
+  <link rel="stylesheet" href="../../arcade-score.css">
+  <script defer src="../../navigation.js"></script>
+  <script src="../../pack-model.js?v=launch-20261023"></script><script src="../../prior-model.js?v=launch-20261023"></script><script src="../../laser-model.js?v=launch-20261023"></script><script src="../../alibi-model.js?v=playtest-20261023"></script><script src="../../bouncer-model.js?v=launch-20261023"></script><script src="../../inner-clock-model.js"></script><script defer src="shell.js"></script><script src="../../time-drop-model.js"></script><script defer src="events.js"></script><script defer src="art.js"></script><script defer src="time-drop.js"></script>
+<link rel="stylesheet" href="../../legal.css"><link rel="stylesheet" href="time-drop.css"><link rel="stylesheet" href="../../game-access.css"><link rel="stylesheet" href="../../accounts.css"><script defer src="../../assets/vendor/supabase.js"></script><script defer src="../../account-config.js"></script><script defer src="../../cloud-saves.js?v=time-drop-20261023"></script><script defer src="../../accounts.js?v=time-drop-20261023"></script><link rel="stylesheet" href="../../game-feel.css"><script src="../../game-feel.js"></script><link rel="stylesheet" href="../../practice-session.css"><script src="../../practice-session.js"></script></head>
+<body class="time-drop-page">
+  <!-- 01 FIXED: Menu/left drawer, centred Break Room brand, account link. -->
+<header class="site-header game-site-header"><div class="wrap game-header-inner"><button class="game-menu-toggle" id="game-menu-toggle" type="button" aria-expanded="false" aria-controls="game-menu"><span class="hamburger-lines" aria-hidden="true">☰</span><span class="menu-toggle-label">MENU</span></button><a class="brand" href="../../index.html" aria-label="Break Room — back to all games"><span class="break-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="break-wordmark">BREAK ROOM</span></a><a class="game-header-account" href="../../login.html">ACCOUNT</a></div><nav class="game-menu" id="game-menu" aria-label="Break Room menu" aria-hidden="true" hidden>
+<div class="game-menu-heading"><span class="section-meta">BREAK ROOM</span><button class="game-menu-close" id="game-menu-close" type="button" aria-label="Close menu">×</button></div>
+<div class="game-menu-content"><div class="game-menu-group"><span class="section-meta">PLAY NOW</span><a href="../../index.html#daily-games">All games</a><a href="../../games/laser/index.html">Laser</a><a href="../../games/stack-up/index.html">Stack Up</a><a href="../../games/stake/index.html">Stake</a><a href="../../games/alibi/index.html">Alibi</a><a href="../../games/pack/index.html">Pack</a><a href="../../games/bouncer/index.html">Bouncer</a><a href="../../games/prior/index.html">Prior</a><a href="../../games/lowball/index.html">Lowball</a><a href="../../games/inner-clock/index.html">Inner Clock</a></div>
+<div class="game-menu-group"><span class="section-meta">YOUR BREAK ROOM</span><a href="../../profile.html">My stats</a><a href="../../friends.html">Friends</a><a href="../../login.html">Account / sign in</a></div></div></nav></header>
+  <main class="br-game-page">
+    <div class="br-game-shell">
+      <!-- 02 FIXED GEOMETRY: title left, stats centred, ?/trophy right. -->
+      <section class="br-game-heading" aria-labelledby="game-title">
+        <div class="br-game-title-group">
+          <h1 id="game-title" data-template-slot="title">Time Drop</h1>
+          <p data-template-slot="description">HISTORY / INSTINCT · Guess the year.</p>
+        </div>
+        <section class="quick-stats" aria-label="Your game stats">
+          <div class="quick-stat"><strong data-summary-stat="streak">—</strong><span>Streak</span></div>
+          <div class="quick-stat"><strong data-summary-stat="best">—</strong><span>Best</span></div>
+          <div class="quick-stat"><strong data-summary-stat="played">—</strong><span>Played</span></div>
+        </section>
+        <div class="br-game-tools">
+          <button class="mini-tool" id="help-popup-open" type="button" aria-label="How to play" title="How to play">?</button>
+          <button class="mini-tool" id="stats-popup-open" type="button" aria-label="Extended game stats" title="Extended game stats"><img src="../../assets/icons/trophy.svg" alt=""></button>
+        </div>
+      </section>
+
+      <!-- 03 FIXED: shared boxed Sydney-midnight reset, independent of game centring. -->
+      <aside class="timer-card daily-reset-card br-reset-rail" aria-label="Daily reset">
+        <div class="card-heading">NEXT DAILY RESET</div>
+        <div class="reset-clock" data-daily-countdown>--:--:--</div>
+        <p>Same time. Every game.</p>
+      </aside>
+
+      <div class="br-game-content">
+        <!-- 04 FIXED: plain Daily / Unlimited mode controls. -->
+        <div class="br-mode-tabs" role="tablist" aria-label="Game mode">
+          <button id="mode-daily" role="tab" type="button" aria-selected="true" aria-controls="game-panel" tabindex="0" data-game-mode="daily">Daily</button>
+          <button id="mode-unlimited" role="tab" type="button" aria-selected="false" aria-controls="game-panel" tabindex="-1" data-game-mode="unlimited">Unlimited</button>
+        </div>
+        <!-- 05 REPLACE: progress content/round count; preserve the centred slot. -->
+        <div class="br-game-progress" id="game-progress" data-template-slot="progress" aria-label="Daily progress">EVENT 1 / 10</div>
+        <!-- 06 REPLACE: ONLY this area is the game's playing surface/engine. -->
+        <section class="br-game-board" id="game-panel" role="tabpanel" aria-labelledby="mode-daily" tabindex="0">
+          <p id="save-warning" role="status" hidden>Saving is unavailable. Your progress stays in memory while this page remains open.</p>
+          <p id="td-notice" role="status"></p>
+          <div id="practice-settings" hidden><label>Topic <select id="practice-category"><option value="all">Mixed topics</option><option>World</option><option>Science</option><option>Culture</option><option>Sport</option><option>Everyday</option></select></label><label>Period <select id="practice-era"><option value="all">All periods</option><option value="early">Before 1700</option><option value="middle">1700–1899</option><option value="modern">1900 onward</option></select></label><p id="practice-note" role="status">Settings apply to your next event. Practice resumes in this browser tab.</p></div>
+          <div id="engine-slot"></div>
+          <p id="mode-description" class="game-sr-only" role="status">Daily · Ten untimed events.</p>
+        </section>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- 08 FIXED POPUP VISUALS AND BEHAVIOUR; replace title/rules/stat bindings. -->
+  <div class="game-popup-backdrop" id="help-popup" hidden>
+    <section class="game-popup" role="dialog" aria-modal="true" aria-labelledby="help-popup-title">
+      <button class="game-popup-close" type="button" data-popup-close aria-label="Close">×</button>
+      <p class="popup-kicker">PLAYER GUIDE</p>
+      <h2 id="help-popup-title">HOW TO PLAY Time Drop</h2>
+      <p>One event. Your best guess at its year.</p>
+      <div class="popup-instructions">
+        <p><strong>1. Guess the year.</strong> Read the event, then use the timeline, ±100/10/1 buttons or type a whole year. Select BCE for years before the common era. There is no year zero.</p>
+        <p><strong>2. Lock it in.</strong> Your first submitted guess is final. There are no lives, no timer and no early elimination. All ten Daily events can be finished. Every answer reveals its year, your distance, points, explanation and source.</p>
+        <p><strong>3. Closer earns more.</strong> Exact years and guesses inside an explicitly accepted approximate range earn 1,000 points. Otherwise points fall evenly to zero over 50 years for events from 1900; 100 years for 1700–1899; 150 for 1000–1699; 250 for 1–999 CE; and 500 for BCE events. These are fixed bands, not changing ages. Three years away from a modern event earns 940 points. Only an exact year is called a Bullseye.</p>
+        <p><strong>4. Finish the Daily.</strong> Ten events, 10,000 possible native points. Arcade score is total points ÷ 100, out of 100. Only completed Dailies count toward stats, Profile and Friends. Everyone uses the same Sydney-date set, resetting at midnight Australia/Sydney. Guesses, answers and event snapshots save as you go.</p>
+        <p><strong>5. Practise in Unlimited.</strong> A shuffled 330-event bank supplies free ongoing practice, excluding today’s Daily events and avoiding repeats until your eligible pool is exhausted. Topic/period changes apply to the next event. Your practice session resumes in this tab and stays separate from Daily/cloud records. Cloud saves require activation on Account.</p>
+      </div>
+      <button class="button pink popup-done" type="button" data-popup-close>GOT IT</button>
+    </section>
+  </div>
+  <div class="game-popup-backdrop" id="stats-popup" hidden>
+    <section class="game-popup" role="dialog" aria-modal="true" aria-labelledby="stats-popup-title">
+      <button class="game-popup-close" type="button" data-popup-close aria-label="Close">×</button>
+      <p class="popup-kicker">YOUR RECORD</p>
+      <h2 id="stats-popup-title">EXTENDED STATS</h2>
+      <p class="stats-popup-game">Time Drop · HISTORY / INSTINCT</p>
+      <div class="extended-stats-grid" data-template-slot="extended-stats">
+        <div><strong data-detail-stat="played">—</strong><span>RUNS PLAYED</span></div>
+        <div><strong data-detail-stat="best">—</strong><span>BEST SCORE</span></div>
+        <div><strong data-detail-stat="average">—</strong><span>AVERAGE SCORE</span></div>
+        <div><strong data-detail-stat="streak">—</strong><span>CURRENT STREAK</span></div>
+        <div><strong data-detail-stat="achievement">—</strong><span>ALL TEN EXACT</span></div>
+        <div><strong data-detail-stat="last">—</strong><span>LAST SCORE</span></div>
+      </div>
+      <p class="popup-footnote">Best, average and last use your Daily Arcade score out of 100. Only completed Dailies count; Unlimited is practice.</p>
+      <button class="button pink popup-done" type="button" data-popup-close>BACK TO GAME</button>
+    </section>
+  </div>
+
+  <!-- 09 SHARED SITE FOOTER ONLY. Do not add standalone per-game legal links. -->
+  <p class="game-cloud-note"><span data-account-status>Guest play · Saved in this browser.</span> <a href="../../account.html">Account &amp; cloud saves →</a></p><!-- shared-legal-footer:start -->
+<footer class="br-site-footer"><div class="br-footer-inner"><p class="br-footer-note">BREAK ROOM · A LITTLE BREAK. A FEW GOOD GAMES.</p><nav class="br-footer-nav" aria-label="Footer"><a href="../../index.html">All games</a><a href="../../privacy.html">Privacy</a><a href="../../terms.html">Terms</a><a href="../../contact.html">Contact &amp; data help</a></nav></div></footer>
+<!-- shared-legal-footer:end -->
+</body>
+</html>
