@@ -14,7 +14,7 @@ const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
   await page.evaluate(f=>{for(const[k,v]of Object.entries(f))localStorage.setItem(k,typeof v==='string'?v:JSON.stringify(v));},fixture);
   const before=await page.evaluate(()=>JSON.stringify(Object.fromEntries(Object.keys(localStorage).sort().map(k=>[k,localStorage.getItem(k)]))));
   await page.reload();assert.equal(await page.locator('#arcade-average').innerText(),'75');
-  assert.match(await page.locator('#arcade-basis').innerText(),/3 of 9 games · 3 saved Daily results/);
+  assert.match(await page.locator('#arcade-basis').innerText(),/3 games with saved history · 3 saved Daily results/);
   assert.deepEqual(await page.locator('.profile-game-arcade>strong').allTextContents(),['75 / 100','100 / 100','50 / 100','— / 100','— / 100','— / 100','— / 100','— / 100','— / 100']);
   await page.locator('.profile-scoring summary').click();assert.match(await page.locator('.profile-scoring').innerText(),/31,000/);
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
