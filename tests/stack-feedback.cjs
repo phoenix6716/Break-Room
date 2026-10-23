@@ -40,7 +40,7 @@ async function reorder(page, values) {
         assert.match(await page.locator('#message').innerText(), /3 of 5 cards in the right position/);
         const messageBox=await page.locator('#message').boundingBox(), buttonBox=await page.locator('#check-button').boundingBox();
         assert.ok(width<=650?messageBox.y+messageBox.height<=buttonBox.y:messageBox.x+messageBox.width<=buttonBox.x, 'Feedback text never overlaps the submit button');
-        const loss = mode === 'daily' ? 300 : 30;
+        const loss = 30;
         assert.equal(await page.locator('#run-score').innerText(), String(-loss));
         assert.equal(await page.locator('#result-modal').isVisible(), false);
         if (width === 1440 && mode === 'daily') {

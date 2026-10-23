@@ -23,7 +23,7 @@ async function centred(target,selectors,width){for(const selector of selectors){
    const original=await page.locator('.daily-reset-card').evaluate(appearance);
    const expectedTime=await page.locator('.daily-reset-card [data-daily-countdown]').innerText();
    await page.goto(base+'/games/stack-up/index.html');
-   await page.locator('[data-start-mode=daily]').click();
+   await page.locator('[data-mode=daily]').click();
    assert.deepEqual(await page.locator('.daily-reset-card').evaluate(appearance),original,'Stack Up matches the canonical reset card');
    await page.goto(base+'/games/stake/index.html');
    assert.deepEqual(await page.locator('.daily-reset-card').evaluate(appearance),original,'Stake reset card matches the canonical template');

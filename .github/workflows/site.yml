@@ -11,7 +11,8 @@ permissions:
 
 concurrency:
   group: pages-${{ github.ref }}
-  cancel-in-progress: false
+  # New PR commits supersede old checks; main publishes remain sequential.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   check:
@@ -32,7 +33,8 @@ jobs:
       - name: Install locked test dependencies
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Install matching Chromium
-        run: npx playwright install --with-deps chromium
+        # Ubuntu runners include Chrome and its system libraries; avoid a redundant apt upgrade.
+        run: npx playwright install chromium
       - name: Run all checks against a project-path build
         shell: bash
         env:

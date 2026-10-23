@@ -1,5 +1,5 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path'),api=require('../scripts/content-lib.cjs'),{scaffold}=require('../scripts/new-game.cjs');
-const catalog=api.load(undefined,'2026-10-22'),report=api.report(catalog);assert.deepEqual(report.counts,{stake:264,'stack-up':208,lowball:100});assert.deepEqual(report.errors,[]);assert.equal(report.reviewCoverage.lowballWithPriceEvidence,0);assert.match(report.warnings.join(' '),/estimated/);
+const catalog=api.load(undefined,'2026-10-22'),report=api.report(catalog);assert.deepEqual(report.counts,{stake:264,'stack-up':368,lowball:100});assert.deepEqual(report.errors,[]);assert.equal(report.reviewCoverage.lowballWithPriceEvidence,0);assert.match(report.warnings.join(' '),/estimated/);
 const reviewed=api.load(undefined,'2026-10-24'),reviewedReport=api.report(reviewed);
 assert.equal(reviewedReport.reviewCoverage.lowballWithPriceEvidence,100);
 assert.equal(reviewedReport.reviewCoverage.lowballRegionsWithPriceEvidence,400);

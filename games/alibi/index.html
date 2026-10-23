@@ -14,11 +14,11 @@
   <link rel="stylesheet" href="../../game-dialog.css">
   <link rel="stylesheet" href="../../daily-reset.css">
   <script src="../../daily-clock.js"></script>
-  <script src="../../arcade-score.js?v=4"></script>
+  <script src="../../arcade-score.js?v=playtest-20261023"></script>
   <link rel="stylesheet" href="../../arcade-score.css">
   <script defer src="../../navigation.js"></script>
-  <script src="../../pack-model.js?v=launch-20261023"></script><script src="../../prior-model.js?v=launch-20261023"></script><script src="../../laser-model.js?v=launch-20261023"></script><script src="../../alibi-model.js?v=launch-20261023"></script><script src="cases.js?v=launch-20261023"></script><script defer src="shell.js"></script><script defer src="alibi.js?v=launch-20261023"></script>
-<link rel="stylesheet" href="../../legal.css"><link rel="stylesheet" href="alibi.css?v=2"><link rel="stylesheet" href="../../game-access.css"><link rel="stylesheet" href="../../accounts.css"><script defer src="../../assets/vendor/supabase.js"></script><script defer src="../../account-config.js"></script><script src="../../bouncer-model.js?v=launch-20261023"></script><script src="../../inner-clock-model.js"></script><script defer src="../../cloud-saves.js?v=4"></script><script defer src="../../accounts.js?v=4"></script><link rel="stylesheet" href="../../game-feel.css"><script src="../../game-feel.js"></script><link rel="stylesheet" href="../../practice-session.css"><script src="../../practice-session.js"></script></head>
+  <script src="../../pack-model.js?v=launch-20261023"></script><script src="../../prior-model.js?v=launch-20261023"></script><script src="../../laser-model.js?v=launch-20261023"></script><script src="../../alibi-model.js?v=playtest-20261023"></script><script src="cases.js?v=launch-20261023"></script><script defer src="evidence-cases.js"></script><script defer src="shell.js"></script><script defer src="alibi.js?v=playtest-20261023"></script>
+<link rel="stylesheet" href="../../legal.css"><link rel="stylesheet" href="alibi.css?v=playtest-20261023"><link rel="stylesheet" href="../../game-access.css"><link rel="stylesheet" href="../../accounts.css"><script defer src="../../assets/vendor/supabase.js"></script><script defer src="../../account-config.js"></script><script src="../../bouncer-model.js?v=launch-20261023"></script><script src="../../inner-clock-model.js"></script><script defer src="../../cloud-saves.js?v=4"></script><script defer src="../../accounts.js?v=4"></script><link rel="stylesheet" href="../../game-feel.css"><script src="../../game-feel.js"></script><link rel="stylesheet" href="../../practice-session.css"><script src="../../practice-session.js"></script></head>
 <body class="alibi-page">
   <!-- 01 FIXED: Menu/left drawer, centred Break Room brand, account link. -->
 <header class="site-header game-site-header"><div class="wrap game-header-inner"><button class="game-menu-toggle" id="game-menu-toggle" type="button" aria-expanded="false" aria-controls="game-menu"><span class="hamburger-lines" aria-hidden="true">☰</span><span class="menu-toggle-label">MENU</span></button><a class="brand" href="../../index.html" aria-label="Break Room — back to all games"><span class="break-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="break-wordmark">BREAK ROOM</span></a><a class="game-header-account" href="../../login.html">ACCOUNT</a></div><nav class="game-menu" id="game-menu" aria-label="Break Room menu" aria-hidden="true" hidden>
@@ -53,8 +53,8 @@
 
       <div class="br-game-content">
         <details class="game-quick-guide"><summary>How to play Alibi</summary>
-          <p><strong>Work out whose story is false to identify the culprit.</strong></p>
-          <ol><li>Read the incident’s time window, the verified records and every suspect’s account. In new cases, each person visited exactly once.</li><li>Work out who visited when. Verified records are true. Only the culprit’s account is false; all other accounts are true. The culprit’s visit falls inside the incident window.</li><li>Use the notebook to test your assumptions, then select a suspect and confirm your accusation. Confirmation is final; notes are not graded. No timer. For older saved cases, follow their displayed rules and the ? guide.</li></ol>
+          <p><strong>Follow the physical evidence to the person responsible.</strong></p>
+          <ol><li>Read the key evidence: a stamp mark, badge permission, weight change or broken seal.</li><li>Match it to the catalogue, then combine the verified observations and records to identify who had that entry. Each person has one entry and each entry has one owner.</li><li>Use the notebook to record possible assignments, then select a suspect and confirm. Notes are not graded; your first accusation is final. No timer.</li></ol>
           <p class="guide-more">Open the yellow ? button for the full rules and scoring.</p>
         </details>
         <!-- 04 FIXED: plain Daily / Unlimited mode controls. -->
@@ -84,12 +84,11 @@
       <h2 id="help-popup-title">HOW TO PLAY Alibi</h2>
       <p>Small office mysteries. Real clues. One story that does not fit.</p>
       <div class="popup-instructions">
-        <p><strong>1. Read the incident.</strong> Something happened in a specific place between the last confirmed check and its discovery. Only one logged visit falls inside that window.</p>
-        <p><strong>2. Reconstruct the visits.</strong> Each suspect made exactly one visit, at one of the listed times. These are all the visits; nobody else entered during this period. Times are exact. Use verified records, sightings and the suspects’ accounts to work out who visited when.</p>
-        <p><strong>3. Spot the false alibi.</strong> Only the culprit gave a false account. Every other account and every verified record is accurate. “Next visitor after” means nobody visited between them; a stated minute gap compares the exact start times. A portrait, name or expression is never a clue.</p>
-        <p><strong>4. Use your notebook.</strong> Mark accounts as assumptions and cross out suspects. These are your own notes: no automatic checking, hints or score changes. Select a suspect, then Confirm accusation. Your first confirmation is final. Afterwards, see the reconstructed timeline, the false alibi and full reasoning.</p>
-        <p><strong>5. Close four Daily cases.</strong> Warm-up → Standard → Tricky → Expert. No timer or speed bonus. Each correct accusation earns 25 Arcade points, alongside your correct cases out of four. Sydney-midnight reset, free Changing/fixed-difficulty Unlimited and private saved notes are unchanged.</p>
-        <p><strong>Resuming an older case?</strong> Existing Daily files keep their original rules: exactly the displayed number of false statements, and the culprit can tell the truth. Finish that saved set as before; new scenarios are available in Unlimited and the next fresh Daily.</p>
+        <p><strong>1. Read the physical evidence.</strong> A forged seal, a restricted badge, an unexplained weight change or a broken custody seal identifies one catalogue entry. All measurements, marks and permissions you need are shown.</p>
+        <p><strong>2. Find its owner.</strong> Each suspect has one catalogue entry; each entry has one owner. The observations on suspect cards and every verified record are facts. Combine them and rule out impossible assignments. Catalogue numbers run in the order shown.</p>
+        <p><strong>3. Keep your own notes.</strong> The notebook lets you propose an assignment or rule out a suspect. Notes are not checked and never change your score. A portrait, name or expression is never evidence.</p>
+        <p><strong>4. Confirm an accusation.</strong> Select a suspect, then confirm. The first confirmation is final. Afterwards, a step-by-step explanation connects the physical evidence and the clues to the culprit; expand every deduction if you want the full trail.</p>
+        <p><strong>Resuming an older case?</strong> Saved visit cases retain their displayed incident window and the rule that only the culprit’s account is false. Original statement cases retain their displayed false-statement count; the culprit can tell the truth. Finish those saved files normally; newly drawn Unlimited files use the new evidence rules.</p>
       </div>
       <button class="button pink popup-done" type="button" data-popup-close>GOT IT</button>
     </section>

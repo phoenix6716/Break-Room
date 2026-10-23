@@ -32,7 +32,7 @@ games.prior=async(p,width)=>{
 };
 async function sortStack(p){for(let value=1;value<=5;value++){let at=await p.locator('.sort-card[data-value="'+value+'"]').evaluate(e=>[...e.parentNode.children].indexOf(e));while(at>value-1){await p.locator('.sort-card[data-value="'+value+'"] button').first().click();at--;}}}
 games.stack=async(p,width)=>{
- await p.goto(base+'/games/stack-up/index.html');await p.locator('[data-start-mode=daily]').click();for(let i=0;i<5;i++){await sortStack(p);await p.locator('#check-button').click();await p.locator('#next-button').click();}const saved=await native(p);await p.locator('[data-mode=infinite]').click();const ids=new Set();
+ await p.goto(base+'/games/stack-up/index.html');await p.locator('[data-mode=daily]').click();for(let i=0;i<5;i++){await sortStack(p);await p.locator('#check-button').click();await p.locator('#next-button').click();}const saved=await native(p);await p.locator('[data-mode=infinite]').click();const ids=new Set();
  for(let i=0;i<30;i++){
   const id=await p.locator('#cards').getAttribute('data-stack-id');assert(!ids.has(id));ids.add(id);
   if(i===19){await p.locator('#stack-topic').selectOption('AIRPORTS');assert.equal(await p.locator('#cards').getAttribute('data-stack-id'),id);}

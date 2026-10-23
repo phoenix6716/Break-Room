@@ -2,7 +2,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
 (async()=>{
  const drafts=fs.mkdtempSync(path.join(os.tmpdir(),'br-studio-')),server=createStudio({draftDir:drafts});await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));const base='http://127.0.0.1:'+server.address().port;let browser;
  try{
- const bootstrap=await(await fetch(base+'/api/catalog')).json();assert.equal(bootstrap.catalog.records.length,572);
+ const bootstrap=await(await fetch(base+'/api/catalog')).json();assert.equal(bootstrap.catalog.records.length,732);
  const body={format:'break-room-content-draft',version:1,game:'stake',mode:'new',id:'test',fields:{},baseFingerprint:bootstrap.catalog.fingerprint};
  for(const headers of [{'Content-Type':'application/json',Origin:'https://evil.example','X-Content-Token':bootstrap.token},{'Content-Type':'application/json',Origin:base}])assert.equal((await fetch(base+'/api/draft',{method:'POST',headers,body:JSON.stringify(body)})).status,403);
  const denied=await fetch(base+'/api/draft',{method:'POST',headers:{'Content-Type':'application/json',Origin:base,'X-Content-Token':bootstrap.token},body:'{bad'});assert.equal(denied.status,400);
