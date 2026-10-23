@@ -1,0 +1,162 @@
+[
+  {
+    "category": "EVERYDAY",
+    "row": "Umbrella|umbrellas|My cover stretches over a folding frame.|I close for easy carrying.|A handle holds me overhead.|Water runs off my canopy.|I am the portable cover opened to stay dry in rain.|My ribs support the fabric."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Scissors|pair of scissors|My two parts share a pivot.|Finger loops form my handles.|My sharpened edges slide past each other.|I trim paper, fabric or hair.|I am the two-bladed hand tool for cutting.|My pivot turns hand movement into shearing."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Key|keys,door key|My shape matches another mechanism.|Teeth or grooves control internal parts.|I can hang on a ring.|Turning me can release a door.|I am the small shaped metal object opening a lock.|Traditional locks depend on a matching pattern."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Padlock|pad lock,padlocks|I work without being built into a door.|My curved loop passes through a clasp.|Some versions use a combination.|My U-shaped shackle closes into my body.|I am the portable lock used on lockers and gates.|My design lets me move between different objects."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Zipper|zip,zip fastener|A slider interlocks my two rows.|My teeth may be metal or plastic.|I join edges without buttons.|I often appear on bags and jackets.|I am the sliding fastener joining two toothed strips.|The slider guides teeth together or separates them."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Button|buttons,clothing button|A slit or loop is my partner.|I can be decorative.|Thread often fixes me in place.|I fasten shirts and coats.|I am the small clothing disc pushed through a hole.|I can fasten fabric without springs."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Safety pin|safety pins|Bent wire forms my body.|A spring helps hold me shut.|A clasp covers my sharp point.|I temporarily join fabric.|I am the pin hiding its point when closed.|My clasp reduces accidental pricks."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Needle|sewing needle,sewing needles|My narrow body has a tiny opening.|I pass through fabric.|Thread goes through my eye.|I have a sharp pointed end.|I am the slender tool for sewing with thread.|My thread opening is called an eye."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Thimble|thimbles|I protect part of a hand.|My surface often has dimples.|I help push a sharp tool.|A sewer wears me on a fingertip.|I am the small protective cap used for hand-sewing.|Dimples help keep a needle from slipping."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Ruler|rulers,measuring ruler|Regular markings repeat along me.|I have a straight edge.|I help draw straight lines.|My scales use centimetres or inches.|I am the marked strip measuring short lengths.|The zero mark can start inside my physical edge."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Pencil|pencils|My writing material is not actual lead.|Particles rub onto a surface.|Grades include HB and 2B.|Wooden versions can be sharpened.|I am the writing tool with a graphite core.|Core hardness affects darkness and softness."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Eraser|rubber,pencil eraser|I lift particles from a surface.|I may sit on another writing tool.|Using me leaves small crumbs.|I correct graphite marks.|I am the soft block rubbing out pencil writing.|My material grips some graphite and lifts it."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Stapler|staplers|A lever pushes a metal piece.|My supply comes in strips.|A plate bends two sharp legs.|I join paper sheets.|I am the desktop tool fastening paper with bent metal staples.|My base plate folds the fastener's legs."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Paper clip|paperclip,paper clips|I hold without piercing.|My common form uses bent wire.|My loops provide spring pressure.|I temporarily join loose sheets.|I am the small looped wire fastener for papers.|My springiness allows reuse."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Envelope|envelopes|I protect something flat during delivery.|Flaps fold around my contents.|Adhesive can seal me.|An address and stamp go outside.|I am the paper cover for posting a letter.|Folded flaps enclose contents using little material."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Stamp|postage stamp,postage stamps|I show that a fee was paid.|Collectors keep examples in albums.|My design may honour an event.|I attach to mail.|I am the small printed label paying for postage.|Postal cancellations help prevent reuse."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Bookmark|book mark,bookmarks|I preserve a position without altering text.|I may be a ribbon or card.|I sit between pages.|I help a reader return.|I am the marker keeping your place in a book.|A built-in ribbon can do the same job."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Candle|candles|My fuel melts near heat.|Liquid rises along a narrow strand.|My supply slowly burns away.|Wax and a wick form me.|I am the wax light placed on birthday cakes.|Capillary action draws melted wax up my wick."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Matchstick|match,matches,matchsticks|Reactive chemicals coat my tip.|Friction supplies initial heat.|Safety versions require a prepared striking surface.|I am usually a short wooden stick.|I am the stick struck against a box to make fire.|Safety forms separate reactive ingredients between head and striking surface."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Mirror|mirrors|I form an image by reflecting light.|A thin metal backing often helps.|Flat versions appear to reverse depth.|People use me while getting ready.|I am the reflective surface showing your own face.|Incoming and reflected light make equal angles at a flat surface."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Sponge|sponges,kitchen sponge|Many small spaces fill my structure.|Those spaces absorb liquids.|I can be natural or synthetic.|I help clean with water.|I am the absorbent pad washing dishes.|My pores hold water and cleaning solution."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Broom|brooms|A long handle keeps users upright.|Stiff fibres form my working end.|I push loose dirt along.|I often work with a dustpan.|I am the long-handled tool sweeping floors.|Bristle stiffness suits different surfaces."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Mop|mops,floor mop|My head holds liquid.|I can be wrung out.|A handle moves me across a surface.|I clean floors using moisture.|I am the floor-cleaning tool paired with a bucket.|Removing excess water avoids leaving floors too wet."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Bucket|pail,buckets|My handle often swings.|I carry liquid or loose material.|A base lets me stand.|I commonly help with cleaning.|I am the open-topped container also called a pail.|A pivoting handle helps carry a filled container."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Clothespin|clothes peg,peg,clothes pin|I often grip fabric outdoors.|A spring closes my jaws.|Older forms use one split wooden piece.|I hold washing against a line.|I am the small clip hanging clothes out to dry.|The spring supplies pressure without continuous hand force."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Hanger|clothes hanger,coat hanger|My shape supports shoulders.|A top hook hangs from a rail.|Some forms clip trousers.|I keep garments off the floor.|I am the shaped frame holding clothes in wardrobes.|Supporting clothing helps reduce creases."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Suitcase|suitcases,travel case|My shell protects packed belongings.|Handles help carry me.|Modern forms often roll.|Travellers check me in or carry me aboard.|I am the large travel case for packed clothes.|Wheels reduce the effort of moving heavy loads."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Backpack|rucksack,back pack,backpacks|My load sits behind the wearer.|Two straps spread the weight.|Compartments separate equipment.|Students and hikers carry me.|I am the bag worn on your back.|Waist belts can transfer some load to the hips."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Wallet|billfold,wallets|Compartments hold flat valuables.|I may fold shut.|I hold notes and identification.|Payment cards fit inside.|I am the small personal holder for money and cards.|Different designs separate coins, notes and cards."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Sunglasses|sun glasses,shades|My lenses reduce incoming light.|Some versions reduce reflected glare.|I sit on the face.|I help in bright outdoor conditions.|I am the dark-lensed eyewear worn in sunshine.|UV protection depends on lens design, not darkness alone."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Toothbrush|tooth brush,toothbrushes|A handle supports my bristled head.|I remove deposits from hard surfaces.|Some versions rotate electrically.|I work with a flavoured paste.|I am the brush cleaning teeth.|Reaching different tooth surfaces is important."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Comb|combs,hair comb|Repeated projections line my edge.|Wide and narrow forms suit different textures.|I separate tangled strands.|I am drawn through hair.|I am the grooming tool with a row of teeth.|Tooth spacing affects styling and suitability."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Pillow|pillows|My filling can be natural or synthetic.|A removable cover protects me.|I support part of the body.|I lie near the head of a bed.|I am the soft cushion supporting your head during sleep.|My filling determines firmness and compression."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Blanket|blankets|I slow down heat loss.|Trapped air helps insulate.|I fold away when unused.|I cover resting people.|I am the warm fabric covering over a bed or lap.|I reduce heat transfer rather than generating heat."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Hammock|hammocks|Two separated points support me.|My bed can be netting or fabric.|I curve under a person's weight.|I can hang between trees.|I am the hanging bed used for swinging rest.|My supporting ropes carry tension."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Ladder|ladders|My sides support repeated crosspieces.|Some forms fold away.|My steps are called rungs.|I provide access to height.|I am the portable climbing frame with two sides and many rungs.|A stable base is important when working high above it."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Wheelbarrow|wheel barrow,wheelbarrows|My handles act as levers.|A wheel carries some weight.|I move loose worksite materials.|Gardeners push my two handles.|I am the garden cart commonly supported by one front wheel.|The wheel helps one person move awkward loads."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Shovel|spade,shovels|My broad blade carries loose material.|A long handle provides leverage.|I move soil, sand or snow.|Gardeners use me to dig.|I am the long-handled digging tool with a scoop-like blade.|Blade shapes suit digging or lifting."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Watering can|watering cans|A spout directs my flow.|A perforated end spreads liquid gently.|My handle makes me portable.|Gardeners fill me for plants.|I am the container sprinkling water over flowers.|The perforated spout end is often called a rose."
+  },
+  {
+    "category": "EVERYDAY",
+    "row": "Hourglass|sand timer,sandglass,hour glass|Gravity makes me work.|Two chambers share a narrow passage.|Fine material passes between them.|Turning me restarts an interval.|I am the timer where sand falls between glass bulbs.|My duration depends on the opening and material quantity."
+  }
+]
