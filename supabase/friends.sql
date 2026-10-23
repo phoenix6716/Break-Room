@@ -509,7 +509,7 @@ revoke all on function public._friend_json(text),public._friend_date(text),publi
 grant execute on function public.friend_scores() to authenticated;
 
 -- Evidence v3: all observations are verified; solve catalogue ownership independently.
-create or replace function public._friend_alibi_evidence_rule(s jsonb,positions int[]) returns boolean language plpgsql immutable set search_path='' as $
+create or replace function public._friend_alibi_evidence_rule(s jsonb,positions int[]) returns boolean language plpgsql immutable set search_path='' as $$
 declare a int; b int; k int; ty text;
 begin
  ty=s->>0;a=(s->>1)::int;b=(s->>2)::int;k=(s->>3)::int;
@@ -518,8 +518,8 @@ begin
  elsif ty='next' then return positions[a+1]=positions[b+1]+1;
  elsif ty='apart' then return abs(positions[a+1]-positions[b+1])=k;end if;return null;
 exception when others then return null;
-end $;
-create or replace function public._friend_alibi_evidence(p jsonb) returns int language plpgsql immutable set search_path='' as $
+end $$;
+create or replace function public._friend_alibi_evidence(p jsonb) returns int language plpgsql immutable set search_path='' as $$
 declare n int; lv int; i int; j int; a int; b int; k int; x numeric; ty text; s jsonb; e jsonb; o jsonb; clue jsonb; mechanism text;
  names text[]:='{}'; portraits int[]:='{}'; object_names text[]:='{}'; rules text[]:='{}'; moment int:=-1; positions int[]; fits boolean; solutions int:=0; winner int; before_mass int; after_mass int; broken boolean:=false;
 begin
@@ -573,16 +573,16 @@ begin
  end loop;
  if solutions<>1 then return null;end if;return winner;
 exception when others then return null;
-end $;
-create or replace function public._friend_alibi_culprit(p jsonb) returns int language plpgsql immutable set search_path='' as $
+end $$;
+create or replace function public._friend_alibi_culprit(p jsonb) returns int language plpgsql immutable set search_path='' as $$
 begin
  if p->'version'='3'::jsonb then return public._friend_alibi_evidence(p);end if;
  if p->'version'='2'::jsonb then return public._friend_alibi_scenario(p);end if;
  return public._friend_alibi_v1_culprit(p);
-end $;
+end $$;
 revoke all on function public._friend_alibi_evidence_rule(jsonb,int[]),public._friend_alibi_evidence(jsonb),public._friend_alibi_culprit(jsonb) from public,anon,authenticated;
 
-create or replace function public._friend_alibi_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $
+create or replace function public._friend_alibi_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
 declare i int; j int; n int; x numeric; culprit int; correct int:=0; p jsonb; note jsonb; ids text[]:='{}';
 begin
  if jsonb_typeof(v) is distinct from 'object' or v->'version' is distinct from '1'::jsonb or v->>'day' is distinct from d::text or v->'round' is distinct from '3'::jsonb or coalesce(v->>'phase','') not in ('review','summary') or jsonb_typeof(v->'edits') is distinct from 'number' then return null;end if;
@@ -600,5 +600,5 @@ begin
  end loop;
  return correct*25;
 exception when others then return null;
-end $;
+end $$;
 commit;
