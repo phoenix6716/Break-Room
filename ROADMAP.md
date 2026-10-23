@@ -1,6 +1,12 @@
 # Break Room launch roadmap
 
-Current development scope: nine integrated games, including Laser, Alibi, Bouncer and Inner Clock. The six old placeholder games were cancelled and their homepage cards removed. The final launch roster and game names remain provisional; human playtesting should decide what ships. The staged launch work below remains necessary.
+Current development scope: seven active games, with Alibi and Bouncer shelved. Three replacements are intended; one owner-supplied prototype is pending review and the other two concepts remain unselected.
+
+## Current lineup — owner decision, 23 October 2026
+
+Alibi and Bouncer are shelved and removed from the active homepage, navigation drawers and current Friends comparisons. The seven current games, in shelf order, are Laser, Stack Up, Stake, Pack, Prior, Lowball and Inner Clock. Preserve the shelved engines, direct routes, artwork, local/cloud saves, historical native/Arcade scores and earned achievements. Profile keeps archived results for players who already have them, without play prompts, and its current Daily checklist uses seven games. Historical profile averages still include saved archived results; Friends compares the current lineup. Do not remove cloud/schema compatibility or erase records as part of shelving.
+
+The owner wants three better replacement games, with one prototype already lined up. Review that supplied game before integration; the other two concepts are not selected. Do not invent or advertise replacement games or restore cancelled placeholders. After three replacements the intended roster would be ten games. This decision supersedes older nine-game and Alibi/Bouncer launch-roster guidance below; those game contracts remain compatibility documentation.
 
 1. **Five-game playability:** Pack → Prior → Stack Up → Stake → Lowball. See `PLAYABILITY.md` for implemented changes, extended-session acceptance checks and limits. Unlimited stays free during development.
 2. **Small-group playtesting:** observe confusion, replays and voluntary return visits; prioritise the largest problems before adding features. Automated passes are preparation for this stage, not a substitute for players.

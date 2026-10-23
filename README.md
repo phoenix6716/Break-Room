@@ -21,12 +21,16 @@ Open `http://127.0.0.1:8000/index.html`. Keep the full folder structure; links u
 | Laser | Four untimed mirror puzzles, first-fire Daily scoring, unscored retries/solutions and free practice. 216 solver-checked boards, including 96 three-mirror Experts. |
 | Prior | Five untimed earlier-event choices, progressive gap bands, timeline/date reveals and free endless practice. 128 scoped events. |
 | Pack | Three untimed easy/medium/hard packing puzzles, a visual bag, personalized swaps and free Unlimited practice. 180 validated bags. |
-| Alibi | Four untimed evidence-based Daily cases, personal notes, illustrated suspects and free Unlimited practice. |
-| Bouncer | Two untimed Daily secret spelling rules, optional half-credit probes and free Unlimited practice. |
 | Inner Clock | Five blind Daily timing targets, native average miss and free Unlimited practice. |
 | Stack Up | Five familiar Daily ordering sets, 90 seconds per stack and drag/touch/keyboard controls; optional Challenge mix in free Unlimited. |
 
-All Dailies reset at midnight **Australia/Sydney**, including daylight-saving changes. The homepage lists only the nine playable games; all six cancelled placeholder cards have been removed. Native scores remain alongside the shared 0–100 Arcade score. See [SCORING.md](SCORING.md) for the exact formulas and equal-game average over the common 120-day window.
+All Dailies reset at midnight **Australia/Sydney**, including daylight-saving changes. The homepage lists seven current games. Alibi and Bouncer are shelved; their engines, direct routes and saved history are preserved. All six cancelled placeholder cards remain removed. Native scores remain alongside the shared 0–100 Arcade score. See [SCORING.md](SCORING.md) for the exact formulas and equal-game average over the common 120-day window.
+
+## Current lineup — owner decision, 23 October 2026
+
+Alibi and Bouncer are shelved and removed from the active homepage, navigation drawers and current Friends comparisons. The seven current games, in shelf order, are Laser, Stack Up, Stake, Pack, Prior, Lowball and Inner Clock. Preserve the shelved engines, direct routes, artwork, local/cloud saves, historical native/Arcade scores and earned achievements. Profile keeps archived results for players who already have them, without play prompts, and its current Daily checklist uses seven games. Historical profile averages still include saved archived results; Friends compares the current lineup. Do not remove cloud/schema compatibility or erase records as part of shelving.
+
+The owner wants three better replacement games, with one prototype already lined up. Review that supplied game before integration; the other two concepts are not selected. Do not invent or advertise replacement games or restore cancelled placeholders. After three replacements the intended roster would be ten games. This decision supersedes older nine-game and Alibi/Bouncer launch-roster guidance below; those game contracts remain compatibility documentation.
 
 ## Content tools
 

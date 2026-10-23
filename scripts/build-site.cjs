@@ -1,4 +1,4 @@
-/* Build a plain static artifact; preserve every published route and image byte. */
+/* Build a plain static artifact; preserve routes, engines and image bytes. */
 const fs=require('node:fs'),path=require('node:path');
 require('./bundle-auth.cjs');
 const root=path.resolve(__dirname,'..'),output=path.join(root,'dist');
@@ -6,7 +6,11 @@ const web=new Set(['.html','.css','.js','.json','.webmanifest','.svg','.png','.j
 const excluded=new Set(['node_modules','.git','source','_template','__pycache__']);
 let count=0,total=0;
 function copy(file,relative){
- const target=path.join(output,relative);fs.mkdirSync(path.dirname(target),{recursive:true});fs.copyFileSync(file,target);count++;total+=fs.statSync(file).size;
+ const target=path.join(output,relative);fs.mkdirSync(path.dirname(target),{recursive:true});if(path.extname(file).toLowerCase()==='.html'){
+  const html=fs.readFileSync(file,'utf8').replace(/<nav\b[^>]*class="[^"]*\bgame-menu\b[^"]*"[^>]*>[\s\S]*?<\/nav>/g,nav=>nav.replace(/<a\b[^>]*href="[^"]*games\/(?:alibi|bouncer)\/index\.html"[^>]*>[\s\S]*?<\/a>/g,''));
+  fs.writeFileSync(target,html);
+ }else fs.copyFileSync(file,target);
+ count++;total+=fs.statSync(target).size;
 }
 function tree(dir,relative){for(const entry of fs.readdirSync(dir,{withFileTypes:true})){
  if(entry.name.startsWith('.')||excluded.has(entry.name))continue;

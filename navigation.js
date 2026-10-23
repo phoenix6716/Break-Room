@@ -3,6 +3,10 @@
   const button = document.getElementById('game-menu-toggle');
   const menu = document.getElementById('game-menu');
   if (!button || !menu) return;
+  // Shelved games keep their routes/saves, but are absent from the active drawer.
+  menu.querySelectorAll('a[href]').forEach(link => {
+    if (/\/games\/(?:alibi|bouncer)\//.test(new URL(link.href).pathname)) link.remove();
+  });
   document.body.appendChild(menu);
   const backdrop = document.createElement('div');
   backdrop.className = 'game-menu-backdrop';

@@ -1,5 +1,11 @@
 # Break Room project memory
 
+## Current lineup — owner decision, 23 October 2026
+
+Alibi and Bouncer are shelved and removed from the active homepage, navigation drawers and current Friends comparisons. The seven current games, in shelf order, are Laser, Stack Up, Stake, Pack, Prior, Lowball and Inner Clock. Preserve the shelved engines, direct routes, artwork, local/cloud saves, historical native/Arcade scores and earned achievements. Profile keeps archived results for players who already have them, without play prompts, and its current Daily checklist uses seven games. Historical profile averages still include saved archived results; Friends compares the current lineup. Do not remove cloud/schema compatibility or erase records as part of shelving.
+
+The owner wants three better replacement games, with one prototype already lined up. Review that supplied game before integration; the other two concepts are not selected. Do not invent or advertise replacement games or restore cancelled placeholders. After three replacements the intended roster would be ten games. This decision supersedes older nine-game and Alibi/Bouncer launch-roster guidance below; those game contracts remain compatibility documentation.
+
 The repository is `phoenix6716/Break-Room`, formerly `Midnight-Arcade`. The website brand is **Break Room** and the current Pages URL is `https://phoenix6716.github.io/Break-Room/`.
 
 ## Incoming game prototypes
