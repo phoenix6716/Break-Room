@@ -1,0 +1,162 @@
+[
+  {
+    "category": "PLACE",
+    "row": "Eiffel Tower|eiffel,tour eiffel|My metal framework forms a lattice.|I was built for an 1889 exhibition.|I stand beside the Champ de Mars.|My early critics disliked my appearance.|I am the tall iron landmark dominating the Paris skyline.|I was originally intended to stand for a limited time."
+  },
+  {
+    "category": "PLACE",
+    "row": "Big Ben|elizabeth tower|My familiar name technically refers to a bell.|I am part of Westminster's palace complex.|My clock has four faces.|My tower was renamed for Elizabeth II.|I am London's famous clock-and-bell landmark beside Parliament.|The tower is officially Elizabeth Tower."
+  },
+  {
+    "category": "PLACE",
+    "row": "Colosseum|coliseum,roman colosseum|Underground passages supported my spectacles.|I am an ancient oval amphitheatre.|My arena hosted gladiators.|Flavian emperors built me.|I am Rome's ruined arena with tiers of arches.|My underground complex is called the hypogeum."
+  },
+  {
+    "category": "PLACE",
+    "row": "Taj Mahal|tajmahal|My layout is strongly symmetrical.|White marble faces my central building.|I stand beside the Yamuna River.|Shah Jahan commissioned me for his wife.|I am the famous white domed mausoleum in Agra.|Gardens and a reflecting pool form part of my complex."
+  },
+  {
+    "category": "PLACE",
+    "row": "Great Wall of China|great wall,wall of china|I am a network rather than one continuous structure.|My sections come from different eras.|Watchtowers punctuate many sections.|I defended parts of northern China.|I am China's huge historic defensive wall system.|Some sections use rammed earth instead of stone."
+  },
+  {
+    "category": "PLACE",
+    "row": "Great Pyramid of Giza|great pyramid,pyramid of giza,khufu pyramid|My sides align closely with cardinal directions.|Pale limestone once covered me.|I was built as a royal tomb.|My commissioner was the pharaoh Khufu.|I am the largest ancient pyramid near Cairo.|I am the only surviving ancient Wonder of the World."
+  },
+  {
+    "category": "PLACE",
+    "row": "Statue of Liberty|lady liberty|A green patina covers my exterior.|I was a gift from France.|One hand holds a tablet.|My raised hand carries a torch.|I am the giant robed figure in New York Harbor.|My outer surface is copper."
+  },
+  {
+    "category": "PLACE",
+    "row": "Sydney Opera House|opera house,sydney opera|Ceramic tiles cover my roof.|My architect was Jørn Utzon.|I stand on Bennelong Point.|My roof is compared to sails.|I am the performing-arts landmark beside Sydney Harbour.|I contain several performance spaces."
+  },
+  {
+    "category": "PLACE",
+    "row": "Golden Gate Bridge|golden gate|My colour is called International Orange.|I opened in the 1930s.|My towers often rise through fog.|I span San Francisco Bay's entrance.|I am San Francisco's orange-red suspension bridge.|My colour helps distinguish me against sea and sky."
+  },
+  {
+    "category": "PLACE",
+    "row": "Tower Bridge|london tower bridge|My centre opens for passing ships.|High walkways join my main towers.|I opened in the nineteenth century.|I cross the Thames beside a historic fortress.|I am London's lifting bridge with two stone-clad towers.|My central bascules lift while the outer spans stay fixed."
+  },
+  {
+    "category": "PLACE",
+    "row": "Leaning Tower of Pisa|tower of pisa,pisa tower|I am a freestanding bell tower.|Building me took several stages.|Soft ground caused my best-known feature.|Pale arches line my exterior.|I am the Italian tower famous for standing at an angle.|Stabilisation work reduced my risk of collapse."
+  },
+  {
+    "category": "PLACE",
+    "row": "Burj Khalifa||My stepped form narrows upwards.|I opened in 2010.|I stand in the United Arab Emirates.|I rise more than 800 metres.|I am Dubai's skyscraper holding the world's tallest-building record.|Setbacks help manage wind forces."
+  },
+  {
+    "category": "PLACE",
+    "row": "Stonehenge|stone henge|My construction had several prehistoric stages.|Some stones travelled long distances.|My layout relates to the Sun.|I stand on Salisbury Plain.|I am England's prehistoric circle of massive standing stones.|Horizontal lintels link some of my uprights."
+  },
+  {
+    "category": "PLACE",
+    "row": "Acropolis of Athens|acropolis,athens acropolis|My name refers to a high fortified place.|Several ancient temples stand on my rock.|My best-known building is the Parthenon.|I overlook Greece's capital.|I am Athens' ancient hilltop temple complex.|The Parthenon was dedicated to Athena."
+  },
+  {
+    "category": "PLACE",
+    "row": "Machu Picchu|machupicchu,machu pichu|My stone blocks fit without mortar.|Terraces surround my buildings.|I overlook the Urubamba valley.|The Inca built me high in the Andes.|I am Peru's famous mountain-top Inca citadel.|Terraces helped stabilise my steep slopes."
+  },
+  {
+    "category": "PLACE",
+    "row": "Petra|petra jordan|A narrow gorge forms my famous approach.|My people managed water carefully.|I was a Nabataean centre.|Facades are carved into pink sandstone.|I am Jordan's ancient rock-cut city famous for the Treasury.|The Treasury's name does not describe its original purpose."
+  },
+  {
+    "category": "PLACE",
+    "row": "Angkor Wat|angkor temple|Towers surround my central sanctuary.|I began as a temple to Vishnu.|Carved reliefs line my galleries.|I stand near Siem Reap.|I am Cambodia's enormous temple complex shown on its flag.|I later became an important Buddhist site."
+  },
+  {
+    "category": "PLACE",
+    "row": "Mount Everest|everest,mt everest|My summit lies on an international border.|Marine limestone occurs high on me.|Hillary and Tenzing reached my top in 1953.|I rise between Nepal and China.|I am Earth's highest mountain above sea level.|Height above sea level differs from height measured from a mountain's base."
+  },
+  {
+    "category": "PLACE",
+    "row": "Mount Fuji|fuji,fuji san,fujisan|I am an active and symmetrical volcano.|My peak is often snow-capped.|I have inspired many Japanese prints.|I am Japan's highest mountain.|I am the iconic conical volcano often pictured near Tokyo.|My best-known modern eruption began in 1707."
+  },
+  {
+    "category": "PLACE",
+    "row": "Mount Kilimanjaro|kilimanjaro,mt kilimanjaro|I have three volcanic cones.|I stand near the equator.|Glaciers remain near my summit.|I rise in Tanzania.|I am Africa's highest mountain.|My highest summit belongs to the cone called Kibo."
+  },
+  {
+    "category": "PLACE",
+    "row": "Grand Canyon|the grand canyon|My rock layers reveal geological history.|Striking bands colour my steep sides.|I lie mainly in Arizona.|The Colorado River runs through me.|I am the enormous river-cut gorge in the southwestern United States.|My river continues to erode the rock."
+  },
+  {
+    "category": "PLACE",
+    "row": "Niagara Falls|niagara|My waters pass between neighbouring countries.|My sections include Horseshoe and American falls.|Visitors approach my spray in boats.|I lie between Ontario and New York.|I am the famous waterfall group on the Canada-US border.|My river connects Lake Erie to Lake Ontario."
+  },
+  {
+    "category": "PLACE",
+    "row": "Victoria Falls|mosi oa tunya|My spray can be visible far away.|A local name means smoke that thunders.|I form a broad falling curtain.|I cross the Zambezi between Zambia and Zimbabwe.|I am southern Africa's huge waterfall named after a British queen.|My water falls into a basalt gorge."
+  },
+  {
+    "category": "PLACE",
+    "row": "Amazon Rainforest|amazon jungle,amazon forest|My trees recycle much moisture.|I span several South American countries.|Most of my area is Brazilian.|An enormous river system runs through me.|I am Earth's largest tropical rainforest.|Saharan dust brings nutrients across the Atlantic to my soils."
+  },
+  {
+    "category": "PLACE",
+    "row": "Sahara Desert|sahara|Rock and gravel cover much of me.|I once had wetter periods with lakes.|I stretch across many countries.|I occupy much of North Africa.|I am Earth's largest hot desert.|Wind can carry my dust across the Atlantic."
+  },
+  {
+    "category": "PLACE",
+    "row": "Antarctica|antarctic continent|A very thick ice sheet covers my land.|I have no permanent native human population.|Research stations operate in my extreme conditions.|I surround the South Pole.|I am Earth's southernmost continent.|Low precipitation makes me a desert."
+  },
+  {
+    "category": "PLACE",
+    "row": "Arctic Ocean|arctic sea|Much of my surface freezes seasonally.|My waters surround a point rather than a continent.|I am the smallest of five oceans.|I lie north of Europe, Asia and North America.|I am the ocean surrounding the North Pole.|My sea ice floats instead of resting on land."
+  },
+  {
+    "category": "PLACE",
+    "row": "Dead Sea|the dead sea|I have no natural surface outlet.|The Jordan River flows into me.|My shore lies far below sea level.|My water is exceptionally salty.|I am the salty lake where visitors float with ease.|I am a lake despite my familiar name."
+  },
+  {
+    "category": "PLACE",
+    "row": "Great Barrier Reef|barrier reef|Tiny animals built much of me.|Heat stress can cause bleaching.|I contain many reefs and islands.|I stretch along northeastern Australia.|I am the enormous coral reef system off Queensland.|Many reef-building corals live with photosynthetic algae."
+  },
+  {
+    "category": "PLACE",
+    "row": "Galapagos Islands|galápagos islands,galapagos,galápagos|Isolation produced many unique species here.|I straddle the Pacific equator.|Giant tortoises are famous inhabitants.|Charles Darwin visited aboard HMS Beagle.|I am Ecuador's island group linked to Darwin's ideas.|Volcanoes helped form my islands."
+  },
+  {
+    "category": "PLACE",
+    "row": "Venice|venezia|Timber piles support many old buildings.|My public transport includes water buses.|I occupy islands in a lagoon.|Gondolas travel my waterways.|I am Italy's city famous for canals instead of ordinary streets.|My lagoon connects to the Adriatic Sea."
+  },
+  {
+    "category": "PLACE",
+    "row": "Paris|city of paris|My river has Left and Right Banks.|I am home to the Louvre.|The Seine flows through me.|An iron tower is my famous landmark.|I am the capital of France.|My central river islands include the Île de la Cité."
+  },
+  {
+    "category": "PLACE",
+    "row": "Tokyo|tokio|I was once known as Edo.|Many railway lines serve my metropolitan area.|Shibuya is one of my districts.|I am Japan's capital.|I am the vast Japanese city containing Shinjuku and Shibuya.|My modern name means eastern capital."
+  },
+  {
+    "category": "PLACE",
+    "row": "Rome|roma|I am nicknamed an eternal city.|My ancient history includes emperors.|An independent city-state is enclosed by me.|My landmarks include the Colosseum.|I am the capital of Italy.|Vatican City is an independent state within my boundaries."
+  },
+  {
+    "category": "PLACE",
+    "row": "New York City|new york,nyc|Five boroughs make up my city.|My subway serves much of me.|Manhattan is one famous area.|A torch-bearing statue stands in my harbour.|I am the American city nicknamed the Big Apple.|My boroughs include Brooklyn and Staten Island."
+  },
+  {
+    "category": "PLACE",
+    "row": "London|city of london|My underground railway is the Tube.|My historic centre grew beside the Thames.|Westminster is one of my landmarks.|I am the United Kingdom's capital.|I am the city with Buckingham Palace and Big Ben.|The Thames flows through me towards the North Sea."
+  },
+  {
+    "category": "PLACE",
+    "row": "Uluru|ayers rock|Light changes the appearance of my surface.|I am a culturally significant sandstone formation.|I stand on Anangu country.|I rise from central Australia's landscape.|I am the enormous red rock once widely called Ayers Rock.|My visible rock continues underground."
+  },
+  {
+    "category": "PLACE",
+    "row": "Yellowstone National Park|yellowstone|A large volcanic system lies beneath me.|My hot springs have vivid colours.|Bison and wolves inhabit me.|Old Faithful is a famous feature.|I am the US national park famous for geysers and geothermal pools.|Most of my area is in Wyoming."
+  },
+  {
+    "category": "PLACE",
+    "row": "Easter Island|rapa nui|I am an isolated Pacific island belonging to Chile.|My traditional name is Rapa Nui.|Stone platforms stand along my coast.|Large carved human figures cover my landscape.|I am the island famous for giant moai statues.|Many moai were carved from volcanic stone."
+  },
+  {
+    "category": "PLACE",
+    "row": "Mount Vesuvius|vesuvius,mt vesuvius|I overlook a densely populated bay.|I am an active Italian volcano.|My eruption buried ancient settlements.|Pompeii and Herculaneum were devastated.|I am the volcano that buried Pompeii in 79 CE.|The preserved towns reveal much about ancient daily life."
+  }
+]
