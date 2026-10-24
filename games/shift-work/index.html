@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f4eddc">
+  <meta name="description" content="Slide office furniture to clear the trolley’s exit. Three untimed Daily boards and free Unlimited.">
+  <title>Shift Work — Break Room</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/break-room-icon.svg">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../game-flow.css">
+  <link rel="stylesheet" href="../../break-room.css">
+  <link rel="stylesheet" href="../../game-shell.css">
+  <link rel="stylesheet" href="../../game-dialog.css">
+  <link rel="stylesheet" href="../../daily-reset.css">
+  <script src="../../daily-clock.js"></script>
+  <script src="../../arcade-score.js?v=hidden-gem-20261024"></script>
+  <link rel="stylesheet" href="../../arcade-score.css">
+  <script defer src="../../navigation.js"></script>
+  <script src="../../pack-model.js?v=launch-20261023"></script><script src="../../prior-model.js?v=launch-20261023"></script><script src="../../laser-model.js?v=launch-20261023"></script><script src="../../alibi-model.js?v=playtest-20261023"></script><script src="../../bouncer-model.js?v=launch-20261023"></script><script src="../../inner-clock-model.js"></script><script defer src="shell.js"></script><script src="../../time-drop-model.js"></script><script src="../../clue-ladder-model.js"></script><script src="../../seating-chart-model.js"></script><script src="../../hidden-gem-model.js"></script><script src="../../shift-work-model.js"></script><script defer src="boards.js"></script><script defer src="shift-work.js"></script>
+<link rel="stylesheet" href="../../legal.css"><link rel="stylesheet" href="shift-work.css"><link rel="stylesheet" href="../../game-access.css"><link rel="stylesheet" href="../../accounts.css"><script defer src="../../assets/vendor/supabase.js"></script><script defer src="../../account-config.js"></script><script defer src="../../cloud-saves.js?v=hidden-gem-20261024"></script><script defer src="../../accounts.js?v=hidden-gem-20261024"></script></head>
+<body class="shift-work-page">
+  <!-- 01 FIXED: Menu/left drawer, centred Break Room brand, account link. -->
+<header class="site-header game-site-header"><div class="wrap game-header-inner"><button class="game-menu-toggle" id="game-menu-toggle" type="button" aria-expanded="false" aria-controls="game-menu"><span class="hamburger-lines" aria-hidden="true">☰</span><span class="menu-toggle-label">MENU</span></button><a class="brand" href="../../index.html" aria-label="Break Room — back to all games"><span class="break-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="break-wordmark">BREAK ROOM</span></a><a class="game-header-account" href="../../login.html">ACCOUNT</a></div><nav class="game-menu" id="game-menu" aria-label="Break Room menu" aria-hidden="true" hidden>
+<div class="game-menu-heading"><span class="section-meta">BREAK ROOM</span><button class="game-menu-close" id="game-menu-close" type="button" aria-label="Close menu">×</button></div>
+<div class="game-menu-content"><div class="game-menu-group"><span class="section-meta">PLAY NOW</span><a href="../../index.html#daily-games">All games</a><a href="../../games/laser/index.html">Laser</a><a href="../../games/time-drop/index.html">Time Drop</a><a href="../../games/clue-ladder/index.html">Clue Ladder</a><a href="../../games/seating-chart/index.html">Seating Chart</a><a href="../../games/hidden-gem/index.html">Shift Work</a><a href="../../games/stack-up/index.html">Stack Up</a><a href="../../games/stake/index.html">Stake</a><a href="../../games/pack/index.html">Pack</a><a href="../../games/lowball/index.html">Lowball</a><a href="../../games/inner-clock/index.html">Inner Clock</a></div>
+<div class="game-menu-group"><span class="section-meta">YOUR BREAK ROOM</span><a href="../../profile.html">My stats</a><a href="../../friends.html">Friends</a><a href="../../login.html">Account / sign in</a></div></div></nav></header>
+  <main class="br-game-page">
+    <div class="br-game-shell">
+      <!-- 02 FIXED GEOMETRY: title left, stats centred, ?/trophy right. -->
+      <section class="br-game-heading" aria-labelledby="game-title">
+        <div class="br-game-title-group">
+          <h1 id="game-title" data-template-slot="title">Shift Work</h1>
+          <p data-template-slot="description">SLIDING / LOGIC · Clear a path. Clock off.</p>
+        </div>
+        <section class="quick-stats" aria-label="Your game stats">
+          <div class="quick-stat"><strong data-summary-stat="streak">—</strong><span>Streak</span></div>
+          <div class="quick-stat"><strong data-summary-stat="best">—</strong><span>Best</span></div>
+          <div class="quick-stat"><strong data-summary-stat="played">—</strong><span>Played</span></div>
+        </section>
+        <div class="br-game-tools">
+          <button class="mini-tool" id="help-popup-open" type="button" aria-label="How to play" title="How to play">?</button>
+          <button class="mini-tool" id="stats-popup-open" type="button" aria-label="Extended game stats" title="Extended game stats"><img src="../../assets/icons/trophy.svg" alt=""></button>
+        </div>
+      </section>
+
+      <!-- 03 FIXED: shared boxed Sydney-midnight reset, independent of game centring. -->
+      <aside class="timer-card daily-reset-card br-reset-rail" aria-label="Daily reset">
+        <div class="card-heading">NEXT DAILY RESET</div>
+        <div class="reset-clock" data-daily-countdown>--:--:--</div>
+        <p>Same time. Every game.</p>
+      </aside>
+
+      <div class="br-game-content">
+        <!-- 04 FIXED: plain Daily / Unlimited mode controls. -->
+        <div class="br-mode-tabs" role="tablist" aria-label="Game mode">
+          <button id="mode-daily" role="tab" type="button" aria-selected="true" aria-controls="game-panel" tabindex="0" data-game-mode="daily">Daily</button>
+          <button id="mode-unlimited" role="tab" type="button" aria-selected="false" aria-controls="game-panel" tabindex="-1" data-game-mode="unlimited">Unlimited</button>
+        </div>
+        <!-- 05 REPLACE: progress content/round count; preserve the centred slot. -->
+        <div class="br-game-progress" id="game-progress" data-template-slot="progress" aria-label="Daily progress">BOARD 1 / 3</div>
+        <!-- 06 REPLACE: ONLY this area is the game's playing surface/engine. -->
+        <section class="br-game-board" id="game-panel" role="tabpanel" aria-labelledby="mode-daily" tabindex="0">
+          <p id="save-warning" role="status" hidden></p><div id="engine-slot"></div><p class="sw-status" id="status" role="status" aria-live="polite"></p><p id="practice-note" class="sw-note"></p><textarea class="sw-copy" id="copy-fallback" readonly aria-label="Result text to copy" hidden></textarea><p id="mode-description" class="game-sr-only" role="status">Daily · Three untimed boards.</p>
+        </section>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- 08 FIXED POPUP VISUALS AND BEHAVIOUR; replace title/rules/stat bindings. -->
+  <div class="game-popup-backdrop" id="help-popup" hidden>
+    <section class="game-popup" role="dialog" aria-modal="true" aria-labelledby="help-popup-title">
+      <button class="game-popup-close" type="button" data-popup-close aria-label="Close">×</button>
+      <p class="popup-kicker">PLAYER GUIDE</p>
+      <h2 id="help-popup-title">HOW TO PLAY SHIFT WORK</h2>
+      <p>Slide the blue trolley to the right edge. Furniture moves along its long side and cannot rotate.</p><div class="popup-instructions"><p><strong>1. Make room.</strong> Drag a piece in its allowed direction, or tap it and use a numbered slide button. The letter identifies it. You cannot push through furniture.</p><p><strong>2. Make it count.</strong> One slide is one move, however far it travels. Your board Arcade score is minimum moves ÷ your moves × 100, rounded. Daily Arcade score averages the three board scores and rounds to a whole number. Native total moves is kept alongside it. No timer.</p><p><strong>3. Find your way.</strong> Undo restores the layout but keeps the move count. Restart resets moves; any hints stay marked. Hints show a best next slide and cap that board at 75.</p><p><strong>Keyboard.</strong> Tab to a piece and press Enter to select it. Arrow keys preview a slide; press Enter to commit or Escape to cancel. Numbered slide buttons work by keyboard too.</p><p><strong>Daily.</strong> Three balanced boards: Easy (4–5 minimum moves), Steady (6–7), then Tricky (8–9). Starter and the toughest boards remain in Unlimited. Final score is their average out of 100. The first finish of each board locks. Everyone gets the same boards, resetting at midnight Australia/Sydney. The deck provides 40 Daily sets with no repeated board IDs before repeating.</p><p><strong>Unlimited.</strong> Practise as long as you like. Difficulty applies to the next board. Practice excludes today’s three IDs and does not repeat eligible boards until the selected pool is exhausted. It resumes in this tab for the current account, outside Daily/profile/cloud scores.</p></div><button class="button pink popup-done" type="button" data-popup-close>GOT IT</button>
+    </section>
+  </div>
+  <div class="game-popup-backdrop" id="stats-popup" hidden>
+    <section class="game-popup" role="dialog" aria-modal="true" aria-labelledby="stats-popup-title">
+      <button class="game-popup-close" type="button" data-popup-close aria-label="Close">×</button>
+      <p class="popup-kicker">YOUR RECORD</p>
+      <h2 id="stats-popup-title">EXTENDED STATS</h2>
+      <p class="stats-popup-game">Shift Work · SLIDING / LOGIC</p>
+      <div class="extended-stats-grid" data-template-slot="extended-stats">
+        <div><strong data-detail-stat="played">—</strong><span>RUNS PLAYED</span></div>
+        <div><strong data-detail-stat="best">—</strong><span>BEST SCORE</span></div>
+        <div><strong data-detail-stat="average">—</strong><span>AVERAGE SCORE</span></div>
+        <div><strong data-detail-stat="streak">—</strong><span>CURRENT STREAK</span></div>
+        <div><strong data-detail-stat="achievement">—</strong><span>OPTIMAL BOARDS</span></div>
+        <div><strong data-detail-stat="last">—</strong><span>LAST SCORE</span></div>
+      </div>
+      <p class="popup-footnote">Best, average and last show Daily Arcade scores out of 100. Native total moves is retained in your profile; lower is better. Only completed Dailies count.</p>
+      <button class="button pink popup-done" type="button" data-popup-close>BACK TO GAME</button>
+    </section>
+  </div>
+
+  <!-- 09 SHARED SITE FOOTER ONLY. Do not add standalone per-game legal links. -->
+  <p class="game-cloud-note"><span data-account-status>Guest play · Saved in this browser.</span> <a href="../../account.html">Account &amp; cloud saves →</a></p><!-- shared-legal-footer:start -->
+<footer class="br-site-footer"><div class="br-footer-inner"><p class="br-footer-note">BREAK ROOM · A LITTLE BREAK. A FEW GOOD GAMES.</p><nav class="br-footer-nav" aria-label="Footer"><a href="../../index.html">All games</a><a href="../../privacy.html">Privacy</a><a href="../../terms.html">Terms</a><a href="../../contact.html">Contact &amp; data help</a></nav></div></footer>
+<!-- shared-legal-footer:end -->
+</body>
+</html>
