@@ -399,6 +399,6 @@ $('game-menu-toggle').onclick=()=>open('game-menu');$('game-menu-close').onclick
 document.addEventListener('keydown',e=>{if(!modal)return;if(e.key==='Escape'){e.preventDefault();close();return;}if(e.key!=='Tab')return;const list=[...modal.querySelectorAll('button:not(:disabled),a[href],select,textarea,[tabindex="0"]')].filter(x=>x.getClientRects().length),first=list[0],last=list.at(-1);if(e.shiftKey&&(document.activeElement===first||!list.includes(document.activeElement))){e.preventDefault();last.focus();}else if(!e.shiftKey&&(document.activeElement===last||!list.includes(document.activeElement))){e.preventDefault();first.focus();}});
 $('new-daily-test').onclick=newDaily;document.querySelectorAll('[data-mode]').forEach(e=>e.onclick=()=>mode(e.dataset.mode));document.querySelector('.br-mode-tabs').onkeydown=e=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();mode(e.key==='Home'?'daily':e.key==='End'?'unlimited':state.mode==='daily'?'unlimited':'daily',true);};
 state=load();sync();render();save();window.addEventListener('storage',e=>{if(e.key===KEY&&sync()){pointerCancel();render();say('Prototype progress updated from another tab.');}});setInterval(()=>{if(sync())render();},1500);document.addEventListener('visibilitychange',()=>{if(sync())render();});
-window.SHIFT_WORK_TEST=Object.freeze({KEY,SW,BOARDS,get state(){return SW.clone(state)}});
+window.SHIFT_WORK_TEST=Object.freeze({KEY,SW,BOARDS,validSave:storedValid,get state(){return SW.clone(state)}});
 })();
 </script></body></html>
