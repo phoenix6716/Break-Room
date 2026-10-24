@@ -8,7 +8,7 @@ let offline=false,missing=false,queue=Promise.resolve();
 (async()=>{const db=new PGlite();let browser;try{
  await db.exec(`create role anon;create role authenticated;create schema auth;create table auth.users(id uuid primary key);create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;grant usage on schema auth to anon,authenticated;grant execute on function auth.uid() to anon,authenticated;`);
  for(const id of Object.values(ids))await db.query('insert into auth.users values($1)',[id]);
- await db.exec(fs.readFileSync('supabase/setup.sql','utf8'));await db.exec(fs.readFileSync('supabase/friends.sql','utf8'));
+ await db.exec(fs.readFileSync('supabase/setup.sql','utf8'));await db.exec(fs.readFileSync('supabase/friends.sql','utf8'));await db.exec(fs.readFileSync('supabase/hidden-gem.sql','utf8'));
  const today=(await db.query("select timezone('Australia/Sydney',now())::date::text as d")).rows[0].d,day=(Date.parse(today+'T00:00:00Z')-Date.UTC(2026,9,1))/86400000;
  const qs=Array.from({length:5},()=>({q:'Secret question',c:'Category',f:'Secret answer',o:['A','B','C'],a:0}));
  const stack=points=>({version:2,day:today,round:4,score:points,streak:5,results:Array.from({length:5},()=>({correct:true,points:points/5,mistakes:0})),order:[1,2,3,4,5],deadline:1,mistakes:0,status:'complete',stacks:Array.from({length:5},()=>({prompt:'Secret stack',fact:'Secret fact',ends:['First','Last'],cards:Array.from({length:5},(_,i)=>({name:'Item',value:i+1}))}))});
@@ -22,9 +22,9 @@ let offline=false,missing=false,queue=Promise.resolve();
   const claims=JSON.parse(Buffer.from(req.headers().authorization.slice(7).split('.')[1],'base64url').toString());
   if(url.pathname.includes('/rpc/')){
    if(missing)return send({code:'PGRST202',message:'Function missing'},404);
-   const name=url.pathname.split('/').at(-1);assert.ok(['friend_hub','friend_scores'].includes(name));
+   const name=url.pathname.split('/').at(-1);assert.ok(['friend_hub','friend_scores','hidden_gem_friend_scores'].includes(name));
    let resolveResult;const result=new Promise(resolve=>resolveResult=resolve);
-   queue=queue.then(async()=>{try{await db.exec('reset role;set role authenticated;');await db.query("select set_config('request.jwt.claim.sub',$1,false)",[claims.sub]);const args=name==='friend_hub'?[body.p_action||'list',body.p_code||null,body.p_target||null,body.p_name||null,body.p_share??null]:[];const r=await db.query(name==='friend_hub'?'select public.friend_hub($1,$2,$3,$4,$5) as x':'select public.friend_scores() as x',args);resolveResult({value:r.rows[0].x});}catch(error){resolveResult({error:error.message});}});
+   queue=queue.then(async()=>{try{await db.exec('reset role;set role authenticated;');await db.query("select set_config('request.jwt.claim.sub',$1,false)",[claims.sub]);const args=name==='friend_hub'?[body.p_action||'list',body.p_code||null,body.p_target||null,body.p_name||null,body.p_share??null]:[];const r=await db.query(name==='friend_hub'?'select public.friend_hub($1,$2,$3,$4,$5) as x':name==='hidden_gem_friend_scores'?'select public.hidden_gem_friend_scores() as x':'select public.friend_scores() as x',args);resolveResult({value:r.rows[0].x});}catch(error){resolveResult({error:error.message});}});
    const r=await result;return r.error?send({message:r.error},400):send(r.value);
   }
   throw Error('Unexpected endpoint '+url.pathname);
