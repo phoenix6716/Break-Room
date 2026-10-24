@@ -1,3 +1,7 @@
+## Shift Work difficulty feedback — owner direction, 25 October 2026
+
+The owner finds the first prototype too hard. Use a gentler Daily: Starter 2–3 minimum slides, Easy 4–5, Steady 6–7. Add ten sparse Starter layouts and default new Unlimited saves to Starter. Preserve original thirty boards and their scores/snapshots, with Medium/Hard retained as optional Unlimited practice. Existing unfinished harder Dailies offer an explicit Start gentler Daily action without silently resetting progress. The standalone bank is now forty starting boards; earlier three-tier Daily/30-board statements below are superseded. Keep scoring and the live site unchanged.
+
 ## Shift Work standalone prototype — owner direction, 25 October 2026
 
 Build Shift Work for rapid playtesting only, on prototype-shift-work under game-drafts/shift-work. Portable embedded HTML uses the canonical shell. Slide office furniture to route a blue trolley to the right exit; three untimed Easy/Medium/Hard Daily boards plus free Unlimited. One slide counts one move regardless of distance; provisional board credit is minimum/used moves ×100, averaged over three. Drag, tap/numbered slides and keyboard preview/Enter; Undo keeps moves, Restart resets them, hints cap a board at75. Keep local prototype storage isolated, scores provisional and no homepage/registry/cloud/Friends/SQL integration until approved. Read game-drafts/shift-work/README.md for the 30-board test-bank limits and focused checks. This prototype is not the tenth live game.
