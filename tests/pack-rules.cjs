@@ -11,7 +11,7 @@ const key=M.PREFIX+day,raw=JSON.stringify(run),pending={...run,round:0,phase:'pl
 for(const r of [pending,review,next]){assert(M.valid(r,day));assert.equal(M.record(r,day),null);}
 assert.equal(S.merge('pack',{[key]:JSON.stringify(next)},{[key]:JSON.stringify(review)})[key],JSON.stringify(next));assert.equal(S.merge('pack',{[key]:JSON.stringify({...run,picks:[1,1,1]})},{[key]:raw})[key],raw,'Completed cloud choice wins, regardless of score');assert.equal(S.merge('pack',{[key]:JSON.stringify({...pending,selection:2})},{[key]:JSON.stringify(pending)})[key],JSON.stringify(pending),'Equal-stage cloud selection wins');assert.throws(()=>S.clean('pack',{'pack:payment':'1'}));
 const map=new Map([[key,raw]]),storage={get length(){return map.size},key:i=>[...map.keys()][i],getItem:k=>map.get(k)??null,setItem(){throw Error('Read only');}};
-const records=global.BREAK_ROOM_RECORDS.read(storage,day);assert.equal(records.games.length,12);assert.equal(records.records[0].arcadeScore,100);assert.equal(records.total,1);assert(records.achievements.find(a=>a.id==='pack').earned);
+const records=global.BREAK_ROOM_RECORDS.read(storage,day);assert.equal(records.games.length,13);assert.equal(records.records[0].arcadeScore,100);assert.equal(records.total,1);assert(records.achievements.find(a=>a.id==='pack').earned);
 assert.equal(global.BREAK_ROOM_SCORE.summary([{game:'pack',date:day,arcadeScore:80},{game:'stake',date:day,arcadeScore:0}],day).average,40);
 const bad=[];const mutate=fn=>{const r=structuredClone(run);fn(r);bad.push(r);};
 for(const field of ['version','day','round','selection','phase','picks','bags'])mutate(r=>delete r[field]);
