@@ -2,7 +2,7 @@
   "version": 1,
   "epoch": "2026-10-24",
   "days": 32,
-  "ratings": "Fixed editorial ratings, not survey data. Distinct ratings within each question. Frozen saved snapshots keep their captured scores.",
+  "ratings": "Fixed editorial ratings, not survey data. Frozen snapshots preserve captured scores.",
   "questions": [
     {
       "id": "countries-a",
@@ -6512,7 +6512,7 @@
       ]
     },
     {
-      "id": "hg-notes",
+      "id": "hg-music-notes",
       "topic": "EVERYDAY",
       "prompt": "Name a natural musical note letter in English notation.",
       "scope": "Seven letter names, without sharps, flats or solfège.",
