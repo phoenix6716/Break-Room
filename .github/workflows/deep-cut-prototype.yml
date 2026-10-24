@@ -34,6 +34,14 @@ jobs:
           set -o pipefail
           mkdir -p .artifacts/deep-cut
           node game-drafts/deep-cut/check.cjs 2>&1 | tee .artifacts/deep-cut/check.log
+      - name: Verify optional standalone preview link
+        continue-on-error: true
+        env:
+          PROTOTYPE_PREVIEW_URL: https://raw.githack.com/phoenix6716/Break-Room/${{ github.sha }}/game-drafts/deep-cut/index.html
+        run: |
+          curl --fail --silent --show-error --location --max-time 25 --dump-header .artifacts/deep-cut/preview-headers.txt "$PROTOTYPE_PREVIEW_URL" --output .artifacts/deep-cut/hosted-prototype.html
+          cmp game-drafts/deep-cut/index.html .artifacts/deep-cut/hosted-prototype.html
+          echo "Verified standalone HTML preview: $PROTOTYPE_PREVIEW_URL"
       - name: Downloadable standalone prototype
         if: success()
         uses: actions/upload-artifact@v4
