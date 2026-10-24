@@ -1,5 +1,16 @@
 # Break Room project memory
 
+## Hidden Gem — full integration authorised, 24 October 2026
+
+The owner approved adding Hidden Gem as a full game and expanding its content. This supersedes the earlier prototype-only integration hold. Ten active games in shelf order: Laser → Time Drop → Clue Ladder → Seating Chart → Hidden Gem → Stack Up → Stake → Pack → Lowball → Inner Clock. Preserve the three archived games and every existing save/artwork/native score. Thirteen native save formats remain supported.
+
+Read [games/hidden-gem/README.md](games/hidden-gem/README.md). Five Daily questions, 30 seconds each, one input, unlisted/blank retry without resetting time, guarded canonical typo correction, first accepted answer or timeout final. Each answer has its own integer rating: Familiar 1–19, Nice Find 20–39, Offbeat 40–59, Hidden Gem 60–79, Crown Jewel 80–100. Ratings are editorial, never surveys. Native and Arcade are the five-question average out of 100. Preserve the approved count-up/meter, five tiles, category pixel icons and high-score stamps; sparkles only at 100. Effects respect reduced motion, never delay play, and never replay on restored results.
+
+The authoritative 160-question/1,004-answer bank has ten topics and 32 nonrepeating Daily sets, five different topics daily. Free owner-scoped tab-local Unlimited excludes today's five and refills after eligible IDs are exhausted. Save full snapshots and real deadlines. Prototype history stays separate. Preserve first completions, memory-only warnings, corrupt saves, cross-tab locks and account ownership.
+
+Apply supabase/hidden-gem.sql after setup/Friends. It adds a dedicated private hidden_gem_saves table and authenticated save_hidden_gem / hidden_gem_friend_scores RPCs, preserving legacy save_game, game_saves and old Friends functions. Fresh install is setup.sql → friends.sql → hidden-gem.sql. Confirm live migration and Pages independently from CI. Use focused Hidden Gem, account, profile, Friends and affected shared checks. Keep human difficulty/content/device review distinct from engineering checks.
+
+
 ## Prototype-first game development — owner direction, 24 October 2026
 
 Build initial new-game versions outside the live Break Room integration so the owner can playtest and request quick improvements. Prefer a portable standalone HTML prototype on an isolated branch under `game-drafts/`, with the approved Stake layout embedded. Run only that prototype's affected checks. Do not add a homepage card, registry entry, official saves, accounts/Friends or SQL until the owner approves full integration. Keep live saves and existing engines untouched.

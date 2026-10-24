@@ -1,38 +1,12 @@
-## Stack Up completed
+# Break Room game integration
 
-Stack Up is implemented at `games/stack-up/` using the approved original layout and twelve curated stacks. It has seeded Sydney-date Daily sets, saved per-round wall-clock deadlines/order/results, one scored Daily run, free Infinite practice, real local records, sharing and accessible sorting. All game drawers and the homepage link to it. The original standalone upload is archived for reference. Its sample leaderboard and starter point balance are not used.
+The canonical baseline is the current Stake shell and newer integrated engines. The former Midnight Arcade placeholder-template handover was outdated: accounts, cloud saves and private Friends are implemented, and the six placeholder cards remain removed. Use AGENTS.md and the current game contracts as source of truth.
 
-# Midnight Arcade — default game template
+1. Prototype outside production until the owner approves integration. Keep the supplied/prototype source archived; do not import test scores into official history.
+2. Implement a pure versioned model, stable scoped content, deterministic Sydney Daily sets, frozen snapshots, immediate durable first locks and separate free owner-scoped Unlimited.
+3. Use the centred shared game shell: left drawer, common header/stats, Daily/Unlimited, Sydney-midnight reset rail, ?-only help, accessible dialogs and shared footer. Keep visual effects independent of scoring, timers and saves.
+4. Add a truthful registry entry and themed shelf art only when playable. Wire navigation, generic redirects, read-only profile records, native/Arcade scoring, accounts, private Friends and content generation.
+5. Preserve existing saves and SQL security contracts. Test new cloud paths against real PostgreSQL, two-account ownership, revision conflicts and private sharing gates. Hidden Gem uses its own private table/RPCs so earlier save rules are not rewritten. Read ACCOUNTS.md, FRIENDS.md and games/hidden-gem/README.md.
+6. Map new files to focused tests; check affected game, menu/profile/account/social interactions and mobile widths. Automatically deploy authorised completed work after checks and required live migration; verify the published artifact separately. Do not run every game after routine isolated updates.
 
-The current uploaded implementation takes precedence over the historical handover.
-
-## Approved baseline
-
-Keep the current visual styling and header: menu at the left edge, Midnight Arcade centred independently, account link at the right edge. `navigation.js` owns drawer events across all game routes. The drawer is mounted under `body` so a header stacking context cannot put it beneath the backdrop. It supports close-button, outside-click, Escape, keyboard focus containment, and focus restoration.
-
-Lowball and Stake own separate engines. Lowball is already integrated through its iframe and keeps its custom artwork and region selector. Stake is implemented directly in its route. Neither should run the placeholder lifecycle controller.
-
-## Placeholder pages are the default layout guide
-
-The pages for Pixel Pairs, Word Forge, Gridlock, Number Drop, Memory Lane, and Mystery Cabinet are deliberately retained as the starting layout for future games. They show **Coming soon** until a real game is integrated. Help panels show the planned mechanics. Stats are clearly empty previews.
-
-Preserved layout sections include:
-
-- Shared header and drawer.
-- Game title, description, help and statistics buttons.
-- Daily/Unlimited control placement, stats strip, and round indicators.
-- Central `interchange-card` with ready, playing, results, and already-played sections.
-- Footer and game-specific help/statistics panels.
-
-Do not mistake the hidden lifecycle sections for working engines. `game.js` currently sets availability and disables attempts; it never generates a demonstration score. Old local demo records do not override coming-soon availability. The generic `game.html` shell also previews this state, and `?id=lowball` or `?id=stake` routes to the implemented game.
-
-## Integrating a new game
-
-1. Copy one of the placeholder routes, retaining the approved outer layout and shared navigation script.
-2. Give it a unique registry entry and route. Keep `status: 'coming-soon'` until its engine is ready.
-3. Implement the central gameplay and transitions for ready, playing, results, and already played. Wire controls to actual mechanics and scoring. Replace the disabled availability controller only for the new implemented game.
-4. Set up its real round count, modes, statistics, and saved progress. Use `window.MIDNIGHT_ARCADE_CLOCK` from `daily-clock.js` for the shared midnight Australia/Sydney boundary; do not introduce a device-local or separate per-game daily reset. Remove template-only preview labels once backed by working behavior. Do not inherit Lowball's region control.
-5. Update the homepage card with game-specific art and accurate scoring/mode details, and change its coming-soon status only when it is playable.
-6. Extend `tests/smoke.cjs` with meaningful start, input, completion, refresh/resume, repeat attempt, keyboard, and narrow-screen checks.
-
-Current local storage is browser-specific and editable. Shared accounts, competitive score validation, attempt enforcement, payments, and cross-device statistics require separate backend work. They are not prerequisites for developing these static game pages.
+Current roster: Laser, Time Drop, Clue Ladder, Seating Chart, Hidden Gem, Stack Up, Stake, Pack, Lowball, Inner Clock. Alibi, Bouncer and Prior remain archived with their native compatibility intact. No fake players, surveys, prices, monetisation controls or demo scores.
