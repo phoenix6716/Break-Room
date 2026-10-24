@@ -2,7 +2,7 @@
 (() => {
  'use strict';
  const $=id=>document.getElementById(id),api=window.BREAK_ROOM_ACCOUNTS,score=window.BREAK_ROOM_SCORE;
- const games=[['seating-chart','SEATING CHART'],['clue-ladder','CLUE LADDER'],['time-drop','TIME DROP'],['lowball','LOWBALL'],['stake','STAKE'],['stack-up','STACK UP'],['pack','PACK'],['laser','LASER'],['inner-clock','INNER CLOCK']];
+ const games=[['hidden-gem','HIDDEN GEM'],['seating-chart','SEATING CHART'],['clue-ladder','CLUE LADDER'],['time-drop','TIME DROP'],['lowball','LOWBALL'],['stake','STAKE'],['stack-up','STACK UP'],['pack','PACK'],['laser','LASER'],['inner-clock','INNER CLOCK']];
  let hub=null,records=[],today=null,userId=null,requestId=0,busy=false,settingsDirty=false;
  const node=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;};
  function status(text,error=false){$('friend-status').textContent=text;$('friend-status').dataset.error=String(error);}
