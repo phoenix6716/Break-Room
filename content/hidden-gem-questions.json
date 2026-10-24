@@ -1,5 +1,8 @@
 {
   "version": 1,
+  "epoch": "2026-10-24",
+  "days": 32,
+  "ratings": "Fixed editorial ratings, not survey data. Distinct ratings within each question. Frozen saved snapshots keep their captured scores.",
   "questions": [
     {
       "id": "countries-a",
@@ -320,7 +323,7 @@
       "id": "australian-states",
       "topic": "AUSTRALIA",
       "prompt": "Name an Australian state or one of the two main mainland territories.",
-      "scope": "The six states, the Australian Capital Territory and the Northern Territory. No external territories.",
+      "scope": "Six states and the two main mainland territories; external territories excluded.",
       "source": "https://en.wikipedia.org/wiki/States_and_territories_of_Australia",
       "answers": [
         {
@@ -6171,6 +6174,1364 @@
         {
           "name": "Been",
           "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-days",
+      "topic": "EVERYDAY",
+      "prompt": "Name a day of the week in English.",
+      "scope": "Seven full names, not abbreviations.",
+      "source": "https://en.wikipedia.org/wiki/Week",
+      "answers": [
+        {
+          "name": "Monday",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Friday",
+          "aliases": [],
+          "points": 19
+        },
+        {
+          "name": "Sunday",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Saturday",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "Tuesday",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Wednesday",
+          "aliases": [],
+          "points": 83
+        },
+        {
+          "name": "Thursday",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-months",
+      "topic": "EVERYDAY",
+      "prompt": "Name a Gregorian calendar month.",
+      "scope": "Full English month names.",
+      "source": "https://en.wikipedia.org/wiki/Gregorian_calendar",
+      "answers": [
+        {
+          "name": "January",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "December",
+          "aliases": [],
+          "points": 12
+        },
+        {
+          "name": "June",
+          "aliases": [],
+          "points": 20
+        },
+        {
+          "name": "July",
+          "aliases": [],
+          "points": 28
+        },
+        {
+          "name": "May",
+          "aliases": [],
+          "points": 36
+        },
+        {
+          "name": "April",
+          "aliases": [],
+          "points": 45
+        },
+        {
+          "name": "October",
+          "aliases": [],
+          "points": 54
+        },
+        {
+          "name": "March",
+          "aliases": [],
+          "points": 63
+        },
+        {
+          "name": "August",
+          "aliases": [],
+          "points": 72
+        },
+        {
+          "name": "September",
+          "aliases": [],
+          "points": 81
+        },
+        {
+          "name": "November",
+          "aliases": [],
+          "points": 90
+        },
+        {
+          "name": "February",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-seasons",
+      "topic": "EVERYDAY",
+      "prompt": "Name a season in the four-season model.",
+      "scope": "British and American names accepted.",
+      "source": "https://en.wikipedia.org/wiki/Season",
+      "answers": [
+        {
+          "name": "Summer",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Winter",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Spring",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Autumn",
+          "aliases": [
+            "Fall"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-suits",
+      "topic": "EVERYDAY",
+      "prompt": "Name a standard playing-card suit.",
+      "scope": "The French-suited 52-card deck; names, not symbols.",
+      "source": "https://en.wikipedia.org/wiki/French-suited_playing_cards",
+      "answers": [
+        {
+          "name": "Hearts",
+          "aliases": [
+            "Heart"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Spades",
+          "aliases": [
+            "Spade"
+          ],
+          "points": 33
+        },
+        {
+          "name": "Diamonds",
+          "aliases": [
+            "Diamond"
+          ],
+          "points": 66
+        },
+        {
+          "name": "Clubs",
+          "aliases": [
+            "Club"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-compass",
+      "topic": "EVERYDAY",
+      "prompt": "Name one of the eight main compass points.",
+      "scope": "Cardinal and intercardinal only, not secondary points.",
+      "source": "https://en.wikipedia.org/wiki/Points_of_the_compass",
+      "answers": [
+        {
+          "name": "North",
+          "aliases": [
+            "N"
+          ],
+          "points": 6
+        },
+        {
+          "name": "South",
+          "aliases": [
+            "S"
+          ],
+          "points": 17
+        },
+        {
+          "name": "East",
+          "aliases": [
+            "E"
+          ],
+          "points": 29
+        },
+        {
+          "name": "West",
+          "aliases": [
+            "W"
+          ],
+          "points": 42
+        },
+        {
+          "name": "North East",
+          "aliases": [
+            "Northeast",
+            "NE"
+          ],
+          "points": 56
+        },
+        {
+          "name": "North West",
+          "aliases": [
+            "Northwest",
+            "NW"
+          ],
+          "points": 70
+        },
+        {
+          "name": "South East",
+          "aliases": [
+            "Southeast",
+            "SE"
+          ],
+          "points": 85
+        },
+        {
+          "name": "South West",
+          "aliases": [
+            "Southwest",
+            "SW"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-chinese-zodiac",
+      "topic": "EVERYDAY",
+      "prompt": "Name a Chinese zodiac animal.",
+      "scope": "The traditional twelve; alternate English animal names accepted.",
+      "source": "https://en.wikipedia.org/wiki/Chinese_zodiac",
+      "answers": [
+        {
+          "name": "Dragon",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Tiger",
+          "aliases": [],
+          "points": 12
+        },
+        {
+          "name": "Rabbit",
+          "aliases": [
+            "Hare"
+          ],
+          "points": 20
+        },
+        {
+          "name": "Snake",
+          "aliases": [],
+          "points": 28
+        },
+        {
+          "name": "Horse",
+          "aliases": [],
+          "points": 36
+        },
+        {
+          "name": "Monkey",
+          "aliases": [],
+          "points": 45
+        },
+        {
+          "name": "Dog",
+          "aliases": [],
+          "points": 54
+        },
+        {
+          "name": "Pig",
+          "aliases": [
+            "Boar"
+          ],
+          "points": 63
+        },
+        {
+          "name": "Rat",
+          "aliases": [
+            "Mouse"
+          ],
+          "points": 72
+        },
+        {
+          "name": "Ox",
+          "aliases": [
+            "Cow"
+          ],
+          "points": 81
+        },
+        {
+          "name": "Rooster",
+          "aliases": [
+            "Chicken",
+            "Cock"
+          ],
+          "points": 90
+        },
+        {
+          "name": "Goat",
+          "aliases": [
+            "Sheep",
+            "Ram"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-notes",
+      "topic": "EVERYDAY",
+      "prompt": "Name a natural musical note letter in English notation.",
+      "scope": "Seven letter names, without sharps, flats or solfège.",
+      "source": "https://en.wikipedia.org/wiki/Musical_note",
+      "answers": [
+        {
+          "name": "C",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "A",
+          "aliases": [],
+          "points": 19
+        },
+        {
+          "name": "G",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "D",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "E",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "F",
+          "aliases": [],
+          "points": 83
+        },
+        {
+          "name": "B",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-orchestra",
+      "topic": "EVERYDAY",
+      "prompt": "Name a standard symphony orchestra instrument family.",
+      "scope": "Four main sections; keyboards are not a separate family here.",
+      "source": "https://en.wikipedia.org/wiki/Orchestra",
+      "answers": [
+        {
+          "name": "Strings",
+          "aliases": [
+            "String"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Brass",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Woodwind",
+          "aliases": [
+            "Woodwinds"
+          ],
+          "points": 66
+        },
+        {
+          "name": "Percussion",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-us-coins",
+      "topic": "EVERYDAY",
+      "prompt": "Name a US circulating coin denomination as of 2025.",
+      "scope": "Six denominations, including seldom-used coins; names or values accepted.",
+      "source": "https://www.usmint.gov/learn/coins-and-medals/circulating-coins",
+      "answers": [
+        {
+          "name": "Quarter",
+          "aliases": [
+            "Quarter dollar",
+            "25 cents",
+            "25c"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Penny",
+          "aliases": [
+            "Cent",
+            "1 cent",
+            "1c"
+          ],
+          "points": 21
+        },
+        {
+          "name": "Dime",
+          "aliases": [
+            "10 cents",
+            "10c"
+          ],
+          "points": 40
+        },
+        {
+          "name": "Nickel",
+          "aliases": [
+            "5 cents",
+            "5c"
+          ],
+          "points": 59
+        },
+        {
+          "name": "Dollar",
+          "aliases": [
+            "Dollar coin",
+            "1 dollar",
+            "$1"
+          ],
+          "points": 79
+        },
+        {
+          "name": "Half dollar",
+          "aliases": [
+            "50 cents",
+            "50c"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-traffic",
+      "topic": "EVERYDAY",
+      "prompt": "Name a standard road traffic signal colour.",
+      "scope": "The three-colour system; British and American names accepted.",
+      "source": "https://en.wikipedia.org/wiki/Traffic_light",
+      "answers": [
+        {
+          "name": "Red",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Green",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "Amber",
+          "aliases": [
+            "Yellow"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-tastes",
+      "topic": "EVERYDAY",
+      "prompt": "Name one of the five conventional basic tastes.",
+      "scope": "The standard five-taste model; spicy is excluded.",
+      "source": "https://en.wikipedia.org/wiki/Taste",
+      "answers": [
+        {
+          "name": "Sweet",
+          "aliases": [
+            "Sweetness"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Salty",
+          "aliases": [
+            "Saltiness",
+            "Salt"
+          ],
+          "points": 26
+        },
+        {
+          "name": "Sour",
+          "aliases": [
+            "Sourness"
+          ],
+          "points": 49
+        },
+        {
+          "name": "Bitter",
+          "aliases": [
+            "Bitterness"
+          ],
+          "points": 74
+        },
+        {
+          "name": "Umami",
+          "aliases": [
+            "Savoury",
+            "Savory"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-rubik",
+      "topic": "EVERYDAY",
+      "prompt": "Name a face colour on a standard Western-colour Rubik’s Cube.",
+      "scope": "The usual six-colour 3×3 cube, not custom schemes.",
+      "source": "https://en.wikipedia.org/wiki/Rubik%27s_Cube",
+      "answers": [
+        {
+          "name": "Red",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Blue",
+          "aliases": [],
+          "points": 21
+        },
+        {
+          "name": "Green",
+          "aliases": [],
+          "points": 40
+        },
+        {
+          "name": "Yellow",
+          "aliases": [],
+          "points": 59
+        },
+        {
+          "name": "White",
+          "aliases": [],
+          "points": 79
+        },
+        {
+          "name": "Orange",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-sauces",
+      "topic": "EVERYDAY",
+      "prompt": "Name a French mother sauce in the modern Escoffier-derived list.",
+      "scope": "The conventional five taught in modern cooking; accents optional.",
+      "source": "https://en.wikipedia.org/wiki/French_mother_sauces",
+      "answers": [
+        {
+          "name": "Béchamel",
+          "aliases": [
+            "Bechamel"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Hollandaise",
+          "aliases": [],
+          "points": 26
+        },
+        {
+          "name": "Tomato",
+          "aliases": [
+            "Tomate",
+            "Sauce tomate",
+            "Tomato sauce"
+          ],
+          "points": 49
+        },
+        {
+          "name": "Velouté",
+          "aliases": [
+            "Veloute"
+          ],
+          "points": 74
+        },
+        {
+          "name": "Espagnole",
+          "aliases": [
+            "Sauce espagnole"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-long-months",
+      "topic": "EVERYDAY",
+      "prompt": "Name a month with 31 days.",
+      "scope": "Seven months in the Gregorian calendar; full English names.",
+      "source": "https://en.wikipedia.org/wiki/Month",
+      "answers": [
+        {
+          "name": "January",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "December",
+          "aliases": [],
+          "points": 19
+        },
+        {
+          "name": "July",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "May",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "March",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "August",
+          "aliases": [],
+          "points": 83
+        },
+        {
+          "name": "October",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-tetris",
+      "topic": "GAMES",
+      "prompt": "Name a Tetris tetromino shape.",
+      "scope": "The seven conventional letter names for one-sided tetrominoes.",
+      "source": "https://en.wikipedia.org/wiki/Tetris",
+      "answers": [
+        {
+          "name": "T",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "I",
+          "aliases": [],
+          "points": 19
+        },
+        {
+          "name": "L",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "O",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "S",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Z",
+          "aliases": [],
+          "points": 83
+        },
+        {
+          "name": "J",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-cluedo-people",
+      "topic": "GAMES",
+      "prompt": "Name an original classic UK Cluedo suspect.",
+      "scope": "The six traditional suspects, before later redesigns.",
+      "source": "https://en.wikipedia.org/wiki/List_of_Cluedo_characters",
+      "answers": [
+        {
+          "name": "Miss Scarlett",
+          "aliases": [
+            "Miss Scarlet",
+            "Scarlett",
+            "Scarlet"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Colonel Mustard",
+          "aliases": [
+            "Mustard"
+          ],
+          "points": 21
+        },
+        {
+          "name": "Professor Plum",
+          "aliases": [
+            "Plum"
+          ],
+          "points": 40
+        },
+        {
+          "name": "Mrs Peacock",
+          "aliases": [
+            "Peacock"
+          ],
+          "points": 59
+        },
+        {
+          "name": "Reverend Green",
+          "aliases": [
+            "Mr Green",
+            "Green"
+          ],
+          "points": 79
+        },
+        {
+          "name": "Mrs White",
+          "aliases": [
+            "White"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-cluedo-weapons",
+      "topic": "GAMES",
+      "prompt": "Name a classic Cluedo weapon.",
+      "scope": "Six original UK weapons; common US names accepted.",
+      "source": "https://en.wikipedia.org/wiki/Cluedo",
+      "answers": [
+        {
+          "name": "Dagger",
+          "aliases": [
+            "Knife"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Revolver",
+          "aliases": [
+            "Pistol",
+            "Gun"
+          ],
+          "points": 21
+        },
+        {
+          "name": "Rope",
+          "aliases": [],
+          "points": 40
+        },
+        {
+          "name": "Candlestick",
+          "aliases": [],
+          "points": 59
+        },
+        {
+          "name": "Spanner",
+          "aliases": [
+            "Wrench"
+          ],
+          "points": 79
+        },
+        {
+          "name": "Lead pipe",
+          "aliases": [
+            "Lead piping",
+            "Pipe"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-monopoly-colours",
+      "topic": "GAMES",
+      "prompt": "Name a street colour group on the modern US Monopoly board.",
+      "scope": "Eight modern US groups, not railroads or utilities.",
+      "source": "https://en.wikipedia.org/wiki/Monopoly_(game)",
+      "answers": [
+        {
+          "name": "Dark blue",
+          "aliases": [
+            "Blue"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Red",
+          "aliases": [],
+          "points": 17
+        },
+        {
+          "name": "Yellow",
+          "aliases": [],
+          "points": 29
+        },
+        {
+          "name": "Green",
+          "aliases": [],
+          "points": 42
+        },
+        {
+          "name": "Orange",
+          "aliases": [],
+          "points": 56
+        },
+        {
+          "name": "Light blue",
+          "aliases": [],
+          "points": 70
+        },
+        {
+          "name": "Pink",
+          "aliases": [
+            "Light purple"
+          ],
+          "points": 85
+        },
+        {
+          "name": "Brown",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-railroads",
+      "topic": "GAMES",
+      "prompt": "Name a railroad on the standard US Monopoly board.",
+      "scope": "Four US names, not British stations.",
+      "source": "https://en.wikipedia.org/wiki/Monopoly_(game)",
+      "answers": [
+        {
+          "name": "Reading Railroad",
+          "aliases": [
+            "Reading"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Pennsylvania Railroad",
+          "aliases": [
+            "Pennsylvania"
+          ],
+          "points": 33
+        },
+        {
+          "name": "B and O Railroad",
+          "aliases": [
+            "B and O",
+            "B&O",
+            "Baltimore and Ohio"
+          ],
+          "points": 66
+        },
+        {
+          "name": "Short Line",
+          "aliases": [
+            "Short Line Railroad"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-catan",
+      "topic": "GAMES",
+      "prompt": "Name a resource in base-game Catan.",
+      "scope": "Five resource cards, not expansion resources or the desert.",
+      "source": "https://www.catan.com/catan",
+      "answers": [
+        {
+          "name": "Lumber",
+          "aliases": [
+            "Wood"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Brick",
+          "aliases": [
+            "Clay"
+          ],
+          "points": 26
+        },
+        {
+          "name": "Grain",
+          "aliases": [
+            "Wheat"
+          ],
+          "points": 49
+        },
+        {
+          "name": "Wool",
+          "aliases": [
+            "Sheep"
+          ],
+          "points": 74
+        },
+        {
+          "name": "Ore",
+          "aliases": [
+            "Rock",
+            "Stone"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-poker",
+      "topic": "GAMES",
+      "prompt": "Name a conventional poker hand category.",
+      "scope": "Ten-category high-poker ranking, with royal flush separate; no wild-card hands.",
+      "source": "https://en.wikipedia.org/wiki/List_of_poker_hands",
+      "answers": [
+        {
+          "name": "Royal flush",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Pair",
+          "aliases": [
+            "One pair"
+          ],
+          "points": 14
+        },
+        {
+          "name": "Two pair",
+          "aliases": [
+            "Two pairs"
+          ],
+          "points": 23
+        },
+        {
+          "name": "Three of a kind",
+          "aliases": [
+            "Trips",
+            "Set"
+          ],
+          "points": 33
+        },
+        {
+          "name": "Full house",
+          "aliases": [],
+          "points": 44
+        },
+        {
+          "name": "Straight",
+          "aliases": [],
+          "points": 55
+        },
+        {
+          "name": "Flush",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Four of a kind",
+          "aliases": [
+            "Quads"
+          ],
+          "points": 77
+        },
+        {
+          "name": "Straight flush",
+          "aliases": [],
+          "points": 88
+        },
+        {
+          "name": "High card",
+          "aliases": [
+            "No pair"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-scrabble",
+      "topic": "GAMES",
+      "prompt": "Name an English Scrabble letter worth at least eight points.",
+      "scope": "Four qualifying letters in the standard English set.",
+      "source": "https://en.wikipedia.org/wiki/Scrabble_letter_distributions",
+      "answers": [
+        {
+          "name": "Q",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Z",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "X",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "J",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-ghosts",
+      "topic": "GAMES",
+      "prompt": "Name an original Pac-Man ghost by its English nickname.",
+      "scope": "Four original ghosts, not Ms. Pac-Man’s substitute.",
+      "source": "https://en.wikipedia.org/wiki/Ghosts_(Pac-Man)",
+      "answers": [
+        {
+          "name": "Blinky",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Pinky",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Inky",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Clyde",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-kart64",
+      "topic": "GAMES",
+      "prompt": "Name a Mario Kart 64 playable racer.",
+      "scope": "Eight original racers; English names.",
+      "source": "https://en.wikipedia.org/wiki/Mario_Kart_64",
+      "answers": [
+        {
+          "name": "Mario",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Luigi",
+          "aliases": [],
+          "points": 17
+        },
+        {
+          "name": "Bowser",
+          "aliases": [],
+          "points": 29
+        },
+        {
+          "name": "Yoshi",
+          "aliases": [],
+          "points": 42
+        },
+        {
+          "name": "Peach",
+          "aliases": [
+            "Princess Peach"
+          ],
+          "points": 56
+        },
+        {
+          "name": "Donkey Kong",
+          "aliases": [
+            "DK"
+          ],
+          "points": 70
+        },
+        {
+          "name": "Toad",
+          "aliases": [],
+          "points": 85
+        },
+        {
+          "name": "Wario",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-smash64",
+      "topic": "GAMES",
+      "prompt": "Name a fighter in the original Super Smash Bros.",
+      "scope": "Twelve N64 fighters, including unlockable characters.",
+      "source": "https://en.wikipedia.org/wiki/Super_Smash_Bros._(video_game)",
+      "answers": [
+        {
+          "name": "Mario",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Pikachu",
+          "aliases": [],
+          "points": 12
+        },
+        {
+          "name": "Donkey Kong",
+          "aliases": [
+            "DK"
+          ],
+          "points": 20
+        },
+        {
+          "name": "Link",
+          "aliases": [],
+          "points": 28
+        },
+        {
+          "name": "Kirby",
+          "aliases": [],
+          "points": 36
+        },
+        {
+          "name": "Yoshi",
+          "aliases": [],
+          "points": 45
+        },
+        {
+          "name": "Luigi",
+          "aliases": [],
+          "points": 54
+        },
+        {
+          "name": "Samus",
+          "aliases": [
+            "Samus Aran"
+          ],
+          "points": 63
+        },
+        {
+          "name": "Fox",
+          "aliases": [
+            "Fox McCloud"
+          ],
+          "points": 72
+        },
+        {
+          "name": "Captain Falcon",
+          "aliases": [],
+          "points": 81
+        },
+        {
+          "name": "Ness",
+          "aliases": [],
+          "points": 90
+        },
+        {
+          "name": "Jigglypuff",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-eevee",
+      "topic": "GAMES",
+      "prompt": "Name an Eevee evolution introduced by the end of 2025.",
+      "scope": "Eight evolved species, not Eevee itself.",
+      "source": "https://en.wikipedia.org/wiki/Eevee",
+      "answers": [
+        {
+          "name": "Vaporeon",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Jolteon",
+          "aliases": [],
+          "points": 17
+        },
+        {
+          "name": "Flareon",
+          "aliases": [],
+          "points": 29
+        },
+        {
+          "name": "Umbreon",
+          "aliases": [],
+          "points": 42
+        },
+        {
+          "name": "Espeon",
+          "aliases": [],
+          "points": 56
+        },
+        {
+          "name": "Sylveon",
+          "aliases": [],
+          "points": 70
+        },
+        {
+          "name": "Leafeon",
+          "aliases": [],
+          "points": 85
+        },
+        {
+          "name": "Glaceon",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-starters",
+      "topic": "GAMES",
+      "prompt": "Name an initial starter species in Pokémon Red and Blue.",
+      "scope": "The three base forms offered by Professor Oak, not Pokémon Yellow or evolved forms.",
+      "source": "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Red,_Blue,_and_Yellow",
+      "answers": [
+        {
+          "name": "Charmander",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Squirtle",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "Bulbasaur",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-chess-champs",
+      "topic": "GAMES",
+      "prompt": "Name a classical World Chess Champion who held the title during 2000–2024.",
+      "scope": "Six champions; FIDE’s separate 1993–2006 title excluded. Surnames accepted.",
+      "source": "https://en.wikipedia.org/wiki/World_Chess_Championship",
+      "answers": [
+        {
+          "name": "Magnus Carlsen",
+          "aliases": [
+            "Carlsen"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Garry Kasparov",
+          "aliases": [
+            "Kasparov"
+          ],
+          "points": 21
+        },
+        {
+          "name": "Viswanathan Anand",
+          "aliases": [
+            "Vishy Anand",
+            "Anand"
+          ],
+          "points": 40
+        },
+        {
+          "name": "Vladimir Kramnik",
+          "aliases": [
+            "Kramnik"
+          ],
+          "points": 59
+        },
+        {
+          "name": "Ding Liren",
+          "aliases": [
+            "Ding"
+          ],
+          "points": 79
+        },
+        {
+          "name": "Gukesh Dommaraju",
+          "aliases": [
+            "Gukesh",
+            "D Gukesh"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-utilities",
+      "topic": "GAMES",
+      "prompt": "Name a utility on a standard English-language Monopoly board.",
+      "scope": "The two utilities, not streets or railroads.",
+      "source": "https://en.wikipedia.org/wiki/Monopoly_(game)",
+      "answers": [
+        {
+          "name": "Electric Company",
+          "aliases": [
+            "Electricity company"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Water Works",
+          "aliases": [
+            "Waterworks"
+          ],
           "points": 100
         }
       ]
