@@ -7,7 +7,7 @@
   const numbers=new Intl.NumberFormat('en-AU',{maximumFractionDigits:1});
   const dates=new Intl.DateTimeFormat('en-AU',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'});
   const dateLabel=day=>dates.format(new Date(day+'T00:00:00Z'));
-  const archived = new Set(['alibi','bouncer','prior']);
+  const archived = new Set(['alibi','bouncer','prior','stake']);
   const url=game=>'games/'+game+'/index.html';
   let model=null,limit=10,signature='';
   function score(value,game,average=false){
@@ -59,8 +59,8 @@
   }
   function renderAchievements(){
     const earned=model.achievements.filter(a=>a.earned).length;
-    $('achievement-count').textContent=earned+' / '+model.achievements.filter(a=>!archived.has(a.id)||a.earned).length+' UNLOCKED';
-    $('achievements').replaceChildren(...model.achievements.filter(a=>!archived.has(a.id)||a.earned).map(achievement=>{
+    $('achievement-count').textContent=earned+' / '+model.achievements.filter(a=>(!archived.has(a.id)&&a.id!=='sweep')||a.earned).length+' UNLOCKED';
+    $('achievements').replaceChildren(...model.achievements.filter(a=>(!archived.has(a.id)&&a.id!=='sweep')||a.earned).map(achievement=>{
       const card=create('article','profile-achievement'+(achievement.earned?' earned':''));card.dataset.achievement=achievement.id;
       const state=create('div','achievement-state'),icon=create('img');icon.src='assets/icons/'+(achievement.earned?'check':'lock')+'.svg';icon.alt='';
       state.append(icon,create('span',null,achievement.earned?'UNLOCKED':'LOCKED'));

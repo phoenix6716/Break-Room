@@ -1,3 +1,7 @@
+# Stake shelved — owner decision, 24 October 2026
+
+Stake is removed from the active shelf, navigation drawers, current Daily checklist and Friends comparisons. Nine active games, in order: Laser → Time Drop → Clue Ladder → Seating Chart → Hidden Gem → Stack Up → Pack → Lowball → Inner Clock. Stake joins Prior, Alibi and Bouncer in the archive. Preserve its direct route, engine, question bank/artwork, local/cloud saves, native/Arcade scores and earned achievements. Profile shows saved Stake history without play prompts; unearned High roller and the legacy three-game Clean sweep are hidden, while earned badges retain their original meaning. Thirteen native save formats remain supported; no database/schema change is needed. The canonical shell still uses Stake's layout. This supersedes older active-roster counts below.
+
 # Friends and score comparisons
 
 ## Current release: Hidden Gem

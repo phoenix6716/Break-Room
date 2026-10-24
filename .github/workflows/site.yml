@@ -109,7 +109,7 @@ jobs:
           python3 - <<'PY'
           import os, pathlib, time, urllib.request
           base = os.environ["PUBLISHED_URL"].rstrip("/") + "/"
-          paths = ["index.html", "games/hidden-gem/index.html", "games/hidden-gem/questions.js", "games/hidden-gem/hidden-gem.js", "games/hidden-gem/hidden-gem.css", "hidden-gem-model.js", "cloud-saves.js", "accounts.js", "friends.js", "profile-records.js"]
+          paths = ["index.html", "games/hidden-gem/index.html", "games/hidden-gem/questions.js", "games/hidden-gem/hidden-gem.js", "games/hidden-gem/hidden-gem.css", "hidden-gem-model.js", "cloud-saves.js", "accounts.js", "friends.js", "profile-records.js", "profile.js", "navigation.js", "game-config.js"]
           for attempt in range(6):
               try:
                   for path in paths:
@@ -117,7 +117,7 @@ jobs:
                       with urllib.request.urlopen(request, timeout=20) as response:
                           body = response.read()
                       if path == "index.html":
-                          assert b"10 DAILY GAMES" in body and b"games/hidden-gem/index.html" in body, path
+                          assert b"9 DAILY GAMES" in body and b"games/hidden-gem/index.html" in body and b"games/stake/index.html" not in body, path
                       elif path.endswith(".html"):
                           assert b"<title>Hidden Gem" in body and b'hidden-gem.js' in body, path
                       else:

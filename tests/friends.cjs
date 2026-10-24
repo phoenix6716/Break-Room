@@ -37,14 +37,14 @@ let offline=false,missing=false,queue=Promise.resolve();
  const codeA=await enable(a);await a.locator('#copy-code').click();assert.equal(await a.evaluate(()=>navigator.clipboard.readText()),codeA);
  await login(b,'bob');const codeB=await enable(b);
  const card=(p,name)=>p.locator('.friend-score').filter({has:p.locator('.score-name').filter({hasText:name})});
- assert.equal(await card(a,'Alice').locator('.overall strong').innerText(),'76.7');assert.equal(await card(b,'Bob').locator('.overall strong').innerText(),'50');
+ assert.equal(await card(a,'Alice').locator('.overall strong').innerText(),'65');assert.equal(await card(b,'Bob').locator('.overall strong').innerText(),'50');
  async function request(p,code){await p.locator('#friend-code').fill(code);await p.locator('#request-friend button').click();await p.locator('#friend-status').filter({hasText:'Request sent'}).waitFor();await p.locator('#friend-content[aria-busy="false"]').waitFor();}
  await request(a,codeB);assert.equal(await a.locator('.friend-score').count(),1);
  await b.locator('#refresh-friends').click();await b.getByRole('button',{name:'Accept Alice',exact:true}).click();await b.waitForFunction(()=>document.querySelectorAll('.friend-score').length===2);
  await a.locator('#refresh-friends').click();await a.waitForFunction(()=>document.querySelectorAll('.friend-score').length===2);
  await a.setViewportSize({width:1440,height:1050});await a.screenshot({path:'/tmp/br-friends-desktop.png',fullPage:true});await a.setViewportSize({width:390,height:1000});await a.screenshot({path:'/tmp/br-friends-mobile.png',fullPage:true});await a.setViewportSize({width:1440,height:1050});
  assert.equal(await card(a,'Bob').locator('.overall strong').innerText(),'50');assert.match(await card(a,'Bob').innerText(),/2 games · 2 completed Dailies/);assert.ok(!await a.locator('#friend-content').innerText().then(t=>t.includes('Secret')));
- await a.locator('#comparison-window').selectOption('history');assert.equal(await card(a,'Bob').locator('.overall strong').innerText(),'75');await a.locator('#comparison-game').selectOption('stake');assert.equal(await card(a,'Bob').locator('.overall strong').innerText(),'—');await a.locator('#comparison-window').selectOption('today');await a.locator('#comparison-game').selectOption('all');
+ await a.locator('#comparison-window').selectOption('history');assert.equal(await card(a,'Bob').locator('.overall strong').innerText(),'75');assert.equal(await a.locator('#comparison-game option[value=stake]').count(),0);assert.equal(await card(a,'Alice').locator('.score-cell').filter({hasText:'STAKE'}).count(),0);await a.locator('#comparison-window').selectOption('today');await a.locator('#comparison-game').selectOption('all');
  // Real PostgreSQL-derived Time Drop comparisons include completed zeroes and hide raw snapshots.
 
 

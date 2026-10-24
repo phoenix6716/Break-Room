@@ -5,7 +5,7 @@
   if (!button || !menu) return;
   // Shelved games keep their routes/saves, but are absent from the active drawer.
   menu.querySelectorAll('a[href]').forEach(link => {
-    if (/\/games\/(?:alibi|bouncer|prior)\//.test(new URL(link.href).pathname)) link.remove();
+    if (/\/games\/(?:alibi|bouncer|prior|stake)\//.test(new URL(link.href).pathname)) link.remove();
   });
   if(!menu.querySelector('a[href*="/games/time-drop/"]')){const link=document.createElement('a');link.href=new URL('games/time-drop/index.html',new URL('.',document.currentScript.src)).href;link.textContent='Time Drop';const laser=menu.querySelector('a[href*="/games/laser/"]');if(laser)laser.after(link);}
   if(!menu.querySelector('a[href*="/games/clue-ladder/"]')){const link=document.createElement('a');link.href=new URL('games/clue-ladder/index.html',new URL('.',document.currentScript.src)).href;link.textContent='Clue Ladder';const after=menu.querySelector('a[href*="/games/time-drop/"]');if(after)after.after(link);}
