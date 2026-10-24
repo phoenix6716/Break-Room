@@ -1,3 +1,7 @@
+## Shift Work balanced difficulty — owner direction, 25 October 2026
+
+The first Daily was too hard; its gentler replacement was too easy. Use the middle progression: Easy 4–5 minimum slides, Steady 6–7, Tricky 8–9. Default new Unlimited saves to Easy, retaining Starter/Medium/Hard/Mixed options and all forty original board snapshots. Existing earlier Dailies offer Start balanced Daily rather than silently resetting progress. Preserve scores, saves, rules and the standalone-only integration hold. This supersedes the Starter-based Daily/default below.
+
 ## Shift Work difficulty feedback — owner direction, 25 October 2026
 
 The owner finds the first prototype too hard. Use a gentler Daily: Starter 2–3 minimum slides, Easy 4–5, Steady 6–7. Add ten sparse Starter layouts and default new Unlimited saves to Starter. Preserve original thirty boards and their scores/snapshots, with Medium/Hard retained as optional Unlimited practice. Existing unfinished harder Dailies offer an explicit Start gentler Daily action without silently resetting progress. The standalone bank is now forty starting boards; earlier three-tier Daily/30-board statements below are superseded. Keep scoring and the live site unchanged.
