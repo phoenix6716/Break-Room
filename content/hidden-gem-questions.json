@@ -5736,8 +5736,8 @@
     {
       "id": "hg-articles",
       "topic": "LANGUAGE",
-      "prompt": "Name an English article.",
-      "scope": "Three written forms, definite or indefinite.",
+      "prompt": "Name a word used as an article in English grammar.",
+      "scope": "Articles go before nouns. Give a definite or indefinite article.",
       "source": "https://en.wikipedia.org/wiki/English_articles",
       "answers": [
         {
