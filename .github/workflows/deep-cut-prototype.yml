@@ -1,0 +1,53 @@
+name: Check Deep Cut standalone prototype
+on:
+  push:
+    branches: [prototype-deep-cut]
+    paths:
+      - 'game-drafts/deep-cut/**'
+      - '.github/workflows/deep-cut-prototype.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: deep-cut-prototype-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  prototype:
+    name: Test and package only Deep Cut
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - name: Install locked browser tooling
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Install matching Chromium
+        run: npx playwright install chromium
+      - name: Check the standalone prototype only
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p .artifacts/deep-cut
+          node game-drafts/deep-cut/check.cjs 2>&1 | tee .artifacts/deep-cut/check.log
+      - name: Downloadable standalone prototype
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Deep-Cut-standalone-prototype
+          path: |
+            game-drafts/deep-cut/index.html
+            game-drafts/deep-cut/README.md
+          retention-days: 30
+      - name: Keep focused check evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Deep-Cut-checks
+          path: .artifacts/deep-cut/
+          include-hidden-files: true
+          retention-days: 7
