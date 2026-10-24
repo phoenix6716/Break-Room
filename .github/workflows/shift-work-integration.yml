@@ -1,0 +1,42 @@
+name: Check Shift Work integration
+on:
+  push:
+    branches: [integrate-shift-work]
+permissions:
+  contents: read
+concurrency:
+  group: shift-work-integration-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  shift-work:
+    name: Shift Work rules, SQL and production UI
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npx playwright install chromium
+      - name: Focused rules and SQL
+        run: node tests/shift-work-rules.cjs
+      - name: Build production artifact
+        run: npm run build
+      - name: Verify legal footer
+        run: npm run legal:check
+      - name: Focused browser interactions
+        env:
+          ARCADE_CHROMIUM: /usr/bin/google-chrome
+        run: node tests/shift-work.cjs
+      - name: Keep focused evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shift-work-evidence
+          path: .artifacts/
+          include-hidden-files: true
+          retention-days: 7

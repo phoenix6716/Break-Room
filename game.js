@@ -7,7 +7,7 @@
   const id = new URLSearchParams(location.search).get('id') || (route && route[1]) || 'pixel-pairs';
   const game = (window.MIDNIGHT_ARCADE_GAMES || []).find(game => game.id === id);
   if (!game) { title.textContent = 'Cabinet not found'; return; }
-  if (['hidden-gem', 'seating-chart', 'clue-ladder', 'time-drop', 'lowball', 'stake', 'stack-up', 'pack', 'prior', 'laser', 'alibi', 'bouncer', 'inner-clock'].includes(game.id)) {
+  if (['shift-work', 'hidden-gem', 'seating-chart', 'clue-ladder', 'time-drop', 'lowball', 'stake', 'stack-up', 'pack', 'prior', 'laser', 'alibi', 'bouncer', 'inner-clock'].includes(game.id)) {
     location.replace(new URL(`games/${game.id}/index.html`, location.href));
     return;
   }
