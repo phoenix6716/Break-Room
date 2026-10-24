@@ -49,7 +49,7 @@
   try{
    const next=await api.friendsRPC('friend_hub');if(id!==requestId||api.getUser()?.id!==expected)return;
    hub=next;records=[];today=null;renderHub();$('friend-score-list').replaceChildren();
-   if(hub.me){const result=await api.friendsRPC('friend_scores');if(id!==requestId||api.getUser()?.id!==expected)return;records=result.records;today=result.today;compare();}
+   if(hub.me){const [result,hidden]=await Promise.all([api.friendsRPC('friend_scores'),api.friendsRPC('hidden_gem_friend_scores')]);if(id!==requestId||api.getUser()?.id!==expected)return;records=[...result.records,...hidden.records];today=result.today;compare();}
    status(hub.me?message:'Choose a name and create your friend code.');
   }catch(error){if(id===requestId){records=[];$('friend-score-list').replaceChildren();status(errorText(error),true);}}
   finally{busy=false;controls(!api.getUser());if(api.getUser()?.id!==expected)refresh();}

@@ -59,3 +59,63 @@ if public._hg_trim(v->>'input') is distinct from v->'picks'->4->>'input' then re
 return total/5.0;exception when others then return null;end $$;
 revoke all on function public._hg_int(jsonb,int,int),public._hg_trim(text),public._hg_normal(text),public._hg_distance(text,text),public._hg_question(jsonb),public._hg_match(jsonb,text),public._friend_hidden_gem_score(jsonb,date) from public,anon,authenticated;
 commit;
+
+-- Dedicated Hidden Gem storage; legacy game_saves and its RPCs are untouched.
+begin;
+create table if not exists public.hidden_gem_saves(
+ user_id uuid not null references auth.users(id) on delete cascade,
+ game text not null default 'hidden-gem' check(game='hidden-gem'),
+ data jsonb not null default '{}'::jsonb check(jsonb_typeof(data)='object' and octet_length(data::text)<=2000000),
+ revision bigint not null default 1 check(revision>0),
+ updated_at timestamptz not null default now(),
+ primary key(user_id,game)
+);
+alter table public.hidden_gem_saves enable row level security;
+revoke all on public.hidden_gem_saves from public,anon,authenticated;
+grant select on public.hidden_gem_saves to authenticated;
+drop policy if exists own_hidden_gem_read on public.hidden_gem_saves;
+create policy own_hidden_gem_read on public.hidden_gem_saves for select to authenticated using((select auth.uid())=user_id);
+create or replace function public.save_hidden_gem(p_game text,p_data jsonb,p_revision bigint)
+returns jsonb language plpgsql security definer set search_path='' as $$
+declare owner_id uuid:=auth.uid();stored public.hidden_gem_saves;k text;
+begin
+if owner_id is null then raise exception 'Sign in required' using errcode='42501';end if;
+if p_game is distinct from 'hidden-gem' or p_revision is null or p_revision<0 or p_data is null or jsonb_typeof(p_data)<>'object' or octet_length(p_data::text)>2000000 then raise exception 'Invalid Hidden Gem save';end if;
+for k in select jsonb_object_keys(p_data) loop
+if k !~ '^break-room:hidden-gem:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$' or jsonb_typeof(p_data->k)<>'string' or char_length(p_data->>k)>250000 then raise exception 'Unsupported Hidden Gem save entry';end if;end loop;
+perform pg_advisory_xact_lock(hashtextextended(owner_id::text||':hidden-gem',0));
+select * into stored from public.hidden_gem_saves where user_id=owner_id and game='hidden-gem' for update;
+if coalesce(stored.revision,0)<>p_revision then return jsonb_build_object('conflict',true,'revision',coalesce(stored.revision,0));end if;
+insert into public.hidden_gem_saves(user_id,game,data,revision) values(owner_id,'hidden-gem',p_data,1)
+on conflict(user_id,game) do update set data=excluded.data,revision=hidden_gem_saves.revision+1,updated_at=now() returning * into stored;
+return jsonb_build_object('conflict',false,'revision',stored.revision);
+end $$;
+revoke all on function public.save_hidden_gem(text,jsonb,bigint) from public,anon;
+grant execute on function public.save_hidden_gem(text,jsonb,bigint) to authenticated;
+create or replace function public._hg_records(p_user uuid,p_today date)
+returns table(game text,day date,arcade_score double precision) language plpgsql stable set search_path='' as $$
+declare r record;e record;d date;s double precision;v jsonb;
+begin
+for r in select h.data from public.hidden_gem_saves h where h.user_id=p_user loop
+for e in select * from jsonb_each_text(r.data) loop
+if e.key !~ '^break-room:hidden-gem:daily:[0-9]{4}-[0-9]{2}-[0-9]{2}$' then continue;end if;
+d=public._friend_date(right(e.key,10));if d is null or d<p_today-119 or d>p_today then continue;end if;
+v=public._friend_json(e.value);s=public._friend_hidden_gem_score(v,d);
+if s is not null then game='hidden-gem';day=d;arcade_score=s;return next;end if;
+end loop;end loop;
+end $$;
+revoke all on function public._hg_records(uuid,date) from public,anon,authenticated;
+create or replace function public.hidden_gem_friend_scores()
+returns jsonb language plpgsql stable security definer set search_path='' as $$
+declare me uuid:=auth.uid();today date:=timezone('Australia/Sydney',now())::date;result jsonb;
+begin
+if me is null then raise exception 'Sign in required' using errcode='42501';end if;
+if not exists(select 1 from public.friend_profiles where user_id=me) then return jsonb_build_object('today',today,'records','[]'::jsonb);end if;
+select coalesce(jsonb_agg(jsonb_build_object('user_id',p.user_id,'game',r.game,'date',r.day,'arcadeScore',r.arcade_score) order by p.user_id,r.day),'[]'::jsonb) into result
+from public.friend_profiles p cross join lateral public._hg_records(p.user_id,today) r
+where p.user_id=me or (p.share_scores and exists(select 1 from public.friend_links f where f.status='accepted' and ((f.requester=me and f.recipient=p.user_id) or (f.recipient=me and f.requester=p.user_id))) and not exists(select 1 from public.friend_blocks b where (b.owner_id=me and b.target_id=p.user_id) or (b.owner_id=p.user_id and b.target_id=me)));
+return jsonb_build_object('today',today,'records',result);
+end $$;
+revoke all on function public.hidden_gem_friend_scores() from public,anon;
+grant execute on function public.hidden_gem_friend_scores() to authenticated;
+commit;
