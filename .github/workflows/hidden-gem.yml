@@ -27,6 +27,12 @@ jobs:
           mkdir -p .artifacts
           set -o pipefail
           node tests/hidden-gem-rules.cjs 2>&1 | tee .artifacts/hidden-gem-rules.log
+      - run: npx playwright install chromium
+      - name: Check Hidden Gem in the production artifact
+        run: |
+          npm run build
+          npm run check
+          node scripts/run-checks.cjs browser hidden-gem.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
