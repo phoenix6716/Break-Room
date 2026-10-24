@@ -9,6 +9,7 @@ Open `index.html` directly in a browser. It contains all CSS, JavaScript, the Sy
 - Type in one answer box. Enter or Submit accepts only a listed answer. Unlisted guesses show “Not in the answer list. Try again.” and leave the original timer running. Clear, unambiguous typos correct to the listed answer.
 - A listed saved draft locks automatically at the deadline; otherwise the question ends with no accepted answer and zero points. Refresh, mode changes and Help do not pause/reset the clock.
 - Higher is better: designer-assigned 20/40/60/80/100 answer ratings, zero only when time expires without a listed answer. Final score is the five-question average out of 100.
+- New question scores count up over 950 ms on reveal. Reduced-motion users see the final score immediately. Saves lock before animation; Next stays available, and refresh does not replay old reveals.
 - No survey, panel, measured popularity or percentile claims. These are provisional editorial ratings.
 - Menu → choose set 1/2/3 → New Daily test makes repeat testing quick.
 - Unlimited shuffles 15 prototype prompts / 146 accepted answers, with aliases and guarded typo matching. Topic changes apply next question.
