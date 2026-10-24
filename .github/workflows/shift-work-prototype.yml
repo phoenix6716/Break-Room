@@ -1,0 +1,61 @@
+name: Check Shift Work standalone prototype
+on:
+  push:
+    branches: [prototype-shift-work]
+    paths:
+      - 'game-drafts/shift-work/**'
+      - '.github/workflows/shift-work-prototype.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: shift-work-prototype-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  prototype:
+    name: Test and package only Shift Work
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - name: Install locked browser tooling
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Install matching Chromium
+        run: npx playwright install chromium
+      - name: Check the standalone prototype only
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p .artifacts/shift-work
+          node game-drafts/shift-work/check.cjs 2>&1 | tee .artifacts/shift-work/check.log
+      - name: Verify optional standalone preview link
+        continue-on-error: true
+        env:
+          PROTOTYPE_PREVIEW_URL: https://raw.githack.com/phoenix6716/Break-Room/${{ github.sha }}/game-drafts/shift-work/index.html
+        run: |
+          curl --fail --silent --show-error --location --max-time 30 --dump-header .artifacts/shift-work/preview-headers.txt "$PROTOTYPE_PREVIEW_URL" --output .artifacts/shift-work/hosted-prototype.html
+          cmp game-drafts/shift-work/index.html .artifacts/shift-work/hosted-prototype.html
+          echo "Verified standalone HTML preview: $PROTOTYPE_PREVIEW_URL"
+      - name: Downloadable standalone prototype
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Shift-Work-standalone-prototype
+          path: |
+            game-drafts/shift-work/index.html
+            game-drafts/shift-work/README.md
+          retention-days: 30
+      - name: Keep focused check evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Shift-Work-checks
+          path: .artifacts/shift-work/
+          include-hidden-files: true
+          retention-days: 7
