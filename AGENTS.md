@@ -1,5 +1,12 @@
 # Break Room project memory
 
+## Prototype-first game development — owner direction, 24 October 2026
+
+Build initial new-game versions outside the live Break Room integration so the owner can playtest and request quick improvements. Prefer a portable standalone HTML prototype on an isolated branch under `game-drafts/`, with the approved Stake layout embedded. Run only that prototype's affected checks. Do not add a homepage card, registry entry, official saves, accounts/Friends or SQL until the owner approves full integration. Keep live saves and existing engines untouched.
+
+The Pointless/Krillion-inspired prototype has working title **Deep Cut**. It uses **30 seconds per question** and **higher-is-better scores**: each answer 0–100, final score the average of five questions. Ratings are designer-assigned; never imply a survey, panel or measured answer popularity. Three optional draft candidates, one locked answer. Source and focused testing: [prototype-deep-cut branch](https://github.com/phoenix6716/Break-Room/tree/prototype-deep-cut/game-drafts/deep-cut). Name, test-bank scope and ratings remain provisional. The prototype is not a tenth live game. This does not change the native-score compatibility contracts for existing games.
+
+
 ## Seating Chart — owner-approved build, 24 October 2026
 
 Seating Chart is the ninth active game, placed after Clue Ladder: Laser → Time Drop → Clue Ladder → Seating Chart → Stack Up → Stake → Pack → Lowball → Inner Clock. Three archived games retain their routes/history; twelve native cloud formats remain supported. This supersedes older roster totals below. Read [the Seating Chart contract](games/seating-chart/README.md).
