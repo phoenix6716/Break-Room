@@ -79,12 +79,16 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
+      contents: read
       pages: write
       id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - name: Check Pages is enabled
         env:
           GH_TOKEN: ${{ github.token }}
@@ -97,3 +101,31 @@ jobs:
       - name: Publish the tested artifact
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Verify published Hidden Gem and shared clients
+        env:
+          PUBLISHED_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          python3 - <<'PY'
+          import os, pathlib, time, urllib.request
+          base = os.environ["PUBLISHED_URL"].rstrip("/") + "/"
+          paths = ["index.html", "games/hidden-gem/index.html", "games/hidden-gem/questions.js", "games/hidden-gem/hidden-gem.js", "games/hidden-gem/hidden-gem.css", "hidden-gem-model.js", "cloud-saves.js", "accounts.js", "friends.js", "profile-records.js"]
+          for attempt in range(6):
+              try:
+                  for path in paths:
+                      request = urllib.request.Request(base + path + "?release=" + os.environ["GITHUB_SHA"], headers={"Cache-Control":"no-cache"})
+                      with urllib.request.urlopen(request, timeout=20) as response:
+                          body = response.read()
+                      if path == "index.html":
+                          assert b"10 DAILY GAMES" in body and b"games/hidden-gem/index.html" in body, path
+                      elif path.endswith(".html"):
+                          assert b"<title>Hidden Gem" in body and b'hidden-gem.js' in body, path
+                      else:
+                          assert body == pathlib.Path(path).read_bytes(), "Published file differs: " + path
+                  print("Verified live Hidden Gem, shelf and shared account/profile/Friends files:", base, os.environ["GITHUB_SHA"])
+                  break
+              except Exception:
+                  if attempt == 5:
+                      raise
+                  time.sleep(2)
+          PY

@@ -8,7 +8,7 @@ let offline=false,missing=false,queue=Promise.resolve();
 (async()=>{const db=new PGlite();let browser;try{
  await db.exec(`create role anon;create role authenticated;create schema auth;create table auth.users(id uuid primary key);create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;grant usage on schema auth to anon,authenticated;grant execute on function auth.uid() to anon,authenticated;`);
  for(const id of Object.values(ids))await db.query('insert into auth.users values($1)',[id]);
- await db.exec(fs.readFileSync('supabase/setup.sql','utf8'));await db.exec(fs.readFileSync('supabase/friends.sql','utf8'));
+ await db.exec(fs.readFileSync('supabase/setup.sql','utf8'));await db.exec(fs.readFileSync('supabase/friends.sql','utf8'));await db.exec(fs.readFileSync('supabase/hidden-gem.sql','utf8'));
  const today=(await db.query("select timezone('Australia/Sydney',now())::date::text as d")).rows[0].d,day=(Date.parse(today+'T00:00:00Z')-Date.UTC(2026,9,1))/86400000;
  const qs=Array.from({length:5},()=>({q:'Secret question',c:'Category',f:'Secret answer',o:['A','B','C'],a:0}));
  const stack=points=>({version:2,day:today,round:4,score:points,streak:5,results:Array.from({length:5},()=>({correct:true,points:points/5,mistakes:0})),order:[1,2,3,4,5],deadline:1,mistakes:0,status:'complete',stacks:Array.from({length:5},()=>({prompt:'Secret stack',fact:'Secret fact',ends:['First','Last'],cards:Array.from({length:5},(_,i)=>({name:'Item',value:i+1}))}))});
@@ -22,9 +22,9 @@ let offline=false,missing=false,queue=Promise.resolve();
   const claims=JSON.parse(Buffer.from(req.headers().authorization.slice(7).split('.')[1],'base64url').toString());
   if(url.pathname.includes('/rpc/')){
    if(missing)return send({code:'PGRST202',message:'Function missing'},404);
-   const name=url.pathname.split('/').at(-1);assert.ok(['friend_hub','friend_scores'].includes(name));
+   const name=url.pathname.split('/').at(-1);assert.ok(['friend_hub','friend_scores','hidden_gem_friend_scores'].includes(name));
    let resolveResult;const result=new Promise(resolve=>resolveResult=resolve);
-   queue=queue.then(async()=>{try{await db.exec('reset role;set role authenticated;');await db.query("select set_config('request.jwt.claim.sub',$1,false)",[claims.sub]);const args=name==='friend_hub'?[body.p_action||'list',body.p_code||null,body.p_target||null,body.p_name||null,body.p_share??null]:[];const r=await db.query(name==='friend_hub'?'select public.friend_hub($1,$2,$3,$4,$5) as x':'select public.friend_scores() as x',args);resolveResult({value:r.rows[0].x});}catch(error){resolveResult({error:error.message});}});
+   queue=queue.then(async()=>{try{await db.exec('reset role;set role authenticated;');await db.query("select set_config('request.jwt.claim.sub',$1,false)",[claims.sub]);const args=name==='friend_hub'?[body.p_action||'list',body.p_code||null,body.p_target||null,body.p_name||null,body.p_share??null]:[];const r=await db.query(name==='friend_hub'?'select public.friend_hub($1,$2,$3,$4,$5) as x':name==='hidden_gem_friend_scores'?'select public.hidden_gem_friend_scores() as x':'select public.friend_scores() as x',args);resolveResult({value:r.rows[0].x});}catch(error){resolveResult({error:error.message});}});
    const r=await result;return r.error?send({message:r.error},400):send(r.value);
   }
   throw Error('Unexpected endpoint '+url.pathname);
@@ -57,6 +57,11 @@ let offline=false,missing=false,queue=Promise.resolve();
  require('../time-drop-model.js');const TM=BREAK_ROOM_TIME_DROP,TB=require('../content/time-drop-events.json').events;
  await db.exec('reset role');for(const name of ['alice','bob']){const r=TM.create(TB,today);for(let i=0;i<TM.ROUNDS;i++){TM.guess(r,name==='alice'?r.events[i].year:-4000);TM.lock(r);if(i<TM.ROUNDS-1)TM.next(r);}await db.query('insert into public.game_saves(user_id,game,data) values($1,$2,$3)',[ids[name],'time-drop',JSON.stringify({[TM.PREFIX+today]:JSON.stringify(r)})]);}
  await a.locator('#refresh-friends').click();await a.locator('#friend-content[aria-busy="false"]').waitFor();await a.locator('#comparison-game').selectOption('time-drop');assert.equal(await card(a,'<b>Alice</b>').count(),0);assert.equal(await card(a,'Alice').locator('.overall strong').innerText(),'100');assert.equal(await card(a,'Bob').locator('.overall strong').innerText(),'0');assert.ok(!await a.locator('#friend-content').innerText().then(t=>t.includes(TB[0].fact)));await a.locator('#comparison-game').selectOption('all');
+
+ require('../hidden-gem-model.js');const HM=BREAK_ROOM_HIDDEN_GEM,HB=require('../content/hidden-gem-questions.json').questions;
+ await db.exec('reset role');for(const name of ['alice','bob']){const r=HM.create(HB,today);HM.begin(r,1000);for(let i=0;i<5;i++){if(name==='alice'){HM.draft(r,r.questions[i].answers.find(a=>a.points===100).name,1001);HM.finish(r,1002);}else HM.expire(r,r.deadline);if(i<4)HM.next(r,1000);}await db.query('insert into public.hidden_gem_saves(user_id,game,data) values($1,$2,$3)',[ids[name],'hidden-gem',JSON.stringify({[HM.PREFIX+today]:JSON.stringify(r)})]);}
+ await a.locator('#refresh-friends').click();await a.locator('#friend-content[aria-busy="false"]').waitFor();await a.locator('#comparison-game').selectOption('hidden-gem');assert.equal(await card(a,'Alice').locator('.overall strong').innerText(),'100');assert.equal(await card(a,'Bob').locator('.overall strong').innerText(),'0');assert.ok(!await a.locator('#friend-content').innerText().then(t=>t.includes(HB[0].prompt)));await a.locator('#comparison-game').selectOption('all');
+
  await a.locator('.friend-settings summary').click();await a.locator('#share-scores').uncheck();await a.locator('#friend-settings button').click();await a.locator('#friend-status').filter({hasText:'setting are saved'}).waitFor();await b.locator('#refresh-friends').click();await b.waitForFunction(()=>[...document.querySelectorAll('.friend-score')].some(c=>c.textContent.includes('Alice')&&c.querySelector('.overall strong').textContent==='—'));
  await a.locator('#share-scores').check();await a.locator('#friend-name').fill('<b>Alice</b>');await a.locator('#friend-settings button').click();await a.locator('#friend-status').filter({hasText:'setting are saved'}).waitFor();assert.equal(await a.locator('.score-name b').count(),0);
  await b.locator('#refresh-friends').click();await b.getByRole('button',{name:'Remove <b>Alice</b>',exact:true}).click();await b.waitForFunction(()=>document.querySelectorAll('.friend-score').length===1);

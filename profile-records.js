@@ -15,6 +15,7 @@
     ,{id:'time-drop',name:'Time Drop',category:'HISTORY / INSTINCT',unit:'points',max:5000,note:'Points from five first-lock year guesses (5,000 maximum). Older ten-round saves retain their 10,000-point scale. Arcade scores normalize each run against its own maximum.'},
     {id:'clue-ladder',name:'Clue Ladder',category:'CLUES / KNOWLEDGE',unit:'points',max:5000,note:'Five untimed puzzles. Solves earn 1,000 / 800 / 600 / 400 / 200 by clue used; unsolved scores zero. Arcade score = Daily points divided by 50.'},
     {id:'seating-chart',name:'Seating Chart',category:'SEATING / LOGIC',unit:'drama',max:60,lowerBetter:true,note:'Total broken guest requests across five tables: lower is better. Arcade credit penalises only avoidable drama above each table’s optimum.'},
+    {id:'hidden-gem',name:'Hidden Gem',category:'TRIVIA / INSTINCT',unit:'points',max:100,note:'Five timed questions. Native and Arcade score are the average of five individual answer ratings, out of 100. Editorial ratings, not surveys.'},
   ];
   const isObject = value => value && typeof value === 'object' && !Array.isArray(value);
   function dateKey(value) {
@@ -62,6 +63,7 @@
     let keys=[];
     try{for(let i=0;i<storage.length;i++)keys.push(storage.key(i));}catch{unavailable=true;}
     for(const key of keys){
+      if(key?.startsWith('break-room:hidden-gem:daily:')){const day=key.slice('break-room:hidden-gem:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_HIDDEN_GEM?.record(r,day);if(record)add('hidden-gem',day,record.score,record.perfect===5,root.BREAK_ROOM_SCORE.hiddenGem(r));else if(root.BREAK_ROOM_HIDDEN_GEM?.valid(r,day)){if(day===today&&(r.picks.length||r.edits>0))progress.add('hidden-gem');}else skipped++;continue;}
       if(key?.startsWith('break-room:seating-chart:daily:')){const day=key.slice('break-room:seating-chart:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_SEATING_CHART?.record(r,day);if(record)add('seating-chart',day,record.drama,record.perfect===5,root.BREAK_ROOM_SCORE.seatingChart(r));else if(root.BREAK_ROOM_SEATING_CHART?.valid(r,day)){if(day===today&&(r.picks.length||r.edits>0))progress.add('seating-chart');}else skipped++;continue;}
       if(key?.startsWith('break-room:clue-ladder:daily:')){const day=key.slice('break-room:clue-ladder:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_CLUE_LADDER?.record(r,day);if(record)add('clue-ladder',day,record.points,record.first===5,root.BREAK_ROOM_SCORE.clueLadder(r));else if(root.BREAK_ROOM_CLUE_LADDER?.valid(r,day)){if(day===today&&(r.picks.length||r.edits>0))progress.add('clue-ladder');}else skipped++;continue;}
       if(key?.startsWith('break-room:time-drop:daily:')){const day=key.slice('break-room:time-drop:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_TIME_DROP?.record(r,day);if(record)add('time-drop',day,record.points,record.exact===record.rounds,root.BREAK_ROOM_SCORE.timeDrop(r));else if(root.BREAK_ROOM_TIME_DROP?.valid(r,day)){if(day===today&&(r.picks.length||r.edits>0))progress.add('time-drop');}else skipped++;continue;}
@@ -106,6 +108,7 @@
     const days=new Map();for(const record of records){if(!days.has(record.date))days.set(record.date,new Set());days.get(record.date).add(record.game);}
     const streak=streaks([...days.keys()],today), total=summaries.reduce((n,g)=>n+g.played,0);
     const achievements=[
+      {id:'hidden-gem',name:'Crown collection',detail:'Find a 100-point answer in all five Daily Hidden Gem questions.',earned:records.some(r=>r.game==='hidden-gem'&&r.perfect)},
       {id:'seating-chart',name:'Perfect host',detail:'Match the minimum drama at all five Daily Seating Chart tables.',earned:records.some(r=>r.game==='seating-chart'&&r.perfect)},
       {id:'clue-ladder',name:'First rung',detail:'Solve all five Daily Clue Ladder puzzles on their first clue.',earned:records.some(r=>r.game==='clue-ladder'&&r.perfect)},
       {id:'time-drop',name:'On the dot',detail:'Guess every Daily Time Drop year exactly.',earned:records.some(r=>r.game==='time-drop'&&r.perfect)},

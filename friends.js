@@ -2,7 +2,7 @@
 (() => {
  'use strict';
  const $=id=>document.getElementById(id),api=window.BREAK_ROOM_ACCOUNTS,score=window.BREAK_ROOM_SCORE;
- const games=[['seating-chart','SEATING CHART'],['clue-ladder','CLUE LADDER'],['time-drop','TIME DROP'],['lowball','LOWBALL'],['stake','STAKE'],['stack-up','STACK UP'],['pack','PACK'],['laser','LASER'],['inner-clock','INNER CLOCK']];
+ const games=[['hidden-gem','HIDDEN GEM'],['seating-chart','SEATING CHART'],['clue-ladder','CLUE LADDER'],['time-drop','TIME DROP'],['lowball','LOWBALL'],['stake','STAKE'],['stack-up','STACK UP'],['pack','PACK'],['laser','LASER'],['inner-clock','INNER CLOCK']];
  let hub=null,records=[],today=null,userId=null,requestId=0,busy=false,settingsDirty=false;
  const node=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;};
  function status(text,error=false){$('friend-status').textContent=text;$('friend-status').dataset.error=String(error);}
@@ -49,7 +49,7 @@
   try{
    const next=await api.friendsRPC('friend_hub');if(id!==requestId||api.getUser()?.id!==expected)return;
    hub=next;records=[];today=null;renderHub();$('friend-score-list').replaceChildren();
-   if(hub.me){const result=await api.friendsRPC('friend_scores');if(id!==requestId||api.getUser()?.id!==expected)return;records=result.records;today=result.today;compare();}
+   if(hub.me){const [result,hidden]=await Promise.all([api.friendsRPC('friend_scores'),api.friendsRPC('hidden_gem_friend_scores')]);if(id!==requestId||api.getUser()?.id!==expected)return;records=[...result.records,...hidden.records];today=result.today;compare();}
    status(hub.me?message:'Choose a name and create your friend code.');
   }catch(error){if(id===requestId){records=[];$('friend-score-list').replaceChildren();status(errorText(error),true);}}
   finally{busy=false;controls(!api.getUser());if(api.getUser()?.id!==expected)refresh();}
