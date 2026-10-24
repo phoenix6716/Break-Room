@@ -4895,6 +4895,1285 @@
           "points": 100
         }
       ]
+    },
+    {
+      "id": "hg-dwarf",
+      "topic": "SPACE",
+      "prompt": "Name an IAU-recognised dwarf planet as of 2025.",
+      "scope": "The five officially recognised objects; candidates excluded.",
+      "source": "https://en.wikipedia.org/wiki/Dwarf_planet",
+      "answers": [
+        {
+          "name": "Pluto",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Ceres",
+          "aliases": [],
+          "points": 26
+        },
+        {
+          "name": "Eris",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "Makemake",
+          "aliases": [],
+          "points": 74
+        },
+        {
+          "name": "Haumea",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-galilean",
+      "topic": "SPACE",
+      "prompt": "Name a Galilean moon of Jupiter.",
+      "scope": "The four discovered by Galileo.",
+      "source": "https://science.nasa.gov/jupiter/moons/",
+      "answers": [
+        {
+          "name": "Europa",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Io",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Ganymede",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Callisto",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-saturn",
+      "topic": "SPACE",
+      "prompt": "Name a Saturnian moon with mean diameter above 300 km.",
+      "scope": "The seven largest regular moons.",
+      "source": "https://science.nasa.gov/saturn/moons/",
+      "answers": [
+        {
+          "name": "Titan",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Enceladus",
+          "aliases": [],
+          "points": 19
+        },
+        {
+          "name": "Mimas",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Rhea",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "Iapetus",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Dione",
+          "aliases": [],
+          "points": 83
+        },
+        {
+          "name": "Tethys",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-uranus",
+      "topic": "SPACE",
+      "prompt": "Name one of Uranus’s five major moons.",
+      "scope": "The five large, roughly spherical moons.",
+      "source": "https://science.nasa.gov/uranus/moons/",
+      "answers": [
+        {
+          "name": "Titania",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Oberon",
+          "aliases": [],
+          "points": 26
+        },
+        {
+          "name": "Miranda",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "Ariel",
+          "aliases": [],
+          "points": 74
+        },
+        {
+          "name": "Umbriel",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-moonwalkers",
+      "topic": "SPACE",
+      "prompt": "Name an Apollo astronaut who walked on the Moon.",
+      "scope": "Twelve Moonwalkers, not orbit-only astronauts; surnames accepted.",
+      "source": "https://www.nasa.gov/history/apollo/",
+      "answers": [
+        {
+          "name": "Neil Armstrong",
+          "aliases": [
+            "Armstrong"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Buzz Aldrin",
+          "aliases": [
+            "Aldrin"
+          ],
+          "points": 12
+        },
+        {
+          "name": "Alan Shepard",
+          "aliases": [
+            "Shepard"
+          ],
+          "points": 20
+        },
+        {
+          "name": "Pete Conrad",
+          "aliases": [
+            "Charles Conrad",
+            "Conrad"
+          ],
+          "points": 28
+        },
+        {
+          "name": "Eugene Cernan",
+          "aliases": [
+            "Gene Cernan",
+            "Cernan"
+          ],
+          "points": 36
+        },
+        {
+          "name": "Alan Bean",
+          "aliases": [
+            "Bean"
+          ],
+          "points": 45
+        },
+        {
+          "name": "David Scott",
+          "aliases": [
+            "Dave Scott",
+            "Scott"
+          ],
+          "points": 54
+        },
+        {
+          "name": "John Young",
+          "aliases": [
+            "Young"
+          ],
+          "points": 63
+        },
+        {
+          "name": "Edgar Mitchell",
+          "aliases": [
+            "Ed Mitchell",
+            "Mitchell"
+          ],
+          "points": 72
+        },
+        {
+          "name": "Harrison Schmitt",
+          "aliases": [
+            "Jack Schmitt",
+            "Schmitt"
+          ],
+          "points": 81
+        },
+        {
+          "name": "Charles Duke",
+          "aliases": [
+            "Charlie Duke",
+            "Duke"
+          ],
+          "points": 90
+        },
+        {
+          "name": "James Irwin",
+          "aliases": [
+            "Jim Irwin",
+            "Irwin"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-apollo11",
+      "topic": "SPACE",
+      "prompt": "Name an Apollo 11 crew member.",
+      "scope": "All three astronauts, including the command module pilot.",
+      "source": "https://www.nasa.gov/mission/apollo-11/",
+      "answers": [
+        {
+          "name": "Neil Armstrong",
+          "aliases": [
+            "Armstrong"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Buzz Aldrin",
+          "aliases": [
+            "Aldrin"
+          ],
+          "points": 49
+        },
+        {
+          "name": "Michael Collins",
+          "aliases": [
+            "Collins"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-mercury7",
+      "topic": "SPACE",
+      "prompt": "Name a Mercury Seven astronaut.",
+      "scope": "NASA’s original seven selected in 1959; surnames accepted.",
+      "source": "https://www.nasa.gov/history/mercury-7-the-first-nasa-astronauts/",
+      "answers": [
+        {
+          "name": "John Glenn",
+          "aliases": [
+            "Glenn"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Alan Shepard",
+          "aliases": [
+            "Shepard"
+          ],
+          "points": 19
+        },
+        {
+          "name": "Gus Grissom",
+          "aliases": [
+            "Virgil Grissom",
+            "Grissom"
+          ],
+          "points": 33
+        },
+        {
+          "name": "Gordon Cooper",
+          "aliases": [
+            "Gordo Cooper",
+            "Cooper"
+          ],
+          "points": 49
+        },
+        {
+          "name": "Scott Carpenter",
+          "aliases": [
+            "Carpenter"
+          ],
+          "points": 66
+        },
+        {
+          "name": "Wally Schirra",
+          "aliases": [
+            "Walter Schirra",
+            "Schirra"
+          ],
+          "points": 83
+        },
+        {
+          "name": "Deke Slayton",
+          "aliases": [
+            "Donald Slayton",
+            "Slayton"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-orbiters",
+      "topic": "SPACE",
+      "prompt": "Name a full-scale NASA Space Shuttle orbiter.",
+      "scope": "Six vehicles, including the approach-and-landing test orbiter, not mock-ups.",
+      "source": "https://www.nasa.gov/space-shuttle/",
+      "answers": [
+        {
+          "name": "Discovery",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Challenger",
+          "aliases": [],
+          "points": 21
+        },
+        {
+          "name": "Columbia",
+          "aliases": [],
+          "points": 40
+        },
+        {
+          "name": "Atlantis",
+          "aliases": [],
+          "points": 59
+        },
+        {
+          "name": "Endeavour",
+          "aliases": [
+            "Endeavor"
+          ],
+          "points": 79
+        },
+        {
+          "name": "Enterprise",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-landings",
+      "topic": "SPACE",
+      "prompt": "Name an Apollo mission that landed people on the Moon.",
+      "scope": "Six successful landings; mission numbers accepted.",
+      "source": "https://www.nasa.gov/history/apollo/",
+      "answers": [
+        {
+          "name": "Apollo 11",
+          "aliases": [
+            "11"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Apollo 17",
+          "aliases": [
+            "17"
+          ],
+          "points": 21
+        },
+        {
+          "name": "Apollo 12",
+          "aliases": [
+            "12"
+          ],
+          "points": 40
+        },
+        {
+          "name": "Apollo 14",
+          "aliases": [
+            "14"
+          ],
+          "points": 59
+        },
+        {
+          "name": "Apollo 15",
+          "aliases": [
+            "15"
+          ],
+          "points": 79
+        },
+        {
+          "name": "Apollo 16",
+          "aliases": [
+            "16"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-rocky",
+      "topic": "SPACE",
+      "prompt": "Name a terrestrial planet in our Solar System.",
+      "scope": "Four rocky planets; dwarf planets excluded.",
+      "source": "https://science.nasa.gov/solar-system/planets/",
+      "answers": [
+        {
+          "name": "Earth",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Mars",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Venus",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Mercury",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-giants",
+      "topic": "SPACE",
+      "prompt": "Name a giant planet in our Solar System.",
+      "scope": "Four gas or ice giants.",
+      "source": "https://science.nasa.gov/solar-system/planets/",
+      "answers": [
+        {
+          "name": "Jupiter",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Saturn",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Neptune",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Uranus",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-iss",
+      "topic": "SPACE",
+      "prompt": "Name an ISS partner space agency as of 2025.",
+      "scope": "Five partner agencies; acronyms accepted.",
+      "source": "https://www.nasa.gov/international-space-station/space-station-international-cooperation/",
+      "answers": [
+        {
+          "name": "NASA",
+          "aliases": [
+            "National Aeronautics and Space Administration"
+          ],
+          "points": 6
+        },
+        {
+          "name": "ESA",
+          "aliases": [
+            "European Space Agency"
+          ],
+          "points": 26
+        },
+        {
+          "name": "Roscosmos",
+          "aliases": [
+            "Russian Space Agency"
+          ],
+          "points": 49
+        },
+        {
+          "name": "JAXA",
+          "aliases": [
+            "Japan Aerospace Exploration Agency"
+          ],
+          "points": 74
+        },
+        {
+          "name": "CSA",
+          "aliases": [
+            "Canadian Space Agency"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-observatories",
+      "topic": "SPACE",
+      "prompt": "Name one of NASA’s original four Great Observatories.",
+      "scope": "The original programme’s space telescopes.",
+      "source": "https://science.nasa.gov/mission/hubble/science/great-observatories/",
+      "answers": [
+        {
+          "name": "Hubble",
+          "aliases": [
+            "Hubble Space Telescope"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Chandra",
+          "aliases": [
+            "Chandra X-ray Observatory"
+          ],
+          "points": 33
+        },
+        {
+          "name": "Spitzer",
+          "aliases": [
+            "Spitzer Space Telescope"
+          ],
+          "points": 66
+        },
+        {
+          "name": "Compton",
+          "aliases": [
+            "Compton Gamma Ray Observatory",
+            "CGRO"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-webb",
+      "topic": "SPACE",
+      "prompt": "Name a Webb telescope science instrument.",
+      "scope": "Four instruments; acronyms or full names accepted.",
+      "source": "https://science.nasa.gov/mission/webb/instruments/",
+      "answers": [
+        {
+          "name": "NIRCam",
+          "aliases": [
+            "Near Infrared Camera"
+          ],
+          "points": 6
+        },
+        {
+          "name": "MIRI",
+          "aliases": [
+            "Mid Infrared Instrument"
+          ],
+          "points": 33
+        },
+        {
+          "name": "NIRSpec",
+          "aliases": [
+            "Near Infrared Spectrograph"
+          ],
+          "points": 66
+        },
+        {
+          "name": "NIRISS",
+          "aliases": [
+            "Near Infrared Imager and Slitless Spectrograph"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-asteroids",
+      "topic": "SPACE",
+      "prompt": "Name one of the first four numbered minor planets.",
+      "scope": "Numbers 1–4 by discovery; number 1 also became a dwarf planet.",
+      "source": "https://en.wikipedia.org/wiki/List_of_minor_planets:_1%E2%80%931000",
+      "answers": [
+        {
+          "name": "Ceres",
+          "aliases": [
+            "1 Ceres"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Vesta",
+          "aliases": [
+            "4 Vesta"
+          ],
+          "points": 33
+        },
+        {
+          "name": "Pallas",
+          "aliases": [
+            "2 Pallas"
+          ],
+          "points": 66
+        },
+        {
+          "name": "Juno",
+          "aliases": [
+            "3 Juno"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-vowels",
+      "topic": "LANGUAGE",
+      "prompt": "Name a traditional English vowel letter.",
+      "scope": "The five-letter convention, excluding the sometimes-vowel Y.",
+      "source": "https://en.wikipedia.org/wiki/Vowel",
+      "answers": [
+        {
+          "name": "A",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "E",
+          "aliases": [],
+          "points": 26
+        },
+        {
+          "name": "I",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "O",
+          "aliases": [],
+          "points": 74
+        },
+        {
+          "name": "U",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-fanboys",
+      "topic": "LANGUAGE",
+      "prompt": "Name a coordinating conjunction in FANBOYS.",
+      "scope": "Seven words in the English mnemonic.",
+      "source": "https://en.wikipedia.org/wiki/Coordinating_conjunction",
+      "answers": [
+        {
+          "name": "And",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "But",
+          "aliases": [],
+          "points": 19
+        },
+        {
+          "name": "Or",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "So",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "For",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Nor",
+          "aliases": [],
+          "points": 83
+        },
+        {
+          "name": "Yet",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-subject-pronouns",
+      "topic": "LANGUAGE",
+      "prompt": "Name a standard English personal subject pronoun.",
+      "scope": "Seven basic forms, not object pronouns or demonstratives.",
+      "source": "https://en.wikipedia.org/wiki/English_personal_pronouns",
+      "answers": [
+        {
+          "name": "I",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "You",
+          "aliases": [],
+          "points": 19
+        },
+        {
+          "name": "He",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "She",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "We",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "They",
+          "aliases": [],
+          "points": 83
+        },
+        {
+          "name": "It",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-possessives",
+      "topic": "LANGUAGE",
+      "prompt": "Name a basic English possessive determiner.",
+      "scope": "Seven forms before nouns; independent pronouns such as “mine” excluded.",
+      "source": "https://en.wikipedia.org/wiki/Possessive_determiner",
+      "answers": [
+        {
+          "name": "My",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Your",
+          "aliases": [],
+          "points": 19
+        },
+        {
+          "name": "His",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Her",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "Our",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Their",
+          "aliases": [],
+          "points": 83
+        },
+        {
+          "name": "Its",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-demonstratives",
+      "topic": "LANGUAGE",
+      "prompt": "Name a basic English demonstrative.",
+      "scope": "Four common forms, singular or plural.",
+      "source": "https://en.wikipedia.org/wiki/Demonstrative",
+      "answers": [
+        {
+          "name": "This",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "That",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "These",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Those",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-articles",
+      "topic": "LANGUAGE",
+      "prompt": "Name an English article.",
+      "scope": "Three written forms, definite or indefinite.",
+      "source": "https://en.wikipedia.org/wiki/English_articles",
+      "answers": [
+        {
+          "name": "The",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "A",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "An",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-un",
+      "topic": "LANGUAGE",
+      "prompt": "Name a UN official language.",
+      "scope": "Six official languages as of 2025.",
+      "source": "https://www.un.org/en/our-work/official-languages",
+      "answers": [
+        {
+          "name": "English",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "French",
+          "aliases": [],
+          "points": 21
+        },
+        {
+          "name": "Spanish",
+          "aliases": [],
+          "points": 40
+        },
+        {
+          "name": "Chinese",
+          "aliases": [
+            "Mandarin",
+            "Mandarin Chinese"
+          ],
+          "points": 59
+        },
+        {
+          "name": "Arabic",
+          "aliases": [],
+          "points": 79
+        },
+        {
+          "name": "Russian",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-nato-start",
+      "topic": "LANGUAGE",
+      "prompt": "Name a NATO phonetic alphabet word for A–H.",
+      "scope": "The first eight codewords.",
+      "source": "https://www.nato.int/cps/en/natohq/declassified_136216.htm",
+      "answers": [
+        {
+          "name": "Alfa",
+          "aliases": [
+            "Alpha"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Bravo",
+          "aliases": [],
+          "points": 17
+        },
+        {
+          "name": "Charlie",
+          "aliases": [],
+          "points": 29
+        },
+        {
+          "name": "Delta",
+          "aliases": [],
+          "points": 42
+        },
+        {
+          "name": "Echo",
+          "aliases": [],
+          "points": 56
+        },
+        {
+          "name": "Foxtrot",
+          "aliases": [],
+          "points": 70
+        },
+        {
+          "name": "Golf",
+          "aliases": [],
+          "points": 85
+        },
+        {
+          "name": "Hotel",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-nato-end",
+      "topic": "LANGUAGE",
+      "prompt": "Name a NATO phonetic alphabet word for S–Z.",
+      "scope": "The final eight codewords.",
+      "source": "https://www.nato.int/cps/en/natohq/declassified_136216.htm",
+      "answers": [
+        {
+          "name": "Sierra",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Tango",
+          "aliases": [],
+          "points": 17
+        },
+        {
+          "name": "Uniform",
+          "aliases": [],
+          "points": 29
+        },
+        {
+          "name": "Victor",
+          "aliases": [],
+          "points": 42
+        },
+        {
+          "name": "Whiskey",
+          "aliases": [
+            "Whisky"
+          ],
+          "points": 56
+        },
+        {
+          "name": "X-ray",
+          "aliases": [
+            "Xray"
+          ],
+          "points": 70
+        },
+        {
+          "name": "Yankee",
+          "aliases": [],
+          "points": 85
+        },
+        {
+          "name": "Zulu",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-greek-start",
+      "topic": "LANGUAGE",
+      "prompt": "Name one of the first eight Greek alphabet letters.",
+      "scope": "English names for positions 1–8.",
+      "source": "https://en.wikipedia.org/wiki/Greek_alphabet",
+      "answers": [
+        {
+          "name": "Alpha",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Beta",
+          "aliases": [],
+          "points": 17
+        },
+        {
+          "name": "Gamma",
+          "aliases": [],
+          "points": 29
+        },
+        {
+          "name": "Delta",
+          "aliases": [],
+          "points": 42
+        },
+        {
+          "name": "Epsilon",
+          "aliases": [],
+          "points": 56
+        },
+        {
+          "name": "Zeta",
+          "aliases": [],
+          "points": 70
+        },
+        {
+          "name": "Eta",
+          "aliases": [],
+          "points": 85
+        },
+        {
+          "name": "Theta",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-greek-end",
+      "topic": "LANGUAGE",
+      "prompt": "Name one of the final eight Greek alphabet letters.",
+      "scope": "English names for positions 17–24.",
+      "source": "https://en.wikipedia.org/wiki/Greek_alphabet",
+      "answers": [
+        {
+          "name": "Omega",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Sigma",
+          "aliases": [],
+          "points": 17
+        },
+        {
+          "name": "Phi",
+          "aliases": [],
+          "points": 29
+        },
+        {
+          "name": "Rho",
+          "aliases": [],
+          "points": 42
+        },
+        {
+          "name": "Tau",
+          "aliases": [],
+          "points": 56
+        },
+        {
+          "name": "Upsilon",
+          "aliases": [],
+          "points": 70
+        },
+        {
+          "name": "Chi",
+          "aliases": [],
+          "points": 85
+        },
+        {
+          "name": "Psi",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-spanish-days",
+      "topic": "LANGUAGE",
+      "prompt": "Name a weekday in Spanish.",
+      "scope": "Any day of the seven-day week; Spanish words, accents optional.",
+      "source": "https://en.wikipedia.org/wiki/Names_of_the_days_of_the_week",
+      "answers": [
+        {
+          "name": "Lunes",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Martes",
+          "aliases": [],
+          "points": 19
+        },
+        {
+          "name": "Miércoles",
+          "aliases": [
+            "Miercoles"
+          ],
+          "points": 33
+        },
+        {
+          "name": "Jueves",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "Viernes",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Sábado",
+          "aliases": [
+            "Sabado"
+          ],
+          "points": 83
+        },
+        {
+          "name": "Domingo",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-french-days",
+      "topic": "LANGUAGE",
+      "prompt": "Name a weekday in French.",
+      "scope": "Any day of the seven-day week; French words, not translations.",
+      "source": "https://en.wikipedia.org/wiki/Names_of_the_days_of_the_week",
+      "answers": [
+        {
+          "name": "Lundi",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Mardi",
+          "aliases": [],
+          "points": 19
+        },
+        {
+          "name": "Mercredi",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Jeudi",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "Vendredi",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Samedi",
+          "aliases": [],
+          "points": 83
+        },
+        {
+          "name": "Dimanche",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-persons",
+      "topic": "LANGUAGE",
+      "prompt": "Name a grammatical person in standard English.",
+      "scope": "Three persons; give an ordinal, not a pronoun.",
+      "source": "https://en.wikipedia.org/wiki/Grammatical_person",
+      "answers": [
+        {
+          "name": "First person",
+          "aliases": [
+            "First",
+            "1st person",
+            "1st"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Second person",
+          "aliases": [
+            "Second",
+            "2nd person",
+            "2nd"
+          ],
+          "points": 49
+        },
+        {
+          "name": "Third person",
+          "aliases": [
+            "Third",
+            "3rd person",
+            "3rd"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-be",
+      "topic": "LANGUAGE",
+      "prompt": "Name a single-word form of the English verb “be”.",
+      "scope": "Eight standard forms, excluding contractions and dialect forms.",
+      "source": "https://en.wikipedia.org/wiki/English_verbs",
+      "answers": [
+        {
+          "name": "Be",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Is",
+          "aliases": [],
+          "points": 17
+        },
+        {
+          "name": "Are",
+          "aliases": [],
+          "points": 29
+        },
+        {
+          "name": "Am",
+          "aliases": [],
+          "points": 42
+        },
+        {
+          "name": "Was",
+          "aliases": [],
+          "points": 56
+        },
+        {
+          "name": "Were",
+          "aliases": [],
+          "points": 70
+        },
+        {
+          "name": "Being",
+          "aliases": [],
+          "points": 85
+        },
+        {
+          "name": "Been",
+          "aliases": [],
+          "points": 100
+        }
+      ]
     }
   ]
 }
