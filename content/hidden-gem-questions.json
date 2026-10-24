@@ -2191,6 +2191,1304 @@
           "points": 100
         }
       ]
+    },
+    {
+      "id": "hg-potter",
+      "topic": "FILM",
+      "prompt": "Name an original Harry Potter film.",
+      "scope": "Eight films released 2001–2011; Fantastic Beasts excluded.",
+      "source": "https://en.wikipedia.org/wiki/Harry_Potter_(film_series)",
+      "answers": [
+        {
+          "name": "Harry Potter and the Philosopher's Stone",
+          "aliases": [
+            "Philosopher's Stone",
+            "Sorcerer's Stone",
+            "Harry Potter and the Sorcerer's Stone"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Harry Potter and the Chamber of Secrets",
+          "aliases": [
+            "Chamber of Secrets"
+          ],
+          "points": 17
+        },
+        {
+          "name": "Harry Potter and the Prisoner of Azkaban",
+          "aliases": [
+            "Prisoner of Azkaban"
+          ],
+          "points": 29
+        },
+        {
+          "name": "Harry Potter and the Goblet of Fire",
+          "aliases": [
+            "Goblet of Fire"
+          ],
+          "points": 42
+        },
+        {
+          "name": "Harry Potter and the Order of the Phoenix",
+          "aliases": [
+            "Order of the Phoenix"
+          ],
+          "points": 56
+        },
+        {
+          "name": "Harry Potter and the Half-Blood Prince",
+          "aliases": [
+            "Half-Blood Prince"
+          ],
+          "points": 70
+        },
+        {
+          "name": "Harry Potter and the Deathly Hallows Part 1",
+          "aliases": [
+            "Deathly Hallows Part 1",
+            "Deathly Hallows 1"
+          ],
+          "points": 85
+        },
+        {
+          "name": "Harry Potter and the Deathly Hallows Part 2",
+          "aliases": [
+            "Deathly Hallows Part 2",
+            "Deathly Hallows 2"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-lotr",
+      "topic": "FILM",
+      "prompt": "Name a film in Peter Jackson’s original Lord of the Rings trilogy.",
+      "scope": "Three films, 2001–2003; subtitles are enough.",
+      "source": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings_(film_series)",
+      "answers": [
+        {
+          "name": "The Fellowship of the Ring",
+          "aliases": [
+            "Fellowship of the Ring"
+          ],
+          "points": 6
+        },
+        {
+          "name": "The Return of the King",
+          "aliases": [
+            "Return of the King"
+          ],
+          "points": 49
+        },
+        {
+          "name": "The Two Towers",
+          "aliases": [
+            "Two Towers"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-star-wars",
+      "topic": "FILM",
+      "prompt": "Name a Skywalker Saga film.",
+      "scope": "Star Wars episodes I–IX; give the subtitle.",
+      "source": "https://en.wikipedia.org/wiki/Star_Wars",
+      "answers": [
+        {
+          "name": "A New Hope",
+          "aliases": [
+            "Star Wars"
+          ],
+          "points": 6
+        },
+        {
+          "name": "The Empire Strikes Back",
+          "aliases": [
+            "Empire Strikes Back"
+          ],
+          "points": 15
+        },
+        {
+          "name": "Return of the Jedi",
+          "aliases": [],
+          "points": 26
+        },
+        {
+          "name": "The Phantom Menace",
+          "aliases": [
+            "Phantom Menace"
+          ],
+          "points": 37
+        },
+        {
+          "name": "Revenge of the Sith",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "The Force Awakens",
+          "aliases": [
+            "Force Awakens"
+          ],
+          "points": 62
+        },
+        {
+          "name": "Attack of the Clones",
+          "aliases": [],
+          "points": 74
+        },
+        {
+          "name": "The Last Jedi",
+          "aliases": [
+            "Last Jedi"
+          ],
+          "points": 87
+        },
+        {
+          "name": "The Rise of Skywalker",
+          "aliases": [
+            "Rise of Skywalker"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-avengers",
+      "topic": "FILM",
+      "prompt": "Name an MCU Avengers-titled film released before 2021.",
+      "scope": "Four films; individual heroes’ movies excluded.",
+      "source": "https://en.wikipedia.org/wiki/The_Avengers_(film_series)",
+      "answers": [
+        {
+          "name": "The Avengers",
+          "aliases": [
+            "Avengers",
+            "Avengers Assemble"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Avengers Endgame",
+          "aliases": [
+            "Endgame"
+          ],
+          "points": 33
+        },
+        {
+          "name": "Avengers Infinity War",
+          "aliases": [
+            "Infinity War"
+          ],
+          "points": 66
+        },
+        {
+          "name": "Avengers Age of Ultron",
+          "aliases": [
+            "Age of Ultron"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-princesses",
+      "topic": "FILM",
+      "prompt": "Name an official Disney Princess as of January 2021.",
+      "scope": "Twelve members of the franchise at that date, not Frozen’s leads.",
+      "source": "https://en.wikipedia.org/wiki/Disney_Princess",
+      "answers": [
+        {
+          "name": "Cinderella",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Snow White",
+          "aliases": [],
+          "points": 12
+        },
+        {
+          "name": "Ariel",
+          "aliases": [],
+          "points": 20
+        },
+        {
+          "name": "Belle",
+          "aliases": [],
+          "points": 28
+        },
+        {
+          "name": "Jasmine",
+          "aliases": [],
+          "points": 36
+        },
+        {
+          "name": "Aurora",
+          "aliases": [
+            "Sleeping Beauty"
+          ],
+          "points": 45
+        },
+        {
+          "name": "Mulan",
+          "aliases": [],
+          "points": 54
+        },
+        {
+          "name": "Rapunzel",
+          "aliases": [],
+          "points": 63
+        },
+        {
+          "name": "Pocahontas",
+          "aliases": [],
+          "points": 72
+        },
+        {
+          "name": "Tiana",
+          "aliases": [],
+          "points": 81
+        },
+        {
+          "name": "Moana",
+          "aliases": [],
+          "points": 90
+        },
+        {
+          "name": "Merida",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-nolan",
+      "topic": "FILM",
+      "prompt": "Name a Christopher Nolan-directed feature from 2000–2023.",
+      "scope": "Eleven films released in that period; his 1998 debut is excluded.",
+      "source": "https://en.wikipedia.org/wiki/Christopher_Nolan_filmography",
+      "answers": [
+        {
+          "name": "Inception",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "The Dark Knight",
+          "aliases": [
+            "Dark Knight"
+          ],
+          "points": 13
+        },
+        {
+          "name": "Oppenheimer",
+          "aliases": [],
+          "points": 21
+        },
+        {
+          "name": "Interstellar",
+          "aliases": [],
+          "points": 30
+        },
+        {
+          "name": "Batman Begins",
+          "aliases": [],
+          "points": 40
+        },
+        {
+          "name": "The Dark Knight Rises",
+          "aliases": [
+            "Dark Knight Rises"
+          ],
+          "points": 49
+        },
+        {
+          "name": "Dunkirk",
+          "aliases": [],
+          "points": 59
+        },
+        {
+          "name": "Tenet",
+          "aliases": [],
+          "points": 69
+        },
+        {
+          "name": "Memento",
+          "aliases": [],
+          "points": 79
+        },
+        {
+          "name": "The Prestige",
+          "aliases": [
+            "Prestige"
+          ],
+          "points": 90
+        },
+        {
+          "name": "Insomnia",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-jurassic",
+      "topic": "FILM",
+      "prompt": "Name a Jurassic Park franchise film from 1993–2022.",
+      "scope": "The first six films; a distinctive subtitle is enough.",
+      "source": "https://en.wikipedia.org/wiki/Jurassic_Park",
+      "answers": [
+        {
+          "name": "Jurassic Park",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Jurassic World",
+          "aliases": [],
+          "points": 21
+        },
+        {
+          "name": "The Lost World Jurassic Park",
+          "aliases": [
+            "Lost World",
+            "The Lost World"
+          ],
+          "points": 40
+        },
+        {
+          "name": "Jurassic Park III",
+          "aliases": [
+            "Jurassic Park 3"
+          ],
+          "points": 59
+        },
+        {
+          "name": "Jurassic World Fallen Kingdom",
+          "aliases": [
+            "Fallen Kingdom"
+          ],
+          "points": 79
+        },
+        {
+          "name": "Jurassic World Dominion",
+          "aliases": [
+            "Dominion"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-renaissance",
+      "topic": "FILM",
+      "prompt": "Name a Disney Renaissance animated feature.",
+      "scope": "The conventional ten-film 1989–1999 grouping.",
+      "source": "https://en.wikipedia.org/wiki/Disney_Renaissance",
+      "answers": [
+        {
+          "name": "The Lion King",
+          "aliases": [
+            "Lion King"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Aladdin",
+          "aliases": [],
+          "points": 14
+        },
+        {
+          "name": "Beauty and the Beast",
+          "aliases": [],
+          "points": 23
+        },
+        {
+          "name": "The Little Mermaid",
+          "aliases": [
+            "Little Mermaid"
+          ],
+          "points": 33
+        },
+        {
+          "name": "Mulan",
+          "aliases": [],
+          "points": 44
+        },
+        {
+          "name": "Tarzan",
+          "aliases": [],
+          "points": 55
+        },
+        {
+          "name": "Hercules",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Pocahontas",
+          "aliases": [],
+          "points": 77
+        },
+        {
+          "name": "The Hunchback of Notre Dame",
+          "aliases": [
+            "Hunchback of Notre Dame"
+          ],
+          "points": 88
+        },
+        {
+          "name": "The Rescuers Down Under",
+          "aliases": [
+            "Rescuers Down Under"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-bond",
+      "topic": "FILM",
+      "prompt": "Name an actor who played James Bond in an Eon feature through 2021.",
+      "scope": "Six actors, excluding non-Eon films; surnames accepted.",
+      "source": "https://en.wikipedia.org/wiki/James_Bond_in_film",
+      "answers": [
+        {
+          "name": "Daniel Craig",
+          "aliases": [
+            "Craig"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Sean Connery",
+          "aliases": [
+            "Connery"
+          ],
+          "points": 21
+        },
+        {
+          "name": "Pierce Brosnan",
+          "aliases": [
+            "Brosnan"
+          ],
+          "points": 40
+        },
+        {
+          "name": "Roger Moore",
+          "aliases": [
+            "Moore"
+          ],
+          "points": 59
+        },
+        {
+          "name": "Timothy Dalton",
+          "aliases": [
+            "Dalton"
+          ],
+          "points": 79
+        },
+        {
+          "name": "George Lazenby",
+          "aliases": [
+            "Lazenby"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-ghostbusters",
+      "topic": "FILM",
+      "prompt": "Name an original Ghostbusters team member.",
+      "scope": "The four characters in the 1984 film; surnames accepted.",
+      "source": "https://en.wikipedia.org/wiki/Ghostbusters",
+      "answers": [
+        {
+          "name": "Peter Venkman",
+          "aliases": [
+            "Venkman"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Egon Spengler",
+          "aliases": [
+            "Spengler"
+          ],
+          "points": 33
+        },
+        {
+          "name": "Ray Stantz",
+          "aliases": [
+            "Raymond Stantz",
+            "Stantz"
+          ],
+          "points": 66
+        },
+        {
+          "name": "Winston Zeddemore",
+          "aliases": [
+            "Zeddemore"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-turtles",
+      "topic": "FILM",
+      "prompt": "Name a Teenage Mutant Ninja Turtle.",
+      "scope": "The four core turtles; nicknames accepted.",
+      "source": "https://en.wikipedia.org/wiki/Teenage_Mutant_Ninja_Turtles",
+      "answers": [
+        {
+          "name": "Leonardo",
+          "aliases": [
+            "Leo"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Michelangelo",
+          "aliases": [
+            "Mikey"
+          ],
+          "points": 33
+        },
+        {
+          "name": "Donatello",
+          "aliases": [
+            "Donnie",
+            "Donny"
+          ],
+          "points": 66
+        },
+        {
+          "name": "Raphael",
+          "aliases": [
+            "Raph"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-emotions",
+      "topic": "FILM",
+      "prompt": "Name an emotion character in the original Inside Out.",
+      "scope": "Five emotions in the 2015 film, not its sequel.",
+      "source": "https://en.wikipedia.org/wiki/Inside_Out_(2015_film)",
+      "answers": [
+        {
+          "name": "Joy",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Sadness",
+          "aliases": [],
+          "points": 26
+        },
+        {
+          "name": "Anger",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "Fear",
+          "aliases": [],
+          "points": 74
+        },
+        {
+          "name": "Disgust",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-parr",
+      "topic": "FILM",
+      "prompt": "Name a Parr family member in The Incredibles.",
+      "scope": "The five family members; first names or superhero names accepted.",
+      "source": "https://en.wikipedia.org/wiki/The_Incredibles",
+      "answers": [
+        {
+          "name": "Bob",
+          "aliases": [
+            "Bob Parr",
+            "Mr Incredible"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Helen",
+          "aliases": [
+            "Helen Parr",
+            "Elastigirl"
+          ],
+          "points": 26
+        },
+        {
+          "name": "Dash",
+          "aliases": [
+            "Dashiell",
+            "Dash Parr"
+          ],
+          "points": 49
+        },
+        {
+          "name": "Violet",
+          "aliases": [
+            "Violet Parr"
+          ],
+          "points": 74
+        },
+        {
+          "name": "Jack-Jack",
+          "aliases": [
+            "Jack Jack",
+            "Jack-Jack Parr"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-shrek",
+      "topic": "FILM",
+      "prompt": "Name a main-series Shrek film released before 2025.",
+      "scope": "Four main films from 2001–2010; spin-offs excluded.",
+      "source": "https://en.wikipedia.org/wiki/Shrek_(franchise)",
+      "answers": [
+        {
+          "name": "Shrek",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Shrek 2",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Shrek the Third",
+          "aliases": [
+            "Shrek 3"
+          ],
+          "points": 66
+        },
+        {
+          "name": "Shrek Forever After",
+          "aliases": [
+            "Shrek 4"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-slams",
+      "topic": "SPORT",
+      "prompt": "Name one of tennis’s Grand Slam tournaments.",
+      "scope": "The four majors; tournament names, not cities.",
+      "source": "https://www.itftennis.com/en/itf-tours/grand-slam-tournaments/",
+      "answers": [
+        {
+          "name": "Wimbledon",
+          "aliases": [
+            "The Championships"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Australian Open",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "US Open",
+          "aliases": [
+            "United States Open"
+          ],
+          "points": 66
+        },
+        {
+          "name": "French Open",
+          "aliases": [
+            "Roland Garros"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-pentathlon",
+      "topic": "SPORT",
+      "prompt": "Name a modern pentathlon discipline at Paris 2024.",
+      "scope": "Five separate disciplines at that edition, before the later format change.",
+      "source": "https://en.wikipedia.org/wiki/Modern_pentathlon",
+      "answers": [
+        {
+          "name": "Swimming",
+          "aliases": [
+            "Freestyle swimming"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Running",
+          "aliases": [
+            "Cross country running"
+          ],
+          "points": 26
+        },
+        {
+          "name": "Fencing",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "Shooting",
+          "aliases": [
+            "Laser shooting",
+            "Pistol shooting"
+          ],
+          "points": 74
+        },
+        {
+          "name": "Show jumping",
+          "aliases": [
+            "Horse riding",
+            "Riding",
+            "Equestrian"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-heptathlon",
+      "topic": "SPORT",
+      "prompt": "Name an event in the women’s outdoor heptathlon.",
+      "scope": "Seven athletics events, not the indoor pentathlon.",
+      "source": "https://en.wikipedia.org/wiki/Heptathlon",
+      "answers": [
+        {
+          "name": "100 metres hurdles",
+          "aliases": [
+            "100m hurdles",
+            "100 meter hurdles"
+          ],
+          "points": 6
+        },
+        {
+          "name": "High jump",
+          "aliases": [],
+          "points": 19
+        },
+        {
+          "name": "Long jump",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Shot put",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "Javelin throw",
+          "aliases": [
+            "Javelin"
+          ],
+          "points": 66
+        },
+        {
+          "name": "200 metres",
+          "aliases": [
+            "200m",
+            "200 meters"
+          ],
+          "points": 83
+        },
+        {
+          "name": "800 metres",
+          "aliases": [
+            "800m",
+            "800 meters"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-triathlon",
+      "topic": "SPORT",
+      "prompt": "Name a standard Olympic triathlon discipline.",
+      "scope": "Three disciplines.",
+      "source": "https://en.wikipedia.org/wiki/Triathlon",
+      "answers": [
+        {
+          "name": "Swimming",
+          "aliases": [
+            "Swim"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Cycling",
+          "aliases": [
+            "Cycle",
+            "Biking"
+          ],
+          "points": 49
+        },
+        {
+          "name": "Running",
+          "aliases": [
+            "Run"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-medley",
+      "topic": "SPORT",
+      "prompt": "Name a swimming stroke in the individual medley.",
+      "scope": "Four strokes; the conventional name of the final leg is accepted.",
+      "source": "https://en.wikipedia.org/wiki/Medley_swimming",
+      "answers": [
+        {
+          "name": "Freestyle",
+          "aliases": [
+            "Front crawl",
+            "Crawl"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Breaststroke",
+          "aliases": [
+            "Breast stroke"
+          ],
+          "points": 33
+        },
+        {
+          "name": "Backstroke",
+          "aliases": [
+            "Back stroke"
+          ],
+          "points": 66
+        },
+        {
+          "name": "Butterfly",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-basketball",
+      "topic": "SPORT",
+      "prompt": "Name a traditional basketball position.",
+      "scope": "Five positions, not modern hybrid labels.",
+      "source": "https://en.wikipedia.org/wiki/Basketball_positions",
+      "answers": [
+        {
+          "name": "Point guard",
+          "aliases": [
+            "PG"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Center",
+          "aliases": [
+            "Centre",
+            "C"
+          ],
+          "points": 26
+        },
+        {
+          "name": "Shooting guard",
+          "aliases": [
+            "SG"
+          ],
+          "points": 49
+        },
+        {
+          "name": "Power forward",
+          "aliases": [
+            "PF"
+          ],
+          "points": 74
+        },
+        {
+          "name": "Small forward",
+          "aliases": [
+            "SF"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-rugby",
+      "topic": "SPORT",
+      "prompt": "Name a way to score in rugby union.",
+      "scope": "The four scoring types; penalty tries count with tries.",
+      "source": "https://en.wikipedia.org/wiki/Rugby_union",
+      "answers": [
+        {
+          "name": "Try",
+          "aliases": [
+            "Penalty try"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Conversion",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Penalty goal",
+          "aliases": [
+            "Penalty kick",
+            "Penalty"
+          ],
+          "points": 66
+        },
+        {
+          "name": "Drop goal",
+          "aliases": [
+            "Dropped goal",
+            "Field goal"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-men-gymnastics",
+      "topic": "SPORT",
+      "prompt": "Name an apparatus in men’s artistic gymnastics.",
+      "scope": "Six standard apparatus, not rhythmic or trampoline events.",
+      "source": "https://en.wikipedia.org/wiki/Artistic_gymnastics",
+      "answers": [
+        {
+          "name": "Floor exercise",
+          "aliases": [
+            "Floor"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Vault",
+          "aliases": [],
+          "points": 21
+        },
+        {
+          "name": "Pommel horse",
+          "aliases": [],
+          "points": 40
+        },
+        {
+          "name": "Still rings",
+          "aliases": [
+            "Rings"
+          ],
+          "points": 59
+        },
+        {
+          "name": "Parallel bars",
+          "aliases": [],
+          "points": 79
+        },
+        {
+          "name": "Horizontal bar",
+          "aliases": [
+            "High bar"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-women-gymnastics",
+      "topic": "SPORT",
+      "prompt": "Name an apparatus in women’s artistic gymnastics.",
+      "scope": "Four standard apparatus.",
+      "source": "https://en.wikipedia.org/wiki/Artistic_gymnastics",
+      "answers": [
+        {
+          "name": "Floor exercise",
+          "aliases": [
+            "Floor"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Vault",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Balance beam",
+          "aliases": [
+            "Beam"
+          ],
+          "points": 66
+        },
+        {
+          "name": "Uneven bars",
+          "aliases": [
+            "Asymmetric bars"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-fencing",
+      "topic": "SPORT",
+      "prompt": "Name an Olympic fencing weapon.",
+      "scope": "Three categories; accents optional.",
+      "source": "https://en.wikipedia.org/wiki/Fencing",
+      "answers": [
+        {
+          "name": "Foil",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Sabre",
+          "aliases": [
+            "Saber"
+          ],
+          "points": 49
+        },
+        {
+          "name": "Épée",
+          "aliases": [
+            "Epee"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-jumps",
+      "topic": "SPORT",
+      "prompt": "Name a standard athletics jumping event.",
+      "scope": "The four outdoor jump disciplines.",
+      "source": "https://en.wikipedia.org/wiki/Athletics_(sport)",
+      "answers": [
+        {
+          "name": "Long jump",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "High jump",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Pole vault",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Triple jump",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-throws",
+      "topic": "SPORT",
+      "prompt": "Name a standard athletics throwing event.",
+      "scope": "Four senior outdoor championship disciplines.",
+      "source": "https://en.wikipedia.org/wiki/Athletics_(sport)",
+      "answers": [
+        {
+          "name": "Shot put",
+          "aliases": [
+            "Shotput"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Javelin throw",
+          "aliases": [
+            "Javelin"
+          ],
+          "points": 33
+        },
+        {
+          "name": "Discus throw",
+          "aliases": [
+            "Discus"
+          ],
+          "points": 66
+        },
+        {
+          "name": "Hammer throw",
+          "aliases": [
+            "Hammer"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-rings",
+      "topic": "SPORT",
+      "prompt": "Name a colour of an Olympic ring.",
+      "scope": "Five colours, excluding the background.",
+      "source": "https://olympics.com/ioc/olympic-rings",
+      "answers": [
+        {
+          "name": "Blue",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Red",
+          "aliases": [],
+          "points": 26
+        },
+        {
+          "name": "Yellow",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "Green",
+          "aliases": [],
+          "points": 74
+        },
+        {
+          "name": "Black",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-baseball",
+      "topic": "SPORT",
+      "prompt": "Name a standard baseball fielding position.",
+      "scope": "Nine defensive positions; designated hitter excluded.",
+      "source": "https://en.wikipedia.org/wiki/Baseball_positions",
+      "answers": [
+        {
+          "name": "Pitcher",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Catcher",
+          "aliases": [],
+          "points": 15
+        },
+        {
+          "name": "First baseman",
+          "aliases": [
+            "First base",
+            "1B"
+          ],
+          "points": 26
+        },
+        {
+          "name": "Shortstop",
+          "aliases": [
+            "SS"
+          ],
+          "points": 37
+        },
+        {
+          "name": "Second baseman",
+          "aliases": [
+            "Second base",
+            "2B"
+          ],
+          "points": 49
+        },
+        {
+          "name": "Third baseman",
+          "aliases": [
+            "Third base",
+            "3B"
+          ],
+          "points": 62
+        },
+        {
+          "name": "Center fielder",
+          "aliases": [
+            "Centre fielder",
+            "Center field",
+            "Centre field",
+            "CF"
+          ],
+          "points": 74
+        },
+        {
+          "name": "Left fielder",
+          "aliases": [
+            "Left field",
+            "LF"
+          ],
+          "points": 87
+        },
+        {
+          "name": "Right fielder",
+          "aliases": [
+            "Right field",
+            "RF"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-cycling",
+      "topic": "SPORT",
+      "prompt": "Name a men’s cycling Grand Tour.",
+      "scope": "The three three-week stage races.",
+      "source": "https://en.wikipedia.org/wiki/Grand_Tour_(cycling)",
+      "answers": [
+        {
+          "name": "Tour de France",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Giro d Italia",
+          "aliases": [
+            "Giro"
+          ],
+          "points": 49
+        },
+        {
+          "name": "Vuelta a España",
+          "aliases": [
+            "Vuelta a Espana",
+            "Vuelta"
+          ],
+          "points": 100
+        }
+      ]
     }
   ]
 }
