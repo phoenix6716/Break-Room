@@ -1,0 +1,2196 @@
+{
+  "version": 1,
+  "questions": [
+    {
+      "id": "countries-a",
+      "topic": "WORLD",
+      "prompt": "Name a UN member country whose English short name starts with A.",
+      "scope": "Use the common English country name; sovereign UN members only.",
+      "source": "https://www.un.org/en/about-us/member-states",
+      "answers": [
+        {
+          "name": "Australia",
+          "points": 8,
+          "aliases": []
+        },
+        {
+          "name": "Argentina",
+          "points": 14,
+          "aliases": []
+        },
+        {
+          "name": "Austria",
+          "points": 27,
+          "aliases": []
+        },
+        {
+          "name": "Afghanistan",
+          "points": 34,
+          "aliases": []
+        },
+        {
+          "name": "Algeria",
+          "points": 38,
+          "aliases": []
+        },
+        {
+          "name": "Albania",
+          "points": 47,
+          "aliases": []
+        },
+        {
+          "name": "Angola",
+          "points": 55,
+          "aliases": []
+        },
+        {
+          "name": "Armenia",
+          "points": 67,
+          "aliases": []
+        },
+        {
+          "name": "Andorra",
+          "points": 74,
+          "aliases": []
+        },
+        {
+          "name": "Azerbaijan",
+          "points": 95,
+          "aliases": []
+        },
+        {
+          "name": "Antigua and Barbuda",
+          "points": 100,
+          "aliases": [
+            "Antigua & Barbuda"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pixar-2010",
+      "topic": "FILM",
+      "prompt": "Name a Pixar feature film released before 2011.",
+      "scope": "Feature films released from 1995 through 2010. Shorts and later films do not count.",
+      "source": "https://www.pixar.com/feature-films",
+      "answers": [
+        {
+          "name": "Toy Story",
+          "points": 6,
+          "aliases": []
+        },
+        {
+          "name": "Finding Nemo",
+          "points": 14,
+          "aliases": []
+        },
+        {
+          "name": "Cars",
+          "points": 24,
+          "aliases": []
+        },
+        {
+          "name": "Monsters, Inc.",
+          "points": 29,
+          "aliases": [
+            "Monsters Inc",
+            "Monsters Incorporated"
+          ]
+        },
+        {
+          "name": "The Incredibles",
+          "points": 33,
+          "aliases": [
+            "Incredibles"
+          ]
+        },
+        {
+          "name": "Up",
+          "points": 38,
+          "aliases": []
+        },
+        {
+          "name": "Toy Story 2",
+          "points": 46,
+          "aliases": [
+            "Toy Story II"
+          ]
+        },
+        {
+          "name": "Toy Story 3",
+          "points": 53,
+          "aliases": [
+            "Toy Story III"
+          ]
+        },
+        {
+          "name": "WALL-E",
+          "points": 64,
+          "aliases": [
+            "Wall E",
+            "Walle"
+          ]
+        },
+        {
+          "name": "Ratatouille",
+          "points": 72,
+          "aliases": []
+        },
+        {
+          "name": "A Bug's Life",
+          "points": 100,
+          "aliases": [
+            "A Bugs Life",
+            "Bugs Life"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "one-letter-elements",
+      "topic": "SCIENCE",
+      "prompt": "Name a chemical element with a one-letter symbol.",
+      "scope": "Give the element's full name, not its symbol. Current official symbols only.",
+      "source": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "answers": [
+        {
+          "name": "Oxygen",
+          "points": 5,
+          "aliases": []
+        },
+        {
+          "name": "Hydrogen",
+          "points": 11,
+          "aliases": []
+        },
+        {
+          "name": "Carbon",
+          "points": 17,
+          "aliases": []
+        },
+        {
+          "name": "Nitrogen",
+          "points": 24,
+          "aliases": []
+        },
+        {
+          "name": "Sulfur",
+          "points": 35,
+          "aliases": [
+            "Sulphur"
+          ]
+        },
+        {
+          "name": "Phosphorus",
+          "points": 43,
+          "aliases": []
+        },
+        {
+          "name": "Potassium",
+          "points": 51,
+          "aliases": []
+        },
+        {
+          "name": "Uranium",
+          "points": 57,
+          "aliases": []
+        },
+        {
+          "name": "Boron",
+          "points": 63,
+          "aliases": []
+        },
+        {
+          "name": "Fluorine",
+          "points": 69,
+          "aliases": []
+        },
+        {
+          "name": "Iodine",
+          "points": 76,
+          "aliases": []
+        },
+        {
+          "name": "Vanadium",
+          "points": 86,
+          "aliases": []
+        },
+        {
+          "name": "Tungsten",
+          "points": 94,
+          "aliases": [
+            "Wolfram"
+          ]
+        },
+        {
+          "name": "Yttrium",
+          "points": 100,
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "decathlon",
+      "topic": "SPORT",
+      "prompt": "Name an event in the men's outdoor decathlon.",
+      "scope": "Give the event, including its distance where needed. Standard modern ten-event decathlon.",
+      "source": "https://worldathletics.org/disciplines/combined-events/decathlon",
+      "answers": [
+        {
+          "name": "100 metres",
+          "points": 9,
+          "aliases": [
+            "100m",
+            "100 meters",
+            "100 metre sprint",
+            "100 meter sprint"
+          ]
+        },
+        {
+          "name": "Long jump",
+          "points": 17,
+          "aliases": []
+        },
+        {
+          "name": "High jump",
+          "points": 26,
+          "aliases": []
+        },
+        {
+          "name": "Shot put",
+          "points": 36,
+          "aliases": [
+            "Shotput"
+          ]
+        },
+        {
+          "name": "Javelin throw",
+          "points": 45,
+          "aliases": [
+            "Javelin"
+          ]
+        },
+        {
+          "name": "Discus throw",
+          "points": 56,
+          "aliases": [
+            "Discus"
+          ]
+        },
+        {
+          "name": "Pole vault",
+          "points": 65,
+          "aliases": []
+        },
+        {
+          "name": "400 metres",
+          "points": 76,
+          "aliases": [
+            "400m",
+            "400 meters"
+          ]
+        },
+        {
+          "name": "110 metres hurdles",
+          "points": 89,
+          "aliases": [
+            "110m hurdles",
+            "110 meter hurdles",
+            "110 metre hurdles",
+            "110 meters hurdles",
+            "110 hurdles"
+          ]
+        },
+        {
+          "name": "1500 metres",
+          "points": 100,
+          "aliases": [
+            "1500m",
+            "1500 meters",
+            "1,500 metres",
+            "1.5km",
+            "1.5 km",
+            "1.5 kilometres",
+            "1.5 kilometers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "australian-states",
+      "topic": "AUSTRALIA",
+      "prompt": "Name an Australian state or one of the two main mainland territories.",
+      "scope": "The six states, the Australian Capital Territory and the Northern Territory. No external territories.",
+      "source": "https://en.wikipedia.org/wiki/States_and_territories_of_Australia",
+      "answers": [
+        {
+          "name": "New South Wales",
+          "points": 6,
+          "aliases": [
+            "NSW"
+          ]
+        },
+        {
+          "name": "Queensland",
+          "points": 13,
+          "aliases": [
+            "QLD"
+          ]
+        },
+        {
+          "name": "Victoria",
+          "points": 25,
+          "aliases": [
+            "VIC"
+          ]
+        },
+        {
+          "name": "Western Australia",
+          "points": 35,
+          "aliases": [
+            "WA"
+          ]
+        },
+        {
+          "name": "Tasmania",
+          "points": 46,
+          "aliases": [
+            "TAS"
+          ]
+        },
+        {
+          "name": "South Australia",
+          "points": 57,
+          "aliases": [
+            "SA"
+          ]
+        },
+        {
+          "name": "Northern Territory",
+          "points": 73,
+          "aliases": [
+            "NT"
+          ]
+        },
+        {
+          "name": "Australian Capital Territory",
+          "points": 100,
+          "aliases": [
+            "ACT"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "germany-neighbours",
+      "topic": "WORLD",
+      "prompt": "Name a country that shares a land border with Germany.",
+      "scope": "Today's nine neighbouring sovereign countries.",
+      "source": "https://en.wikipedia.org/wiki/Geography_of_Germany",
+      "answers": [
+        {
+          "name": "France",
+          "points": 8,
+          "aliases": []
+        },
+        {
+          "name": "Poland",
+          "points": 16,
+          "aliases": []
+        },
+        {
+          "name": "Austria",
+          "points": 25,
+          "aliases": []
+        },
+        {
+          "name": "Netherlands",
+          "points": 31,
+          "aliases": [
+            "The Netherlands",
+            "Holland"
+          ]
+        },
+        {
+          "name": "Switzerland",
+          "points": 38,
+          "aliases": []
+        },
+        {
+          "name": "Belgium",
+          "points": 54,
+          "aliases": []
+        },
+        {
+          "name": "Denmark",
+          "points": 66,
+          "aliases": []
+        },
+        {
+          "name": "Czechia",
+          "points": 74,
+          "aliases": [
+            "Czech Republic",
+            "The Czech Republic"
+          ]
+        },
+        {
+          "name": "Luxembourg",
+          "points": 100,
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "best-picture-2010s",
+      "topic": "FILM",
+      "prompt": "Name a Best Picture Oscar winner for a film released in 2010–2019.",
+      "scope": "Film release years 2010 through 2019, not ceremony years. Best Picture winners only.",
+      "source": "https://www.oscars.org/oscars/awards-databases",
+      "answers": [
+        {
+          "name": "Parasite",
+          "points": 12,
+          "aliases": []
+        },
+        {
+          "name": "The King's Speech",
+          "points": 25,
+          "aliases": [
+            "Kings Speech",
+            "The Kings Speech"
+          ]
+        },
+        {
+          "name": "Argo",
+          "points": 31,
+          "aliases": []
+        },
+        {
+          "name": "12 Years a Slave",
+          "points": 38,
+          "aliases": [
+            "Twelve Years a Slave"
+          ]
+        },
+        {
+          "name": "Moonlight",
+          "points": 46,
+          "aliases": []
+        },
+        {
+          "name": "The Shape of Water",
+          "points": 55,
+          "aliases": [
+            "Shape of Water"
+          ]
+        },
+        {
+          "name": "Birdman",
+          "points": 65,
+          "aliases": [
+            "Birdman or The Unexpected Virtue of Ignorance"
+          ]
+        },
+        {
+          "name": "The Artist",
+          "points": 73,
+          "aliases": [
+            "Artist"
+          ]
+        },
+        {
+          "name": "Spotlight",
+          "points": 91,
+          "aliases": []
+        },
+        {
+          "name": "Green Book",
+          "points": 100,
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "si-base-units",
+      "topic": "SCIENCE",
+      "prompt": "Name an SI base unit.",
+      "scope": "The seven base units. Give a unit name, not a symbol or derived unit.",
+      "source": "https://www.bipm.org/en/measurement-units/si-base-units",
+      "answers": [
+        {
+          "name": "Second",
+          "points": 9,
+          "aliases": [
+            "Seconds"
+          ]
+        },
+        {
+          "name": "Metre",
+          "points": 17,
+          "aliases": [
+            "Meter",
+            "Metres",
+            "Meters"
+          ]
+        },
+        {
+          "name": "Kilogram",
+          "points": 35,
+          "aliases": [
+            "Kilograms"
+          ]
+        },
+        {
+          "name": "Ampere",
+          "points": 46,
+          "aliases": [
+            "Amperes",
+            "Amp",
+            "Amps"
+          ]
+        },
+        {
+          "name": "Kelvin",
+          "points": 56,
+          "aliases": [
+            "Kelvins"
+          ]
+        },
+        {
+          "name": "Mole",
+          "points": 74,
+          "aliases": [
+            "Moles"
+          ]
+        },
+        {
+          "name": "Candela",
+          "points": 100,
+          "aliases": [
+            "Candelas"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "card-ranks",
+      "topic": "EVERYDAY",
+      "prompt": "Name a rank in a standard 52-card deck.",
+      "scope": "The thirteen ranks: suits and jokers are not ranks.",
+      "source": "https://www.britannica.com/topic/playing-card",
+      "answers": [
+        {
+          "name": "Ace",
+          "points": 5,
+          "aliases": [
+            "A"
+          ]
+        },
+        {
+          "name": "King",
+          "points": 11,
+          "aliases": [
+            "K"
+          ]
+        },
+        {
+          "name": "Queen",
+          "points": 18,
+          "aliases": [
+            "Q"
+          ]
+        },
+        {
+          "name": "Jack",
+          "points": 25,
+          "aliases": [
+            "J",
+            "Knave"
+          ]
+        },
+        {
+          "name": "Ten",
+          "points": 31,
+          "aliases": [
+            "10"
+          ]
+        },
+        {
+          "name": "Two",
+          "points": 38,
+          "aliases": [
+            "2",
+            "Deuce"
+          ]
+        },
+        {
+          "name": "Three",
+          "points": 47,
+          "aliases": [
+            "3"
+          ]
+        },
+        {
+          "name": "Seven",
+          "points": 55,
+          "aliases": [
+            "7"
+          ]
+        },
+        {
+          "name": "Four",
+          "points": 64,
+          "aliases": [
+            "4"
+          ]
+        },
+        {
+          "name": "Five",
+          "points": 69,
+          "aliases": [
+            "5"
+          ]
+        },
+        {
+          "name": "Six",
+          "points": 76,
+          "aliases": [
+            "6"
+          ]
+        },
+        {
+          "name": "Eight",
+          "points": 91,
+          "aliases": [
+            "8"
+          ]
+        },
+        {
+          "name": "Nine",
+          "points": 100,
+          "aliases": [
+            "9"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "planets",
+      "topic": "SPACE",
+      "prompt": "Name one of the Solar System's eight planets.",
+      "scope": "Current planet classification. Dwarf planets, including Pluto, do not count.",
+      "source": "https://science.nasa.gov/solar-system/planets/",
+      "answers": [
+        {
+          "name": "Earth",
+          "points": 6,
+          "aliases": []
+        },
+        {
+          "name": "Mars",
+          "points": 14,
+          "aliases": []
+        },
+        {
+          "name": "Jupiter",
+          "points": 25,
+          "aliases": []
+        },
+        {
+          "name": "Saturn",
+          "points": 36,
+          "aliases": []
+        },
+        {
+          "name": "Venus",
+          "points": 45,
+          "aliases": []
+        },
+        {
+          "name": "Mercury",
+          "points": 56,
+          "aliases": []
+        },
+        {
+          "name": "Uranus",
+          "points": 74,
+          "aliases": []
+        },
+        {
+          "name": "Neptune",
+          "points": 100,
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "south-america",
+      "topic": "WORLD",
+      "prompt": "Name a sovereign country in South America.",
+      "scope": "The twelve sovereign countries. Territories and dependencies do not count.",
+      "source": "https://www.britannica.com/place/South-America",
+      "answers": [
+        {
+          "name": "Brazil",
+          "points": 5,
+          "aliases": []
+        },
+        {
+          "name": "Argentina",
+          "points": 13,
+          "aliases": []
+        },
+        {
+          "name": "Chile",
+          "points": 24,
+          "aliases": []
+        },
+        {
+          "name": "Peru",
+          "points": 31,
+          "aliases": []
+        },
+        {
+          "name": "Colombia",
+          "points": 38,
+          "aliases": []
+        },
+        {
+          "name": "Ecuador",
+          "points": 45,
+          "aliases": []
+        },
+        {
+          "name": "Uruguay",
+          "points": 51,
+          "aliases": []
+        },
+        {
+          "name": "Venezuela",
+          "points": 57,
+          "aliases": []
+        },
+        {
+          "name": "Bolivia",
+          "points": 66,
+          "aliases": []
+        },
+        {
+          "name": "Paraguay",
+          "points": 75,
+          "aliases": []
+        },
+        {
+          "name": "Guyana",
+          "points": 89,
+          "aliases": []
+        },
+        {
+          "name": "Suriname",
+          "points": 100,
+          "aliases": [
+            "Surinam"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "harry-potter",
+      "topic": "BOOKS",
+      "prompt": "Name one of the seven original Harry Potter novels.",
+      "scope": "J. K. Rowling's original seven novels. Give the book title; stage plays, screenplays and companion books do not count.",
+      "source": "https://www.harrypotter.com/discover/books",
+      "answers": [
+        {
+          "name": "Harry Potter and the Philosopher's Stone",
+          "points": 11,
+          "aliases": [
+            "Philosophers Stone",
+            "The Philosopher's Stone",
+            "Harry Potter and the Sorcerer's Stone",
+            "Sorcerers Stone",
+            "The Sorcerer's Stone"
+          ]
+        },
+        {
+          "name": "Harry Potter and the Chamber of Secrets",
+          "points": 26,
+          "aliases": [
+            "Chamber of Secrets",
+            "The Chamber of Secrets"
+          ]
+        },
+        {
+          "name": "Harry Potter and the Prisoner of Azkaban",
+          "points": 37,
+          "aliases": [
+            "Prisoner of Azkaban",
+            "The Prisoner of Azkaban"
+          ]
+        },
+        {
+          "name": "Harry Potter and the Goblet of Fire",
+          "points": 46,
+          "aliases": [
+            "Goblet of Fire",
+            "The Goblet of Fire"
+          ]
+        },
+        {
+          "name": "Harry Potter and the Deathly Hallows",
+          "points": 57,
+          "aliases": [
+            "Deathly Hallows",
+            "The Deathly Hallows"
+          ]
+        },
+        {
+          "name": "Harry Potter and the Order of the Phoenix",
+          "points": 75,
+          "aliases": [
+            "Order of the Phoenix",
+            "The Order of the Phoenix"
+          ]
+        },
+        {
+          "name": "Harry Potter and the Half-Blood Prince",
+          "points": 100,
+          "aliases": [
+            "Half Blood Prince",
+            "The Half Blood Prince"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parts-of-speech",
+      "topic": "LANGUAGE",
+      "prompt": "Name one of the traditional eight English parts of speech.",
+      "scope": "Use the traditional eight-part classification. Determiners/articles are not a separate ninth category here.",
+      "source": "https://www.britannica.com/topic/part-of-speech",
+      "answers": [
+        {
+          "name": "Noun",
+          "points": 7,
+          "aliases": [
+            "Nouns"
+          ]
+        },
+        {
+          "name": "Verb",
+          "points": 16,
+          "aliases": [
+            "Verbs"
+          ]
+        },
+        {
+          "name": "Adjective",
+          "points": 26,
+          "aliases": [
+            "Adjectives"
+          ]
+        },
+        {
+          "name": "Adverb",
+          "points": 36,
+          "aliases": [
+            "Adverbs"
+          ]
+        },
+        {
+          "name": "Pronoun",
+          "points": 47,
+          "aliases": [
+            "Pronouns"
+          ]
+        },
+        {
+          "name": "Preposition",
+          "points": 56,
+          "aliases": [
+            "Prepositions"
+          ]
+        },
+        {
+          "name": "Conjunction",
+          "points": 74,
+          "aliases": [
+            "Conjunctions"
+          ]
+        },
+        {
+          "name": "Interjection",
+          "points": 100,
+          "aliases": [
+            "Interjections"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chess-pieces",
+      "topic": "GAMES",
+      "prompt": "Name a type of piece in standard chess.",
+      "scope": "The six types, including pawns. Variant pieces and individual square names do not count.",
+      "source": "https://www.fide.com/FIDE/handbook/LawsOfChess.pdf",
+      "answers": [
+        {
+          "name": "Queen",
+          "points": 9,
+          "aliases": [
+            "Queens"
+          ]
+        },
+        {
+          "name": "King",
+          "points": 17,
+          "aliases": [
+            "Kings"
+          ]
+        },
+        {
+          "name": "Pawn",
+          "points": 36,
+          "aliases": [
+            "Pawns"
+          ]
+        },
+        {
+          "name": "Knight",
+          "points": 56,
+          "aliases": [
+            "Knights",
+            "Horse"
+          ]
+        },
+        {
+          "name": "Rook",
+          "points": 76,
+          "aliases": [
+            "Rooks",
+            "Castle"
+          ]
+        },
+        {
+          "name": "Bishop",
+          "points": 100,
+          "aliases": [
+            "Bishops"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zodiac",
+      "topic": "EVERYDAY",
+      "prompt": "Name one of the twelve Western zodiac signs.",
+      "scope": "The traditional twelve astrological signs. Use their usual names, not calendar months or other constellations.",
+      "source": "https://www.britannica.com/topic/zodiac",
+      "answers": [
+        {
+          "name": "Leo",
+          "points": 8,
+          "aliases": []
+        },
+        {
+          "name": "Aries",
+          "points": 16,
+          "aliases": []
+        },
+        {
+          "name": "Gemini",
+          "points": 24,
+          "aliases": []
+        },
+        {
+          "name": "Cancer",
+          "points": 31,
+          "aliases": []
+        },
+        {
+          "name": "Taurus",
+          "points": 38,
+          "aliases": []
+        },
+        {
+          "name": "Virgo",
+          "points": 45,
+          "aliases": []
+        },
+        {
+          "name": "Libra",
+          "points": 51,
+          "aliases": []
+        },
+        {
+          "name": "Scorpio",
+          "points": 57,
+          "aliases": [
+            "Scorpius"
+          ]
+        },
+        {
+          "name": "Sagittarius",
+          "points": 65,
+          "aliases": []
+        },
+        {
+          "name": "Capricorn",
+          "points": 74,
+          "aliases": [
+            "Capricornus"
+          ]
+        },
+        {
+          "name": "Aquarius",
+          "points": 91,
+          "aliases": []
+        },
+        {
+          "name": "Pisces",
+          "points": 100,
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "hg-nordic",
+      "topic": "WORLD",
+      "prompt": "Name a Nordic country.",
+      "scope": "The five sovereign countries; territories excluded.",
+      "source": "https://en.wikipedia.org/wiki/Nordic_countries",
+      "answers": [
+        {
+          "name": "Sweden",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Norway",
+          "aliases": [],
+          "points": 26
+        },
+        {
+          "name": "Denmark",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "Finland",
+          "aliases": [],
+          "points": 74
+        },
+        {
+          "name": "Iceland",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-baltic",
+      "topic": "WORLD",
+      "prompt": "Name one of the Baltic states.",
+      "scope": "The three sovereign states in this regional grouping.",
+      "source": "https://en.wikipedia.org/wiki/Baltic_states",
+      "answers": [
+        {
+          "name": "Estonia",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Latvia",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "Lithuania",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-g7",
+      "topic": "WORLD",
+      "prompt": "Name a G7 member country.",
+      "scope": "Seven national members as of 2025; the EU is not a country.",
+      "source": "https://en.wikipedia.org/wiki/G7",
+      "answers": [
+        {
+          "name": "United States",
+          "aliases": [
+            "USA",
+            "US",
+            "United States of America"
+          ],
+          "points": 6
+        },
+        {
+          "name": "United Kingdom",
+          "aliases": [
+            "UK",
+            "Britain"
+          ],
+          "points": 19
+        },
+        {
+          "name": "Japan",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Germany",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "France",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Italy",
+          "aliases": [],
+          "points": 83
+        },
+        {
+          "name": "Canada",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-ireland",
+      "topic": "WORLD",
+      "prompt": "Name a traditional province of Ireland.",
+      "scope": "The four provinces of the whole island.",
+      "source": "https://en.wikipedia.org/wiki/Provinces_of_Ireland",
+      "answers": [
+        {
+          "name": "Leinster",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Munster",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Ulster",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Connacht",
+          "aliases": [
+            "Connaught"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-uk",
+      "topic": "WORLD",
+      "prompt": "Name a constituent country of the United Kingdom.",
+      "scope": "Four constituent countries, not crown dependencies.",
+      "source": "https://en.wikipedia.org/wiki/Countries_of_the_United_Kingdom",
+      "answers": [
+        {
+          "name": "England",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Scotland",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Wales",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Northern Ireland",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-benelux",
+      "topic": "WORLD",
+      "prompt": "Name a Benelux country.",
+      "scope": "The three members.",
+      "source": "https://en.wikipedia.org/wiki/Benelux",
+      "answers": [
+        {
+          "name": "Netherlands",
+          "aliases": [
+            "Holland"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Belgium",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "Luxembourg",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-canada",
+      "topic": "WORLD",
+      "prompt": "Name a Canadian province.",
+      "scope": "Ten provinces; territories are excluded.",
+      "source": "https://en.wikipedia.org/wiki/Provinces_and_territories_of_Canada",
+      "answers": [
+        {
+          "name": "Ontario",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Quebec",
+          "aliases": [
+            "Québec"
+          ],
+          "points": 14
+        },
+        {
+          "name": "British Columbia",
+          "aliases": [
+            "BC"
+          ],
+          "points": 23
+        },
+        {
+          "name": "Alberta",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Manitoba",
+          "aliases": [],
+          "points": 44
+        },
+        {
+          "name": "Nova Scotia",
+          "aliases": [],
+          "points": 55
+        },
+        {
+          "name": "New Brunswick",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Saskatchewan",
+          "aliases": [],
+          "points": 77
+        },
+        {
+          "name": "Newfoundland and Labrador",
+          "aliases": [
+            "Newfoundland"
+          ],
+          "points": 88
+        },
+        {
+          "name": "Prince Edward Island",
+          "aliases": [
+            "PEI"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-pacific",
+      "topic": "WORLD",
+      "prompt": "Name a US state in the Census Pacific division.",
+      "scope": "Five states, including non-contiguous states; not territories.",
+      "source": "https://en.wikipedia.org/wiki/Pacific_states",
+      "answers": [
+        {
+          "name": "California",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Hawaii",
+          "aliases": [],
+          "points": 26
+        },
+        {
+          "name": "Alaska",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "Washington",
+          "aliases": [],
+          "points": 74
+        },
+        {
+          "name": "Oregon",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-lakes",
+      "topic": "WORLD",
+      "prompt": "Name a Great Lake of North America.",
+      "scope": "The five Great Lakes; “Lake” is optional.",
+      "source": "https://en.wikipedia.org/wiki/Great_Lakes",
+      "answers": [
+        {
+          "name": "Superior",
+          "aliases": [
+            "Lake Superior"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Michigan",
+          "aliases": [
+            "Lake Michigan"
+          ],
+          "points": 26
+        },
+        {
+          "name": "Ontario",
+          "aliases": [
+            "Lake Ontario"
+          ],
+          "points": 49
+        },
+        {
+          "name": "Erie",
+          "aliases": [
+            "Lake Erie"
+          ],
+          "points": 74
+        },
+        {
+          "name": "Huron",
+          "aliases": [
+            "Lake Huron"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-continents",
+      "topic": "WORLD",
+      "prompt": "Name a continent in the seven-continent model.",
+      "scope": "The common seven-continent model; a broad regional synonym is accepted for the smallest continent.",
+      "source": "https://en.wikipedia.org/wiki/Continent",
+      "answers": [
+        {
+          "name": "Asia",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Africa",
+          "aliases": [],
+          "points": 19
+        },
+        {
+          "name": "Europe",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "North America",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "South America",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Australia",
+          "aliases": [
+            "Oceania"
+          ],
+          "points": 83
+        },
+        {
+          "name": "Antarctica",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-france",
+      "topic": "WORLD",
+      "prompt": "Name a country bordering metropolitan France by land.",
+      "scope": "European France only, including small sovereign neighbours; overseas borders excluded.",
+      "source": "https://en.wikipedia.org/wiki/Borders_of_France",
+      "answers": [
+        {
+          "name": "Spain",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Germany",
+          "aliases": [],
+          "points": 17
+        },
+        {
+          "name": "Italy",
+          "aliases": [],
+          "points": 29
+        },
+        {
+          "name": "Belgium",
+          "aliases": [],
+          "points": 42
+        },
+        {
+          "name": "Switzerland",
+          "aliases": [],
+          "points": 56
+        },
+        {
+          "name": "Luxembourg",
+          "aliases": [],
+          "points": 70
+        },
+        {
+          "name": "Monaco",
+          "aliases": [],
+          "points": 85
+        },
+        {
+          "name": "Andorra",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-summer-hosts",
+      "topic": "WORLD",
+      "prompt": "Name a Summer Olympic host city from 2000 to 2024.",
+      "scope": "Seven editions. Tokyo 2020 was held in 2021.",
+      "source": "https://olympics.com/en/olympic-games/olympic-games-hosts",
+      "answers": [
+        {
+          "name": "Sydney",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "London",
+          "aliases": [],
+          "points": 19
+        },
+        {
+          "name": "Paris",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Beijing",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "Tokyo",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Athens",
+          "aliases": [],
+          "points": 83
+        },
+        {
+          "name": "Rio de Janeiro",
+          "aliases": [
+            "Rio"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-iberia",
+      "topic": "WORLD",
+      "prompt": "Name a sovereign country on the Iberian Peninsula.",
+      "scope": "Include the Pyrenean microstate; Gibraltar is not sovereign.",
+      "source": "https://en.wikipedia.org/wiki/Iberian_Peninsula",
+      "answers": [
+        {
+          "name": "Spain",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Portugal",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "Andorra",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-first-elements",
+      "topic": "SCIENCE",
+      "prompt": "Name an element with atomic number 1–10.",
+      "scope": "Give the element name, not its symbol.",
+      "source": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "answers": [
+        {
+          "name": "Hydrogen",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Helium",
+          "aliases": [],
+          "points": 14
+        },
+        {
+          "name": "Oxygen",
+          "aliases": [],
+          "points": 23
+        },
+        {
+          "name": "Carbon",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Nitrogen",
+          "aliases": [],
+          "points": 44
+        },
+        {
+          "name": "Neon",
+          "aliases": [],
+          "points": 55
+        },
+        {
+          "name": "Lithium",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Boron",
+          "aliases": [],
+          "points": 77
+        },
+        {
+          "name": "Fluorine",
+          "aliases": [],
+          "points": 88
+        },
+        {
+          "name": "Beryllium",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-next-elements",
+      "topic": "SCIENCE",
+      "prompt": "Name an element with atomic number 11–20.",
+      "scope": "Give the English element name.",
+      "source": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "answers": [
+        {
+          "name": "Sodium",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Calcium",
+          "aliases": [],
+          "points": 14
+        },
+        {
+          "name": "Aluminium",
+          "aliases": [
+            "Aluminum"
+          ],
+          "points": 23
+        },
+        {
+          "name": "Magnesium",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Chlorine",
+          "aliases": [],
+          "points": 44
+        },
+        {
+          "name": "Silicon",
+          "aliases": [],
+          "points": 55
+        },
+        {
+          "name": "Potassium",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Sulfur",
+          "aliases": [
+            "Sulphur"
+          ],
+          "points": 77
+        },
+        {
+          "name": "Phosphorus",
+          "aliases": [],
+          "points": 88
+        },
+        {
+          "name": "Argon",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-noble-gases",
+      "topic": "SCIENCE",
+      "prompt": "Name a group 18 element.",
+      "scope": "Seven named elements, including element 118.",
+      "source": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "answers": [
+        {
+          "name": "Helium",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Neon",
+          "aliases": [],
+          "points": 19
+        },
+        {
+          "name": "Argon",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Radon",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "Krypton",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Xenon",
+          "aliases": [],
+          "points": 83
+        },
+        {
+          "name": "Oganesson",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-halogens",
+      "topic": "SCIENCE",
+      "prompt": "Name a group 17 element.",
+      "scope": "Six named halogens, including element 117.",
+      "source": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "answers": [
+        {
+          "name": "Chlorine",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Fluorine",
+          "aliases": [],
+          "points": 21
+        },
+        {
+          "name": "Iodine",
+          "aliases": [],
+          "points": 40
+        },
+        {
+          "name": "Bromine",
+          "aliases": [],
+          "points": 59
+        },
+        {
+          "name": "Astatine",
+          "aliases": [],
+          "points": 79
+        },
+        {
+          "name": "Tennessine",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-alkali",
+      "topic": "SCIENCE",
+      "prompt": "Name an alkali metal.",
+      "scope": "Group 1 metals; hydrogen is excluded.",
+      "source": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "answers": [
+        {
+          "name": "Sodium",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Lithium",
+          "aliases": [],
+          "points": 21
+        },
+        {
+          "name": "Potassium",
+          "aliases": [],
+          "points": 40
+        },
+        {
+          "name": "Caesium",
+          "aliases": [
+            "Cesium"
+          ],
+          "points": 59
+        },
+        {
+          "name": "Rubidium",
+          "aliases": [],
+          "points": 79
+        },
+        {
+          "name": "Francium",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-alkaline-earth",
+      "topic": "SCIENCE",
+      "prompt": "Name an alkaline-earth metal.",
+      "scope": "The six group 2 elements.",
+      "source": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "answers": [
+        {
+          "name": "Calcium",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Magnesium",
+          "aliases": [],
+          "points": 21
+        },
+        {
+          "name": "Barium",
+          "aliases": [],
+          "points": 40
+        },
+        {
+          "name": "Beryllium",
+          "aliases": [],
+          "points": 59
+        },
+        {
+          "name": "Strontium",
+          "aliases": [],
+          "points": 79
+        },
+        {
+          "name": "Radium",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-big-prefixes",
+      "topic": "SCIENCE",
+      "prompt": "Name an SI prefix for a power from 10³ to 10³⁰.",
+      "scope": "Ten positive-exponent prefixes at intervals of three powers.",
+      "source": "https://www.bipm.org/en/measurement-units/si-prefixes",
+      "answers": [
+        {
+          "name": "Kilo",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Mega",
+          "aliases": [],
+          "points": 14
+        },
+        {
+          "name": "Giga",
+          "aliases": [],
+          "points": 23
+        },
+        {
+          "name": "Tera",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Peta",
+          "aliases": [],
+          "points": 44
+        },
+        {
+          "name": "Exa",
+          "aliases": [],
+          "points": 55
+        },
+        {
+          "name": "Zetta",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Yotta",
+          "aliases": [],
+          "points": 77
+        },
+        {
+          "name": "Ronna",
+          "aliases": [],
+          "points": 88
+        },
+        {
+          "name": "Quetta",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-small-prefixes",
+      "topic": "SCIENCE",
+      "prompt": "Name an SI prefix from 10⁻³ down to 10⁻³⁰.",
+      "scope": "Ten negative-exponent prefixes at intervals of three powers.",
+      "source": "https://www.bipm.org/en/measurement-units/si-prefixes",
+      "answers": [
+        {
+          "name": "Milli",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Micro",
+          "aliases": [],
+          "points": 14
+        },
+        {
+          "name": "Nano",
+          "aliases": [],
+          "points": 23
+        },
+        {
+          "name": "Pico",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Femto",
+          "aliases": [],
+          "points": 44
+        },
+        {
+          "name": "Atto",
+          "aliases": [],
+          "points": 55
+        },
+        {
+          "name": "Zepto",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Yocto",
+          "aliases": [],
+          "points": 77
+        },
+        {
+          "name": "Ronto",
+          "aliases": [],
+          "points": 88
+        },
+        {
+          "name": "Quecto",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-rainbow",
+      "topic": "SCIENCE",
+      "prompt": "Name a traditional rainbow colour.",
+      "scope": "The seven-colour ROYGBIV convention.",
+      "source": "https://en.wikipedia.org/wiki/Rainbow",
+      "answers": [
+        {
+          "name": "Red",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Blue",
+          "aliases": [],
+          "points": 19
+        },
+        {
+          "name": "Green",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Yellow",
+          "aliases": [],
+          "points": 49
+        },
+        {
+          "name": "Orange",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Violet",
+          "aliases": [
+            "Purple"
+          ],
+          "points": 83
+        },
+        {
+          "name": "Indigo",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-spectrum",
+      "topic": "SCIENCE",
+      "prompt": "Name a major band of the electromagnetic spectrum.",
+      "scope": "Seven broad bands, not individual visible colours.",
+      "source": "https://en.wikipedia.org/wiki/Electromagnetic_spectrum",
+      "answers": [
+        {
+          "name": "Radio",
+          "aliases": [
+            "Radio waves"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Visible",
+          "aliases": [
+            "Visible light"
+          ],
+          "points": 19
+        },
+        {
+          "name": "Infrared",
+          "aliases": [
+            "IR"
+          ],
+          "points": 33
+        },
+        {
+          "name": "Ultraviolet",
+          "aliases": [
+            "UV"
+          ],
+          "points": 49
+        },
+        {
+          "name": "X-ray",
+          "aliases": [
+            "X-rays",
+            "X ray"
+          ],
+          "points": 66
+        },
+        {
+          "name": "Microwave",
+          "aliases": [
+            "Microwaves"
+          ],
+          "points": 83
+        },
+        {
+          "name": "Gamma ray",
+          "aliases": [
+            "Gamma rays",
+            "Gamma"
+          ],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-blood",
+      "topic": "SCIENCE",
+      "prompt": "Name an ABO blood group.",
+      "scope": "Four letter groups, ignoring positive/negative Rh factors.",
+      "source": "https://en.wikipedia.org/wiki/ABO_blood_group_system",
+      "answers": [
+        {
+          "name": "O",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "A",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "B",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "AB",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-dna",
+      "topic": "SCIENCE",
+      "prompt": "Name a standard DNA base.",
+      "scope": "The four full base names, not letters.",
+      "source": "https://en.wikipedia.org/wiki/DNA",
+      "answers": [
+        {
+          "name": "Adenine",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Guanine",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Cytosine",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Thymine",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-rna",
+      "topic": "SCIENCE",
+      "prompt": "Name a standard RNA base.",
+      "scope": "The four full base names; RNA, not DNA.",
+      "source": "https://en.wikipedia.org/wiki/RNA",
+      "answers": [
+        {
+          "name": "Adenine",
+          "aliases": [],
+          "points": 6
+        },
+        {
+          "name": "Guanine",
+          "aliases": [],
+          "points": 33
+        },
+        {
+          "name": "Cytosine",
+          "aliases": [],
+          "points": 66
+        },
+        {
+          "name": "Uracil",
+          "aliases": [],
+          "points": 100
+        }
+      ]
+    },
+    {
+      "id": "hg-vitamins",
+      "topic": "SCIENCE",
+      "prompt": "Name a fat-soluble vitamin.",
+      "scope": "Four standard vitamin letters; water-soluble vitamins excluded.",
+      "source": "https://en.wikipedia.org/wiki/Vitamin",
+      "answers": [
+        {
+          "name": "Vitamin D",
+          "aliases": [
+            "D"
+          ],
+          "points": 6
+        },
+        {
+          "name": "Vitamin A",
+          "aliases": [
+            "A"
+          ],
+          "points": 33
+        },
+        {
+          "name": "Vitamin E",
+          "aliases": [
+            "E"
+          ],
+          "points": 66
+        },
+        {
+          "name": "Vitamin K",
+          "aliases": [
+            "K"
+          ],
+          "points": 100
+        }
+      ]
+    }
+  ]
+}
