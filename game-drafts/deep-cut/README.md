@@ -8,16 +8,16 @@ Open `index.html` directly in a browser. It contains all CSS, JavaScript, the Sy
 - Five questions per replayable Daily preview, 30 seconds per revealed question.
 - Type in one answer box. Enter or Submit accepts only a listed answer. Unlisted guesses show “Not in the answer list. Try again.” and leave the original timer running. Clear, unambiguous typos correct to the listed answer.
 - A listed saved draft locks automatically at the deadline; otherwise the question ends with no accepted answer and zero points. Refresh, mode changes and Help do not pause/reset the clock.
-- Higher is better: designer-assigned 20/40/60/80/100 answer ratings, zero only when time expires without a listed answer. Final score is the five-question average out of 100.
+- Higher is better: individually assigned integer answer ratings from 1 to 100, zero only when time expires without a listed answer. Final score is the five-question average out of 100.
 - New question scores count up over 950 ms on reveal. Reduced-motion users see the final score immediately. Saves lock before animation; Next stays available, and refresh does not replay old reveals.
-- Visual score meter fills with the count-up; five Daily tiles retain each result; all ten categories have original embedded pixel art. 80/100-point answers show a Hidden Gem/Crown Jewel stamp, with brief pixel sparkles at 100. Effects never delay controls or replay on hydration.
-- Score labels: 0 Time’s Up, 20 Familiar, 40 Nice Find, 60 Offbeat, 80 Hidden Gem, 100 Crown Jewel. Labels describe editorial ratings, not measured popularity.
+- Visual score meter fills with the count-up; five Daily tiles retain each result; all ten categories have original embedded pixel art. 60–79 / 80–100-point answers show a Hidden Gem/Crown Jewel stamp, with brief pixel sparkles at 100. Effects never delay controls or replay on hydration.
+- Score bands: 0 Time’s Up, 1–19 Familiar, 20–39 Nice Find, 40–59 Offbeat, 60–79 Hidden Gem, 80–100 Crown Jewel. Every answer within a question has a distinct editorial rating; e.g. Azerbaijan 95 and Antigua and Barbuda 100 are both Crown Jewels. Labels describe editorial ratings, not measured popularity.
 - No survey, panel, measured popularity or percentile claims. These are provisional editorial ratings.
 - Menu → choose set 1/2/3 → New Daily test makes repeat testing quick.
 - Unlimited shuffles 15 prototype prompts / 146 accepted answers, with aliases and guarded typo matching. Topic changes apply next question.
 - Copy feedback after any reveal to report missing answers or ratings you dislike.
 
-The display name changed from Deep Cut; internal paths/model globals and the existing save key deliberately stay stable for compatibility. Local-only state uses `br-prototypes:deep-cut:v2`. Saves and stats do not touch official Break Room records. At most 20 completed Daily test runs are retained. Old v1 test saves remain untouched. Questions, the input, retry feedback, deadlines and locked results survive refresh where the browser permits storage. Denied storage keeps the test playable in memory.
+The display name changed from Deep Cut; internal paths/model globals and the existing save key deliberately stay stable for compatibility. Local-only state uses `br-prototypes:deep-cut:v2`. Saves and stats do not touch official Break Room records. At most 20 completed Daily test runs are retained. Old v1 test saves remain untouched. Existing v2 snapshots, including active questions and completed scores, retain their captured ratings. Replay Daily / New Daily test and newly drawn Unlimited questions use the updated ratings. Questions, the input, retry feedback, deadlines and locked results survive refresh where the browser permits storage. Denied storage keeps the test playable in memory.
 
 ## Scope
 Uses the actual centred Stake shell styles, left drawer, header Streak/Best/Played, Daily/Unlimited controls, Sydney reset rail, ?-only help and stats dialog. Everything is embedded for portability. Header account integration is replaced by a clear prototype badge. No official leaderboard, cloud/Friends, registry, homepage card, purchases, telemetry or live AI judge.
