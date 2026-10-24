@@ -362,7 +362,7 @@ function art(i,a){if(i===0)return '<svg viewBox="0 0 100 50" preserveAspectRatio
 function name(i){return i===0?'Blue trolley':(board().pieces[i].axis==='h'?'Desk ':'Cabinet ')+letters[i];}
 function direction(a,d){return a.axis==='h'?(d<0?'left':'right'):(d<0?'up':'down');}
 function placement(a,p){return{left:(a.axis==='h'?p:a.lane)*100/6,top:(a.axis==='v'?p:a.lane)*100/6,width:(a.axis==='h'?a.len:1)*100/6,height:(a.axis==='v'?a.len:1)*100/6};}
-function styleAt(a,p){const q=placement(a,p);return 'left:calc('+q.left+'% + 2px);top:calc('+q.top+'% + 2px);width:calc('+q.width+'% - 4px);height:calc('+q.height+'% - 4px);';}
+function styleAt(a,p){const q=placement(a,p);return 'left:calc('+q.left+'% + 1px);top:calc('+q.top+'% + 1px);width:calc('+q.width+'% - 2px);height:calc('+q.height+'% - 2px);';}
 function controls(){const r=run(),b=board(),line=$('selected-piece'),buttons=$('slide-options');if(!line)return;buttons.replaceChildren();if(r.phase!=='play')return;
 line.textContent=selected<0?'Select a piece. Clear a path for the blue trolley.':name(selected)+' · '+(b.pieces[selected].axis==='h'?'slides left / right':'slides up / down');
 if(selected>=0){const options=SW.choices(b,r.pos,selected);if(!options.length)line.textContent+=' · blocked for now';for(const d of options){const a=b.pieces[selected],btn=document.createElement('button');btn.type='button';btn.dataset.delta=d;btn.textContent=(a.axis==='h'?(d<0?'←':'→'):(d<0?'↑':'↓'))+' '+Math.abs(d);btn.setAttribute('aria-label','Slide '+name(selected)+' '+direction(a,d)+' '+Math.abs(d)+' '+(Math.abs(d)===1?'space':'spaces'));btn.onclick=()=>commit(selected,d);buttons.append(btn);}}
