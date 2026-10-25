@@ -1,6 +1,6 @@
 ## Game naming — owner decision, 25 October 2026
 
-The owner explicitly likes and wants to retain **Laser**, **Clue Ladder** and **Seating Chart**. The other seven active display names (Time Drop, Shift Work, Hidden Gem, Stack Up, Pack, Lowball and Inner Clock) remain provisional while alternatives are evaluated. Do not rename any game until an alternative is selected. Future display-name changes must preserve internal routes, storage keys, saved snapshots, scoring and account/Friends compatibility unless separately requested.
+The owner explicitly likes and wants to retain **Laser**, **Clue Ladder**, **Seating Chart** and **Pack**. The other six active display names (Time Drop, Shift Work, Hidden Gem, Stack Up, Lowball and Inner Clock) remain provisional while alternatives are evaluated. Do not rename any game until an alternative is selected. Future display-name changes must preserve internal routes, storage keys, saved snapshots, scoring and account/Friends compatibility unless separately requested.
 
 ## Shift Work — full integration authorised, 25 October 2026
 
