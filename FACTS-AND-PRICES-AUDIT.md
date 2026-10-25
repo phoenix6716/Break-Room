@@ -2,7 +2,7 @@
 
 The no-repeat release adds 28 different products with 112 additional regional references and generated artwork. Authoritative product/model/pack/channel scopes, source URLs and 25 October check dates are in [content/lowball-additions.json](content/lowball-additions.json). This extends the pool to128 products /512 regional targets; it does not redate or alter the original400-reference audit. Run `node scripts/build-lowball-additions.cjs` to regenerate the appended rows, art mapping and overlay.
 
-References include advertised preorders, explicit 2024 Mac mini launch RRPs, retail offers and explicitly unavailable listings; these definitions appear before guessing. The imported Coleman tent references identify the marketplace/channel, and the Australian item price excludes the unusually large quoted postage. These are dated benchmarks, not universal market averages or live purchase recommendations. Recheck volatile references before a public launch. New references apply from26 October; existing snapshots and snapshotless legacy drafts keep their targets.
+References include advertised preorders, explicit 2024 Mac mini launch RRPs, retail offers and explicitly unavailable listings; these definitions appear before guessing. The imported Coleman tent references identify the marketplace/channel, and the Australian item price excludes the unusually large quoted postage. These are dated benchmarks, not universal market averages or live purchase recommendations. Recheck volatile references before a public launch. New references apply in Unlimited from 25 October and in the expanded Daily rotation from 26 October; existing snapshots and snapshotless legacy drafts keep their targets.
 
 # Facts and regional price audit
 

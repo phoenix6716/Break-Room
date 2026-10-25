@@ -14,6 +14,13 @@ const values={[key]:encode(run(.05)),[M.PREFIX+'2026-10-20']:encode({...good,day
 const nrDates=Array.from({length:80},(_,i)=>new Date(Date.UTC(2026,9,25+i)).toISOString().slice(0,10));
 for(let start=0;start+32<=nrDates.length;start++){const times=nrDates.slice(start,start+32).flatMap(d=>M.daily(d));assert.equal(new Set(times).size,160,'No individual Daily target repeats in a rolling month');}
 const nextDay='2026-10-26',nextTargets=M.daily(nextDay),nextRun={...good,day:nextDay,targets:nextTargets,picks:nextTargets.map(elapsed=>({elapsed,kind:'stop'}))};assert(M.valid(nextRun,nextDay));assert.equal(M.record(nextRun,nextDay).arcadeScore,100);assert(nextTargets.some(t=>t%100===50),'New targets require exact hundredth-second display');assert(!M.target(2025));
+const nextKey=M.PREFIX+nextDay,nextData={[nextKey]:encode(nextRun)};
+assert.deepEqual(C.clean('inner-clock',nextData),nextData,'Cloud cleaning retains exact 50ms snapshots');
+assert.deepEqual(C.merge('inner-clock',{},nextData),nextData,'Cloud restore retains exact targets');
+const nextStore={get length(){return 1},key:()=>nextKey,getItem:k=>k===nextKey?encode(nextRun):null,setItem(){throw Error('read only')}};
+const nextProfile=BREAK_ROOM_RECORDS.read(nextStore,nextDay).games.find(g=>g.id==='inner-clock');
+assert.equal(nextProfile.best,0);assert.equal(nextProfile.played,1);
+
 
 (async()=>{const db=new PGlite();try{await db.exec("create role anon;create role authenticated;create schema auth;create table auth.users(id uuid primary key);create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;grant usage on schema auth to anon,authenticated;grant execute on function auth.uid() to anon,authenticated;");await db.exec(fs.readFileSync('supabase/setup.sql','utf8'));await db.exec(fs.readFileSync('supabase/friends.sql','utf8'));const sql=async r=>(await db.query('select public._friend_score($1,$2,$3) s',['inner-clock',encode(r),day])).rows[0].s;assert.equal(await sql(good),100);assert.equal((await db.query('select public._friend_score($1,$2,$3) s',['inner-clock',encode(nextRun),nextDay])).rows[0].s,100);assert.equal((await db.query('select public._friend_inner_clock_score($1,$2) s',[encode({...nextRun,targets:[2025,...nextTargets.slice(1)]}),nextDay])).rows[0].s,null);
 await db.exec(fs.readFileSync('supabase/bouncer.sql','utf8'));for(let i=0;i<2;i++)await db.exec(fs.readFileSync('supabase/inner-clock.sql','utf8'));

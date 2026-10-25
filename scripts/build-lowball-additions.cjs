@@ -12,7 +12,7 @@ for(const row of data.items){
  for(const region of ['AU','US','UK','CA']){
   const evidence=row.evidence[region];assert(Number.isFinite(row.prices[region])&&row.prices[region]>0);
   assert.equal(evidence.price,row.prices[region]);assert.equal(evidence.checkedAt,data.checkedAt);
-  assert.equal(evidence.effectiveDay,data.effectiveDay);assert.match(evidence.source,/^https:\/\/[^\s]+$/);
+  assert.equal(evidence.effectiveDay,data.priceEffectiveDay);assert.match(evidence.source,/^https:\/\/[^\s]+$/);
   assert(evidence.detail.length>20&&evidence.detail.length<=1000);
  }
 }

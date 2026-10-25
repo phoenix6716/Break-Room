@@ -118,3 +118,10 @@ const oldSelect=select(frozenSelector,true),recovered=select(selector);
 for(let d=0;d<1000;d++)assert.deepEqual(Array.from(recovered(d)),Array.from(oldSelect(d)),'Snapshotless v1 item selection day '+d);
 assert.match(html,/PRICE_REFERENCES\.daily\(saved&&!PRICE_REFERENCES\.validItems\(saved.items\)\?legacyDailyItems\(\):pickDailyItems\(\),saved,todayKey\)/);
 console.log('PASS 1,000 legacy dates: snapshotless saves reconstruct the original 100-item selector.');
+
+const lowOutput=['games/lowball/engine/index.html','games/lowball/engine/reference-prices.js','games/lowball/engine/item-art.js'],lowFiles=new Map(lowOutput.map(p=>[p,read(p)]));
+vm.runInNewContext(read('scripts/build-lowball-additions.cjs'),{console,require:id=>{
+ if(id==='node:fs')return {readFileSync:p=>lowFiles.get(p)??read(p),writeFileSync:(p,t)=>lowFiles.set(p,t),existsSync:p=>fs.existsSync(p)};
+ if(id==='node:vm')return vm;if(id==='node:assert/strict')return assert;throw Error(id);
+}});
+for(const p of lowOutput)assert.equal(lowFiles.get(p),read(p),'Lowball authoring must be reproducible: '+p);

@@ -51,7 +51,7 @@ assert.equal(new Set(items.map(p=>p.name)).size,items.length,'Lowball unique pro
 for(const item of items)for(const region of ['AU','US','UK','CA'])assert(Number.isFinite(item.prices[region])&&item.prices[region]>0,item.name+' '+region);
 specs.push({id:'lowball',name:'Lowball',rounds:4,period:32,bankCount:items.length,pool:items,identity:p=>p.name,select:low});
 const clock=model('inner-clock');
-specs.push({id:'inner-clock',name:'Time Sense',rounds:5,period:39,bankCount:200,identity:p=>p,select:day=>clock.daily(day)});
+specs.push({id:'inner-clock',name:'Time Sense',rounds:5,period:39,bankCount:195,identity:p=>p,select:day=>clock.daily(day)});
 const sourceShelf=read('index.html').match(/<article\b[\s\S]*?<\/article>/g)||[];
 const shelfIds=sourceShelf.map(card=>card.match(/href="games\/([^/]+)\/index\.html"/)?.[1]).filter(Boolean);
 const order=['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','pack','lowball','inner-clock'];

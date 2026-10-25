@@ -40,3 +40,7 @@ This document supersedes older roster/name/content-coverage notes in CONTENT.md 
 Pack's historical cutover-eve holdout uses its legacy source order. Contrary to the older generic bank-reversal statement, this audit does **not** certify that reordering Pack's source array preserves the same future schedule. Keep the canonical source order and existing snapshots; deliberate pool/order changes still need compatibility review. The month of unique Dailies passes in the actual shipped order.
 
 Structural coverage does not reverify factual answers, current retail prices, human challenge or live account configuration. Existing dated price/reference evidence and captured snapshots retain their meanings. The only SQL change accepts valid 50ms target snapshots in the existing private Time Sense score helper; score formulas and access contracts are untouched.
+
+## Live database compatibility
+
+On 25 October 2026, the narrow `time_sense_exact_daily_targets` migration replaced only the private Time Sense score helper. Live verification returned100 for both legacy and new exact-target runs, rejected an invalid25ms target, retained revoked anonymous/authenticated helper access and the empty search path, and confirmed unchanged save/Friends API definitions and enabled save RLS. The security-advisor findings were unchanged. This records database readiness; the frontend's deployment is verified separately by the Pages workflow.

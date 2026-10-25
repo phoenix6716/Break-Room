@@ -2215,28 +2215,28 @@
       "detail": "IKEA LACK side table, white, 55 × 55 cm; one table, regular online price, no loyalty offer; displayed local price, shipping excluded",
       "source": "https://www.ikea.com/au/en/p/lack-side-table-white-10449909/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 16.99,
       "detail": "IKEA LACK side table, white, 55 × 55 cm; one table, regular online price, no loyalty offer; before checkout tax, shipping excluded",
       "source": "https://www.ikea.com/us/en/p/lack-side-table-white-30449908/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 10,
       "detail": "IKEA LACK side table, white, 55 × 55 cm; one table, regular online price, no loyalty offer; displayed local price, shipping excluded",
       "source": "https://www.ikea.com/gb/en/p/lack-side-table-white-30449908/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 18.99,
       "detail": "IKEA LACK side table, white, 55 × 55 cm; one table, regular online price, no loyalty offer; before checkout tax, shipping excluded",
       "source": "https://www.ikea.com/ca/en/p/lack-side-table-white-30449908/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "IKEA BILLY bookcase": {
@@ -2245,28 +2245,28 @@
       "detail": "IKEA BILLY bookcase, white, 80 × 28 × 202 cm; regular online price, not an IKEA Family in-store offer; displayed local price, shipping excluded",
       "source": "https://www.ikea.com/au/en/p/billy-bookcase-white-10616564/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 79,
       "detail": "IKEA BILLY bookcase, white, 80 × 28 × 202 cm; regular online price, not an IKEA Family in-store offer; before checkout tax, shipping excluded",
       "source": "https://www.ikea.com/us/en/p/billy-bookcase-white-20522046/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 55,
       "detail": "IKEA BILLY bookcase, white, 80 × 28 × 202 cm; regular online price, not an IKEA Family in-store offer; displayed local price, shipping excluded",
       "source": "https://www.ikea.com/gb/en/p/billy-bookcase-white-00263850/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 90,
       "detail": "IKEA BILLY bookcase, white, 80 × 28 × 202 cm; regular online price, not an IKEA Family in-store offer; before checkout tax, shipping excluded",
       "source": "https://www.ikea.com/ca/en/p/billy-bookcase-white-20522046/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "IKEA KALLAX shelf": {
@@ -2275,28 +2275,28 @@
       "detail": "IKEA KALLAX white 2 × 2 open-cube shelf, 77 × 77 cm; no doors or drawer inserts, regular online price; displayed local price, shipping excluded",
       "source": "https://www.ikea.com/au/en/p/kallax-shelving-unit-white-00616767/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 49.99,
       "detail": "IKEA KALLAX white 2 × 2 open-cube shelf, 77 × 77 cm; no doors or drawer inserts, regular online price; before checkout tax, shipping excluded",
       "source": "https://www.ikea.com/us/en/p/kallax-shelf-unit-white-20631639/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 29,
       "detail": "IKEA KALLAX white 2 × 2 open-cube shelf, 77 × 77 cm; no doors or drawer inserts, regular online price; displayed local price, shipping excluded",
       "source": "https://www.ikea.com/gb/en/p/kallax-shelving-unit-white-20275814/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 59.99,
       "detail": "IKEA KALLAX white 2 × 2 open-cube shelf, 77 × 77 cm; no doors or drawer inserts, regular online price; before checkout tax, shipping excluded",
       "source": "https://www.ikea.com/ca/en/p/kallax-shelf-unit-white-20631639/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "IKEA POÄNG armchair": {
@@ -2305,28 +2305,28 @@
       "detail": "IKEA POÄNG adult armchair, birch veneer frame and Knisa light beige cushion; one armchair, no footstool; displayed online price, not loyalty in-store offers; displayed local price, shipping excluded",
       "source": "https://www.ikea.com/au/en/p/poaeng-armchair-birch-veneer-knisa-light-beige-s19240788/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 149,
       "detail": "IKEA POÄNG adult armchair, birch veneer frame and Knisa light beige cushion; one armchair, no footstool; displayed online price, not loyalty in-store offers; before checkout tax, shipping excluded",
       "source": "https://www.ikea.com/us/en/p/poaeng-armchair-birch-veneer-knisa-light-beige-s59305928/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 69,
       "detail": "IKEA POÄNG adult armchair, birch veneer frame and Knisa light beige cushion; one armchair, no footstool; displayed online price, not loyalty in-store offers; displayed local price, shipping excluded",
       "source": "https://www.ikea.com/gb/en/p/poaeng-armchair-birch-veneer-knisa-light-beige-s99240789/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 119,
       "detail": "IKEA POÄNG adult armchair, birch veneer frame and Knisa light beige cushion; one armchair, no footstool; displayed online price, not loyalty in-store offers; before checkout tax, shipping excluded",
       "source": "https://www.ikea.com/ca/en/p/poaeng-armchair-birch-veneer-knisa-light-beige-s49306570/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "IKEA RÅSKOG trolley": {
@@ -2335,28 +2335,28 @@
       "detail": "IKEA RÅSKOG white three-tier trolley, 35 × 45 × 77 cm; no lid, regular online price; displayed local price, shipping excluded",
       "source": "https://www.ikea.com/au/en/p/raskog-trolley-white-20586788/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 39.99,
       "detail": "IKEA RÅSKOG white three-tier trolley, 35 × 45 × 77 cm; no lid, regular online price; before checkout tax, shipping excluded",
       "source": "https://www.ikea.com/us/en/p/raskog-utility-cart-white-30586783/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 29,
       "detail": "IKEA RÅSKOG white three-tier trolley, 35 × 45 × 77 cm; no lid, regular online price; displayed local price, shipping excluded",
       "source": "https://www.ikea.com/gb/en/p/raskog-trolley-white-30586783/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 39.99,
       "detail": "IKEA RÅSKOG white three-tier trolley, 35 × 45 × 77 cm; no lid, regular online price; before checkout tax, shipping excluded",
       "source": "https://www.ikea.com/ca/en/p/raskog-utility-cart-white-30586783/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "IKEA FRAKTA bag": {
@@ -2365,28 +2365,28 @@
       "detail": "IKEA FRAKTA large blue open shopping bag, 71 litres; one bag, no zip or trolley; online listed price, local bag levies may vary; displayed local price, shipping excluded",
       "source": "https://www.ikea.com/au/en/p/frakta-carrier-bag-large-blue-00611114/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 0.99,
       "detail": "IKEA FRAKTA large blue open shopping bag, 71 litres; one bag, no zip or trolley; online listed price, local bag levies may vary; before checkout tax, shipping excluded",
       "source": "https://www.ikea.com/us/en/p/frakta-shopping-bag-large-blue-20611108/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 0.75,
       "detail": "IKEA FRAKTA large blue open shopping bag, 71 litres; one bag, no zip or trolley; online listed price, local bag levies may vary; displayed local price, shipping excluded",
       "source": "https://www.ikea.com/gb/en/p/frakta-carrier-bag-large-blue-20611108/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 1,
       "detail": "IKEA FRAKTA large blue open shopping bag, 71 litres; one bag, no zip or trolley; online listed price, local bag levies may vary; before checkout tax, shipping excluded",
       "source": "https://www.ikea.com/ca/en/p/frakta-bag-large-blue-20611108/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "IKEA POKAL glasses": {
@@ -2395,28 +2395,28 @@
       "detail": "Six clear IKEA POKAL 35cl / 12oz glasses bought individually; total = six times the listed single-glass price, no bundle discount; displayed local price, shipping excluded",
       "source": "https://www.ikea.com/au/en/p/pokal-glass-clear-glass-60623185/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 11.94,
       "detail": "Six clear IKEA POKAL 35cl / 12oz glasses bought individually; total = six times the listed single-glass price, no bundle discount; before checkout tax, shipping excluded",
       "source": "https://www.ikea.com/us/en/p/pokal-glass-clear-glass-10270478/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 4.5,
       "detail": "Six clear IKEA POKAL 35cl / 12oz glasses bought individually; total = six times the listed single-glass price, no bundle discount; displayed local price, shipping excluded",
       "source": "https://www.ikea.com/gb/en/p/pokal-glass-clear-glass-10270478/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 5.94,
       "detail": "Six clear IKEA POKAL 35cl / 12oz glasses bought individually; total = six times the listed single-glass price, no bundle discount; before checkout tax, shipping excluded",
       "source": "https://www.ikea.com/ca/en/p/pokal-glass-clear-glass-10270478/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "IKEA FÖRNUFT cutlery": {
@@ -2425,28 +2425,28 @@
       "detail": "IKEA FÖRNUFT stainless steel cutlery set; 24 pieces in AU/UK, 20 pieces in US/CA; regular online price; displayed local price, shipping excluded",
       "source": "https://www.ikea.com/au/en/p/foernuft-24-piece-cutlery-set-stainless-steel-10177569/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 12.99,
       "detail": "IKEA FÖRNUFT stainless steel cutlery set; 24 pieces in AU/UK, 20 pieces in US/CA; regular online price; before checkout tax, shipping excluded",
       "source": "https://www.ikea.com/us/en/p/foernuft-20-piece-flatware-set-stainless-steel-90043076/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 10,
       "detail": "IKEA FÖRNUFT stainless steel cutlery set; 24 pieces in AU/UK, 20 pieces in US/CA; regular online price; displayed local price, shipping excluded",
       "source": "https://www.ikea.com/gb/en/p/foernuft-24-piece-cutlery-set-stainless-steel-70014999/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 9.99,
       "detail": "IKEA FÖRNUFT stainless steel cutlery set; 24 pieces in AU/UK, 20 pieces in US/CA; regular online price; before checkout tax, shipping excluded",
       "source": "https://www.ikea.com/ca/en/p/foernuft-20-piece-cutlery-set-stainless-steel-90043076/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "AirTag": {
@@ -2455,28 +2455,28 @@
       "detail": "Apple AirTag, 2026 model, one tracker; no accessories or engraving charge; displayed local price, shipping excluded",
       "source": "https://www.apple.com/au/shop/buy-airtag/airtag",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 29,
       "detail": "Apple AirTag, 2026 model, one tracker; no accessories or engraving charge; displayed local price before checkout tax, shipping excluded",
       "source": "https://www.apple.com/shop/buy-airtag/airtag",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 29,
       "detail": "Apple AirTag, 2026 model, one tracker; no accessories or engraving charge; displayed local price, shipping excluded",
       "source": "https://www.apple.com/uk/shop/buy-airtag/airtag",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 39,
       "detail": "Apple AirTag, 2026 model, one tracker; no accessories or engraving charge; displayed local price before checkout tax, shipping excluded",
       "source": "https://www.apple.com/ca/shop/buy-airtag/airtag",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "Apple Pencil USB-C": {
@@ -2485,28 +2485,28 @@
       "detail": "Apple Pencil USB-C, one new stylus; standard retail, not education or refurbished; displayed local price, shipping excluded",
       "source": "https://www.apple.com/au/shop/product/muwa3za/a/apple-pencil-usb-c",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 79,
       "detail": "Apple Pencil USB-C, one new stylus; standard retail, not education or refurbished; before checkout tax, shipping excluded",
       "source": "https://www.apple.com/shop/product/muwa3am/a/apple-pencil-usb-c",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 79,
       "detail": "Apple Pencil USB-C, one new stylus; standard retail, not education or refurbished; displayed local price, shipping excluded",
       "source": "https://www.apple.com/uk/shop/product/muwa3zm/a/apple-pencil-usb-c",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 109,
       "detail": "Apple Pencil USB-C, one new stylus; standard retail, not education or refurbished; before checkout tax, shipping excluded",
       "source": "https://www.apple.com/ca/shop/product/muwa3am/a/apple-pencil-usb-c",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "HomePod mini": {
@@ -2515,28 +2515,28 @@
       "detail": "Apple HomePod mini 2, one Midnight speaker; published preorder price on 25 Oct 2026, release 30 Oct; displayed local price, shipping excluded",
       "source": "https://www.apple.com/au/shop/buy-homepod/homepod-mini",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 149,
       "detail": "Apple HomePod mini 2, one Midnight speaker; published preorder price on 25 Oct 2026, release 30 Oct; displayed local price before checkout tax, shipping excluded",
       "source": "https://www.apple.com/shop/buy-homepod/homepod-mini",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 149,
       "detail": "Apple HomePod mini 2, one Midnight speaker; published preorder price on 25 Oct 2026, release 30 Oct; displayed local price, shipping excluded",
       "source": "https://www.apple.com/uk/shop/buy-homepod/homepod-mini",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 199,
       "detail": "Apple HomePod mini 2, one Midnight speaker; published preorder price on 25 Oct 2026, release 30 Oct; displayed local price before checkout tax, shipping excluded",
       "source": "https://www.apple.com/ca/shop/buy-homepod/homepod-mini",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "Apple TV 4K": {
@@ -2545,58 +2545,58 @@
       "detail": "Apple TV 4K 4th generation with Siri Remote; published preorder price on 25 Oct 2026, release 13 Nov; cables sold separately; displayed local price, shipping excluded",
       "source": "https://www.apple.com/au/shop/buy-tv/apple-tv-4k",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 299,
       "detail": "Apple TV 4K 4th generation with Siri Remote; published preorder price on 25 Oct 2026, release 13 Nov; cables sold separately; before checkout tax, shipping excluded",
       "source": "https://www.apple.com/shop/buy-tv/apple-tv-4k",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 299,
       "detail": "Apple TV 4K 4th generation with Siri Remote; published preorder price on 25 Oct 2026, release 13 Nov; cables sold separately; displayed local price, shipping excluded",
       "source": "https://www.apple.com/uk/shop/buy-tv/apple-tv-4k",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 429,
       "detail": "Apple TV 4K 4th generation with Siri Remote; published preorder price on 25 Oct 2026, release 13 Nov; cables sold separately; before checkout tax, shipping excluded",
       "source": "https://www.apple.com/ca/shop/buy-tv/apple-tv-4k",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "Mac mini": {
     "AU": {
       "price": 999,
-      "detail": "Apple Mac mini M4 base model, 16GB memory / 256GB SSD; October 2024 launch RRP reference, not the current M6 model or live resale price; displayed local price, shipping excluded",
+      "detail": "Apple Mac mini M4 base model, 16GB memory / 256GB SSD; October 2024 launch RRP reference; displayed local price, shipping excluded",
       "source": "https://www.apple.com/au/newsroom/2024/10/apples-new-mac-mini-is-more-mighty-more-mini-and-built-for-apple-intelligence/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 599,
-      "detail": "Apple Mac mini M4 base model, 16GB memory / 256GB SSD; October 2024 launch RRP reference, not the current M6 model or live resale price; before checkout tax, shipping excluded",
+      "detail": "Apple Mac mini M4 base model, 16GB memory / 256GB SSD; October 2024 launch RRP reference; before checkout tax, shipping excluded",
       "source": "https://www.apple.com/newsroom/2024/10/apples-new-mac-mini-is-more-mighty-more-mini-and-built-for-apple-intelligence/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 599,
-      "detail": "Apple Mac mini M4 base model, 16GB memory / 256GB SSD; October 2024 launch RRP reference, not the current M6 model or live resale price; displayed local price, shipping excluded",
+      "detail": "Apple Mac mini M4 base model, 16GB memory / 256GB SSD; October 2024 launch RRP reference; displayed local price, shipping excluded",
       "source": "https://www.apple.com/uk/newsroom/2024/10/apples-new-mac-mini-is-more-mighty-more-mini-and-built-for-apple-intelligence/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 799,
-      "detail": "Apple Mac mini M4 base model, 16GB memory / 256GB SSD; October 2024 launch RRP reference, not the current M6 model or live resale price; before checkout tax, shipping excluded",
+      "detail": "Apple Mac mini M4 base model, 16GB memory / 256GB SSD; October 2024 launch RRP reference; before checkout tax, shipping excluded",
       "source": "https://www.apple.com/ca/newsroom/2024/10/apples-new-mac-mini-is-more-mighty-more-mini-and-built-for-apple-intelligence/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "iCloud+ 200GB": {
@@ -2605,28 +2605,28 @@
       "detail": "Apple iCloud+ 200GB storage plan, regular monthly subscription, no Apple One bundle; displayed local price, shipping excluded",
       "source": "https://support.apple.com/en-au/108047",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 2.99,
       "detail": "Apple iCloud+ 200GB storage plan, regular monthly subscription, no Apple One bundle; before checkout tax, shipping excluded",
       "source": "https://support.apple.com/en-au/108047",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 2.99,
       "detail": "Apple iCloud+ 200GB storage plan, regular monthly subscription, no Apple One bundle; displayed local price, shipping excluded",
       "source": "https://support.apple.com/en-au/108047",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 3.99,
       "detail": "Apple iCloud+ 200GB storage plan, regular monthly subscription, no Apple One bundle; before checkout tax, shipping excluded",
       "source": "https://support.apple.com/en-au/108047",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "UNO card game": {
@@ -2635,28 +2635,28 @@
       "detail": "Mattel UNO classic colour-and-number card game; one standard deck, not a themed or miniature edition; named retailer online reference; displayed local price, shipping excluded",
       "source": "https://www.kmart.com.au/product/uno-card-game-6225544/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 6.99,
       "detail": "Mattel UNO classic colour-and-number card game; one standard deck, not a themed or miniature edition; named retailer online reference; before checkout tax, shipping excluded",
       "source": "https://www.target.com/p/-/A-17070411",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 5,
       "detail": "Argos UNO classic card game, one standard deck; advertised £5 offer on 25 Oct 2026 (previous £7); delivery excluded.",
       "source": "https://www.argos.co.uk/product/1464456",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 9.97,
       "detail": "Mattel UNO classic colour-and-number card game; one standard deck, not a themed or miniature edition; named retailer online reference; before checkout tax, shipping excluded",
       "source": "https://www.walmart.ca/en/ip/The-Game-Of-UNO/6000202607917",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "Rubik's Cube": {
@@ -2665,28 +2665,28 @@
       "detail": "Original branded 3×3 Rubik's Cube; one standard cube, not a speed cube; displayed local price, shipping excluded",
       "source": "https://www.kmart.com.au/product/the-official-rubik%27s-3x3-cube-42043003/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 9.49,
       "detail": "Original branded 3×3 Rubik's Cube; one standard cube, not a speed cube; before checkout tax, shipping excluded",
       "source": "https://www.target.com/p/-/A-14783169",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 10,
       "detail": "Original branded 3×3 Rubik's Cube; one standard cube, not a speed cube; displayed local price, shipping excluded",
       "source": "https://www.argos.co.uk/product/3900217",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 9.97,
       "detail": "Original branded 3×3 Rubik's Cube; one standard cube, not a speed cube; before checkout tax, shipping excluded",
       "source": "https://www.walmart.ca/en/ip/rubiks-3x3-original-cube-multi/10230773",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "Play-Doh pack": {
@@ -2695,28 +2695,28 @@
       "detail": "Four 4oz tubs; Kmart Australia advertised pack; GST included, shipping excluded",
       "source": "https://www.kmart.com.au/product/play-doh-colour-collection-4-pack-41887288/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 2.96,
       "detail": "Four 3oz tubs, 340g total; Target clearance reference $2.96, regular $3.49; before tax, shipping excluded",
       "source": "https://www.target.com/p/-/A-94757304",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 3.98,
       "detail": "Four 4oz tubs; ASDA online £3.98 reference, delivery excluded",
       "source": "https://www.asda.com/groceries/product/creative-play/play-doh-play-doh-4-ounce-cans-4-pack/5317162",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 1,
       "detail": "Four classic-colour tubs; Walmart Canada published clearance $1 reference, out of stock when checked; before tax, shipping excluded",
       "source": "https://www.walmart.ca/en/ip/Play-Doh-4-Pack-of-Classic-Colours/6000196079008",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "Hot Wheels car": {
@@ -2725,58 +2725,58 @@
       "detail": "One Hot Wheels basic 1:64 car; assorted style, not premium or multipack; displayed local price, shipping excluded",
       "source": "https://www.kmart.com.au/product/hot-wheels-basic-car-assorted-5621682/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 1.49,
       "detail": "One Hot Wheels basic 1:64 car; assorted style, not premium or multipack; before checkout tax, shipping excluded",
       "source": "https://www.kroger.com/p/mattel-hot-wheels-basic-car-assortment/0088796179243",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 1.88,
       "detail": "One Hot Wheels basic 1:64 car; assorted style, not premium or multipack; displayed local price, shipping excluded",
       "source": "https://www.asda.com/groceries/product/toy-cars-transport/hot-wheels-basic-car-colour-styles-may-vary-/6638571",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 1.97,
       "detail": "One Hot Wheels basic 1:64 car; assorted style, not premium or multipack; before checkout tax, shipping excluded",
       "source": "https://www.walmart.ca/en/ip/hot-wheels-car-styles-may-vary-multi/10029058",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "Coleman Sundome tent": {
     "AU": {
       "price": 109.38,
-      "detail": "Coleman Sundome2-person green, new; eBay Australia published imported listing AU$109.38 item-only reference; AU$133.58 postage excluded, not local RRP",
+      "detail": "Coleman Sundome 2-person green, new; eBay Australia published imported listing AU$109.38 item-only reference; AU$133.58 postage excluded, not local RRP",
       "source": "https://www.ebay.com.au/b/Coleman-Cabin-Tent-Camping-Tents/179010/bn_7014653231",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 82.99,
-      "detail": "Coleman Sundome2-person; Coleman US published $82.99 reference, listed unavailable; before tax and shipping",
+      "detail": "Coleman Sundome 2-person; Coleman US published $82.99 reference, listed unavailable; before tax and shipping",
       "source": "https://www.coleman.com/camp-sports/tents-by-size/sundome-2-person-camping-tent/SP_271240.html",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 117.91,
-      "detail": "Coleman Sundome2-person model2206840; OnBuy UK seller Ami Ventures Inc, imported marketplace offer £117.91 including advertised free delivery",
+      "detail": "Coleman Sundome 2-person model 2206840; OnBuy UK seller Ami Ventures Inc, imported marketplace offer £117.91 including advertised free delivery",
       "source": "https://www.onbuy.com/gb/p/coleman-sundome-2-person-camping-tent~p117985516/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 245.37,
-      "detail": "Coleman Sundome2-person navy model2207023; Walmart Canada marketplace seller ZK WHOLESALE LLC $245.37; before tax and shipping",
+      "detail": "Coleman Sundome 2-person navy model 2207023; Walmart Canada marketplace seller ZK WHOLESALE LLC $245.37; before tax and shipping",
       "source": "https://www.walmart.ca/en/ip/Coleman-Sundome-2-Person-Camping-Tent/25IBF0HIQHKN",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "Owala FreeSip bottle": {
@@ -2785,28 +2785,28 @@
       "detail": "One Owala FreeSip 24oz / 710ml stainless steel bottle; standard colour, no customisation; displayed local price, shipping excluded",
       "source": "https://owalalife.com/en-au/products/freesip?Color=Read+My+Lips&Material=Stainless+Steel&Size=24oz&selectionType=local",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 29.99,
       "detail": "One Owala FreeSip 24oz / 710ml stainless steel bottle; standard colour, no customisation; before checkout tax, shipping excluded",
       "source": "https://owalalife.com/products/freesip?Color=Read+My+Lips&Material=Stainless+Steel&Size=24oz&selectionType=local",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 31.99,
       "detail": "One Owala FreeSip 24oz / 710ml stainless steel bottle; standard colour, no customisation; displayed local price, shipping excluded",
       "source": "https://owalalife.com/en-gb/collections/all?product-type=24oz",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 41.99,
       "detail": "One Owala FreeSip 24oz / 710ml stainless steel bottle; standard colour, no customisation; before checkout tax, shipping excluded",
       "source": "https://owalalife.com/en-ca/products/freesip?Color=Very%2C+Very+Dark&Material=Stainless+Steel&Size=24oz&selectionType=local",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "YETI Rambler mug": {
@@ -2815,28 +2815,28 @@
       "detail": "One YETI Rambler 14oz / 414ml stackable mug with DuraSip ceramic lining; standard colour, no engraving; displayed local price, shipping excluded",
       "source": "https://au.yeti.com/collections/coffee-mugs",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 35,
       "detail": "One YETI Rambler 14oz / 414ml stackable mug with DuraSip ceramic lining; standard colour, no engraving; before checkout tax, shipping excluded",
       "source": "https://www.yeti.com/new-to-yeti.html",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 35,
       "detail": "One YETI Rambler 14oz / 414ml stackable mug with DuraSip ceramic lining; standard colour, no engraving; displayed local price, shipping excluded",
       "source": "https://www.endclothing.com/gb/women/brands/yeti",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 45,
       "detail": "One YETI Rambler 14oz / 414ml stackable mug with DuraSip ceramic lining; standard colour, no engraving; before checkout tax, shipping excluded",
       "source": "https://www.simons.ca/en/kitchen-dining/drinking-glasses-mugs/coffee-mugs-teacups/rambler-thermal-mug-414-ml-14-oz--23527-5261100?catId=c9551&colourId=41",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "Therm-a-Rest Z Seat": {
@@ -2845,28 +2845,28 @@
       "detail": "One Therm-a-Rest Z Seat folding foam sit pad; standard retail reference, not a sleeping mattress; displayed local price, shipping excluded",
       "source": "https://outdoorestore.com.au/products/therm-a-rest-z-seat",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 32.95,
       "detail": "One Therm-a-Rest Z Seat folding foam sit pad; standard retail reference, not a sleeping mattress; before checkout tax, shipping excluded",
       "source": "https://enlightenedequipment.com/therm-a-rest-z-seat/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 24.65,
       "detail": "One Therm-a-Rest Z Seat folding foam sit pad; standard retail reference, not a sleeping mattress; displayed local price, shipping excluded",
       "source": "https://basecampfood.com/products/therm-a-rest-z-seat",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 47.95,
       "detail": "One Therm-a-Rest Z Seat folding foam sit pad; standard retail reference, not a sleeping mattress; before checkout tax, shipping excluded",
       "source": "https://www.monodsports.com/en-us/products/z-seat",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "Casio scientific calculator": {
@@ -2875,28 +2875,28 @@
       "detail": "Casio fx-8200AU black, Officeworks advertised $40, GST included; one calculator, shipping excluded",
       "source": "https://www.officeworks.com.au/shop/officeworks/p/casio-fx-8200au-scientific-calculator-black-casfx8200",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 24.99,
       "detail": "Casio FX-9910CW black, Staples advertised $24.99 promotional price, before tax; one calculator, shipping excluded",
       "source": "https://www.staples.com/casio-classwiz-12-digit-battery-solar-powered-scientific-calculator-black-fx-991cw/product_24555520",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 17,
       "detail": "Casio FX-83GT CW+ blue, Argos advertised £17 including VAT; one calculator, shipping excluded",
       "source": "https://www.argos.co.uk/brand/casio/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 24.49,
       "detail": "Casio FX-300ESPLUS2 black, Staples Canada advertised $24.49, before tax; one calculator, shipping excluded",
       "source": "https://www.staples.ca/search?query=casio+scientific+calculator",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "STABILO highlighters": {
@@ -2905,28 +2905,28 @@
       "detail": "STABILO BOSS Original four-highlighter pack; assorted colours, local reference range; displayed local price, shipping excluded",
       "source": "https://www.officeworks.com.au/brands/stabilo",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 7.22,
       "detail": "STABILO BOSS Original assorted four-pack, product70/4; The Online Pen Company US-dollar storefront $7.22; shipping and import/checkout charges excluded",
       "source": "https://www.theonlinepencompany.com/us/stabilo-boss-original-highlighter-pen-assorted-colours-pack-of-4",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 3.99,
       "detail": "STABILO BOSS Original four-highlighter pack; assorted colours, local reference range; displayed local price, shipping excluded",
       "source": "https://www.therange.co.uk/stationery/pens-and-pencils/pens/highlighters/pack-of-four-stabilo-boss-original-highlighters",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 4.97,
       "detail": "STABILO BOSS Original pastel colours, four-pack; Staples Canada $4.97 reference, before tax and shipping",
       "source": "https://www.staples.ca/products/2942872-en-stabilo-boss-original-chisel-tip-highlighters-assorted-pastel-colours-4-pack",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "Moleskine notebook": {
@@ -2935,58 +2935,58 @@
       "detail": "Moleskine black large ruled hard-cover notebook, about13×21cm; local editions' page counts vary; displayed local price, shipping excluded",
       "source": "https://www.officeworks.com.au/shop/officeworks/p/moleskine-classic-hard-cover-ruled-large-notebook-black-msqp060",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 26.59,
-      "detail": "Moleskine black large hard-cover college-ruled notebook, model701122,96sheets /192pages,5×8.25in; Staples US $26.59, before tax and shipping",
+      "detail": "Moleskine black large hard-cover college-ruled notebook, model 701122, 96 sheets / 192 pages, 5×8.25in; Staples US $26.59, before tax and shipping",
       "source": "https://www.staples.com/moleskine-classic-notebook-large-5-x-8-25-college-ruled-96-sheets-black-701122/product_401609",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 23,
       "detail": "Moleskine black large ruled hard-cover notebook, about13×21cm; local editions' page counts vary; displayed local price, shipping excluded",
       "source": "https://www.johnlewis.com/moleskine-large-hard-cover-ruled-notebook/black/p5065097",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 27.99,
       "detail": "Moleskine black large ruled hard-cover notebook, about13×21cm; local editions' page counts vary; before checkout tax, shipping excluded",
       "source": "https://www.staples.ca/products/401609-en-moleskine-classic-black-hard-cover-large-ruled-notebook-5-x-8-14",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "WD-40 can": {
     "AU": {
       "price": 14.95,
-      "detail": "WD-40 Smart Straw350g, eMega advertised $14.95, shipping excluded",
+      "detail": "WD-40 Smart Straw 350g, eMega advertised $14.95, shipping excluded",
       "source": "https://emega.com.au/shop/wd-40-multi-use-lubricant-with-smart-straw-cleans-350g/",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 6.32,
-      "detail": "WD-40 Classic Formula8oz Smart Straw, Home Depot model110057, $6.32, before tax and shipping",
+      "detail": "WD-40 Classic Formula 8oz Smart Straw, Home Depot model 110057, $6.32, before tax and shipping",
       "source": "https://www.homedepot.com/p/202319355",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 9.5,
-      "detail": "WD-40 Multi-Use Flexible Straw400ml, Wickes £9.50 including VAT, delivery excluded",
+      "detail": "WD-40 Multi-Use Flexible Straw 400ml, Wickes £9.50 including VAT, delivery excluded",
       "source": "https://www2.wickes.co.uk/WD-40-Multi-Use-Flexible-Lubricant---400ml/p/249603",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 9.99,
-      "detail": "WD-40 Multi-Use Big Blast311g, Canadian Tire advertised sale $9.99, regular $11.99, before tax and shipping",
+      "detail": "WD-40 Multi-Use Big Blast 311g, Canadian Tire advertised sale $9.99, regular $11.99, before tax and shipping",
       "source": "https://www.canadiantire.ca/en/cat/automotive/oils-fluids-additives-chemicals/grease-gear-oils-lubricants/lubricants-penetrants-DC0000386.html",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "Gorilla Super Glue": {
@@ -2995,28 +2995,28 @@
       "detail": "One15g bottle of Gorilla Super Glue; local liquid or gel version specified; displayed local price, shipping excluded",
       "source": "https://www.officeworks.com.au/shop/officeworks/p/-GG41004",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 7.98,
-      "detail": "Gorilla15g Super Glue Gel, model112287; Lowe's advertised $7.98, before tax and shipping",
+      "detail": "Gorilla 15g Super Glue Gel, model 112287; Lowe's advertised $7.98, before tax and shipping",
       "source": "https://www.lowes.com/pd/Gorilla-Super-Glue-15-gram-Gel-Super-Glue/5013943243",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 6.74,
       "detail": "One15g bottle of Gorilla Super Glue; local liquid or gel version specified; displayed local price, shipping excluded",
       "source": "https://www.asda.com/groceries/product/glues-tapes-adhesives/gorilla-super-glue-15g/7214486",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 11.49,
       "detail": "One15g bottle of Gorilla Super Glue; local liquid or gel version specified; before checkout tax, shipping excluded",
       "source": "https://www.staples.ca/products/1619897-en-gorilla-super-glue-15g",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   },
   "Fiskars scissors": {
@@ -3025,28 +3025,28 @@
       "detail": "One pair Fiskars Classic / Original orange-handled general-purpose scissors, 8in /21cm; displayed local price, shipping excluded",
       "source": "https://www.mitre10.com.au/brand/fiskars/fiskars-pruners-scissors-snips",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "US": {
       "price": 8.99,
       "detail": "One pair Fiskars Classic / Original orange-handled general-purpose scissors, 8in /21cm; before checkout tax, shipping excluded",
       "source": "https://www.target.com/s/fisker%2Bscissors",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "UK": {
       "price": 27.9,
       "detail": "One pair Fiskars Classic / Original orange-handled general-purpose scissors, 8in /21cm; displayed local price, shipping excluded",
       "source": "https://www.diy.com/tools-equipment/hand-tools/cutting-tools.cat?Brand=Fiskars",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     },
     "CA": {
       "price": 24.99,
       "detail": "One pair Fiskars Classic / Original orange-handled general-purpose scissors, 8in /21cm; before checkout tax, shipping excluded",
       "source": "https://www.staples.ca/products/116301-en-fiskars-original-orange-handled-scissors-8",
       "checkedAt": "2026-10-25",
-      "effectiveDay": "2026-10-26"
+      "effectiveDay": "2026-10-25"
     }
   }
 };

@@ -7,7 +7,7 @@ const routes = ['game.html', ...['lowball', 'stake', 'stack-up', 'pack', 'prior'
 async function lowballFrame(page) {
   const handle = await page.locator('#lowball-game-frame').elementHandle();
   const frame = await handle.contentFrame();
-  await frame.waitForURL('**/engine/index.html');
+  await frame.waitForURL(url => url.pathname.endsWith('/engine/index.html'));
   await frame.locator('#cselectBtn').waitFor();
   return frame;
 }
