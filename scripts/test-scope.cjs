@@ -1,7 +1,7 @@
 /* Pure changed-file selection. Full game sweeps require an explicit --full request. */
 const UNITS=["daily-content.cjs","shift-work-rules.cjs","hidden-gem-rules.cjs","seating-chart-rules.cjs","clue-ladder-rules.cjs","time-drop-rules.cjs","test-scope.cjs","playtest-feedback.cjs","factual-review.cjs","launch-content.cjs","inner-clock-rules.cjs","bouncer-rules.cjs","alibi-scenarios.cjs","alibi-rules.cjs","laser-rules.cjs","practice-session-rules.cjs","prior-rules.cjs","pack-rules.cjs","content-tools.cjs","friends-database.cjs","account-navigation.cjs","cloud-saves.cjs","cloud-database.cjs","arcade-score.cjs","daily-clock.cjs","profile-records.cjs","question-banks.cjs"];
 
-const DAILY_CONTENT_FILES=new Set(["index.html","game-config.js","pack-model.js","laser-model.js","inner-clock-model.js","time-drop-model.js","clue-ladder-model.js","seating-chart-model.js","hidden-gem-model.js","shift-work-model.js","games/pack/puzzles.js","games/laser/boards.js","games/inner-clock/inner-clock.js","games/time-drop/events.js","games/clue-ladder/puzzles.js","games/seating-chart/puzzles.js","games/hidden-gem/questions.js","games/shift-work/boards.js","games/stack-up/stack-up.js","games/stack-up/stacks.js","games/stack-up/familiar-stacks.js","games/lowball/engine/index.html","content/time-drop-events.json","content/clue-ladder-puzzles.json","content/seating-chart-puzzles.json","content/hidden-gem-questions.json","content/shift-work-boards.json","content/stack-up-familiar.json"]);
+const DAILY_CONTENT_FILES=new Set(["index.html","game-config.js","pack-model.js","laser-model.js","inner-clock-model.js","time-drop-model.js","clue-ladder-model.js","seating-chart-model.js","hidden-gem-model.js","shift-work-model.js","games/pack/puzzles.js","games/laser/boards.js","games/inner-clock/inner-clock.js","games/time-drop/events.js","games/clue-ladder/puzzles.js","games/seating-chart/puzzles.js","games/hidden-gem/questions.js","games/shift-work/boards.js","games/stack-up/stack-up.js","games/stack-up/stacks.js","games/stack-up/familiar-stacks.js","games/lowball/engine/index.html","content/time-drop-events.json","content/clue-ladder-puzzles.json","content/seating-chart-puzzles.json","content/hidden-gem-questions.json","content/shift-work-boards.json","content/stack-up-familiar.json","content/lowball-additions.json","content/lowball-original-items.json","content/lowball-original-selector.js"]);
 
 const PLACEHOLDERS=['pixel-pairs','word-forge','gridlock','number-drop','memory-lane','mystery-cabinet'];
 const GAMES=['shift-work','hidden-gem','seating-chart','clue-ladder','lowball','stake','stack-up','pack','prior','laser','alibi','bouncer','inner-clock','time-drop'];
@@ -58,7 +58,7 @@ function selectChecks(changed,available,{full=false}={}){
     const rules=/\.(?:js|json)$/.test(file);game(own[1],rules);
     if(/(?:questions|stacks|cases|evidence-cases|boards|puzzles|events|reference-prices|price-review)\.(?:js|json)$/.test(file))content=true;
    }
-  }else if(model){game(model[1],true);add('profile-records.cjs','cloud-saves.cjs');}
+  }else if(model){game(model[1],true);add('profile-records.cjs','cloud-saves.cjs');if(model[1]==='inner-clock')add('accounts.cjs','friends.cjs','profile.cjs');}
   else if(/^supabase\//.test(file)){add('friends-database.cjs','cloud-database.cjs','playtest-feedback.cjs');}
   else if(/^content\//.test(file)){
    content=true;add('content-tools.cjs');
@@ -77,7 +77,8 @@ function selectChecks(changed,available,{full=false}={}){
    else{add('question-banks.cjs','factual-review.cjs','question-migrations.cjs');python=true;}
   }else if(/^scripts\/build-(?:shift-work|hidden-gem|seating-chart|clue-ladder|time-drop|alibi|bouncer|laser|pack|prior)/.test(file)){
    const id=file.match(/^scripts\/build-(shift-work|hidden-gem|seating-chart|clue-ladder|time-drop|alibi|bouncer|laser|pack|prior)/)[1];game(id,true);content=true;
-  }else if(file==='scripts/build-familiar-stacks.cjs'){game('stack-up',true);content=true;}
+  }else if(file==='scripts/build-lowball-additions.cjs'){game('lowball',true);content=true;add('content-tools.cjs','daily-content.cjs');}
+  else if(file==='scripts/build-familiar-stacks.cjs'){game('stack-up',true);content=true;}
   else if(/scripts\/(?:build-launch-content|build-question-banks|review-question-banks)/.test(file)){add('launch-content.cjs','question-banks.cjs','factual-review.cjs');content=true;python=true;}
   else if(/^scripts\/(?:content|new-game)/.test(file)||/^tools\//.test(file)){add('content-tools.cjs','content-studio.cjs');content=true;}
   else if(file==='scripts/extract-lowball-images.cjs'){game('lowball');}

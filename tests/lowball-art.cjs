@@ -9,14 +9,14 @@ const assetRoot = path.resolve(__dirname, '../games/lowball/engine/icons/generat
 (async () => {
   const manifest = JSON.parse(fs.readFileSync(path.join(assetRoot, 'manifest.json'), 'utf8'));
   const entries = [...Object.values(manifest.items), ...Object.values(manifest.utilities)];
-  assert.equal(Object.keys(manifest.items).length, 100);
+  assert.equal(Object.keys(manifest.items).length, 128);
   assert.equal(Object.keys(manifest.utilities).length, 9);
   const hashes = new Set(entries.map(entry => {
     const data = fs.readFileSync(path.join(assetRoot, entry.file));
     assert.equal(data.subarray(1, 4).toString(), 'PNG');
     return crypto.createHash('sha256').update(data).digest('hex');
   }));
-  assert.equal(hashes.size, 109, 'Every image must be an individual asset');
+  assert.equal(hashes.size, 137, 'Every image must be an individual asset');
   const browser = await chromium.launch({executablePath: process.env.ARCADE_CHROMIUM || '/usr/bin/chromium', args: ['--no-sandbox']});
   try {
     const page = await browser.newPage({reducedMotion: 'reduce'});
@@ -26,7 +26,7 @@ const assetRoot = path.resolve(__dirname, '../games/lowball/engine/icons/generat
     await page.addInitScript(() => localStorage.setItem('pc_help_seen', '1'));
     await page.goto(`${base}/games/lowball/engine/index.html`);
     assert.deepEqual(await page.evaluate(() => ITEMS.map(item => item.name)), Object.keys(manifest.items));
-    for (let index = 0; index < 100; index++) {
+    for (let index = 0; index < 128; index++) {
       const expected = await page.evaluate(index => {
         mode = 'unlimited'; deck = ITEMS.slice(); deckIndex = index; showItem();
         return {name: PRICE_REFERENCES.label(currentItem), source: LOWBALL_ART.source(currentItem)};
@@ -83,6 +83,6 @@ const assetRoot = path.resolve(__dirname, '../games/lowball/engine/icons/generat
     }
     assert.deepEqual(errors, []);
     assert.deepEqual(failed, []);
-    console.log('PASS: all 100 item PNGs and 5 utility PNGs decode; 109 archived image assets remain unique; all four faceted gem tiers on round/final screens; sound controls and reload; score/play layouts at four widths.');
+    console.log('PASS: all 128 item PNGs and 5 utility PNGs decode; 137 image assets remain unique; all four faceted gem tiers on round/final screens; sound controls and reload; score/play layouts at four widths.');
   } finally {await browser.close();}
 })().catch(error=>{console.error(error);process.exitCode=1;});

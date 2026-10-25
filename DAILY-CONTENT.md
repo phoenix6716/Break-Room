@@ -1,6 +1,6 @@
 # Daily content coverage — 25 October 2026
 
-All ten active games pass **32 consecutive distinct Daily sets**, covering **25 October–25 November 2026 inclusive**: the requested 31 days plus one day of buffer. No question bank, schedule, score, artwork, saved run or gameplay needed changing.
+All ten active games pass **32 consecutive distinct Daily sets**, covering **25 October–25 November 2026 inclusive**: the requested 31 days plus one day of buffer. The no-repeat follow-up expands Lowball and changes Time Sense's target selector. Existing saves, scoring and original artwork remain protected. The new selectors start 26 October, with the 25 October legacy Daily held out at the boundary.
 
 This audit executes the shipped pure selectors and extracts the existing Stack Up / Lowball selectors from their real engine source. It checks complete round counts, unique whole Daily sets (ignoring order), valid bank entries, deterministic selection, duplicate ingredients and duplicate challenge payloads. No browser/game initialization or player storage is used.
 
@@ -16,18 +16,20 @@ This audit executes the shipped pure selectors and extracts the existing Stack U
 | Sleeper | 160 questions / 1,004 answers | 32 days without repeating individual questions |
 | Stack Up | 160 familiar Daily stacks + 208 optional challenges | 32 days without repeating individual Daily stacks |
 | Pack | 212 bags, including 32 advanced Daily hard bags | 32 days without repeating individual bags |
-| Lowball | 100 products with four regional reference prices each | 32 different full Daily sets; products recur |
-| Time Sense | Five date-seeded targets per Daily | 32 different full target sets; individual durations recur |
+| Lowball | 128 products / 512 explicitly scoped regional references | 32 days without repeating individual products |
+| Time Sense | 195 scheduled durations across five lanes, at 50ms precision | 39 days without repeating individual targets |
 
-Lowball's 100 products supply **25 days before the item pool cycles**, at four products per day. Over the checked 32 days it uses 100 distinct products in 128 slots. This is enough for different Daily sets, **not a month of entirely new products**. The 400 regional prices are not 400 separate items. Existing product art, order and captured price snapshots are preserved.
+Lowball's fixed 128-product ring supplies four new products per day for 32 days, including across cycle boundaries. The original 100 rows remain the frozen prefix; 28 additions have their own generated artwork and 112 regional references checked 25 October. Regional prices do not count as different products. Saved item/price snapshots always win; old snapshotless drafts use the legacy selector and baseline prices. The ring begins 26 October and places 25 October's held-out products at its end, protecting the launch boundary.
 
-Time Sense has no finite question bank or expiry. A five-target combination is the Daily; its short/medium/long durations recur intentionally. Over the primary 32-day window, 85 distinct durations fill 160 slots. This is not a claim of new timing ingredients every day or indefinite collision-free combinations.
+Time Sense's fixed 39-day deck schedules five distinct targets each day, one per duration lane. Exact targets use 50ms increments within 2–12 seconds; half-tenths display with two decimals. Each lane excludes the 25 October legacy target. Earlier dates and saved targets retain v1 behavior. The private Friends helper accepts the same grid without changing scoring, access, sharing or saved data.
+
+No finite pool guarantees forever-new content. These are **rolling-month individual-content guarantees**, superseding the earlier allowance for product/duration reuse. The other eight games' existing banks already meet the stricter requirement.
 
 ## Repeatable check
 
 Run `node tests/daily-content.cjs`.
 
-The check writes `.artifacts/daily-content.json` with the source commit, Sydney date, inventory and exact results. It covers the current Sydney date, the original audit window, a later cycle-boundary window, March 2027 and the February 2028 leap-day window. It also checks the full repeat-free periods listed for the eight puzzle/question games.
+The check writes `.artifacts/daily-content.json` with the source commit, Sydney date, inventory and exact results. It covers the current Sydney date, the original audit window, a later cycle-boundary window, March 2027 and the February 2028 leap-day window. It also checks the full repeat-free periods listed for the all ten games.
 
 CI runs this check when relevant banks, selectors, models, source content or the active shelf change. Pure styling, ordinary game UI copy and documentation changes do not run every game. No browser sessions are needed for this content-availability check.
 
@@ -37,4 +39,4 @@ This document supersedes older roster/name/content-coverage notes in CONTENT.md 
 
 Pack's historical cutover-eve holdout uses its legacy source order. Contrary to the older generic bank-reversal statement, this audit does **not** certify that reordering Pack's source array preserves the same future schedule. Keep the canonical source order and existing snapshots; deliberate pool/order changes still need compatibility review. The month of unique Dailies passes in the actual shipped order.
 
-Structural coverage does not reverify factual answers, current retail prices, human challenge or live account configuration. Existing dated price/reference evidence and captured snapshots retain their meanings. Private account/SQL contracts are untouched.
+Structural coverage does not reverify factual answers, current retail prices, human challenge or live account configuration. Existing dated price/reference evidence and captured snapshots retain their meanings. The only SQL change accepts valid 50ms target snapshots in the existing private Time Sense score helper; score formulas and access contracts are untouched.

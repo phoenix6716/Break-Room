@@ -109,7 +109,10 @@ jobs:
           python3 - <<'PY'
           import os, pathlib, time, urllib.request
           base = os.environ["PUBLISHED_URL"].rstrip("/") + "/"
-          paths = ["games/inner-clock/index.html", "games/inner-clock/inner-clock.js", "profile.html", "friends.html", "index.html", "games/shift-work/index.html", "games/shift-work/boards.js", "games/shift-work/shift-work.js", "games/shift-work/shift-work.css", "shift-work-model.js", "games/hidden-gem/index.html", "games/hidden-gem/questions.js", "games/hidden-gem/hidden-gem.js", "games/hidden-gem/hidden-gem.css", "hidden-gem-model.js", "cloud-saves.js", "accounts.js", "friends.js", "profile-records.js", "profile.js", "navigation.js", "game-config.js"]
+          paths = ["inner-clock-model.js", "games/lowball/engine/index.html", "games/lowball/engine/reference-prices.js", "games/lowball/engine/item-art.js", "games/inner-clock/index.html", "games/inner-clock/inner-clock.js", "profile.html", "friends.html", "index.html", "games/shift-work/index.html", "games/shift-work/boards.js", "games/shift-work/shift-work.js", "games/shift-work/shift-work.css", "shift-work-model.js", "games/hidden-gem/index.html", "games/hidden-gem/questions.js", "games/hidden-gem/hidden-gem.js", "games/hidden-gem/hidden-gem.css", "hidden-gem-model.js", "cloud-saves.js", "accounts.js", "friends.js", "profile-records.js", "profile.js", "navigation.js", "game-config.js"]
+          import json
+          manifest = json.loads(pathlib.Path("games/lowball/engine/icons/generated/manifest.json").read_text())
+          paths += ["games/lowball/engine/icons/generated/" + entry["file"] for entry in manifest["items"].values() if entry.get("source") == "items-5.png"]
           for attempt in range(6):
               try:
                   for path in paths:
@@ -120,11 +123,13 @@ jobs:
                           assert b"Desk Jam" in body and b"<h3>Shift Work</h3>" not in body and b"Sleeper" in body and b"<h3>Hidden Gem</h3>" not in body and b"Time Sense" in body and b"Inner Clock" not in body and b"10 DAILY GAMES" in body and b"games/hidden-gem/index.html" in body and b"games/shift-work/index.html" in body and b"games/stake/index.html" not in body, path
                       elif path in ["games/inner-clock/index.html", "profile.html", "friends.html"]:
                           assert b"Desk Jam" in body and b"Sleeper" in body and b"Time Sense" in body and b"Inner Clock" not in body, path
+                      elif path == "games/lowball/engine/index.html":
+                          assert b"DAILY_ITEM_PERIOD = 32" in body and b"DAILY_ITEM_CUTOVER = 25" in body and b"Fiskars scissors" in body, path
                       elif path.endswith(".html"):
                           assert ((b"<title>Desk Jam" in body and b"shift-work.js" in body) if "shift-work" in path else (b"<title>Sleeper" in body and b"hidden-gem.js" in body)), path
                       else:
                           assert body == pathlib.Path(path).read_bytes(), "Published file differs: " + path
-                  print("Verified live Time Sense, Desk Jam, Sleeper, shelf and shared account/profile/Friends files:", base, os.environ["GITHUB_SHA"])
+                  print("Verified live no-repeat selectors, Lowball references/art, Time Sense, shelf and shared clients:", base, os.environ["GITHUB_SHA"])
                   break
               except Exception:
                   if attempt == 5:

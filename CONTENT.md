@@ -1,6 +1,12 @@
-# Current Daily coverage — 25 October 2026
+## No repeated Daily ingredients — owner requirement, 25 October 2026
 
-All ten active games have at least a month of distinct Daily sets. The [current coverage audit](DAILY-CONTENT.md) verifies 32 days, longer repeat-free rotations for eight games, later/current-date windows and the Lowball/Time Sense ingredient-reuse limits. Run `node tests/daily-content.cjs`; relevant changes select it automatically in CI. No bank or schedule changes were necessary. Current names are Desk Jam, Sleeper and Time Sense; older names/counts below are historical.
+The owner explicitly rejected repeated individual content within the month. All ten active games must provide **32 consecutive days without repeating individual questions, products, boards or target durations**, including repeats hidden under another ID. Different full Daily combinations are not sufficient. Read [DAILY-CONTENT.md](DAILY-CONTENT.md); `node tests/daily-content.cjs` enforces the actual shipped selectors across the release boundary, current/future windows and a leap-day window. This supersedes the earlier Lowball/Time Sense reuse exceptions.
+
+Lowball appends 28 genuinely different products (128 total / four per day) and uses a fixed 32-day ring from 26 October 2026 Sydney. Freeze the original 100 identities/order/base prices and their v1 selector in `content/lowball-original-*.{json,js}`. Existing captured snapshots always win; snapshotless drafts reconstruct the original 100-item selector even after cutover. New authoritative additions/evidence are in `content/lowball-additions.json`; regenerate via `node scripts/build-lowball-additions.cjs`. Preserve original art and numeric scoring. The 112 additional regional references were checked 25 October; upfront scopes distinguish model/pack/channel, preorder, launch RRP, sale and unavailable published references. They are dated reference prices, not universal or live quotes.
+
+Time Sense uses a fixed 39-day duration deck from 26 October, with exact 50ms target steps within the existing 2–12-second range. Show half-tenth targets exactly (5.95s, not 6.0s); preserve v1 targets and old saves. Client/private SQL validators accept the same grid; score formulas, keys, tables, RLS and sharing remain unchanged. Only the private `_friend_inner_clock_score(jsonb,date)` helper needs a narrow live replacement; main code, CI and confirmed deployment are separate milestones.
+
+Both schedules hold out the previous day's individual content to protect 25 October's existing Daily and the release boundary. This is a rolling-month guarantee, not an infinite uniqueness claim; later pool/order changes need deliberate versioned compatibility review. The other eight banks already satisfy it. Current display names: Desk Jam, Sleeper and Time Sense; older roster/installer notes below remain historical.
 
 ## Current release: Shift Work — 25 October 2026
 

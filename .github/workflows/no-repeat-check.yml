@@ -2,42 +2,40 @@ name: Check no-repeat Daily integration
 on:
   push:
     branches: [no-repeat-dailies]
-    paths:
-      - inner-clock-model.js
-      - games/inner-clock/inner-clock.js
-      - tests/inner-clock-rules.cjs
-      - tests/inner-clock.cjs
-      - supabase/inner-clock.sql
-      - supabase/friends.sql
-      - .github/workflows/no-repeat-check.yml
 permissions:
   contents: read
 jobs:
-  clock:
+  integration:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 20
+    env:
+      ARCADE_DIFF_BASE: d072719ba2bcc512c3d02eefe5d098af05a105a3
+      ARCADE_DIFF_HEAD: ${{ github.sha }}
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version-file: .node-version
           cache: npm
       - run: npm ci --ignore-scripts --no-audit --no-fund
       - run: npx playwright install chromium
-      - name: Check exact target compatibility and affected game
+      - name: Verify authoring output stays reproducible
+        run: |
+          node scripts/build-lowball-additions.cjs
+          git diff --exit-code
+      - name: Check the complete affected change against a project-path build
         shell: bash
         run: |
           export ARCADE_CHROMIUM="$(node -p "require('playwright').chromium.executablePath()")"
-          node scripts/run-checks.cjs unit inner-clock-rules.cjs
-          npm run build
-          npm run check
-          node scripts/run-checks.cjs browser inner-clock.cjs
+          mkdir -p .artifacts
+          npm test 2>&1 | tee .artifacts/full-check.log
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: no-repeat-clock-checks
+          name: no-repeat-integration-checks
           path: .artifacts/
           include-hidden-files: true
           retention-days: 7

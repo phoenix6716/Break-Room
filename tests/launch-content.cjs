@@ -33,6 +33,6 @@ const lowText=read('games/lowball/engine/index.html'),itemLiteral=lowText.match(
 const itemCount=vm.runInNewContext(itemLiteral[1]).length,selector=lowText.slice(lowText.indexOf('function mulberry32'),lowText.indexOf('let deck = []'));
 const low=vm.runInNewContext('const ITEMS=Array.from({length:'+itemCount+'},(_,id)=>({id})),ROUNDS_PER_DAY=4;let selectedDay=0;const dayNumber=()=>selectedDay;\n'+selector+'\n(d)=>{selectedDay=d;return pickDailyItems().map(x=>x.id)}');
 for(const start of ['2026-10-22','2026-11-07','2027-03-21']){const sets=dates(start,start==='2026-10-22'?33:32).map(d=>JSON.stringify(low(Math.floor((Date.parse(d+'T00:00:00Z')-Date.UTC(2026,9,1))/86400000))));assert.equal(new Set(sets).size,sets.length,'Lowball repeats a complete Daily');}
-assert.equal(new Set(Array.from({length:25},(_,i)=>Array.from(low(i))).flat()).size,itemCount,'Lowball preserves the 100-item cycle');
+assert.equal(new Set(Array.from({length:25},(_,i)=>Array.from(low(i))).flat()).size,100,'Lowball preserves the 100-item cycle');
 
-console.log('PASS 22 October–23 November 2026 and later rolling windows: distinct Daily puzzles/questions, harder final tiers, no expiry. Lowball retains its existing 100-product cycle and can reuse products in different sets.');
+console.log('PASS 22 October–23 November 2026 and later rolling windows: distinct Daily puzzles/questions, harder final tiers, no expiry. Lowball historical selection retains its original 100-product cycle; the current 128-product / 32-day ring is checked by daily-content.cjs.');

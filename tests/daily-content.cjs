@@ -49,9 +49,9 @@ assert(start>=0&&end>start,'Keep extracting the real Lowball selector');
 const low=vm.runInNewContext('const ITEMS='+JSON.stringify(items)+',ROUNDS_PER_DAY=4;let selectedDay=0;const dayNumber=()=>selectedDay;\n'+lowText.slice(start,end)+'\n(day)=>{selectedDay=Math.floor((Date.parse(day+"T00:00:00Z")-Date.UTC(2026,9,1))/86400000);return pickDailyItems();};');
 assert.equal(new Set(items.map(p=>p.name)).size,items.length,'Lowball unique product identities');
 for(const item of items)for(const region of ['AU','US','UK','CA'])assert(Number.isFinite(item.prices[region])&&item.prices[region]>0,item.name+' '+region);
-specs.push({id:'lowball',name:'Lowball',rounds:4,period:null,bankCount:items.length,pool:items,identity:p=>p.name,select:low,note:'Full Daily sets differ. Individual products recur after the 100-item / 25-day pool; this is not 32 days of new products.'});
+specs.push({id:'lowball',name:'Lowball',rounds:4,period:32,bankCount:items.length,pool:items,identity:p=>p.name,select:low});
 const clock=model('inner-clock');
-specs.push({id:'inner-clock',name:'Time Sense',rounds:5,period:null,bankCount:null,identity:p=>p,select:day=>clock.daily(day),note:'Date-seeded target combinations; individual durations recur. No finite question bank.'});
+specs.push({id:'inner-clock',name:'Time Sense',rounds:5,period:39,bankCount:200,identity:p=>p,select:day=>clock.daily(day)});
 const sourceShelf=read('index.html').match(/<article\b[\s\S]*?<\/article>/g)||[];
 const shelfIds=sourceShelf.map(card=>card.match(/href="games\/([^/]+)\/index\.html"/)?.[1]).filter(Boolean);
 const order=['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','pack','lowball','inner-clock'];
@@ -70,12 +70,12 @@ for(const first of starts){
    const ids=Array.from(rows,s.identity);
    assert.equal(new Set(ids).size,s.rounds,s.name+' duplicate within '+days[i]);
    if(s.id==='stack-up')assert.deepEqual(Array.from(rows,p=>p.lane),[0,1,2,3,4]);
-   if(s.id==='inner-clock')rows.forEach((v,lane)=>assert(Number.isInteger(v)&&v>=2000+2000*lane&&v<=3900+2000*lane&&v%100===0));
+   if(s.id==='inner-clock')rows.forEach((v,lane)=>assert(Number.isInteger(v)&&v>=2000+2000*lane&&v<4000+2000*lane&&v%(days[i]<'2026-10-26'?100:50)===0));
    return ids.slice().sort();
   });
   assert.equal(new Set(keys.map(k=>JSON.stringify(k))).size,HORIZON,s.name+' repeats a complete Daily from '+first);
   const identities=selected.flatMap(rows=>Array.from(rows,s.identity)),fingerprints=selected.flatMap(rows=>Array.from(rows,p=>JSON.stringify(challenge(s.id,p))));
-  if(s.period){
+  {
    assert.equal(new Set(identities).size,identities.length,s.name+' repeats an individual question/board from '+first);
    assert.equal(new Set(fingerprints).size,fingerprints.length,s.name+' repeats a challenge under another ID from '+first);
   }
@@ -83,7 +83,7 @@ for(const first of starts){
    assert.deepEqual(JSON.parse(JSON.stringify(s.select(day))),JSON.parse(JSON.stringify(s.select(day))),s.name+' nondeterministic '+day);
   }
   const counts=new Map();identities.forEach(id=>counts.set(id,(counts.get(id)||0)+1));
-  rows.push({id:s.id,name:s.name,roundsPerDaily:s.rounds,bankCount:s.bankCount,defaultBankCount:s.defaultBankCount??s.bankCount,distinctDailies:HORIZON,uniqueIngredients:counts.size,ingredientSlots:identities.length,maxUsesOfIngredient:Math.max(...counts.values()),noIngredientRepeats:s.period!==null,note:s.note||null});
+  rows.push({id:s.id,name:s.name,roundsPerDaily:s.rounds,bankCount:s.bankCount,defaultBankCount:s.defaultBankCount??s.bankCount,distinctDailies:HORIZON,uniqueIngredients:counts.size,ingredientSlots:identities.length,maxUsesOfIngredient:Math.max(...counts.values()),noIngredientRepeats:true,note:s.note||null});
  }
  windows.push({start:first,end:days.at(-1),days:HORIZON,games:rows});
 }

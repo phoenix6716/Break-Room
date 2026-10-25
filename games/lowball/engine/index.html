@@ -723,8 +723,8 @@
 </div>
 
 <script src="site-config.js"></script>
-<script src="item-art.js"></script>
-<script src="reference-prices.js?v=facts-20261022"></script>
+<script src="item-art.js?v=no-repeat-20261026"></script>
+<script src="reference-prices.js?v=no-repeat-20261026"></script>
 <script>
 document.getElementById("statsArt").innerHTML = LOWBALL_ART.markup({ art: "stats" });
 document.getElementById("trophyArt").innerHTML = LOWBALL_ART.markup({ art: "trophy" });
@@ -833,7 +833,35 @@ const ITEMS = [
   { name: "Soccer ball", emoji: "⚽", detail: "size 5", prices: { AU: 25, US: 20, UK: 15, CA: 25 } },
   { name: "Yoga mat", emoji: "🧘", detail: "standard", prices: { AU: 25, US: 20, UK: 15, CA: 25 } },
   { name: "Tennis balls", emoji: "🎾", detail: "3 pack", prices: { AU: 10, US: 7, UK: 6, CA: 10 } },
-  { name: "Cat food", emoji: "🐱", detail: "12 pack, wet", prices: { AU: 20, US: 15, UK: 10, CA: 18 } }
+  { name: "Cat food", emoji: "🐱", detail: "12 pack, wet", prices: { AU: 20, US: 15, UK: 10, CA: 18 } },
+  {"name":"IKEA LACK side table","emoji":"🛍️","detail":"IKEA LACK side table, white, 55 × 55 cm; one table, regular online price, no loyalty offer","prices":{"AU":19.99,"US":16.99,"UK":10,"CA":18.99}},
+  {"name":"IKEA BILLY bookcase","emoji":"🛍️","detail":"IKEA BILLY bookcase, white, 80 × 28 × 202 cm; regular online price, not an IKEA Family in-store offer","prices":{"AU":129,"US":79,"UK":55,"CA":90}},
+  {"name":"IKEA KALLAX shelf","emoji":"🛍️","detail":"IKEA KALLAX white 2 × 2 open-cube shelf, 77 × 77 cm; no doors or drawer inserts, regular online price","prices":{"AU":49,"US":49.99,"UK":29,"CA":59.99}},
+  {"name":"IKEA POÄNG armchair","emoji":"🛍️","detail":"IKEA POÄNG adult armchair, birch veneer frame and Knisa light beige cushion; one armchair, no footstool; displayed online price, not loyalty in-store offers","prices":{"AU":119,"US":149,"UK":69,"CA":119}},
+  {"name":"IKEA RÅSKOG trolley","emoji":"🛍️","detail":"IKEA RÅSKOG white three-tier trolley, 35 × 45 × 77 cm; no lid, regular online price","prices":{"AU":45.99,"US":39.99,"UK":29,"CA":39.99}},
+  {"name":"IKEA FRAKTA bag","emoji":"🛍️","detail":"IKEA FRAKTA large blue open shopping bag, 71 litres; one bag, no zip or trolley; online listed price, local bag levies may vary","prices":{"AU":1.75,"US":0.99,"UK":0.75,"CA":1}},
+  {"name":"IKEA POKAL glasses","emoji":"🛍️","detail":"Six clear IKEA POKAL 35 cl / 12 oz glasses bought individually; total = six times the listed single-glass price, no bundle discount","prices":{"AU":7.5,"US":11.94,"UK":4.5,"CA":5.94}},
+  {"name":"IKEA FÖRNUFT cutlery","emoji":"🛍️","detail":"IKEA FÖRNUFT stainless steel cutlery set; 24 pieces in AU/UK, 20 pieces in US/CA; regular online price","prices":{"AU":8.99,"US":12.99,"UK":10,"CA":9.99}},
+  {"name":"AirTag","emoji":"🛍️","detail":"Apple AirTag, 2026 model, one tracker; no accessories or engraving charge","prices":{"AU":49,"US":29,"UK":29,"CA":39}},
+  {"name":"Apple Pencil USB-C","emoji":"🛍️","detail":"Apple Pencil USB-C, one new stylus; standard retail, not education or refurbished","prices":{"AU":139,"US":79,"UK":79,"CA":109}},
+  {"name":"HomePod mini","emoji":"🛍️","detail":"Apple HomePod mini 2, one Midnight speaker; published preorder price on 25 Oct 2026, release 30 Oct","prices":{"AU":229,"US":149,"UK":149,"CA":199}},
+  {"name":"Apple TV 4K","emoji":"🛍️","detail":"Apple TV 4 K 4 th generation with Siri Remote; published preorder price on 25 Oct 2026, release 13 Nov; cables sold separately","prices":{"AU":449,"US":299,"UK":299,"CA":429}},
+  {"name":"Mac mini","emoji":"🛍️","detail":"Apple Mac mini M4 base model, 16 GB memory / 256 GB SSD; October 2024 launch RRP reference, not the current M6 model or live resale price","prices":{"AU":999,"US":599,"UK":599,"CA":799}},
+  {"name":"iCloud+ 200GB","emoji":"🛍️","detail":"Apple iCloud+ 200 GB storage plan, regular monthly subscription, no Apple One bundle","prices":{"AU":4.49,"US":2.99,"UK":2.99,"CA":3.99}},
+  {"name":"UNO card game","emoji":"🛍️","detail":"Mattel UNO classic colour-and-number card game; one standard deck, not a themed or miniature edition; named retailer online reference","prices":{"AU":6,"US":6.99,"UK":5,"CA":9.97}},
+  {"name":"Rubik's Cube","emoji":"🛍️","detail":"Original branded 3×3 Rubik's Cube; one standard cube, not a speed cube","prices":{"AU":10,"US":9.49,"UK":10,"CA":9.97}},
+  {"name":"Play-Doh pack","emoji":"🛍️","detail":"Play-Doh four-tub modelling-compound pack; local pack sizes and advertised offers apply","prices":{"AU":7,"US":2.96,"UK":3.98,"CA":1}},
+  {"name":"Hot Wheels car","emoji":"🛍️","detail":"One Hot Wheels basic 1:64 car; assorted style, not premium or multipack","prices":{"AU":2,"US":1.49,"UK":1.88,"CA":1.97}},
+  {"name":"Coleman Sundome tent","emoji":"🛍️","detail":"Coleman Sundome two-person tent; local seller and import/channel reference, not a universal RRP","prices":{"AU":109.38,"US":82.99,"UK":117.91,"CA":245.37}},
+  {"name":"Owala FreeSip bottle","emoji":"🛍️","detail":"One Owala FreeSip 24 oz / 710 ml stainless steel bottle; standard colour, no customisation","prices":{"AU":59.99,"US":29.99,"UK":31.99,"CA":41.99}},
+  {"name":"YETI Rambler mug","emoji":"🛍️","detail":"One YETI Rambler 14 oz / 414 ml stackable mug with DuraSip ceramic lining; standard colour, no engraving","prices":{"AU":45,"US":35,"UK":35,"CA":45}},
+  {"name":"Therm-a-Rest Z Seat","emoji":"🛍️","detail":"One Therm-a-Rest Z Seat folding foam sit pad; standard retail reference, not a sleeping mattress","prices":{"AU":69.95,"US":32.95,"UK":24.65,"CA":47.95}},
+  {"name":"Casio scientific calculator","emoji":"🛍️","detail":"One Casio scientific calculator; local model specified in the regional reference","prices":{"AU":40,"US":24.99,"UK":17,"CA":24.49}},
+  {"name":"STABILO highlighters","emoji":"🛍️","detail":"STABILO BOSS Original four-highlighter pack; assorted colours, local reference range","prices":{"AU":9,"US":7.22,"UK":3.99,"CA":4.97}},
+  {"name":"Moleskine notebook","emoji":"🛍️","detail":"Moleskine black large ruled hard-cover notebook, about13×21 cm; local editions' page counts vary","prices":{"AU":37,"US":26.59,"UK":23,"CA":27.99}},
+  {"name":"WD-40 can","emoji":"🛍️","detail":"One WD-40 multi-use spray can; local can size and nozzle specified in regional reference","prices":{"AU":14.95,"US":6.32,"UK":9.5,"CA":9.99}},
+  {"name":"Gorilla Super Glue","emoji":"🛍️","detail":"One15 g bottle of Gorilla Super Glue; local liquid or gel version specified","prices":{"AU":18,"US":7.98,"UK":6.74,"CA":11.49}},
+  {"name":"Fiskars scissors","emoji":"🛍️","detail":"One pair Fiskars Classic / Original orange-handled general-purpose scissors, 8 in /21 cm","prices":{"AU":24.95,"US":8.99,"UK":27.9,"CA":24.99}}
 ];
 
 const CURRENCY = {
@@ -1032,16 +1060,32 @@ function cycleOrder(cycle, n) {
   }
   return (cycleCache[key] = arr);
 }
-function pickDailyItems() {
+function legacyDailyItems(day = Math.max(0, dayNumber())) {
   // Every item appears once per cycle, so no repeats until the whole pool has been used.
-  const n = ITEMS.length;
-  const day = Math.max(0, dayNumber());
+  const n = 100;
   const picks = [];
   for (let g = day * ROUNDS_PER_DAY; picks.length < ROUNDS_PER_DAY; g++) {
     const idx = cycleOrder(Math.floor(g / n), n)[g % n];
     if (!picks.includes(idx)) picks.push(idx);
   }
   return picks.map(i => ITEMS[i]);
+}
+// v2 starts 26 October 2026. A fixed ring avoids repeats across cycle boundaries.
+// The previous day's four products close the ring, protecting the release boundary.
+const DAILY_ITEM_CUTOVER = 25;
+const DAILY_ITEM_PERIOD = 32;
+const dailyItemRing = (() => {
+  const held = legacyDailyItems(DAILY_ITEM_CUTOVER - 1).map(item => ITEMS.indexOf(item));
+  const ring = Array.from({length:128},(_,i)=>i).filter(i=>!held.includes(i));
+  const rnd = mulberry32(20261026);
+  for(let i=ring.length-1;i>0;i--){const j=Math.floor(rnd()*(i+1));[ring[i],ring[j]]=[ring[j],ring[i]];}
+  return ring.concat(held);
+})();
+function pickDailyItems() {
+  const day = Math.max(0, dayNumber());
+  if(day < DAILY_ITEM_CUTOVER)return legacyDailyItems(day);
+  const offset = (day-DAILY_ITEM_CUTOVER)*ROUNDS_PER_DAY;
+  return Array.from({length:ROUNDS_PER_DAY},(_,i)=>ITEMS[dailyItemRing[(offset+i)%128]]);
 }
 let deck = [];
 let deckIndex = 0;
@@ -1721,7 +1765,7 @@ function startNormalMode() {
   const todayKey = getTodayKey();
   const stats = loadStats();
   const saved = loadProgress();
-  roundItems = PRICE_REFERENCES.daily(pickDailyItems(),saved,todayKey);
+  roundItems = PRICE_REFERENCES.daily(saved&&!PRICE_REFERENCES.validItems(saved.items)?legacyDailyItems():pickDailyItems(),saved,todayKey);
 
   if (stats.lastPlayed === todayKey) {
     // already completed today

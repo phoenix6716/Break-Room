@@ -48,7 +48,7 @@ for(const row of ledger.stake.filter(r=>r.id.startsWith('stake-legacy-'))){
  const index=Number(row.id.slice(-3))-1,raw=vm.runInContext('BANK['+index+']',box);
  assert.equal(raw.q,row.originalQuestion);assert.deepEqual(Array.from(raw.o),[row.answer,...row.wrongAnswers]);
 }
-for(const item of items)for(const region of ['AU','US','UK','CA']){
+for(const item of items.slice(0,100))for(const region of ['AU','US','UK','CA']){
  const row=prices.regions.find(r=>r.name===item.name&&r.region===region),modern=P.current(item,P.effectiveDay);
  assert.equal(item.prices[region],row.inheritedTarget,'Frozen inherited price changed');
  assert.equal(modern.prices[region],row.reviewedTarget??row.inheritedTarget,'Only evidence-backed regional targets may change');
@@ -98,3 +98,23 @@ badLinks.priceEvidence.UK.supportingSources=['javascript:alert(1)',null,'https:/
 assert.deepEqual(P.evidence(badLinks,'UK').supportingSources,['https://example.org/second']);
 assert.equal(P.daily([combo,...fresh.slice(0,3)],{items:[combo,...fresh.slice(0,3)]},'2027-01-01')[0].prices.UK,17.4);
 console.log('PASS factual review: frozen legacy Stake options, scoped modern wording, dated Lowball targets, draft/snapshot/zero/cloud compatibility and per-region evidence.');
+
+const additions=JSON.parse(read('content/lowball-additions.json'));
+assert.equal(additions.items.length,28);
+assert.deepEqual(items.slice(0,100),JSON.parse(read('content/lowball-original-items.json')).items,'Original pool/order/base targets stay frozen');
+assert.deepEqual(items.slice(100),additions.items.map(({name,emoji,detail,prices})=>({name,emoji,detail,prices})));
+for(const row of additions.items)for(const region of ['AU','US','UK','CA']){
+ const fresh=P.current(row,'2026-10-26');
+ assert.equal(fresh.prices[region],row.evidence[region].price);
+ assert.equal(P.detail(fresh,region),row.evidence[region].detail);
+ assert.deepEqual(P.evidence(fresh,region),{checkedAt:'2026-10-25',source:row.evidence[region].source});
+ assert.equal(P.evidence(P.current(row,'2026-10-24'),region),null,'No future evidence on historical dates');
+}
+console.log('PASS Lowball: 100 frozen originals plus 28 distinct products / 112 explicitly scoped regional references.');
+
+const frozenSelector=read('content/lowball-original-selector.js'),selector=html.slice(html.indexOf('function mulberry32'),html.indexOf('let deck = []'));
+const select=(body,legacy=false)=>vm.runInNewContext('const ITEMS='+JSON.stringify(legacy?items.slice(0,100):items)+',ROUNDS_PER_DAY=4;let d=0;const dayNumber=()=>d;\n'+body+'\n(day)=>{d=day;return '+(legacy?'pickDailyItems()':'legacyDailyItems()')+'.map(x=>x.name)};');
+const oldSelect=select(frozenSelector,true),recovered=select(selector);
+for(let d=0;d<1000;d++)assert.deepEqual(Array.from(recovered(d)),Array.from(oldSelect(d)),'Snapshotless v1 item selection day '+d);
+assert.match(html,/PRICE_REFERENCES\.daily\(saved&&!PRICE_REFERENCES\.validItems\(saved.items\)\?legacyDailyItems\(\):pickDailyItems\(\),saved,todayKey\)/);
+console.log('PASS 1,000 legacy dates: snapshotless saves reconstruct the original 100-item selector.');

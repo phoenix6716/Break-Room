@@ -25,3 +25,6 @@ const {options}=require('../scripts/affected-checks.cjs'),{spawnSync}=require('n
 assert.deepEqual(options(['--files','games/alibi/index.html']).files,['games/alibi/index.html']);assert(options(['--full']).full);assert.throws(()=>options(['--base']),/Missing/);assert.throws(()=>options(['--wat']),/Unknown option/);
 const failed=spawnSync(process.execPath,['scripts/run-checks.cjs','unit','missing-check.cjs'],{encoding:'utf8'});assert.equal(failed.status,1);assert.match(failed.stderr,/Unknown unit check/);
 console.log('PASS focused checks: Alibi-only help change, docs-only, each game, models, shared dependencies, direct tests, renames, missing mappings and explicit full-suite override.');
+
+for(const source of ['content/lowball-additions.json','content/lowball-original-items.json','content/lowball-original-selector.js','scripts/build-lowball-additions.cjs']){const p=plan([source]);assert(p.unit.includes('daily-content.cjs'));assert(p.browser.includes('price-reference.cjs'));assert(p.browser.includes('lowball-art.cjs'));}
+const timingModel=plan(['inner-clock-model.js']);for(const name of ['accounts.cjs','friends.cjs','profile.cjs'])assert(timingModel.browser.includes(name),'Exact targets reach '+name);
