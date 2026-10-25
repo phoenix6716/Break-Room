@@ -21,9 +21,11 @@ if x<0 or x>5 or y<0 or y>5 or g[y*6+x+1]<>0 then return null;end if;g[y*6+x+1]=
 end loop;end loop;return g;
 exception when others then return null;end $$;
 create or replace function public._sw_board(b jsonb) returns boolean language plpgsql immutable set search_path='' as $$
-declare a jsonb;v jsonb;fp text:='';p text:='';
+declare a jsonb;v jsonb;fp text:='';p text:='';pool text;tier text;label text;
 begin
 if jsonb_typeof(b) is distinct from 'object' or jsonb_typeof(b->'id') is distinct from 'string' or jsonb_typeof(b->'pieces') is distinct from 'array' or jsonb_array_length(b->'pieces') not between 5 and 15 or jsonb_typeof(b->'start') is distinct from 'array' or not public._sw_int(b->'min',1,30) then return false;end if;
+pool=split_part(b->>'id','-',3);tier=case pool when 'starter' then 'Starter' when 'hard' then 'Hard' when 'high' then 'Medium' else 'Easy' end;label=case pool when 'low' then 'Easy' when 'mid' then 'Steady' when 'high' then 'Tricky' when 'starter' then 'Starter' when 'hard' then 'Hard' end;
+if b->>'pool' is distinct from pool or b->>'tier' is distinct from tier or (b?'label' and b->>'label' is distinct from label) then return false;end if;
 if public._sw_cells(b,b->'start') is null or b->'pieces'->0->>'axis' is distinct from 'h' or b->'pieces'->0->'lane' is distinct from '2'::jsonb or b->'pieces'->0->'len' is distinct from '2'::jsonb or b->'start'->0='4'::jsonb then return false;end if;
 for a in select value from jsonb_array_elements(b->'pieces') loop fp=fp||(a->>'axis')||(a->>'len')||(a->>'lane');end loop;
 for v in select value from jsonb_array_elements(b->'start') loop p=p||(v#>>'{}');end loop;fp=fp||'|'||p||'|'||(b->>'min');

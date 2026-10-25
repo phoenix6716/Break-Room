@@ -1,3 +1,13 @@
+## Shift Work — full integration authorised, 25 October 2026
+
+The owner approved Shift Work and authorised expansion/full integration. Ten active games in shelf/drawer order: Laser → Time Drop → Clue Ladder → Seating Chart → Shift Work → Hidden Gem → Stack Up → Pack → Lowball → Inner Clock. Stake, Prior, Alibi and Bouncer remain archived with routes/artwork/saves/scoring/earned badges preserved. Fourteen native save formats remain supported. This supersedes older roster totals and prototype-only holds.
+
+Read [games/shift-work/README.md](games/shift-work/README.md). Keep three untimed Daily boards at 4–5 / 6–7 / 8–9 minimum slides and free independent Unlimited. Native total moves is lower-is-better. Board Arcade credit is rounded minimum/moves ×100, capped at75 with hints; Daily is the rounded mean of three board credits. Undo retains moves; Restart clears unsolved moves/trace but retains hints. First solve locks and third counts before final Next. Preserve the approved artwork, controls, canonical shell and ?-only help.
+
+The frozen 180-board deck gives 40 nonrepeating Daily sets (120 IDs), plus20 Starter/40 harder boards. Unlimited defaults Easy, supports all levels/Mixed and nonrepeating pools excluding today's three. Save/replay board snapshots, legal forward/Undo evidence, fixed catalog/minima, positions and first results. No prototype import or Daily replay; owner-scoped practice stays outside cloud/profile history.
+
+Apply supabase/shift-work.sql after setup/Friends/Hidden Gem. It adds only the game's private table/RPCs/helpers, preserving older storage/functions. Require fourteen-format accounts, read-only profiles, native best=min moves, private Arcade comparisons and Smooth shift. Verify live SQL and Pages independently from affected checks; automatic deployment remains authorised. Solvers do not certify human enjoyment/difficulty.
+
 # Stake shelved — owner decision, 24 October 2026
 
 Stake is removed from the active shelf, navigation drawers, current Daily checklist and Friends comparisons. Nine active games, in order: Laser → Time Drop → Clue Ladder → Seating Chart → Hidden Gem → Stack Up → Pack → Lowball → Inner Clock. Stake joins Prior, Alibi and Bouncer in the archive. Preserve its direct route, engine, question bank/artwork, local/cloud saves, native/Arcade scores and earned achievements. Profile shows saved Stake history without play prompts; unearned High roller and the legacy three-game Clean sweep are hidden, while earned badges retain their original meaning. Thirteen native save formats remain supported; no database/schema change is needed. The canonical shell still uses Stake's layout. This supersedes older active-roster counts below.

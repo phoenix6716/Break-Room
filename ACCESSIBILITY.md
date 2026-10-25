@@ -1,3 +1,11 @@
+## Current release: Shift Work — 25 October 2026
+
+Shift Work is the tenth active game, after Seating Chart. Current shelf: Laser, Time Drop, Clue Ladder, Seating Chart, Shift Work, Hidden Gem, Stack Up, Pack, Lowball, Inner Clock. Stake/Prior/Alibi/Bouncer are archived; fourteen native formats remain supported. Older roster counts and complete-installer claims below are historical and superseded.
+
+Three untimed Daily boards keep the approved 4–5 / 6–7 / 8–9-slide challenge. 180 frozen boards provide 40 nonrepeating Daily sets and free Unlimited. Native total moves is lower-is-better; Arcade scores are higher-is-better. First solves lock, third counts immediately, and prototype records remain separate. Read [the full contract](games/shift-work/README.md).
+
+Apply [supabase/shift-work.sql](supabase/shift-work.sql) after setup/Friends/Hidden Gem. Fresh install: setup.sql → friends.sql → hidden-gem.sql → shift-work.sql. Only the game's private table, constrained APIs and private replay helpers are added; older tables/functions remain unchanged. Verify live SQL/configuration/Pages separately from CI. Human/device playtesting remains a launch check.
+
 # Game usability and accessibility
 
 ## Current release: Hidden Gem
