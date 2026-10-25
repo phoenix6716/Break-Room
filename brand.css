@@ -1,0 +1,7 @@
+/* Approved option 05: stepped tiles + stacked Break Room wordmark. */
+a.brand.br-brand{display:inline-flex;align-items:center;justify-content:center;width:auto;max-width:100%;min-width:0;min-height:44px;gap:0;padding:0;border:0;background:transparent;box-shadow:none;line-height:0!important;text-shadow:none!important;text-decoration:none;flex-shrink:0}
+a.brand.br-brand>.br-brand__image{display:block;width:204px!important;height:auto!important;max-width:100%;object-fit:contain;filter:none!important}
+a.brand.br-brand:focus-visible{outline:3px solid #ee6557;outline-offset:5px}
+@media(max-width:900px){a.brand.br-brand>.br-brand__image{width:176px!important}}
+@media(max-width:650px){a.brand.br-brand>.br-brand__image{width:138px!important}}
+@media(forced-colors:active){a.brand.br-brand{forced-color-adjust:none;background:#f4eddc}}

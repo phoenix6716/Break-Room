@@ -1,6 +1,7 @@
 /* Build a plain static artifact; preserve routes, engines and image bytes. */
 const fs=require('node:fs'),path=require('node:path');
 require('./bundle-auth.cjs');
+const {applyBrand}=require('./site-brand.cjs');
 const root=path.resolve(__dirname,'..'),output=path.join(root,'dist');
 const web=new Set(['.html','.css','.js','.json','.webmanifest','.svg','.png','.jpg','.jpeg','.gif','.webp','.ico','.ttf','.woff','.woff2','.mp3','.wav','.ogg']);
 const excluded=new Set(['node_modules','.git','source','_template','__pycache__']);
@@ -9,7 +10,8 @@ function copy(file,relative){
  const target=path.join(output,relative);fs.mkdirSync(path.dirname(target),{recursive:true});if(path.extname(file).toLowerCase()==='.html'){
   const html=fs.readFileSync(file,'utf8').replace(/<nav\b[^>]*class="[^"]*\bgame-menu\b[^"]*"[^>]*>[\s\S]*?<\/nav>/g,nav=>nav.replace(/<a\b[^>]*href="[^"]*games\/(?:alibi|bouncer|prior|stake|time-drop|clue-ladder|seating-chart|shift-work|hidden-gem)\/index\.html"[^>]*>[\s\S]*?<\/a>/g,'').replace(/(<a\b[^>]*href="([^"]*)games\/laser\/index\.html"[^>]*>[\s\S]*?<\/a>)/,(_,link,prefix)=>link+'<a href="'+prefix+'games/time-drop/index.html">Time Drop</a><a href="'+prefix+'games/clue-ladder/index.html">Clue Ladder</a><a href="'+prefix+'games/seating-chart/index.html">Seating Chart</a><a href="'+prefix+'games/shift-work/index.html">Desk Jam</a><a href="'+prefix+'games/hidden-gem/index.html">Sleeper</a>'));
   // Keep generated static drawer labels aligned with the approved display name.
-  fs.writeFileSync(target,html.replace(/(src="[^"]*inner-clock-model\.js)(?:\?[^\"]*)?"/g,'$1?v=no-repeat-20261026"').replace(/(<a\b[^>]*href="[^"]*games\/inner-clock\/index\.html"[^>]*>)[\s\S]*?(<\/a>)/g,(_,open,close)=>open+'Time Sense'+close));
+  const rendered=html.replace(/(src="[^"]*inner-clock-model\.js)(?:\?[^\"]*)?"/g,'$1?v=no-repeat-20261026"').replace(/(<a\b[^>]*href="[^"]*games\/inner-clock\/index\.html"[^>]*>)[\s\S]*?(<\/a>)/g,(_,open,close)=>open+'Time Sense'+close);
+  fs.writeFileSync(target,applyBrand(rendered,relative));
  }else fs.copyFileSync(file,target);
  count++;total+=fs.statSync(target).size;
 }

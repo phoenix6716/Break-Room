@@ -83,6 +83,7 @@ function selectChecks(changed,available,{full=false}={}){
   else if(/^scripts\/(?:content|new-game)/.test(file)||/^tools\//.test(file)){add('content-tools.cjs','content-studio.cjs');content=true;}
   else if((file==='scripts/extract-lowball-images.cjs'||file==='scripts/extract-lowball-unbranded.cjs')){game('lowball');}
   else if(file==='scripts/sync-legal-footer.cjs'){add('legal-pages.cjs');legal=true;}
+  else if(file==='brand.css'||file==='scripts/site-brand.cjs'||file==='scripts/export-break-room-brand.cjs'||/^assets\/(?:source\/)?break-room-/.test(file)){add('brand.cjs','smoke.cjs');}
   else if(/^scripts\//.test(file)||/^\.github\/workflows\//.test(file)||/^package(?:-lock)?\.json$/.test(file)||file==='.node-version'){infra();}
   else if(/^(?:accounts|account-config|cloud-saves)\.(?:js|css)$/.test(file)||/^(?:account|login|signup|forgot-password|reset-password)\.html$/.test(file)||/^assets\/vendor\//.test(file)){auth();}
   else if(/^friends\.(?:js|css|html)$/.test(file)){add('friends-database.cjs','friends.cjs');}
