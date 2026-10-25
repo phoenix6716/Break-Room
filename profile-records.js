@@ -9,7 +9,7 @@
     {id:'pack', name:'Pack', category:'PACKING / LOGIC', unit:'usefulness', max:600, note:'Total usefulness from three untimed Daily bags. Available points vary; Arcade scores compare each total with its exact optimum.'},
     {id:'prior', name:'Prior', category:'HISTORY / INSTINCT', unit:'correct', max:5, note:'Correct earlier-event choices out of five untimed Daily pairs. Arcade score is correct answers × 20.'},
     {id:'laser', name:'Laser', category:'LIGHT / LOGIC', unit:'solved', max:4, note:'First-fire hits out of four Daily boards. Retries and solution reveals never change the score.'},
-    {id:'inner-clock',name:'Inner Clock',category:'TIMING / INSTINCT',unit:'seconds miss',max:30,lowerBetter:true,note:'Average absolute timing miss in seconds: lower is better. Arcade score measures misses relative to each target length.'},
+    {id:'inner-clock',name:'Time Sense',category:'TIMING / INSTINCT',unit:'seconds miss',max:30,lowerBetter:true,note:'Average absolute timing miss in seconds: lower is better. Arcade score measures misses relative to each target length.'},
     {id:'bouncer',name:'Bouncer',category:'WORD / DEDUCTION',unit:'correct',max:16,note:'Correct words out of sixteen. Tested words earn half credit for the Arcade score; untested correct words earn full credit.'},
     {id:'alibi', name:'Alibi', category:'DEDUCTION / MYSTERY', unit:'correct', max:4, note:'Correct first accusations out of four untimed Daily cases. Notes never affect scoring.'}
     ,{id:'time-drop',name:'Time Drop',category:'HISTORY / INSTINCT',unit:'points',max:5000,note:'Points from five first-lock year guesses (5,000 maximum). Older ten-round saves retain their 10,000-point scale. Arcade scores normalize each run against its own maximum.'},
@@ -115,7 +115,7 @@
       {id:'seating-chart',name:'Perfect host',detail:'Match the minimum drama at all five Daily Seating Chart tables.',earned:records.some(r=>r.game==='seating-chart'&&r.perfect)},
       {id:'clue-ladder',name:'First rung',detail:'Solve all five Daily Clue Ladder puzzles on their first clue.',earned:records.some(r=>r.game==='clue-ladder'&&r.perfect)},
       {id:'time-drop',name:'On the dot',detail:'Guess every Daily Time Drop year exactly.',earned:records.some(r=>r.game==='time-drop'&&r.perfect)},
-      {id:'inner-clock',name:'In sync',detail:'Stop all five Daily Inner Clock targets within 2%.',earned:records.some(r=>r.game==='inner-clock'&&r.perfect)},
+      {id:'inner-clock',name:'In sync',detail:'Stop all five Daily Time Sense targets within 2%.',earned:records.some(r=>r.game==='inner-clock'&&r.perfect)},
       {id:'bouncer',name:'On the list',detail:'Sort all sixteen Daily Bouncer words correctly without testing.',earned:records.some(r=>r.game==='bouncer'&&r.perfect)},
       {id:'first',name:'First break',detail:'Finish your first Daily game.',earned:total>0},
       {id:'sweep',name:'Clean sweep',detail:'Complete Lowball, Stake and Stack Up on the same day.',earned:[...days.values()].some(g=>['lowball','stake','stack-up'].every(id=>g.has(id)))},

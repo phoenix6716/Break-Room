@@ -1,6 +1,8 @@
 ## Game naming — owner decision, 25 October 2026
 
-The owner explicitly likes and wants to retain **Laser**, **Clue Ladder**, **Seating Chart**, **Pack** and **Lowball**. The other five active display names (Time Drop, Shift Work, Hidden Gem, Stack Up and Inner Clock) remain provisional while alternatives are evaluated. Do not rename any game until an alternative is selected. Future display-name changes must preserve internal routes, storage keys, saved snapshots, scoring and account/Friends compatibility unless separately requested.
+The owner explicitly likes and wants to retain **Laser**, **Clue Ladder**, **Seating Chart**, **Pack**, **Lowball** and **Time Sense** (formerly Inner Clock). The other four active display names (Time Drop, Shift Work, Hidden Gem and Stack Up) remain provisional while alternatives are evaluated. Do not rename any game until an alternative is selected. Future display-name changes must preserve internal routes, storage keys, saved snapshots, scoring and account/Friends compatibility unless separately requested.
+
+Time Sense is the approved display name for `inner-clock`. Apply it to the shelf, game/dialog titles, menu labels, share text, profile and Friends. Keep `games/inner-clock/`, JavaScript identifiers, native/cloud keys, SQL functions, scores and earned achievements unchanged; no migration is needed. Older references below use its former name. Static drawer labels are normalised by `scripts/build-site.cjs`, with the same runtime label in `navigation.js`.
 
 ## Shift Work — full integration authorised, 25 October 2026
 

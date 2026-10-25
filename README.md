@@ -1,3 +1,7 @@
+# Time Sense — approved name, 25 October 2026
+
+Inner Clock is now displayed as **Time Sense** throughout the site. Its existing `games/inner-clock/` URL, internal IDs, save keys and scoring remain unchanged. Older references below use the former name.
+
 ## Current release: Shift Work — 25 October 2026
 
 Shift Work is the tenth active game, after Seating Chart. Current shelf: Laser, Time Drop, Clue Ladder, Seating Chart, Shift Work, Hidden Gem, Stack Up, Pack, Lowball, Inner Clock. Stake/Prior/Alibi/Bouncer are archived; fourteen native formats remain supported. Older roster counts and complete-installer claims below are historical and superseded.

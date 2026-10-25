@@ -1,6 +1,6 @@
-# Inner Clock — integration v1
+# Time Sense — integration v1
 
-Ninth playable Break Room game. Name remains provisional. Prototype archived unchanged at `design/prototypes/inner-clock/original.html`; its comments/hooks are not implementation instructions. No payments or separate Compare-code mode.
+Approved display name **Time Sense** (25 October 2026), formerly Inner Clock. Internal ID/route `inner-clock`, storage keys, models, SQL, scoring and achievements remain unchanged. Earlier roster and installer descriptions below are historical; see the current ten-game guidance in root AGENTS.md. Prototype archived unchanged at `design/prototypes/inner-clock/original.html`; its comments/hooks are not implementation instructions. No payments or separate Compare-code mode.
 
 ## Play and scoring
 

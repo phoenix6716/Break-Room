@@ -109,7 +109,7 @@ jobs:
           python3 - <<'PY'
           import os, pathlib, time, urllib.request
           base = os.environ["PUBLISHED_URL"].rstrip("/") + "/"
-          paths = ["index.html", "games/shift-work/index.html", "games/shift-work/boards.js", "games/shift-work/shift-work.js", "games/shift-work/shift-work.css", "shift-work-model.js", "games/hidden-gem/index.html", "games/hidden-gem/questions.js", "games/hidden-gem/hidden-gem.js", "games/hidden-gem/hidden-gem.css", "hidden-gem-model.js", "cloud-saves.js", "accounts.js", "friends.js", "profile-records.js", "profile.js", "navigation.js", "game-config.js"]
+          paths = ["games/inner-clock/index.html", "games/inner-clock/inner-clock.js", "profile.html", "friends.html", "index.html", "games/shift-work/index.html", "games/shift-work/boards.js", "games/shift-work/shift-work.js", "games/shift-work/shift-work.css", "shift-work-model.js", "games/hidden-gem/index.html", "games/hidden-gem/questions.js", "games/hidden-gem/hidden-gem.js", "games/hidden-gem/hidden-gem.css", "hidden-gem-model.js", "cloud-saves.js", "accounts.js", "friends.js", "profile-records.js", "profile.js", "navigation.js", "game-config.js"]
           for attempt in range(6):
               try:
                   for path in paths:
@@ -117,12 +117,14 @@ jobs:
                       with urllib.request.urlopen(request, timeout=20) as response:
                           body = response.read()
                       if path == "index.html":
-                          assert b"10 DAILY GAMES" in body and b"games/hidden-gem/index.html" in body and b"games/shift-work/index.html" in body and b"games/stake/index.html" not in body, path
+                          assert b"Time Sense" in body and b"Inner Clock" not in body and b"10 DAILY GAMES" in body and b"games/hidden-gem/index.html" in body and b"games/shift-work/index.html" in body and b"games/stake/index.html" not in body, path
+                      elif path in ["games/inner-clock/index.html", "profile.html", "friends.html"]:
+                          assert b"Time Sense" in body and b"Inner Clock" not in body, path
                       elif path.endswith(".html"):
                           assert ((b"<title>Shift Work" in body and b"shift-work.js" in body) if "shift-work" in path else (b"<title>Hidden Gem" in body and b"hidden-gem.js" in body)), path
                       else:
                           assert body == pathlib.Path(path).read_bytes(), "Published file differs: " + path
-                  print("Verified live Shift Work, Hidden Gem, shelf and shared account/profile/Friends files:", base, os.environ["GITHUB_SHA"])
+                  print("Verified live Time Sense, Shift Work, Hidden Gem, shelf and shared account/profile/Friends files:", base, os.environ["GITHUB_SHA"])
                   break
               except Exception:
                   if attempt == 5:
