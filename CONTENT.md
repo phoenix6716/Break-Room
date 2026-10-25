@@ -1,3 +1,7 @@
+# Current Daily coverage — 25 October 2026
+
+All ten active games have at least a month of distinct Daily sets. The [current coverage audit](DAILY-CONTENT.md) verifies 32 days, longer repeat-free rotations for eight games, later/current-date windows and the Lowball/Time Sense ingredient-reuse limits. Run `node tests/daily-content.cjs`; relevant changes select it automatically in CI. No bank or schedule changes were necessary. Current names are Desk Jam, Sleeper and Time Sense; older names/counts below are historical.
+
 ## Current release: Shift Work — 25 October 2026
 
 Shift Work is the tenth active game, after Seating Chart. Current shelf: Laser, Time Drop, Clue Ladder, Seating Chart, Shift Work, Hidden Gem, Stack Up, Pack, Lowball, Inner Clock. Stake/Prior/Alibi/Bouncer are archived; fourteen native formats remain supported. Older roster counts and complete-installer claims below are historical and superseded.

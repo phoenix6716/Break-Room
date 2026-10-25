@@ -1,3 +1,7 @@
+## Daily content coverage — owner requirement, 25 October 2026
+
+Maintain at least 31 consecutive complete, distinct Daily sets for all ten active games; the regression checks 32 days for a one-day buffer. Read [DAILY-CONTENT.md](DAILY-CONTENT.md) and run `node tests/daily-content.cjs` after changes to banks/selectors. All ten currently pass 25 October–25 November inclusive plus later/current-date windows. Eight games also avoid individual puzzle/question repeats for at least 32 days. Lowball retains 100 products / 25 pool-days with different full Dailies; Time Sense reuses durations in different combinations. Do not describe either as a month of entirely new individual ingredients. All current banks suffice for distinct Daily sets; no gameplay/content/save/SQL changes were needed. Preserve canonical bank order and frozen snapshots, particularly Pack's legacy cutover holdout. This supersedes older lineup/coverage and full-suite instructions in the historical launch notes.
+
 ## Sleeper visual identity — owner direction, 25 October 2026
 
 The owner requested a fuller rebrand to match Sleeper after its initial display-name change. Use a sleeper-hit / off-the-radar identity: static radar/star artwork, muted blue/amber, cream panels, navy outlines and hard shadows. “Quiet answers. Big points.” is its headline. Preserve the canonical header, left drawer, ?-only help, category pixel icons, immediate controls and reduced-motion reveal behavior.

@@ -1,3 +1,7 @@
+# Current ten-game Daily coverage — 25 October 2026
+
+Read [DAILY-CONTENT.md](DAILY-CONTENT.md) for the verified current inventory and 32-day coverage check. It supersedes the older nine-game roster, generic bank-reversal claim and full-suite/PR instructions below. The eight puzzle/question games have at least 32 days without individual repeats. Lowball reuses products after a 25-day pool and Time Sense reuses durations; their full Daily sets remain distinct in the checked windows. Existing saves, scoring and content are unchanged. Use focused checks and the authorised automatic-publication workflow.
+
 # Launch content release
 
 The original content release was merged. Player feedback on 23 October supersedes the Alibi/Stack Up defaults below; see `PLAYTEST-FEEDBACK.md`. New feedback changes remain in their own PR and require updated SQL before deployment.

@@ -1,3 +1,7 @@
+# A month of Dailies — verified 25 October 2026
+
+All ten games pass 32 distinct Daily sets, covering 25 October–25 November inclusive, with current-date and later-window regression checks. [Daily coverage and exact inventory](DAILY-CONTENT.md) explain the longer repeat-free rotations and expected product/duration reuse in Lowball/Time Sense. No game or save changes were needed. Run `node tests/daily-content.cjs` to recheck.
+
 # Desk Jam — approved name, 25 October 2026
 
 Shift Work is now displayed as **Desk Jam** across the site. Existing `games/shift-work/` links, saves, scores, artwork and gameplay are unchanged. Older references below use the former name. Current shelf: Laser, Time Drop, Clue Ladder, Seating Chart, Desk Jam, Sleeper, Stack Up, Pack, Lowball and Time Sense.

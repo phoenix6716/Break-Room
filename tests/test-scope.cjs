@@ -18,6 +18,9 @@ assert.throws(()=>plan(['new-runtime.js']),/No focused check mapping/);assert.th
 assert.throws(()=>selectChecks(['games/alibi/index.html'],[]),/Missing mapped check/);
 const full=selectChecks([],available,{full:true});assert.deepEqual(full.unit,[...UNITS].sort());assert.equal(full.unit.length+full.browser.length,available.length);assert(full.python&&full.content&&full.legal);
 const infra=plan(['scripts/test-scope.cjs','.github/workflows/site.yml','package.json']);assert(infra.unit.includes('test-scope.cjs'));assert(!infra.browser.includes('extended-play.cjs'));assert(!infra.browser.includes('alibi.cjs'));
+for(const source of ['games/stack-up/familiar-stacks.js','games/lowball/engine/index.html','hidden-gem-model.js','index.html'])assert(plan([source]).unit.includes('daily-content.cjs'),'Daily coverage follows '+source);
+assert(!plan(['games/hidden-gem/hidden-gem.css']).unit.includes('daily-content.cjs'),'Pure styling does not rerun the content audit');
+const coverage=plan(['tests/daily-content.cjs']);assert.deepEqual(coverage.unit,['daily-content.cjs']);assert.deepEqual(coverage.browser,[]);
 const {options}=require('../scripts/affected-checks.cjs'),{spawnSync}=require('node:child_process');
 assert.deepEqual(options(['--files','games/alibi/index.html']).files,['games/alibi/index.html']);assert(options(['--full']).full);assert.throws(()=>options(['--base']),/Missing/);assert.throws(()=>options(['--wat']),/Unknown option/);
 const failed=spawnSync(process.execPath,['scripts/run-checks.cjs','unit','missing-check.cjs'],{encoding:'utf8'});assert.equal(failed.status,1);assert.match(failed.stderr,/Unknown unit check/);

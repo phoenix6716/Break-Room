@@ -1,5 +1,7 @@
 /* Pure changed-file selection. Full game sweeps require an explicit --full request. */
-const UNITS=["shift-work-rules.cjs","hidden-gem-rules.cjs","seating-chart-rules.cjs","clue-ladder-rules.cjs","time-drop-rules.cjs","test-scope.cjs","playtest-feedback.cjs","factual-review.cjs","launch-content.cjs","inner-clock-rules.cjs","bouncer-rules.cjs","alibi-scenarios.cjs","alibi-rules.cjs","laser-rules.cjs","practice-session-rules.cjs","prior-rules.cjs","pack-rules.cjs","content-tools.cjs","friends-database.cjs","account-navigation.cjs","cloud-saves.cjs","cloud-database.cjs","arcade-score.cjs","daily-clock.cjs","profile-records.cjs","question-banks.cjs"];
+const UNITS=["daily-content.cjs","shift-work-rules.cjs","hidden-gem-rules.cjs","seating-chart-rules.cjs","clue-ladder-rules.cjs","time-drop-rules.cjs","test-scope.cjs","playtest-feedback.cjs","factual-review.cjs","launch-content.cjs","inner-clock-rules.cjs","bouncer-rules.cjs","alibi-scenarios.cjs","alibi-rules.cjs","laser-rules.cjs","practice-session-rules.cjs","prior-rules.cjs","pack-rules.cjs","content-tools.cjs","friends-database.cjs","account-navigation.cjs","cloud-saves.cjs","cloud-database.cjs","arcade-score.cjs","daily-clock.cjs","profile-records.cjs","question-banks.cjs"];
+
+const DAILY_CONTENT_FILES=new Set(["index.html","game-config.js","pack-model.js","laser-model.js","inner-clock-model.js","time-drop-model.js","clue-ladder-model.js","seating-chart-model.js","hidden-gem-model.js","shift-work-model.js","games/pack/puzzles.js","games/laser/boards.js","games/inner-clock/inner-clock.js","games/time-drop/events.js","games/clue-ladder/puzzles.js","games/seating-chart/puzzles.js","games/hidden-gem/questions.js","games/shift-work/boards.js","games/stack-up/stack-up.js","games/stack-up/stacks.js","games/stack-up/familiar-stacks.js","games/lowball/engine/index.html","content/time-drop-events.json","content/clue-ladder-puzzles.json","content/seating-chart-puzzles.json","content/hidden-gem-questions.json","content/shift-work-boards.json","content/stack-up-familiar.json"]);
 
 const PLACEHOLDERS=['pixel-pairs','word-forge','gridlock','number-drop','memory-lane','mystery-cabinet'];
 const GAMES=['shift-work','hidden-gem','seating-chart','clue-ladder','lowball','stake','stack-up','pack','prior','laser','alibi','bouncer','inner-clock','time-drop'];
@@ -41,6 +43,8 @@ function selectChecks(changed,available,{full=false}={}){
  if(full){for(const name of available)if(name.endsWith('.cjs'))add(name);python=true;legal=true;content=true;GAMES.forEach(id=>games.add(id));reasons.push('Explicit full-suite request.');}
  else for(const file of files){
   const before=unit.size+browser.size;
+  // Check date coverage when shipped banks, selectors or the active shelf change; no game sessions.
+  if(DAILY_CONTENT_FILES.has(file))add('daily-content.cjs');
   if(/\.md$/i.test(file)||/^(?:design|game-drafts|source)\//.test(file)||['.gitignore','.DS_Store'].includes(file))continue;
   if(/^tests\/[^/]+\.cjs$/.test(file)){const name=file.slice(6);if(known.has(name))add(name);else reasons.push('Deleted check: '+file);continue;}
   if(file==='tests/question-maths.py'){python=true;continue;}
