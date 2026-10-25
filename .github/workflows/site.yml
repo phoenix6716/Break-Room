@@ -117,14 +117,14 @@ jobs:
                       with urllib.request.urlopen(request, timeout=20) as response:
                           body = response.read()
                       if path == "index.html":
-                          assert b"Time Sense" in body and b"Inner Clock" not in body and b"10 DAILY GAMES" in body and b"games/hidden-gem/index.html" in body and b"games/shift-work/index.html" in body and b"games/stake/index.html" not in body, path
+                          assert b"Sleeper" in body and b"<h3>Hidden Gem</h3>" not in body and b"Time Sense" in body and b"Inner Clock" not in body and b"10 DAILY GAMES" in body and b"games/hidden-gem/index.html" in body and b"games/shift-work/index.html" in body and b"games/stake/index.html" not in body, path
                       elif path in ["games/inner-clock/index.html", "profile.html", "friends.html"]:
-                          assert b"Time Sense" in body and b"Inner Clock" not in body, path
+                          assert b"Sleeper" in body and b"Time Sense" in body and b"Inner Clock" not in body, path
                       elif path.endswith(".html"):
-                          assert ((b"<title>Shift Work" in body and b"shift-work.js" in body) if "shift-work" in path else (b"<title>Hidden Gem" in body and b"hidden-gem.js" in body)), path
+                          assert ((b"<title>Shift Work" in body and b"shift-work.js" in body) if "shift-work" in path else (b"<title>Sleeper" in body and b"hidden-gem.js" in body)), path
                       else:
                           assert body == pathlib.Path(path).read_bytes(), "Published file differs: " + path
-                  print("Verified live Time Sense, Shift Work, Hidden Gem, shelf and shared account/profile/Friends files:", base, os.environ["GITHUB_SHA"])
+                  print("Verified live Time Sense, Shift Work, Sleeper, shelf and shared account/profile/Friends files:", base, os.environ["GITHUB_SHA"])
                   break
               except Exception:
                   if attempt == 5:

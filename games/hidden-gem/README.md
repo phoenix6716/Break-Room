@@ -1,6 +1,6 @@
-# Hidden Gem
+# Sleeper
 
-Ten active games: Laser → Time Drop → Clue Ladder → Seating Chart → Hidden Gem → Stack Up → Stake → Pack → Lowball → Inner Clock. Alibi, Bouncer and Prior retain archived routes, artwork, saves and history. Thirteen native save formats are supported.
+Approved display name **Sleeper** (25 October 2026), formerly Hidden Gem. Keep the `hidden-gem` internal ID/route, all native/cloud keys, frozen question snapshots, scores and achievements. The **Hidden Gem 60–79** answer band remains unchanged. Current ten-game shelf: Laser → Time Drop → Clue Ladder → Seating Chart → Shift Work → Sleeper → Stack Up → Pack → Lowball → Time Sense. Stake, Prior, Alibi and Bouncer retain archived history; fourteen native formats are supported.
 
 ## Rules and scores
 Five Daily questions have 30 seconds each, starting when revealed. Type in one box and press Enter or Submit. An unlisted submission shows “Not in the answer list. Try again.” and remains editable under the original deadline. Blank submissions also retry. Clear, unique one-letter typos in longer answers and listed aliases resolve to the canonical answer; ambiguous guesses are rejected. At the deadline a listed saved draft is accepted automatically; otherwise the question ends with no accepted answer and zero points.

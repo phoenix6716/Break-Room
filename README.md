@@ -1,3 +1,7 @@
+# Sleeper — approved name, 25 October 2026
+
+Hidden Gem is now displayed as **Sleeper**. Its existing `games/hidden-gem/` URL, internal identifiers, save keys, content, scores and answer bands are unchanged. Older references below use the former name; the current lineup is Laser, Time Drop, Clue Ladder, Seating Chart, Shift Work, Sleeper, Stack Up, Pack, Lowball and Time Sense.
+
 # Time Sense — approved name, 25 October 2026
 
 Inner Clock is now displayed as **Time Sense** throughout the site. Its existing `games/inner-clock/` URL, internal IDs, save keys and scoring remain unchanged. Older references below use the former name.

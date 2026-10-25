@@ -1,4 +1,4 @@
-/* Hidden Gem: frozen first answers, real deadlines and owner-scoped practice. */
+/* Sleeper: frozen first answers, real deadlines and owner-scoped practice. */
 (()=>{'use strict';
 const M=BREAK_ROOM_HIDDEN_GEM,B=HIDDEN_GEM_QUESTIONS,C=MIDNIGHT_ARCADE_CLOCK,$=id=>document.getElementById(id),fmt=BREAK_ROOM_SCORE.format,mem=new Map(),bootOwner=owner(),practiceKey='break-room:hidden-gem:practice:'+bootOwner;
 const h=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;};
@@ -77,8 +77,8 @@ if(reviewed){const review=h('section','dc-review'),heading=h('h3',null,pick.answ
 const details=h('details','dc-answer-list');details.append(h('summary',null,'See accepted answers and their ratings'));const list=h('ul');q.answers.slice().sort((a,b)=>b.points-a.points||a.name.localeCompare(b.name)).forEach(a=>{const item=h('li');item.append(h('span',null,a.name),h('strong',null,a.points+' · '+scoreName(a.points)));list.append(item);});const source=h('a',null,'Question reference ↗');source.href=q.source;source.target='_blank';source.rel='noopener noreferrer';details.append(h('p','dc-small','These are editorial ratings, not measured popularity. They may change after your feedback.'),list,source);review.append(details,btn('COPY FEEDBACK FOR THIS QUESTION','copy-feedback',()=>feedback(q,pick)));out.append(review);revealScore(score.querySelector('strong'),pick.points,r.id+':'+r.round,meter.fill,stamp);}
 paintTimer();if(moveFocus)focusHeading();}
 function copy(text,label){const fallback=()=>{const box=h('textarea','dc-copy');box.readOnly=true;box.value=text;box.setAttribute('aria-label',label+' to copy');$('copy-fallback').replaceChildren(box);$('copy-note').textContent='Automatic copy was blocked. Select and copy the text below.';box.focus();box.select();};try{navigator.clipboard.writeText(text).then(()=>$('copy-note').textContent='Copied.',fallback);}catch{fallback();}}
-function copyResult(r){copy('Hidden Gem · '+r.day+'\n'+r.picks.map(p=>p.points>=80?'🟩':p.points>=60?'🟦':p.points?'🟨':'⬜').join('')+'\n'+fmt(M.average(r))+'/100\nEditorial ratings · no survey data','Result');}
-function feedback(q,p){copy('Hidden Gem question feedback\nQuestion: '+q.prompt+'\nMy answer: '+(p.input||'(blank)')+'\nMatched answer: '+(p.answer||'(not accepted)')+'\nPoints: '+p.points+'/100\nWhat I would change: ','Feedback');}
+function copyResult(r){copy('Sleeper · '+r.day+'\n'+r.picks.map(p=>p.points>=80?'🟩':p.points>=60?'🟦':p.points?'🟨':'⬜').join('')+'\n'+fmt(M.average(r))+'/100\nEditorial ratings · no survey data','Result');}
+function feedback(q,p){copy('Sleeper question feedback\nQuestion: '+q.prompt+'\nMy answer: '+(p.input||'(blank)')+'\nMatched answer: '+(p.answer||'(not accepted)')+'\nPoints: '+p.points+'/100\nWhat I would change: ','Feedback');}
 
 $('practice-topic').addEventListener('change',()=>{if(!sync())return;ensurePractice();data.topic=$('practice-topic').value;savePractice();$('practice-note').textContent='Topic changes apply to the next question. Your current question keeps its timer.';});
 document.addEventListener('break-room:mode-change',e=>{if(owner()!==bootOwner)return;tick();mode=e.detail.mode;if(mode==='unlimited'){ensurePractice();$('practice-topic').value=data.topic;}announced='';tick();render();});
