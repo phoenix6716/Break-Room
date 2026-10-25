@@ -6,11 +6,13 @@ The owner selected **Sleeper**, without “Hit”, for the 60–79 tier. Display
 
 ## Game naming — owner decision, 25 October 2026
 
-The owner explicitly likes and wants to retain **Laser**, **Clue Ladder**, **Seating Chart**, **Pack**, **Lowball**, **Time Sense** (formerly Inner Clock), **Stack Up** and **Sleeper** (formerly Hidden Gem). The other two active display names (Time Drop and Shift Work) remain provisional while alternatives are evaluated. Do not rename any game until an alternative is selected. Future display-name changes must preserve internal routes, storage keys, saved snapshots, scoring and account/Friends compatibility unless separately requested.
+The owner explicitly likes and wants to retain **Laser**, **Clue Ladder**, **Seating Chart**, **Pack**, **Lowball**, **Time Sense** (formerly Inner Clock), **Stack Up**, **Sleeper** (formerly Hidden Gem) and **Desk Jam** (formerly Shift Work). Time Drop remains provisional while alternatives are evaluated. Do not rename any game until an alternative is selected. Future display-name changes must preserve internal routes, storage keys, saved snapshots, scoring and account/Friends compatibility unless separately requested.
 
 Time Sense is the approved display name for `inner-clock`. Apply it to the shelf, game/dialog titles, menu labels, share text, profile and Friends. Keep `games/inner-clock/`, JavaScript identifiers, native/cloud keys, SQL functions, scores and earned achievements unchanged; no migration is needed. Older references below use its former name. Static drawer labels are normalised by `scripts/build-site.cjs`, with the same runtime label in `navigation.js`.
 
 Sleeper is the approved display name for `hidden-gem` (25 October 2026). Apply it to the shelf, game/help/stats titles, drawer labels, share/feedback text, profile and Friends. Preserve `games/hidden-gem/`, internal identifiers, local/cloud keys, SQL, answer content, artwork, scores and achievements. The existing answer score band **Hidden Gem (60–79)** stays unchanged; the owner chose a game title, not new score bands. No data migration is needed. Older documentation below uses its former name.
+
+Desk Jam is the approved display name for `shift-work` (25 October 2026). Update the homepage, registry, game/help/stats titles, drawer, share text, profile and Friends. Preserve the existing office artwork, gameplay, Smooth shift badge meaning, numeric scores, `games/shift-work/` route, internal identifiers, local/cloud keys and SQL. No migration is needed. Older references below use the former name.
 
 ## Shift Work — full integration authorised, 25 October 2026
 

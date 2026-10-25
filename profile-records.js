@@ -16,7 +16,7 @@
     {id:'clue-ladder',name:'Clue Ladder',category:'CLUES / KNOWLEDGE',unit:'points',max:5000,note:'Five untimed puzzles. Solves earn 1,000 / 800 / 600 / 400 / 200 by clue used; unsolved scores zero. Arcade score = Daily points divided by 50.'},
     {id:'seating-chart',name:'Seating Chart',category:'SEATING / LOGIC',unit:'drama',max:60,lowerBetter:true,note:'Total broken guest requests across five tables: lower is better. Arcade credit penalises only avoidable drama above each table’s optimum.'},
     {id:'hidden-gem',name:'Sleeper',category:'TRIVIA / INSTINCT',unit:'points',max:100,note:'Five timed questions. Native and Arcade score are the average of five individual answer ratings, out of 100. Editorial ratings, not surveys.'},
-    {id:'shift-work',name:'Shift Work',category:'SLIDING / LOGIC',unit:'moves',max:6000,lowerBetter:true,note:'Total moves across three untimed Daily boards: lower is better. Arcade score compares moves with each board’s minimum; hints cap board credit at 75.'},
+    {id:'shift-work',name:'Desk Jam',category:'SLIDING / LOGIC',unit:'moves',max:6000,lowerBetter:true,note:'Total moves across three untimed Daily boards: lower is better. Arcade score compares moves with each board’s minimum; hints cap board credit at 75.'},
   ];
   const isObject = value => value && typeof value === 'object' && !Array.isArray(value);
   function dateKey(value) {
@@ -110,7 +110,7 @@
     const days=new Map();for(const record of records){if(!days.has(record.date))days.set(record.date,new Set());days.get(record.date).add(record.game);}
     const streak=streaks([...days.keys()],today), total=summaries.reduce((n,g)=>n+g.played,0);
     const achievements=[
-      {id:'shift-work',name:'Smooth shift',detail:'Solve all three Daily Shift Work boards in their minimum moves without hints.',earned:records.some(r=>r.game==='shift-work'&&r.perfect)},
+      {id:'shift-work',name:'Smooth shift',detail:'Solve all three Daily Desk Jam boards in their minimum moves without hints.',earned:records.some(r=>r.game==='shift-work'&&r.perfect)},
       {id:'hidden-gem',name:'Breakout run',detail:'Find a 100-point answer in all five Daily Sleeper questions.',earned:records.some(r=>r.game==='hidden-gem'&&r.perfect)},
       {id:'seating-chart',name:'Perfect host',detail:'Match the minimum drama at all five Daily Seating Chart tables.',earned:records.some(r=>r.game==='seating-chart'&&r.perfect)},
       {id:'clue-ladder',name:'First rung',detail:'Solve all five Daily Clue Ladder puzzles on their first clue.',earned:records.some(r=>r.game==='clue-ladder'&&r.perfect)},

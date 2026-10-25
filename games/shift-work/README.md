@@ -1,4 +1,6 @@
-# Shift Work
+# Desk Jam
+
+Approved display name **Desk Jam** (25 October 2026), formerly Shift Work. Keep the `shift-work` route/ID, internal symbols, storage/SQL contracts, frozen boards, artwork, scores and Smooth shift achievement unchanged. This is a display-name change with no data migration.
 
 Three untimed Daily boards use the approved middle challenge: **Easy 4–5 minimum slides → Steady 6–7 → Tricky 8–9**. Slide office furniture along its long side to move the blue trolley to the right edge of a 6×6 room. Preserve the approved artwork, drag/tap/keyboard controls, centred Stake shell, left menu, shared Sydney reset and ?-only help/stats. No timer, hearts, intro screen or Daily replay.
 

@@ -1,3 +1,7 @@
+# Desk Jam — approved name, 25 October 2026
+
+Shift Work is now displayed as **Desk Jam** across the site. Existing `games/shift-work/` links, saves, scores, artwork and gameplay are unchanged. Older references below use the former name. Current shelf: Laser, Time Drop, Clue Ladder, Seating Chart, Desk Jam, Sleeper, Stack Up, Pack, Lowball and Time Sense.
+
 # Sleeper visual rebrand — 25 October 2026
 
 Sleeper now has a radar/star identity, blue/amber accents and “Quiet answers. Big points.” copy. Answer labels are Everyday 1–19, Good Call 20–39, Under the Radar 40–59, Sleeper 60–79 and Breakout 80–100. The existing badge is displayed as Breakout run. Numeric scores, answer content, saves, routes and gameplay are unchanged. This supersedes the older instruction below to keep the visible gem/crown bands. Read [the game contract](games/hidden-gem/README.md).
