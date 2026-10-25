@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "effectiveDay": "2026-10-26",
+  "checkedAt": "2026-10-25",
+  "items": [
+    {
+      "name": "IKEA LACK side table",
+      "art": "ikea-lack-side-table.png"
+    },
+    {
+      "name": "IKEA BILLY bookcase",
+      "art": "ikea-billy-bookcase.png"
+    },
+    {
+      "name": "IKEA KALLAX shelf",
+      "art": "ikea-kallax-shelf.png"
+    },
+    {
+      "name": "IKEA POÄNG armchair",
+      "art": "ikea-poang-armchair.png"
+    },
+    {
+      "name": "IKEA RÅSKOG trolley",
+      "art": "ikea-raskog-trolley.png"
+    },
+    {
+      "name": "IKEA FRAKTA bag",
+      "art": "ikea-frakta-bag.png"
+    },
+    {
+      "name": "IKEA POKAL glasses",
+      "art": "ikea-pokal-glasses.png"
+    },
+    {
+      "name": "IKEA FÖRNUFT cutlery",
+      "art": "ikea-fornuft-cutlery.png"
+    },
+    {
+      "name": "AirTag",
+      "art": "airtag.png"
+    },
+    {
+      "name": "Apple Pencil USB-C",
+      "art": "apple-pencil-usb-c.png"
+    },
+    {
+      "name": "HomePod mini",
+      "art": "homepod-mini.png"
+    },
+    {
+      "name": "Apple TV 4K",
+      "art": "apple-tv-4k.png"
+    },
+    {
+      "name": "Mac mini",
+      "art": "mac-mini.png"
+    },
+    {
+      "name": "iCloud+ 200GB",
+      "art": "icloud-200gb.png"
+    },
+    {
+      "name": "UNO card game",
+      "art": "uno-card-game.png"
+    },
+    {
+      "name": "Rubik's Cube",
+      "art": "rubiks-cube.png"
+    },
+    {
+      "name": "Play-Doh pack",
+      "art": "play-doh-pack.png"
+    },
+    {
+      "name": "Hot Wheels car",
+      "art": "hot-wheels-car.png"
+    },
+    {
+      "name": "Coleman Sundome tent",
+      "art": "coleman-sundome-tent.png"
+    },
+    {
+      "name": "Owala FreeSip bottle",
+      "art": "owala-freesip-bottle.png"
+    },
+    {
+      "name": "YETI Rambler mug",
+      "art": "yeti-rambler-mug.png"
+    },
+    {
+      "name": "Therm-a-Rest Z Seat",
+      "art": "therm-a-rest-z-seat.png"
+    },
+    {
+      "name": "Casio scientific calculator",
+      "art": "casio-scientific-calculator.png"
+    },
+    {
+      "name": "STABILO highlighters",
+      "art": "stabilo-highlighters.png"
+    },
+    {
+      "name": "Moleskine notebook",
+      "art": "moleskine-notebook.png"
+    },
+    {
+      "name": "WD-40 can",
+      "art": "wd-40-can.png"
+    },
+    {
+      "name": "Gorilla Super Glue",
+      "art": "gorilla-super-glue.png"
+    },
+    {
+      "name": "Fiskars scissors",
+      "art": "fiskars-scissors.png"
+    }
+  ]
+}
