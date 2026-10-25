@@ -10,6 +10,7 @@ const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
    await context.addInitScript(()=>localStorage.setItem('pc_help_seen','1'));
    const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
    await page.goto(base+'/games/lowball/index.html');
+   assert.equal(await page.locator('#game-menu a[href$="games/inner-clock/index.html"]').innerText(),'Time Sense');
    const frame=await(await page.locator('#lowball-game-frame').elementHandle()).contentFrame();
    await frame.locator('#guessInput').waitFor();
    const item=await frame.locator('#itemName').innerText();
