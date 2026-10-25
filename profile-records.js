@@ -111,7 +111,7 @@
     const streak=streaks([...days.keys()],today), total=summaries.reduce((n,g)=>n+g.played,0);
     const achievements=[
       {id:'shift-work',name:'Smooth shift',detail:'Solve all three Daily Shift Work boards in their minimum moves without hints.',earned:records.some(r=>r.game==='shift-work'&&r.perfect)},
-      {id:'hidden-gem',name:'Crown collection',detail:'Find a 100-point answer in all five Daily Sleeper questions.',earned:records.some(r=>r.game==='hidden-gem'&&r.perfect)},
+      {id:'hidden-gem',name:'Breakout run',detail:'Find a 100-point answer in all five Daily Sleeper questions.',earned:records.some(r=>r.game==='hidden-gem'&&r.perfect)},
       {id:'seating-chart',name:'Perfect host',detail:'Match the minimum drama at all five Daily Seating Chart tables.',earned:records.some(r=>r.game==='seating-chart'&&r.perfect)},
       {id:'clue-ladder',name:'First rung',detail:'Solve all five Daily Clue Ladder puzzles on their first clue.',earned:records.some(r=>r.game==='clue-ladder'&&r.perfect)},
       {id:'time-drop',name:'On the dot',detail:'Guess every Daily Time Drop year exactly.',earned:records.some(r=>r.game==='time-drop'&&r.perfect)},

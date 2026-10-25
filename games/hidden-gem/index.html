@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f4eddc">
-  <meta name="description" content="Find an overlooked answer in 30 seconds. Five Daily questions, individual editorial scores and free Unlimited practice.">
+  <meta name="description" content="Quiet answers. Big points. Find an overlooked answer in 30 seconds, with five Daily questions and free Unlimited practice.">
   <title>Sleeper — Break Room</title>
   <link rel="icon" type="image/svg+xml" href="../../assets/break-room-icon.svg">
   <link rel="stylesheet" href="../../styles.css">
@@ -17,8 +17,8 @@
   <script src="../../arcade-score.js?v=shift-work-20261025"></script>
   <link rel="stylesheet" href="../../arcade-score.css">
   <script defer src="../../navigation.js?v=shift-work-20261025"></script>
-  <script src="../../pack-model.js?v=launch-20261023"></script><script src="../../prior-model.js?v=launch-20261023"></script><script src="../../laser-model.js?v=launch-20261023"></script><script src="../../alibi-model.js?v=playtest-20261023"></script><script src="../../bouncer-model.js?v=launch-20261023"></script><script src="../../inner-clock-model.js"></script><script defer src="shell.js"></script><script src="../../time-drop-model.js"></script><script src="../../clue-ladder-model.js"></script><script src="../../seating-chart-model.js"></script><script src="../../hidden-gem-model.js"></script><script defer src="questions.js"></script><script defer src="hidden-gem.js?v=sleeper-20261025"></script>
-<link rel="stylesheet" href="../../legal.css"><link rel="stylesheet" href="hidden-gem.css"><link rel="stylesheet" href="../../game-access.css"><link rel="stylesheet" href="../../accounts.css"><script defer src="../../assets/vendor/supabase.js"></script><script defer src="../../account-config.js"></script><script defer src="../../cloud-saves.js?v=shift-work-20261025"></script><script defer src="../../accounts.js?v=shift-work-20261025"></script><script src="../../shift-work-model.js?v=shift-work-20261025"></script></head>
+  <script src="../../pack-model.js?v=launch-20261023"></script><script src="../../prior-model.js?v=launch-20261023"></script><script src="../../laser-model.js?v=launch-20261023"></script><script src="../../alibi-model.js?v=playtest-20261023"></script><script src="../../bouncer-model.js?v=launch-20261023"></script><script src="../../inner-clock-model.js"></script><script defer src="shell.js"></script><script src="../../time-drop-model.js"></script><script src="../../clue-ladder-model.js"></script><script src="../../seating-chart-model.js"></script><script src="../../hidden-gem-model.js"></script><script defer src="questions.js"></script><script defer src="hidden-gem.js?v=sleeper-brand-20261025"></script>
+<link rel="stylesheet" href="../../legal.css"><link rel="stylesheet" href="hidden-gem.css?v=sleeper-brand-20261025"><link rel="stylesheet" href="../../game-access.css"><link rel="stylesheet" href="../../accounts.css"><script defer src="../../assets/vendor/supabase.js"></script><script defer src="../../account-config.js"></script><script defer src="../../cloud-saves.js?v=shift-work-20261025"></script><script defer src="../../accounts.js?v=shift-work-20261025"></script><script src="../../shift-work-model.js?v=shift-work-20261025"></script></head>
 <body class="hidden-gem-page">
   <!-- 01 FIXED: Menu/left drawer, centred Break Room brand, account link. -->
 <header class="site-header game-site-header"><div class="wrap game-header-inner"><button class="game-menu-toggle" id="game-menu-toggle" type="button" aria-expanded="false" aria-controls="game-menu"><span class="hamburger-lines" aria-hidden="true">☰</span><span class="menu-toggle-label">MENU</span></button><a class="brand" href="../../index.html" aria-label="Break Room — back to all games"><span class="break-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="break-wordmark">BREAK ROOM</span></a><a class="game-header-account" href="../../login.html">ACCOUNT</a></div><nav class="game-menu" id="game-menu" aria-label="Break Room menu" aria-hidden="true" hidden>
@@ -31,7 +31,7 @@
       <section class="br-game-heading" aria-labelledby="game-title">
         <div class="br-game-title-group">
           <h1 id="game-title" data-template-slot="title">Sleeper</h1>
-          <p data-template-slot="description">TRIVIA / INSTINCT · Find the overlooked answer.</p>
+          <p data-template-slot="description">TRIVIA / INSTINCT · Think off the radar.</p>
         </div>
         <section class="quick-stats" aria-label="Your game stats">
           <div class="quick-stat"><strong data-summary-stat="streak">—</strong><span>Streak</span></div>
@@ -77,13 +77,13 @@
       <button class="game-popup-close" type="button" data-popup-close aria-label="Close">×</button>
       <p class="popup-kicker">PLAYER GUIDE</p>
       <h2 id="help-popup-title">HOW TO PLAY SLEEPER</h2>
-      <p>Find a correct answer that feels less obvious. Higher is better.</p>
+      <p>Quiet answers. Big points. Find the overlooked answer and turn it into a sleeper hit.</p>
 <div class="popup-instructions">
 <p><strong>1. One box. Thirty seconds.</strong> Read the question and its scope, then type an answer. The timer starts when you reveal the question.</p>
 <p><strong>2. Submit and keep trying.</strong> Press Enter or Submit answer. If it is not listed, you see “Not in the answer list. Try again.” The question stays open and the original timer keeps running. Rejected guesses do not count as answers or reduce your score.</p>
 <p><strong>3. Clear typos are corrected.</strong> Common aliases and unambiguous one-letter typos in longer answers match the listed spelling. A successful submission shows the actual accepted answer. Ambiguous guesses are rejected so you can try again.</p>
 <p><strong>4. The deadline still matters.</strong> Refreshing, changing modes or opening Help does not pause or restart the clock. At 30 seconds, your current draft is accepted only if it matches the answer list. Otherwise the question ends with no accepted answer and zero points. You can read the reveal without a timer.</p>
-<p><strong>5. Higher is better.</strong> Each answer has its own designer-assigned score from 1 to 100. Familiar: 1–19; Nice Find: 20–39; Offbeat: 40–59; Hidden Gem: 60–79; Crown Jewel: 80–100. For example, two Crown Jewel answers can earn 95 and 100 points. Your final score is the average of five questions, out of 100. Ratings are editorial choices, not surveys or measured player popularity.</p>
+<p><strong>5. Higher is better.</strong> Each answer has its own designer-assigned score from 1 to 100. Everyday: 1–19; Good Call: 20–39; Under the Radar: 40–59; Sleeper Hit: 60–79; Breakout: 80–100. For example, two Breakout answers can earn 95 and 100 points. Your final score is the average of five questions, out of 100. Ratings are editorial choices, not surveys or measured player popularity.</p>
 <p><strong>6. One Daily. A shared reset.</strong> Five questions make one scored Daily. Each accepted answer or timeout locks immediately. Your input, rejected attempts, deadline and result save as you go. Everyone gets the same questions, resetting at midnight Australia/Sydney. The 160-question bank provides 32 sets before repeating, each with five different topics. Saved snapshots keep their captured ratings.</p><p><strong>7. Unlimited.</strong> Free practice excludes today’s five questions and does not repeat eligible questions until the chosen pool is exhausted. Topic changes apply next question. Practice resumes in this tab for the current account and stays outside Daily/profile/cloud history.</p>
 <p><strong>8. Feedback.</strong> If you think a valid answer is missing, use Copy feedback after the reveal. This game checks a fixed answer list; it does not invent a match or use a live AI judge.</p></div><button class="button pink popup-done" type="button" data-popup-close>GOT IT</button>
     </section>

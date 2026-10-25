@@ -1,3 +1,9 @@
+## Sleeper visual identity — owner direction, 25 October 2026
+
+The owner requested a fuller rebrand to match Sleeper after its initial display-name change. Use a sleeper-hit / off-the-radar identity: static radar/star artwork, muted blue/amber, cream panels, navy outlines and hard shadows. “Quiet answers. Big points.” is its headline. Preserve the canonical header, left drawer, ?-only help, category pixel icons, immediate controls and reduced-motion reveal behavior.
+
+Display answer bands are now Everyday 1–19, Good Call 20–39, Under the Radar 40–59, Sleeper Hit 60–79 and Breakout 80–100; zero remains Time’s Up. These presentation labels replace the earlier gem/crown labels without changing numeric thresholds, saved points, deadlines, question snapshots, matching, first-answer locks, native/Arcade averages or content. The legacy pure model’s scoreBand strings remain internal compatibility labels; the engine maps them for display. Rename the existing badge to Breakout run without changing its ID or five 100-point requirement. No SQL or data migration. This supersedes the earlier instruction to retain the visible Hidden Gem band/artwork.
+
 ## Game naming — owner decision, 25 October 2026
 
 The owner explicitly likes and wants to retain **Laser**, **Clue Ladder**, **Seating Chart**, **Pack**, **Lowball**, **Time Sense** (formerly Inner Clock), **Stack Up** and **Sleeper** (formerly Hidden Gem). The other two active display names (Time Drop and Shift Work) remain provisional while alternatives are evaluated. Do not rename any game until an alternative is selected. Future display-name changes must preserve internal routes, storage keys, saved snapshots, scoring and account/Friends compatibility unless separately requested.

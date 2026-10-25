@@ -1,3 +1,7 @@
+# Sleeper visual rebrand — 25 October 2026
+
+Sleeper now has a radar/star identity, blue/amber accents and “Quiet answers. Big points.” copy. Answer labels are Everyday 1–19, Good Call 20–39, Under the Radar 40–59, Sleeper Hit 60–79 and Breakout 80–100. The existing badge is displayed as Breakout run. Numeric scores, answer content, saves, routes and gameplay are unchanged. This supersedes the older instruction below to keep the visible gem/crown bands. Read [the game contract](games/hidden-gem/README.md).
+
 # Sleeper — approved name, 25 October 2026
 
 Hidden Gem is now displayed as **Sleeper**. Its existing `games/hidden-gem/` URL, internal identifiers, save keys, content, scores and answer bands are unchanged. Older references below use the former name; the current lineup is Laser, Time Drop, Clue Ladder, Seating Chart, Shift Work, Sleeper, Stack Up, Pack, Lowball and Time Sense.
