@@ -1,3 +1,7 @@
+## Final site name — owner decision, 25 October 2026
+
+The owner confirmed **Break Room** as the final website name after considering alternatives. Use two words with this capitalisation throughout the public brand. Midnight Arcade is the former name. Keep the existing visual identity, game names, routes, storage keys and account contracts. Revisit the website name only if the owner asks. This records the branding decision; it does not establish domain availability or trademark clearance.
+
 ## Artwork without third-party logos — owner requirement, 25 October 2026
 
 Use generic illustrations for products and services. Do not include third-party logos, wordmarks, recognisable brand marks, branded clothing/packaging patterns or protected medical emblems in images. Keep device backs and packaging labels blank. This applies to future generated artwork and overrides earlier instructions to preserve an image when it contains such marks. Break Room's own identity remains permitted; factual product names in question text are unchanged.
