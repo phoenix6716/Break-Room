@@ -1103,6 +1103,370 @@
         "width": 218,
         "height": 199
       }
+    },
+    "IKEA LACK side table": {
+      "file": "ikea-lack-side-table.png",
+      "source": "items-5.png",
+      "cell": 0,
+      "bounds": {
+        "left": 34,
+        "top": 85,
+        "width": 184,
+        "height": 163
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "c73e21917179ea3cd067c343b9adbf961d2331626f3a674e65b504f9b79edbde"
+    },
+    "IKEA BILLY bookcase": {
+      "file": "ikea-billy-bookcase.png",
+      "source": "items-5.png",
+      "cell": 1,
+      "bounds": {
+        "left": 295,
+        "top": 28,
+        "width": 116,
+        "height": 224
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "d192c268a8b3ee92c3f566d0db98d846859fc2787ed6f98c8d09e3ef70d123bf"
+    },
+    "IKEA KALLAX shelf": {
+      "file": "ikea-kallax-shelf.png",
+      "source": "items-5.png",
+      "cell": 2,
+      "bounds": {
+        "left": 498,
+        "top": 68,
+        "width": 183,
+        "height": 183
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "50adabf21da907e67cb3d5f56693be9b0e9e68420da1e7881f02d98925b6a137"
+    },
+    "IKEA POÄNG armchair": {
+      "file": "ikea-poang-armchair.png",
+      "source": "items-5.png",
+      "cell": 3,
+      "bounds": {
+        "left": 731,
+        "top": 45,
+        "width": 187,
+        "height": 210
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "4794d4f526b5602b0ab891ee462cb919d1c7a7f986a6cc496b75033d3b569bab"
+    },
+    "IKEA RÅSKOG trolley": {
+      "file": "ikea-raskog-trolley.png",
+      "source": "items-5.png",
+      "cell": 4,
+      "bounds": {
+        "left": 39,
+        "top": 271,
+        "width": 171,
+        "height": 226
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "b7d5a08c34553f500f6720fdd0aa5dc22e7a82735336da6648aee4ca57c752d7"
+    },
+    "IKEA FRAKTA bag": {
+      "file": "ikea-frakta-bag.png",
+      "source": "items-5.png",
+      "cell": 5,
+      "bounds": {
+        "left": 254,
+        "top": 279,
+        "width": 209,
+        "height": 210
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "c30f609e4bcb64fbc25060bd2418b5af6d0771874e09922f51a6ce5c05b13d93"
+    },
+    "IKEA POKAL glasses": {
+      "file": "ikea-pokal-glasses.png",
+      "source": "items-5.png",
+      "cell": 6,
+      "bounds": {
+        "left": 485,
+        "top": 315,
+        "width": 209,
+        "height": 161
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "d4886556b3f9073cbf2a48cb9331e9f36a6f1fb48abb6fdc34ac062d297696bd"
+    },
+    "IKEA FÖRNUFT cutlery": {
+      "file": "ikea-fornuft-cutlery.png",
+      "source": "items-5.png",
+      "cell": 7,
+      "bounds": {
+        "left": 763,
+        "top": 285,
+        "width": 151,
+        "height": 200
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "cabffe4ce58504fc83b56f60cdf5d5f3be3299f59616c9a2d835028ee719e4f2"
+    },
+    "AirTag": {
+      "file": "airtag.png",
+      "source": "items-5.png",
+      "cell": 8,
+      "bounds": {
+        "left": 49,
+        "top": 558,
+        "width": 146,
+        "height": 146
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "aa9bfc49d4ed4341b5c7126f93e000ffb260d1a22eae7f3de490f2fcf25220c6"
+    },
+    "Apple Pencil USB-C": {
+      "file": "apple-pencil-usb-c.png",
+      "source": "items-5.png",
+      "cell": 9,
+      "bounds": {
+        "left": 265,
+        "top": 520,
+        "width": 180,
+        "height": 203
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "cfbac91fbf865d661c91a74e7a3685fa4437aed3ea1966ed58754a9fc6bbd9a7"
+    },
+    "HomePod mini": {
+      "file": "homepod-mini.png",
+      "source": "items-5.png",
+      "cell": 10,
+      "bounds": {
+        "left": 496,
+        "top": 538,
+        "width": 184,
+        "height": 179
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "f12b763a3ff03a4bd21713687027232a22c1dfcceb88e0b66c4a547b328caf15"
+    },
+    "Apple TV 4K": {
+      "file": "apple-tv-4k.png",
+      "source": "items-5.png",
+      "cell": 11,
+      "bounds": {
+        "left": 721,
+        "top": 531,
+        "width": 198,
+        "height": 186
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "8854f985daeb96073eda03645d5523004e37ebab2012aeb0d2dbb2822250b4aa"
+    },
+    "Mac mini": {
+      "file": "mac-mini.png",
+      "source": "items-5.png",
+      "cell": 12,
+      "bounds": {
+        "left": 21,
+        "top": 781,
+        "width": 210,
+        "height": 136
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "f75177662e3b58087a50f70f0b06ad03a9439a342acf2842a595498bf599a231"
+    },
+    "iCloud+ 200GB": {
+      "file": "icloud-200gb.png",
+      "source": "items-5.png",
+      "cell": 13,
+      "bounds": {
+        "left": 279,
+        "top": 775,
+        "width": 160,
+        "height": 153
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "12d5323dc637ef8ce360bcb96e05063daefe40c4ee6cd1e8703fd42c12a4a71b"
+    },
+    "UNO card game": {
+      "file": "uno-card-game.png",
+      "source": "items-5.png",
+      "cell": 14,
+      "bounds": {
+        "left": 490,
+        "top": 763,
+        "width": 213,
+        "height": 176
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "22b4727cf7abdac345c4a83b975f88abb19434295139cc26745dbdde8ff3a95f"
+    },
+    "Rubik's Cube": {
+      "file": "rubiks-cube.png",
+      "source": "items-5.png",
+      "cell": 15,
+      "bounds": {
+        "left": 743,
+        "top": 759,
+        "width": 169,
+        "height": 181
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "ab7799f66b7b316e968ff1bfc4052352d77f7e80bb5fab580d3556f5f204a190"
+    },
+    "Play-Doh pack": {
+      "file": "play-doh-pack.png",
+      "source": "items-5.png",
+      "cell": 16,
+      "bounds": {
+        "left": 35,
+        "top": 983,
+        "width": 190,
+        "height": 168
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "bb6473e3330a0e4635979c34721c3f7f59cce0ed55165e64477f5e2a693f5000"
+    },
+    "Hot Wheels car": {
+      "file": "hot-wheels-car.png",
+      "source": "items-5.png",
+      "cell": 17,
+      "bounds": {
+        "left": 255,
+        "top": 1020,
+        "width": 210,
+        "height": 118
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "db48ddddfb7ec4612fa5d7522f4c5dafe2e298a09c929d06be1ae969acbcb44e"
+    },
+    "Coleman Sundome tent": {
+      "file": "coleman-sundome-tent.png",
+      "source": "items-5.png",
+      "cell": 18,
+      "bounds": {
+        "left": 478,
+        "top": 981,
+        "width": 246,
+        "height": 182
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "0fbd07c48e13a298b10c1ccc293c81b6df807a7dd7592953ade35b5f15ef3c3c"
+    },
+    "Owala FreeSip bottle": {
+      "file": "owala-freesip-bottle.png",
+      "source": "items-5.png",
+      "cell": 19,
+      "bounds": {
+        "left": 785,
+        "top": 956,
+        "width": 102,
+        "height": 219
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "b3d9295e520fb945eec0970f903ec18b981bdb915450603662137f7e9b99baa7"
+    },
+    "YETI Rambler mug": {
+      "file": "yeti-rambler-mug.png",
+      "source": "items-5.png",
+      "cell": 20,
+      "bounds": {
+        "left": 43,
+        "top": 1188,
+        "width": 176,
+        "height": 179
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "58f5f1f083b2ac28356b0e6a3c90a336a6def398a0229d6883d9225204d5b529"
+    },
+    "Therm-a-Rest Z Seat": {
+      "file": "therm-a-rest-z-seat.png",
+      "source": "items-5.png",
+      "cell": 21,
+      "bounds": {
+        "left": 254,
+        "top": 1197,
+        "width": 213,
+        "height": 168
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "8eb9a4d172b62f3dd46f72440c862ca1b25b35ba99fbeabb742c8dc6116f61b3"
+    },
+    "Casio scientific calculator": {
+      "file": "casio-scientific-calculator.png",
+      "source": "items-5.png",
+      "cell": 22,
+      "bounds": {
+        "left": 530,
+        "top": 1177,
+        "width": 115,
+        "height": 199
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "f77f31af1c020122fd78a30c1eb2f25776f5dbbf2afd89cdf4c8cab3c4236dfa"
+    },
+    "STABILO highlighters": {
+      "file": "stabilo-highlighters.png",
+      "source": "items-5.png",
+      "cell": 23,
+      "bounds": {
+        "left": 721,
+        "top": 1209,
+        "width": 204,
+        "height": 159
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "e584f66db4f8b75c72f081a289a4b8fcc7e53b7fffc0cc47db7ccfc25ff3039b"
+    },
+    "Moleskine notebook": {
+      "file": "moleskine-notebook.png",
+      "source": "items-5.png",
+      "cell": 24,
+      "bounds": {
+        "left": 36,
+        "top": 1405,
+        "width": 177,
+        "height": 227
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "024cf10cb188bfa5c36fa3c747df4bfc95db59eeee7e11b27ee2d971ab88f7eb"
+    },
+    "WD-40 can": {
+      "file": "wd-40-can.png",
+      "source": "items-5.png",
+      "cell": 25,
+      "bounds": {
+        "left": 305,
+        "top": 1391,
+        "width": 100,
+        "height": 229
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "391eab6a4aa8e433fad1a747e64523986815bd0df0008e6319f18e624a6ac131"
+    },
+    "Gorilla Super Glue": {
+      "file": "gorilla-super-glue.png",
+      "source": "items-5.png",
+      "cell": 26,
+      "bounds": {
+        "left": 541,
+        "top": 1391,
+        "width": 102,
+        "height": 230
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "92b74aa64ed17da5c10bf06c77a2df39f8bde9bba6e603212e7612df975a8425"
+    },
+    "Fiskars scissors": {
+      "file": "fiskars-scissors.png",
+      "source": "items-5.png",
+      "cell": 27,
+      "bounds": {
+        "left": 730,
+        "top": 1420,
+        "width": 182,
+        "height": 198
+      },
+      "generatedOn": "2026-10-25",
+      "sha256": "05030828244d61aab9e82de1db6d6a9a58b25835a22260e58d82b7232f60f767"
     }
   },
   "utilities": {
@@ -1241,6 +1605,15 @@
       "count": 9,
       "width": 1254,
       "height": 1254
+    },
+    {
+      "file": "items-5.png",
+      "columns": 4,
+      "rows": 7,
+      "count": 28,
+      "width": 948,
+      "height": 1659,
+      "generatedOn": "2026-10-25"
     }
   ]
 }
