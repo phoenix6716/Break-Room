@@ -1,0 +1,27 @@
+name: Prepare logo-free artwork
+on:
+  push:
+    branches: [logo-free-art]
+    paths:
+      - games/lowball/engine/icons/generated/source/items-unbranded.png
+      - scripts/extract-lowball-unbranded.cjs
+      - .github/workflows/logo-art.yml
+permissions:
+  contents: read
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      - run: npm install --prefix /tmp/logo-art-tools --ignore-scripts --no-audit --no-fund --package-lock=false sharp@0.34.5
+      - name: Extract reviewed sprites
+        env:
+          NODE_PATH: /tmp/logo-art-tools/node_modules
+          EXPORT_LOGO_ART: '1'
+        run: node scripts/extract-lowball-unbranded.cjs

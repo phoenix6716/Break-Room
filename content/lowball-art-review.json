@@ -1,0 +1,160 @@
+{
+  "version": 1,
+  "reviewedOn": "2026-10-25",
+  "rule": "Generic product illustrations only: no third-party logos, wordmarks, distinctive brand marks or protected medical emblems. Branded product names remain factual text.",
+  "source": "items-unbranded.png",
+  "columns": 5,
+  "rows": 6,
+  "items": [
+    {
+      "name": "Netflix Standard",
+      "description": "a small dark television showing a plain warm red blank screen, no letter N",
+      "file": "netflix-standard.png"
+    },
+    {
+      "name": "Spotify Premium",
+      "description": "a pair of simple mint-green over-ear headphones, no app tile",
+      "file": "spotify-premium.png"
+    },
+    {
+      "name": "iPhone 16",
+      "description": "the back of a plain dark navy smartphone with camera lenses and a completely blank back",
+      "file": "iphone-16.png"
+    },
+    {
+      "name": "Coca-Cola bottle",
+      "description": "a plain straight-sided glass soda bottle with dark drink, red cap, a completely blank cream label; no distinctive contour branding",
+      "file": "coca-cola-bottle.png"
+    },
+    {
+      "name": "McDonald's fries",
+      "description": "golden fries in a plain coral-red carton with absolutely blank front",
+      "file": "mcdonalds-fries.png"
+    },
+    {
+      "name": "Starbucks latte",
+      "description": "a plain takeaway coffee cup, cream body and dark green lid, no seal or emblem",
+      "file": "starbucks-latte.png"
+    },
+    {
+      "name": "Domino's pizza",
+      "description": "a pizza in a plain open tan cardboard box, no dots or motifs",
+      "file": "dominos-pizza.png"
+    },
+    {
+      "name": "Band-Aids box",
+      "description": "a plain blue-and-cream plaster box with one beige plaster lying in front; no cross or medical emblem",
+      "file": "band-aids-box.png"
+    },
+    {
+      "name": "Kindle Paperwhite",
+      "description": "a generic dark e-reader with a few neutral text-like horizontal lines on screen, no text on bezel",
+      "file": "kindle-paperwhite.png"
+    },
+    {
+      "name": "Levi's 501 jeans",
+      "description": "folded blue denim jeans, plain pocket with straight stitching; no curved brand stitching, no leather label",
+      "file": "levis-501-jeans.png"
+    },
+    {
+      "name": "Monopoly board game",
+      "description": "a plain plum board-game box with a generic small checkerboard and two wooden pawns; no words, money or famous game layout",
+      "file": "monopoly-board-game.png"
+    },
+    {
+      "name": "Nike Air Force 1",
+      "description": "two plain white low-top sneakers, smooth blank sides without swoosh, stripes or other marks",
+      "file": "nike-air-force-1.png"
+    },
+    {
+      "name": "iPad",
+      "description": "a plain silver tablet with completely blank back, beside its front showing a muted geometric colour screen",
+      "file": "ipad.png"
+    },
+    {
+      "name": "Apple Watch SE",
+      "description": "a plain blue wristwatch showing simple analogue clock hands, no activity rings, symbols or text",
+      "file": "apple-watch-se.png"
+    },
+    {
+      "name": "Disney+",
+      "description": "a small navy television showing a simple amber filmstrip, no letter D, plus sign or swooping arc",
+      "file": "disney.png"
+    },
+    {
+      "name": "PS5 game",
+      "description": "a generic navy video-game case with a completely abstract teal-orange geometric cover and no header words or logos",
+      "file": "ps5-game.png"
+    },
+    {
+      "name": "LEGO set",
+      "description": "a blank ochre toy box with a few loose simple colourful building blocks, no text or emblems",
+      "file": "lego-set.png"
+    },
+    {
+      "name": "PlayStation 5",
+      "description": "a generic compact rectangular white game console beside a plain navy controller with round unmarked buttons",
+      "file": "playstation-5.png"
+    },
+    {
+      "name": "Nintendo Switch 2",
+      "description": "a generic dark handheld gaming console with muted coral and blue grips, plain round buttons and blank screen",
+      "file": "nintendo-switch-2.png"
+    },
+    {
+      "name": "IKEA FRAKTA bag",
+      "description": "a blue woven reusable shopping bag with plain blue handles, no yellow stitching, labels or text",
+      "file": "ikea-frakta-bag.png"
+    },
+    {
+      "name": "AirTag",
+      "description": "a simple round silver-and-white tracking tag, smooth completely blank centre",
+      "file": "airtag.png"
+    },
+    {
+      "name": "Apple Pencil USB-C",
+      "description": "a simple slim white stylus with a completely blank barrel",
+      "file": "apple-pencil-usb-c.png"
+    },
+    {
+      "name": "Apple TV 4K",
+      "description": "a small plain navy square media-streaming box and matching remote with unmarked round buttons, blank top",
+      "file": "apple-tv-4k.png"
+    },
+    {
+      "name": "Mac mini",
+      "description": "a plain compact silver desktop computer, totally blank top, small dark front port",
+      "file": "mac-mini.png"
+    },
+    {
+      "name": "iCloud+ 200GB",
+      "description": "a generic pale-blue storage box beside a small soft white cloud, no app tile, no lettering",
+      "file": "icloud-200gb.png"
+    },
+    {
+      "name": "Hot Wheels car",
+      "description": "a plain blue toy sports car with no flames, decals, emblems or text",
+      "file": "hot-wheels-car.png"
+    },
+    {
+      "name": "YETI Rambler mug",
+      "description": "a plain brushed-steel camping mug with handle and dark lid, totally smooth blank sides, no embossing",
+      "file": "yeti-rambler-mug.png"
+    },
+    {
+      "name": "WD-40 can",
+      "description": "a plain blue aerosol can with red cap and slim straw, a completely blank cream rectangular label, no shield",
+      "file": "wd-40-can.png"
+    },
+    {
+      "name": "Gorilla Super Glue",
+      "description": "a small transparent glue bottle with orange cap and completely blank cream rectangular label, no animal, no badge, no writing",
+      "file": "gorilla-super-glue.png"
+    },
+    {
+      "name": "Casio scientific calculator",
+      "description": "a generic navy calculator with a blank grey-green display and simple unmarked small buttons, no lettering",
+      "file": "casio-scientific-calculator.png"
+    }
+  ]
+}
