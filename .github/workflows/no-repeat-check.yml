@@ -1,0 +1,43 @@
+name: Check no-repeat Daily integration
+on:
+  push:
+    branches: [no-repeat-dailies]
+    paths:
+      - inner-clock-model.js
+      - games/inner-clock/inner-clock.js
+      - tests/inner-clock-rules.cjs
+      - tests/inner-clock.cjs
+      - supabase/inner-clock.sql
+      - supabase/friends.sql
+      - .github/workflows/no-repeat-check.yml
+permissions:
+  contents: read
+jobs:
+  clock:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npx playwright install chromium
+      - name: Check exact target compatibility and affected game
+        shell: bash
+        run: |
+          export ARCADE_CHROMIUM="$(node -p "require('playwright').chromium.executablePath()")"
+          node scripts/run-checks.cjs unit inner-clock-rules.cjs
+          npm run build
+          npm run check
+          node scripts/run-checks.cjs browser inner-clock.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: no-repeat-clock-checks
+          path: .artifacts/
+          include-hidden-files: true
+          retention-days: 7

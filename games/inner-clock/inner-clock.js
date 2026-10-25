@@ -3,7 +3,7 @@
  const M=window.BREAK_ROOM_INNER_CLOCK,C=window.MIDNIGHT_ARCADE_CLOCK,S=window.BREAK_ROOM_SCORE,P=window.BREAK_ROOM_PRACTICE,F=window.BREAK_ROOM_FEEL,$=id=>document.getElementById(id);
  const h=(t,c,text)=>{const e=document.createElement(t);if(c)e.className=c;if(text!==undefined)e.textContent=text;return e;},memory=new Map(),deck=P.deck();
  let mode='daily',daily,practice=null,range='mixed',played=0,practiceError=0,practiceCredit=0,persistent=true,mono=null,lastPress=-Infinity,held=false,suppressClick=false,note='';
- const seconds=(ms,digits=1)=>(ms/1000).toFixed(digits),signed=ms=>(ms>0?'+':ms<0?'−':'±')+seconds(Math.abs(ms),3)+' s';
+ const seconds=(ms,digits=ms%100===0?1:2)=>(ms/1000).toFixed(digits),signed=ms=>(ms>0?'+':ms<0?'−':'±')+seconds(Math.abs(ms),3)+' s';
  function get(k){try{return !persistent&&memory.has(k)?memory.get(k):localStorage.getItem(k)||memory.get(k)||null;}catch{return memory.get(k)||null;}}
  function read(day){try{const r=JSON.parse(get(M.PREFIX+day));return M.valid(r,day)?r:null;}catch{return null;}}
  const run=(targets,day='')=>({version:1,edits:0,day,targets,round:0,phase:'ready',picks:[],startedAt:null});

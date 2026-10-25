@@ -345,7 +345,7 @@ begin
  n=(v->>'edits')::numeric;if n<>trunc(n) or n<0 or n>1000000 then return null;end if;
  for i in 0..4 loop
   if jsonb_typeof(v->'targets'->i) is distinct from 'number' then return null;end if;
-  t=(v->'targets'->>i)::numeric;if t<>trunc(t) or t<2000 or t>12000 or mod(t,100)<>0 or t=any(seen) then return null;end if;seen=array_append(seen,t);
+  t=(v->'targets'->>i)::numeric;if t<>trunc(t) or t<2000 or t>12000 or mod(t,50)<>0 or t=any(seen) then return null;end if;seen=array_append(seen,t);
   a=v->'picks'->i;if jsonb_typeof(a) is distinct from 'object' or jsonb_typeof(a->'kind') is distinct from 'string' or a->>'kind' not in ('stop','timeout') or jsonb_typeof(a->'elapsed') is distinct from 'number' then return null;end if;
   e=(a->>'elapsed')::numeric;if e<>trunc(e) or e<0 or e>30000 or (a->>'kind'='timeout' and e<>30000) then return null;end if;
   if a->>'kind'='stop' then total=total+greatest(0,100*(1-abs(e-t)/(t*.25)));end if;
