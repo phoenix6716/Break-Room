@@ -1,0 +1,29 @@
+name: Prepare approved Break Room logo
+on:
+  push:
+    branches: [break-room-logo05]
+    paths:
+      - assets/source/break-room-option05.png
+      - scripts/export-break-room-brand.cjs
+      - .github/workflows/brand-export.yml
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      - run: npm install --prefix /tmp/brand-export-tools --ignore-scripts --no-audit --no-fund --package-lock=false sharp@0.34.5
+      - name: Export selected logo and icon
+        env:
+          NODE_PATH: /tmp/brand-export-tools/node_modules
+          EXPORT_BRAND: '1'
+        run: node scripts/export-break-room-brand.cjs
+      - name: Inspect existing branding assertions
+        run: rg -n 'break-wordmark|break-mark|\.brand|logo\.svg|break-room-icon' tests
