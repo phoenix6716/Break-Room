@@ -1,3 +1,7 @@
+## Game naming — owner decision, 25 October 2026
+
+The owner explicitly likes and wants to retain **Laser**, **Clue Ladder** and **Seating Chart**. The other seven active display names (Time Drop, Shift Work, Hidden Gem, Stack Up, Pack, Lowball and Inner Clock) remain provisional while alternatives are evaluated. Do not rename any game until an alternative is selected. Future display-name changes must preserve internal routes, storage keys, saved snapshots, scoring and account/Friends compatibility unless separately requested.
+
 ## Shift Work — full integration authorised, 25 October 2026
 
 The owner approved Shift Work and authorised expansion/full integration. Ten active games in shelf/drawer order: Laser → Time Drop → Clue Ladder → Seating Chart → Shift Work → Hidden Gem → Stack Up → Pack → Lowball → Inner Clock. Stake, Prior, Alibi and Bouncer remain archived with routes/artwork/saves/scoring/earned badges preserved. Fourteen native save formats remain supported. This supersedes older roster totals and prototype-only holds.
