@@ -139,12 +139,14 @@
   "sound-on": "sound-on.png",
   "sound-off": "sound-off.png"
 });
+  // Version replaced images so existing players receive the reviewed generic artwork.
+  const unbranded = new Set(["Netflix Standard","Spotify Premium","iPhone 16","Coca-Cola bottle","McDonald's fries","Starbucks latte","Domino's pizza","Band-Aids box","Kindle Paperwhite","Levi's 501 jeans","Monopoly board game","Nike Air Force 1","iPad","Apple Watch SE","Disney+","PS5 game","LEGO set","PlayStation 5","Nintendo Switch 2","IKEA FRAKTA bag","AirTag","Apple Pencil USB-C","Apple TV 4K","Mac mini","iCloud+ 200GB","Hot Wheels car","YETI Rambler mug","WD-40 can","Gorilla Super Glue","Casio scientific calculator"]);
   function source(item) {
     const name = typeof item === 'string' ? item : item?.name;
     const utility = typeof item === 'object' ? item?.art : item;
     const file = items[name] || utilities[utility];
     if (!file) throw new RangeError('Missing Lowball image: ' + (name || utility));
-    return 'icons/generated/' + file;
+    return 'icons/generated/' + file + (unbranded.has(name) ? '?v=unbranded-20261025' : '');
   }
   function markup(item) {
     return '<img class="lowball-art" src="' + source(item) + '" alt="" width="192" height="192" decoding="async" draggable="false">';

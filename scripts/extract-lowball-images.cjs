@@ -61,5 +61,7 @@ function components(data, w, h) {
     manifest.sources.push({file:sheet.file,columns:sheet.columns,...(sheet.rows?{rows:sheet.rows}:{}),count:sheet.names.length,width,height});
   }
   fs.writeFileSync(path.join(output,'manifest.json'),JSON.stringify(manifest,null,2)+'\n');
+  // Apply the generic overrides after extracting historical source sheets.
+  await require('./extract-lowball-unbranded.cjs')();
   console.log(`Extracted ${Object.keys(manifest.items).length} item PNGs and ${Object.keys(manifest.utilities).length} utility PNGs.`);
 })().catch(error=>{console.error(error);process.exitCode=1;});

@@ -17,47 +17,59 @@
     },
     "Netflix Standard": {
       "file": "netflix-standard.png",
-      "source": "items-1.png",
-      "cell": 1,
+      "source": "items-unbranded.png",
+      "cell": 0,
       "bounds": {
-        "left": 285,
-        "top": 83,
-        "width": 227,
-        "height": 190
-      }
+        "left": 37,
+        "top": 71,
+        "width": 201,
+        "height": 157
+      },
+      "generatedOn": "2026-10-25",
+      "logoReview": "2026-10-25",
+      "sha256": "75db5ce715a0b843ad6e75ecc70428e7e1bfc6f7696e6b153b33d2dd38c17377"
     },
     "Spotify Premium": {
       "file": "spotify-premium.png",
-      "source": "items-1.png",
-      "cell": 2,
+      "source": "items-unbranded.png",
+      "cell": 1,
       "bounds": {
-        "left": 545,
-        "top": 84,
-        "width": 189,
-        "height": 189
-      }
+        "left": 270,
+        "top": 40,
+        "width": 188,
+        "height": 193
+      },
+      "generatedOn": "2026-10-25",
+      "logoReview": "2026-10-25",
+      "sha256": "1ff8659641c4f81740c5b6229ef61d6f0a65741c03cb975416071dcebf492922"
     },
     "iPhone 16": {
       "file": "iphone-16.png",
-      "source": "items-1.png",
-      "cell": 3,
+      "source": "items-unbranded.png",
+      "cell": 2,
       "bounds": {
-        "left": 810,
-        "top": 53,
-        "width": 132,
-        "height": 232
-      }
+        "left": 520,
+        "top": 37,
+        "width": 115,
+        "height": 207
+      },
+      "generatedOn": "2026-10-25",
+      "logoReview": "2026-10-25",
+      "sha256": "f78662daa28d5c2c1aaa4324017c7514c4f390b9c833175ff47732c5e227e7f5"
     },
     "Coca-Cola bottle": {
       "file": "coca-cola-bottle.png",
-      "source": "items-1.png",
-      "cell": 4,
+      "source": "items-unbranded.png",
+      "cell": 3,
       "bounds": {
-        "left": 1063,
-        "top": 41,
-        "width": 108,
-        "height": 252
-      }
+        "left": 756,
+        "top": 31,
+        "width": 89,
+        "height": 213
+      },
+      "generatedOn": "2026-10-25",
+      "logoReview": "2026-10-25",
+      "sha256": "96bb3fb7464917542fad15e07d956388cb88a9c14281beb39340708edda0ec3a"
     },
     "Dozen eggs": {
       "file": "dozen-eggs.png",
@@ -83,25 +95,31 @@
     },
     "PlayStation 5": {
       "file": "playstation-5.png",
-      "source": "items-1.png",
-      "cell": 7,
+      "source": "items-unbranded.png",
+      "cell": 17,
       "bounds": {
-        "left": 533,
-        "top": 307,
-        "width": 219,
-        "height": 221
-      }
+        "left": 490,
+        "top": 706,
+        "width": 181,
+        "height": 196
+      },
+      "generatedOn": "2026-10-25",
+      "logoReview": "2026-10-25",
+      "sha256": "2c8ab78cf81f7822d54ee44b920f12fc98bdc3ff86ea2c07b4f582cc4ffc9509"
     },
     "McDonald's fries": {
       "file": "mcdonalds-fries.png",
-      "source": "items-1.png",
-      "cell": 8,
+      "source": "items-unbranded.png",
+      "cell": 4,
       "bounds": {
-        "left": 785,
-        "top": 308,
-        "width": 183,
-        "height": 220
-      }
+        "left": 947,
+        "top": 36,
+        "width": 165,
+        "height": 203
+      },
+      "generatedOn": "2026-10-25",
+      "logoReview": "2026-10-25",
+      "sha256": "339e1598363e89ab7eed08f6db7307df480681cb75d57b2f719eb0b2f4049674"
     },
     "Loaf of bread": {
       "file": "loaf-of-bread.png",
@@ -127,14 +145,17 @@
     },
     "Starbucks latte": {
       "file": "starbucks-latte.png",
-      "source": "items-1.png",
-      "cell": 11,
+      "source": "items-unbranded.png",
+      "cell": 5,
       "bounds": {
-        "left": 316,
-        "top": 538,
-        "width": 152,
-        "height": 216
-      }
+        "left": 59,
+        "top": 275,
+        "width": 142,
+        "height": 194
+      },
+      "generatedOn": "2026-10-25",
+      "logoReview": "2026-10-25",
+      "sha256": "71546daa985d1e92121067be6ae56eefc97afea2e09cba9e5a095afcacd2e7c6"
     },
     "Movie popcorn": {
       "file": "movie-popcorn.png",
@@ -160,25 +181,31 @@
     },
     "Nintendo Switch 2": {
       "file": "nintendo-switch-2.png",
-      "source": "items-1.png",
-      "cell": 14,
+      "source": "items-unbranded.png",
+      "cell": 18,
       "bounds": {
-        "left": 1002,
-        "top": 594,
-        "width": 235,
-        "height": 130
-      }
+        "left": 693,
+        "top": 757,
+        "width": 227,
+        "height": 132
+      },
+      "generatedOn": "2026-10-25",
+      "logoReview": "2026-10-25",
+      "sha256": "e0afc458486d3ec8816d310a066f9db6cda3d9e8d897983c31c3b4dd7530589d"
     },
     "Domino's pizza": {
       "file": "dominos-pizza.png",
-      "source": "items-1.png",
-      "cell": 15,
+      "source": "items-unbranded.png",
+      "cell": 6,
       "bounds": {
-        "left": 22,
-        "top": 762,
-        "width": 257,
-        "height": 235
-      }
+        "left": 248,
+        "top": 267,
+        "width": 219,
+        "height": 212
+      },
+      "generatedOn": "2026-10-25",
+      "logoReview": "2026-10-25",
+      "sha256": "c2087c70c82ea1ccd77020281f673a7226e993fca9d4fce22336802482c6bfbb"
     },
     "Petrol per litre": {
       "file": "petrol-per-litre.png",
@@ -237,25 +264,31 @@
     },
     "Band-Aids box": {
       "file": "band-aids-box.png",
-      "source": "items-1.png",
-      "cell": 21,
+      "source": "items-unbranded.png",
+      "cell": 7,
       "bounds": {
-        "left": 303,
-        "top": 1006,
-        "width": 190,
-        "height": 202
-      }
+        "left": 508,
+        "top": 291,
+        "width": 189,
+        "height": 178
+      },
+      "generatedOn": "2026-10-25",
+      "logoReview": "2026-10-25",
+      "sha256": "5328db15773fd2651ba309093be761f8d316b8d5a0100d97d66e9936055a5e45"
     },
     "Kindle Paperwhite": {
       "file": "kindle-paperwhite.png",
-      "source": "items-1.png",
-      "cell": 22,
+      "source": "items-unbranded.png",
+      "cell": 8,
       "bounds": {
-        "left": 547,
-        "top": 996,
-        "width": 157,
-        "height": 218
-      }
+        "left": 738,
+        "top": 275,
+        "width": 151,
+        "height": 192
+      },
+      "generatedOn": "2026-10-25",
+      "logoReview": "2026-10-25",
+      "sha256": "c80cc6f5ec23ba2ba52ef0841895a37abdc6f8ac02055cb71e79797d801cde18"
     },
     "Standard stamp": {
       "file": "standard-stamp.png",
@@ -281,14 +314,17 @@
     },
     "Levi's 501 jeans": {
       "file": "levis-501-jeans.png",
-      "source": "items-2.png",
-      "cell": 0,
+      "source": "items-unbranded.png",
+      "cell": 9,
       "bounds": {
-        "left": 29,
-        "top": 65,
-        "width": 228,
-        "height": 213
-      }
+        "left": 924,
+        "top": 269,
+        "width": 204,
+        "height": 210
+      },
+      "generatedOn": "2026-10-25",
+      "logoReview": "2026-10-25",
+      "sha256": "77608b459b35d2a13a3c2f367e2b6236c2295971c93c2789a3e8e8275857e9ba"
     },
     "Dog food bag": {
       "file": "dog-food-bag.png",
@@ -336,14 +372,17 @@
     },
     "Monopoly board game": {
       "file": "monopoly-board-game.png",
-      "source": "items-2.png",
-      "cell": 5,
+      "source": "items-unbranded.png",
+      "cell": 10,
       "bounds": {
-        "left": 26,
-        "top": 312,
-        "width": 239,
-        "height": 195
-      }
+        "left": 37,
+        "top": 506,
+        "width": 205,
+        "height": 180
+      },
+      "generatedOn": "2026-10-25",
+      "logoReview": "2026-10-25",
+      "sha256": "c40f62ff6f8accb2d9b689ace4be42d44592442f6b0b94ccf0d68b3b9e786a3f"
     },
     "Sunscreen bottle": {
       "file": "sunscreen-bottle.png",
@@ -776,14 +815,17 @@
     },
     "Nike Air Force 1": {
       "file": "nike-air-force-1.png",
-      "source": "items-3.png",
-      "cell": 20,
+      "source": "items-unbranded.png",
+      "cell": 11,
       "bounds": {
-        "left": 25,
-        "top": 1025,
-        "width": 259,
-        "height": 177
-      }
+        "left": 253,
+        "top": 522,
+        "width": 210,
+        "height": 155
+      },
+      "generatedOn": "2026-10-25",
+      "logoReview": "2026-10-25",
+      "sha256": "217fc5b054087053db2ef671a18bf0565e85421f8a30a698cad428fc33df9812"
     },
     "Sunglasses": {
       "file": "sunglasses.png",
@@ -853,25 +895,31 @@
     },
     "iPad": {
       "file": "ipad.png",
-      "source": "items-4.png",
-      "cell": 2,
+      "source": "items-unbranded.png",
+      "cell": 12,
       "bounds": {
-        "left": 539,
-        "top": 47,
-        "width": 206,
-        "height": 231
-      }
+        "left": 486,
+        "top": 496,
+        "width": 202,
+        "height": 198
+      },
+      "generatedOn": "2026-10-25",
+      "logoReview": "2026-10-25",
+      "sha256": "6459bafda54ac841cc20b83aa7ea8f6b1c6ea644a43daf55e314cbe63c98f7e0"
     },
     "Apple Watch SE": {
       "file": "apple-watch-se.png",
-      "source": "items-4.png",
-      "cell": 3,
+      "source": "items-unbranded.png",
+      "cell": 13,
       "bounds": {
-        "left": 802,
-        "top": 73,
-        "width": 179,
-        "height": 212
-      }
+        "left": 736,
+        "top": 496,
+        "width": 136,
+        "height": 205
+      },
+      "generatedOn": "2026-10-25",
+      "logoReview": "2026-10-25",
+      "sha256": "70937352f8fc61749f89bda01831f86f5bbd3fb2fb74a050100bb4aaedfa6dee"
     },
     "External SSD": {
       "file": "external-ssd.png",
@@ -952,14 +1000,17 @@
     },
     "Disney+": {
       "file": "disney.png",
-      "source": "items-4.png",
-      "cell": 11,
+      "source": "items-unbranded.png",
+      "cell": 14,
       "bounds": {
-        "left": 282,
-        "top": 553,
-        "width": 202,
-        "height": 197
-      }
+        "left": 920,
+        "top": 516,
+        "width": 208,
+        "height": 170
+      },
+      "generatedOn": "2026-10-25",
+      "logoReview": "2026-10-25",
+      "sha256": "0f3e3f97f88a1655a1bdeb4230b3783dc8938ce1f0437e458c7688f6c4cddf5e"
     },
     "Paperback novel": {
       "file": "paperback-novel.png",
@@ -1029,25 +1080,31 @@
     },
     "PS5 game": {
       "file": "ps5-game.png",
-      "source": "items-4.png",
-      "cell": 18,
+      "source": "items-unbranded.png",
+      "cell": 15,
       "bounds": {
-        "left": 786,
-        "top": 766,
-        "width": 181,
-        "height": 234
-      }
+        "left": 54,
+        "top": 707,
+        "width": 155,
+        "height": 196
+      },
+      "generatedOn": "2026-10-25",
+      "logoReview": "2026-10-25",
+      "sha256": "bf8c1b5d6b14b5627aa1289bf0c35a25ab33c52307d8276da217114aff50d4e8"
     },
     "LEGO set": {
       "file": "lego-set.png",
-      "source": "items-4.png",
-      "cell": 19,
+      "source": "items-unbranded.png",
+      "cell": 16,
       "bounds": {
-        "left": 1003,
-        "top": 786,
-        "width": 233,
-        "height": 207
-      }
+        "left": 241,
+        "top": 719,
+        "width": 217,
+        "height": 185
+      },
+      "generatedOn": "2026-10-25",
+      "logoReview": "2026-10-25",
+      "sha256": "7320451f931ce6cd077141a77bbdbdf73e10d5f829f19062b94ce71834a243c4"
     },
     "Jigsaw puzzle": {
       "file": "jigsaw-puzzle.png",
@@ -1171,16 +1228,17 @@
     },
     "IKEA FRAKTA bag": {
       "file": "ikea-frakta-bag.png",
-      "source": "items-5.png",
-      "cell": 5,
+      "source": "items-unbranded.png",
+      "cell": 19,
       "bounds": {
-        "left": 254,
-        "top": 279,
-        "width": 209,
-        "height": 210
+        "left": 948,
+        "top": 707,
+        "width": 166,
+        "height": 205
       },
       "generatedOn": "2026-10-25",
-      "sha256": "c30f609e4bcb64fbc25060bd2418b5af6d0771874e09922f51a6ce5c05b13d93"
+      "logoReview": "2026-10-25",
+      "sha256": "57a6381ffa4a22ab8165269ece45d4664686397515ed21b5cb5b944a63e77e68"
     },
     "IKEA POKAL glasses": {
       "file": "ikea-pokal-glasses.png",
@@ -1210,29 +1268,31 @@
     },
     "AirTag": {
       "file": "airtag.png",
-      "source": "items-5.png",
-      "cell": 8,
+      "source": "items-unbranded.png",
+      "cell": 20,
       "bounds": {
-        "left": 49,
-        "top": 558,
-        "width": 146,
-        "height": 146
+        "left": 53,
+        "top": 956,
+        "width": 156,
+        "height": 155
       },
       "generatedOn": "2026-10-25",
-      "sha256": "aa9bfc49d4ed4341b5c7126f93e000ffb260d1a22eae7f3de490f2fcf25220c6"
+      "logoReview": "2026-10-25",
+      "sha256": "12ad8c394fae5a3313153c25638dbe9c39cd60daa0af22e2b09f393d7ead2408"
     },
     "Apple Pencil USB-C": {
       "file": "apple-pencil-usb-c.png",
-      "source": "items-5.png",
-      "cell": 9,
+      "source": "items-unbranded.png",
+      "cell": 21,
       "bounds": {
-        "left": 265,
-        "top": 520,
-        "width": 180,
-        "height": 203
+        "left": 271,
+        "top": 924,
+        "width": 164,
+        "height": 193
       },
       "generatedOn": "2026-10-25",
-      "sha256": "cfbac91fbf865d661c91a74e7a3685fa4437aed3ea1966ed58754a9fc6bbd9a7"
+      "logoReview": "2026-10-25",
+      "sha256": "2950d37785b314ff48794f26c2de02277350fc92775ec847114c905de25f6f4c"
     },
     "HomePod mini": {
       "file": "homepod-mini.png",
@@ -1249,42 +1309,45 @@
     },
     "Apple TV 4K": {
       "file": "apple-tv-4k.png",
-      "source": "items-5.png",
-      "cell": 11,
+      "source": "items-unbranded.png",
+      "cell": 22,
       "bounds": {
-        "left": 721,
-        "top": 531,
-        "width": 198,
-        "height": 186
+        "left": 469,
+        "top": 934,
+        "width": 206,
+        "height": 170
       },
       "generatedOn": "2026-10-25",
-      "sha256": "8854f985daeb96073eda03645d5523004e37ebab2012aeb0d2dbb2822250b4aa"
+      "logoReview": "2026-10-25",
+      "sha256": "4184aae71acb04f0561bc56d7872e6e1338763f1419e3b0ccec9006a8eb0639e"
     },
     "Mac mini": {
       "file": "mac-mini.png",
-      "source": "items-5.png",
-      "cell": 12,
+      "source": "items-unbranded.png",
+      "cell": 23,
       "bounds": {
-        "left": 21,
-        "top": 781,
-        "width": 210,
-        "height": 136
+        "left": 695,
+        "top": 977,
+        "width": 213,
+        "height": 124
       },
       "generatedOn": "2026-10-25",
-      "sha256": "f75177662e3b58087a50f70f0b06ad03a9439a342acf2842a595498bf599a231"
+      "logoReview": "2026-10-25",
+      "sha256": "fa0104810ac26a21b867b2226afd78abcd555163d67e3604c6a37a1f91c70571"
     },
     "iCloud+ 200GB": {
       "file": "icloud-200gb.png",
-      "source": "items-5.png",
-      "cell": 13,
+      "source": "items-unbranded.png",
+      "cell": 24,
       "bounds": {
-        "left": 279,
-        "top": 775,
-        "width": 160,
-        "height": 153
+        "left": 924,
+        "top": 945,
+        "width": 205,
+        "height": 159
       },
       "generatedOn": "2026-10-25",
-      "sha256": "12d5323dc637ef8ce360bcb96e05063daefe40c4ee6cd1e8703fd42c12a4a71b"
+      "logoReview": "2026-10-25",
+      "sha256": "b59f0fdfbe9108fbc1344c85b507626dd41a3957a98165da3d971f799380dcf5"
     },
     "UNO card game": {
       "file": "uno-card-game.png",
@@ -1327,16 +1390,17 @@
     },
     "Hot Wheels car": {
       "file": "hot-wheels-car.png",
-      "source": "items-5.png",
-      "cell": 17,
+      "source": "items-unbranded.png",
+      "cell": 25,
       "bounds": {
-        "left": 255,
-        "top": 1020,
-        "width": 210,
-        "height": 118
+        "left": 27,
+        "top": 1183,
+        "width": 223,
+        "height": 140
       },
       "generatedOn": "2026-10-25",
-      "sha256": "db48ddddfb7ec4612fa5d7522f4c5dafe2e298a09c929d06be1ae969acbcb44e"
+      "logoReview": "2026-10-25",
+      "sha256": "76fa42678b845527d19c9e42f24d18673b90d7ad566cf7bf860eab62fdd29791"
     },
     "Coleman Sundome tent": {
       "file": "coleman-sundome-tent.png",
@@ -1366,16 +1430,17 @@
     },
     "YETI Rambler mug": {
       "file": "yeti-rambler-mug.png",
-      "source": "items-5.png",
-      "cell": 20,
+      "source": "items-unbranded.png",
+      "cell": 26,
       "bounds": {
-        "left": 43,
-        "top": 1188,
-        "width": 176,
-        "height": 179
+        "left": 288,
+        "top": 1145,
+        "width": 187,
+        "height": 189
       },
       "generatedOn": "2026-10-25",
-      "sha256": "58f5f1f083b2ac28356b0e6a3c90a336a6def398a0229d6883d9225204d5b529"
+      "logoReview": "2026-10-25",
+      "sha256": "b3bab922c611c4220ddd7ecb877f3bf56cd860883d8dd2313283cb80afb4427c"
     },
     "Therm-a-Rest Z Seat": {
       "file": "therm-a-rest-z-seat.png",
@@ -1392,16 +1457,17 @@
     },
     "Casio scientific calculator": {
       "file": "casio-scientific-calculator.png",
-      "source": "items-5.png",
-      "cell": 22,
+      "source": "items-unbranded.png",
+      "cell": 29,
       "bounds": {
-        "left": 530,
-        "top": 1177,
-        "width": 115,
-        "height": 199
+        "left": 946,
+        "top": 1140,
+        "width": 160,
+        "height": 197
       },
       "generatedOn": "2026-10-25",
-      "sha256": "f77f31af1c020122fd78a30c1eb2f25776f5dbbf2afd89cdf4c8cab3c4236dfa"
+      "logoReview": "2026-10-25",
+      "sha256": "5788ffc96a46fca260f9be6b7b3a270a8aebce51c77f559a621569ca146ebb64"
     },
     "STABILO highlighters": {
       "file": "stabilo-highlighters.png",
@@ -1431,29 +1497,31 @@
     },
     "WD-40 can": {
       "file": "wd-40-can.png",
-      "source": "items-5.png",
-      "cell": 25,
+      "source": "items-unbranded.png",
+      "cell": 27,
       "bounds": {
-        "left": 305,
-        "top": 1391,
-        "width": 100,
-        "height": 229
+        "left": 517,
+        "top": 1124,
+        "width": 162,
+        "height": 221
       },
       "generatedOn": "2026-10-25",
-      "sha256": "391eab6a4aa8e433fad1a747e64523986815bd0df0008e6319f18e624a6ac131"
+      "logoReview": "2026-10-25",
+      "sha256": "1b37afa82fb0af6e384140425fdfa7e12bb21988f84f33d65e24bd107600b350"
     },
     "Gorilla Super Glue": {
       "file": "gorilla-super-glue.png",
-      "source": "items-5.png",
-      "cell": 26,
+      "source": "items-unbranded.png",
+      "cell": 28,
       "bounds": {
-        "left": 541,
-        "top": 1391,
-        "width": 102,
-        "height": 230
+        "left": 751,
+        "top": 1121,
+        "width": 120,
+        "height": 224
       },
       "generatedOn": "2026-10-25",
-      "sha256": "92b74aa64ed17da5c10bf06c77a2df39f8bde9bba6e603212e7612df975a8425"
+      "logoReview": "2026-10-25",
+      "sha256": "86f51e95a6bad13abcbfe30415d3bc8e4c23b66d179a52036c3dcc69800ae195"
     },
     "Fiskars scissors": {
       "file": "fiskars-scissors.png",
@@ -1614,6 +1682,16 @@
       "width": 948,
       "height": 1659,
       "generatedOn": "2026-10-25"
+    },
+    {
+      "file": "items-unbranded.png",
+      "columns": 5,
+      "rows": 6,
+      "count": 30,
+      "width": 1145,
+      "height": 1374,
+      "generatedOn": "2026-10-25",
+      "logoReview": "2026-10-25"
     }
   ]
 }

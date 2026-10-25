@@ -1,3 +1,9 @@
+## Artwork without third-party logos — owner requirement, 25 October 2026
+
+Use generic illustrations for products and services. Do not include third-party logos, wordmarks, recognisable brand marks, branded clothing/packaging patterns or protected medical emblems in images. Keep device backs and packaging labels blank. This applies to future generated artwork and overrides earlier instructions to preserve an image when it contains such marks. Break Room's own identity remains permitted; factual product names in question text are unchanged.
+
+Lowball's visually reviewed replacements are listed in `content/lowball-art-review.json` and sourced from the transparent `items-unbranded.png` atlas. Apply these overrides last when regenerating art with `scripts/extract-lowball-unbranded.cjs`; preserve filenames, item/save identities, prices, rotations and scores. Update the compatibility PNG aliases as well as the generated sprites, and retain the cache version for affected images. Historical source sheets/design previews are unpublished archives and must not be used to restore branded artwork. Automated hashes and decoding checks protect the reviewed files; new illustrations still need visual inspection.
+
 ## No repeated Daily ingredients — owner requirement, 25 October 2026
 
 The owner explicitly rejected repeated individual content within the month. All ten active games must provide **32 consecutive days without repeating individual questions, products, boards or target durations**, including repeats hidden under another ID. Different full Daily combinations are not sufficient. Read [DAILY-CONTENT.md](DAILY-CONTENT.md); `node tests/daily-content.cjs` enforces the actual shipped selectors across the release boundary, current/future windows and a leap-day window. This supersedes the earlier Lowball/Time Sense reuse exceptions.

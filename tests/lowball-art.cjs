@@ -17,6 +17,16 @@ const assetRoot = path.resolve(__dirname, '../games/lowball/engine/icons/generat
     return crypto.createHash('sha256').update(data).digest('hex');
   }));
   assert.equal(hashes.size, 137, 'Every image must be an individual asset');
+  // Mechanical integrity for visually reviewed files, not automatic logo detection.
+  const reviewed = JSON.parse(fs.readFileSync('content/lowball-art-review.json','utf8'));
+  assert.equal(reviewed.items.length,30);
+  for(const item of reviewed.items){
+    const entry=manifest.items[item.name],bytes=fs.readFileSync(path.join(assetRoot,item.file));
+    assert.equal(entry.source,reviewed.source);assert.equal(entry.logoReview,reviewed.reviewedOn);
+    assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),entry.sha256,item.name+' reviewed image changed');
+    const legacy=path.join(assetRoot,'..',item.file);
+    if(fs.existsSync(legacy))assert.deepEqual(fs.readFileSync(legacy),bytes,item.name+' legacy alias must not retain an old logo');
+  }
   const browser = await chromium.launch({executablePath: process.env.ARCADE_CHROMIUM || '/usr/bin/chromium', args: ['--no-sandbox']});
   try {
     const page = await browser.newPage({reducedMotion: 'reduce'});
@@ -36,7 +46,8 @@ const assetRoot = path.resolve(__dirname, '../games/lowball/engine/icons/generat
       assert.equal(await img.getAttribute('src'), expected.source, expected.name);
       assert.equal(await page.locator('#itemName').innerText(), expected.name);
       assert.deepEqual(await img.evaluate(image => [image.naturalWidth,image.naturalHeight]), [192,192]);
-      assert.match(expected.source, /^icons\/generated\/.+\.png$/);
+      if(reviewed.items.some(item=>expected.source.split('?')[0].endsWith('/'+item.file)))assert.match(expected.source,/\?v=unbranded-20261025$/);
+      assert.match(expected.source, /^icons\/generated\/.+\.png(?:\?v=unbranded-20261025)?$/);
       assert.equal(await page.locator('#itemEmoji svg').count(), 0);
     }
     // Decode utilities that may be hidden (e.g. the lock when Unlimited is free).

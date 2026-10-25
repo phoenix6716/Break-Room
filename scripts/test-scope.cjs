@@ -81,7 +81,7 @@ function selectChecks(changed,available,{full=false}={}){
   else if(file==='scripts/build-familiar-stacks.cjs'){game('stack-up',true);content=true;}
   else if(/scripts\/(?:build-launch-content|build-question-banks|review-question-banks)/.test(file)){add('launch-content.cjs','question-banks.cjs','factual-review.cjs');content=true;python=true;}
   else if(/^scripts\/(?:content|new-game)/.test(file)||/^tools\//.test(file)){add('content-tools.cjs','content-studio.cjs');content=true;}
-  else if(file==='scripts/extract-lowball-images.cjs'){game('lowball');}
+  else if((file==='scripts/extract-lowball-images.cjs'||file==='scripts/extract-lowball-unbranded.cjs')){game('lowball');}
   else if(file==='scripts/sync-legal-footer.cjs'){add('legal-pages.cjs');legal=true;}
   else if(/^scripts\//.test(file)||/^\.github\/workflows\//.test(file)||/^package(?:-lock)?\.json$/.test(file)||file==='.node-version'){infra();}
   else if(/^(?:accounts|account-config|cloud-saves)\.(?:js|css)$/.test(file)||/^(?:account|login|signup|forgot-password|reset-password)\.html$/.test(file)||/^assets\/vendor\//.test(file)){auth();}
