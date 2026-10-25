@@ -11,7 +11,7 @@ const values={'pc_history':{'17':80,'18':100,'19':90},pc_played:'30',pc_last:'20
  'break-room:stack-up:daily:2026-10-20':stackRun('2026-10-20')};
 let result=api.read(store(values),'2026-10-20');
 assert.equal(result.total,33);assert.equal(result.records.length,6);assert.equal(result.games[0].average,90);assert.equal(result.games[0].best,100);assert.equal(result.games[0].played,30);assert.equal(result.games[1].best,15);assert.equal(result.games[1].average,2);assert.equal(result.games[2].best,31000);assert.equal(result.streak.current,3);assert.equal(result.achievements.filter(a=>a.earned).length,5);
-assert.ok(result.games.filter(g=>!['pack','prior','laser','alibi','bouncer','inner-clock','time-drop','clue-ladder','seating-chart','hidden-gem'].includes(g.id)).every(g=>g.today==='complete')&&result.games.filter(g=>['pack','prior','laser','alibi','bouncer','inner-clock','time-drop','clue-ladder','seating-chart','hidden-gem'].includes(g.id)).every(g=>g.today==='ready'));
+assert.ok(result.games.filter(g=>!['pack','prior','laser','alibi','bouncer','inner-clock','time-drop','clue-ladder','seating-chart','hidden-gem','shift-work'].includes(g.id)).every(g=>g.today==='complete')&&result.games.filter(g=>['pack','prior','laser','alibi','bouncer','inner-clock','time-drop','clue-ladder','seating-chart','hidden-gem','shift-work'].includes(g.id)).every(g=>g.today==='ready'));
 assert.equal(result.arcade.average,80);assert.equal(result.games[1].arcade.average,50);assert.equal(result.arcade.runs,6);assert.equal(result.arcade.gamesPlayed,3);
 // Sparse/truncated Lowball history: preserve lifetime plays and recover its documented last score only once.
 result=api.read(store({pc_history:{'18':0},pc_played:'200',pc_last:'2026-10-20',pc_last_avg:'0'}),'2026-10-20');
@@ -22,7 +22,7 @@ assert.ok(result.skipped>=4);assert.equal(result.games[1].played,2);assert.equal
 // Ignore real in-progress records, but expose Resume Daily without counting them.
 const pending=stackRun('2026-10-20');Object.assign(pending,{round:0,status:'playing',results:[],score:0});
 result=api.read(store({pc_progress:{day:'2026-10-20',idx:1,scores:[90]},'stake:d:2026-10-20':{b:[1],p:[],qs},'break-room:stack-up:daily:2026-10-20':pending}),'2026-10-20');
-assert.equal(result.total,0);assert.ok(result.games.filter(g=>!['pack','prior','laser','alibi','bouncer','inner-clock','time-drop','clue-ladder','seating-chart','hidden-gem'].includes(g.id)).every(g=>g.today==='progress')&&result.games.filter(g=>['pack','prior','laser','alibi','bouncer','inner-clock','time-drop','clue-ladder','seating-chart','hidden-gem'].includes(g.id)).every(g=>g.today==='ready'));assert.ok(result.achievements.every(a=>!a.earned));
+assert.equal(result.total,0);assert.ok(result.games.filter(g=>!['pack','prior','laser','alibi','bouncer','inner-clock','time-drop','clue-ladder','seating-chart','hidden-gem','shift-work'].includes(g.id)).every(g=>g.today==='progress')&&result.games.filter(g=>['pack','prior','laser','alibi','bouncer','inner-clock','time-drop','clue-ladder','seating-chart','hidden-gem','shift-work'].includes(g.id)).every(g=>g.today==='ready'));assert.ok(result.achievements.every(a=>!a.earned));
 // Negative results stay negative, even when every completed run lost points.
 const negative={...values,'stake:d:2026-10-20':{b:[3,3,3,3,3],p:[-1,-1,-1,-1,-1],qs},'break-room:stack-up:daily:2026-10-20':stackRun('2026-10-20',-2000)};
 result=api.read(store(negative),'2026-10-20');assert.equal(result.games[1].best,-11);assert.equal(result.games[2].best,-2000);
