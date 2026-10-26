@@ -30,12 +30,12 @@
       "path": "assets/cards/clue-ladder-pixel.webp",
       "width": 1200,
       "height": 400,
-      "bytes": 91398,
+      "bytes": 67944,
       "foreground": {
-        "left": 538,
+        "left": 404,
         "top": 31,
-        "width": 124,
-        "height": 335
+        "width": 392,
+        "height": 333
       }
     },
     "seating-chart": {

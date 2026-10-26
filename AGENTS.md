@@ -1,3 +1,9 @@
+## Fuller artwork in five homepage cards — owner direction, 26 October 2026
+
+The owner found Time Sense, Time Drop, Clue Ladder, Stack Up and Sleeper too sparse after background extension. Enlarge the existing Time Sense/Sleeper motifs by 50%, Time Drop by 35% (10% on the narrowest phones), and Stack Up by up to 80% with smaller responsive scales to retain all five cards. These are presentation transforms inside the existing clipped artwork areas; the original 172/155/126px card heights and full-width backgrounds remain fixed. Other illustrations retain their scale.
+
+Clue Ladder is already nearly full-height, so add three small clue slips around its existing ladder rather than stretching it. Its wide source and measured foreground bounds remain reproducible through the existing export script. Verify the actual transformed foreground bounds across phone/tablet/desktop widths, including responsive transitions, and visually inspect the resulting homepage. Do not change game content, scores, saves, controls, links or game layouts.
+
 ## Full-width card backgrounds and Sleeper score tower — owner decision, 26 October 2026
 
 The owner approved Sleeper's quiz-show-style score tower (95, coral meter, answer panel and star), replacing the live radar artwork. Retain Sleeper's higher-is-better scoring and avoid survey claims or third-party show logos.
