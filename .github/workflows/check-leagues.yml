@@ -24,7 +24,7 @@ jobs:
       - name: Focused league and integration checks
         run: |
           export ARCADE_CHROMIUM="$(node -p "require('playwright').chromium.executablePath()")"
-          npm test
+          npm test -- --files leagues.css tests/leagues.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
