@@ -1,3 +1,11 @@
+## Full-width card backgrounds and Sleeper score tower — owner decision, 26 October 2026
+
+The owner approved Sleeper's quiz-show-style score tower (95, coral meter, answer panel and star), replacing the live radar artwork. Retain Sleeper's higher-is-better scoring and avoid survey claims or third-party show logos.
+
+The owner also rejected the visible rectangular image patches over the old card colours. All ten approved motifs now have wide, continuous pastel-grid backgrounds that reach every artwork edge. Use the full-width masters in `assets/cards/source/wide/`, exported by `scripts/export-homepage-cards.cjs` to 1200px palette-optimised WebP. `assets/cards/manifest.json` records the foreground outline and accent-colour bounds so responsive tests can prove the subjects remain visible while the spare background is cropped. Visually review both phone and desktop renderings as well.
+
+Keep the original 172/155/126px artwork heights and unchanged grid, text, buttons, game routes, content, saves and scoring. Use object-fit:cover on these wide masters with the measured foreground centre as the horizontal focus; this supersedes the earlier contain instruction, which exposed the mismatched backgrounds. Source PNGs stay excluded from production. Regenerating old square exports must not restore the rejected inset-panel appearance.
+
 ## Desk Jam and Time Sense card revisions — 26 October 2026
 
 The owner approved Desk Jam option B: a recognisable top-down desk, filing cabinet and blue chair with an exit route. Export only the left panel of `assets/cards/source/desk-jam-option-b.png`; the right-hand Sleeper index-card-box concept was explicitly rejected. Time Sense's generic screen/pointer illustration is replaced with a simple blue pixel stopwatch on a pale-blue grid, from `assets/cards/source/time-sense-stopwatch.png`. The new Sleeper star-cluster image is an unselected preview; keep the current live radar artwork until a replacement is chosen.

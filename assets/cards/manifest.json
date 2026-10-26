@@ -1,0 +1,126 @@
+{
+  "version": 2,
+  "revision": "full-bleed-20261026",
+  "cards": {
+    "laser": {
+      "path": "assets/cards/laser-pixel.webp",
+      "width": 1200,
+      "height": 400,
+      "bytes": 63116,
+      "foreground": {
+        "left": 431,
+        "top": 69,
+        "width": 305,
+        "height": 259
+      }
+    },
+    "time-drop": {
+      "path": "assets/cards/time-drop-pixel.webp",
+      "width": 1200,
+      "height": 400,
+      "bytes": 75748,
+      "foreground": {
+        "left": 434,
+        "top": 80,
+        "width": 331,
+        "height": 247
+      }
+    },
+    "clue-ladder": {
+      "path": "assets/cards/clue-ladder-pixel.webp",
+      "width": 1200,
+      "height": 400,
+      "bytes": 91398,
+      "foreground": {
+        "left": 538,
+        "top": 31,
+        "width": 124,
+        "height": 335
+      }
+    },
+    "seating-chart": {
+      "path": "assets/cards/seating-chart-pixel.webp",
+      "width": 1200,
+      "height": 403,
+      "bytes": 73580,
+      "foreground": {
+        "left": 420,
+        "top": 82,
+        "width": 359,
+        "height": 245
+      }
+    },
+    "shift-work": {
+      "path": "assets/cards/shift-work-pixel.webp",
+      "width": 1200,
+      "height": 400,
+      "bytes": 8848,
+      "foreground": {
+        "left": 409,
+        "top": 86,
+        "width": 416,
+        "height": 240
+      }
+    },
+    "hidden-gem": {
+      "path": "assets/cards/hidden-gem-pixel.webp",
+      "width": 1200,
+      "height": 400,
+      "bytes": 92884,
+      "foreground": {
+        "left": 478,
+        "top": 94,
+        "width": 252,
+        "height": 219
+      }
+    },
+    "stack-up": {
+      "path": "assets/cards/stack-up-pixel.webp",
+      "width": 1200,
+      "height": 400,
+      "bytes": 58730,
+      "foreground": {
+        "left": 427,
+        "top": 133,
+        "width": 346,
+        "height": 132
+      }
+    },
+    "pack": {
+      "path": "assets/cards/pack-pixel.webp",
+      "width": 1200,
+      "height": 400,
+      "bytes": 34722,
+      "foreground": {
+        "left": 439,
+        "top": 60,
+        "width": 322,
+        "height": 271
+      }
+    },
+    "lowball": {
+      "path": "assets/cards/lowball-pixel.webp",
+      "width": 1200,
+      "height": 400,
+      "bytes": 80888,
+      "foreground": {
+        "left": 430,
+        "top": 108,
+        "width": 342,
+        "height": 201
+      }
+    },
+    "inner-clock": {
+      "path": "assets/cards/inner-clock-pixel.webp",
+      "width": 1200,
+      "height": 400,
+      "bytes": 65130,
+      "foreground": {
+        "left": 504,
+        "top": 87,
+        "width": 191,
+        "height": 226
+      }
+    }
+  }
+}
