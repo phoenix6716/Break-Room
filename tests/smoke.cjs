@@ -36,6 +36,7 @@ function check(condition, message) { assert.ok(condition, message); checks++; }
       check(await page.locator('.coming-stamp').count() === 0, 'No placeholder cards on the homepage');
       check(!await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), 'Homepage has no horizontal overflow');
       check(await cards.locator('a[href*="/alibi/"],a[href*="/bouncer/"],a[href*="/prior/"],a[href*="/stake/"]').count() === 0, 'Shelved games absent from shelf');
+      const leagueLink=page.locator('a[href="leagues.html"]').first();check(await leagueLink.isVisible(),'Homepage exposes weekly leagues');await leagueLink.click();await page.locator('#league-guest').waitFor();check(await page.locator('.league-entry').count()===0,'Guest league page has no fake standings');check(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),'League navigation fits the viewport');await page.goto(base);
       for (const route of routes) {
         await page.goto(`${base}/${route}`, {waitUntil: 'domcontentloaded'});
         const wordmark = await page.locator('header .brand').boundingBox();
