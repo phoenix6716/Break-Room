@@ -114,12 +114,12 @@
       "path": "assets/cards/inner-clock-pixel.webp",
       "width": 1200,
       "height": 400,
-      "bytes": 65130,
+      "bytes": 51904,
       "foreground": {
-        "left": 504,
+        "left": 434,
         "top": 87,
-        "width": 191,
-        "height": 226
+        "width": 322,
+        "height": 243
       }
     }
   }

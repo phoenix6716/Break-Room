@@ -1,3 +1,9 @@
+## Final card illustration refinement — owner direction, 26 October 2026
+
+The owner still found Time Sense too plain and requested slightly larger Pack, Lowball, Laser, Seating Chart and Desk Jam illustrations. Time Sense now combines its pixel stopwatch with a 5s target tile, coral stop control and short timing-marker line. It remains decorative card art; the game rules and blind timing are unchanged.
+
+Enlarge Laser/Seating Chart/Desk Jam by 25%, Pack by 20% and Lowball by 30% at roomy widths. Keep smaller safe scales for the constrained phone cards, especially Desk Jam's wide exit route. Preserve the existing Time Drop, Sleeper, Stack Up and Clue Ladder improvements. All full-width backgrounds and original 172/155/126px card heights remain unchanged. Validate the transformed foreground bounds and navigation at mobile, tablet, desktop and breakpoint widths; no game-session sweep is needed.
+
 ## Fuller artwork in five homepage cards — owner direction, 26 October 2026
 
 The owner found Time Sense, Time Drop, Clue Ladder, Stack Up and Sleeper too sparse after background extension. Enlarge the existing Time Sense/Sleeper motifs by 50%, Time Drop by 35% (10% on the narrowest phones), and Stack Up by up to 80% with smaller responsive scales to retain all five cards. These are presentation transforms inside the existing clipped artwork areas; the original 172/155/126px card heights and full-width backgrounds remain fixed. Other illustrations retain their scale.

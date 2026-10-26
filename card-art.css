@@ -5,11 +5,15 @@
 @media(max-width:1050px){.game-art.has-card-art{--art-content-height:153px}}
 @media(max-width:540px){.game-art.has-card-art{--art-content-height:124px}}
 
-/* Fill the quieter illustrations without changing the card frames. */
+/* Fuller scenes, always clipped to the original artwork frames. */
 .game-card-image[data-art="time-drop"]{transform:scale(1.35)}
-.game-card-image[data-art="hidden-gem"],.game-card-image[data-art="inner-clock"]{transform:scale(1.5)}
+.game-card-image[data-art="hidden-gem"]{transform:scale(1.5)}
+.game-card-image[data-art="inner-clock"]{transform:scale(1.4)}
 .game-card-image[data-art="stack-up"]{transform:scale(1.8)}
+.game-card-image[data-art="laser"],.game-card-image[data-art="seating-chart"],.game-card-image[data-art="shift-work"]{transform:scale(1.25)}
+.game-card-image[data-art="pack"]{transform:scale(1.2)}
+.game-card-image[data-art="lowball"]{transform:scale(1.3)}
 @media(max-width:1050px){.game-card-image[data-art="stack-up"]{transform:scale(1.6)}}
-@media(max-width:540px){.game-card-image[data-art="stack-up"]{transform:scale(1.5)}}
-@media(max-width:420px){.game-card-image[data-art="stack-up"]{transform:scale(1.25)}}
-@media(max-width:360px){.game-card-image[data-art="stack-up"]{transform:scale(1.05)}.game-card-image[data-art="time-drop"]{transform:scale(1.1)}}
+@media(max-width:540px){.game-card-image[data-art="stack-up"]{transform:scale(1.5)}.game-card-image[data-art="inner-clock"]{transform:scale(1.25)}}
+@media(max-width:420px){.game-card-image[data-art="stack-up"]{transform:scale(1.25)}.game-card-image[data-art="shift-work"]{transform:scale(1.05)}}
+@media(max-width:360px){.game-card-image[data-art="stack-up"],.game-card-image[data-art="seating-chart"]{transform:scale(1.05)}.game-card-image[data-art="time-drop"],.game-card-image[data-art="lowball"],.game-card-image[data-art="inner-clock"]{transform:scale(1.1)}.game-card-image[data-art="shift-work"]{transform:none}}
