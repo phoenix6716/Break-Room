@@ -47,7 +47,7 @@ assert.equal(await own.locator('.league-slots .league-slot').count(),3);
 await own.locator('summary').click();assert.equal(await own.locator('tbody tr').count(),10);assert.equal(await a.locator('#league-content').innerText().then(t=>/pc_history|example.com/.test(t)),false);
 fs.mkdirSync('.artifacts/leagues',{recursive:true});
 for(const width of [320,390,768,1100,1440]){await a.setViewportSize({width,height:1000});assert.equal(await a.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'Leagues fit '+width);assert.equal(await a.locator('#required-games img').evaluateAll(imgs=>imgs.length===2&&imgs.every(i=>i.complete&&i.naturalWidth>0)),true);await a.screenshot({path:'.artifacts/leagues/'+width+'.png',fullPage:true});}
-console.log('LEAGUES_PREVIEW_390 '+(await a.screenshot({type:'jpeg',quality:65})).toString('base64'));
+console.log('LEAGUES_PREVIEW_1440 '+(await a.screenshot({type:'jpeg',quality:65})).toString('base64'));await a.setViewportSize({width:390,height:1000});console.log('LEAGUES_PREVIEW_390 '+(await a.screenshot({type:'jpeg',quality:65})).toString('base64'));
 await a.locator('#invite-league').click();await settled(a);assert.notEqual(await a.locator('#league-invite-url').inputValue(),link);
 await a.getByRole('button',{name:'Remove Bob',exact:true}).click();await a.locator('#cancel-league-action').click();assert.equal(await a.locator('.league-entry').count(),2);
 await a.getByRole('button',{name:'Remove Bob',exact:true}).click();await a.locator('#confirm-league-action').click();await a.waitForFunction(()=>document.querySelectorAll('.league-entry').length===1);await settled(a);
