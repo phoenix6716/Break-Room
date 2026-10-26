@@ -6,9 +6,9 @@ A fresh page opens the current Daily immediately; saved reviews/results resume. 
 
 ## Content
 
-`familiar-stacks.js` has 160 curated defaults: 32 in each of five lanes (everyday/calendar, familiar science/units, recognisable films, basic calculations, common fractions/percentages). Fresh Dailies from 23 October 2026 use one per lane with 32-day repeat-free rotation. `scripts/build-familiar-stacks.cjs` reproduces the bank and `content/stack-up-familiar.json` audit.
+`familiar-stacks.js` has 160 curated non-maths defaults: 32 in each of five stable lanes (everyday/calendar; planets/nature/world; recognisable films; games/history/sport; books/animation/music/space). Fresh Dailies from 23 October 2026 use one per lane with 32-day repeat-free rotation. `scripts/build-familiar-stacks.cjs` reproduces the bank and `content/stack-up-familiar.json` audit. The authored replacement families are in `content/stack-up-familiar-topics.json`. On 26 October, 64 calculation/fraction stacks and 16 conversion drills were replaced in place, preserving every ID and date slot.
 
-The original 208-set `stacks.js` remains unchanged. Unlimited defaults to Familiar mix; Challenge mix offers the older harder bank, and topic selection retains both banks. Changes apply to the next stack. Today's snapshots are excluded; active practice survives mode changes. Blank descriptions and shuffled card order remain.
+The original 208-set `stacks.js` remains unchanged. Unlimited defaults to Familiar mix; Challenge mix offers its 134 non-maths stacks. All filters exclude the 74 legacy NUMBER SENSE stacks, and that retired topic is hidden. The original data remains solely for compatibility; saved snapshots may still contain maths and are not rewritten. Changes apply to the next stack. Today's snapshots are excluded; active practice survives mode changes. Blank descriptions and shuffled card order remain.
 
 ## Scoring and compatibility
 

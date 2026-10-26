@@ -1,0 +1,509 @@
+{
+  "version": 1,
+  "reviewedAt": "2026-10-26",
+  "scope": "Non-maths replacements: stable familiar lane slots and unchanged 32-day selector. Ranks and dates appear only after locking.",
+  "families": [
+    {
+      "lane": 1,
+      "category": "NATURE",
+      "prompt": "Order these traditional rainbow colours from the outside of a primary rainbow towards the inside.",
+      "ends": [
+        "OUTSIDE",
+        "INSIDE"
+      ],
+      "items": [
+        {
+          "name": "Red",
+          "value": 1
+        },
+        {
+          "name": "Orange",
+          "value": 2
+        },
+        {
+          "name": "Yellow",
+          "value": 3
+        },
+        {
+          "name": "Green",
+          "value": 4
+        },
+        {
+          "name": "Blue",
+          "value": 5
+        },
+        {
+          "name": "Indigo",
+          "value": 6
+        },
+        {
+          "name": "Violet",
+          "value": 7
+        }
+      ],
+      "sources": [
+        "https://www.nasa.gov/learning-resources/nasas-picture-dictionary-r/"
+      ],
+      "seed": "no-maths:rainbow:1",
+      "count": 8,
+      "unit": "sequence position"
+    },
+    {
+      "lane": 1,
+      "category": "WORLD",
+      "prompt": "Order these continents by land area, largest first (seven-continent model).",
+      "ends": [
+        "LARGER",
+        "SMALLER"
+      ],
+      "items": [
+        {
+          "name": "Asia",
+          "value": 1
+        },
+        {
+          "name": "Africa",
+          "value": 2
+        },
+        {
+          "name": "North America",
+          "value": 3
+        },
+        {
+          "name": "South America",
+          "value": 4
+        },
+        {
+          "name": "Antarctica",
+          "value": 5
+        },
+        {
+          "name": "Europe",
+          "value": 6
+        },
+        {
+          "name": "Australia",
+          "value": 7
+        }
+      ],
+      "sources": [
+        "https://www.britannica.com/science/continent"
+      ],
+      "seed": "no-maths:continents:1",
+      "count": 8,
+      "unit": "area rank, largest first"
+    },
+    {
+      "lane": 3,
+      "category": "GAMES",
+      "prompt": "Order these Nintendo console families by their first launch anywhere, oldest first. Famicom/NES and Super Famicom/SNES count as one family each.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "Famicom / NES",
+          "value": 1983
+        },
+        {
+          "name": "Super Famicom / SNES",
+          "value": 1990
+        },
+        {
+          "name": "Nintendo 64",
+          "value": 1996
+        },
+        {
+          "name": "GameCube",
+          "value": 2001
+        },
+        {
+          "name": "Wii",
+          "value": 2006
+        },
+        {
+          "name": "Wii U",
+          "value": 2012
+        },
+        {
+          "name": "Nintendo Switch",
+          "value": 2017
+        },
+        {
+          "name": "Nintendo Switch 2",
+          "value": 2025
+        }
+      ],
+      "sources": [
+        "https://www.nintendo.co.jp/corporate/en/history/index.html",
+        "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Nintendo-History-625945.html"
+      ],
+      "seed": "no-maths:nintendo:1",
+      "count": 8,
+      "unit": "first launch year"
+    },
+    {
+      "lane": 3,
+      "category": "GAMES",
+      "prompt": "Order these PlayStation systems by their first launch anywhere, oldest first. Include the handheld systems.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "PlayStation",
+          "value": 1994
+        },
+        {
+          "name": "PlayStation 2",
+          "value": 2000
+        },
+        {
+          "name": "PSP",
+          "value": 2004
+        },
+        {
+          "name": "PlayStation 3",
+          "value": 2006
+        },
+        {
+          "name": "PlayStation Vita",
+          "value": 2011
+        },
+        {
+          "name": "PlayStation 4",
+          "value": 2013
+        },
+        {
+          "name": "PlayStation 5",
+          "value": 2020
+        }
+      ],
+      "sources": [
+        "https://sonyinteractive.com/en/our-company/expanded-company-timeline/"
+      ],
+      "seed": "no-maths:playstation:1",
+      "count": 8,
+      "unit": "first launch year"
+    },
+    {
+      "lane": 3,
+      "category": "HISTORY",
+      "prompt": "Order these historical milestones, earliest first.",
+      "ends": [
+        "EARLIER",
+        "LATER"
+      ],
+      "items": [
+        {
+          "name": "Rome’s Colosseum opens",
+          "value": 80
+        },
+        {
+          "name": "Columbus reaches the Caribbean",
+          "value": 1492
+        },
+        {
+          "name": "The US Declaration of Independence is adopted",
+          "value": 1776
+        },
+        {
+          "name": "The Wright brothers fly the Wright Flyer",
+          "value": 1903
+        },
+        {
+          "name": "The Titanic sinks",
+          "value": 1912
+        },
+        {
+          "name": "Australia becomes a federation",
+          "value": 1901
+        },
+        {
+          "name": "The Berlin Wall’s border crossings open",
+          "value": 1989
+        },
+        {
+          "name": "The first iPhone goes on sale in the US",
+          "value": 2007
+        }
+      ],
+      "sources": [
+        "https://www.pbs.org/empires/romans/special/timeline_26.html",
+        "https://christophercolumbus.org/wp-content/uploads/2019/01/2005.pdf",
+        "https://www.archives.gov/milestone-documents/declaration-of-independence",
+        "https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/the-wilbur-and-orville-wright-timeline-1846-to-1948/1901-to-1910/",
+        "https://www.noaa.gov/rms-titanic",
+        "https://en.wikipedia.org/wiki/Federation_of_Australia",
+        "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
+        "https://en.wikipedia.org/wiki/IPhone_(1st_generation)"
+      ],
+      "seed": "no-maths:history:1",
+      "count": 8,
+      "unit": "year"
+    },
+    {
+      "lane": 3,
+      "category": "SPORT",
+      "prompt": "Order these Summer Olympic host cities by when their listed Games took place, earliest first. Use their most recent Summer Games through Paris 2024.",
+      "ends": [
+        "EARLIER",
+        "LATER"
+      ],
+      "items": [
+        {
+          "name": "Atlanta",
+          "value": 1996
+        },
+        {
+          "name": "Sydney",
+          "value": 2000
+        },
+        {
+          "name": "Athens",
+          "value": 2004
+        },
+        {
+          "name": "Beijing",
+          "value": 2008
+        },
+        {
+          "name": "London",
+          "value": 2012
+        },
+        {
+          "name": "Rio de Janeiro",
+          "value": 2016
+        },
+        {
+          "name": "Tokyo",
+          "value": 2021
+        },
+        {
+          "name": "Paris",
+          "value": 2024
+        }
+      ],
+      "sources": [
+        "https://olympics.com/en/olympic-games"
+      ],
+      "seed": "no-maths:olympics:1",
+      "count": 8,
+      "unit": "year Games were held"
+    },
+    {
+      "lane": 4,
+      "category": "BOOKS",
+      "prompt": "Order these original Harry Potter novels by publication order, earliest first.",
+      "ends": [
+        "EARLIER",
+        "LATER"
+      ],
+      "items": [
+        {
+          "name": "Harry Potter and the Philosopher's Stone",
+          "value": 1
+        },
+        {
+          "name": "Harry Potter and the Chamber of Secrets",
+          "value": 2
+        },
+        {
+          "name": "Harry Potter and the Prisoner of Azkaban",
+          "value": 3
+        },
+        {
+          "name": "Harry Potter and the Goblet of Fire",
+          "value": 4
+        },
+        {
+          "name": "Harry Potter and the Order of the Phoenix",
+          "value": 5
+        },
+        {
+          "name": "Harry Potter and the Half-Blood Prince",
+          "value": 6
+        },
+        {
+          "name": "Harry Potter and the Deathly Hallows",
+          "value": 7
+        }
+      ],
+      "sources": [
+        "https://www.harrypotter.com/discover/books"
+      ],
+      "seed": "no-maths:potter:1",
+      "count": 8,
+      "unit": "book position"
+    },
+    {
+      "lane": 4,
+      "category": "SCREEN TIME",
+      "prompt": "Order these Pixar films by their original release, oldest first.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "Toy Story 3",
+          "value": 2010
+        },
+        {
+          "name": "Brave",
+          "value": 2012
+        },
+        {
+          "name": "Inside Out",
+          "value": 2015
+        },
+        {
+          "name": "Coco",
+          "value": 2017
+        },
+        {
+          "name": "Onward",
+          "value": 2020
+        },
+        {
+          "name": "Luca",
+          "value": 2021
+        },
+        {
+          "name": "Turning Red",
+          "value": 2022
+        },
+        {
+          "name": "Elemental",
+          "value": 2023
+        },
+        {
+          "name": "Inside Out 2",
+          "value": 2024
+        },
+        {
+          "name": "Elio",
+          "value": 2025
+        }
+      ],
+      "sources": [
+        "https://www.pixar.com/feature-films/"
+      ],
+      "seed": "no-maths:pixar:1",
+      "count": 8,
+      "unit": "first release year"
+    },
+    {
+      "lane": 4,
+      "category": "MUSIC",
+      "prompt": "Order these original Taylor Swift studio albums by release, oldest first. Ignore rerecordings.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "Taylor Swift",
+          "value": 2006
+        },
+        {
+          "name": "Fearless",
+          "value": 2008
+        },
+        {
+          "name": "Speak Now",
+          "value": 2010
+        },
+        {
+          "name": "Red",
+          "value": 2012
+        },
+        {
+          "name": "1989",
+          "value": 2014
+        },
+        {
+          "name": "Reputation",
+          "value": 2017
+        },
+        {
+          "name": "Lover",
+          "value": 2019
+        },
+        {
+          "name": "Midnights",
+          "value": 2022
+        },
+        {
+          "name": "The Tortured Poets Department",
+          "value": 2024
+        }
+      ],
+      "sources": [
+        "https://www.taylorswift.com/",
+        "https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography"
+      ],
+      "seed": "no-maths:albums:1",
+      "count": 8,
+      "unit": "original release year"
+    },
+    {
+      "lane": 4,
+      "category": "SPACE",
+      "prompt": "Order these space milestones, earliest first.",
+      "ends": [
+        "EARLIER",
+        "LATER"
+      ],
+      "items": [
+        {
+          "name": "Sputnik 1 launches",
+          "value": 1957
+        },
+        {
+          "name": "Yuri Gagarin orbits Earth",
+          "value": 1961
+        },
+        {
+          "name": "Apollo 11 lands on the Moon",
+          "value": 1969
+        },
+        {
+          "name": "Space Shuttle Columbia makes its first launch",
+          "value": 1981
+        },
+        {
+          "name": "The Hubble Space Telescope launches",
+          "value": 1990
+        },
+        {
+          "name": "Curiosity lands on Mars",
+          "value": 2012
+        },
+        {
+          "name": "The James Webb Space Telescope launches",
+          "value": 2021
+        },
+        {
+          "name": "NASA begins operations",
+          "value": 1958
+        }
+      ],
+      "sources": [
+        "https://www.nasa.gov/history/dawn-of-the-space-age/",
+        "https://www.fai.org/page/history-manned-spaceflight-pioneers",
+        "https://www.nasa.gov/mission/apollo-11/",
+        "https://www.nasa.gov/mission/sts-1/",
+        "https://science.nasa.gov/mission/hubble/overview/hubble-timeline/hubble-history-timeline-full-text/",
+        "https://www.jpl.nasa.gov/missions/mars-science-laboratory-curiosity-rover-msl/",
+        "https://science.nasa.gov/mission/webb/launch/",
+        "https://en.wikipedia.org/wiki/NASA"
+      ],
+      "seed": "no-maths:space:1",
+      "count": 8,
+      "unit": "year"
+    }
+  ]
+}

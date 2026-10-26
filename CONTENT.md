@@ -1,3 +1,9 @@
+## Stack Up without maths — owner decision, 26 October 2026
+
+The owner finds maths questions boring and repetitive. New Dailies and every Unlimited filter must exclude calculations, fractions, percentages, geometry exercises and unit-conversion drills. Keep ordinary chronological, science, geography and other knowledge ordering. Replace the 64 arithmetic/fraction slots and 16 unit/data-conversion slots with non-maths topics while retaining all 160 IDs, five 32-item lanes and their exact Daily date assignments. The added source is `content/stack-up-familiar-topics.json`, rebuilt by `scripts/build-familiar-stacks.cjs`.
+
+Keep the original 208-set bank and legacy snapshots intact for saved-history compatibility. Its 74 NUMBER SENSE stacks are excluded from all new Unlimited draws and its topic list; 134 non-maths Challenge stacks remain. Existing captured Dailies can still contain retired content and must retain their answers, deadlines, scoring and progress. Do not reset these saves or change native/Arcade formulas. Keep at least 32 days without repeated individual stacks and verify Daily, every practice filter and old-run restoration with Stack Up's affected checks.
+
 ## Familiar and contemporary questions — owner feedback, 26 October 2026
 
 Players found some Sleeper, Time Drop and Clue Ladder questions too obscure. Prefer recognisable subjects and approachable wording; add contemporary film, books, games, technology and screen/music culture to Sleeper and Clue Ladder. Time Drop keeps ancient history and its full era range, using better-known milestones rather than minor battles or treaties. Later Clue Ladder clues should give a direct everyday route to the answer. This supersedes older claims that specialist questions and the original banks were already calibrated for players.

@@ -14,7 +14,7 @@ This audit executes the shipped pure selectors and extracts the existing Stack U
 | Seating Chart | 360 tables | 72 days without repeating individual tables |
 | Desk Jam | 180 boards: 120 Daily, 60 additional practice boards | 40 days without repeating individual Daily boards |
 | Sleeper | 160 questions / 922 answers | 32 days without repeating individual questions |
-| Stack Up | 160 familiar Daily stacks + 208 optional challenges | 32 days without repeating individual Daily stacks |
+| Stack Up | 160 non-maths Daily stacks + 134 active optional challenges | 32 days without repeating individual Daily stacks |
 | Pack | 212 bags, including 32 advanced Daily hard bags | 32 days without repeating individual bags |
 | Lowball | 128 products / 512 explicitly scoped regional references | 32 days without repeating individual products |
 | Time Sense | 195 scheduled durations across five lanes, at 50ms precision | 39 days without repeating individual targets |
@@ -48,3 +48,7 @@ On 25 October 2026, the narrow `time_sense_exact_daily_targets` migration replac
 ## Player-feedback revision — 26 October 2026
 
 Sleeper, Clue Ladder and Time Drop use editorial bank revision 2. IDs, category/topic slots, era buckets and each date's selected IDs are unchanged; their 32/60/66-day individual-content guarantees still hold. `tests/content-refresh.cjs` compares the archived banks across every possible old/new rolling-month boundary and checks that old frozen Dailies still complete. Existing captured content remains unchanged, so players resuming a run may see an older question. New questions arrive when a fresh run is created.
+
+## Stack Up maths retirement — 26 October 2026
+
+The 160-slot default deck now contains non-maths questions. Eighty replacements retain the same IDs/lanes and exact 32-day calendar assignment, preserving old/new release-boundary uniqueness. The 74 legacy maths challenges are recovery-only, leaving 134 active non-maths Challenge stacks. Captured Dailies retain their original content and scores.

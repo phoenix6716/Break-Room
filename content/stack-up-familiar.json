@@ -1,7 +1,7 @@
 {
-  "version": 1,
-  "reviewedAt": "2026-10-23",
-  "note": "Familiar default progression; old challenge bank remains available. Values stay behind the answer reveal.",
+  "version": 2,
+  "reviewedAt": "2026-10-26",
+  "note": "No maths in new Dailies or Unlimited. Stable lane slots; legacy challenge data and saved snapshots remain intact. Values stay behind the answer reveal.",
   "stacks": [
     {
       "id": "stack-familiar-0-001",
@@ -1445,481 +1445,481 @@
     },
     {
       "id": "stack-familiar-1-017",
-      "source": "SCIENCE",
-      "unit": "metres",
+      "source": "NATURE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.bipm.org/en/measurement-units/si-prefixes"
+        "https://www.nasa.gov/learning-resources/nasas-picture-dictionary-r/"
       ],
       "ordered": [
         {
-          "name": "One millimetre",
-          "value": 0.001
-        },
-        {
-          "name": "One metre",
+          "name": "Red",
           "value": 1
         },
         {
-          "name": "One hundred metres",
-          "value": 100
+          "name": "Green",
+          "value": 4
         },
         {
-          "name": "One kilometre",
-          "value": 1000
+          "name": "Blue",
+          "value": 5
         },
         {
-          "name": "Five kilometres",
-          "value": 5000
+          "name": "Indigo",
+          "value": 6
+        },
+        {
+          "name": "Violet",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-1-018",
-      "source": "SCIENCE",
-      "unit": "metres",
+      "source": "NATURE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.bipm.org/en/measurement-units/si-prefixes"
+        "https://www.nasa.gov/learning-resources/nasas-picture-dictionary-r/"
       ],
       "ordered": [
         {
-          "name": "Five centimetres",
-          "value": 0.05
+          "name": "Orange",
+          "value": 2
         },
         {
-          "name": "Ten centimetres",
-          "value": 0.1
+          "name": "Yellow",
+          "value": 3
         },
         {
-          "name": "Half a metre",
-          "value": 0.5
+          "name": "Green",
+          "value": 4
         },
         {
-          "name": "One metre",
-          "value": 1
+          "name": "Blue",
+          "value": 5
         },
         {
-          "name": "One hundred metres",
-          "value": 100
+          "name": "Indigo",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-1-019",
-      "source": "SCIENCE",
-      "unit": "metres",
+      "source": "NATURE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.bipm.org/en/measurement-units/si-prefixes"
+        "https://www.nasa.gov/learning-resources/nasas-picture-dictionary-r/"
       ],
       "ordered": [
         {
-          "name": "One millimetre",
-          "value": 0.001
+          "name": "Yellow",
+          "value": 3
         },
         {
-          "name": "Five centimetres",
-          "value": 0.05
+          "name": "Green",
+          "value": 4
         },
         {
-          "name": "Ten centimetres",
-          "value": 0.1
+          "name": "Blue",
+          "value": 5
         },
         {
-          "name": "One metre",
-          "value": 1
+          "name": "Indigo",
+          "value": 6
         },
         {
-          "name": "One kilometre",
-          "value": 1000
+          "name": "Violet",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-1-020",
-      "source": "SCIENCE",
-      "unit": "metres",
+      "source": "NATURE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.bipm.org/en/measurement-units/si-prefixes"
+        "https://www.nasa.gov/learning-resources/nasas-picture-dictionary-r/"
       ],
       "ordered": [
         {
-          "name": "One millimetre",
-          "value": 0.001
-        },
-        {
-          "name": "Five centimetres",
-          "value": 0.05
-        },
-        {
-          "name": "Ten centimetres",
-          "value": 0.1
-        },
-        {
-          "name": "Half a metre",
-          "value": 0.5
-        },
-        {
-          "name": "One metre",
+          "name": "Red",
           "value": 1
+        },
+        {
+          "name": "Orange",
+          "value": 2
+        },
+        {
+          "name": "Green",
+          "value": 4
+        },
+        {
+          "name": "Blue",
+          "value": 5
+        },
+        {
+          "name": "Indigo",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-1-021",
-      "source": "SCIENCE",
-      "unit": "metres",
+      "source": "NATURE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.bipm.org/en/measurement-units/si-prefixes"
+        "https://www.nasa.gov/learning-resources/nasas-picture-dictionary-r/"
       ],
       "ordered": [
         {
-          "name": "One millimetre",
-          "value": 0.001
+          "name": "Red",
+          "value": 1
         },
         {
-          "name": "Ten centimetres",
-          "value": 0.1
+          "name": "Orange",
+          "value": 2
         },
         {
-          "name": "One hundred metres",
-          "value": 100
+          "name": "Yellow",
+          "value": 3
         },
         {
-          "name": "One kilometre",
-          "value": 1000
+          "name": "Green",
+          "value": 4
         },
         {
-          "name": "Five kilometres",
-          "value": 5000
+          "name": "Blue",
+          "value": 5
         }
       ]
     },
     {
       "id": "stack-familiar-1-022",
-      "source": "SCIENCE",
-      "unit": "metres",
+      "source": "NATURE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.bipm.org/en/measurement-units/si-prefixes"
+        "https://www.nasa.gov/learning-resources/nasas-picture-dictionary-r/"
       ],
       "ordered": [
         {
-          "name": "One millimetre",
-          "value": 0.001
+          "name": "Orange",
+          "value": 2
         },
         {
-          "name": "Ten centimetres",
-          "value": 0.1
+          "name": "Yellow",
+          "value": 3
         },
         {
-          "name": "Half a metre",
-          "value": 0.5
+          "name": "Green",
+          "value": 4
         },
         {
-          "name": "One kilometre",
-          "value": 1000
+          "name": "Indigo",
+          "value": 6
         },
         {
-          "name": "Five kilometres",
-          "value": 5000
+          "name": "Violet",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-1-023",
-      "source": "SCIENCE",
-      "unit": "metres",
+      "source": "NATURE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.bipm.org/en/measurement-units/si-prefixes"
+        "https://www.nasa.gov/learning-resources/nasas-picture-dictionary-r/"
       ],
       "ordered": [
         {
-          "name": "Five centimetres",
-          "value": 0.05
+          "name": "Orange",
+          "value": 2
         },
         {
-          "name": "One metre",
-          "value": 1
+          "name": "Green",
+          "value": 4
         },
         {
-          "name": "One hundred metres",
-          "value": 100
+          "name": "Blue",
+          "value": 5
         },
         {
-          "name": "One kilometre",
-          "value": 1000
+          "name": "Indigo",
+          "value": 6
         },
         {
-          "name": "Five kilometres",
-          "value": 5000
+          "name": "Violet",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-1-024",
-      "source": "SCIENCE",
-      "unit": "metres",
+      "source": "NATURE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.bipm.org/en/measurement-units/si-prefixes"
+        "https://www.nasa.gov/learning-resources/nasas-picture-dictionary-r/"
       ],
       "ordered": [
         {
-          "name": "One millimetre",
-          "value": 0.001
-        },
-        {
-          "name": "Half a metre",
-          "value": 0.5
-        },
-        {
-          "name": "One metre",
+          "name": "Red",
           "value": 1
         },
         {
-          "name": "One hundred metres",
-          "value": 100
+          "name": "Orange",
+          "value": 2
         },
         {
-          "name": "One kilometre",
-          "value": 1000
+          "name": "Yellow",
+          "value": 3
+        },
+        {
+          "name": "Indigo",
+          "value": 6
+        },
+        {
+          "name": "Violet",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-1-025",
-      "source": "TECH",
-      "unit": "bytes",
+      "source": "WORLD",
+      "unit": "area rank, largest first",
       "sources": [
-        "https://www.nist.gov/pml/owm/metric-si-prefixes"
+        "https://www.britannica.com/science/continent"
       ],
       "ordered": [
         {
-          "name": "One byte",
+          "name": "Asia",
           "value": 1
         },
         {
-          "name": "One kilobyte",
-          "value": 1000
+          "name": "North America",
+          "value": 3
         },
         {
-          "name": "One megabyte",
-          "value": 1000000
+          "name": "South America",
+          "value": 4
         },
         {
-          "name": "Two gigabytes",
-          "value": 2000000000
+          "name": "Antarctica",
+          "value": 5
         },
         {
-          "name": "One terabyte",
-          "value": 1000000000000
+          "name": "Europe",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-1-026",
-      "source": "TECH",
-      "unit": "bytes",
+      "source": "WORLD",
+      "unit": "area rank, largest first",
       "sources": [
-        "https://www.nist.gov/pml/owm/metric-si-prefixes"
+        "https://www.britannica.com/science/continent"
       ],
       "ordered": [
         {
-          "name": "One byte",
-          "value": 1
+          "name": "Africa",
+          "value": 2
         },
         {
-          "name": "One kilobyte",
-          "value": 1000
+          "name": "North America",
+          "value": 3
         },
         {
-          "name": "One gigabyte",
-          "value": 1000000000
+          "name": "South America",
+          "value": 4
         },
         {
-          "name": "Two gigabytes",
-          "value": 2000000000
+          "name": "Europe",
+          "value": 6
         },
         {
-          "name": "One terabyte",
-          "value": 1000000000000
+          "name": "Australia",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-1-027",
-      "source": "TECH",
-      "unit": "bytes",
+      "source": "WORLD",
+      "unit": "area rank, largest first",
       "sources": [
-        "https://www.nist.gov/pml/owm/metric-si-prefixes"
+        "https://www.britannica.com/science/continent"
       ],
       "ordered": [
         {
-          "name": "One byte",
+          "name": "Asia",
           "value": 1
         },
         {
-          "name": "One megabyte",
-          "value": 1000000
+          "name": "Africa",
+          "value": 2
         },
         {
-          "name": "One gigabyte",
-          "value": 1000000000
+          "name": "Antarctica",
+          "value": 5
         },
         {
-          "name": "Two gigabytes",
-          "value": 2000000000
+          "name": "Europe",
+          "value": 6
         },
         {
-          "name": "One terabyte",
-          "value": 1000000000000
+          "name": "Australia",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-1-028",
-      "source": "TECH",
-      "unit": "bytes",
+      "source": "WORLD",
+      "unit": "area rank, largest first",
       "sources": [
-        "https://www.nist.gov/pml/owm/metric-si-prefixes"
+        "https://www.britannica.com/science/continent"
       ],
       "ordered": [
         {
-          "name": "One byte",
-          "value": 1
+          "name": "Africa",
+          "value": 2
         },
         {
-          "name": "One kilobyte",
-          "value": 1000
+          "name": "South America",
+          "value": 4
         },
         {
-          "name": "One megabyte",
-          "value": 1000000
+          "name": "Antarctica",
+          "value": 5
         },
         {
-          "name": "One gigabyte",
-          "value": 1000000000
+          "name": "Europe",
+          "value": 6
         },
         {
-          "name": "One terabyte",
-          "value": 1000000000000
+          "name": "Australia",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-1-029",
-      "source": "TECH",
-      "unit": "bytes",
+      "source": "WORLD",
+      "unit": "area rank, largest first",
       "sources": [
-        "https://www.nist.gov/pml/owm/metric-si-prefixes"
+        "https://www.britannica.com/science/continent"
       ],
       "ordered": [
         {
-          "name": "One kilobyte",
-          "value": 1000
+          "name": "North America",
+          "value": 3
         },
         {
-          "name": "One megabyte",
-          "value": 1000000
+          "name": "South America",
+          "value": 4
         },
         {
-          "name": "One gigabyte",
-          "value": 1000000000
+          "name": "Antarctica",
+          "value": 5
         },
         {
-          "name": "Two gigabytes",
-          "value": 2000000000
+          "name": "Europe",
+          "value": 6
         },
         {
-          "name": "One terabyte",
-          "value": 1000000000000
+          "name": "Australia",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-1-030",
-      "source": "TECH",
-      "unit": "bytes",
+      "source": "WORLD",
+      "unit": "area rank, largest first",
       "sources": [
-        "https://www.nist.gov/pml/owm/metric-si-prefixes"
+        "https://www.britannica.com/science/continent"
       ],
       "ordered": [
         {
-          "name": "One byte",
+          "name": "Asia",
           "value": 1
         },
         {
-          "name": "One kilobyte",
-          "value": 1000
+          "name": "Africa",
+          "value": 2
         },
         {
-          "name": "One megabyte",
-          "value": 1000000
+          "name": "North America",
+          "value": 3
         },
         {
-          "name": "One gigabyte",
-          "value": 1000000000
+          "name": "South America",
+          "value": 4
         },
         {
-          "name": "Two gigabytes",
-          "value": 2000000000
+          "name": "Antarctica",
+          "value": 5
         }
       ]
     },
     {
       "id": "stack-familiar-1-031",
-      "source": "SCIENCE",
-      "unit": "grams",
+      "source": "WORLD",
+      "unit": "area rank, largest first",
       "sources": [
-        "https://www.bipm.org/en/measurement-units/si-prefixes"
+        "https://www.britannica.com/science/continent"
       ],
       "ordered": [
         {
-          "name": "One gram",
+          "name": "Asia",
           "value": 1
         },
         {
-          "name": "Two hundred grams",
-          "value": 200
+          "name": "Africa",
+          "value": 2
         },
         {
-          "name": "Five hundred grams",
-          "value": 500
+          "name": "North America",
+          "value": 3
         },
         {
-          "name": "One kilogram",
-          "value": 1000
+          "name": "Antarctica",
+          "value": 5
         },
         {
-          "name": "Two kilograms",
-          "value": 2000
+          "name": "Australia",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-1-032",
-      "source": "SCIENCE",
-      "unit": "grams",
+      "source": "WORLD",
+      "unit": "area rank, largest first",
       "sources": [
-        "https://www.bipm.org/en/measurement-units/si-prefixes"
+        "https://www.britannica.com/science/continent"
       ],
       "ordered": [
         {
-          "name": "One gram",
+          "name": "Asia",
           "value": 1
         },
         {
-          "name": "Fifty grams",
-          "value": 50
+          "name": "North America",
+          "value": 3
         },
         {
-          "name": "Two hundred grams",
-          "value": 200
+          "name": "South America",
+          "value": 4
         },
         {
-          "name": "Five hundred grams",
-          "value": 500
+          "name": "Europe",
+          "value": 6
         },
         {
-          "name": "One kilogram",
-          "value": 1000
+          "name": "Australia",
+          "value": 7
         }
       ]
     },
@@ -2885,2401 +2885,2049 @@
     },
     {
       "id": "stack-familiar-3-001",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "GAMES",
+      "unit": "first launch year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://www.nintendo.co.jp/corporate/en/history/index.html",
+        "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Nintendo-History-625945.html"
       ],
       "ordered": [
         {
-          "name": "18 − 11",
-          "value": 7
+          "name": "Famicom / NES",
+          "value": 1983
         },
         {
-          "name": "2 + 7",
-          "value": 9
+          "name": "GameCube",
+          "value": 2001
         },
         {
-          "name": "16 − 5",
-          "value": 11
+          "name": "Wii",
+          "value": 2006
         },
         {
-          "name": "9 + 4",
-          "value": 13
+          "name": "Nintendo Switch",
+          "value": 2017
         },
         {
-          "name": "7 + 7",
-          "value": 14
+          "name": "Nintendo Switch 2",
+          "value": 2025
         }
       ]
     },
     {
       "id": "stack-familiar-3-002",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "GAMES",
+      "unit": "first launch year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://www.nintendo.co.jp/corporate/en/history/index.html",
+        "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Nintendo-History-625945.html"
       ],
       "ordered": [
         {
-          "name": "18 − 11",
-          "value": 7
+          "name": "Nintendo 64",
+          "value": 1996
         },
         {
-          "name": "3 + 5",
-          "value": 8
+          "name": "GameCube",
+          "value": 2001
         },
         {
-          "name": "22 − 11",
-          "value": 11
+          "name": "Wii",
+          "value": 2006
         },
         {
-          "name": "10 + 3",
-          "value": 13
+          "name": "Wii U",
+          "value": 2012
         },
         {
-          "name": "12 + 11",
-          "value": 23
+          "name": "Nintendo Switch",
+          "value": 2017
         }
       ]
     },
     {
       "id": "stack-familiar-3-003",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "GAMES",
+      "unit": "first launch year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://www.nintendo.co.jp/corporate/en/history/index.html",
+        "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Nintendo-History-625945.html"
       ],
       "ordered": [
         {
-          "name": "13 − 7",
-          "value": 6
+          "name": "Super Famicom / SNES",
+          "value": 1990
         },
         {
-          "name": "17 − 10",
-          "value": 7
+          "name": "Nintendo 64",
+          "value": 1996
         },
         {
-          "name": "2 + 7",
-          "value": 9
+          "name": "GameCube",
+          "value": 2001
         },
         {
-          "name": "9 + 6",
-          "value": 15
+          "name": "Wii",
+          "value": 2006
         },
         {
-          "name": "12 + 6",
-          "value": 18
+          "name": "Nintendo Switch",
+          "value": 2017
         }
       ]
     },
     {
       "id": "stack-familiar-3-004",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "GAMES",
+      "unit": "first launch year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://www.nintendo.co.jp/corporate/en/history/index.html",
+        "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Nintendo-History-625945.html"
       ],
       "ordered": [
         {
-          "name": "12 − 7",
-          "value": 5
+          "name": "Super Famicom / SNES",
+          "value": 1990
         },
         {
-          "name": "3 + 3",
-          "value": 6
+          "name": "Wii",
+          "value": 2006
         },
         {
-          "name": "4 + 4",
-          "value": 8
+          "name": "Wii U",
+          "value": 2012
         },
         {
-          "name": "7 + 2",
-          "value": 9
+          "name": "Nintendo Switch",
+          "value": 2017
         },
         {
-          "name": "12 + 10",
-          "value": 22
+          "name": "Nintendo Switch 2",
+          "value": 2025
         }
       ]
     },
     {
       "id": "stack-familiar-3-005",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "GAMES",
+      "unit": "first launch year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://www.nintendo.co.jp/corporate/en/history/index.html",
+        "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Nintendo-History-625945.html"
       ],
       "ordered": [
         {
-          "name": "11 − 7",
-          "value": 4
+          "name": "Super Famicom / SNES",
+          "value": 1990
         },
         {
-          "name": "3 + 3",
-          "value": 6
+          "name": "Nintendo 64",
+          "value": 1996
         },
         {
-          "name": "6 + 5",
-          "value": 11
+          "name": "GameCube",
+          "value": 2001
         },
         {
-          "name": "8 + 6",
-          "value": 14
+          "name": "Wii",
+          "value": 2006
         },
         {
-          "name": "12 + 4",
-          "value": 16
+          "name": "Wii U",
+          "value": 2012
         }
       ]
     },
     {
       "id": "stack-familiar-3-006",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "GAMES",
+      "unit": "first launch year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://www.nintendo.co.jp/corporate/en/history/index.html",
+        "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Nintendo-History-625945.html"
       ],
       "ordered": [
         {
-          "name": "16 − 8",
-          "value": 8
+          "name": "Famicom / NES",
+          "value": 1983
         },
         {
-          "name": "21 − 10",
-          "value": 11
+          "name": "Nintendo 64",
+          "value": 1996
         },
         {
-          "name": "3 + 9",
-          "value": 12
+          "name": "GameCube",
+          "value": 2001
         },
         {
-          "name": "5 + 8",
-          "value": 13
+          "name": "Wii",
+          "value": 2006
         },
         {
-          "name": "7 + 10",
-          "value": 17
+          "name": "Nintendo Switch 2",
+          "value": 2025
         }
       ]
     },
     {
       "id": "stack-familiar-3-007",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "GAMES",
+      "unit": "first launch year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://www.nintendo.co.jp/corporate/en/history/index.html",
+        "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Nintendo-History-625945.html"
       ],
       "ordered": [
         {
-          "name": "13 − 7",
-          "value": 6
+          "name": "GameCube",
+          "value": 2001
         },
         {
-          "name": "21 − 11",
-          "value": 10
+          "name": "Wii",
+          "value": 2006
         },
         {
-          "name": "19 − 8",
-          "value": 11
+          "name": "Wii U",
+          "value": 2012
         },
         {
-          "name": "10 + 6",
-          "value": 16
+          "name": "Nintendo Switch",
+          "value": 2017
         },
         {
-          "name": "10 + 7",
-          "value": 17
+          "name": "Nintendo Switch 2",
+          "value": 2025
         }
       ]
     },
     {
       "id": "stack-familiar-3-008",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "GAMES",
+      "unit": "first launch year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://www.nintendo.co.jp/corporate/en/history/index.html",
+        "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Nintendo-History-625945.html"
       ],
       "ordered": [
         {
-          "name": "11 − 7",
-          "value": 4
+          "name": "Super Famicom / SNES",
+          "value": 1990
         },
         {
-          "name": "17 − 10",
-          "value": 7
+          "name": "Nintendo 64",
+          "value": 1996
         },
         {
-          "name": "14 − 4",
-          "value": 10
+          "name": "GameCube",
+          "value": 2001
         },
         {
-          "name": "8 + 11",
-          "value": 19
+          "name": "Wii",
+          "value": 2006
         },
         {
-          "name": "11 + 11",
-          "value": 22
+          "name": "Nintendo Switch 2",
+          "value": 2025
         }
       ]
     },
     {
       "id": "stack-familiar-3-009",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "GAMES",
+      "unit": "first launch year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://sonyinteractive.com/en/our-company/expanded-company-timeline/"
       ],
       "ordered": [
         {
-          "name": "12 − 10",
-          "value": 2
+          "name": "PlayStation",
+          "value": 1994
         },
         {
-          "name": "6 − 2",
-          "value": 4
+          "name": "PlayStation 2",
+          "value": 2000
         },
         {
-          "name": "10 − 2",
-          "value": 8
+          "name": "PlayStation 3",
+          "value": 2006
         },
         {
-          "name": "18 − 8",
-          "value": 10
+          "name": "PlayStation Vita",
+          "value": 2011
         },
         {
-          "name": "5 + 11",
-          "value": 16
+          "name": "PlayStation 5",
+          "value": 2020
         }
       ]
     },
     {
       "id": "stack-familiar-3-010",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "GAMES",
+      "unit": "first launch year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://sonyinteractive.com/en/our-company/expanded-company-timeline/"
       ],
       "ordered": [
         {
-          "name": "9 − 7",
-          "value": 2
+          "name": "PlayStation",
+          "value": 1994
         },
         {
-          "name": "8 − 2",
-          "value": 6
+          "name": "PlayStation 2",
+          "value": 2000
         },
         {
-          "name": "12 − 4",
-          "value": 8
+          "name": "PlayStation 3",
+          "value": 2006
         },
         {
-          "name": "18 − 7",
-          "value": 11
+          "name": "PlayStation 4",
+          "value": 2013
         },
         {
-          "name": "8 + 7",
-          "value": 15
+          "name": "PlayStation 5",
+          "value": 2020
         }
       ]
     },
     {
       "id": "stack-familiar-3-011",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "GAMES",
+      "unit": "first launch year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://sonyinteractive.com/en/our-company/expanded-company-timeline/"
       ],
       "ordered": [
         {
-          "name": "8 − 6",
-          "value": 2
+          "name": "PlayStation",
+          "value": 1994
         },
         {
-          "name": "19 − 8",
-          "value": 11
+          "name": "PSP",
+          "value": 2004
         },
         {
-          "name": "10 + 5",
-          "value": 15
+          "name": "PlayStation Vita",
+          "value": 2011
         },
         {
-          "name": "6 + 10",
-          "value": 16
+          "name": "PlayStation 4",
+          "value": 2013
         },
         {
-          "name": "10 + 9",
-          "value": 19
+          "name": "PlayStation 5",
+          "value": 2020
         }
       ]
     },
     {
       "id": "stack-familiar-3-012",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "GAMES",
+      "unit": "first launch year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://sonyinteractive.com/en/our-company/expanded-company-timeline/"
       ],
       "ordered": [
         {
-          "name": "12 − 10",
-          "value": 2
+          "name": "PlayStation",
+          "value": 1994
         },
         {
-          "name": "14 − 8",
-          "value": 6
+          "name": "PlayStation 2",
+          "value": 2000
         },
         {
-          "name": "20 − 10",
-          "value": 10
+          "name": "PSP",
+          "value": 2004
         },
         {
-          "name": "2 + 10",
-          "value": 12
+          "name": "PlayStation 4",
+          "value": 2013
         },
         {
-          "name": "10 + 10",
-          "value": 20
+          "name": "PlayStation 5",
+          "value": 2020
         }
       ]
     },
     {
       "id": "stack-familiar-3-013",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "GAMES",
+      "unit": "first launch year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://sonyinteractive.com/en/our-company/expanded-company-timeline/"
       ],
       "ordered": [
         {
-          "name": "7 − 5",
-          "value": 2
+          "name": "PlayStation",
+          "value": 1994
         },
         {
-          "name": "13 − 6",
-          "value": 7
+          "name": "PSP",
+          "value": 2004
         },
         {
-          "name": "6 + 3",
-          "value": 9
+          "name": "PlayStation 3",
+          "value": 2006
         },
         {
-          "name": "4 + 7",
-          "value": 11
+          "name": "PlayStation Vita",
+          "value": 2011
         },
         {
-          "name": "7 + 5",
-          "value": 12
+          "name": "PlayStation 5",
+          "value": 2020
         }
       ]
     },
     {
       "id": "stack-familiar-3-014",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "GAMES",
+      "unit": "first launch year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://sonyinteractive.com/en/our-company/expanded-company-timeline/"
       ],
       "ordered": [
         {
-          "name": "7 − 5",
-          "value": 2
+          "name": "PlayStation",
+          "value": 1994
         },
         {
-          "name": "15 − 11",
-          "value": 4
+          "name": "PlayStation 2",
+          "value": 2000
         },
         {
-          "name": "11 − 3",
-          "value": 8
+          "name": "PSP",
+          "value": 2004
         },
         {
-          "name": "2 + 8",
-          "value": 10
+          "name": "PlayStation Vita",
+          "value": 2011
         },
         {
-          "name": "16 − 5",
-          "value": 11
+          "name": "PlayStation 5",
+          "value": 2020
         }
       ]
     },
     {
       "id": "stack-familiar-3-015",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "GAMES",
+      "unit": "first launch year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://sonyinteractive.com/en/our-company/expanded-company-timeline/"
       ],
       "ordered": [
         {
-          "name": "13 − 11",
-          "value": 2
+          "name": "PlayStation",
+          "value": 1994
         },
         {
-          "name": "13 − 7",
-          "value": 6
+          "name": "PlayStation 3",
+          "value": 2006
         },
         {
-          "name": "8 + 2",
-          "value": 10
+          "name": "PlayStation Vita",
+          "value": 2011
         },
         {
-          "name": "7 + 4",
-          "value": 11
+          "name": "PlayStation 4",
+          "value": 2013
         },
         {
-          "name": "9 + 8",
-          "value": 17
+          "name": "PlayStation 5",
+          "value": 2020
         }
       ]
     },
     {
       "id": "stack-familiar-3-016",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "GAMES",
+      "unit": "first launch year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://sonyinteractive.com/en/our-company/expanded-company-timeline/"
       ],
       "ordered": [
         {
-          "name": "10 − 7",
-          "value": 3
+          "name": "PSP",
+          "value": 2004
         },
         {
-          "name": "6 − 2",
-          "value": 4
+          "name": "PlayStation 3",
+          "value": 2006
         },
         {
-          "name": "16 − 6",
-          "value": 10
+          "name": "PlayStation Vita",
+          "value": 2011
         },
         {
-          "name": "22 − 11",
-          "value": 11
+          "name": "PlayStation 4",
+          "value": 2013
         },
         {
-          "name": "23 − 11",
-          "value": 12
+          "name": "PlayStation 5",
+          "value": 2020
         }
       ]
     },
     {
       "id": "stack-familiar-3-017",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "HISTORY",
+      "unit": "year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://www.pbs.org/empires/romans/special/timeline_26.html",
+        "https://christophercolumbus.org/wp-content/uploads/2019/01/2005.pdf",
+        "https://www.archives.gov/milestone-documents/declaration-of-independence",
+        "https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/the-wilbur-and-orville-wright-timeline-1846-to-1948/1901-to-1910/",
+        "https://www.noaa.gov/rms-titanic",
+        "https://en.wikipedia.org/wiki/Federation_of_Australia",
+        "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
+        "https://en.wikipedia.org/wiki/IPhone_(1st_generation)"
       ],
       "ordered": [
         {
-          "name": "60 ÷ 10",
-          "value": 6
+          "name": "Rome’s Colosseum opens",
+          "value": 80
         },
         {
-          "name": "77 ÷ 11",
-          "value": 7
+          "name": "Columbus reaches the Caribbean",
+          "value": 1492
         },
         {
-          "name": "13 − 5",
-          "value": 8
+          "name": "The US Declaration of Independence is adopted",
+          "value": 1776
         },
         {
-          "name": "20 − 10",
-          "value": 10
+          "name": "Australia becomes a federation",
+          "value": 1901
         },
         {
-          "name": "33 ÷ 3",
-          "value": 11
+          "name": "The Titanic sinks",
+          "value": 1912
         }
       ]
     },
     {
       "id": "stack-familiar-3-018",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "HISTORY",
+      "unit": "year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://www.pbs.org/empires/romans/special/timeline_26.html",
+        "https://christophercolumbus.org/wp-content/uploads/2019/01/2005.pdf",
+        "https://www.archives.gov/milestone-documents/declaration-of-independence",
+        "https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/the-wilbur-and-orville-wright-timeline-1846-to-1948/1901-to-1910/",
+        "https://www.noaa.gov/rms-titanic",
+        "https://en.wikipedia.org/wiki/Federation_of_Australia",
+        "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
+        "https://en.wikipedia.org/wiki/IPhone_(1st_generation)"
       ],
       "ordered": [
         {
-          "name": "16 ÷ 4",
-          "value": 4
+          "name": "Rome’s Colosseum opens",
+          "value": 80
         },
         {
-          "name": "16 − 9",
-          "value": 7
+          "name": "Columbus reaches the Caribbean",
+          "value": 1492
         },
         {
-          "name": "20 − 9",
-          "value": 11
+          "name": "Australia becomes a federation",
+          "value": 1901
         },
         {
-          "name": "4 + 8",
-          "value": 12
+          "name": "The Wright brothers fly the Wright Flyer",
+          "value": 1903
         },
         {
-          "name": "2 × 9",
-          "value": 18
+          "name": "The Berlin Wall’s border crossings open",
+          "value": 1989
         }
       ]
     },
     {
       "id": "stack-familiar-3-019",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "HISTORY",
+      "unit": "year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://www.pbs.org/empires/romans/special/timeline_26.html",
+        "https://christophercolumbus.org/wp-content/uploads/2019/01/2005.pdf",
+        "https://www.archives.gov/milestone-documents/declaration-of-independence",
+        "https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/the-wilbur-and-orville-wright-timeline-1846-to-1948/1901-to-1910/",
+        "https://www.noaa.gov/rms-titanic",
+        "https://en.wikipedia.org/wiki/Federation_of_Australia",
+        "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
+        "https://en.wikipedia.org/wiki/IPhone_(1st_generation)"
       ],
       "ordered": [
         {
-          "name": "22 ÷ 11",
-          "value": 2
+          "name": "Rome’s Colosseum opens",
+          "value": 80
         },
         {
-          "name": "100 ÷ 10",
-          "value": 10
+          "name": "Columbus reaches the Caribbean",
+          "value": 1492
         },
         {
-          "name": "21 − 9",
-          "value": 12
+          "name": "Australia becomes a federation",
+          "value": 1901
         },
         {
-          "name": "9 × 6",
-          "value": 54
+          "name": "The Titanic sinks",
+          "value": 1912
         },
         {
-          "name": "7 × 11",
-          "value": 77
+          "name": "The Berlin Wall’s border crossings open",
+          "value": 1989
         }
       ]
     },
     {
       "id": "stack-familiar-3-020",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "HISTORY",
+      "unit": "year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://www.pbs.org/empires/romans/special/timeline_26.html",
+        "https://christophercolumbus.org/wp-content/uploads/2019/01/2005.pdf",
+        "https://www.archives.gov/milestone-documents/declaration-of-independence",
+        "https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/the-wilbur-and-orville-wright-timeline-1846-to-1948/1901-to-1910/",
+        "https://www.noaa.gov/rms-titanic",
+        "https://en.wikipedia.org/wiki/Federation_of_Australia",
+        "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
+        "https://en.wikipedia.org/wiki/IPhone_(1st_generation)"
       ],
       "ordered": [
         {
-          "name": "7 − 3",
-          "value": 4
+          "name": "Columbus reaches the Caribbean",
+          "value": 1492
         },
         {
-          "name": "10 − 2",
-          "value": 8
+          "name": "Australia becomes a federation",
+          "value": 1901
         },
         {
-          "name": "20 ÷ 2",
-          "value": 10
+          "name": "The Wright brothers fly the Wright Flyer",
+          "value": 1903
         },
         {
-          "name": "7 + 8",
-          "value": 15
+          "name": "The Berlin Wall’s border crossings open",
+          "value": 1989
         },
         {
-          "name": "6 × 4",
-          "value": 24
+          "name": "The first iPhone goes on sale in the US",
+          "value": 2007
         }
       ]
     },
     {
       "id": "stack-familiar-3-021",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "HISTORY",
+      "unit": "year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://www.pbs.org/empires/romans/special/timeline_26.html",
+        "https://christophercolumbus.org/wp-content/uploads/2019/01/2005.pdf",
+        "https://www.archives.gov/milestone-documents/declaration-of-independence",
+        "https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/the-wilbur-and-orville-wright-timeline-1846-to-1948/1901-to-1910/",
+        "https://www.noaa.gov/rms-titanic",
+        "https://en.wikipedia.org/wiki/Federation_of_Australia",
+        "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
+        "https://en.wikipedia.org/wiki/IPhone_(1st_generation)"
       ],
       "ordered": [
         {
-          "name": "4 − 2",
-          "value": 2
+          "name": "Columbus reaches the Caribbean",
+          "value": 1492
         },
         {
-          "name": "8 − 5",
-          "value": 3
+          "name": "Australia becomes a federation",
+          "value": 1901
         },
         {
-          "name": "24 ÷ 6",
-          "value": 4
+          "name": "The Wright brothers fly the Wright Flyer",
+          "value": 1903
         },
         {
-          "name": "6 × 2",
-          "value": 12
+          "name": "The Titanic sinks",
+          "value": 1912
         },
         {
-          "name": "3 × 11",
-          "value": 33
+          "name": "The Berlin Wall’s border crossings open",
+          "value": 1989
         }
       ]
     },
     {
       "id": "stack-familiar-3-022",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "HISTORY",
+      "unit": "year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://www.pbs.org/empires/romans/special/timeline_26.html",
+        "https://christophercolumbus.org/wp-content/uploads/2019/01/2005.pdf",
+        "https://www.archives.gov/milestone-documents/declaration-of-independence",
+        "https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/the-wilbur-and-orville-wright-timeline-1846-to-1948/1901-to-1910/",
+        "https://www.noaa.gov/rms-titanic",
+        "https://en.wikipedia.org/wiki/Federation_of_Australia",
+        "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
+        "https://en.wikipedia.org/wiki/IPhone_(1st_generation)"
       ],
       "ordered": [
         {
-          "name": "10 ÷ 2",
-          "value": 5
+          "name": "Rome’s Colosseum opens",
+          "value": 80
         },
         {
-          "name": "2 + 10",
-          "value": 12
+          "name": "The US Declaration of Independence is adopted",
+          "value": 1776
         },
         {
-          "name": "5 + 9",
-          "value": 14
+          "name": "The Wright brothers fly the Wright Flyer",
+          "value": 1903
         },
         {
-          "name": "3 × 7",
-          "value": 21
+          "name": "The Berlin Wall’s border crossings open",
+          "value": 1989
         },
         {
-          "name": "11 × 7",
-          "value": 77
+          "name": "The first iPhone goes on sale in the US",
+          "value": 2007
         }
       ]
     },
     {
       "id": "stack-familiar-3-023",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "HISTORY",
+      "unit": "year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://www.pbs.org/empires/romans/special/timeline_26.html",
+        "https://christophercolumbus.org/wp-content/uploads/2019/01/2005.pdf",
+        "https://www.archives.gov/milestone-documents/declaration-of-independence",
+        "https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/the-wilbur-and-orville-wright-timeline-1846-to-1948/1901-to-1910/",
+        "https://www.noaa.gov/rms-titanic",
+        "https://en.wikipedia.org/wiki/Federation_of_Australia",
+        "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
+        "https://en.wikipedia.org/wiki/IPhone_(1st_generation)"
       ],
       "ordered": [
         {
-          "name": "10 − 8",
-          "value": 2
+          "name": "Rome’s Colosseum opens",
+          "value": 80
         },
         {
-          "name": "24 ÷ 6",
-          "value": 4
+          "name": "Columbus reaches the Caribbean",
+          "value": 1492
         },
         {
-          "name": "14 − 7",
-          "value": 7
+          "name": "The US Declaration of Independence is adopted",
+          "value": 1776
         },
         {
-          "name": "9 + 10",
-          "value": 19
+          "name": "The Wright brothers fly the Wright Flyer",
+          "value": 1903
         },
         {
-          "name": "8 × 4",
-          "value": 32
+          "name": "The Berlin Wall’s border crossings open",
+          "value": 1989
         }
       ]
     },
     {
       "id": "stack-familiar-3-024",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "HISTORY",
+      "unit": "year",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://www.pbs.org/empires/romans/special/timeline_26.html",
+        "https://christophercolumbus.org/wp-content/uploads/2019/01/2005.pdf",
+        "https://www.archives.gov/milestone-documents/declaration-of-independence",
+        "https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/the-wilbur-and-orville-wright-timeline-1846-to-1948/1901-to-1910/",
+        "https://www.noaa.gov/rms-titanic",
+        "https://en.wikipedia.org/wiki/Federation_of_Australia",
+        "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
+        "https://en.wikipedia.org/wiki/IPhone_(1st_generation)"
       ],
       "ordered": [
         {
-          "name": "10 − 8",
-          "value": 2
+          "name": "Rome’s Colosseum opens",
+          "value": 80
         },
         {
-          "name": "63 ÷ 9",
-          "value": 7
+          "name": "Columbus reaches the Caribbean",
+          "value": 1492
         },
         {
-          "name": "100 ÷ 10",
-          "value": 10
+          "name": "Australia becomes a federation",
+          "value": 1901
         },
         {
-          "name": "5 + 11",
-          "value": 16
+          "name": "The Titanic sinks",
+          "value": 1912
         },
         {
-          "name": "11 × 3",
-          "value": 33
+          "name": "The first iPhone goes on sale in the US",
+          "value": 2007
         }
       ]
     },
     {
       "id": "stack-familiar-3-025",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SPORT",
+      "unit": "year Games were held",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://olympics.com/en/olympic-games"
       ],
       "ordered": [
         {
-          "name": "12 − 8",
-          "value": 4
+          "name": "Sydney",
+          "value": 2000
         },
         {
-          "name": "8 − 3",
-          "value": 5
+          "name": "Athens",
+          "value": 2004
         },
         {
-          "name": "12 − 2",
-          "value": 10
+          "name": "London",
+          "value": 2012
         },
         {
-          "name": "7 × 5",
-          "value": 35
+          "name": "Rio de Janeiro",
+          "value": 2016
         },
         {
-          "name": "11 × 8",
-          "value": 88
+          "name": "Tokyo",
+          "value": 2021
         }
       ]
     },
     {
       "id": "stack-familiar-3-026",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SPORT",
+      "unit": "year Games were held",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://olympics.com/en/olympic-games"
       ],
       "ordered": [
         {
-          "name": "2 + 2",
-          "value": 4
+          "name": "Atlanta",
+          "value": 1996
         },
         {
-          "name": "55 ÷ 11",
-          "value": 5
+          "name": "Sydney",
+          "value": 2000
         },
         {
-          "name": "48 ÷ 8",
-          "value": 6
+          "name": "Rio de Janeiro",
+          "value": 2016
         },
         {
-          "name": "88 ÷ 8",
-          "value": 11
+          "name": "Tokyo",
+          "value": 2021
         },
         {
-          "name": "2 × 11",
-          "value": 22
+          "name": "Paris",
+          "value": 2024
         }
       ]
     },
     {
       "id": "stack-familiar-3-027",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SPORT",
+      "unit": "year Games were held",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://olympics.com/en/olympic-games"
       ],
       "ordered": [
         {
-          "name": "6 + 2",
-          "value": 8
+          "name": "Atlanta",
+          "value": 1996
         },
         {
-          "name": "4 + 8",
-          "value": 12
+          "name": "Sydney",
+          "value": 2000
         },
         {
-          "name": "6 + 7",
-          "value": 13
+          "name": "Athens",
+          "value": 2004
         },
         {
-          "name": "12 × 3",
-          "value": 36
+          "name": "London",
+          "value": 2012
         },
         {
-          "name": "9 × 6",
-          "value": 54
+          "name": "Paris",
+          "value": 2024
         }
       ]
     },
     {
       "id": "stack-familiar-3-028",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SPORT",
+      "unit": "year Games were held",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://olympics.com/en/olympic-games"
       ],
       "ordered": [
         {
-          "name": "9 − 5",
-          "value": 4
+          "name": "Atlanta",
+          "value": 1996
         },
         {
-          "name": "3 + 4",
-          "value": 7
+          "name": "Sydney",
+          "value": 2000
         },
         {
-          "name": "88 ÷ 11",
-          "value": 8
+          "name": "Athens",
+          "value": 2004
         },
         {
-          "name": "110 ÷ 10",
-          "value": 11
+          "name": "Rio de Janeiro",
+          "value": 2016
         },
         {
-          "name": "2 × 10",
-          "value": 20
+          "name": "Paris",
+          "value": 2024
         }
       ]
     },
     {
       "id": "stack-familiar-3-029",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SPORT",
+      "unit": "year Games were held",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://olympics.com/en/olympic-games"
       ],
       "ordered": [
         {
-          "name": "12 ÷ 2",
-          "value": 6
+          "name": "Atlanta",
+          "value": 1996
         },
         {
-          "name": "13 − 6",
-          "value": 7
+          "name": "Athens",
+          "value": 2004
         },
         {
-          "name": "60 ÷ 5",
-          "value": 12
+          "name": "London",
+          "value": 2012
         },
         {
-          "name": "6 + 7",
-          "value": 13
+          "name": "Rio de Janeiro",
+          "value": 2016
         },
         {
-          "name": "10 × 2",
-          "value": 20
+          "name": "Paris",
+          "value": 2024
         }
       ]
     },
     {
       "id": "stack-familiar-3-030",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SPORT",
+      "unit": "year Games were held",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://olympics.com/en/olympic-games"
       ],
       "ordered": [
         {
-          "name": "9 − 3",
-          "value": 6
+          "name": "Sydney",
+          "value": 2000
         },
         {
-          "name": "20 − 11",
-          "value": 9
+          "name": "Athens",
+          "value": 2004
         },
         {
-          "name": "40 ÷ 4",
-          "value": 10
+          "name": "London",
+          "value": 2012
         },
         {
-          "name": "9 + 6",
-          "value": 15
+          "name": "Tokyo",
+          "value": 2021
         },
         {
-          "name": "2 × 9",
-          "value": 18
+          "name": "Paris",
+          "value": 2024
         }
       ]
     },
     {
       "id": "stack-familiar-3-031",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SPORT",
+      "unit": "year Games were held",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://olympics.com/en/olympic-games"
       ],
       "ordered": [
         {
-          "name": "12 − 6",
-          "value": 6
+          "name": "Atlanta",
+          "value": 1996
         },
         {
-          "name": "11 − 4",
-          "value": 7
+          "name": "Athens",
+          "value": 2004
         },
         {
-          "name": "9 + 2",
-          "value": 11
+          "name": "London",
+          "value": 2012
         },
         {
-          "name": "17 − 5",
-          "value": 12
+          "name": "Tokyo",
+          "value": 2021
         },
         {
-          "name": "6 + 7",
-          "value": 13
+          "name": "Paris",
+          "value": 2024
         }
       ]
     },
     {
       "id": "stack-familiar-3-032",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SPORT",
+      "unit": "year Games were held",
       "sources": [
-        "Exact arithmetic; operands retained in each card."
+        "https://olympics.com/en/olympic-games"
       ],
       "ordered": [
         {
-          "name": "10 ÷ 5",
-          "value": 2
+          "name": "Atlanta",
+          "value": 1996
         },
         {
-          "name": "24 ÷ 3",
-          "value": 8
+          "name": "Sydney",
+          "value": 2000
         },
         {
-          "name": "50 ÷ 5",
-          "value": 10
+          "name": "Athens",
+          "value": 2004
         },
         {
-          "name": "9 + 4",
-          "value": 13
+          "name": "Beijing",
+          "value": 2008
         },
         {
-          "name": "9 + 8",
-          "value": 17
+          "name": "Rio de Janeiro",
+          "value": 2016
         }
       ]
     },
     {
       "id": "stack-familiar-4-001",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "BOOKS",
+      "unit": "book position",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.harrypotter.com/discover/books"
       ],
       "ordered": [
         {
-          "name": "1/4",
-          "numerator": 1,
-          "denominator": 4,
-          "value": 0.25,
-          "display": "1/4"
+          "name": "Harry Potter and the Philosopher's Stone",
+          "value": 1
         },
         {
-          "name": "1/2",
-          "numerator": 1,
-          "denominator": 2,
-          "value": 0.5,
-          "display": "1/2"
+          "name": "Harry Potter and the Chamber of Secrets",
+          "value": 2
         },
         {
-          "name": "60%",
-          "numerator": 3,
-          "denominator": 5,
-          "value": 0.6,
-          "display": "3/5"
+          "name": "Harry Potter and the Order of the Phoenix",
+          "value": 5
         },
         {
-          "name": "2/3",
-          "numerator": 2,
-          "denominator": 3,
-          "value": 0.6666666666666666,
-          "display": "2/3"
+          "name": "Harry Potter and the Half-Blood Prince",
+          "value": 6
         },
         {
-          "name": "3/4",
-          "numerator": 3,
-          "denominator": 4,
-          "value": 0.75,
-          "display": "3/4"
+          "name": "Harry Potter and the Deathly Hallows",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-4-002",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "BOOKS",
+      "unit": "book position",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.harrypotter.com/discover/books"
       ],
       "ordered": [
         {
-          "name": "1/8",
-          "numerator": 1,
-          "denominator": 8,
-          "value": 0.125,
-          "display": "1/8"
+          "name": "Harry Potter and the Philosopher's Stone",
+          "value": 1
         },
         {
-          "name": "20%",
-          "numerator": 1,
-          "denominator": 5,
-          "value": 0.2,
-          "display": "1/5"
+          "name": "Harry Potter and the Prisoner of Azkaban",
+          "value": 3
         },
         {
-          "name": "2/3",
-          "numerator": 2,
-          "denominator": 3,
-          "value": 0.6666666666666666,
-          "display": "2/3"
+          "name": "Harry Potter and the Goblet of Fire",
+          "value": 4
         },
         {
-          "name": "5/6",
-          "numerator": 5,
-          "denominator": 6,
-          "value": 0.8333333333333334,
-          "display": "5/6"
+          "name": "Harry Potter and the Half-Blood Prince",
+          "value": 6
         },
         {
-          "name": "One whole",
-          "numerator": 1,
-          "denominator": 1,
-          "value": 1,
-          "display": "1/1"
+          "name": "Harry Potter and the Deathly Hallows",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-4-003",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "BOOKS",
+      "unit": "book position",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.harrypotter.com/discover/books"
       ],
       "ordered": [
         {
-          "name": "80%",
-          "numerator": 4,
-          "denominator": 5,
-          "value": 0.8,
-          "display": "4/5"
+          "name": "Harry Potter and the Philosopher's Stone",
+          "value": 1
         },
         {
-          "name": "5/6",
-          "numerator": 5,
-          "denominator": 6,
-          "value": 0.8333333333333334,
-          "display": "5/6"
+          "name": "Harry Potter and the Prisoner of Azkaban",
+          "value": 3
         },
         {
-          "name": "7/8",
-          "numerator": 7,
-          "denominator": 8,
-          "value": 0.875,
-          "display": "7/8"
+          "name": "Harry Potter and the Order of the Phoenix",
+          "value": 5
         },
         {
-          "name": "90%",
-          "numerator": 9,
-          "denominator": 10,
-          "value": 0.9,
-          "display": "9/10"
+          "name": "Harry Potter and the Half-Blood Prince",
+          "value": 6
         },
         {
-          "name": "One whole",
-          "numerator": 1,
-          "denominator": 1,
-          "value": 1,
-          "display": "1/1"
+          "name": "Harry Potter and the Deathly Hallows",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-4-004",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "BOOKS",
+      "unit": "book position",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.harrypotter.com/discover/books"
       ],
       "ordered": [
         {
-          "name": "1/6",
-          "numerator": 1,
-          "denominator": 6,
-          "value": 0.16666666666666666,
-          "display": "1/6"
+          "name": "Harry Potter and the Philosopher's Stone",
+          "value": 1
         },
         {
-          "name": "1/4",
-          "numerator": 1,
-          "denominator": 4,
-          "value": 0.25,
-          "display": "1/4"
+          "name": "Harry Potter and the Chamber of Secrets",
+          "value": 2
         },
         {
-          "name": "40%",
-          "numerator": 2,
-          "denominator": 5,
-          "value": 0.4,
-          "display": "2/5"
+          "name": "Harry Potter and the Goblet of Fire",
+          "value": 4
         },
         {
-          "name": "3/4",
-          "numerator": 3,
-          "denominator": 4,
-          "value": 0.75,
-          "display": "3/4"
+          "name": "Harry Potter and the Order of the Phoenix",
+          "value": 5
         },
         {
-          "name": "One whole",
-          "numerator": 1,
-          "denominator": 1,
-          "value": 1,
-          "display": "1/1"
+          "name": "Harry Potter and the Deathly Hallows",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-4-005",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "BOOKS",
+      "unit": "book position",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.harrypotter.com/discover/books"
       ],
       "ordered": [
         {
-          "name": "1/6",
-          "numerator": 1,
-          "denominator": 6,
-          "value": 0.16666666666666666,
-          "display": "1/6"
+          "name": "Harry Potter and the Philosopher's Stone",
+          "value": 1
         },
         {
-          "name": "1/3",
-          "numerator": 1,
-          "denominator": 3,
-          "value": 0.3333333333333333,
-          "display": "1/3"
+          "name": "Harry Potter and the Chamber of Secrets",
+          "value": 2
         },
         {
-          "name": "1/2",
-          "numerator": 1,
-          "denominator": 2,
-          "value": 0.5,
-          "display": "1/2"
+          "name": "Harry Potter and the Prisoner of Azkaban",
+          "value": 3
         },
         {
-          "name": "7/8",
-          "numerator": 7,
-          "denominator": 8,
-          "value": 0.875,
-          "display": "7/8"
+          "name": "Harry Potter and the Order of the Phoenix",
+          "value": 5
         },
         {
-          "name": "One whole",
-          "numerator": 1,
-          "denominator": 1,
-          "value": 1,
-          "display": "1/1"
+          "name": "Harry Potter and the Half-Blood Prince",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-4-006",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "BOOKS",
+      "unit": "book position",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.harrypotter.com/discover/books"
       ],
       "ordered": [
         {
-          "name": "30%",
-          "numerator": 3,
-          "denominator": 10,
-          "value": 0.3,
-          "display": "3/10"
+          "name": "Harry Potter and the Chamber of Secrets",
+          "value": 2
         },
         {
-          "name": "1/3",
-          "numerator": 1,
-          "denominator": 3,
-          "value": 0.3333333333333333,
-          "display": "1/3"
+          "name": "Harry Potter and the Prisoner of Azkaban",
+          "value": 3
         },
         {
-          "name": "40%",
-          "numerator": 2,
-          "denominator": 5,
-          "value": 0.4,
-          "display": "2/5"
+          "name": "Harry Potter and the Goblet of Fire",
+          "value": 4
         },
         {
-          "name": "1/2",
-          "numerator": 1,
-          "denominator": 2,
-          "value": 0.5,
-          "display": "1/2"
+          "name": "Harry Potter and the Half-Blood Prince",
+          "value": 6
         },
         {
-          "name": "90%",
-          "numerator": 9,
-          "denominator": 10,
-          "value": 0.9,
-          "display": "9/10"
+          "name": "Harry Potter and the Deathly Hallows",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-4-007",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "BOOKS",
+      "unit": "book position",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.harrypotter.com/discover/books"
       ],
       "ordered": [
         {
-          "name": "1/6",
-          "numerator": 1,
-          "denominator": 6,
-          "value": 0.16666666666666666,
-          "display": "1/6"
+          "name": "Harry Potter and the Philosopher's Stone",
+          "value": 1
         },
         {
-          "name": "2/3",
-          "numerator": 2,
-          "denominator": 3,
-          "value": 0.6666666666666666,
-          "display": "2/3"
+          "name": "Harry Potter and the Chamber of Secrets",
+          "value": 2
         },
         {
-          "name": "3/4",
-          "numerator": 3,
-          "denominator": 4,
-          "value": 0.75,
-          "display": "3/4"
+          "name": "Harry Potter and the Prisoner of Azkaban",
+          "value": 3
         },
         {
-          "name": "5/6",
-          "numerator": 5,
-          "denominator": 6,
-          "value": 0.8333333333333334,
-          "display": "5/6"
+          "name": "Harry Potter and the Half-Blood Prince",
+          "value": 6
         },
         {
-          "name": "One whole",
-          "numerator": 1,
-          "denominator": 1,
-          "value": 1,
-          "display": "1/1"
+          "name": "Harry Potter and the Deathly Hallows",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-4-008",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "BOOKS",
+      "unit": "book position",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.harrypotter.com/discover/books"
       ],
       "ordered": [
         {
-          "name": "1/8",
-          "numerator": 1,
-          "denominator": 8,
-          "value": 0.125,
-          "display": "1/8"
+          "name": "Harry Potter and the Chamber of Secrets",
+          "value": 2
         },
         {
-          "name": "1/6",
-          "numerator": 1,
-          "denominator": 6,
-          "value": 0.16666666666666666,
-          "display": "1/6"
+          "name": "Harry Potter and the Prisoner of Azkaban",
+          "value": 3
         },
         {
-          "name": "20%",
-          "numerator": 1,
-          "denominator": 5,
-          "value": 0.2,
-          "display": "1/5"
+          "name": "Harry Potter and the Goblet of Fire",
+          "value": 4
         },
         {
-          "name": "30%",
-          "numerator": 3,
-          "denominator": 10,
-          "value": 0.3,
-          "display": "3/10"
+          "name": "Harry Potter and the Order of the Phoenix",
+          "value": 5
         },
         {
-          "name": "40%",
-          "numerator": 2,
-          "denominator": 5,
-          "value": 0.4,
-          "display": "2/5"
+          "name": "Harry Potter and the Deathly Hallows",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-4-009",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SCREEN TIME",
+      "unit": "first release year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.pixar.com/feature-films/"
       ],
       "ordered": [
         {
-          "name": "1/8",
-          "numerator": 1,
-          "denominator": 8,
-          "value": 0.125,
-          "display": "1/8"
+          "name": "Toy Story 3",
+          "value": 2010
         },
         {
-          "name": "1/6",
-          "numerator": 1,
-          "denominator": 6,
-          "value": 0.16666666666666666,
-          "display": "1/6"
+          "name": "Coco",
+          "value": 2017
         },
         {
-          "name": "20%",
-          "numerator": 1,
-          "denominator": 5,
-          "value": 0.2,
-          "display": "1/5"
+          "name": "Luca",
+          "value": 2021
         },
         {
-          "name": "30%",
-          "numerator": 3,
-          "denominator": 10,
-          "value": 0.3,
-          "display": "3/10"
+          "name": "Inside Out 2",
+          "value": 2024
         },
         {
-          "name": "60%",
-          "numerator": 3,
-          "denominator": 5,
-          "value": 0.6,
-          "display": "3/5"
+          "name": "Elio",
+          "value": 2025
         }
       ]
     },
     {
       "id": "stack-familiar-4-010",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SCREEN TIME",
+      "unit": "first release year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.pixar.com/feature-films/"
       ],
       "ordered": [
         {
-          "name": "1/8",
-          "numerator": 1,
-          "denominator": 8,
-          "value": 0.125,
-          "display": "1/8"
+          "name": "Toy Story 3",
+          "value": 2010
         },
         {
-          "name": "20%",
-          "numerator": 1,
-          "denominator": 5,
-          "value": 0.2,
-          "display": "1/5"
+          "name": "Coco",
+          "value": 2017
         },
         {
-          "name": "1/4",
-          "numerator": 1,
-          "denominator": 4,
-          "value": 0.25,
-          "display": "1/4"
+          "name": "Onward",
+          "value": 2020
         },
         {
-          "name": "40%",
-          "numerator": 2,
-          "denominator": 5,
-          "value": 0.4,
-          "display": "2/5"
+          "name": "Turning Red",
+          "value": 2022
         },
         {
-          "name": "7/8",
-          "numerator": 7,
-          "denominator": 8,
-          "value": 0.875,
-          "display": "7/8"
+          "name": "Elemental",
+          "value": 2023
         }
       ]
     },
     {
       "id": "stack-familiar-4-011",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SCREEN TIME",
+      "unit": "first release year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.pixar.com/feature-films/"
       ],
       "ordered": [
         {
-          "name": "1/8",
-          "numerator": 1,
-          "denominator": 8,
-          "value": 0.125,
-          "display": "1/8"
+          "name": "Onward",
+          "value": 2020
         },
         {
-          "name": "20%",
-          "numerator": 1,
-          "denominator": 5,
-          "value": 0.2,
-          "display": "1/5"
+          "name": "Luca",
+          "value": 2021
         },
         {
-          "name": "1/4",
-          "numerator": 1,
-          "denominator": 4,
-          "value": 0.25,
-          "display": "1/4"
+          "name": "Turning Red",
+          "value": 2022
         },
         {
-          "name": "60%",
-          "numerator": 3,
-          "denominator": 5,
-          "value": 0.6,
-          "display": "3/5"
+          "name": "Elemental",
+          "value": 2023
         },
         {
-          "name": "One whole",
-          "numerator": 1,
-          "denominator": 1,
-          "value": 1,
-          "display": "1/1"
+          "name": "Inside Out 2",
+          "value": 2024
         }
       ]
     },
     {
       "id": "stack-familiar-4-012",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SCREEN TIME",
+      "unit": "first release year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.pixar.com/feature-films/"
       ],
       "ordered": [
         {
-          "name": "40%",
-          "numerator": 2,
-          "denominator": 5,
-          "value": 0.4,
-          "display": "2/5"
+          "name": "Toy Story 3",
+          "value": 2010
         },
         {
-          "name": "2/3",
-          "numerator": 2,
-          "denominator": 3,
-          "value": 0.6666666666666666,
-          "display": "2/3"
+          "name": "Brave",
+          "value": 2012
         },
         {
-          "name": "80%",
-          "numerator": 4,
-          "denominator": 5,
-          "value": 0.8,
-          "display": "4/5"
+          "name": "Inside Out",
+          "value": 2015
         },
         {
-          "name": "5/6",
-          "numerator": 5,
-          "denominator": 6,
-          "value": 0.8333333333333334,
-          "display": "5/6"
+          "name": "Coco",
+          "value": 2017
         },
         {
-          "name": "7/8",
-          "numerator": 7,
-          "denominator": 8,
-          "value": 0.875,
-          "display": "7/8"
+          "name": "Elemental",
+          "value": 2023
         }
       ]
     },
     {
       "id": "stack-familiar-4-013",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SCREEN TIME",
+      "unit": "first release year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.pixar.com/feature-films/"
       ],
       "ordered": [
         {
-          "name": "1/8",
-          "numerator": 1,
-          "denominator": 8,
-          "value": 0.125,
-          "display": "1/8"
+          "name": "Coco",
+          "value": 2017
         },
         {
-          "name": "1/6",
-          "numerator": 1,
-          "denominator": 6,
-          "value": 0.16666666666666666,
-          "display": "1/6"
+          "name": "Luca",
+          "value": 2021
         },
         {
-          "name": "40%",
-          "numerator": 2,
-          "denominator": 5,
-          "value": 0.4,
-          "display": "2/5"
+          "name": "Turning Red",
+          "value": 2022
         },
         {
-          "name": "1/2",
-          "numerator": 1,
-          "denominator": 2,
-          "value": 0.5,
-          "display": "1/2"
+          "name": "Elemental",
+          "value": 2023
         },
         {
-          "name": "2/3",
-          "numerator": 2,
-          "denominator": 3,
-          "value": 0.6666666666666666,
-          "display": "2/3"
+          "name": "Inside Out 2",
+          "value": 2024
         }
       ]
     },
     {
       "id": "stack-familiar-4-014",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SCREEN TIME",
+      "unit": "first release year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.pixar.com/feature-films/"
       ],
       "ordered": [
         {
-          "name": "30%",
-          "numerator": 3,
-          "denominator": 10,
-          "value": 0.3,
-          "display": "3/10"
+          "name": "Toy Story 3",
+          "value": 2010
         },
         {
-          "name": "1/2",
-          "numerator": 1,
-          "denominator": 2,
-          "value": 0.5,
-          "display": "1/2"
+          "name": "Coco",
+          "value": 2017
         },
         {
-          "name": "60%",
-          "numerator": 3,
-          "denominator": 5,
-          "value": 0.6,
-          "display": "3/5"
+          "name": "Onward",
+          "value": 2020
         },
         {
-          "name": "3/4",
-          "numerator": 3,
-          "denominator": 4,
-          "value": 0.75,
-          "display": "3/4"
+          "name": "Elemental",
+          "value": 2023
         },
         {
-          "name": "90%",
-          "numerator": 9,
-          "denominator": 10,
-          "value": 0.9,
-          "display": "9/10"
+          "name": "Inside Out 2",
+          "value": 2024
         }
       ]
     },
     {
       "id": "stack-familiar-4-015",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SCREEN TIME",
+      "unit": "first release year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.pixar.com/feature-films/"
       ],
       "ordered": [
         {
-          "name": "1/8",
-          "numerator": 1,
-          "denominator": 8,
-          "value": 0.125,
-          "display": "1/8"
+          "name": "Toy Story 3",
+          "value": 2010
         },
         {
-          "name": "1/4",
-          "numerator": 1,
-          "denominator": 4,
-          "value": 0.25,
-          "display": "1/4"
+          "name": "Coco",
+          "value": 2017
         },
         {
-          "name": "1/3",
-          "numerator": 1,
-          "denominator": 3,
-          "value": 0.3333333333333333,
-          "display": "1/3"
+          "name": "Luca",
+          "value": 2021
         },
         {
-          "name": "80%",
-          "numerator": 4,
-          "denominator": 5,
-          "value": 0.8,
-          "display": "4/5"
+          "name": "Turning Red",
+          "value": 2022
         },
         {
-          "name": "90%",
-          "numerator": 9,
-          "denominator": 10,
-          "value": 0.9,
-          "display": "9/10"
+          "name": "Elio",
+          "value": 2025
         }
       ]
     },
     {
       "id": "stack-familiar-4-016",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SCREEN TIME",
+      "unit": "first release year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.pixar.com/feature-films/"
       ],
       "ordered": [
         {
-          "name": "1/8",
-          "numerator": 1,
-          "denominator": 8,
-          "value": 0.125,
-          "display": "1/8"
+          "name": "Toy Story 3",
+          "value": 2010
         },
         {
-          "name": "1/6",
-          "numerator": 1,
-          "denominator": 6,
-          "value": 0.16666666666666666,
-          "display": "1/6"
+          "name": "Brave",
+          "value": 2012
         },
         {
-          "name": "30%",
-          "numerator": 3,
-          "denominator": 10,
-          "value": 0.3,
-          "display": "3/10"
+          "name": "Turning Red",
+          "value": 2022
         },
         {
-          "name": "90%",
-          "numerator": 9,
-          "denominator": 10,
-          "value": 0.9,
-          "display": "9/10"
+          "name": "Inside Out 2",
+          "value": 2024
         },
         {
-          "name": "One whole",
-          "numerator": 1,
-          "denominator": 1,
-          "value": 1,
-          "display": "1/1"
+          "name": "Elio",
+          "value": 2025
         }
       ]
     },
     {
       "id": "stack-familiar-4-017",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "MUSIC",
+      "unit": "original release year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.taylorswift.com/",
+        "https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography"
       ],
       "ordered": [
         {
-          "name": "30%",
-          "numerator": 3,
-          "denominator": 10,
-          "value": 0.3,
-          "display": "3/10"
+          "name": "Taylor Swift",
+          "value": 2006
         },
         {
-          "name": "1/2",
-          "numerator": 1,
-          "denominator": 2,
-          "value": 0.5,
-          "display": "1/2"
+          "name": "Fearless",
+          "value": 2008
         },
         {
-          "name": "2/3",
-          "numerator": 2,
-          "denominator": 3,
-          "value": 0.6666666666666666,
-          "display": "2/3"
+          "name": "Speak Now",
+          "value": 2010
         },
         {
-          "name": "80%",
-          "numerator": 4,
-          "denominator": 5,
-          "value": 0.8,
-          "display": "4/5"
+          "name": "Red",
+          "value": 2012
         },
         {
-          "name": "5/6",
-          "numerator": 5,
-          "denominator": 6,
-          "value": 0.8333333333333334,
-          "display": "5/6"
+          "name": "Midnights",
+          "value": 2022
         }
       ]
     },
     {
       "id": "stack-familiar-4-018",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "MUSIC",
+      "unit": "original release year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.taylorswift.com/",
+        "https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography"
       ],
       "ordered": [
         {
-          "name": "1/6",
-          "numerator": 1,
-          "denominator": 6,
-          "value": 0.16666666666666666,
-          "display": "1/6"
+          "name": "Fearless",
+          "value": 2008
         },
         {
-          "name": "80%",
-          "numerator": 4,
-          "denominator": 5,
-          "value": 0.8,
-          "display": "4/5"
+          "name": "Speak Now",
+          "value": 2010
         },
         {
-          "name": "5/6",
-          "numerator": 5,
-          "denominator": 6,
-          "value": 0.8333333333333334,
-          "display": "5/6"
+          "name": "Red",
+          "value": 2012
         },
         {
-          "name": "90%",
-          "numerator": 9,
-          "denominator": 10,
-          "value": 0.9,
-          "display": "9/10"
+          "name": "1989",
+          "value": 2014
         },
         {
-          "name": "One whole",
-          "numerator": 1,
-          "denominator": 1,
-          "value": 1,
-          "display": "1/1"
+          "name": "Lover",
+          "value": 2019
         }
       ]
     },
     {
       "id": "stack-familiar-4-019",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "MUSIC",
+      "unit": "original release year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.taylorswift.com/",
+        "https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography"
       ],
       "ordered": [
         {
-          "name": "1/8",
-          "numerator": 1,
-          "denominator": 8,
-          "value": 0.125,
-          "display": "1/8"
+          "name": "Taylor Swift",
+          "value": 2006
         },
         {
-          "name": "20%",
-          "numerator": 1,
-          "denominator": 5,
-          "value": 0.2,
-          "display": "1/5"
+          "name": "Speak Now",
+          "value": 2010
         },
         {
-          "name": "60%",
-          "numerator": 3,
-          "denominator": 5,
-          "value": 0.6,
-          "display": "3/5"
+          "name": "Red",
+          "value": 2012
         },
         {
-          "name": "3/4",
-          "numerator": 3,
-          "denominator": 4,
-          "value": 0.75,
-          "display": "3/4"
+          "name": "Reputation",
+          "value": 2017
         },
         {
-          "name": "90%",
-          "numerator": 9,
-          "denominator": 10,
-          "value": 0.9,
-          "display": "9/10"
+          "name": "The Tortured Poets Department",
+          "value": 2024
         }
       ]
     },
     {
       "id": "stack-familiar-4-020",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "MUSIC",
+      "unit": "original release year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.taylorswift.com/",
+        "https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography"
       ],
       "ordered": [
         {
-          "name": "20%",
-          "numerator": 1,
-          "denominator": 5,
-          "value": 0.2,
-          "display": "1/5"
+          "name": "Fearless",
+          "value": 2008
         },
         {
-          "name": "40%",
-          "numerator": 2,
-          "denominator": 5,
-          "value": 0.4,
-          "display": "2/5"
+          "name": "Red",
+          "value": 2012
         },
         {
-          "name": "60%",
-          "numerator": 3,
-          "denominator": 5,
-          "value": 0.6,
-          "display": "3/5"
+          "name": "1989",
+          "value": 2014
         },
         {
-          "name": "2/3",
-          "numerator": 2,
-          "denominator": 3,
-          "value": 0.6666666666666666,
-          "display": "2/3"
+          "name": "Reputation",
+          "value": 2017
         },
         {
-          "name": "80%",
-          "numerator": 4,
-          "denominator": 5,
-          "value": 0.8,
-          "display": "4/5"
+          "name": "The Tortured Poets Department",
+          "value": 2024
         }
       ]
     },
     {
       "id": "stack-familiar-4-021",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "MUSIC",
+      "unit": "original release year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.taylorswift.com/",
+        "https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography"
       ],
       "ordered": [
         {
-          "name": "1/8",
-          "numerator": 1,
-          "denominator": 8,
-          "value": 0.125,
-          "display": "1/8"
+          "name": "Taylor Swift",
+          "value": 2006
         },
         {
-          "name": "1/6",
-          "numerator": 1,
-          "denominator": 6,
-          "value": 0.16666666666666666,
-          "display": "1/6"
+          "name": "Speak Now",
+          "value": 2010
         },
         {
-          "name": "60%",
-          "numerator": 3,
-          "denominator": 5,
-          "value": 0.6,
-          "display": "3/5"
+          "name": "Lover",
+          "value": 2019
         },
         {
-          "name": "2/3",
-          "numerator": 2,
-          "denominator": 3,
-          "value": 0.6666666666666666,
-          "display": "2/3"
+          "name": "Midnights",
+          "value": 2022
         },
         {
-          "name": "One whole",
-          "numerator": 1,
-          "denominator": 1,
-          "value": 1,
-          "display": "1/1"
+          "name": "The Tortured Poets Department",
+          "value": 2024
         }
       ]
     },
     {
       "id": "stack-familiar-4-022",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "MUSIC",
+      "unit": "original release year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.taylorswift.com/",
+        "https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography"
       ],
       "ordered": [
         {
-          "name": "20%",
-          "numerator": 1,
-          "denominator": 5,
-          "value": 0.2,
-          "display": "1/5"
+          "name": "Taylor Swift",
+          "value": 2006
         },
         {
-          "name": "1/4",
-          "numerator": 1,
-          "denominator": 4,
-          "value": 0.25,
-          "display": "1/4"
+          "name": "Fearless",
+          "value": 2008
         },
         {
-          "name": "1/3",
-          "numerator": 1,
-          "denominator": 3,
-          "value": 0.3333333333333333,
-          "display": "1/3"
+          "name": "Speak Now",
+          "value": 2010
         },
         {
-          "name": "1/2",
-          "numerator": 1,
-          "denominator": 2,
-          "value": 0.5,
-          "display": "1/2"
+          "name": "Midnights",
+          "value": 2022
         },
         {
-          "name": "90%",
-          "numerator": 9,
-          "denominator": 10,
-          "value": 0.9,
-          "display": "9/10"
+          "name": "The Tortured Poets Department",
+          "value": 2024
         }
       ]
     },
     {
       "id": "stack-familiar-4-023",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "MUSIC",
+      "unit": "original release year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.taylorswift.com/",
+        "https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography"
       ],
       "ordered": [
         {
-          "name": "1/3",
-          "numerator": 1,
-          "denominator": 3,
-          "value": 0.3333333333333333,
-          "display": "1/3"
+          "name": "Taylor Swift",
+          "value": 2006
         },
         {
-          "name": "40%",
-          "numerator": 2,
-          "denominator": 5,
-          "value": 0.4,
-          "display": "2/5"
+          "name": "Speak Now",
+          "value": 2010
         },
         {
-          "name": "60%",
-          "numerator": 3,
-          "denominator": 5,
-          "value": 0.6,
-          "display": "3/5"
+          "name": "1989",
+          "value": 2014
         },
         {
-          "name": "5/6",
-          "numerator": 5,
-          "denominator": 6,
-          "value": 0.8333333333333334,
-          "display": "5/6"
+          "name": "Lover",
+          "value": 2019
         },
         {
-          "name": "One whole",
-          "numerator": 1,
-          "denominator": 1,
-          "value": 1,
-          "display": "1/1"
+          "name": "The Tortured Poets Department",
+          "value": 2024
         }
       ]
     },
     {
       "id": "stack-familiar-4-024",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "MUSIC",
+      "unit": "original release year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.taylorswift.com/",
+        "https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography"
       ],
       "ordered": [
         {
-          "name": "1/8",
-          "numerator": 1,
-          "denominator": 8,
-          "value": 0.125,
-          "display": "1/8"
+          "name": "Fearless",
+          "value": 2008
         },
         {
-          "name": "40%",
-          "numerator": 2,
-          "denominator": 5,
-          "value": 0.4,
-          "display": "2/5"
+          "name": "Red",
+          "value": 2012
         },
         {
-          "name": "1/2",
-          "numerator": 1,
-          "denominator": 2,
-          "value": 0.5,
-          "display": "1/2"
+          "name": "1989",
+          "value": 2014
         },
         {
-          "name": "60%",
-          "numerator": 3,
-          "denominator": 5,
-          "value": 0.6,
-          "display": "3/5"
+          "name": "Reputation",
+          "value": 2017
         },
         {
-          "name": "5/6",
-          "numerator": 5,
-          "denominator": 6,
-          "value": 0.8333333333333334,
-          "display": "5/6"
+          "name": "Lover",
+          "value": 2019
         }
       ]
     },
     {
       "id": "stack-familiar-4-025",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SPACE",
+      "unit": "year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.nasa.gov/history/dawn-of-the-space-age/",
+        "https://www.fai.org/page/history-manned-spaceflight-pioneers",
+        "https://www.nasa.gov/mission/apollo-11/",
+        "https://www.nasa.gov/mission/sts-1/",
+        "https://science.nasa.gov/mission/hubble/overview/hubble-timeline/hubble-history-timeline-full-text/",
+        "https://www.jpl.nasa.gov/missions/mars-science-laboratory-curiosity-rover-msl/",
+        "https://science.nasa.gov/mission/webb/launch/",
+        "https://en.wikipedia.org/wiki/NASA"
       ],
       "ordered": [
         {
-          "name": "1/6",
-          "numerator": 1,
-          "denominator": 6,
-          "value": 0.16666666666666666,
-          "display": "1/6"
+          "name": "NASA begins operations",
+          "value": 1958
         },
         {
-          "name": "1/4",
-          "numerator": 1,
-          "denominator": 4,
-          "value": 0.25,
-          "display": "1/4"
+          "name": "Yuri Gagarin orbits Earth",
+          "value": 1961
         },
         {
-          "name": "1/2",
-          "numerator": 1,
-          "denominator": 2,
-          "value": 0.5,
-          "display": "1/2"
+          "name": "The Hubble Space Telescope launches",
+          "value": 1990
         },
         {
-          "name": "5/6",
-          "numerator": 5,
-          "denominator": 6,
-          "value": 0.8333333333333334,
-          "display": "5/6"
+          "name": "Curiosity lands on Mars",
+          "value": 2012
         },
         {
-          "name": "One whole",
-          "numerator": 1,
-          "denominator": 1,
-          "value": 1,
-          "display": "1/1"
+          "name": "The James Webb Space Telescope launches",
+          "value": 2021
         }
       ]
     },
     {
       "id": "stack-familiar-4-026",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SPACE",
+      "unit": "year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.nasa.gov/history/dawn-of-the-space-age/",
+        "https://www.fai.org/page/history-manned-spaceflight-pioneers",
+        "https://www.nasa.gov/mission/apollo-11/",
+        "https://www.nasa.gov/mission/sts-1/",
+        "https://science.nasa.gov/mission/hubble/overview/hubble-timeline/hubble-history-timeline-full-text/",
+        "https://www.jpl.nasa.gov/missions/mars-science-laboratory-curiosity-rover-msl/",
+        "https://science.nasa.gov/mission/webb/launch/",
+        "https://en.wikipedia.org/wiki/NASA"
       ],
       "ordered": [
         {
-          "name": "20%",
-          "numerator": 1,
-          "denominator": 5,
-          "value": 0.2,
-          "display": "1/5"
+          "name": "Yuri Gagarin orbits Earth",
+          "value": 1961
         },
         {
-          "name": "1/4",
-          "numerator": 1,
-          "denominator": 4,
-          "value": 0.25,
-          "display": "1/4"
+          "name": "Apollo 11 lands on the Moon",
+          "value": 1969
         },
         {
-          "name": "30%",
-          "numerator": 3,
-          "denominator": 10,
-          "value": 0.3,
-          "display": "3/10"
+          "name": "The Hubble Space Telescope launches",
+          "value": 1990
         },
         {
-          "name": "80%",
-          "numerator": 4,
-          "denominator": 5,
-          "value": 0.8,
-          "display": "4/5"
+          "name": "Curiosity lands on Mars",
+          "value": 2012
         },
         {
-          "name": "5/6",
-          "numerator": 5,
-          "denominator": 6,
-          "value": 0.8333333333333334,
-          "display": "5/6"
+          "name": "The James Webb Space Telescope launches",
+          "value": 2021
         }
       ]
     },
     {
       "id": "stack-familiar-4-027",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SPACE",
+      "unit": "year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.nasa.gov/history/dawn-of-the-space-age/",
+        "https://www.fai.org/page/history-manned-spaceflight-pioneers",
+        "https://www.nasa.gov/mission/apollo-11/",
+        "https://www.nasa.gov/mission/sts-1/",
+        "https://science.nasa.gov/mission/hubble/overview/hubble-timeline/hubble-history-timeline-full-text/",
+        "https://www.jpl.nasa.gov/missions/mars-science-laboratory-curiosity-rover-msl/",
+        "https://science.nasa.gov/mission/webb/launch/",
+        "https://en.wikipedia.org/wiki/NASA"
       ],
       "ordered": [
         {
-          "name": "1/6",
-          "numerator": 1,
-          "denominator": 6,
-          "value": 0.16666666666666666,
-          "display": "1/6"
+          "name": "Sputnik 1 launches",
+          "value": 1957
         },
         {
-          "name": "60%",
-          "numerator": 3,
-          "denominator": 5,
-          "value": 0.6,
-          "display": "3/5"
+          "name": "NASA begins operations",
+          "value": 1958
         },
         {
-          "name": "3/4",
-          "numerator": 3,
-          "denominator": 4,
-          "value": 0.75,
-          "display": "3/4"
+          "name": "Apollo 11 lands on the Moon",
+          "value": 1969
         },
         {
-          "name": "80%",
-          "numerator": 4,
-          "denominator": 5,
-          "value": 0.8,
-          "display": "4/5"
+          "name": "Curiosity lands on Mars",
+          "value": 2012
         },
         {
-          "name": "5/6",
-          "numerator": 5,
-          "denominator": 6,
-          "value": 0.8333333333333334,
-          "display": "5/6"
+          "name": "The James Webb Space Telescope launches",
+          "value": 2021
         }
       ]
     },
     {
       "id": "stack-familiar-4-028",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SPACE",
+      "unit": "year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.nasa.gov/history/dawn-of-the-space-age/",
+        "https://www.fai.org/page/history-manned-spaceflight-pioneers",
+        "https://www.nasa.gov/mission/apollo-11/",
+        "https://www.nasa.gov/mission/sts-1/",
+        "https://science.nasa.gov/mission/hubble/overview/hubble-timeline/hubble-history-timeline-full-text/",
+        "https://www.jpl.nasa.gov/missions/mars-science-laboratory-curiosity-rover-msl/",
+        "https://science.nasa.gov/mission/webb/launch/",
+        "https://en.wikipedia.org/wiki/NASA"
       ],
       "ordered": [
         {
-          "name": "1/8",
-          "numerator": 1,
-          "denominator": 8,
-          "value": 0.125,
-          "display": "1/8"
+          "name": "Sputnik 1 launches",
+          "value": 1957
         },
         {
-          "name": "30%",
-          "numerator": 3,
-          "denominator": 10,
-          "value": 0.3,
-          "display": "3/10"
+          "name": "Yuri Gagarin orbits Earth",
+          "value": 1961
         },
         {
-          "name": "3/4",
-          "numerator": 3,
-          "denominator": 4,
-          "value": 0.75,
-          "display": "3/4"
+          "name": "Space Shuttle Columbia makes its first launch",
+          "value": 1981
         },
         {
-          "name": "7/8",
-          "numerator": 7,
-          "denominator": 8,
-          "value": 0.875,
-          "display": "7/8"
+          "name": "The Hubble Space Telescope launches",
+          "value": 1990
         },
         {
-          "name": "One whole",
-          "numerator": 1,
-          "denominator": 1,
-          "value": 1,
-          "display": "1/1"
+          "name": "The James Webb Space Telescope launches",
+          "value": 2021
         }
       ]
     },
     {
       "id": "stack-familiar-4-029",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SPACE",
+      "unit": "year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.nasa.gov/history/dawn-of-the-space-age/",
+        "https://www.fai.org/page/history-manned-spaceflight-pioneers",
+        "https://www.nasa.gov/mission/apollo-11/",
+        "https://www.nasa.gov/mission/sts-1/",
+        "https://science.nasa.gov/mission/hubble/overview/hubble-timeline/hubble-history-timeline-full-text/",
+        "https://www.jpl.nasa.gov/missions/mars-science-laboratory-curiosity-rover-msl/",
+        "https://science.nasa.gov/mission/webb/launch/",
+        "https://en.wikipedia.org/wiki/NASA"
       ],
       "ordered": [
         {
-          "name": "1/8",
-          "numerator": 1,
-          "denominator": 8,
-          "value": 0.125,
-          "display": "1/8"
+          "name": "NASA begins operations",
+          "value": 1958
         },
         {
-          "name": "30%",
-          "numerator": 3,
-          "denominator": 10,
-          "value": 0.3,
-          "display": "3/10"
+          "name": "Yuri Gagarin orbits Earth",
+          "value": 1961
         },
         {
-          "name": "40%",
-          "numerator": 2,
-          "denominator": 5,
-          "value": 0.4,
-          "display": "2/5"
+          "name": "Apollo 11 lands on the Moon",
+          "value": 1969
         },
         {
-          "name": "1/2",
-          "numerator": 1,
-          "denominator": 2,
-          "value": 0.5,
-          "display": "1/2"
+          "name": "Space Shuttle Columbia makes its first launch",
+          "value": 1981
         },
         {
-          "name": "7/8",
-          "numerator": 7,
-          "denominator": 8,
-          "value": 0.875,
-          "display": "7/8"
+          "name": "The Hubble Space Telescope launches",
+          "value": 1990
         }
       ]
     },
     {
       "id": "stack-familiar-4-030",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SPACE",
+      "unit": "year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.nasa.gov/history/dawn-of-the-space-age/",
+        "https://www.fai.org/page/history-manned-spaceflight-pioneers",
+        "https://www.nasa.gov/mission/apollo-11/",
+        "https://www.nasa.gov/mission/sts-1/",
+        "https://science.nasa.gov/mission/hubble/overview/hubble-timeline/hubble-history-timeline-full-text/",
+        "https://www.jpl.nasa.gov/missions/mars-science-laboratory-curiosity-rover-msl/",
+        "https://science.nasa.gov/mission/webb/launch/",
+        "https://en.wikipedia.org/wiki/NASA"
       ],
       "ordered": [
         {
-          "name": "20%",
-          "numerator": 1,
-          "denominator": 5,
-          "value": 0.2,
-          "display": "1/5"
+          "name": "NASA begins operations",
+          "value": 1958
         },
         {
-          "name": "1/4",
-          "numerator": 1,
-          "denominator": 4,
-          "value": 0.25,
-          "display": "1/4"
+          "name": "Yuri Gagarin orbits Earth",
+          "value": 1961
         },
         {
-          "name": "3/4",
-          "numerator": 3,
-          "denominator": 4,
-          "value": 0.75,
-          "display": "3/4"
+          "name": "Apollo 11 lands on the Moon",
+          "value": 1969
         },
         {
-          "name": "5/6",
-          "numerator": 5,
-          "denominator": 6,
-          "value": 0.8333333333333334,
-          "display": "5/6"
+          "name": "The Hubble Space Telescope launches",
+          "value": 1990
         },
         {
-          "name": "One whole",
-          "numerator": 1,
-          "denominator": 1,
-          "value": 1,
-          "display": "1/1"
+          "name": "Curiosity lands on Mars",
+          "value": 2012
         }
       ]
     },
     {
       "id": "stack-familiar-4-031",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SPACE",
+      "unit": "year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.nasa.gov/history/dawn-of-the-space-age/",
+        "https://www.fai.org/page/history-manned-spaceflight-pioneers",
+        "https://www.nasa.gov/mission/apollo-11/",
+        "https://www.nasa.gov/mission/sts-1/",
+        "https://science.nasa.gov/mission/hubble/overview/hubble-timeline/hubble-history-timeline-full-text/",
+        "https://www.jpl.nasa.gov/missions/mars-science-laboratory-curiosity-rover-msl/",
+        "https://science.nasa.gov/mission/webb/launch/",
+        "https://en.wikipedia.org/wiki/NASA"
       ],
       "ordered": [
         {
-          "name": "1/4",
-          "numerator": 1,
-          "denominator": 4,
-          "value": 0.25,
-          "display": "1/4"
+          "name": "Sputnik 1 launches",
+          "value": 1957
         },
         {
-          "name": "30%",
-          "numerator": 3,
-          "denominator": 10,
-          "value": 0.3,
-          "display": "3/10"
+          "name": "Apollo 11 lands on the Moon",
+          "value": 1969
         },
         {
-          "name": "2/3",
-          "numerator": 2,
-          "denominator": 3,
-          "value": 0.6666666666666666,
-          "display": "2/3"
+          "name": "The Hubble Space Telescope launches",
+          "value": 1990
         },
         {
-          "name": "5/6",
-          "numerator": 5,
-          "denominator": 6,
-          "value": 0.8333333333333334,
-          "display": "5/6"
+          "name": "Curiosity lands on Mars",
+          "value": 2012
         },
         {
-          "name": "90%",
-          "numerator": 9,
-          "denominator": 10,
-          "value": 0.9,
-          "display": "9/10"
+          "name": "The James Webb Space Telescope launches",
+          "value": 2021
         }
       ]
     },
     {
       "id": "stack-familiar-4-032",
-      "source": "NUMBER SENSE",
-      "unit": "",
+      "source": "SPACE",
+      "unit": "year",
       "sources": [
-        "Exact rational values retained in the audit."
+        "https://www.nasa.gov/history/dawn-of-the-space-age/",
+        "https://www.fai.org/page/history-manned-spaceflight-pioneers",
+        "https://www.nasa.gov/mission/apollo-11/",
+        "https://www.nasa.gov/mission/sts-1/",
+        "https://science.nasa.gov/mission/hubble/overview/hubble-timeline/hubble-history-timeline-full-text/",
+        "https://www.jpl.nasa.gov/missions/mars-science-laboratory-curiosity-rover-msl/",
+        "https://science.nasa.gov/mission/webb/launch/",
+        "https://en.wikipedia.org/wiki/NASA"
       ],
       "ordered": [
         {
-          "name": "20%",
-          "numerator": 1,
-          "denominator": 5,
-          "value": 0.2,
-          "display": "1/5"
+          "name": "Sputnik 1 launches",
+          "value": 1957
         },
         {
-          "name": "1/3",
-          "numerator": 1,
-          "denominator": 3,
-          "value": 0.3333333333333333,
-          "display": "1/3"
+          "name": "Yuri Gagarin orbits Earth",
+          "value": 1961
         },
         {
-          "name": "60%",
-          "numerator": 3,
-          "denominator": 5,
-          "value": 0.6,
-          "display": "3/5"
+          "name": "The Hubble Space Telescope launches",
+          "value": 1990
         },
         {
-          "name": "3/4",
-          "numerator": 3,
-          "denominator": 4,
-          "value": 0.75,
-          "display": "3/4"
+          "name": "Curiosity lands on Mars",
+          "value": 2012
         },
         {
-          "name": "One whole",
-          "numerator": 1,
-          "denominator": 1,
-          "value": 1,
-          "display": "1/1"
+          "name": "The James Webb Space Telescope launches",
+          "value": 2021
         }
       ]
     }
