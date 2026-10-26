@@ -2389,7 +2389,7 @@
       "id": "hg-princesses",
       "topic": "FILM",
       "prompt": "Name an emotion character in Inside Out 2 (2024).",
-      "scope": "The nine emotions at Riley's headquarters; English character names. Not human characters.",
+      "scope": "Riley's named emotion characters in the 2024 film, including Nostalgia's brief appearance. Not humans or imaginary-friend characters.",
       "source": "https://www.pixar.com/inside-out-2",
       "answers": [
         {
@@ -2436,6 +2436,11 @@
           "name": "Ennui",
           "aliases": [],
           "points": 100
+        },
+        {
+          "name": "Nostalgia",
+          "aliases": [],
+          "points": 97
         }
       ]
     },

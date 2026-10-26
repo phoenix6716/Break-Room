@@ -29,6 +29,7 @@ for(const [id,key,global,period,bankGlobal,file]of specs){
 }
 const HG=read('content/hidden-gem-questions.json').questions,CL=read('content/clue-ladder-puzzles.json').puzzles,TD=read('content/time-drop-events.json').events;
 const by=(bank,id)=>bank.find(p=>p.id===id);
+assert(by(HG,'hg-princesses').answers.some(a=>a.name==='Nostalgia'));
 assert(by(HG,'pixar-2010').answers.some(a=>a.name==='Inside Out 2'));
 assert(by(HG,'pixar-2010').answers.some(a=>a.name==='Elio'));
 assert(by(HG,'hg-hitchhiker').answers.some(a=>a.name==='Sunrise on the Reaping'));

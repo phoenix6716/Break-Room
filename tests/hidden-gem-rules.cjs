@@ -3,7 +3,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('nod
 for(const p of ['daily-clock.js','hidden-gem-model.js','arcade-score.js','profile-records.js','cloud-saves.js'])require('../'+p);
 const M=BREAK_ROOM_HIDDEN_GEM,B=require('../content/hidden-gem-questions.json').questions,day='2026-10-24',key=M.PREFIX+day,encode=JSON.stringify;
 const runtime={window:{}};vm.runInNewContext(fs.readFileSync('games/hidden-gem/questions.js','utf8'),runtime);
-assert.deepEqual(JSON.parse(JSON.stringify(runtime.window.HIDDEN_GEM_QUESTIONS)),B);assert.equal(B.length,160);assert.equal(B.reduce((n,q)=>n+q.answers.length,0),921);assert.equal(new Set(B.map(q=>q.id)).size,160);
+assert.deepEqual(JSON.parse(JSON.stringify(runtime.window.HIDDEN_GEM_QUESTIONS)),B);assert.equal(B.length,160);assert.equal(B.reduce((n,q)=>n+q.answers.length,0),922);assert.equal(new Set(B.map(q=>q.id)).size,160);
 for(const q of B){assert(M.puzzle(q),q.id);assert.equal(new Set(q.answers.map(a=>a.points)).size,q.answers.length);assert(q.answers.some(a=>a.points===100));for(const a of q.answers)for(const x of [a.name,...a.aliases])assert.equal(M.match(q,x)?.name,a.name,q.id+': '+x);}
 const ids=[];for(let i=0;i<32;i++){const d=new Date(Date.UTC(2026,9,24+i)).toISOString().slice(0,10),qs=M.daily(B,d);assert.deepEqual(qs,M.daily([...B].reverse(),d));assert.equal(new Set(qs.map(q=>q.topic)).size,5);ids.push(...qs.map(q=>q.id));}assert.equal(new Set(ids).size,160);
 for(const [n,label]of [[0,'Time’s Up'],[1,'Familiar'],[19,'Familiar'],[20,'Nice Find'],[39,'Nice Find'],[40,'Offbeat'],[59,'Offbeat'],[60,'Hidden Gem'],[79,'Hidden Gem'],[80,'Crown Jewel'],[95,'Crown Jewel'],[100,'Crown Jewel']])assert.equal(M.scoreBand(n),label);
