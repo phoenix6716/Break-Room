@@ -1,0 +1,18 @@
+name: Export approved homepage artwork
+on:
+  push:
+    branches: [homepage-card-art]
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Export approved panels
+        run: |
+          npm install --prefix /tmp/card-export-tools --no-audit --no-fund sharp@0.34.5
+          NODE_PATH=/tmp/card-export-tools/node_modules EXPORT_CARDS=1 node scripts/export-homepage-cards.cjs
