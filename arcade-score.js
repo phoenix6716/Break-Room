@@ -10,7 +10,7 @@
   return won/total*100;
  }
  function innerClock(targets,picks){
-  if(!Array.isArray(targets)||targets.length!==5||new Set(targets).size!==5||!targets.every(t=>Number.isInteger(t)&&t>=2000&&t<=12000&&t%100===0)||!Array.isArray(picks)||picks.length!==5||!picks.every(a=>a&&Number.isInteger(a.elapsed)&&a.elapsed>=0&&a.elapsed<=30000&&['stop','timeout'].includes(a.kind)&&(a.kind!=='timeout'||a.elapsed===30000)))return null;
+  if(!Array.isArray(targets)||targets.length!==5||new Set(targets).size!==5||!targets.every(t=>Number.isInteger(t)&&t>=2000&&t<=12000&&t%50===0)||!Array.isArray(picks)||picks.length!==5||!picks.every(a=>a&&Number.isInteger(a.elapsed)&&a.elapsed>=0&&a.elapsed<=30000&&['stop','timeout'].includes(a.kind)&&(a.kind!=='timeout'||a.elapsed===30000)))return null;
   return picks.reduce((n,a,i)=>n+(a.kind==='timeout'?0:Math.max(0,100*(1-Math.abs(a.elapsed-targets[i])/(targets[i]*.25)))),0)/5;
  }
  function summary(records,today,ids=['hidden-gem','seating-chart','clue-ladder','lowball','stake','stack-up','pack','prior','laser','alibi','bouncer','inner-clock','time-drop','shift-work']){

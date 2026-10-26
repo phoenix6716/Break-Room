@@ -39,6 +39,8 @@ The owner requested no hearts anywhere in Time Drop, reasonable partial-credit s
 
 Existing live projects apply `supabase/time-drop.sql` after the current Inner Clock/player-feedback migration. For an already-enabled Time Drop project, apply `supabase/time-drop-five-rounds.sql` to support both run lengths. Updated `supabase/inner-clock.sql` includes it; fresh setup then friends supports all ten formats. Do not reapply historical narrower migrations. Publication is already authorised automatically after affected checks; verify live SQL separately from CI and deployment.
 
+Time Sense accepts exact 50ms target increments across the game model, shared Arcade calculator and private SQL scorer. The 26 October 2026 calculator correction restores missing profile Arcade values for valid saved Dailies without rewriting saves or changing the accuracy formula. Regression coverage checks every day in the 39-day rotation, non-perfect results, timeouts, invalid targets and profile aggregation.
+
 Every completed Daily has a shared **0–100 Arcade score**, alongside its original game score. Chips, points, deadlines, penalties, saved runs and game-specific achievements remain unchanged. `arcade-score.js` is the single calculator for the result screens and read-only profile adapters. Values are kept at full precision for averages and displayed to at most one decimal place.
 
 | Game | Arcade score | Examples |

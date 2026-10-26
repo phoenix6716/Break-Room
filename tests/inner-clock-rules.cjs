@@ -20,6 +20,19 @@ assert.deepEqual(C.merge('inner-clock',{},nextData),nextData,'Cloud restore reta
 const nextStore={get length(){return 1},key:()=>nextKey,getItem:k=>k===nextKey?encode(nextRun):null,setItem(){throw Error('read only')}};
 const nextProfile=BREAK_ROOM_RECORDS.read(nextStore,nextDay).games.find(g=>g.id==='inner-clock');
 assert.equal(nextProfile.best,0);assert.equal(nextProfile.played,1);
+assert.equal(S.innerClock(nextTargets,nextRun.picks),100,'Shared score accepts 50ms targets');
+assert.equal(nextProfile.arcade.average,100,'Profile includes completed 50ms-target Dailies');
+const nextRecords=BREAK_ROOM_RECORDS.read(nextStore,nextDay);
+assert.equal(nextRecords.arcade.average,100);assert.equal(nextRecords.arcade.runs,1);
+for(let n=0;n<M.DAILY_PERIOD;n++){
+ const d=new Date(Date.UTC(2026,9,26+n)).toISOString().slice(0,10),targets=M.daily(d);
+ for(const offset of [0,-.05,.05,-.25,.25]){
+  const picks=targets.map(t=>({elapsed:Math.round(t*(1+offset)),kind:'stop'})),r={...good,day:d,targets,picks};
+  assert(Math.abs(S.innerClock(targets,picks)-M.record(r,d).arcadeScore)<1e-10,'Shared/model parity across the complete 39-day deck');
+ }
+ assert.equal(S.innerClock(targets,targets.map(()=>({elapsed:30000,kind:'timeout'}))),0,'50ms-target timeouts remain completed zeroes');
+}
+assert.equal(S.innerClock([2025,...nextTargets.slice(1)],nextRun.picks),null,'Reject targets outside the 50ms grid');
 
 
 (async()=>{const db=new PGlite();try{await db.exec("create role anon;create role authenticated;create schema auth;create table auth.users(id uuid primary key);create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;grant usage on schema auth to anon,authenticated;grant execute on function auth.uid() to anon,authenticated;");await db.exec(fs.readFileSync('supabase/setup.sql','utf8'));await db.exec(fs.readFileSync('supabase/friends.sql','utf8'));const sql=async r=>(await db.query('select public._friend_score($1,$2,$3) s',['inner-clock',encode(r),day])).rows[0].s;assert.equal(await sql(good),100);assert.equal((await db.query('select public._friend_score($1,$2,$3) s',['inner-clock',encode(nextRun),nextDay])).rows[0].s,100);assert.equal((await db.query('select public._friend_inner_clock_score($1,$2) s',[encode({...nextRun,targets:[2025,...nextTargets.slice(1)]}),nextDay])).rows[0].s,null);
