@@ -1,3 +1,9 @@
+## Desk Jam and Time Sense card revisions — 26 October 2026
+
+The owner approved Desk Jam option B: a recognisable top-down desk, filing cabinet and blue chair with an exit route. Export only the left panel of `assets/cards/source/desk-jam-option-b.png`; the right-hand Sleeper index-card-box concept was explicitly rejected. Time Sense's generic screen/pointer illustration is replaced with a simple blue pixel stopwatch on a pale-blue grid, from `assets/cards/source/time-sense-stopwatch.png`. The new Sleeper star-cluster image is an unselected preview; keep the current live radar artwork until a replacement is chosen.
+
+The revised lossless WebPs keep their public asset filenames with revisioned query strings. The export script reproduces the original eight panels and these two overrides. Source images remain excluded from production. Preserve the restored 172/155/126px artwork frames, use contain sizing and do not enlarge cards again.
+
 ## Preserve homepage card sizes — owner correction, 26 October 2026
 
 The owner requested new artwork, not larger cards. Preserve the original menu.css artwork heights: 172px desktop, 155px through 1050px, and 126px through 540px. Do not impose a new image aspect ratio on the card container. Fit the entire illustration inside the existing frame with object-fit:contain, preserving the original grid, text and button layout. Time Sense needs a closer visual match; new Desk Jam and Sleeper alternatives are previews until selected. This supersedes the 4:3 frame instruction below.
