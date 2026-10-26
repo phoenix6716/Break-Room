@@ -1,0 +1,18 @@
+name: Export full-bleed card art
+on:
+  push:
+    branches: [card-full-bleed]
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Export and measure artwork
+        run: |
+          npm install --prefix /tmp/full-bleed-tools --no-audit --no-fund sharp@0.34.5
+          NODE_PATH=/tmp/full-bleed-tools/node_modules EXPORT_CARDS=1 node scripts/export-homepage-cards.cjs
