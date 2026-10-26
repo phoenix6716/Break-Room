@@ -1,0 +1,4 @@
+/* Owner-approved flat pixel illustrations; preserve the complete game motif. */
+.game-art.has-card-art{display:block;height:auto;aspect-ratio:4/3;background:var(--art)}
+.game-art.has-card-art::after{display:none}
+.game-art.has-card-art>.game-card-image{display:block;width:100%;height:100%;object-fit:cover;object-position:center;image-rendering:pixelated}

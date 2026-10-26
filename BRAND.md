@@ -10,3 +10,10 @@ Production assets: `assets/break-room-wordmark.png`, `assets/break-room-mark.png
 
 
 The final site name remains **Break Room** (two words). Keep the existing warm cream/grid backgrounds, navy outlines, rectangular panels, hard shadows and muted playful colours. The website's own approved identity is permitted; third-party logos and protected emblems remain excluded from game artwork.
+
+## Approved homepage card artwork — owner decision, 26 October 2026
+
+The owner approved the second, flat pixel-style ten-card preview after rejecting the glossy cartoon direction as looking AI-generated. Use crisp geometric sprites, solid muted fills, navy outlines and hard shadows close to the games' actual graphics. No glossy cartoon scenes, realistic hands/faces, third-party logos or branded packaging. The approved master is `assets/source/homepage-cards-pixel-approved.png`, excluded from production; `scripts/export-homepage-cards.cjs` uses Sharp 0.34.5 to reproduce the exact panel crops as lossless WebP under `assets/cards/`. Do not regenerate/redraw the approved art during exports. The board's captions and gutters are not part of the shipped card images.
+
+Homepage titles, descriptions and play links remain real HTML. Treat the images as decorative because the adjacent text identifies each game. Keep a consistent 4:3 artwork frame, sharp pixel scaling, complete subject silhouettes at every supported width, and the ten existing routes/order/Daily progress. Changes here do not alter game engines, content, saves or scoring. Validate the homepage artwork, image loading, mobile/desktop layout and navigation; no full-game sweep is required.
+

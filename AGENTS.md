@@ -1,3 +1,9 @@
+## Approved homepage card artwork — owner decision, 26 October 2026
+
+The owner approved the second, flat pixel-style ten-card preview after rejecting the glossy cartoon direction as looking AI-generated. Use crisp geometric sprites, solid muted fills, navy outlines and hard shadows close to the games' actual graphics. No glossy cartoon scenes, realistic hands/faces, third-party logos or branded packaging. The approved master is `assets/source/homepage-cards-pixel-approved.png`, excluded from production; `scripts/export-homepage-cards.cjs` uses Sharp 0.34.5 to reproduce the exact panel crops as lossless WebP under `assets/cards/`. Do not regenerate/redraw the approved art during exports. The board's captions and gutters are not part of the shipped card images.
+
+Homepage titles, descriptions and play links remain real HTML. Treat the images as decorative because the adjacent text identifies each game. Keep a consistent 4:3 artwork frame, sharp pixel scaling, complete subject silhouettes at every supported width, and the ten existing routes/order/Daily progress. Changes here do not alter game engines, content, saves or scoring. Validate the homepage artwork, image loading, mobile/desktop layout and navigation; no full-game sweep is required.
+
 ## Stack Up without maths — owner decision, 26 October 2026
 
 The owner finds maths questions boring and repetitive. New Dailies and every Unlimited filter must exclude calculations, fractions, percentages, geometry exercises and unit-conversion drills. Keep ordinary chronological, science, geography and other knowledge ordering. Replace the 64 arithmetic/fraction slots and 16 unit/data-conversion slots with non-maths topics while retaining all 160 IDs, five 32-item lanes and their exact Daily date assignments. The added source is `content/stack-up-familiar-topics.json`, rebuilt by `scripts/build-familiar-stacks.cjs`.
