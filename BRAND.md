@@ -1,3 +1,7 @@
+## Preserve homepage card sizes — owner correction, 26 October 2026
+
+The owner requested new artwork, not larger cards. Preserve the original menu.css artwork heights: 172px desktop, 155px through 1050px, and 126px through 540px. Do not impose a new image aspect ratio on the card container. Fit the entire illustration inside the existing frame with object-fit:contain, preserving the original grid, text and button layout. Time Sense needs a closer visual match; new Desk Jam and Sleeper alternatives are previews until selected. This supersedes the 4:3 frame instruction below.
+
 # Break Room identity
 
 ## Approved Break Room logo — owner decision, 25 October 2026
@@ -15,5 +19,5 @@ The final site name remains **Break Room** (two words). Keep the existing warm c
 
 The owner approved the second, flat pixel-style ten-card preview after rejecting the glossy cartoon direction as looking AI-generated. Use crisp geometric sprites, solid muted fills, navy outlines and hard shadows close to the games' actual graphics. No glossy cartoon scenes, realistic hands/faces, third-party logos or branded packaging. The approved master is `assets/source/homepage-cards-pixel-approved.png`, excluded from production; `scripts/export-homepage-cards.cjs` uses Sharp 0.34.5 to reproduce the exact panel crops as lossless WebP under `assets/cards/`. Do not regenerate/redraw the approved art during exports. The board's captions and gutters are not part of the shipped card images.
 
-Homepage titles, descriptions and play links remain real HTML. Treat the images as decorative because the adjacent text identifies each game. Keep a consistent 4:3 artwork frame, sharp pixel scaling, complete subject silhouettes at every supported width, and the ten existing routes/order/Daily progress. Changes here do not alter game engines, content, saves or scoring. Validate the homepage artwork, image loading, mobile/desktop layout and navigation; no full-game sweep is required.
+Homepage titles, descriptions and play links remain real HTML. Treat the images as decorative because the adjacent text identifies each game. Keep the original responsive artwork heights, sharp pixel scaling, complete subject silhouettes at every supported width, and the ten existing routes/order/Daily progress. Changes here do not alter game engines, content, saves or scoring. Validate the homepage artwork, image loading, mobile/desktop layout and navigation; no full-game sweep is required.
 
