@@ -10,7 +10,7 @@ const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000',ids=['laser','ti
    assert.equal(await card.locator('.play-button').getAttribute('href'),'games/'+ids[i]+'/index.html');
    const detail=await img.evaluate(i=>{const b=i.getBoundingClientRect();return {width:b.width,height:b.height,nw:i.naturalWidth,nh:i.naturalHeight,fit:getComputedStyle(i).objectFit,render:getComputedStyle(i).imageRendering};});
    assert(detail.nw>=350&&detail.nh>=260);assert(Math.abs(detail.width/detail.height-4/3)<0.03,'Consistent art ratio');assert.equal(detail.fit,'cover');assert.equal(detail.render,'pixelated');
-   const visibleFraction=(detail.nw/(4/3))/detail.nh;assert(visibleFraction>0.93&&visibleFraction<1.02,'Artwork crop retains full scene '+ids[i]);
+   const visibleFraction=Math.min(detail.nw/(4/3)/detail.nh,(4/3)*detail.nh/detail.nw);assert(visibleFraction>0.93&&visibleFraction<=1,'Artwork crop retains full scene '+ids[i]);
    assert(await card.locator('h3').isVisible());assert((await card.locator('h3').innerText()).trim().length>0);
   }
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);assert.deepEqual(errors,[]);
