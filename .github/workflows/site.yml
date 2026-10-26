@@ -109,7 +109,7 @@ jobs:
           python3 - <<'PY'
           import os, pathlib, time, urllib.request
           base = os.environ["PUBLISHED_URL"].rstrip("/") + "/"
-          paths = ["games/time-drop/events.js", "games/clue-ladder/puzzles.js", "brand.css", "assets/break-room-wordmark.png", "assets/break-room-mark.png", "assets/break-room-icon.svg", "assets/break-room-touch-icon.png", "assets/favicon.svg", "assets/logo.svg", "inner-clock-model.js", "arcade-score.js", "games/lowball/engine/index.html", "games/lowball/engine/reference-prices.js", "games/lowball/engine/item-art.js", "games/inner-clock/index.html", "games/inner-clock/inner-clock.js", "profile.html", "friends.html", "index.html", "games/shift-work/index.html", "games/shift-work/boards.js", "games/shift-work/shift-work.js", "games/shift-work/shift-work.css", "shift-work-model.js", "games/hidden-gem/index.html", "games/hidden-gem/questions.js", "games/hidden-gem/hidden-gem.js", "games/hidden-gem/hidden-gem.css", "hidden-gem-model.js", "cloud-saves.js", "accounts.js", "friends.js", "profile-records.js", "profile.js", "navigation.js", "game-config.js"]
+          paths = ["games/time-drop/events.js", "games/clue-ladder/puzzles.js", "brand.css", "assets/break-room-wordmark.png", "assets/break-room-mark.png", "assets/break-room-icon.svg", "assets/break-room-touch-icon.png", "assets/favicon.svg", "assets/logo.svg", "leagues.html", "leagues.js", "leagues-model.js", "leagues.css", "inner-clock-model.js", "arcade-score.js", "games/lowball/engine/index.html", "games/lowball/engine/reference-prices.js", "games/lowball/engine/item-art.js", "games/inner-clock/index.html", "games/inner-clock/inner-clock.js", "profile.html", "friends.html", "index.html", "games/shift-work/index.html", "games/shift-work/boards.js", "games/shift-work/shift-work.js", "games/shift-work/shift-work.css", "shift-work-model.js", "games/hidden-gem/index.html", "games/hidden-gem/questions.js", "games/hidden-gem/hidden-gem.js", "games/hidden-gem/hidden-gem.css", "hidden-gem-model.js", "cloud-saves.js", "accounts.js", "friends.js", "profile-records.js", "profile.js", "navigation.js", "game-config.js"]
           import json
           manifest = json.loads(pathlib.Path("games/lowball/engine/icons/generated/manifest.json").read_text())
           paths += ["games/lowball/engine/icons/generated/" + entry["file"] for entry in manifest["items"].values() if entry.get("source") == "items-5.png" or entry.get("logoReview")]
@@ -128,6 +128,8 @@ jobs:
                           assert b"Desk Jam" in body and b"Sleeper" in body and b"Time Sense" in body and b"Inner Clock" not in body, path
                       elif path == "games/lowball/engine/index.html":
                           assert b"DAILY_ITEM_PERIOD = 32" in body and b"DAILY_ITEM_CUTOVER = 25" in body and b"Fiskars scissors" in body, path
+                      elif path == "leagues.html":
+                          assert b"leagues.js" in body and b"2,100" in body and b"JOIN LEAGUE" in body, path
                       elif path.endswith(".html"):
                           assert ((b"<title>Desk Jam" in body and b"shift-work.js" in body) if "shift-work" in path else (b"<title>Sleeper" in body and b"hidden-gem.js" in body)), path
                       else:

@@ -1,3 +1,7 @@
+# Private weekly leagues — 26 October 2026
+
+[Leagues](LEAGUES.md) adds invite-based weekly competition separately from Friends averages. League membership explicitly shares completed Daily scores with current members regardless of the Friends sharing toggle. Two required games plus one best optional weekly total count, up to 2,100. Existing Friends consent, comparisons, blocks and saved scores retain their meanings. Apply supabase/leagues.sql after the current save/Friends/game migrations; no earlier migration is replaced.
+
 ## Current release: Shift Work — 25 October 2026
 
 Shift Work is the tenth active game, after Seating Chart. Current shelf: Laser, Time Drop, Clue Ladder, Seating Chart, Shift Work, Hidden Gem, Stack Up, Pack, Lowball, Inner Clock. Stake/Prior/Alibi/Bouncer are archived; fourteen native formats remain supported. Older roster counts and complete-installer claims below are historical and superseded.

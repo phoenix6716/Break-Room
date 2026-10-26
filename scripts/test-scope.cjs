@@ -1,5 +1,5 @@
 /* Pure changed-file selection. Full game sweeps require an explicit --full request. */
-const UNITS=["content-refresh.cjs","daily-content.cjs","shift-work-rules.cjs","hidden-gem-rules.cjs","seating-chart-rules.cjs","clue-ladder-rules.cjs","time-drop-rules.cjs","test-scope.cjs","playtest-feedback.cjs","factual-review.cjs","launch-content.cjs","inner-clock-rules.cjs","bouncer-rules.cjs","alibi-scenarios.cjs","alibi-rules.cjs","laser-rules.cjs","practice-session-rules.cjs","prior-rules.cjs","pack-rules.cjs","content-tools.cjs","friends-database.cjs","account-navigation.cjs","cloud-saves.cjs","cloud-database.cjs","arcade-score.cjs","daily-clock.cjs","profile-records.cjs","question-banks.cjs"];
+const UNITS=["leagues-database.cjs","content-refresh.cjs","daily-content.cjs","shift-work-rules.cjs","hidden-gem-rules.cjs","seating-chart-rules.cjs","clue-ladder-rules.cjs","time-drop-rules.cjs","test-scope.cjs","playtest-feedback.cjs","factual-review.cjs","launch-content.cjs","inner-clock-rules.cjs","bouncer-rules.cjs","alibi-scenarios.cjs","alibi-rules.cjs","laser-rules.cjs","practice-session-rules.cjs","prior-rules.cjs","pack-rules.cjs","content-tools.cjs","friends-database.cjs","account-navigation.cjs","cloud-saves.cjs","cloud-database.cjs","arcade-score.cjs","daily-clock.cjs","profile-records.cjs","question-banks.cjs"];
 
 const DAILY_CONTENT_FILES=new Set(["index.html","game-config.js","pack-model.js","laser-model.js","inner-clock-model.js","time-drop-model.js","clue-ladder-model.js","seating-chart-model.js","hidden-gem-model.js","shift-work-model.js","games/pack/puzzles.js","games/laser/boards.js","games/inner-clock/inner-clock.js","games/time-drop/events.js","games/clue-ladder/puzzles.js","games/seating-chart/puzzles.js","games/hidden-gem/questions.js","games/shift-work/boards.js","games/stack-up/stack-up.js","games/stack-up/stacks.js","games/stack-up/familiar-stacks.js","games/lowball/engine/index.html","content/time-drop-events.json","content/clue-ladder-puzzles.json","content/seating-chart-puzzles.json","content/hidden-gem-questions.json","content/shift-work-boards.json","content/stack-up-familiar.json","content/lowball-additions.json","content/lowball-original-items.json","content/lowball-original-selector.js"]);
 
@@ -38,7 +38,7 @@ function selectChecks(changed,available,{full=false}={}){
  const add=(...names)=>{for(const name of names.flat()){if(!known.has(name))throw Error('Missing mapped check: '+name);(UNITS.includes(name)?unit:browser).add(name);}};
  const game=(id,rules=false)=>{if(!GAMES.includes(id))throw Error('Add a test scope for game '+id);games.add(id);add(GAME_UI[id]);if(rules){add(GAME_RULES[id]);if(['alibi','stack-up'].includes(id))add('playtest-feedback-ui.cjs');}};
  const infra=()=>add('test-scope.cjs','smoke.cjs','release.cjs');
- const auth=()=>add('account-navigation.cjs','cloud-saves.cjs','cloud-database.cjs','profile-records.cjs','accounts.cjs','friends.cjs');
+ const auth=()=>add('account-navigation.cjs','cloud-saves.cjs','cloud-database.cjs','profile-records.cjs','accounts.cjs','friends.cjs','leagues.cjs');
  const layout=()=>add('game-surfaces.cjs','layout-goals.cjs','mobile-access.cjs','game-template.cjs');
  if(full){for(const name of available)if(name.endsWith('.cjs'))add(name);python=true;legal=true;content=true;GAMES.forEach(id=>games.add(id));reasons.push('Explicit full-suite request.');}
  else for(const file of files){
@@ -59,6 +59,7 @@ function selectChecks(changed,available,{full=false}={}){
     if(/(?:questions|stacks|cases|evidence-cases|boards|puzzles|events|reference-prices|price-review)\.(?:js|json)$/.test(file))content=true;
    }
   }else if(model){game(model[1],true);add('profile-records.cjs','cloud-saves.cjs');if(model[1]==='inner-clock')add('accounts.cjs','friends.cjs','profile.cjs');}
+  else if(file==='supabase/leagues.sql'){add('leagues-database.cjs','leagues.cjs');}
   else if(/^supabase\//.test(file)){add('friends-database.cjs','cloud-database.cjs','playtest-feedback.cjs');}
   else if(/^content\//.test(file)){
    content=true;add('content-tools.cjs');
@@ -87,6 +88,7 @@ function selectChecks(changed,available,{full=false}={}){
   else if(file==='brand.css'||file==='scripts/site-brand.cjs'||file==='scripts/export-break-room-brand.cjs'||/^assets\/(?:source\/)?break-room-/.test(file)){add('brand.cjs','smoke.cjs');}
   else if(/^scripts\//.test(file)||/^\.github\/workflows\//.test(file)||/^package(?:-lock)?\.json$/.test(file)||file==='.node-version'){infra();}
   else if(/^(?:accounts|account-config|cloud-saves)\.(?:js|css)$/.test(file)||/^(?:account|login|signup|forgot-password|reset-password)\.html$/.test(file)||/^assets\/vendor\//.test(file)){auth();}
+  else if(/^leagues(?:-model)?\.(?:js|css|html)$/.test(file)){add('leagues-database.cjs','leagues.cjs');}
   else if(/^friends\.(?:js|css|html)$/.test(file)){add('friends-database.cjs','friends.cjs');}
   else if(/^profile(?:-records)?\.(?:js|css|html)$/.test(file)){add('profile-records.cjs','profile.cjs');}
   else if(file==='arcade-score.js'){add('arcade-score.cjs','profile-records.cjs','cloud-saves.cjs','friends-database.cjs','arcade-score-ui.cjs','profile.cjs','friends.cjs','game-surfaces.cjs');}
