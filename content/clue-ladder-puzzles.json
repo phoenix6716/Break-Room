@@ -1,8 +1,8 @@
 {
   "version": 1,
   "review": {
-    "date": "2026-10-23",
-    "method": "Authored and editorially reviewed for familiar answers, progressive clues, answer leakage, aliases and stable facts. Encyclopedia references support follow-up; not independent primary-source certification or human difficulty calibration."
+    "date": "2026-10-26",
+    "method": "Player-feedback revision: contemporary technology and screen/music culture; later clues use everyday language and direct identifiers. New references are supplied per record; automation checks matching, progression structure, uniqueness and schedule stability, not human familiarity."
   },
   "puzzles": [
     {
@@ -658,11 +658,11 @@
         "newts"
       ],
       "clues": [
-        "My skin usually needs moisture.",
-        "Some relatives regrow lost limbs.",
-        "I am an amphibian rather than a reptile.",
-        "My shape resembles a small lizard.",
-        "I am the tailed amphibian whose relatives include newts."
+        "I am a small animal with a tail.",
+        "I need moisture and have smooth skin.",
+        "I am an amphibian, like a frog, but keep a tail.",
+        "Newts belong to my wider group.",
+        "I am the lizard-shaped amphibian whose name begins with Sala."
       ],
       "fact": "Many relatives begin life with external gills.",
       "source": "https://en.wikipedia.org/wiki/Salamander",
@@ -991,11 +991,11 @@
         "athens acropolis"
       ],
       "clues": [
-        "My name refers to a high fortified place.",
-        "Several ancient temples stand on my rock.",
-        "My best-known building is the Parthenon.",
-        "I overlook Greece's capital.",
-        "I am Athens' ancient hilltop temple complex."
+        "I stand on high ground above a city.",
+        "Ancient Greek temples cover my rocky hill.",
+        "The Parthenon is my best-known building.",
+        "I overlook Athens, Greece's capital.",
+        "I am Athens' ancient hilltop complex; my name begins with Acro."
       ],
       "fact": "The Parthenon was dedicated to Athena.",
       "source": "https://en.wikipedia.org/wiki/Acropolis_of_Athens",
@@ -1028,11 +1028,11 @@
         "petra jordan"
       ],
       "clues": [
-        "A narrow gorge forms my famous approach.",
-        "My people managed water carefully.",
-        "I was a Nabataean centre.",
-        "Facades are carved into pink sandstone.",
-        "I am Jordan's ancient rock-cut city famous for the Treasury."
+        "Visitors walk through a narrow rocky gorge to reach me.",
+        "My buildings were cut into cliffs rather than simply built in front of them.",
+        "A famous entrance is called the Treasury.",
+        "I am an ancient city in Jordan, carved into pink sandstone.",
+        "I am Jordan's rose-red city; my five-letter name starts with P."
       ],
       "fact": "The Treasury's name does not describe its original purpose.",
       "source": "https://en.wikipedia.org/wiki/Petra",
@@ -1046,11 +1046,11 @@
         "angkor temple"
       ],
       "clues": [
-        "Towers surround my central sanctuary.",
-        "I began as a temple to Vishnu.",
-        "Carved reliefs line my galleries.",
-        "I stand near Siem Reap.",
-        "I am Cambodia's enormous temple complex shown on its flag."
+        "I am a huge temple complex in Southeast Asia.",
+        "My towers appear on my country's flag.",
+        "I am near the Cambodian city of Siem Reap.",
+        "My name has two words and the second means temple.",
+        "I am Cambodia's famous temple complex; my name begins with Angkor."
       ],
       "fact": "I later became an important Buddhist site.",
       "source": "https://en.wikipedia.org/wiki/Angkor_Wat",
@@ -1287,11 +1287,11 @@
         "galápagos"
       ],
       "clues": [
-        "Isolation produced many unique species here.",
-        "I straddle the Pacific equator.",
-        "Giant tortoises are famous inhabitants.",
-        "Charles Darwin visited aboard HMS Beagle.",
-        "I am Ecuador's island group linked to Darwin's ideas."
+        "I am a group of Pacific islands.",
+        "I belong to Ecuador.",
+        "Giant tortoises live here.",
+        "Darwin visited me while developing ideas about evolution.",
+        "I am Ecuador's famous tortoise islands; my name begins with Gala."
       ],
       "fact": "Volcanoes helped form my islands.",
       "source": "https://en.wikipedia.org/wiki/Galapagos_Islands",
@@ -2733,11 +2733,11 @@
         "quartz crystal"
       ],
       "clues": [
-        "I am common in Earth's crust.",
-        "Silicon and oxygen form me.",
-        "Pressure can produce an electrical response.",
-        "My vibrations regulate electronic timepieces.",
-        "I am the crystal used in many watches."
+        "I am a mineral found in many rocks.",
+        "My crystals can be clear or coloured.",
+        "Amethyst is a purple variety of me.",
+        "My crystals help keep time in many watches.",
+        "I am the common watch crystal whose name starts with Q."
       ],
       "fact": "Amethyst is a purple variety of me.",
       "source": "https://en.wikipedia.org/wiki/Quartz",
@@ -2921,11 +2921,11 @@
         "chlorophyl"
       ],
       "clues": [
-        "I absorb some wavelengths more strongly.",
-        "I occur in plant chloroplasts.",
-        "I capture light energy.",
-        "I reflect much green light.",
-        "I am the green pigment associated with photosynthesis."
+        "I am found in plants.",
+        "I absorb light that helps plants make food.",
+        "I am a pigment rather than a plant organ.",
+        "I give leaves their green colour.",
+        "I am the green plant pigment whose name begins with Chloro."
       ],
       "fact": "Several related forms occur in plants and algae.",
       "source": "https://en.wikipedia.org/wiki/Chlorophyll",
@@ -2971,37 +2971,37 @@
     {
       "id": "cl-162",
       "category": "TECH",
-      "answer": "Microscope",
+      "answer": "TikTok",
       "aliases": [
-        "microscopes"
+        "tik tok"
       ],
       "clues": [
-        "My optical forms use lenses.",
-        "A specimen often rests on a slide.",
-        "I magnify very small objects.",
-        "Biologists use me to study cells.",
-        "I am the instrument for viewing things too small for unaided eyes."
+        "Short videos fill my main feed.",
+        "My creators often build on shared sounds.",
+        "You can scroll from one vertical clip to the next.",
+        "My personalised feed is called For You.",
+        "I am the video-sharing app owned by ByteDance."
       ],
-      "fact": "Some advanced forms use electrons instead of light.",
-      "source": "https://en.wikipedia.org/wiki/Microscope",
+      "fact": "The app's duet and stitch tools let people respond to other videos.",
+      "source": "https://en.wikipedia.org/wiki/TikTok",
       "rejects": []
     },
     {
       "id": "cl-163",
       "category": "TECH",
-      "answer": "Telescope",
+      "answer": "YouTube",
       "aliases": [
-        "telescopes"
+        "you tube"
       ],
       "clues": [
-        "I gather radiation from distant sources.",
-        "My optical forms use mirrors or lenses.",
-        "A larger opening collects more light.",
-        "Astronomers point me into the sky.",
-        "I am the instrument used to study distant stars and planets."
+        "People subscribe to channels on me.",
+        "My creators can post both long videos and Shorts.",
+        "Tutorials and music videos are common on me.",
+        "My familiar play symbol sits inside a red shape.",
+        "I am Google's large video-sharing platform."
       ],
-      "fact": "Some versions observe radio waves.",
-      "source": "https://en.wikipedia.org/wiki/Telescope",
+      "fact": "The service launched in 2005.",
+      "source": "https://en.wikipedia.org/wiki/YouTube",
       "rejects": []
     },
     {
@@ -3138,58 +3138,53 @@
     {
       "id": "cl-171",
       "category": "TECH",
-      "answer": "Telephone",
+      "answer": "Instagram",
       "aliases": [
-        "phone",
-        "landline",
-        "landline telephone"
+        "insta"
       ],
       "clues": [
-        "I transmit speech across distance.",
-        "Operators once connected my calls.",
-        "My receiver lets a caller hear.",
-        "Numbers select another line.",
-        "I am the device used to make distant voice calls."
+        "Photos were my original focus.",
+        "I later added Stories and short vertical videos.",
+        "My short videos are called Reels.",
+        "My name is often shortened to Insta.",
+        "I am Meta's photo-sharing app with a camera-style icon."
       ],
-      "fact": "Traditional forms converted sound into electrical signals.",
-      "source": "https://en.wikipedia.org/wiki/Telephone",
+      "fact": "Stories disappear after 24 hours unless saved as highlights.",
+      "source": "https://en.wikipedia.org/wiki/Instagram",
       "rejects": []
     },
     {
       "id": "cl-172",
       "category": "TECH",
-      "answer": "Radio",
+      "answer": "WhatsApp",
       "aliases": [
-        "radio receiver"
+        "whats app"
       ],
       "clues": [
-        "I receive information carried by electromagnetic waves.",
-        "Users tune me to select a station.",
-        "AM and FM are broadcasting methods.",
-        "I provide music and news without pictures.",
-        "I am the receiver for listening to broadcast stations."
+        "I help people keep in touch across countries.",
+        "My group chats can become very busy.",
+        "My messages and calls use an internet connection.",
+        "My familiar icon combines a phone and a green speech bubble.",
+        "I am Meta's messaging app whose name sounds like 'what's up'."
       ],
-      "fact": "Signals can reach listeners without a wire to each receiver.",
-      "source": "https://en.wikipedia.org/wiki/Radio",
+      "fact": "The app supports voice notes as well as written messages.",
+      "source": "https://en.wikipedia.org/wiki/WhatsApp",
       "rejects": []
     },
     {
       "id": "cl-173",
       "category": "TECH",
-      "answer": "Television",
-      "aliases": [
-        "tv",
-        "telly"
-      ],
+      "answer": "Netflix",
+      "aliases": [],
       "clues": [
-        "I display rapidly refreshed pictures.",
-        "Early versions were monochrome.",
-        "A remote commonly selects channels.",
-        "I combine moving images and sound.",
-        "I am the household screen used for broadcast programmes."
+        "People watch series and films on me.",
+        "My service uses subscriptions.",
+        "A famous opening sound is often called ta-dum.",
+        "Stranger Things and Squid Game are among my originals.",
+        "I am the streaming platform associated with a red letter N."
       ],
-      "fact": "Modern displays commonly use liquid crystals or light-emitting pixels.",
-      "source": "https://en.wikipedia.org/wiki/Television",
+      "fact": "The business began with DVD rentals before expanding into streaming.",
+      "source": "https://en.wikipedia.org/wiki/Netflix",
       "rejects": []
     },
     {
@@ -3271,39 +3266,33 @@
     {
       "id": "cl-178",
       "category": "TECH",
-      "answer": "Submarine",
-      "aliases": [
-        "sub",
-        "submarines"
-      ],
+      "answer": "Spotify",
+      "aliases": [],
       "clues": [
-        "Ballast tanks control my buoyancy.",
-        "A pressure-resistant hull protects my interior.",
-        "Some versions use a periscope.",
-        "I travel beneath the sea surface.",
-        "I am the vessel designed to operate underwater."
+        "You can follow artists on me.",
+        "I offer podcasts as well as songs.",
+        "My personalised playlists can include Discover Weekly.",
+        "My year-end listening recap is called Wrapped.",
+        "I am the music-streaming service with a green circular icon."
       ],
-      "fact": "Water-filled ballast tanks reduce buoyancy.",
-      "source": "https://en.wikipedia.org/wiki/Submarine",
+      "fact": "Wrapped summarises a listener's activity over the year.",
+      "source": "https://en.wikipedia.org/wiki/Spotify",
       "rejects": []
     },
     {
       "id": "cl-179",
       "category": "TECH",
-      "answer": "Train",
-      "aliases": [
-        "trains",
-        "railway train"
-      ],
+      "answer": "Discord",
+      "aliases": [],
       "clues": [
-        "My wheels follow a fixed route.",
-        "Connected vehicles travel together.",
-        "A locomotive or onboard motors provide power.",
-        "I stop at railway stations.",
-        "I am the passenger or freight vehicle running on rails."
+        "Communities gather in spaces on me.",
+        "Those spaces can contain text and voice channels.",
+        "Gaming groups often use me to talk while playing.",
+        "My communities are usually called servers.",
+        "I am the chat platform whose name also means a lack of agreement."
       ],
-      "fact": "Steel wheels on rails have low rolling resistance.",
-      "source": "https://en.wikipedia.org/wiki/Train",
+      "fact": "A server can have different channels for different conversations.",
+      "source": "https://en.wikipedia.org/wiki/Discord",
       "rejects": []
     },
     {
@@ -3329,151 +3318,143 @@
     {
       "id": "cl-181",
       "category": "TECH",
-      "answer": "Elevator",
-      "aliases": [
-        "lift",
-        "elevators"
-      ],
+      "answer": "Twitch",
+      "aliases": [],
       "clues": [
-        "Guide rails constrain my path.",
-        "Safety systems limit uncontrolled movement.",
-        "I travel vertically inside buildings.",
-        "My doors open at a floor landing.",
-        "I am the moving cabin also called a lift."
+        "Live broadcasts are central to me.",
+        "Viewers can send messages beside a stream.",
+        "Gaming streams helped make me well known.",
+        "My chat has its own familiar emotes.",
+        "I am Amazon's purple-themed livestreaming platform."
       ],
-      "fact": "Counterweights can reduce the energy needed to move me.",
-      "source": "https://en.wikipedia.org/wiki/Elevator",
+      "fact": "The site also hosts music, conversation and other live categories.",
+      "source": "https://en.wikipedia.org/wiki/Twitch_(service)",
       "rejects": []
     },
     {
       "id": "cl-182",
       "category": "TECH",
-      "answer": "Escalator",
+      "answer": "Snapchat",
       "aliases": [
-        "escalators"
+        "snap chat"
       ],
       "clues": [
-        "My linked steps form a continuous loop.",
-        "My handrail moves with riders.",
-        "My steps flatten at each end.",
-        "I am common in stations and shops.",
-        "I am the moving staircase carrying people between levels."
+        "People can exchange pictures on me.",
+        "Some messages are designed to disappear.",
+        "Friends maintain streaks by sending each other snaps.",
+        "My symbol is a white ghost on yellow.",
+        "I am the messaging app with Snap in its name."
       ],
-      "fact": "The linked steps circulate beneath the visible surface.",
-      "source": "https://en.wikipedia.org/wiki/Escalator",
+      "fact": "Streaks are shown beside friends' names.",
+      "source": "https://en.wikipedia.org/wiki/Snapchat",
       "rejects": []
     },
     {
       "id": "cl-183",
       "category": "TECH",
-      "answer": "Refrigerator",
+      "answer": "Duolingo",
       "aliases": [
-        "fridge",
-        "refrigerators"
+        "duo lingo"
       ],
       "clues": [
-        "I move heat into the surrounding room.",
-        "A circulating fluid helps my cycle.",
-        "Low temperatures slow food spoilage.",
-        "My shelves hold groceries.",
-        "I am the kitchen appliance keeping food cold."
+        "Short lessons build a daily habit on me.",
+        "I give points for practising skills.",
+        "Learning languages was my original focus.",
+        "My mascot is a persistent green owl named Duo.",
+        "I am the language-learning app with an owl mascot."
       ],
-      "fact": "My outside can feel warm because removed heat must go somewhere.",
-      "source": "https://en.wikipedia.org/wiki/Refrigerator",
+      "fact": "Its lessons use repeated practice and short exercises.",
+      "source": "https://en.wikipedia.org/wiki/Duolingo",
       "rejects": []
     },
     {
       "id": "cl-184",
       "category": "TECH",
-      "answer": "Microwave oven",
+      "answer": "Air fryer",
       "aliases": [
-        "microwave",
-        "microwaves"
+        "airfryer"
       ],
       "clues": [
-        "Electromagnetic waves fill my chamber.",
-        "A turntable helps distribute heating.",
-        "My waves interact with water in food.",
-        "I reheat meals rapidly.",
-        "I am the kitchen appliance heating food with high-frequency waves."
+        "I am a kitchen appliance.",
+        "I use a fan to circulate hot air.",
+        "Food often goes into my pull-out basket.",
+        "People use me to crisp chips with relatively little oil.",
+        "I am the countertop cooker promoted as an alternative to deep frying."
       ],
-      "fact": "My door mesh helps keep radiation inside.",
-      "source": "https://en.wikipedia.org/wiki/Microwave_oven",
+      "fact": "Despite the name, the cooking method uses circulating hot air.",
+      "source": "https://en.wikipedia.org/wiki/Air_fryer",
       "rejects": []
     },
     {
       "id": "cl-185",
       "category": "TECH",
-      "answer": "Toaster",
+      "answer": "ChatGPT",
       "aliases": [
-        "toasters"
+        "chat gpt"
       ],
       "clues": [
-        "My heating elements glow.",
-        "A timer or sensor controls me.",
-        "Some versions lift food when finished.",
-        "Slots hold slices upright.",
-        "I am the appliance browning slices of bread."
+        "People type requests into my chat box.",
+        "I can help draft text or explain an idea.",
+        "My answers can still contain mistakes.",
+        "OpenAI released me publicly in 2022.",
+        "I am OpenAI's conversational AI assistant whose name ends with GPT."
       ],
-      "fact": "Browning reactions create new flavours.",
-      "source": "https://en.wikipedia.org/wiki/Toaster",
+      "fact": "Confident wording does not guarantee an answer is correct.",
+      "source": "https://openai.com/index/chatgpt/",
       "rejects": []
     },
     {
       "id": "cl-186",
       "category": "TECH",
-      "answer": "Washing machine",
+      "answer": "Zoom",
       "aliases": [
-        "washer",
-        "laundry machine"
+        "zoom meetings"
       ],
       "clues": [
-        "I combine detergent, water and movement.",
-        "My cycle includes rinsing.",
-        "My drum rotates.",
-        "I remove dirt from fabrics.",
-        "I am the household machine cleaning clothes."
+        "I help groups meet from separate locations.",
+        "A host can admit people from a waiting room.",
+        "My calls have mute and camera controls.",
+        "Online meetings made me especially familiar during lockdowns.",
+        "I am the video-meeting service whose name also means to move quickly."
       ],
-      "fact": "Fast spinning removes some water before drying.",
-      "source": "https://en.wikipedia.org/wiki/Washing_machine",
+      "fact": "A host can use breakout rooms for smaller discussions.",
+      "source": "https://en.wikipedia.org/wiki/Zoom_(software)",
       "rejects": []
     },
     {
       "id": "cl-187",
       "category": "TECH",
-      "answer": "Dishwasher",
+      "answer": "Bluetooth",
       "aliases": [
-        "dish washer",
-        "dishwashers"
+        "blue tooth"
       ],
       "clues": [
-        "Rotating arms spray hot water.",
-        "My detergent suits my cleaning cycle.",
-        "Racks separate the contents.",
-        "I clean cutlery, plates and glasses.",
-        "I am the kitchen machine washing dishes."
+        "I work over relatively short distances.",
+        "I connect devices without a cable.",
+        "You often pair a phone with another device using me.",
+        "Wireless headphones and car speakers commonly use me.",
+        "I am the wireless standard named after a Viking king."
       ],
-      "fact": "Good loading keeps items from blocking spray.",
-      "source": "https://en.wikipedia.org/wiki/Dishwasher",
+      "fact": "The name refers to Harald 'Bluetooth' Gormsson.",
+      "source": "https://en.wikipedia.org/wiki/Bluetooth",
       "rejects": []
     },
     {
       "id": "cl-188",
       "category": "TECH",
-      "answer": "Vacuum cleaner",
+      "answer": "Smartwatch",
       "aliases": [
-        "vacuum",
-        "hoover"
+        "smart watch"
       ],
       "clues": [
-        "My motor creates a pressure difference.",
-        "Air carries particles into a container.",
-        "Filters retain dust.",
-        "I use a hose or floor head.",
-        "I am the household appliance sucking up dirt."
+        "I am worn rather than carried.",
+        "I can show notifications from another device.",
+        "Some models track steps and heart rate.",
+        "My screen sits on your wrist.",
+        "I am the connected digital timepiece worn like a traditional watch."
       ],
-      "fact": "Air flows towards the lower-pressure region.",
-      "source": "https://en.wikipedia.org/wiki/Vacuum_cleaner",
+      "fact": "Features vary by model, and fitness readings are estimates.",
+      "source": "https://en.wikipedia.org/wiki/Smartwatch",
       "rejects": []
     },
     {
@@ -3498,19 +3479,21 @@
     {
       "id": "cl-190",
       "category": "TECH",
-      "answer": "Wind turbine",
+      "answer": "Wireless earbuds",
       "aliases": [
-        "wind turbines"
+        "wireless earphones",
+        "earbuds",
+        "ear buds"
       ],
       "clues": [
-        "Moving air supplies my energy.",
-        "A generator converts rotation into electricity.",
-        "I often stand in groups on land or sea.",
-        "Long blades rotate above the ground.",
-        "I am the tall spinning machine generating power from wind."
+        "I usually come as a pair.",
+        "A small case can store and recharge me.",
+        "I send sound into each ear without a cable to your phone.",
+        "Popular examples include AirPods.",
+        "I am the small wireless listening devices that sit in your ears."
       ],
-      "fact": "Output depends on wind conditions and controls.",
-      "source": "https://en.wikipedia.org/wiki/Wind_turbine",
+      "fact": "Many models use Bluetooth to receive audio.",
+      "source": "https://en.wikipedia.org/wiki/Headphones",
       "rejects": []
     },
     {
@@ -3555,58 +3538,61 @@
     {
       "id": "cl-193",
       "category": "TECH",
-      "answer": "Thermometer",
+      "answer": "Power bank",
       "aliases": [
-        "thermometers"
+        "powerbank",
+        "portable charger"
       ],
       "clues": [
-        "A sensor's physical property affects my reading.",
-        "Older versions used expanding liquid.",
-        "I may use Celsius or Fahrenheit.",
-        "I help check for fever.",
-        "I am the instrument measuring temperature."
+        "I store energy for later.",
+        "People take me on trips.",
+        "A cable connects me to the device I am helping.",
+        "I can recharge a phone when no wall socket is nearby.",
+        "I am a portable battery pack used to charge other devices."
       ],
-      "fact": "Different designs use different physical effects.",
-      "source": "https://en.wikipedia.org/wiki/Thermometer",
+      "fact": "Its capacity is commonly labelled in milliamp-hours.",
+      "source": "https://en.wikipedia.org/wiki/Power_bank",
       "rejects": []
     },
     {
       "id": "cl-194",
       "category": "TECH",
-      "answer": "Stethoscope",
+      "answer": "USB flash drive",
       "aliases": [
-        "stethoscopes"
+        "usb stick",
+        "usb drive",
+        "flash drive",
+        "thumb drive",
+        "memory stick"
       ],
       "clues": [
-        "My chest piece transmits vibrations.",
-        "Tubes connect to two earpieces.",
-        "Clinicians place me against the body.",
-        "I reveal heart and lung sounds.",
-        "I am the listening instrument doctors wear around their necks."
+        "I am small enough to fit in a pocket.",
+        "I store files without a spinning disk.",
+        "People use me to move documents between computers.",
+        "I plug into a matching port and can be removed.",
+        "I am the small portable storage device also called a thumb drive."
       ],
-      "fact": "Different chest-piece surfaces suit different frequencies.",
-      "source": "https://en.wikipedia.org/wiki/Stethoscope",
+      "fact": "The data is kept in flash memory.",
+      "source": "https://en.wikipedia.org/wiki/USB_flash_drive",
       "rejects": []
     },
     {
       "id": "cl-195",
       "category": "TECH",
-      "answer": "X-ray machine",
+      "answer": "Wi-Fi",
       "aliases": [
-        "x ray machine",
-        "xray machine",
-        "x ray",
-        "xray"
+        "wifi",
+        "wi fi"
       ],
       "clues": [
-        "My radiation passes through soft tissue.",
-        "Dense materials absorb more of my beam.",
-        "I reveal some internal injuries.",
-        "Bones show clearly in my images.",
-        "I am the medical imaging machine checking broken bones."
+        "I connect devices locally without network cables.",
+        "My signal can weaken through walls.",
+        "Homes often provide me through a router.",
+        "People ask for my password in cafés.",
+        "I am the wireless networking technology used to connect a phone to a home router."
       ],
-      "fact": "Different absorption creates image contrast.",
-      "source": "https://en.wikipedia.org/wiki/X-ray_generator",
+      "fact": "A local wireless connection can exist even if internet access fails.",
+      "source": "https://en.wikipedia.org/wiki/Wi-Fi",
       "rejects": []
     },
     {
@@ -3687,19 +3673,17 @@
     {
       "id": "cl-200",
       "category": "TECH",
-      "answer": "Robot",
-      "aliases": [
-        "robots"
-      ],
+      "answer": "Reddit",
+      "aliases": [],
       "clues": [
-        "I perform programmed physical actions.",
-        "Sensors help me respond.",
-        "Factories use me for repetitive tasks.",
-        "Fictional forms often resemble humans.",
-        "I am the programmable machine performing tasks automatically."
+        "People vote on posts and comments on me.",
+        "My communities each have their own moderators.",
+        "Those communities often begin with r followed by a slash.",
+        "Ask Me Anything sessions are a familiar format.",
+        "I am the discussion website organised into subreddits."
       ],
-      "fact": "I do not need a human shape.",
-      "source": "https://en.wikipedia.org/wiki/Robot",
+      "fact": "Each community can set its own posting rules.",
+      "source": "https://en.wikipedia.org/wiki/Reddit",
       "rejects": []
     },
     {
@@ -3834,57 +3818,57 @@
     {
       "id": "cl-208",
       "category": "CULTURE",
-      "answer": "Accordion",
+      "answer": "Bluey",
       "aliases": [
-        "accordions"
+        "bluey heeler"
       ],
       "clues": [
-        "Air passes vibrating reeds inside me.",
-        "My middle expands and contracts.",
-        "Both hands operate buttons or keys.",
-        "My bellows are pushed and pulled.",
-        "I am the squeezebox instrument common in folk music."
+        "Family life and imaginative play drive my stories.",
+        "My episodes are made in Australia.",
+        "My younger sister is Bingo.",
+        "My parents are Bandit and Chilli.",
+        "I am the blue heeler puppy who gives her name to a children's cartoon."
       ],
-      "fact": "My reeds sound when air passes them.",
-      "source": "https://en.wikipedia.org/wiki/Accordion",
+      "fact": "The series is set in Brisbane.",
+      "source": "https://en.wikipedia.org/wiki/Bluey",
       "rejects": []
     },
     {
       "id": "cl-209",
       "category": "CULTURE",
-      "answer": "Saxophone",
+      "answer": "Taylor Swift",
       "aliases": [
-        "sax",
-        "saxophones"
+        "taylor",
+        "swift"
       ],
       "clues": [
-        "A single reed creates my sound.",
-        "Keys control holes in my body.",
-        "My metal body does not make me brass-family.",
-        "I am closely associated with jazz.",
-        "I am the curved reed instrument invented by Adolphe Sax."
+        "My career began with country music.",
+        "My fans have a name based on my surname.",
+        "I have released albums called Folklore and Midnights.",
+        "My stadium concert project was called the Eras Tour.",
+        "I am the singer-songwriter whose fans are called Swifties."
       ],
-      "fact": "I belong to the woodwind family.",
-      "source": "https://en.wikipedia.org/wiki/Saxophone",
+      "fact": "Her rerecorded albums use the label Taylor's Version.",
+      "source": "https://en.wikipedia.org/wiki/Taylor_Swift",
       "rejects": []
     },
     {
       "id": "cl-210",
       "category": "CULTURE",
-      "answer": "Ukulele",
+      "answer": "Billie Eilish",
       "aliases": [
-        "uke",
-        "ukuleles"
+        "billie",
+        "eilish"
       ],
       "clues": [
-        "My standard form has four strings.",
-        "I am smaller than a typical six-stringed instrument.",
-        "Hawaii is strongly associated with me.",
-        "My strumming sounds light and bright.",
-        "I am the small Hawaiian four-stringed instrument."
+        "I often work on music with my brother.",
+        "His professional name is Finneas.",
+        "My songs include Bad Guy and Birds of a Feather.",
+        "I sang What Was I Made For? for the Barbie film.",
+        "I am the singer whose surname sounds like 'eye-lish'."
       ],
-      "fact": "Portuguese instruments helped inspire my development.",
-      "source": "https://en.wikipedia.org/wiki/Ukulele",
+      "fact": "Her debut studio album was released in 2019.",
+      "source": "https://en.wikipedia.org/wiki/Billie_Eilish",
       "rejects": []
     },
     {
@@ -3945,133 +3929,128 @@
     {
       "id": "cl-214",
       "category": "CULTURE",
-      "answer": "Pinocchio",
+      "answer": "Minecraft",
       "aliases": [
-        "pinnochio"
+        "mine craft"
       ],
       "clues": [
-        "Carlo Collodi wrote my story.",
-        "A craftsman makes me from wood.",
-        "I wish to become a real boy.",
-        "My nose changes when I lie.",
-        "I am the wooden puppet whose nose grows when lying."
+        "My worlds can be generated differently each time.",
+        "I have both Survival and Creative modes.",
+        "Players gather resources and make tools.",
+        "Creepers and block-shaped landscapes are especially recognisable.",
+        "I am the block-building game where players mine resources and craft things."
       ],
-      "fact": "Geppetto creates me.",
-      "source": "https://en.wikipedia.org/wiki/Pinocchio",
+      "fact": "The game's full release followed earlier public versions.",
+      "source": "https://en.wikipedia.org/wiki/Minecraft",
       "rejects": []
     },
     {
       "id": "cl-215",
       "category": "CULTURE",
-      "answer": "Robin Hood",
+      "answer": "Fortnite",
       "aliases": [
-        "robinhood"
+        "fort night"
       ],
       "clues": [
-        "A band of companions joins my adventures.",
-        "A sheriff is my enemy.",
-        "I am associated with Sherwood Forest.",
-        "My famous weapon is a bow.",
-        "I am the legendary outlaw robbing the rich to help the poor."
+        "My players can use a range of cosmetic outfits.",
+        "A shrinking safe area brings opponents closer.",
+        "Some modes let players build walls and ramps.",
+        "The Battle Bus carries players over the island.",
+        "I am Epic Games' game famous for its battle royale mode and Victory Royale message."
       ],
-      "fact": "Little John is a well-known companion.",
-      "source": "https://en.wikipedia.org/wiki/Robin_Hood",
+      "fact": "The game also includes modes beyond battle royale.",
+      "source": "https://en.wikipedia.org/wiki/Fortnite",
       "rejects": []
     },
     {
       "id": "cl-216",
       "category": "CULTURE",
-      "answer": "Dracula",
+      "answer": "Wednesday",
       "aliases": [
-        "count dracula"
+        "wednesday addams"
       ],
       "clues": [
-        "Bram Stoker wrote my famous novel.",
-        "My story connects Transylvania and England.",
-        "I am a supernatural aristocrat.",
-        "I am associated with drinking blood.",
-        "I am the famous fictional vampire count."
+        "My dry humour rarely comes with a smile.",
+        "My family is unusually comfortable with spooky things.",
+        "In a recent series I attend Nevermore Academy.",
+        "Jenna Ortega plays me in that Netflix series.",
+        "I am the Addams daughter named after a day of the week."
       ],
-      "fact": "The novel uses letters, diaries and other documents.",
-      "source": "https://en.wikipedia.org/wiki/Dracula",
+      "fact": "The character existed long before the Netflix adaptation.",
+      "source": "https://en.wikipedia.org/wiki/Wednesday_Addams",
       "rejects": []
     },
     {
       "id": "cl-217",
       "category": "CULTURE",
-      "answer": "Frankenstein's monster",
+      "answer": "Stranger Things",
       "aliases": [
-        "frankenstein",
-        "frankensteins monster",
-        "the creature"
+        "strangerthings"
       ],
       "clues": [
-        "My story questions responsibility for creating life.",
-        "My creator fears what he made.",
-        "Mary Shelley wrote my original story.",
-        "A scientist assembles and animates me.",
-        "I am the creature created by Victor Frankenstein."
+        "My story mixes friendship and supernatural danger.",
+        "A group of young friends live in a small American town.",
+        "Hawkins and the Upside Down are central places.",
+        "Eleven is one of my main characters.",
+        "I am the Netflix series about Hawkins, Eleven and the Upside Down."
       ],
-      "fact": "My familiar neck-bolt appearance comes from later films.",
-      "source": "https://en.wikipedia.org/wiki/Frankenstein's_monster",
+      "fact": "The story's early seasons are set in the 1980s.",
+      "source": "https://en.wikipedia.org/wiki/Stranger_Things",
       "rejects": []
     },
     {
       "id": "cl-218",
       "category": "CULTURE",
-      "answer": "Alice in Wonderland",
+      "answer": "Squid Game",
       "aliases": [
-        "alice",
-        "alice adventures in wonderland"
+        "squidgame"
       ],
       "clues": [
-        "My adventures play with language and logic.",
-        "Lewis Carroll created my story.",
-        "I meet a grinning cat and strange tea party.",
-        "I follow a white rabbit.",
-        "I am the girl falling down a rabbit hole into a strange world."
+        "My story contrasts huge prize money with deadly risk.",
+        "Competitors are given numbers.",
+        "Guards wear masks marked with simple shapes.",
+        "Green tracksuits and Red Light, Green Light are familiar images.",
+        "I am the South Korean Netflix series about deadly versions of children's games."
       ],
-      "fact": "The original book is Alice's Adventures in Wonderland.",
-      "source": "https://en.wikipedia.org/wiki/Alice_(Alice's_Adventures_in_Wonderland)",
+      "fact": "The first season was released in 2021.",
+      "source": "https://en.wikipedia.org/wiki/Squid_Game",
       "rejects": []
     },
     {
       "id": "cl-219",
       "category": "CULTURE",
-      "answer": "Peter Pan",
+      "answer": "Moana",
       "aliases": [
-        "peterpan"
+        "vaiana"
       ],
       "clues": [
-        "J. M. Barrie created me.",
-        "A fairy is my companion.",
-        "My enemy has a hook for a hand.",
-        "I live in Neverland.",
-        "I am the flying boy who refuses to grow up."
+        "The ocean has an unusual connection with me.",
+        "I leave my island on an important journey.",
+        "Maui joins me as a companion.",
+        "I sail to return the heart of Te Fiti.",
+        "I am Disney's Polynesian heroine whose film is also called Vaiana in some countries."
       ],
-      "fact": "Tinker Bell is my fairy companion.",
-      "source": "https://en.wikipedia.org/wiki/Peter_Pan",
+      "fact": "Her story is centred on voyaging and her island community.",
+      "source": "https://en.wikipedia.org/wiki/Moana_(character)",
       "rejects": []
     },
     {
       "id": "cl-220",
       "category": "CULTURE",
-      "answer": "Winnie-the-Pooh",
+      "answer": "Elsa",
       "aliases": [
-        "winnie the pooh",
-        "winnie pooh",
-        "pooh",
-        "pooh bear"
+        "queen elsa",
+        "elsa of arendelle"
       ],
       "clues": [
-        "My friends inhabit the Hundred Acre Wood.",
-        "A. A. Milne wrote my stories.",
-        "Piglet and Eeyore are my companions.",
-        "I love a sweet food.",
-        "I am Christopher Robin's honey-loving stuffed bear."
+        "Fear makes me hide an important part of myself.",
+        "My story takes place partly in Arendelle.",
+        "Anna is my younger sister.",
+        "I can create ice and snow.",
+        "I am the Frozen character who sings Let It Go."
       ],
-      "fact": "E. H. Shepard illustrated the original stories.",
-      "source": "https://en.wikipedia.org/wiki/Winnie-the-Pooh",
+      "fact": "Her relationship with Anna is central to the films.",
+      "source": "https://en.wikipedia.org/wiki/Elsa_(Frozen)",
       "rejects": []
     },
     {
@@ -4083,11 +4062,11 @@
         "monalisa"
       ],
       "clues": [
-        "My painter used sfumato.",
-        "I am painted on wood.",
-        "I hang in the Louvre.",
-        "My sitter's smile is famous.",
-        "I am Leonardo da Vinci's celebrated smiling portrait."
+        "I am a famous portrait of a woman.",
+        "My background contains a distant landscape.",
+        "Leonardo da Vinci painted me.",
+        "Visitors see my mysterious smile at the Louvre.",
+        "I am Leonardo's smiling portrait; my two-word name begins with Mona."
       ],
       "fact": "I was stolen in 1911 and recovered in 1913.",
       "source": "https://en.wikipedia.org/wiki/Mona_Lisa",
@@ -4096,168 +4075,162 @@
     {
       "id": "cl-222",
       "category": "CULTURE",
-      "answer": "The Starry Night",
+      "answer": "Barbie",
       "aliases": [
-        "starry night"
+        "barbie doll"
       ],
       "clues": [
-        "My painter stayed in Saint-Rémy.",
-        "A dark cypress rises in my foreground.",
-        "A village sits under my swirling sky.",
-        "Vincent van Gogh painted me.",
-        "I am van Gogh's famous swirling night-sky painting."
+        "I began as a toy before appearing in films.",
+        "My accessories and careers have changed many times.",
+        "A dreamhouse is strongly associated with me.",
+        "Margot Robbie played me in a 2023 film.",
+        "I am Mattel's famous fashion doll usually associated with pink."
       ],
-      "fact": "My sky is expressive rather than photographic.",
-      "source": "https://en.wikipedia.org/wiki/The_Starry_Night",
+      "fact": "The original doll debuted in 1959.",
+      "source": "https://en.wikipedia.org/wiki/Barbie",
       "rejects": []
     },
     {
       "id": "cl-223",
       "category": "CULTURE",
-      "answer": "Ballet",
+      "answer": "Oppenheimer",
       "aliases": [
-        "classical ballet"
+        "j robert oppenheimer",
+        "robert oppenheimer"
       ],
       "clues": [
-        "My performers train for control and balance.",
-        "My terms include plié and arabesque.",
-        "Movement alone can tell my stories.",
-        "Some performers dance on their toes.",
-        "I am the classical dance associated with tutus and pointe shoes."
+        "A major historical science project sits at the centre of my story.",
+        "My title is the surname of a physicist.",
+        "Christopher Nolan directed this 2023 film.",
+        "Cillian Murphy plays the scientist who led Los Alamos.",
+        "I am the 2023 film about the scientific director of the Manhattan Project."
       ],
-      "fact": "Pointe work requires extensive training and special footwear.",
-      "source": "https://en.wikipedia.org/wiki/Ballet",
-      "rejects": [
-        "Wallet"
-      ]
+      "fact": "The film is based on the biography American Prometheus.",
+      "source": "https://en.wikipedia.org/wiki/Oppenheimer_(film)",
+      "rejects": []
     },
     {
       "id": "cl-224",
       "category": "CULTURE",
-      "answer": "Opera",
-      "aliases": [
-        "operas"
-      ],
+      "answer": "Encanto",
+      "aliases": [],
       "clues": [
-        "My performances include arias.",
-        "An orchestra often accompanies me.",
-        "My written text is a libretto.",
-        "Singing carries my dramatic story.",
-        "I am the stage art combining trained singing and drama."
+        "My story follows a family living together.",
+        "Their home itself seems alive.",
+        "Most relatives receive a magical gift.",
+        "Mirabel and the Madrigal family are my central characters.",
+        "I am the Disney animated film featuring We Don't Talk About Bruno."
       ],
-      "fact": "Music and libretto are distinct parts of my creation.",
-      "source": "https://en.wikipedia.org/wiki/Opera",
+      "fact": "The story is set in Colombia.",
+      "source": "https://en.wikipedia.org/wiki/Encanto",
       "rejects": []
     },
     {
       "id": "cl-225",
       "category": "CULTURE",
-      "answer": "Origami",
+      "answer": "BTS",
       "aliases": [
-        "paper folding"
+        "bangtan boys",
+        "bangtan sonyeondan"
       ],
       "clues": [
-        "I use mountain and valley folds.",
-        "A square sheet is a common start.",
-        "Traditional models often need no glue.",
-        "A crane is my famous model.",
-        "I am the Japanese art of folding paper."
+        "My members began performing together in South Korea.",
+        "My fan community is called ARMY.",
+        "Dynamite and Butter are among my songs.",
+        "I am a seven-member K-pop group.",
+        "I am the Korean group often known by three letters beginning with B."
       ],
-      "fact": "Creases make structures without adding pieces.",
-      "source": "https://en.wikipedia.org/wiki/Origami",
+      "fact": "The group's Korean name is Bangtan Sonyeondan.",
+      "source": "https://en.wikipedia.org/wiki/BTS",
       "rejects": []
     },
     {
       "id": "cl-226",
       "category": "CULTURE",
-      "answer": "Chess",
-      "aliases": [
-        "chess game"
-      ],
+      "answer": "Shrek",
+      "aliases": [],
       "clues": [
-        "My modern queen developed powerful moves.",
-        "My board has sixty-four squares.",
-        "Each side starts with sixteen pieces.",
-        "Knights, bishops and rooks are my pieces.",
-        "I am the board game won by checkmating a king."
+        "I prefer a quiet life away from crowds.",
+        "Fairy-tale characters disturb my home.",
+        "My talkative companion is Donkey.",
+        "Princess Fiona becomes my partner.",
+        "I am DreamWorks' green ogre who lives in a swamp."
       ],
-      "fact": "Knights can jump over intervening pieces.",
-      "source": "https://en.wikipedia.org/wiki/Chess",
+      "fact": "The first feature film was released in 2001.",
+      "source": "https://en.wikipedia.org/wiki/Shrek_(character)",
       "rejects": []
     },
     {
       "id": "cl-227",
       "category": "CULTURE",
-      "answer": "Sudoku",
+      "answer": "Pikachu",
       "aliases": [
-        "sudoko"
+        "pika chu"
       ],
       "clues": [
-        "My clues are fixed grid entries.",
-        "Logic rather than arithmetic solves me.",
-        "My usual grid has nine rows and columns.",
-        "Each row, column and box needs distinct digits.",
-        "I am the puzzle filling a nine-by-nine grid with digits one to nine."
+        "I am small but can release a powerful attack.",
+        "My cheeks store electricity.",
+        "Ash is my best-known human companion.",
+        "I am a yellow creature with a lightning-shaped tail.",
+        "I am the famous Electric-type Pokémon whose name begins with Pika."
       ],
-      "fact": "Letters could replace numbers without changing my logic.",
-      "source": "https://en.wikipedia.org/wiki/Sudoku",
+      "fact": "The character is one of the franchise's most recognisable mascots.",
+      "source": "https://en.wikipedia.org/wiki/Pikachu",
       "rejects": []
     },
     {
       "id": "cl-228",
       "category": "CULTURE",
-      "answer": "Crossword",
+      "answer": "Mario",
       "aliases": [
-        "crosswords",
-        "crossword puzzle"
+        "super mario"
       ],
       "clues": [
-        "My answers share letters.",
-        "My clues may be direct or cryptic.",
-        "Black squares separate entries.",
-        "Words are entered across and down.",
-        "I am the puzzle with intersecting horizontal and vertical words."
+        "I began appearing in games in the early 1980s.",
+        "I often travel through pipes.",
+        "Luigi is my brother.",
+        "I wear a red cap and often rescue Princess Peach.",
+        "I am Nintendo's famous moustached plumber."
       ],
-      "fact": "One crossing letter can help solve multiple clues.",
-      "source": "https://en.wikipedia.org/wiki/Crossword",
+      "fact": "The character appeared in Donkey Kong before starring in his own series.",
+      "source": "https://en.wikipedia.org/wiki/Mario",
       "rejects": []
     },
     {
       "id": "cl-229",
       "category": "CULTURE",
-      "answer": "Monopoly",
+      "answer": "Spider-Man",
       "aliases": [
-        "monopoly game"
+        "spiderman",
+        "spider man"
       ],
       "clues": [
-        "Players collect property groups.",
-        "Buildings increase rents.",
-        "My board includes Chance and Community Chest.",
-        "Players pass GO or enter jail.",
-        "I am the property-trading board game with houses and hotels."
+        "I try to balance ordinary life with a secret identity.",
+        "A bite is part of my best-known origin story.",
+        "Peter Parker is one person behind my mask.",
+        "I swing between buildings on webs.",
+        "I am the Marvel superhero whose powers are based on an eight-legged creature."
       ],
-      "fact": "A full colour group permits building under standard rules.",
-      "source": "https://en.wikipedia.org/wiki/Monopoly",
+      "fact": "Several different characters have used this superhero identity.",
+      "source": "https://en.wikipedia.org/wiki/Spider-Man",
       "rejects": []
     },
     {
       "id": "cl-230",
       "category": "CULTURE",
-      "answer": "Rubik's Cube",
+      "answer": "Peppa Pig",
       "aliases": [
-        "rubiks cube",
-        "rubik cube",
-        "rubiks"
+        "peppa"
       ],
       "clues": [
-        "My pieces move in linked layers.",
-        "Centre colours define face arrangements.",
-        "My standard version has three squares along each edge.",
-        "Each solved face has one colour.",
-        "I am the twisting six-coloured puzzle invented by Ernő Rubik."
+        "My stories are made for young children.",
+        "My little brother is called George.",
+        "My family includes Mummy and Daddy.",
+        "I love jumping in muddy puddles.",
+        "I am the pink cartoon pig whose first name starts with Pepp."
       ],
-      "fact": "Movable pieces keep their own colour combinations.",
-      "source": "https://en.wikipedia.org/wiki/Rubik's_Cube",
+      "fact": "Episodes often focus on everyday family experiences.",
+      "source": "https://en.wikipedia.org/wiki/Peppa_Pig",
       "rejects": []
     },
     {
@@ -4972,11 +4945,11 @@
         "thimbles"
       ],
       "clues": [
-        "I protect part of a hand.",
-        "My surface often has dimples.",
-        "I help push a sharp tool.",
-        "A sewer wears me on a fingertip.",
-        "I am the small protective cap used for hand-sewing."
+        "I am small enough to wear on one finger.",
+        "I protect skin while someone sews.",
+        "My surface often has tiny dimples.",
+        "I am a cap that helps push a sewing needle.",
+        "I am the little metal fingertip cap used in hand-sewing; my name starts with Thim."
       ],
       "fact": "Dimples help keep a needle from slipping.",
       "source": "https://en.wikipedia.org/wiki/Thimble",

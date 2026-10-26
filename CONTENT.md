@@ -1,3 +1,11 @@
+## Familiar and contemporary questions — owner feedback, 26 October 2026
+
+Players found some Sleeper, Time Drop and Clue Ladder questions too obscure. Prefer recognisable subjects and approachable wording; add contemporary film, books, games, technology and screen/music culture to Sleeper and Clue Ladder. Time Drop keeps ancient history and its full era range, using better-known milestones rather than minor battles or treaties. Later Clue Ladder clues should give a direct everyday route to the answer. This supersedes older claims that specialist questions and the original banks were already calibrated for players.
+
+Editorial bank revision 2 replaces 44 Sleeper prompts (160 total / 921 answers), 39 Clue Ladder answers and clarifies nine other ladders (300 total), and replaces 38 Time Drop additions (330 total). See `design/content-reviews/2026-10-26.json` for the complete before/after record. The former banks are archived under `content/archive/2026-10-25/`, outside production. All IDs, topic/category slots and Daily assignments stay fixed; Time Drop also preserves each era bucket. Historical ID slugs now identify stable authoring slots, not necessarily the revised subject. Existing saved snapshots, answers, deadlines, scores and archived Prior content remain unchanged. No SQL or save migration.
+
+Keep at least 32 consecutive days without repeated individual content, including across old/new-bank boundaries. Run the three affected game suites and `tests/content-refresh.cjs` / `tests/daily-content.cjs`; do not replay unrelated games. Reference links and automation support review but do not certify that every player knows each answer. Continue calibrating from human playtests.
+
 ## Artwork without third-party logos — owner requirement, 25 October 2026
 
 Use generic illustrations for products and services. Do not include third-party logos, wordmarks, recognisable brand marks, branded clothing/packaging patterns or protected medical emblems in images. Keep device backs and packaging labels blank. This applies to future generated artwork and overrides earlier instructions to preserve an image when it contains such marks. Break Room's own identity remains permitted; factual product names in question text are unchanged.

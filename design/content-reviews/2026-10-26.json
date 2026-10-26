@@ -1,0 +1,939 @@
+{
+  "version": 2,
+  "date": "2026-10-26",
+  "decision": "Prefer recognisable subjects over specialist recall in Sleeper, Time Drop and Clue Ladder. Add contemporary subjects to Sleeper and Clue Ladder; preserve Time Drop's ancient-to-modern range.",
+  "compatibility": "Retain every original ID, category/topic and calendar slot; Time Drop replacements retain their era bucket. Complete captured snapshots remain authoritative. Stable IDs are retained authoring slots; historical slugs need not describe a revised subject.",
+  "limits": "Editorial familiarity judgements need human playtesting. References are provided per record; selected primary checks are recorded below, not independent certification of every fact.",
+  "sourceSpotChecks": [
+    {
+      "source": "https://www.pixar.com/feature-films/",
+      "supports": "2015–2025 Pixar feature list including Inside Out 2 and Elio"
+    },
+    {
+      "source": "https://ausopen.com/history/honour-roll/womens-singles",
+      "supports": "2018–2025 women's singles champions"
+    },
+    {
+      "source": "https://aliceoseman.com/ya-fiction/in-what-order-should-i-read-your-books/",
+      "supports": "Four standalone novels"
+    },
+    {
+      "source": "https://www.scholastic.com/newsroom/all-news/press-release/scholastic-to-publish-new-novel-in-the-worldwide-bestselling-hun.html",
+      "supports": "Sunrise on the Reaping, March 2025"
+    },
+    {
+      "source": "https://about.fb.com/news/2016/02/reactions-now-available-globally/",
+      "supports": "Original six English Facebook reactions"
+    },
+    {
+      "source": "https://openai.com/index/chatgpt/",
+      "supports": "ChatGPT public release, November 2022"
+    },
+    {
+      "source": "https://www.english-heritage.org.uk/visit/places/stonehenge/history-and-stories/history/",
+      "supports": "Large stone setting around 2500 BCE"
+    }
+  ],
+  "games": {
+    "hidden-gem": {
+      "questions": 160,
+      "answers": 921,
+      "days": 32,
+      "changes": [
+        {
+          "id": "pixar-2010",
+          "topic": "FILM",
+          "before": "Name a Pixar feature film released before 2011.",
+          "after": "Name a Pixar feature film first released in 2015–2025.",
+          "recent": true
+        },
+        {
+          "id": "hg-princesses",
+          "topic": "FILM",
+          "before": "Name an official Disney Princess as of January 2021.",
+          "after": "Name an emotion character in Inside Out 2 (2024).",
+          "recent": true
+        },
+        {
+          "id": "hg-renaissance",
+          "topic": "FILM",
+          "before": "Name a Disney Renaissance animated feature.",
+          "after": "Name a Walt Disney Animation Studios feature first released in 2016–2024.",
+          "recent": true
+        },
+        {
+          "id": "hg-ghostbusters",
+          "topic": "FILM",
+          "before": "Name an original Ghostbusters team member.",
+          "after": "Name a film in the live-action Sonic the Hedgehog trilogy released in 2020–2024.",
+          "recent": true
+        },
+        {
+          "id": "hg-parr",
+          "topic": "FILM",
+          "before": "Name a Parr family member in The Incredibles.",
+          "after": "Name a Madrigal family member given a magical gift in Encanto (2021).",
+          "recent": true
+        },
+        {
+          "id": "hg-ireland",
+          "topic": "WORLD",
+          "before": "Name a traditional province of Ireland.",
+          "after": "Name a country that co-hosted a men's or women's FIFA World Cup held in 2002–2023.",
+          "recent": true
+        },
+        {
+          "id": "hg-benelux",
+          "topic": "WORLD",
+          "before": "Name a Benelux country.",
+          "after": "Name a country that hosted a Summer Olympics held in 2008–2024.",
+          "recent": true
+        },
+        {
+          "id": "hg-iberia",
+          "topic": "WORLD",
+          "before": "Name a sovereign country on the Iberian Peninsula.",
+          "after": "Name a country that hosted the men's FIFA World Cup in 2006–2022.",
+          "recent": true
+        },
+        {
+          "id": "hg-big-prefixes",
+          "topic": "SCIENCE",
+          "before": "Name an SI prefix for a power from 10³ to 10³⁰.",
+          "after": "Name one of the three everyday states of matter.",
+          "recent": false
+        },
+        {
+          "id": "hg-small-prefixes",
+          "topic": "SCIENCE",
+          "before": "Name an SI prefix from 10⁻³ down to 10⁻³⁰.",
+          "after": "Name one of the five human senses traditionally taught at school.",
+          "recent": false
+        },
+        {
+          "id": "hg-alkaline-earth",
+          "topic": "SCIENCE",
+          "before": "Name an alkaline-earth metal.",
+          "after": "Name a renewable energy source in this group: sun, wind, moving water, Earth's heat or organic material.",
+          "recent": false
+        },
+        {
+          "id": "hg-halogens",
+          "topic": "SCIENCE",
+          "before": "Name a group 17 element.",
+          "after": "Name a main part of a flowering plant from roots up to fruit.",
+          "recent": false
+        },
+        {
+          "id": "hg-alkali",
+          "topic": "SCIENCE",
+          "before": "Name an alkali metal.",
+          "after": "Name a planet whose English name has exactly five letters.",
+          "recent": false
+        },
+        {
+          "id": "hg-rna",
+          "topic": "SCIENCE",
+          "before": "Name a standard RNA base.",
+          "after": "Name a human organ in this set: the blood pump, main breathing organs, food sac, main filtering pair or thinking organ.",
+          "recent": false
+        },
+        {
+          "id": "hg-peaks",
+          "topic": "AUSTRALIA",
+          "before": "Name a highest mountain of an Australian state or mainland territory.",
+          "after": "Name a city that hosted the Australian Open during the Open Era, through 2025.",
+          "recent": true
+        },
+        {
+          "id": "hg-ao-women",
+          "topic": "AUSTRALIA",
+          "before": "Name an Australian Open women’s singles champion from 2000–2009.",
+          "after": "Name an Australian Open women's singles champion from 2018–2025.",
+          "recent": true
+        },
+        {
+          "id": "hg-mens-slams",
+          "topic": "AUSTRALIA",
+          "before": "Name an Australian man who won a Grand Slam singles title in the Open Era by 2025.",
+          "after": "Name an Australian man who reached a Grand Slam singles final in 2000–2025.",
+          "recent": true
+        },
+        {
+          "id": "hg-womens-slams",
+          "topic": "AUSTRALIA",
+          "before": "Name an Australian woman who won a Grand Slam singles title in the Open Era by 2025.",
+          "after": "Name an Australian woman who won a Grand Slam singles title in 2000–2025.",
+          "recent": true
+        },
+        {
+          "id": "hg-test-cities",
+          "topic": "AUSTRALIA",
+          "before": "Name an Australian city that hosted men’s Test cricket by 2025.",
+          "after": "Name a city that hosted a men's Ashes Test in Australia in the 2021–22 series.",
+          "recent": true
+        },
+        {
+          "id": "hg-hitchhiker",
+          "topic": "BOOKS",
+          "before": "Name a Douglas Adams Hitchhiker’s Guide novel.",
+          "after": "Name a novel in Suzanne Collins's Hunger Games series published in 2020–2025.",
+          "recent": true
+        },
+        {
+          "id": "hg-austen",
+          "topic": "BOOKS",
+          "before": "Name a completed Jane Austen novel.",
+          "after": "Name a book in the main A Good Girl's Guide to Murder trilogy.",
+          "recent": true
+        },
+        {
+          "id": "hg-bronte",
+          "topic": "BOOKS",
+          "before": "Name a Brontë sister who published a novel.",
+          "after": "Name an Alice Oseman standalone novel first published in 2014–2020.",
+          "recent": true
+        },
+        {
+          "id": "hg-tragedies",
+          "topic": "BOOKS",
+          "before": "Name one of Shakespeare’s conventional four great tragedies.",
+          "after": "Name a book in the original Divergent trilogy.",
+          "recent": true
+        },
+        {
+          "id": "hg-holmes",
+          "topic": "BOOKS",
+          "before": "Name a Sherlock Holmes novel by Arthur Conan Doyle.",
+          "after": "Name a book in the original Maze Runner trilogy.",
+          "recent": true
+        },
+        {
+          "id": "hg-march",
+          "topic": "BOOKS",
+          "before": "Name a March sister in Little Women.",
+          "after": "Name a book in the original To All the Boys trilogy.",
+          "recent": true
+        },
+        {
+          "id": "hg-famous-five",
+          "topic": "BOOKS",
+          "before": "Name a member of Enid Blyton’s Famous Five.",
+          "after": "Name one of the two Heeler sisters featured in the Bluey picture books.",
+          "recent": true
+        },
+        {
+          "id": "hg-secret-seven",
+          "topic": "BOOKS",
+          "before": "Name a child member of Enid Blyton’s Secret Seven.",
+          "after": "Name a novel in the original four-book Twilight saga.",
+          "recent": true
+        },
+        {
+          "id": "hg-saturn",
+          "topic": "SPACE",
+          "before": "Name a Saturnian moon with mean diameter above 300 km.",
+          "after": "Name one of the four main Moon phases.",
+          "recent": false
+        },
+        {
+          "id": "hg-uranus",
+          "topic": "SPACE",
+          "before": "Name one of Uranus’s five major moons.",
+          "after": "Name a founding member of the Guardians of the Galaxy team in the 2014 MCU film.",
+          "recent": true
+        },
+        {
+          "id": "hg-mercury7",
+          "topic": "SPACE",
+          "before": "Name a Mercury Seven astronaut.",
+          "after": "Name a Mars rover that NASA successfully landed by the end of 2021.",
+          "recent": true
+        },
+        {
+          "id": "hg-webb",
+          "topic": "SPACE",
+          "before": "Name a Webb telescope science instrument.",
+          "after": "Name a droid in this Star Wars group: the golden translator, blue-and-white astromech or orange-and-white rolling droid.",
+          "recent": true
+        },
+        {
+          "id": "hg-asteroids",
+          "topic": "SPACE",
+          "before": "Name one of the first four numbered minor planets.",
+          "after": "Name a main robot in WALL-E who falls in love with the other.",
+          "recent": false
+        },
+        {
+          "id": "hg-observatories",
+          "topic": "SPACE",
+          "before": "Name one of NASA’s original four Great Observatories.",
+          "after": "Name one of the two space telescopes in this pair: Hubble's 1990 observatory or its 2021 infrared successor.",
+          "recent": true
+        },
+        {
+          "id": "hg-galilean",
+          "topic": "SPACE",
+          "before": "Name a Galilean moon of Jupiter.",
+          "after": "Name one of the Solar System's two gas giants.",
+          "recent": false
+        },
+        {
+          "id": "hg-landings",
+          "topic": "SPACE",
+          "before": "Name an Apollo mission that landed people on the Moon.",
+          "after": "Name a celestial body that people had physically walked on by the end of 2025.",
+          "recent": true
+        },
+        {
+          "id": "hg-greek-start",
+          "topic": "LANGUAGE",
+          "before": "Name one of the first eight Greek alphabet letters.",
+          "after": "Name a punctuation mark used to end an ordinary English sentence.",
+          "recent": false
+        },
+        {
+          "id": "hg-greek-end",
+          "topic": "LANGUAGE",
+          "before": "Name one of the final eight Greek alphabet letters.",
+          "after": "Name a tile colour in Wordle's standard (non-colour-blind) theme.",
+          "recent": true
+        },
+        {
+          "id": "hg-spanish-days",
+          "topic": "LANGUAGE",
+          "before": "Name a weekday in Spanish.",
+          "after": "Name a group colour in the New York Times game Connections.",
+          "recent": true
+        },
+        {
+          "id": "hg-french-days",
+          "topic": "LANGUAGE",
+          "before": "Name a weekday in French.",
+          "after": "Name an original Facebook reaction introduced or retained in the six-reaction set in 2016.",
+          "recent": true
+        },
+        {
+          "id": "hg-sauces",
+          "topic": "EVERYDAY",
+          "before": "Name a French mother sauce in the modern Escoffier-derived list.",
+          "after": "Name a main topping on a classic Margherita pizza.",
+          "recent": false
+        },
+        {
+          "id": "hg-railroads",
+          "topic": "GAMES",
+          "before": "Name a railroad on the standard US Monopoly board.",
+          "after": "Name a starter Pokémon offered in Pokémon Scarlet and Violet (2022).",
+          "recent": true
+        },
+        {
+          "id": "hg-smash64",
+          "topic": "GAMES",
+          "before": "Name a fighter in the original Super Smash Bros.",
+          "after": "Name one of the three basic Minecraft dimensions as of 2025.",
+          "recent": true
+        },
+        {
+          "id": "hg-chess-champs",
+          "topic": "GAMES",
+          "before": "Name a classical World Chess Champion who held the title during 2000–2024.",
+          "after": "Name a role in the original Among Us base game, before the 2021 role update.",
+          "recent": true
+        },
+        {
+          "id": "hg-utilities",
+          "topic": "GAMES",
+          "before": "Name a utility on a standard English-language Monopoly board.",
+          "after": "Name a player team size in the standard Fortnite Battle Royale Solo/Duos/Trios/Squads modes.",
+          "recent": true
+        }
+      ]
+    },
+    "clue-ladder": {
+      "questions": 300,
+      "days": 60,
+      "changes": [
+        {
+          "id": "cl-162",
+          "category": "TECH",
+          "before": "Microscope",
+          "after": "TikTok",
+          "recent": true
+        },
+        {
+          "id": "cl-163",
+          "category": "TECH",
+          "before": "Telescope",
+          "after": "YouTube",
+          "recent": true
+        },
+        {
+          "id": "cl-171",
+          "category": "TECH",
+          "before": "Telephone",
+          "after": "Instagram",
+          "recent": true
+        },
+        {
+          "id": "cl-172",
+          "category": "TECH",
+          "before": "Radio",
+          "after": "WhatsApp",
+          "recent": true
+        },
+        {
+          "id": "cl-173",
+          "category": "TECH",
+          "before": "Television",
+          "after": "Netflix",
+          "recent": true
+        },
+        {
+          "id": "cl-178",
+          "category": "TECH",
+          "before": "Submarine",
+          "after": "Spotify",
+          "recent": true
+        },
+        {
+          "id": "cl-179",
+          "category": "TECH",
+          "before": "Train",
+          "after": "Discord",
+          "recent": true
+        },
+        {
+          "id": "cl-181",
+          "category": "TECH",
+          "before": "Elevator",
+          "after": "Twitch",
+          "recent": true
+        },
+        {
+          "id": "cl-182",
+          "category": "TECH",
+          "before": "Escalator",
+          "after": "Snapchat",
+          "recent": true
+        },
+        {
+          "id": "cl-183",
+          "category": "TECH",
+          "before": "Refrigerator",
+          "after": "Duolingo",
+          "recent": true
+        },
+        {
+          "id": "cl-184",
+          "category": "TECH",
+          "before": "Microwave oven",
+          "after": "Air fryer",
+          "recent": true
+        },
+        {
+          "id": "cl-185",
+          "category": "TECH",
+          "before": "Toaster",
+          "after": "ChatGPT",
+          "recent": true
+        },
+        {
+          "id": "cl-186",
+          "category": "TECH",
+          "before": "Washing machine",
+          "after": "Zoom",
+          "recent": true
+        },
+        {
+          "id": "cl-187",
+          "category": "TECH",
+          "before": "Dishwasher",
+          "after": "Bluetooth",
+          "recent": true
+        },
+        {
+          "id": "cl-188",
+          "category": "TECH",
+          "before": "Vacuum cleaner",
+          "after": "Smartwatch",
+          "recent": true
+        },
+        {
+          "id": "cl-190",
+          "category": "TECH",
+          "before": "Wind turbine",
+          "after": "Wireless earbuds",
+          "recent": true
+        },
+        {
+          "id": "cl-193",
+          "category": "TECH",
+          "before": "Thermometer",
+          "after": "Power bank",
+          "recent": true
+        },
+        {
+          "id": "cl-194",
+          "category": "TECH",
+          "before": "Stethoscope",
+          "after": "USB flash drive",
+          "recent": true
+        },
+        {
+          "id": "cl-195",
+          "category": "TECH",
+          "before": "X-ray machine",
+          "after": "Wi-Fi",
+          "recent": true
+        },
+        {
+          "id": "cl-200",
+          "category": "TECH",
+          "before": "Robot",
+          "after": "Reddit",
+          "recent": true
+        },
+        {
+          "id": "cl-208",
+          "category": "CULTURE",
+          "before": "Accordion",
+          "after": "Bluey",
+          "recent": true
+        },
+        {
+          "id": "cl-209",
+          "category": "CULTURE",
+          "before": "Saxophone",
+          "after": "Taylor Swift",
+          "recent": true
+        },
+        {
+          "id": "cl-210",
+          "category": "CULTURE",
+          "before": "Ukulele",
+          "after": "Billie Eilish",
+          "recent": true
+        },
+        {
+          "id": "cl-214",
+          "category": "CULTURE",
+          "before": "Pinocchio",
+          "after": "Minecraft",
+          "recent": true
+        },
+        {
+          "id": "cl-215",
+          "category": "CULTURE",
+          "before": "Robin Hood",
+          "after": "Fortnite",
+          "recent": true
+        },
+        {
+          "id": "cl-216",
+          "category": "CULTURE",
+          "before": "Dracula",
+          "after": "Wednesday",
+          "recent": true
+        },
+        {
+          "id": "cl-217",
+          "category": "CULTURE",
+          "before": "Frankenstein's monster",
+          "after": "Stranger Things",
+          "recent": true
+        },
+        {
+          "id": "cl-218",
+          "category": "CULTURE",
+          "before": "Alice in Wonderland",
+          "after": "Squid Game",
+          "recent": true
+        },
+        {
+          "id": "cl-219",
+          "category": "CULTURE",
+          "before": "Peter Pan",
+          "after": "Moana",
+          "recent": true
+        },
+        {
+          "id": "cl-220",
+          "category": "CULTURE",
+          "before": "Winnie-the-Pooh",
+          "after": "Elsa",
+          "recent": true
+        },
+        {
+          "id": "cl-222",
+          "category": "CULTURE",
+          "before": "The Starry Night",
+          "after": "Barbie",
+          "recent": true
+        },
+        {
+          "id": "cl-223",
+          "category": "CULTURE",
+          "before": "Ballet",
+          "after": "Oppenheimer",
+          "recent": true
+        },
+        {
+          "id": "cl-224",
+          "category": "CULTURE",
+          "before": "Opera",
+          "after": "Encanto",
+          "recent": true
+        },
+        {
+          "id": "cl-225",
+          "category": "CULTURE",
+          "before": "Origami",
+          "after": "BTS",
+          "recent": true
+        },
+        {
+          "id": "cl-226",
+          "category": "CULTURE",
+          "before": "Chess",
+          "after": "Shrek",
+          "recent": true
+        },
+        {
+          "id": "cl-227",
+          "category": "CULTURE",
+          "before": "Sudoku",
+          "after": "Pikachu",
+          "recent": true
+        },
+        {
+          "id": "cl-228",
+          "category": "CULTURE",
+          "before": "Crossword",
+          "after": "Mario",
+          "recent": true
+        },
+        {
+          "id": "cl-229",
+          "category": "CULTURE",
+          "before": "Monopoly",
+          "after": "Spider-Man",
+          "recent": true
+        },
+        {
+          "id": "cl-230",
+          "category": "CULTURE",
+          "before": "Rubik's Cube",
+          "after": "Peppa Pig",
+          "recent": true
+        },
+        {
+          "id": "cl-054",
+          "category": "PLACE",
+          "before": "Acropolis of Athens",
+          "after": "Acropolis of Athens",
+          "recent": false,
+          "kind": "clearer clues"
+        },
+        {
+          "id": "cl-056",
+          "category": "PLACE",
+          "before": "Petra",
+          "after": "Petra",
+          "recent": false,
+          "kind": "clearer clues"
+        },
+        {
+          "id": "cl-057",
+          "category": "PLACE",
+          "before": "Angkor Wat",
+          "after": "Angkor Wat",
+          "recent": false,
+          "kind": "clearer clues"
+        },
+        {
+          "id": "cl-149",
+          "category": "SCIENCE",
+          "before": "Quartz",
+          "after": "Quartz",
+          "recent": false,
+          "kind": "clearer clues"
+        },
+        {
+          "id": "cl-159",
+          "category": "SCIENCE",
+          "before": "Chlorophyll",
+          "after": "Chlorophyll",
+          "recent": false,
+          "kind": "clearer clues"
+        },
+        {
+          "id": "cl-269",
+          "category": "EVERYDAY",
+          "before": "Thimble",
+          "after": "Thimble",
+          "recent": false,
+          "kind": "clearer clues"
+        },
+        {
+          "id": "cl-036",
+          "category": "ANIMAL",
+          "before": "Salamander",
+          "after": "Salamander",
+          "recent": false,
+          "kind": "clearer clues"
+        },
+        {
+          "id": "cl-070",
+          "category": "PLACE",
+          "before": "Galapagos Islands",
+          "after": "Galapagos Islands",
+          "recent": false,
+          "kind": "clearer clues"
+        },
+        {
+          "id": "cl-221",
+          "category": "CULTURE",
+          "before": "Mona Lisa",
+          "after": "Mona Lisa",
+          "recent": false,
+          "kind": "clearer clues"
+        }
+      ]
+    },
+    "time-drop": {
+      "questions": 330,
+      "days": 66,
+      "changes": [
+        {
+          "id": "td-005",
+          "before": "The Battle of Plataea takes place",
+          "after": "Cleopatra becomes queen of Egypt",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-006",
+          "before": "The Peloponnesian War begins",
+          "after": "Spartacus begins the famous slave revolt against Rome",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-008",
+          "before": "Philip II wins the Battle of Chaeronea",
+          "after": "The boy king Tutankhamun becomes pharaoh (approximately)",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-010",
+          "before": "Alexander wins the Battle of Gaugamela",
+          "after": "Alexander the Great begins his invasion of the Persian Empire",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-014",
+          "before": "The Battle of Zama takes place",
+          "after": "Democratic reforms begin in ancient Athens (approximately)",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-015",
+          "before": "Rome destroys Carthage",
+          "after": "The inscription on the Rosetta Stone is created",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-017",
+          "before": "Octavian wins the Battle of Actium",
+          "after": "Cleopatra dies as Roman forces take control of Egypt",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-020",
+          "before": "Trajan completes Rome's conquest of Dacia",
+          "after": "Stonehenge's great stone circle is raised (approximately)",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-022",
+          "before": "The Edict of Milan is agreed",
+          "after": "Vikings raid the island monastery of Lindisfarne",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-023",
+          "before": "The First Council of Nicaea meets",
+          "after": "Upper and Lower Egypt are united (approximately)",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-027",
+          "before": "Umayyad forces begin their conquest of Iberia",
+          "after": "Rome begins its conquest of Britain under Emperor Claudius",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-028",
+          "before": "The Abbasid Revolution overthrows the Umayyads",
+          "after": "The Great Sphinx at Giza is built (approximately)",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-031",
+          "before": "The Treaty of Verdun divides the Carolingian Empire",
+          "after": "Visigoths sack the city of Rome",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-033",
+          "before": "The Song dynasty begins in China",
+          "after": "Attila the Hun dies",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-039",
+          "before": "Mongol forces sack Baghdad",
+          "after": "The Black Death reaches England",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-040",
+          "before": "Kublai Khan proclaims the Yuan dynasty",
+          "after": "The Wars of the Roses end with the Battle of Bosworth",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-044",
+          "before": "Zheng He begins his first treasure voyage",
+          "after": "Henry VIII becomes king of England",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-047",
+          "before": "The Treaty of Tordesillas is signed",
+          "after": "Anne Boleyn is executed",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-053",
+          "before": "Atahualpa is captured at Cajamarca",
+          "after": "Elizabeth I becomes queen of England",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-054",
+          "before": "The Battle of Lepanto takes place",
+          "after": "The Mayflower reaches what is now Massachusetts",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-059",
+          "before": "The Qing dynasty takes Beijing",
+          "after": "The Gunpowder Plot to blow up Parliament is uncovered",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-060",
+          "before": "The Peace of Westphalia is signed",
+          "after": "King Charles I is executed after the English Civil War",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-064",
+          "before": "The Battle of Plassey takes place",
+          "after": "George Washington becomes the first US president",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-075",
+          "before": "The Seneca Falls Convention takes place",
+          "after": "Abraham Lincoln is assassinated",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-095",
+          "before": "Egypt's Free Officers launch their revolution",
+          "after": "Martin Luther King Jr. gives his 'I Have a Dream' speech",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-101",
+          "before": "Mozambique becomes independent",
+          "after": "The Woodstock music festival takes place",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-102",
+          "before": "Zimbabwe becomes independent",
+          "after": "Queen Elizabeth II is crowned",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-103",
+          "before": "Namibia becomes independent",
+          "after": "East and West Germany reunite",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-105",
+          "before": "Timor-Leste restores independence",
+          "after": "The September 11 attacks take place in the United States",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-106",
+          "before": "South Sudan becomes independent",
+          "after": "The Soviet Union formally dissolves",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-128",
+          "before": "The Nobel Prize in Physics recognises Marconi and Braun",
+          "after": "John Logie Baird demonstrates television to invited observers",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-131",
+          "before": "James Chadwick announces the neutron",
+          "after": "The first controlled nuclear chain reaction is achieved",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-133",
+          "before": "CERN is founded",
+          "after": "The first polio vaccine is announced as safe and effective",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-139",
+          "before": "51 Pegasi b is announced",
+          "after": "ChatGPT is released to the public",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-155",
+          "before": "Things Fall Apart is published",
+          "after": "The Lion, the Witch and the Wardrobe is published",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-157",
+          "before": "One Hundred Years of Solitude is published",
+          "after": "Roald Dahl's Charlie and the Chocolate Factory is published",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-158",
+          "before": "Midnight's Children is published",
+          "after": "Michael Jackson releases the album Thriller",
+          "kind": "replacement"
+        },
+        {
+          "id": "td-159",
+          "before": "The Alchemist is first published in Portuguese",
+          "after": "The first Where's Wally? book is published",
+          "kind": "replacement"
+        }
+      ]
+    }
+  }
+}

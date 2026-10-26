@@ -1,5 +1,10 @@
 # Clue Ladder
 
+## Player-feedback revision — 26 October 2026
+
+Revision 2 replaces 39 older technology/culture answers with contemporary apps, games, films, music and characters, and makes nine retained ladders' later clues more direct. Examples include TikTok, Bluey, Minecraft, Wednesday and Encanto. The 300-answer/eight-topic/60-day deck keeps every ID, category slot and date assignment; old saved ladders and scores remain authoritative. Historical ID slugs remain authoring slots. See `design/content-reviews/2026-10-26.json` and `tests/content-refresh.cjs`. Familiarity remains a player-testing judgement, not an automated certification.
+
+
 Owner-approved implementation of `design/prototypes/Clue_Ladder_easier_no_repeats.html`, preserved unchanged outside production. Five untimed Daily puzzles plus free Unlimited. Keep the original ladder and pixel climber with the canonical centred shell, drawer, Sydney reset, mode tabs, ? help, trapped Help/Stats dialogs and universal footer.
 
 ## Rules and scoring v1

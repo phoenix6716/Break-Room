@@ -73,79 +73,84 @@
     {
       "id": "pixar-2010",
       "topic": "FILM",
-      "prompt": "Name a Pixar feature film released before 2011.",
-      "scope": "Feature films released from 1995 through 2010. Shorts and later films do not count.",
-      "source": "https://www.pixar.com/feature-films",
+      "prompt": "Name a Pixar feature film first released in 2015–2025.",
+      "scope": "Feature-length theatrical Pixar films; sequels count. Use the English film title.",
+      "source": "https://www.pixar.com/feature-films/",
       "answers": [
         {
-          "name": "Toy Story",
-          "points": 6,
-          "aliases": []
+          "name": "Inside Out",
+          "aliases": [],
+          "points": 8
         },
         {
-          "name": "Finding Nemo",
-          "points": 14,
-          "aliases": []
+          "name": "The Good Dinosaur",
+          "aliases": [],
+          "points": 15
         },
         {
-          "name": "Cars",
-          "points": 24,
-          "aliases": []
+          "name": "Finding Dory",
+          "aliases": [],
+          "points": 21
         },
         {
-          "name": "Monsters, Inc.",
-          "points": 29,
-          "aliases": [
-            "Monsters Inc",
-            "Monsters Incorporated"
-          ]
+          "name": "Cars 3",
+          "aliases": [],
+          "points": 28
         },
         {
-          "name": "The Incredibles",
-          "points": 33,
-          "aliases": [
-            "Incredibles"
-          ]
+          "name": "Coco",
+          "aliases": [],
+          "points": 34
         },
         {
-          "name": "Up",
-          "points": 38,
-          "aliases": []
+          "name": "Incredibles 2",
+          "aliases": [],
+          "points": 41
         },
         {
-          "name": "Toy Story 2",
-          "points": 46,
-          "aliases": [
-            "Toy Story II"
-          ]
+          "name": "Toy Story 4",
+          "aliases": [],
+          "points": 47
         },
         {
-          "name": "Toy Story 3",
-          "points": 53,
-          "aliases": [
-            "Toy Story III"
-          ]
+          "name": "Onward",
+          "aliases": [],
+          "points": 54
         },
         {
-          "name": "WALL-E",
-          "points": 64,
-          "aliases": [
-            "Wall E",
-            "Walle"
-          ]
+          "name": "Soul",
+          "aliases": [],
+          "points": 61
         },
         {
-          "name": "Ratatouille",
-          "points": 72,
-          "aliases": []
+          "name": "Luca",
+          "aliases": [],
+          "points": 67
         },
         {
-          "name": "A Bug's Life",
-          "points": 100,
-          "aliases": [
-            "A Bugs Life",
-            "Bugs Life"
-          ]
+          "name": "Turning Red",
+          "aliases": [],
+          "points": 74
+        },
+        {
+          "name": "Lightyear",
+          "aliases": [],
+          "points": 80
+        },
+        {
+          "name": "Elemental",
+          "aliases": [],
+          "points": 87
+        },
+        {
+          "name": "Inside Out 2",
+          "aliases": [],
+          "points": 93
+        },
+        {
+          "name": "Elio",
+          "aliases": [],
+          "points": 100
         }
       ]
     },
@@ -1169,30 +1174,31 @@
     {
       "id": "hg-ireland",
       "topic": "WORLD",
-      "prompt": "Name a traditional province of Ireland.",
-      "scope": "The four provinces of the whole island.",
-      "source": "https://en.wikipedia.org/wiki/Provinces_of_Ireland",
+      "prompt": "Name a country that co-hosted a men's or women's FIFA World Cup held in 2002–2023.",
+      "scope": "Senior tournaments only; each tournament must have had more than one host country.",
+      "source": "https://www.fifa.com/tournaments",
       "answers": [
         {
-          "name": "Leinster",
+          "name": "Japan",
           "aliases": [],
-          "points": 6
+          "points": 8
         },
         {
-          "name": "Munster",
-          "aliases": [],
-          "points": 33
-        },
-        {
-          "name": "Ulster",
-          "aliases": [],
-          "points": 66
-        },
-        {
-          "name": "Connacht",
+          "name": "South Korea",
           "aliases": [
-            "Connaught"
+            "Korea Republic",
+            "Republic of Korea"
           ],
+          "points": 39
+        },
+        {
+          "name": "Australia",
+          "aliases": [],
+          "points": 69
+        },
+        {
+          "name": "New Zealand",
+          "aliases": [],
           "points": 100
         }
       ]
@@ -1229,24 +1235,36 @@
     {
       "id": "hg-benelux",
       "topic": "WORLD",
-      "prompt": "Name a Benelux country.",
-      "scope": "The three members.",
-      "source": "https://en.wikipedia.org/wiki/Benelux",
+      "prompt": "Name a country that hosted a Summer Olympics held in 2008–2024.",
+      "scope": "Use the country, not the city. Includes the Tokyo Games held in 2021.",
+      "source": "https://olympics.com/en/olympic-games",
       "answers": [
         {
-          "name": "Netherlands",
-          "aliases": [
-            "Holland"
-          ],
-          "points": 6
-        },
-        {
-          "name": "Belgium",
+          "name": "China",
           "aliases": [],
-          "points": 49
+          "points": 8
         },
         {
-          "name": "Luxembourg",
+          "name": "United Kingdom",
+          "aliases": [
+            "UK",
+            "Great Britain",
+            "Britain"
+          ],
+          "points": 31
+        },
+        {
+          "name": "Brazil",
+          "aliases": [],
+          "points": 54
+        },
+        {
+          "name": "Japan",
+          "aliases": [],
+          "points": 77
+        },
+        {
+          "name": "France",
           "aliases": [],
           "points": 100
         }
@@ -1541,22 +1559,32 @@
     {
       "id": "hg-iberia",
       "topic": "WORLD",
-      "prompt": "Name a sovereign country on the Iberian Peninsula.",
-      "scope": "Include the Pyrenean microstate; Gibraltar is not sovereign.",
-      "source": "https://en.wikipedia.org/wiki/Iberian_Peninsula",
+      "prompt": "Name a country that hosted the men's FIFA World Cup in 2006–2022.",
+      "scope": "Five tournaments, one host country each.",
+      "source": "https://www.fifa.com/tournaments/mens/worldcup",
       "answers": [
         {
-          "name": "Spain",
+          "name": "Germany",
           "aliases": [],
-          "points": 6
+          "points": 8
         },
         {
-          "name": "Portugal",
+          "name": "South Africa",
           "aliases": [],
-          "points": 49
+          "points": 31
         },
         {
-          "name": "Andorra",
+          "name": "Brazil",
+          "aliases": [],
+          "points": 54
+        },
+        {
+          "name": "Russia",
+          "aliases": [],
+          "points": 77
+        },
+        {
+          "name": "Qatar",
           "aliases": [],
           "points": 100
         }
@@ -1731,38 +1759,50 @@
     {
       "id": "hg-halogens",
       "topic": "SCIENCE",
-      "prompt": "Name a group 17 element.",
-      "scope": "Six named halogens, including element 117.",
-      "source": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "prompt": "Name a main part of a flowering plant from roots up to fruit.",
+      "scope": "The six basic parts taught in school: roots, stem, leaves, flowers, fruit and seeds.",
+      "source": "https://en.wikipedia.org/wiki/Plant",
       "answers": [
         {
-          "name": "Chlorine",
-          "aliases": [],
-          "points": 6
+          "name": "Root",
+          "aliases": [
+            "Roots"
+          ],
+          "points": 8
         },
         {
-          "name": "Fluorine",
-          "aliases": [],
-          "points": 21
+          "name": "Stem",
+          "aliases": [
+            "Stems"
+          ],
+          "points": 26
         },
         {
-          "name": "Iodine",
-          "aliases": [],
-          "points": 40
+          "name": "Leaf",
+          "aliases": [
+            "Leaves"
+          ],
+          "points": 45
         },
         {
-          "name": "Bromine",
-          "aliases": [],
-          "points": 59
+          "name": "Flower",
+          "aliases": [
+            "Flowers"
+          ],
+          "points": 63
         },
         {
-          "name": "Astatine",
-          "aliases": [],
-          "points": 79
+          "name": "Fruit",
+          "aliases": [
+            "Fruits"
+          ],
+          "points": 82
         },
         {
-          "name": "Tennessine",
-          "aliases": [],
+          "name": "Seed",
+          "aliases": [
+            "Seeds"
+          ],
           "points": 100
         }
       ]
@@ -1770,39 +1810,17 @@
     {
       "id": "hg-alkali",
       "topic": "SCIENCE",
-      "prompt": "Name an alkali metal.",
-      "scope": "Group 1 metals; hydrogen is excluded.",
-      "source": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "prompt": "Name a planet whose English name has exactly five letters.",
+      "scope": "The eight recognised Solar System planets; spelling in English.",
+      "source": "https://science.nasa.gov/solar-system/planets/",
       "answers": [
         {
-          "name": "Sodium",
+          "name": "Earth",
           "aliases": [],
-          "points": 6
+          "points": 8
         },
         {
-          "name": "Lithium",
-          "aliases": [],
-          "points": 21
-        },
-        {
-          "name": "Potassium",
-          "aliases": [],
-          "points": 40
-        },
-        {
-          "name": "Caesium",
-          "aliases": [
-            "Cesium"
-          ],
-          "points": 59
-        },
-        {
-          "name": "Rubidium",
-          "aliases": [],
-          "points": 79
-        },
-        {
-          "name": "Francium",
+          "name": "Venus",
           "aliases": [],
           "points": 100
         }
@@ -1811,38 +1829,48 @@
     {
       "id": "hg-alkaline-earth",
       "topic": "SCIENCE",
-      "prompt": "Name an alkaline-earth metal.",
-      "scope": "The six group 2 elements.",
-      "source": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "prompt": "Name a renewable energy source in this group: sun, wind, moving water, Earth's heat or organic material.",
+      "scope": "Give the energy-source name rather than the equipment; the five groups are described in the question.",
+      "source": "https://en.wikipedia.org/wiki/Renewable_energy",
       "answers": [
         {
-          "name": "Calcium",
-          "aliases": [],
-          "points": 6
+          "name": "Solar",
+          "aliases": [
+            "Solar energy",
+            "Sun"
+          ],
+          "points": 8
         },
         {
-          "name": "Magnesium",
-          "aliases": [],
-          "points": 21
+          "name": "Wind",
+          "aliases": [
+            "Wind energy"
+          ],
+          "points": 31
         },
         {
-          "name": "Barium",
-          "aliases": [],
-          "points": 40
+          "name": "Hydropower",
+          "aliases": [
+            "Hydro",
+            "Hydroelectricity",
+            "Water",
+            "Hydroelectric"
+          ],
+          "points": 54
         },
         {
-          "name": "Beryllium",
-          "aliases": [],
-          "points": 59
+          "name": "Geothermal",
+          "aliases": [
+            "Geothermal energy"
+          ],
+          "points": 77
         },
         {
-          "name": "Strontium",
-          "aliases": [],
-          "points": 79
-        },
-        {
-          "name": "Radium",
-          "aliases": [],
+          "name": "Biomass",
+          "aliases": [
+            "Bioenergy",
+            "Organic material"
+          ],
           "points": 100
         }
       ]
@@ -1850,57 +1878,22 @@
     {
       "id": "hg-big-prefixes",
       "topic": "SCIENCE",
-      "prompt": "Name an SI prefix for a power from 10³ to 10³⁰.",
-      "scope": "Ten positive-exponent prefixes at intervals of three powers.",
-      "source": "https://www.bipm.org/en/measurement-units/si-prefixes",
+      "prompt": "Name one of the three everyday states of matter.",
+      "scope": "The three commonly taught at primary school; not plasma or specialised states.",
+      "source": "https://en.wikipedia.org/wiki/State_of_matter",
       "answers": [
         {
-          "name": "Kilo",
+          "name": "Solid",
           "aliases": [],
-          "points": 6
+          "points": 8
         },
         {
-          "name": "Mega",
+          "name": "Liquid",
           "aliases": [],
-          "points": 14
+          "points": 54
         },
         {
-          "name": "Giga",
-          "aliases": [],
-          "points": 23
-        },
-        {
-          "name": "Tera",
-          "aliases": [],
-          "points": 33
-        },
-        {
-          "name": "Peta",
-          "aliases": [],
-          "points": 44
-        },
-        {
-          "name": "Exa",
-          "aliases": [],
-          "points": 55
-        },
-        {
-          "name": "Zetta",
-          "aliases": [],
-          "points": 66
-        },
-        {
-          "name": "Yotta",
-          "aliases": [],
-          "points": 77
-        },
-        {
-          "name": "Ronna",
-          "aliases": [],
-          "points": 88
-        },
-        {
-          "name": "Quetta",
+          "name": "Gas",
           "aliases": [],
           "points": 100
         }
@@ -1909,58 +1902,43 @@
     {
       "id": "hg-small-prefixes",
       "topic": "SCIENCE",
-      "prompt": "Name an SI prefix from 10⁻³ down to 10⁻³⁰.",
-      "scope": "Ten negative-exponent prefixes at intervals of three powers.",
-      "source": "https://www.bipm.org/en/measurement-units/si-prefixes",
+      "prompt": "Name one of the five human senses traditionally taught at school.",
+      "scope": "The traditional five-sense model, not balance or body-position senses.",
+      "source": "https://en.wikipedia.org/wiki/Sense",
       "answers": [
         {
-          "name": "Milli",
-          "aliases": [],
-          "points": 6
+          "name": "Sight",
+          "aliases": [
+            "Vision"
+          ],
+          "points": 8
         },
         {
-          "name": "Micro",
-          "aliases": [],
-          "points": 14
+          "name": "Hearing",
+          "aliases": [
+            "Sound"
+          ],
+          "points": 31
         },
         {
-          "name": "Nano",
-          "aliases": [],
-          "points": 23
+          "name": "Smell",
+          "aliases": [
+            "Olfaction"
+          ],
+          "points": 54
         },
         {
-          "name": "Pico",
-          "aliases": [],
-          "points": 33
-        },
-        {
-          "name": "Femto",
-          "aliases": [],
-          "points": 44
-        },
-        {
-          "name": "Atto",
-          "aliases": [],
-          "points": 55
-        },
-        {
-          "name": "Zepto",
-          "aliases": [],
-          "points": 66
-        },
-        {
-          "name": "Yocto",
-          "aliases": [],
+          "name": "Taste",
+          "aliases": [
+            "Gustation"
+          ],
           "points": 77
         },
         {
-          "name": "Ronto",
-          "aliases": [],
-          "points": 88
-        },
-        {
-          "name": "Quecto",
-          "aliases": [],
+          "name": "Touch",
+          "aliases": [
+            "Feeling"
+          ],
           "points": 100
         }
       ]
@@ -2132,27 +2110,36 @@
     {
       "id": "hg-rna",
       "topic": "SCIENCE",
-      "prompt": "Name a standard RNA base.",
-      "scope": "The four full base names; RNA, not DNA.",
-      "source": "https://en.wikipedia.org/wiki/RNA",
+      "prompt": "Name a human organ in this set: the blood pump, main breathing organs, food sac, main filtering pair or thinking organ.",
+      "scope": "Use the everyday organ name. The five descriptions define the accepted set.",
+      "source": "https://en.wikipedia.org/wiki/Organ_(biology)",
       "answers": [
         {
-          "name": "Adenine",
+          "name": "Heart",
           "aliases": [],
-          "points": 6
+          "points": 8
         },
         {
-          "name": "Guanine",
-          "aliases": [],
-          "points": 33
+          "name": "Lungs",
+          "aliases": [
+            "Lung"
+          ],
+          "points": 31
         },
         {
-          "name": "Cytosine",
+          "name": "Stomach",
           "aliases": [],
-          "points": 66
+          "points": 54
         },
         {
-          "name": "Uracil",
+          "name": "Kidneys",
+          "aliases": [
+            "Kidney"
+          ],
+          "points": 77
+        },
+        {
+          "name": "Brain",
           "aliases": [],
           "points": 100
         }
@@ -2401,69 +2388,52 @@
     {
       "id": "hg-princesses",
       "topic": "FILM",
-      "prompt": "Name an official Disney Princess as of January 2021.",
-      "scope": "Twelve members of the franchise at that date, not Frozen’s leads.",
-      "source": "https://en.wikipedia.org/wiki/Disney_Princess",
+      "prompt": "Name an emotion character in Inside Out 2 (2024).",
+      "scope": "The nine emotions at Riley's headquarters; English character names. Not human characters.",
+      "source": "https://www.pixar.com/inside-out-2",
       "answers": [
         {
-          "name": "Cinderella",
+          "name": "Joy",
           "aliases": [],
-          "points": 6
+          "points": 8
         },
         {
-          "name": "Snow White",
-          "aliases": [],
-          "points": 12
-        },
-        {
-          "name": "Ariel",
+          "name": "Sadness",
           "aliases": [],
           "points": 20
         },
         {
-          "name": "Belle",
+          "name": "Anger",
           "aliases": [],
-          "points": 28
+          "points": 31
         },
         {
-          "name": "Jasmine",
+          "name": "Fear",
           "aliases": [],
-          "points": 36
+          "points": 43
         },
         {
-          "name": "Aurora",
-          "aliases": [
-            "Sleeping Beauty"
-          ],
-          "points": 45
-        },
-        {
-          "name": "Mulan",
+          "name": "Disgust",
           "aliases": [],
           "points": 54
         },
         {
-          "name": "Rapunzel",
+          "name": "Anxiety",
           "aliases": [],
-          "points": 63
+          "points": 66
         },
         {
-          "name": "Pocahontas",
+          "name": "Envy",
           "aliases": [],
-          "points": 72
+          "points": 77
         },
         {
-          "name": "Tiana",
+          "name": "Embarrassment",
           "aliases": [],
-          "points": 81
+          "points": 89
         },
         {
-          "name": "Moana",
-          "aliases": [],
-          "points": 90
-        },
-        {
-          "name": "Merida",
+          "name": "Ennui",
           "aliases": [],
           "points": 100
         }
@@ -2590,66 +2560,55 @@
     {
       "id": "hg-renaissance",
       "topic": "FILM",
-      "prompt": "Name a Disney Renaissance animated feature.",
-      "scope": "The conventional ten-film 1989–1999 grouping.",
-      "source": "https://en.wikipedia.org/wiki/Disney_Renaissance",
+      "prompt": "Name a Walt Disney Animation Studios feature first released in 2016–2024.",
+      "scope": "The main animation studio, not Pixar, live-action remakes or shorts.",
+      "source": "https://disneyanimation.com/films/",
       "answers": [
         {
-          "name": "The Lion King",
+          "name": "Zootopia",
           "aliases": [
-            "Lion King"
+            "Zootropolis"
           ],
-          "points": 6
+          "points": 8
         },
         {
-          "name": "Aladdin",
+          "name": "Moana",
           "aliases": [],
-          "points": 14
+          "points": 20
         },
         {
-          "name": "Beauty and the Beast",
+          "name": "Ralph Breaks the Internet",
           "aliases": [],
-          "points": 23
+          "points": 31
         },
         {
-          "name": "The Little Mermaid",
-          "aliases": [
-            "Little Mermaid"
-          ],
-          "points": 33
-        },
-        {
-          "name": "Mulan",
+          "name": "Frozen 2",
           "aliases": [],
-          "points": 44
+          "points": 43
         },
         {
-          "name": "Tarzan",
+          "name": "Raya and the Last Dragon",
           "aliases": [],
-          "points": 55
+          "points": 54
         },
         {
-          "name": "Hercules",
+          "name": "Encanto",
           "aliases": [],
           "points": 66
         },
         {
-          "name": "Pocahontas",
+          "name": "Strange World",
           "aliases": [],
           "points": 77
         },
         {
-          "name": "The Hunchback of Notre Dame",
-          "aliases": [
-            "Hunchback of Notre Dame"
-          ],
-          "points": 88
+          "name": "Wish",
+          "aliases": [],
+          "points": 89
         },
         {
-          "name": "The Rescuers Down Under",
-          "aliases": [
-            "Rescuers Down Under"
-          ],
+          "name": "Moana 2",
+          "aliases": [],
           "points": 100
         }
       ]
@@ -2708,37 +2667,23 @@
     {
       "id": "hg-ghostbusters",
       "topic": "FILM",
-      "prompt": "Name an original Ghostbusters team member.",
-      "scope": "The four characters in the 1984 film; surnames accepted.",
-      "source": "https://en.wikipedia.org/wiki/Ghostbusters",
+      "prompt": "Name a film in the live-action Sonic the Hedgehog trilogy released in 2020–2024.",
+      "scope": "Use the film title, with its number if it is a sequel.",
+      "source": "https://en.wikipedia.org/wiki/Sonic_the_Hedgehog_(film_series)",
       "answers": [
         {
-          "name": "Peter Venkman",
-          "aliases": [
-            "Venkman"
-          ],
-          "points": 6
+          "name": "Sonic the Hedgehog",
+          "aliases": [],
+          "points": 8
         },
         {
-          "name": "Egon Spengler",
-          "aliases": [
-            "Spengler"
-          ],
-          "points": 33
+          "name": "Sonic the Hedgehog 2",
+          "aliases": [],
+          "points": 54
         },
         {
-          "name": "Ray Stantz",
-          "aliases": [
-            "Raymond Stantz",
-            "Stantz"
-          ],
-          "points": 66
-        },
-        {
-          "name": "Winston Zeddemore",
-          "aliases": [
-            "Zeddemore"
-          ],
+          "name": "Sonic the Hedgehog 3",
+          "aliases": [],
           "points": 100
         }
       ]
@@ -2818,46 +2763,72 @@
     {
       "id": "hg-parr",
       "topic": "FILM",
-      "prompt": "Name a Parr family member in The Incredibles.",
-      "scope": "The five family members; first names or superhero names accepted.",
-      "source": "https://en.wikipedia.org/wiki/The_Incredibles",
+      "prompt": "Name a Madrigal family member given a magical gift in Encanto (2021).",
+      "scope": "Mirabel's magical relatives, including Abuela Alma, whose gift is the candle. Not Mirabel, Agustín or Félix.",
+      "source": "https://en.wikipedia.org/wiki/Encanto",
       "answers": [
         {
-          "name": "Bob",
+          "name": "Isabela",
           "aliases": [
-            "Bob Parr",
-            "Mr Incredible"
+            "Isabela Madrigal"
           ],
-          "points": 6
+          "points": 8
         },
         {
-          "name": "Helen",
+          "name": "Luisa",
           "aliases": [
-            "Helen Parr",
-            "Elastigirl"
+            "Luisa Madrigal"
           ],
-          "points": 26
+          "points": 20
         },
         {
-          "name": "Dash",
+          "name": "Bruno",
           "aliases": [
-            "Dashiell",
-            "Dash Parr"
+            "Bruno Madrigal"
           ],
-          "points": 49
+          "points": 31
         },
         {
-          "name": "Violet",
+          "name": "Pepa",
           "aliases": [
-            "Violet Parr"
+            "Pepa Madrigal"
           ],
-          "points": 74
+          "points": 43
         },
         {
-          "name": "Jack-Jack",
+          "name": "Julieta",
           "aliases": [
-            "Jack Jack",
-            "Jack-Jack Parr"
+            "Julieta Madrigal"
+          ],
+          "points": 54
+        },
+        {
+          "name": "Dolores",
+          "aliases": [
+            "Dolores Madrigal"
+          ],
+          "points": 66
+        },
+        {
+          "name": "Camilo",
+          "aliases": [
+            "Camilo Madrigal"
+          ],
+          "points": 77
+        },
+        {
+          "name": "Antonio",
+          "aliases": [
+            "Antonio Madrigal"
+          ],
+          "points": 89
+        },
+        {
+          "name": "Alma",
+          "aliases": [
+            "Abuela",
+            "Abuela Alma",
+            "Alma Madrigal"
           ],
           "points": 100
         }
@@ -3982,64 +3953,23 @@
     {
       "id": "hg-peaks",
       "topic": "AUSTRALIA",
-      "prompt": "Name a highest mountain of an Australian state or mainland territory.",
-      "scope": "Eight jurisdictions; Mount is optional.",
-      "source": "https://en.wikipedia.org/wiki/List_of_Australian_states_and_territories_by_highest_point",
+      "prompt": "Name a city that hosted the Australian Open during the Open Era, through 2025.",
+      "scope": "The tennis tournament, from 1968 onward. City names, not stadium names.",
+      "source": "https://ausopen.com/history",
       "answers": [
         {
-          "name": "Mount Kosciuszko",
-          "aliases": [
-            "Kosciuszko"
-          ],
-          "points": 6
+          "name": "Melbourne",
+          "aliases": [],
+          "points": 8
         },
         {
-          "name": "Mount Ossa",
-          "aliases": [
-            "Ossa"
-          ],
-          "points": 17
+          "name": "Sydney",
+          "aliases": [],
+          "points": 54
         },
         {
-          "name": "Mount Bogong",
-          "aliases": [
-            "Bogong"
-          ],
-          "points": 29
-        },
-        {
-          "name": "Mount Bartle Frere",
-          "aliases": [
-            "Bartle Frere"
-          ],
-          "points": 42
-        },
-        {
-          "name": "Mount Zeil",
-          "aliases": [
-            "Zeil"
-          ],
-          "points": 56
-        },
-        {
-          "name": "Mount Woodroffe",
-          "aliases": [
-            "Woodroffe"
-          ],
-          "points": 70
-        },
-        {
-          "name": "Mount Meharry",
-          "aliases": [
-            "Meharry"
-          ],
-          "points": 85
-        },
-        {
-          "name": "Bimberi Peak",
-          "aliases": [
-            "Bimberi"
-          ],
+          "name": "Brisbane",
+          "aliases": [],
           "points": 100
         }
       ]
@@ -4047,50 +3977,50 @@
     {
       "id": "hg-ao-women",
       "topic": "AUSTRALIA",
-      "prompt": "Name an Australian Open women’s singles champion from 2000–2009.",
-      "scope": "Six distinct champions in that decade; surnames accepted.",
-      "source": "https://en.wikipedia.org/wiki/List_of_Australian_Open_women%27s_singles_champions",
+      "prompt": "Name an Australian Open women's singles champion from 2018–2025.",
+      "scope": "Use the player's surname or full name. Singles champions only.",
+      "source": "https://ausopen.com/history/honour-roll/womens-singles",
       "answers": [
         {
-          "name": "Serena Williams",
+          "name": "Naomi Osaka",
           "aliases": [
-            "Serena"
+            "Osaka"
           ],
-          "points": 6
+          "points": 8
         },
         {
-          "name": "Maria Sharapova",
+          "name": "Ashleigh Barty",
           "aliases": [
-            "Sharapova"
+            "Ash Barty",
+            "Barty"
           ],
-          "points": 21
+          "points": 26
         },
         {
-          "name": "Justine Henin",
+          "name": "Aryna Sabalenka",
           "aliases": [
-            "Henin"
+            "Sabalenka"
           ],
-          "points": 40
+          "points": 45
         },
         {
-          "name": "Lindsay Davenport",
+          "name": "Caroline Wozniacki",
           "aliases": [
-            "Davenport"
+            "Wozniacki"
           ],
-          "points": 59
+          "points": 63
         },
         {
-          "name": "Jennifer Capriati",
+          "name": "Sofia Kenin",
           "aliases": [
-            "Capriati"
+            "Kenin"
           ],
-          "points": 79
+          "points": 82
         },
         {
-          "name": "Amélie Mauresmo",
+          "name": "Madison Keys",
           "aliases": [
-            "Amelie Mauresmo",
-            "Mauresmo"
+            "Keys"
           ],
           "points": 100
         }
@@ -4120,16 +4050,23 @@
     {
       "id": "hg-mens-slams",
       "topic": "AUSTRALIA",
-      "prompt": "Name an Australian man who won a Grand Slam singles title in the Open Era by 2025.",
-      "scope": "Seven champions since 1968; surnames accepted.",
-      "source": "https://en.wikipedia.org/wiki/List_of_Grand_Slam_men%27s_singles_champions",
+      "prompt": "Name an Australian man who reached a Grand Slam singles final in 2000–2025.",
+      "scope": "Men's singles finalists representing Australia. Use surname or full name.",
+      "source": "https://www.atptour.com/en/players/atp-head-2-head",
       "answers": [
         {
           "name": "Lleyton Hewitt",
           "aliases": [
             "Hewitt"
           ],
-          "points": 6
+          "points": 8
+        },
+        {
+          "name": "Nick Kyrgios",
+          "aliases": [
+            "Kyrgios"
+          ],
+          "points": 39
         },
         {
           "name": "Pat Rafter",
@@ -4137,40 +4074,12 @@
             "Patrick Rafter",
             "Rafter"
           ],
-          "points": 19
+          "points": 69
         },
         {
-          "name": "Rod Laver",
+          "name": "Mark Philippoussis",
           "aliases": [
-            "Laver"
-          ],
-          "points": 33
-        },
-        {
-          "name": "Pat Cash",
-          "aliases": [
-            "Cash"
-          ],
-          "points": 49
-        },
-        {
-          "name": "Ken Rosewall",
-          "aliases": [
-            "Rosewall"
-          ],
-          "points": 66
-        },
-        {
-          "name": "John Newcombe",
-          "aliases": [
-            "Newcombe"
-          ],
-          "points": 83
-        },
-        {
-          "name": "Mark Edmondson",
-          "aliases": [
-            "Edmondson"
+            "Philippoussis"
           ],
           "points": 100
         }
@@ -4179,9 +4088,9 @@
     {
       "id": "hg-womens-slams",
       "topic": "AUSTRALIA",
-      "prompt": "Name an Australian woman who won a Grand Slam singles title in the Open Era by 2025.",
-      "scope": "Six champions; singles, not doubles.",
-      "source": "https://en.wikipedia.org/wiki/List_of_Grand_Slam_women%27s_singles_champions",
+      "prompt": "Name an Australian woman who won a Grand Slam singles title in 2000–2025.",
+      "scope": "Singles only; use surname or full name. Australian nationality when winning.",
+      "source": "https://www.wtatennis.com/players",
       "answers": [
         {
           "name": "Ashleigh Barty",
@@ -4189,44 +4098,13 @@
             "Ash Barty",
             "Barty"
           ],
-          "points": 6
+          "points": 8
         },
         {
           "name": "Samantha Stosur",
           "aliases": [
             "Sam Stosur",
             "Stosur"
-          ],
-          "points": 21
-        },
-        {
-          "name": "Margaret Court",
-          "aliases": [
-            "Court"
-          ],
-          "points": 40
-        },
-        {
-          "name": "Evonne Goolagong Cawley",
-          "aliases": [
-            "Evonne Goolagong",
-            "Goolagong"
-          ],
-          "points": 59
-        },
-        {
-          "name": "Kerry Reid",
-          "aliases": [
-            "Kerry Melville Reid",
-            "Reid"
-          ],
-          "points": 79
-        },
-        {
-          "name": "Chris O'Neil",
-          "aliases": [
-            "Christine O'Neil",
-            "O'Neil"
           ],
           "points": 100
         }
@@ -4235,52 +4113,32 @@
     {
       "id": "hg-test-cities",
       "topic": "AUSTRALIA",
-      "prompt": "Name an Australian city that hosted men’s Test cricket by 2025.",
-      "scope": "Nine cities; different grounds in one city count once.",
-      "source": "https://en.wikipedia.org/wiki/List_of_Test_cricket_grounds",
+      "prompt": "Name a city that hosted a men's Ashes Test in Australia in the 2021–22 series.",
+      "scope": "Five host cities; not stadium names.",
+      "source": "https://www.cricket.com.au/",
       "answers": [
-        {
-          "name": "Melbourne",
-          "aliases": [],
-          "points": 6
-        },
         {
           "name": "Sydney",
           "aliases": [],
-          "points": 15
+          "points": 8
         },
         {
-          "name": "Adelaide",
+          "name": "Melbourne",
           "aliases": [],
-          "points": 26
+          "points": 31
         },
         {
           "name": "Brisbane",
           "aliases": [],
-          "points": 37
+          "points": 54
         },
         {
-          "name": "Perth",
+          "name": "Adelaide",
           "aliases": [],
-          "points": 49
+          "points": 77
         },
         {
           "name": "Hobart",
-          "aliases": [],
-          "points": 62
-        },
-        {
-          "name": "Canberra",
-          "aliases": [],
-          "points": 74
-        },
-        {
-          "name": "Darwin",
-          "aliases": [],
-          "points": 87
-        },
-        {
-          "name": "Cairns",
           "aliases": [],
           "points": 100
         }
@@ -4372,37 +4230,23 @@
     {
       "id": "hg-hitchhiker",
       "topic": "BOOKS",
-      "prompt": "Name a Douglas Adams Hitchhiker’s Guide novel.",
-      "scope": "The five novels by Adams, not the later sequel by Eoin Colfer.",
-      "source": "https://en.wikipedia.org/wiki/The_Hitchhiker%27s_Guide_to_the_Galaxy",
+      "prompt": "Name a novel in Suzanne Collins's Hunger Games series published in 2020–2025.",
+      "scope": "Only novels first published in that date window; full titles or the listed short titles.",
+      "source": "https://en.wikipedia.org/wiki/The_Hunger_Games",
       "answers": [
         {
-          "name": "The Hitchhiker's Guide to the Galaxy",
+          "name": "The Ballad of Songbirds and Snakes",
           "aliases": [
-            "Hitchhiker's Guide to the Galaxy"
+            "Ballad of Songbirds and Snakes",
+            "Songbirds and Snakes"
           ],
-          "points": 6
+          "points": 8
         },
         {
-          "name": "The Restaurant at the End of the Universe",
+          "name": "Sunrise on the Reaping",
           "aliases": [
-            "Restaurant at the End of the Universe"
+            "Sunrise"
           ],
-          "points": 26
-        },
-        {
-          "name": "Life the Universe and Everything",
-          "aliases": [],
-          "points": 49
-        },
-        {
-          "name": "So Long and Thanks for All the Fish",
-          "aliases": [],
-          "points": 74
-        },
-        {
-          "name": "Mostly Harmless",
-          "aliases": [],
           "points": 100
         }
       ]
@@ -4410,37 +4254,26 @@
     {
       "id": "hg-austen",
       "topic": "BOOKS",
-      "prompt": "Name a completed Jane Austen novel.",
-      "scope": "Six novels published 1811–1818; unfinished works and juvenilia excluded.",
-      "source": "https://en.wikipedia.org/wiki/Jane_Austen",
+      "prompt": "Name a book in the main A Good Girl's Guide to Murder trilogy.",
+      "scope": "Holly Jackson's original three novels; not novellas or other books.",
+      "source": "https://en.wikipedia.org/wiki/A_Good_Girl%27s_Guide_to_Murder",
       "answers": [
         {
-          "name": "Pride and Prejudice",
-          "aliases": [],
-          "points": 6
+          "name": "A Good Girl's Guide to Murder",
+          "aliases": [
+            "Good Girl's Guide to Murder"
+          ],
+          "points": 8
         },
         {
-          "name": "Sense and Sensibility",
-          "aliases": [],
-          "points": 21
+          "name": "Good Girl, Bad Blood",
+          "aliases": [
+            "Good Girl Bad Blood"
+          ],
+          "points": 54
         },
         {
-          "name": "Emma",
-          "aliases": [],
-          "points": 40
-        },
-        {
-          "name": "Persuasion",
-          "aliases": [],
-          "points": 59
-        },
-        {
-          "name": "Mansfield Park",
-          "aliases": [],
-          "points": 79
-        },
-        {
-          "name": "Northanger Abbey",
+          "name": "As Good as Dead",
           "aliases": [],
           "points": 100
         }
@@ -4449,32 +4282,28 @@
     {
       "id": "hg-bronte",
       "topic": "BOOKS",
-      "prompt": "Name a Brontë sister who published a novel.",
-      "scope": "The three novelist sisters; first names accepted.",
-      "source": "https://en.wikipedia.org/wiki/Bront%C3%AB_family",
+      "prompt": "Name an Alice Oseman standalone novel first published in 2014–2020.",
+      "scope": "The four full-length standalone novels; not graphic novels or novellas.",
+      "source": "https://aliceoseman.com/ya-fiction/in-what-order-should-i-read-your-books/",
       "answers": [
         {
-          "name": "Charlotte Brontë",
-          "aliases": [
-            "Charlotte Bronte",
-            "Charlotte"
-          ],
-          "points": 6
+          "name": "Solitaire",
+          "aliases": [],
+          "points": 8
         },
         {
-          "name": "Emily Brontë",
-          "aliases": [
-            "Emily Bronte",
-            "Emily"
-          ],
-          "points": 49
+          "name": "Radio Silence",
+          "aliases": [],
+          "points": 39
         },
         {
-          "name": "Anne Brontë",
-          "aliases": [
-            "Anne Bronte",
-            "Anne"
-          ],
+          "name": "I Was Born for This",
+          "aliases": [],
+          "points": 69
+        },
+        {
+          "name": "Loveless",
+          "aliases": [],
           "points": 100
         }
       ]
@@ -4482,30 +4311,23 @@
     {
       "id": "hg-tragedies",
       "topic": "BOOKS",
-      "prompt": "Name one of Shakespeare’s conventional four great tragedies.",
-      "scope": "The commonly grouped four mature tragedies, not every tragic play.",
-      "source": "https://en.wikipedia.org/wiki/Shakespearean_tragedy",
+      "prompt": "Name a book in the original Divergent trilogy.",
+      "scope": "Veronica Roth's three main novels, not the companion collection.",
+      "source": "https://en.wikipedia.org/wiki/Divergent_(book_series)",
       "answers": [
         {
-          "name": "Hamlet",
+          "name": "Divergent",
           "aliases": [],
-          "points": 6
+          "points": 8
         },
         {
-          "name": "Macbeth",
+          "name": "Insurgent",
           "aliases": [],
-          "points": 33
+          "points": 54
         },
         {
-          "name": "Othello",
+          "name": "Allegiant",
           "aliases": [],
-          "points": 66
-        },
-        {
-          "name": "King Lear",
-          "aliases": [
-            "Lear"
-          ],
           "points": 100
         }
       ]
@@ -4513,36 +4335,28 @@
     {
       "id": "hg-holmes",
       "topic": "BOOKS",
-      "prompt": "Name a Sherlock Holmes novel by Arthur Conan Doyle.",
-      "scope": "Four full-length novels; short-story collections excluded.",
-      "source": "https://en.wikipedia.org/wiki/Canon_of_Sherlock_Holmes",
+      "prompt": "Name a book in the original Maze Runner trilogy.",
+      "scope": "James Dashner's first three main novels; not prequels or sequels.",
+      "source": "https://en.wikipedia.org/wiki/The_Maze_Runner_(book_series)",
       "answers": [
         {
-          "name": "The Hound of the Baskervilles",
+          "name": "The Maze Runner",
           "aliases": [
-            "Hound of the Baskervilles"
+            "Maze Runner"
           ],
-          "points": 6
+          "points": 8
         },
         {
-          "name": "A Study in Scarlet",
+          "name": "The Scorch Trials",
           "aliases": [
-            "Study in Scarlet"
+            "Scorch Trials"
           ],
-          "points": 33
+          "points": 54
         },
         {
-          "name": "The Sign of the Four",
+          "name": "The Death Cure",
           "aliases": [
-            "The Sign of Four",
-            "Sign of Four"
-          ],
-          "points": 66
-        },
-        {
-          "name": "The Valley of Fear",
-          "aliases": [
-            "Valley of Fear"
+            "Death Cure"
           ],
           "points": 100
         }
@@ -4733,38 +4547,28 @@
     {
       "id": "hg-march",
       "topic": "BOOKS",
-      "prompt": "Name a March sister in Little Women.",
-      "scope": "Four sisters; first names and common nicknames accepted.",
-      "source": "https://en.wikipedia.org/wiki/Little_Women",
+      "prompt": "Name a book in the original To All the Boys trilogy.",
+      "scope": "Jenny Han's three novels; not film subtitles on their own.",
+      "source": "https://en.wikipedia.org/wiki/To_All_the_Boys_I%27ve_Loved_Before_(novel)",
       "answers": [
         {
-          "name": "Jo",
+          "name": "To All the Boys I've Loved Before",
           "aliases": [
-            "Josephine",
-            "Jo March"
+            "To All the Boys I Have Loved Before"
           ],
-          "points": 6
+          "points": 8
         },
         {
-          "name": "Beth",
+          "name": "P.S. I Still Love You",
           "aliases": [
-            "Elizabeth",
-            "Beth March"
+            "PS I Still Love You"
           ],
-          "points": 33
+          "points": 54
         },
         {
-          "name": "Meg",
+          "name": "Always and Forever, Lara Jean",
           "aliases": [
-            "Margaret",
-            "Meg March"
-          ],
-          "points": 66
-        },
-        {
-          "name": "Amy",
-          "aliases": [
-            "Amy March"
+            "Always and Forever"
           ],
           "points": 100
         }
@@ -4773,40 +4577,18 @@
     {
       "id": "hg-famous-five",
       "topic": "BOOKS",
-      "prompt": "Name a member of Enid Blyton’s Famous Five.",
-      "scope": "The four children and their dog.",
-      "source": "https://en.wikipedia.org/wiki/The_Famous_Five_(novel_series)",
+      "prompt": "Name one of the two Heeler sisters featured in the Bluey picture books.",
+      "scope": "The two daughters of Bandit and Chilli, not cousins or friends.",
+      "source": "https://www.penguin.com.au/brands/bluey",
       "answers": [
         {
-          "name": "George",
-          "aliases": [
-            "Georgina"
-          ],
-          "points": 6
-        },
-        {
-          "name": "Julian",
+          "name": "Bluey",
           "aliases": [],
-          "points": 26
+          "points": 8
         },
         {
-          "name": "Dick",
-          "aliases": [
-            "Richard"
-          ],
-          "points": 49
-        },
-        {
-          "name": "Anne",
+          "name": "Bingo",
           "aliases": [],
-          "points": 74
-        },
-        {
-          "name": "Timmy",
-          "aliases": [
-            "Timothy",
-            "Timmy the dog"
-          ],
           "points": 100
         }
       ]
@@ -4814,42 +4596,27 @@
     {
       "id": "hg-secret-seven",
       "topic": "BOOKS",
-      "prompt": "Name a child member of Enid Blyton’s Secret Seven.",
-      "scope": "Seven children, not Scamper the dog or Susie.",
-      "source": "https://en.wikipedia.org/wiki/The_Secret_Seven",
+      "prompt": "Name a novel in the original four-book Twilight saga.",
+      "scope": "Stephenie Meyer's original 2005–2008 novels; not companion books, retellings or film subtitles.",
+      "source": "https://stepheniemeyer.com/the-books/",
       "answers": [
         {
-          "name": "Peter",
+          "name": "Twilight",
           "aliases": [],
-          "points": 6
+          "points": 8
         },
         {
-          "name": "Janet",
+          "name": "New Moon",
           "aliases": [],
-          "points": 19
+          "points": 39
         },
         {
-          "name": "Jack",
+          "name": "Eclipse",
           "aliases": [],
-          "points": 33
+          "points": 69
         },
         {
-          "name": "George",
-          "aliases": [],
-          "points": 49
-        },
-        {
-          "name": "Colin",
-          "aliases": [],
-          "points": 66
-        },
-        {
-          "name": "Pam",
-          "aliases": [],
-          "points": 83
-        },
-        {
-          "name": "Barbara",
+          "name": "Breaking Dawn",
           "aliases": [],
           "points": 100
         }
@@ -4936,27 +4703,17 @@
     {
       "id": "hg-galilean",
       "topic": "SPACE",
-      "prompt": "Name a Galilean moon of Jupiter.",
-      "scope": "The four discovered by Galileo.",
-      "source": "https://science.nasa.gov/jupiter/moons/",
+      "prompt": "Name one of the Solar System's two gas giants.",
+      "scope": "The gas giants only, not the ice giants, terrestrial planets or dwarf planets.",
+      "source": "https://science.nasa.gov/solar-system/planets/",
       "answers": [
         {
-          "name": "Europa",
+          "name": "Saturn",
           "aliases": [],
-          "points": 6
+          "points": 8
         },
         {
-          "name": "Io",
-          "aliases": [],
-          "points": 33
-        },
-        {
-          "name": "Ganymede",
-          "aliases": [],
-          "points": 66
-        },
-        {
-          "name": "Callisto",
+          "name": "Jupiter",
           "aliases": [],
           "points": 100
         }
@@ -4965,43 +4722,38 @@
     {
       "id": "hg-saturn",
       "topic": "SPACE",
-      "prompt": "Name a Saturnian moon with mean diameter above 300 km.",
-      "scope": "The seven largest regular moons.",
-      "source": "https://science.nasa.gov/saturn/moons/",
+      "prompt": "Name one of the four main Moon phases.",
+      "scope": "The four main phases, not the intermediate crescent or gibbous phases.",
+      "source": "https://science.nasa.gov/moon/moon-phases/",
       "answers": [
         {
-          "name": "Titan",
-          "aliases": [],
-          "points": 6
+          "name": "Full Moon",
+          "aliases": [
+            "Full"
+          ],
+          "points": 8
         },
         {
-          "name": "Enceladus",
-          "aliases": [],
-          "points": 19
+          "name": "New Moon",
+          "aliases": [
+            "New"
+          ],
+          "points": 39
         },
         {
-          "name": "Mimas",
-          "aliases": [],
-          "points": 33
+          "name": "First Quarter",
+          "aliases": [
+            "First Quarter Moon"
+          ],
+          "points": 69
         },
         {
-          "name": "Rhea",
-          "aliases": [],
-          "points": 49
-        },
-        {
-          "name": "Iapetus",
-          "aliases": [],
-          "points": 66
-        },
-        {
-          "name": "Dione",
-          "aliases": [],
-          "points": 83
-        },
-        {
-          "name": "Tethys",
-          "aliases": [],
+          "name": "Third Quarter",
+          "aliases": [
+            "Last Quarter",
+            "Third Quarter Moon",
+            "Last Quarter Moon"
+          ],
           "points": 100
         }
       ]
@@ -5009,33 +4761,41 @@
     {
       "id": "hg-uranus",
       "topic": "SPACE",
-      "prompt": "Name one of Uranus’s five major moons.",
-      "scope": "The five large, roughly spherical moons.",
-      "source": "https://science.nasa.gov/uranus/moons/",
+      "prompt": "Name a founding member of the Guardians of the Galaxy team in the 2014 MCU film.",
+      "scope": "The five heroes who form the team in that film; not later recruits.",
+      "source": "https://www.marvel.com/teams-and-groups/guardians-of-the-galaxy/on-screen",
       "answers": [
         {
-          "name": "Titania",
-          "aliases": [],
-          "points": 6
+          "name": "Star-Lord",
+          "aliases": [
+            "Peter Quill",
+            "Starlord",
+            "Quill"
+          ],
+          "points": 8
         },
         {
-          "name": "Oberon",
+          "name": "Groot",
           "aliases": [],
-          "points": 26
+          "points": 31
         },
         {
-          "name": "Miranda",
-          "aliases": [],
-          "points": 49
+          "name": "Rocket",
+          "aliases": [
+            "Rocket Raccoon"
+          ],
+          "points": 54
         },
         {
-          "name": "Ariel",
+          "name": "Gamora",
           "aliases": [],
-          "points": 74
+          "points": 77
         },
         {
-          "name": "Umbriel",
-          "aliases": [],
+          "name": "Drax",
+          "aliases": [
+            "Drax the Destroyer"
+          ],
           "points": 100
         }
       ]
@@ -5173,61 +4933,33 @@
     {
       "id": "hg-mercury7",
       "topic": "SPACE",
-      "prompt": "Name a Mercury Seven astronaut.",
-      "scope": "NASA’s original seven selected in 1959; surnames accepted.",
-      "source": "https://www.nasa.gov/history/mercury-7-the-first-nasa-astronauts/",
+      "prompt": "Name a Mars rover that NASA successfully landed by the end of 2021.",
+      "scope": "NASA rovers only, not orbiters, stationary landers or other countries' rovers.",
+      "source": "https://science.nasa.gov/mars/missions/",
       "answers": [
         {
-          "name": "John Glenn",
-          "aliases": [
-            "Glenn"
-          ],
-          "points": 6
+          "name": "Curiosity",
+          "aliases": [],
+          "points": 8
         },
         {
-          "name": "Alan Shepard",
-          "aliases": [
-            "Shepard"
-          ],
-          "points": 19
+          "name": "Perseverance",
+          "aliases": [],
+          "points": 31
         },
         {
-          "name": "Gus Grissom",
-          "aliases": [
-            "Virgil Grissom",
-            "Grissom"
-          ],
-          "points": 33
+          "name": "Spirit",
+          "aliases": [],
+          "points": 54
         },
         {
-          "name": "Gordon Cooper",
-          "aliases": [
-            "Gordo Cooper",
-            "Cooper"
-          ],
-          "points": 49
+          "name": "Opportunity",
+          "aliases": [],
+          "points": 77
         },
         {
-          "name": "Scott Carpenter",
-          "aliases": [
-            "Carpenter"
-          ],
-          "points": 66
-        },
-        {
-          "name": "Wally Schirra",
-          "aliases": [
-            "Walter Schirra",
-            "Schirra"
-          ],
-          "points": 83
-        },
-        {
-          "name": "Deke Slayton",
-          "aliases": [
-            "Donald Slayton",
-            "Slayton"
-          ],
+          "name": "Sojourner",
+          "aliases": [],
           "points": 100
         }
       ]
@@ -5276,49 +5008,19 @@
     {
       "id": "hg-landings",
       "topic": "SPACE",
-      "prompt": "Name an Apollo mission that landed people on the Moon.",
-      "scope": "Six successful landings; mission numbers accepted.",
-      "source": "https://www.nasa.gov/history/apollo/",
+      "prompt": "Name a celestial body that people had physically walked on by the end of 2025.",
+      "scope": "Include our home planet. Not places visited only by robots.",
+      "source": "https://www.nasa.gov/humans-in-space/",
       "answers": [
         {
-          "name": "Apollo 11",
-          "aliases": [
-            "11"
-          ],
-          "points": 6
+          "name": "Earth",
+          "aliases": [],
+          "points": 8
         },
         {
-          "name": "Apollo 17",
+          "name": "Moon",
           "aliases": [
-            "17"
-          ],
-          "points": 21
-        },
-        {
-          "name": "Apollo 12",
-          "aliases": [
-            "12"
-          ],
-          "points": 40
-        },
-        {
-          "name": "Apollo 14",
-          "aliases": [
-            "14"
-          ],
-          "points": 59
-        },
-        {
-          "name": "Apollo 15",
-          "aliases": [
-            "15"
-          ],
-          "points": 79
-        },
-        {
-          "name": "Apollo 16",
-          "aliases": [
-            "16"
+            "The Moon"
           ],
           "points": 100
         }
@@ -5429,36 +5131,23 @@
     {
       "id": "hg-observatories",
       "topic": "SPACE",
-      "prompt": "Name one of NASA’s original four Great Observatories.",
-      "scope": "The original programme’s space telescopes.",
-      "source": "https://science.nasa.gov/mission/hubble/science/great-observatories/",
+      "prompt": "Name one of the two space telescopes in this pair: Hubble's 1990 observatory or its 2021 infrared successor.",
+      "scope": "Give the short telescope name or full name. The pair is defined in the question.",
+      "source": "https://science.nasa.gov/mission/webb/",
       "answers": [
         {
           "name": "Hubble",
           "aliases": [
             "Hubble Space Telescope"
           ],
-          "points": 6
+          "points": 8
         },
         {
-          "name": "Chandra",
+          "name": "James Webb",
           "aliases": [
-            "Chandra X-ray Observatory"
-          ],
-          "points": 33
-        },
-        {
-          "name": "Spitzer",
-          "aliases": [
-            "Spitzer Space Telescope"
-          ],
-          "points": 66
-        },
-        {
-          "name": "Compton",
-          "aliases": [
-            "Compton Gamma Ray Observatory",
-            "CGRO"
+            "Webb",
+            "James Webb Space Telescope",
+            "JWST"
           ],
           "points": 100
         }
@@ -5467,35 +5156,30 @@
     {
       "id": "hg-webb",
       "topic": "SPACE",
-      "prompt": "Name a Webb telescope science instrument.",
-      "scope": "Four instruments; acronyms or full names accepted.",
-      "source": "https://science.nasa.gov/mission/webb/instruments/",
+      "prompt": "Name a droid in this Star Wars group: the golden translator, blue-and-white astromech or orange-and-white rolling droid.",
+      "scope": "The three descriptions define the accepted group. Names, not models or actors.",
+      "source": "https://en.wikipedia.org/wiki/Droid_(Star_Wars)",
       "answers": [
         {
-          "name": "NIRCam",
+          "name": "R2-D2",
           "aliases": [
-            "Near Infrared Camera"
+            "R2D2",
+            "Artoo"
           ],
-          "points": 6
+          "points": 8
         },
         {
-          "name": "MIRI",
+          "name": "C-3PO",
           "aliases": [
-            "Mid Infrared Instrument"
+            "C3PO",
+            "Threepio"
           ],
-          "points": 33
+          "points": 54
         },
         {
-          "name": "NIRSpec",
+          "name": "BB-8",
           "aliases": [
-            "Near Infrared Spectrograph"
-          ],
-          "points": 66
-        },
-        {
-          "name": "NIRISS",
-          "aliases": [
-            "Near Infrared Imager and Slitless Spectrograph"
+            "BB8"
           ],
           "points": 100
         }
@@ -5504,35 +5188,22 @@
     {
       "id": "hg-asteroids",
       "topic": "SPACE",
-      "prompt": "Name one of the first four numbered minor planets.",
-      "scope": "Numbers 1–4 by discovery; number 1 also became a dwarf planet.",
-      "source": "https://en.wikipedia.org/wiki/List_of_minor_planets:_1%E2%80%931000",
+      "prompt": "Name a main robot in WALL-E who falls in love with the other.",
+      "scope": "The two robot leads, not supporting robots or humans.",
+      "source": "https://www.pixar.com/wall-e",
       "answers": [
         {
-          "name": "Ceres",
+          "name": "WALL-E",
           "aliases": [
-            "1 Ceres"
+            "Walle",
+            "Wall E"
           ],
-          "points": 6
+          "points": 8
         },
         {
-          "name": "Vesta",
+          "name": "EVE",
           "aliases": [
-            "4 Vesta"
-          ],
-          "points": 33
-        },
-        {
-          "name": "Pallas",
-          "aliases": [
-            "2 Pallas"
-          ],
-          "points": 66
-        },
-        {
-          "name": "Juno",
-          "aliases": [
-            "3 Juno"
+            "Eva"
           ],
           "points": 100
         }
@@ -5906,48 +5577,27 @@
     {
       "id": "hg-greek-start",
       "topic": "LANGUAGE",
-      "prompt": "Name one of the first eight Greek alphabet letters.",
-      "scope": "English names for positions 1–8.",
-      "source": "https://en.wikipedia.org/wiki/Greek_alphabet",
+      "prompt": "Name a punctuation mark used to end an ordinary English sentence.",
+      "scope": "The three usual sentence endings; give the mark's name.",
+      "source": "https://dictionary.cambridge.org/grammar/british-grammar/punctuation",
       "answers": [
         {
-          "name": "Alpha",
-          "aliases": [],
-          "points": 6
+          "name": "Full stop",
+          "aliases": [
+            "Period"
+          ],
+          "points": 8
         },
         {
-          "name": "Beta",
+          "name": "Question mark",
           "aliases": [],
-          "points": 17
+          "points": 54
         },
         {
-          "name": "Gamma",
-          "aliases": [],
-          "points": 29
-        },
-        {
-          "name": "Delta",
-          "aliases": [],
-          "points": 42
-        },
-        {
-          "name": "Epsilon",
-          "aliases": [],
-          "points": 56
-        },
-        {
-          "name": "Zeta",
-          "aliases": [],
-          "points": 70
-        },
-        {
-          "name": "Eta",
-          "aliases": [],
-          "points": 85
-        },
-        {
-          "name": "Theta",
-          "aliases": [],
+          "name": "Exclamation mark",
+          "aliases": [
+            "Exclamation point"
+          ],
           "points": 100
         }
       ]
@@ -5955,48 +5605,25 @@
     {
       "id": "hg-greek-end",
       "topic": "LANGUAGE",
-      "prompt": "Name one of the final eight Greek alphabet letters.",
-      "scope": "English names for positions 17–24.",
-      "source": "https://en.wikipedia.org/wiki/Greek_alphabet",
+      "prompt": "Name a tile colour in Wordle's standard (non-colour-blind) theme.",
+      "scope": "The three result colours; American or British spelling is fine.",
+      "source": "https://www.nytimes.com/games/wordle/index.html",
       "answers": [
         {
-          "name": "Omega",
+          "name": "Green",
           "aliases": [],
-          "points": 6
+          "points": 8
         },
         {
-          "name": "Sigma",
+          "name": "Yellow",
           "aliases": [],
-          "points": 17
+          "points": 54
         },
         {
-          "name": "Phi",
-          "aliases": [],
-          "points": 29
-        },
-        {
-          "name": "Rho",
-          "aliases": [],
-          "points": 42
-        },
-        {
-          "name": "Tau",
-          "aliases": [],
-          "points": 56
-        },
-        {
-          "name": "Upsilon",
-          "aliases": [],
-          "points": 70
-        },
-        {
-          "name": "Chi",
-          "aliases": [],
-          "points": 85
-        },
-        {
-          "name": "Psi",
-          "aliases": [],
+          "name": "Grey",
+          "aliases": [
+            "Gray"
+          ],
           "points": 100
         }
       ]
@@ -6004,46 +5631,27 @@
     {
       "id": "hg-spanish-days",
       "topic": "LANGUAGE",
-      "prompt": "Name a weekday in Spanish.",
-      "scope": "Any day of the seven-day week; Spanish words, accents optional.",
-      "source": "https://en.wikipedia.org/wiki/Names_of_the_days_of_the_week",
+      "prompt": "Name a group colour in the New York Times game Connections.",
+      "scope": "The four difficulty colours in the standard theme.",
+      "source": "https://www.nytimes.com/games/connections",
       "answers": [
         {
-          "name": "Lunes",
+          "name": "Yellow",
           "aliases": [],
-          "points": 6
+          "points": 8
         },
         {
-          "name": "Martes",
+          "name": "Green",
           "aliases": [],
-          "points": 19
+          "points": 39
         },
         {
-          "name": "Miércoles",
-          "aliases": [
-            "Miercoles"
-          ],
-          "points": 33
-        },
-        {
-          "name": "Jueves",
+          "name": "Blue",
           "aliases": [],
-          "points": 49
+          "points": 69
         },
         {
-          "name": "Viernes",
-          "aliases": [],
-          "points": 66
-        },
-        {
-          "name": "Sábado",
-          "aliases": [
-            "Sabado"
-          ],
-          "points": 83
-        },
-        {
-          "name": "Domingo",
+          "name": "Purple",
           "aliases": [],
           "points": 100
         }
@@ -6052,42 +5660,39 @@
     {
       "id": "hg-french-days",
       "topic": "LANGUAGE",
-      "prompt": "Name a weekday in French.",
-      "scope": "Any day of the seven-day week; French words, not translations.",
-      "source": "https://en.wikipedia.org/wiki/Names_of_the_days_of_the_week",
+      "prompt": "Name an original Facebook reaction introduced or retained in the six-reaction set in 2016.",
+      "scope": "The six English reaction labels; not the Care reaction added later.",
+      "source": "https://about.fb.com/news/2016/02/reactions-now-available-globally/",
       "answers": [
         {
-          "name": "Lundi",
+          "name": "Like",
           "aliases": [],
-          "points": 6
+          "points": 8
         },
         {
-          "name": "Mardi",
+          "name": "Love",
           "aliases": [],
-          "points": 19
+          "points": 26
         },
         {
-          "name": "Mercredi",
-          "aliases": [],
-          "points": 33
+          "name": "Haha",
+          "aliases": [
+            "Ha ha"
+          ],
+          "points": 45
         },
         {
-          "name": "Jeudi",
+          "name": "Wow",
           "aliases": [],
-          "points": 49
+          "points": 63
         },
         {
-          "name": "Vendredi",
+          "name": "Sad",
           "aliases": [],
-          "points": 66
+          "points": 82
         },
         {
-          "name": "Samedi",
-          "aliases": [],
-          "points": 83
-        },
-        {
-          "name": "Dimanche",
+          "name": "Angry",
           "aliases": [],
           "points": 100
         }
@@ -6762,42 +6367,30 @@
     {
       "id": "hg-sauces",
       "topic": "EVERYDAY",
-      "prompt": "Name a French mother sauce in the modern Escoffier-derived list.",
-      "scope": "The conventional five taught in modern cooking; accents optional.",
-      "source": "https://en.wikipedia.org/wiki/French_mother_sauces",
+      "prompt": "Name a main topping on a classic Margherita pizza.",
+      "scope": "The traditional three: tomato, mozzarella and basil. Exclude the dough, oil, salt and optional extra garnishes.",
+      "source": "https://en.wikipedia.org/wiki/Pizza_Margherita",
       "answers": [
-        {
-          "name": "Béchamel",
-          "aliases": [
-            "Bechamel"
-          ],
-          "points": 6
-        },
-        {
-          "name": "Hollandaise",
-          "aliases": [],
-          "points": 26
-        },
         {
           "name": "Tomato",
           "aliases": [
-            "Tomate",
-            "Sauce tomate",
+            "Tomatoes",
             "Tomato sauce"
           ],
-          "points": 49
+          "points": 8
         },
         {
-          "name": "Velouté",
+          "name": "Mozzarella",
           "aliases": [
-            "Veloute"
+            "Mozzarella cheese",
+            "Cheese"
           ],
-          "points": 74
+          "points": 54
         },
         {
-          "name": "Espagnole",
+          "name": "Basil",
           "aliases": [
-            "Sauce espagnole"
+            "Fresh basil"
           ],
           "points": 100
         }
@@ -7050,38 +6643,23 @@
     {
       "id": "hg-railroads",
       "topic": "GAMES",
-      "prompt": "Name a railroad on the standard US Monopoly board.",
-      "scope": "Four US names, not British stations.",
-      "source": "https://en.wikipedia.org/wiki/Monopoly_(game)",
+      "prompt": "Name a starter Pokémon offered in Pokémon Scarlet and Violet (2022).",
+      "scope": "The three unevolved starter species, not their evolutions.",
+      "source": "https://scarletviolet.pokemon.com/en-us/pokemon/",
       "answers": [
         {
-          "name": "Reading Railroad",
-          "aliases": [
-            "Reading"
-          ],
-          "points": 6
+          "name": "Sprigatito",
+          "aliases": [],
+          "points": 8
         },
         {
-          "name": "Pennsylvania Railroad",
-          "aliases": [
-            "Pennsylvania"
-          ],
-          "points": 33
+          "name": "Fuecoco",
+          "aliases": [],
+          "points": 54
         },
         {
-          "name": "B and O Railroad",
-          "aliases": [
-            "B and O",
-            "B&O",
-            "Baltimore and Ohio"
-          ],
-          "points": 66
-        },
-        {
-          "name": "Short Line",
-          "aliases": [
-            "Short Line Railroad"
-          ],
+          "name": "Quaxly",
+          "aliases": [],
           "points": 100
         }
       ]
@@ -7315,74 +6893,29 @@
     {
       "id": "hg-smash64",
       "topic": "GAMES",
-      "prompt": "Name a fighter in the original Super Smash Bros.",
-      "scope": "Twelve N64 fighters, including unlockable characters.",
-      "source": "https://en.wikipedia.org/wiki/Super_Smash_Bros._(video_game)",
+      "prompt": "Name one of the three basic Minecraft dimensions as of 2025.",
+      "scope": "The base game, not mods or spinoffs.",
+      "source": "https://www.minecraft.net/en-us/article/minecraft-dimensions",
       "answers": [
         {
-          "name": "Mario",
-          "aliases": [],
-          "points": 6
-        },
-        {
-          "name": "Pikachu",
-          "aliases": [],
-          "points": 12
-        },
-        {
-          "name": "Donkey Kong",
+          "name": "Overworld",
           "aliases": [
-            "DK"
+            "The Overworld"
           ],
-          "points": 20
+          "points": 8
         },
         {
-          "name": "Link",
-          "aliases": [],
-          "points": 28
-        },
-        {
-          "name": "Kirby",
-          "aliases": [],
-          "points": 36
-        },
-        {
-          "name": "Yoshi",
-          "aliases": [],
-          "points": 45
-        },
-        {
-          "name": "Luigi",
-          "aliases": [],
+          "name": "Nether",
+          "aliases": [
+            "The Nether"
+          ],
           "points": 54
         },
         {
-          "name": "Samus",
+          "name": "End",
           "aliases": [
-            "Samus Aran"
+            "The End"
           ],
-          "points": 63
-        },
-        {
-          "name": "Fox",
-          "aliases": [
-            "Fox McCloud"
-          ],
-          "points": 72
-        },
-        {
-          "name": "Captain Falcon",
-          "aliases": [],
-          "points": 81
-        },
-        {
-          "name": "Ness",
-          "aliases": [],
-          "points": 90
-        },
-        {
-          "name": "Jigglypuff",
-          "aliases": [],
           "points": 100
         }
       ]
@@ -7463,51 +6996,23 @@
     {
       "id": "hg-chess-champs",
       "topic": "GAMES",
-      "prompt": "Name a classical World Chess Champion who held the title during 2000–2024.",
-      "scope": "Six champions; FIDE’s separate 1993–2006 title excluded. Surnames accepted.",
-      "source": "https://en.wikipedia.org/wiki/World_Chess_Championship",
+      "prompt": "Name a role in the original Among Us base game, before the 2021 role update.",
+      "scope": "The two original roles, not later specialist roles.",
+      "source": "https://www.innersloth.com/games/among-us/",
       "answers": [
         {
-          "name": "Magnus Carlsen",
+          "name": "Crewmate",
           "aliases": [
-            "Carlsen"
+            "Crewmates"
           ],
-          "points": 6
+          "points": 8
         },
         {
-          "name": "Garry Kasparov",
+          "name": "Impostor",
           "aliases": [
-            "Kasparov"
-          ],
-          "points": 21
-        },
-        {
-          "name": "Viswanathan Anand",
-          "aliases": [
-            "Vishy Anand",
-            "Anand"
-          ],
-          "points": 40
-        },
-        {
-          "name": "Vladimir Kramnik",
-          "aliases": [
-            "Kramnik"
-          ],
-          "points": 59
-        },
-        {
-          "name": "Ding Liren",
-          "aliases": [
-            "Ding"
-          ],
-          "points": 79
-        },
-        {
-          "name": "Gukesh Dommaraju",
-          "aliases": [
-            "Gukesh",
-            "D Gukesh"
+            "Imposter",
+            "Impostors",
+            "Imposters"
           ],
           "points": 100
         }
@@ -7516,25 +7021,52 @@
     {
       "id": "hg-utilities",
       "topic": "GAMES",
-      "prompt": "Name a utility on a standard English-language Monopoly board.",
-      "scope": "The two utilities, not streets or railroads.",
-      "source": "https://en.wikipedia.org/wiki/Monopoly_(game)",
+      "prompt": "Name a player team size in the standard Fortnite Battle Royale Solo/Duos/Trios/Squads modes.",
+      "scope": "Use the mode name or number of players; not limited-time modes.",
+      "source": "https://en.wikipedia.org/wiki/Fortnite_Battle_Royale",
       "answers": [
         {
-          "name": "Electric Company",
+          "name": "Solo",
           "aliases": [
-            "Electricity company"
+            "Solos",
+            "One",
+            "1"
           ],
-          "points": 6
+          "points": 8
         },
         {
-          "name": "Water Works",
+          "name": "Duos",
           "aliases": [
-            "Waterworks"
+            "Duo",
+            "Two",
+            "2"
+          ],
+          "points": 39
+        },
+        {
+          "name": "Trios",
+          "aliases": [
+            "Trio",
+            "Three",
+            "3"
+          ],
+          "points": 69
+        },
+        {
+          "name": "Squads",
+          "aliases": [
+            "Squad",
+            "Four",
+            "4"
           ],
           "points": 100
         }
       ]
     }
-  ]
+  ],
+  "editorialRevision": {
+    "version": 2,
+    "date": "2026-10-26",
+    "reason": "Player feedback: recognisable answer sets and more contemporary subjects. Stable question slots and full saved snapshots retain their meanings."
+  }
 }

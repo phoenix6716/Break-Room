@@ -13,7 +13,7 @@ This audit executes the shipped pure selectors and extracts the existing Stack U
 | Clue Ladder | 300 answers with five clues each | 60 days without repeating individual puzzles |
 | Seating Chart | 360 tables | 72 days without repeating individual tables |
 | Desk Jam | 180 boards: 120 Daily, 60 additional practice boards | 40 days without repeating individual Daily boards |
-| Sleeper | 160 questions / 1,004 answers | 32 days without repeating individual questions |
+| Sleeper | 160 questions / 921 answers | 32 days without repeating individual questions |
 | Stack Up | 160 familiar Daily stacks + 208 optional challenges | 32 days without repeating individual Daily stacks |
 | Pack | 212 bags, including 32 advanced Daily hard bags | 32 days without repeating individual bags |
 | Lowball | 128 products / 512 explicitly scoped regional references | 32 days without repeating individual products |
@@ -44,3 +44,7 @@ Structural coverage does not reverify factual answers, current retail prices, hu
 ## Live database compatibility
 
 On 25 October 2026, the narrow `time_sense_exact_daily_targets` migration replaced only the private Time Sense score helper. Live verification returned100 for both legacy and new exact-target runs, rejected an invalid25ms target, retained revoked anonymous/authenticated helper access and the empty search path, and confirmed unchanged save/Friends API definitions and enabled save RLS. The security-advisor findings were unchanged. This records database readiness; the frontend's deployment is verified separately by the Pages workflow.
+
+## Player-feedback revision — 26 October 2026
+
+Sleeper, Clue Ladder and Time Drop use editorial bank revision 2. IDs, category/topic slots, era buckets and each date's selected IDs are unchanged; their 32/60/66-day individual-content guarantees still hold. `tests/content-refresh.cjs` compares the archived banks across every possible old/new rolling-month boundary and checks that old frozen Dailies still complete. Existing captured content remains unchanged, so players resuming a run may see an older question. New questions arrive when a fresh run is created.

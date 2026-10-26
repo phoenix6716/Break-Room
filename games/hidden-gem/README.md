@@ -1,5 +1,10 @@
 # Sleeper
 
+## Player-feedback revision — 26 October 2026
+
+The owner requested more recognisable and recent questions. Revision 2 replaces 44 prompts with approachable sets including 2015–2025 Pixar films, Inside Out 2 emotions, recent books, Pokémon starters, Minecraft and familiar online language. The bank remains 160 questions over ten topics and 32 repeat-free Daily sets; it now contains 921 canonical answers. Original date slots/IDs remain fixed. Old question/answer/rating snapshots always win; no existing score or deadline is changed. Historical ID slugs remain stable authoring slots. See `design/content-reviews/2026-10-26.json` and `tests/content-refresh.cjs`. Recency is scoped explicitly, not a promise that every topic is breaking news.
+
+
 Approved display name **Sleeper** (25 October 2026), formerly Hidden Gem. Keep the `hidden-gem` internal ID/route, all native/cloud keys, frozen question snapshots, scores and achievements. The rebrand uses static radar/star artwork and the headline “Quiet answers. Big points.” Answer labels now match the sleeper-hit theme; numeric thresholds and points are unchanged. Current ten-game shelf: Laser → Time Drop → Clue Ladder → Seating Chart → Shift Work → Sleeper → Stack Up → Pack → Lowball → Time Sense. Stake, Prior, Alibi and Bouncer retain archived history; fourteen native formats are supported.
 
 ## Rules and scores
@@ -10,11 +15,11 @@ Each accepted answer has its own fixed integer editorial rating from 1–100. Di
 The first result is final. Daily has no replay/reset mechanism. Unlimited is free, has no Daily/cloud/profile score and resumes in this tab for the current account. Topic changes apply to the next question. Today's five IDs are excluded, leaving 155 eligible questions across all topics; no eligible ID repeats before the selected pool is exhausted.
 
 ## Content
-`content/hidden-gem-questions.json` is authoritative: 160 scoped prompts, 1,004 canonical answers, ten topics with sixteen questions each, plus aliases. Each question has a reference link and an explicit scope or historical cutoff. Questions range from familiar everyday knowledge to specialist answers. Ratings distinguish answers within a question; they do not establish equal real-world difficulty across questions.
+`content/hidden-gem-questions.json` is authoritative: 160 scoped prompts, 921 canonical answers, ten topics with sixteen questions each, plus aliases. Each question has a reference link and an explicit scope or historical cutoff. The current revision favours recognisable subjects, contemporary references and accessible answer sets. Ratings distinguish answers within a question; they do not establish equal real-world difficulty across questions.
 
 `scripts/build-hidden-gem-questions.cjs` reproduces the shipped `questions.js`. Daily cycles through 32 sets from 24 October 2026 Sydney, five different topics per set, no repeated question IDs before the cycle repeats. Do not reorder existing IDs or reinterpret frozen snapshots. The original standalone prototype and its v2 saves remain separate and are not imported into official stats.
 
-Scopes/aliases were editorially checked and automation validates every canonical answer, alias and score. References include primary sites and reference works; this is not independent primary-source certification of all 1,004 facts. Human question quality, missing aliases and difficulty calibration remain launch checks. Changes to future questions must retain existing captured snapshots and scores.
+Scopes/aliases were editorially checked and automation validates every canonical answer, alias and score. References include primary sites and reference works; this is not independent primary-source certification of all 921 facts. Human question quality, missing aliases and difficulty calibration remain launch checks. Changes to future questions must retain existing captured snapshots and scores.
 
 ## State and accessibility
 `hidden-gem-model.js` owns v1 records at `break-room:hidden-gem:daily:YYYY-MM-DD`. Store complete question/answer/rating snapshots, current input, retry state, immutable results, absolute deadline, round/phase and edit count. All edits save immediately. Refresh, Help, mode changes and backgrounding do not pause/reset the clock. Cross-tab progress loads before further input; account ownership changes block stale writes. A corrupt record is left untouched and explained; denied storage falls back to memory with a warning. Reset uses shared `daily-clock.js`, midnight Australia/Sydney, including DST.
