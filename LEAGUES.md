@@ -1,0 +1,25 @@
+# Private weekly leagues
+
+Leagues use the owner-approved three-game weekly format. Two required games rotate through a frozen five-week schedule covering all ten active games, with the same pair for every league. Each player automatically counts their highest weekly total from one other game. All seven completed Daily Arcade scores count per selected game; each contributes up to 700, giving a 2,100 maximum. Missing Dailies score zero; completed zeroes count as played; pending, future, Unlimited and archived-game results are excluded. The optional slot is one game across the week, not a different game each day. It may switch as weekly totals change. Ties share competition rank (1, 1, 3); optional-game ties use the stable internal ID order. Display rounding never changes ranking.
+
+The server derives Sydney's date and Monday–Sunday week, including DST. It reads only current-week saved snapshots and reuses all ten established native scorers. No native save, accuracy formula or historical score is rewritten. Membership includes already-completed Dailies from the current week, so joining midweek does not lose that week's synced results. Refresh tries the current browser's normal upload before reading standings; cloud activation remains an explicit Account action. Unsynced guest scores are not included.
+
+## Membership and privacy
+
+Create or join on leagues.html after signing in and explicitly confirming sharing. Membership shares the existing Friends display name, per-game weekly totals and completed Daily Arcade scores with current league members, independently of the Friends sharing toggle. Creating a missing Friends profile leaves Friends sharing off. Existing profiles are reused without silently renaming them. Emails, raw answers, guesses and unfinished runs never leave the server through leagues.
+
+Invites are random 128-bit UUID-derived tokens, stored only as hashes in the database. Link tokens use URL fragments (not server query strings); the page removes the fragment and keeps an incoming invite in tab session storage across login. Visiting never joins automatically. Only an owner can create a fresh invite; doing so invalidates the prior one. Links should be sent privately. The server caps leagues at 30 active players, membership at 10 active leagues, and directly created owned leagues at three. There is no public directory or email sending.
+
+Owners can remove players; removed players cannot reuse an invite to rejoin that league. Leaving removes the player's standings row and access immediately on subsequent requests. An owner leaving transfers ownership to the longest-standing remaining member and invalidates the old invite. The last member leaving closes the league. Blocking in Friends hides the two players from each other's standings and prevents joining a league containing a blocked player. Already viewed results cannot be retracted. Stale private UI is cleared on errors and account changes.
+
+This first version shows the current week and resets naturally on Monday. Archived weekly winners/history, notifications and public competitive rankings are not implemented. Scores are derived from browser-originated saves, not an anti-cheat system; there are no prizes.
+
+## Installation and verification
+
+Apply supabase/leagues.sql after setup.sql, friends.sql, hidden-gem.sql and shift-work.sql. It creates only the non-exposed br_league schema, RLS-protected tables with all direct browser privileges revoked, private constrained helpers, and public.league_hub as a security-invoker wrapper. The private privileged API derives identity from auth.uid() and verifies membership for every read and owner authority for management. No existing table grants, score readers, auth configuration, game saves or Friends sharing settings are changed. The accounts.js allowlist reuses the existing official client.
+
+tests/leagues-database.cjs checks repeatable installation, all ten native-reader parity, seven-day totals, optional choice, zero/missing/future/duplicate/archived results, calendar/DST boundaries, schedule coverage, consent, permissions, expired invites, blocks, ties, ownership and removal/leave. tests/leagues.cjs exercises the actual SQL through the official auth client with mocked transport and two browser contexts, including invite persistence, safe rendering, responsive widths, assets, offline clearing and cross-tab logout. Those tests do not establish live email delivery or live cross-device user playtesting. Current live schema readiness and Pages deployment must be verified separately.
+
+Use focused checks. No full game-session sweep is needed for league work. Privacy and Terms describe the new membership/sharing behavior before the UI is published.
+
+Live schema was applied on 26 October 2026 through the Supabase migration tool. Live checks confirmed RLS and revoked direct authenticated table reads. The advisor's two new no-policy informational notices reflect deliberate deny-by-default private tables, accessed only through the membership-checked API; no new exposed security-definer warning was introduced. Repository/browser checks and Pages publication are separate checks.
