@@ -3,3 +3,5 @@
 
 .league-entry summary::after{content:'+';margin-left:auto;font-size:20px}.league-entry details[open]>summary::after{content:'−'}
 @media(max-width:650px){.league-slot{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;padding:10px}.league-slot span{grid-column:1/-1}.league-slot strong{font-size:16px;margin:0}.league-slot small{font-size:11px;text-align:right;align-self:center}}
+
+.league-required+.friend-fine{margin-top:18px}
