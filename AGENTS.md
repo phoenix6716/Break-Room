@@ -1,3 +1,9 @@
+## Private weekly leagues — owner-approved format, 26 October 2026
+
+The owner approved a three-game weekly competition: two required games rotate each week, and the third slot automatically counts each player's highest weekly total from the other eight active games. The optional slot is one distinct game across the whole week, not a different game each day. Sum all seven completed Daily Arcade scores for each counted game (up to 700 each), then add the three game totals for a maximum of 2,100. Missed Dailies contribute zero; Unlimited never counts. Weeks run Monday–Sunday in Australia/Sydney, resetting Monday at midnight.
+
+This supersedes the proposed five-game (three required plus two optional) format, best-Daily-of-week scoring and placement-based league points. Preserve existing native/Arcade formulas and saves. This is an agreed design, not an implemented or deployed leagues feature. Required-game scheduling, invites/membership and standings still need implementation and focused verification. Do not represent the current Friends average as this weekly total.
+
 ## Final card illustration refinement — owner direction, 26 October 2026
 
 The owner still found Time Sense too plain and requested slightly larger Pack, Lowball, Laser, Seating Chart and Desk Jam illustrations. Time Sense now combines its pixel stopwatch with a 5s target tile, coral stop control and short timing-marker line. It remains decorative card art; the game rules and blind timing are unchanged.

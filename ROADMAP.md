@@ -1,5 +1,12 @@
 # Break Room launch roadmap
 
+## Private weekly leagues — owner-approved format, 26 October 2026
+
+The owner approved a three-game weekly competition: two required games rotate each week, and the third slot automatically counts each player's highest weekly total from the other eight active games. The optional slot is one distinct game across the whole week, not a different game each day. Sum all seven completed Daily Arcade scores for each counted game (up to 700 each), then add the three game totals for a maximum of 2,100. Missed Dailies contribute zero; Unlimited never counts. Weeks run Monday–Sunday in Australia/Sydney, resetting Monday at midnight.
+
+This supersedes the proposed five-game (three required plus two optional) format, best-Daily-of-week scoring and placement-based league points. Preserve existing native/Arcade formulas and saves. This is an agreed design, not an implemented or deployed leagues feature. Required-game scheduling, invites/membership and standings still need implementation and focused verification. Do not represent the current Friends average as this weekly total.
+
+
 ## Current release: Seating Chart
 
 Nine active games and twelve supported native cloud formats including archives. Seating Chart adds five untimed Daily seating puzzles, 360 frozen tables / 72 Daily sets, immediate draft saving and free Unlimited. Read [its current contract](games/seating-chart/README.md) for scoring, accessibility, save/schema and verification details. This supersedes older roster counts below; prior game contracts remain compatibility documentation.
