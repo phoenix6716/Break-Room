@@ -1,0 +1,36 @@
+/* Decorative art never captures input or changes native board geometry. */
+.native-game-art{display:block;object-fit:contain;pointer-events:none;user-select:none}
+[data-game-art=stack-up] .card-symbol{width:56px;height:56px;background:none;border:0;box-shadow:none;padding:0;flex:none}
+.card-symbol .native-game-art{width:100%;height:100%}
+[data-game-art=seating-chart] .sc-pool button{display:flex;align-items:center;gap:6px}
+.native-guest-copy{min-width:0}.native-guest-copy small{display:block}
+.sc-pool .native-portrait{width:30px;height:34px;flex:none}
+.sc-seat .native-portrait{width:24px;height:24px;margin:auto}
+[data-game-art=seating-chart] .sc-seat small{font-size:8px;line-height:1}
+[data-game-art=seating-chart] .sc-seat>span{font-size:10px;line-height:1.1}
+.native-furniture-art{position:absolute;inset:3px;width:calc(100% - 6px);height:calc(100% - 6px);object-fit:fill}
+[data-game-art=shift-work] .piece-letter{font-size:12px;position:absolute;bottom:2px;right:4px;background:#fffdf5d9;padding:1px 3px;z-index:1}
+[data-game-art=laser] .laser-mirror{inset:8%;width:84%;height:84%;border:0;background:none;box-shadow:none;transform:none}
+[data-game-art=laser] .laser-mirror.back{transform:rotate(90deg)}
+[data-game-art=laser] .laser-bullseye,[data-game-art=laser] .laser-block{inset:10%;border:0;border-radius:0;background:none;box-shadow:none}
+[data-game-art=laser] .laser-bullseye:after{display:none}
+[data-game-art=laser] .laser-entry{width:24px;height:24px;border:0;background:none}
+[data-game-art=laser] .laser-cell .native-game-art{width:100%;height:100%}
+[data-game-art=laser] .laser-coordinate{z-index:2;background:#fffdf5d9;padding:1px}
+.cl-climber .native-game-art{width:26px;height:42px}
+.cl-rung.locked{position:relative}.native-lock{position:absolute;right:10px;top:10px;width:18px;height:18px}
+img.hg-topic-art{width:42px;height:42px;image-rendering:auto}
+img.hg-topic-art.large{width:96px;height:96px}
+[data-game-art=time-drop] #era-tag{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.native-era-art{width:64px;height:52px}
+body[data-clock-art-loaded=true] .clock-dial{border:0;border-radius:0;box-shadow:none;background:transparent url('assets/game-art/timing/stopwatch.svg?v=objects-20261027') center/contain no-repeat}
+body[data-clock-art-loaded=true] .clock-dial>*{visibility:hidden}
+[data-game-art=lowball] .shelf-price-tag{border:0;box-shadow:none;background:transparent url('assets/game-art/retail/price-tag.svg?v=objects-20261027') center/100% 100% no-repeat;width:92px;min-width:0;height:94px;box-sizing:border-box;padding:34px 8px 8px}
+[data-game-art=lowball] .shelf-price-tag:before{display:none}
+[data-game-art=lowball] .product-label:after{background:transparent url('assets/game-art/retail/scanner.svg?v=objects-20261027') center/contain no-repeat;width:38px;height:38px}
+[data-game-art=lowball] .receipt-header{background:url('assets/game-art/retail/shop.svg?v=objects-20261027') left top/42px 42px no-repeat;padding-left:54px}
+@media(max-width:750px){
+ .sc-seat .native-portrait{width:18px;height:18px}
+ [data-game-art=seating-chart] .sc-seat small{font-size:7px}
+ [data-game-art=lowball] .shelf-price-tag{width:68px;height:82px;padding:31px 5px 6px}
+}
