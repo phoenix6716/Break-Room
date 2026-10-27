@@ -4,7 +4,7 @@ const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
 const ids=['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','pack','lowball','inner-clock'];
 const names=['Laser','Time Drop','Clue Ladder','Seating Chart','Desk Jam','Sleeper','Stack Up','Pack','Lowball','Time Sense'];
 const dir='.artifacts/game-scenes';fs.mkdirSync(dir,{recursive:true});
-const snapshots={desktop:[],mobile:[],review:[]};
+const snapshots={desktop:[],mobile:[],review:[],environment:[]};
 async function pause(p){await p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));}
 async function view(page,id){
  await page.goto(base+'/games/'+id+'/index.html');
@@ -100,21 +100,21 @@ async function action(p,id){
   }
   const c=await browser.newContext({viewport:{width:1440,height:1100},reducedMotion:'reduce'});
   await c.addInitScript(()=>localStorage.setItem('pc_help_seen','1'));
-  for(const id of ids){const page=await c.newPage();const p=await view(page,id);await shot(p,id,'desktop');assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,id+' desktop layout');await page.close();}
+  for(const id of ids){const page=await c.newPage();const p=await view(page,id);await shot(p,id,'desktop');const environment=path.join(dir,'environment-'+id+'.png');await page.screenshot({path:environment,animations:'disabled'});snapshots.environment.push({id,file:environment});assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,id+' desktop layout');await page.close();}
   await c.close();
   const sheet=await browser.newPage();
   for(const [group,images]of Object.entries(snapshots)){
    const inputs=images.map(({id,file})=>({name:names[ids.indexOf(id)],src:'data:image/png;base64,'+fs.readFileSync(file).toString('base64')}));
-   const data=await sheet.evaluate(async inputs=>{
-    const canvas=document.createElement('canvas');canvas.width=800;canvas.height=2840;const ctx=canvas.getContext('2d');ctx.fillStyle='#f4eddc';ctx.fillRect(0,0,canvas.width,canvas.height);
+   const data=await sheet.evaluate(async ({inputs,wide})=>{
+    const canvas=document.createElement('canvas');const tw=wide?600:400,th=wide?500:568;canvas.width=tw*2;canvas.height=th*5;const ctx=canvas.getContext('2d');ctx.fillStyle='#f4eddc';ctx.fillRect(0,0,canvas.width,canvas.height);
     for(let i=0;i<inputs.length;i++){
      const tile=inputs[i],img=new Image();img.src=tile.src;await img.decode();
-     const x=i%2*400,y=Math.floor(i/2)*568,scale=Math.min(388/img.width,518/img.height),w=img.width*scale,h=img.height*scale;
-     ctx.fillStyle='#17263a';ctx.fillRect(x,y,400,32);ctx.fillStyle='#fffaf0';ctx.font='bold 16px sans-serif';ctx.fillText(tile.name,x+12,y+22);
-     ctx.drawImage(img,x+(400-w)/2,y+38+(518-h)/2,w,h);
+     const x=i%2*tw,y=Math.floor(i/2)*th,scale=Math.min((tw-12)/img.width,(th-50)/img.height),w=img.width*scale,h=img.height*scale;
+     ctx.fillStyle='#17263a';ctx.fillRect(x,y,tw,32);ctx.fillStyle='#fffaf0';ctx.font='bold 16px sans-serif';ctx.fillText(tile.name,x+12,y+22);
+     ctx.drawImage(img,x+(tw-w)/2,y+38+(th-50-h)/2,w,h);
     }
     return canvas.toDataURL('image/jpeg',.82).split(',')[1];
-   },inputs);
+   },{inputs,wide:group==='environment'});
    fs.writeFileSync(path.join(dir,group+'-contact.jpg'),Buffer.from(data,'base64'));
    console.log('SCENE_PREVIEW_'+group.toUpperCase()+'='+data);
   }

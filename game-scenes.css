@@ -5,10 +5,6 @@ body[data-game-scene]{--scene-ground:#e7eee8;--scene-line:#17263a0b;--scene-acce
 [data-game-scene] #game-panel{position:relative;isolation:isolate}
 [data-game-scene] :is(.button,button):active:not(:disabled){box-shadow:1px 1px 0 #17263a}
 .scene-set-dressing{pointer-events:none;user-select:none}
-.scene-pulse{animation:scene-settle 260ms cubic-bezier(.2,.8,.2,1)}
-.scene-paper-in{animation:scene-paper-in 240ms cubic-bezier(.2,.8,.2,1)}
-@keyframes scene-settle{0%{filter:brightness(1.07)}100%{filter:brightness(1)}}
-@keyframes scene-paper-in{from{opacity:.7;translate:0 8px}to{opacity:1;translate:0 0}}
 
 /* LASER / optical breadboard, enamel controls and a connected light path. */
 body[data-game-scene=laser]{--scene-ground:#dfeaed;--scene-accent:#9acbdb;background-image:linear-gradient(#517e8d12 1px,transparent 1px),linear-gradient(90deg,#517e8d12 1px,transparent 1px),linear-gradient(#517e8d09 1px,transparent 1px),linear-gradient(90deg,#517e8d09 1px,transparent 1px);background-size:96px 96px,96px 96px,16px 16px,16px 16px}
