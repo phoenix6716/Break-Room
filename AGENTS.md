@@ -332,3 +332,10 @@ Use only the existing header **?** button to open each game’s How to play dial
 ## Retired games hidden everywhere — owner decision, 27 October 2026
 
 Only the ten current games appear in public routes, menus, profile history, statistics, activity and achievements. This supersedes earlier instructions to expose archived games or keep their earned badges visible. Stake, Prior, Alibi and Bouncer and the six cancelled placeholders redirect to the home shelf; their engines and question banks must not ship. Preserve private native saves, cloud data, scoring adapters and repository source for compatibility. Profile totals, averages and streaks are computed only from current games. Source-only legacy browser fixtures use ARCADE_LEGACY_TEST_URL; public removal tests always use the built artifact.
+
+
+## Game-specific sets and motion — owner direction, 27 October 2026
+
+Give each current game a setting as closely tied to its play as Lowball's shop counter. `game-scenes.css` scopes ten physical visual themes to `data-game-scene`; `game-scenes.js` adds finite local interaction feedback and Sleeper's original score-tower prop. Preserve the shared header, centre line, reset rail, help/stats, native artwork, controls, frozen content, saves and scores. Animations follow actual moves, clue advances, submissions and new rounds; hydration and remote saves must stay quiet. Respect reduced motion, cancel effects on backgrounding, and never delay or disable actions for an effect. Time Sense must remain completely still during timing, with its measurement ahead of all presentation work. No new audio or processors.
+
+Test the ten affected public games, reduced/normal motion, quiet hydration, native save continuity, phone/tablet/desktop layouts and real action/review states. Visually inspect screenshots of the production artifact. The homepage and social top bar are unchanged by these scoped game sets.

@@ -98,6 +98,7 @@ function selectChecks(changed,available,{full=false}={}){
   else if(file==='arcade-score.css'){layout();}
   else if(file==='daily-clock.js'){add('daily-clock.cjs','homepage-reset.cjs');GAMES.forEach(id=>game(id));}
   else if(/^practice-session\.(?:js|css)$/.test(file)){add('practice-session-rules.cjs','extended-play.cjs','replay-unlimited.cjs');}
+  else if(/^game-scenes\.(?:js|css)$/.test(file)){add('game-scenes.cjs','smoke.cjs','mobile-access.cjs','game-feel.cjs');['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','pack','lowball','inner-clock'].forEach(id=>game(id));}
   else if(/^game-feel\.(?:js|css)$/.test(file)){add('game-feel.cjs');}
   else if(/^(?:game-shell|game-access|game-dialog|game-layout|game-flow|daily-reset|break-room|styles|placeholder-layout|prototype-pages)\.(?:js|css)$/.test(file)){layout();}
   else if(file==='stack-layout.css'){game('stack-up');add('layout-goals.cjs');}
