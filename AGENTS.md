@@ -1,3 +1,9 @@
+## No answer giveaways — owner correction, 27 October 2026
+
+Sleeper descriptions must explain the scope without naming accepted answers or aliases, listing the solution set, or using an answer as a release cutoff. Use dates and neutral boundary wording. Where a prompt must name a series or character that is itself an accepted answer, assign that answer the minimum 1 point; it must never be a Sleeper/Breakout giveaway. Multiple such answers can share the 1-point floor. These are editorial common-answer choices, not measured popularity.
+
+Revision 4 repairs 39 question slots, including the plant/renewable-source prompts, and replaces the organ-identification clues with the conventional five-vital-organs question (liver replaces stomach). IDs, topics, schedule, timers and score formulas stay fixed; captured revision-3 questions and ratings remain authoritative. Regression checks scan all 160 prompts/descriptions and complete old snapshots at their captured scores. See `design/content-reviews/2026-10-27-sleeper-no-giveaways.json`. No SQL update is required.
+
 ## Broader answer lists — 27 October 2026
 
 Revision 3 integrates the 96 drafted WORLD, SPORT, FILM, BOOKS, GAMES and SPACE slots, with 4013 canonical answers across the full 160-question bank. The other four topics remain unchanged. IDs, topics, calendar slots, 32-day rotation, 30-second deadlines, first-result locks and native/Arcade formulas are unchanged. Existing full snapshots keep their captured questions and ratings. Revision 2 is archived under `content/archive/2026-10-26/`.

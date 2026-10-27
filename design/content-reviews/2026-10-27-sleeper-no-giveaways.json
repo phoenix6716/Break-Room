@@ -1,0 +1,599 @@
+{
+  "date": "2026-10-27",
+  "game": "hidden-gem",
+  "baseRevision": 3,
+  "revision": 4,
+  "reason": "Owner feedback: descriptions were naming accepted answers, including high-scoring ones.",
+  "policy": "Descriptions define boundaries without naming accepted answers or aliases. Unavoidable character/series names in a prompt receive the minimum 1-point rating. Existing snapshots and scores remain unchanged.",
+  "questions": 160,
+  "answers": 4013,
+  "changes": [
+    {
+      "id": "pixar-2010",
+      "topic": "FILM",
+      "before": {
+        "prompt": "Name a Pixar feature film released by the end of 2025.",
+        "scope": "Full-length Pixar films through Elio, including streaming releases; shorts excluded."
+      },
+      "after": {
+        "prompt": "Name a Pixar feature film released by the end of 2025.",
+        "scope": "Full-length Pixar films released by the end of 2025, including streaming releases; shorts excluded."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "decathlon",
+      "topic": "SPORT",
+      "before": {
+        "prompt": "Name a sport or discipline contested at the Paris 2024 Olympics.",
+        "scope": "Paris 2024 sports and disciplines; individual distances and weight classes excluded. Cycling includes road, track, BMX racing/freestyle and mountain biking."
+      },
+      "after": {
+        "prompt": "Name a sport or discipline contested at the Paris 2024 Olympics.",
+        "scope": "Paris 2024 sports and named disciplines both count. Individual race distances, weight classes and pieces of equipment do not."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "planets",
+      "topic": "SPACE",
+      "before": {
+        "prompt": "Name a Solar System moon discovered before 1990.",
+        "scope": "Natural moons discovered before 1 January 1990, including Earth's Moon. Use the present name; not asteroids or artificial satellites."
+      },
+      "after": {
+        "prompt": "Name a Solar System moon discovered before 1990.",
+        "scope": "Natural satellites discovered before 1 January 1990. Use the present name; not asteroids or artificial satellites."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "south-america",
+      "topic": "WORLD",
+      "before": {
+        "prompt": "Name a sovereign country in Central or South America.",
+        "scope": "UN M49 Central America, including Mexico, or South America; sovereign UN members only."
+      },
+      "after": {
+        "prompt": "Name a sovereign country in Central or South America.",
+        "scope": "Sovereign UN members in Central or South America, using the UN M49 regional classification."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "harry-potter",
+      "topic": "BOOKS",
+      "before": {
+        "prompt": "Name a Hogwarts student in the Harry Potter novels.",
+        "scope": "Named students attending during Harry's seven-book story, not adult former students."
+      },
+      "after": {
+        "prompt": "Name a Hogwarts student in the Harry Potter novels.",
+        "scope": "Named students attending during the original seven-book story, not adult former students."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "chess-pieces",
+      "topic": "GAMES",
+      "before": {
+        "prompt": "Name a playable fighter in Super Smash Bros. Ultimate.",
+        "scope": "Official fighters and named selectable variants, including DLC, Pokemon Trainer's Pokemon, Koopalings and Alex/Zombie/Enderman. No generic costumes."
+      },
+      "after": {
+        "prompt": "Name a playable fighter in Super Smash Bros. Ultimate.",
+        "scope": "Official fighters and named selectable variants, including DLC and named alternate characters. No generic costumes."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-nordic",
+      "topic": "WORLD",
+      "before": {
+        "prompt": "Name a US state.",
+        "scope": "All 50 states. Washington, D.C. and territories are excluded."
+      },
+      "after": {
+        "prompt": "Name a US state.",
+        "scope": "All 50 states. The federal district and overseas territories are excluded."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-uk",
+      "topic": "WORLD",
+      "before": {
+        "prompt": "Name a country with a Mediterranean coastline.",
+        "scope": "Sovereign countries and Palestine; includes shores on the Adriatic and Aegean."
+      },
+      "after": {
+        "prompt": "Name a country with a Mediterranean coastline.",
+        "scope": "Countries and recognised observer states bordering the Mediterranean or its connected marginal seas."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-benelux",
+      "topic": "WORLD",
+      "before": {
+        "prompt": "Name a UN member country in the UN's Asia region.",
+        "scope": "UN M49 Asia, sovereign UN members only. Includes Turkey and Cyprus; Russia is grouped in Europe and Palestine is not a UN member."
+      },
+      "after": {
+        "prompt": "Name a UN member country in the UN's Asia region.",
+        "scope": "Sovereign UN members classified in Asia by UN M49. Transcontinental countries follow that classification."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-summer-hosts",
+      "topic": "WORLD",
+      "before": {
+        "prompt": "Name a city that hosted the Summer Olympics before 2025.",
+        "scope": "Official Summer Games hosts through Paris 2024; cancelled Games excluded. Stockholm also held the 1956 equestrian events."
+      },
+      "after": {
+        "prompt": "Name a city that hosted the Summer Olympics before 2025.",
+        "scope": "Official Summer Games host cities through the end of 2024, including the separate equestrian host in 1956. Cancelled Games excluded."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-halogens",
+      "topic": "SCIENCE",
+      "before": {
+        "prompt": "Name a main part of a flowering plant from roots up to fruit.",
+        "scope": "The six basic parts taught in school: roots, stem, leaves, flowers, fruit and seeds."
+      },
+      "after": {
+        "prompt": "Name one of the six main parts of a flowering plant.",
+        "scope": "The six basic structures commonly taught at school; not cells, tissues or specialised reproductive parts."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-alkaline-earth",
+      "topic": "SCIENCE",
+      "before": {
+        "prompt": "Name a renewable energy source in this group: sun, wind, moving water, Earth's heat or organic material.",
+        "scope": "Give the energy-source name rather than the equipment; the five groups are described in the question."
+      },
+      "after": {
+        "prompt": "Name one of the five major renewable energy sources.",
+        "scope": "The five main source categories; give an energy source rather than equipment."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-spectrum",
+      "topic": "SCIENCE",
+      "before": {
+        "prompt": "Name a major band of the electromagnetic spectrum.",
+        "scope": "Seven broad bands, not individual visible colours."
+      },
+      "after": {
+        "prompt": "Name a major band of the electromagnetic spectrum.",
+        "scope": "Seven broad bands; give a band name rather than an individual colour."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-rna",
+      "topic": "SCIENCE",
+      "before": {
+        "prompt": "Name a human organ in this set: the blood pump, main breathing organs, food sac, main filtering pair or thinking organ.",
+        "scope": "Use the everyday organ name. The five descriptions define the accepted set."
+      },
+      "after": {
+        "prompt": "Name one of the five traditionally recognised vital organs.",
+        "scope": "The conventional five-organ teaching group; give an everyday organ name, not tissues or cell types."
+      },
+      "answerChanges": [
+        {
+          "before": {
+            "name": "Stomach",
+            "aliases": [],
+            "points": 54
+          },
+          "after": {
+            "name": "Liver",
+            "aliases": [],
+            "points": 54
+          }
+        }
+      ]
+    },
+    {
+      "id": "hg-star-wars",
+      "topic": "FILM",
+      "before": {
+        "prompt": "Name a Star Wars feature film.",
+        "scope": "The nine saga films, Rogue One, Solo and the 2008 animated theatrical film. TV episodes and specials excluded."
+      },
+      "after": {
+        "prompt": "Name a Star Wars feature film.",
+        "scope": "The nine saga films, the two live-action anthology features and the 2008 animated theatrical feature. TV episodes and specials excluded."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-nolan",
+      "topic": "FILM",
+      "before": {
+        "prompt": "Name a film directed by Steven Spielberg and released before 2025.",
+        "scope": "Features he directed, including the TV film Duel. Producer-only credits excluded."
+      },
+      "after": {
+        "prompt": "Name a film directed by Steven Spielberg and released before 2025.",
+        "scope": "Features he directed, including his feature-length television debut. Producer-only credits excluded."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-parr",
+      "topic": "FILM",
+      "before": {
+        "prompt": "Name a named character in Encanto, Frozen or Moana.",
+        "scope": "The original three theatrical films, not sequels; named animals count."
+      },
+      "after": {
+        "prompt": "Name a named character in Encanto, Frozen or Moana.",
+        "scope": "The original three theatrical films, not sequels; named animals count."
+      },
+      "answerChanges": [
+        {
+          "before": {
+            "name": "Moana",
+            "points": 77,
+            "aliases": []
+          },
+          "after": {
+            "name": "Moana",
+            "points": 1,
+            "aliases": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "hg-shrek",
+      "topic": "FILM",
+      "before": {
+        "prompt": "Name a named character in the Shrek or Puss in Boots films.",
+        "scope": "The Shrek films and both Puss in Boots features through 2022; named collective groups count."
+      },
+      "after": {
+        "prompt": "Name a named character in the Shrek or Puss in Boots films.",
+        "scope": "The main franchise and both theatrical spinoff features released through 2022; named collective groups count."
+      },
+      "answerChanges": [
+        {
+          "before": {
+            "name": "Puss in Boots",
+            "points": 9,
+            "aliases": [
+              "Puss"
+            ]
+          },
+          "after": {
+            "name": "Puss in Boots",
+            "points": 1,
+            "aliases": [
+              "Puss"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hg-medley",
+      "topic": "SPORT",
+      "before": {
+        "prompt": "Name a men's Ballon d'Or winner from 1956–2024.",
+        "scope": "France Football's men's award through 2024. Ronaldo alone means the Brazilian; Suarez means the Spanish 1960 winner."
+      },
+      "after": {
+        "prompt": "Name a men's Ballon d'Or winner from 1956–2024.",
+        "scope": "France Football's men's award through 2024. Use enough of the player's name to distinguish people who share a surname."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-men-gymnastics",
+      "topic": "SPORT",
+      "before": {
+        "prompt": "Name a Major League Baseball team.",
+        "scope": "The 30 franchises in 2025; Oakland Athletics also resolves to Athletics."
+      },
+      "after": {
+        "prompt": "Name a Major League Baseball team.",
+        "scope": "The 30 franchises in 2025; familiar nicknames and former location names are accepted."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-women-gymnastics",
+      "topic": "SPORT",
+      "before": {
+        "prompt": "Name a team in the 2024–25 NHL season.",
+        "scope": "The 32 teams in that season; Utah Mammoth is a later name."
+      },
+      "after": {
+        "prompt": "Name a team in the 2024–25 NHL season.",
+        "scope": "The 32 teams under their 2024–25 season names; later renames excluded."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-cycling",
+      "topic": "SPORT",
+      "before": {
+        "prompt": "Name a team that played in the 2024 men's T20 World Cup.",
+        "scope": "The 20 qualifying cricket teams; West Indies count as one team."
+      },
+      "after": {
+        "prompt": "Name a team that played in the 2024 men's T20 World Cup.",
+        "scope": "The 20 qualifying national or regional cricket teams; not individual players."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-coins",
+      "topic": "AUSTRALIA",
+      "before": {
+        "prompt": "Name a circulating Australian coin denomination as of 2025.",
+        "scope": "Use cents for 5–50, dollars for 1 or 2. Withdrawn 1c and 2c excluded."
+      },
+      "after": {
+        "prompt": "Name a circulating Australian coin denomination as of 2025.",
+        "scope": "Current circulating denominations; give the value with its currency unit. Withdrawn denominations excluded."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-narnia",
+      "topic": "BOOKS",
+      "before": {
+        "prompt": "Name a Roald Dahl children's book.",
+        "scope": "Children's fiction/verse and the two memoirs. Billy and the Minpins resolves to The Minpins."
+      },
+      "after": {
+        "prompt": "Name a Roald Dahl children's book.",
+        "scope": "Children's fiction and verse, plus the author's two memoirs. Alternate published titles resolve to the same book."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-hunger",
+      "topic": "BOOKS",
+      "before": {
+        "prompt": "Name a novel in The Hunger Games, Divergent, Twilight or The Maze Runner series.",
+        "scope": "Novels through 2025, including prequels/retellings; short-story collections and novellas excluded."
+      },
+      "after": {
+        "prompt": "Name a novel in The Hunger Games, Divergent, Twilight or The Maze Runner series.",
+        "scope": "Novels through 2025, including prequels/retellings; short-story collections and novellas excluded."
+      },
+      "answerChanges": [
+        {
+          "before": {
+            "name": "Divergent",
+            "points": 25,
+            "aliases": []
+          },
+          "after": {
+            "name": "Divergent",
+            "points": 1,
+            "aliases": []
+          }
+        },
+        {
+          "before": {
+            "name": "Twilight",
+            "points": 39,
+            "aliases": []
+          },
+          "after": {
+            "name": "Twilight",
+            "points": 1,
+            "aliases": []
+          }
+        },
+        {
+          "before": {
+            "name": "The Maze Runner",
+            "points": 67,
+            "aliases": []
+          },
+          "after": {
+            "name": "The Maze Runner",
+            "points": 1,
+            "aliases": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "hg-pooh",
+      "topic": "BOOKS",
+      "before": {
+        "prompt": "Name a Discworld novel.",
+        "scope": "The 41 main books, including illustrated The Last Hero; companion guides excluded."
+      },
+      "after": {
+        "prompt": "Name a Discworld novel.",
+        "scope": "The 41 main books, including the illustrated novel; companion guides excluded."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-hogwarts",
+      "topic": "BOOKS",
+      "before": {
+        "prompt": "Name a member of the Fellowship or Thorin's company.",
+        "scope": "Tolkien's nine Fellowship members or fifteen members of Thorin's company. Shared Gandalf counts once."
+      },
+      "after": {
+        "prompt": "Name a member of the Fellowship or Thorin's company.",
+        "scope": "The nine members of the quest in The Lord of the Rings or the fifteen members of the quest in The Hobbit. Shared members count once."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-tickets",
+      "topic": "BOOKS",
+      "before": {
+        "prompt": "Name a book in Sarah J. Maas's three main series.",
+        "scope": "Throne of Glass, A Court of Thorns and Roses and Crescent City through 2025; includes their novella and story collection."
+      },
+      "after": {
+        "prompt": "Name a book in Sarah J. Maas's three main series.",
+        "scope": "Books in the author's three main fantasy series through 2025, including their novella and story collection."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-secret-seven",
+      "topic": "BOOKS",
+      "before": {
+        "prompt": "Name a Dog Man main-series book released by the end of 2024.",
+        "scope": "The first 13 main volumes; Cat Kid Comic Club is separate. The Dog Man prefix is optional when a subtitle is given."
+      },
+      "after": {
+        "prompt": "Name a Dog Man main-series book released by the end of 2024.",
+        "scope": "The first 13 main volumes; the related comic-club spinoff is separate. The series prefix is optional when a subtitle is given."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-galilean",
+      "topic": "SPACE",
+      "before": {
+        "prompt": "Name a named character in Star Wars.",
+        "scope": "Named characters from official screen canon through 2024; not fan characters. Darth Vader and Anakin refer to one person, with both names accepted."
+      },
+      "after": {
+        "prompt": "Name a named character in Star Wars.",
+        "scope": "Named characters from official screen canon through 2024; not fan characters. Alternate names for the same person share a rating."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-saturn",
+      "topic": "SPACE",
+      "before": {
+        "prompt": "Name a film where a main character physically travels into space.",
+        "scope": "Features released through 2024 where a principal human or alien physically travels beyond Earth; not dreams, virtual reality or robot-only trips from Earth."
+      },
+      "after": {
+        "prompt": "Name a film where a main character physically travels into space.",
+        "scope": "Features released through 2024 where a person or other sentient lead character physically travels beyond Earth; not dreams, virtual reality or robot-only trips from Earth."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-landings",
+      "topic": "SPACE",
+      "before": {
+        "prompt": "Name a planet or moon featured in Star Wars.",
+        "scope": "Named planets/moons in official screen canon and Jedi games through 2024. Artificial stations excluded; Starkiller Base resolves to the converted planet Ilum."
+      },
+      "after": {
+        "prompt": "Name a planet or moon featured in Star Wars.",
+        "scope": "Named planets and moons in official screen canon and the Jedi games through 2024. Converted natural worlds count; artificial stations do not."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-rocky",
+      "topic": "SPACE",
+      "before": {
+        "prompt": "Name a Doctor Who alien species or people.",
+        "scope": "Alien species, named peoples and robot races from television through 2024. Slitheen is accepted for Raxacoricofallapatorian; individual character names excluded."
+      },
+      "after": {
+        "prompt": "Name a Doctor Who alien species or people.",
+        "scope": "Alien species, named peoples and robot races from television through 2024. Familiar alternate group names are accepted; individual character names excluded."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-observatories",
+      "topic": "SPACE",
+      "before": {
+        "prompt": "Name a space telescope or astronomical observatory mission launched before 2025.",
+        "scope": "Launched astronomical space observatories, including joint/non-NASA missions and ISS's NICER instrument. Not ground-based or future telescopes."
+      },
+      "after": {
+        "prompt": "Name a space telescope or astronomical observatory mission launched before 2025.",
+        "scope": "Launched astronomical space observatories, including non-NASA and joint missions and space-station instruments. Not ground-based or future telescopes."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-asteroids",
+      "topic": "SPACE",
+      "before": {
+        "prompt": "Name a named Transformers character.",
+        "scope": "Named official characters through 2024, including combiners. Galvatron and Rodimus Prime are accepted for Megatron and Hot Rod in this list."
+      },
+      "after": {
+        "prompt": "Name a named Transformers character.",
+        "scope": "Named official characters through 2024, including combiners. Alternate identities in this list resolve to the original character's rating."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-sauces",
+      "topic": "EVERYDAY",
+      "before": {
+        "prompt": "Name a main topping on a classic Margherita pizza.",
+        "scope": "The traditional three: tomato, mozzarella and basil. Exclude the dough, oil, salt and optional extra garnishes."
+      },
+      "after": {
+        "prompt": "Name a main topping on a classic Margherita pizza.",
+        "scope": "The three principal toppings in the traditional recipe. Exclude the dough, oil, salt and optional extra garnishes."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-monopoly-colours",
+      "topic": "GAMES",
+      "before": {
+        "prompt": "Name a main Super Mario platform game released by the end of 2023.",
+        "scope": "Includes Maker, Run and Bowser's Fury; ports count as the original title, not Kart or Party."
+      },
+      "after": {
+        "prompt": "Name a main Super Mario platform game released by the end of 2023.",
+        "scope": "Main platform games through 2023, including the level-making games, mobile entry and standalone expansion. Ports count as the original title, not racing or party games."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-poker",
+      "topic": "GAMES",
+      "before": {
+        "prompt": "Name a hero playable in the original Overwatch.",
+        "scope": "The 32 heroes before Overwatch 2 launched in October 2022; McCree resolves to Cassidy."
+      },
+      "after": {
+        "prompt": "Name a hero playable in the original Overwatch.",
+        "scope": "The 32 heroes playable before the sequel launched in October 2022; former character names are accepted."
+      },
+      "answerChanges": []
+    },
+    {
+      "id": "hg-kart64",
+      "topic": "GAMES",
+      "before": {
+        "prompt": "Name a main-series Legend of Zelda game released before 2024.",
+        "scope": "Main series through Tears of the Kingdom; remasters count as the original title, not spinoffs."
+      },
+      "after": {
+        "prompt": "Name a main-series Legend of Zelda game released before 2024.",
+        "scope": "Main series released before 2024; remasters count as the original title, not spinoffs."
+      },
+      "answerChanges": []
+    }
+  ]
+}

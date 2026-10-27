@@ -9,7 +9,28 @@ const wide=B.find(q=>q.answers.length===151);assert(wide);assert.equal(M.match(w
 assert(M.puzzle({...wide,answers:Array.from({length:160},(_,i)=>({name:'Answer '+i,points:1+i%100,aliases:[]}))}));
 assert(!M.puzzle({...wide,answers:Array.from({length:161},(_,i)=>({name:'Answer '+i,points:1+i%100,aliases:[]}))}));
 const oldRun=M.create(previous,'2026-10-26');M.begin(oldRun,1000);for(let i=0;i<5;i++){M.draft(oldRun,oldRun.questions[i].answers[0].name,1001);assert(M.finish(oldRun,1002));if(i<4)M.next(oldRun,1000);}assert(M.record(oldRun,'2026-10-26'));
-for(const q of B){assert(M.puzzle(q),q.id);assert.equal(new Set(q.answers.map(a=>a.points)).size,Math.min(q.answers.length,100));assert(q.answers.some(a=>a.points===100));for(const a of q.answers)for(const x of [a.name,...a.aliases])assert.equal(M.match(q,x)?.name,a.name,q.id+': '+x);}
+for(const q of B){assert(M.puzzle(q),q.id);assert.equal(new Set(q.answers.map(a=>a.points)).size,Math.min(q.answers.length-Math.max(0,q.answers.filter(a=>a.points===1).length-1),100));assert(q.answers.some(a=>a.points===100));for(const a of q.answers)for(const x of [a.name,...a.aliases])assert.equal(M.match(q,x)?.name,a.name,q.id+': '+x);}
+
+// A reference/cutoff must never give away a scored answer before submission.
+const mentioned=(text,label)=>{const n=M.normal(label);return n.length>=3&&(' '+M.normal(text)+' ').includes(' '+n+' ');};
+const titleAnswers={
+ 'planets':['Moon'],'harry-potter':['Harry Potter'],'hg-potter':['Harry Potter'],
+ 'hg-star-wars':['A New Hope'],'hg-ghostbusters':['Sonic'],'hg-parr':['Moana'],
+ 'hg-shrek':['Shrek','Puss in Boots'],'hg-hunger':['The Hunger Games','Divergent','Twilight','The Maze Runner'],
+ 'hg-holmes':['Alice'],'hg-weasleys':['Diary of a Wimpy Kid'],'hg-secret-seven':['Dog Man'],
+ 'hg-tetris':['Mario'],'hg-kart64':['The Legend of Zelda']
+};
+for(const q of B)for(const a of q.answers)for(const label of [a.name,...a.aliases]){
+ assert(!mentioned(q.scope,label),q.id+' description gives away '+label);
+ if(mentioned(q.prompt,label)){assert(titleAnswers[q.id]?.includes(a.name),q.id+' unexpected answer in prompt: '+label);assert.equal(a.points,1,q.id+' named answer must receive minimum points');}
+}
+const preFix=require('../content/archive/2026-10-27/hidden-gem-questions.json').questions;
+for(const [id,input,points]of [['hg-parr','Moana',77],['hg-hunger','The Maze Runner',67],['hg-rna','Stomach',54]]){
+ const q=preFix.find(q=>q.id===id),r=M.createPractice(q,day,'old:'+id),frozen=encode(r.questions);
+ M.begin(r,1000);M.draft(r,input,1001);assert(M.finish(r,1002));assert(M.validRun(r));
+ assert.equal(r.picks[0].points,points);assert.equal(encode(r.questions),frozen);
+}
+
 const ids=[];for(let i=0;i<32;i++){const d=new Date(Date.UTC(2026,9,24+i)).toISOString().slice(0,10),qs=M.daily(B,d);assert.deepEqual(qs,M.daily([...B].reverse(),d));assert.equal(new Set(qs.map(q=>q.topic)).size,5);ids.push(...qs.map(q=>q.id));}assert.equal(new Set(ids).size,160);
 for(const [n,label]of [[0,'Time’s Up'],[1,'Familiar'],[19,'Familiar'],[20,'Nice Find'],[39,'Nice Find'],[40,'Offbeat'],[59,'Offbeat'],[60,'Hidden Gem'],[79,'Hidden Gem'],[80,'Crown Jewel'],[95,'Crown Jewel'],[100,'Crown Jewel']])assert.equal(M.scoreBand(n),label);
 const countries=B.find(q=>q.id==='countries-a');assert.equal(M.match(countries,'Azerbaijna').name,'Azerbaijan');assert.equal(M.match(countries,'Austria').name,'Austria');assert.equal(M.match(countries,'Canada'),null);
