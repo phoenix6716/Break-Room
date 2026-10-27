@@ -1,0 +1,168 @@
+/* Game-specific sets. Native engines own every control, deadline and result. */
+body[data-game-scene]{--scene-ground:#e7eee8;--scene-line:#17263a0b;--scene-accent:#91c7dc;background-color:var(--scene-ground);background-image:linear-gradient(var(--scene-line) 1px,transparent 1px),linear-gradient(90deg,var(--scene-line) 1px,transparent 1px);background-size:24px 24px;background-attachment:scroll}
+[data-game-scene] .br-game-title-group h1{text-shadow:3px 3px var(--scene-accent)}
+[data-game-scene] #game-panel{position:relative;isolation:isolate}
+[data-game-scene] :is(.button,button):active:not(:disabled){box-shadow:1px 1px 0 #17263a}
+.scene-set-dressing{pointer-events:none;user-select:none}
+.scene-pulse{animation:scene-settle 260ms cubic-bezier(.2,.8,.2,1)}
+.scene-paper-in{animation:scene-paper-in 240ms cubic-bezier(.2,.8,.2,1)}
+@keyframes scene-settle{0%{filter:brightness(1.07)}100%{filter:brightness(1)}}
+@keyframes scene-paper-in{from{opacity:.7;translate:0 8px}to{opacity:1;translate:0 0}}
+
+/* LASER / optical breadboard, enamel controls and a connected light path. */
+body[data-game-scene=laser]{--scene-ground:#dfeaed;--scene-accent:#9acbdb;background-image:linear-gradient(#517e8d12 1px,transparent 1px),linear-gradient(90deg,#517e8d12 1px,transparent 1px),linear-gradient(#517e8d09 1px,transparent 1px),linear-gradient(90deg,#517e8d09 1px,transparent 1px);background-size:96px 96px,96px 96px,16px 16px,16px 16px}
+[data-game-scene=laser] #game-panel{background:#edf4f2;box-shadow:6px 7px #17263a,10px 11px #91b3bc}
+[data-game-scene=laser] .laser-stage{background:#17263a;box-shadow:0 0 0 5px #17263a,0 0 0 8px #a3bcc3,7px 10px 0 #17263a;margin-top:20px;margin-bottom:24px}
+[data-game-scene=laser] .laser-grid{background:#17263a}
+[data-game-scene=laser] .laser-cell{background:#eef5f4;border-color:#17263a18}
+[data-game-scene=laser] .laser-cell:nth-child(even){background:#e1edef}
+[data-game-scene=laser] .laser-cell.fixed{background:#bbced1}
+[data-game-scene=laser] .laser-cell.placed{background:#c4e7f1}
+[data-game-scene=laser] .laser-cell.wall{background:#d1d9d3}
+[data-game-scene=laser] .laser-cell:not([aria-disabled=true]):hover{background:#f5df9d}
+[data-game-scene=laser] .laser-mirror{height:6px;box-shadow:0 3px #89aab5,0 -2px #fffdf5}
+[data-game-scene=laser] .laser-hud{padding:10px 12px;background:#17263a;color:#d5eced;border:2px solid #17263a;box-shadow:3px 3px #a3bcc3}
+[data-game-scene=laser] #fire-beam{background:#ee8070;color:#17263a;box-shadow:4px 5px #17263a;border-bottom-width:4px;letter-spacing:.06em}
+[data-game-scene=laser] .laser-entry{background:#e6ea8e}
+[data-game-scene=laser] .laser-feedback{border-left-width:8px}
+[data-game-scene=laser] .laser-feedback.hit{background:#e1edbc}
+[data-game-scene=laser] .beam-glow{stroke:#ffe9c9;stroke-width:19}
+[data-game-scene=laser] .beam-core{stroke:#ef6655;stroke-width:7}
+
+/* TIME DROP / archival paper, date stamp and a mechanical year readout. */
+body[data-game-scene=time-drop]{--scene-ground:#eee4cd;--scene-accent:#e4bf7b;background-image:repeating-linear-gradient(0deg,transparent 0 31px,#7a675912 31px 32px),linear-gradient(90deg,transparent 8%,#c2786520 8% 8.2%,transparent 8.2%);background-size:auto}
+[data-game-scene=time-drop] #game-panel{background:#e1ceb0}
+[data-game-scene=time-drop] .td-card{background-color:#fffaf0;background-image:linear-gradient(#8f9d9e12 1px,transparent 1px);background-size:100% 28px;border-top:10px solid #bb795d;box-shadow:4px 5px #17263a,8px 9px #c7b18e}
+[data-game-scene=time-drop] .td-kicker{display:inline-block;background:#f1dfb9;border:1px solid #b59b73;padding:5px 8px}
+[data-game-scene=time-drop] .era-tag{color:#835445;font-weight:900;letter-spacing:.12em}
+[data-game-scene=time-drop] .td-readout{background:#263e43;color:#f2edcd;border:3px solid #17263a;box-shadow:inset 0 4px #17263a,0 3px #bfa781;font-variant-numeric:tabular-nums;text-shadow:2px 2px #17263a;background-image:linear-gradient(transparent 49%,#17263a 49% 51%,transparent 51%)}
+[data-game-scene=time-drop] .td-steps button{background:#eee3cc;box-shadow:0 3px #ad997c}
+[data-game-scene=time-drop] .td-lock{background:#b9d8d8;border-bottom-width:4px}
+[data-game-scene=time-drop] .td-review{background:#fffaf0;border-top:7px solid #91b8ad;box-shadow:4px 4px #17263a}
+[data-game-scene=time-drop] .td-review h3{display:inline-block;padding:8px 12px;border:2px solid #3b6a5f;color:#285448;background:#e8f0de;rotate:-1deg}
+[data-game-scene=time-drop] .td-history li{background:#fffaf0;padding:14px;margin:10px 0;border:1px solid #a99b84}
+
+/* CLUE LADDER / a bound clue notebook, wooden rails and the original climber. */
+body[data-game-scene=clue-ladder]{--scene-ground:#e4e5d2;--scene-accent:#ddbb7b;background-image:linear-gradient(90deg,#636a4e0c 2px,transparent 2px),linear-gradient(#636a4e0c 1px,transparent 1px);background-size:48px 48px}
+[data-game-scene=clue-ladder] #game-panel{background:#c8d5bd}
+[data-game-scene=clue-ladder] .cl-card{background-color:#fffaf0;background-image:linear-gradient(#8aafbf17 1px,transparent 1px);background-size:100% 26px;border-top:14px solid #4e7771;box-shadow:4px 4px #17263a,8px 8px #e9dec4}
+[data-game-scene=clue-ladder] .cl-kicker{color:#34564f;letter-spacing:.12em}
+[data-game-scene=clue-ladder] .cl-ladder:before,[data-game-scene=clue-ladder] .cl-ladder:after{background:#cb975c;box-shadow:inset 1px 0 #efca86}
+[data-game-scene=clue-ladder] .cl-rung{background:#f8eed9;box-shadow:2px 3px #c5baa0}
+[data-game-scene=clue-ladder] .cl-rung.current{background:#f8dda0;border-left-width:5px}
+[data-game-scene=clue-ladder] .cl-rung.locked{background:#f3f0e5;box-shadow:none}
+[data-game-scene=clue-ladder] .cl-form input{background:#fffefa;box-shadow:inset 3px 3px #e9e1d0}
+[data-game-scene=clue-ladder] .cl-review{background:#e3edcf;border-left:8px solid #5c8364}
+[data-game-scene=clue-ladder] .cl-history li{background:#fffaf0;box-shadow:3px 3px #c4c3a7}
+
+/* SEATING CHART / gingham linen, porcelain places and a reception planner. */
+body[data-game-scene=seating-chart]{--scene-ground:#f0ded4;--scene-accent:#e0a896;background-image:linear-gradient(90deg,#bd837317 50%,transparent 50%),linear-gradient(#bd837317 50%,transparent 50%);background-size:44px 44px}
+[data-game-scene=seating-chart] #game-panel{background:#fff8eb;border-top:10px solid #b97d6d;box-shadow:6px 7px #17263a,10px 11px #d7b5a1}
+[data-game-scene=seating-chart] .sc-objective{background:#e4e7cc;border-color:#526649}
+[data-game-scene=seating-chart] .sc-ring{background:radial-gradient(circle,#d9c4a6 0 52%,transparent 52.5%);border-radius:50%}
+[data-game-scene=seating-chart] .sc-cloth{background:#f6eee0;background-image:radial-gradient(circle at 15% 50%,#83946b 0 3px,transparent 4px),radial-gradient(circle at 85% 50%,#b97d6d 0 3px,transparent 4px);border-color:#716751;box-shadow:0 0 0 5px #eee4cd,0 0 0 7px #716751,3px 5px #17263a40;color:#564d3c}
+[data-game-scene=seating-chart] .sc-seat{background:#fffcf2;box-shadow:inset 0 0 0 3px #fffcf2,inset 0 0 0 4px #c1b69d,2px 3px #8c746244}
+[data-game-scene=seating-chart] .sc-seat.empty{background:#eee4d1}
+[data-game-scene=seating-chart] .sc-seat.selected{background:#c0dce5;outline:3px solid #346f82;outline-offset:2px}
+[data-game-scene=seating-chart] .sc-seat.broken{background:#f3cfbf}
+[data-game-scene=seating-chart] .sc-pool button{background:#fffaf0;border-bottom-width:4px}
+[data-game-scene=seating-chart] .sc-pool button[aria-pressed=true]{background:#c0dce5}
+[data-game-scene=seating-chart] .sc-rules li{background:#fffdf5;border:0;border-left:3px solid #c99b86;box-shadow:0 2px #d8c7b1}
+[data-game-scene=seating-chart] .sc-rules li.related{background:#deebee;border-left-color:#346f82}
+[data-game-scene=seating-chart] .sc-review{background:#f1ead7;padding:16px;border:2px solid #b7a487}
+
+/* DESK JAM / office floor, drawing-board frame and the original furniture. */
+body[data-game-scene=shift-work]{--scene-ground:#dfe5d9;--scene-accent:#b5c791;background-image:linear-gradient(90deg,#6b7c5a12 1px,transparent 1px),linear-gradient(#6b7c5a12 1px,transparent 1px);background-size:48px 48px}
+[data-game-scene=shift-work] #game-panel{background:#f7f1df;border-top:10px solid #879e7c;box-shadow:6px 7px #17263a,10px 11px #b2bfa0}
+[data-game-scene=shift-work] .sw-top{border-bottom:1px dashed #9aab8d;padding-bottom:12px}
+[data-game-scene=shift-work] .sw-badge{background:#dee8c4;border-bottom-width:4px}
+[data-game-scene=shift-work] .sw-floor{background-color:#ece5d4;background-image:linear-gradient(90deg,#17263a20 1px,transparent 1px),linear-gradient(#17263a20 1px,transparent 1px),repeating-linear-gradient(0deg,transparent 0 7px,#b89c7020 7px 8px);background-size:calc(100%/6) calc(100%/6),calc(100%/6) calc(100%/6),100% 100%;box-shadow:0 0 0 4px #829880,0 0 0 7px #17263a,7px 10px #17263a30}
+[data-game-scene=shift-work] .sw-stage{margin-top:20px;margin-bottom:25px}
+[data-game-scene=shift-work] .sw-piece{box-shadow:2px 3px #17263a70,inset 0 2px #ffffff55}
+[data-game-scene=shift-work] .sw-piece svg{opacity:.88}
+[data-game-scene=shift-work] .sw-piece.target{background:#78b4ce}
+[data-game-scene=shift-work] .sw-review{border:2px solid #17263a;background:#e1e9c8;box-shadow:4px 4px #17263a;padding:18px}
+
+/* SLEEPER / a small quiz-show set, lit answer console and five score tiles. */
+body[data-game-scene=hidden-gem]{--scene-ground:#e4deed;--scene-accent:#c9abd9;background-image:linear-gradient(115deg,transparent 0 16%,#fffaf035 16% 29%,transparent 29%),linear-gradient(245deg,transparent 0 16%,#fffaf035 16% 29%,transparent 29%),linear-gradient(#8173940c 1px,transparent 1px);background-size:auto,auto,24px 24px}
+[data-game-scene=hidden-gem] #game-panel{background:#f8f1e9;border:3px solid #17263a;border-top:12px solid #726483;box-shadow:6px 7px #17263a,10px 11px #bfaccd}
+[data-game-scene=hidden-gem] .hg-rounds li{background:#e9ddeb;border-color:#40374d;box-shadow:2px 3px #b6a4bf}
+[data-game-scene=hidden-gem] .hg-rounds .done{background:#d4e4db}
+[data-game-scene=hidden-gem] .hg-rounds .current{background:#f4d98d}
+[data-game-scene=hidden-gem] .dc-round-top{padding:10px 12px;background:#e5dbe9;border:2px solid #726483;box-shadow:3px 3px #c7b9cb}
+[data-game-scene=hidden-gem] .dc-question{padding:20px 16px;background:#fffdf6;border:2px solid #17263a;box-shadow:4px 4px #c6b6ce;margin-top:18px}
+[data-game-scene=hidden-gem] .dc-answer-form{background:#343447;padding:16px;border:2px solid #17263a;box-shadow:4px 4px #b4a4bd}
+[data-game-scene=hidden-gem] .dc-answer-form legend,[data-game-scene=hidden-gem] .dc-answer-form .dc-small{color:#f5eee1}
+[data-game-scene=hidden-gem] .dc-answer-form input{background:#fffdf4;box-shadow:inset 3px 3px #d9cfb9}
+[data-game-scene=hidden-gem] .dc-answer-form .dc-error:not(:empty){background:#fff0dd;color:#8a2d24;padding:8px}
+[data-game-scene=hidden-gem] #lock-answer{background:#edca78;color:#17263a}
+[data-game-scene=hidden-gem] .dc-review{background:#eee5ef;border-top:7px solid #726483;padding:18px}
+[data-game-scene=hidden-gem] .dc-score-card{background:#fffaf0;box-shadow:4px 4px #c2b2cb}
+[data-game-scene=hidden-gem] .dc-score-card.gem{background:#f2dda0}
+[data-game-scene=hidden-gem] .hg-meter-track{height:34px;background:#fffaf0}
+[data-game-scene=hidden-gem] .hg-meter-fill{background:linear-gradient(to right,#e0dad2 0% 20%,#bcd4cd 20% 40%,#9cbfce 40% 60%,#b39ac9 60% 80%,#edc465 80% 100%)}
+.scene-score-tower{display:block;width:100%;height:auto}
+
+/* STACK UP / a sorting desk, layered index cards and an ordering rail. */
+body[data-game-scene=stack-up]{--scene-ground:#dce9e0;--scene-accent:#b2cfae;background-image:linear-gradient(45deg,#617e6a0a 25%,transparent 25% 75%,#617e6a0a 75%),linear-gradient(45deg,#617e6a0a 25%,transparent 25% 75%,#617e6a0a 75%);background-size:32px 32px;background-position:0 0,16px 16px}
+[data-game-scene=stack-up] .game-board{background:#fff9e9;border-top:10px solid #9eb797;box-shadow:5px 6px #17263a,9px 10px #b9ccaf}
+[data-game-scene=stack-up] .sort-area{padding-bottom:22px;border-top:2px dashed #9eab91;border-bottom:2px dashed #9eab91}
+[data-game-scene=stack-up] .sort-card{background:#fffdf5;box-shadow:3px 4px #17263a;clip-path:none;border-top:7px solid #a9cbd4;border-radius:0}
+[data-game-scene=stack-up] .sort-card:nth-child(2){border-top-color:#e3bd70}
+[data-game-scene=stack-up] .sort-card:nth-child(3){border-top-color:#acc67b}
+[data-game-scene=stack-up] .sort-card:nth-child(4){border-top-color:#b5a1c9}
+[data-game-scene=stack-up] .sort-card:nth-child(5){border-top-color:#df9b8e}
+[data-game-scene=stack-up] .sort-card.correct{background:#dceaba}
+[data-game-scene=stack-up] .sort-card.wrong{background:#f5d0c2}
+[data-game-scene=stack-up] .card-number{border-bottom:1px solid #d7cfbc;padding-bottom:5px}
+[data-game-scene=stack-up] .card-name{line-height:1.25}
+[data-game-scene=stack-up] .card-moves button{background:#eef0df;border-bottom-width:3px}
+[data-game-scene=stack-up] .result-card{background:#fff9e9;border-top:10px solid #9eb797}
+
+/* PACK / canvas luggage, stitched compartments and paper item tags. */
+body[data-game-scene=pack]{--scene-ground:#e5e7d4;--scene-accent:#b6c581;background-image:linear-gradient(30deg,transparent 46%,#84927612 46% 49%,transparent 49%),linear-gradient(120deg,transparent 46%,#84927612 46% 49%,transparent 49%);background-size:110px 110px}
+[data-game-scene=pack] #game-panel{background:#fbf2da;border-top:10px solid #9ba776;box-shadow:6px 7px #17263a,10px 11px #c1c8a3}
+[data-game-scene=pack] .suitcase{background-color:#97bfc3;background-image:linear-gradient(90deg,transparent 17%,#426b7433 17% 22%,transparent 22% 78%,#426b7433 78% 83%,transparent 83%),repeating-linear-gradient(0deg,transparent 0 5px,#ffffff18 5px 6px);border-radius:10px;outline:1px dashed #315a66;outline-offset:-9px;box-shadow:5px 6px #17263a}
+[data-game-scene=pack] .suitcase:before{background:#bd9b6c;border-bottom:0;border-radius:5px 5px 0 0}
+[data-game-scene=pack] .bag-label{border-bottom-style:dashed;color:#173743}
+[data-game-scene=pack] .bag-tag{background:#fff8e9;border-radius:0;box-shadow:2px 3px #36586366}
+[data-game-scene=pack] .pack-item{background:#fffaf0;border-left:6px solid #b5bf99;box-shadow:2px 3px #17263a}
+[data-game-scene=pack] .pack-item[aria-pressed=true]{background:#dce9b7;border-left-color:#547854}
+[data-game-scene=pack] .item-symbol{padding:4px;background:#eee6d2;border:1px solid #c5b995}
+[data-game-scene=pack] .pack-hud>div{background:#dce8e6}
+[data-game-scene=pack] .pack-hud>div:last-child{background:#e3e9c5}
+[data-game-scene=pack] .capacity-track{height:12px;border-style:dashed}
+[data-game-scene=pack] .pack-result{border-top:7px solid #6f8b68;background:#e7edcf}
+
+/* TIME SENSE / a quiet measuring instrument. Absolutely still while running. */
+body[data-game-scene=inner-clock]{--scene-ground:#dae5e9;--scene-accent:#a7c4d5;background-image:linear-gradient(90deg,#667e8c0b 1px,transparent 1px);background-size:12px 12px}
+[data-game-scene=inner-clock] #game-panel{background:#f6f1e6;border-top:10px solid #8299a6;box-shadow:6px 7px #17263a,10px 11px #a7bdc8}
+[data-game-scene=inner-clock] .clock-stage{background:#bfd3dc;border:3px solid #17263a;box-shadow:inset 0 0 0 5px #dbe5e5,0 5px #829eac;padding-top:28px}
+[data-game-scene=inner-clock] .clock-stage::before,[data-game-scene=inner-clock] .clock-stage::after{width:7px;height:7px;border-radius:50%;background:#f7f2e5;border:2px solid #17263a}
+[data-game-scene=inner-clock] .clock-target{color:#203a48;text-shadow:3px 3px #e5ece7}
+[data-game-scene=inner-clock] .clock-dial{box-shadow:0 0 0 4px #8aa6b3,0 0 0 6px #17263a,4px 6px #829eac}
+[data-game-scene=inner-clock] .clock-action{background:#e4bf76;box-shadow:0 5px #17263a;border-bottom-width:4px}
+[data-game-scene=inner-clock] .clock-review{background:#e1eae3;border-top:7px solid #6a8d7c}
+[data-game-scene=inner-clock] .clock-metrics div{background:#fffaf0;border:1px solid #a3b7ad;padding:12px 4px}
+[data-game-scene=inner-clock].clock-running *,[data-game-scene=inner-clock].clock-running *::before,[data-game-scene=inner-clock].clock-running *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+
+/* LOWBALL / keep the shop counter and make the printed paper feel tangible. */
+body[data-game-scene=lowball-counter]{background-color:#e6ebdc}
+[data-game-scene=lowball-counter] .product-display{background-image:linear-gradient(90deg,#fffdf512 1px,transparent 1px);background-size:26px 100%}
+[data-game-scene=lowball-counter] .counter-shelf{background-image:repeating-linear-gradient(0deg,transparent 0 6px,#95784f22 6px 7px)}
+[data-game-scene=lowball-counter] .till-drawer{background-image:linear-gradient(90deg,transparent 12px,#17263a15 12px 13px,transparent 13px)}
+[data-game-scene=lowball-counter] .receipt-header{border-bottom-width:2px}
+[data-game-scene=lowball-counter] #resultArea{transform-origin:top center}
+[data-game-scene=lowball-counter] #resultLabel{text-underline-offset:3px}
+
+/* Effects are local, finite and optional. Never change the geometry of controls. */
+@media(max-width:650px){
+ [data-game-scene=hidden-gem] .dc-question{padding:14px 12px}
+ [data-game-scene=hidden-gem] .dc-answer-form{padding:12px}
+ [data-game-scene=hidden-gem] .dc-review{padding:14px 10px}
+ [data-game-scene=seating-chart] .sc-review{padding:12px}
+ [data-game-scene=laser] .laser-hud{padding:8px}
+}
+@media(prefers-reduced-motion:reduce){
+ [data-game-scene] *,[data-game-scene] *::before,[data-game-scene] *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
