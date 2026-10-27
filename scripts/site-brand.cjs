@@ -13,7 +13,7 @@ function applyBrand(html,relative){
   return '<a'+attributes+'><img class="br-brand__image" src="'+prefix+'assets/break-room-wordmark.png?v='+VERSION+'" alt="Break Room" width="'+width+'" height="'+height+'" decoding="async"></a>';
  });
  if(branded){
-  html=html.replace(/<link\b[^>]*href=(["'])[^"']*\bbrand\.css(?:\?[^"']*)?\1[^>]*>/g,'');
+  html=html.replace(/<link\b[^>]*href=(["'])(?:[^"']*\/)?brand\.css(?:\?[^"']*)?\1[^>]*>/g,'');
   html=html.replace(/<\/head>/i,'<link rel="stylesheet" href="'+prefix+'brand.css?v='+VERSION+'"></head>');
  }
  // All root/nested pages share the approved icon, including JavaScript-free pages.
