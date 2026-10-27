@@ -17,7 +17,7 @@ const pages=['leagues.html','friends.html','profile.html'],labels=['Home','Leagu
    for(const label of ['LOG IN','ACCOUNT']){
     await header.locator('.login').evaluate((a,label)=>a.textContent=label,label);
     const rects=await header.locator('a').evaluateAll(links=>links.map(a=>{const r=a.getBoundingClientRect();return{x:r.x,y:r.y,width:r.width,height:r.height};}));
-    for(const r of rects){assert(r.height>=44&&r.width>=36,'Accessible target '+route+' '+width);assert(r.x>=0&&r.x+r.width<=width+1,'Visible target '+width);}
+    for(const r of rects){assert(r.height>=44&&r.width>=44,'Accessible target '+route+' '+width);assert(r.x>=0&&r.x+r.width<=width+1,'Visible target '+width);}
     for(let i=0;i<rects.length;i++)for(let j=i+1;j<rects.length;j++){const a=rects[i],b=rects[j];assert(!(Math.min(a.x+a.width,b.x+b.width)-Math.max(a.x,b.x)>1&&Math.min(a.y+a.height,b.y+b.height)-Math.max(a.y,b.y)>1),'Overlapping header links '+route+' '+width);}
    }
    assert.equal(await header.locator('.login').getAttribute('href'),'login.html');
