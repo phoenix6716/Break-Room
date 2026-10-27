@@ -18,7 +18,7 @@ games.pack=async(p,width)=>{
  assert.equal(await native(p),saved);assert.match(await p.locator('.practice-summary').innerText(),/30 bags/);assert.equal(await p.locator('[data-summary-stat=played]').innerText(),'0');
 };
 games.prior=async(p,width)=>{
- await p.goto(base+'/games/prior/index.html');await p.locator('[data-choice="0"]').click();const saved=await native(p);await p.locator('#mode-unlimited').click();const pairs=new Set();let last=[];
+ await p.goto((process.env.ARCADE_LEGACY_TEST_URL||base)+'/games/prior/index.html');await p.locator('[data-choice="0"]').click();const saved=await native(p);await p.locator('#mode-unlimited').click();const pairs=new Set();let last=[];
  for(let i=0;i<30;i++){
   const ids=(await p.locator('#engine-slot').getAttribute('data-pair-ids')).split('|'),key=ids.slice().sort().join('|');assert(!pairs.has(key));pairs.add(key);assert(ids.every(id=>!last.includes(id)),'Prior avoids immediately repeating an event');last=ids;
   if(i>=6)assert.equal(await p.locator('#engine-slot').getAttribute('data-difficulty'),'hard');
@@ -44,7 +44,7 @@ games.stack=async(p,width)=>{
  assert.match(await p.locator('.practice-summary').innerText(),/30 stacks · 29 cleared/);assert.equal(await native(p),saved);assert.equal(await p.locator('#record-played').innerText(),'1');
 };
 games.stake=async(p,width)=>{
- await p.goto(base+'/games/stake/index.html');for(let i=0;i<5;i++){await p.locator('.chip').first().click();const a=await p.evaluate(()=>getQ(run,run.p.length).a);await p.locator('button.opt').nth(a).click();await p.locator('.next-question').click();}const saved=await native(p),daily=await p.evaluate(()=>run.qs.map(q=>q.q));await p.getByRole('tab',{name:'Unlimited',exact:true}).click();const questions=new Set(),category=await p.evaluate(()=>Object.entries(BANK.reduce((a,q)=>(a[q.c]=(a[q.c]||0)+1,a),{})).sort((a,b)=>b[1]-a[1])[0][0]);
+ await p.goto((process.env.ARCADE_LEGACY_TEST_URL||base)+'/games/stake/index.html');for(let i=0;i<5;i++){await p.locator('.chip').first().click();const a=await p.evaluate(()=>getQ(run,run.p.length).a);await p.locator('button.opt').nth(a).click();await p.locator('.next-question').click();}const saved=await native(p),daily=await p.evaluate(()=>run.qs.map(q=>q.q));await p.getByRole('tab',{name:'Unlimited',exact:true}).click();const questions=new Set(),category=await p.evaluate(()=>Object.entries(BANK.reduce((a,q)=>(a[q.c]=(a[q.c]||0)+1,a),{})).sort((a,b)=>b[1]-a[1])[0][0]);
  for(let i=0;i<30;i++){
   const q=await p.evaluate(()=>getQ(unl,unl.p.length));assert(!questions.has(q.q));questions.add(q.q);assert(!daily.includes(q.q));if(i>=20)assert.equal(q.c,category);
   if(i===19){await p.locator('#stake-topic').selectOption(category);assert.equal(await p.evaluate(()=>getQ(unl,unl.p.length).q),q.q);}

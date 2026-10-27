@@ -136,6 +136,12 @@ jobs:
                           assert ((b"<title>Desk Jam" in body and b"shift-work.js" in body) if "shift-work" in path else (b"<title>Sleeper" in body and b"hidden-gem.js" in body)), path
                       else:
                           assert body == pathlib.Path(path).read_bytes(), "Published file differs: " + path
+                  for retired in ["stake","prior","alibi","bouncer","pixel-pairs","word-forge","gridlock","number-drop","memory-lane","mystery-cabinet"]:
+                      request = urllib.request.Request(base + "games/" + retired + "/index.html?release=" + os.environ["GITHUB_SHA"], headers={"Cache-Control":"no-cache"})
+                      with urllib.request.urlopen(request, timeout=20) as response:
+                          redirect = response.read()
+                      assert b'http-equiv="refresh"' in redirect and b'../../index.html' in redirect and b'<title>Break Room</title>' in redirect, "Retired game still public: " + retired
+                  print("Verified retired game bookmarks return to the shelf.")
                   print("Verified live option05 branding, selectors, logo-free Lowball artwork, references and shared clients:", base, os.environ["GITHUB_SHA"])
                   break
               except Exception:

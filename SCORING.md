@@ -119,3 +119,8 @@ Inner Clock (`games/inner-clock/README.md`) is the ninth playable game; its name
 ## Player-feedback compatibility — 23 October 2026
 
 Alibi v3 changes the deduction mechanism, not its four-case native/Arcade formula; the server derives the answer through verified evidence rather than trusting an answer field. Apply `supabase/playtest-feedback.sql` after the previous Inner Clock update, or the updated complete Inner Clock SQL, before deployment. Fresh setup/current Friends includes all three Alibi formats and both Stack Up score versions. This supersedes narrower historical migration notes above.
+
+
+## Current public history (27 October 2026)
+
+Profile statistics, Arcade average, history, activity, streaks and badges include only the ten current games. Retired results and badges are hidden even when previously earned; the Stake-dependent Clean sweep badge is also hidden. Native archived saves and scoring adapters below remain private compatibility data and are not rewritten or deleted.

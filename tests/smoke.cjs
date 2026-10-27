@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const { chromium } = require('playwright');
 const base = process.env.ARCADE_TEST_URL || 'http://127.0.0.1:8000';
 const placeholderIds = ['pixel-pairs', 'word-forge', 'gridlock', 'number-drop', 'memory-lane', 'mystery-cabinet'];
-const routes = ['game.html', ...['lowball', 'stake', 'stack-up', 'pack', 'prior', ...placeholderIds].map(id => `games/${id}/`)];
+const routes = ['lowball','stack-up','pack','laser','time-drop','clue-ladder','seating-chart','hidden-gem','shift-work','inner-clock'].map(id=>`games/${id}/`);
 async function lowballFrame(page) {
   const handle = await page.locator('#lowball-game-frame').elementHandle();
   const frame = await handle.contentFrame();
@@ -60,27 +60,13 @@ function check(condition, message) { assert.ok(condition, message); checks++; }
         await page.waitForURL('**/index.html#daily-games');
         check(await page.locator('#daily-games').isVisible(), 'Drawer navigation reaches homepage');
         await page.goto(`${base}/${route}`, {waitUntil: 'domcontentloaded'});
-        if (placeholderIds.some(id => route.includes(id)) || route === 'game.html') {
-          check(await page.locator('#start-game').isDisabled(), 'Placeholder start disabled');
-          check(await page.locator('#attempt-status').innerText() === 'COMING SOON', 'Placeholder says coming soon');
-          check(await page.locator('#game-ready').isVisible(), 'Template ready layout retained');
-          check(await page.locator('#game-playing').isHidden(), 'Placeholder does not play');
-          if (route !== 'game.html') {
-            await page.locator('#help-popup-open').click();
-            check(await page.locator('#help-popup').isVisible(), 'Template help opens');
-            await page.keyboard.press('Escape');
-            await page.locator('#stats-popup-open').click();
-            check(await page.locator('#stats-popup').isVisible(), 'Template stats opens');
-            await page.keyboard.press('Escape');
-          }
-        }
         if (route === 'games/lowball/') {
           const frame = page.frameLocator('#lowball-game-frame');
           await frame.locator('#itemName').waitFor();
           check((await frame.locator('#itemName').innerText()) !== 'Loading...', 'Lowball engine loaded');
         }
       }
-      console.log(`PASS: homepage, navigation, templates, and header branding at ${width}px`);
+      console.log(`PASS: homepage, active-game navigation and header branding at ${width}px`);
       await context.close();
     }
     // Gameplay uses isolated browser storage, never the developer's saved runs.
@@ -125,30 +111,7 @@ function check(condition, message) { assert.ok(condition, message); checks++; }
     await frame.locator('#guessInput').waitFor({state:'visible'});
     check(!await frame.locator('#lockScreen').evaluate(el=>el.classList.contains('show')), 'Lowball unlimited is free and unlocked');
     console.log('PASS: Lowball region, invalid input, four rounds, resume, saved completion, stats, unlimited state');
-    await page.goto(`${base}/games/stake/`, {waitUntil: 'domcontentloaded'});
-    for (let question = 0; question < 5; question++) {
-      await page.locator('.chip').first().click();
-      if (question === 0) {
-        await page.reload({waitUntil: 'domcontentloaded'});
-        check(await page.locator('button.opt').count() === 3, 'Stake resumes bet');
-      }
-      await page.locator('button.opt').first().click();
-      check(await page.locator('.banner').isVisible(), 'Stake answer feedback');
-      await page.getByRole('button', {name: question === 4 ? 'See results' : 'Next question', exact: true}).click();
-    }
-    check((await page.locator('#app').innerText()).includes('Today’s set is done'), 'Stake five-question completion');
-    await page.reload({waitUntil: 'domcontentloaded'});
-    check((await page.locator('#app').innerText()).includes('Today’s set is done'), 'Stake completion persists');
-    check(await page.locator('#stake-played').innerText() === '1', 'Stake counts one run');
-    await page.locator('#stats-popup-open').click();
-    check(await page.locator('#stat-played').innerText() === '1', 'Stake stats reflect saved result');
-    await page.keyboard.press('Escape');
-    await page.getByRole('tab', {name:'Unlimited', exact:true}).click();
-    await page.locator('.chip').first().click();
-    await page.locator('button.opt').first().click();
-    check(await page.locator('.banner').isVisible(), 'Stake unlimited answer');
-    check(await page.locator('#stake-played').innerText() === '1', 'Unlimited does not add a daily run');
-    console.log('PASS: Stake betting, resume, five questions, saved completion, stats, unlimited');
+    // Retired entries are checked as redirects in retired-games.cjs, never as playable cabinets.
     check(errors.length === 0, `No browser JS errors: ${errors.join('; ')}`);
     await context.close();
     console.log(`PASS: ${checks} assertions; no browser JavaScript errors.`);

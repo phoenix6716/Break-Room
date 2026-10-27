@@ -130,5 +130,17 @@
     ];
     return {today,records,games:summaries,arcade,total,streak,days,achievements,unavailable,skipped};
   }
-  root.BREAK_ROOM_RECORDS=Object.freeze({read,dateKey,streaks,legacyStakeAnswers});
+
+  // Public presentation excludes retired games; native readers remain for private save compatibility.
+  function active(model) {
+    const ids=new Set(["laser","time-drop","clue-ladder","seating-chart","shift-work","hidden-gem","stack-up","pack","lowball","inner-clock"]);
+    const records=model.records.filter(r=>ids.has(r.game));
+    const arcade=root.BREAK_ROOM_SCORE.summary(records,model.today,[...ids]);
+    const summaries=model.games.filter(g=>ids.has(g.id)).map(g=>({...g,arcade:arcade.games.find(a=>a.id===g.id)}));
+    const days=new Map();for(const r of records){if(!days.has(r.date))days.set(r.date,new Set());days.get(r.date).add(r.game);}
+    const streak=streaks([...days.keys()],model.today),total=summaries.reduce((n,g)=>n+g.played,0);
+    const achievements=model.achievements.filter(a=>ids.has(a.id)||['first','week'].includes(a.id)).map(a=>a.id==='first'?{...a,earned:total>0}:a.id==='week'?{...a,earned:streak.best>=7}:a);
+    return {...model,records,games:summaries,arcade,total,days,streak,achievements};
+  }
+  root.BREAK_ROOM_RECORDS=Object.freeze({read,active,dateKey,streaks,legacyStakeAnswers});
 })(typeof window==='undefined'?globalThis:window);

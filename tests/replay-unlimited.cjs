@@ -38,7 +38,7 @@ const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
   await page.locator('#guessInput').fill('10');await page.locator('#submitBtn').click();
   assert(await page.locator('#resultArea').evaluate(e=>e.classList.contains('show')));
   assert.equal(await page.evaluate(()=>loadStats().played),3);
-  await page.goto(base+'/games/stake/index.html');
+  await page.goto((process.env.ARCADE_LEGACY_TEST_URL||base)+'/games/stake/index.html');
   assert.equal(await page.evaluate(()=>run.p.length),5,'Restored Stake Daily is never replay-reset');
   assert.equal(await page.evaluate(()=>Object.keys(localStorage).filter(k=>k.startsWith('stake:d:')).length),2);
   await page.evaluate(day=>localStorage.removeItem('stake:d:'+day),day);await page.reload();

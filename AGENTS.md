@@ -327,3 +327,8 @@ The owner says Alibi is boring/confusing and needs deductions beyond being prese
 ## Single instructions entry across all games — owner decision, 23 October 2026
 
 Use only the existing header **?** button to open each game’s How to play dialog. This applies to all nine games, not just Alibi. Do not add duplicate expandable guides or a second instructions entry. Keep useful examples and diagrams inside the help dialog. Keep the full instructions, keyboard opening, modal focus trapping, Escape dismissal and focus restoration in the shared help dialog.
+
+
+## Retired games hidden everywhere — owner decision, 27 October 2026
+
+Only the ten current games appear in public routes, menus, profile history, statistics, activity and achievements. This supersedes earlier instructions to expose archived games or keep their earned badges visible. Stake, Prior, Alibi and Bouncer and the six cancelled placeholders redirect to the home shelf; their engines and question banks must not ship. Preserve private native saves, cloud data, scoring adapters and repository source for compatibility. Profile totals, averages and streaks are computed only from current games. Source-only legacy browser fixtures use ARCADE_LEGACY_TEST_URL; public removal tests always use the built artifact.

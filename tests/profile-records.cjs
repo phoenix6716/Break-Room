@@ -33,4 +33,18 @@ result=api.read(store(week),'2026-10-20');assert.equal(result.streak.current,7);
 result=api.read({getItem(){throw Error('Denied')},get length(){throw Error('Denied')}},'2026-10-20');assert.equal(result.unavailable,true);assert.equal(result.total,0);
 assert.equal(api.read(store({}),'2026-10-20').records.length,0);
 console.log('PASS: real save formats, retained/lifetime Lowball stats, zero/negative scores, malformed/future/in-progress entries, current/best history streaks, provable achievements, unavailable storage and read-only access.');
+
+const full=api.read(store(values),'2026-10-20'),unchanged=JSON.stringify(full),visible=api.active(full);
+assert.equal(visible.games.length,10);assert.equal(visible.records.length,4);assert.equal(visible.total,31);
+assert.equal(visible.arcade.average,95);assert.equal(visible.arcade.runs,4);assert.equal(visible.arcade.gamesPlayed,2);
+assert(visible.games.every(g=>!['stake','prior','alibi','bouncer'].includes(g.id)));
+assert(visible.achievements.every(a=>!['stake','prior','alibi','bouncer','sweep'].includes(a.id)));
+assert.equal(visible.achievements.filter(a=>a.earned).length,3);assert.equal(JSON.stringify(full),unchanged);
+const retiredWeek={};for(let i=0;i<7;i++)retiredWeek['stake:d:2026-10-'+(14+i)]={b:[3,3,3,3,3],p:[0,0,0,0,0],qs};
+const oldOnly=api.read(store(retiredWeek),'2026-10-20'),hidden=api.active(oldOnly);
+assert.equal(oldOnly.streak.best,7);assert.equal(hidden.streak.best,0);assert.equal(hidden.streak.current,0);
+assert.equal(hidden.total,0);assert.equal(hidden.records.length,0);assert.equal(hidden.days.size,0);
+assert.equal(hidden.arcade.average,null);assert.equal(hidden.arcade.runs,0);assert(hidden.achievements.every(a=>!a.earned));
+console.log('PASS current-game profile view: retired history excluded from totals, averages, activity, streaks and earned badges; private native data remains intact.');
+
 module.exports={stackRun,qs};

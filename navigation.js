@@ -3,9 +3,9 @@
   const button = document.getElementById('game-menu-toggle');
   const menu = document.getElementById('game-menu');
   if (!button || !menu) return;
-  // Shelved games keep their routes/saves, but are absent from the active drawer.
+  // Retired games are not public destinations. Old saves remain private.
   menu.querySelectorAll('a[href]').forEach(link => {
-    if (/\/games\/(?:alibi|bouncer|prior|stake)\//.test(new URL(link.href).pathname)) link.remove();
+    if (/\/games\/(?:alibi|bouncer|prior|stake|pixel-pairs|word-forge|gridlock|number-drop|memory-lane|mystery-cabinet)\//.test(new URL(link.href).pathname)) link.remove();
   });
   if(!menu.querySelector('a[href*="/games/time-drop/"]')){const link=document.createElement('a');link.href=new URL('games/time-drop/index.html',new URL('.',document.currentScript.src)).href;link.textContent='Time Drop';const laser=menu.querySelector('a[href*="/games/laser/"]');if(laser)laser.after(link);}
   if(!menu.querySelector('a[href*="/games/clue-ladder/"]')){const link=document.createElement('a');link.href=new URL('games/clue-ladder/index.html',new URL('.',document.currentScript.src)).href;link.textContent='Clue Ladder';const after=menu.querySelector('a[href*="/games/time-drop/"]');if(after)after.after(link);}
