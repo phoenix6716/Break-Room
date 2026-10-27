@@ -1,3 +1,9 @@
+## Homepage-style top bar on social pages — owner direction, 27 October 2026
+
+Use the homepage's text-link top bar on Leagues, Friends and Profile: Home → Leagues → Friends → Profile, the approved centred wordmark, coral underline on the current page, and the existing account/profile controls. `menu-brand.css` scopes the shared layout to `.hub-topbar` inside `.hub-header-frame`; it must not restyle page content or game headers. Keep the homepage artwork/layout and all social, account and score behaviour intact.
+
+At tablet widths put navigation on its own row. On narrow phones place the logo and account controls side by side so their touch targets do not collide. Keep four links, visible keyboard focus, usable no-JavaScript links and the existing auth-aware Account/Log in destination. Verify mobile/tablet/desktop breakpoints and real Friends, Leagues and Profile flows. This is a presentation change, with no database or save migration.
+
 ## Stack Up without numerical trivia or time-unit tasks — owner correction, 27 October 2026
 
 The owner explicitly wants to keep ordering films/books by release and historical events by date, while removing maths, number facts and time-unit questions. New Dailies replace 32 weekday/month/duration slots and eight continent-area slots with story, nature, crafting and everyday-process ordering. Keep the other 120 familiar stacks, all 160 IDs, five 32-item lanes and their exact Daily assignments.

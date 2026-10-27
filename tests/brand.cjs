@@ -1,6 +1,10 @@
 /* Check only shared branding/navigation, never replay entire game sessions. */
 const assert=require('node:assert/strict'),fs=require('node:fs'),{chromium}=require('playwright');
 const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000',version='tile05-20261025';
+const {applyBrand}=require('../scripts/site-brand.cjs');
+const socialSource=fs.readFileSync('leagues.html','utf8'),socialBuild=applyBrand(applyBrand(socialSource,'leagues.html'),'leagues.html');
+assert(socialBuild.includes('menu-brand.css?v=hub-topbar-20261027'),'Preserve the shared menu stylesheet');
+assert.equal((socialBuild.match(/href="brand\.css(?:\?[^"]*)?"/g)||[]).length,1,'Deduplicate only the exact brand.css filename');
 const games=['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','pack','lowball','inner-clock'];
 const rootPages=['index.html','friends.html','profile.html','login.html','signup.html','forgot-password.html','reset-password.html','privacy.html','terms.html','contact.html','style-guide.html'];
 (async()=>{const browser=await chromium.launch({executablePath:process.env.ARCADE_CHROMIUM||'/usr/bin/chromium',args:['--no-sandbox']});try{
