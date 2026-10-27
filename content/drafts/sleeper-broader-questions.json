@@ -390,5 +390,201 @@
       "source": "https://stephenking.com/works/novel/",
       "scope": "Novels, serial novels and separately published novellas through 2024, including Richard Bachman and collaborations; not story collections."
     }
+  ],
+  "GAMES": [
+    {
+      "prompt": "Name a playable fighter in Super Smash Bros. Ultimate.",
+      "answers": "Mario|Luigi|Peach|Bowser|Yoshi|Donkey Kong|Link|Zelda|Pikachu|Kirby|Sonic|Pac-Man|Steve|Alex|Samus|Fox|Captain Falcon|Ness|Jigglypuff|Mewtwo|Charizard|Squirtle|Ivysaur|Lucario|Greninja|Incineroar|Pichu|Pokemon Trainer|Piranha Plant|Wario|Daisy|Rosalina|Bowser Jr|Dr Mario|Diddy Kong|King K Rool|Ganondorf|Young Link|Toon Link|Sheik|Dark Samus|Zero Suit Samus|Falco|Wolf|Lucas|King Dedede|Meta Knight|Wii Fit Trainer|Villager|Isabelle|Inkling|Olimar|Marth|Roy|Ike|Lucina|Robin|Corrin|Chrom|Byleth|Pit|Dark Pit|Palutena|Ice Climbers|Mr Game and Watch|ROB|Little Mac|Shulk|Duck Hunt|Mega Man|Ryu|Ken|Cloud|Bayonetta|Simon|Richter|Joker|Hero|Banjo and Kazooie|Terry|Min Min|Sephiroth|Pyra|Mythra|Kazuya|Sora",
+      "source": "https://www.smashbros.com/en_US/fighter/",
+      "scope": "Official fighters and named selectable partners, including DLC and Alex/Pyra/Mythra; no generic costumes."
+    },
+    {
+      "prompt": "Name a playable racer in Mario Kart 8 Deluxe.",
+      "answers": "Mario|Luigi|Peach|Daisy|Rosalina|Yoshi|Toad|Koopa Troopa|Shy Guy|Lakitu|Toadette|King Boo|Baby Mario|Baby Luigi|Baby Peach|Baby Daisy|Baby Rosalina|Metal Mario|Pink Gold Peach|Wario|Waluigi|Donkey Kong|Bowser|Dry Bones|Bowser Jr|Dry Bowser|Lemmy|Larry|Wendy|Ludwig|Iggy|Roy|Morton|Inkling Girl|Inkling Boy|Link|Villager|Isabelle|Mii|Tanooki Mario|Cat Peach|Gold Mario|Birdo|Petey Piranha|Wiggler|Kamek|Diddy Kong|Funky Kong|Pauline|Peachette",
+      "source": "https://mariokart8.nintendo.com/",
+      "scope": "Deluxe roster including Booster Course Pass characters and named variants; not kart parts."
+    },
+    {
+      "prompt": "Name an original Kanto Pokémon.",
+      "answers": "Bulbasaur|Ivysaur|Venusaur|Charmander|Charmeleon|Charizard|Squirtle|Wartortle|Blastoise|Caterpie|Metapod|Butterfree|Weedle|Kakuna|Beedrill|Pidgey|Pidgeotto|Pidgeot|Rattata|Raticate|Spearow|Fearow|Ekans|Arbok|Pikachu|Raichu|Sandshrew|Sandslash|Nidoran female|Nidorina|Nidoqueen|Nidoran male|Nidorino|Nidoking|Clefairy|Clefable|Vulpix|Ninetales|Jigglypuff|Wigglytuff|Zubat|Golbat|Oddish|Gloom|Vileplume|Paras|Parasect|Venonat|Venomoth|Diglett|Dugtrio|Meowth|Persian|Psyduck|Golduck|Mankey|Primeape|Growlithe|Arcanine|Poliwag|Poliwhirl|Poliwrath|Abra|Kadabra|Alakazam|Machop|Machoke|Machamp|Bellsprout|Weepinbell|Victreebel|Tentacool|Tentacruel|Geodude|Graveler|Golem|Ponyta|Rapidash|Slowpoke|Slowbro|Magnemite|Magneton|Farfetch'd|Doduo|Dodrio|Seel|Dewgong|Grimer|Muk|Shellder|Cloyster|Gastly|Haunter|Gengar|Onix|Drowzee|Hypno|Krabby|Kingler|Voltorb|Electrode|Exeggcute|Exeggutor|Cubone|Marowak|Hitmonlee|Hitmonchan|Lickitung|Koffing|Weezing|Rhyhorn|Rhydon|Chansey|Tangela|Kangaskhan|Horsea|Seadra|Goldeen|Seaking|Staryu|Starmie|Mr Mime|Scyther|Jynx|Electabuzz|Magmar|Pinsir|Tauros|Magikarp|Gyarados|Lapras|Ditto|Eevee|Vaporeon|Jolteon|Flareon|Porygon|Omanyte|Omastar|Kabuto|Kabutops|Aerodactyl|Snorlax|Articuno|Zapdos|Moltres|Dratini|Dragonair|Dragonite|Mewtwo|Mew",
+      "source": "https://www.pokemon.com/us/pokedex",
+      "scope": "All original 151 species, national Pokédex 1–151. Specify male/female for Nidoran; later evolutions excluded."
+    },
+    {
+      "prompt": "Name a property you can buy on the standard US Monopoly board.",
+      "answers": "Boardwalk|Park Place|Baltic Avenue|Mediterranean Avenue|Oriental Avenue|Vermont Avenue|Connecticut Avenue|St Charles Place|States Avenue|Virginia Avenue|St James Place|Tennessee Avenue|New York Avenue|Kentucky Avenue|Indiana Avenue|Illinois Avenue|Atlantic Avenue|Ventnor Avenue|Marvin Gardens|Pacific Avenue|North Carolina Avenue|Pennsylvania Avenue|Reading Railroad|Pennsylvania Railroad|B and O Railroad|Short Line|Electric Company|Water Works",
+      "source": "https://en.wikipedia.org/wiki/Monopoly_(game)",
+      "scope": "The Atlantic City board's 22 streets, four railroads and two utilities; non-property squares excluded."
+    },
+    {
+      "prompt": "Name a main Super Mario platform game released by the end of 2023.",
+      "answers": "Super Mario Bros|Super Mario Bros 2|Super Mario Bros 3|Super Mario World|Super Mario 64|Super Mario Sunshine|Super Mario Galaxy|Super Mario Galaxy 2|Super Mario Odyssey|Super Mario Bros Wonder|Super Mario Land|Super Mario Land 2|New Super Mario Bros|New Super Mario Bros Wii|New Super Mario Bros 2|New Super Mario Bros U|Super Mario 3D Land|Super Mario 3D World|Super Mario Bros The Lost Levels|Super Mario Run|Super Mario Maker|Super Mario Maker 2|Bowser's Fury",
+      "source": "https://mario.nintendo.com/history/",
+      "scope": "Includes Maker, Run and Bowser's Fury; ports count as the original title, not Kart or Party."
+    },
+    {
+      "prompt": "Name a starter Pokémon offered in the main series, generations 1–9.",
+      "answers": "Charmander|Squirtle|Bulbasaur|Chikorita|Cyndaquil|Totodile|Treecko|Torchic|Mudkip|Turtwig|Chimchar|Piplup|Snivy|Tepig|Oshawott|Chespin|Fennekin|Froakie|Rowlet|Litten|Popplio|Grookey|Scorbunny|Sobble|Sprigatito|Fuecoco|Quaxly",
+      "source": "https://www.pokemon.com/us/pokemon-video-games",
+      "scope": "The 27 standard grass/fire/water base-form starters; not Pikachu, Eevee or evolved forms."
+    },
+    {
+      "prompt": "Name a Valorant agent released by the end of 2024.",
+      "answers": "Jett|Sage|Phoenix|Sova|Reyna|Raze|Omen|Brimstone|Viper|Cypher|Breach|Killjoy|Skye|Yoru|Astra|KAY/O|Chamber|Neon|Fade|Harbor|Gekko|Deadlock|Iso|Clove|Vyse",
+      "source": "https://playvalorant.com/en-us/agents/",
+      "scope": "Playable agents available by 31 December 2024, not later additions."
+    },
+    {
+      "prompt": "Name a hero playable in the original Overwatch.",
+      "answers": "Tracer|Mercy|Reaper|Soldier 76|D Va|Genji|Hanzo|Widowmaker|Winston|Reinhardt|Bastion|Mei|Junkrat|Roadhog|Lucio|Zenyatta|Symmetra|Torbjorn|Pharah|Zarya|Cassidy|Ana|Sombra|Orisa|Doomfist|Moira|Brigitte|Wrecking Ball|Ashe|Baptiste|Sigma|Echo",
+      "source": "https://overwatch.blizzard.com/en-us/heroes/",
+      "scope": "The 32 heroes before Overwatch 2 launched in October 2022; McCree resolves to Cassidy."
+    },
+    {
+      "prompt": "Name an Apex Legends character released by the end of 2024.",
+      "answers": "Wraith|Lifeline|Pathfinder|Bloodhound|Bangalore|Gibraltar|Mirage|Caustic|Octane|Wattson|Crypto|Revenant|Loba|Rampart|Horizon|Fuse|Valkyrie|Seer|Ash|Mad Maggie|Newcastle|Vantage|Catalyst|Ballistic|Conduit|Alter",
+      "source": "https://www.ea.com/games/apex-legends/apex-legends/characters",
+      "scope": "Playable Legends through 31 December 2024."
+    },
+    {
+      "prompt": "Name a mob in Minecraft Java Edition 1.21.",
+      "answers": "Creeper|Zombie|Skeleton|Enderman|Spider|Cave Spider|Villager|Witch|Iron Golem|Snow Golem|Pig|Cow|Sheep|Chicken|Wolf|Cat|Horse|Donkey|Mule|Rabbit|Fox|Panda|Polar Bear|Bee|Bat|Squid|Glow Squid|Dolphin|Turtle|Cod|Salmon|Pufferfish|Tropical Fish|Axolotl|Goat|Llama|Trader Llama|Wandering Trader|Mooshroom|Ocelot|Parrot|Slime|Magma Cube|Blaze|Ghast|Zombified Piglin|Piglin|Piglin Brute|Hoglin|Zoglin|Strider|Wither Skeleton|Wither|Ender Dragon|Silverfish|Endermite|Shulker|Guardian|Elder Guardian|Drowned|Husk|Stray|Phantom|Pillager|Vindicator|Evoker|Ravager|Vex|Zombie Villager|Skeleton Horse|Zombie Horse|Frog|Tadpole|Allay|Warden|Camel|Sniffer|Armadillo|Breeze|Bogged|Giant|Illusioner",
+      "source": "https://www.minecraft.net/en-us/article/minecraft-java-edition-1-21",
+      "scope": "Base-game Java 1.21, including command-only mobs. No mods, removed mobs or later updates."
+    },
+    {
+      "prompt": "Name a main-series Legend of Zelda game released before 2024.",
+      "answers": "The Legend of Zelda|Zelda II The Adventure of Link|A Link to the Past|Link's Awakening|Ocarina of Time|Majora's Mask|Oracle of Seasons|Oracle of Ages|Four Swords|The Wind Waker|Four Swords Adventures|The Minish Cap|Twilight Princess|Phantom Hourglass|Spirit Tracks|Skyward Sword|A Link Between Worlds|Tri Force Heroes|Breath of the Wild|Tears of the Kingdom",
+      "source": "https://www.zelda.com/about/",
+      "scope": "Main series through Tears of the Kingdom; remasters count as the original title, not spinoffs."
+    },
+    {
+      "prompt": "Name a Stardew Valley villager with a friendship heart meter.",
+      "answers": "Abigail|Alex|Elliott|Emily|Haley|Harvey|Leah|Maru|Penny|Sam|Sebastian|Shane|Caroline|Clint|Demetrius|Dwarf|Evelyn|George|Gus|Jas|Jodi|Kent|Krobus|Leo|Lewis|Linus|Marnie|Pam|Pierre|Robin|Sandy|Vincent|Willy|Wizard",
+      "source": "https://stardewvalleywiki.com/Villagers",
+      "scope": "The 34 friendship NPCs in base-game version 1.6; no mods, generic animals or other NPCs."
+    },
+    {
+      "prompt": "Name a standard Among Us player colour.",
+      "answers": "Red|Blue|Green|Pink|Orange|Yellow|Black|White|Purple|Brown|Cyan|Lime|Maroon|Rose|Banana|Gray|Tan|Coral",
+      "source": "https://among-us.fandom.com/wiki/Colors",
+      "scope": "The modern base game's 18 standard selectable colours, not cosmetics."
+    },
+    {
+      "prompt": "Name a fighter in Street Fighter 6's launch roster.",
+      "answers": "Ryu|Ken|Chun-Li|Guile|Cammy|Zangief|Dhalsim|Blanka|E Honda|Juri|Luke|Jamie|Kimberly|Manon|Marisa|Lily|JP|Dee Jay",
+      "source": "https://www.streetfighter.com/6/en-us/character/",
+      "scope": "The 18 fighters available in June 2023, not later DLC."
+    },
+    {
+      "prompt": "Name a League of Legends champion first released in 2009.",
+      "answers": "Ashe|Annie|Alistar|Amumu|Anivia|Blitzcrank|Corki|Cho'Gath|Dr Mundo|Evelynn|Fiddlesticks|Gangplank|Heimerdinger|Janna|Jax|Karthus|Kassadin|Katarina|Kayle|Malphite|Master Yi|Morgana|Nasus|Nidalee|Nunu|Rammus|Ryze|Shaco|Singed|Sion|Sivir|Soraka|Taric|Teemo|Tristana|Tryndamere|Twisted Fate|Twitch|Udyr|Veigar|Warwick|Zilean",
+      "source": "https://wiki.leagueoflegends.com/en-us/List_of_champions",
+      "scope": "Original 2009 release dates; modern names accepted, not later champions."
+    },
+    {
+      "prompt": "Name a weapon from Fortnite Battle Royale's first chapter.",
+      "answers": "Assault Rifle|Burst Assault Rifle|Scoped Assault Rifle|Thermal Scoped Assault Rifle|Suppressed Assault Rifle|Infantry Rifle|Heavy Assault Rifle|Tactical Assault Rifle|Minigun|Light Machine Gun|Drum Gun|Pistol|Suppressed Pistol|Hand Cannon|Dual Pistols|Flint-Knock Pistol|Revolver|Scoped Revolver|Submachine Gun|Tactical Submachine Gun|Suppressed Submachine Gun|Burst Submachine Gun|Compact Submachine Gun|Pump Shotgun|Tactical Shotgun|Heavy Shotgun|Double Barrel Shotgun|Combat Shotgun|Bolt-Action Sniper Rifle|Semi-Auto Sniper Rifle|Heavy Sniper Rifle|Suppressed Sniper Rifle|Hunting Rifle|Automatic Sniper Rifle|Rocket Launcher|Grenade Launcher|Guided Missile|Quad Launcher|Proximity Grenade Launcher|Boom Bow|Crossbow|Fiend Hunter Crossbow|Grenade|Clinger|Stink Bomb|Dynamite|Remote Explosives|Zap-o-tron",
+      "source": "https://fortnite.fandom.com/wiki/Chapter_1",
+      "scope": "Weapons that appeared during Chapter 1, including vaulted weapons; not traps, cosmetics or later chapters."
+    }
+  ],
+  "SPACE": [
+    {
+      "prompt": "Name a Solar System moon discovered before 1990.",
+      "answers": "Moon|Phobos|Deimos|Io|Europa|Ganymede|Callisto|Amalthea|Himalia|Elara|Pasiphae|Sinope|Lysithea|Carme|Ananke|Leda|Metis|Adrastea|Thebe|Mimas|Enceladus|Tethys|Dione|Rhea|Titan|Iapetus|Hyperion|Phoebe|Janus|Epimetheus|Helene|Telesto|Calypso|Atlas|Prometheus|Pandora|Miranda|Ariel|Umbriel|Titania|Oberon|Cordelia|Ophelia|Bianca|Cressida|Desdemona|Juliet|Portia|Rosalind|Belinda|Puck|Triton|Nereid|Naiad|Thalassa|Despina|Galatea|Larissa|Proteus|Charon",
+      "source": "https://science.nasa.gov/solar-system/moons/",
+      "scope": "Natural moons discovered before 1 January 1990, including Earth's Moon. Use the present name; not asteroids or artificial satellites."
+    },
+    {
+      "prompt": "Name an officially recognised constellation.",
+      "answers": "Orion|Leo|Scorpius|Aries|Taurus|Gemini|Cancer|Virgo|Libra|Sagittarius|Capricornus|Aquarius|Pisces|Ursa Major|Ursa Minor|Cassiopeia|Andromeda|Pegasus|Cygnus|Draco|Hercules|Lyra|Aquila|Canis Major|Canis Minor|Centaurus|Crux|Hydra|Phoenix|Perseus|Auriga|Ophiuchus|Serpens|Cetus|Eridanus|Lepus|Lupus|Boötes|Carina|Vela|Puppis|Columba|Corvus|Crater|Coma Berenices|Corona Borealis|Corona Australis|Triangulum|Triangulum Australe|Piscis Austrinus|Delphinus|Dorado|Equuleus|Grus|Indus|Lacerta|Leo Minor|Lynx|Monoceros|Musca|Pavo|Sagitta|Scutum|Sextans|Tucana|Volans|Vulpecula|Antlia|Apus|Ara|Caelum|Camelopardalis|Canes Venatici|Chamaeleon|Circinus|Fornax|Horologium|Hydrus|Mensa|Microscopium|Norma|Octans|Pictor|Pyxis|Reticulum|Sculptor|Telescopium|Borealis",
+      "source": "https://www.iau.org/public/themes/constellations/",
+      "scope": "The IAU's 88 constellations; use the Latin name, with common zodiac names accepted. Asterisms such as the Big Dipper are not separate constellations."
+    },
+    {
+      "prompt": "Name a named character in Star Wars.",
+      "answers": "Luke Skywalker|Leia Organa|Han Solo|Darth Vader|Obi-Wan Kenobi|Yoda|Chewbacca|R2-D2|C-3PO|Anakin Skywalker|Palpatine|Padme Amidala|Rey|Finn|Poe Dameron|Kylo Ren|Boba Fett|Jango Fett|Jabba the Hutt|Lando Calrissian|Darth Maul|Qui-Gon Jinn|Mace Windu|Count Dooku|General Grievous|Ahsoka Tano|Din Djarin|Grogu|Bo-Katan Kryze|Jyn Erso|Cassian Andor|Chirrut Imwe|Baze Malbus|Orson Krennic|Grand Moff Tarkin|Admiral Ackbar|Nien Nunb|Wedge Antilles|Rose Tico|Maz Kanata|Supreme Leader Snoke|Captain Phasma|General Hux|General Pryde|Saw Gerrera|Mon Mothma|Bail Organa|Owen Lars|Beru Lars|Shmi Skywalker|Watto|Sebulba|Jar Jar Binks|Boss Nass|Captain Panaka|Plo Koon|Kit Fisto|Aayla Secura|Ki-Adi-Mundi|Shaak Ti|Asajj Ventress|Savage Opress|Cad Bane|Hera Syndulla|Sabine Wren|Ezra Bridger|Kanan Jarrus|Grand Admiral Thrawn|Zeb Orrelios|Captain Rex|Commander Cody|Omega",
+      "source": "https://www.starwars.com/databank",
+      "scope": "Named characters from official screen canon through 2024; not fan characters. Darth Vader and Anakin refer to one person, with both names accepted."
+    },
+    {
+      "prompt": "Name a film where a main character physically travels into space.",
+      "answers": "Star Wars A New Hope|The Empire Strikes Back|Return of the Jedi|The Phantom Menace|Attack of the Clones|Revenge of the Sith|The Force Awakens|The Last Jedi|The Rise of Skywalker|Rogue One|Solo|2001 A Space Odyssey|2010 The Year We Make Contact|Interstellar|The Martian|Gravity|Apollo 13|First Man|Alien|Aliens|Alien 3|Alien Resurrection|Prometheus|Alien Covenant|Alien Romulus|WALL-E|Lightyear|Guardians of the Galaxy|Guardians of the Galaxy Vol 2|Guardians of the Galaxy Vol 3|Avengers Infinity War|Avengers Endgame|Thor|Thor Ragnarok|Thor Love and Thunder|Captain Marvel|The Marvels|Iron Man|Iron Man 3|Star Trek|Star Trek Into Darkness|Star Trek Beyond|Star Trek The Motion Picture|Star Trek II The Wrath of Khan|Star Trek First Contact|Galaxy Quest|Spaceballs|Space Jam|Space Cowboys|Ad Astra|Sunshine|Event Horizon|Passengers|Life|Moon|Dune|Dune Part Two|The Hitchhiker's Guide to the Galaxy|Lost in Space|The Fifth Element|Valerian and the City of a Thousand Planets|The Right Stuff|Armageddon|Deep Impact|Contact|Muppets from Space|Treasure Planet|Zathura|Space Chimps|Planet of the Apes",
+      "source": "https://en.wikipedia.org/wiki/List_of_films_featuring_space_stations",
+      "scope": "Features released through 2024 with a physical trip beyond Earth by a principal character; not dreams, virtual reality or a robot-only mission."
+    },
+    {
+      "prompt": "Name an actor who plays a named Guardian of the Galaxy in the MCU.",
+      "answers": "Chris Pratt|Zoe Saldana|Dave Bautista|Bradley Cooper|Vin Diesel|Karen Gillan|Pom Klementieff|Michael Rooker|Sean Gunn|Sylvester Stallone|Miley Cyrus|Michelle Yeoh|Ving Rhames|Michael Rosenbaum|Will Poulter|Linda Cardellini|Asim Chaudhry|Mikaela Hoover|Maria Bakalova",
+      "source": "https://www.marvel.com/teams-and-groups/guardians-of-the-galaxy/on-screen",
+      "scope": "Actors/voice actors playing the core team, named Ravager Guardians, Adam Warlock or Rocket's named animal companions through Vol. 3. Not villains or uncredited extras."
+    },
+    {
+      "prompt": "Name an astronaut who flew on an Apollo mission to the Moon.",
+      "answers": "Neil Armstrong|Buzz Aldrin|Michael Collins|Jim Lovell|Frank Borman|William Anders|Thomas Stafford|John Young|Eugene Cernan|Pete Conrad|Richard Gordon|Alan Bean|Jack Swigert|Fred Haise|Alan Shepard|Stuart Roosa|Edgar Mitchell|David Scott|Alfred Worden|James Irwin|Ken Mattingly|Charles Duke|Ronald Evans|Harrison Schmitt",
+      "source": "https://www.nasa.gov/history/apollo/",
+      "scope": "The 24 distinct astronauts aboard Apollo 8 and 10–17, including orbit-only crew and Apollo 13; not Apollo 7 or 9."
+    },
+    {
+      "prompt": "Name a NASA mission or spaceflight programme.",
+      "answers": "Apollo|Artemis|Gemini|Mercury|Space Shuttle|Skylab|Voyager|Pioneer|New Horizons|Juno|Cassini|Galileo|Hubble|James Webb|Chandra|Spitzer|Kepler|TESS|WISE|Viking|Mariner|Mars Pathfinder|Mars Global Surveyor|Mars Odyssey|Mars Reconnaissance Orbiter|Curiosity|Perseverance|Spirit|Opportunity|Phoenix|InSight|MAVEN|OSIRIS-REx|DART|Lucy|Psyche|Dawn|Deep Impact|Stardust|NEAR Shoemaker|Magellan|MESSENGER|Parker Solar Probe|Solar Dynamics Observatory|SOHO|Ulysses|IBEX|WMAP|COBE|Fermi|Swift|Europa Clipper|Dragonfly|SLS",
+      "source": "https://science.nasa.gov/missions/",
+      "scope": "Named NASA civilian missions/programmes launched or formally selected by 2025, including joint missions. Individual astronauts and generic rockets do not count."
+    },
+    {
+      "prompt": "Name a spacecraft mission that reached Mars.",
+      "answers": "Mariner 4|Mariner 6|Mariner 7|Mariner 9|Mars 2|Mars 3|Mars 4|Mars 5|Mars 6|Mars 7|Viking 1|Viking 2|Mars Pathfinder|Mars Global Surveyor|Mars Odyssey|Mars Express|Mars Reconnaissance Orbiter|Phoenix|Curiosity|MAVEN|ExoMars Trace Gas Orbiter|InSight|Perseverance|Hope|Tianwen-1",
+      "source": "https://science.nasa.gov/mars/exploration/",
+      "scope": "Missions through 2025 that reached Mars orbit, its surface or made a close flyby; rover names resolve to their mission. Failed launches and lost-before-arrival missions excluded."
+    },
+    {
+      "prompt": "Name a main Star Trek character.",
+      "answers": "James T Kirk|Spock|Leonard McCoy|Montgomery Scott|Nyota Uhura|Hikaru Sulu|Pavel Chekov|Christine Chapel|Janice Rand|Jean-Luc Picard|William Riker|Data|Geordi La Forge|Worf|Deanna Troi|Beverly Crusher|Wesley Crusher|Tasha Yar|Guinan|Q|Benjamin Sisko|Jake Sisko|Kira Nerys|Odo|Quark|Jadzia Dax|Ezri Dax|Julian Bashir|Miles O'Brien|Kathryn Janeway|Chakotay|Tuvok|Tom Paris|B'Elanna Torres|Harry Kim|Seven of Nine|The Doctor|Neelix|Kes|Jonathan Archer|T'Pol|Trip Tucker|Malcolm Reed|Hoshi Sato|Travis Mayweather|Phlox|Michael Burnham|Saru|Paul Stamets|Sylvia Tilly|Hugh Culber|Christopher Pike|Una Chin-Riley|La'an Noonien-Singh|Erica Ortegas|Beckett Mariner|Brad Boimler|D'Vana Tendi|Sam Rutherford|Carol Freeman|Dal R'El|Gwyndala",
+      "source": "https://www.startrek.com/characters",
+      "scope": "Regular and recurring named characters in official TV/films through 2024; unambiguous surnames or familiar nicknames accepted."
+    },
+    {
+      "prompt": "Name a planet or moon featured in Star Wars.",
+      "answers": "Tatooine|Coruscant|Naboo|Hoth|Endor|Mustafar|Alderaan|Yavin 4|Dagobah|Bespin|Kamino|Geonosis|Utapau|Kashyyyk|Felucia|Mygeeto|Saleucami|Cato Neimoidia|Polis Massa|Jakku|Takodana|D'Qar|Starkiller Base|Ahch-To|Crait|Cantonica|Exegol|Kijimi|Pasaana|Kef Bir|Ajan Kloss|Scarif|Jedha|Eadu|Wobani|Lah'mu|Corellia|Mimban|Vandor|Kessel|Savareen|Mandalore|Lothal|Dathomir|Malachor|Ryloth|Mon Cala|Ilum|Sullust|Bracca|Zeffo|Bogano|Nur|Tanalorr|Nevarro|Trask|Tython|Morak|Ferrix|Aldhani|Niamos|Narkina 5|At Attin",
+      "source": "https://www.starwars.com/databank",
+      "scope": "Named planets/moons in official screen canon and Jedi games through 2024. Artificial stations excluded; Starkiller Base resolves to the converted planet Ilum."
+    },
+    {
+      "prompt": "Name a Doctor Who alien species or people.",
+      "answers": "Dalek|Cyberman|Time Lord|Weeping Angel|Sontaran|Silurian|Ice Warrior|Zygon|Ood|Judoon|Slitheen|Auton|Nestene|Krynoid|Sea Devil|Draconian|Vashta Nerada|Adipose|Racnoss|Raxacoricofallapatorian|Sycorax|Toclafane|Krillitane|Carrionite|Pyrovile|Hath|Tritovore|Tenza|Silence|Siren|Atraxi|Abzorbaloff|Vervoid|Sutekh|Osiran|Thal|Drahvin|Sensorite|Voord|Mechanoid|Chumblie|Macra|Yeti|Zarbi|Menoptera|Mono id|Sontaran",
+      "source": "https://www.bbc.co.uk/doctorwho",
+      "scope": "Alien species, named peoples and robot races from television through 2024. Individual character names do not count."
+    },
+    {
+      "prompt": "Name an MCU character who has physically travelled beyond Earth.",
+      "answers": "Thor|Loki|Iron Man|Spider-Man|Doctor Strange|Hulk|Black Widow|Hawkeye|Captain Marvel|Monica Rambeau|Ms Marvel|Nick Fury|Star-Lord|Gamora|Drax|Rocket|Groot|Nebula|Mantis|Yondu|Kraglin|Adam Warlock|Odin|Frigga|Heimdall|Sif|Valkyrie|Hela|Jane Foster|Korg|Miek|Thanos|Ebony Maw|Proxima Midnight|Corvus Glaive|Cull Obsidian|Eitri|Ayesha|High Evolutionary|Goose|Talos|Eros|Pip|Sersi|Ikaris|Thena|Gilgamesh|Kingo|Sprite|Phastos|Druig|Makkari|Ajak|Arishem",
+      "source": "https://www.marvel.com/characters",
+      "scope": "MCU screen canon through 2024, beyond Earth's atmosphere; trips only to the Quantum Realm or other Earth locations excluded."
+    },
+    {
+      "prompt": "Name a planet, recognised dwarf planet or zodiac constellation.",
+      "answers": "Earth|Mars|Jupiter|Saturn|Venus|Mercury|Uranus|Neptune|Pluto|Ceres|Eris|Makemake|Haumea|Aries|Taurus|Gemini|Cancer|Leo|Virgo|Libra|Scorpius|Sagittarius|Capricornus|Aquarius|Pisces",
+      "source": "https://www.iau.org/public/themes/",
+      "scope": "Eight Solar System planets, the five IAU-recognised dwarf planets, or the twelve traditional zodiac constellations; not Ophiuchus."
+    },
+    {
+      "prompt": "Name a space telescope or astronomical observatory mission launched before 2025.",
+      "answers": "Hubble|James Webb|Chandra|Spitzer|Kepler|TESS|Gaia|Hipparcos|Planck|Herschel|WMAP|COBE|IRAS|Swift|Fermi|Euclid|ROSAT|Einstein Observatory|Compton Gamma Ray Observatory|GALEX|WISE|Spektr-R|Spektr-RG|DAMPE|AstroSat|Hitomi|Suzaku|ASCA|Akari|ISO|International Ultraviolet Explorer|CHEOPS|CoRoT|MOST|BRITE|IXPE|NICER|XMM-Newton|INTEGRAL|BeppoSAX|Uhuru|EXOSAT|HEAO-1|HEAO-3|OAO-2",
+      "source": "https://science.nasa.gov/astrophysics/missions/",
+      "scope": "Launched astronomical space observatories, including joint/non-NASA missions and ISS's NICER instrument. Not ground-based or future telescopes."
+    },
+    {
+      "prompt": "Name a named Star Wars droid.",
+      "answers": "R2-D2|C-3PO|BB-8|K-2SO|Chopper|IG-88|IG-11|L3-37|D-O|BD-1|R5-D4|EV-9D9|FX-7|2-1B|TC-14|WA-7|ME-8D9|AP-5|Huyang|AZI-3|Todo 360|B2EMO|L0-LA59|NED-B|SM-33|8D8|R-3X|R3-S6|R4-P17|R2-KT|BB-9E|CH-33P|U7|CZ-3|CZ-4",
+      "source": "https://www.starwars.com/databank",
+      "scope": "Named individual droids in official canon through 2024, including games; generic model descriptions do not count."
+    },
+    {
+      "prompt": "Name a named Transformers character.",
+      "answers": "Optimus Prime|Bumblebee|Megatron|Starscream|Soundwave|Shockwave|Ratchet|Ironhide|Jazz|Sideswipe|Wheeljack|Grimlock|Slug|Snarl|Swoop|Sludge|Arcee|Hot Rod|Ultra Magnus|Jetfire|Cliffjumper|Hound|Trailbreaker|Brawn|Mirage|Hoist|Grapple|Inferno|Red Alert|Prowl|Smokescreen|Bluestreak|Blaster|Perceptor|Powerglide|Warpath|Cosmos|Beachcomber|Seaspray|Windcharger|Tracks|Omega Supreme|Metroplex|Trypticon|Unicron|Primus|Devastator|Bruticus|Menasor|Superion|Defensor|Predaking|Thundercracker|Skywarp|Rumble|Frenzy|Laserbeak|Ravage|Bombshell|Shrapnel|Kickback|Cyclonus|Scourge|Swindle|Vortex|Brawl|Onslaught|Blast Off|Hot Spot|Silverbolt|Air Raid|Fireflight|Skydive|Slingshot",
+      "source": "https://transformers.hasbro.com/",
+      "scope": "Named official characters through 2024, including named combiners. Renames such as Galvatron/Rodimus Prime resolve to the original character."
+    }
   ]
 }
