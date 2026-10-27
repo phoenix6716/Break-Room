@@ -22,14 +22,16 @@ const snapshot=page=>page.evaluate(()=>Object.fromEntries(Object.keys(localStora
    }
    await page.evaluate(f=>{for(const [key,value]of Object.entries(f))localStorage.setItem(key,typeof value==='string'?value:JSON.stringify(value));},fixture);
    const before=await snapshot(page);await page.reload();
-   assert.equal(await page.locator('#total-runs').innerText(),'148');assert.equal(await page.locator('#today-count').innerText(),'2 / 10');assert.equal(await page.locator('#overall-streak').innerText(),'14 days');
-   assert.equal(await page.locator('.profile-achievement.earned').count(),6);assert.equal(await page.locator('.activity-day[data-count="3"]').count(),14);
+   assert.equal(await page.locator('#total-runs').innerText(),'134');assert.equal(await page.locator('#today-count').innerText(),'2 / 10');assert.equal(await page.locator('#overall-streak').innerText(),'14 days');
+   assert.equal(await page.locator('.profile-achievement.earned').count(),4);assert.equal(await page.locator('.activity-day[data-count="2"]').count(),14);
    assert.equal(await page.locator('.profile-result').count(),10);await page.locator('#more-results').click();assert.equal(await page.locator('.profile-result').count(),20);
-   assert.match(await page.locator('.profile-game[data-game=stake]').innerText(),/ARCHIVED/);assert.equal(await page.locator('.profile-game[data-game=stake] a').count(),0);await page.locator('#result-filter').selectOption('stake');assert.equal(await page.locator('.profile-result').count(),10);assert.equal(await page.locator('.profile-result:not([data-game=stake])').count(),0);await page.locator('#more-results').click();assert.equal(await page.locator('.profile-result').count(),14);assert.equal(await page.locator('#more-results').isVisible(),false);
+   assert.equal(await page.locator('.profile-game[data-game=stake],.profile-result[data-game=stake],#result-filter option[value=stake]').count(),0);
+   assert.equal(await page.locator('[data-achievement=stake],[data-achievement=sweep]').count(),0);
+   await page.locator('#result-filter').selectOption('stack-up');assert.equal(await page.locator('.profile-result').count(),10);assert.equal(await page.locator('.profile-result:not([data-game=stack-up])').count(),0);await page.locator('#more-results').click();assert.equal(await page.locator('.profile-result').count(),14);assert.equal(await page.locator('#more-results').isVisible(),false);
    await page.locator('#result-filter').selectOption('all');
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
    for(const card of await page.locator('.profile-game').all()){
-    if(await card.getAttribute('data-game')==='stake')assert.equal(await card.locator('a').count(),0);else assert.ok(await card.locator('a').getAttribute('href').then(h=>h.endsWith('/index.html')));
+    assert.ok(await card.locator('a').getAttribute('href').then(h=>h.endsWith('/index.html')));
     assert.ok(await card.locator('.profile-metrics').evaluate(e=>e.scrollWidth<=e.clientWidth));
    }
    assert.deepEqual(await snapshot(page),before,'Viewing/filtering profile must not write or migrate any save');
@@ -38,33 +40,30 @@ const snapshot=page=>page.evaluate(()=>Object.fromEntries(Object.keys(localStora
    await page.evaluate(()=>{localStorage.removeItem('stake:d:2026-10-20');window.dispatchEvent(new StorageEvent('storage',{key:'stake:d:2026-10-20'}));});
    assert.equal(await page.locator('#today-count').innerText(),'2 / 10');
    await page.clock.setSystemTime(new Date(fixed.getTime()+86400000*2));await page.clock.runFor(30000);assert.equal(await page.locator('#today-count').innerText(),'0 / 10');assert.equal(await page.locator('#overall-streak').innerText(),'0 days');
-   assert.deepEqual(errors,[]);await context.close();console.log(`PASS ${width}px: empty/populated profile, exact real-format stats, six earned achievements, filters/pagination, live refresh/day rollover, read-only saves and no overflow/errors.`);
+   assert.deepEqual(errors,[]);await context.close();console.log(`PASS ${width}px: empty/populated profile, exact real-format stats, current-game achievements, filters/pagination, live refresh/day rollover, read-only saves and no overflow/errors.`);
   }
   // Actual engines write the records: profile has no game-engine imports or sample scores.
   {
    const context=await browser.newContext({viewport:{width:1440,height:1000},reducedMotion:'reduce'}),page=await context.newPage();await page.clock.install({time:fixed});await page.clock.pauseAt(new Date(fixed.getTime()+1000));await page.clock.setSystemTime(fixed);
    await page.goto(base+'/games/lowball/index.html');let frame=await(await page.locator('#lowball-game-frame').elementHandle()).contentFrame();await page.clock.runFor(1000);if(await frame.locator('#helpClose').isVisible())await frame.locator('#helpClose').click();
    for(let i=0;i<4;i++){await frame.locator('#guessInput').fill(String(await frame.evaluate(()=>currentItem.prices[country])));await frame.locator('#submitBtn').click();await frame.locator('#nextBtn').click();}
-   await page.goto(base+'/games/stake/index.html');
-   for(let i=0;i<5;i++){await page.getByRole('button',{name:'Bet 3 chips',exact:true}).click();const answer=await page.evaluate(()=>run.qs[run.p.length].a);await page.locator('button.opt').nth(answer).click();await page.getByRole('button',{name:i===4?'See results':'Next question',exact:true}).click();}
-   // Verify legacy answers against the existing engine, rather than testing against a copied fixture.
+   // Retained private records must not reappear in public history.
    await page.addScriptTag({url:base+'/profile-records.js'});
-   assert.ok(await page.evaluate(()=>Array.from({length:40},(_,i)=>new Date(Date.UTC(2026,8,1+i)).toISOString().slice(0,10)).every(day=>JSON.stringify(dayQs(day,164).map(q=>q.a))===JSON.stringify(BREAK_ROOM_RECORDS.legacyStakeAnswers(day)))));
-   const legacy=await page.evaluate(()=>({day:'2026-10-19',b:[1,2,3,1,2],p:[0,1,-1,2,1]}));
-   const legacyScore=await page.evaluate(r=>sc({...r,qs:dayQs(r.day,164)}),legacy);
-   await page.evaluate(r=>localStorage.setItem('stake:d:'+r.day,JSON.stringify({b:r.b,p:r.p})),legacy);
+   await page.evaluate(qs=>{
+    localStorage.setItem('stake:d:2026-10-20',JSON.stringify({b:[3,3,3,3,3],p:[0,0,0,0,0],qs}));
+    localStorage.setItem('stake:d:2026-10-19',JSON.stringify({b:[1,2,3,1,2],p:[0,1,-1,2,1]}));
+   },qs);
    await page.goto(base+'/games/stack-up/index.html');await page.locator('[data-mode=daily]').click();
    for(let i=0;i<5;i++){await reorder(page);await page.locator('#check-button').click();await page.locator('#next-button').click();}
    const before=await snapshot(page);await page.goto(base+'/profile.html');
-   assert.equal(await page.locator('#total-runs').innerText(),'4');assert.equal(await page.locator('#today-count').innerText(),'2 / 10');
-   const actual=await page.evaluate(()=>BREAK_ROOM_RECORDS.read(localStorage));
-   assert.equal(actual.games[0].best,100);assert.equal(actual.games[1].best,15);assert.equal(actual.games[2].best,3100);assert.equal(actual.records.find(r=>r.game==='stake'&&r.date==='2026-10-19').score,legacyScore);
-   assert.deepEqual(await snapshot(page),before);await page.reload();assert.equal(await page.locator('#total-runs').innerText(),'4');
+   assert.equal(await page.locator('#total-runs').innerText(),'2');assert.equal(await page.locator('#today-count').innerText(),'2 / 10');
+   const actual=await page.evaluate(()=>BREAK_ROOM_RECORDS.active(BREAK_ROOM_RECORDS.read(localStorage)));
+   assert.equal(actual.games[0].best,100);assert.equal(actual.games.find(g=>g.id==='stack-up').best,3100);assert(actual.records.every(r=>r.game!=='stake'));
+   assert.deepEqual(await snapshot(page),before);await page.reload();assert.equal(await page.locator('#total-runs').innerText(),'2');
    await page.screenshot({path:'design/previews/profile/actual-completions.png',fullPage:true});
    // Practice is deliberately excluded, including real runs from each engine.
-   await page.goto(base+'/games/stake/index.html');await page.getByRole('tab',{name:'Unlimited',exact:true}).click();await page.getByRole('button',{name:'Bet 3 chips',exact:true}).click();await page.locator('button.opt').first().click();
    await page.goto(base+'/games/stack-up/index.html');await page.locator('[data-mode=infinite]').click();await reorder(page);await page.locator('#check-button').click();await page.locator('#next-button').click();
-   await page.goto(base+'/profile.html');assert.equal(await page.locator('#total-runs').innerText(),'4');await context.close();console.log('PASS: full real Lowball/Stake/Stack Up Dailies populate exact profile scores; legacy Stake answers match 40 engine dates; practice excluded; saves unchanged.');
+   await page.goto(base+'/profile.html');assert.equal(await page.locator('#total-runs').innerText(),'2');await context.close();console.log('PASS: real current-game completions populate exact public scores; retained retired-game records remain hidden and unchanged; practice excluded.');
   }
   {
    const context=await browser.newContext(),page=await context.newPage();await context.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw Error('Blocked')}});});await page.goto(base+'/profile.html');assert(await page.locator('#storage-warning').isVisible());assert.equal(await page.locator('#profile-content').isVisible(),false);await context.close();console.log('PASS: denied storage shows an honest warning rather than invented empty stats.');

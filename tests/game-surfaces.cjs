@@ -28,7 +28,7 @@ const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
    assert.match(await frame.locator('#counterItemNumber').innerText(),/02/);
    assert(!await frame.evaluate(()=>document.documentElement.scrollWidth>innerWidth));
    assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth));
-   await page.goto(base+'/games/stake/index.html');
+   await page.goto((process.env.ARCADE_LEGACY_TEST_URL||base)+'/games/stake/index.html');
    for(const chip of await page.locator('.chip').all()){
     const box=await chip.boundingBox();assert(Math.abs(box.width-box.height)<1);
     assert.equal(await chip.evaluate(el=>getComputedStyle(el).borderRadius),'50%');

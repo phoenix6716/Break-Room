@@ -30,8 +30,8 @@ function run(command,args,env,name){return new Promise((resolve,reject)=>{
   const artifact=await serve(path.join(root,'dist')),source=await serve(root);
   const chromium=process.env.ARCADE_CHROMIUM||(fs.existsSync('/usr/bin/chromium')?'/usr/bin/chromium':require('playwright').chromium.executablePath());
   try{for(const test of selected(fs.readdirSync(path.join(root,'tests')).filter(n=>n.endsWith('.cjs')&&!units.includes(n)).sort())){
-   const base=['game-template.cjs','layout-goals.cjs'].includes(test)?source.url:artifact.url;
-   await run(process.execPath,['tests/'+test],{ARCADE_TEST_URL:base,BASE_URL:base,ARCADE_CHROMIUM:chromium},test);
+   const base=['game-template.cjs','layout-goals.cjs','stake-timer.cjs','stake-sharing.cjs','prior.cjs','alibi.cjs','bouncer.cjs'].includes(test)?source.url:artifact.url;
+   await run(process.execPath,['tests/'+test],{ARCADE_TEST_URL:base,ARCADE_LEGACY_TEST_URL:source.url,BASE_URL:base,ARCADE_CHROMIUM:chromium},test);
   }}finally{await Promise.all([artifact.server,source.server].map(server=>new Promise(resolve=>server.close(resolve))));}
  }else throw Error('Use unit or browser');
  console.log('\nAll '+kind+' checks passed.');

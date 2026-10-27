@@ -1,29 +1,123 @@
-/* Midnight Arcade game registry. Add a new entry here before building its engine. */
+/* Public registry: only the ten current games are offered. */
 window.MIDNIGHT_ARCADE_GAMES = [
- {id:'shift-work',title:'Desk Jam',category:'SLIDING / LOGIC',description:'Slide the furniture. Clear a path. Clock off.',instructions:'Clear a route for the blue trolley in three untimed boards. Move count determines your 0–100 Arcade score; Unlimited is free.',accent:'green',status:'live',scoreMax:100,attemptsPerDay:1,engine:'shift-work'},
- {id:'hidden-gem',title:'Sleeper',category:'TRIVIA / INSTINCT',description:'Quiet answers. Big points. Think off the radar.',instructions:'Type one answer in 30 seconds. Unlisted guesses can retry. Five Daily questions with individual editorial ratings; free Unlimited.',accent:'yellow',status:'live',scoreMax:100,attemptsPerDay:1,engine:'hidden-gem'},
- {id:'seating-chart',title:'Seating Chart',category:'SEATING / LOGIC',description:'Seat the guests. Keep the drama to a minimum.',instructions:'Arrange five untimed Daily tables. Match the stated minimum drama for full credit. First reception counts; free Unlimited practice.',accent:'green',status:'live',scoreMax:60,attemptsPerDay:1,engine:'seating-chart'},
- {id:'clue-ladder',title:'Clue Ladder',category:'CLUES / KNOWLEDGE',description:'One answer. Five clues. How soon can you name it?',instructions:'Solve five untimed Daily puzzles with clearer clues. Fewer clues earn more points. Free Unlimited practice.',accent:'orange',status:'live',scoreMax:5000,attemptsPerDay:1,engine:'clue-ladder'},
- {id:'time-drop',title:'Time Drop',category:'HISTORY / INSTINCT',description:'One event. Your best guess at its year.',instructions:'Guess five Daily years with partial credit, or practise in Unlimited. No hearts or timer. First lock is final.',accent:'yellow',status:'live',scoreMax:5000,attemptsPerDay:1,engine:'time-drop'},
- {id:'stack-up',title:'Stack Up',category:'SORTING / SPEED',description:'Put five familiar things in the right order. Then beat the clock.',instructions:'Sort the cards with dragging or arrows and lock in your answer within 90 seconds. Daily has five stacks. Infinite is free practice.',accent:'yellow',status:'live',scoreMax:31000,attemptsPerDay:1,engine:'stack-up'},
- {id:'stake',title:'Stake',category:'TRIVIA / RISK',description:'Bet your chips. Trust your knowledge. Win big or lose it.',instructions:'Choose a chip bet before each trivia question. Correct answers win your bet; wrong answers lose it.',accent:'green',status:'archived',scoreMax:15,attemptsPerDay:1,engine:'stake'},
- {id:'lowball',title:'Lowball',category:'PRICE GUESSING',description:'Estimate the price. Trust your instincts. How close can you get?',instructions:'Guess the price of everyday items. Choose your region, enter your estimate, and aim for 100 points.',accent:'cyan',status:'live',scoreMax:100,attemptsPerDay:1,engine:'lowball'},
- {id:'pack',title:'Pack',category:'PACKING / LOGIC',description:'A small bag. A big decision. Make every gram count.',instructions:'Choose the most useful combination within the weight limit. Three untimed Daily bags and free Unlimited practice.',accent:'cyan',status:'live',scoreMax:100,attemptsPerDay:1,engine:'pack'},
- {id:'prior',title:'Prior',category:'HISTORY / INSTINCT',description:'Two events. One question. Which came first?',instructions:'Pick the earlier event. Five untimed Daily pairs, then reveal both dates and the connection. Unlimited is free practice.',accent:'purple',status:'archived',scoreMax:5,attemptsPerDay:1,engine:'prior'},
- {id:'laser',title:'Laser',category:'LIGHT / LOGIC',description:'One beam. Find your angle.',instructions:'Place and rotate mirrors to hit the target. Expert needs three; other tiers need two. Four Daily boards; first fire counts. Free Unlimited practice.',accent:'orange',status:'live',scoreMax:4,attemptsPerDay:1,engine:'laser'},
- {id:'alibi',title:'Alibi',category:'DEDUCTION / MYSTERY',description:'One culprit. Conflicting stories. Find the hole.',instructions:'Reconstruct the visits from verified records and personal accounts to identify the false alibi. Four untimed Daily cases; first accusation counts. Free Unlimited practice.',accent:'purple',status:'archived',scoreMax:4,attemptsPerDay:1,engine:'alibi'},
- {id:'bouncer',title:'Bouncer',category:'WORD / DEDUCTION',description:'Some words get in. Work out the secret rule.',instructions:'Study IN/OUT examples, optionally test words for half credit, then lock your list. Two untimed Daily doors and free Unlimited.',accent:'purple',status:'archived',scoreMax:16,attemptsPerDay:1,engine:'bouncer'},
- {id:'inner-clock',title:'Time Sense',category:'TIMING / INSTINCT',description:'No ticks. No clues. Just your sense of time.',instructions:'Start, then stop the hidden timer by instinct. Five Daily targets and free Unlimited practice.',accent:'cyan',status:'live',scoreMax:100,attemptsPerDay:1,engine:'inner-clock'},
- {id:'pixel-pairs',title:'Pixel Pairs',category:'MEMORY',description:'Spot the matching pair before time runs out.',instructions:'Flip tiles two at a time and find every matching pair.',accent:'pink',status:'coming-soon',scoreMax:100,attemptsPerDay:1,engine:'placeholder'},
- {id:'word-forge',title:'Word Forge',category:'WORDPLAY',description:'Build the best word from six letters.',instructions:'Use the letters to build the highest-scoring word.',accent:'cyan',status:'coming-soon',scoreMax:100,attemptsPerDay:1,engine:'placeholder'},
- {id:'gridlock',title:'Gridlock',category:'LOGIC',description:'Find the missing tile in the pattern.',instructions:'Study the pattern and pick the tile that completes it.',accent:'green',status:'coming-soon',scoreMax:100,attemptsPerDay:1,engine:'placeholder'},
- {id:'number-drop',title:'Number Drop',category:'NUMBER',description:'Guess the hidden number in fewer moves.',instructions:'Guess a number from 1 to 20. You have 5 guesses.',accent:'orange',status:'coming-soon',scoreMax:100,attemptsPerDay:1,engine:'placeholder'},
- {id:'memory-lane',title:'Memory Lane',category:'MEMORY',description:'Remember the sequence. Repeat it cleanly.',instructions:'A sequence game is planned for this cabinet.',accent:'purple',status:'coming-soon',scoreMax:100,attemptsPerDay:1,engine:'placeholder'},
- {id:'mystery-cabinet',title:'Mystery Cabinet',category:'???',description:'A new challenge is being prepared.',instructions:'This cabinet is not open yet.',accent:'yellow',status:'coming-soon',scoreMax:100,attemptsPerDay:0,engine:'placeholder'}
+  {
+    "id": "shift-work",
+    "title": "Desk Jam",
+    "category": "SLIDING / LOGIC",
+    "description": "Slide the furniture. Clear a path. Clock off.",
+    "instructions": "Clear a route for the blue trolley in three untimed boards. Move count determines your 0–100 Arcade score; Unlimited is free.",
+    "accent": "green",
+    "status": "live",
+    "scoreMax": 100,
+    "attemptsPerDay": 1,
+    "engine": "shift-work"
+  },
+  {
+    "id": "hidden-gem",
+    "title": "Sleeper",
+    "category": "TRIVIA / INSTINCT",
+    "description": "Quiet answers. Big points. Think off the radar.",
+    "instructions": "Type one answer in 30 seconds. Unlisted guesses can retry. Five Daily questions with individual editorial ratings; free Unlimited.",
+    "accent": "yellow",
+    "status": "live",
+    "scoreMax": 100,
+    "attemptsPerDay": 1,
+    "engine": "hidden-gem"
+  },
+  {
+    "id": "seating-chart",
+    "title": "Seating Chart",
+    "category": "SEATING / LOGIC",
+    "description": "Seat the guests. Keep the drama to a minimum.",
+    "instructions": "Arrange five untimed Daily tables. Match the stated minimum drama for full credit. First reception counts; free Unlimited practice.",
+    "accent": "green",
+    "status": "live",
+    "scoreMax": 60,
+    "attemptsPerDay": 1,
+    "engine": "seating-chart"
+  },
+  {
+    "id": "clue-ladder",
+    "title": "Clue Ladder",
+    "category": "CLUES / KNOWLEDGE",
+    "description": "One answer. Five clues. How soon can you name it?",
+    "instructions": "Solve five untimed Daily puzzles with clearer clues. Fewer clues earn more points. Free Unlimited practice.",
+    "accent": "orange",
+    "status": "live",
+    "scoreMax": 5000,
+    "attemptsPerDay": 1,
+    "engine": "clue-ladder"
+  },
+  {
+    "id": "time-drop",
+    "title": "Time Drop",
+    "category": "HISTORY / INSTINCT",
+    "description": "One event. Your best guess at its year.",
+    "instructions": "Guess five Daily years with partial credit, or practise in Unlimited. No hearts or timer. First lock is final.",
+    "accent": "yellow",
+    "status": "live",
+    "scoreMax": 5000,
+    "attemptsPerDay": 1,
+    "engine": "time-drop"
+  },
+  {
+    "id": "stack-up",
+    "title": "Stack Up",
+    "category": "SORTING / SPEED",
+    "description": "Put five familiar things in the right order. Then beat the clock.",
+    "instructions": "Sort the cards with dragging or arrows and lock in your answer within 90 seconds. Daily has five stacks. Infinite is free practice.",
+    "accent": "yellow",
+    "status": "live",
+    "scoreMax": 31000,
+    "attemptsPerDay": 1,
+    "engine": "stack-up"
+  },
+  {
+    "id": "lowball",
+    "title": "Lowball",
+    "category": "PRICE GUESSING",
+    "description": "Estimate the price. Trust your instincts. How close can you get?",
+    "instructions": "Guess the price of everyday items. Choose your region, enter your estimate, and aim for 100 points.",
+    "accent": "cyan",
+    "status": "live",
+    "scoreMax": 100,
+    "attemptsPerDay": 1,
+    "engine": "lowball"
+  },
+  {
+    "id": "pack",
+    "title": "Pack",
+    "category": "PACKING / LOGIC",
+    "description": "A small bag. A big decision. Make every gram count.",
+    "instructions": "Choose the most useful combination within the weight limit. Three untimed Daily bags and free Unlimited practice.",
+    "accent": "cyan",
+    "status": "live",
+    "scoreMax": 100,
+    "attemptsPerDay": 1,
+    "engine": "pack"
+  },
+  {
+    "id": "laser",
+    "title": "Laser",
+    "category": "LIGHT / LOGIC",
+    "description": "One beam. Find your angle.",
+    "instructions": "Place and rotate mirrors to hit the target. Expert needs three; other tiers need two. Four Daily boards; first fire counts. Free Unlimited practice.",
+    "accent": "orange",
+    "status": "live",
+    "scoreMax": 4,
+    "attemptsPerDay": 1,
+    "engine": "laser"
+  },
+  {
+    "id": "inner-clock",
+    "title": "Time Sense",
+    "category": "TIMING / INSTINCT",
+    "description": "No ticks. No clues. Just your sense of time.",
+    "instructions": "Start, then stop the hidden timer by instinct. Five Daily targets and free Unlimited practice.",
+    "accent": "cyan",
+    "status": "live",
+    "scoreMax": 100,
+    "attemptsPerDay": 1,
+    "engine": "inner-clock"
+  }
 ];
-window.MIDNIGHT_ARCADE_STORAGE = { // Demo only. Replace with server-side records before public launch.
- dayKey: () => window.MIDNIGHT_ARCADE_CLOCK.dayKey(),
- key: id => `insert-coin:attempt:${window.MIDNIGHT_ARCADE_STORAGE.dayKey()}:${id}`,
- get: id => { try { return JSON.parse(localStorage.getItem(window.MIDNIGHT_ARCADE_STORAGE.key(id))||'null'); } catch { return null; } },
- save: (id,data) => localStorage.setItem(window.MIDNIGHT_ARCADE_STORAGE.key(id),JSON.stringify(data))
-};
