@@ -194,5 +194,201 @@
       "source": "https://www.icc-cricket.com/tournaments/t20cricketworldcup",
       "scope": "The 20 qualifying cricket teams; West Indies count as one team."
     }
+  ],
+  "FILM": [
+    {
+      "prompt": "Name a Pixar feature film released by the end of 2025.",
+      "answers": "Toy Story|Finding Nemo|The Incredibles|Cars|Inside Out|Monsters Inc|Up|WALL-E|Ratatouille|Coco|Brave|A Bug's Life|Toy Story 2|Toy Story 3|Toy Story 4|Cars 2|Cars 3|Monsters University|Finding Dory|Incredibles 2|The Good Dinosaur|Onward|Soul|Luca|Turning Red|Lightyear|Elemental|Inside Out 2|Elio",
+      "source": "https://www.pixar.com/films",
+      "scope": "Full-length Pixar films through Elio, including streaming releases; shorts excluded."
+    },
+    {
+      "prompt": "Name a Best Picture Oscar winner for a film released in 1990–2024.",
+      "answers": "Titanic|Forrest Gump|The Lord of the Rings The Return of the King|Gladiator|Oppenheimer|Parasite|Everything Everywhere All at Once|The King's Speech|Slumdog Millionaire|The Departed|No Country for Old Men|Million Dollar Baby|A Beautiful Mind|Chicago|American Beauty|Shakespeare in Love|The English Patient|Braveheart|Schindler's List|Unforgiven|The Silence of the Lambs|Dances with Wolves|Argo|12 Years a Slave|Birdman|Spotlight|Moonlight|The Shape of Water|Green Book|Nomadland|CODA|The Artist|The Hurt Locker|Crash|Anora",
+      "source": "https://www.oscars.org/oscars/ceremonies",
+      "scope": "Film release years, not ceremony years. Best Picture winners only."
+    },
+    {
+      "prompt": "Name a named character in the eight Harry Potter films.",
+      "answers": "Harry Potter|Hermione Granger|Ron Weasley|Albus Dumbledore|Severus Snape|Rubeus Hagrid|Voldemort|Draco Malfoy|Ginny Weasley|Neville Longbottom|Luna Lovegood|Sirius Black|Remus Lupin|Minerva McGonagall|Dobby|Bellatrix Lestrange|Dolores Umbridge|Fred Weasley|George Weasley|Molly Weasley|Arthur Weasley|Percy Weasley|Bill Weasley|Lucius Malfoy|Narcissa Malfoy|Cedric Diggory|Cho Chang|Seamus Finnigan|Dean Thomas|Vernon Dursley|Petunia Dursley|Dudley Dursley|Gilderoy Lockhart|Quirinus Quirrell|Sybill Trelawney|Horace Slughorn|Alastor Moody|Nymphadora Tonks|Fleur Delacour|Viktor Krum|Rita Skeeter|Argus Filch|Garrick Ollivander|Peter Pettigrew|Barty Crouch Jr|Barty Crouch Sr|Cornelius Fudge|Kingsley Shacklebolt|Gellert Grindelwald|Xenophilius Lovegood|Griphook|Hedwig|Fawkes|Aragog|Buckbeak|Nagini|Moaning Myrtle|Nearly Headless Nick|Aberforth Dumbledore|Pansy Parkinson|Lavender Brown|Oliver Wood|Gregory Goyle|Vincent Crabbe",
+      "source": "https://www.harrypotter.com/",
+      "scope": "Named characters and creatures credited in the original eight films; not Fantastic Beasts-only characters. Shared surnames need more detail."
+    },
+    {
+      "prompt": "Name a DreamWorks Animation feature released by the end of 2024.",
+      "answers": "Shrek|Shrek 2|Shrek the Third|Shrek Forever After|Kung Fu Panda|Kung Fu Panda 2|Kung Fu Panda 3|Kung Fu Panda 4|How to Train Your Dragon|How to Train Your Dragon 2|How to Train Your Dragon The Hidden World|Madagascar|Madagascar Escape 2 Africa|Madagascar 3 Europe's Most Wanted|Megamind|The Prince of Egypt|Chicken Run|The Road to El Dorado|Antz|Spirit Stallion of the Cimarron|Sinbad Legend of the Seven Seas|Shark Tale|Wallace and Gromit The Curse of the Were-Rabbit|Over the Hedge|Flushed Away|Bee Movie|Monsters vs Aliens|Puss in Boots|Puss in Boots The Last Wish|Rise of the Guardians|The Croods|The Croods A New Age|Turbo|Mr Peabody and Sherman|Penguins of Madagascar|Home|Trolls|Trolls World Tour|Trolls Band Together|The Boss Baby|The Boss Baby Family Business|Captain Underpants The First Epic Movie|Abominable|Spirit Untamed|The Bad Guys|Ruby Gillman Teenage Kraken|Orion and the Dark|The Wild Robot",
+      "source": "https://www.dreamworks.com/movies",
+      "scope": "Animated features through 2024, not TV series."
+    },
+    {
+      "prompt": "Name a Star Wars feature film.",
+      "answers": "A New Hope|The Empire Strikes Back|Return of the Jedi|The Phantom Menace|Attack of the Clones|Revenge of the Sith|The Force Awakens|The Last Jedi|The Rise of Skywalker|Rogue One|Solo|The Clone Wars",
+      "source": "https://www.starwars.com/films",
+      "scope": "The nine saga films, Rogue One, Solo and the 2008 animated theatrical film. TV episodes and specials excluded."
+    },
+    {
+      "prompt": "Name an MCU feature film released by the end of 2025.",
+      "answers": "Iron Man|The Incredible Hulk|Iron Man 2|Thor|Captain America The First Avenger|The Avengers|Iron Man 3|Thor The Dark World|Captain America The Winter Soldier|Guardians of the Galaxy|Avengers Age of Ultron|Ant-Man|Captain America Civil War|Doctor Strange|Guardians of the Galaxy Vol 2|Spider-Man Homecoming|Thor Ragnarok|Black Panther|Avengers Infinity War|Ant-Man and the Wasp|Captain Marvel|Avengers Endgame|Spider-Man Far From Home|Black Widow|Shang-Chi and the Legend of the Ten Rings|Eternals|Spider-Man No Way Home|Doctor Strange in the Multiverse of Madness|Thor Love and Thunder|Black Panther Wakanda Forever|Ant-Man and the Wasp Quantumania|Guardians of the Galaxy Vol 3|The Marvels|Deadpool and Wolverine|Captain America Brave New World|Thunderbolts|The Fantastic Four First Steps",
+      "source": "https://www.marvel.com/movies",
+      "scope": "Marvel Studios' MCU theatrical films; TV series and earlier non-MCU films excluded."
+    },
+    {
+      "prompt": "Name a named character in either Inside Out film.",
+      "answers": "Joy|Sadness|Anger|Fear|Disgust|Anxiety|Envy|Embarrassment|Ennui|Nostalgia|Riley Andersen|Bing Bong|Jill Andersen|Bill Andersen|Meg|Valentina Ortiz|Bree Young|Grace Hsieh|Fritz|Paula|Foreman|Jangles|Frank|Dave|Lance Slashblade|Bloofy|Pouchy|Deep Dark Secret",
+      "source": "https://www.pixar.com/inside-out-2",
+      "scope": "Named speaking characters in the 2015 and 2024 films, including emotions. Shared emotions resolve to the emotion name."
+    },
+    {
+      "prompt": "Name a film directed by Steven Spielberg and released before 2025.",
+      "answers": "Jaws|Jurassic Park|E.T. the Extra-Terrestrial|Raiders of the Lost Ark|Schindler's List|Saving Private Ryan|Catch Me If You Can|Indiana Jones and the Temple of Doom|Indiana Jones and the Last Crusade|Indiana Jones and the Kingdom of the Crystal Skull|The Lost World Jurassic Park|Close Encounters of the Third Kind|Hook|The BFG|Ready Player One|War of the Worlds|Minority Report|The Terminal|Lincoln|The Fabelmans|West Side Story|Bridge of Spies|The Post|War Horse|The Adventures of Tintin|Munich|A.I. Artificial Intelligence|Amistad|The Color Purple|Empire of the Sun|Always|1941|The Sugarland Express|Duel",
+      "source": "https://en.wikipedia.org/wiki/Steven_Spielberg_filmography",
+      "scope": "Features he directed, including the TV film Duel. Producer-only credits excluded."
+    },
+    {
+      "prompt": "Name a prehistoric animal or hybrid in the Jurassic Park films through Dominion.",
+      "answers": "Tyrannosaurus rex|Velociraptor|Triceratops|Brachiosaurus|Stegosaurus|Spinosaurus|Dilophosaurus|Ankylosaurus|Parasaurolophus|Gallimimus|Compsognathus|Pteranodon|Mosasaurus|Indominus rex|Indoraptor|Allosaurus|Carnotaurus|Baryonyx|Sinoceratops|Stygimoloch|Apatosaurus|Dreadnoughtus|Giganotosaurus|Therizinosaurus|Pyroraptor|Atrociraptor|Dimorphodon|Pachycephalosaurus|Mamenchisaurus|Corythosaurus|Nasutoceratops|Moros|Quetzalcoatlus|Lystrosaurus|Dimetrodon|Microceratus",
+      "source": "https://jurassicworld.com/",
+      "scope": "Species shown in the six theatrical films through 2022, including fictional hybrids, flying and marine reptiles. Not TV-only species."
+    },
+    {
+      "prompt": "Name a Walt Disney Animation Studios feature released in 2000–2024.",
+      "answers": "Frozen|Frozen II|Moana|Moana 2|Encanto|Zootopia|Tangled|Wreck-It Ralph|Ralph Breaks the Internet|Big Hero 6|The Princess and the Frog|Lilo and Stitch|The Emperor's New Groove|Dinosaur|Atlantis The Lost Empire|Treasure Planet|Brother Bear|Home on the Range|Chicken Little|Meet the Robinsons|Bolt|Winnie the Pooh|Raya and the Last Dragon|Strange World|Wish",
+      "source": "https://www.disneyanimation.com/films/",
+      "scope": "Disney Animation's own feature slate in those release years; Pixar and DisneyToon excluded."
+    },
+    {
+      "prompt": "Name an actor who played the Doctor in Doctor Who on television through 2024.",
+      "answers": "William Hartnell|Patrick Troughton|Jon Pertwee|Tom Baker|Peter Davison|Colin Baker|Sylvester McCoy|Paul McGann|Christopher Eccleston|David Tennant|Matt Smith|Peter Capaldi|Jodie Whittaker|Ncuti Gatwa|John Hurt|Jo Martin|Richard Hurndall|David Bradley",
+      "source": "https://www.bbc.co.uk/doctorwho",
+      "scope": "Main incarnations, War/Fugitive Doctors and First Doctor recasts; film, parody-only and stunt performances excluded."
+    },
+    {
+      "prompt": "Name a Sonic the Hedgehog character from the games or theatrical films.",
+      "answers": "Sonic|Tails|Knuckles|Amy Rose|Shadow|Dr Eggman|Metal Sonic|Silver|Blaze|Rouge|Cream|Cheese|Big the Cat|Froggy|Vector|Espio|Charmy Bee|Jet|Wave|Storm|E-102 Gamma|E-123 Omega|Tikal|Chaos|Infinite|Sage|Orbot|Cubot|Fang|Mighty|Ray|Sticks|Gerald Robotnik|Maria Robotnik|Tom Wachowski|Maddie Wachowski|Agent Stone|Longclaw|Wade Whipple",
+      "source": "https://sonic.sega.jp/SonicChannel/character/",
+      "scope": "Named characters in official games or theatrical films through 2024; not fan characters."
+    },
+    {
+      "prompt": "Name a named Teenage Mutant Ninja Turtles character.",
+      "answers": "Leonardo|Raphael|Donatello|Michelangelo|Splinter|Shredder|April O'Neil|Casey Jones|Bebop|Rocksteady|Krang|Baxter Stockman|Karai|Leatherhead|Slash|Metalhead|Rat King|Mondo Gecko|Mona Lisa|Usagi Yojimbo|Traag|Irma|Vernon Fenwick|Venus de Milo|Jennika|Tokka|Rahzar|Keno|Superfly|Cynthia Utrom|Ray Fillet|Wingnut|Scumbug|Genghis Frog|Napoleon Bonafrog|Zog|Traximus|Zanramon",
+      "source": "https://en.wikipedia.org/wiki/List_of_Teenage_Mutant_Ninja_Turtles_characters",
+      "scope": "Official comics, TV or film characters through 2025; not fan characters or unnamed species."
+    },
+    {
+      "prompt": "Name a named character in Toy Story 1–4.",
+      "answers": "Woody|Buzz Lightyear|Jessie|Bo Peep|Rex|Hamm|Slinky Dog|Mr Potato Head|Mrs Potato Head|Bullseye|Forky|Lotso|Stinky Pete|Emperor Zurg|Duke Caboom|Ducky|Bunny|Gabby Gabby|Giggle McDimples|Andy Davis|Bonnie Anderson|Sid Phillips|Hannah Phillips|Molly Davis|Al McWhiggin|Buster|Wheezy|Sarge|RC|Lenny|Etch|Barbie|Ken|Big Baby|Stretch|Chunk|Twitch|Sparks|Bookworm|Chuckles|Trixie|Mr Pricklepants|Buttercup|Dolly|Combat Carl|Billy Goat and Gruff|Benson|Tinny",
+      "source": "https://www.pixar.com/toy-story-4",
+      "scope": "Named characters in the first four features. The three sheep are accepted together; generic unnamed toys excluded."
+    },
+    {
+      "prompt": "Name a named character in Encanto, Frozen or Moana.",
+      "answers": "Mirabel Madrigal|Bruno Madrigal|Isabela Madrigal|Luisa Madrigal|Alma Madrigal|Julieta Madrigal|Agustin Madrigal|Pepa Madrigal|Felix Madrigal|Dolores Madrigal|Camilo Madrigal|Antonio Madrigal|Pedro Madrigal|Mariano Guzman|Elsa|Anna|Olaf|Kristoff|Sven|Hans|Oaken|Duke of Weselton|Marshmallow|Agnarr|Iduna|Pabbie|Bulda|Moana|Maui|Hei Hei|Pua|Tala|Tui|Sina|Tamatoa|Te Fiti|Te Ka",
+      "source": "https://www.disney.com/",
+      "scope": "The original three theatrical films, not sequels; named animals count."
+    },
+    {
+      "prompt": "Name a named character in the Shrek or Puss in Boots films.",
+      "answers": "Shrek|Fiona|Donkey|Puss in Boots|Dragon|Lord Farquaad|Fairy Godmother|Prince Charming|King Harold|Queen Lillian|Gingerbread Man|Pinocchio|Big Bad Wolf|Three Little Pigs|Three Blind Mice|Doris|Mabel|Artie|Merlin|Captain Hook|Rapunzel|Cinderella|Snow White|Sleeping Beauty|Rumpelstiltskin|Brogan|Cookie|Gretched|Kitty Softpaws|Humpty Dumpty|Jack|Jill|Perrito|Goldilocks|Mama Bear|Papa Bear|Baby Bear|Big Jack Horner|Death|Ethical Bug",
+      "source": "https://www.dreamworks.com/movies/puss-in-boots-the-last-wish",
+      "scope": "The Shrek films and both Puss in Boots features through 2022; named collective groups count."
+    }
+  ],
+  "BOOKS": [
+    {
+      "prompt": "Name a Hogwarts student in the Harry Potter novels.",
+      "answers": "Harry Potter|Hermione Granger|Ron Weasley|Draco Malfoy|Neville Longbottom|Luna Lovegood|Ginny Weasley|Fred Weasley|George Weasley|Percy Weasley|Cedric Diggory|Cho Chang|Seamus Finnigan|Dean Thomas|Lavender Brown|Parvati Patil|Padma Patil|Oliver Wood|Katie Bell|Angelina Johnson|Alicia Spinnet|Lee Jordan|Colin Creevey|Dennis Creevey|Hannah Abbott|Susan Bones|Ernie Macmillan|Justin Finch-Fletchley|Terry Boot|Michael Corner|Anthony Goldstein|Pansy Parkinson|Vincent Crabbe|Gregory Goyle|Blaise Zabini|Theodore Nott|Millicent Bulstrode|Marcus Flint|Adrian Pucey|Graham Montague|Zacharias Smith|Marietta Edgecombe|Romilda Vane|Cormac McLaggen|Demelza Robins|Jimmy Peakes|Ritchie Coote|Euan Abercrombie|Natalie McDonald",
+      "source": "https://www.harrypotter.com/",
+      "scope": "Named students attending during Harry's seven-book story, not adult former students."
+    },
+    {
+      "prompt": "Name a Roald Dahl children's book.",
+      "answers": "Charlie and the Chocolate Factory|Matilda|The BFG|The Witches|James and the Giant Peach|Fantastic Mr Fox|The Twits|George's Marvellous Medicine|Danny the Champion of the World|The Magic Finger|Esio Trot|The Giraffe and the Pelly and Me|Charlie and the Great Glass Elevator|The Enormous Crocodile|The Minpins|The Gremlins|The Wonderful Story of Henry Sugar and Six More|The Vicar of Nibbleswicke|Revolting Rhymes|Dirty Beasts|Rhyme Stew|Boy Tales of Childhood|Going Solo",
+      "source": "https://www.roalddahl.com/books/",
+      "scope": "Children's fiction/verse and the two memoirs. Billy and the Minpins resolves to The Minpins."
+    },
+    {
+      "prompt": "Name a novel in The Hunger Games, Divergent, Twilight or The Maze Runner series.",
+      "answers": "The Hunger Games|Catching Fire|Mockingjay|The Ballad of Songbirds and Snakes|Sunrise on the Reaping|Divergent|Insurgent|Allegiant|Twilight|New Moon|Eclipse|Breaking Dawn|Midnight Sun|Life and Death Twilight Reimagined|The Maze Runner|The Scorch Trials|The Death Cure|The Kill Order|The Fever Code|The Maze Cutter|The Godhead Complex|The Infinite Glade",
+      "source": "https://en.wikipedia.org/wiki/The_Hunger_Games",
+      "scope": "Novels through 2025, including prequels/retellings; short-story collections and novellas excluded."
+    },
+    {
+      "prompt": "Name a novel by J. K. Rowling or Suzanne Collins.",
+      "answers": "Harry Potter and the Philosopher's Stone|Harry Potter and the Chamber of Secrets|Harry Potter and the Prisoner of Azkaban|Harry Potter and the Goblet of Fire|Harry Potter and the Order of the Phoenix|Harry Potter and the Half-Blood Prince|Harry Potter and the Deathly Hallows|The Hunger Games|Catching Fire|Mockingjay|The Ballad of Songbirds and Snakes|Sunrise on the Reaping|Gregor the Overlander|Gregor and the Prophecy of Bane|Gregor and the Curse of the Warmbloods|Gregor and the Marks of Secret|Gregor and the Code of Claw|The Casual Vacancy|The Cuckoo's Calling|The Silkworm|Career of Evil|Lethal White|Troubled Blood|The Ink Black Heart|The Running Grave|The Hallmarked Man|The Ickabog|The Christmas Pig",
+      "source": "https://www.jkrowling.com/writing/",
+      "scope": "Novels through 2025, including Robert Galbraith books; plays, screenplays and reference books excluded."
+    },
+    {
+      "prompt": "Name a completed novel by Jane Austen or one of the Brontë sisters.",
+      "answers": "Pride and Prejudice|Sense and Sensibility|Emma|Persuasion|Mansfield Park|Northanger Abbey|Wuthering Heights|Jane Eyre|Villette|Shirley|The Professor|Agnes Grey|The Tenant of Wildfell Hall",
+      "source": "https://www.bl.uk/people/jane-austen",
+      "scope": "Six completed Austen and seven completed Brontë novels; unfinished books, juvenilia and poetry excluded."
+    },
+    {
+      "prompt": "Name a main novel in Percy Jackson, Heroes of Olympus or Trials of Apollo.",
+      "answers": "The Lightning Thief|The Sea of Monsters|The Titan's Curse|The Battle of the Labyrinth|The Last Olympian|The Chalice of the Gods|Wrath of the Triple Goddess|The Lost Hero|The Son of Neptune|The Mark of Athena|The House of Hades|The Blood of Olympus|The Hidden Oracle|The Dark Prophecy|The Burning Maze|The Tyrant's Tomb|The Tower of Nero",
+      "source": "https://rickriordan.com/books/",
+      "scope": "Novels in the three named series through 2025; companions, Nico spinoffs and graphic adaptations excluded."
+    },
+    {
+      "prompt": "Name a Shakespeare play.",
+      "answers": "Romeo and Juliet|Hamlet|Macbeth|Othello|King Lear|A Midsummer Night's Dream|Much Ado About Nothing|The Tempest|Twelfth Night|The Merchant of Venice|Julius Caesar|Antony and Cleopatra|Richard III|Richard II|Henry V|Henry IV Part 1|Henry IV Part 2|Henry VI Part 1|Henry VI Part 2|Henry VI Part 3|Henry VIII|King John|As You Like It|The Taming of the Shrew|The Comedy of Errors|Love's Labour's Lost|The Merry Wives of Windsor|All's Well That Ends Well|Measure for Measure|The Winter's Tale|Cymbeline|Titus Andronicus|Coriolanus|Timon of Athens|Troilus and Cressida|The Two Gentlemen of Verona|Pericles|The Two Noble Kinsmen",
+      "source": "https://www.rsc.org.uk/shakespeares-plays",
+      "scope": "The standard 38-play canon, including collaborations; name the part for multi-part Henry plays."
+    },
+    {
+      "prompt": "Name a character in Alice's Adventures in Wonderland or Through the Looking-Glass.",
+      "answers": "Alice|White Rabbit|Cheshire Cat|Mad Hatter|March Hare|Dormouse|Queen of Hearts|King of Hearts|Knave of Hearts|Duchess|Dodo|Caterpillar|Mock Turtle|Gryphon|Bill the Lizard|Mouse|Lory|Eaglet|Duck|Pigeon|Pat|Cook|Dinah|Red Queen|White Queen|Red King|White King|White Knight|Red Knight|Humpty Dumpty|Tweedledum|Tweedledee|Walrus|Carpenter|Lion|Unicorn|Jabberwock|Jubjub Bird|Bandersnatch|Sheep|Gnat|Fawn|Rose|Tiger Lily",
+      "source": "https://www.gutenberg.org/ebooks/11",
+      "scope": "Lewis Carroll's two original books, including their poems; not Disney-only characters."
+    },
+    {
+      "prompt": "Name a Discworld novel.",
+      "answers": "The Colour of Magic|The Light Fantastic|Equal Rites|Mort|Sourcery|Wyrd Sisters|Pyramids|Guards Guards|Eric|Moving Pictures|Reaper Man|Witches Abroad|Small Gods|Lords and Ladies|Men at Arms|Soul Music|Interesting Times|Maskerade|Feet of Clay|Hogfather|Jingo|The Last Continent|Carpe Jugulum|The Fifth Elephant|The Truth|Thief of Time|The Last Hero|The Amazing Maurice and His Educated Rodents|Night Watch|The Wee Free Men|Monstrous Regiment|A Hat Full of Sky|Going Postal|Thud|Wintersmith|Making Money|Unseen Academicals|I Shall Wear Midnight|Snuff|Raising Steam|The Shepherd's Crown",
+      "source": "https://www.terrypratchettbooks.com/discworld-reading-order/",
+      "scope": "The 41 main books, including illustrated The Last Hero; companion guides excluded."
+    },
+    {
+      "prompt": "Name a member of the Fellowship or Thorin's company.",
+      "answers": "Frodo Baggins|Samwise Gamgee|Meriadoc Brandybuck|Peregrin Took|Aragorn|Legolas|Gimli|Boromir|Gandalf|Bilbo Baggins|Thorin Oakenshield|Balin|Dwalin|Fili|Kili|Dori|Nori|Ori|Oin|Gloin|Bifur|Bofur|Bombur",
+      "source": "https://www.tolkiensociety.org/author/books-by-tolkien/",
+      "scope": "Tolkien's nine Fellowship members or fifteen members of Thorin's company. Shared Gandalf counts once."
+    },
+    {
+      "prompt": "Name a Diary of a Wimpy Kid main-series book released through 2025.",
+      "answers": "Diary of a Wimpy Kid|Rodrick Rules|The Last Straw|Dog Days|The Ugly Truth|Cabin Fever|The Third Wheel|Hard Luck|The Long Haul|Old School|Double Down|The Getaway|The Meltdown|Wrecking Ball|The Deep End|Big Shot|Diper Overlode|No Brainer|Hot Mess|Partypooper",
+      "source": "https://wimpykid.com/books/",
+      "scope": "The first 20 main-series books, not Rowley spinoffs, movie diaries or activity books."
+    },
+    {
+      "prompt": "Name a book in Sarah J. Maas's three main series.",
+      "answers": "A Court of Thorns and Roses|A Court of Mist and Fury|A Court of Wings and Ruin|A Court of Frost and Starlight|A Court of Silver Flames|Throne of Glass|Crown of Midnight|Heir of Fire|Queen of Shadows|Empire of Storms|Tower of Dawn|Kingdom of Ash|The Assassin's Blade|House of Earth and Blood|House of Sky and Breath|House of Flame and Shadow",
+      "source": "https://sarahjmaas.com/books/",
+      "scope": "Throne of Glass, A Court of Thorns and Roses and Crescent City through 2025; includes their novella and story collection."
+    },
+    {
+      "prompt": "Name a fictional detective from a published book.",
+      "answers": "Sherlock Holmes|Hercule Poirot|Miss Marple|Nancy Drew|Philip Marlowe|Sam Spade|Father Brown|Inspector Morse|Inspector Rebus|Jack Reacher|Cormoran Strike|Robin Ellacott|Harry Bosch|Alex Cross|Kay Scarpetta|Temperance Brennan|Lisbeth Salander|Mikael Blomkvist|Jessica Fletcher|Nero Wolfe|Lord Peter Wimsey|Albert Campion|Roderick Alleyn|Adam Dalgliesh|Kurt Wallander|Harry Hole|James Qwilleran|Kinsey Millhone|V I Warshawski|Stephanie Plum|Amelia Peabody|Flavia de Luce|Enola Holmes|Thursday Next|Frank Hardy|Joe Hardy|Cam Jansen|Encyclopedia Brown|Precious Ramotswe|Jules Maigret",
+      "source": "https://en.wikipedia.org/wiki/List_of_fictional_detectives",
+      "scope": "Named professional/amateur investigators, including published TV tie-in novels. Full names or unambiguous surnames."
+    },
+    {
+      "prompt": "Name a Julia Donaldson picture book.",
+      "answers": "The Gruffalo|The Gruffalo's Child|Room on the Broom|Stick Man|Zog|The Snail and the Whale|The Highway Rat|Superworm|The Smeds and the Smoos|A Squash and a Squeeze|Tabby McTat|Tiddler|The Smartest Giant in Town|Monkey Puzzle|Charlie Cook's Favourite Book|The Detective Dog|The Hospital Dog|The Scarecrows' Wedding|Zog and the Flying Doctors|What the Ladybird Heard|What the Ladybird Heard Next|What the Ladybird Heard on Holiday|What the Ladybird Heard at the Seaside|The Ugly Five|The Baddies|The Go-Away Bird|The Paper Dolls|The Everywhere Bear|The Magic Paintbrush|The Singing Mermaid|Sharing a Shell|Cave Baby|Tyrannosaurus Drip|The Troll|Freddie and the Fairy|Chocolate Mousse for Greedy Goose|Goat Goes to Playgroup|Spinderella|The Princess and the Wizard|The Rhyming Rabbit",
+      "source": "https://www.juliadonaldson.co.uk/books/",
+      "scope": "Picture books credited to Donaldson through 2025; not TV episode titles."
+    },
+    {
+      "prompt": "Name a Dog Man main-series book released by the end of 2024.",
+      "answers": "Dog Man|Dog Man Unleashed|Dog Man A Tale of Two Kitties|Dog Man and Cat Kid|Dog Man Lord of the Fleas|Dog Man Brawl of the Wild|Dog Man For Whom the Ball Rolls|Dog Man Fetch-22|Dog Man Grime and Punishment|Dog Man Mothering Heights|Dog Man Twenty Thousand Fleas Under the Sea|Dog Man The Scarlet Shedder|Dog Man Big Jim Begins",
+      "source": "https://pilkey.com/series/dog-man",
+      "scope": "The first 13 main volumes; Cat Kid Comic Club is a separate series. Subtitles alone are accepted."
+    },
+    {
+      "prompt": "Name a Stephen King novel published before 2025.",
+      "answers": "Carrie|The Shining|It|Misery|The Stand|Pet Sematary|Salem's Lot|Christine|Cujo|The Green Mile|The Running Man|The Long Walk|Firestarter|The Dead Zone|The Tommyknockers|Needful Things|Gerald's Game|Dolores Claiborne|Insomnia|Rose Madder|Desperation|The Regulators|Bag of Bones|The Girl Who Loved Tom Gordon|Dreamcatcher|Black House|From a Buick 8|The Colorado Kid|Cell|Lisey's Story|Duma Key|Under the Dome|11/22/63|Joyland|Doctor Sleep|Mr Mercedes|Revival|Finders Keepers|End of Watch|Sleeping Beauties|The Outsider|The Institute|Later|Billy Summers|Fairy Tale|Holly|Elevation|Gwendy's Button Box|Gwendy's Final Task|The Gunslinger|The Drawing of the Three|The Waste Lands|Wizard and Glass|Wolves of the Calla|Song of Susannah|The Dark Tower|The Wind Through the Keyhole|Rage|Roadwork|Thinner|The Eyes of the Dragon|The Talisman|Cycle of the Werewolf",
+      "source": "https://stephenking.com/works/novel/",
+      "scope": "Novels, serial novels and separately published novellas through 2024, including Richard Bachman and collaborations; not story collections."
+    }
   ]
 }
