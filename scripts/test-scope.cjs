@@ -46,6 +46,7 @@ function selectChecks(changed,available,{full=false}={}){
   // Check date coverage when shipped banks, selectors or the active shelf change; no game sessions.
   if(DAILY_CONTENT_FILES.has(file))add('daily-content.cjs');
   if(/\.md$/i.test(file)||/^(?:design|game-drafts|source)\//.test(file)||['.gitignore','.DS_Store'].includes(file))continue;
+  if(file.startsWith('content/archive/'))continue;
   if(/^tests\/[^/]+\.cjs$/.test(file)){const name=file.slice(6);if(known.has(name))add(name);else reasons.push('Deleted check: '+file);continue;}
   if(file==='tests/question-maths.py'){python=true;continue;}
   if(file.startsWith('tests/fixtures/')){if(file.includes('alibi'))game('alibi',true);else throw Error('Add a test scope for fixture '+file);continue;}
@@ -60,7 +61,9 @@ function selectChecks(changed,available,{full=false}={}){
    }
   }else if(model){game(model[1],true);add('profile-records.cjs','cloud-saves.cjs');if(model[1]==='inner-clock')add('accounts.cjs','friends.cjs','profile.cjs');}
   else if(file==='supabase/leagues.sql'){add('leagues-database.cjs','leagues.cjs');}
+  else if(['supabase/hidden-gem.sql','supabase/hidden-gem-broader-answers.sql'].includes(file)){game('hidden-gem',true);}
   else if(/^supabase\//.test(file)){add('friends-database.cjs','cloud-database.cjs','playtest-feedback.cjs');}
+  else if(file==='content/drafts/sleeper-broader-questions.json'){game('hidden-gem',true);content=true;}
   else if(/^content\//.test(file)){
    content=true;add('content-tools.cjs');
    if(/shift-work/.test(file))game('shift-work',true);

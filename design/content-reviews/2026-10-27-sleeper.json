@@ -1,0 +1,889 @@
+{
+  "date": "2026-10-27",
+  "game": "hidden-gem",
+  "baseRevision": 2,
+  "revision": 3,
+  "questions": 160,
+  "answers": 4013,
+  "days": 32,
+  "scope": "Integrate the six drafted topics (96 slots); other four topics unchanged. IDs, topic order, date selector, timers, score formula and captured snapshots are preserved.",
+  "ratings": "Fixed editorial order from familiar to less obvious; evenly spread integer 1–100 ratings. Kanto uses a curated familiar prefix then the remaining Pokedex order. Questions with more than 100 answers necessarily share integer ratings. These are design choices, not measured popularity.",
+  "corrections": [
+    "Commonwealth: remove duplicate Saint Kitts and Nevis; add Brunei.",
+    "Constellations: replace invalid Borealis with Cepheus.",
+    "Moons: include Themisto (discovered in 1975).",
+    "Star Wars: merge Anakin/Vader and Ilum/Starkiller Base aliases.",
+    "Doctor Who: remove individual Sutekh, repair Monoid, deduplicate Sontaran; Slitheen aliases its species.",
+    "Merge Te Ka/Te Fiti; add common player, team, title and spelling aliases.",
+    "Exclude Iron Man 3, Muppets from Space and Space Jam from physical space-trip films.",
+    "NASA: exclude SLS hardware; Mars missions include Spirit and Opportunity.",
+    "Keep all 151 Kanto species; expand browser/SQL bound to 160 rather than truncating."
+  ],
+  "limits": "Editorial scope review and matching checks do not independently verify every linked source or establish human difficulty calibration.",
+  "changes": [
+    {
+      "id": "countries-a",
+      "topic": "WORLD",
+      "before": "Name a UN member country whose English short name starts with A.",
+      "after": "Name a UN member country beginning with A or B.",
+      "answersBefore": 11,
+      "answersAfter": 28,
+      "source": "https://www.un.org/en/about-us/member-states"
+    },
+    {
+      "id": "pixar-2010",
+      "topic": "FILM",
+      "before": "Name a Pixar feature film first released in 2015–2025.",
+      "after": "Name a Pixar feature film released by the end of 2025.",
+      "answersBefore": 15,
+      "answersAfter": 29,
+      "source": "https://www.pixar.com/films"
+    },
+    {
+      "id": "decathlon",
+      "topic": "SPORT",
+      "before": "Name an event in the men's outdoor decathlon.",
+      "after": "Name a sport or discipline contested at the Paris 2024 Olympics.",
+      "answersBefore": 10,
+      "answersAfter": 56,
+      "source": "https://olympics.com/en/paris-2024/sports"
+    },
+    {
+      "id": "germany-neighbours",
+      "topic": "WORLD",
+      "before": "Name a country that shares a land border with Germany.",
+      "after": "Name a European Union member country.",
+      "answersBefore": 9,
+      "answersAfter": 27,
+      "source": "https://european-union.europa.eu/principles-countries-history/eu-countries_en"
+    },
+    {
+      "id": "best-picture-2010s",
+      "topic": "FILM",
+      "before": "Name a Best Picture Oscar winner for a film released in 2010–2019.",
+      "after": "Name a Best Picture Oscar winner for a film released in 1990–2024.",
+      "answersBefore": 10,
+      "answersAfter": 35,
+      "source": "https://www.oscars.org/oscars/ceremonies"
+    },
+    {
+      "id": "planets",
+      "topic": "SPACE",
+      "before": "Name one of the Solar System's eight planets.",
+      "after": "Name a Solar System moon discovered before 1990.",
+      "answersBefore": 8,
+      "answersAfter": 61,
+      "source": "https://science.nasa.gov/solar-system/moons/"
+    },
+    {
+      "id": "south-america",
+      "topic": "WORLD",
+      "before": "Name a sovereign country in South America.",
+      "after": "Name a sovereign country in Central or South America.",
+      "answersBefore": 12,
+      "answersAfter": 20,
+      "source": "https://unstats.un.org/unsd/methodology/m49/"
+    },
+    {
+      "id": "harry-potter",
+      "topic": "BOOKS",
+      "before": "Name one of the seven original Harry Potter novels.",
+      "after": "Name a Hogwarts student in the Harry Potter novels.",
+      "answersBefore": 7,
+      "answersAfter": 49,
+      "source": "https://www.harrypotter.com/"
+    },
+    {
+      "id": "chess-pieces",
+      "topic": "GAMES",
+      "before": "Name a type of piece in standard chess.",
+      "after": "Name a playable fighter in Super Smash Bros. Ultimate.",
+      "answersBefore": 6,
+      "answersAfter": 96,
+      "source": "https://www.smashbros.com/en_US/fighter/"
+    },
+    {
+      "id": "hg-nordic",
+      "topic": "WORLD",
+      "before": "Name a Nordic country.",
+      "after": "Name a US state.",
+      "answersBefore": 5,
+      "answersAfter": 50,
+      "source": "https://www.census.gov/library/reference/code-lists/ansi.html"
+    },
+    {
+      "id": "hg-baltic",
+      "topic": "WORLD",
+      "before": "Name one of the Baltic states.",
+      "after": "Name an African UN member country.",
+      "answersBefore": 3,
+      "answersAfter": 54,
+      "source": "https://www.un.org/en/about-us/member-states"
+    },
+    {
+      "id": "hg-g7",
+      "topic": "WORLD",
+      "before": "Name a G7 member country.",
+      "after": "Name a G20 member country.",
+      "answersBefore": 7,
+      "answersAfter": 19,
+      "source": "https://www.g20.org/"
+    },
+    {
+      "id": "hg-ireland",
+      "topic": "WORLD",
+      "before": "Name a country that co-hosted a men's or women's FIFA World Cup held in 2002–2023.",
+      "after": "Name a team that played at the 2023 Women's World Cup.",
+      "answersBefore": 4,
+      "answersAfter": 32,
+      "source": "https://www.fifa.com/en/tournaments/womens/womensworldcup/australia-new-zealand2023"
+    },
+    {
+      "id": "hg-uk",
+      "topic": "WORLD",
+      "before": "Name a constituent country of the United Kingdom.",
+      "after": "Name a country with a Mediterranean coastline.",
+      "answersBefore": 4,
+      "answersAfter": 22,
+      "source": "https://www.unep.org/unepmap/who-we-are/contracting-parties"
+    },
+    {
+      "id": "hg-benelux",
+      "topic": "WORLD",
+      "before": "Name a country that hosted a Summer Olympics held in 2008–2024.",
+      "after": "Name a UN member country in the UN's Asia region.",
+      "answersBefore": 5,
+      "answersAfter": 47,
+      "source": "https://unstats.un.org/unsd/methodology/m49/"
+    },
+    {
+      "id": "hg-canada",
+      "topic": "WORLD",
+      "before": "Name a Canadian province.",
+      "after": "Name a Canadian province or territory.",
+      "answersBefore": 10,
+      "answersAfter": 13,
+      "source": "https://www.canada.ca/en/intergovernmental-affairs/services/provinces-territories.html"
+    },
+    {
+      "id": "hg-pacific",
+      "topic": "WORLD",
+      "before": "Name a US state in the Census Pacific division.",
+      "after": "Name a country that competed at Eurovision 2025.",
+      "answersBefore": 5,
+      "answersAfter": 37,
+      "source": "https://eurovision.tv/event/basel-2025/participants"
+    },
+    {
+      "id": "hg-lakes",
+      "topic": "WORLD",
+      "before": "Name a Great Lake of North America.",
+      "after": "Name a sovereign country where Spanish is an official or nationwide de facto language.",
+      "answersBefore": 5,
+      "answersAfter": 20,
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_territories_where_Spanish_is_an_official_language"
+    },
+    {
+      "id": "hg-continents",
+      "topic": "WORLD",
+      "before": "Name a continent in the seven-continent model.",
+      "after": "Name a Commonwealth member country.",
+      "answersBefore": 7,
+      "answersAfter": 56,
+      "source": "https://thecommonwealth.org/our-member-countries"
+    },
+    {
+      "id": "hg-france",
+      "topic": "WORLD",
+      "before": "Name a country bordering metropolitan France by land.",
+      "after": "Name a team that played at Euro 2024.",
+      "answersBefore": 8,
+      "answersAfter": 24,
+      "source": "https://www.uefa.com/uefaeuro/history/seasons/2024/teams/"
+    },
+    {
+      "id": "hg-summer-hosts",
+      "topic": "WORLD",
+      "before": "Name a Summer Olympic host city from 2000 to 2024.",
+      "after": "Name a city that hosted the Summer Olympics before 2025.",
+      "answersBefore": 7,
+      "answersAfter": 23,
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "id": "hg-iberia",
+      "topic": "WORLD",
+      "before": "Name a country that hosted the men's FIFA World Cup in 2006–2022.",
+      "after": "Name a team that played at the 2022 men's World Cup.",
+      "answersBefore": 5,
+      "answersAfter": 32,
+      "source": "https://www.fifa.com/en/tournaments/mens/worldcup/qatar2022"
+    },
+    {
+      "id": "hg-potter",
+      "topic": "FILM",
+      "before": "Name an original Harry Potter film.",
+      "after": "Name a named character in the eight Harry Potter films.",
+      "answersBefore": 8,
+      "answersAfter": 64,
+      "source": "https://www.harrypotter.com/"
+    },
+    {
+      "id": "hg-lotr",
+      "topic": "FILM",
+      "before": "Name a film in Peter Jackson’s original Lord of the Rings trilogy.",
+      "after": "Name a DreamWorks Animation feature released by the end of 2024.",
+      "answersBefore": 3,
+      "answersAfter": 48,
+      "source": "https://www.dreamworks.com/movies"
+    },
+    {
+      "id": "hg-star-wars",
+      "topic": "FILM",
+      "before": "Name a Skywalker Saga film.",
+      "after": "Name a Star Wars feature film.",
+      "answersBefore": 9,
+      "answersAfter": 12,
+      "source": "https://www.starwars.com/films"
+    },
+    {
+      "id": "hg-avengers",
+      "topic": "FILM",
+      "before": "Name an MCU Avengers-titled film released before 2021.",
+      "after": "Name an MCU feature film released by the end of 2025.",
+      "answersBefore": 4,
+      "answersAfter": 37,
+      "source": "https://www.marvel.com/movies"
+    },
+    {
+      "id": "hg-princesses",
+      "topic": "FILM",
+      "before": "Name an emotion character in Inside Out 2 (2024).",
+      "after": "Name a named character in either Inside Out film.",
+      "answersBefore": 10,
+      "answersAfter": 28,
+      "source": "https://www.pixar.com/inside-out-2"
+    },
+    {
+      "id": "hg-nolan",
+      "topic": "FILM",
+      "before": "Name a Christopher Nolan-directed feature from 2000–2023.",
+      "after": "Name a film directed by Steven Spielberg and released before 2025.",
+      "answersBefore": 11,
+      "answersAfter": 34,
+      "source": "https://en.wikipedia.org/wiki/Steven_Spielberg_filmography"
+    },
+    {
+      "id": "hg-jurassic",
+      "topic": "FILM",
+      "before": "Name a Jurassic Park franchise film from 1993–2022.",
+      "after": "Name a prehistoric animal or hybrid in the Jurassic Park films through Dominion (2022).",
+      "answersBefore": 6,
+      "answersAfter": 36,
+      "source": "https://jurassicworld.com/"
+    },
+    {
+      "id": "hg-renaissance",
+      "topic": "FILM",
+      "before": "Name a Walt Disney Animation Studios feature first released in 2016–2024.",
+      "after": "Name a Walt Disney Animation Studios feature released in 2000–2024.",
+      "answersBefore": 9,
+      "answersAfter": 25,
+      "source": "https://www.disneyanimation.com/films/"
+    },
+    {
+      "id": "hg-bond",
+      "topic": "FILM",
+      "before": "Name an actor who played James Bond in an Eon feature through 2021.",
+      "after": "Name an actor who played the Doctor in Doctor Who on television through 2024.",
+      "answersBefore": 6,
+      "answersAfter": 18,
+      "source": "https://www.bbc.co.uk/doctorwho"
+    },
+    {
+      "id": "hg-ghostbusters",
+      "topic": "FILM",
+      "before": "Name a film in the live-action Sonic the Hedgehog trilogy released in 2020–2024.",
+      "after": "Name a Sonic the Hedgehog character from the games or theatrical films.",
+      "answersBefore": 3,
+      "answersAfter": 39,
+      "source": "https://sonic.sega.jp/SonicChannel/character/"
+    },
+    {
+      "id": "hg-turtles",
+      "topic": "FILM",
+      "before": "Name a Teenage Mutant Ninja Turtle.",
+      "after": "Name a named Teenage Mutant Ninja Turtles character.",
+      "answersBefore": 4,
+      "answersAfter": 38,
+      "source": "https://en.wikipedia.org/wiki/List_of_Teenage_Mutant_Ninja_Turtles_characters"
+    },
+    {
+      "id": "hg-emotions",
+      "topic": "FILM",
+      "before": "Name an emotion character in the original Inside Out.",
+      "after": "Name a named character in Toy Story 1–4.",
+      "answersBefore": 5,
+      "answersAfter": 48,
+      "source": "https://www.pixar.com/toy-story-4"
+    },
+    {
+      "id": "hg-parr",
+      "topic": "FILM",
+      "before": "Name a Madrigal family member given a magical gift in Encanto (2021).",
+      "after": "Name a named character in Encanto, Frozen or Moana.",
+      "answersBefore": 9,
+      "answersAfter": 36,
+      "source": "https://www.disney.com/"
+    },
+    {
+      "id": "hg-shrek",
+      "topic": "FILM",
+      "before": "Name a main-series Shrek film released before 2025.",
+      "after": "Name a named character in the Shrek or Puss in Boots films.",
+      "answersBefore": 4,
+      "answersAfter": 40,
+      "source": "https://www.dreamworks.com/movies/puss-in-boots-the-last-wish"
+    },
+    {
+      "id": "hg-slams",
+      "topic": "SPORT",
+      "before": "Name one of tennis’s Grand Slam tournaments.",
+      "after": "Name a women's Grand Slam singles champion from the Open Era.",
+      "answersBefore": 4,
+      "answersAfter": 58,
+      "source": "https://www.wtatennis.com/"
+    },
+    {
+      "id": "hg-pentathlon",
+      "topic": "SPORT",
+      "before": "Name a modern pentathlon discipline at Paris 2024.",
+      "after": "Name an NBA team.",
+      "answersBefore": 5,
+      "answersAfter": 30,
+      "source": "https://www.nba.com/teams"
+    },
+    {
+      "id": "hg-heptathlon",
+      "topic": "SPORT",
+      "before": "Name an event in the women’s outdoor heptathlon.",
+      "after": "Name a club in the 2024–25 English Premier League.",
+      "answersBefore": 7,
+      "answersAfter": 20,
+      "source": "https://www.premierleague.com/en/tables"
+    },
+    {
+      "id": "hg-triathlon",
+      "topic": "SPORT",
+      "before": "Name a standard Olympic triathlon discipline.",
+      "after": "Name an NFL team.",
+      "answersBefore": 3,
+      "answersAfter": 32,
+      "source": "https://www.nfl.com/teams/"
+    },
+    {
+      "id": "hg-medley",
+      "topic": "SPORT",
+      "before": "Name a swimming stroke in the individual medley.",
+      "after": "Name a men's Ballon d'Or winner from 1956–2024.",
+      "answersBefore": 4,
+      "answersAfter": 43,
+      "source": "https://ballondor.com/"
+    },
+    {
+      "id": "hg-basketball",
+      "topic": "SPORT",
+      "before": "Name a traditional basketball position.",
+      "after": "Name a man who reached ATP singles world number one by the end of 2025.",
+      "answersBefore": 5,
+      "answersAfter": 29,
+      "source": "https://www.atptour.com/en/rankings/former-no-1s"
+    },
+    {
+      "id": "hg-rugby",
+      "topic": "SPORT",
+      "before": "Name a way to score in rugby union.",
+      "after": "Name a woman who reached WTA singles world number one by the end of 2025.",
+      "answersBefore": 4,
+      "answersAfter": 29,
+      "source": "https://www.wtatennis.com/rankings"
+    },
+    {
+      "id": "hg-men-gymnastics",
+      "topic": "SPORT",
+      "before": "Name an apparatus in men’s artistic gymnastics.",
+      "after": "Name a Major League Baseball team.",
+      "answersBefore": 6,
+      "answersAfter": 30,
+      "source": "https://www.mlb.com/team"
+    },
+    {
+      "id": "hg-women-gymnastics",
+      "topic": "SPORT",
+      "before": "Name an apparatus in women’s artistic gymnastics.",
+      "after": "Name a team in the 2024–25 NHL season.",
+      "answersBefore": 4,
+      "answersAfter": 32,
+      "source": "https://www.nhl.com/info/teams"
+    },
+    {
+      "id": "hg-fencing",
+      "topic": "SPORT",
+      "before": "Name an Olympic fencing weapon.",
+      "after": "Name a country that hosted a men's or women's FIFA World Cup before 2025.",
+      "answersBefore": 3,
+      "answersAfter": 22,
+      "source": "https://www.fifa.com/en/tournaments"
+    },
+    {
+      "id": "hg-jumps",
+      "topic": "SPORT",
+      "before": "Name a standard athletics jumping event.",
+      "after": "Name a men's Grand Slam singles champion from the Open Era.",
+      "answersBefore": 4,
+      "answersAfter": 57,
+      "source": "https://www.atptour.com/en/news/grand-slam-titles-all-time"
+    },
+    {
+      "id": "hg-throws",
+      "topic": "SPORT",
+      "before": "Name a standard athletics throwing event.",
+      "after": "Name a country that played at the 2023 men's Rugby World Cup.",
+      "answersBefore": 4,
+      "answersAfter": 20,
+      "source": "https://www.world.rugby/tournaments/rugby-world-cup"
+    },
+    {
+      "id": "hg-rings",
+      "topic": "SPORT",
+      "before": "Name a colour of an Olympic ring.",
+      "after": "Name a Formula One world drivers' champion through 2024.",
+      "answersBefore": 5,
+      "answersAfter": 34,
+      "source": "https://www.formula1.com/en/results/2024/drivers"
+    },
+    {
+      "id": "hg-baseball",
+      "topic": "SPORT",
+      "before": "Name a standard baseball fielding position.",
+      "after": "Name a club in the 2024–25 Spanish La Liga.",
+      "answersBefore": 9,
+      "answersAfter": 20,
+      "source": "https://www.laliga.com/en-GB/clubs"
+    },
+    {
+      "id": "hg-cycling",
+      "topic": "SPORT",
+      "before": "Name a men’s cycling Grand Tour.",
+      "after": "Name a team that played in the 2024 men's T20 World Cup.",
+      "answersBefore": 3,
+      "answersAfter": 20,
+      "source": "https://www.icc-cricket.com/tournaments/t20cricketworldcup"
+    },
+    {
+      "id": "hg-narnia",
+      "topic": "BOOKS",
+      "before": "Name one of C. S. Lewis’s seven Narnia novels.",
+      "after": "Name a Roald Dahl children's book.",
+      "answersBefore": 7,
+      "answersAfter": 23,
+      "source": "https://www.roalddahl.com/books/"
+    },
+    {
+      "id": "hg-hunger",
+      "topic": "BOOKS",
+      "before": "Name a book in the original Hunger Games trilogy.",
+      "after": "Name a novel in The Hunger Games, Divergent, Twilight or The Maze Runner series.",
+      "answersBefore": 3,
+      "answersAfter": 22,
+      "source": "https://en.wikipedia.org/wiki/The_Hunger_Games"
+    },
+    {
+      "id": "hg-hitchhiker",
+      "topic": "BOOKS",
+      "before": "Name a novel in Suzanne Collins's Hunger Games series published in 2020–2025.",
+      "after": "Name a novel by J. K. Rowling or Suzanne Collins.",
+      "answersBefore": 2,
+      "answersAfter": 28,
+      "source": "https://www.jkrowling.com/writing/"
+    },
+    {
+      "id": "hg-austen",
+      "topic": "BOOKS",
+      "before": "Name a book in the main A Good Girl's Guide to Murder trilogy.",
+      "after": "Name a completed novel by Jane Austen or one of the Brontë sisters.",
+      "answersBefore": 3,
+      "answersAfter": 13,
+      "source": "https://www.bl.uk/people/jane-austen"
+    },
+    {
+      "id": "hg-bronte",
+      "topic": "BOOKS",
+      "before": "Name an Alice Oseman standalone novel first published in 2014–2020.",
+      "after": "Name a main novel in Percy Jackson, Heroes of Olympus or Trials of Apollo.",
+      "answersBefore": 4,
+      "answersAfter": 17,
+      "source": "https://rickriordan.com/books/"
+    },
+    {
+      "id": "hg-tragedies",
+      "topic": "BOOKS",
+      "before": "Name a book in the original Divergent trilogy.",
+      "after": "Name a Shakespeare play.",
+      "answersBefore": 3,
+      "answersAfter": 38,
+      "source": "https://www.rsc.org.uk/shakespeares-plays"
+    },
+    {
+      "id": "hg-holmes",
+      "topic": "BOOKS",
+      "before": "Name a book in the original Maze Runner trilogy.",
+      "after": "Name a character in Alice's Adventures in Wonderland or Through the Looking-Glass.",
+      "answersBefore": 3,
+      "answersAfter": 44,
+      "source": "https://www.gutenberg.org/ebooks/11"
+    },
+    {
+      "id": "hg-pooh",
+      "topic": "BOOKS",
+      "before": "Name one of Christopher Robin’s eight main animal friends in Milne’s Pooh books.",
+      "after": "Name a Discworld novel.",
+      "answersBefore": 8,
+      "answersAfter": 41,
+      "source": "https://www.terrypratchettbooks.com/discworld-reading-order/"
+    },
+    {
+      "id": "hg-hogwarts",
+      "topic": "BOOKS",
+      "before": "Name a Hogwarts house.",
+      "after": "Name a member of the Fellowship or Thorin's company.",
+      "answersBefore": 4,
+      "answersAfter": 23,
+      "source": "https://www.tolkiensociety.org/author/books-by-tolkien/"
+    },
+    {
+      "id": "hg-weasleys",
+      "topic": "BOOKS",
+      "before": "Name a child of Arthur and Molly Weasley.",
+      "after": "Name a Diary of a Wimpy Kid main-series book released through 2025.",
+      "answersBefore": 7,
+      "answersAfter": 20,
+      "source": "https://wimpykid.com/books/"
+    },
+    {
+      "id": "hg-tickets",
+      "topic": "BOOKS",
+      "before": "Name a golden-ticket winning child in Charlie and the Chocolate Factory.",
+      "after": "Name a book in Sarah J. Maas's three main series.",
+      "answersBefore": 5,
+      "answersAfter": 16,
+      "source": "https://sarahjmaas.com/books/"
+    },
+    {
+      "id": "hg-march",
+      "topic": "BOOKS",
+      "before": "Name a book in the original To All the Boys trilogy.",
+      "after": "Name a fictional detective from a published book.",
+      "answersBefore": 3,
+      "answersAfter": 40,
+      "source": "https://en.wikipedia.org/wiki/List_of_fictional_detectives"
+    },
+    {
+      "id": "hg-famous-five",
+      "topic": "BOOKS",
+      "before": "Name one of the two Heeler sisters featured in the Bluey picture books.",
+      "after": "Name a Julia Donaldson picture book.",
+      "answersBefore": 2,
+      "answersAfter": 40,
+      "source": "https://www.juliadonaldson.co.uk/books/"
+    },
+    {
+      "id": "hg-secret-seven",
+      "topic": "BOOKS",
+      "before": "Name a novel in the original four-book Twilight saga.",
+      "after": "Name a Dog Man main-series book released by the end of 2024.",
+      "answersBefore": 4,
+      "answersAfter": 13,
+      "source": "https://pilkey.com/series/dog-man"
+    },
+    {
+      "id": "hg-heffley",
+      "topic": "BOOKS",
+      "before": "Name a member of Greg’s immediate Heffley family.",
+      "after": "Name a Stephen King novel published before 2025.",
+      "answersBefore": 5,
+      "answersAfter": 63,
+      "source": "https://stephenking.com/works/novel/"
+    },
+    {
+      "id": "hg-dwarf",
+      "topic": "SPACE",
+      "before": "Name an IAU-recognised dwarf planet as of 2025.",
+      "after": "Name an officially recognised constellation.",
+      "answersBefore": 5,
+      "answersAfter": 88,
+      "source": "https://www.iau.org/public/themes/constellations/"
+    },
+    {
+      "id": "hg-galilean",
+      "topic": "SPACE",
+      "before": "Name one of the Solar System's two gas giants.",
+      "after": "Name a named character in Star Wars.",
+      "answersBefore": 2,
+      "answersAfter": 71,
+      "source": "https://www.starwars.com/databank"
+    },
+    {
+      "id": "hg-saturn",
+      "topic": "SPACE",
+      "before": "Name one of the four main Moon phases.",
+      "after": "Name a film where a main character physically travels into space.",
+      "answersBefore": 4,
+      "answersAfter": 67,
+      "source": "https://en.wikipedia.org/wiki/List_of_films_featuring_space_stations"
+    },
+    {
+      "id": "hg-uranus",
+      "topic": "SPACE",
+      "before": "Name a founding member of the Guardians of the Galaxy team in the 2014 MCU film.",
+      "after": "Name an actor playing a Guardian, named Ravager captain or Rocket's animal friend in the MCU.",
+      "answersBefore": 5,
+      "answersAfter": 19,
+      "source": "https://www.marvel.com/teams-and-groups/guardians-of-the-galaxy/on-screen"
+    },
+    {
+      "id": "hg-moonwalkers",
+      "topic": "SPACE",
+      "before": "Name an Apollo astronaut who walked on the Moon.",
+      "after": "Name an astronaut who flew on an Apollo mission to the Moon.",
+      "answersBefore": 12,
+      "answersAfter": 24,
+      "source": "https://www.nasa.gov/history/apollo/"
+    },
+    {
+      "id": "hg-apollo11",
+      "topic": "SPACE",
+      "before": "Name an Apollo 11 crew member.",
+      "after": "Name a NASA mission or spaceflight programme.",
+      "answersBefore": 3,
+      "answersAfter": 53,
+      "source": "https://science.nasa.gov/missions/"
+    },
+    {
+      "id": "hg-mercury7",
+      "topic": "SPACE",
+      "before": "Name a Mars rover that NASA successfully landed by the end of 2021.",
+      "after": "Name a spacecraft mission that reached Mars.",
+      "answersBefore": 5,
+      "answersAfter": 27,
+      "source": "https://science.nasa.gov/mars/exploration/"
+    },
+    {
+      "id": "hg-orbiters",
+      "topic": "SPACE",
+      "before": "Name a full-scale NASA Space Shuttle orbiter.",
+      "after": "Name a main Star Trek character.",
+      "answersBefore": 6,
+      "answersAfter": 62,
+      "source": "https://www.startrek.com/characters"
+    },
+    {
+      "id": "hg-landings",
+      "topic": "SPACE",
+      "before": "Name a celestial body that people had physically walked on by the end of 2025.",
+      "after": "Name a planet or moon featured in Star Wars.",
+      "answersBefore": 2,
+      "answersAfter": 61,
+      "source": "https://www.starwars.com/databank"
+    },
+    {
+      "id": "hg-rocky",
+      "topic": "SPACE",
+      "before": "Name a terrestrial planet in our Solar System.",
+      "after": "Name a Doctor Who alien species or people.",
+      "answersBefore": 4,
+      "answersAfter": 44,
+      "source": "https://www.bbc.co.uk/doctorwho"
+    },
+    {
+      "id": "hg-giants",
+      "topic": "SPACE",
+      "before": "Name a giant planet in our Solar System.",
+      "after": "Name an MCU character who has physically travelled beyond Earth.",
+      "answersBefore": 4,
+      "answersAfter": 54,
+      "source": "https://www.marvel.com/characters"
+    },
+    {
+      "id": "hg-iss",
+      "topic": "SPACE",
+      "before": "Name an ISS partner space agency as of 2025.",
+      "after": "Name a planet, recognised dwarf planet or zodiac constellation.",
+      "answersBefore": 5,
+      "answersAfter": 25,
+      "source": "https://www.iau.org/public/themes/"
+    },
+    {
+      "id": "hg-observatories",
+      "topic": "SPACE",
+      "before": "Name one of the two space telescopes in this pair: Hubble's 1990 observatory or its 2021 infrared successor.",
+      "after": "Name a space telescope or astronomical observatory mission launched before 2025.",
+      "answersBefore": 2,
+      "answersAfter": 45,
+      "source": "https://science.nasa.gov/astrophysics/missions/"
+    },
+    {
+      "id": "hg-webb",
+      "topic": "SPACE",
+      "before": "Name a droid in this Star Wars group: the golden translator, blue-and-white astromech or orange-and-white rolling droid.",
+      "after": "Name a named Star Wars droid.",
+      "answersBefore": 3,
+      "answersAfter": 35,
+      "source": "https://www.starwars.com/databank"
+    },
+    {
+      "id": "hg-asteroids",
+      "topic": "SPACE",
+      "before": "Name a main robot in WALL-E who falls in love with the other.",
+      "after": "Name a named Transformers character.",
+      "answersBefore": 2,
+      "answersAfter": 74,
+      "source": "https://transformers.hasbro.com/"
+    },
+    {
+      "id": "hg-tetris",
+      "topic": "GAMES",
+      "before": "Name a Tetris tetromino shape.",
+      "after": "Name a playable racer in Mario Kart 8 Deluxe.",
+      "answersBefore": 7,
+      "answersAfter": 50,
+      "source": "https://mariokart8.nintendo.com/"
+    },
+    {
+      "id": "hg-cluedo-people",
+      "topic": "GAMES",
+      "before": "Name an original classic UK Cluedo suspect.",
+      "after": "Name an original Kanto Pokémon.",
+      "answersBefore": 6,
+      "answersAfter": 151,
+      "source": "https://www.pokemon.com/us/pokedex"
+    },
+    {
+      "id": "hg-cluedo-weapons",
+      "topic": "GAMES",
+      "before": "Name a classic Cluedo weapon.",
+      "after": "Name a property you can buy on the standard US Monopoly board.",
+      "answersBefore": 6,
+      "answersAfter": 28,
+      "source": "https://en.wikipedia.org/wiki/Monopoly_(game)"
+    },
+    {
+      "id": "hg-monopoly-colours",
+      "topic": "GAMES",
+      "before": "Name a street colour group on the modern US Monopoly board.",
+      "after": "Name a main Super Mario platform game released by the end of 2023.",
+      "answersBefore": 8,
+      "answersAfter": 23,
+      "source": "https://mario.nintendo.com/history/"
+    },
+    {
+      "id": "hg-railroads",
+      "topic": "GAMES",
+      "before": "Name a starter Pokémon offered in Pokémon Scarlet and Violet (2022).",
+      "after": "Name a standard grass, fire or water starter Pokémon from generations 1–9.",
+      "answersBefore": 3,
+      "answersAfter": 27,
+      "source": "https://www.pokemon.com/us/pokemon-video-games"
+    },
+    {
+      "id": "hg-catan",
+      "topic": "GAMES",
+      "before": "Name a resource in base-game Catan.",
+      "after": "Name a Valorant agent released by the end of 2024.",
+      "answersBefore": 5,
+      "answersAfter": 25,
+      "source": "https://playvalorant.com/en-us/agents/"
+    },
+    {
+      "id": "hg-poker",
+      "topic": "GAMES",
+      "before": "Name a conventional poker hand category.",
+      "after": "Name a hero playable in the original Overwatch.",
+      "answersBefore": 10,
+      "answersAfter": 32,
+      "source": "https://overwatch.blizzard.com/en-us/heroes/"
+    },
+    {
+      "id": "hg-scrabble",
+      "topic": "GAMES",
+      "before": "Name an English Scrabble letter worth at least eight points.",
+      "after": "Name an Apex Legends character released by the end of 2024.",
+      "answersBefore": 4,
+      "answersAfter": 26,
+      "source": "https://www.ea.com/games/apex-legends/apex-legends/characters"
+    },
+    {
+      "id": "hg-ghosts",
+      "topic": "GAMES",
+      "before": "Name an original Pac-Man ghost by its English nickname.",
+      "after": "Name a mob in Minecraft Java Edition 1.21.",
+      "answersBefore": 4,
+      "answersAfter": 82,
+      "source": "https://www.minecraft.net/en-us/article/minecraft-java-edition-1-21"
+    },
+    {
+      "id": "hg-kart64",
+      "topic": "GAMES",
+      "before": "Name a Mario Kart 64 playable racer.",
+      "after": "Name a main-series Legend of Zelda game released before 2024.",
+      "answersBefore": 8,
+      "answersAfter": 20,
+      "source": "https://www.zelda.com/about/"
+    },
+    {
+      "id": "hg-smash64",
+      "topic": "GAMES",
+      "before": "Name one of the three basic Minecraft dimensions as of 2025.",
+      "after": "Name a Stardew Valley villager with a friendship heart meter.",
+      "answersBefore": 3,
+      "answersAfter": 34,
+      "source": "https://stardewvalleywiki.com/Villagers"
+    },
+    {
+      "id": "hg-eevee",
+      "topic": "GAMES",
+      "before": "Name an Eevee evolution introduced by the end of 2025.",
+      "after": "Name a standard Among Us player colour.",
+      "answersBefore": 8,
+      "answersAfter": 18,
+      "source": "https://among-us.fandom.com/wiki/Colors"
+    },
+    {
+      "id": "hg-starters",
+      "topic": "GAMES",
+      "before": "Name an initial starter species in Pokémon Red and Blue.",
+      "after": "Name a fighter in Street Fighter 6's launch roster.",
+      "answersBefore": 3,
+      "answersAfter": 18,
+      "source": "https://www.streetfighter.com/6/en-us/character/"
+    },
+    {
+      "id": "hg-chess-champs",
+      "topic": "GAMES",
+      "before": "Name a role in the original Among Us base game, before the 2021 role update.",
+      "after": "Name a League of Legends champion first released in 2009.",
+      "answersBefore": 2,
+      "answersAfter": 42,
+      "source": "https://wiki.leagueoflegends.com/en-us/List_of_champions"
+    },
+    {
+      "id": "hg-utilities",
+      "topic": "GAMES",
+      "before": "Name a player team size in the standard Fortnite Battle Royale Solo/Duos/Trios/Squads modes.",
+      "after": "Name a weapon from Fortnite Battle Royale's first chapter.",
+      "answersBefore": 4,
+      "answersAfter": 48,
+      "source": "https://fortnite.fandom.com/wiki/Chapter_1"
+    }
+  ]
+}

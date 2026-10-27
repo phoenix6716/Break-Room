@@ -49,10 +49,10 @@
       "scope": "Sovereign countries and Palestine; includes shores on the Adriatic and Aegean."
     },
     {
-      "prompt": "Name an Asian UN member country.",
+      "prompt": "Name a UN member country in the UN's Asia region.",
       "answers": "China|India|Japan|Thailand|Vietnam|South Korea|North Korea|Indonesia|Malaysia|Singapore|Philippines|Pakistan|Bangladesh|Sri Lanka|Nepal|Bhutan|Maldives|Afghanistan|Iran|Iraq|Saudi Arabia|United Arab Emirates|Qatar|Kuwait|Bahrain|Oman|Yemen|Jordan|Lebanon|Syria|Israel|Turkey|Cyprus|Armenia|Azerbaijan|Georgia|Kazakhstan|Uzbekistan|Turkmenistan|Kyrgyzstan|Tajikistan|Mongolia|Myanmar|Laos|Cambodia|Brunei|Timor-Leste",
       "source": "https://unstats.un.org/unsd/methodology/m49/",
-      "scope": "UN M49 Asia, sovereign UN members only. Russia is grouped in Europe; Palestine is not a UN member."
+      "scope": "UN M49 Asia, sovereign UN members only. Includes Turkey and Cyprus; Russia is grouped in Europe and Palestine is not a UN member."
     },
     {
       "prompt": "Name a Canadian province or territory.",
@@ -67,14 +67,14 @@
       "scope": "All 37 countries, including semi-finalists."
     },
     {
-      "prompt": "Name a country where Spanish is an official national language.",
+      "prompt": "Name a sovereign country where Spanish is an official or nationwide de facto language.",
       "answers": "Spain|Mexico|Argentina|Colombia|Chile|Peru|Venezuela|Ecuador|Bolivia|Paraguay|Uruguay|Cuba|Dominican Republic|Costa Rica|Panama|Guatemala|Honduras|El Salvador|Nicaragua|Equatorial Guinea",
       "source": "https://en.wikipedia.org/wiki/List_of_countries_and_territories_where_Spanish_is_an_official_language",
       "scope": "Sovereign countries where Spanish is official nationally in law or national practice; Puerto Rico is a territory."
     },
     {
       "prompt": "Name a Commonwealth member country.",
-      "answers": "United Kingdom|Australia|Canada|New Zealand|India|Pakistan|Bangladesh|Sri Lanka|Singapore|Malaysia|South Africa|Nigeria|Kenya|Ghana|Jamaica|Barbados|Bahamas|Trinidad and Tobago|Malta|Cyprus|Fiji|Samoa|Tonga|Papua New Guinea|Solomon Islands|Vanuatu|Kiribati|Tuvalu|Nauru|Mauritius|Seychelles|Maldives|Botswana|Namibia|Zambia|Malawi|Mozambique|Rwanda|Uganda|Tanzania|Cameroon|Gabon|Togo|Sierra Leone|Gambia|Lesotho|Eswatini|Belize|Guyana|Antigua and Barbuda|Dominica|Grenada|Saint Lucia|Saint Kitts and Nevis|Saint Vincent and the Grenadines|Saint Kitts and Nevis",
+      "answers": "United Kingdom|Australia|Canada|New Zealand|India|Pakistan|Bangladesh|Sri Lanka|Singapore|Malaysia|South Africa|Nigeria|Kenya|Ghana|Jamaica|Barbados|Bahamas|Trinidad and Tobago|Malta|Cyprus|Fiji|Samoa|Tonga|Papua New Guinea|Solomon Islands|Vanuatu|Kiribati|Tuvalu|Nauru|Mauritius|Seychelles|Maldives|Botswana|Namibia|Zambia|Malawi|Mozambique|Rwanda|Uganda|Tanzania|Cameroon|Gabon|Togo|Sierra Leone|Gambia|Lesotho|Eswatini|Belize|Guyana|Antigua and Barbuda|Dominica|Grenada|Saint Lucia|Saint Kitts and Nevis|Saint Vincent and the Grenadines|Brunei",
       "source": "https://thecommonwealth.org/our-member-countries",
       "scope": "Current members as of 2025, not former members."
     },
@@ -100,9 +100,9 @@
   "SPORT": [
     {
       "prompt": "Name a sport or discipline contested at the Paris 2024 Olympics.",
-      "answers": "Athletics|Swimming|Basketball|Football|Tennis|Golf|Boxing|Cycling|Gymnastics|Rowing|Sailing|Rugby sevens|Hockey|Volleyball|Beach volleyball|Table tennis|Badminton|Archery|Shooting|Fencing|Judo|Taekwondo|Wrestling|Weightlifting|Canoeing|Triathlon|Modern pentathlon|Equestrian|Handball|Water polo|Diving|Artistic swimming|Surfing|Skateboarding|Sport climbing|Breaking|BMX|Mountain biking|Rhythmic gymnastics|Trampolining|Marathon swimming",
+      "answers": "Athletics|Swimming|Basketball|Football|Tennis|Golf|Boxing|Cycling|Gymnastics|Rowing|Sailing|Rugby sevens|Hockey|Volleyball|Beach volleyball|Table tennis|Badminton|Archery|Shooting|Fencing|Judo|Taekwondo|Wrestling|Weightlifting|Canoeing|Triathlon|Modern pentathlon|Equestrian|Handball|Water polo|Diving|Artistic swimming|Surfing|Skateboarding|Sport climbing|Breaking|BMX|Mountain biking|Rhythmic gymnastics|Trampolining|Marathon swimming|Road cycling|Track cycling|BMX racing|BMX freestyle|Artistic gymnastics|Canoe sprint|Canoe slalom|Greco-Roman wrestling|Freestyle wrestling|Dressage|Eventing|Equestrian jumping|3x3 basketball|Basketball 5x5|Indoor volleyball",
       "source": "https://olympics.com/en/paris-2024/sports",
-      "scope": "Paris 2024; broader sports and named disciplines both count, but individual race distances do not."
+      "scope": "Paris 2024 sports and disciplines; individual distances and weight classes excluded. Cycling includes road, track, BMX racing/freestyle and mountain biking."
     },
     {
       "prompt": "Name a women's Grand Slam singles champion from the Open Era.",
@@ -236,7 +236,7 @@
       "prompt": "Name a named character in either Inside Out film.",
       "answers": "Joy|Sadness|Anger|Fear|Disgust|Anxiety|Envy|Embarrassment|Ennui|Nostalgia|Riley Andersen|Bing Bong|Jill Andersen|Bill Andersen|Meg|Valentina Ortiz|Bree Young|Grace Hsieh|Fritz|Paula|Foreman|Jangles|Frank|Dave|Lance Slashblade|Bloofy|Pouchy|Deep Dark Secret",
       "source": "https://www.pixar.com/inside-out-2",
-      "scope": "Named speaking characters in the 2015 and 2024 films, including emotions. Shared emotions resolve to the emotion name."
+      "scope": "Named characters in the 2015 and 2024 films, including emotions. Shared emotions resolve to the emotion name."
     },
     {
       "prompt": "Name a film directed by Steven Spielberg and released before 2025.",
@@ -245,7 +245,7 @@
       "scope": "Features he directed, including the TV film Duel. Producer-only credits excluded."
     },
     {
-      "prompt": "Name a prehistoric animal or hybrid in the Jurassic Park films through Dominion.",
+      "prompt": "Name a prehistoric animal or hybrid in the Jurassic Park films through Dominion (2022).",
       "answers": "Tyrannosaurus rex|Velociraptor|Triceratops|Brachiosaurus|Stegosaurus|Spinosaurus|Dilophosaurus|Ankylosaurus|Parasaurolophus|Gallimimus|Compsognathus|Pteranodon|Mosasaurus|Indominus rex|Indoraptor|Allosaurus|Carnotaurus|Baryonyx|Sinoceratops|Stygimoloch|Apatosaurus|Dreadnoughtus|Giganotosaurus|Therizinosaurus|Pyroraptor|Atrociraptor|Dimorphodon|Pachycephalosaurus|Mamenchisaurus|Corythosaurus|Nasutoceratops|Moros|Quetzalcoatlus|Lystrosaurus|Dimetrodon|Microceratus",
       "source": "https://jurassicworld.com/",
       "scope": "Species shown in the six theatrical films through 2022, including fictional hybrids, flying and marine reptiles. Not TV-only species."
@@ -382,7 +382,7 @@
       "prompt": "Name a Dog Man main-series book released by the end of 2024.",
       "answers": "Dog Man|Dog Man Unleashed|Dog Man A Tale of Two Kitties|Dog Man and Cat Kid|Dog Man Lord of the Fleas|Dog Man Brawl of the Wild|Dog Man For Whom the Ball Rolls|Dog Man Fetch-22|Dog Man Grime and Punishment|Dog Man Mothering Heights|Dog Man Twenty Thousand Fleas Under the Sea|Dog Man The Scarlet Shedder|Dog Man Big Jim Begins",
       "source": "https://pilkey.com/series/dog-man",
-      "scope": "The first 13 main volumes; Cat Kid Comic Club is a separate series. Subtitles alone are accepted."
+      "scope": "The first 13 main volumes; Cat Kid Comic Club is separate. The Dog Man prefix is optional when a subtitle is given."
     },
     {
       "prompt": "Name a Stephen King novel published before 2025.",
@@ -394,9 +394,9 @@
   "GAMES": [
     {
       "prompt": "Name a playable fighter in Super Smash Bros. Ultimate.",
-      "answers": "Mario|Luigi|Peach|Bowser|Yoshi|Donkey Kong|Link|Zelda|Pikachu|Kirby|Sonic|Pac-Man|Steve|Alex|Samus|Fox|Captain Falcon|Ness|Jigglypuff|Mewtwo|Charizard|Squirtle|Ivysaur|Lucario|Greninja|Incineroar|Pichu|Pokemon Trainer|Piranha Plant|Wario|Daisy|Rosalina|Bowser Jr|Dr Mario|Diddy Kong|King K Rool|Ganondorf|Young Link|Toon Link|Sheik|Dark Samus|Zero Suit Samus|Falco|Wolf|Lucas|King Dedede|Meta Knight|Wii Fit Trainer|Villager|Isabelle|Inkling|Olimar|Marth|Roy|Ike|Lucina|Robin|Corrin|Chrom|Byleth|Pit|Dark Pit|Palutena|Ice Climbers|Mr Game and Watch|ROB|Little Mac|Shulk|Duck Hunt|Mega Man|Ryu|Ken|Cloud|Bayonetta|Simon|Richter|Joker|Hero|Banjo and Kazooie|Terry|Min Min|Sephiroth|Pyra|Mythra|Kazuya|Sora",
+      "answers": "Mario|Luigi|Peach|Bowser|Yoshi|Donkey Kong|Link|Zelda|Pikachu|Kirby|Sonic|Pac-Man|Steve|Alex|Samus|Fox|Captain Falcon|Ness|Jigglypuff|Mewtwo|Charizard|Squirtle|Ivysaur|Lucario|Greninja|Incineroar|Pichu|Pokemon Trainer|Piranha Plant|Wario|Daisy|Rosalina|Bowser Jr|Dr Mario|Diddy Kong|King K Rool|Ganondorf|Young Link|Toon Link|Sheik|Dark Samus|Zero Suit Samus|Falco|Wolf|Lucas|King Dedede|Meta Knight|Wii Fit Trainer|Villager|Isabelle|Inkling|Olimar|Marth|Roy|Ike|Lucina|Robin|Corrin|Chrom|Byleth|Pit|Dark Pit|Palutena|Ice Climbers|Mr Game and Watch|ROB|Little Mac|Shulk|Duck Hunt|Mega Man|Ryu|Ken|Cloud|Bayonetta|Simon|Richter|Joker|Hero|Banjo and Kazooie|Terry|Min Min|Sephiroth|Pyra|Mythra|Kazuya|Sora|Alph|Zombie|Enderman|Larry|Roy Koopa|Wendy|Iggy|Morton|Lemmy|Ludwig",
       "source": "https://www.smashbros.com/en_US/fighter/",
-      "scope": "Official fighters and named selectable partners, including DLC and Alex/Pyra/Mythra; no generic costumes."
+      "scope": "Official fighters and named selectable variants, including DLC, Pokemon Trainer's Pokemon, Koopalings and Alex/Zombie/Enderman. No generic costumes."
     },
     {
       "prompt": "Name a playable racer in Mario Kart 8 Deluxe.",
@@ -423,7 +423,7 @@
       "scope": "Includes Maker, Run and Bowser's Fury; ports count as the original title, not Kart or Party."
     },
     {
-      "prompt": "Name a starter Pokémon offered in the main series, generations 1–9.",
+      "prompt": "Name a standard grass, fire or water starter Pokémon from generations 1–9.",
       "answers": "Charmander|Squirtle|Bulbasaur|Chikorita|Cyndaquil|Totodile|Treecko|Torchic|Mudkip|Turtwig|Chimchar|Piplup|Snivy|Tepig|Oshawott|Chespin|Fennekin|Froakie|Rowlet|Litten|Popplio|Grookey|Scorbunny|Sobble|Sprigatito|Fuecoco|Quaxly",
       "source": "https://www.pokemon.com/us/pokemon-video-games",
       "scope": "The 27 standard grass/fire/water base-form starters; not Pikachu, Eevee or evolved forms."
@@ -478,7 +478,7 @@
     },
     {
       "prompt": "Name a League of Legends champion first released in 2009.",
-      "answers": "Ashe|Annie|Alistar|Amumu|Anivia|Blitzcrank|Corki|Cho'Gath|Dr Mundo|Evelynn|Fiddlesticks|Gangplank|Heimerdinger|Janna|Jax|Karthus|Kassadin|Katarina|Kayle|Malphite|Master Yi|Morgana|Nasus|Nidalee|Nunu|Rammus|Ryze|Shaco|Singed|Sion|Sivir|Soraka|Taric|Teemo|Tristana|Tryndamere|Twisted Fate|Twitch|Udyr|Veigar|Warwick|Zilean",
+      "answers": "Ashe|Annie|Alistar|Amumu|Anivia|Blitzcrank|Corki|Cho'Gath|Dr Mundo|Evelynn|Fiddlesticks|Gangplank|Heimerdinger|Janna|Jax|Karthus|Kassadin|Katarina|Kayle|Malphite|Master Yi|Morgana|Nasus|Nidalee|Nunu and Willump|Rammus|Ryze|Shaco|Singed|Sion|Sivir|Soraka|Taric|Teemo|Tristana|Tryndamere|Twisted Fate|Twitch|Udyr|Veigar|Warwick|Zilean",
       "source": "https://wiki.leagueoflegends.com/en-us/List_of_champions",
       "scope": "Original 2009 release dates; modern names accepted, not later champions."
     },
@@ -498,27 +498,27 @@
     },
     {
       "prompt": "Name an officially recognised constellation.",
-      "answers": "Orion|Leo|Scorpius|Aries|Taurus|Gemini|Cancer|Virgo|Libra|Sagittarius|Capricornus|Aquarius|Pisces|Ursa Major|Ursa Minor|Cassiopeia|Andromeda|Pegasus|Cygnus|Draco|Hercules|Lyra|Aquila|Canis Major|Canis Minor|Centaurus|Crux|Hydra|Phoenix|Perseus|Auriga|Ophiuchus|Serpens|Cetus|Eridanus|Lepus|Lupus|Boötes|Carina|Vela|Puppis|Columba|Corvus|Crater|Coma Berenices|Corona Borealis|Corona Australis|Triangulum|Triangulum Australe|Piscis Austrinus|Delphinus|Dorado|Equuleus|Grus|Indus|Lacerta|Leo Minor|Lynx|Monoceros|Musca|Pavo|Sagitta|Scutum|Sextans|Tucana|Volans|Vulpecula|Antlia|Apus|Ara|Caelum|Camelopardalis|Canes Venatici|Chamaeleon|Circinus|Fornax|Horologium|Hydrus|Mensa|Microscopium|Norma|Octans|Pictor|Pyxis|Reticulum|Sculptor|Telescopium|Borealis",
+      "answers": "Orion|Leo|Scorpius|Aries|Taurus|Gemini|Cancer|Virgo|Libra|Sagittarius|Capricornus|Aquarius|Pisces|Ursa Major|Ursa Minor|Cassiopeia|Andromeda|Pegasus|Cygnus|Draco|Hercules|Lyra|Aquila|Canis Major|Canis Minor|Centaurus|Crux|Hydra|Phoenix|Perseus|Auriga|Ophiuchus|Serpens|Cetus|Eridanus|Lepus|Lupus|Boötes|Carina|Vela|Puppis|Columba|Corvus|Crater|Coma Berenices|Corona Borealis|Corona Australis|Triangulum|Triangulum Australe|Piscis Austrinus|Delphinus|Dorado|Equuleus|Grus|Indus|Lacerta|Leo Minor|Lynx|Monoceros|Musca|Pavo|Sagitta|Scutum|Sextans|Tucana|Volans|Vulpecula|Antlia|Apus|Ara|Caelum|Camelopardalis|Canes Venatici|Chamaeleon|Circinus|Fornax|Horologium|Hydrus|Mensa|Microscopium|Norma|Octans|Pictor|Pyxis|Reticulum|Sculptor|Telescopium|Cepheus",
       "source": "https://www.iau.org/public/themes/constellations/",
       "scope": "The IAU's 88 constellations; use the Latin name, with common zodiac names accepted. Asterisms such as the Big Dipper are not separate constellations."
     },
     {
       "prompt": "Name a named character in Star Wars.",
-      "answers": "Luke Skywalker|Leia Organa|Han Solo|Darth Vader|Obi-Wan Kenobi|Yoda|Chewbacca|R2-D2|C-3PO|Anakin Skywalker|Palpatine|Padme Amidala|Rey|Finn|Poe Dameron|Kylo Ren|Boba Fett|Jango Fett|Jabba the Hutt|Lando Calrissian|Darth Maul|Qui-Gon Jinn|Mace Windu|Count Dooku|General Grievous|Ahsoka Tano|Din Djarin|Grogu|Bo-Katan Kryze|Jyn Erso|Cassian Andor|Chirrut Imwe|Baze Malbus|Orson Krennic|Grand Moff Tarkin|Admiral Ackbar|Nien Nunb|Wedge Antilles|Rose Tico|Maz Kanata|Supreme Leader Snoke|Captain Phasma|General Hux|General Pryde|Saw Gerrera|Mon Mothma|Bail Organa|Owen Lars|Beru Lars|Shmi Skywalker|Watto|Sebulba|Jar Jar Binks|Boss Nass|Captain Panaka|Plo Koon|Kit Fisto|Aayla Secura|Ki-Adi-Mundi|Shaak Ti|Asajj Ventress|Savage Opress|Cad Bane|Hera Syndulla|Sabine Wren|Ezra Bridger|Kanan Jarrus|Grand Admiral Thrawn|Zeb Orrelios|Captain Rex|Commander Cody|Omega",
+      "answers": "Luke Skywalker|Leia Organa|Han Solo|Darth Vader|Obi-Wan Kenobi|Yoda|Chewbacca|R2-D2|C-3PO|Palpatine|Padme Amidala|Rey|Finn|Poe Dameron|Kylo Ren|Boba Fett|Jango Fett|Jabba the Hutt|Lando Calrissian|Darth Maul|Qui-Gon Jinn|Mace Windu|Count Dooku|General Grievous|Ahsoka Tano|Din Djarin|Grogu|Bo-Katan Kryze|Jyn Erso|Cassian Andor|Chirrut Imwe|Baze Malbus|Orson Krennic|Grand Moff Tarkin|Admiral Ackbar|Nien Nunb|Wedge Antilles|Rose Tico|Maz Kanata|Supreme Leader Snoke|Captain Phasma|General Hux|General Pryde|Saw Gerrera|Mon Mothma|Bail Organa|Owen Lars|Beru Lars|Shmi Skywalker|Watto|Sebulba|Jar Jar Binks|Boss Nass|Captain Panaka|Plo Koon|Kit Fisto|Aayla Secura|Ki-Adi-Mundi|Shaak Ti|Asajj Ventress|Savage Opress|Cad Bane|Hera Syndulla|Sabine Wren|Ezra Bridger|Kanan Jarrus|Grand Admiral Thrawn|Zeb Orrelios|Captain Rex|Commander Cody|Omega",
       "source": "https://www.starwars.com/databank",
       "scope": "Named characters from official screen canon through 2024; not fan characters. Darth Vader and Anakin refer to one person, with both names accepted."
     },
     {
       "prompt": "Name a film where a main character physically travels into space.",
-      "answers": "Star Wars A New Hope|The Empire Strikes Back|Return of the Jedi|The Phantom Menace|Attack of the Clones|Revenge of the Sith|The Force Awakens|The Last Jedi|The Rise of Skywalker|Rogue One|Solo|2001 A Space Odyssey|2010 The Year We Make Contact|Interstellar|The Martian|Gravity|Apollo 13|First Man|Alien|Aliens|Alien 3|Alien Resurrection|Prometheus|Alien Covenant|Alien Romulus|WALL-E|Lightyear|Guardians of the Galaxy|Guardians of the Galaxy Vol 2|Guardians of the Galaxy Vol 3|Avengers Infinity War|Avengers Endgame|Thor|Thor Ragnarok|Thor Love and Thunder|Captain Marvel|The Marvels|Iron Man|Iron Man 3|Star Trek|Star Trek Into Darkness|Star Trek Beyond|Star Trek The Motion Picture|Star Trek II The Wrath of Khan|Star Trek First Contact|Galaxy Quest|Spaceballs|Space Jam|Space Cowboys|Ad Astra|Sunshine|Event Horizon|Passengers|Life|Moon|Dune|Dune Part Two|The Hitchhiker's Guide to the Galaxy|Lost in Space|The Fifth Element|Valerian and the City of a Thousand Planets|The Right Stuff|Armageddon|Deep Impact|Contact|Muppets from Space|Treasure Planet|Zathura|Space Chimps|Planet of the Apes",
+      "answers": "Star Wars A New Hope|The Empire Strikes Back|Return of the Jedi|The Phantom Menace|Attack of the Clones|Revenge of the Sith|The Force Awakens|The Last Jedi|The Rise of Skywalker|Rogue One|Solo|2001 A Space Odyssey|2010 The Year We Make Contact|Interstellar|The Martian|Gravity|Apollo 13|First Man|Alien|Aliens|Alien 3|Alien Resurrection|Prometheus|Alien Covenant|Alien Romulus|WALL-E|Lightyear|Guardians of the Galaxy|Guardians of the Galaxy Vol 2|Guardians of the Galaxy Vol 3|Avengers Infinity War|Avengers Endgame|Thor|Thor Ragnarok|Thor Love and Thunder|Captain Marvel|The Marvels|Iron Man|Star Trek|Star Trek Into Darkness|Star Trek Beyond|Star Trek The Motion Picture|Star Trek II The Wrath of Khan|Star Trek First Contact|Galaxy Quest|Spaceballs|Space Cowboys|Ad Astra|Sunshine|Event Horizon|Passengers|Life|Moon|Dune|Dune Part Two|The Hitchhiker's Guide to the Galaxy|Lost in Space|The Fifth Element|Valerian and the City of a Thousand Planets|The Right Stuff|Armageddon|Deep Impact|Contact|Treasure Planet|Zathura|Space Chimps|Planet of the Apes",
       "source": "https://en.wikipedia.org/wiki/List_of_films_featuring_space_stations",
-      "scope": "Features released through 2024 with a physical trip beyond Earth by a principal character; not dreams, virtual reality or a robot-only mission."
+      "scope": "Features released through 2024 where a principal human or alien physically travels beyond Earth; not dreams, virtual reality or robot-only trips from Earth."
     },
     {
-      "prompt": "Name an actor who plays a named Guardian of the Galaxy in the MCU.",
+      "prompt": "Name an actor playing a Guardian, named Ravager captain or Rocket's animal friend in the MCU.",
       "answers": "Chris Pratt|Zoe Saldana|Dave Bautista|Bradley Cooper|Vin Diesel|Karen Gillan|Pom Klementieff|Michael Rooker|Sean Gunn|Sylvester Stallone|Miley Cyrus|Michelle Yeoh|Ving Rhames|Michael Rosenbaum|Will Poulter|Linda Cardellini|Asim Chaudhry|Mikaela Hoover|Maria Bakalova",
       "source": "https://www.marvel.com/teams-and-groups/guardians-of-the-galaxy/on-screen",
-      "scope": "Actors/voice actors playing the core team, named Ravager Guardians, Adam Warlock or Rocket's named animal companions through Vol. 3. Not villains or uncredited extras."
+      "scope": "Core team, named Ravager captains, Adam Warlock, Cosmo and Rocket's named animal companions through Vol. 3; includes voice actors."
     },
     {
       "prompt": "Name an astronaut who flew on an Apollo mission to the Moon.",
@@ -528,15 +528,15 @@
     },
     {
       "prompt": "Name a NASA mission or spaceflight programme.",
-      "answers": "Apollo|Artemis|Gemini|Mercury|Space Shuttle|Skylab|Voyager|Pioneer|New Horizons|Juno|Cassini|Galileo|Hubble|James Webb|Chandra|Spitzer|Kepler|TESS|WISE|Viking|Mariner|Mars Pathfinder|Mars Global Surveyor|Mars Odyssey|Mars Reconnaissance Orbiter|Curiosity|Perseverance|Spirit|Opportunity|Phoenix|InSight|MAVEN|OSIRIS-REx|DART|Lucy|Psyche|Dawn|Deep Impact|Stardust|NEAR Shoemaker|Magellan|MESSENGER|Parker Solar Probe|Solar Dynamics Observatory|SOHO|Ulysses|IBEX|WMAP|COBE|Fermi|Swift|Europa Clipper|Dragonfly|SLS",
+      "answers": "Apollo|Artemis|Gemini|Mercury|Space Shuttle|Skylab|Voyager|Pioneer|New Horizons|Juno|Cassini|Galileo|Hubble|James Webb|Chandra|Spitzer|Kepler|TESS|WISE|Viking|Mariner|Mars Pathfinder|Mars Global Surveyor|Mars Odyssey|Mars Reconnaissance Orbiter|Curiosity|Perseverance|Spirit|Opportunity|Phoenix|InSight|MAVEN|OSIRIS-REx|DART|Lucy|Psyche|Dawn|Deep Impact|Stardust|NEAR Shoemaker|Magellan|MESSENGER|Parker Solar Probe|Solar Dynamics Observatory|SOHO|Ulysses|IBEX|WMAP|COBE|Fermi|Swift|Europa Clipper|Dragonfly",
       "source": "https://science.nasa.gov/missions/",
       "scope": "Named NASA civilian missions/programmes launched or formally selected by 2025, including joint missions. Individual astronauts and generic rockets do not count."
     },
     {
       "prompt": "Name a spacecraft mission that reached Mars.",
-      "answers": "Mariner 4|Mariner 6|Mariner 7|Mariner 9|Mars 2|Mars 3|Mars 4|Mars 5|Mars 6|Mars 7|Viking 1|Viking 2|Mars Pathfinder|Mars Global Surveyor|Mars Odyssey|Mars Express|Mars Reconnaissance Orbiter|Phoenix|Curiosity|MAVEN|ExoMars Trace Gas Orbiter|InSight|Perseverance|Hope|Tianwen-1",
+      "answers": "Mariner 4|Mariner 6|Mariner 7|Mariner 9|Mars 2|Mars 3|Mars 4|Mars 5|Mars 6|Mars 7|Viking 1|Viking 2|Mars Pathfinder|Mars Global Surveyor|Mars Odyssey|Mars Express|Mars Reconnaissance Orbiter|Phoenix|Curiosity|MAVEN|ExoMars Trace Gas Orbiter|InSight|Perseverance|Hope|Tianwen-1|Spirit|Opportunity",
       "source": "https://science.nasa.gov/mars/exploration/",
-      "scope": "Missions through 2025 that reached Mars orbit, its surface or made a close flyby; rover names resolve to their mission. Failed launches and lost-before-arrival missions excluded."
+      "scope": "Missions through 2025 that reached Mars orbit, surface or a close flyby. Rover names accepted. Failed launches and lost-before-arrival missions excluded."
     },
     {
       "prompt": "Name a main Star Trek character.",
@@ -546,15 +546,15 @@
     },
     {
       "prompt": "Name a planet or moon featured in Star Wars.",
-      "answers": "Tatooine|Coruscant|Naboo|Hoth|Endor|Mustafar|Alderaan|Yavin 4|Dagobah|Bespin|Kamino|Geonosis|Utapau|Kashyyyk|Felucia|Mygeeto|Saleucami|Cato Neimoidia|Polis Massa|Jakku|Takodana|D'Qar|Starkiller Base|Ahch-To|Crait|Cantonica|Exegol|Kijimi|Pasaana|Kef Bir|Ajan Kloss|Scarif|Jedha|Eadu|Wobani|Lah'mu|Corellia|Mimban|Vandor|Kessel|Savareen|Mandalore|Lothal|Dathomir|Malachor|Ryloth|Mon Cala|Ilum|Sullust|Bracca|Zeffo|Bogano|Nur|Tanalorr|Nevarro|Trask|Tython|Morak|Ferrix|Aldhani|Niamos|Narkina 5|At Attin",
+      "answers": "Tatooine|Coruscant|Naboo|Hoth|Endor|Mustafar|Alderaan|Yavin 4|Dagobah|Bespin|Kamino|Geonosis|Utapau|Kashyyyk|Felucia|Mygeeto|Saleucami|Cato Neimoidia|Polis Massa|Jakku|Takodana|D'Qar|Ahch-To|Crait|Cantonica|Exegol|Kijimi|Pasaana|Kef Bir|Ajan Kloss|Scarif|Jedha|Eadu|Wobani|Lah'mu|Corellia|Mimban|Vandor|Kessel|Savareen|Mandalore|Lothal|Dathomir|Malachor|Ryloth|Mon Cala|Ilum|Sullust|Bracca|Zeffo|Bogano|Nur|Tanalorr|Nevarro|Trask|Tython|Morak|Ferrix|Aldhani|Niamos|Narkina 5",
       "source": "https://www.starwars.com/databank",
       "scope": "Named planets/moons in official screen canon and Jedi games through 2024. Artificial stations excluded; Starkiller Base resolves to the converted planet Ilum."
     },
     {
       "prompt": "Name a Doctor Who alien species or people.",
-      "answers": "Dalek|Cyberman|Time Lord|Weeping Angel|Sontaran|Silurian|Ice Warrior|Zygon|Ood|Judoon|Slitheen|Auton|Nestene|Krynoid|Sea Devil|Draconian|Vashta Nerada|Adipose|Racnoss|Raxacoricofallapatorian|Sycorax|Toclafane|Krillitane|Carrionite|Pyrovile|Hath|Tritovore|Tenza|Silence|Siren|Atraxi|Abzorbaloff|Vervoid|Sutekh|Osiran|Thal|Drahvin|Sensorite|Voord|Mechanoid|Chumblie|Macra|Yeti|Zarbi|Menoptera|Mono id|Sontaran",
+      "answers": "Dalek|Cyberman|Time Lord|Weeping Angel|Sontaran|Silurian|Ice Warrior|Zygon|Ood|Judoon|Auton|Nestene|Krynoid|Sea Devil|Draconian|Vashta Nerada|Adipose|Racnoss|Raxacoricofallapatorian|Sycorax|Toclafane|Krillitane|Carrionite|Pyrovile|Hath|Tritovore|Tenza|Silence|Siren|Atraxi|Abzorbaloff|Vervoid|Osiran|Thal|Drahvin|Sensorite|Voord|Mechanoid|Chumblie|Macra|Yeti|Zarbi|Menoptera|Monoid",
       "source": "https://www.bbc.co.uk/doctorwho",
-      "scope": "Alien species, named peoples and robot races from television through 2024. Individual character names do not count."
+      "scope": "Alien species, named peoples and robot races from television through 2024. Slitheen is accepted for Raxacoricofallapatorian; individual character names excluded."
     },
     {
       "prompt": "Name an MCU character who has physically travelled beyond Earth.",
@@ -584,7 +584,7 @@
       "prompt": "Name a named Transformers character.",
       "answers": "Optimus Prime|Bumblebee|Megatron|Starscream|Soundwave|Shockwave|Ratchet|Ironhide|Jazz|Sideswipe|Wheeljack|Grimlock|Slug|Snarl|Swoop|Sludge|Arcee|Hot Rod|Ultra Magnus|Jetfire|Cliffjumper|Hound|Trailbreaker|Brawn|Mirage|Hoist|Grapple|Inferno|Red Alert|Prowl|Smokescreen|Bluestreak|Blaster|Perceptor|Powerglide|Warpath|Cosmos|Beachcomber|Seaspray|Windcharger|Tracks|Omega Supreme|Metroplex|Trypticon|Unicron|Primus|Devastator|Bruticus|Menasor|Superion|Defensor|Predaking|Thundercracker|Skywarp|Rumble|Frenzy|Laserbeak|Ravage|Bombshell|Shrapnel|Kickback|Cyclonus|Scourge|Swindle|Vortex|Brawl|Onslaught|Blast Off|Hot Spot|Silverbolt|Air Raid|Fireflight|Skydive|Slingshot",
       "source": "https://transformers.hasbro.com/",
-      "scope": "Named official characters through 2024, including named combiners. Renames such as Galvatron/Rodimus Prime resolve to the original character."
+      "scope": "Named official characters through 2024, including combiners. Galvatron and Rodimus Prime are accepted for Megatron and Hot Rod in this list."
     }
   ]
 }

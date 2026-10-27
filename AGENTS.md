@@ -1,3 +1,11 @@
+## Broader answer lists — 27 October 2026
+
+Revision 3 integrates the 96 drafted WORLD, SPORT, FILM, BOOKS, GAMES and SPACE slots, with 4013 canonical answers across the full 160-question bank. The other four topics remain unchanged. IDs, topics, calendar slots, 32-day rotation, 30-second deadlines, first-result locks and native/Arcade formulas are unchanged. Existing full snapshots keep their captured questions and ratings. Revision 2 is archived under `content/archive/2026-10-26/`.
+
+Lists can now contain up to 160 canonical answers, including all 151 Kanto Pokemon. Fixed integer ratings remain 1–100; more than 100 answers necessarily share ratings. This supersedes the former distinct-rating-per-answer limit for broad lists. Names for the same identity resolve to one canonical rating; ambiguous aliases are excluded. See `design/content-reviews/2026-10-27-sleeper.json` for scope corrections and editorial limits.
+
+Existing databases apply `supabase/hidden-gem-broader-answers.sql` before publishing: it only widens `_hg_question`'s answer-count bound from 40 to 160 and keeps the helper private. Fresh installs use the updated `hidden-gem.sql`. No user data, tables, policies, sharing gates or score formula changes.
+
 ## Private weekly leagues — owner-approved format, 26 October 2026
 
 The owner approved a three-game weekly competition: two required games rotate each week, and the third slot automatically counts each player's highest weekly total from the other eight active games. The optional slot is one distinct game across the whole week, not a different game each day. Sum all seven completed Daily Arcade scores for each counted game (up to 700 each), then add the three game totals for a maximum of 2,100. Missed Dailies contribute zero; Unlimited never counts. Weeks run Monday–Sunday in Australia/Sydney, resetting Monday at midnight.
