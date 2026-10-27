@@ -62,7 +62,8 @@
  }
  function serial(task){return navigator.locks?navigator.locks.request('break-room-cloud-saves',task):task();}
  function syncUpload(){
-  // true = current snapshot uploaded; false = upload failed; null = cloud inactive.
+  // Resolves true for a current upload, false for a failed upload, or null when
+  // cloud saves are inactive. Concurrent callers join the same pending result.
   // Callers must join an upload already in flight, rather than read older scores.
   if(uploadTask)return uploadTask;
   if(busy||!session||document.hidden)return Promise.resolve(null);

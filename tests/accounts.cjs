@@ -57,7 +57,7 @@ const native=page=>page.evaluate(()=>window.BREAK_ROOM_CLOUD_SAVES.capture(local
  try{
  const context=await browser.newContext(),page=await context.newPage();
  // Archived engines remain private compatibility fixtures; their public URLs redirect home.
- if(process.env.ARCADE_LEGACY_TEST_URL)await context.route(/\\/games\\/(?:prior|alibi|bouncer)\\//,async route=>{
+ if(process.env.ARCADE_LEGACY_TEST_URL)await context.route(url=>['prior','alibi','bouncer'].some(id=>url.pathname.includes('/games/'+id+'/')),async route=>{
   const response=await route.fetch({url:route.request().url().replace(base,process.env.ARCADE_LEGACY_TEST_URL)});
   await route.fulfill({response});
  });
