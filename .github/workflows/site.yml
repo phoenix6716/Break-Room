@@ -110,6 +110,8 @@ jobs:
           import os, pathlib, time, urllib.request
           base = os.environ["PUBLISHED_URL"].rstrip("/") + "/"
           paths = ["games/stack-up/familiar-stacks.js", "games/stack-up/stack-up.js", "games/time-drop/events.js", "games/clue-ladder/puzzles.js", "brand.css", "menu-brand.css", "assets/break-room-wordmark.png", "assets/break-room-mark.png", "assets/break-room-icon.svg", "assets/break-room-touch-icon.png", "assets/favicon.svg", "assets/logo.svg", "leagues.html", "leagues.js", "leagues-model.js", "leagues.css", "inner-clock-model.js", "arcade-score.js", "games/lowball/engine/index.html", "games/lowball/engine/reference-prices.js", "games/lowball/engine/item-art.js", "games/inner-clock/index.html", "games/inner-clock/inner-clock.js", "profile.html", "friends.html", "index.html", "games/shift-work/index.html", "games/shift-work/boards.js", "games/shift-work/shift-work.js", "games/shift-work/shift-work.css", "shift-work-model.js", "games/hidden-gem/index.html", "games/hidden-gem/questions.js", "games/hidden-gem/hidden-gem.js", "games/hidden-gem/hidden-gem.css", "hidden-gem-model.js", "cloud-saves.js", "accounts.js", "friends.js", "profile-records.js", "profile.js", "navigation.js", "game-config.js", "game-scenes.js", "game-scenes.css", "games/pack/item-art.js", "games/pack/pack.js", "games/pack/pack.css"]
+          paths += ["game-art.js", "game-art.css", "assets/game-art/manifest.js"]
+          paths += [str(p) for p in pathlib.Path("assets/game-art").rglob("*.svg")]
           paths += [str(p) for p in pathlib.Path("games/pack/art").glob("*.svg")]
           import json
           manifest = json.loads(pathlib.Path("games/lowball/engine/icons/generated/manifest.json").read_text())
@@ -130,6 +132,7 @@ jobs:
                       elif path in ["games/inner-clock/index.html", "profile.html", "friends.html"]:
                           assert b"Desk Jam" in body and b"Sleeper" in body and b"Time Sense" in body and b"Inner Clock" not in body, path
                       elif path == "games/lowball/engine/index.html":
+                          assert b'data-game-art="lowball"' in body and b"game-art.js?v=objects-20261027" in body, path
                           assert b"DAILY_ITEM_PERIOD = 32" in body and b"DAILY_ITEM_CUTOVER = 25" in body and b"Fiskars scissors" in body, path
                       elif path == "leagues.html":
                           assert b"leagues.js" in body and b"2,100" in body and b"JOIN LEAGUE" in body, path
@@ -142,6 +145,8 @@ jobs:
                       with urllib.request.urlopen(request, timeout=20) as response:
                           page = response.read()
                       assert ('data-game-scene="' + current + '"').encode() in page and b"game-scenes.css?v=sets-20261027" in page and b"game-scenes.js?v=sets-20261027" in page, "Missing themed surface: " + current
+                      if current != "pack":
+                          assert ('data-game-art="' + current + '"').encode() in page and b"game-art.js?v=objects-20261027" in page, "Missing game objects: " + current
                       if current == "pack":
                           assert b"item-art.js?v=items-20261027" in page and b"pack.js?v=items-20261027" in page and b"pack.css?v=items-20261027" in page, "Missing custom Pack item graphics"
                   print("Verified all current game sets, Pack item artwork and shared motion assets.")
