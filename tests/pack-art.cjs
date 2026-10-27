@@ -17,6 +17,7 @@ const dir='.artifacts/pack-art';fs.mkdirSync(dir,{recursive:true});
    const c=await browser.newContext({viewport:{width,height:1100},reducedMotion:'reduce'}),p=await c.newPage(),errors=[];
    p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url());});
    await p.clock.setFixedTime(new Date('2026-10-27T03:00:00Z'));await p.goto(base+'/games/pack/index.html');
+   assert(await p.evaluate(async()=>{const img=BREAK_ROOM_PACK_ART.image({name:'Older saved item'});document.body.append(img);await img.decode();const valid=img.naturalWidth>0&&img.src.endsWith('/packing-item.svg');img.remove();return valid;}),'Unknown historical names have a decoded neutral image');
    const n=await p.locator('.pack-item').count();assert.equal(await p.locator('.item-symbol img.pack-item-art').count(),n);
    await p.locator('.item-symbol img').evaluateAll(es=>Promise.all(es.map(e=>e.decode())));
    assert(await p.locator('.item-symbol img').evaluateAll(es=>es.every(e=>e.alt===''&&e.naturalWidth>0)));
