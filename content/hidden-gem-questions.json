@@ -5421,7 +5421,8 @@
         {
           "name": "X-ray",
           "aliases": [
-            "X-rays"
+            "X-rays",
+            "X ray"
           ],
           "points": 66
         },
@@ -11872,6 +11873,7 @@
           "name": "50 dollars",
           "aliases": [
             "50",
+            "$50",
             "Fifty dollars"
           ],
           "points": 6
@@ -11880,6 +11882,7 @@
           "name": "20 dollars",
           "aliases": [
             "20",
+            "$20",
             "Twenty dollars"
           ],
           "points": 26
@@ -11888,6 +11891,7 @@
           "name": "10 dollars",
           "aliases": [
             "10",
+            "$10",
             "Ten dollars"
           ],
           "points": 49
@@ -11896,6 +11900,7 @@
           "name": "5 dollars",
           "aliases": [
             "5",
+            "$5",
             "Five dollars"
           ],
           "points": 74
@@ -11904,6 +11909,7 @@
           "name": "100 dollars",
           "aliases": [
             "100",
+            "$100",
             "One hundred dollars"
           ],
           "points": 100
