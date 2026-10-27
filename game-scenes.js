@@ -53,7 +53,8 @@
   const now=snapshot(),old=before||last;
   if(armed&&old&&!running()&&!reduce.matches){
    if(old.id===now.id){
-    for(const [key,p]of now.pieces){
+    // Desk Jam owns continuous dragging and exact slide/Undo/Restart travel.
+    for(const [key,p]of (scene==='shift-work'?new Map():now.pieces)){
      const q=old.pieces.get(key);if(!q){if(scene==='seating-chart')play(p.el,[{opacity:.5,scale:'.85'},{opacity:1,scale:'1'}],{duration:180});continue;}
      const dx=q.x-p.x,dy=q.y-p.y;if(Math.abs(dx)+Math.abs(dy)<2)continue;
      const transform=getComputedStyle(p.el).transform,final=transform==='none'?'':transform;

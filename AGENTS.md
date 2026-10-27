@@ -349,3 +349,8 @@ The owner wants upgrades to the actual game graphics, including a custom image f
 ## Custom graphics across the remaining games — owner direction, 27 October 2026
 
 The owner asked for actual game objects as well as themed backgrounds. `game-art.js` decorates nine current games with original local SVGs and visible-label mappings in `assets/game-art/manifest.js`. Preserve Pack item images and Lowball product images. Keep labels, keyboard/touch controls, native content/snapshots, saves, scoring and deadlines intact. Do not derive art from hidden answers, correct positions or scores. Time Sense's stopwatch stays still; a late image decode waits until the attempt ends before showing it. Clue Ladder uses generic explorer/lock props, never hidden-answer imagery. Run native affected game checks, catalog decoding, actual action/save/reload and phone/desktop visual checks before automatic deployment.
+
+
+## Smooth Desk Jam movement — owner direction, 27 October 2026
+
+Desk Jam furniture must follow constrained pointer pixels continuously and glide to committed grid positions. The native engine owns 220ms slide, snap, Undo and Restart transforms; shared scenes must not add a second furniture transform. Moves, scores and saves commit immediately, with no action lock while animating. Re-grabbing furniture keeps its current visible position. Preserve all controls/boards, quiet hydration/remote updates, reduced-motion fallback and cancellation when backgrounded. Test actual fractional drags, rapid input and saved positions.

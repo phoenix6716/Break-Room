@@ -144,7 +144,7 @@ jobs:
                       request = urllib.request.Request(base + "games/" + current + "/index.html?release=" + os.environ["GITHUB_SHA"], headers={"Cache-Control":"no-cache"})
                       with urllib.request.urlopen(request, timeout=20) as response:
                           page = response.read()
-                      assert ('data-game-scene="' + current + '"').encode() in page and b"game-scenes.css?v=sets-20261027" in page and b"game-scenes.js?v=sets-20261027" in page, "Missing themed surface: " + current
+                      assert ('data-game-scene="' + current + '"').encode() in page and b"game-scenes.css?v=sets-20261027" in page and (b"game-scenes.js?v=sets-smooth-20261027" if current == "shift-work" else b"game-scenes.js?v=sets-20261027") in page, "Missing themed surface: " + current
                       if current != "pack":
                           assert ('data-game-art="' + current + '"').encode() in page and b"game-art.js?v=objects-20261027" in page, "Missing game objects: " + current
                       if current == "pack":
