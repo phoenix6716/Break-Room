@@ -1,5 +1,5 @@
 /* Real public surfaces, action-driven motion, silent hydration and a still timing game. */
-const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),sharp=require('sharp'),{chromium}=require('playwright');
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{chromium}=require('playwright');
 const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
 const ids=['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','pack','lowball','inner-clock'];
 const names=['Laser','Time Drop','Clue Ladder','Seating Chart','Desk Jam','Sleeper','Stack Up','Pack','Lowball','Time Sense'];
@@ -96,17 +96,23 @@ async function action(p,id){
   await c.addInitScript(()=>localStorage.setItem('pc_help_seen','1'));
   for(const id of ids){const page=await c.newPage();const p=await view(page,id);await shot(p,id,'desktop');assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,id+' desktop layout');await page.close();}
   await c.close();
+  const sheet=await browser.newPage();
   for(const [group,images]of Object.entries(snapshots)){
-   const tiles=[];
-   for(let i=0;i<images.length;i++){
-    const {id,file}=images[i],label=Buffer.from('<svg width="400" height="32"><rect width="400" height="32" fill="#17263a"/><text x="12" y="22" fill="#fffaf0" font-family="sans-serif" font-size="16" font-weight="bold">'+names[ids.indexOf(id)]+'</text></svg>');
-    const tile=await sharp(file).resize(388,518,{fit:'contain',background:'#f4eddc'}).extend({top:38,bottom:12,left:6,right:6,background:'#f4eddc'}).composite([{input:label,top:0,left:0}]).png().toBuffer();
-    tiles.push({input:tile,left:i%2*400,top:Math.floor(i/2)*568});
-   }
-   const out=path.join(dir,group+'-contact.jpg');
-   await sharp({create:{width:800,height:2840,channels:3,background:'#f4eddc'}}).composite(tiles).jpeg({quality:80}).toFile(out);
-   console.log('SCENE_PREVIEW_'+group.toUpperCase()+'='+fs.readFileSync(out).toString('base64'));
+   const inputs=images.map(({id,file})=>({name:names[ids.indexOf(id)],src:'data:image/png;base64,'+fs.readFileSync(file).toString('base64')}));
+   const data=await sheet.evaluate(async inputs=>{
+    const canvas=document.createElement('canvas');canvas.width=800;canvas.height=2840;const ctx=canvas.getContext('2d');ctx.fillStyle='#f4eddc';ctx.fillRect(0,0,canvas.width,canvas.height);
+    for(let i=0;i<inputs.length;i++){
+     const tile=inputs[i],img=new Image();img.src=tile.src;await img.decode();
+     const x=i%2*400,y=Math.floor(i/2)*568,scale=Math.min(388/img.width,518/img.height),w=img.width*scale,h=img.height*scale;
+     ctx.fillStyle='#17263a';ctx.fillRect(x,y,400,32);ctx.fillStyle='#fffaf0';ctx.font='bold 16px sans-serif';ctx.fillText(tile.name,x+12,y+22);
+     ctx.drawImage(img,x+(400-w)/2,y+38+(518-h)/2,w,h);
+    }
+    return canvas.toDataURL('image/jpeg',.82).split(',')[1];
+   },inputs);
+   fs.writeFileSync(path.join(dir,group+'-contact.jpg'),Buffer.from(data,'base64'));
+   console.log('SCENE_PREVIEW_'+group.toUpperCase()+'='+data);
   }
+  await sheet.close();
   console.log('PASS all ten themed surfaces: normal/reduced motion, real native actions, reload/save preservation, motionless blind timing and mobile/desktop screenshots.');
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});
