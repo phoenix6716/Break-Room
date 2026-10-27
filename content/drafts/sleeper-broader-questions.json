@@ -1,0 +1,590 @@
+{
+  "WORLD": [
+    {
+      "prompt": "Name a UN member country beginning with A or B.",
+      "answers": "Australia|Argentina|Austria|Afghanistan|Algeria|Albania|Angola|Armenia|Andorra|Azerbaijan|Antigua and Barbuda|Brazil|Belgium|Bangladesh|Bulgaria|Bolivia|Bahrain|Barbados|Belarus|Belize|Benin|Bhutan|Bosnia and Herzegovina|Botswana|Brunei|Burkina Faso|Burundi|Bahamas",
+      "source": "https://www.un.org/en/about-us/member-states",
+      "scope": "UN members with common English names starting A or B; ignore 'The'."
+    },
+    {
+      "prompt": "Name a European Union member country.",
+      "answers": "France|Germany|Italy|Spain|Ireland|Greece|Portugal|Netherlands|Sweden|Poland|Austria|Belgium|Denmark|Finland|Czechia|Hungary|Romania|Bulgaria|Croatia|Slovakia|Slovenia|Lithuania|Latvia|Estonia|Cyprus|Malta|Luxembourg",
+      "source": "https://european-union.europa.eu/principles-countries-history/eu-countries_en",
+      "scope": "The 27 members as of 2025; not the United Kingdom."
+    },
+    {
+      "prompt": "Name a sovereign country in Central or South America.",
+      "answers": "Brazil|Argentina|Chile|Peru|Colombia|Ecuador|Uruguay|Venezuela|Bolivia|Paraguay|Guyana|Suriname|Mexico|Costa Rica|Panama|Guatemala|Honduras|El Salvador|Nicaragua|Belize",
+      "source": "https://unstats.un.org/unsd/methodology/m49/",
+      "scope": "UN M49 Central America, including Mexico, or South America; sovereign UN members only."
+    },
+    {
+      "prompt": "Name a US state.",
+      "answers": "California|Texas|Florida|New York|Hawaii|Alaska|Nevada|Washington|Ohio|Georgia|Illinois|Colorado|Arizona|Massachusetts|Michigan|Pennsylvania|Virginia|New Jersey|North Carolina|South Carolina|Tennessee|Louisiana|Alabama|Kentucky|Oregon|Wisconsin|Minnesota|Missouri|Indiana|Maryland|Connecticut|Oklahoma|Arkansas|Utah|Mississippi|Kansas|Iowa|Nebraska|New Mexico|West Virginia|New Hampshire|Rhode Island|Maine|Montana|Idaho|Vermont|Delaware|South Dakota|North Dakota|Wyoming",
+      "source": "https://www.census.gov/library/reference/code-lists/ansi.html",
+      "scope": "All 50 states. Washington, D.C. and territories are excluded."
+    },
+    {
+      "prompt": "Name an African UN member country.",
+      "answers": "Egypt|South Africa|Nigeria|Kenya|Morocco|Ghana|Ethiopia|Algeria|Tunisia|Uganda|Tanzania|Zimbabwe|Zambia|Senegal|Cameroon|Ivory Coast|Democratic Republic of the Congo|Republic of the Congo|Sudan|South Sudan|Somalia|Rwanda|Namibia|Botswana|Mozambique|Madagascar|Angola|Libya|Mali|Niger|Chad|Mauritius|Seychelles|Cape Verde|Benin|Togo|Burkina Faso|Liberia|Sierra Leone|Guinea|Guinea-Bissau|Equatorial Guinea|Gabon|Gambia|Malawi|Lesotho|Eswatini|Burundi|Eritrea|Djibouti|Central African Republic|Comoros|Sao Tome and Principe|Mauritania",
+      "source": "https://www.un.org/en/about-us/member-states",
+      "scope": "The 54 African UN members, not territories or disputed non-members."
+    },
+    {
+      "prompt": "Name a G20 member country.",
+      "answers": "United States|United Kingdom|Australia|Canada|France|Germany|Italy|Japan|China|India|Brazil|Mexico|Russia|South Africa|South Korea|Indonesia|Argentina|Saudi Arabia|Turkey",
+      "source": "https://www.g20.org/",
+      "scope": "The 19 national members as of 2025. The EU and African Union are organisations."
+    },
+    {
+      "prompt": "Name a team that played at the 2023 Women's World Cup.",
+      "answers": "Australia|New Zealand|England|United States|France|Germany|Spain|Brazil|Japan|Canada|Sweden|Netherlands|Norway|Denmark|Italy|Switzerland|Portugal|Ireland|China|South Korea|South Africa|Nigeria|Morocco|Zambia|Jamaica|Haiti|Panama|Colombia|Argentina|Costa Rica|Philippines|Vietnam",
+      "source": "https://www.fifa.com/en/tournaments/womens/womensworldcup/australia-new-zealand2023",
+      "scope": "The 32 qualifying national teams; countries, not individual players."
+    },
+    {
+      "prompt": "Name a country with a Mediterranean coastline.",
+      "answers": "Spain|France|Italy|Greece|Turkey|Egypt|Morocco|Algeria|Tunisia|Libya|Israel|Lebanon|Syria|Cyprus|Malta|Croatia|Albania|Montenegro|Slovenia|Bosnia and Herzegovina|Monaco|Palestine",
+      "source": "https://www.unep.org/unepmap/who-we-are/contracting-parties",
+      "scope": "Sovereign countries and Palestine; includes shores on the Adriatic and Aegean."
+    },
+    {
+      "prompt": "Name a UN member country in the UN's Asia region.",
+      "answers": "China|India|Japan|Thailand|Vietnam|South Korea|North Korea|Indonesia|Malaysia|Singapore|Philippines|Pakistan|Bangladesh|Sri Lanka|Nepal|Bhutan|Maldives|Afghanistan|Iran|Iraq|Saudi Arabia|United Arab Emirates|Qatar|Kuwait|Bahrain|Oman|Yemen|Jordan|Lebanon|Syria|Israel|Turkey|Cyprus|Armenia|Azerbaijan|Georgia|Kazakhstan|Uzbekistan|Turkmenistan|Kyrgyzstan|Tajikistan|Mongolia|Myanmar|Laos|Cambodia|Brunei|Timor-Leste",
+      "source": "https://unstats.un.org/unsd/methodology/m49/",
+      "scope": "UN M49 Asia, sovereign UN members only. Includes Turkey and Cyprus; Russia is grouped in Europe and Palestine is not a UN member."
+    },
+    {
+      "prompt": "Name a Canadian province or territory.",
+      "answers": "Ontario|Quebec|British Columbia|Alberta|Manitoba|Nova Scotia|New Brunswick|Saskatchewan|Newfoundland and Labrador|Prince Edward Island|Yukon|Northwest Territories|Nunavut",
+      "source": "https://www.canada.ca/en/intergovernmental-affairs/services/provinces-territories.html",
+      "scope": "All ten provinces and all three territories."
+    },
+    {
+      "prompt": "Name a country that competed at Eurovision 2025.",
+      "answers": "Sweden|United Kingdom|France|Germany|Italy|Spain|Australia|Ireland|Austria|Belgium|Netherlands|Denmark|Finland|Norway|Iceland|Portugal|Poland|Greece|Cyprus|Malta|Switzerland|Luxembourg|Estonia|Latvia|Lithuania|Ukraine|Israel|Croatia|Slovenia|Serbia|Albania|Montenegro|San Marino|Armenia|Azerbaijan|Georgia|Czechia",
+      "source": "https://eurovision.tv/event/basel-2025/participants",
+      "scope": "All 37 countries, including semi-finalists."
+    },
+    {
+      "prompt": "Name a sovereign country where Spanish is an official or nationwide de facto language.",
+      "answers": "Spain|Mexico|Argentina|Colombia|Chile|Peru|Venezuela|Ecuador|Bolivia|Paraguay|Uruguay|Cuba|Dominican Republic|Costa Rica|Panama|Guatemala|Honduras|El Salvador|Nicaragua|Equatorial Guinea",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_territories_where_Spanish_is_an_official_language",
+      "scope": "Sovereign countries where Spanish is official nationally in law or national practice; Puerto Rico is a territory."
+    },
+    {
+      "prompt": "Name a Commonwealth member country.",
+      "answers": "United Kingdom|Australia|Canada|New Zealand|India|Pakistan|Bangladesh|Sri Lanka|Singapore|Malaysia|South Africa|Nigeria|Kenya|Ghana|Jamaica|Barbados|Bahamas|Trinidad and Tobago|Malta|Cyprus|Fiji|Samoa|Tonga|Papua New Guinea|Solomon Islands|Vanuatu|Kiribati|Tuvalu|Nauru|Mauritius|Seychelles|Maldives|Botswana|Namibia|Zambia|Malawi|Mozambique|Rwanda|Uganda|Tanzania|Cameroon|Gabon|Togo|Sierra Leone|Gambia|Lesotho|Eswatini|Belize|Guyana|Antigua and Barbuda|Dominica|Grenada|Saint Lucia|Saint Kitts and Nevis|Saint Vincent and the Grenadines|Brunei",
+      "source": "https://thecommonwealth.org/our-member-countries",
+      "scope": "Current members as of 2025, not former members."
+    },
+    {
+      "prompt": "Name a team that played at Euro 2024.",
+      "answers": "Germany|England|Scotland|France|Spain|Italy|Portugal|Netherlands|Belgium|Denmark|Switzerland|Austria|Croatia|Serbia|Slovenia|Hungary|Poland|Czechia|Slovakia|Romania|Ukraine|Turkey|Georgia|Albania",
+      "source": "https://www.uefa.com/uefaeuro/history/seasons/2024/teams/",
+      "scope": "The 24 qualifying national teams."
+    },
+    {
+      "prompt": "Name a city that hosted the Summer Olympics before 2025.",
+      "answers": "Sydney|London|Paris|Tokyo|Beijing|Athens|Rio de Janeiro|Los Angeles|Melbourne|Atlanta|Barcelona|Seoul|Moscow|Montreal|Munich|Mexico City|Rome|Helsinki|Berlin|Amsterdam|Antwerp|Stockholm|St Louis",
+      "source": "https://olympics.com/en/olympic-games",
+      "scope": "Official Summer Games hosts through Paris 2024; cancelled Games excluded. Stockholm also held the 1956 equestrian events."
+    },
+    {
+      "prompt": "Name a team that played at the 2022 men's World Cup.",
+      "answers": "Argentina|France|Brazil|England|Portugal|Spain|Germany|Netherlands|Belgium|Croatia|Morocco|Australia|Japan|South Korea|United States|Canada|Mexico|Uruguay|Ecuador|Costa Rica|Saudi Arabia|Qatar|Iran|Tunisia|Cameroon|Ghana|Senegal|Serbia|Switzerland|Denmark|Poland|Wales",
+      "source": "https://www.fifa.com/en/tournaments/mens/worldcup/qatar2022",
+      "scope": "All 32 qualifying national teams."
+    }
+  ],
+  "SPORT": [
+    {
+      "prompt": "Name a sport or discipline contested at the Paris 2024 Olympics.",
+      "answers": "Athletics|Swimming|Basketball|Football|Tennis|Golf|Boxing|Cycling|Gymnastics|Rowing|Sailing|Rugby sevens|Hockey|Volleyball|Beach volleyball|Table tennis|Badminton|Archery|Shooting|Fencing|Judo|Taekwondo|Wrestling|Weightlifting|Canoeing|Triathlon|Modern pentathlon|Equestrian|Handball|Water polo|Diving|Artistic swimming|Surfing|Skateboarding|Sport climbing|Breaking|BMX|Mountain biking|Rhythmic gymnastics|Trampolining|Marathon swimming|Road cycling|Track cycling|BMX racing|BMX freestyle|Artistic gymnastics|Canoe sprint|Canoe slalom|Greco-Roman wrestling|Freestyle wrestling|Dressage|Eventing|Equestrian jumping|3x3 basketball|Basketball 5x5|Indoor volleyball",
+      "source": "https://olympics.com/en/paris-2024/sports",
+      "scope": "Paris 2024 sports and disciplines; individual distances and weight classes excluded. Cycling includes road, track, BMX racing/freestyle and mountain biking."
+    },
+    {
+      "prompt": "Name a women's Grand Slam singles champion from the Open Era.",
+      "answers": "Serena Williams|Venus Williams|Ashleigh Barty|Naomi Osaka|Maria Sharapova|Iga Swiatek|Aryna Sabalenka|Coco Gauff|Emma Raducanu|Madison Keys|Simona Halep|Caroline Wozniacki|Angelique Kerber|Garbine Muguruza|Petra Kvitova|Victoria Azarenka|Li Na|Samantha Stosur|Sloane Stephens|Sofia Kenin|Bianca Andreescu|Barbora Krejcikova|Elena Rybakina|Jelena Ostapenko|Marketa Vondrousova|Flavia Pennetta|Francesca Schiavone|Ana Ivanovic|Justine Henin|Kim Clijsters|Amelie Mauresmo|Lindsay Davenport|Jennifer Capriati|Martina Hingis|Steffi Graf|Monica Seles|Arantxa Sanchez Vicario|Conchita Martinez|Gabriela Sabatini|Martina Navratilova|Chris Evert|Evonne Goolagong Cawley|Margaret Court|Billie Jean King|Virginia Wade|Hana Mandlikova|Tracy Austin|Mary Pierce|Kerry Reid|Virginia Ruzici|Sue Barker|Chris O'Neil|Barbara Jordan|Iva Majoli|Anastasia Myskina|Svetlana Kuznetsova|Ann Jones|Nancy Richey",
+      "source": "https://www.wtatennis.com/",
+      "scope": "Women's singles majors, 1968–2025; unambiguous surnames accepted."
+    },
+    {
+      "prompt": "Name an NBA team.",
+      "answers": "Los Angeles Lakers|Boston Celtics|Chicago Bulls|Golden State Warriors|New York Knicks|Miami Heat|Dallas Mavericks|Denver Nuggets|Milwaukee Bucks|Philadelphia 76ers|Phoenix Suns|San Antonio Spurs|Toronto Raptors|Brooklyn Nets|Los Angeles Clippers|Houston Rockets|Oklahoma City Thunder|Cleveland Cavaliers|Memphis Grizzlies|New Orleans Pelicans|Minnesota Timberwolves|Sacramento Kings|Atlanta Hawks|Utah Jazz|Portland Trail Blazers|Detroit Pistons|Indiana Pacers|Orlando Magic|Charlotte Hornets|Washington Wizards",
+      "source": "https://www.nba.com/teams",
+      "scope": "The 30 teams as of 2025; nicknames accepted."
+    },
+    {
+      "prompt": "Name a club in the 2024–25 English Premier League.",
+      "answers": "Manchester United|Liverpool|Arsenal|Chelsea|Manchester City|Tottenham Hotspur|Newcastle United|Aston Villa|Everton|West Ham United|Crystal Palace|Brighton and Hove Albion|Brentford|Fulham|Wolverhampton Wanderers|Bournemouth|Nottingham Forest|Leicester City|Ipswich Town|Southampton",
+      "source": "https://www.premierleague.com/en/tables",
+      "scope": "Those season's 20 clubs; familiar short names accepted."
+    },
+    {
+      "prompt": "Name an NFL team.",
+      "answers": "Kansas City Chiefs|Dallas Cowboys|San Francisco 49ers|New England Patriots|Green Bay Packers|Pittsburgh Steelers|Philadelphia Eagles|New York Giants|New York Jets|Buffalo Bills|Miami Dolphins|Baltimore Ravens|Cincinnati Bengals|Cleveland Browns|Denver Broncos|Las Vegas Raiders|Los Angeles Rams|Los Angeles Chargers|Chicago Bears|Detroit Lions|Minnesota Vikings|New Orleans Saints|Tampa Bay Buccaneers|Seattle Seahawks|Indianapolis Colts|Tennessee Titans|Houston Texans|Jacksonville Jaguars|Atlanta Falcons|Carolina Panthers|Arizona Cardinals|Washington Commanders",
+      "source": "https://www.nfl.com/teams/",
+      "scope": "The 32 teams as of 2025; nicknames accepted."
+    },
+    {
+      "prompt": "Name a men's Ballon d'Or winner from 1956–2024.",
+      "answers": "Lionel Messi|Cristiano Ronaldo|Ronaldo|Ronaldinho|Zinedine Zidane|Kaka|Luka Modric|Karim Benzema|Rodri|Luis Figo|Rivaldo|Michael Owen|George Weah|Roberto Baggio|Hristo Stoichkov|Marco van Basten|Ruud Gullit|Michel Platini|Paolo Rossi|Karl-Heinz Rummenigge|Kevin Keegan|Johan Cruyff|Franz Beckenbauer|Gerd Muller|George Best|Bobby Charlton|Eusebio|Denis Law|Lev Yashin|Omar Sivori|Luis Suarez|Alfredo Di Stefano|Raymond Kopa|Stanley Matthews|Igor Belanov|Oleg Blokhin|Allan Simonsen|Pavel Nedved|Andriy Shevchenko|Fabio Cannavaro|Matthias Sammer|Jean-Pierre Papin|Lothar Matthaus",
+      "source": "https://ballondor.com/",
+      "scope": "France Football's men's award through 2024. Ronaldo alone means the Brazilian; Suarez means the Spanish 1960 winner."
+    },
+    {
+      "prompt": "Name a man who reached ATP singles world number one by the end of 2025.",
+      "answers": "Novak Djokovic|Roger Federer|Rafael Nadal|Andy Murray|Carlos Alcaraz|Jannik Sinner|Pete Sampras|Andre Agassi|Boris Becker|John McEnroe|Bjorn Borg|Jimmy Connors|Ivan Lendl|Lleyton Hewitt|Pat Rafter|Andy Roddick|Daniil Medvedev|Gustavo Kuerten|Marat Safin|Juan Carlos Ferrero|Carlos Moya|Marcelo Rios|Yevgeny Kafelnikov|Thomas Muster|Jim Courier|Stefan Edberg|Mats Wilander|Ilie Nastase|John Newcombe",
+      "source": "https://www.atptour.com/en/rankings/former-no-1s",
+      "scope": "Official ATP singles rankings since 1973, not doubles."
+    },
+    {
+      "prompt": "Name a woman who reached WTA singles world number one by the end of 2025.",
+      "answers": "Serena Williams|Venus Williams|Steffi Graf|Martina Navratilova|Chris Evert|Martina Hingis|Monica Seles|Ashleigh Barty|Naomi Osaka|Iga Swiatek|Aryna Sabalenka|Maria Sharapova|Justine Henin|Kim Clijsters|Caroline Wozniacki|Victoria Azarenka|Angelique Kerber|Simona Halep|Garbine Muguruza|Lindsay Davenport|Jennifer Capriati|Amelie Mauresmo|Ana Ivanovic|Jelena Jankovic|Dinara Safina|Karolina Pliskova|Tracy Austin|Evonne Goolagong Cawley|Arantxa Sanchez Vicario",
+      "source": "https://www.wtatennis.com/rankings",
+      "scope": "Official WTA singles rankings since 1975."
+    },
+    {
+      "prompt": "Name a Major League Baseball team.",
+      "answers": "New York Yankees|Los Angeles Dodgers|Boston Red Sox|Chicago Cubs|New York Mets|San Francisco Giants|Philadelphia Phillies|Atlanta Braves|Houston Astros|Texas Rangers|Toronto Blue Jays|Baltimore Orioles|Seattle Mariners|San Diego Padres|St Louis Cardinals|Chicago White Sox|Detroit Tigers|Cleveland Guardians|Cincinnati Reds|Pittsburgh Pirates|Milwaukee Brewers|Minnesota Twins|Kansas City Royals|Tampa Bay Rays|Miami Marlins|Washington Nationals|Arizona Diamondbacks|Colorado Rockies|Los Angeles Angels|Athletics",
+      "source": "https://www.mlb.com/team",
+      "scope": "The 30 franchises in 2025; Oakland Athletics also resolves to Athletics."
+    },
+    {
+      "prompt": "Name a team in the 2024–25 NHL season.",
+      "answers": "Toronto Maple Leafs|Montreal Canadiens|Boston Bruins|New York Rangers|Chicago Blackhawks|Detroit Red Wings|Pittsburgh Penguins|Edmonton Oilers|Calgary Flames|Vancouver Canucks|Ottawa Senators|Winnipeg Jets|Colorado Avalanche|Vegas Golden Knights|Florida Panthers|Tampa Bay Lightning|Dallas Stars|Carolina Hurricanes|New Jersey Devils|New York Islanders|Philadelphia Flyers|Washington Capitals|St Louis Blues|Nashville Predators|Minnesota Wild|Los Angeles Kings|Anaheim Ducks|San Jose Sharks|Seattle Kraken|Buffalo Sabres|Columbus Blue Jackets|Utah Hockey Club",
+      "source": "https://www.nhl.com/info/teams",
+      "scope": "The 32 teams in that season; Utah Mammoth is a later name."
+    },
+    {
+      "prompt": "Name a country that hosted a men's or women's FIFA World Cup before 2025.",
+      "answers": "Brazil|Germany|France|Italy|Spain|England|United States|Australia|New Zealand|Canada|Japan|South Korea|China|Sweden|Argentina|Uruguay|Chile|Mexico|Switzerland|South Africa|Russia|Qatar",
+      "source": "https://www.fifa.com/en/tournaments",
+      "scope": "Senior World Cups actually held through 2023; future hosts excluded."
+    },
+    {
+      "prompt": "Name a men's Grand Slam singles champion from the Open Era.",
+      "answers": "Novak Djokovic|Roger Federer|Rafael Nadal|Andy Murray|Carlos Alcaraz|Jannik Sinner|Pete Sampras|Andre Agassi|Boris Becker|John McEnroe|Bjorn Borg|Jimmy Connors|Ivan Lendl|Lleyton Hewitt|Pat Rafter|Andy Roddick|Daniil Medvedev|Stan Wawrinka|Juan Martin del Potro|Marin Cilic|Dominic Thiem|Gustavo Kuerten|Marat Safin|Juan Carlos Ferrero|Carlos Moya|Yevgeny Kafelnikov|Thomas Muster|Jim Courier|Stefan Edberg|Mats Wilander|Ilie Nastase|John Newcombe|Rod Laver|Ken Rosewall|Arthur Ashe|Stan Smith|Jan Kodes|Manuel Orantes|Adriano Panatta|Guillermo Vilas|Roscoe Tanner|Vitas Gerulaitis|Mark Edmondson|Johan Kriek|Brian Teacher|Andres Gomez|Sergi Bruguera|Michael Chang|Richard Krajicek|Petr Korda|Goran Ivanisevic|Thomas Johansson|Albert Costa|Gaston Gaudio|Andres Gimeno|Pat Cash|Michael Stich",
+      "source": "https://www.atptour.com/en/news/grand-slam-titles-all-time",
+      "scope": "Men's singles majors, 1968–2025; unambiguous surnames accepted."
+    },
+    {
+      "prompt": "Name a country that played at the 2023 men's Rugby World Cup.",
+      "answers": "New Zealand|South Africa|Australia|England|France|Ireland|Scotland|Wales|Argentina|Italy|Japan|Fiji|Samoa|Tonga|Georgia|Portugal|Romania|Uruguay|Namibia|Chile",
+      "source": "https://www.world.rugby/tournaments/rugby-world-cup",
+      "scope": "The 20 qualified national teams."
+    },
+    {
+      "prompt": "Name a Formula One world drivers' champion through 2024.",
+      "answers": "Lewis Hamilton|Michael Schumacher|Max Verstappen|Sebastian Vettel|Fernando Alonso|Ayrton Senna|Alain Prost|Niki Lauda|Nelson Piquet|Nigel Mansell|Damon Hill|Mika Hakkinen|Kimi Raikkonen|Jenson Button|Nico Rosberg|Jacques Villeneuve|Mario Andretti|James Hunt|Emerson Fittipaldi|Jackie Stewart|Jochen Rindt|Denny Hulme|Jack Brabham|Jim Clark|Graham Hill|Phil Hill|John Surtees|Mike Hawthorn|Juan Manuel Fangio|Alberto Ascari|Giuseppe Farina|Keke Rosberg|Alan Jones|Jody Scheckter",
+      "source": "https://www.formula1.com/en/results/2024/drivers",
+      "scope": "Drivers' champions 1950–2024; shared surnames require more detail."
+    },
+    {
+      "prompt": "Name a club in the 2024–25 Spanish La Liga.",
+      "answers": "Real Madrid|Barcelona|Atletico Madrid|Athletic Bilbao|Real Sociedad|Real Betis|Sevilla|Valencia|Villarreal|Celta Vigo|Osasuna|Mallorca|Girona|Getafe|Rayo Vallecano|Espanyol|Alaves|Leganes|Valladolid|Las Palmas",
+      "source": "https://www.laliga.com/en-GB/clubs",
+      "scope": "The 20 clubs in that season."
+    },
+    {
+      "prompt": "Name a team that played in the 2024 men's T20 World Cup.",
+      "answers": "India|Australia|England|Pakistan|New Zealand|South Africa|Sri Lanka|Bangladesh|Afghanistan|West Indies|United States|Canada|Scotland|Ireland|Netherlands|Namibia|Oman|Nepal|Uganda|Papua New Guinea",
+      "source": "https://www.icc-cricket.com/tournaments/t20cricketworldcup",
+      "scope": "The 20 qualifying cricket teams; West Indies count as one team."
+    }
+  ],
+  "FILM": [
+    {
+      "prompt": "Name a Pixar feature film released by the end of 2025.",
+      "answers": "Toy Story|Finding Nemo|The Incredibles|Cars|Inside Out|Monsters Inc|Up|WALL-E|Ratatouille|Coco|Brave|A Bug's Life|Toy Story 2|Toy Story 3|Toy Story 4|Cars 2|Cars 3|Monsters University|Finding Dory|Incredibles 2|The Good Dinosaur|Onward|Soul|Luca|Turning Red|Lightyear|Elemental|Inside Out 2|Elio",
+      "source": "https://www.pixar.com/films",
+      "scope": "Full-length Pixar films through Elio, including streaming releases; shorts excluded."
+    },
+    {
+      "prompt": "Name a Best Picture Oscar winner for a film released in 1990–2024.",
+      "answers": "Titanic|Forrest Gump|The Lord of the Rings The Return of the King|Gladiator|Oppenheimer|Parasite|Everything Everywhere All at Once|The King's Speech|Slumdog Millionaire|The Departed|No Country for Old Men|Million Dollar Baby|A Beautiful Mind|Chicago|American Beauty|Shakespeare in Love|The English Patient|Braveheart|Schindler's List|Unforgiven|The Silence of the Lambs|Dances with Wolves|Argo|12 Years a Slave|Birdman|Spotlight|Moonlight|The Shape of Water|Green Book|Nomadland|CODA|The Artist|The Hurt Locker|Crash|Anora",
+      "source": "https://www.oscars.org/oscars/ceremonies",
+      "scope": "Film release years, not ceremony years. Best Picture winners only."
+    },
+    {
+      "prompt": "Name a named character in the eight Harry Potter films.",
+      "answers": "Harry Potter|Hermione Granger|Ron Weasley|Albus Dumbledore|Severus Snape|Rubeus Hagrid|Voldemort|Draco Malfoy|Ginny Weasley|Neville Longbottom|Luna Lovegood|Sirius Black|Remus Lupin|Minerva McGonagall|Dobby|Bellatrix Lestrange|Dolores Umbridge|Fred Weasley|George Weasley|Molly Weasley|Arthur Weasley|Percy Weasley|Bill Weasley|Lucius Malfoy|Narcissa Malfoy|Cedric Diggory|Cho Chang|Seamus Finnigan|Dean Thomas|Vernon Dursley|Petunia Dursley|Dudley Dursley|Gilderoy Lockhart|Quirinus Quirrell|Sybill Trelawney|Horace Slughorn|Alastor Moody|Nymphadora Tonks|Fleur Delacour|Viktor Krum|Rita Skeeter|Argus Filch|Garrick Ollivander|Peter Pettigrew|Barty Crouch Jr|Barty Crouch Sr|Cornelius Fudge|Kingsley Shacklebolt|Gellert Grindelwald|Xenophilius Lovegood|Griphook|Hedwig|Fawkes|Aragog|Buckbeak|Nagini|Moaning Myrtle|Nearly Headless Nick|Aberforth Dumbledore|Pansy Parkinson|Lavender Brown|Oliver Wood|Gregory Goyle|Vincent Crabbe",
+      "source": "https://www.harrypotter.com/",
+      "scope": "Named characters and creatures credited in the original eight films; not Fantastic Beasts-only characters. Shared surnames need more detail."
+    },
+    {
+      "prompt": "Name a DreamWorks Animation feature released by the end of 2024.",
+      "answers": "Shrek|Shrek 2|Shrek the Third|Shrek Forever After|Kung Fu Panda|Kung Fu Panda 2|Kung Fu Panda 3|Kung Fu Panda 4|How to Train Your Dragon|How to Train Your Dragon 2|How to Train Your Dragon The Hidden World|Madagascar|Madagascar Escape 2 Africa|Madagascar 3 Europe's Most Wanted|Megamind|The Prince of Egypt|Chicken Run|The Road to El Dorado|Antz|Spirit Stallion of the Cimarron|Sinbad Legend of the Seven Seas|Shark Tale|Wallace and Gromit The Curse of the Were-Rabbit|Over the Hedge|Flushed Away|Bee Movie|Monsters vs Aliens|Puss in Boots|Puss in Boots The Last Wish|Rise of the Guardians|The Croods|The Croods A New Age|Turbo|Mr Peabody and Sherman|Penguins of Madagascar|Home|Trolls|Trolls World Tour|Trolls Band Together|The Boss Baby|The Boss Baby Family Business|Captain Underpants The First Epic Movie|Abominable|Spirit Untamed|The Bad Guys|Ruby Gillman Teenage Kraken|Orion and the Dark|The Wild Robot",
+      "source": "https://www.dreamworks.com/movies",
+      "scope": "Animated features through 2024, not TV series."
+    },
+    {
+      "prompt": "Name a Star Wars feature film.",
+      "answers": "A New Hope|The Empire Strikes Back|Return of the Jedi|The Phantom Menace|Attack of the Clones|Revenge of the Sith|The Force Awakens|The Last Jedi|The Rise of Skywalker|Rogue One|Solo|The Clone Wars",
+      "source": "https://www.starwars.com/films",
+      "scope": "The nine saga films, Rogue One, Solo and the 2008 animated theatrical film. TV episodes and specials excluded."
+    },
+    {
+      "prompt": "Name an MCU feature film released by the end of 2025.",
+      "answers": "Iron Man|The Incredible Hulk|Iron Man 2|Thor|Captain America The First Avenger|The Avengers|Iron Man 3|Thor The Dark World|Captain America The Winter Soldier|Guardians of the Galaxy|Avengers Age of Ultron|Ant-Man|Captain America Civil War|Doctor Strange|Guardians of the Galaxy Vol 2|Spider-Man Homecoming|Thor Ragnarok|Black Panther|Avengers Infinity War|Ant-Man and the Wasp|Captain Marvel|Avengers Endgame|Spider-Man Far From Home|Black Widow|Shang-Chi and the Legend of the Ten Rings|Eternals|Spider-Man No Way Home|Doctor Strange in the Multiverse of Madness|Thor Love and Thunder|Black Panther Wakanda Forever|Ant-Man and the Wasp Quantumania|Guardians of the Galaxy Vol 3|The Marvels|Deadpool and Wolverine|Captain America Brave New World|Thunderbolts|The Fantastic Four First Steps",
+      "source": "https://www.marvel.com/movies",
+      "scope": "Marvel Studios' MCU theatrical films; TV series and earlier non-MCU films excluded."
+    },
+    {
+      "prompt": "Name a named character in either Inside Out film.",
+      "answers": "Joy|Sadness|Anger|Fear|Disgust|Anxiety|Envy|Embarrassment|Ennui|Nostalgia|Riley Andersen|Bing Bong|Jill Andersen|Bill Andersen|Meg|Valentina Ortiz|Bree Young|Grace Hsieh|Fritz|Paula|Foreman|Jangles|Frank|Dave|Lance Slashblade|Bloofy|Pouchy|Deep Dark Secret",
+      "source": "https://www.pixar.com/inside-out-2",
+      "scope": "Named characters in the 2015 and 2024 films, including emotions. Shared emotions resolve to the emotion name."
+    },
+    {
+      "prompt": "Name a film directed by Steven Spielberg and released before 2025.",
+      "answers": "Jaws|Jurassic Park|E.T. the Extra-Terrestrial|Raiders of the Lost Ark|Schindler's List|Saving Private Ryan|Catch Me If You Can|Indiana Jones and the Temple of Doom|Indiana Jones and the Last Crusade|Indiana Jones and the Kingdom of the Crystal Skull|The Lost World Jurassic Park|Close Encounters of the Third Kind|Hook|The BFG|Ready Player One|War of the Worlds|Minority Report|The Terminal|Lincoln|The Fabelmans|West Side Story|Bridge of Spies|The Post|War Horse|The Adventures of Tintin|Munich|A.I. Artificial Intelligence|Amistad|The Color Purple|Empire of the Sun|Always|1941|The Sugarland Express|Duel",
+      "source": "https://en.wikipedia.org/wiki/Steven_Spielberg_filmography",
+      "scope": "Features he directed, including the TV film Duel. Producer-only credits excluded."
+    },
+    {
+      "prompt": "Name a prehistoric animal or hybrid in the Jurassic Park films through Dominion (2022).",
+      "answers": "Tyrannosaurus rex|Velociraptor|Triceratops|Brachiosaurus|Stegosaurus|Spinosaurus|Dilophosaurus|Ankylosaurus|Parasaurolophus|Gallimimus|Compsognathus|Pteranodon|Mosasaurus|Indominus rex|Indoraptor|Allosaurus|Carnotaurus|Baryonyx|Sinoceratops|Stygimoloch|Apatosaurus|Dreadnoughtus|Giganotosaurus|Therizinosaurus|Pyroraptor|Atrociraptor|Dimorphodon|Pachycephalosaurus|Mamenchisaurus|Corythosaurus|Nasutoceratops|Moros|Quetzalcoatlus|Lystrosaurus|Dimetrodon|Microceratus",
+      "source": "https://jurassicworld.com/",
+      "scope": "Species shown in the six theatrical films through 2022, including fictional hybrids, flying and marine reptiles. Not TV-only species."
+    },
+    {
+      "prompt": "Name a Walt Disney Animation Studios feature released in 2000–2024.",
+      "answers": "Frozen|Frozen II|Moana|Moana 2|Encanto|Zootopia|Tangled|Wreck-It Ralph|Ralph Breaks the Internet|Big Hero 6|The Princess and the Frog|Lilo and Stitch|The Emperor's New Groove|Dinosaur|Atlantis The Lost Empire|Treasure Planet|Brother Bear|Home on the Range|Chicken Little|Meet the Robinsons|Bolt|Winnie the Pooh|Raya and the Last Dragon|Strange World|Wish",
+      "source": "https://www.disneyanimation.com/films/",
+      "scope": "Disney Animation's own feature slate in those release years; Pixar and DisneyToon excluded."
+    },
+    {
+      "prompt": "Name an actor who played the Doctor in Doctor Who on television through 2024.",
+      "answers": "William Hartnell|Patrick Troughton|Jon Pertwee|Tom Baker|Peter Davison|Colin Baker|Sylvester McCoy|Paul McGann|Christopher Eccleston|David Tennant|Matt Smith|Peter Capaldi|Jodie Whittaker|Ncuti Gatwa|John Hurt|Jo Martin|Richard Hurndall|David Bradley",
+      "source": "https://www.bbc.co.uk/doctorwho",
+      "scope": "Main incarnations, War/Fugitive Doctors and First Doctor recasts; film, parody-only and stunt performances excluded."
+    },
+    {
+      "prompt": "Name a Sonic the Hedgehog character from the games or theatrical films.",
+      "answers": "Sonic|Tails|Knuckles|Amy Rose|Shadow|Dr Eggman|Metal Sonic|Silver|Blaze|Rouge|Cream|Cheese|Big the Cat|Froggy|Vector|Espio|Charmy Bee|Jet|Wave|Storm|E-102 Gamma|E-123 Omega|Tikal|Chaos|Infinite|Sage|Orbot|Cubot|Fang|Mighty|Ray|Sticks|Gerald Robotnik|Maria Robotnik|Tom Wachowski|Maddie Wachowski|Agent Stone|Longclaw|Wade Whipple",
+      "source": "https://sonic.sega.jp/SonicChannel/character/",
+      "scope": "Named characters in official games or theatrical films through 2024; not fan characters."
+    },
+    {
+      "prompt": "Name a named Teenage Mutant Ninja Turtles character.",
+      "answers": "Leonardo|Raphael|Donatello|Michelangelo|Splinter|Shredder|April O'Neil|Casey Jones|Bebop|Rocksteady|Krang|Baxter Stockman|Karai|Leatherhead|Slash|Metalhead|Rat King|Mondo Gecko|Mona Lisa|Usagi Yojimbo|Traag|Irma|Vernon Fenwick|Venus de Milo|Jennika|Tokka|Rahzar|Keno|Superfly|Cynthia Utrom|Ray Fillet|Wingnut|Scumbug|Genghis Frog|Napoleon Bonafrog|Zog|Traximus|Zanramon",
+      "source": "https://en.wikipedia.org/wiki/List_of_Teenage_Mutant_Ninja_Turtles_characters",
+      "scope": "Official comics, TV or film characters through 2025; not fan characters or unnamed species."
+    },
+    {
+      "prompt": "Name a named character in Toy Story 1–4.",
+      "answers": "Woody|Buzz Lightyear|Jessie|Bo Peep|Rex|Hamm|Slinky Dog|Mr Potato Head|Mrs Potato Head|Bullseye|Forky|Lotso|Stinky Pete|Emperor Zurg|Duke Caboom|Ducky|Bunny|Gabby Gabby|Giggle McDimples|Andy Davis|Bonnie Anderson|Sid Phillips|Hannah Phillips|Molly Davis|Al McWhiggin|Buster|Wheezy|Sarge|RC|Lenny|Etch|Barbie|Ken|Big Baby|Stretch|Chunk|Twitch|Sparks|Bookworm|Chuckles|Trixie|Mr Pricklepants|Buttercup|Dolly|Combat Carl|Billy Goat and Gruff|Benson|Tinny",
+      "source": "https://www.pixar.com/toy-story-4",
+      "scope": "Named characters in the first four features. The three sheep are accepted together; generic unnamed toys excluded."
+    },
+    {
+      "prompt": "Name a named character in Encanto, Frozen or Moana.",
+      "answers": "Mirabel Madrigal|Bruno Madrigal|Isabela Madrigal|Luisa Madrigal|Alma Madrigal|Julieta Madrigal|Agustin Madrigal|Pepa Madrigal|Felix Madrigal|Dolores Madrigal|Camilo Madrigal|Antonio Madrigal|Pedro Madrigal|Mariano Guzman|Elsa|Anna|Olaf|Kristoff|Sven|Hans|Oaken|Duke of Weselton|Marshmallow|Agnarr|Iduna|Pabbie|Bulda|Moana|Maui|Hei Hei|Pua|Tala|Tui|Sina|Tamatoa|Te Fiti|Te Ka",
+      "source": "https://www.disney.com/",
+      "scope": "The original three theatrical films, not sequels; named animals count."
+    },
+    {
+      "prompt": "Name a named character in the Shrek or Puss in Boots films.",
+      "answers": "Shrek|Fiona|Donkey|Puss in Boots|Dragon|Lord Farquaad|Fairy Godmother|Prince Charming|King Harold|Queen Lillian|Gingerbread Man|Pinocchio|Big Bad Wolf|Three Little Pigs|Three Blind Mice|Doris|Mabel|Artie|Merlin|Captain Hook|Rapunzel|Cinderella|Snow White|Sleeping Beauty|Rumpelstiltskin|Brogan|Cookie|Gretched|Kitty Softpaws|Humpty Dumpty|Jack|Jill|Perrito|Goldilocks|Mama Bear|Papa Bear|Baby Bear|Big Jack Horner|Death|Ethical Bug",
+      "source": "https://www.dreamworks.com/movies/puss-in-boots-the-last-wish",
+      "scope": "The Shrek films and both Puss in Boots features through 2022; named collective groups count."
+    }
+  ],
+  "BOOKS": [
+    {
+      "prompt": "Name a Hogwarts student in the Harry Potter novels.",
+      "answers": "Harry Potter|Hermione Granger|Ron Weasley|Draco Malfoy|Neville Longbottom|Luna Lovegood|Ginny Weasley|Fred Weasley|George Weasley|Percy Weasley|Cedric Diggory|Cho Chang|Seamus Finnigan|Dean Thomas|Lavender Brown|Parvati Patil|Padma Patil|Oliver Wood|Katie Bell|Angelina Johnson|Alicia Spinnet|Lee Jordan|Colin Creevey|Dennis Creevey|Hannah Abbott|Susan Bones|Ernie Macmillan|Justin Finch-Fletchley|Terry Boot|Michael Corner|Anthony Goldstein|Pansy Parkinson|Vincent Crabbe|Gregory Goyle|Blaise Zabini|Theodore Nott|Millicent Bulstrode|Marcus Flint|Adrian Pucey|Graham Montague|Zacharias Smith|Marietta Edgecombe|Romilda Vane|Cormac McLaggen|Demelza Robins|Jimmy Peakes|Ritchie Coote|Euan Abercrombie|Natalie McDonald",
+      "source": "https://www.harrypotter.com/",
+      "scope": "Named students attending during Harry's seven-book story, not adult former students."
+    },
+    {
+      "prompt": "Name a Roald Dahl children's book.",
+      "answers": "Charlie and the Chocolate Factory|Matilda|The BFG|The Witches|James and the Giant Peach|Fantastic Mr Fox|The Twits|George's Marvellous Medicine|Danny the Champion of the World|The Magic Finger|Esio Trot|The Giraffe and the Pelly and Me|Charlie and the Great Glass Elevator|The Enormous Crocodile|The Minpins|The Gremlins|The Wonderful Story of Henry Sugar and Six More|The Vicar of Nibbleswicke|Revolting Rhymes|Dirty Beasts|Rhyme Stew|Boy Tales of Childhood|Going Solo",
+      "source": "https://www.roalddahl.com/books/",
+      "scope": "Children's fiction/verse and the two memoirs. Billy and the Minpins resolves to The Minpins."
+    },
+    {
+      "prompt": "Name a novel in The Hunger Games, Divergent, Twilight or The Maze Runner series.",
+      "answers": "The Hunger Games|Catching Fire|Mockingjay|The Ballad of Songbirds and Snakes|Sunrise on the Reaping|Divergent|Insurgent|Allegiant|Twilight|New Moon|Eclipse|Breaking Dawn|Midnight Sun|Life and Death Twilight Reimagined|The Maze Runner|The Scorch Trials|The Death Cure|The Kill Order|The Fever Code|The Maze Cutter|The Godhead Complex|The Infinite Glade",
+      "source": "https://en.wikipedia.org/wiki/The_Hunger_Games",
+      "scope": "Novels through 2025, including prequels/retellings; short-story collections and novellas excluded."
+    },
+    {
+      "prompt": "Name a novel by J. K. Rowling or Suzanne Collins.",
+      "answers": "Harry Potter and the Philosopher's Stone|Harry Potter and the Chamber of Secrets|Harry Potter and the Prisoner of Azkaban|Harry Potter and the Goblet of Fire|Harry Potter and the Order of the Phoenix|Harry Potter and the Half-Blood Prince|Harry Potter and the Deathly Hallows|The Hunger Games|Catching Fire|Mockingjay|The Ballad of Songbirds and Snakes|Sunrise on the Reaping|Gregor the Overlander|Gregor and the Prophecy of Bane|Gregor and the Curse of the Warmbloods|Gregor and the Marks of Secret|Gregor and the Code of Claw|The Casual Vacancy|The Cuckoo's Calling|The Silkworm|Career of Evil|Lethal White|Troubled Blood|The Ink Black Heart|The Running Grave|The Hallmarked Man|The Ickabog|The Christmas Pig",
+      "source": "https://www.jkrowling.com/writing/",
+      "scope": "Novels through 2025, including Robert Galbraith books; plays, screenplays and reference books excluded."
+    },
+    {
+      "prompt": "Name a completed novel by Jane Austen or one of the Brontë sisters.",
+      "answers": "Pride and Prejudice|Sense and Sensibility|Emma|Persuasion|Mansfield Park|Northanger Abbey|Wuthering Heights|Jane Eyre|Villette|Shirley|The Professor|Agnes Grey|The Tenant of Wildfell Hall",
+      "source": "https://www.bl.uk/people/jane-austen",
+      "scope": "Six completed Austen and seven completed Brontë novels; unfinished books, juvenilia and poetry excluded."
+    },
+    {
+      "prompt": "Name a main novel in Percy Jackson, Heroes of Olympus or Trials of Apollo.",
+      "answers": "The Lightning Thief|The Sea of Monsters|The Titan's Curse|The Battle of the Labyrinth|The Last Olympian|The Chalice of the Gods|Wrath of the Triple Goddess|The Lost Hero|The Son of Neptune|The Mark of Athena|The House of Hades|The Blood of Olympus|The Hidden Oracle|The Dark Prophecy|The Burning Maze|The Tyrant's Tomb|The Tower of Nero",
+      "source": "https://rickriordan.com/books/",
+      "scope": "Novels in the three named series through 2025; companions, Nico spinoffs and graphic adaptations excluded."
+    },
+    {
+      "prompt": "Name a Shakespeare play.",
+      "answers": "Romeo and Juliet|Hamlet|Macbeth|Othello|King Lear|A Midsummer Night's Dream|Much Ado About Nothing|The Tempest|Twelfth Night|The Merchant of Venice|Julius Caesar|Antony and Cleopatra|Richard III|Richard II|Henry V|Henry IV Part 1|Henry IV Part 2|Henry VI Part 1|Henry VI Part 2|Henry VI Part 3|Henry VIII|King John|As You Like It|The Taming of the Shrew|The Comedy of Errors|Love's Labour's Lost|The Merry Wives of Windsor|All's Well That Ends Well|Measure for Measure|The Winter's Tale|Cymbeline|Titus Andronicus|Coriolanus|Timon of Athens|Troilus and Cressida|The Two Gentlemen of Verona|Pericles|The Two Noble Kinsmen",
+      "source": "https://www.rsc.org.uk/shakespeares-plays",
+      "scope": "The standard 38-play canon, including collaborations; name the part for multi-part Henry plays."
+    },
+    {
+      "prompt": "Name a character in Alice's Adventures in Wonderland or Through the Looking-Glass.",
+      "answers": "Alice|White Rabbit|Cheshire Cat|Mad Hatter|March Hare|Dormouse|Queen of Hearts|King of Hearts|Knave of Hearts|Duchess|Dodo|Caterpillar|Mock Turtle|Gryphon|Bill the Lizard|Mouse|Lory|Eaglet|Duck|Pigeon|Pat|Cook|Dinah|Red Queen|White Queen|Red King|White King|White Knight|Red Knight|Humpty Dumpty|Tweedledum|Tweedledee|Walrus|Carpenter|Lion|Unicorn|Jabberwock|Jubjub Bird|Bandersnatch|Sheep|Gnat|Fawn|Rose|Tiger Lily",
+      "source": "https://www.gutenberg.org/ebooks/11",
+      "scope": "Lewis Carroll's two original books, including their poems; not Disney-only characters."
+    },
+    {
+      "prompt": "Name a Discworld novel.",
+      "answers": "The Colour of Magic|The Light Fantastic|Equal Rites|Mort|Sourcery|Wyrd Sisters|Pyramids|Guards Guards|Eric|Moving Pictures|Reaper Man|Witches Abroad|Small Gods|Lords and Ladies|Men at Arms|Soul Music|Interesting Times|Maskerade|Feet of Clay|Hogfather|Jingo|The Last Continent|Carpe Jugulum|The Fifth Elephant|The Truth|Thief of Time|The Last Hero|The Amazing Maurice and His Educated Rodents|Night Watch|The Wee Free Men|Monstrous Regiment|A Hat Full of Sky|Going Postal|Thud|Wintersmith|Making Money|Unseen Academicals|I Shall Wear Midnight|Snuff|Raising Steam|The Shepherd's Crown",
+      "source": "https://www.terrypratchettbooks.com/discworld-reading-order/",
+      "scope": "The 41 main books, including illustrated The Last Hero; companion guides excluded."
+    },
+    {
+      "prompt": "Name a member of the Fellowship or Thorin's company.",
+      "answers": "Frodo Baggins|Samwise Gamgee|Meriadoc Brandybuck|Peregrin Took|Aragorn|Legolas|Gimli|Boromir|Gandalf|Bilbo Baggins|Thorin Oakenshield|Balin|Dwalin|Fili|Kili|Dori|Nori|Ori|Oin|Gloin|Bifur|Bofur|Bombur",
+      "source": "https://www.tolkiensociety.org/author/books-by-tolkien/",
+      "scope": "Tolkien's nine Fellowship members or fifteen members of Thorin's company. Shared Gandalf counts once."
+    },
+    {
+      "prompt": "Name a Diary of a Wimpy Kid main-series book released through 2025.",
+      "answers": "Diary of a Wimpy Kid|Rodrick Rules|The Last Straw|Dog Days|The Ugly Truth|Cabin Fever|The Third Wheel|Hard Luck|The Long Haul|Old School|Double Down|The Getaway|The Meltdown|Wrecking Ball|The Deep End|Big Shot|Diper Overlode|No Brainer|Hot Mess|Partypooper",
+      "source": "https://wimpykid.com/books/",
+      "scope": "The first 20 main-series books, not Rowley spinoffs, movie diaries or activity books."
+    },
+    {
+      "prompt": "Name a book in Sarah J. Maas's three main series.",
+      "answers": "A Court of Thorns and Roses|A Court of Mist and Fury|A Court of Wings and Ruin|A Court of Frost and Starlight|A Court of Silver Flames|Throne of Glass|Crown of Midnight|Heir of Fire|Queen of Shadows|Empire of Storms|Tower of Dawn|Kingdom of Ash|The Assassin's Blade|House of Earth and Blood|House of Sky and Breath|House of Flame and Shadow",
+      "source": "https://sarahjmaas.com/books/",
+      "scope": "Throne of Glass, A Court of Thorns and Roses and Crescent City through 2025; includes their novella and story collection."
+    },
+    {
+      "prompt": "Name a fictional detective from a published book.",
+      "answers": "Sherlock Holmes|Hercule Poirot|Miss Marple|Nancy Drew|Philip Marlowe|Sam Spade|Father Brown|Inspector Morse|Inspector Rebus|Jack Reacher|Cormoran Strike|Robin Ellacott|Harry Bosch|Alex Cross|Kay Scarpetta|Temperance Brennan|Lisbeth Salander|Mikael Blomkvist|Jessica Fletcher|Nero Wolfe|Lord Peter Wimsey|Albert Campion|Roderick Alleyn|Adam Dalgliesh|Kurt Wallander|Harry Hole|James Qwilleran|Kinsey Millhone|V I Warshawski|Stephanie Plum|Amelia Peabody|Flavia de Luce|Enola Holmes|Thursday Next|Frank Hardy|Joe Hardy|Cam Jansen|Encyclopedia Brown|Precious Ramotswe|Jules Maigret",
+      "source": "https://en.wikipedia.org/wiki/List_of_fictional_detectives",
+      "scope": "Named professional/amateur investigators, including published TV tie-in novels. Full names or unambiguous surnames."
+    },
+    {
+      "prompt": "Name a Julia Donaldson picture book.",
+      "answers": "The Gruffalo|The Gruffalo's Child|Room on the Broom|Stick Man|Zog|The Snail and the Whale|The Highway Rat|Superworm|The Smeds and the Smoos|A Squash and a Squeeze|Tabby McTat|Tiddler|The Smartest Giant in Town|Monkey Puzzle|Charlie Cook's Favourite Book|The Detective Dog|The Hospital Dog|The Scarecrows' Wedding|Zog and the Flying Doctors|What the Ladybird Heard|What the Ladybird Heard Next|What the Ladybird Heard on Holiday|What the Ladybird Heard at the Seaside|The Ugly Five|The Baddies|The Go-Away Bird|The Paper Dolls|The Everywhere Bear|The Magic Paintbrush|The Singing Mermaid|Sharing a Shell|Cave Baby|Tyrannosaurus Drip|The Troll|Freddie and the Fairy|Chocolate Mousse for Greedy Goose|Goat Goes to Playgroup|Spinderella|The Princess and the Wizard|The Rhyming Rabbit",
+      "source": "https://www.juliadonaldson.co.uk/books/",
+      "scope": "Picture books credited to Donaldson through 2025; not TV episode titles."
+    },
+    {
+      "prompt": "Name a Dog Man main-series book released by the end of 2024.",
+      "answers": "Dog Man|Dog Man Unleashed|Dog Man A Tale of Two Kitties|Dog Man and Cat Kid|Dog Man Lord of the Fleas|Dog Man Brawl of the Wild|Dog Man For Whom the Ball Rolls|Dog Man Fetch-22|Dog Man Grime and Punishment|Dog Man Mothering Heights|Dog Man Twenty Thousand Fleas Under the Sea|Dog Man The Scarlet Shedder|Dog Man Big Jim Begins",
+      "source": "https://pilkey.com/series/dog-man",
+      "scope": "The first 13 main volumes; Cat Kid Comic Club is separate. The Dog Man prefix is optional when a subtitle is given."
+    },
+    {
+      "prompt": "Name a Stephen King novel published before 2025.",
+      "answers": "Carrie|The Shining|It|Misery|The Stand|Pet Sematary|Salem's Lot|Christine|Cujo|The Green Mile|The Running Man|The Long Walk|Firestarter|The Dead Zone|The Tommyknockers|Needful Things|Gerald's Game|Dolores Claiborne|Insomnia|Rose Madder|Desperation|The Regulators|Bag of Bones|The Girl Who Loved Tom Gordon|Dreamcatcher|Black House|From a Buick 8|The Colorado Kid|Cell|Lisey's Story|Duma Key|Under the Dome|11/22/63|Joyland|Doctor Sleep|Mr Mercedes|Revival|Finders Keepers|End of Watch|Sleeping Beauties|The Outsider|The Institute|Later|Billy Summers|Fairy Tale|Holly|Elevation|Gwendy's Button Box|Gwendy's Final Task|The Gunslinger|The Drawing of the Three|The Waste Lands|Wizard and Glass|Wolves of the Calla|Song of Susannah|The Dark Tower|The Wind Through the Keyhole|Rage|Roadwork|Thinner|The Eyes of the Dragon|The Talisman|Cycle of the Werewolf",
+      "source": "https://stephenking.com/works/novel/",
+      "scope": "Novels, serial novels and separately published novellas through 2024, including Richard Bachman and collaborations; not story collections."
+    }
+  ],
+  "GAMES": [
+    {
+      "prompt": "Name a playable fighter in Super Smash Bros. Ultimate.",
+      "answers": "Mario|Luigi|Peach|Bowser|Yoshi|Donkey Kong|Link|Zelda|Pikachu|Kirby|Sonic|Pac-Man|Steve|Alex|Samus|Fox|Captain Falcon|Ness|Jigglypuff|Mewtwo|Charizard|Squirtle|Ivysaur|Lucario|Greninja|Incineroar|Pichu|Pokemon Trainer|Piranha Plant|Wario|Daisy|Rosalina|Bowser Jr|Dr Mario|Diddy Kong|King K Rool|Ganondorf|Young Link|Toon Link|Sheik|Dark Samus|Zero Suit Samus|Falco|Wolf|Lucas|King Dedede|Meta Knight|Wii Fit Trainer|Villager|Isabelle|Inkling|Olimar|Marth|Roy|Ike|Lucina|Robin|Corrin|Chrom|Byleth|Pit|Dark Pit|Palutena|Ice Climbers|Mr Game and Watch|ROB|Little Mac|Shulk|Duck Hunt|Mega Man|Ryu|Ken|Cloud|Bayonetta|Simon|Richter|Joker|Hero|Banjo and Kazooie|Terry|Min Min|Sephiroth|Pyra|Mythra|Kazuya|Sora|Alph|Zombie|Enderman|Larry|Roy Koopa|Wendy|Iggy|Morton|Lemmy|Ludwig",
+      "source": "https://www.smashbros.com/en_US/fighter/",
+      "scope": "Official fighters and named selectable variants, including DLC, Pokemon Trainer's Pokemon, Koopalings and Alex/Zombie/Enderman. No generic costumes."
+    },
+    {
+      "prompt": "Name a playable racer in Mario Kart 8 Deluxe.",
+      "answers": "Mario|Luigi|Peach|Daisy|Rosalina|Yoshi|Toad|Koopa Troopa|Shy Guy|Lakitu|Toadette|King Boo|Baby Mario|Baby Luigi|Baby Peach|Baby Daisy|Baby Rosalina|Metal Mario|Pink Gold Peach|Wario|Waluigi|Donkey Kong|Bowser|Dry Bones|Bowser Jr|Dry Bowser|Lemmy|Larry|Wendy|Ludwig|Iggy|Roy|Morton|Inkling Girl|Inkling Boy|Link|Villager|Isabelle|Mii|Tanooki Mario|Cat Peach|Gold Mario|Birdo|Petey Piranha|Wiggler|Kamek|Diddy Kong|Funky Kong|Pauline|Peachette",
+      "source": "https://mariokart8.nintendo.com/",
+      "scope": "Deluxe roster including Booster Course Pass characters and named variants; not kart parts."
+    },
+    {
+      "prompt": "Name an original Kanto Pokémon.",
+      "answers": "Bulbasaur|Ivysaur|Venusaur|Charmander|Charmeleon|Charizard|Squirtle|Wartortle|Blastoise|Caterpie|Metapod|Butterfree|Weedle|Kakuna|Beedrill|Pidgey|Pidgeotto|Pidgeot|Rattata|Raticate|Spearow|Fearow|Ekans|Arbok|Pikachu|Raichu|Sandshrew|Sandslash|Nidoran female|Nidorina|Nidoqueen|Nidoran male|Nidorino|Nidoking|Clefairy|Clefable|Vulpix|Ninetales|Jigglypuff|Wigglytuff|Zubat|Golbat|Oddish|Gloom|Vileplume|Paras|Parasect|Venonat|Venomoth|Diglett|Dugtrio|Meowth|Persian|Psyduck|Golduck|Mankey|Primeape|Growlithe|Arcanine|Poliwag|Poliwhirl|Poliwrath|Abra|Kadabra|Alakazam|Machop|Machoke|Machamp|Bellsprout|Weepinbell|Victreebel|Tentacool|Tentacruel|Geodude|Graveler|Golem|Ponyta|Rapidash|Slowpoke|Slowbro|Magnemite|Magneton|Farfetch'd|Doduo|Dodrio|Seel|Dewgong|Grimer|Muk|Shellder|Cloyster|Gastly|Haunter|Gengar|Onix|Drowzee|Hypno|Krabby|Kingler|Voltorb|Electrode|Exeggcute|Exeggutor|Cubone|Marowak|Hitmonlee|Hitmonchan|Lickitung|Koffing|Weezing|Rhyhorn|Rhydon|Chansey|Tangela|Kangaskhan|Horsea|Seadra|Goldeen|Seaking|Staryu|Starmie|Mr Mime|Scyther|Jynx|Electabuzz|Magmar|Pinsir|Tauros|Magikarp|Gyarados|Lapras|Ditto|Eevee|Vaporeon|Jolteon|Flareon|Porygon|Omanyte|Omastar|Kabuto|Kabutops|Aerodactyl|Snorlax|Articuno|Zapdos|Moltres|Dratini|Dragonair|Dragonite|Mewtwo|Mew",
+      "source": "https://www.pokemon.com/us/pokedex",
+      "scope": "All original 151 species, national Pokédex 1–151. Specify male/female for Nidoran; later evolutions excluded."
+    },
+    {
+      "prompt": "Name a property you can buy on the standard US Monopoly board.",
+      "answers": "Boardwalk|Park Place|Baltic Avenue|Mediterranean Avenue|Oriental Avenue|Vermont Avenue|Connecticut Avenue|St Charles Place|States Avenue|Virginia Avenue|St James Place|Tennessee Avenue|New York Avenue|Kentucky Avenue|Indiana Avenue|Illinois Avenue|Atlantic Avenue|Ventnor Avenue|Marvin Gardens|Pacific Avenue|North Carolina Avenue|Pennsylvania Avenue|Reading Railroad|Pennsylvania Railroad|B and O Railroad|Short Line|Electric Company|Water Works",
+      "source": "https://en.wikipedia.org/wiki/Monopoly_(game)",
+      "scope": "The Atlantic City board's 22 streets, four railroads and two utilities; non-property squares excluded."
+    },
+    {
+      "prompt": "Name a main Super Mario platform game released by the end of 2023.",
+      "answers": "Super Mario Bros|Super Mario Bros 2|Super Mario Bros 3|Super Mario World|Super Mario 64|Super Mario Sunshine|Super Mario Galaxy|Super Mario Galaxy 2|Super Mario Odyssey|Super Mario Bros Wonder|Super Mario Land|Super Mario Land 2|New Super Mario Bros|New Super Mario Bros Wii|New Super Mario Bros 2|New Super Mario Bros U|Super Mario 3D Land|Super Mario 3D World|Super Mario Bros The Lost Levels|Super Mario Run|Super Mario Maker|Super Mario Maker 2|Bowser's Fury",
+      "source": "https://mario.nintendo.com/history/",
+      "scope": "Includes Maker, Run and Bowser's Fury; ports count as the original title, not Kart or Party."
+    },
+    {
+      "prompt": "Name a standard grass, fire or water starter Pokémon from generations 1–9.",
+      "answers": "Charmander|Squirtle|Bulbasaur|Chikorita|Cyndaquil|Totodile|Treecko|Torchic|Mudkip|Turtwig|Chimchar|Piplup|Snivy|Tepig|Oshawott|Chespin|Fennekin|Froakie|Rowlet|Litten|Popplio|Grookey|Scorbunny|Sobble|Sprigatito|Fuecoco|Quaxly",
+      "source": "https://www.pokemon.com/us/pokemon-video-games",
+      "scope": "The 27 standard grass/fire/water base-form starters; not Pikachu, Eevee or evolved forms."
+    },
+    {
+      "prompt": "Name a Valorant agent released by the end of 2024.",
+      "answers": "Jett|Sage|Phoenix|Sova|Reyna|Raze|Omen|Brimstone|Viper|Cypher|Breach|Killjoy|Skye|Yoru|Astra|KAY/O|Chamber|Neon|Fade|Harbor|Gekko|Deadlock|Iso|Clove|Vyse",
+      "source": "https://playvalorant.com/en-us/agents/",
+      "scope": "Playable agents available by 31 December 2024, not later additions."
+    },
+    {
+      "prompt": "Name a hero playable in the original Overwatch.",
+      "answers": "Tracer|Mercy|Reaper|Soldier 76|D Va|Genji|Hanzo|Widowmaker|Winston|Reinhardt|Bastion|Mei|Junkrat|Roadhog|Lucio|Zenyatta|Symmetra|Torbjorn|Pharah|Zarya|Cassidy|Ana|Sombra|Orisa|Doomfist|Moira|Brigitte|Wrecking Ball|Ashe|Baptiste|Sigma|Echo",
+      "source": "https://overwatch.blizzard.com/en-us/heroes/",
+      "scope": "The 32 heroes before Overwatch 2 launched in October 2022; McCree resolves to Cassidy."
+    },
+    {
+      "prompt": "Name an Apex Legends character released by the end of 2024.",
+      "answers": "Wraith|Lifeline|Pathfinder|Bloodhound|Bangalore|Gibraltar|Mirage|Caustic|Octane|Wattson|Crypto|Revenant|Loba|Rampart|Horizon|Fuse|Valkyrie|Seer|Ash|Mad Maggie|Newcastle|Vantage|Catalyst|Ballistic|Conduit|Alter",
+      "source": "https://www.ea.com/games/apex-legends/apex-legends/characters",
+      "scope": "Playable Legends through 31 December 2024."
+    },
+    {
+      "prompt": "Name a mob in Minecraft Java Edition 1.21.",
+      "answers": "Creeper|Zombie|Skeleton|Enderman|Spider|Cave Spider|Villager|Witch|Iron Golem|Snow Golem|Pig|Cow|Sheep|Chicken|Wolf|Cat|Horse|Donkey|Mule|Rabbit|Fox|Panda|Polar Bear|Bee|Bat|Squid|Glow Squid|Dolphin|Turtle|Cod|Salmon|Pufferfish|Tropical Fish|Axolotl|Goat|Llama|Trader Llama|Wandering Trader|Mooshroom|Ocelot|Parrot|Slime|Magma Cube|Blaze|Ghast|Zombified Piglin|Piglin|Piglin Brute|Hoglin|Zoglin|Strider|Wither Skeleton|Wither|Ender Dragon|Silverfish|Endermite|Shulker|Guardian|Elder Guardian|Drowned|Husk|Stray|Phantom|Pillager|Vindicator|Evoker|Ravager|Vex|Zombie Villager|Skeleton Horse|Zombie Horse|Frog|Tadpole|Allay|Warden|Camel|Sniffer|Armadillo|Breeze|Bogged|Giant|Illusioner",
+      "source": "https://www.minecraft.net/en-us/article/minecraft-java-edition-1-21",
+      "scope": "Base-game Java 1.21, including command-only mobs. No mods, removed mobs or later updates."
+    },
+    {
+      "prompt": "Name a main-series Legend of Zelda game released before 2024.",
+      "answers": "The Legend of Zelda|Zelda II The Adventure of Link|A Link to the Past|Link's Awakening|Ocarina of Time|Majora's Mask|Oracle of Seasons|Oracle of Ages|Four Swords|The Wind Waker|Four Swords Adventures|The Minish Cap|Twilight Princess|Phantom Hourglass|Spirit Tracks|Skyward Sword|A Link Between Worlds|Tri Force Heroes|Breath of the Wild|Tears of the Kingdom",
+      "source": "https://www.zelda.com/about/",
+      "scope": "Main series through Tears of the Kingdom; remasters count as the original title, not spinoffs."
+    },
+    {
+      "prompt": "Name a Stardew Valley villager with a friendship heart meter.",
+      "answers": "Abigail|Alex|Elliott|Emily|Haley|Harvey|Leah|Maru|Penny|Sam|Sebastian|Shane|Caroline|Clint|Demetrius|Dwarf|Evelyn|George|Gus|Jas|Jodi|Kent|Krobus|Leo|Lewis|Linus|Marnie|Pam|Pierre|Robin|Sandy|Vincent|Willy|Wizard",
+      "source": "https://stardewvalleywiki.com/Villagers",
+      "scope": "The 34 friendship NPCs in base-game version 1.6; no mods, generic animals or other NPCs."
+    },
+    {
+      "prompt": "Name a standard Among Us player colour.",
+      "answers": "Red|Blue|Green|Pink|Orange|Yellow|Black|White|Purple|Brown|Cyan|Lime|Maroon|Rose|Banana|Gray|Tan|Coral",
+      "source": "https://among-us.fandom.com/wiki/Colors",
+      "scope": "The modern base game's 18 standard selectable colours, not cosmetics."
+    },
+    {
+      "prompt": "Name a fighter in Street Fighter 6's launch roster.",
+      "answers": "Ryu|Ken|Chun-Li|Guile|Cammy|Zangief|Dhalsim|Blanka|E Honda|Juri|Luke|Jamie|Kimberly|Manon|Marisa|Lily|JP|Dee Jay",
+      "source": "https://www.streetfighter.com/6/en-us/character/",
+      "scope": "The 18 fighters available in June 2023, not later DLC."
+    },
+    {
+      "prompt": "Name a League of Legends champion first released in 2009.",
+      "answers": "Ashe|Annie|Alistar|Amumu|Anivia|Blitzcrank|Corki|Cho'Gath|Dr Mundo|Evelynn|Fiddlesticks|Gangplank|Heimerdinger|Janna|Jax|Karthus|Kassadin|Katarina|Kayle|Malphite|Master Yi|Morgana|Nasus|Nidalee|Nunu and Willump|Rammus|Ryze|Shaco|Singed|Sion|Sivir|Soraka|Taric|Teemo|Tristana|Tryndamere|Twisted Fate|Twitch|Udyr|Veigar|Warwick|Zilean",
+      "source": "https://wiki.leagueoflegends.com/en-us/List_of_champions",
+      "scope": "Original 2009 release dates; modern names accepted, not later champions."
+    },
+    {
+      "prompt": "Name a weapon from Fortnite Battle Royale's first chapter.",
+      "answers": "Assault Rifle|Burst Assault Rifle|Scoped Assault Rifle|Thermal Scoped Assault Rifle|Suppressed Assault Rifle|Infantry Rifle|Heavy Assault Rifle|Tactical Assault Rifle|Minigun|Light Machine Gun|Drum Gun|Pistol|Suppressed Pistol|Hand Cannon|Dual Pistols|Flint-Knock Pistol|Revolver|Scoped Revolver|Submachine Gun|Tactical Submachine Gun|Suppressed Submachine Gun|Burst Submachine Gun|Compact Submachine Gun|Pump Shotgun|Tactical Shotgun|Heavy Shotgun|Double Barrel Shotgun|Combat Shotgun|Bolt-Action Sniper Rifle|Semi-Auto Sniper Rifle|Heavy Sniper Rifle|Suppressed Sniper Rifle|Hunting Rifle|Automatic Sniper Rifle|Rocket Launcher|Grenade Launcher|Guided Missile|Quad Launcher|Proximity Grenade Launcher|Boom Bow|Crossbow|Fiend Hunter Crossbow|Grenade|Clinger|Stink Bomb|Dynamite|Remote Explosives|Zap-o-tron",
+      "source": "https://fortnite.fandom.com/wiki/Chapter_1",
+      "scope": "Weapons that appeared during Chapter 1, including vaulted weapons; not traps, cosmetics or later chapters."
+    }
+  ],
+  "SPACE": [
+    {
+      "prompt": "Name a Solar System moon discovered before 1990.",
+      "answers": "Moon|Phobos|Deimos|Io|Europa|Ganymede|Callisto|Amalthea|Himalia|Elara|Pasiphae|Sinope|Lysithea|Carme|Ananke|Leda|Metis|Adrastea|Thebe|Mimas|Enceladus|Tethys|Dione|Rhea|Titan|Iapetus|Hyperion|Phoebe|Janus|Epimetheus|Helene|Telesto|Calypso|Atlas|Prometheus|Pandora|Miranda|Ariel|Umbriel|Titania|Oberon|Cordelia|Ophelia|Bianca|Cressida|Desdemona|Juliet|Portia|Rosalind|Belinda|Puck|Triton|Nereid|Naiad|Thalassa|Despina|Galatea|Larissa|Proteus|Charon",
+      "source": "https://science.nasa.gov/solar-system/moons/",
+      "scope": "Natural moons discovered before 1 January 1990, including Earth's Moon. Use the present name; not asteroids or artificial satellites."
+    },
+    {
+      "prompt": "Name an officially recognised constellation.",
+      "answers": "Orion|Leo|Scorpius|Aries|Taurus|Gemini|Cancer|Virgo|Libra|Sagittarius|Capricornus|Aquarius|Pisces|Ursa Major|Ursa Minor|Cassiopeia|Andromeda|Pegasus|Cygnus|Draco|Hercules|Lyra|Aquila|Canis Major|Canis Minor|Centaurus|Crux|Hydra|Phoenix|Perseus|Auriga|Ophiuchus|Serpens|Cetus|Eridanus|Lepus|Lupus|Boötes|Carina|Vela|Puppis|Columba|Corvus|Crater|Coma Berenices|Corona Borealis|Corona Australis|Triangulum|Triangulum Australe|Piscis Austrinus|Delphinus|Dorado|Equuleus|Grus|Indus|Lacerta|Leo Minor|Lynx|Monoceros|Musca|Pavo|Sagitta|Scutum|Sextans|Tucana|Volans|Vulpecula|Antlia|Apus|Ara|Caelum|Camelopardalis|Canes Venatici|Chamaeleon|Circinus|Fornax|Horologium|Hydrus|Mensa|Microscopium|Norma|Octans|Pictor|Pyxis|Reticulum|Sculptor|Telescopium|Cepheus",
+      "source": "https://www.iau.org/public/themes/constellations/",
+      "scope": "The IAU's 88 constellations; use the Latin name, with common zodiac names accepted. Asterisms such as the Big Dipper are not separate constellations."
+    },
+    {
+      "prompt": "Name a named character in Star Wars.",
+      "answers": "Luke Skywalker|Leia Organa|Han Solo|Darth Vader|Obi-Wan Kenobi|Yoda|Chewbacca|R2-D2|C-3PO|Palpatine|Padme Amidala|Rey|Finn|Poe Dameron|Kylo Ren|Boba Fett|Jango Fett|Jabba the Hutt|Lando Calrissian|Darth Maul|Qui-Gon Jinn|Mace Windu|Count Dooku|General Grievous|Ahsoka Tano|Din Djarin|Grogu|Bo-Katan Kryze|Jyn Erso|Cassian Andor|Chirrut Imwe|Baze Malbus|Orson Krennic|Grand Moff Tarkin|Admiral Ackbar|Nien Nunb|Wedge Antilles|Rose Tico|Maz Kanata|Supreme Leader Snoke|Captain Phasma|General Hux|General Pryde|Saw Gerrera|Mon Mothma|Bail Organa|Owen Lars|Beru Lars|Shmi Skywalker|Watto|Sebulba|Jar Jar Binks|Boss Nass|Captain Panaka|Plo Koon|Kit Fisto|Aayla Secura|Ki-Adi-Mundi|Shaak Ti|Asajj Ventress|Savage Opress|Cad Bane|Hera Syndulla|Sabine Wren|Ezra Bridger|Kanan Jarrus|Grand Admiral Thrawn|Zeb Orrelios|Captain Rex|Commander Cody|Omega",
+      "source": "https://www.starwars.com/databank",
+      "scope": "Named characters from official screen canon through 2024; not fan characters. Darth Vader and Anakin refer to one person, with both names accepted."
+    },
+    {
+      "prompt": "Name a film where a main character physically travels into space.",
+      "answers": "Star Wars A New Hope|The Empire Strikes Back|Return of the Jedi|The Phantom Menace|Attack of the Clones|Revenge of the Sith|The Force Awakens|The Last Jedi|The Rise of Skywalker|Rogue One|Solo|2001 A Space Odyssey|2010 The Year We Make Contact|Interstellar|The Martian|Gravity|Apollo 13|First Man|Alien|Aliens|Alien 3|Alien Resurrection|Prometheus|Alien Covenant|Alien Romulus|WALL-E|Lightyear|Guardians of the Galaxy|Guardians of the Galaxy Vol 2|Guardians of the Galaxy Vol 3|Avengers Infinity War|Avengers Endgame|Thor|Thor Ragnarok|Thor Love and Thunder|Captain Marvel|The Marvels|Iron Man|Star Trek|Star Trek Into Darkness|Star Trek Beyond|Star Trek The Motion Picture|Star Trek II The Wrath of Khan|Star Trek First Contact|Galaxy Quest|Spaceballs|Space Cowboys|Ad Astra|Sunshine|Event Horizon|Passengers|Life|Moon|Dune|Dune Part Two|The Hitchhiker's Guide to the Galaxy|Lost in Space|The Fifth Element|Valerian and the City of a Thousand Planets|The Right Stuff|Armageddon|Deep Impact|Contact|Treasure Planet|Zathura|Space Chimps|Planet of the Apes",
+      "source": "https://en.wikipedia.org/wiki/List_of_films_featuring_space_stations",
+      "scope": "Features released through 2024 where a principal human or alien physically travels beyond Earth; not dreams, virtual reality or robot-only trips from Earth."
+    },
+    {
+      "prompt": "Name an actor playing a Guardian, named Ravager captain or Rocket's animal friend in the MCU.",
+      "answers": "Chris Pratt|Zoe Saldana|Dave Bautista|Bradley Cooper|Vin Diesel|Karen Gillan|Pom Klementieff|Michael Rooker|Sean Gunn|Sylvester Stallone|Miley Cyrus|Michelle Yeoh|Ving Rhames|Michael Rosenbaum|Will Poulter|Linda Cardellini|Asim Chaudhry|Mikaela Hoover|Maria Bakalova",
+      "source": "https://www.marvel.com/teams-and-groups/guardians-of-the-galaxy/on-screen",
+      "scope": "Core team, named Ravager captains, Adam Warlock, Cosmo and Rocket's named animal companions through Vol. 3; includes voice actors."
+    },
+    {
+      "prompt": "Name an astronaut who flew on an Apollo mission to the Moon.",
+      "answers": "Neil Armstrong|Buzz Aldrin|Michael Collins|Jim Lovell|Frank Borman|William Anders|Thomas Stafford|John Young|Eugene Cernan|Pete Conrad|Richard Gordon|Alan Bean|Jack Swigert|Fred Haise|Alan Shepard|Stuart Roosa|Edgar Mitchell|David Scott|Alfred Worden|James Irwin|Ken Mattingly|Charles Duke|Ronald Evans|Harrison Schmitt",
+      "source": "https://www.nasa.gov/history/apollo/",
+      "scope": "The 24 distinct astronauts aboard Apollo 8 and 10–17, including orbit-only crew and Apollo 13; not Apollo 7 or 9."
+    },
+    {
+      "prompt": "Name a NASA mission or spaceflight programme.",
+      "answers": "Apollo|Artemis|Gemini|Mercury|Space Shuttle|Skylab|Voyager|Pioneer|New Horizons|Juno|Cassini|Galileo|Hubble|James Webb|Chandra|Spitzer|Kepler|TESS|WISE|Viking|Mariner|Mars Pathfinder|Mars Global Surveyor|Mars Odyssey|Mars Reconnaissance Orbiter|Curiosity|Perseverance|Spirit|Opportunity|Phoenix|InSight|MAVEN|OSIRIS-REx|DART|Lucy|Psyche|Dawn|Deep Impact|Stardust|NEAR Shoemaker|Magellan|MESSENGER|Parker Solar Probe|Solar Dynamics Observatory|SOHO|Ulysses|IBEX|WMAP|COBE|Fermi|Swift|Europa Clipper|Dragonfly",
+      "source": "https://science.nasa.gov/missions/",
+      "scope": "Named NASA civilian missions/programmes launched or formally selected by 2025, including joint missions. Individual astronauts and generic rockets do not count."
+    },
+    {
+      "prompt": "Name a spacecraft mission that reached Mars.",
+      "answers": "Mariner 4|Mariner 6|Mariner 7|Mariner 9|Mars 2|Mars 3|Mars 4|Mars 5|Mars 6|Mars 7|Viking 1|Viking 2|Mars Pathfinder|Mars Global Surveyor|Mars Odyssey|Mars Express|Mars Reconnaissance Orbiter|Phoenix|Curiosity|MAVEN|ExoMars Trace Gas Orbiter|InSight|Perseverance|Hope|Tianwen-1|Spirit|Opportunity",
+      "source": "https://science.nasa.gov/mars/exploration/",
+      "scope": "Missions through 2025 that reached Mars orbit, surface or a close flyby. Rover names accepted. Failed launches and lost-before-arrival missions excluded."
+    },
+    {
+      "prompt": "Name a main Star Trek character.",
+      "answers": "James T Kirk|Spock|Leonard McCoy|Montgomery Scott|Nyota Uhura|Hikaru Sulu|Pavel Chekov|Christine Chapel|Janice Rand|Jean-Luc Picard|William Riker|Data|Geordi La Forge|Worf|Deanna Troi|Beverly Crusher|Wesley Crusher|Tasha Yar|Guinan|Q|Benjamin Sisko|Jake Sisko|Kira Nerys|Odo|Quark|Jadzia Dax|Ezri Dax|Julian Bashir|Miles O'Brien|Kathryn Janeway|Chakotay|Tuvok|Tom Paris|B'Elanna Torres|Harry Kim|Seven of Nine|The Doctor|Neelix|Kes|Jonathan Archer|T'Pol|Trip Tucker|Malcolm Reed|Hoshi Sato|Travis Mayweather|Phlox|Michael Burnham|Saru|Paul Stamets|Sylvia Tilly|Hugh Culber|Christopher Pike|Una Chin-Riley|La'an Noonien-Singh|Erica Ortegas|Beckett Mariner|Brad Boimler|D'Vana Tendi|Sam Rutherford|Carol Freeman|Dal R'El|Gwyndala",
+      "source": "https://www.startrek.com/characters",
+      "scope": "Regular and recurring named characters in official TV/films through 2024; unambiguous surnames or familiar nicknames accepted."
+    },
+    {
+      "prompt": "Name a planet or moon featured in Star Wars.",
+      "answers": "Tatooine|Coruscant|Naboo|Hoth|Endor|Mustafar|Alderaan|Yavin 4|Dagobah|Bespin|Kamino|Geonosis|Utapau|Kashyyyk|Felucia|Mygeeto|Saleucami|Cato Neimoidia|Polis Massa|Jakku|Takodana|D'Qar|Ahch-To|Crait|Cantonica|Exegol|Kijimi|Pasaana|Kef Bir|Ajan Kloss|Scarif|Jedha|Eadu|Wobani|Lah'mu|Corellia|Mimban|Vandor|Kessel|Savareen|Mandalore|Lothal|Dathomir|Malachor|Ryloth|Mon Cala|Ilum|Sullust|Bracca|Zeffo|Bogano|Nur|Tanalorr|Nevarro|Trask|Tython|Morak|Ferrix|Aldhani|Niamos|Narkina 5",
+      "source": "https://www.starwars.com/databank",
+      "scope": "Named planets/moons in official screen canon and Jedi games through 2024. Artificial stations excluded; Starkiller Base resolves to the converted planet Ilum."
+    },
+    {
+      "prompt": "Name a Doctor Who alien species or people.",
+      "answers": "Dalek|Cyberman|Time Lord|Weeping Angel|Sontaran|Silurian|Ice Warrior|Zygon|Ood|Judoon|Auton|Nestene|Krynoid|Sea Devil|Draconian|Vashta Nerada|Adipose|Racnoss|Raxacoricofallapatorian|Sycorax|Toclafane|Krillitane|Carrionite|Pyrovile|Hath|Tritovore|Tenza|Silence|Siren|Atraxi|Abzorbaloff|Vervoid|Osiran|Thal|Drahvin|Sensorite|Voord|Mechanoid|Chumblie|Macra|Yeti|Zarbi|Menoptera|Monoid",
+      "source": "https://www.bbc.co.uk/doctorwho",
+      "scope": "Alien species, named peoples and robot races from television through 2024. Slitheen is accepted for Raxacoricofallapatorian; individual character names excluded."
+    },
+    {
+      "prompt": "Name an MCU character who has physically travelled beyond Earth.",
+      "answers": "Thor|Loki|Iron Man|Spider-Man|Doctor Strange|Hulk|Black Widow|Hawkeye|Captain Marvel|Monica Rambeau|Ms Marvel|Nick Fury|Star-Lord|Gamora|Drax|Rocket|Groot|Nebula|Mantis|Yondu|Kraglin|Adam Warlock|Odin|Frigga|Heimdall|Sif|Valkyrie|Hela|Jane Foster|Korg|Miek|Thanos|Ebony Maw|Proxima Midnight|Corvus Glaive|Cull Obsidian|Eitri|Ayesha|High Evolutionary|Goose|Talos|Eros|Pip|Sersi|Ikaris|Thena|Gilgamesh|Kingo|Sprite|Phastos|Druig|Makkari|Ajak|Arishem",
+      "source": "https://www.marvel.com/characters",
+      "scope": "MCU screen canon through 2024, beyond Earth's atmosphere; trips only to the Quantum Realm or other Earth locations excluded."
+    },
+    {
+      "prompt": "Name a planet, recognised dwarf planet or zodiac constellation.",
+      "answers": "Earth|Mars|Jupiter|Saturn|Venus|Mercury|Uranus|Neptune|Pluto|Ceres|Eris|Makemake|Haumea|Aries|Taurus|Gemini|Cancer|Leo|Virgo|Libra|Scorpius|Sagittarius|Capricornus|Aquarius|Pisces",
+      "source": "https://www.iau.org/public/themes/",
+      "scope": "Eight Solar System planets, the five IAU-recognised dwarf planets, or the twelve traditional zodiac constellations; not Ophiuchus."
+    },
+    {
+      "prompt": "Name a space telescope or astronomical observatory mission launched before 2025.",
+      "answers": "Hubble|James Webb|Chandra|Spitzer|Kepler|TESS|Gaia|Hipparcos|Planck|Herschel|WMAP|COBE|IRAS|Swift|Fermi|Euclid|ROSAT|Einstein Observatory|Compton Gamma Ray Observatory|GALEX|WISE|Spektr-R|Spektr-RG|DAMPE|AstroSat|Hitomi|Suzaku|ASCA|Akari|ISO|International Ultraviolet Explorer|CHEOPS|CoRoT|MOST|BRITE|IXPE|NICER|XMM-Newton|INTEGRAL|BeppoSAX|Uhuru|EXOSAT|HEAO-1|HEAO-3|OAO-2",
+      "source": "https://science.nasa.gov/astrophysics/missions/",
+      "scope": "Launched astronomical space observatories, including joint/non-NASA missions and ISS's NICER instrument. Not ground-based or future telescopes."
+    },
+    {
+      "prompt": "Name a named Star Wars droid.",
+      "answers": "R2-D2|C-3PO|BB-8|K-2SO|Chopper|IG-88|IG-11|L3-37|D-O|BD-1|R5-D4|EV-9D9|FX-7|2-1B|TC-14|WA-7|ME-8D9|AP-5|Huyang|AZI-3|Todo 360|B2EMO|L0-LA59|NED-B|SM-33|8D8|R-3X|R3-S6|R4-P17|R2-KT|BB-9E|CH-33P|U7|CZ-3|CZ-4",
+      "source": "https://www.starwars.com/databank",
+      "scope": "Named individual droids in official canon through 2024, including games; generic model descriptions do not count."
+    },
+    {
+      "prompt": "Name a named Transformers character.",
+      "answers": "Optimus Prime|Bumblebee|Megatron|Starscream|Soundwave|Shockwave|Ratchet|Ironhide|Jazz|Sideswipe|Wheeljack|Grimlock|Slug|Snarl|Swoop|Sludge|Arcee|Hot Rod|Ultra Magnus|Jetfire|Cliffjumper|Hound|Trailbreaker|Brawn|Mirage|Hoist|Grapple|Inferno|Red Alert|Prowl|Smokescreen|Bluestreak|Blaster|Perceptor|Powerglide|Warpath|Cosmos|Beachcomber|Seaspray|Windcharger|Tracks|Omega Supreme|Metroplex|Trypticon|Unicron|Primus|Devastator|Bruticus|Menasor|Superion|Defensor|Predaking|Thundercracker|Skywarp|Rumble|Frenzy|Laserbeak|Ravage|Bombshell|Shrapnel|Kickback|Cyclonus|Scourge|Swindle|Vortex|Brawl|Onslaught|Blast Off|Hot Spot|Silverbolt|Air Raid|Fireflight|Skydive|Slingshot",
+      "source": "https://transformers.hasbro.com/",
+      "scope": "Named official characters through 2024, including combiners. Galvatron and Rodimus Prime are accepted for Megatron and Hot Rod in this list."
+    }
+  ]
+}
