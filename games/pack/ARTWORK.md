@@ -1,0 +1,7 @@
+# Pack item illustrations
+
+43 original, local SVG illustrations replace platform emoji in the item list, packed luggage and result recaps. Each item name has a distinct image, including Map/Day map, Pillow/Travel pillow, the clothing variants and each kind of footwear. Plain muted fills, navy outlines and hard geometric details follow Break Room's approved visual style. No third-party marks or protected medical emblems are used; the first-aid pouch uses a bandage illustration.
+
+`item-art.js` maps native names to fixed local files. Unknown historical names receive a neutral luggage illustration, alongside their original readable label. Native icon fields remain untouched in question banks and captured saves because the validator still expects them. The renderer uses decorative empty-alt images beside the existing names. The bag viewport has a stable height to keep the item controls from moving as it fills; contents scroll within it. Recap artwork repeats the native text and is hidden from assistive technology to avoid duplicate announcements.
+
+No puzzle, identity, weight, usefulness, optimum, date selection, save key or scoring changes. SVGs are source artwork and ship directly; no font, image service or extra dependency is required. `tests/pack-art.cjs` decodes all images, produces an item catalog and real phone/desktop screenshots, exercises selection/review/restoration and checks native snapshot preservation. The normal Pack and dependent save/scoring checks remain in CI.
