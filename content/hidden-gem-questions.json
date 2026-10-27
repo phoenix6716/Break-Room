@@ -1713,22 +1713,30 @@
         {
           "name": "Harry Potter",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "Harry"
+          ]
         },
         {
           "name": "Hermione Granger",
           "points": 3,
-          "aliases": []
+          "aliases": [
+            "Hermione"
+          ]
         },
         {
           "name": "Ron Weasley",
           "points": 5,
-          "aliases": []
+          "aliases": [
+            "Ron"
+          ]
         },
         {
           "name": "Draco Malfoy",
           "points": 7,
-          "aliases": []
+          "aliases": [
+            "Draco"
+          ]
         },
         {
           "name": "Neville Longbottom",
@@ -5413,8 +5421,7 @@
         {
           "name": "X-ray",
           "aliases": [
-            "X-rays",
-            "X ray"
+            "X-rays"
           ],
           "points": 66
         },
@@ -5578,17 +5585,23 @@
         {
           "name": "Harry Potter",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "Harry"
+          ]
         },
         {
           "name": "Hermione Granger",
           "points": 3,
-          "aliases": []
+          "aliases": [
+            "Hermione"
+          ]
         },
         {
           "name": "Ron Weasley",
           "points": 4,
-          "aliases": []
+          "aliases": [
+            "Ron"
+          ]
         },
         {
           "name": "Albus Dumbledore",
@@ -5598,22 +5611,32 @@
         {
           "name": "Severus Snape",
           "points": 7,
-          "aliases": []
+          "aliases": [
+            "Snape"
+          ]
         },
         {
           "name": "Rubeus Hagrid",
           "points": 9,
-          "aliases": []
+          "aliases": [
+            "Hagrid"
+          ]
         },
         {
           "name": "Voldemort",
           "points": 10,
-          "aliases": []
+          "aliases": [
+            "Tom Riddle",
+            "Lord Voldemort",
+            "Tom Marvolo Riddle"
+          ]
         },
         {
           "name": "Draco Malfoy",
           "points": 12,
-          "aliases": []
+          "aliases": [
+            "Draco"
+          ]
         },
         {
           "name": "Ginny Weasley",
@@ -5643,7 +5666,9 @@
         {
           "name": "Minerva McGonagall",
           "points": 21,
-          "aliases": []
+          "aliases": [
+            "McGonagall"
+          ]
         },
         {
           "name": "Dobby",
@@ -6246,7 +6271,10 @@
         {
           "name": "Iron Man",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "Tony Stark",
+            "Stark"
+          ]
         },
         {
           "name": "The Incredible Hulk",
@@ -6317,7 +6345,11 @@
         {
           "name": "Doctor Strange",
           "points": 37,
-          "aliases": []
+          "aliases": [
+            "Stephen Strange",
+            "Dr Strange",
+            "Strange"
+          ]
         },
         {
           "name": "Guardians of the Galaxy Vol 2",
@@ -6358,7 +6390,9 @@
         {
           "name": "Captain Marvel",
           "points": 56,
-          "aliases": []
+          "aliases": [
+            "Carol Danvers"
+          ]
         },
         {
           "name": "Avengers Endgame",
@@ -6377,7 +6411,10 @@
         {
           "name": "Black Widow",
           "points": 64,
-          "aliases": []
+          "aliases": [
+            "Natasha Romanoff",
+            "Natasha"
+          ]
         },
         {
           "name": "Shang-Chi and the Legend of the Ten Rings",
@@ -7707,7 +7744,9 @@
         {
           "name": "Buzz Lightyear",
           "points": 3,
-          "aliases": []
+          "aliases": [
+            "Buzz"
+          ]
         },
         {
           "name": "Jessie",
@@ -7717,7 +7756,9 @@
         {
           "name": "Bo Peep",
           "points": 7,
-          "aliases": []
+          "aliases": [
+            "Bo"
+          ]
         },
         {
           "name": "Rex",
@@ -11831,7 +11872,6 @@
           "name": "50 dollars",
           "aliases": [
             "50",
-            "$50",
             "Fifty dollars"
           ],
           "points": 6
@@ -11840,7 +11880,6 @@
           "name": "20 dollars",
           "aliases": [
             "20",
-            "$20",
             "Twenty dollars"
           ],
           "points": 26
@@ -11849,7 +11888,6 @@
           "name": "10 dollars",
           "aliases": [
             "10",
-            "$10",
             "Ten dollars"
           ],
           "points": 49
@@ -11858,7 +11896,6 @@
           "name": "5 dollars",
           "aliases": [
             "5",
-            "$5",
             "Five dollars"
           ],
           "points": 74
@@ -11867,7 +11904,6 @@
           "name": "100 dollars",
           "aliases": [
             "100",
-            "$100",
             "One hundred dollars"
           ],
           "points": 100
@@ -15891,7 +15927,9 @@
         {
           "name": "Captain Marvel",
           "points": 54,
-          "aliases": []
+          "aliases": [
+            "Carol Danvers"
+          ]
         },
         {
           "name": "The Marvels",
@@ -15901,7 +15939,10 @@
         {
           "name": "Iron Man",
           "points": 57,
-          "aliases": []
+          "aliases": [
+            "Tony Stark",
+            "Stark"
+          ]
         },
         {
           "name": "Star Trek",
@@ -17756,39 +17797,58 @@
         {
           "name": "Iron Man",
           "points": 5,
-          "aliases": []
+          "aliases": [
+            "Tony Stark",
+            "Stark"
+          ]
         },
         {
           "name": "Spider-Man",
           "points": 7,
           "aliases": [
-            "SpiderMan"
+            "SpiderMan",
+            "Peter Parker"
           ]
         },
         {
           "name": "Doctor Strange",
           "points": 8,
-          "aliases": []
+          "aliases": [
+            "Stephen Strange",
+            "Dr Strange",
+            "Strange"
+          ]
         },
         {
           "name": "Hulk",
           "points": 10,
-          "aliases": []
+          "aliases": [
+            "Bruce Banner",
+            "Banner"
+          ]
         },
         {
           "name": "Black Widow",
           "points": 12,
-          "aliases": []
+          "aliases": [
+            "Natasha Romanoff",
+            "Natasha"
+          ]
         },
         {
           "name": "Hawkeye",
           "points": 14,
-          "aliases": []
+          "aliases": [
+            "Clint Barton",
+            "Clint"
+          ]
         },
         {
           "name": "Captain Marvel",
           "points": 16,
-          "aliases": []
+          "aliases": [
+            "Carol Danvers"
+          ]
         },
         {
           "name": "Monica Rambeau",
@@ -17798,7 +17858,9 @@
         {
           "name": "Ms Marvel",
           "points": 20,
-          "aliases": []
+          "aliases": [
+            "Kamala Khan"
+          ]
         },
         {
           "name": "Nick Fury",
@@ -23060,7 +23122,10 @@
         {
           "name": "E Honda",
           "points": 48,
-          "aliases": []
+          "aliases": [
+            "Edmond Honda",
+            "Honda"
+          ]
         },
         {
           "name": "Juri",
