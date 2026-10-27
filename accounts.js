@@ -73,15 +73,15 @@
  async function uploadLatest(){
   busy=true;
   try{
-   const userId=session.user.id;
+   const userId=session.user.id;let uploaded=false;
    while(owner()===userId&&session?.user.id===userId&&!document.hidden){
-    const local=snapshot(),signature=JSON.stringify(local);if(signature===lastUploaded)return true;
+    const local=snapshot(),signature=JSON.stringify(local);if(signature===lastUploaded){if(uploaded){status('Saved to your account. Load cloud saves on your other device before playing.');notify('saved');}return true;}
     await serial(async()=>{
      if(owner()!==userId||session?.user.id!==userId)return;
      backup(cacheKey(userId),local);
      await exchange(userId,local);
      if(owner()!==userId||session?.user.id!==userId)return;
-     lastUploaded=signature;status('Saved to your account. Load cloud saves on your other device before playing.');notify('saved');
+     lastUploaded=signature;uploaded=true;
     });
     // A game may finish while the previous snapshot is uploading. Drain the latest
     // owned snapshot before resolving sync() to a comparison page.
