@@ -51,7 +51,7 @@
    const next=await api.friendsRPC('friend_hub');if(id!==requestId||api.getUser()?.id!==expected)return;
    hub=next;records=[];today=null;renderHub();$('friend-score-list').replaceChildren();
    if(hub.me){const [result,hidden,shift]=await Promise.all([api.friendsRPC('friend_scores'),api.friendsRPC('hidden_gem_friend_scores'),api.friendsRPC('shift_work_friend_scores')]);if(id!==requestId||api.getUser()?.id!==expected)return;records=[...result.records,...hidden.records,...shift.records];today=result.today;compare();}
-   status(hub.me?(synced===false?'Your new browser results could not sync. Showing cloud scores; open Account to retry.':synced===null&&message==='Showing your latest cloud scores.'?'Showing cloud scores. Open Account, choose USE CLOUD SAVES, and choose whether to import this browser’s progress.':message):'Choose a name and create your friend code.',synced===false);
+   status(hub.me?(synced===false?'Your new browser results could not sync. Showing cloud scores; open Account to retry.':!api.cloudActive()&&message==='Showing your latest cloud scores.'?'Showing cloud scores. Open Account, choose USE CLOUD SAVES, and choose whether to import this browser’s progress.':message):'Choose a name and create your friend code.',synced===false);
   }catch(error){if(id===requestId){records=[];$('friend-score-list').replaceChildren();status(errorText(error),true);}}
   finally{busy=false;controls(!api.getUser());if(api.getUser()?.id!==expected)refresh();else if(refreshQueued)scheduleRefresh();}
  }

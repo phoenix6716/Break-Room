@@ -16,7 +16,12 @@ const token=name=>[Buffer.from(JSON.stringify({alg:'HS256',typ:'JWT'})).toString
 const user=name=>({id:ids[name],email:name+'@example.com',aud:'authenticated',role:'authenticated',created_at:new Date().toISOString(),app_metadata:{provider:'email'},user_metadata:{display_name:name}});
 const session=name=>({access_token:token(name),refresh_token:'refresh-'+name,token_type:'bearer',expires_in:3600,expires_at:Math.floor(Date.now()/1000)+3600,user:user(name)});
 let clockNeedsMigration=false,bouncerNeedsMigration=false,alibiNeedsMigration=false,laserNeedsMigration=false,priorNeedsMigration=false,packNeedsMigration=false,schemaMissing=false,networkDown=false,conflictOnce=false,signup=0,recovery=0,passwordUpdate=0,posts=[];
-async function mock(context){await context.route('https://*.supabase.co/**',async route=>{
+async function mock(context){
+ // Only compatibility tests may proxy archived engines; public routes stay redirects.
+ if(process.env.ARCADE_LEGACY_TEST_URL)await context.route(url=>['stake','prior','alibi','bouncer'].some(id=>url.pathname.includes('/games/'+id+'/')),async route=>{
+  const response=await route.fetch({url:route.request().url().replace(base,process.env.ARCADE_LEGACY_TEST_URL)});await route.fulfill({response});
+ });
+ await context.route('https://*.supabase.co/**',async route=>{
  if(networkDown)return route.abort('internetdisconnected');
  const req=route.request(),url=new URL(req.url()),method=req.method();
  const headers={'access-control-allow-origin':'*','access-control-allow-headers':'*','access-control-allow-methods':'GET,POST,PUT,DELETE,OPTIONS','content-type':'application/json'};
@@ -55,13 +60,7 @@ const native=page=>page.evaluate(()=>window.BREAK_ROOM_CLOUD_SAVES.capture(local
 (async()=>{
  const browser=await chromium.launch({executablePath:process.env.ARCADE_CHROMIUM||'/usr/bin/chromium',args:['--no-sandbox']});
  try{
- const context=await browser.newContext(),page=await context.newPage();
- // Archived engines remain private compatibility fixtures; their public URLs redirect home.
- if(process.env.ARCADE_LEGACY_TEST_URL)await context.route(url=>['prior','alibi','bouncer'].some(id=>url.pathname.includes('/games/'+id+'/')),async route=>{
-  const response=await route.fetch({url:route.request().url().replace(base,process.env.ARCADE_LEGACY_TEST_URL)});
-  await route.fulfill({response});
- });
- await mock(context);const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ const context=await browser.newContext(),page=await context.newPage();await mock(context);const errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto(base+'/account.html');await page.evaluate(([k,v])=>localStorage.setItem(k,v),[guestKey,complete]);
  await page.goto(base+'/login.html');await page.locator('#email').fill('alice@example.com');await page.locator('#password').fill('wrongpass');await page.locator('button[type=submit]').click();await page.locator('[data-account-status]').filter({hasText:'Email or password is incorrect'}).waitFor();assert.equal(new URL(page.url()).search,'');
  await login(page);assert.equal(new URL(page.url()).search,'');assert.equal(await page.locator('#import-guest').isChecked(),false);

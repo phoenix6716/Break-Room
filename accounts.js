@@ -178,6 +178,7 @@
  }
  function schedule(){clearTimeout(schedule.timer);schedule.timer=setTimeout(()=>syncUpload(),800);}
  window.BREAK_ROOM_ACCOUNTS=Object.freeze({sync:syncUpload,ready,getUser:()=>session?.user||null,
+  cloudActive:()=>{try{return !!session&&owner()===session.user.id;}catch{return false;}},
   async friendsRPC(name,args={}){await ready;if(!['friend_hub','friend_scores','hidden_gem_friend_scores','shift_work_friend_scores','league_hub'].includes(name))throw Error('Unknown friends operation.');if(!client||!session)throw Error('Please sign in to use friends.');const {data,error}=await client.rpc(name,args);if(error)throw error;return data;}
  });
  boot();
