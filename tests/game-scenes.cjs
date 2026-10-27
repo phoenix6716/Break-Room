@@ -75,6 +75,12 @@ async function action(p,id){
     const p=await view(page,id);await pause(p);
     assert.equal((await motions(p)).length,0,id+' hydration stays quiet');
     assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,id+' phone layout');
+    if(id!=='lowball'){
+     assert(await p.locator('#game-panel button,#game-panel input,#game-panel select').evaluateAll(es=>{
+      const board=document.querySelector('#game-panel').getBoundingClientRect();
+      return es.filter(e=>e.getClientRects().length).every(e=>{const r=e.getBoundingClientRect();return r.left>=board.left-1&&r.right<=board.right+1;});
+     }),id+' controls stay inside the surface');
+    }
     if(reducedMotion==='no-preference')await shot(p,id,'mobile');
     await action(p,id);
     const effects=await motions(p);
@@ -83,7 +89,7 @@ async function action(p,id){
     assert(effects.every(e=>e.options.duration<=300),'Effects stay brief');
     const saved=await p.evaluate(()=>JSON.stringify({...localStorage}));
     await page.waitForTimeout(350);assert.equal(await p.evaluate(()=>JSON.stringify({...localStorage})),saved,id+' visual feedback does not write saves');
-    if(reducedMotion==='no-preference')await shot(p,id,'review');
+    if(reducedMotion==='no-preference'){await page.waitForTimeout(750);await shot(p,id,'review');}
     await page.reload();const restored=id==='lowball'?await(await page.locator('iframe').elementHandle()).contentFrame():page;
     await restored.locator('body[data-scene-ready=true]').waitFor();await pause(restored);
     assert.equal((await motions(restored)).length,0,id+' restored result does not replay effects');
