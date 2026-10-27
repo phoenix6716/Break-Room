@@ -20,7 +20,7 @@ const pages=['leagues.html','friends.html','profile.html'],labels=['Home','Leagu
     for(const r of rects){assert(r.height>=44&&r.width>=44,'Accessible target '+route+' '+width);assert(r.x>=0&&r.x+r.width<=width+1,'Visible target '+width);}
     for(let i=0;i<rects.length;i++)for(let j=i+1;j<rects.length;j++){const a=rects[i],b=rects[j];assert(!(Math.min(a.x+a.width,b.x+b.width)-Math.max(a.x,b.x)>1&&Math.min(a.y+a.height,b.y+b.height)-Math.max(a.y,b.y)>1),'Overlapping header links '+route+' '+width);}
    }
-   assert.equal(await header.locator('.login').getAttribute('href'),'login.html');
+   assert.equal(new URL(await header.locator('.login').getAttribute('href'),base+'/').href,base+'/login.html');
    assert.equal(await header.locator('.avatar').getAttribute('href'),'profile.html');
    assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'Page overflow '+route+' '+width);
    await p.keyboard.press('Tab');await nav.getByRole('link',{name:'Home',exact:true}).focus();
@@ -34,6 +34,6 @@ const pages=['leagues.html','friends.html','profile.html'],labels=['Home','Leagu
   assert.deepEqual(errors,[]);await ctx.close();console.log('PASS social top bar '+width+'px: current-page underline, logo, account widths, keyboard, links and no overlaps/overflow.');
  }
  const ctx=await browser.newContext({javaScriptEnabled:false,viewport:{width:320,height:900}}),p=await ctx.newPage();
- for(const route of pages){await p.goto(base+'/'+route);const header=p.locator('header.hub-topbar');assert(await header.locator('.br-brand__image').isVisible());assert.equal(await header.getByRole('navigation').getByRole('link').count(),4);assert.equal(await header.locator('.login').getAttribute('href'),'login.html');await header.locator('.brand').click();await p.waitForURL('**/index.html');}
+ for(const route of pages){await p.goto(base+'/'+route);const header=p.locator('header.hub-topbar');assert(await header.locator('.br-brand__image').isVisible());assert.equal(await header.getByRole('navigation').getByRole('link').count(),4);assert.equal(new URL(await header.locator('.login').getAttribute('href'),base+'/').href,base+'/login.html');await header.locator('.brand').click();await p.waitForURL('**/index.html');}
  await ctx.close();console.log('PASS social top bar without JavaScript: approved logo, navigation and account links remain usable.');
  }finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1;});
