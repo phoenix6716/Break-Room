@@ -15,7 +15,7 @@ try{
    if(id==='stack-up'){
     assert.equal(await p.locator('.card-symbol img').count(),await p.locator('.sort-card').count());
     const before=await p.locator('.sort-card').evaluateAll(es=>es.map(e=>[e.querySelector('.card-name').textContent,e.querySelector('img').src]).sort());
-    await p.locator('.sort-card button').last().click();await settle(p);
+    await p.locator('.sort-card button:not(:disabled)').first().click();await settle(p);
     assert.deepEqual(await p.locator('.sort-card').evaluateAll(es=>es.map(e=>[e.querySelector('.card-name').textContent,e.querySelector('img').src]).sort()),before,'art follows names rather than rank');
    }
    if(id==='seating-chart'){
@@ -25,6 +25,7 @@ try{
    }
    if(id==='shift-work')assert.equal(await p.locator('.sw-piece img').count(),await p.locator('.sw-piece').count());
    if(id==='laser')assert(await p.locator('.laser-bullseye img').count());
+   if(id==='time-drop'){assert.equal(await p.locator('#era-tag img').count(),1);}
    if(id==='clue-ladder'){assert(await p.locator('.cl-climber img').count());assert(await p.locator('.native-lock').count());}
    if(id==='hidden-gem'){assert(await p.locator('img.hg-topic-art.large').count());await p.locator('#start-question').click();await settle(p);assert(await p.locator('img.hg-topic-art').count());}
    if(id==='inner-clock'){await p.locator('body[data-clock-art-loaded=true]').waitFor();assert((await p.locator('.clock-dial').evaluate(e=>getComputedStyle(e).backgroundImage)).includes('stopwatch.svg'));}

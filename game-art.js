@@ -24,7 +24,7 @@ function decorate(){
   replace(card.querySelector('.card-symbol'),own(art.subjects,category+'|'+name)||own(art.topics,category)||'motifs/scroll.svg');
  });
  if(id==='seating-chart'){
-  const guests=[...root.querySelectorAll('.sc-pool button')],names=guests.map(e=>e.dataset.artGuest||e.firstChild?.textContent.trim()).filter(Boolean).sort();
+  const guests=[...root.querySelectorAll('.sc-pool button')],names=(guests.length?guests.map(e=>e.dataset.artGuest||e.firstChild?.textContent.trim()):[...root.querySelectorAll('.sc-seat:not(.empty)>span')].map(e=>e.textContent.trim())).filter(Boolean).sort();
   const portrait=name=>art.portraits[(Math.max(0,names.indexOf(name))*3)%art.portraits.length];
   guests.forEach(e=>{if(e.dataset.artGuest)return;const name=e.firstChild.textContent.trim(),copy=document.createElement('span');copy.className='native-guest-copy';while(e.firstChild)copy.append(e.firstChild);e.append(image(portrait(name),'native-portrait'),copy);e.dataset.artGuest=name;});
   root.querySelectorAll('.sc-seat:not(.empty)').forEach(e=>{if(e.querySelector('.native-portrait'))return;const name=e.querySelector('span')?.textContent.trim();e.prepend(image(portrait(name),'native-portrait'));});
