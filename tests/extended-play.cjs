@@ -32,11 +32,11 @@ games.prior=async(p,width)=>{
 };
 async function sortStack(p){for(let value=1;value<=5;value++){let at=await p.locator('.sort-card[data-value="'+value+'"]').evaluate(e=>[...e.parentNode.children].indexOf(e));while(at>value-1){await p.locator('.sort-card[data-value="'+value+'"] button').first().click();at--;}}}
 games.stack=async(p,width)=>{
- await p.goto(base+'/games/stack-up/index.html');await p.locator('[data-mode=daily]').click();for(let i=0;i<5;i++){await sortStack(p);await p.locator('#check-button').click();await p.locator('#next-button').click();}const saved=await native(p);await p.locator('[data-mode=infinite]').click();const ids=new Set();
+ await p.goto(base+'/games/stack-up/index.html');await p.locator('[data-mode=daily]').click();for(let i=0;i<5;i++){await sortStack(p);await p.locator('#check-button').click();await p.locator('#next-button').click();}const saved=await native(p);await p.locator('[data-mode=infinite]').click();const ids=new Set(),topic=await p.evaluate(()=>{const replacements=new Map((window.STACK_UP_REPLACEMENT_STACKS||[]).map(s=>[s.id,s]));return Object.entries([...STACK_UP_STACKS.map(s=>replacements.get(s.id)||s),...STACK_UP_FAMILIAR_STACKS].filter(s=>s.category!=='NUMBER SENSE').reduce((counts,s)=>(counts[s.category]=(counts[s.category]||0)+1,counts),{})).sort((a,b)=>b[1]-a[1])[0][0];});
  for(let i=0;i<30;i++){
   const id=await p.locator('#cards').getAttribute('data-stack-id');assert(!ids.has(id));ids.add(id);
-  if(i===19){await p.locator('#stack-topic').selectOption('AIRPORTS');assert.equal(await p.locator('#cards').getAttribute('data-stack-id'),id);}
-  if(i>=20)assert.equal(await p.locator('#category-tag').innerText(),'AIRPORTS');
+  if(i===19){await p.locator('#stack-topic').selectOption(topic);assert.equal(await p.locator('#cards').getAttribute('data-stack-id'),id);}
+  if(i>=20)assert.equal(await p.locator('#category-tag').innerText(),topic);
   if(i===12){const order=await p.locator('.sort-card').evaluateAll(nodes=>nodes.map(e=>e.dataset.value));await p.clock.runFor(2500);await p.locator('[data-mode=daily]').click();assert.equal(await native(p),saved);await p.locator('[data-mode=infinite]').click();assert.equal(await p.locator('#cards').getAttribute('data-stack-id'),id);assert.deepEqual(await p.locator('.sort-card').evaluateAll(nodes=>nodes.map(e=>e.dataset.value)),order);assert.match(await p.locator('#timer').innerText(),/01:2[78]/);await p.screenshot({path:'/tmp/br-extended-stack-'+width+'.png',fullPage:true});}
   if(i===29){await p.clock.runFor(91000);assert.match(await p.locator('#result-title').innerText(),/clock/);}else{await sortStack(p);if(i===0)await p.locator('.sort-card').first().press('Enter');else await p.locator('#check-button').click();}
   await p.locator('#next-button').click();

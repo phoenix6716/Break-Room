@@ -38,6 +38,10 @@ const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
   await page.locator('#guessInput').fill('10');await page.locator('#submitBtn').click();
   assert(await page.locator('#resultArea').evaluate(e=>e.classList.contains('show')));
   assert.equal(await page.evaluate(()=>loadStats().played),3);
+  // Archived engine compatibility runs only from repository source, with its own origin.
+  const privateStake=await page.evaluate(()=>Object.fromEntries(Object.entries(localStorage).filter(([k])=>k.startsWith('stake:d:'))));
+  await page.goto((process.env.ARCADE_LEGACY_TEST_URL||base)+'/index.html');
+  await page.evaluate(records=>{for(const [key,value]of Object.entries(records))localStorage.setItem(key,value);},privateStake);
   await page.goto((process.env.ARCADE_LEGACY_TEST_URL||base)+'/games/stake/index.html');
   assert.equal(await page.evaluate(()=>run.p.length),5,'Restored Stake Daily is never replay-reset');
   assert.equal(await page.evaluate(()=>Object.keys(localStorage).filter(k=>k.startsWith('stake:d:')).length),2);
@@ -51,14 +55,13 @@ const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
   }
   assert.deepEqual(errors,[]);await context.close();
   const homepage=readFileSync('index.html','utf8');
-  for(const game of ['lowball','stake']){
+  for(const game of ['lowball']){
    const target=`games/${game}/index.html`;
    assert(homepage.includes(`href="${target}"`));assert(existsSync(path.resolve(target)));
    const context=await browser.newContext();const tab=await context.newPage();
    await tab.goto(base+'/index.html');await tab.locator(`a[href="${target}"]`).click();
    assert(tab.url().endsWith('/'+target));
-   if(game==='stake')assert.equal(await tab.locator('.chip').count(),3);
-   else await tab.frameLocator('iframe').locator('#guessInput').waitFor({state:'visible'});
+   await tab.frameLocator('iframe').locator('#guessInput').waitFor({state:'visible'});
    await context.close();
   }
   // Managed Chromium blocks file:// navigation. Verify explicit file targets above,
