@@ -1,0 +1,965 @@
+{
+  "version": 1,
+  "reviewedAt": "2026-10-27",
+  "policy": "No maths, numerical-fact or time-unit tasks. Retain chronology and qualitative knowledge ordering. Ranks are internal sort keys, not content questions.",
+  "challenge": [
+    {
+      "category": "SCREEN TIME",
+      "prompt": "Order these story moments from the original The Lion King, following the film's story.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Simba is presented at Pride Rock",
+          "value": 1
+        },
+        {
+          "name": "Scar tells Simba about the elephant graveyard",
+          "value": 2
+        },
+        {
+          "name": "Mufasa rescues the cubs from the hyenas",
+          "value": 3
+        },
+        {
+          "name": "The wildebeest stampede begins",
+          "value": 4
+        },
+        {
+          "name": "Simba flees the Pride Lands",
+          "value": 5
+        },
+        {
+          "name": "Timon and Pumbaa take Simba in",
+          "value": 6
+        },
+        {
+          "name": "Adult Nala finds Simba",
+          "value": 7
+        },
+        {
+          "name": "Simba returns to Pride Rock",
+          "value": 8
+        },
+        {
+          "name": "Simba confronts Scar",
+          "value": 9
+        },
+        {
+          "name": "Simba takes his place as king",
+          "value": 10
+        }
+      ],
+      "sources": [
+        "https://movies.disney.com/the-lion-king-1994"
+      ],
+      "explanation": "Follow the original animated film's story.",
+      "count": 7,
+      "unit": "sequence position",
+      "ids": [
+        "stack-001",
+        "stack-002",
+        "stack-003",
+        "stack-004",
+        "stack-007",
+        "stack-008",
+        "stack-009"
+      ],
+      "seed": "stack-no-numbers:challenge:0"
+    },
+    {
+      "category": "SCREEN TIME",
+      "prompt": "Order these story moments from Finding Nemo, following the film's story.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Nemo starts school",
+          "value": 1
+        },
+        {
+          "name": "A diver captures Nemo",
+          "value": 2
+        },
+        {
+          "name": "Marlin meets Dory",
+          "value": 3
+        },
+        {
+          "name": "Marlin and Dory meet the sharks",
+          "value": 4
+        },
+        {
+          "name": "Marlin and Dory cross the jellyfish field",
+          "value": 5
+        },
+        {
+          "name": "Crush carries the pair in the ocean current",
+          "value": 6
+        },
+        {
+          "name": "A whale takes the pair into its mouth",
+          "value": 7
+        },
+        {
+          "name": "Nigel carries the pair to the dentist's window",
+          "value": 8
+        },
+        {
+          "name": "Dory finds Nemo",
+          "value": 9
+        },
+        {
+          "name": "Nemo helps free the fish from the net",
+          "value": 10
+        }
+      ],
+      "sources": [
+        "https://www.pixar.com/finding-nemo"
+      ],
+      "explanation": "Follow the events of the original film.",
+      "count": 7,
+      "unit": "sequence position",
+      "ids": [
+        "stack-010",
+        "stack-011",
+        "stack-012",
+        "stack-013",
+        "stack-014",
+        "stack-015",
+        "stack-016"
+      ],
+      "seed": "stack-no-numbers:challenge:1"
+    },
+    {
+      "category": "SCREEN TIME",
+      "prompt": "Order these story moments from the original Toy Story, following the film's story.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Andy's birthday party begins",
+          "value": 1
+        },
+        {
+          "name": "Buzz arrives as Andy's new toy",
+          "value": 2
+        },
+        {
+          "name": "Woody knocks Buzz out of the window",
+          "value": 3
+        },
+        {
+          "name": "Woody and Buzz become stranded at the petrol station",
+          "value": 4
+        },
+        {
+          "name": "The pair reach Pizza Planet",
+          "value": 5
+        },
+        {
+          "name": "Sid takes the pair home",
+          "value": 6
+        },
+        {
+          "name": "Buzz sees the television advert for his toy",
+          "value": 7
+        },
+        {
+          "name": "Woody and the mutant toys frighten Sid",
+          "value": 8
+        },
+        {
+          "name": "Woody and Buzz chase the moving van",
+          "value": 9
+        },
+        {
+          "name": "The pair glide into Andy's car",
+          "value": 10
+        }
+      ],
+      "sources": [
+        "https://www.pixar.com/toy-story"
+      ],
+      "explanation": "Follow the events of the original film.",
+      "count": 7,
+      "unit": "sequence position",
+      "ids": [
+        "stack-017",
+        "stack-018",
+        "stack-019",
+        "stack-020",
+        "stack-021",
+        "stack-022",
+        "stack-023"
+      ],
+      "seed": "stack-no-numbers:challenge:2"
+    },
+    {
+      "category": "SCREEN TIME",
+      "prompt": "Order these story moments from the original Shrek, following the film's story.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Fairytale creatures arrive in Shrek's swamp",
+          "value": 1
+        },
+        {
+          "name": "Shrek and Donkey reach Duloc",
+          "value": 2
+        },
+        {
+          "name": "Farquaad sends Shrek to rescue Fiona",
+          "value": 3
+        },
+        {
+          "name": "Shrek and Donkey enter the dragon's castle",
+          "value": 4
+        },
+        {
+          "name": "Shrek rescues Fiona from the tower",
+          "value": 5
+        },
+        {
+          "name": "Fiona fights Robin Hood's band",
+          "value": 6
+        },
+        {
+          "name": "Donkey discovers Fiona's nightly transformation",
+          "value": 7
+        },
+        {
+          "name": "Fiona leaves with Farquaad",
+          "value": 8
+        },
+        {
+          "name": "Shrek interrupts the wedding",
+          "value": 9
+        },
+        {
+          "name": "Fiona reveals her ogre form in the church",
+          "value": 10
+        }
+      ],
+      "sources": [
+        "https://www.dreamworks.com/movies/shrek"
+      ],
+      "explanation": "Follow the original film, rather than the later sequels.",
+      "count": 7,
+      "unit": "sequence position",
+      "ids": [
+        "stack-024",
+        "stack-025",
+        "stack-026",
+        "stack-027",
+        "stack-028",
+        "stack-029",
+        "stack-030"
+      ],
+      "seed": "stack-no-numbers:challenge:3"
+    },
+    {
+      "category": "SCREEN TIME",
+      "prompt": "Order these story moments from the original Frozen, following the film's story.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Elsa accidentally hurts Anna as children",
+          "value": 1
+        },
+        {
+          "name": "The castle opens for Elsa's coronation",
+          "value": 2
+        },
+        {
+          "name": "Anna accepts Hans's proposal",
+          "value": 3
+        },
+        {
+          "name": "Elsa reveals her magic and flees",
+          "value": 4
+        },
+        {
+          "name": "Anna meets Kristoff",
+          "value": 5
+        },
+        {
+          "name": "Anna and Kristoff meet Olaf",
+          "value": 6
+        },
+        {
+          "name": "Elsa accidentally strikes Anna's heart",
+          "value": 7
+        },
+        {
+          "name": "The trolls explain that Anna needs an act of true love",
+          "value": 8
+        },
+        {
+          "name": "Hans refuses to help Anna",
+          "value": 9
+        },
+        {
+          "name": "Anna shields Elsa from Hans's sword",
+          "value": 10
+        }
+      ],
+      "sources": [
+        "https://movies.disney.com/frozen-2013"
+      ],
+      "explanation": "Follow the events as shown in the original film.",
+      "count": 7,
+      "unit": "sequence position",
+      "ids": [
+        "stack-031",
+        "stack-032",
+        "stack-033",
+        "stack-034",
+        "stack-035",
+        "stack-036",
+        "stack-037"
+      ],
+      "seed": "stack-no-numbers:challenge:4"
+    },
+    {
+      "category": "SCREEN TIME",
+      "prompt": "Order these story moments from the original Moana, following the film's story.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "The ocean chooses young Moana",
+          "value": 1
+        },
+        {
+          "name": "The island's coconuts begin to fail",
+          "value": 2
+        },
+        {
+          "name": "Gramma Tala shows Moana the voyaging canoes",
+          "value": 3
+        },
+        {
+          "name": "Moana sets sail alone",
+          "value": 4
+        },
+        {
+          "name": "Moana finds Maui on his island",
+          "value": 5
+        },
+        {
+          "name": "The Kakamora attack",
+          "value": 6
+        },
+        {
+          "name": "Moana and Maui enter Lalotai",
+          "value": 7
+        },
+        {
+          "name": "Maui recovers his fishhook from Tamatoa",
+          "value": 8
+        },
+        {
+          "name": "Maui's hook is damaged during the first attack on Te Ka",
+          "value": 9
+        },
+        {
+          "name": "Moana restores the heart",
+          "value": 10
+        }
+      ],
+      "sources": [
+        "https://movies.disney.com/moana-2016"
+      ],
+      "explanation": "Follow the original film's story.",
+      "count": 7,
+      "unit": "sequence position",
+      "ids": [
+        "stack-038",
+        "stack-039",
+        "stack-040",
+        "stack-041",
+        "stack-042",
+        "stack-043",
+        "stack-044"
+      ],
+      "seed": "stack-no-numbers:challenge:5"
+    },
+    {
+      "category": "SCREEN TIME",
+      "prompt": "Order these story moments from Disney's animated Cinderella, following the film's story.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "The invitation to the royal ball arrives",
+          "value": 1
+        },
+        {
+          "name": "The mice and birds repair Cinderella's dress",
+          "value": 2
+        },
+        {
+          "name": "The stepsisters tear the repaired dress",
+          "value": 3
+        },
+        {
+          "name": "The Fairy Godmother appears",
+          "value": 4
+        },
+        {
+          "name": "Cinderella arrives at the ball",
+          "value": 5
+        },
+        {
+          "name": "Cinderella dances with the Prince",
+          "value": 6
+        },
+        {
+          "name": "Cinderella flees the palace",
+          "value": 7
+        },
+        {
+          "name": "Lady Tremaine locks Cinderella in her room",
+          "value": 8
+        },
+        {
+          "name": "The mice bring Cinderella the key",
+          "value": 9
+        },
+        {
+          "name": "Cinderella produces the matching glass slipper",
+          "value": 10
+        }
+      ],
+      "sources": [
+        "https://movies.disney.com/cinderella-1950"
+      ],
+      "explanation": "Follow the original animated film's story.",
+      "count": 7,
+      "unit": "sequence position",
+      "ids": [
+        "stack-045",
+        "stack-046",
+        "stack-047",
+        "stack-048",
+        "stack-049",
+        "stack-050",
+        "stack-051"
+      ],
+      "seed": "stack-no-numbers:challenge:6"
+    },
+    {
+      "category": "SCREEN TIME",
+      "prompt": "Order these story moments from The Wizard of Oz, following the film's story.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Dorothy runs away with Toto",
+          "value": 1
+        },
+        {
+          "name": "Dorothy meets Professor Marvel",
+          "value": 2
+        },
+        {
+          "name": "The tornado carries Dorothy's house away",
+          "value": 3
+        },
+        {
+          "name": "Dorothy arrives in Munchkinland",
+          "value": 4
+        },
+        {
+          "name": "Dorothy meets the Scarecrow",
+          "value": 5
+        },
+        {
+          "name": "Dorothy meets the Tin Man",
+          "value": 6
+        },
+        {
+          "name": "Dorothy meets the Cowardly Lion",
+          "value": 7
+        },
+        {
+          "name": "The group first reaches the Emerald City",
+          "value": 8
+        },
+        {
+          "name": "Dorothy throws water on the Wicked Witch",
+          "value": 9
+        },
+        {
+          "name": "Dorothy returns to Kansas",
+          "value": 10
+        }
+      ],
+      "sources": [
+        "https://www.warnerbros.com/movies/wizard-oz"
+      ],
+      "explanation": "Follow Dorothy's journey in the classic film.",
+      "count": 7,
+      "unit": "sequence position",
+      "ids": [
+        "stack-052",
+        "stack-073",
+        "stack-074",
+        "stack-075",
+        "stack-076",
+        "stack-077",
+        "stack-078"
+      ],
+      "seed": "stack-no-numbers:challenge:7"
+    },
+    {
+      "category": "BOOKS",
+      "prompt": "Order these story moments from The Hobbit novel, following Bilbo's journey.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "The dwarves visit Bag End",
+          "value": 1
+        },
+        {
+          "name": "The trolls capture the travellers",
+          "value": 2
+        },
+        {
+          "name": "The company reaches Rivendell",
+          "value": 3
+        },
+        {
+          "name": "Goblins capture the company in the mountains",
+          "value": 4
+        },
+        {
+          "name": "Bilbo plays the riddle game with Gollum",
+          "value": 5
+        },
+        {
+          "name": "Eagles rescue the travellers",
+          "value": 6
+        },
+        {
+          "name": "The company stays with Beorn",
+          "value": 7
+        },
+        {
+          "name": "Bilbo fights the spiders in Mirkwood",
+          "value": 8
+        },
+        {
+          "name": "The company escapes in barrels",
+          "value": 9
+        },
+        {
+          "name": "Bilbo enters Smaug's lair",
+          "value": 10
+        }
+      ],
+      "sources": [
+        "https://www.tolkiensociety.org/author/books-by-tolkien/"
+      ],
+      "explanation": "Follow the original novel's narrative.",
+      "count": 7,
+      "unit": "sequence position",
+      "ids": [
+        "stack-079",
+        "stack-080",
+        "stack-081",
+        "stack-082",
+        "stack-083",
+        "stack-084",
+        "stack-085"
+      ],
+      "seed": "stack-no-numbers:challenge:8"
+    },
+    {
+      "category": "BOOKS",
+      "prompt": "Order these encounters from Alice's Adventures in Wonderland, following Alice through the book.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Alice follows the White Rabbit",
+          "value": 1
+        },
+        {
+          "name": "Alice falls down the rabbit hole",
+          "value": 2
+        },
+        {
+          "name": "Alice reaches the hall of locked doors",
+          "value": 3
+        },
+        {
+          "name": "Alice swims in the pool of tears",
+          "value": 4
+        },
+        {
+          "name": "Alice joins the Caucus-race",
+          "value": 5
+        },
+        {
+          "name": "Alice grows inside the White Rabbit's house",
+          "value": 6
+        },
+        {
+          "name": "Alice meets the Caterpillar",
+          "value": 7
+        },
+        {
+          "name": "Alice visits the Duchess's house",
+          "value": 8
+        },
+        {
+          "name": "Alice attends the tea party",
+          "value": 9
+        },
+        {
+          "name": "Alice plays croquet with the Queen",
+          "value": 10
+        }
+      ],
+      "sources": [
+        "https://www.gutenberg.org/ebooks/11"
+      ],
+      "explanation": "Follow the chapter sequence in the original novel.",
+      "count": 7,
+      "unit": "sequence position",
+      "ids": [
+        "stack-086",
+        "stack-087",
+        "stack-088",
+        "stack-089",
+        "stack-090",
+        "stack-091",
+        "stack-092"
+      ],
+      "seed": "stack-no-numbers:challenge:9"
+    },
+    {
+      "category": "GAMES",
+      "prompt": "Order these Kanto Gym Badges in their usual Trainer Card order in Pokemon Red and Blue.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Boulder Badge",
+          "value": 1
+        },
+        {
+          "name": "Cascade Badge",
+          "value": 2
+        },
+        {
+          "name": "Thunder Badge",
+          "value": 3
+        },
+        {
+          "name": "Rainbow Badge",
+          "value": 4
+        },
+        {
+          "name": "Soul Badge",
+          "value": 5
+        },
+        {
+          "name": "Marsh Badge",
+          "value": 6
+        },
+        {
+          "name": "Volcano Badge",
+          "value": 7
+        },
+        {
+          "name": "Earth Badge",
+          "value": 8
+        }
+      ],
+      "sources": [
+        "https://bulbapedia.bulbagarden.net/wiki/Badge"
+      ],
+      "explanation": "Use the standard badge-case order, rather than an optional route through the Gyms.",
+      "count": 7,
+      "unit": "sequence position",
+      "ids": [
+        "stack-093",
+        "stack-094",
+        "stack-095",
+        "stack-096",
+        "stack-097",
+        "stack-098",
+        "stack-099"
+      ],
+      "seed": "stack-no-numbers:challenge:10"
+    },
+    {
+      "category": "GAMES",
+      "prompt": "Order these instrument dungeons from Link's Awakening in the main quest's dungeon sequence.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Tail Cave",
+          "value": 1
+        },
+        {
+          "name": "Bottle Grotto",
+          "value": 2
+        },
+        {
+          "name": "Key Cavern",
+          "value": 3
+        },
+        {
+          "name": "Angler's Tunnel",
+          "value": 4
+        },
+        {
+          "name": "Catfish's Maw",
+          "value": 5
+        },
+        {
+          "name": "Face Shrine",
+          "value": 6
+        },
+        {
+          "name": "Eagle's Tower",
+          "value": 7
+        },
+        {
+          "name": "Turtle Rock",
+          "value": 8
+        }
+      ],
+      "sources": [
+        "https://zeldawiki.wiki/wiki/Dungeon"
+      ],
+      "explanation": "Use the main quest's established instrument-dungeon sequence.",
+      "count": 7,
+      "unit": "sequence position",
+      "ids": [
+        "stack-100",
+        "stack-101",
+        "stack-102",
+        "stack-launch-fact-001",
+        "stack-launch-fact-002",
+        "stack-launch-fact-003",
+        "stack-launch-fact-004"
+      ],
+      "seed": "stack-no-numbers:challenge:11"
+    },
+    {
+      "category": "SCIENCE",
+      "prompt": "Order these parts along the route food takes through the human digestive tract.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Mouth",
+          "value": 1
+        },
+        {
+          "name": "Pharynx",
+          "value": 2
+        },
+        {
+          "name": "Oesophagus",
+          "value": 3
+        },
+        {
+          "name": "Stomach",
+          "value": 4
+        },
+        {
+          "name": "Small intestine",
+          "value": 5
+        },
+        {
+          "name": "Large intestine",
+          "value": 6
+        },
+        {
+          "name": "Rectum",
+          "value": 7
+        },
+        {
+          "name": "Anus",
+          "value": 8
+        }
+      ],
+      "sources": [
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works"
+      ],
+      "explanation": "Follow the continuous digestive tract from entry to exit.",
+      "count": 7,
+      "unit": "sequence position",
+      "ids": [
+        "stack-launch-fact-007",
+        "stack-launch-fact-008",
+        "stack-launch-fact-009",
+        "stack-launch-fact-010",
+        "stack-launch-fact-011",
+        "stack-launch-fact-012",
+        "stack-launch-fact-013"
+      ],
+      "seed": "stack-no-numbers:challenge:12"
+    },
+    {
+      "category": "NATURE",
+      "prompt": "Order these stages as a bean grows from a dry seed to a ripe seed pod.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "The dry seed takes in water",
+          "value": 1
+        },
+        {
+          "name": "The first root emerges",
+          "value": 2
+        },
+        {
+          "name": "The shoot emerges from the seed",
+          "value": 3
+        },
+        {
+          "name": "The first foliage leaves open",
+          "value": 4
+        },
+        {
+          "name": "The plant opens its flowers",
+          "value": 5
+        },
+        {
+          "name": "The flowers are pollinated",
+          "value": 6
+        },
+        {
+          "name": "Seed pods develop",
+          "value": 7
+        },
+        {
+          "name": "The pods ripen and dry",
+          "value": 8
+        }
+      ],
+      "sources": [
+        "https://www.rhs.org.uk/vegetables/beans/grow-your-own"
+      ],
+      "explanation": "Follow germination, vegetative growth, flowering and seed production.",
+      "count": 7,
+      "unit": "sequence position",
+      "ids": [
+        "stack-launch-fact-016",
+        "stack-launch-fact-017",
+        "stack-launch-fact-018",
+        "stack-launch-fact-019",
+        "stack-launch-fact-020",
+        "stack-launch-fact-021",
+        "stack-launch-fact-022"
+      ],
+      "seed": "stack-no-numbers:challenge:13"
+    },
+    {
+      "category": "WORLD",
+      "prompt": "Order these cities along the Danube, travelling downstream towards its mouth.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Regensburg",
+          "value": 1
+        },
+        {
+          "name": "Passau",
+          "value": 2
+        },
+        {
+          "name": "Linz",
+          "value": 3
+        },
+        {
+          "name": "Vienna",
+          "value": 4
+        },
+        {
+          "name": "Bratislava",
+          "value": 5
+        },
+        {
+          "name": "Budapest",
+          "value": 6
+        },
+        {
+          "name": "Novi Sad",
+          "value": 7
+        },
+        {
+          "name": "Belgrade",
+          "value": 8
+        },
+        {
+          "name": "Ruse",
+          "value": 9
+        },
+        {
+          "name": "Tulcea",
+          "value": 10
+        }
+      ],
+      "sources": [
+        "https://www.danubecommission.org/dc/en/danube-river/"
+      ],
+      "explanation": "Follow the river's route downstream; this is geographical order, not a latitude or distance calculation.",
+      "count": 7,
+      "unit": "sequence position",
+      "ids": [
+        "stack-launch-fact-025",
+        "stack-launch-fact-026",
+        "stack-launch-fact-027",
+        "stack-launch-fact-028",
+        "stack-launch-fact-029",
+        "stack-launch-fact-030",
+        "stack-launch-fact-031"
+      ],
+      "seed": "stack-no-numbers:challenge:14"
+    }
+  ]
+}

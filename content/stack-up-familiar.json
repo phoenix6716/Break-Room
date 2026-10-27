@@ -1,965 +1,965 @@
 {
-  "version": 2,
-  "reviewedAt": "2026-10-26",
-  "note": "No maths in new Dailies or Unlimited. Stable lane slots; legacy challenge data and saved snapshots remain intact. Values stay behind the answer reveal.",
+  "version": 3,
+  "reviewedAt": "2026-10-27",
+  "note": "No maths, numerical facts or time-unit questions in new Dailies or Unlimited. Chronology stays available. Stable lane slots and immutable saved snapshots.",
   "stacks": [
     {
       "id": "stack-familiar-0-001",
       "source": "EVERYDAY",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.timeanddate.com/calendar/months/"
+        "https://www.bbcgoodfood.com/recipes/easy-white-bread"
       ],
       "ordered": [
         {
-          "name": "Monday",
+          "name": "Mix the dough ingredients",
           "value": 1
         },
         {
-          "name": "Thursday",
-          "value": 4
+          "name": "Let the dough complete its first rise",
+          "value": 3
         },
         {
-          "name": "Friday",
-          "value": 5
-        },
-        {
-          "name": "Saturday",
+          "name": "Let the shaped loaf prove",
           "value": 6
         },
         {
-          "name": "Sunday",
+          "name": "Bake the loaf",
           "value": 7
+        },
+        {
+          "name": "Cool the baked loaf",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-0-002",
       "source": "EVERYDAY",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.timeanddate.com/calendar/months/"
+        "https://www.bbcgoodfood.com/recipes/easy-white-bread"
       ],
       "ordered": [
         {
-          "name": "Monday",
+          "name": "Mix the dough ingredients",
           "value": 1
         },
         {
-          "name": "Wednesday",
+          "name": "Knead the dough",
+          "value": 2
+        },
+        {
+          "name": "Let the dough complete its first rise",
           "value": 3
         },
         {
-          "name": "Thursday",
-          "value": 4
+          "name": "Shape the loaf",
+          "value": 5
         },
         {
-          "name": "Saturday",
+          "name": "Let the shaped loaf prove",
           "value": 6
-        },
-        {
-          "name": "Sunday",
-          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-0-003",
       "source": "EVERYDAY",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.timeanddate.com/calendar/months/"
+        "https://www.bbcgoodfood.com/recipes/easy-white-bread"
       ],
       "ordered": [
         {
-          "name": "Monday",
+          "name": "Mix the dough ingredients",
           "value": 1
         },
         {
-          "name": "Tuesday",
+          "name": "Knead the dough",
           "value": 2
         },
         {
-          "name": "Friday",
-          "value": 5
+          "name": "Let the dough complete its first rise",
+          "value": 3
         },
         {
-          "name": "Saturday",
-          "value": 6
+          "name": "Cool the baked loaf",
+          "value": 8
         },
         {
-          "name": "Sunday",
-          "value": 7
+          "name": "Slice the cooled loaf",
+          "value": 9
         }
       ]
     },
     {
       "id": "stack-familiar-0-004",
       "source": "EVERYDAY",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.timeanddate.com/calendar/months/"
+        "https://www.bbcgoodfood.com/recipes/easy-white-bread"
       ],
       "ordered": [
         {
-          "name": "Monday",
-          "value": 1
-        },
-        {
-          "name": "Tuesday",
-          "value": 2
-        },
-        {
-          "name": "Wednesday",
+          "name": "Let the dough complete its first rise",
           "value": 3
         },
         {
-          "name": "Friday",
-          "value": 5
+          "name": "Knock back the risen dough",
+          "value": 4
         },
         {
-          "name": "Sunday",
+          "name": "Let the shaped loaf prove",
+          "value": 6
+        },
+        {
+          "name": "Bake the loaf",
           "value": 7
+        },
+        {
+          "name": "Cool the baked loaf",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-0-005",
       "source": "EVERYDAY",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.timeanddate.com/calendar/months/"
+        "https://www.bbcgoodfood.com/recipes/easy-white-bread"
       ],
       "ordered": [
         {
-          "name": "Monday",
+          "name": "Mix the dough ingredients",
           "value": 1
         },
         {
-          "name": "Wednesday",
-          "value": 3
-        },
-        {
-          "name": "Thursday",
-          "value": 4
-        },
-        {
-          "name": "Friday",
+          "name": "Shape the loaf",
           "value": 5
         },
         {
-          "name": "Sunday",
+          "name": "Let the shaped loaf prove",
+          "value": 6
+        },
+        {
+          "name": "Bake the loaf",
           "value": 7
+        },
+        {
+          "name": "Slice the cooled loaf",
+          "value": 9
         }
       ]
     },
     {
       "id": "stack-familiar-0-006",
       "source": "EVERYDAY",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.timeanddate.com/calendar/months/"
+        "https://www.bbcgoodfood.com/recipes/easy-white-bread"
       ],
       "ordered": [
         {
-          "name": "Monday",
-          "value": 1
-        },
-        {
-          "name": "Tuesday",
+          "name": "Knead the dough",
           "value": 2
         },
         {
-          "name": "Thursday",
+          "name": "Let the dough complete its first rise",
+          "value": 3
+        },
+        {
+          "name": "Knock back the risen dough",
           "value": 4
         },
         {
-          "name": "Saturday",
-          "value": 6
+          "name": "Bake the loaf",
+          "value": 7
         },
         {
-          "name": "Sunday",
-          "value": 7
+          "name": "Slice the cooled loaf",
+          "value": 9
         }
       ]
     },
     {
       "id": "stack-familiar-0-007",
       "source": "EVERYDAY",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.timeanddate.com/calendar/months/"
+        "https://www.bbcgoodfood.com/recipes/easy-white-bread"
       ],
       "ordered": [
         {
-          "name": "Monday",
+          "name": "Mix the dough ingredients",
           "value": 1
         },
         {
-          "name": "Tuesday",
+          "name": "Knead the dough",
           "value": 2
         },
         {
-          "name": "Wednesday",
-          "value": 3
-        },
-        {
-          "name": "Thursday",
+          "name": "Knock back the risen dough",
           "value": 4
         },
         {
-          "name": "Saturday",
+          "name": "Let the shaped loaf prove",
           "value": 6
+        },
+        {
+          "name": "Cool the baked loaf",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-0-008",
       "source": "EVERYDAY",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.timeanddate.com/calendar/months/"
+        "https://www.bbcgoodfood.com/recipes/easy-white-bread"
       ],
       "ordered": [
         {
-          "name": "Tuesday",
-          "value": 2
+          "name": "Mix the dough ingredients",
+          "value": 1
         },
         {
-          "name": "Wednesday",
-          "value": 3
-        },
-        {
-          "name": "Thursday",
+          "name": "Knock back the risen dough",
           "value": 4
         },
         {
-          "name": "Friday",
+          "name": "Shape the loaf",
           "value": 5
         },
         {
-          "name": "Sunday",
-          "value": 7
+          "name": "Let the shaped loaf prove",
+          "value": 6
+        },
+        {
+          "name": "Slice the cooled loaf",
+          "value": 9
         }
       ]
     },
     {
       "id": "stack-familiar-0-009",
-      "source": "EVERYDAY",
-      "unit": "",
+      "source": "NATURE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.timeanddate.com/calendar/months/"
+        "https://www.floridamuseum.ufl.edu/educators/resource/butterfly-life-cycle/"
       ],
       "ordered": [
         {
-          "name": "February",
+          "name": "An egg is laid",
+          "value": 1
+        },
+        {
+          "name": "The caterpillar hatches",
           "value": 2
         },
         {
-          "name": "April",
-          "value": 4
+          "name": "The caterpillar feeds and grows",
+          "value": 3
         },
         {
-          "name": "July",
-          "value": 7
+          "name": "The adult butterfly emerges",
+          "value": 5
         },
         {
-          "name": "September",
-          "value": 9
-        },
-        {
-          "name": "November",
-          "value": 11
+          "name": "The butterfly expands its wings",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-0-010",
-      "source": "EVERYDAY",
-      "unit": "",
+      "source": "NATURE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.timeanddate.com/calendar/months/"
+        "https://www.floridamuseum.ufl.edu/educators/resource/butterfly-life-cycle/"
       ],
       "ordered": [
         {
-          "name": "February",
+          "name": "The caterpillar hatches",
           "value": 2
         },
         {
-          "name": "March",
-          "value": 3
+          "name": "The caterpillar forms a chrysalis",
+          "value": 4
         },
         {
-          "name": "June",
+          "name": "The adult butterfly emerges",
+          "value": 5
+        },
+        {
+          "name": "The butterfly expands its wings",
           "value": 6
         },
         {
-          "name": "September",
-          "value": 9
-        },
-        {
-          "name": "November",
-          "value": 11
+          "name": "The adult takes its first flight",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-0-011",
-      "source": "EVERYDAY",
-      "unit": "",
+      "source": "NATURE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.timeanddate.com/calendar/months/"
+        "https://www.floridamuseum.ufl.edu/educators/resource/butterfly-life-cycle/"
       ],
       "ordered": [
         {
-          "name": "January",
-          "value": 1
+          "name": "The caterpillar feeds and grows",
+          "value": 3
         },
         {
-          "name": "February",
-          "value": 2
+          "name": "The caterpillar forms a chrysalis",
+          "value": 4
         },
         {
-          "name": "May",
+          "name": "The adult butterfly emerges",
           "value": 5
         },
         {
-          "name": "June",
+          "name": "The butterfly expands its wings",
           "value": 6
         },
         {
-          "name": "October",
-          "value": 10
+          "name": "The adult takes its first flight",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-0-012",
-      "source": "EVERYDAY",
-      "unit": "",
+      "source": "NATURE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.timeanddate.com/calendar/months/"
+        "https://www.floridamuseum.ufl.edu/educators/resource/butterfly-life-cycle/"
       ],
       "ordered": [
         {
-          "name": "February",
+          "name": "An egg is laid",
+          "value": 1
+        },
+        {
+          "name": "The caterpillar hatches",
           "value": 2
         },
         {
-          "name": "July",
+          "name": "The caterpillar feeds and grows",
+          "value": 3
+        },
+        {
+          "name": "The butterfly expands its wings",
+          "value": 6
+        },
+        {
+          "name": "The adult takes its first flight",
           "value": 7
-        },
-        {
-          "name": "October",
-          "value": 10
-        },
-        {
-          "name": "November",
-          "value": 11
-        },
-        {
-          "name": "December",
-          "value": 12
         }
       ]
     },
     {
       "id": "stack-familiar-0-013",
-      "source": "EVERYDAY",
-      "unit": "",
+      "source": "NATURE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.timeanddate.com/calendar/months/"
+        "https://www.floridamuseum.ufl.edu/educators/resource/butterfly-life-cycle/"
       ],
       "ordered": [
         {
-          "name": "May",
-          "value": 5
+          "name": "An egg is laid",
+          "value": 1
         },
         {
-          "name": "July",
+          "name": "The caterpillar hatches",
+          "value": 2
+        },
+        {
+          "name": "The caterpillar feeds and grows",
+          "value": 3
+        },
+        {
+          "name": "The caterpillar forms a chrysalis",
+          "value": 4
+        },
+        {
+          "name": "The adult takes its first flight",
           "value": 7
-        },
-        {
-          "name": "October",
-          "value": 10
-        },
-        {
-          "name": "November",
-          "value": 11
-        },
-        {
-          "name": "December",
-          "value": 12
         }
       ]
     },
     {
       "id": "stack-familiar-0-014",
-      "source": "EVERYDAY",
-      "unit": "",
+      "source": "NATURE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.timeanddate.com/calendar/months/"
+        "https://www.floridamuseum.ufl.edu/educators/resource/butterfly-life-cycle/"
       ],
       "ordered": [
         {
-          "name": "January",
+          "name": "An egg is laid",
           "value": 1
         },
         {
-          "name": "February",
+          "name": "The caterpillar hatches",
           "value": 2
         },
         {
-          "name": "August",
-          "value": 8
+          "name": "The adult butterfly emerges",
+          "value": 5
         },
         {
-          "name": "October",
-          "value": 10
+          "name": "The butterfly expands its wings",
+          "value": 6
         },
         {
-          "name": "November",
-          "value": 11
+          "name": "The adult takes its first flight",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-0-015",
-      "source": "EVERYDAY",
-      "unit": "",
+      "source": "NATURE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.timeanddate.com/calendar/months/"
+        "https://www.floridamuseum.ufl.edu/educators/resource/butterfly-life-cycle/"
       ],
       "ordered": [
         {
-          "name": "March",
+          "name": "An egg is laid",
+          "value": 1
+        },
+        {
+          "name": "The caterpillar hatches",
+          "value": 2
+        },
+        {
+          "name": "The caterpillar feeds and grows",
           "value": 3
         },
         {
-          "name": "May",
-          "value": 5
+          "name": "The caterpillar forms a chrysalis",
+          "value": 4
         },
         {
-          "name": "June",
+          "name": "The butterfly expands its wings",
           "value": 6
-        },
-        {
-          "name": "July",
-          "value": 7
-        },
-        {
-          "name": "August",
-          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-0-016",
-      "source": "EVERYDAY",
-      "unit": "",
+      "source": "NATURE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.timeanddate.com/calendar/months/"
+        "https://www.floridamuseum.ufl.edu/educators/resource/butterfly-life-cycle/"
       ],
       "ordered": [
         {
-          "name": "January",
+          "name": "An egg is laid",
           "value": 1
         },
         {
-          "name": "April",
+          "name": "The caterpillar feeds and grows",
+          "value": 3
+        },
+        {
+          "name": "The caterpillar forms a chrysalis",
           "value": 4
         },
         {
-          "name": "August",
-          "value": 8
+          "name": "The adult butterfly emerges",
+          "value": 5
         },
         {
-          "name": "October",
-          "value": 10
-        },
-        {
-          "name": "December",
-          "value": 12
+          "name": "The adult takes its first flight",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-0-017",
-      "source": "EVERYDAY",
-      "unit": "",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
       "sources": [
-        "https://www.timeanddate.com/calendar/months/"
+        "https://www.harrypotter.com/discover/films/harry-potter-and-the-philosophers-stone"
       ],
       "ordered": [
         {
-          "name": "January",
-          "value": 1
+          "name": "Hagrid tells Harry he is a wizard",
+          "value": 2
         },
         {
-          "name": "June",
+          "name": "Harry shops in Diagon Alley",
+          "value": 3
+        },
+        {
+          "name": "Harry boards the Hogwarts Express",
+          "value": 4
+        },
+        {
+          "name": "Harry helps defeat the troll",
           "value": 6
         },
         {
-          "name": "August",
-          "value": 8
-        },
-        {
-          "name": "September",
-          "value": 9
-        },
-        {
-          "name": "November",
-          "value": 11
+          "name": "Harry returns to the Dursleys",
+          "value": 10
         }
       ]
     },
     {
       "id": "stack-familiar-0-018",
-      "source": "EVERYDAY",
-      "unit": "",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
       "sources": [
-        "https://www.timeanddate.com/calendar/months/"
+        "https://www.harrypotter.com/discover/films/harry-potter-and-the-philosophers-stone"
       ],
       "ordered": [
         {
-          "name": "January",
-          "value": 1
+          "name": "Harry shops in Diagon Alley",
+          "value": 3
         },
         {
-          "name": "May",
+          "name": "The Sorting Hat places Harry in Gryffindor",
           "value": 5
         },
         {
-          "name": "June",
-          "value": 6
+          "name": "Harry plays his first Quidditch match",
+          "value": 7
         },
         {
-          "name": "September",
+          "name": "Harry finds the Mirror of Erised",
+          "value": 8
+        },
+        {
+          "name": "Harry faces Quirrell",
           "value": 9
-        },
-        {
-          "name": "December",
-          "value": 12
         }
       ]
     },
     {
       "id": "stack-familiar-0-019",
-      "source": "EVERYDAY",
-      "unit": "",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
       "sources": [
-        "https://www.timeanddate.com/calendar/months/"
+        "https://www.harrypotter.com/discover/films/harry-potter-and-the-philosophers-stone"
       ],
       "ordered": [
         {
-          "name": "February",
-          "value": 2
+          "name": "Harry's first Hogwarts letter arrives",
+          "value": 1
         },
         {
-          "name": "June",
-          "value": 6
+          "name": "Harry shops in Diagon Alley",
+          "value": 3
         },
         {
-          "name": "August",
-          "value": 8
+          "name": "The Sorting Hat places Harry in Gryffindor",
+          "value": 5
         },
         {
-          "name": "September",
-          "value": 9
+          "name": "Harry plays his first Quidditch match",
+          "value": 7
         },
         {
-          "name": "October",
+          "name": "Harry returns to the Dursleys",
           "value": 10
         }
       ]
     },
     {
       "id": "stack-familiar-0-020",
-      "source": "EVERYDAY",
-      "unit": "",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
       "sources": [
-        "https://www.timeanddate.com/calendar/months/"
+        "https://www.harrypotter.com/discover/films/harry-potter-and-the-philosophers-stone"
       ],
       "ordered": [
         {
-          "name": "January",
-          "value": 1
-        },
-        {
-          "name": "April",
+          "name": "Harry boards the Hogwarts Express",
           "value": 4
         },
         {
-          "name": "June",
-          "value": 6
+          "name": "The Sorting Hat places Harry in Gryffindor",
+          "value": 5
         },
         {
-          "name": "August",
-          "value": 8
+          "name": "Harry plays his first Quidditch match",
+          "value": 7
         },
         {
-          "name": "September",
+          "name": "Harry faces Quirrell",
           "value": 9
+        },
+        {
+          "name": "Harry returns to the Dursleys",
+          "value": 10
         }
       ]
     },
     {
       "id": "stack-familiar-0-021",
-      "source": "EVERYDAY",
-      "unit": "seconds",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
       "sources": [
-        "https://www.bipm.org/en/publications/si-brochure"
+        "https://www.harrypotter.com/discover/films/harry-potter-and-the-philosophers-stone"
       ],
       "ordered": [
         {
-          "name": "One second",
-          "value": 1
+          "name": "Harry shops in Diagon Alley",
+          "value": 3
         },
         {
-          "name": "Quarter of an hour",
-          "value": 900
+          "name": "The Sorting Hat places Harry in Gryffindor",
+          "value": 5
         },
         {
-          "name": "Half an hour",
-          "value": 1800
+          "name": "Harry finds the Mirror of Erised",
+          "value": 8
         },
         {
-          "name": "One week",
-          "value": 604800
+          "name": "Harry faces Quirrell",
+          "value": 9
         },
         {
-          "name": "One fortnight",
-          "value": 1209600
+          "name": "Harry returns to the Dursleys",
+          "value": 10
         }
       ]
     },
     {
       "id": "stack-familiar-0-022",
-      "source": "EVERYDAY",
-      "unit": "seconds",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
       "sources": [
-        "https://www.bipm.org/en/publications/si-brochure"
+        "https://www.harrypotter.com/discover/films/harry-potter-and-the-philosophers-stone"
       ],
       "ordered": [
         {
-          "name": "One minute",
-          "value": 60
+          "name": "Harry shops in Diagon Alley",
+          "value": 3
         },
         {
-          "name": "Half an hour",
-          "value": 1800
+          "name": "The Sorting Hat places Harry in Gryffindor",
+          "value": 5
         },
         {
-          "name": "One hour",
-          "value": 3600
+          "name": "Harry helps defeat the troll",
+          "value": 6
         },
         {
-          "name": "One week",
-          "value": 604800
+          "name": "Harry plays his first Quidditch match",
+          "value": 7
         },
         {
-          "name": "One fortnight",
-          "value": 1209600
+          "name": "Harry finds the Mirror of Erised",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-0-023",
-      "source": "EVERYDAY",
-      "unit": "seconds",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
       "sources": [
-        "https://www.bipm.org/en/publications/si-brochure"
+        "https://www.harrypotter.com/discover/films/harry-potter-and-the-philosophers-stone"
       ],
       "ordered": [
         {
-          "name": "One second",
-          "value": 1
+          "name": "Hagrid tells Harry he is a wizard",
+          "value": 2
         },
         {
-          "name": "Quarter of an hour",
-          "value": 900
+          "name": "Harry shops in Diagon Alley",
+          "value": 3
         },
         {
-          "name": "Half an hour",
-          "value": 1800
+          "name": "Harry boards the Hogwarts Express",
+          "value": 4
         },
         {
-          "name": "One hour",
-          "value": 3600
+          "name": "Harry helps defeat the troll",
+          "value": 6
         },
         {
-          "name": "One fortnight",
-          "value": 1209600
+          "name": "Harry plays his first Quidditch match",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-0-024",
-      "source": "EVERYDAY",
-      "unit": "seconds",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
       "sources": [
-        "https://www.bipm.org/en/publications/si-brochure"
+        "https://www.harrypotter.com/discover/films/harry-potter-and-the-philosophers-stone"
       ],
       "ordered": [
         {
-          "name": "One second",
-          "value": 1
+          "name": "Harry shops in Diagon Alley",
+          "value": 3
         },
         {
-          "name": "One minute",
-          "value": 60
+          "name": "Harry boards the Hogwarts Express",
+          "value": 4
         },
         {
-          "name": "One day",
-          "value": 86400
+          "name": "Harry helps defeat the troll",
+          "value": 6
         },
         {
-          "name": "One fortnight",
-          "value": 1209600
+          "name": "Harry plays his first Quidditch match",
+          "value": 7
         },
         {
-          "name": "One 365-day year",
-          "value": 31536000
+          "name": "Harry finds the Mirror of Erised",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-0-025",
-      "source": "EVERYDAY",
-      "unit": "seconds",
+      "source": "GAMES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.bipm.org/en/publications/si-brochure"
+        "https://minecraft.wiki/w/Tutorial:Beginner%27s_guide"
       ],
       "ordered": [
         {
-          "name": "One second",
-          "value": 1
+          "name": "Craft wooden planks",
+          "value": 2
         },
         {
-          "name": "Half an hour",
-          "value": 1800
+          "name": "Craft a crafting table",
+          "value": 3
         },
         {
-          "name": "One hour",
-          "value": 3600
+          "name": "Mine cobblestone",
+          "value": 5
         },
         {
-          "name": "One week",
-          "value": 604800
+          "name": "Craft a stone pickaxe",
+          "value": 6
         },
         {
-          "name": "One 365-day year",
-          "value": 31536000
+          "name": "Smelt iron into ingots",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-0-026",
-      "source": "EVERYDAY",
-      "unit": "seconds",
+      "source": "GAMES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.bipm.org/en/publications/si-brochure"
+        "https://minecraft.wiki/w/Tutorial:Beginner%27s_guide"
       ],
       "ordered": [
         {
-          "name": "One second",
+          "name": "Gather a log from a tree",
           "value": 1
         },
         {
-          "name": "One minute",
-          "value": 60
+          "name": "Mine cobblestone",
+          "value": 5
         },
         {
-          "name": "Quarter of an hour",
-          "value": 900
+          "name": "Mine iron ore",
+          "value": 7
         },
         {
-          "name": "One hour",
-          "value": 3600
+          "name": "Craft an iron pickaxe",
+          "value": 9
         },
         {
-          "name": "One 365-day year",
-          "value": 31536000
+          "name": "Mine diamond ore with the iron pickaxe",
+          "value": 10
         }
       ]
     },
     {
       "id": "stack-familiar-0-027",
-      "source": "EVERYDAY",
-      "unit": "seconds",
+      "source": "GAMES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.bipm.org/en/publications/si-brochure"
+        "https://minecraft.wiki/w/Tutorial:Beginner%27s_guide"
       ],
       "ordered": [
         {
-          "name": "One second",
-          "value": 1
+          "name": "Craft wooden planks",
+          "value": 2
         },
         {
-          "name": "Quarter of an hour",
-          "value": 900
+          "name": "Craft a crafting table",
+          "value": 3
         },
         {
-          "name": "One hour",
-          "value": 3600
+          "name": "Craft a stone pickaxe",
+          "value": 6
         },
         {
-          "name": "One day",
-          "value": 86400
+          "name": "Mine iron ore",
+          "value": 7
         },
         {
-          "name": "One 365-day year",
-          "value": 31536000
+          "name": "Smelt iron into ingots",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-0-028",
-      "source": "EVERYDAY",
-      "unit": "seconds",
+      "source": "GAMES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.bipm.org/en/publications/si-brochure"
+        "https://minecraft.wiki/w/Tutorial:Beginner%27s_guide"
       ],
       "ordered": [
         {
-          "name": "One second",
-          "value": 1
+          "name": "Craft wooden planks",
+          "value": 2
         },
         {
-          "name": "One minute",
-          "value": 60
+          "name": "Mine cobblestone",
+          "value": 5
         },
         {
-          "name": "Half an hour",
-          "value": 1800
+          "name": "Mine iron ore",
+          "value": 7
         },
         {
-          "name": "One hour",
-          "value": 3600
+          "name": "Smelt iron into ingots",
+          "value": 8
         },
         {
-          "name": "One fortnight",
-          "value": 1209600
+          "name": "Mine diamond ore with the iron pickaxe",
+          "value": 10
         }
       ]
     },
     {
       "id": "stack-familiar-0-029",
-      "source": "EVERYDAY",
-      "unit": "seconds",
+      "source": "GAMES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.bipm.org/en/publications/si-brochure"
+        "https://minecraft.wiki/w/Tutorial:Beginner%27s_guide"
       ],
       "ordered": [
         {
-          "name": "One second",
+          "name": "Gather a log from a tree",
           "value": 1
         },
         {
-          "name": "Half an hour",
-          "value": 1800
+          "name": "Craft wooden planks",
+          "value": 2
         },
         {
-          "name": "One day",
-          "value": 86400
+          "name": "Mine cobblestone",
+          "value": 5
         },
         {
-          "name": "One week",
-          "value": 604800
+          "name": "Mine iron ore",
+          "value": 7
         },
         {
-          "name": "One fortnight",
-          "value": 1209600
+          "name": "Smelt iron into ingots",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-0-030",
-      "source": "EVERYDAY",
-      "unit": "seconds",
+      "source": "GAMES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.bipm.org/en/publications/si-brochure"
+        "https://minecraft.wiki/w/Tutorial:Beginner%27s_guide"
       ],
       "ordered": [
         {
-          "name": "One second",
-          "value": 1
+          "name": "Craft wooden planks",
+          "value": 2
         },
         {
-          "name": "Quarter of an hour",
-          "value": 900
+          "name": "Craft a wooden pickaxe",
+          "value": 4
         },
         {
-          "name": "One hour",
-          "value": 3600
+          "name": "Mine cobblestone",
+          "value": 5
         },
         {
-          "name": "One day",
-          "value": 86400
+          "name": "Craft a stone pickaxe",
+          "value": 6
         },
         {
-          "name": "One week",
-          "value": 604800
+          "name": "Smelt iron into ingots",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-0-031",
-      "source": "EVERYDAY",
-      "unit": "seconds",
+      "source": "GAMES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.bipm.org/en/publications/si-brochure"
+        "https://minecraft.wiki/w/Tutorial:Beginner%27s_guide"
       ],
       "ordered": [
         {
-          "name": "One minute",
-          "value": 60
+          "name": "Craft a crafting table",
+          "value": 3
         },
         {
-          "name": "Quarter of an hour",
-          "value": 900
+          "name": "Craft a wooden pickaxe",
+          "value": 4
         },
         {
-          "name": "One day",
-          "value": 86400
+          "name": "Mine cobblestone",
+          "value": 5
         },
         {
-          "name": "One week",
-          "value": 604800
+          "name": "Mine iron ore",
+          "value": 7
         },
         {
-          "name": "One 365-day year",
-          "value": 31536000
+          "name": "Smelt iron into ingots",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-0-032",
-      "source": "EVERYDAY",
-      "unit": "seconds",
+      "source": "GAMES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.bipm.org/en/publications/si-brochure"
+        "https://minecraft.wiki/w/Tutorial:Beginner%27s_guide"
       ],
       "ordered": [
         {
-          "name": "One minute",
-          "value": 60
+          "name": "Craft wooden planks",
+          "value": 2
         },
         {
-          "name": "Quarter of an hour",
-          "value": 900
+          "name": "Mine cobblestone",
+          "value": 5
         },
         {
-          "name": "Half an hour",
-          "value": 1800
+          "name": "Craft a stone pickaxe",
+          "value": 6
         },
         {
-          "name": "One hour",
-          "value": 3600
+          "name": "Mine iron ore",
+          "value": 7
         },
         {
-          "name": "One week",
-          "value": 604800
+          "name": "Craft an iron pickaxe",
+          "value": 9
         }
       ]
     },
@@ -1685,241 +1685,241 @@
     },
     {
       "id": "stack-familiar-1-025",
-      "source": "WORLD",
-      "unit": "area rank, largest first",
+      "source": "SCIENCE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.britannica.com/science/continent"
+        "https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology"
       ],
       "ordered": [
         {
-          "name": "Asia",
+          "name": "Atom",
           "value": 1
         },
         {
-          "name": "North America",
-          "value": 3
+          "name": "Molecule",
+          "value": 2
         },
         {
-          "name": "South America",
-          "value": 4
-        },
-        {
-          "name": "Antarctica",
-          "value": 5
-        },
-        {
-          "name": "Europe",
+          "name": "Organ",
           "value": 6
+        },
+        {
+          "name": "Organ system",
+          "value": 7
+        },
+        {
+          "name": "Organism",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-1-026",
-      "source": "WORLD",
-      "unit": "area rank, largest first",
+      "source": "SCIENCE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.britannica.com/science/continent"
+        "https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology"
       ],
       "ordered": [
         {
-          "name": "Africa",
+          "name": "Molecule",
           "value": 2
         },
         {
-          "name": "North America",
+          "name": "Organelle",
           "value": 3
         },
         {
-          "name": "South America",
+          "name": "Cell",
           "value": 4
         },
         {
-          "name": "Europe",
-          "value": 6
+          "name": "Tissue",
+          "value": 5
         },
         {
-          "name": "Australia",
-          "value": 7
+          "name": "Organism",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-1-027",
-      "source": "WORLD",
-      "unit": "area rank, largest first",
+      "source": "SCIENCE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.britannica.com/science/continent"
+        "https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology"
       ],
       "ordered": [
         {
-          "name": "Asia",
+          "name": "Atom",
           "value": 1
         },
         {
-          "name": "Africa",
-          "value": 2
+          "name": "Cell",
+          "value": 4
         },
         {
-          "name": "Antarctica",
+          "name": "Tissue",
           "value": 5
         },
         {
-          "name": "Europe",
+          "name": "Organ",
           "value": 6
         },
         {
-          "name": "Australia",
+          "name": "Organ system",
           "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-1-028",
-      "source": "WORLD",
-      "unit": "area rank, largest first",
+      "source": "SCIENCE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.britannica.com/science/continent"
+        "https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology"
       ],
       "ordered": [
         {
-          "name": "Africa",
+          "name": "Atom",
+          "value": 1
+        },
+        {
+          "name": "Molecule",
           "value": 2
         },
         {
-          "name": "South America",
+          "name": "Cell",
           "value": 4
         },
         {
-          "name": "Antarctica",
+          "name": "Tissue",
           "value": 5
         },
         {
-          "name": "Europe",
-          "value": 6
-        },
-        {
-          "name": "Australia",
+          "name": "Organ system",
           "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-1-029",
-      "source": "WORLD",
-      "unit": "area rank, largest first",
+      "source": "SCIENCE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.britannica.com/science/continent"
+        "https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology"
       ],
       "ordered": [
         {
-          "name": "North America",
-          "value": 3
+          "name": "Atom",
+          "value": 1
         },
         {
-          "name": "South America",
+          "name": "Molecule",
+          "value": 2
+        },
+        {
+          "name": "Cell",
           "value": 4
         },
         {
-          "name": "Antarctica",
-          "value": 5
-        },
-        {
-          "name": "Europe",
+          "name": "Organ",
           "value": 6
         },
         {
-          "name": "Australia",
+          "name": "Organ system",
           "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-1-030",
-      "source": "WORLD",
-      "unit": "area rank, largest first",
+      "source": "SCIENCE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.britannica.com/science/continent"
+        "https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology"
       ],
       "ordered": [
         {
-          "name": "Asia",
+          "name": "Atom",
           "value": 1
         },
         {
-          "name": "Africa",
-          "value": 2
-        },
-        {
-          "name": "North America",
-          "value": 3
-        },
-        {
-          "name": "South America",
+          "name": "Cell",
           "value": 4
         },
         {
-          "name": "Antarctica",
-          "value": 5
+          "name": "Organ",
+          "value": 6
+        },
+        {
+          "name": "Organ system",
+          "value": 7
+        },
+        {
+          "name": "Organism",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-1-031",
-      "source": "WORLD",
-      "unit": "area rank, largest first",
+      "source": "SCIENCE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.britannica.com/science/continent"
+        "https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology"
       ],
       "ordered": [
         {
-          "name": "Asia",
-          "value": 1
-        },
-        {
-          "name": "Africa",
-          "value": 2
-        },
-        {
-          "name": "North America",
+          "name": "Organelle",
           "value": 3
         },
         {
-          "name": "Antarctica",
+          "name": "Cell",
+          "value": 4
+        },
+        {
+          "name": "Tissue",
           "value": 5
         },
         {
-          "name": "Australia",
-          "value": 7
+          "name": "Organ",
+          "value": 6
+        },
+        {
+          "name": "Organism",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-1-032",
-      "source": "WORLD",
-      "unit": "area rank, largest first",
+      "source": "SCIENCE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.britannica.com/science/continent"
+        "https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology"
       ],
       "ordered": [
         {
-          "name": "Asia",
+          "name": "Atom",
           "value": 1
         },
         {
-          "name": "North America",
-          "value": 3
+          "name": "Molecule",
+          "value": 2
         },
         {
-          "name": "South America",
+          "name": "Cell",
           "value": 4
         },
         {
-          "name": "Europe",
-          "value": 6
+          "name": "Organ system",
+          "value": 7
         },
         {
-          "name": "Australia",
-          "value": 7
+          "name": "Organism",
+          "value": 8
         }
       ]
     },

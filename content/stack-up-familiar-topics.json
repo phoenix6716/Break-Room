@@ -1,8 +1,224 @@
 {
-  "version": 1,
-  "reviewedAt": "2026-10-26",
-  "scope": "Non-maths replacements: stable familiar lane slots and unchanged 32-day selector. Ranks and dates appear only after locking.",
+  "version": 2,
+  "reviewedAt": "2026-10-27",
+  "scope": "No maths, numerical facts or time-unit ordering. Chronology stays available. Stable lane slots and unchanged selector.",
   "families": [
+    {
+      "category": "EVERYDAY",
+      "prompt": "Order these steps in the standard straight-dough method for a yeast bread loaf.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Mix the dough ingredients",
+          "value": 1
+        },
+        {
+          "name": "Knead the dough",
+          "value": 2
+        },
+        {
+          "name": "Let the dough complete its first rise",
+          "value": 3
+        },
+        {
+          "name": "Knock back the risen dough",
+          "value": 4
+        },
+        {
+          "name": "Shape the loaf",
+          "value": 5
+        },
+        {
+          "name": "Let the shaped loaf prove",
+          "value": 6
+        },
+        {
+          "name": "Bake the loaf",
+          "value": 7
+        },
+        {
+          "name": "Cool the baked loaf",
+          "value": 8
+        },
+        {
+          "name": "Slice the cooled loaf",
+          "value": 9
+        }
+      ],
+      "sources": [
+        "https://www.bbcgoodfood.com/recipes/easy-white-bread"
+      ],
+      "explanation": "Follow the standard bulk-rise-and-final-proof bread method.",
+      "count": 8,
+      "unit": "sequence position",
+      "lane": 0,
+      "seed": "stack-no-numbers:daily:0"
+    },
+    {
+      "category": "NATURE",
+      "prompt": "Order these stages of a butterfly's life, from egg to its first flight.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "An egg is laid",
+          "value": 1
+        },
+        {
+          "name": "The caterpillar hatches",
+          "value": 2
+        },
+        {
+          "name": "The caterpillar feeds and grows",
+          "value": 3
+        },
+        {
+          "name": "The caterpillar forms a chrysalis",
+          "value": 4
+        },
+        {
+          "name": "The adult butterfly emerges",
+          "value": 5
+        },
+        {
+          "name": "The butterfly expands its wings",
+          "value": 6
+        },
+        {
+          "name": "The adult takes its first flight",
+          "value": 7
+        }
+      ],
+      "sources": [
+        "https://www.floridamuseum.ufl.edu/educators/resource/butterfly-life-cycle/"
+      ],
+      "explanation": "Follow the life cycle from the egg through metamorphosis to the adult's first flight.",
+      "count": 8,
+      "unit": "sequence position",
+      "lane": 0,
+      "seed": "stack-no-numbers:daily:1"
+    },
+    {
+      "category": "SCREEN TIME",
+      "prompt": "Order these story moments from Harry Potter and the Philosopher's Stone, following Harry's story.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Harry's first Hogwarts letter arrives",
+          "value": 1
+        },
+        {
+          "name": "Hagrid tells Harry he is a wizard",
+          "value": 2
+        },
+        {
+          "name": "Harry shops in Diagon Alley",
+          "value": 3
+        },
+        {
+          "name": "Harry boards the Hogwarts Express",
+          "value": 4
+        },
+        {
+          "name": "The Sorting Hat places Harry in Gryffindor",
+          "value": 5
+        },
+        {
+          "name": "Harry helps defeat the troll",
+          "value": 6
+        },
+        {
+          "name": "Harry plays his first Quidditch match",
+          "value": 7
+        },
+        {
+          "name": "Harry finds the Mirror of Erised",
+          "value": 8
+        },
+        {
+          "name": "Harry faces Quirrell",
+          "value": 9
+        },
+        {
+          "name": "Harry returns to the Dursleys",
+          "value": 10
+        }
+      ],
+      "sources": [
+        "https://www.harrypotter.com/discover/films/harry-potter-and-the-philosophers-stone"
+      ],
+      "explanation": "Follow the original film's narrative. The American title refers to the same film.",
+      "count": 8,
+      "unit": "sequence position",
+      "lane": 0,
+      "seed": "stack-no-numbers:daily:2"
+    },
+    {
+      "category": "GAMES",
+      "prompt": "Order these milestones on the standard crafting route from an empty inventory to mining a diamond in Minecraft Survival.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Gather a log from a tree",
+          "value": 1
+        },
+        {
+          "name": "Craft wooden planks",
+          "value": 2
+        },
+        {
+          "name": "Craft a crafting table",
+          "value": 3
+        },
+        {
+          "name": "Craft a wooden pickaxe",
+          "value": 4
+        },
+        {
+          "name": "Mine cobblestone",
+          "value": 5
+        },
+        {
+          "name": "Craft a stone pickaxe",
+          "value": 6
+        },
+        {
+          "name": "Mine iron ore",
+          "value": 7
+        },
+        {
+          "name": "Smelt iron into ingots",
+          "value": 8
+        },
+        {
+          "name": "Craft an iron pickaxe",
+          "value": 9
+        },
+        {
+          "name": "Mine diamond ore with the iron pickaxe",
+          "value": 10
+        }
+      ],
+      "sources": [
+        "https://minecraft.wiki/w/Tutorial:Beginner%27s_guide"
+      ],
+      "explanation": "Use the normal tool-upgrade route, without loot chests, trading or borrowed equipment.",
+      "count": 8,
+      "unit": "sequence position",
+      "lane": 0,
+      "seed": "stack-no-numbers:daily:3"
+    },
     {
       "lane": 1,
       "category": "NATURE",
@@ -49,49 +265,54 @@
       "unit": "sequence position"
     },
     {
-      "lane": 1,
-      "category": "WORLD",
-      "prompt": "Order these continents by land area, largest first (seven-continent model).",
+      "category": "SCIENCE",
+      "prompt": "Order these levels of biological organisation from simpler building blocks to a complete living thing.",
       "ends": [
-        "LARGER",
-        "SMALLER"
+        "FIRST",
+        "LAST"
       ],
       "items": [
         {
-          "name": "Asia",
+          "name": "Atom",
           "value": 1
         },
         {
-          "name": "Africa",
+          "name": "Molecule",
           "value": 2
         },
         {
-          "name": "North America",
+          "name": "Organelle",
           "value": 3
         },
         {
-          "name": "South America",
+          "name": "Cell",
           "value": 4
         },
         {
-          "name": "Antarctica",
+          "name": "Tissue",
           "value": 5
         },
         {
-          "name": "Europe",
+          "name": "Organ",
           "value": 6
         },
         {
-          "name": "Australia",
+          "name": "Organ system",
           "value": 7
+        },
+        {
+          "name": "Organism",
+          "value": 8
         }
       ],
       "sources": [
-        "https://www.britannica.com/science/continent"
+        "https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology"
       ],
-      "seed": "no-maths:continents:1",
+      "explanation": "Use the standard structural hierarchy in a multicellular organism.",
       "count": 8,
-      "unit": "area rank, largest first"
+      "unit": "sequence position",
+      "lane": 1,
+      "seed": "stack-no-numbers:daily:4"
     },
     {
       "lane": 3,

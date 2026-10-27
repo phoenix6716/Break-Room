@@ -2,7 +2,8 @@
 (() => {
  'use strict';
  const P=window.BREAK_ROOM_PRACTICE,$=id=>document.getElementById(id),clock=window.MIDNIGHT_ARCADE_CLOCK;
- const pool=[...window.STACK_UP_STACKS,...window.STACK_UP_FAMILIAR_STACKS], prefix='break-room:stack-up:daily:',version=2;
+ const replacements=new Map((window.STACK_UP_REPLACEMENT_STACKS||[]).map(s=>[s.id,s]));
+ const pool=[...window.STACK_UP_STACKS.map(s=>replacements.get(s.id)||s),...window.STACK_UP_FAMILIAR_STACKS], prefix='break-room:stack-up:daily:',version=2;
  const playablePool=pool.filter(s=>s.category!=='NUMBER SENSE');
  const memory=new Map();let persistent=true,run=null,mode='daily',dialog=null,feedbackTimer=null,warnedDeadline=null;let practiceRun=null,practiceCategory='familiar';const stackDeck=P.deck(s=>s.id||s.prompt);
  const read=key=>{if(!persistent&&memory.has(key))return memory.get(key);try{return localStorage.getItem(key)||memory.get(key)||null}catch{return memory.get(key)||null}};

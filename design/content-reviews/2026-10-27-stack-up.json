@@ -1,0 +1,736 @@
+{
+  "date": "2026-10-27",
+  "game": "stack-up",
+  "policy": "Owner explicitly retained date/release/history ordering and requested replacement of maths, number facts and time-unit questions.",
+  "familiarChanges": [
+    {
+      "id": "stack-familiar-0-001",
+      "before": "Put these days in order within a Monday-to-Sunday week.",
+      "after": "Order these steps in the standard straight-dough method for a yeast bread loaf."
+    },
+    {
+      "id": "stack-familiar-0-002",
+      "before": "Put these days in order within a Monday-to-Sunday week.",
+      "after": "Order these steps in the standard straight-dough method for a yeast bread loaf."
+    },
+    {
+      "id": "stack-familiar-0-003",
+      "before": "Put these days in order within a Monday-to-Sunday week.",
+      "after": "Order these steps in the standard straight-dough method for a yeast bread loaf."
+    },
+    {
+      "id": "stack-familiar-0-004",
+      "before": "Put these days in order within a Monday-to-Sunday week.",
+      "after": "Order these steps in the standard straight-dough method for a yeast bread loaf."
+    },
+    {
+      "id": "stack-familiar-0-005",
+      "before": "Put these days in order within a Monday-to-Sunday week.",
+      "after": "Order these steps in the standard straight-dough method for a yeast bread loaf."
+    },
+    {
+      "id": "stack-familiar-0-006",
+      "before": "Put these days in order within a Monday-to-Sunday week.",
+      "after": "Order these steps in the standard straight-dough method for a yeast bread loaf."
+    },
+    {
+      "id": "stack-familiar-0-007",
+      "before": "Put these days in order within a Monday-to-Sunday week.",
+      "after": "Order these steps in the standard straight-dough method for a yeast bread loaf."
+    },
+    {
+      "id": "stack-familiar-0-008",
+      "before": "Put these days in order within a Monday-to-Sunday week.",
+      "after": "Order these steps in the standard straight-dough method for a yeast bread loaf."
+    },
+    {
+      "id": "stack-familiar-0-009",
+      "before": "Put these months in order within one calendar year.",
+      "after": "Order these stages of a butterfly's life, from egg to its first flight."
+    },
+    {
+      "id": "stack-familiar-0-010",
+      "before": "Put these months in order within one calendar year.",
+      "after": "Order these stages of a butterfly's life, from egg to its first flight."
+    },
+    {
+      "id": "stack-familiar-0-011",
+      "before": "Put these months in order within one calendar year.",
+      "after": "Order these stages of a butterfly's life, from egg to its first flight."
+    },
+    {
+      "id": "stack-familiar-0-012",
+      "before": "Put these months in order within one calendar year.",
+      "after": "Order these stages of a butterfly's life, from egg to its first flight."
+    },
+    {
+      "id": "stack-familiar-0-013",
+      "before": "Put these months in order within one calendar year.",
+      "after": "Order these stages of a butterfly's life, from egg to its first flight."
+    },
+    {
+      "id": "stack-familiar-0-014",
+      "before": "Put these months in order within one calendar year.",
+      "after": "Order these stages of a butterfly's life, from egg to its first flight."
+    },
+    {
+      "id": "stack-familiar-0-015",
+      "before": "Put these months in order within one calendar year.",
+      "after": "Order these stages of a butterfly's life, from egg to its first flight."
+    },
+    {
+      "id": "stack-familiar-0-016",
+      "before": "Put these months in order within one calendar year.",
+      "after": "Order these stages of a butterfly's life, from egg to its first flight."
+    },
+    {
+      "id": "stack-familiar-0-017",
+      "before": "Put these months in order within one calendar year.",
+      "after": "Order these story moments from Harry Potter and the Philosopher's Stone, following Harry's story."
+    },
+    {
+      "id": "stack-familiar-0-018",
+      "before": "Put these months in order within one calendar year.",
+      "after": "Order these story moments from Harry Potter and the Philosopher's Stone, following Harry's story."
+    },
+    {
+      "id": "stack-familiar-0-019",
+      "before": "Put these months in order within one calendar year.",
+      "after": "Order these story moments from Harry Potter and the Philosopher's Stone, following Harry's story."
+    },
+    {
+      "id": "stack-familiar-0-020",
+      "before": "Put these months in order within one calendar year.",
+      "after": "Order these story moments from Harry Potter and the Philosopher's Stone, following Harry's story."
+    },
+    {
+      "id": "stack-familiar-0-021",
+      "before": "Order these lengths of time, shortest first.",
+      "after": "Order these story moments from Harry Potter and the Philosopher's Stone, following Harry's story."
+    },
+    {
+      "id": "stack-familiar-0-022",
+      "before": "Order these lengths of time, shortest first.",
+      "after": "Order these story moments from Harry Potter and the Philosopher's Stone, following Harry's story."
+    },
+    {
+      "id": "stack-familiar-0-023",
+      "before": "Order these lengths of time, shortest first.",
+      "after": "Order these story moments from Harry Potter and the Philosopher's Stone, following Harry's story."
+    },
+    {
+      "id": "stack-familiar-0-024",
+      "before": "Order these lengths of time, shortest first.",
+      "after": "Order these story moments from Harry Potter and the Philosopher's Stone, following Harry's story."
+    },
+    {
+      "id": "stack-familiar-0-025",
+      "before": "Order these lengths of time, shortest first.",
+      "after": "Order these milestones on the standard crafting route from an empty inventory to mining a diamond in Minecraft Survival."
+    },
+    {
+      "id": "stack-familiar-0-026",
+      "before": "Order these lengths of time, shortest first.",
+      "after": "Order these milestones on the standard crafting route from an empty inventory to mining a diamond in Minecraft Survival."
+    },
+    {
+      "id": "stack-familiar-0-027",
+      "before": "Order these lengths of time, shortest first.",
+      "after": "Order these milestones on the standard crafting route from an empty inventory to mining a diamond in Minecraft Survival."
+    },
+    {
+      "id": "stack-familiar-0-028",
+      "before": "Order these lengths of time, shortest first.",
+      "after": "Order these milestones on the standard crafting route from an empty inventory to mining a diamond in Minecraft Survival."
+    },
+    {
+      "id": "stack-familiar-0-029",
+      "before": "Order these lengths of time, shortest first.",
+      "after": "Order these milestones on the standard crafting route from an empty inventory to mining a diamond in Minecraft Survival."
+    },
+    {
+      "id": "stack-familiar-0-030",
+      "before": "Order these lengths of time, shortest first.",
+      "after": "Order these milestones on the standard crafting route from an empty inventory to mining a diamond in Minecraft Survival."
+    },
+    {
+      "id": "stack-familiar-0-031",
+      "before": "Order these lengths of time, shortest first.",
+      "after": "Order these milestones on the standard crafting route from an empty inventory to mining a diamond in Minecraft Survival."
+    },
+    {
+      "id": "stack-familiar-0-032",
+      "before": "Order these lengths of time, shortest first.",
+      "after": "Order these milestones on the standard crafting route from an empty inventory to mining a diamond in Minecraft Survival."
+    },
+    {
+      "id": "stack-familiar-1-025",
+      "before": "Order these continents by land area, largest first (seven-continent model).",
+      "after": "Order these levels of biological organisation from simpler building blocks to a complete living thing."
+    },
+    {
+      "id": "stack-familiar-1-026",
+      "before": "Order these continents by land area, largest first (seven-continent model).",
+      "after": "Order these levels of biological organisation from simpler building blocks to a complete living thing."
+    },
+    {
+      "id": "stack-familiar-1-027",
+      "before": "Order these continents by land area, largest first (seven-continent model).",
+      "after": "Order these levels of biological organisation from simpler building blocks to a complete living thing."
+    },
+    {
+      "id": "stack-familiar-1-028",
+      "before": "Order these continents by land area, largest first (seven-continent model).",
+      "after": "Order these levels of biological organisation from simpler building blocks to a complete living thing."
+    },
+    {
+      "id": "stack-familiar-1-029",
+      "before": "Order these continents by land area, largest first (seven-continent model).",
+      "after": "Order these levels of biological organisation from simpler building blocks to a complete living thing."
+    },
+    {
+      "id": "stack-familiar-1-030",
+      "before": "Order these continents by land area, largest first (seven-continent model).",
+      "after": "Order these levels of biological organisation from simpler building blocks to a complete living thing."
+    },
+    {
+      "id": "stack-familiar-1-031",
+      "before": "Order these continents by land area, largest first (seven-continent model).",
+      "after": "Order these levels of biological organisation from simpler building blocks to a complete living thing."
+    },
+    {
+      "id": "stack-familiar-1-032",
+      "before": "Order these continents by land area, largest first (seven-continent model).",
+      "after": "Order these levels of biological organisation from simpler building blocks to a complete living thing."
+    }
+  ],
+  "challengeChanges": [
+    {
+      "id": "stack-001",
+      "before": "Order these elements by increasing atomic number.",
+      "after": "Order these story moments from the original The Lion King, following the film's story."
+    },
+    {
+      "id": "stack-002",
+      "before": "Order these pure metals by melting point at standard pressure, lowest first (RSC values).",
+      "after": "Order these story moments from the original The Lion King, following the film's story."
+    },
+    {
+      "id": "stack-003",
+      "before": "Order these pure solid elements by density near room temperature, lowest first (RSC values).",
+      "after": "Order these story moments from the original The Lion King, following the film's story."
+    },
+    {
+      "id": "stack-004",
+      "before": "Order these countries by surface area, smallest first (UNdata, 2023).",
+      "after": "Order these story moments from the original The Lion King, following the film's story."
+    },
+    {
+      "id": "stack-007",
+      "before": "Order these airports by approximate airport latitude, south to north.",
+      "after": "Order these story moments from the original The Lion King, following the film's story."
+    },
+    {
+      "id": "stack-008",
+      "before": "Order these airports by approximate airport longitude, west to east (−180° to +180°).",
+      "after": "Order these story moments from the original The Lion King, following the film's story."
+    },
+    {
+      "id": "stack-009",
+      "before": "Order these airports by field elevation above sea level, lowest first.",
+      "after": "Order these story moments from the original The Lion King, following the film's story."
+    },
+    {
+      "id": "stack-010",
+      "before": "Order these elements by increasing atomic number.",
+      "after": "Order these story moments from Finding Nemo, following the film's story."
+    },
+    {
+      "id": "stack-011",
+      "before": "Order these pure metals by melting point at standard pressure, lowest first (RSC values).",
+      "after": "Order these story moments from Finding Nemo, following the film's story."
+    },
+    {
+      "id": "stack-012",
+      "before": "Order these pure solid elements by density near room temperature, lowest first (RSC values).",
+      "after": "Order these story moments from Finding Nemo, following the film's story."
+    },
+    {
+      "id": "stack-013",
+      "before": "Order these elements by increasing atomic number.",
+      "after": "Order these story moments from Finding Nemo, following the film's story."
+    },
+    {
+      "id": "stack-014",
+      "before": "Order these elements by increasing atomic number.",
+      "after": "Order these story moments from Finding Nemo, following the film's story."
+    },
+    {
+      "id": "stack-015",
+      "before": "Order these elements by increasing atomic number.",
+      "after": "Order these story moments from Finding Nemo, following the film's story."
+    },
+    {
+      "id": "stack-016",
+      "before": "Order these elements by increasing atomic number.",
+      "after": "Order these story moments from Finding Nemo, following the film's story."
+    },
+    {
+      "id": "stack-017",
+      "before": "Order these elements by increasing atomic number.",
+      "after": "Order these story moments from the original Toy Story, following the film's story."
+    },
+    {
+      "id": "stack-018",
+      "before": "Order these elements by increasing atomic number.",
+      "after": "Order these story moments from the original Toy Story, following the film's story."
+    },
+    {
+      "id": "stack-019",
+      "before": "Order these elements by increasing atomic number.",
+      "after": "Order these story moments from the original Toy Story, following the film's story."
+    },
+    {
+      "id": "stack-020",
+      "before": "Order these elements by increasing atomic number.",
+      "after": "Order these story moments from the original Toy Story, following the film's story."
+    },
+    {
+      "id": "stack-021",
+      "before": "Order these elements by increasing atomic number.",
+      "after": "Order these story moments from the original Toy Story, following the film's story."
+    },
+    {
+      "id": "stack-022",
+      "before": "Order these elements by increasing atomic number.",
+      "after": "Order these story moments from the original Toy Story, following the film's story."
+    },
+    {
+      "id": "stack-023",
+      "before": "Order these pure metals by melting point at standard pressure, lowest first (RSC values).",
+      "after": "Order these story moments from the original Toy Story, following the film's story."
+    },
+    {
+      "id": "stack-024",
+      "before": "Order these pure metals by melting point at standard pressure, lowest first (RSC values).",
+      "after": "Order these story moments from the original Shrek, following the film's story."
+    },
+    {
+      "id": "stack-025",
+      "before": "Order these pure metals by melting point at standard pressure, lowest first (RSC values).",
+      "after": "Order these story moments from the original Shrek, following the film's story."
+    },
+    {
+      "id": "stack-026",
+      "before": "Order these pure metals by melting point at standard pressure, lowest first (RSC values).",
+      "after": "Order these story moments from the original Shrek, following the film's story."
+    },
+    {
+      "id": "stack-027",
+      "before": "Order these pure metals by melting point at standard pressure, lowest first (RSC values).",
+      "after": "Order these story moments from the original Shrek, following the film's story."
+    },
+    {
+      "id": "stack-028",
+      "before": "Order these pure metals by melting point at standard pressure, lowest first (RSC values).",
+      "after": "Order these story moments from the original Shrek, following the film's story."
+    },
+    {
+      "id": "stack-029",
+      "before": "Order these pure metals by melting point at standard pressure, lowest first (RSC values).",
+      "after": "Order these story moments from the original Shrek, following the film's story."
+    },
+    {
+      "id": "stack-030",
+      "before": "Order these pure metals by melting point at standard pressure, lowest first (RSC values).",
+      "after": "Order these story moments from the original Shrek, following the film's story."
+    },
+    {
+      "id": "stack-031",
+      "before": "Order these pure metals by melting point at standard pressure, lowest first (RSC values).",
+      "after": "Order these story moments from the original Frozen, following the film's story."
+    },
+    {
+      "id": "stack-032",
+      "before": "Order these pure metals by melting point at standard pressure, lowest first (RSC values).",
+      "after": "Order these story moments from the original Frozen, following the film's story."
+    },
+    {
+      "id": "stack-033",
+      "before": "Order these pure solid elements by density near room temperature, lowest first (RSC values).",
+      "after": "Order these story moments from the original Frozen, following the film's story."
+    },
+    {
+      "id": "stack-034",
+      "before": "Order these pure solid elements by density near room temperature, lowest first (RSC values).",
+      "after": "Order these story moments from the original Frozen, following the film's story."
+    },
+    {
+      "id": "stack-035",
+      "before": "Order these pure solid elements by density near room temperature, lowest first (RSC values).",
+      "after": "Order these story moments from the original Frozen, following the film's story."
+    },
+    {
+      "id": "stack-036",
+      "before": "Order these pure solid elements by density near room temperature, lowest first (RSC values).",
+      "after": "Order these story moments from the original Frozen, following the film's story."
+    },
+    {
+      "id": "stack-037",
+      "before": "Order these pure solid elements by density near room temperature, lowest first (RSC values).",
+      "after": "Order these story moments from the original Frozen, following the film's story."
+    },
+    {
+      "id": "stack-038",
+      "before": "Order these pure solid elements by density near room temperature, lowest first (RSC values).",
+      "after": "Order these story moments from the original Moana, following the film's story."
+    },
+    {
+      "id": "stack-039",
+      "before": "Order these pure solid elements by density near room temperature, lowest first (RSC values).",
+      "after": "Order these story moments from the original Moana, following the film's story."
+    },
+    {
+      "id": "stack-040",
+      "before": "Order these pure solid elements by density near room temperature, lowest first (RSC values).",
+      "after": "Order these story moments from the original Moana, following the film's story."
+    },
+    {
+      "id": "stack-041",
+      "before": "Order these pure solid elements by density near room temperature, lowest first (RSC values).",
+      "after": "Order these story moments from the original Moana, following the film's story."
+    },
+    {
+      "id": "stack-042",
+      "before": "Order these pure solid elements by density near room temperature, lowest first (RSC values).",
+      "after": "Order these story moments from the original Moana, following the film's story."
+    },
+    {
+      "id": "stack-043",
+      "before": "Order these countries by surface area, smallest first (UNdata, 2023).",
+      "after": "Order these story moments from the original Moana, following the film's story."
+    },
+    {
+      "id": "stack-044",
+      "before": "Order these countries by surface area, smallest first (UNdata, 2023).",
+      "after": "Order these story moments from the original Moana, following the film's story."
+    },
+    {
+      "id": "stack-045",
+      "before": "Order these countries by surface area, smallest first (UNdata, 2023).",
+      "after": "Order these story moments from Disney's animated Cinderella, following the film's story."
+    },
+    {
+      "id": "stack-046",
+      "before": "Order these countries by surface area, smallest first (UNdata, 2023).",
+      "after": "Order these story moments from Disney's animated Cinderella, following the film's story."
+    },
+    {
+      "id": "stack-047",
+      "before": "Order these countries by surface area, smallest first (UNdata, 2023).",
+      "after": "Order these story moments from Disney's animated Cinderella, following the film's story."
+    },
+    {
+      "id": "stack-048",
+      "before": "Order these countries by surface area, smallest first (UNdata, 2023).",
+      "after": "Order these story moments from Disney's animated Cinderella, following the film's story."
+    },
+    {
+      "id": "stack-049",
+      "before": "Order these countries by surface area, smallest first (UNdata, 2023). Finland excludes Åland.",
+      "after": "Order these story moments from Disney's animated Cinderella, following the film's story."
+    },
+    {
+      "id": "stack-050",
+      "before": "Order these countries by surface area, smallest first (UNdata, 2023).",
+      "after": "Order these story moments from Disney's animated Cinderella, following the film's story."
+    },
+    {
+      "id": "stack-051",
+      "before": "Order these countries by surface area, smallest first (UNdata, 2023).",
+      "after": "Order these story moments from Disney's animated Cinderella, following the film's story."
+    },
+    {
+      "id": "stack-052",
+      "before": "Order these countries by surface area, smallest first (UNdata, 2023).",
+      "after": "Order these story moments from The Wizard of Oz, following the film's story."
+    },
+    {
+      "id": "stack-073",
+      "before": "Order these airports by approximate airport latitude, south to north.",
+      "after": "Order these story moments from The Wizard of Oz, following the film's story."
+    },
+    {
+      "id": "stack-074",
+      "before": "Order these airports by approximate airport latitude, south to north.",
+      "after": "Order these story moments from The Wizard of Oz, following the film's story."
+    },
+    {
+      "id": "stack-075",
+      "before": "Order these airports by approximate airport latitude, south to north.",
+      "after": "Order these story moments from The Wizard of Oz, following the film's story."
+    },
+    {
+      "id": "stack-076",
+      "before": "Order these airports by approximate airport latitude, south to north.",
+      "after": "Order these story moments from The Wizard of Oz, following the film's story."
+    },
+    {
+      "id": "stack-077",
+      "before": "Order these airports by approximate airport latitude, south to north.",
+      "after": "Order these story moments from The Wizard of Oz, following the film's story."
+    },
+    {
+      "id": "stack-078",
+      "before": "Order these airports by approximate airport latitude, south to north.",
+      "after": "Order these story moments from The Wizard of Oz, following the film's story."
+    },
+    {
+      "id": "stack-079",
+      "before": "Order these airports by approximate airport latitude, south to north.",
+      "after": "Order these story moments from The Hobbit novel, following Bilbo's journey."
+    },
+    {
+      "id": "stack-080",
+      "before": "Order these airports by approximate airport latitude, south to north.",
+      "after": "Order these story moments from The Hobbit novel, following Bilbo's journey."
+    },
+    {
+      "id": "stack-081",
+      "before": "Order these airports by approximate airport latitude, south to north.",
+      "after": "Order these story moments from The Hobbit novel, following Bilbo's journey."
+    },
+    {
+      "id": "stack-082",
+      "before": "Order these airports by approximate airport latitude, south to north.",
+      "after": "Order these story moments from The Hobbit novel, following Bilbo's journey."
+    },
+    {
+      "id": "stack-083",
+      "before": "Order these airports by approximate airport longitude, west to east (−180° to +180°).",
+      "after": "Order these story moments from The Hobbit novel, following Bilbo's journey."
+    },
+    {
+      "id": "stack-084",
+      "before": "Order these airports by approximate airport longitude, west to east (−180° to +180°).",
+      "after": "Order these story moments from The Hobbit novel, following Bilbo's journey."
+    },
+    {
+      "id": "stack-085",
+      "before": "Order these airports by approximate airport longitude, west to east (−180° to +180°).",
+      "after": "Order these story moments from The Hobbit novel, following Bilbo's journey."
+    },
+    {
+      "id": "stack-086",
+      "before": "Order these airports by approximate airport longitude, west to east (−180° to +180°).",
+      "after": "Order these encounters from Alice's Adventures in Wonderland, following Alice through the book."
+    },
+    {
+      "id": "stack-087",
+      "before": "Order these airports by approximate airport longitude, west to east (−180° to +180°).",
+      "after": "Order these encounters from Alice's Adventures in Wonderland, following Alice through the book."
+    },
+    {
+      "id": "stack-088",
+      "before": "Order these airports by approximate airport longitude, west to east (−180° to +180°).",
+      "after": "Order these encounters from Alice's Adventures in Wonderland, following Alice through the book."
+    },
+    {
+      "id": "stack-089",
+      "before": "Order these airports by approximate airport longitude, west to east (−180° to +180°).",
+      "after": "Order these encounters from Alice's Adventures in Wonderland, following Alice through the book."
+    },
+    {
+      "id": "stack-090",
+      "before": "Order these airports by approximate airport longitude, west to east (−180° to +180°).",
+      "after": "Order these encounters from Alice's Adventures in Wonderland, following Alice through the book."
+    },
+    {
+      "id": "stack-091",
+      "before": "Order these airports by approximate airport longitude, west to east (−180° to +180°).",
+      "after": "Order these encounters from Alice's Adventures in Wonderland, following Alice through the book."
+    },
+    {
+      "id": "stack-092",
+      "before": "Order these airports by approximate airport longitude, west to east (−180° to +180°).",
+      "after": "Order these encounters from Alice's Adventures in Wonderland, following Alice through the book."
+    },
+    {
+      "id": "stack-093",
+      "before": "Order these airports by field elevation above sea level, lowest first.",
+      "after": "Order these Kanto Gym Badges in their usual Trainer Card order in Pokemon Red and Blue."
+    },
+    {
+      "id": "stack-094",
+      "before": "Order these airports by field elevation above sea level, lowest first.",
+      "after": "Order these Kanto Gym Badges in their usual Trainer Card order in Pokemon Red and Blue."
+    },
+    {
+      "id": "stack-095",
+      "before": "Order these airports by field elevation above sea level, lowest first.",
+      "after": "Order these Kanto Gym Badges in their usual Trainer Card order in Pokemon Red and Blue."
+    },
+    {
+      "id": "stack-096",
+      "before": "Order these airports by field elevation above sea level, lowest first.",
+      "after": "Order these Kanto Gym Badges in their usual Trainer Card order in Pokemon Red and Blue."
+    },
+    {
+      "id": "stack-097",
+      "before": "Order these airports by field elevation above sea level, lowest first.",
+      "after": "Order these Kanto Gym Badges in their usual Trainer Card order in Pokemon Red and Blue."
+    },
+    {
+      "id": "stack-098",
+      "before": "Order these airports by field elevation above sea level, lowest first.",
+      "after": "Order these Kanto Gym Badges in their usual Trainer Card order in Pokemon Red and Blue."
+    },
+    {
+      "id": "stack-099",
+      "before": "Order these airports by field elevation above sea level, lowest first.",
+      "after": "Order these Kanto Gym Badges in their usual Trainer Card order in Pokemon Red and Blue."
+    },
+    {
+      "id": "stack-100",
+      "before": "Order these airports by field elevation above sea level, lowest first.",
+      "after": "Order these instrument dungeons from Link's Awakening in the main quest's dungeon sequence."
+    },
+    {
+      "id": "stack-101",
+      "before": "Order these airports by field elevation above sea level, lowest first.",
+      "after": "Order these instrument dungeons from Link's Awakening in the main quest's dungeon sequence."
+    },
+    {
+      "id": "stack-102",
+      "before": "Order these airports by field elevation above sea level, lowest first.",
+      "after": "Order these instrument dungeons from Link's Awakening in the main quest's dungeon sequence."
+    },
+    {
+      "id": "stack-launch-fact-001",
+      "before": "Order these elements by increasing atomic number.",
+      "after": "Order these instrument dungeons from Link's Awakening in the main quest's dungeon sequence."
+    },
+    {
+      "id": "stack-launch-fact-002",
+      "before": "Order these pure metals by melting point at standard pressure, lowest first (RSC values).",
+      "after": "Order these instrument dungeons from Link's Awakening in the main quest's dungeon sequence."
+    },
+    {
+      "id": "stack-launch-fact-003",
+      "before": "Order these pure solid elements by density near room temperature, lowest first (RSC values).",
+      "after": "Order these instrument dungeons from Link's Awakening in the main quest's dungeon sequence."
+    },
+    {
+      "id": "stack-launch-fact-004",
+      "before": "Order these countries by surface area, smallest first (UNdata, 2023). Finland excludes Åland.",
+      "after": "Order these instrument dungeons from Link's Awakening in the main quest's dungeon sequence."
+    },
+    {
+      "id": "stack-launch-fact-007",
+      "before": "Order these airports by approximate airport latitude, south to north.",
+      "after": "Order these parts along the route food takes through the human digestive tract."
+    },
+    {
+      "id": "stack-launch-fact-008",
+      "before": "Order these airports by approximate airport longitude, west to east (−180° to +180°).",
+      "after": "Order these parts along the route food takes through the human digestive tract."
+    },
+    {
+      "id": "stack-launch-fact-009",
+      "before": "Order these airports by field elevation above sea level, lowest first.",
+      "after": "Order these parts along the route food takes through the human digestive tract."
+    },
+    {
+      "id": "stack-launch-fact-010",
+      "before": "Order these elements by increasing atomic number.",
+      "after": "Order these parts along the route food takes through the human digestive tract."
+    },
+    {
+      "id": "stack-launch-fact-011",
+      "before": "Order these pure metals by melting point at standard pressure, lowest first (RSC values).",
+      "after": "Order these parts along the route food takes through the human digestive tract."
+    },
+    {
+      "id": "stack-launch-fact-012",
+      "before": "Order these pure solid elements by density near room temperature, lowest first (RSC values).",
+      "after": "Order these parts along the route food takes through the human digestive tract."
+    },
+    {
+      "id": "stack-launch-fact-013",
+      "before": "Order these countries by surface area, smallest first (UNdata, 2023).",
+      "after": "Order these parts along the route food takes through the human digestive tract."
+    },
+    {
+      "id": "stack-launch-fact-016",
+      "before": "Order these airports by approximate airport latitude, south to north.",
+      "after": "Order these stages as a bean grows from a dry seed to a ripe seed pod."
+    },
+    {
+      "id": "stack-launch-fact-017",
+      "before": "Order these airports by approximate airport longitude, west to east (−180° to +180°).",
+      "after": "Order these stages as a bean grows from a dry seed to a ripe seed pod."
+    },
+    {
+      "id": "stack-launch-fact-018",
+      "before": "Order these airports by field elevation above sea level, lowest first.",
+      "after": "Order these stages as a bean grows from a dry seed to a ripe seed pod."
+    },
+    {
+      "id": "stack-launch-fact-019",
+      "before": "Order these elements by increasing atomic number.",
+      "after": "Order these stages as a bean grows from a dry seed to a ripe seed pod."
+    },
+    {
+      "id": "stack-launch-fact-020",
+      "before": "Order these pure metals by melting point at standard pressure, lowest first (RSC values).",
+      "after": "Order these stages as a bean grows from a dry seed to a ripe seed pod."
+    },
+    {
+      "id": "stack-launch-fact-021",
+      "before": "Order these pure solid elements by density near room temperature, lowest first (RSC values).",
+      "after": "Order these stages as a bean grows from a dry seed to a ripe seed pod."
+    },
+    {
+      "id": "stack-launch-fact-022",
+      "before": "Order these countries by surface area, smallest first (UNdata, 2023).",
+      "after": "Order these stages as a bean grows from a dry seed to a ripe seed pod."
+    },
+    {
+      "id": "stack-launch-fact-025",
+      "before": "Order these airports by approximate airport latitude, south to north.",
+      "after": "Order these cities along the Danube, travelling downstream towards its mouth."
+    },
+    {
+      "id": "stack-launch-fact-026",
+      "before": "Order these airports by approximate airport longitude, west to east (−180° to +180°).",
+      "after": "Order these cities along the Danube, travelling downstream towards its mouth."
+    },
+    {
+      "id": "stack-launch-fact-027",
+      "before": "Order these airports by field elevation above sea level, lowest first.",
+      "after": "Order these cities along the Danube, travelling downstream towards its mouth."
+    },
+    {
+      "id": "stack-launch-fact-028",
+      "before": "Order these elements by increasing atomic number.",
+      "after": "Order these cities along the Danube, travelling downstream towards its mouth."
+    },
+    {
+      "id": "stack-launch-fact-029",
+      "before": "Order these pure metals by melting point at standard pressure, lowest first (RSC values).",
+      "after": "Order these cities along the Danube, travelling downstream towards its mouth."
+    },
+    {
+      "id": "stack-launch-fact-030",
+      "before": "Order these pure solid elements by density near room temperature, lowest first (RSC values).",
+      "after": "Order these cities along the Danube, travelling downstream towards its mouth."
+    },
+    {
+      "id": "stack-launch-fact-031",
+      "before": "Order these countries by surface area, smallest first (UNdata, 2023).",
+      "after": "Order these cities along the Danube, travelling downstream towards its mouth."
+    }
+  ],
+  "compatibility": "All IDs, familiar lanes and Daily date assignments stay fixed. The original 208-row challenge source is frozen; active replacements overlay 105 IDs. The 74 NUMBER SENSE rows remain excluded. Captured Daily snapshots, legacy v1 recovery, timers and score versions are unchanged.",
+  "limits": "Source links and deterministic order checks support editorial review; narrative sequences and difficulty still benefit from human playtests."
+}
