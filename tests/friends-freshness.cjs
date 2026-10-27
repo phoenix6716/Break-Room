@@ -1,4 +1,4 @@
-/* Real SDK + isolated PostgreSQL: uploads in flight, newer completions, cross-tab updates and guest isolation. */
+/* End-to-end freshness regression; real SDK + isolated PostgreSQL: uploads in flight, newer completions, cross-tab updates and guest isolation. */
 const assert=require('node:assert/strict'),fs=require('node:fs'),{PGlite}=require('@electric-sql/pglite'),{chromium}=require('playwright');
 const base=process.env.ARCADE_TEST_URL,alice='00000000-0000-4000-8000-000000000001',bob='00000000-0000-4000-8000-000000000002';
 (async()=>{const db=new PGlite();let browser,release;try{

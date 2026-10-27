@@ -55,7 +55,13 @@ const native=page=>page.evaluate(()=>window.BREAK_ROOM_CLOUD_SAVES.capture(local
 (async()=>{
  const browser=await chromium.launch({executablePath:process.env.ARCADE_CHROMIUM||'/usr/bin/chromium',args:['--no-sandbox']});
  try{
- const context=await browser.newContext(),page=await context.newPage();await mock(context);const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ const context=await browser.newContext(),page=await context.newPage();
+ // Archived engines remain private compatibility fixtures; their public URLs redirect home.
+ if(process.env.ARCADE_LEGACY_TEST_URL)await context.route(/\\/games\\/(?:prior|alibi|bouncer)\\//,async route=>{
+  const response=await route.fetch({url:route.request().url().replace(base,process.env.ARCADE_LEGACY_TEST_URL)});
+  await route.fulfill({response});
+ });
+ await mock(context);const errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto(base+'/account.html');await page.evaluate(([k,v])=>localStorage.setItem(k,v),[guestKey,complete]);
  await page.goto(base+'/login.html');await page.locator('#email').fill('alice@example.com');await page.locator('#password').fill('wrongpass');await page.locator('button[type=submit]').click();await page.locator('[data-account-status]').filter({hasText:'Email or password is incorrect'}).waitFor();assert.equal(new URL(page.url()).search,'');
  await login(page);assert.equal(new URL(page.url()).search,'');assert.equal(await page.locator('#import-guest').isChecked(),false);
