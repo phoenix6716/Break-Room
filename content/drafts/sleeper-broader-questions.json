@@ -1,0 +1,198 @@
+{
+  "WORLD": [
+    {
+      "prompt": "Name a UN member country beginning with A or B.",
+      "answers": "Australia|Argentina|Austria|Afghanistan|Algeria|Albania|Angola|Armenia|Andorra|Azerbaijan|Antigua and Barbuda|Brazil|Belgium|Bangladesh|Bulgaria|Bolivia|Bahrain|Barbados|Belarus|Belize|Benin|Bhutan|Bosnia and Herzegovina|Botswana|Brunei|Burkina Faso|Burundi|Bahamas",
+      "source": "https://www.un.org/en/about-us/member-states",
+      "scope": "UN members with common English names starting A or B; ignore 'The'."
+    },
+    {
+      "prompt": "Name a European Union member country.",
+      "answers": "France|Germany|Italy|Spain|Ireland|Greece|Portugal|Netherlands|Sweden|Poland|Austria|Belgium|Denmark|Finland|Czechia|Hungary|Romania|Bulgaria|Croatia|Slovakia|Slovenia|Lithuania|Latvia|Estonia|Cyprus|Malta|Luxembourg",
+      "source": "https://european-union.europa.eu/principles-countries-history/eu-countries_en",
+      "scope": "The 27 members as of 2025; not the United Kingdom."
+    },
+    {
+      "prompt": "Name a sovereign country in Central or South America.",
+      "answers": "Brazil|Argentina|Chile|Peru|Colombia|Ecuador|Uruguay|Venezuela|Bolivia|Paraguay|Guyana|Suriname|Mexico|Costa Rica|Panama|Guatemala|Honduras|El Salvador|Nicaragua|Belize",
+      "source": "https://unstats.un.org/unsd/methodology/m49/",
+      "scope": "UN M49 Central America, including Mexico, or South America; sovereign UN members only."
+    },
+    {
+      "prompt": "Name a US state.",
+      "answers": "California|Texas|Florida|New York|Hawaii|Alaska|Nevada|Washington|Ohio|Georgia|Illinois|Colorado|Arizona|Massachusetts|Michigan|Pennsylvania|Virginia|New Jersey|North Carolina|South Carolina|Tennessee|Louisiana|Alabama|Kentucky|Oregon|Wisconsin|Minnesota|Missouri|Indiana|Maryland|Connecticut|Oklahoma|Arkansas|Utah|Mississippi|Kansas|Iowa|Nebraska|New Mexico|West Virginia|New Hampshire|Rhode Island|Maine|Montana|Idaho|Vermont|Delaware|South Dakota|North Dakota|Wyoming",
+      "source": "https://www.census.gov/library/reference/code-lists/ansi.html",
+      "scope": "All 50 states. Washington, D.C. and territories are excluded."
+    },
+    {
+      "prompt": "Name an African UN member country.",
+      "answers": "Egypt|South Africa|Nigeria|Kenya|Morocco|Ghana|Ethiopia|Algeria|Tunisia|Uganda|Tanzania|Zimbabwe|Zambia|Senegal|Cameroon|Ivory Coast|Democratic Republic of the Congo|Republic of the Congo|Sudan|South Sudan|Somalia|Rwanda|Namibia|Botswana|Mozambique|Madagascar|Angola|Libya|Mali|Niger|Chad|Mauritius|Seychelles|Cape Verde|Benin|Togo|Burkina Faso|Liberia|Sierra Leone|Guinea|Guinea-Bissau|Equatorial Guinea|Gabon|Gambia|Malawi|Lesotho|Eswatini|Burundi|Eritrea|Djibouti|Central African Republic|Comoros|Sao Tome and Principe|Mauritania",
+      "source": "https://www.un.org/en/about-us/member-states",
+      "scope": "The 54 African UN members, not territories or disputed non-members."
+    },
+    {
+      "prompt": "Name a G20 member country.",
+      "answers": "United States|United Kingdom|Australia|Canada|France|Germany|Italy|Japan|China|India|Brazil|Mexico|Russia|South Africa|South Korea|Indonesia|Argentina|Saudi Arabia|Turkey",
+      "source": "https://www.g20.org/",
+      "scope": "The 19 national members as of 2025. The EU and African Union are organisations."
+    },
+    {
+      "prompt": "Name a team that played at the 2023 Women's World Cup.",
+      "answers": "Australia|New Zealand|England|United States|France|Germany|Spain|Brazil|Japan|Canada|Sweden|Netherlands|Norway|Denmark|Italy|Switzerland|Portugal|Ireland|China|South Korea|South Africa|Nigeria|Morocco|Zambia|Jamaica|Haiti|Panama|Colombia|Argentina|Costa Rica|Philippines|Vietnam",
+      "source": "https://www.fifa.com/en/tournaments/womens/womensworldcup/australia-new-zealand2023",
+      "scope": "The 32 qualifying national teams; countries, not individual players."
+    },
+    {
+      "prompt": "Name a country with a Mediterranean coastline.",
+      "answers": "Spain|France|Italy|Greece|Turkey|Egypt|Morocco|Algeria|Tunisia|Libya|Israel|Lebanon|Syria|Cyprus|Malta|Croatia|Albania|Montenegro|Slovenia|Bosnia and Herzegovina|Monaco|Palestine",
+      "source": "https://www.unep.org/unepmap/who-we-are/contracting-parties",
+      "scope": "Sovereign countries and Palestine; includes shores on the Adriatic and Aegean."
+    },
+    {
+      "prompt": "Name an Asian UN member country.",
+      "answers": "China|India|Japan|Thailand|Vietnam|South Korea|North Korea|Indonesia|Malaysia|Singapore|Philippines|Pakistan|Bangladesh|Sri Lanka|Nepal|Bhutan|Maldives|Afghanistan|Iran|Iraq|Saudi Arabia|United Arab Emirates|Qatar|Kuwait|Bahrain|Oman|Yemen|Jordan|Lebanon|Syria|Israel|Turkey|Cyprus|Armenia|Azerbaijan|Georgia|Kazakhstan|Uzbekistan|Turkmenistan|Kyrgyzstan|Tajikistan|Mongolia|Myanmar|Laos|Cambodia|Brunei|Timor-Leste",
+      "source": "https://unstats.un.org/unsd/methodology/m49/",
+      "scope": "UN M49 Asia, sovereign UN members only. Russia is grouped in Europe; Palestine is not a UN member."
+    },
+    {
+      "prompt": "Name a Canadian province or territory.",
+      "answers": "Ontario|Quebec|British Columbia|Alberta|Manitoba|Nova Scotia|New Brunswick|Saskatchewan|Newfoundland and Labrador|Prince Edward Island|Yukon|Northwest Territories|Nunavut",
+      "source": "https://www.canada.ca/en/intergovernmental-affairs/services/provinces-territories.html",
+      "scope": "All ten provinces and all three territories."
+    },
+    {
+      "prompt": "Name a country that competed at Eurovision 2025.",
+      "answers": "Sweden|United Kingdom|France|Germany|Italy|Spain|Australia|Ireland|Austria|Belgium|Netherlands|Denmark|Finland|Norway|Iceland|Portugal|Poland|Greece|Cyprus|Malta|Switzerland|Luxembourg|Estonia|Latvia|Lithuania|Ukraine|Israel|Croatia|Slovenia|Serbia|Albania|Montenegro|San Marino|Armenia|Azerbaijan|Georgia|Czechia",
+      "source": "https://eurovision.tv/event/basel-2025/participants",
+      "scope": "All 37 countries, including semi-finalists."
+    },
+    {
+      "prompt": "Name a country where Spanish is an official national language.",
+      "answers": "Spain|Mexico|Argentina|Colombia|Chile|Peru|Venezuela|Ecuador|Bolivia|Paraguay|Uruguay|Cuba|Dominican Republic|Costa Rica|Panama|Guatemala|Honduras|El Salvador|Nicaragua|Equatorial Guinea",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_territories_where_Spanish_is_an_official_language",
+      "scope": "Sovereign countries where Spanish is official nationally in law or national practice; Puerto Rico is a territory."
+    },
+    {
+      "prompt": "Name a Commonwealth member country.",
+      "answers": "United Kingdom|Australia|Canada|New Zealand|India|Pakistan|Bangladesh|Sri Lanka|Singapore|Malaysia|South Africa|Nigeria|Kenya|Ghana|Jamaica|Barbados|Bahamas|Trinidad and Tobago|Malta|Cyprus|Fiji|Samoa|Tonga|Papua New Guinea|Solomon Islands|Vanuatu|Kiribati|Tuvalu|Nauru|Mauritius|Seychelles|Maldives|Botswana|Namibia|Zambia|Malawi|Mozambique|Rwanda|Uganda|Tanzania|Cameroon|Gabon|Togo|Sierra Leone|Gambia|Lesotho|Eswatini|Belize|Guyana|Antigua and Barbuda|Dominica|Grenada|Saint Lucia|Saint Kitts and Nevis|Saint Vincent and the Grenadines|Saint Kitts and Nevis",
+      "source": "https://thecommonwealth.org/our-member-countries",
+      "scope": "Current members as of 2025, not former members."
+    },
+    {
+      "prompt": "Name a team that played at Euro 2024.",
+      "answers": "Germany|England|Scotland|France|Spain|Italy|Portugal|Netherlands|Belgium|Denmark|Switzerland|Austria|Croatia|Serbia|Slovenia|Hungary|Poland|Czechia|Slovakia|Romania|Ukraine|Turkey|Georgia|Albania",
+      "source": "https://www.uefa.com/uefaeuro/history/seasons/2024/teams/",
+      "scope": "The 24 qualifying national teams."
+    },
+    {
+      "prompt": "Name a city that hosted the Summer Olympics before 2025.",
+      "answers": "Sydney|London|Paris|Tokyo|Beijing|Athens|Rio de Janeiro|Los Angeles|Melbourne|Atlanta|Barcelona|Seoul|Moscow|Montreal|Munich|Mexico City|Rome|Helsinki|Berlin|Amsterdam|Antwerp|Stockholm|St Louis",
+      "source": "https://olympics.com/en/olympic-games",
+      "scope": "Official Summer Games hosts through Paris 2024; cancelled Games excluded. Stockholm also held the 1956 equestrian events."
+    },
+    {
+      "prompt": "Name a team that played at the 2022 men's World Cup.",
+      "answers": "Argentina|France|Brazil|England|Portugal|Spain|Germany|Netherlands|Belgium|Croatia|Morocco|Australia|Japan|South Korea|United States|Canada|Mexico|Uruguay|Ecuador|Costa Rica|Saudi Arabia|Qatar|Iran|Tunisia|Cameroon|Ghana|Senegal|Serbia|Switzerland|Denmark|Poland|Wales",
+      "source": "https://www.fifa.com/en/tournaments/mens/worldcup/qatar2022",
+      "scope": "All 32 qualifying national teams."
+    }
+  ],
+  "SPORT": [
+    {
+      "prompt": "Name a sport or discipline contested at the Paris 2024 Olympics.",
+      "answers": "Athletics|Swimming|Basketball|Football|Tennis|Golf|Boxing|Cycling|Gymnastics|Rowing|Sailing|Rugby sevens|Hockey|Volleyball|Beach volleyball|Table tennis|Badminton|Archery|Shooting|Fencing|Judo|Taekwondo|Wrestling|Weightlifting|Canoeing|Triathlon|Modern pentathlon|Equestrian|Handball|Water polo|Diving|Artistic swimming|Surfing|Skateboarding|Sport climbing|Breaking|BMX|Mountain biking|Rhythmic gymnastics|Trampolining|Marathon swimming",
+      "source": "https://olympics.com/en/paris-2024/sports",
+      "scope": "Paris 2024; broader sports and named disciplines both count, but individual race distances do not."
+    },
+    {
+      "prompt": "Name a women's Grand Slam singles champion from the Open Era.",
+      "answers": "Serena Williams|Venus Williams|Ashleigh Barty|Naomi Osaka|Maria Sharapova|Iga Swiatek|Aryna Sabalenka|Coco Gauff|Emma Raducanu|Madison Keys|Simona Halep|Caroline Wozniacki|Angelique Kerber|Garbine Muguruza|Petra Kvitova|Victoria Azarenka|Li Na|Samantha Stosur|Sloane Stephens|Sofia Kenin|Bianca Andreescu|Barbora Krejcikova|Elena Rybakina|Jelena Ostapenko|Marketa Vondrousova|Flavia Pennetta|Francesca Schiavone|Ana Ivanovic|Justine Henin|Kim Clijsters|Amelie Mauresmo|Lindsay Davenport|Jennifer Capriati|Martina Hingis|Steffi Graf|Monica Seles|Arantxa Sanchez Vicario|Conchita Martinez|Gabriela Sabatini|Martina Navratilova|Chris Evert|Evonne Goolagong Cawley|Margaret Court|Billie Jean King|Virginia Wade|Hana Mandlikova|Tracy Austin|Mary Pierce|Kerry Reid|Virginia Ruzici|Sue Barker|Chris O'Neil|Barbara Jordan|Iva Majoli|Anastasia Myskina|Svetlana Kuznetsova|Ann Jones|Nancy Richey",
+      "source": "https://www.wtatennis.com/",
+      "scope": "Women's singles majors, 1968–2025; unambiguous surnames accepted."
+    },
+    {
+      "prompt": "Name an NBA team.",
+      "answers": "Los Angeles Lakers|Boston Celtics|Chicago Bulls|Golden State Warriors|New York Knicks|Miami Heat|Dallas Mavericks|Denver Nuggets|Milwaukee Bucks|Philadelphia 76ers|Phoenix Suns|San Antonio Spurs|Toronto Raptors|Brooklyn Nets|Los Angeles Clippers|Houston Rockets|Oklahoma City Thunder|Cleveland Cavaliers|Memphis Grizzlies|New Orleans Pelicans|Minnesota Timberwolves|Sacramento Kings|Atlanta Hawks|Utah Jazz|Portland Trail Blazers|Detroit Pistons|Indiana Pacers|Orlando Magic|Charlotte Hornets|Washington Wizards",
+      "source": "https://www.nba.com/teams",
+      "scope": "The 30 teams as of 2025; nicknames accepted."
+    },
+    {
+      "prompt": "Name a club in the 2024–25 English Premier League.",
+      "answers": "Manchester United|Liverpool|Arsenal|Chelsea|Manchester City|Tottenham Hotspur|Newcastle United|Aston Villa|Everton|West Ham United|Crystal Palace|Brighton and Hove Albion|Brentford|Fulham|Wolverhampton Wanderers|Bournemouth|Nottingham Forest|Leicester City|Ipswich Town|Southampton",
+      "source": "https://www.premierleague.com/en/tables",
+      "scope": "Those season's 20 clubs; familiar short names accepted."
+    },
+    {
+      "prompt": "Name an NFL team.",
+      "answers": "Kansas City Chiefs|Dallas Cowboys|San Francisco 49ers|New England Patriots|Green Bay Packers|Pittsburgh Steelers|Philadelphia Eagles|New York Giants|New York Jets|Buffalo Bills|Miami Dolphins|Baltimore Ravens|Cincinnati Bengals|Cleveland Browns|Denver Broncos|Las Vegas Raiders|Los Angeles Rams|Los Angeles Chargers|Chicago Bears|Detroit Lions|Minnesota Vikings|New Orleans Saints|Tampa Bay Buccaneers|Seattle Seahawks|Indianapolis Colts|Tennessee Titans|Houston Texans|Jacksonville Jaguars|Atlanta Falcons|Carolina Panthers|Arizona Cardinals|Washington Commanders",
+      "source": "https://www.nfl.com/teams/",
+      "scope": "The 32 teams as of 2025; nicknames accepted."
+    },
+    {
+      "prompt": "Name a men's Ballon d'Or winner from 1956–2024.",
+      "answers": "Lionel Messi|Cristiano Ronaldo|Ronaldo|Ronaldinho|Zinedine Zidane|Kaka|Luka Modric|Karim Benzema|Rodri|Luis Figo|Rivaldo|Michael Owen|George Weah|Roberto Baggio|Hristo Stoichkov|Marco van Basten|Ruud Gullit|Michel Platini|Paolo Rossi|Karl-Heinz Rummenigge|Kevin Keegan|Johan Cruyff|Franz Beckenbauer|Gerd Muller|George Best|Bobby Charlton|Eusebio|Denis Law|Lev Yashin|Omar Sivori|Luis Suarez|Alfredo Di Stefano|Raymond Kopa|Stanley Matthews|Igor Belanov|Oleg Blokhin|Allan Simonsen|Pavel Nedved|Andriy Shevchenko|Fabio Cannavaro|Matthias Sammer|Jean-Pierre Papin|Lothar Matthaus",
+      "source": "https://ballondor.com/",
+      "scope": "France Football's men's award through 2024. Ronaldo alone means the Brazilian; Suarez means the Spanish 1960 winner."
+    },
+    {
+      "prompt": "Name a man who reached ATP singles world number one by the end of 2025.",
+      "answers": "Novak Djokovic|Roger Federer|Rafael Nadal|Andy Murray|Carlos Alcaraz|Jannik Sinner|Pete Sampras|Andre Agassi|Boris Becker|John McEnroe|Bjorn Borg|Jimmy Connors|Ivan Lendl|Lleyton Hewitt|Pat Rafter|Andy Roddick|Daniil Medvedev|Gustavo Kuerten|Marat Safin|Juan Carlos Ferrero|Carlos Moya|Marcelo Rios|Yevgeny Kafelnikov|Thomas Muster|Jim Courier|Stefan Edberg|Mats Wilander|Ilie Nastase|John Newcombe",
+      "source": "https://www.atptour.com/en/rankings/former-no-1s",
+      "scope": "Official ATP singles rankings since 1973, not doubles."
+    },
+    {
+      "prompt": "Name a woman who reached WTA singles world number one by the end of 2025.",
+      "answers": "Serena Williams|Venus Williams|Steffi Graf|Martina Navratilova|Chris Evert|Martina Hingis|Monica Seles|Ashleigh Barty|Naomi Osaka|Iga Swiatek|Aryna Sabalenka|Maria Sharapova|Justine Henin|Kim Clijsters|Caroline Wozniacki|Victoria Azarenka|Angelique Kerber|Simona Halep|Garbine Muguruza|Lindsay Davenport|Jennifer Capriati|Amelie Mauresmo|Ana Ivanovic|Jelena Jankovic|Dinara Safina|Karolina Pliskova|Tracy Austin|Evonne Goolagong Cawley|Arantxa Sanchez Vicario",
+      "source": "https://www.wtatennis.com/rankings",
+      "scope": "Official WTA singles rankings since 1975."
+    },
+    {
+      "prompt": "Name a Major League Baseball team.",
+      "answers": "New York Yankees|Los Angeles Dodgers|Boston Red Sox|Chicago Cubs|New York Mets|San Francisco Giants|Philadelphia Phillies|Atlanta Braves|Houston Astros|Texas Rangers|Toronto Blue Jays|Baltimore Orioles|Seattle Mariners|San Diego Padres|St Louis Cardinals|Chicago White Sox|Detroit Tigers|Cleveland Guardians|Cincinnati Reds|Pittsburgh Pirates|Milwaukee Brewers|Minnesota Twins|Kansas City Royals|Tampa Bay Rays|Miami Marlins|Washington Nationals|Arizona Diamondbacks|Colorado Rockies|Los Angeles Angels|Athletics",
+      "source": "https://www.mlb.com/team",
+      "scope": "The 30 franchises in 2025; Oakland Athletics also resolves to Athletics."
+    },
+    {
+      "prompt": "Name a team in the 2024–25 NHL season.",
+      "answers": "Toronto Maple Leafs|Montreal Canadiens|Boston Bruins|New York Rangers|Chicago Blackhawks|Detroit Red Wings|Pittsburgh Penguins|Edmonton Oilers|Calgary Flames|Vancouver Canucks|Ottawa Senators|Winnipeg Jets|Colorado Avalanche|Vegas Golden Knights|Florida Panthers|Tampa Bay Lightning|Dallas Stars|Carolina Hurricanes|New Jersey Devils|New York Islanders|Philadelphia Flyers|Washington Capitals|St Louis Blues|Nashville Predators|Minnesota Wild|Los Angeles Kings|Anaheim Ducks|San Jose Sharks|Seattle Kraken|Buffalo Sabres|Columbus Blue Jackets|Utah Hockey Club",
+      "source": "https://www.nhl.com/info/teams",
+      "scope": "The 32 teams in that season; Utah Mammoth is a later name."
+    },
+    {
+      "prompt": "Name a country that hosted a men's or women's FIFA World Cup before 2025.",
+      "answers": "Brazil|Germany|France|Italy|Spain|England|United States|Australia|New Zealand|Canada|Japan|South Korea|China|Sweden|Argentina|Uruguay|Chile|Mexico|Switzerland|South Africa|Russia|Qatar",
+      "source": "https://www.fifa.com/en/tournaments",
+      "scope": "Senior World Cups actually held through 2023; future hosts excluded."
+    },
+    {
+      "prompt": "Name a men's Grand Slam singles champion from the Open Era.",
+      "answers": "Novak Djokovic|Roger Federer|Rafael Nadal|Andy Murray|Carlos Alcaraz|Jannik Sinner|Pete Sampras|Andre Agassi|Boris Becker|John McEnroe|Bjorn Borg|Jimmy Connors|Ivan Lendl|Lleyton Hewitt|Pat Rafter|Andy Roddick|Daniil Medvedev|Stan Wawrinka|Juan Martin del Potro|Marin Cilic|Dominic Thiem|Gustavo Kuerten|Marat Safin|Juan Carlos Ferrero|Carlos Moya|Yevgeny Kafelnikov|Thomas Muster|Jim Courier|Stefan Edberg|Mats Wilander|Ilie Nastase|John Newcombe|Rod Laver|Ken Rosewall|Arthur Ashe|Stan Smith|Jan Kodes|Manuel Orantes|Adriano Panatta|Guillermo Vilas|Roscoe Tanner|Vitas Gerulaitis|Mark Edmondson|Johan Kriek|Brian Teacher|Andres Gomez|Sergi Bruguera|Michael Chang|Richard Krajicek|Petr Korda|Goran Ivanisevic|Thomas Johansson|Albert Costa|Gaston Gaudio|Andres Gimeno|Pat Cash|Michael Stich",
+      "source": "https://www.atptour.com/en/news/grand-slam-titles-all-time",
+      "scope": "Men's singles majors, 1968–2025; unambiguous surnames accepted."
+    },
+    {
+      "prompt": "Name a country that played at the 2023 men's Rugby World Cup.",
+      "answers": "New Zealand|South Africa|Australia|England|France|Ireland|Scotland|Wales|Argentina|Italy|Japan|Fiji|Samoa|Tonga|Georgia|Portugal|Romania|Uruguay|Namibia|Chile",
+      "source": "https://www.world.rugby/tournaments/rugby-world-cup",
+      "scope": "The 20 qualified national teams."
+    },
+    {
+      "prompt": "Name a Formula One world drivers' champion through 2024.",
+      "answers": "Lewis Hamilton|Michael Schumacher|Max Verstappen|Sebastian Vettel|Fernando Alonso|Ayrton Senna|Alain Prost|Niki Lauda|Nelson Piquet|Nigel Mansell|Damon Hill|Mika Hakkinen|Kimi Raikkonen|Jenson Button|Nico Rosberg|Jacques Villeneuve|Mario Andretti|James Hunt|Emerson Fittipaldi|Jackie Stewart|Jochen Rindt|Denny Hulme|Jack Brabham|Jim Clark|Graham Hill|Phil Hill|John Surtees|Mike Hawthorn|Juan Manuel Fangio|Alberto Ascari|Giuseppe Farina|Keke Rosberg|Alan Jones|Jody Scheckter",
+      "source": "https://www.formula1.com/en/results/2024/drivers",
+      "scope": "Drivers' champions 1950–2024; shared surnames require more detail."
+    },
+    {
+      "prompt": "Name a club in the 2024–25 Spanish La Liga.",
+      "answers": "Real Madrid|Barcelona|Atletico Madrid|Athletic Bilbao|Real Sociedad|Real Betis|Sevilla|Valencia|Villarreal|Celta Vigo|Osasuna|Mallorca|Girona|Getafe|Rayo Vallecano|Espanyol|Alaves|Leganes|Valladolid|Las Palmas",
+      "source": "https://www.laliga.com/en-GB/clubs",
+      "scope": "The 20 clubs in that season."
+    },
+    {
+      "prompt": "Name a team that played in the 2024 men's T20 World Cup.",
+      "answers": "India|Australia|England|Pakistan|New Zealand|South Africa|Sri Lanka|Bangladesh|Afghanistan|West Indies|United States|Canada|Scotland|Ireland|Netherlands|Namibia|Oman|Nepal|Uganda|Papua New Guinea",
+      "source": "https://www.icc-cricket.com/tournaments/t20cricketworldcup",
+      "scope": "The 20 qualifying cricket teams; West Indies count as one team."
+    }
+  ]
+}
