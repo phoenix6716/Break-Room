@@ -94,8 +94,8 @@
  props();last=snapshot();
  // Keep the timing game's measurement ahead of all presentation work.
  if(scene==='inner-clock'){
-  for(const type of ['click','keydown','pointerup','submit'])document.addEventListener(type,event=>{
-   if(root.contains(event.target)){armed=!running();schedule();}
+  for(const type of ['pointerdown','click','keydown','pointerup','submit'])document.addEventListener(type,event=>{
+   if(event.composedPath().includes(root)){armed=!running();schedule();}
   },{passive:true});
   new MutationObserver(()=>{if(running()){armed=false;cancel();}}).observe(document.body,{attributes:true,attributeFilter:['class']});
  }else{

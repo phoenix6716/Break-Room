@@ -51,7 +51,7 @@ async function action(p,id){
   const value=await p.evaluate(()=>currentItem.prices[country]);await p.locator('#guessInput').fill(String(value));await p.locator('#submitBtn').click();assert(await p.locator('#resultArea.show').isVisible());
  }else if(id==='inner-clock'){
   await p.locator('#clock-action').click();
-  const html=await p.locator('#engine-slot').innerHTML(),count=(await motions(p)).length;
+  const html=await p.locator('#engine-slot').innerHTML(),count=(await motions(p)).length;await p.waitForTimeout(200);
   for(let i=0;i<5;i++){await pause(p);assert.equal(await p.evaluate(()=>document.getAnimations().length),0,'No movement gives a timing cue');}
   assert.equal(await p.locator('#engine-slot').innerHTML(),html,'No visual ticks while measuring');
   assert.equal((await motions(p)).length,count,'Presentation does no work during the attempt');
