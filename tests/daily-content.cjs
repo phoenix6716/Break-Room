@@ -34,7 +34,7 @@ const specs=defs.map(d=>{
  pool.forEach(p=>assert(M[d.validate](p),d.name+' invalid content '+p.id));
  return {...d,bankCount:pool.length,pool,identity:p=>p.id,select:day=>M.daily(pool,day)};
 });
-const stacks=bank('games/stack-up/stacks.js','STACK_UP_STACKS'),familiar=bank('games/stack-up/familiar-stacks.js','STACK_UP_FAMILIAR_STACKS'),stackPool=[...stacks,...familiar];
+const stacks=bank('games/stack-up/stacks.js','STACK_UP_STACKS'),familiar=bank('games/stack-up/familiar-stacks.js','STACK_UP_FAMILIAR_STACKS'),replacementMap=new Map(box.window.STACK_UP_REPLACEMENT_STACKS.map(s=>[s.id,s])),stackPool=[...stacks.map(s=>replacementMap.get(s.id)||s),...familiar];
 const stackFunctions=read('games/stack-up/stack-up.js').split('\n').filter(l=>/^ function (seeded|shuffle|dailySet)\(/.test(l)).join('\n');
 assert.equal((stackFunctions.match(/ function /g)||[]).length,3,'Keep extracting the real Stack Up selector');
 const stackFor=pool=>vm.runInNewContext('const pool='+JSON.stringify(pool)+';\n'+stackFunctions+'\n(day)=>dailySet(day).map(i=>pool[i]);');

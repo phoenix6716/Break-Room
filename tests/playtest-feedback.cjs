@@ -32,6 +32,35 @@ for(const path of ['scripts/build-familiar-stacks.cjs','scripts/build-alibi-evid
  vm.runInNewContext(fs.readFileSync(path,'utf8'),{require:id=>id==='node:fs'?fake:id==='../alibi-model.js'?{}:require(id),globalThis:{BREAK_ROOM_ALIBI:M}});
  for(const [p,v]of files)assert.equal(v,fs.readFileSync(p,'utf8'),'Reproducible source: '+p);
 }
+
+const replacements=JSON.parse(JSON.stringify(box.window.STACK_UP_REPLACEMENT_STACKS));
+const originalStacks=JSON.parse(JSON.stringify(box.window.STACK_UP_STACKS));
+const retiredQuantitative=new Set(['PERIODIC TABLE','METALS','MATERIALS','GEOGRAPHY','AIRPORTS']);
+assert.equal(replacements.length,105);
+assert.deepEqual(replacements.map(s=>s.id).sort(),originalStacks.filter(s=>retiredQuantitative.has(s.category)).map(s=>s.id).sort());
+const byId=new Map(replacements.map(s=>[s.id,s]));
+const active=[...originalStacks.map(s=>byId.get(s.id)||s),...familiar].filter(s=>s.category!=='NUMBER SENSE');
+assert.equal(active.length,294);assert.equal(active.filter(s=>s.collection!=='familiar').length,134);
+const prohibited=/atomic number|melting point|density|surface area|latitude|longitude|field elevation|lengths of time|fortnight|Monday-to-Sunday|months in order|fraction|percentages|cuboids|diagonals|interior angle/i;
+const fingerprints=new Set();
+for(const s of active){
+ assert(!retiredQuantitative.has(s.category));assert(!prohibited.test(s.prompt),s.id+' prohibited numerical task');
+ assert.equal(s.cards.length,5);s.cards.forEach((c,i)=>{assert.equal(c.detail,'');assert.equal(c.value,i+1);});
+ const fp=s.prompt+'|'+s.cards.map(c=>c.name).join('|');assert(!fingerprints.has(fp),'Duplicate active stack '+s.id);fingerprints.add(fp);
+}
+const replacementAudit=JSON.parse(fs.readFileSync('content/stack-up-familiar-challenge-audit.json')).stacks;
+for(const s of replacements){const a=replacementAudit.find(a=>a.id===s.id);assert(a);assert(a.sources.length&&a.sources.every(s=>s.startsWith('https://')));assert.deepEqual(s.cards.map(c=>c.name),a.ordered.map(c=>c.name));assert(a.ordered.every((c,i)=>!i||c.value>a.ordered[i-1].value));}
+const oldBox={window:{}};vm.runInNewContext(fs.readFileSync('content/archive/2026-10-27/stack-up-familiar-stacks.js','utf8'),oldBox);
+const oldFamiliar=JSON.parse(JSON.stringify(oldBox.window.STACK_UP_FAMILIAR_STACKS));
+assert.deepEqual(familiar.map(s=>s.id),oldFamiliar.map(s=>s.id));
+assert.equal(familiar.filter((s,i)=>JSON.stringify(s)!==JSON.stringify(oldFamiliar[i])).length,40);
+const selectorSource=fs.readFileSync('games/stack-up/stack-up.js','utf8').split('\n').filter(l=>/^ function (seeded|shuffle|dailySet)\(/.test(l)).join('\n');
+const select=pool=>vm.runInNewContext('const pool='+JSON.stringify(pool)+';'+selectorSource+';(day)=>dailySet(day).map(i=>pool[i]);');
+const beforeSelect=select([...originalStacks,...oldFamiliar]),afterSelect=select([...originalStacks.map(s=>byId.get(s.id)||s),...familiar]);
+for(let i=0;i<64;i++){const day=new Date(Date.UTC(2026,9,25+i)).toISOString().slice(0,10);assert.deepEqual(Array.from(afterSelect(day),s=>s.id),Array.from(beforeSelect(day),s=>s.id),'Stable Daily slots '+day);}
+assert(active.some(s=>/release|publication|historical milestones/i.test(s.prompt)),'Keep chronology');
+console.log('PASS Stack Up content policy: 40 Daily and 105 Challenge replacements, all active filters free of numerical/time-unit tasks, unique content and stable date slots.');
+
 const day='2026-10-23',cases=M.daily([...box.window.ALIBI_CASES,...bank],day),picks=cases.map(p=>M.solve(p)[0].culprit),run={version:1,day,edits:0,round:3,phase:'summary',cases,picks,selection:picks[3],notes:cases.map(M.notes)};
 const key=M.PREFIX+day,raw=JSON.stringify(run);assert.equal(M.record(run,day).arcadeScore,100);
 assert.equal(BREAK_ROOM_CLOUD_SAVES.clean('alibi',{[key]:raw})[key],raw);

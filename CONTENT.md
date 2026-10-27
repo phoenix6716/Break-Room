@@ -1,3 +1,11 @@
+## Stack Up without numerical trivia or time-unit tasks — owner correction, 27 October 2026
+
+The owner explicitly wants to keep ordering films/books by release and historical events by date, while removing maths, number facts and time-unit questions. New Dailies replace 32 weekday/month/duration slots and eight continent-area slots with story, nature, crafting and everyday-process ordering. Keep the other 120 familiar stacks, all 160 IDs, five 32-item lanes and their exact Daily assignments.
+
+Unlimited replaces 105 atomic-number, melting-point, density, area, coordinate and elevation slots with plot, quest, route and process ordering. `content/stack-up-familiar-challenge-topics.json` defines the replacements; `scripts/build-familiar-stacks.cjs` emits them alongside the familiar bank and `content/stack-up-familiar-challenge-audit.json`. The original 208-row `stacks.js` stays frozen; the engine overlays replacements by ID before selecting new practice. Challenge mix remains 134 stacks, Familiar stays 160, and the 74 old NUMBER SENSE stacks stay excluded from every filter.
+
+Do not rewrite captured Dailies or old scoring. `content/archive/2026-10-27/stack-up-familiar-stacks.js` preserves the prior familiar bank. Test every Unlimited filter, 32-day content/date-slot continuity, reproducible source generation and old numerical/time-unit snapshot completion. No SQL update or save reset is required. See `design/content-reviews/2026-10-27-stack-up.json`.
+
 ## Broader answer lists — 27 October 2026
 
 Revision 3 integrates the 96 drafted WORLD, SPORT, FILM, BOOKS, GAMES and SPACE slots, with 4013 canonical answers across the full 160-question bank. The other four topics remain unchanged. IDs, topics, calendar slots, 32-day rotation, 30-second deadlines, first-result locks and native/Arcade formulas are unchanged. Existing full snapshots keep their captured questions and ratings. Revision 2 is archived under `content/archive/2026-10-26/`.
