@@ -8,3 +8,22 @@
 #pack-notice:empty{display:none}#pack-notice{font:14px/1.6 Arial,sans-serif;padding:10px;border-left:4px solid #3e86a5;background:#e4f2f4}.pack-heading{scroll-margin-top:110px}.pack-heading:focus-visible{outline:3px solid #17263a;outline-offset:4px}
 @media(max-width:650px){#game-panel{padding:20px 16px}.pack-workbench{grid-template-columns:1fr;gap:18px}.suitcase-area{position:static;grid-row:1}.suitcase{min-height:130px;padding:12px}.bag-contents{min-height:55px}.packing-tip{display:none}.pack-hud strong{font-size:19px}.pack-item{min-height:66px}.pack-result-actions{flex-direction:column}.pack-result-actions>*{width:100%}}
 @media(prefers-reduced-motion:reduce){.pack-item,.pack-submit{transition:none;animation:none}}
+
+/* Every native item has original artwork, shared by the shelf, bag and recaps. */
+.pack-page .pack-item{min-height:88px;gap:12px}
+.pack-page .pack-item .item-symbol{display:grid;place-items:center;flex:0 0 64px;width:64px;height:64px;padding:0;background:transparent;border:0;font-size:0}
+.pack-item-art{display:block;flex:none;width:64px;height:64px;object-fit:contain;user-select:none}
+.pack-page .bag-contents{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));height:200px;min-height:200px;overflow-y:auto;overscroll-behavior:contain;align-content:start;padding:3px 5px 6px 0;scrollbar-width:thin}
+.pack-page .bag-empty{grid-column:1/-1;align-self:center;margin:auto;text-align:center}
+.pack-page .bag-tag{display:flex;flex-direction:column;align-items:center;gap:4px;padding:7px;text-align:center;min-width:0}
+.pack-page .bag-tag .pack-item-art{width:42px;height:42px}
+.pack-page .bag-tag span{font:700 11px/1.4 Arial,sans-serif;overflow-wrap:anywhere}
+.pack-art-recap{display:grid;grid-template-columns:repeat(auto-fit,minmax(76px,1fr));gap:8px;list-style:none;margin:14px 0 20px;padding:0}
+.pack-art-recap li{display:flex;flex-direction:column;align-items:center;justify-content:start;gap:6px;min-width:0;padding:9px 5px;border:1px solid #17263a;background:#fffaf0;text-align:center}
+.pack-art-recap .pack-item-art{width:46px;height:46px}
+.pack-art-recap span{font:700 11px/1.4 Arial,sans-serif;overflow-wrap:anywhere}
+@media(max-width:650px){.pack-page .pack-item .item-symbol,.pack-page .pack-item .item-symbol .pack-item-art{width:56px;height:56px;flex-basis:56px}.pack-page .pack-item{gap:10px;padding:10px;min-height:80px}.pack-page .bag-contents{height:180px;min-height:180px}}
+
+.pack-page .pack-over{min-height:44px}
+.pack-page #capacity-remaining{min-height:3em;font-size:12px;line-height:1.5}
+@media(max-width:650px){.pack-page .pack-hud strong{min-height:2.6em}}
