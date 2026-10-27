@@ -3,7 +3,7 @@
  'use strict';
  const $=id=>document.getElementById(id),api=window.BREAK_ROOM_ACCOUNTS,score=window.BREAK_ROOM_SCORE;
  const games=[['shift-work','DESK JAM'],['hidden-gem','SLEEPER'],['seating-chart','SEATING CHART'],['clue-ladder','CLUE LADDER'],['time-drop','TIME DROP'],['lowball','LOWBALL'],['stack-up','STACK UP'],['pack','PACK'],['laser','LASER'],['inner-clock','TIME SENSE']];
- let hub=null,records=[],today=null,userId=null,requestId=0,busy=false,settingsDirty=false;
+ let hub=null,records=[],today=null,userId=null,requestId=0,busy=false,settingsDirty=false,refreshQueued=false,refreshTimer=null;
  const node=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;};
  function status(text,error=false){$('friend-status').textContent=text;$('friend-status').dataset.error=String(error);}
  function errorText(error){if(['42P01','PGRST202','PGRST205'].includes(error?.code))return 'Friends setup is not installed yet. The site owner needs to run the friends database script in Supabase.';if(/fetch|network|offline/i.test(error?.message||''))return 'Could not connect. Check your connection and refresh. Your game saves are safe.';return error?.message||'Could not update your friends. Please try again.';}
@@ -44,15 +44,16 @@
   }));
  }
  async function refresh(message='Showing your latest cloud scores.'){
-  if(busy)return;const user=api.getUser();if(!user){clearPrivate();$('friend-guest').hidden=false;status('Sign in to join your friends.');return;}
+  if(busy){refreshQueued=true;return;}refreshQueued=false;const user=api.getUser();if(!user){clearPrivate();$('friend-guest').hidden=false;status('Sign in to join your friends.');return;}
   busy=true;const id=++requestId,expected=user.id;controls(true);
   try{
+   const synced=await api.sync();if(id!==requestId||api.getUser()?.id!==expected)return;
    const next=await api.friendsRPC('friend_hub');if(id!==requestId||api.getUser()?.id!==expected)return;
    hub=next;records=[];today=null;renderHub();$('friend-score-list').replaceChildren();
    if(hub.me){const [result,hidden,shift]=await Promise.all([api.friendsRPC('friend_scores'),api.friendsRPC('hidden_gem_friend_scores'),api.friendsRPC('shift_work_friend_scores')]);if(id!==requestId||api.getUser()?.id!==expected)return;records=[...result.records,...hidden.records,...shift.records];today=result.today;compare();}
-   status(hub.me?message:'Choose a name and create your friend code.');
+   status(hub.me?(synced===false?'Your new browser results could not sync. Showing cloud scores; open Account to retry.':synced===null&&message==='Showing your latest cloud scores.'?'Showing cloud scores. Open Account and enable cloud saves to include this browser’s progress.':message):'Choose a name and create your friend code.',synced===false);
   }catch(error){if(id===requestId){records=[];$('friend-score-list').replaceChildren();status(errorText(error),true);}}
-  finally{busy=false;controls(!api.getUser());if(api.getUser()?.id!==expected)refresh();}
+  finally{busy=false;controls(!api.getUser());if(api.getUser()?.id!==expected)refresh();else if(refreshQueued)scheduleRefresh();}
  }
  async function mutate(args,message){
   if(busy)return;busy=true;controls(true);const expected=api.getUser()?.id,id=++requestId;
@@ -66,7 +67,10 @@
  $('friend-settings').oninput=()=>settingsDirty=true;
  $('friend-settings').onsubmit=e=>{e.preventDefault();mutate({p_action:'settings',p_name:$('friend-name').value.trim(),p_share:$('share-scores').checked},'Your name and sharing setting are saved.');};
  $('comparison-window').onchange=compare;$('comparison-game').onchange=compare;
- $('refresh-friends').onclick=async()=>{await api.sync();await refresh();};
+ $('refresh-friends').onclick=()=>refresh();
+ function scheduleRefresh(){clearTimeout(refreshTimer);refreshTimer=setTimeout(()=>{if(!document.hidden)refresh();},250);}
+ window.addEventListener('break-room:save',scheduleRefresh);
+ window.addEventListener('storage',event=>{if(event.key&&window.BREAK_ROOM_CLOUD_SAVES.games.some(g=>window.BREAK_ROOM_CLOUD_SAVES.belongs(g,event.key)))scheduleRefresh();});
  $('copy-code').onclick=async()=>{try{await navigator.clipboard.writeText($('my-friend-code').textContent);status('Friend code copied.');}catch{status('Could not copy automatically. Select the code above and copy it.');}};
  async function boot(){try{await api.ready;userId=api.getUser()?.id||null;await refresh();window.addEventListener('break-room:auth-change',()=>{const next=api.getUser()?.id||null;if(next===userId)return;userId=next;clearPrivate();$('friend-guest').hidden=!!next;status(next?'Loading your friends…':'Sign in to join your friends.');if(!busy)refresh();});document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh();});setInterval(()=>{if(!document.hidden)refresh();},60000);}catch(error){status(errorText(error),true);}}
  boot();

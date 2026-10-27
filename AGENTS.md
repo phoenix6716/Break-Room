@@ -354,3 +354,8 @@ The owner asked for actual game objects as well as themed backgrounds. `game-art
 ## Smooth Desk Jam movement — owner direction, 27 October 2026
 
 Desk Jam furniture must follow constrained pointer pixels continuously and glide to committed grid positions. The native engine owns 220ms slide, snap, Undo and Restart transforms; shared scenes must not add a second furniture transform. Moves, scores and saves commit immediately, with no action lock while animating. Re-grabbing furniture keeps its current visible position. Preserve all controls/boards, quiet hydration/remote updates, reduced-motion fallback and cancellation when backgrounded. Test actual fractional drags, rapid input and saved positions.
+
+
+## Friends uses fresh synced results — owner correction, 27 October 2026
+
+Friends must await the current own-account upload before reading comparisons. `BREAK_ROOM_ACCOUNTS.sync()` coalesces concurrent callers and drains newer local snapshots that arrive during upload. Refresh visible comparisons after native saves in other tabs; preserve private server-derived scores, first-completion locks, account ownership and explicit guest import. Never substitute arbitrary local/guest records for a signed-in player's cloud scores. Surface failed/inactive sync rather than claiming browser progress is shared.

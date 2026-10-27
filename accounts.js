@@ -6,7 +6,7 @@
  const generationKey='br:cloud:generation',ownerKey='br:cloud:owner',guestKey='br:cloud:guest',cacheKey=id=>'br:cloud:cache:'+id;
  const $=id=>document.getElementById(id),isAccount=!!$('account-content'),isGame=location.pathname.includes('/games/');
  let resolveReady;const ready=new Promise(resolve=>resolveReady=resolve);
- let client=null,session=null,busy=false,lastUploaded='',syncTimer=null,initialOwner=null,redirecting=false;
+ let client=null,session=null,busy=false,lastUploaded='',syncTimer=null,uploadTask=null,initialOwner=null,redirecting=false;
  // Auth, ownership and generation events can arrive together on logout.
  // Navigate once so a second event cannot abort the first page load.
  function openAccount(){if(redirecting)return;redirecting=true;location.replace(accountURL);}
@@ -61,20 +61,31 @@
   return result;
  }
  function serial(task){return navigator.locks?navigator.locks.request('break-room-cloud-saves',task):task();}
- async function syncUpload(){
-  if(busy||!session||document.hidden)return;
+ function syncUpload(){
+  // Callers must join an upload already in flight, rather than read older scores.
+  if(uploadTask)return uploadTask;
+  if(busy||!session||document.hidden)return Promise.resolve(null);
+  uploadTask=uploadLatest().finally(()=>{uploadTask=null;});
+  return uploadTask;
+ }
+ async function uploadLatest(){
   busy=true;
   try{
-   const userId=session.user.id;if(owner()!==userId)return;
-   const local=snapshot(),signature=JSON.stringify(local);if(signature===lastUploaded)return;
-   await serial(async()=>{
-    if(owner()!==userId||session?.user.id!==userId)return;
-    backup(cacheKey(userId),local);
-    await exchange(userId,local);
-    if(owner()!==userId)return;
-    lastUploaded=signature;status('Saved to your account. Load cloud saves on your other device before playing.');notify('saved');
-   });
-  }catch(error){status(friendly(error),true);}finally{busy=false;}
+   const userId=session.user.id;
+   while(owner()===userId&&session?.user.id===userId&&!document.hidden){
+    const local=snapshot(),signature=JSON.stringify(local);if(signature===lastUploaded)return true;
+    await serial(async()=>{
+     if(owner()!==userId||session?.user.id!==userId)return;
+     backup(cacheKey(userId),local);
+     await exchange(userId,local);
+     if(owner()!==userId||session?.user.id!==userId)return;
+     lastUploaded=signature;status('Saved to your account. Load cloud saves on your other device before playing.');notify('saved');
+    });
+    // A game may finish while the previous snapshot is uploading. Drain the latest
+    // owned snapshot before resolving sync() to a comparison page.
+   }
+   return null;
+  }catch(error){status(friendly(error),true);return false;}finally{busy=false;}
  }
  function restoreGuest(){
   const id=owner();if(!id)return;
