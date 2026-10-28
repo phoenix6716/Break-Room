@@ -1,3 +1,7 @@
+## Current navigation on Log in — owner direction, 28 October 2026
+
+Log in uses the same shared hub top bar as Account: Home, Leagues, Friends, Profile, centred cube logo and auth-aware account/profile links. Preserve the sign-in form, recovery links, disabled no-JavaScript fallback and save behaviour.
+
 ## League standings freshness — owner bug report, 28 October 2026
 
 Leagues must await the current account upload before reading standings, refresh on native-save events and cross-tab game storage changes, and drain refreshes arriving while busy. Failed sync and inactive cloud saves must be shown explicitly. Never import guest results automatically or replace server scores with local totals.
