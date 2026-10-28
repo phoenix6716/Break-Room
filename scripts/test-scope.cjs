@@ -105,6 +105,7 @@ function selectChecks(changed,available,{full=false}={}){
   else if(/^(?:game-shell|game-access|game-dialog|game-layout|game-flow|daily-reset|break-room|styles|placeholder-layout|prototype-pages)\.(?:js|css)$/.test(file)){layout();}
   else if(file==='stack-layout.css'){game('stack-up');add('layout-goals.cjs');}
   else if(/^(?:navigation|game-config|game|menu|menu-brand)\.(?:js|css)$/.test(file)||file==='game.html'){add('smoke.cjs','game-surfaces.cjs');}
+  else if(/^pricing\.(?:html|css)$/.test(file)){add('pricing.cjs');}
   else if(/^(?:privacy|terms|contact)\.html$/.test(file)||file==='legal.css'){add('legal-pages.cjs');legal=true;}
   else if(file==='index.html'){add('smoke.cjs','homepage-reset.cjs');}
   else if(file==='style-guide.html'||file.startsWith('assets/')){add('smoke.cjs');}
