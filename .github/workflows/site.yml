@@ -133,6 +133,7 @@ jobs:
                           assert b"Desk Jam" in body and b"Sleeper" in body and b"Time Sense" in body and b"Inner Clock" not in body, path
                       elif path == "games/lowball/engine/index.html":
                           assert b"How To Play</button>" in body and b"game-help.js?v=first-visit-20261028" in body and b'data-game="lowball"' in body, "Missing Lowball first-visit instructions"
+                          assert b'class="mobile-stats-label">Stats</span>' in body and b"game-help.css?v=mobile-stats-20261028" in body, "Missing Lowball mobile stats layout"
                           assert b'data-game-art="lowball"' in body and b"game-art.js?v=objects-20261027" in body, path
                           assert b"DAILY_ITEM_PERIOD = 32" in body and b"DAILY_ITEM_CUTOVER = 25" in body and b"Fiskars scissors" in body, path
                       elif path == "leagues.html":
@@ -146,6 +147,7 @@ jobs:
                       with urllib.request.urlopen(request, timeout=20) as response:
                           page = response.read()
                       assert b"How To Play</button>" in page and b"game-help.js?v=first-visit-20261028" in page and ('data-game="' + current + '"').encode() in page, "Missing labelled first-visit instructions: " + current
+                      assert b'class="mobile-stats-label">Stats</span>' in page and b"game-help.css?v=mobile-stats-20261028" in page, "Missing mobile stats layout: " + current
                       if current == "clue-ladder":
                           assert b"clue-ladder.css" in page and b"clue-ladder.js" in page and b"puzzles.js?v=familiar-20261026" in page, "Missing original Clue Ladder assets"
                           assert b'data-game-scene=' not in page and b'data-game-art=' not in page and b"game-scenes.css" not in page and b"game-scenes.js" not in page and b"game-art.css" not in page and b"game-art.js" not in page, "Clue Ladder must keep its original appearance"

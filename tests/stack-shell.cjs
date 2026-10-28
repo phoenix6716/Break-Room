@@ -23,7 +23,8 @@ async function checkLayout(page, width) {
   } else assert.ok(reset.y + reset.height <= modes.y);
   if (width <= 650) {
     const title=await page.locator('.br-game-title-group').boundingBox(),stats=await page.locator('.quick-stats').boundingBox(),tools=await page.locator('.br-game-tools').boundingBox();
-    assert.ok(Math.abs(title.y+title.height/2-stats.y-stats.height/2)<1,'Title and centred stats share the first row');
+    assert.ok(stats.y>=title.y+title.height,'Full-width stats sit beneath the title');
+    assert.ok(Math.abs(stats.width-head.width)<1,'Stats span the mobile header');
     assert.ok(tools.y>=Math.max(title.y+title.height,stats.y+stats.height),'Labelled tools have their own phone row');
   } else for (const selector of ['.br-game-title-group', '.quick-stats', '.br-game-tools']) {
     const box = await page.locator(selector).boundingBox();

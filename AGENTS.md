@@ -1,3 +1,7 @@
+## Approved mobile stats strip — owner decision, 28 October 2026
+
+All ten games use the approved mobile preview at widths through 650px: title on its own row, full-width three-column Streak/Best/Played strip below with bold 2px navy borders and no shadow, then How To Play at the left and a text Stats button at the right. Keep the centred reset card. Desktop retains its original header and trophy icon. This supersedes the earlier phone title/stats same-row direction. Native stats, scores, saves and popup behaviour stay unchanged.
+
 ## Mobile game controls — owner direction, 28 October 2026
 
 On phones, How To Play sits at the far left of the tools row and the trophy stays at the far right, vertically aligned. Centre the daily-reset card and its contents. Keep the title and centred stats on the preceding row and preserve desktop layouts.

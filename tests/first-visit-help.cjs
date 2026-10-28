@@ -5,7 +5,7 @@ async function game(p,id){await p.goto(base+'/games/'+id+'/index.html');return i
 const selectors=id=>id==='lowball'?['#helpBtn','#helpModal']:id==='stack-up'?['#help-open','#help-dialog']:['#help-popup-open','#help-popup'];
 (async()=>{const browser=await chromium.launch({executablePath:process.env.ARCADE_CHROMIUM||'/usr/bin/chromium',args:['--no-sandbox']});try{
  let stackSnapshot;
- for(const width of [320,390,768,1440]){
+ for(const width of [320,390,650,768,1440]){
   const c=await browser.newContext({viewport:{width,height:1000},reducedMotion:'reduce'}),p=await c.newPage();
   const fixed=new Date('2026-10-28T01:00:00Z');await p.clock.setFixedTime(fixed);
   for(const id of ids){console.log('Checking '+id+' first visit at '+width);
@@ -25,15 +25,26 @@ const selectors=id=>id==='lowball'?['#helpBtn','#helpModal']:id==='stack-up'?['#
    }
    if(width<=650){
     const tools=await f.locator(id==='lowball'?'.head-btns':'.br-game-tools').boundingBox();
-    const help=await f.locator(button).boundingBox(),trophy=await f.locator(id==='lowball'?'#statsBtn':id==='stack-up'?'#stats-open':'#stats-popup-open').boundingBox();
+    const statsButton=f.locator(id==='lowball'?'#statsBtn':id==='stack-up'?'#stats-open':'#stats-popup-open');
+    assert.equal(await statsButton.innerText(),'Stats',id+' mobile Stats label');
+    const title=await f.locator(id==='lowball'?'.lowball-title-group':'.br-game-title-group').boundingBox();
+    const strip=f.locator(id==='lowball'?'#statStrip':'.quick-stats'),stripBox=await strip.boundingBox();
+    assert(stripBox.y>=title.y+title.height,id+' stats below title');
+    assert(Math.abs(stripBox.x-tools.x)<1&&Math.abs(stripBox.width-tools.width)<1,id+' full-width stats');
+    assert(tools.y>=stripBox.y+stripBox.height,id+' tools below stats');
+    assert.deepEqual(await strip.evaluate(e=>{const s=getComputedStyle(e);return [s.borderTopWidth,s.borderTopColor,s.boxShadow]}),['2px','rgb(23, 38, 58)','none'],id+' approved bold border without shadow');
+    const help=await f.locator(button).boundingBox(),trophy=await statsButton.boundingBox();
     assert(Math.abs(help.x-tools.x)<1,id+' Help at the far left');
-    assert(Math.abs(trophy.x+trophy.width-tools.x-tools.width)<1,id+' trophy at the far right');
+    assert(Math.abs(trophy.x+trophy.width-tools.x-tools.width)<1,id+' Stats at the far right');
     assert(Math.abs(help.y+help.height/2-trophy.y-trophy.height/2)<1,id+' controls on the same row');
     const reset=await f.locator('.daily-reset-card').boundingBox();
     const viewport=await f.evaluate(()=>innerWidth);
     assert(Math.abs(reset.x+reset.width/2-viewport/2)<2,id+' reset card centred');
     assert.equal(await f.locator('.daily-reset-card').evaluate(e=>getComputedStyle(e).textAlign),'center',id+' countdown text centred');
    }
+   const statsControl=f.locator(id==='lowball'?'#statsBtn':id==='stack-up'?'#stats-open':'#stats-popup-open');
+   if(width>650)assert.equal(await statsControl.locator('.mobile-stats-label').isVisible(),false,id+' desktop trophy retained');
+   await statsControl.click();const statsDialog=f.locator(id==='lowball'?'#statsModal':id==='stack-up'?'#stats-dialog':'#stats-popup');await statsDialog.waitFor({state:'visible'});await p.keyboard.press('Escape');await statsDialog.waitFor({state:'hidden'});assert(await statsControl.evaluate(e=>e===document.activeElement),id+' Stats focus restored');
    await p.reload();f=id==='lowball'?await(await p.locator('iframe').elementHandle()).contentFrame():p;await f.locator(button).waitFor();assert.equal(await f.locator(dialog).isVisible(),false,id+' returning visit');
    await f.locator(button).click();await f.locator(dialog).waitFor({state:'visible'});await p.keyboard.press('Escape');await f.locator(dialog).waitFor({state:'hidden'});
    assert.deepEqual(errors,[]);p.off('pageerror',onError);
