@@ -4,3 +4,19 @@
 @media(max-width:650px){.laser-page #game-panel{padding:20px 12px}.laser-hud{font-size:10px}.laser-feedback{padding:14px}.laser-actions{flex-direction:column}.laser-actions>*{width:100%;min-width:0}.laser-recap{grid-template-columns:1fr}.laser-heading{font-size:28px}}
 @media(max-width:360px){.laser-page .br-game-page{padding-left:4px;padding-right:4px}.laser-page #game-panel{padding:18px 0;border-width:2px}.laser-page #engine-slot>p,.laser-page .laser-heading,.laser-page .laser-hud,.laser-page .laser-actions,.laser-page .laser-feedback,.laser-page .laser-recap,.laser-page .arcade-score,.laser-page .practice-panel,.laser-page .laser-summary-review{margin-left:8px;margin-right:8px}.laser-page .laser-summary-review .laser-stage{width:calc(100% + 16px);margin-left:-8px}.laser-page #fire-beam{width:calc(100% - 16px)}}
 @media(prefers-reduced-motion:reduce){.draw-beam{animation:none;stroke-dasharray:none}}
+
+/* Keep the source separate from mirrors, including mirrors on the entry tile. */
+.laser-stage{padding-top:58px;background:transparent}
+.laser-board{position:relative}
+.laser-source{position:absolute;top:6px;left:8px;display:flex;align-items:center;gap:10px;color:#17263a;pointer-events:none}
+.laser-source .laser-emitter{display:grid;place-items:center;width:44px;height:40px;flex:none;color:#17263a;background:#f18e79;border:3px solid #17263a;box-shadow:2px 2px #17263a;font:900 30px/1 Arial,sans-serif}
+.laser-source-label{font:800 12px/1.4 ui-monospace,monospace}
+.laser-grid .laser-cell.entry{border-left:5px solid #c34732}
+.laser-board .laser-beam{inset:0}
+@media(min-width:650px){
+ .laser-stage{width:min(100%,536px);padding-top:0;padding-left:56px}
+ .laser-source{left:4px;top:var(--entry-y);transform:translateY(-20px);flex-direction:column;gap:3px;width:44px}
+ .laser-source-label{font-size:0;text-align:center}.laser-source-label:after{content:attr(data-entry);font:800 11px/1.3 ui-monospace,monospace}
+}
+
+[data-game-scene=laser] .laser-source{color:#edf6f6}

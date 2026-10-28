@@ -1,3 +1,7 @@
+## Clear beam entry — 28 October 2026
+
+A larger coral emitter sits outside the grid: aligned with the entry row on desktop, or in a labelled rail above the grid on phones. The matching coral entry edge and coordinate label identify where the beam enters, even when that tile holds a mirror. Original layouts, legal mirror placements, tracing, scores and saved snapshots are unchanged. The phone rail preserves the full grid width for touch input.
+
 # Laser — working name
 
 Four untimed Daily optical puzzles: place exactly two diagonal mirrors on Warm-up/Standard/Tricky, or three on new Expert boards, then fire the beam from the left-hand entry to a target. The first fire is final for score. A hit earns one solved board; Arcade score is solved × 25, alongside the native 0–4 result. Zero is a valid completed Daily. There are no speed bonuses, purchases or retries that improve a Daily score.
