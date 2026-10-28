@@ -1,3 +1,7 @@
+## Current navigation on legal/help pages — owner direction, 28 October 2026
+
+Privacy, Terms, and Contact & Data Help use the shared `hub-topbar`/`menu-brand.css` navigation: Home, Leagues, Friends, Profile, centred approved cube logo, Account and profile avatar. No main-navigation item is marked current on these legal routes. Keep these pages static, usable without JavaScript and read-only for game/account storage; retain all policy/help content and footer links. Hide the header when printing.
+
 ## Compact mobile countdown — owner decision, 28 October 2026
 
 All ten games use the approved full-width compact reset strip through 650px: label and 19px countdown side by side, 2px navy border, no shadow or supporting paragraph. Keep the existing larger desktop/tablet reset card and rail. Lowball retains its region control and new-daily-ready action; Time Sense still hides the reset during timing. Presentation only: reset calculation, deadlines, saves and scores stay unchanged.
