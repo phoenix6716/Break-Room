@@ -19,7 +19,7 @@ const GAME_UI={
 };
 const GAME_RULES={
  'shift-work':['shift-work-rules.cjs'],
- 'hidden-gem':['hidden-gem-rules.cjs'],
+ 'hidden-gem':['hidden-gem-rules.cjs','sleeper-expansion.cjs'],
  'seating-chart':['seating-chart-rules.cjs'],
  'clue-ladder':['clue-ladder-rules.cjs'],
  'time-drop':['time-drop-rules.cjs'],
@@ -45,6 +45,7 @@ function selectChecks(changed,available,{full=false}={}){
   const before=unit.size+browser.size;
   // Check date coverage when shipped banks, selectors or the active shelf change; no game sessions.
   if(DAILY_CONTENT_FILES.has(file))add('daily-content.cjs');
+  if(['hidden-gem-model.js','content/hidden-gem-questions.json','games/hidden-gem/questions.js'].includes(file))add('sleeper-expansion.cjs');
   if(/\.md$/i.test(file)||/^(?:design|game-drafts|source)\//.test(file)||['.gitignore','.DS_Store'].includes(file))continue;
   if(file.startsWith('content/archive/'))continue;
   if(/^tests\/[^/]+\.cjs$/.test(file)){const name=file.slice(6);if(known.has(name))add(name);else reasons.push('Deleted check: '+file);continue;}

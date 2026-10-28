@@ -9,7 +9,25 @@ function match(p,input){if(!puzzle(p)||typeof input!=='string'||input.length>MAX
 
 function grade(p,input){const a=match(p,input);return a?{input:input.trim(),answer:a.name,points:a.points,typo:!!a.typo,reason:'accepted'}:null;}
 const date=d=>typeof d==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(d)&&Number.isFinite(Date.parse(d+'T00:00:00Z'))&&new Date(d+'T00:00:00Z').toISOString().slice(0,10)===d;
-function daily(bank,day){if(!date(day))throw Error('Invalid Sydney date');const topics=[...new Set(bank.map(q=>q.topic))].sort();if(topics.length!==10||topics.some(t=>bank.filter(q=>q.topic===t).length!==16))throw Error('Invalid bank');const ordinal=Math.floor((Date.parse(day+'T00:00:00Z')-Date.UTC(2026,9,24))/86400000),n=((ordinal%32)+32)%32,block=Math.floor(n/2),offset=n%2*5;return clone(Array.from({length:5},(_,i)=>bank.filter(q=>q.topic===topics[(block+offset+i)%10]).sort((a,b)=>a.id.localeCompare(b.id))[block]));}
+function daily(bank,day){
+ if(!date(day))throw Error('Invalid Sydney date');
+ const original=bank.filter(q=>!q.id.startsWith('hg-extra-')),extra=bank.filter(q=>q.id.startsWith('hg-extra-'));
+ const topics=[...new Set(original.map(q=>q.topic))].sort();
+ if(original.length!==160||topics.length!==10||topics.some(t=>original.filter(q=>q.topic===t).length!==16))throw Error('Invalid bank');
+ const ordinal=Math.floor((Date.parse(day+'T00:00:00Z')-Date.UTC(2026,9,24))/86400000);
+ let n=((ordinal%32)+32)%32;
+ if(extra.length&&day>='2026-10-30'){
+  const extraTopics=[...new Set(extra.map(q=>q.topic))].sort();
+  if(extra.length!==80||extraTopics.length!==5||extraTopics.some(t=>extra.filter(q=>q.topic===t).length!==16))throw Error('Invalid expanded bank');
+  const slot=((ordinal%48)+48)%48;
+  // Keep the first six already-released days. Insert 16 fresh sets before
+  // continuing the unused original slots; no captured save is rewritten.
+  if(slot>=6&&slot<22)return clone(extraTopics.map(t=>extra.filter(q=>q.topic===t).sort((a,b)=>a.id.localeCompare(b.id))[slot-6]));
+  n=slot<6?slot:slot-16;
+ }
+ const block=Math.floor(n/2),offset=n%2*5;
+ return clone(Array.from({length:5},(_,i)=>original.filter(q=>q.topic===topics[(block+offset+i)%10]).sort((a,b)=>a.id.localeCompare(b.id))[block]));
+}
 
 function make(questions,kind,day,id){return{id,version:1,kind,day,questions:clone(questions),round:0,phase:'ready',input:'',error:'',rejections:0,deadline:null,picks:[],edits:0};}
 function validRun(r){if(!r||r.version!==1||(typeof r.id!=='string'||r.id.length>100)||!['daily','unlimited'].includes(r.kind)||!date(r.day)||!Array.isArray(r.questions)||r.questions.length!==(r.kind==='daily'?5:1)||(!r.questions.every(puzzle)||new Set(r.questions.map(q=>q.id)).size!==r.questions.length)||!Number.isInteger(r.round)||r.round<0||r.round>=r.questions.length||!['ready','active','review','summary'].includes(r.phase)||typeof r.input!=='string'||r.input.length>MAX||!['','blank','unlisted'].includes(r.error)||!Number.isInteger(r.rejections)||r.rejections<0||r.rejections>1000000||!Number.isInteger(r.edits)||r.edits<0||r.edits>1000000||!Array.isArray(r.picks)||r.picks.length>r.questions.length)return false;

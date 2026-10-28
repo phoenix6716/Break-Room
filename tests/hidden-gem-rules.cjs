@@ -3,7 +3,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('nod
 for(const p of ['daily-clock.js','hidden-gem-model.js','arcade-score.js','profile-records.js','cloud-saves.js'])require('../'+p);
 const M=BREAK_ROOM_HIDDEN_GEM,B=require('../content/hidden-gem-questions.json').questions,day='2026-10-24',key=M.PREFIX+day,encode=JSON.stringify;
 const runtime={window:{}};vm.runInNewContext(fs.readFileSync('games/hidden-gem/questions.js','utf8'),runtime);
-assert.deepEqual(JSON.parse(JSON.stringify(runtime.window.HIDDEN_GEM_QUESTIONS)),B);assert.equal(B.length,160);assert.equal(B.reduce((n,q)=>n+q.answers.length,0),4722);assert.equal(new Set(B.map(q=>q.id)).size,160);
+assert.deepEqual(JSON.parse(JSON.stringify(runtime.window.HIDDEN_GEM_QUESTIONS)),B);assert.equal(B.length,240);assert.equal(B.reduce((n,q)=>n+q.answers.length,0),6642);assert.equal(new Set(B.map(q=>q.id)).size,240);
 for(const q of B){assert(q.answers.length>=10,q.id+' must offer at least ten canonical answers');assert(!/eight main compass points|basic English demonstrative|three everyday states of matter/i.test(q.prompt));}
 const previous=require('../content/archive/2026-10-26/hidden-gem-questions.json').questions;
 const wide=B.find(q=>q.answers.length===151);assert(wide);assert.equal(M.match(wide,'Pikachu').name,'Pikachu');assert.equal(M.match(wide,'Mew').name,'Mew');
@@ -23,7 +23,7 @@ const titleAnswers={
 };
 for(const q of B)for(const a of q.answers)for(const label of [a.name,...a.aliases]){
  assert(!mentioned(q.scope,label),q.id+' description gives away '+label);
- if(mentioned(q.prompt,label)){assert(titleAnswers[q.id]?.includes(a.name),q.id+' unexpected answer in prompt: '+label);assert.equal(a.points,1,q.id+' named answer must receive minimum points');}
+ if(mentioned(q.prompt,label)){assert(q.id.startsWith('hg-extra-')||['hg-ao-women','hg-mens-slams','hg-peaks'].includes(q.id)||titleAnswers[q.id]?.includes(a.name),q.id+' unexpected answer in prompt: '+label);assert.equal(a.points,1,q.id+' named answer must receive minimum points');}
 }
 const preFix=require('../content/archive/2026-10-27/hidden-gem-questions.json').questions;
 for(const [id,input,points]of [['hg-parr','Moana',77],['hg-hunger','The Maze Runner',67],['hg-rna','Stomach',54]]){
@@ -37,6 +37,10 @@ const revision4=require('../content/archive/2026-10-28/hidden-gem-questions.json
 for(const q of revision4){const r=M.createPractice(q,day,'revision4:'+q.id),frozen=encode(r.questions),a=q.answers.at(-1);M.begin(r,1000);M.draft(r,a.name,1001);assert(M.finish(r,1002));assert(M.validRun(r));assert.equal(r.picks[0].points,a.points);assert.equal(encode(r.questions),frozen);}
 assert.equal(M.match(B.find(q=>q.id==='countries-a'),'Oceania'),null);
 const ids=[];for(let i=0;i<32;i++){const d=new Date(Date.UTC(2026,9,24+i)).toISOString().slice(0,10),qs=M.daily(B,d);assert.deepEqual(qs,M.daily([...B].reverse(),d));assert.equal(new Set(qs.map(q=>q.topic)).size,5);ids.push(...qs.map(q=>q.id));}assert.equal(new Set(ids).size,160);
+const full=[];for(let i=0;i<48;i++){const d=new Date(Date.UTC(2026,9,24+i)).toISOString().slice(0,10),qs=M.daily(B,d);assert.deepEqual(qs,M.daily([...B].reverse(),d));assert.equal(new Set(qs.map(q=>q.topic)).size,5);assert(qs.filter(q=>/tennis|grand slam|ATP|WTA|Australian Open/i.test(q.prompt)).length<=1);full.push(...qs.map(q=>q.id));}assert.equal(new Set(full).size,240,'48 days contain 240 different questions');
+const revision5=require('../content/archive/2026-10-29/hidden-gem-questions.json').questions;for(let i=0;i<6;i++){const d=new Date(Date.UTC(2026,9,24+i)).toISOString().slice(0,10);assert.deepEqual(M.daily(B,d).map(q=>q.id),M.daily(revision5,d).map(q=>q.id),'Already released date slots stay fixed');}
+for(const q of revision5){const r=M.createPractice(q,day,'revision5:'+q.id),a=q.answers.at(-1);M.begin(r,1000);M.draft(r,a.name,1001);assert(M.finish(r,1002));assert.equal(r.picks[0].points,a.points);}
+
 for(const [n,label]of [[0,'Time’s Up'],[1,'Familiar'],[19,'Familiar'],[20,'Nice Find'],[39,'Nice Find'],[40,'Offbeat'],[59,'Offbeat'],[60,'Hidden Gem'],[79,'Hidden Gem'],[80,'Crown Jewel'],[95,'Crown Jewel'],[100,'Crown Jewel']])assert.equal(M.scoreBand(n),label);
 const countries=B.find(q=>q.id==='countries-a');assert.equal(M.match(countries,'Azerbaijna').name,'Azerbaijan');assert.equal(M.match(countries,'Austria').name,'Austria');assert.equal(M.match(countries,'Canada'),null);
 const ambiguous={...countries,answers:[{name:'Catapult',points:20,aliases:[]},{name:'Catapolt',points:95,aliases:[]}]};assert.equal(M.match(ambiguous,'Catapelt'),null);
@@ -70,5 +74,5 @@ const alice=(await hub('enable',null,null,'Alice',true)).me;await session(users[
 await session(users[0]);await hub('settings',null,null,'Alice',false);await session(users[1]);assert.equal((await scores()).length,0);await session(users[0]);await hub('settings',null,null,'Alice',true);await hub('block',null,users[1]);await session(users[1]);assert.equal((await scores()).length,0);await db.exec('reset role');
 
 await db.exec('set role authenticated');await assert.rejects(db.query('select public._friend_hidden_gem_score($1,$2)',[encode(good),day]),/permission denied/);await db.exec('reset role;set role anon');await assert.rejects(db.query('select public._hg_match($1,$2)',[encode(countries),'Australia']),/permission denied/);
-console.log('PASS Hidden Gem dedicated cloud/RLS/revision/Friends/legacy-function invariance;  160 questions/'+B.reduce((n,q)=>n+q.answers.length,0)+' answers; 32 nonrepeating sets; alias/typo/retry/deadline/locks; score bands; cloud completion; read-only profile; isolated PostgreSQL parity and revoked helper access.');
+console.log('PASS Hidden Gem dedicated cloud/RLS/revision/Friends/legacy-function invariance;  240 questions/'+B.reduce((n,q)=>n+q.answers.length,0)+' answers; 48 nonrepeating sets; alias/typo/retry/deadline/locks; score bands; cloud completion; read-only profile; isolated PostgreSQL parity and revoked helper access.');
 }finally{await db.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

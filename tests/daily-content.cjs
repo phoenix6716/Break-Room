@@ -10,7 +10,7 @@ const defs=[
  {id:'clue-ladder',name:'Clue Ladder',file:'puzzles',key:'CLUE_LADDER_PUZZLES',rounds:5,period:60,validate:'puzzle'},
  {id:'seating-chart',name:'Seating Chart',file:'puzzles',key:'SEATING_CHART_PUZZLES',rounds:5,period:72,validate:'puzzle'},
  {id:'shift-work',name:'Desk Jam',file:'boards',key:'SHIFT_WORK_BOARDS',rounds:3,period:40,validate:'validBoard'},
- {id:'hidden-gem',name:'Sleeper',file:'questions',key:'HIDDEN_GEM_QUESTIONS',rounds:5,period:32,validate:'puzzle'},
+ {id:'hidden-gem',name:'Sleeper',file:'questions',key:'HIDDEN_GEM_QUESTIONS',rounds:5,period:48,validate:'puzzle'},
  {id:'pack',name:'Pack',file:'puzzles',key:'PACK_PUZZLES',rounds:3,period:32,validate:'validBag'}
 ];
 function challenge(id,p){
