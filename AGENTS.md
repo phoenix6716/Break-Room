@@ -1,3 +1,7 @@
+## Automatic account saving — owner correction, 28 October 2026
+
+Remove manual cloud activation, sync/load buttons and import controls from Account. Sign-in returns to Account and automatically restores that account before readiness resolves. Signed-in non-game pages refresh account saves automatically, while native game pages upload without replacing a running engine. Reconnect/visibility retry automatically, concurrent callers share the pending restore/upload, and new owned edits arriving during restore are drained before comparisons. Keep guest data in a separate recovery copy and preserve per-account caches, captured timers and first completions. This supersedes earlier manual activation directions. All built account script references use the current shared cache version.
+
 ## Automatic Profile restore — owner cross-device bug report, 28 October 2026
 
 Opening Profile while signed in automatically merges that account’s cloud saves before account readiness resolves and refreshes displayed stats when the restore completes. No cloud button is needed on a new device. Preserve guest saves separately, account isolation, newer owned edits arriving during download, captured deadlines and first-completion locks. Running game pages are never hydrated by this Profile-specific path. Offline restore errors must remain visible and reconnect retries the restore.

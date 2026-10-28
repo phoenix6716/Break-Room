@@ -63,7 +63,7 @@ async function load(args={},success){
   if(result.invite&&state.selected){const url=new URL('leagues.html',location.href);url.hash='join='+result.invite;$('league-invite-url').value=url.href;$('league-invite').hidden=false;inviteLeague=state.selected.id;}
   if(args.p_action==='create'){$('league-name').value='';$('create-league-consent').checked=false;}
   if(args.p_action==='join'){$('league-token').value='';$('join-league-consent').checked=false;try{sessionStorage.removeItem('br:league:invite');}catch{}}
-  status(synced===false?'Your new browser results could not sync. Showing cloud scores; open Account to retry.':api.cloudActive?.()===false?'Showing cloud scores. Open Account, choose USE CLOUD SAVES, and choose whether to import this browser’s progress.':success||(state.leagues.length?'Showing the latest synced Daily scores.':'Create a league or join one with an invite.'),synced===false);
+  status(synced===false?'Your new browser results could not sync. Showing saved cloud scores; we will retry automatically when you reconnect.':api.cloudActive?.()===false?'Your account progress has not loaded yet. Reconnect and reopen this page; your browser saves are safe.':success||(state.leagues.length?'Showing the latest synced Daily scores.':'Create a league or join one with an invite.'),synced===false);
  }catch(error){if(id===request){clearBoard();status(message(error),true);}}
  finally{busy=false;controls(!api.getUser());if(api.getUser()?.id!==expected)load();else if(refreshQueued)scheduleRefresh();}
 }

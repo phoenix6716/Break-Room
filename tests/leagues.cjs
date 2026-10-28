@@ -20,6 +20,16 @@ async function context(){
   const send=(data,status=200)=>route.fulfill({status,headers,body:JSON.stringify(data)});if(req.method()==='OPTIONS')return send({});
   if(url.pathname.endsWith('/token')){const name=body.email.startsWith('bob')?'bob':'alice';return send({access_token:jwt(name),refresh_token:'refresh-'+name,token_type:'bearer',expires_in:3600,expires_at:Math.floor(Date.now()/1000)+3600,user:user(name)});}
   if(url.pathname.endsWith('/logout'))return send({});
+  if(/\/(game_saves|hidden_gem_saves|shift_work_saves)$/.test(url.pathname)||/\/rpc\/(save_game|save_hidden_gem|save_shift_work)$/.test(url.pathname)){
+   const uid=JSON.parse(Buffer.from(req.headers().authorization.slice(7).split('.')[1],'base64url').toString()).sub;
+   let finish;const pending=new Promise(r=>finish=r);
+   queue=queue.then(async()=>{try{await db.exec('reset role;set role authenticated');await db.query("select set_config('request.jwt.claim.sub',$1,false)",[uid]);let value;
+    if(req.method()==='GET'){const table=url.pathname.split('/').at(-1);assert.equal(url.searchParams.get('user_id'),'eq.'+uid);value=(await db.query('select data,revision from public.'+table+' where user_id=$1 and game=$2',[uid,url.searchParams.get('game').slice(3)])).rows;}
+    else{const fn=url.pathname.split('/').at(-1);value=(await db.query('select public.'+fn+'($1,$2,$3) x',[body.p_game,JSON.stringify(body.p_data),body.p_revision])).rows[0].x;}
+    finish({value});}catch(e){finish({error:e.message})}});
+   const result=await pending;return result.error?send({message:result.error},400):send(result.value);
+  }
+
   if(url.pathname.endsWith('/rpc/league_hub')){
    if(missing)return send({code:'PGRST202',message:'Function missing'},404);
    const claims=JSON.parse(Buffer.from(req.headers().authorization.slice(7).split('.')[1],'base64url').toString());let resolveResult;const result=new Promise(resolve=>resolveResult=resolve);
