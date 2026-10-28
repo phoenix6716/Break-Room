@@ -1,3 +1,7 @@
+## League standings freshness — owner bug report, 28 October 2026
+
+Leagues must await the current account upload before reading standings, refresh on native-save events and cross-tab game storage changes, and drain refreshes arriving while busy. Failed sync and inactive cloud saves must be shown explicitly. Never import guest results automatically or replace server scores with local totals.
+
 ## Current navigation on Account — owner direction, 28 October 2026
 
 Account uses the shared hub top bar with Home, Leagues, Friends, Profile, the approved centred cube logo and account/profile controls. Keep the header Account link auth-aware through `data-account-link="true"`. No main-navigation item is marked current on the Account route. Preserve account, cloud-save and planned-purchase controls.

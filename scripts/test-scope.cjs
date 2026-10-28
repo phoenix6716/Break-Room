@@ -60,7 +60,7 @@ function selectChecks(changed,available,{full=false}={}){
     if(/(?:questions|stacks|cases|evidence-cases|boards|puzzles|events|reference-prices|price-review)\.(?:js|json)$/.test(file))content=true;
    }
   }else if(model){game(model[1],true);add('profile-records.cjs','cloud-saves.cjs');if(model[1]==='inner-clock')add('accounts.cjs','friends.cjs','profile.cjs');}
-  else if(file==='supabase/leagues.sql'){add('leagues-database.cjs','leagues.cjs');}
+  else if(file==='supabase/leagues.sql'){add('leagues-database.cjs','leagues.cjs','leagues-freshness.cjs');}
   else if(['supabase/hidden-gem.sql','supabase/hidden-gem-broader-answers.sql'].includes(file)){game('hidden-gem',true);}
   else if(/^supabase\//.test(file)){add('friends-database.cjs','cloud-database.cjs','playtest-feedback.cjs');}
   else if(file==='content/drafts/sleeper-broader-questions.json'){game('hidden-gem',true);content=true;}
@@ -91,7 +91,7 @@ function selectChecks(changed,available,{full=false}={}){
   else if(file==='brand.css'||file==='scripts/site-brand.cjs'||file==='scripts/export-break-room-brand.cjs'||/^assets\/(?:source\/)?break-room-/.test(file)){add('brand.cjs','smoke.cjs');}
   else if(/^scripts\//.test(file)||/^\.github\/workflows\//.test(file)||/^package(?:-lock)?\.json$/.test(file)||file==='.node-version'){infra();}
   else if(/^(?:accounts|account-config|cloud-saves)\.(?:js|css)$/.test(file)||/^(?:account|login|signup|forgot-password|reset-password)\.html$/.test(file)||/^assets\/vendor\//.test(file)){auth();}
-  else if(/^leagues(?:-model)?\.(?:js|css|html)$/.test(file)){add('leagues-database.cjs','leagues.cjs');}
+  else if(/^leagues(?:-model)?\.(?:js|css|html)$/.test(file)){add('leagues-database.cjs','leagues.cjs','leagues-freshness.cjs');}
   else if(/^friends\.(?:js|css|html)$/.test(file)){add('friends-database.cjs','friends.cjs','friends-freshness.cjs');}
   else if(/^profile(?:-records)?\.(?:js|css|html)$/.test(file)){add('profile-records.cjs','profile.cjs');}
   else if(file==='arcade-score.js'){add('arcade-score.cjs','profile-records.cjs','cloud-saves.cjs','friends-database.cjs','arcade-score-ui.cjs','profile.cjs','friends.cjs','game-surfaces.cjs');}

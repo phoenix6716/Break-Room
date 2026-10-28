@@ -4,7 +4,7 @@
 const $=id=>document.getElementById(id),api=window.BREAK_ROOM_ACCOUNTS,M=window.BREAK_ROOM_LEAGUES;
 const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
 const format=n=>new Intl.NumberFormat('en-AU',{maximumFractionDigits:1}).format(n);
-let state=null,busy=false,request=0,userId=null,selected=null,confirmation=null,inviteLeague=null;
+let state=null,busy=false,request=0,userId=null,selected=null,confirmation=null,inviteLeague=null,refreshQueued=false,refreshTimer=null;
 function status(message,error=false){$('league-status').textContent=message;$('league-status').dataset.error=String(error);}
 function controls(disabled){for(const n of document.querySelectorAll('#league-content button,#league-content fieldset,#league-select'))n.disabled=disabled;$('league-content').setAttribute('aria-busy',String(disabled));}
 function clearBoard(){state=null;selected=null;confirmation=null;inviteLeague=null;$('league-confirm').hidden=true;$('league-board').hidden=true;$('league-standings').replaceChildren();$('required-games').replaceChildren();$('league-select').replaceChildren(el('option',null,'Choose a league'));$('league-invite').hidden=true;$('league-invite-url').value='';$('league-title').textContent='';}
@@ -48,9 +48,10 @@ function render(){
  renderBoard();
 }
 async function load(args={},success){
- if(busy)return;const who=api.getUser();if(!who){clearPrivate();$('league-guest').hidden=false;status('Sign in to create or join a private league.');return;}
+ if(busy){if(!args.p_action)refreshQueued=true;return;}refreshQueued=false;const who=api.getUser();if(!who){clearPrivate();$('league-guest').hidden=false;status('Sign in to create or join a private league.');return;}
  busy=true;controls(true);const id=++request,expected=who.id;
  try{
+  const synced=await api.sync();if(id!==request||api.getUser()?.id!==expected)return;
   const result=await api.friendsRPC('league_hub',args);if(id!==request||api.getUser()?.id!==expected)return;
   state=result;
   if(!state.selected&&selected&&state.leagues.some(l=>l.id===selected)){
@@ -62,14 +63,17 @@ async function load(args={},success){
   if(result.invite&&state.selected){const url=new URL('leagues.html',location.href);url.hash='join='+result.invite;$('league-invite-url').value=url.href;$('league-invite').hidden=false;inviteLeague=state.selected.id;}
   if(args.p_action==='create'){$('league-name').value='';$('create-league-consent').checked=false;}
   if(args.p_action==='join'){$('league-token').value='';$('join-league-consent').checked=false;try{sessionStorage.removeItem('br:league:invite');}catch{}}
-  status(success||(state.leagues.length?'Showing the latest synced Daily scores.':'Create a league or join one with an invite.'));
+  status(synced===false?'Your new browser results could not sync. Showing cloud scores; open Account to retry.':api.cloudActive?.()===false?'Showing cloud scores. Open Account, choose USE CLOUD SAVES, and choose whether to import this browser’s progress.':success||(state.leagues.length?'Showing the latest synced Daily scores.':'Create a league or join one with an invite.'),synced===false);
  }catch(error){if(id===request){clearBoard();status(message(error),true);}}
- finally{busy=false;controls(!api.getUser());if(api.getUser()?.id!==expected)load();}
+ finally{busy=false;controls(!api.getUser());if(api.getUser()?.id!==expected)load();else if(refreshQueued)scheduleRefresh();}
 }
 $('create-league').onsubmit=e=>{e.preventDefault();load({p_action:'create',p_name:$('league-name').value.trim(),p_display_name:$('league-display-name').value.trim(),p_consent:$('create-league-consent').checked},'League created. Make an invite link to bring your friends.');};
 $('join-league').onsubmit=e=>{e.preventDefault();const token=M.invite($('league-token').value);if(!token){status('Paste a complete league invite link or its 32-character code.',true);return;}load({p_action:'join',p_token:token,p_display_name:$('join-display-name').value.trim(),p_consent:$('join-league-consent').checked},'You joined the league. This week’s synced Dailies now count.');};
 $('league-select').onchange=()=>{const id=$('league-select').value;selected=id||null;if(id)load({p_action:'view',p_league:id});else{state.selected=null;renderBoard();}};
-$('refresh-leagues').onclick=async()=>{await api.sync();await load();};
+$('refresh-leagues').onclick=()=>load();
+function scheduleRefresh(){clearTimeout(refreshTimer);refreshTimer=setTimeout(()=>{if(!document.hidden)load();},250);}
+window.addEventListener('break-room:save',scheduleRefresh);
+window.addEventListener('storage',event=>{if(event.key&&window.BREAK_ROOM_CLOUD_SAVES.games.some(g=>window.BREAK_ROOM_CLOUD_SAVES.belongs(g,event.key)))scheduleRefresh();});
 $('invite-league').onclick=()=>load({p_action:'invite',p_league:selected},'New invite link ready. Previous links no longer work.');
 $('copy-league-invite').onclick=async()=>{try{await navigator.clipboard.writeText($('league-invite-url').value);status('Invite link copied.');}catch{$('league-invite-url').focus();$('league-invite-url').select();status('Select and copy the invite link above.');}};
 $('leave-league').onclick=()=>confirmAction({p_action:'leave',p_league:selected},state.selected.owner?'Leave this league? Ownership passes to its longest-standing remaining member. If you are the last member, the league closes.':'Leave this league? You will lose access and your scores will disappear from its standings.');
