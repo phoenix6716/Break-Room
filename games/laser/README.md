@@ -1,6 +1,6 @@
-## Clear beam entry — 28 October 2026
+## Beam entry visual — 28 October 2026
 
-A larger coral emitter sits outside the grid: aligned with the entry row on desktop, or in a labelled rail above the grid on phones. The matching coral entry edge and coordinate label identify where the beam enters, even when that tile holds a mirror. Original layouts, legal mirror placements, tracing, scores and saved snapshots are unchanged. The phone rail preserves the full grid width for touch input.
+A static coral beam with a pale core marks the actual entry row at every screen size. No black side rail, arrow box or mobile header is added. The compact phone flare sits on the entry edge and preserves full grid width and touch targets. Layouts, legal mirror placements, tracing, scores and saved snapshots are unchanged.
 
 # Laser — working name
 
