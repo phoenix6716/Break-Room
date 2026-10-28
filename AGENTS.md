@@ -1,3 +1,7 @@
+## Automatic Profile restore — owner cross-device bug report, 28 October 2026
+
+Opening Profile while signed in automatically merges that account’s cloud saves before account readiness resolves and refreshes displayed stats when the restore completes. No cloud button is needed on a new device. Preserve guest saves separately, account isolation, newer owned edits arriving during download, captured deadlines and first-completion locks. Running game pages are never hydrated by this Profile-specific path. Offline restore errors must remain visible and reconnect retries the restore.
+
 ## Current navigation on Log in — owner direction, 28 October 2026
 
 Log in uses the same shared hub top bar as Account: Home, Leagues, Friends, Profile, centred cube logo and auth-aware account/profile links. Preserve the sign-in form, recovery links, disabled no-JavaScript fallback and save behaviour.

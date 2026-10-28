@@ -1,10 +1,10 @@
-/* Supabase owns authentication. Game saves stay native; cloud activation is explicit. */
+/* Supabase owns authentication. Native account saves restore automatically on Profile. */
 (() => {
  'use strict';
  const config=window.BREAK_ROOM_ACCOUNT_CONFIG, saves=window.BREAK_ROOM_CLOUD_SAVES;
  const base=new URL('.',document.currentScript.src),accountURL=new URL('account.html',base).href;
  const generationKey='br:cloud:generation',ownerKey='br:cloud:owner',guestKey='br:cloud:guest',cacheKey=id=>'br:cloud:cache:'+id;
- const $=id=>document.getElementById(id),isAccount=!!$('account-content'),isGame=location.pathname.includes('/games/');
+ const $=id=>document.getElementById(id),isAccount=!!$('account-content'),isGame=location.pathname.includes('/games/'),isProfile=!!document.querySelector('.profile-page');
  let resolveReady;const ready=new Promise(resolve=>resolveReady=resolve);
  let client=null,session=null,busy=false,lastUploaded='',syncTimer=null,uploadTask=null,initialOwner=null,redirecting=false;
  // Auth, ownership and generation events can arrive together on logout.
@@ -35,7 +35,7 @@
   if($('import-choice'))$('import-choice').hidden=signed&&owner()===session.user.id;
   window.dispatchEvent(new Event('break-room:auth-change'));
   const note=document.querySelector('.profile-storage-note');
-  if(note){const text=signed&&owner()===session.user.id?'Your account saves are active here. Open Account to load newer progress from another device. Unlimited practice is not included.':'Saved on this browser. Sign in and activate cloud saves to play across devices. Unlimited practice is not included.';note.textContent=text;}
+  if(note){const text=signed&&owner()===session.user.id?(isProfile?'Your account progress loads automatically here. Unlimited practice is not included.':'Your account saves are active here. Open Account to load newer progress from another device. Unlimited practice is not included.'):'Saved on this browser. Sign in and activate cloud saves to play across devices. Unlimited practice is not included.';note.textContent=text;}
  }
  const friendly=error=>{
   if(error?.code==='42P01'||error?.code==='PGRST202'||error?.code==='PGRST205')return 'Cloud saves are not set up yet. The site owner needs to run the database setup in Supabase.';
@@ -95,7 +95,8 @@
   const guest=loadBackup(guestKey)||Object.fromEntries(saves.games.map(g=>[g,{}]));
   saves.install(storage(),guest);storage().removeItem(ownerKey);storage().setItem(generationKey,crypto.randomUUID());initialOwner=null;
  }
- async function activate(){
+ async function activate(automatic=false){
+  automatic=automatic===true;
   if(busy)return;busy=true;const button=$('activate-cloud');if(button)button.disabled=true;
   try{await serial(async()=>{
    session=await authenticated();const id=session.user.id,current=owner();
@@ -108,10 +109,15 @@
    status('Syncing your saves…');const merged=await exchange(id,local);
    if((await authenticated()).user.id!==id||owner()!==current)throw Error('Account changed while syncing. Please try again.');
    // Keep an exact local backup before writing; installation rolls back on storage failure.
-   backup(cacheKey(id),merged);saves.install(storage(),merged);storage().setItem(ownerKey,id);storage().setItem(generationKey,crypto.randomUUID());initialOwner=id;
+   // Another tab may save while the remote read is in flight. Keep those newer
+   // owned edits too; never use this browser's guest data as account input.
+   const latest=snapshot();
+   const final=current===id?Object.fromEntries(saves.games.map(g=>[g,saves.merge(g,latest[g]||{},merged[g]||{})])):merged;
+   const changed=current!==id||JSON.stringify(latest)!==JSON.stringify(final);
+   backup(cacheKey(id),final);if(changed||!automatic){saves.install(storage(),final);storage().setItem(ownerKey,id);storage().setItem(generationKey,crypto.randomUUID());}initialOwner=id;
    // Lowball percentile data is not a portable save.
    for(const k of ['pc_pct','pc_submitted'])storage().removeItem(k);
-   lastUploaded=JSON.stringify(merged);status('Your cloud saves are ready. You can open a game now.');render();window.dispatchEvent(new Event('break-room:saves-loaded'));
+   lastUploaded=JSON.stringify(merged);status(automatic?'Your saved progress is up to date.':'Your cloud saves are ready. You can open a game now.');render();window.dispatchEvent(new Event('break-room:saves-loaded'));
   });}catch(error){status(friendly(error),true);}finally{busy=false;if(button)button.disabled=false;}
  }
  async function logout(){
@@ -169,11 +175,12 @@
     if(event.key&&saves.games.some(g=>saves.belongs(g,event.key)))schedule();
    });
    window.addEventListener('break-room:save',schedule);
-   window.addEventListener('online',()=>syncUpload());
+   window.addEventListener('online',()=>{if(isProfile&&session)activate(true);else syncUpload();});
    syncTimer=setInterval(()=>syncUpload(),15000);
    // Never overwrite game storage while an engine is running. Downloads happen only
-   // on the account screen; other pages just upload local changes after play.
-   if(!isAccount)syncUpload();
+   // on Account and Profile; game pages only upload local changes after play.
+   if(isProfile&&session)await activate(true);
+   else if(!isAccount)syncUpload();
   }catch(error){status(friendly(error),true);}finally{resolveReady();}
  }
  function schedule(){clearTimeout(schedule.timer);schedule.timer=setTimeout(()=>syncUpload(),800);}

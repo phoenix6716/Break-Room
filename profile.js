@@ -92,7 +92,7 @@
     const previous=$('recent-results').children.length;limit+=10;renderResults();
     if($('more-results').hidden)$('recent-results').children[previous]?.querySelector('a')?.focus();
   });
-  window.addEventListener('storage',refresh);window.addEventListener('pageshow',refresh);
+  window.addEventListener('break-room:saves-loaded',refresh);window.addEventListener('storage',refresh);window.addEventListener('pageshow',refresh);
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh();});
   setInterval(refresh,30000);refresh();
 })();

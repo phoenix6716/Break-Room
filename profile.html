@@ -13,8 +13,8 @@
   <script defer src="daily-clock.js"></script>
   <script defer src="arcade-score.js?v=shift-work-20261025"></script>
   <script defer src="pack-model.js?v=launch-20261023"></script><script defer src="prior-model.js?v=launch-20261023"></script><script defer src="laser-model.js?v=launch-20261023"></script><script defer src="alibi-model.js?v=playtest-20261023"></script><script defer src="profile-records.js?v=current-games-20261027"></script>
-  <script defer src="profile.js?v=current-games-20261027"></script>
-<link rel="stylesheet" href="accounts.css"><script defer src="assets/vendor/supabase.js"></script><script defer src="account-config.js"></script><script src="bouncer-model.js?v=launch-20261023"></script><script src="inner-clock-model.js"></script><script src="hidden-gem-model.js"></script><script defer src="cloud-saves.js?v=shift-work-20261025"></script><script defer src="accounts.js?v=time-sense-20261025b"></script><link rel="stylesheet" href="legal.css"><script src="time-drop-model.js"></script><script src="clue-ladder-model.js"></script><script src="seating-chart-model.js"></script><script src="shift-work-model.js?v=shift-work-20261025"></script><link rel="stylesheet" href="menu-brand.css?v=hub-topbar-20261027"></head>
+  <script defer src="profile.js?v=auto-cloud-20261028"></script>
+<link rel="stylesheet" href="accounts.css"><script defer src="assets/vendor/supabase.js"></script><script defer src="account-config.js"></script><script src="bouncer-model.js?v=launch-20261023"></script><script src="inner-clock-model.js"></script><script src="hidden-gem-model.js"></script><script defer src="cloud-saves.js?v=shift-work-20261025"></script><script defer src="accounts.js?v=profile-auto-20261028"></script><link rel="stylesheet" href="legal.css"><script src="time-drop-model.js"></script><script src="clue-ladder-model.js"></script><script src="seating-chart-model.js"></script><script src="shift-work-model.js?v=shift-work-20261025"></script><link rel="stylesheet" href="menu-brand.css?v=hub-topbar-20261027"></head>
 <body class="profile-page">
 <div class="hub-header-frame"><header class="topbar hub-topbar"><nav class="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="leagues.html">Leagues</a><a href="friends.html">Friends</a><a href="profile.html" aria-current="page">Profile</a></nav><a class="brand" href="index.html" aria-label="Break Room home"><img class="br-brand__image" src="assets/break-room-wordmark.png?v=tile05-20261025" alt="Break Room" decoding="async"></a><div class="account"><a class="login" href="login.html">Log in</a><a class="avatar" href="profile.html" aria-label="Your profile">?</a></div></header></div>
 <main class="page"><div class="wrap profile-wrap">
@@ -23,6 +23,7 @@
     <a class="button" href="index.html#daily-games">PLAY A DAILY →</a>
   </section>
   <p class="profile-storage-note"><img src="assets/icons/profile.svg" alt="">Saved on this browser. Sign in to sync your Daily saves across devices. Unlimited practice is not included.</p>
+  <p class="profile-sync-status" data-account-status role="status" aria-live="polite"></p>
   <p id="storage-warning" class="profile-warning" role="status" hidden></p>
   <noscript><p class="profile-warning">Turn on JavaScript to read your saved game results. <a href="index.html">Browse games</a>.</p></noscript>
   <div id="profile-content" hidden>
