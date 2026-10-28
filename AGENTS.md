@@ -1,3 +1,7 @@
+## Automatic deployment reaffirmed — owner direction, 28 October 2026
+
+The owner explicitly revoked the earlier chat instruction not to publish and requests automatic deployment from this point forward. Commit and deploy completed requested repository changes after the focused checks pass, then verify the Pages workflow and live site without asking for another release approval.
+
 ## Original Clue Ladder appearance — owner correction, 28 October 2026
 
 Restore the original cream panel, orange ladder and native pixel climber. Clue Ladder opts out of the later shared game-scenes and game-art styles/scripts; the other games retain their artwork and motion. Keep the current question bank, clues, scores, Daily slots and captured saves. This supersedes the Clue Ladder portion of the shared scene/object artwork directions. The page matches its pre-scene version from before commit `1e56731`; the engine and bank are unchanged.

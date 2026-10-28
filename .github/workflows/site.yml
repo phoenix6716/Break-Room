@@ -144,12 +144,16 @@ jobs:
                       request = urllib.request.Request(base + "games/" + current + "/index.html?release=" + os.environ["GITHUB_SHA"], headers={"Cache-Control":"no-cache"})
                       with urllib.request.urlopen(request, timeout=20) as response:
                           page = response.read()
+                      if current == "clue-ladder":
+                          assert b"clue-ladder.css" in page and b"clue-ladder.js" in page and b"puzzles.js?v=familiar-20261026" in page, "Missing original Clue Ladder assets"
+                          assert b'data-game-scene=' not in page and b'data-game-art=' not in page and b"game-scenes.css" not in page and b"game-scenes.js" not in page and b"game-art.css" not in page and b"game-art.js" not in page, "Clue Ladder must keep its original appearance"
+                          continue
                       assert ('data-game-scene="' + current + '"').encode() in page and b"game-scenes.css?v=sets-20261027" in page and (b"game-scenes.js?v=sets-smooth-20261027" if current == "shift-work" else b"game-scenes.js?v=sets-20261027") in page, "Missing themed surface: " + current
                       if current != "pack":
                           assert ('data-game-art="' + current + '"').encode() in page and b"game-art.js?v=objects-20261027" in page, "Missing game objects: " + current
                       if current == "pack":
                           assert b"item-art.js?v=items-20261027" in page and b"pack.js?v=items-20261027" in page and b"pack.css?v=items-20261027" in page, "Missing custom Pack item graphics"
-                  print("Verified all current game sets, Pack item artwork and shared motion assets.")
+                  print("Verified current game sets, original Clue Ladder, Pack item artwork and shared motion assets.")
                   for retired in ["stake","prior","alibi","bouncer","pixel-pairs","word-forge","gridlock","number-drop","memory-lane","mystery-cabinet"]:
                       request = urllib.request.Request(base + "games/" + retired + "/index.html?release=" + os.environ["GITHUB_SHA"], headers={"Cache-Control":"no-cache"})
                       with urllib.request.urlopen(request, timeout=20) as response:
