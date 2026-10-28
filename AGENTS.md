@@ -1,3 +1,7 @@
+## Current navigation on Account — owner direction, 28 October 2026
+
+Account uses the shared hub top bar with Home, Leagues, Friends, Profile, the approved centred cube logo and account/profile controls. Keep the header Account link auth-aware through `data-account-link="true"`. No main-navigation item is marked current on the Account route. Preserve account, cloud-save and planned-purchase controls.
+
 ## Approved pricing and purchase model — owner decision, 28 October 2026
 
 See `PAYMENTS.md`. Monthly Break Room access is A$4.99 AUD, including Unlimited across current and future games and no ads while subscribed. A$7.99 AUD buys permanent Unlimited for one game and permanent site-wide ad removal. Purchases attach to accounts across devices; individual purchases survive subscription expiry. This supersedes earlier statements that no pricing was approved. Provider integration and live payments are not yet configured; keep development Unlimited available until a verified purchase flow is ready.

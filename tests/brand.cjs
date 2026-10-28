@@ -6,7 +6,7 @@ const socialSource=fs.readFileSync('leagues.html','utf8'),socialBuild=applyBrand
 assert(socialBuild.includes('menu-brand.css?v=hub-topbar-20261027'),'Preserve the shared menu stylesheet');
 assert.equal((socialBuild.match(/href="brand\.css(?:\?[^"]*)?"/g)||[]).length,1,'Deduplicate only the exact brand.css filename');
 const games=['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','pack','lowball','inner-clock'];
-const rootPages=['index.html','friends.html','profile.html','login.html','signup.html','forgot-password.html','reset-password.html','privacy.html','terms.html','contact.html','style-guide.html'];
+const rootPages=['account.html','index.html','friends.html','profile.html','login.html','signup.html','forgot-password.html','reset-password.html','privacy.html','terms.html','contact.html','style-guide.html'];
 (async()=>{const browser=await chromium.launch({executablePath:process.env.ARCADE_CHROMIUM||'/usr/bin/chromium',args:['--no-sandbox']});try{
  for(const width of [320,390,768,1440]){
   const context=await browser.newContext({viewport:{width,height:1000},reducedMotion:'reduce'});await context.route('https://fonts.googleapis.com/**',r=>r.abort());await context.addInitScript(()=>localStorage.setItem('pc_help_seen','1'));
