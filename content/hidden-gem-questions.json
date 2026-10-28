@@ -14,9 +14,7 @@
         {
           "name": "Australia",
           "points": 1,
-          "aliases": [
-            "Oceania"
-          ]
+          "aliases": []
         },
         {
           "name": "Argentina",
@@ -707,64 +705,113 @@
     {
       "id": "australian-states",
       "topic": "AUSTRALIA",
-      "prompt": "Name an Australian state or one of the two main mainland territories.",
-      "scope": "Six states and the two main mainland territories; external territories excluded.",
-      "source": "https://en.wikipedia.org/wiki/States_and_territories_of_Australia",
+      "prompt": "Name an Australian state or internal or external territory.",
+      "scope": "The six states, three internal territories and seven external territories administered by Australia, as of 2025.",
+      "source": "https://www.ga.gov.au/scientific-topics/national-location-information/dimensions/australias-size-and-dimensions",
       "answers": [
         {
           "name": "New South Wales",
-          "points": 6,
+          "points": 1,
           "aliases": [
             "NSW"
           ]
         },
         {
-          "name": "Queensland",
-          "points": 13,
+          "name": "Victoria",
+          "points": 8,
           "aliases": [
-            "QLD"
+            "Vic"
           ]
         },
         {
-          "name": "Victoria",
-          "points": 25,
+          "name": "Queensland",
+          "points": 14,
           "aliases": [
-            "VIC"
+            "Qld"
           ]
         },
         {
           "name": "Western Australia",
-          "points": 35,
+          "points": 21,
           "aliases": [
             "WA"
           ]
         },
         {
-          "name": "Tasmania",
-          "points": 46,
-          "aliases": [
-            "TAS"
-          ]
-        },
-        {
           "name": "South Australia",
-          "points": 57,
+          "points": 27,
           "aliases": [
             "SA"
           ]
         },
         {
+          "name": "Tasmania",
+          "points": 34,
+          "aliases": [
+            "Tas"
+          ]
+        },
+        {
           "name": "Northern Territory",
-          "points": 73,
+          "points": 41,
           "aliases": [
             "NT"
           ]
         },
         {
           "name": "Australian Capital Territory",
-          "points": 100,
+          "points": 47,
           "aliases": [
             "ACT"
+          ]
+        },
+        {
+          "name": "Norfolk Island",
+          "points": 54,
+          "aliases": []
+        },
+        {
+          "name": "Christmas Island",
+          "points": 60,
+          "aliases": []
+        },
+        {
+          "name": "Cocos (Keeling) Islands",
+          "points": 67,
+          "aliases": [
+            "Cocos Islands",
+            "Keeling Islands"
+          ]
+        },
+        {
+          "name": "Jervis Bay Territory",
+          "points": 74,
+          "aliases": [
+            "Jervis Bay"
+          ]
+        },
+        {
+          "name": "Australian Antarctic Territory",
+          "points": 80,
+          "aliases": []
+        },
+        {
+          "name": "Coral Sea Islands",
+          "points": 87,
+          "aliases": [
+            "Coral Sea Islands Territory"
+          ]
+        },
+        {
+          "name": "Ashmore and Cartier Islands",
+          "points": 93,
+          "aliases": []
+        },
+        {
+          "name": "Heard Island and McDonald Islands",
+          "points": 100,
+          "aliases": [
+            "Heard and McDonald Islands"
           ]
         }
       ]
@@ -1114,61 +1161,160 @@
     {
       "id": "si-base-units",
       "topic": "SCIENCE",
-      "prompt": "Name an SI base unit.",
-      "scope": "The seven base units. Give a unit name, not a symbol or derived unit.",
-      "source": "https://www.bipm.org/en/measurement-units/si-base-units",
+      "prompt": "Name an SI derived unit with a special name.",
+      "scope": "The 22 specially named derived units in the SI Brochure; base units and prefixed multiples are excluded.",
+      "source": "https://www.bipm.org/en/publications/si-brochure",
       "answers": [
         {
-          "name": "Second",
-          "points": 9,
+          "name": "Watt",
+          "points": 1,
           "aliases": [
-            "Seconds"
+            "W"
           ]
         },
         {
-          "name": "Metre",
-          "points": 17,
+          "name": "Volt",
+          "points": 6,
           "aliases": [
-            "Meter",
-            "Metres",
-            "Meters"
+            "V"
           ]
         },
         {
-          "name": "Kilogram",
-          "points": 35,
+          "name": "Hertz",
+          "points": 10,
           "aliases": [
-            "Kilograms"
+            "Hz"
           ]
         },
         {
-          "name": "Ampere",
-          "points": 46,
+          "name": "Newton",
+          "points": 15,
           "aliases": [
-            "Amperes",
-            "Amp",
-            "Amps"
+            "N"
           ]
         },
         {
-          "name": "Kelvin",
-          "points": 56,
+          "name": "Joule",
+          "points": 20,
           "aliases": [
-            "Kelvins"
+            "J"
           ]
         },
         {
-          "name": "Mole",
-          "points": 74,
+          "name": "Pascal",
+          "points": 25,
           "aliases": [
-            "Moles"
+            "Pa"
           ]
         },
         {
-          "name": "Candela",
+          "name": "Ohm",
+          "points": 29,
+          "aliases": []
+        },
+        {
+          "name": "Coulomb",
+          "points": 34,
+          "aliases": [
+            "C"
+          ]
+        },
+        {
+          "name": "Degree Celsius",
+          "points": 39,
+          "aliases": [
+            "Celsius"
+          ]
+        },
+        {
+          "name": "Lumen",
+          "points": 43,
+          "aliases": [
+            "lm"
+          ]
+        },
+        {
+          "name": "Lux",
+          "points": 48,
+          "aliases": [
+            "lx"
+          ]
+        },
+        {
+          "name": "Becquerel",
+          "points": 53,
+          "aliases": [
+            "Bq"
+          ]
+        },
+        {
+          "name": "Sievert",
+          "points": 58,
+          "aliases": [
+            "Sv"
+          ]
+        },
+        {
+          "name": "Gray",
+          "points": 62,
+          "aliases": [
+            "Gy"
+          ]
+        },
+        {
+          "name": "Farad",
+          "points": 67,
+          "aliases": [
+            "F"
+          ]
+        },
+        {
+          "name": "Tesla",
+          "points": 72,
+          "aliases": [
+            "T"
+          ]
+        },
+        {
+          "name": "Weber",
+          "points": 76,
+          "aliases": [
+            "Wb"
+          ]
+        },
+        {
+          "name": "Henry",
+          "points": 81,
+          "aliases": [
+            "H"
+          ]
+        },
+        {
+          "name": "Radian",
+          "points": 86,
+          "aliases": [
+            "rad"
+          ]
+        },
+        {
+          "name": "Steradian",
+          "points": 91,
+          "aliases": [
+            "sr"
+          ]
+        },
+        {
+          "name": "Siemens",
+          "points": 95,
+          "aliases": [
+            "S"
+          ]
+        },
+        {
+          "name": "Katal",
           "points": 100,
           "aliases": [
-            "Candelas"
+            "kat"
           ]
         }
       ]
@@ -1970,64 +2116,90 @@
     {
       "id": "parts-of-speech",
       "topic": "LANGUAGE",
-      "prompt": "Name one of the traditional eight English parts of speech.",
-      "scope": "Use the traditional eight-part classification. Determiners/articles are not a separate ninth category here.",
-      "source": "https://www.britannica.com/topic/part-of-speech",
+      "prompt": "Name an official language of South Africa as of 2025.",
+      "scope": "The twelve constitutionally recognised languages, including the addition made in 2023.",
+      "source": "https://www.gov.za/about-sa/south-africas-people",
       "answers": [
         {
-          "name": "Noun",
-          "points": 7,
+          "name": "English",
+          "points": 1,
+          "aliases": []
+        },
+        {
+          "name": "Afrikaans",
+          "points": 10,
+          "aliases": []
+        },
+        {
+          "name": "Zulu",
+          "points": 19,
           "aliases": [
-            "Nouns"
+            "isiZulu"
           ]
         },
         {
-          "name": "Verb",
-          "points": 16,
+          "name": "Xhosa",
+          "points": 28,
           "aliases": [
-            "Verbs"
+            "isiXhosa"
           ]
         },
         {
-          "name": "Adjective",
-          "points": 26,
+          "name": "Sesotho",
+          "points": 37,
           "aliases": [
-            "Adjectives"
+            "Southern Sotho"
           ]
         },
         {
-          "name": "Adverb",
-          "points": 36,
+          "name": "Sepedi",
+          "points": 46,
           "aliases": [
-            "Adverbs"
+            "Northern Sotho"
           ]
         },
         {
-          "name": "Pronoun",
-          "points": 47,
+          "name": "Setswana",
+          "points": 55,
           "aliases": [
-            "Pronouns"
+            "Tswana"
           ]
         },
         {
-          "name": "Preposition",
-          "points": 56,
+          "name": "Swati",
+          "points": 64,
           "aliases": [
-            "Prepositions"
+            "siSwati"
           ]
         },
         {
-          "name": "Conjunction",
-          "points": 74,
+          "name": "Venda",
+          "points": 73,
           "aliases": [
-            "Conjunctions"
+            "Tshivenda"
           ]
         },
         {
-          "name": "Interjection",
+          "name": "Tsonga",
+          "points": 82,
+          "aliases": [
+            "itsonga",
+            "xiTsonga"
+          ]
+        },
+        {
+          "name": "Ndebele",
+          "points": 91,
+          "aliases": [
+            "isiNdebele",
+            "Southern Ndebele"
+          ]
+        },
+        {
+          "name": "South African Sign Language",
           "points": 100,
           "aliases": [
-            "Interjections"
+            "SASL"
           ]
         }
       ]
@@ -5109,470 +5281,1304 @@
     {
       "id": "hg-noble-gases",
       "topic": "SCIENCE",
-      "prompt": "Name a group 18 element.",
-      "scope": "Seven named elements, including element 118.",
-      "source": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "prompt": "Name a chemical element named after a real person.",
+      "scope": "Elements whose names honour scientists, directly or through a laboratory or mineral; place names and mythological figures are excluded.",
+      "source": "https://www.rsc.org/periodic-table",
       "answers": [
         {
-          "name": "Helium",
-          "aliases": [],
-          "points": 6
+          "name": "Einsteinium",
+          "points": 1,
+          "aliases": []
         },
         {
-          "name": "Neon",
-          "aliases": [],
-          "points": 19
+          "name": "Nobelium",
+          "points": 8,
+          "aliases": []
         },
         {
-          "name": "Argon",
-          "aliases": [],
-          "points": 33
+          "name": "Curium",
+          "points": 14,
+          "aliases": []
         },
         {
-          "name": "Radon",
-          "aliases": [],
-          "points": 49
+          "name": "Mendelevium",
+          "points": 21,
+          "aliases": []
         },
         {
-          "name": "Krypton",
-          "aliases": [],
-          "points": 66
+          "name": "Fermium",
+          "points": 27,
+          "aliases": []
         },
         {
-          "name": "Xenon",
-          "aliases": [],
-          "points": 83
+          "name": "Rutherfordium",
+          "points": 34,
+          "aliases": []
+        },
+        {
+          "name": "Copernicium",
+          "points": 41,
+          "aliases": []
+        },
+        {
+          "name": "Seaborgium",
+          "points": 47,
+          "aliases": []
+        },
+        {
+          "name": "Bohrium",
+          "points": 54,
+          "aliases": []
+        },
+        {
+          "name": "Meitnerium",
+          "points": 60,
+          "aliases": []
+        },
+        {
+          "name": "Lawrencium",
+          "points": 67,
+          "aliases": []
+        },
+        {
+          "name": "Roentgenium",
+          "points": 74,
+          "aliases": []
+        },
+        {
+          "name": "Flerovium",
+          "points": 80,
+          "aliases": []
         },
         {
           "name": "Oganesson",
-          "aliases": [],
-          "points": 100
+          "points": 87,
+          "aliases": []
+        },
+        {
+          "name": "Gadolinium",
+          "points": 93,
+          "aliases": []
+        },
+        {
+          "name": "Samarium",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
     {
       "id": "hg-halogens",
       "topic": "SCIENCE",
-      "prompt": "Name one of the six main parts of a flowering plant.",
-      "scope": "The six basic structures commonly taught at school; not cells, tissues or specialised reproductive parts.",
-      "source": "https://en.wikipedia.org/wiki/Plant",
+      "prompt": "Name a type of bone in an adult human skeleton.",
+      "scope": "Anatomical bone names, including groups of small hand and foot bones. Side and number do not make a separate answer.",
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-introduction",
       "answers": [
         {
-          "name": "Root",
+          "name": "Skull",
+          "points": 1,
           "aliases": [
-            "Roots"
-          ],
-          "points": 8
+            "Cranium"
+          ]
         },
         {
-          "name": "Stem",
+          "name": "Rib",
+          "points": 4,
           "aliases": [
-            "Stems"
-          ],
-          "points": 26
+            "Ribs"
+          ]
         },
         {
-          "name": "Leaf",
-          "aliases": [
-            "Leaves"
-          ],
-          "points": 45
+          "name": "Femur",
+          "points": 7,
+          "aliases": []
         },
         {
-          "name": "Flower",
-          "aliases": [
-            "Flowers"
-          ],
-          "points": 63
+          "name": "Tibia",
+          "points": 11,
+          "aliases": []
         },
         {
-          "name": "Fruit",
-          "aliases": [
-            "Fruits"
-          ],
-          "points": 82
+          "name": "Fibula",
+          "points": 14,
+          "aliases": []
         },
         {
-          "name": "Seed",
+          "name": "Humerus",
+          "points": 17,
+          "aliases": []
+        },
+        {
+          "name": "Radius",
+          "points": 20,
+          "aliases": []
+        },
+        {
+          "name": "Ulna",
+          "points": 23,
+          "aliases": []
+        },
+        {
+          "name": "Patella",
+          "points": 27,
           "aliases": [
-            "Seeds"
-          ],
-          "points": 100
+            "Kneecap"
+          ]
+        },
+        {
+          "name": "Clavicle",
+          "points": 30,
+          "aliases": [
+            "Collarbone"
+          ]
+        },
+        {
+          "name": "Scapula",
+          "points": 33,
+          "aliases": [
+            "Shoulder blade"
+          ]
+        },
+        {
+          "name": "Sternum",
+          "points": 36,
+          "aliases": [
+            "Breastbone"
+          ]
+        },
+        {
+          "name": "Mandible",
+          "points": 39,
+          "aliases": [
+            "Jawbone"
+          ]
+        },
+        {
+          "name": "Vertebra",
+          "points": 43,
+          "aliases": [
+            "Vertebrae"
+          ]
+        },
+        {
+          "name": "Sacrum",
+          "points": 46,
+          "aliases": []
+        },
+        {
+          "name": "Coccyx",
+          "points": 49,
+          "aliases": [
+            "Tailbone"
+          ]
+        },
+        {
+          "name": "Carpal",
+          "points": 52,
+          "aliases": [
+            "Carpals"
+          ]
+        },
+        {
+          "name": "Metacarpal",
+          "points": 55,
+          "aliases": [
+            "Metacarpals"
+          ]
+        },
+        {
+          "name": "Phalanx",
+          "points": 58,
+          "aliases": [
+            "Phalanges"
+          ]
+        },
+        {
+          "name": "Tarsal",
+          "points": 62,
+          "aliases": [
+            "Tarsals"
+          ]
+        },
+        {
+          "name": "Metatarsal",
+          "points": 65,
+          "aliases": [
+            "Metatarsals"
+          ]
+        },
+        {
+          "name": "Talus",
+          "points": 68,
+          "aliases": []
+        },
+        {
+          "name": "Calcaneus",
+          "points": 71,
+          "aliases": [
+            "Heel bone"
+          ]
+        },
+        {
+          "name": "Maxilla",
+          "points": 74,
+          "aliases": []
+        },
+        {
+          "name": "Zygomatic bone",
+          "points": 78,
+          "aliases": [
+            "Cheekbone"
+          ]
+        },
+        {
+          "name": "Hyoid",
+          "points": 81,
+          "aliases": []
+        },
+        {
+          "name": "Ilium",
+          "points": 84,
+          "aliases": []
+        },
+        {
+          "name": "Ischium",
+          "points": 87,
+          "aliases": []
+        },
+        {
+          "name": "Pubis",
+          "points": 90,
+          "aliases": []
+        },
+        {
+          "name": "Malleus",
+          "points": 94,
+          "aliases": []
+        },
+        {
+          "name": "Incus",
+          "points": 97,
+          "aliases": []
+        },
+        {
+          "name": "Stapes",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
     {
       "id": "hg-alkali",
       "topic": "SCIENCE",
-      "prompt": "Name a planet whose English name has exactly five letters.",
-      "scope": "The eight recognised Solar System planets; spelling in English.",
+      "prompt": "Name a Solar System planet or an IAU-recognised dwarf planet.",
+      "scope": "The eight planets and five bodies formally recognised in the dwarf-planet category by 2025; proposed candidates are excluded.",
       "source": "https://science.nasa.gov/solar-system/planets/",
       "answers": [
         {
           "name": "Earth",
-          "aliases": [],
-          "points": 8
+          "points": 1,
+          "aliases": []
+        },
+        {
+          "name": "Mars",
+          "points": 9,
+          "aliases": []
+        },
+        {
+          "name": "Jupiter",
+          "points": 18,
+          "aliases": []
+        },
+        {
+          "name": "Saturn",
+          "points": 26,
+          "aliases": []
         },
         {
           "name": "Venus",
-          "aliases": [],
-          "points": 100
+          "points": 34,
+          "aliases": []
+        },
+        {
+          "name": "Mercury",
+          "points": 42,
+          "aliases": []
+        },
+        {
+          "name": "Neptune",
+          "points": 50,
+          "aliases": []
+        },
+        {
+          "name": "Uranus",
+          "points": 59,
+          "aliases": []
+        },
+        {
+          "name": "Pluto",
+          "points": 67,
+          "aliases": []
+        },
+        {
+          "name": "Ceres",
+          "points": 75,
+          "aliases": []
+        },
+        {
+          "name": "Eris",
+          "points": 84,
+          "aliases": []
+        },
+        {
+          "name": "Haumea",
+          "points": 92,
+          "aliases": []
+        },
+        {
+          "name": "Makemake",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
     {
       "id": "hg-alkaline-earth",
       "topic": "SCIENCE",
-      "prompt": "Name one of the five major renewable energy sources.",
-      "scope": "The five main source categories; give an energy source rather than equipment.",
-      "source": "https://en.wikipedia.org/wiki/Renewable_energy",
+      "prompt": "Name an official SI metric prefix.",
+      "scope": "The 24 decimal prefixes approved by the BIPM, including the four adopted in 2022. Enter the prefix name.",
+      "source": "https://www.bipm.org/en/measurement-units/si-prefixes",
       "answers": [
         {
-          "name": "Solar",
-          "aliases": [
-            "Solar energy",
-            "Sun"
-          ],
-          "points": 8
+          "name": "Kilo",
+          "points": 1,
+          "aliases": []
         },
         {
-          "name": "Wind",
-          "aliases": [
-            "Wind energy"
-          ],
-          "points": 31
+          "name": "Milli",
+          "points": 5,
+          "aliases": []
         },
         {
-          "name": "Hydropower",
-          "aliases": [
-            "Hydro",
-            "Hydroelectricity",
-            "Water",
-            "Hydroelectric"
-          ],
-          "points": 54
+          "name": "Centi",
+          "points": 10,
+          "aliases": []
         },
         {
-          "name": "Geothermal",
-          "aliases": [
-            "Geothermal energy"
-          ],
-          "points": 77
+          "name": "Mega",
+          "points": 14,
+          "aliases": []
         },
         {
-          "name": "Biomass",
+          "name": "Giga",
+          "points": 18,
+          "aliases": []
+        },
+        {
+          "name": "Micro",
+          "points": 23,
+          "aliases": []
+        },
+        {
+          "name": "Nano",
+          "points": 27,
+          "aliases": []
+        },
+        {
+          "name": "Tera",
+          "points": 31,
+          "aliases": []
+        },
+        {
+          "name": "Deci",
+          "points": 35,
+          "aliases": []
+        },
+        {
+          "name": "Deca",
+          "points": 40,
           "aliases": [
-            "Bioenergy",
-            "Organic material"
-          ],
-          "points": 100
+            "Deka"
+          ]
+        },
+        {
+          "name": "Hecto",
+          "points": 44,
+          "aliases": []
+        },
+        {
+          "name": "Pico",
+          "points": 48,
+          "aliases": []
+        },
+        {
+          "name": "Femto",
+          "points": 53,
+          "aliases": []
+        },
+        {
+          "name": "Peta",
+          "points": 57,
+          "aliases": []
+        },
+        {
+          "name": "Exa",
+          "points": 61,
+          "aliases": []
+        },
+        {
+          "name": "Atto",
+          "points": 66,
+          "aliases": []
+        },
+        {
+          "name": "Zetta",
+          "points": 70,
+          "aliases": []
+        },
+        {
+          "name": "Zepto",
+          "points": 74,
+          "aliases": []
+        },
+        {
+          "name": "Yotta",
+          "points": 78,
+          "aliases": []
+        },
+        {
+          "name": "Yocto",
+          "points": 83,
+          "aliases": []
+        },
+        {
+          "name": "Ronna",
+          "points": 87,
+          "aliases": []
+        },
+        {
+          "name": "Ronto",
+          "points": 91,
+          "aliases": []
+        },
+        {
+          "name": "Quetta",
+          "points": 96,
+          "aliases": []
+        },
+        {
+          "name": "Quecto",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
     {
       "id": "hg-big-prefixes",
       "topic": "SCIENCE",
-      "prompt": "Name one of the three everyday states of matter.",
-      "scope": "The three commonly taught at primary school; not plasma or specialised states.",
-      "source": "https://en.wikipedia.org/wiki/State_of_matter",
+      "prompt": "Name a chemical element with atomic number 21–40.",
+      "scope": "The inclusive atomic-number range; element names and their standard symbols are accepted.",
+      "source": "https://www.rsc.org/periodic-table",
       "answers": [
         {
-          "name": "Solid",
-          "aliases": [],
-          "points": 8
+          "name": "Iron",
+          "points": 1,
+          "aliases": [
+            "Fe"
+          ]
         },
         {
-          "name": "Liquid",
-          "aliases": [],
-          "points": 54
+          "name": "Copper",
+          "points": 6,
+          "aliases": [
+            "Cu"
+          ]
         },
         {
-          "name": "Gas",
-          "aliases": [],
-          "points": 100
+          "name": "Zinc",
+          "points": 11,
+          "aliases": [
+            "Zn"
+          ]
+        },
+        {
+          "name": "Nickel",
+          "points": 17,
+          "aliases": [
+            "Ni"
+          ]
+        },
+        {
+          "name": "Titanium",
+          "points": 22,
+          "aliases": [
+            "Ti"
+          ]
+        },
+        {
+          "name": "Chromium",
+          "points": 27,
+          "aliases": [
+            "Cr"
+          ]
+        },
+        {
+          "name": "Cobalt",
+          "points": 32,
+          "aliases": [
+            "Co"
+          ]
+        },
+        {
+          "name": "Manganese",
+          "points": 37,
+          "aliases": [
+            "Mn"
+          ]
+        },
+        {
+          "name": "Scandium",
+          "points": 43,
+          "aliases": [
+            "Sc"
+          ]
+        },
+        {
+          "name": "Vanadium",
+          "points": 48,
+          "aliases": [
+            "V"
+          ]
+        },
+        {
+          "name": "Gallium",
+          "points": 53,
+          "aliases": [
+            "Ga"
+          ]
+        },
+        {
+          "name": "Germanium",
+          "points": 58,
+          "aliases": [
+            "Ge"
+          ]
+        },
+        {
+          "name": "Arsenic",
+          "points": 64,
+          "aliases": [
+            "As"
+          ]
+        },
+        {
+          "name": "Selenium",
+          "points": 69,
+          "aliases": [
+            "Se"
+          ]
+        },
+        {
+          "name": "Bromine",
+          "points": 74,
+          "aliases": [
+            "Br"
+          ]
+        },
+        {
+          "name": "Krypton",
+          "points": 79,
+          "aliases": [
+            "Kr"
+          ]
+        },
+        {
+          "name": "Rubidium",
+          "points": 84,
+          "aliases": [
+            "Rb"
+          ]
+        },
+        {
+          "name": "Strontium",
+          "points": 90,
+          "aliases": [
+            "Sr"
+          ]
+        },
+        {
+          "name": "Yttrium",
+          "points": 95,
+          "aliases": [
+            "Y"
+          ]
+        },
+        {
+          "name": "Zirconium",
+          "points": 100,
+          "aliases": [
+            "Zr"
+          ]
         }
       ]
     },
     {
       "id": "hg-small-prefixes",
       "topic": "SCIENCE",
-      "prompt": "Name one of the five human senses traditionally taught at school.",
-      "scope": "The traditional five-sense model, not balance or body-position senses.",
-      "source": "https://en.wikipedia.org/wiki/Sense",
+      "prompt": "Name a chemical element whose symbol begins with C.",
+      "scope": "Use the standard IUPAC element names or symbols, as listed in the periodic table.",
+      "source": "https://www.rsc.org/periodic-table",
       "answers": [
         {
-          "name": "Sight",
+          "name": "Carbon",
+          "points": 1,
           "aliases": [
-            "Vision"
-          ],
-          "points": 8
+            "C"
+          ]
         },
         {
-          "name": "Hearing",
+          "name": "Calcium",
+          "points": 10,
           "aliases": [
-            "Sound"
-          ],
-          "points": 31
+            "Ca"
+          ]
         },
         {
-          "name": "Smell",
+          "name": "Copper",
+          "points": 19,
           "aliases": [
-            "Olfaction"
-          ],
-          "points": 54
+            "Cu"
+          ]
         },
         {
-          "name": "Taste",
+          "name": "Chlorine",
+          "points": 28,
           "aliases": [
-            "Gustation"
-          ],
-          "points": 77
+            "Cl"
+          ]
         },
         {
-          "name": "Touch",
+          "name": "Cobalt",
+          "points": 37,
           "aliases": [
-            "Feeling"
-          ],
-          "points": 100
+            "Co"
+          ]
+        },
+        {
+          "name": "Chromium",
+          "points": 46,
+          "aliases": [
+            "Cr"
+          ]
+        },
+        {
+          "name": "Cadmium",
+          "points": 55,
+          "aliases": [
+            "Cd"
+          ]
+        },
+        {
+          "name": "Caesium",
+          "points": 64,
+          "aliases": [
+            "Cesium",
+            "Cs"
+          ]
+        },
+        {
+          "name": "Cerium",
+          "points": 73,
+          "aliases": [
+            "Ce"
+          ]
+        },
+        {
+          "name": "Curium",
+          "points": 82,
+          "aliases": [
+            "Cm"
+          ]
+        },
+        {
+          "name": "Californium",
+          "points": 91,
+          "aliases": [
+            "Cf"
+          ]
+        },
+        {
+          "name": "Copernicium",
+          "points": 100,
+          "aliases": [
+            "Cn"
+          ]
         }
       ]
     },
     {
       "id": "hg-rainbow",
       "topic": "SCIENCE",
-      "prompt": "Name a traditional rainbow colour.",
-      "scope": "The seven-colour ROYGBIV convention.",
-      "source": "https://en.wikipedia.org/wiki/Rainbow",
+      "prompt": "Name a mineral in the traditional Mohs hardness scale.",
+      "scope": "The original ten reference minerals, in use since 1812.",
+      "source": "https://www.britannica.com/science/Mohs-hardness",
       "answers": [
         {
-          "name": "Red",
-          "aliases": [],
-          "points": 6
+          "name": "Diamond",
+          "points": 1,
+          "aliases": []
         },
         {
-          "name": "Blue",
-          "aliases": [],
-          "points": 19
+          "name": "Quartz",
+          "points": 12,
+          "aliases": []
         },
         {
-          "name": "Green",
-          "aliases": [],
-          "points": 33
+          "name": "Talc",
+          "points": 23,
+          "aliases": []
         },
         {
-          "name": "Yellow",
-          "aliases": [],
-          "points": 49
+          "name": "Gypsum",
+          "points": 34,
+          "aliases": []
         },
         {
-          "name": "Orange",
-          "aliases": [],
-          "points": 66
+          "name": "Calcite",
+          "points": 45,
+          "aliases": []
         },
         {
-          "name": "Violet",
+          "name": "Fluorite",
+          "points": 56,
+          "aliases": []
+        },
+        {
+          "name": "Apatite",
+          "points": 67,
+          "aliases": []
+        },
+        {
+          "name": "Topaz",
+          "points": 78,
+          "aliases": []
+        },
+        {
+          "name": "Corundum",
+          "points": 89,
+          "aliases": []
+        },
+        {
+          "name": "Orthoclase",
+          "points": 100,
           "aliases": [
-            "Purple"
-          ],
-          "points": 83
-        },
-        {
-          "name": "Indigo",
-          "aliases": [],
-          "points": 100
+            "Orthoclase feldspar"
+          ]
         }
       ]
     },
     {
       "id": "hg-spectrum",
       "topic": "SCIENCE",
-      "prompt": "Name a major band of the electromagnetic spectrum.",
-      "scope": "Seven broad bands; give a band name rather than an individual colour.",
-      "source": "https://en.wikipedia.org/wiki/Electromagnetic_spectrum",
+      "prompt": "Name one of the ten main cloud genera.",
+      "scope": "The ten genus names in the WMO International Cloud Atlas; species and informal weather descriptions are excluded.",
+      "source": "https://cloudatlas.wmo.int/en/clouds-genera.html",
       "answers": [
         {
-          "name": "Radio",
-          "aliases": [
-            "Radio waves"
-          ],
-          "points": 6
+          "name": "Cumulus",
+          "points": 1,
+          "aliases": []
         },
         {
-          "name": "Visible",
-          "aliases": [
-            "Visible light"
-          ],
-          "points": 19
+          "name": "Cirrus",
+          "points": 12,
+          "aliases": []
         },
         {
-          "name": "Infrared",
-          "aliases": [
-            "IR"
-          ],
-          "points": 33
+          "name": "Stratus",
+          "points": 23,
+          "aliases": []
         },
         {
-          "name": "Ultraviolet",
-          "aliases": [
-            "UV"
-          ],
-          "points": 49
+          "name": "Cumulonimbus",
+          "points": 34,
+          "aliases": []
         },
         {
-          "name": "X-ray",
-          "aliases": [
-            "X-rays",
-            "X ray"
-          ],
-          "points": 66
+          "name": "Nimbostratus",
+          "points": 45,
+          "aliases": []
         },
         {
-          "name": "Microwave",
-          "aliases": [
-            "Microwaves"
-          ],
-          "points": 83
+          "name": "Altocumulus",
+          "points": 56,
+          "aliases": []
         },
         {
-          "name": "Gamma ray",
-          "aliases": [
-            "Gamma rays",
-            "Gamma"
-          ],
-          "points": 100
+          "name": "Altostratus",
+          "points": 67,
+          "aliases": []
+        },
+        {
+          "name": "Cirrocumulus",
+          "points": 78,
+          "aliases": []
+        },
+        {
+          "name": "Cirrostratus",
+          "points": 89,
+          "aliases": []
+        },
+        {
+          "name": "Stratocumulus",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
     {
       "id": "hg-blood",
       "topic": "SCIENCE",
-      "prompt": "Name an ABO blood group.",
-      "scope": "Four letter groups, ignoring positive/negative Rh factors.",
-      "source": "https://en.wikipedia.org/wiki/ABO_blood_group_system",
+      "prompt": "Name one of the thirteen essential human vitamins.",
+      "scope": "Use a letter/number designation or the standard vitamin name. Related chemical forms count together.",
+      "source": "https://medlineplus.gov/ency/article/002399.htm",
       "answers": [
         {
-          "name": "O",
-          "aliases": [],
-          "points": 6
+          "name": "Vitamin C",
+          "points": 1,
+          "aliases": [
+            "C",
+            "Ascorbic acid"
+          ]
         },
         {
-          "name": "A",
-          "aliases": [],
-          "points": 33
+          "name": "Vitamin D",
+          "points": 9,
+          "aliases": [
+            "D",
+            "Calciferol"
+          ]
         },
         {
-          "name": "B",
-          "aliases": [],
-          "points": 66
+          "name": "Vitamin A",
+          "points": 18,
+          "aliases": [
+            "A",
+            "Retinol"
+          ]
         },
         {
-          "name": "AB",
-          "aliases": [],
-          "points": 100
+          "name": "Vitamin E",
+          "points": 26,
+          "aliases": [
+            "E",
+            "Tocopherol"
+          ]
+        },
+        {
+          "name": "Vitamin K",
+          "points": 34,
+          "aliases": [
+            "K"
+          ]
+        },
+        {
+          "name": "Vitamin B12",
+          "points": 42,
+          "aliases": [
+            "B12",
+            "Cobalamin"
+          ]
+        },
+        {
+          "name": "Vitamin B6",
+          "points": 50,
+          "aliases": [
+            "B6",
+            "Pyridoxine"
+          ]
+        },
+        {
+          "name": "Vitamin B1",
+          "points": 59,
+          "aliases": [
+            "B1",
+            "Thiamine",
+            "Thiamin"
+          ]
+        },
+        {
+          "name": "Vitamin B2",
+          "points": 67,
+          "aliases": [
+            "B2",
+            "Riboflavin"
+          ]
+        },
+        {
+          "name": "Vitamin B3",
+          "points": 75,
+          "aliases": [
+            "B3",
+            "Niacin"
+          ]
+        },
+        {
+          "name": "Vitamin B9",
+          "points": 84,
+          "aliases": [
+            "B9",
+            "Folate",
+            "Folic acid"
+          ]
+        },
+        {
+          "name": "Vitamin B5",
+          "points": 92,
+          "aliases": [
+            "B5",
+            "Pantothenic acid"
+          ]
+        },
+        {
+          "name": "Vitamin B7",
+          "points": 100,
+          "aliases": [
+            "B7",
+            "Biotin"
+          ]
         }
       ]
     },
     {
       "id": "hg-dna",
       "topic": "SCIENCE",
-      "prompt": "Name a standard DNA base.",
-      "scope": "The four full base names, not letters.",
-      "source": "https://en.wikipedia.org/wiki/DNA",
+      "prompt": "Name one of the twenty standard amino acids.",
+      "scope": "The conventional twenty protein-building amino acids; full names and standard three-letter codes are accepted.",
+      "source": "https://www.britannica.com/science/amino-acid",
       "answers": [
         {
-          "name": "Adenine",
-          "aliases": [],
-          "points": 6
+          "name": "Glycine",
+          "points": 1,
+          "aliases": [
+            "Gly"
+          ]
         },
         {
-          "name": "Guanine",
-          "aliases": [],
-          "points": 33
+          "name": "Alanine",
+          "points": 6,
+          "aliases": [
+            "Ala"
+          ]
         },
         {
-          "name": "Cytosine",
-          "aliases": [],
-          "points": 66
+          "name": "Lysine",
+          "points": 11,
+          "aliases": [
+            "Lys"
+          ]
         },
         {
-          "name": "Thymine",
-          "aliases": [],
-          "points": 100
+          "name": "Tryptophan",
+          "points": 17,
+          "aliases": [
+            "Trp"
+          ]
+        },
+        {
+          "name": "Glutamine",
+          "points": 22,
+          "aliases": [
+            "Gln"
+          ]
+        },
+        {
+          "name": "Arginine",
+          "points": 27,
+          "aliases": [
+            "Arg"
+          ]
+        },
+        {
+          "name": "Leucine",
+          "points": 32,
+          "aliases": [
+            "Leu"
+          ]
+        },
+        {
+          "name": "Valine",
+          "points": 37,
+          "aliases": [
+            "Val"
+          ]
+        },
+        {
+          "name": "Proline",
+          "points": 43,
+          "aliases": [
+            "Pro"
+          ]
+        },
+        {
+          "name": "Serine",
+          "points": 48,
+          "aliases": [
+            "Ser"
+          ]
+        },
+        {
+          "name": "Cysteine",
+          "points": 53,
+          "aliases": [
+            "Cys"
+          ]
+        },
+        {
+          "name": "Methionine",
+          "points": 58,
+          "aliases": [
+            "Met"
+          ]
+        },
+        {
+          "name": "Phenylalanine",
+          "points": 64,
+          "aliases": [
+            "Phe"
+          ]
+        },
+        {
+          "name": "Tyrosine",
+          "points": 69,
+          "aliases": [
+            "Tyr"
+          ]
+        },
+        {
+          "name": "Threonine",
+          "points": 74,
+          "aliases": [
+            "Thr"
+          ]
+        },
+        {
+          "name": "Isoleucine",
+          "points": 79,
+          "aliases": [
+            "Ile"
+          ]
+        },
+        {
+          "name": "Histidine",
+          "points": 84,
+          "aliases": [
+            "His"
+          ]
+        },
+        {
+          "name": "Asparagine",
+          "points": 90,
+          "aliases": [
+            "Asn"
+          ]
+        },
+        {
+          "name": "Aspartic acid",
+          "points": 95,
+          "aliases": [
+            "Aspartate",
+            "Asp"
+          ]
+        },
+        {
+          "name": "Glutamic acid",
+          "points": 100,
+          "aliases": [
+            "Glutamate",
+            "Glu"
+          ]
         }
       ]
     },
     {
       "id": "hg-rna",
       "topic": "SCIENCE",
-      "prompt": "Name one of the five traditionally recognised vital organs.",
-      "scope": "The conventional five-organ teaching group; give an everyday organ name, not tissues or cell types.",
-      "source": "https://en.wikipedia.org/wiki/Organ_(biology)",
+      "prompt": "Name one of the twelve cranial nerves.",
+      "scope": "The conventional numbered pairs in human anatomy; the usual anatomical names are accepted.",
+      "source": "https://my.clevelandclinic.org/health/body/21998-cranial-nerves",
       "answers": [
         {
-          "name": "Heart",
-          "aliases": [],
-          "points": 8
-        },
-        {
-          "name": "Lungs",
+          "name": "Optic",
+          "points": 1,
           "aliases": [
-            "Lung"
-          ],
-          "points": 31
+            "Optic nerve"
+          ]
         },
         {
-          "name": "Liver",
-          "aliases": [],
-          "points": 54
-        },
-        {
-          "name": "Kidneys",
+          "name": "Olfactory",
+          "points": 10,
           "aliases": [
-            "Kidney"
-          ],
-          "points": 77
+            "Olfactory nerve"
+          ]
         },
         {
-          "name": "Brain",
-          "aliases": [],
-          "points": 100
+          "name": "Vagus",
+          "points": 19,
+          "aliases": [
+            "Vagus nerve"
+          ]
+        },
+        {
+          "name": "Facial",
+          "points": 28,
+          "aliases": [
+            "Facial nerve"
+          ]
+        },
+        {
+          "name": "Trigeminal",
+          "points": 37,
+          "aliases": [
+            "Trigeminal nerve"
+          ]
+        },
+        {
+          "name": "Oculomotor",
+          "points": 46,
+          "aliases": [
+            "Oculomotor nerve"
+          ]
+        },
+        {
+          "name": "Trochlear",
+          "points": 55,
+          "aliases": [
+            "Trochlear nerve"
+          ]
+        },
+        {
+          "name": "Abducens",
+          "points": 64,
+          "aliases": [
+            "Abducens nerve"
+          ]
+        },
+        {
+          "name": "Vestibulocochlear",
+          "points": 73,
+          "aliases": [
+            "Vestibulocochlear nerve",
+            "Auditory nerve"
+          ]
+        },
+        {
+          "name": "Glossopharyngeal",
+          "points": 82,
+          "aliases": [
+            "Glossopharyngeal nerve"
+          ]
+        },
+        {
+          "name": "Accessory",
+          "points": 91,
+          "aliases": [
+            "Accessory nerve",
+            "Spinal accessory nerve"
+          ]
+        },
+        {
+          "name": "Hypoglossal",
+          "points": 100,
+          "aliases": [
+            "Hypoglossal nerve"
+          ]
         }
       ]
     },
     {
       "id": "hg-vitamins",
       "topic": "SCIENCE",
-      "prompt": "Name a fat-soluble vitamin.",
-      "scope": "Four standard vitamin letters; water-soluble vitamins excluded.",
-      "source": "https://en.wikipedia.org/wiki/Vitamin",
+      "prompt": "Name an element that is a gas at room temperature.",
+      "scope": "Pure elements at 20 degrees Celsius and one atmosphere; element names or standard symbols.",
+      "source": "https://www.rsc.org/periodic-table",
       "answers": [
         {
-          "name": "Vitamin D",
+          "name": "Oxygen",
+          "points": 1,
           "aliases": [
-            "D"
-          ],
-          "points": 6
+            "O"
+          ]
         },
         {
-          "name": "Vitamin A",
+          "name": "Hydrogen",
+          "points": 11,
           "aliases": [
-            "A"
-          ],
-          "points": 33
+            "H"
+          ]
         },
         {
-          "name": "Vitamin E",
+          "name": "Helium",
+          "points": 21,
           "aliases": [
-            "E"
-          ],
-          "points": 66
+            "He"
+          ]
         },
         {
-          "name": "Vitamin K",
+          "name": "Nitrogen",
+          "points": 31,
           "aliases": [
-            "K"
-          ],
-          "points": 100
+            "N"
+          ]
+        },
+        {
+          "name": "Neon",
+          "points": 41,
+          "aliases": [
+            "Ne"
+          ]
+        },
+        {
+          "name": "Chlorine",
+          "points": 50,
+          "aliases": [
+            "Cl"
+          ]
+        },
+        {
+          "name": "Argon",
+          "points": 60,
+          "aliases": [
+            "Ar"
+          ]
+        },
+        {
+          "name": "Fluorine",
+          "points": 70,
+          "aliases": [
+            "F"
+          ]
+        },
+        {
+          "name": "Krypton",
+          "points": 80,
+          "aliases": [
+            "Kr"
+          ]
+        },
+        {
+          "name": "Xenon",
+          "points": 90,
+          "aliases": [
+            "Xe"
+          ]
+        },
+        {
+          "name": "Radon",
+          "points": 100,
+          "aliases": [
+            "Rn"
+          ]
         }
       ]
     },
@@ -11700,219 +12706,633 @@
     {
       "id": "hg-capitals",
       "topic": "AUSTRALIA",
-      "prompt": "Name an Australian state or mainland territory capital.",
-      "scope": "Six state capitals and both main mainland territory capitals.",
-      "source": "https://en.wikipedia.org/wiki/States_and_territories_of_Australia",
+      "prompt": "Name an Australian UNESCO World Heritage property listed by the end of 2024.",
+      "scope": "Australian properties on the World Heritage List by 31 December 2024; tentative sites and later inscriptions are excluded.",
+      "source": "https://whc.unesco.org/en/statesparties/au",
       "answers": [
         {
-          "name": "Sydney",
-          "aliases": [],
-          "points": 6
+          "name": "Great Barrier Reef",
+          "points": 1,
+          "aliases": []
         },
         {
-          "name": "Melbourne",
-          "aliases": [],
-          "points": 17
+          "name": "Sydney Opera House",
+          "points": 6,
+          "aliases": []
         },
         {
-          "name": "Brisbane",
-          "aliases": [],
-          "points": 29
+          "name": "Uluru-Kata Tjuta National Park",
+          "points": 11,
+          "aliases": [
+            "Uluru",
+            "Uluru Kata Tjuta"
+          ]
         },
         {
-          "name": "Perth",
-          "aliases": [],
-          "points": 42
+          "name": "Kakadu National Park",
+          "points": 17,
+          "aliases": [
+            "Kakadu"
+          ]
         },
         {
-          "name": "Adelaide",
-          "aliases": [],
-          "points": 56
+          "name": "Greater Blue Mountains Area",
+          "points": 22,
+          "aliases": [
+            "Blue Mountains"
+          ]
         },
         {
-          "name": "Canberra",
-          "aliases": [],
-          "points": 70
+          "name": "K’gari",
+          "points": 27,
+          "aliases": [
+            "Fraser Island"
+          ]
         },
         {
-          "name": "Hobart",
-          "aliases": [],
-          "points": 85
+          "name": "Tasmanian Wilderness",
+          "points": 32,
+          "aliases": []
         },
         {
-          "name": "Darwin",
-          "aliases": [],
-          "points": 100
+          "name": "Shark Bay, Western Australia",
+          "points": 37,
+          "aliases": [
+            "Shark Bay"
+          ]
+        },
+        {
+          "name": "Wet Tropics of Queensland",
+          "points": 43,
+          "aliases": [
+            "Wet Tropics"
+          ]
+        },
+        {
+          "name": "Ningaloo Coast",
+          "points": 48,
+          "aliases": [
+            "Ningaloo"
+          ]
+        },
+        {
+          "name": "Purnululu National Park",
+          "points": 53,
+          "aliases": [
+            "Purnululu"
+          ]
+        },
+        {
+          "name": "Australian Convict Sites",
+          "points": 58,
+          "aliases": []
+        },
+        {
+          "name": "Royal Exhibition Building and Carlton Gardens",
+          "points": 64,
+          "aliases": [
+            "Royal Exhibition Building"
+          ]
+        },
+        {
+          "name": "Gondwana Rainforests of Australia",
+          "points": 69,
+          "aliases": [
+            "Gondwana Rainforests"
+          ]
+        },
+        {
+          "name": "Willandra Lakes Region",
+          "points": 74,
+          "aliases": [
+            "Willandra Lakes"
+          ]
+        },
+        {
+          "name": "Lord Howe Island Group",
+          "points": 79,
+          "aliases": [
+            "Lord Howe Island"
+          ]
+        },
+        {
+          "name": "Macquarie Island",
+          "points": 84,
+          "aliases": []
+        },
+        {
+          "name": "Heard and McDonald Islands",
+          "points": 90,
+          "aliases": [
+            "Heard Island and McDonald Islands"
+          ]
+        },
+        {
+          "name": "Australian Fossil Mammal Sites (Riversleigh / Naracoorte)",
+          "points": 95,
+          "aliases": [
+            "Australian Fossil Mammal Sites",
+            "Riversleigh",
+            "Naracoorte"
+          ]
+        },
+        {
+          "name": "Budj Bim Cultural Landscape",
+          "points": 100,
+          "aliases": [
+            "Budj Bim"
+          ]
         }
       ]
     },
     {
       "id": "hg-prime-ministers",
       "topic": "AUSTRALIA",
-      "prompt": "Name an Australian prime minister who served during 2000–2024.",
-      "scope": "Any part of that period; surnames accepted.",
-      "source": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Australia",
+      "prompt": "Name an Australian prime minister who took office before 2026.",
+      "scope": "People who have served as prime minister of the Commonwealth of Australia, through 2025; surnames accepted when unambiguous.",
+      "source": "https://www.nma.gov.au/explore/features/prime-ministers",
       "answers": [
         {
-          "name": "John Howard",
-          "aliases": [
-            "Howard"
-          ],
-          "points": 6
-        },
-        {
           "name": "Anthony Albanese",
+          "points": 1,
           "aliases": [
             "Albanese"
-          ],
-          "points": 19
+          ]
         },
         {
           "name": "Scott Morrison",
+          "points": 4,
           "aliases": [
             "Morrison"
-          ],
-          "points": 33
-        },
-        {
-          "name": "Kevin Rudd",
-          "aliases": [
-            "Rudd"
-          ],
-          "points": 49
-        },
-        {
-          "name": "Julia Gillard",
-          "aliases": [
-            "Gillard"
-          ],
-          "points": 66
-        },
-        {
-          "name": "Tony Abbott",
-          "aliases": [
-            "Abbott"
-          ],
-          "points": 83
+          ]
         },
         {
           "name": "Malcolm Turnbull",
+          "points": 8,
           "aliases": [
             "Turnbull"
-          ],
-          "points": 100
+          ]
+        },
+        {
+          "name": "Tony Abbott",
+          "points": 11,
+          "aliases": [
+            "Abbott"
+          ]
+        },
+        {
+          "name": "Julia Gillard",
+          "points": 14,
+          "aliases": [
+            "Gillard"
+          ]
+        },
+        {
+          "name": "Kevin Rudd",
+          "points": 18,
+          "aliases": [
+            "Rudd"
+          ]
+        },
+        {
+          "name": "John Howard",
+          "points": 21,
+          "aliases": [
+            "Howard"
+          ]
+        },
+        {
+          "name": "Paul Keating",
+          "points": 24,
+          "aliases": [
+            "Keating"
+          ]
+        },
+        {
+          "name": "Bob Hawke",
+          "points": 27,
+          "aliases": [
+            "Hawke"
+          ]
+        },
+        {
+          "name": "Malcolm Fraser",
+          "points": 31,
+          "aliases": [
+            "Fraser"
+          ]
+        },
+        {
+          "name": "Gough Whitlam",
+          "points": 34,
+          "aliases": [
+            "Whitlam"
+          ]
+        },
+        {
+          "name": "William McMahon",
+          "points": 37,
+          "aliases": [
+            "McMahon"
+          ]
+        },
+        {
+          "name": "John Gorton",
+          "points": 41,
+          "aliases": [
+            "Gorton"
+          ]
+        },
+        {
+          "name": "Harold Holt",
+          "points": 44,
+          "aliases": [
+            "Holt"
+          ]
+        },
+        {
+          "name": "Robert Menzies",
+          "points": 47,
+          "aliases": [
+            "Menzies"
+          ]
+        },
+        {
+          "name": "John McEwen",
+          "points": 50,
+          "aliases": [
+            "McEwen"
+          ]
+        },
+        {
+          "name": "Ben Chifley",
+          "points": 54,
+          "aliases": [
+            "Chifley"
+          ]
+        },
+        {
+          "name": "John Curtin",
+          "points": 57,
+          "aliases": [
+            "Curtin"
+          ]
+        },
+        {
+          "name": "Arthur Fadden",
+          "points": 60,
+          "aliases": [
+            "Fadden"
+          ]
+        },
+        {
+          "name": "Joseph Lyons",
+          "points": 64,
+          "aliases": [
+            "Lyons"
+          ]
+        },
+        {
+          "name": "James Scullin",
+          "points": 67,
+          "aliases": [
+            "Scullin"
+          ]
+        },
+        {
+          "name": "Stanley Bruce",
+          "points": 70,
+          "aliases": [
+            "Bruce"
+          ]
+        },
+        {
+          "name": "Billy Hughes",
+          "points": 74,
+          "aliases": [
+            "Hughes"
+          ]
+        },
+        {
+          "name": "Andrew Fisher",
+          "points": 77,
+          "aliases": [
+            "Fisher"
+          ]
+        },
+        {
+          "name": "Joseph Cook",
+          "points": 80,
+          "aliases": [
+            "Cook"
+          ]
+        },
+        {
+          "name": "Alfred Deakin",
+          "points": 84,
+          "aliases": [
+            "Deakin"
+          ]
+        },
+        {
+          "name": "Edmund Barton",
+          "points": 87,
+          "aliases": [
+            "Barton"
+          ]
+        },
+        {
+          "name": "Chris Watson",
+          "points": 90,
+          "aliases": [
+            "Watson"
+          ]
+        },
+        {
+          "name": "George Reid",
+          "points": 93,
+          "aliases": [
+            "Reid"
+          ]
+        },
+        {
+          "name": "Earle Page",
+          "points": 97,
+          "aliases": [
+            "Page"
+          ]
+        },
+        {
+          "name": "Frank Forde",
+          "points": 100,
+          "aliases": [
+            "Forde"
+          ]
         }
       ]
     },
     {
       "id": "hg-coins",
       "topic": "AUSTRALIA",
-      "prompt": "Name a circulating Australian coin denomination as of 2025.",
-      "scope": "Current circulating denominations; give the value with its currency unit. Withdrawn denominations excluded.",
-      "source": "https://www.ramint.gov.au/circulating-coins",
+      "prompt": "Name an AFL club in the 2025 season.",
+      "scope": "The eighteen clubs in the Australian Football League in 2025; current club names and common team nicknames.",
+      "source": "https://www.afl.com.au/clubs",
       "answers": [
         {
-          "name": "2 dollars",
+          "name": "Collingwood",
+          "points": 1,
           "aliases": [
-            "$2",
-            "2 dollar",
-            "Two dollars"
-          ],
-          "points": 6
+            "Magpies"
+          ]
         },
         {
-          "name": "1 dollar",
+          "name": "Carlton",
+          "points": 7,
           "aliases": [
-            "$1",
-            "One dollar"
-          ],
-          "points": 21
+            "Blues"
+          ]
         },
         {
-          "name": "50 cents",
+          "name": "Essendon",
+          "points": 13,
           "aliases": [
-            "50c",
-            "Fifty cents"
-          ],
-          "points": 40
+            "Bombers"
+          ]
         },
         {
-          "name": "20 cents",
+          "name": "Richmond",
+          "points": 18,
           "aliases": [
-            "20c",
-            "Twenty cents"
-          ],
-          "points": 59
+            "Tigers"
+          ]
         },
         {
-          "name": "10 cents",
+          "name": "Geelong",
+          "points": 24,
           "aliases": [
-            "10c",
-            "Ten cents"
-          ],
-          "points": 79
+            "Cats"
+          ]
         },
         {
-          "name": "5 cents",
+          "name": "Hawthorn",
+          "points": 30,
           "aliases": [
-            "5c",
-            "Five cents"
-          ],
-          "points": 100
+            "Hawks"
+          ]
+        },
+        {
+          "name": "Sydney Swans",
+          "points": 36,
+          "aliases": [
+            "Swans"
+          ]
+        },
+        {
+          "name": "Brisbane Lions",
+          "points": 42,
+          "aliases": [
+            "Lions"
+          ]
+        },
+        {
+          "name": "West Coast Eagles",
+          "points": 48,
+          "aliases": [
+            "West Coast",
+            "Eagles"
+          ]
+        },
+        {
+          "name": "Adelaide Crows",
+          "points": 53,
+          "aliases": [
+            "Adelaide",
+            "Crows"
+          ]
+        },
+        {
+          "name": "Port Adelaide",
+          "points": 59,
+          "aliases": [
+            "Power"
+          ]
+        },
+        {
+          "name": "Fremantle",
+          "points": 65,
+          "aliases": [
+            "Dockers"
+          ]
+        },
+        {
+          "name": "Melbourne",
+          "points": 71,
+          "aliases": [
+            "Demons"
+          ]
+        },
+        {
+          "name": "North Melbourne",
+          "points": 77,
+          "aliases": [
+            "Kangaroos"
+          ]
+        },
+        {
+          "name": "St Kilda",
+          "points": 83,
+          "aliases": [
+            "Saints"
+          ]
+        },
+        {
+          "name": "Western Bulldogs",
+          "points": 88,
+          "aliases": [
+            "Bulldogs"
+          ]
+        },
+        {
+          "name": "Gold Coast Suns",
+          "points": 94,
+          "aliases": [
+            "Gold Coast",
+            "Suns"
+          ]
+        },
+        {
+          "name": "Greater Western Sydney Giants",
+          "points": 100,
+          "aliases": [
+            "GWS",
+            "Giants"
+          ]
         }
       ]
     },
     {
       "id": "hg-notes",
       "topic": "AUSTRALIA",
-      "prompt": "Name a current Australian polymer banknote denomination.",
-      "scope": "The five circulating denominations; commemorative notes excluded.",
-      "source": "https://banknotes.rba.gov.au/australias-banknotes/banknotes-in-circulation/",
+      "prompt": "Name an NRL club in the 2025 season.",
+      "scope": "The seventeen clubs in the National Rugby League in 2025; current names and common team nicknames.",
+      "source": "https://www.nrl.com/clubs/",
       "answers": [
         {
-          "name": "50 dollars",
+          "name": "Brisbane Broncos",
+          "points": 1,
           "aliases": [
-            "50",
-            "$50",
-            "Fifty dollars"
-          ],
-          "points": 6
+            "Broncos"
+          ]
         },
         {
-          "name": "20 dollars",
+          "name": "Melbourne Storm",
+          "points": 7,
           "aliases": [
-            "20",
-            "$20",
-            "Twenty dollars"
-          ],
-          "points": 26
+            "Storm"
+          ]
         },
         {
-          "name": "10 dollars",
+          "name": "Penrith Panthers",
+          "points": 13,
           "aliases": [
-            "10",
-            "$10",
-            "Ten dollars"
-          ],
-          "points": 49
+            "Panthers"
+          ]
         },
         {
-          "name": "5 dollars",
+          "name": "Sydney Roosters",
+          "points": 20,
           "aliases": [
-            "5",
-            "$5",
-            "Five dollars"
-          ],
-          "points": 74
+            "Roosters"
+          ]
         },
         {
-          "name": "100 dollars",
+          "name": "South Sydney Rabbitohs",
+          "points": 26,
           "aliases": [
-            "100",
-            "$100",
-            "One hundred dollars"
-          ],
-          "points": 100
+            "Rabbitohs"
+          ]
+        },
+        {
+          "name": "Canterbury-Bankstown Bulldogs",
+          "points": 32,
+          "aliases": [
+            "Bulldogs"
+          ]
+        },
+        {
+          "name": "Parramatta Eels",
+          "points": 38,
+          "aliases": [
+            "Eels"
+          ]
+        },
+        {
+          "name": "Manly Warringah Sea Eagles",
+          "points": 44,
+          "aliases": [
+            "Manly",
+            "Sea Eagles"
+          ]
+        },
+        {
+          "name": "Cronulla-Sutherland Sharks",
+          "points": 50,
+          "aliases": [
+            "Cronulla",
+            "Sharks"
+          ]
+        },
+        {
+          "name": "St George Illawarra Dragons",
+          "points": 57,
+          "aliases": [
+            "Dragons"
+          ]
+        },
+        {
+          "name": "Newcastle Knights",
+          "points": 63,
+          "aliases": [
+            "Knights"
+          ]
+        },
+        {
+          "name": "Canberra Raiders",
+          "points": 69,
+          "aliases": [
+            "Raiders"
+          ]
+        },
+        {
+          "name": "North Queensland Cowboys",
+          "points": 75,
+          "aliases": [
+            "Cowboys"
+          ]
+        },
+        {
+          "name": "Gold Coast Titans",
+          "points": 81,
+          "aliases": [
+            "Titans"
+          ]
+        },
+        {
+          "name": "New Zealand Warriors",
+          "points": 88,
+          "aliases": [
+            "Warriors"
+          ]
+        },
+        {
+          "name": "Wests Tigers",
+          "points": 94,
+          "aliases": []
+        },
+        {
+          "name": "Dolphins",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
@@ -12086,294 +13506,1142 @@
     {
       "id": "hg-hosts",
       "topic": "AUSTRALIA",
-      "prompt": "Name an Australian city that hosted a Summer Olympics before 2025.",
-      "scope": "Past hosts only; future Games excluded.",
-      "source": "https://en.wikipedia.org/wiki/Australia_at_the_Olympics",
+      "prompt": "Name a city that hosted a Summer or Winter Olympics before 2025.",
+      "scope": "Host cities of completed modern Olympic Games through 2024, including shared host cities. Cancelled editions and Youth Olympics are excluded.",
+      "source": "https://olympics.com/en/olympic-games",
       "answers": [
         {
           "name": "Sydney",
-          "aliases": [],
-          "points": 6
+          "points": 1,
+          "aliases": []
         },
         {
           "name": "Melbourne",
-          "aliases": [],
-          "points": 100
+          "points": 3,
+          "aliases": []
+        },
+        {
+          "name": "London",
+          "points": 6,
+          "aliases": []
+        },
+        {
+          "name": "Paris",
+          "points": 8,
+          "aliases": []
+        },
+        {
+          "name": "Athens",
+          "points": 10,
+          "aliases": []
+        },
+        {
+          "name": "Tokyo",
+          "points": 13,
+          "aliases": []
+        },
+        {
+          "name": "Los Angeles",
+          "points": 15,
+          "aliases": []
+        },
+        {
+          "name": "Beijing",
+          "points": 18,
+          "aliases": []
+        },
+        {
+          "name": "Rome",
+          "points": 20,
+          "aliases": []
+        },
+        {
+          "name": "Barcelona",
+          "points": 22,
+          "aliases": []
+        },
+        {
+          "name": "Atlanta",
+          "points": 25,
+          "aliases": []
+        },
+        {
+          "name": "Rio de Janeiro",
+          "points": 27,
+          "aliases": [
+            "Rio"
+          ]
+        },
+        {
+          "name": "Seoul",
+          "points": 29,
+          "aliases": []
+        },
+        {
+          "name": "Moscow",
+          "points": 32,
+          "aliases": []
+        },
+        {
+          "name": "Montreal",
+          "points": 34,
+          "aliases": []
+        },
+        {
+          "name": "Munich",
+          "points": 36,
+          "aliases": []
+        },
+        {
+          "name": "Mexico City",
+          "points": 39,
+          "aliases": []
+        },
+        {
+          "name": "Berlin",
+          "points": 41,
+          "aliases": []
+        },
+        {
+          "name": "Amsterdam",
+          "points": 43,
+          "aliases": []
+        },
+        {
+          "name": "Antwerp",
+          "points": 46,
+          "aliases": []
+        },
+        {
+          "name": "Stockholm",
+          "points": 48,
+          "aliases": []
+        },
+        {
+          "name": "St Louis",
+          "points": 50,
+          "aliases": [
+            "Saint Louis"
+          ]
+        },
+        {
+          "name": "Helsinki",
+          "points": 53,
+          "aliases": []
+        },
+        {
+          "name": "Oslo",
+          "points": 55,
+          "aliases": []
+        },
+        {
+          "name": "Lillehammer",
+          "points": 58,
+          "aliases": []
+        },
+        {
+          "name": "Vancouver",
+          "points": 60,
+          "aliases": []
+        },
+        {
+          "name": "Calgary",
+          "points": 62,
+          "aliases": []
+        },
+        {
+          "name": "Salt Lake City",
+          "points": 65,
+          "aliases": []
+        },
+        {
+          "name": "Turin",
+          "points": 67,
+          "aliases": [
+            "Torino"
+          ]
+        },
+        {
+          "name": "Sochi",
+          "points": 69,
+          "aliases": []
+        },
+        {
+          "name": "PyeongChang",
+          "points": 72,
+          "aliases": [
+            "Pyeongchang"
+          ]
+        },
+        {
+          "name": "Nagano",
+          "points": 74,
+          "aliases": []
+        },
+        {
+          "name": "Sapporo",
+          "points": 76,
+          "aliases": []
+        },
+        {
+          "name": "Innsbruck",
+          "points": 79,
+          "aliases": []
+        },
+        {
+          "name": "Lake Placid",
+          "points": 81,
+          "aliases": []
+        },
+        {
+          "name": "Squaw Valley",
+          "points": 84,
+          "aliases": [
+            "Olympic Valley"
+          ]
+        },
+        {
+          "name": "Cortina d’Ampezzo",
+          "points": 86,
+          "aliases": [
+            "Cortina"
+          ]
+        },
+        {
+          "name": "St Moritz",
+          "points": 88,
+          "aliases": [
+            "Saint Moritz"
+          ]
+        },
+        {
+          "name": "Garmisch-Partenkirchen",
+          "points": 91,
+          "aliases": []
+        },
+        {
+          "name": "Chamonix",
+          "points": 93,
+          "aliases": []
+        },
+        {
+          "name": "Albertville",
+          "points": 95,
+          "aliases": []
+        },
+        {
+          "name": "Grenoble",
+          "points": 98,
+          "aliases": []
+        },
+        {
+          "name": "Sarajevo",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
     {
       "id": "hg-mainland",
       "topic": "AUSTRALIA",
-      "prompt": "Name an Australian state on the mainland.",
-      "scope": "Five states, not territories or island states.",
-      "source": "https://en.wikipedia.org/wiki/States_and_territories_of_Australia",
+      "prompt": "Name an A-League Men club in the 2024–25 season.",
+      "scope": "The thirteen clubs competing in the Australian and New Zealand league in that season.",
+      "source": "https://aleagues.com.au/a-league-men/",
       "answers": [
         {
-          "name": "New South Wales",
-          "aliases": [
-            "NSW"
-          ],
-          "points": 6
+          "name": "Melbourne Victory",
+          "points": 1,
+          "aliases": []
         },
         {
-          "name": "Queensland",
+          "name": "Sydney FC",
+          "points": 9,
           "aliases": [
-            "QLD"
-          ],
-          "points": 26
+            "Sydney"
+          ]
         },
         {
-          "name": "Victoria",
-          "aliases": [
-            "VIC"
-          ],
-          "points": 49
+          "name": "Melbourne City",
+          "points": 18,
+          "aliases": []
         },
         {
-          "name": "Western Australia",
+          "name": "Western Sydney Wanderers",
+          "points": 26,
           "aliases": [
-            "WA"
-          ],
-          "points": 74
+            "Wanderers"
+          ]
         },
         {
-          "name": "South Australia",
+          "name": "Adelaide United",
+          "points": 34,
+          "aliases": []
+        },
+        {
+          "name": "Brisbane Roar",
+          "points": 42,
+          "aliases": []
+        },
+        {
+          "name": "Perth Glory",
+          "points": 50,
+          "aliases": []
+        },
+        {
+          "name": "Wellington Phoenix",
+          "points": 59,
+          "aliases": []
+        },
+        {
+          "name": "Central Coast Mariners",
+          "points": 67,
+          "aliases": []
+        },
+        {
+          "name": "Newcastle Jets",
+          "points": 75,
+          "aliases": []
+        },
+        {
+          "name": "Western United",
+          "points": 84,
+          "aliases": []
+        },
+        {
+          "name": "Macarthur FC",
+          "points": 92,
           "aliases": [
-            "SA"
-          ],
-          "points": 100
+            "Macarthur"
+          ]
+        },
+        {
+          "name": "Auckland FC",
+          "points": 100,
+          "aliases": [
+            "Auckland"
+          ]
         }
       ]
     },
     {
       "id": "hg-sa-borders",
       "topic": "AUSTRALIA",
-      "prompt": "Name a state sharing a land border with South Australia.",
-      "scope": "Four other states; territories excluded.",
-      "source": "https://en.wikipedia.org/wiki/South_Australia",
+      "prompt": "Name an A-League Women club in the 2024–25 season.",
+      "scope": "The twelve clubs competing in the Australian and New Zealand league in that season.",
+      "source": "https://aleagues.com.au/a-league-women/",
       "answers": [
         {
-          "name": "Victoria",
-          "aliases": [
-            "VIC"
-          ],
-          "points": 6
+          "name": "Melbourne Victory",
+          "points": 1,
+          "aliases": []
         },
         {
-          "name": "New South Wales",
+          "name": "Sydney FC",
+          "points": 10,
           "aliases": [
-            "NSW"
-          ],
-          "points": 33
+            "Sydney"
+          ]
         },
         {
-          "name": "Western Australia",
-          "aliases": [
-            "WA"
-          ],
-          "points": 66
+          "name": "Melbourne City",
+          "points": 19,
+          "aliases": []
         },
         {
-          "name": "Queensland",
+          "name": "Western Sydney Wanderers",
+          "points": 28,
           "aliases": [
-            "QLD"
-          ],
-          "points": 100
+            "Wanderers"
+          ]
+        },
+        {
+          "name": "Adelaide United",
+          "points": 37,
+          "aliases": []
+        },
+        {
+          "name": "Brisbane Roar",
+          "points": 46,
+          "aliases": []
+        },
+        {
+          "name": "Perth Glory",
+          "points": 55,
+          "aliases": []
+        },
+        {
+          "name": "Wellington Phoenix",
+          "points": 64,
+          "aliases": []
+        },
+        {
+          "name": "Central Coast Mariners",
+          "points": 73,
+          "aliases": []
+        },
+        {
+          "name": "Newcastle Jets",
+          "points": 82,
+          "aliases": []
+        },
+        {
+          "name": "Canberra United",
+          "points": 91,
+          "aliases": []
+        },
+        {
+          "name": "Western United",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
     {
       "id": "hg-peaks",
       "topic": "AUSTRALIA",
-      "prompt": "Name a city that hosted the Australian Open during the Open Era, through 2025.",
-      "scope": "The tennis tournament, from 1968 onward. City names, not stadium names.",
-      "source": "https://ausopen.com/history",
+      "prompt": "Name an Australian who won a Grand Slam singles title in the Open Era by the end of 2024.",
+      "scope": "Singles champions representing Australia from the 1968 French Championships onwards. Doubles titles and pre-Open-Era-only winners do not count.",
+      "source": "https://www.itftennis.com/en/itf-tours/grand-slam-tournaments/",
       "answers": [
         {
-          "name": "Melbourne",
-          "aliases": [],
-          "points": 8
+          "name": "Ash Barty",
+          "points": 1,
+          "aliases": [
+            "Ashleigh Barty",
+            "Barty"
+          ]
         },
         {
-          "name": "Sydney",
-          "aliases": [],
-          "points": 54
+          "name": "Lleyton Hewitt",
+          "points": 9,
+          "aliases": [
+            "Hewitt"
+          ]
         },
         {
-          "name": "Brisbane",
-          "aliases": [],
-          "points": 100
+          "name": "Pat Rafter",
+          "points": 18,
+          "aliases": [
+            "Patrick Rafter",
+            "Rafter"
+          ]
+        },
+        {
+          "name": "Samantha Stosur",
+          "points": 26,
+          "aliases": [
+            "Sam Stosur",
+            "Stosur"
+          ]
+        },
+        {
+          "name": "Pat Cash",
+          "points": 34,
+          "aliases": [
+            "Cash"
+          ]
+        },
+        {
+          "name": "Rod Laver",
+          "points": 42,
+          "aliases": [
+            "Laver"
+          ]
+        },
+        {
+          "name": "Ken Rosewall",
+          "points": 50,
+          "aliases": [
+            "Rosewall"
+          ]
+        },
+        {
+          "name": "John Newcombe",
+          "points": 59,
+          "aliases": [
+            "Newcombe"
+          ]
+        },
+        {
+          "name": "Margaret Court",
+          "points": 67,
+          "aliases": [
+            "Court"
+          ]
+        },
+        {
+          "name": "Evonne Goolagong Cawley",
+          "points": 75,
+          "aliases": [
+            "Evonne Goolagong",
+            "Goolagong",
+            "Cawley"
+          ]
+        },
+        {
+          "name": "Mark Edmondson",
+          "points": 84,
+          "aliases": [
+            "Edmondson"
+          ]
+        },
+        {
+          "name": "Chris O’Neil",
+          "points": 92,
+          "aliases": [
+            "Chris ONeil",
+            "ONeil"
+          ]
+        },
+        {
+          "name": "Kerry Melville Reid",
+          "points": 100,
+          "aliases": [
+            "Kerry Reid",
+            "Reid"
+          ]
         }
       ]
     },
     {
       "id": "hg-ao-women",
       "topic": "AUSTRALIA",
-      "prompt": "Name an Australian Open women's singles champion from 2018–2025.",
-      "scope": "Use the player's surname or full name. Singles champions only.",
+      "prompt": "Name an Australian Open women’s singles champion from the Open Era through 2024.",
+      "scope": "Champions from 1969–2024; maiden and married surnames are accepted.",
       "source": "https://ausopen.com/history/honour-roll/womens-singles",
       "answers": [
         {
+          "name": "Serena Williams",
+          "points": 1,
+          "aliases": [
+            "Serena"
+          ]
+        },
+        {
           "name": "Naomi Osaka",
+          "points": 5,
           "aliases": [
             "Osaka"
-          ],
-          "points": 8
+          ]
         },
         {
           "name": "Ashleigh Barty",
+          "points": 8,
           "aliases": [
             "Ash Barty",
             "Barty"
-          ],
-          "points": 26
+          ]
         },
         {
           "name": "Aryna Sabalenka",
+          "points": 12,
           "aliases": [
             "Sabalenka"
-          ],
-          "points": 45
+          ]
         },
         {
-          "name": "Caroline Wozniacki",
+          "name": "Maria Sharapova",
+          "points": 16,
           "aliases": [
-            "Wozniacki"
-          ],
-          "points": 63
+            "Sharapova"
+          ]
+        },
+        {
+          "name": "Victoria Azarenka",
+          "points": 19,
+          "aliases": [
+            "Azarenka"
+          ]
+        },
+        {
+          "name": "Angelique Kerber",
+          "points": 23,
+          "aliases": [
+            "Kerber"
+          ]
         },
         {
           "name": "Sofia Kenin",
+          "points": 27,
           "aliases": [
             "Kenin"
-          ],
-          "points": 82
+          ]
         },
         {
-          "name": "Madison Keys",
+          "name": "Caroline Wozniacki",
+          "points": 30,
           "aliases": [
-            "Keys"
-          ],
-          "points": 100
+            "Wozniacki"
+          ]
+        },
+        {
+          "name": "Li Na",
+          "points": 34,
+          "aliases": []
+        },
+        {
+          "name": "Kim Clijsters",
+          "points": 38,
+          "aliases": [
+            "Clijsters"
+          ]
+        },
+        {
+          "name": "Amelie Mauresmo",
+          "points": 41,
+          "aliases": [
+            "Mauresmo"
+          ]
+        },
+        {
+          "name": "Justine Henin",
+          "points": 45,
+          "aliases": [
+            "Henin"
+          ]
+        },
+        {
+          "name": "Jennifer Capriati",
+          "points": 49,
+          "aliases": [
+            "Capriati"
+          ]
+        },
+        {
+          "name": "Lindsay Davenport",
+          "points": 52,
+          "aliases": [
+            "Davenport"
+          ]
+        },
+        {
+          "name": "Martina Hingis",
+          "points": 56,
+          "aliases": [
+            "Hingis"
+          ]
+        },
+        {
+          "name": "Monica Seles",
+          "points": 60,
+          "aliases": [
+            "Seles"
+          ]
+        },
+        {
+          "name": "Mary Pierce",
+          "points": 63,
+          "aliases": [
+            "Pierce"
+          ]
+        },
+        {
+          "name": "Steffi Graf",
+          "points": 67,
+          "aliases": [
+            "Graf"
+          ]
+        },
+        {
+          "name": "Martina Navratilova",
+          "points": 71,
+          "aliases": [
+            "Navratilova"
+          ]
+        },
+        {
+          "name": "Chris Evert",
+          "points": 74,
+          "aliases": [
+            "Evert"
+          ]
+        },
+        {
+          "name": "Hana Mandlikova",
+          "points": 78,
+          "aliases": [
+            "Mandlikova"
+          ]
+        },
+        {
+          "name": "Evonne Goolagong Cawley",
+          "points": 82,
+          "aliases": [
+            "Evonne Goolagong",
+            "Goolagong"
+          ]
+        },
+        {
+          "name": "Margaret Court",
+          "points": 85,
+          "aliases": [
+            "Court"
+          ]
+        },
+        {
+          "name": "Virginia Wade",
+          "points": 89,
+          "aliases": [
+            "Wade"
+          ]
+        },
+        {
+          "name": "Kerry Reid",
+          "points": 93,
+          "aliases": [
+            "Kerry Melville Reid",
+            "Reid"
+          ]
+        },
+        {
+          "name": "Chris O’Neil",
+          "points": 96,
+          "aliases": [
+            "Chris ONeil",
+            "ONeil"
+          ]
+        },
+        {
+          "name": "Barbara Jordan",
+          "points": 100,
+          "aliases": [
+            "Jordan"
+          ]
         }
       ]
     },
     {
       "id": "hg-arms",
       "topic": "AUSTRALIA",
-      "prompt": "Name an animal supporting Australia’s Commonwealth Coat of Arms.",
-      "scope": "The two shield supporters, not animals depicted inside it.",
-      "source": "https://www.pmc.gov.au/government/commonwealth-coat-arms",
+      "prompt": "Name a Commonwealth realm where Charles III was king in 2025.",
+      "scope": "The fifteen independent countries sharing the British monarch as head of state; dependencies are excluded.",
+      "source": "https://www.royal.uk/the-king-and-the-commonwealth",
       "answers": [
         {
-          "name": "Kangaroo",
-          "aliases": [
-            "Red kangaroo"
-          ],
-          "points": 6
+          "name": "Australia",
+          "points": 1,
+          "aliases": []
         },
         {
-          "name": "Emu",
-          "aliases": [],
-          "points": 100
+          "name": "United Kingdom",
+          "points": 8,
+          "aliases": [
+            "UK",
+            "Britain"
+          ]
+        },
+        {
+          "name": "Canada",
+          "points": 15,
+          "aliases": []
+        },
+        {
+          "name": "New Zealand",
+          "points": 22,
+          "aliases": [
+            "NZ"
+          ]
+        },
+        {
+          "name": "Jamaica",
+          "points": 29,
+          "aliases": []
+        },
+        {
+          "name": "Bahamas",
+          "points": 36,
+          "aliases": []
+        },
+        {
+          "name": "Belize",
+          "points": 43,
+          "aliases": []
+        },
+        {
+          "name": "Papua New Guinea",
+          "points": 50,
+          "aliases": [
+            "PNG"
+          ]
+        },
+        {
+          "name": "Solomon Islands",
+          "points": 58,
+          "aliases": []
+        },
+        {
+          "name": "Tuvalu",
+          "points": 65,
+          "aliases": []
+        },
+        {
+          "name": "Antigua and Barbuda",
+          "points": 72,
+          "aliases": []
+        },
+        {
+          "name": "Saint Kitts and Nevis",
+          "points": 79,
+          "aliases": [
+            "St Kitts and Nevis"
+          ]
+        },
+        {
+          "name": "Saint Lucia",
+          "points": 86,
+          "aliases": [
+            "St Lucia"
+          ]
+        },
+        {
+          "name": "Saint Vincent and the Grenadines",
+          "points": 93,
+          "aliases": [
+            "St Vincent and the Grenadines"
+          ]
+        },
+        {
+          "name": "Grenada",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
     {
       "id": "hg-mens-slams",
       "topic": "AUSTRALIA",
-      "prompt": "Name an Australian man who reached a Grand Slam singles final in 2000–2025.",
-      "scope": "Men's singles finalists representing Australia. Use surname or full name.",
-      "source": "https://www.atptour.com/en/players/atp-head-2-head",
+      "prompt": "Name an Australian Open men’s singles champion from the Open Era through 2024.",
+      "scope": "Champions from 1969–2024; surnames are accepted when unambiguous.",
+      "source": "https://ausopen.com/history/honour-roll/mens-singles",
       "answers": [
         {
-          "name": "Lleyton Hewitt",
+          "name": "Novak Djokovic",
+          "points": 1,
           "aliases": [
-            "Hewitt"
-          ],
-          "points": 8
+            "Djokovic"
+          ]
         },
         {
-          "name": "Nick Kyrgios",
+          "name": "Roger Federer",
+          "points": 5,
           "aliases": [
-            "Kyrgios"
-          ],
-          "points": 39
+            "Federer"
+          ]
         },
         {
-          "name": "Pat Rafter",
+          "name": "Rafael Nadal",
+          "points": 9,
           "aliases": [
-            "Patrick Rafter",
-            "Rafter"
-          ],
-          "points": 69
+            "Nadal"
+          ]
         },
         {
-          "name": "Mark Philippoussis",
+          "name": "Jannik Sinner",
+          "points": 12,
           "aliases": [
-            "Philippoussis"
-          ],
-          "points": 100
+            "Sinner"
+          ]
+        },
+        {
+          "name": "Andre Agassi",
+          "points": 16,
+          "aliases": [
+            "Agassi"
+          ]
+        },
+        {
+          "name": "Stan Wawrinka",
+          "points": 20,
+          "aliases": [
+            "Wawrinka"
+          ]
+        },
+        {
+          "name": "Pete Sampras",
+          "points": 24,
+          "aliases": [
+            "Sampras"
+          ]
+        },
+        {
+          "name": "Boris Becker",
+          "points": 28,
+          "aliases": [
+            "Becker"
+          ]
+        },
+        {
+          "name": "Jim Courier",
+          "points": 31,
+          "aliases": [
+            "Courier"
+          ]
+        },
+        {
+          "name": "Ivan Lendl",
+          "points": 35,
+          "aliases": [
+            "Lendl"
+          ]
+        },
+        {
+          "name": "Mats Wilander",
+          "points": 39,
+          "aliases": [
+            "Wilander"
+          ]
+        },
+        {
+          "name": "Stefan Edberg",
+          "points": 43,
+          "aliases": [
+            "Edberg"
+          ]
+        },
+        {
+          "name": "Marat Safin",
+          "points": 47,
+          "aliases": [
+            "Safin"
+          ]
+        },
+        {
+          "name": "Thomas Johansson",
+          "points": 50,
+          "aliases": [
+            "Johansson"
+          ]
+        },
+        {
+          "name": "Petr Korda",
+          "points": 54,
+          "aliases": [
+            "Korda"
+          ]
+        },
+        {
+          "name": "Yevgeny Kafelnikov",
+          "points": 58,
+          "aliases": [
+            "Kafelnikov"
+          ]
+        },
+        {
+          "name": "Brian Teacher",
+          "points": 62,
+          "aliases": [
+            "Teacher"
+          ]
+        },
+        {
+          "name": "Johan Kriek",
+          "points": 66,
+          "aliases": [
+            "Kriek"
+          ]
+        },
+        {
+          "name": "Guillermo Vilas",
+          "points": 70,
+          "aliases": [
+            "Vilas"
+          ]
+        },
+        {
+          "name": "Vitas Gerulaitis",
+          "points": 73,
+          "aliases": [
+            "Gerulaitis"
+          ]
+        },
+        {
+          "name": "Roscoe Tanner",
+          "points": 77,
+          "aliases": [
+            "Tanner"
+          ]
+        },
+        {
+          "name": "Mark Edmondson",
+          "points": 81,
+          "aliases": [
+            "Edmondson"
+          ]
+        },
+        {
+          "name": "John Newcombe",
+          "points": 85,
+          "aliases": [
+            "Newcombe"
+          ]
+        },
+        {
+          "name": "Jimmy Connors",
+          "points": 89,
+          "aliases": [
+            "Connors"
+          ]
+        },
+        {
+          "name": "Ken Rosewall",
+          "points": 92,
+          "aliases": [
+            "Rosewall"
+          ]
+        },
+        {
+          "name": "Arthur Ashe",
+          "points": 96,
+          "aliases": [
+            "Ashe"
+          ]
+        },
+        {
+          "name": "Rod Laver",
+          "points": 100,
+          "aliases": [
+            "Laver"
+          ]
         }
       ]
     },
     {
       "id": "hg-womens-slams",
       "topic": "AUSTRALIA",
-      "prompt": "Name an Australian woman who won a Grand Slam singles title in 2000–2025.",
-      "scope": "Singles only; use surname or full name. Australian nationality when winning.",
-      "source": "https://www.wtatennis.com/players",
+      "prompt": "Name an act that represented Australia at Eurovision in 2015–2025.",
+      "scope": "Credited Australian entrants, including the selected act for the cancelled 2020 contest. Repeated entrants count once.",
+      "source": "https://eurovision.tv/country/australia",
       "answers": [
         {
-          "name": "Ashleigh Barty",
+          "name": "Guy Sebastian",
+          "points": 1,
           "aliases": [
-            "Ash Barty",
-            "Barty"
-          ],
-          "points": 8
+            "Sebastian"
+          ]
         },
         {
-          "name": "Samantha Stosur",
+          "name": "Dami Im",
+          "points": 12,
+          "aliases": []
+        },
+        {
+          "name": "Jessica Mauboy",
+          "points": 23,
           "aliases": [
-            "Sam Stosur",
-            "Stosur"
-          ],
-          "points": 100
+            "Mauboy"
+          ]
+        },
+        {
+          "name": "Kate Miller-Heidke",
+          "points": 34,
+          "aliases": [
+            "Kate Miller Heidke"
+          ]
+        },
+        {
+          "name": "Montaigne",
+          "points": 45,
+          "aliases": []
+        },
+        {
+          "name": "Voyager",
+          "points": 56,
+          "aliases": []
+        },
+        {
+          "name": "Electric Fields",
+          "points": 67,
+          "aliases": []
+        },
+        {
+          "name": "Sheldon Riley",
+          "points": 78,
+          "aliases": []
+        },
+        {
+          "name": "Isaiah Firebrace",
+          "points": 89,
+          "aliases": [
+            "Isaiah"
+          ]
+        },
+        {
+          "name": "Go-Jo",
+          "points": 100,
+          "aliases": [
+            "Go Jo"
+          ]
         }
       ]
     },
     {
       "id": "hg-test-cities",
       "topic": "AUSTRALIA",
-      "prompt": "Name a city that hosted a men's Ashes Test in Australia in the 2021–22 series.",
-      "scope": "Five host cities; not stadium names.",
-      "source": "https://www.cricket.com.au/",
+      "prompt": "Name an ICC Full Member country or team as of 2025.",
+      "scope": "The twelve Full Members of the International Cricket Council; combined international sides count as one.",
+      "source": "https://www.icc-cricket.com/about/members",
       "answers": [
         {
-          "name": "Sydney",
-          "aliases": [],
-          "points": 8
+          "name": "Australia",
+          "points": 1,
+          "aliases": []
         },
         {
-          "name": "Melbourne",
-          "aliases": [],
-          "points": 31
+          "name": "England",
+          "points": 10,
+          "aliases": []
         },
         {
-          "name": "Brisbane",
-          "aliases": [],
-          "points": 54
+          "name": "India",
+          "points": 19,
+          "aliases": []
         },
         {
-          "name": "Adelaide",
-          "aliases": [],
-          "points": 77
+          "name": "Pakistan",
+          "points": 28,
+          "aliases": []
         },
         {
-          "name": "Hobart",
-          "aliases": [],
-          "points": 100
+          "name": "New Zealand",
+          "points": 37,
+          "aliases": [
+            "NZ"
+          ]
+        },
+        {
+          "name": "South Africa",
+          "points": 46,
+          "aliases": []
+        },
+        {
+          "name": "Sri Lanka",
+          "points": 55,
+          "aliases": []
+        },
+        {
+          "name": "West Indies",
+          "points": 64,
+          "aliases": []
+        },
+        {
+          "name": "Bangladesh",
+          "points": 73,
+          "aliases": []
+        },
+        {
+          "name": "Zimbabwe",
+          "points": 82,
+          "aliases": []
+        },
+        {
+          "name": "Ireland",
+          "points": 91,
+          "aliases": []
+        },
+        {
+          "name": "Afghanistan",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
@@ -19115,618 +21383,1818 @@
     {
       "id": "hg-vowels",
       "topic": "LANGUAGE",
-      "prompt": "Name a traditional English vowel letter.",
-      "scope": "The five-letter convention, excluding the sometimes-vowel Y.",
-      "source": "https://en.wikipedia.org/wiki/Vowel",
+      "prompt": "Name a word in the NATO phonetic alphabet.",
+      "scope": "The complete ICAO/NATO radiotelephony alphabet; standard alternative English spellings are accepted.",
+      "source": "https://www.nato.int/cps/en/natohq/declassified_136216.htm",
       "answers": [
         {
-          "name": "A",
-          "aliases": [],
-          "points": 6
+          "name": "Alpha",
+          "points": 1,
+          "aliases": [
+            "Alfa"
+          ]
         },
         {
-          "name": "E",
-          "aliases": [],
-          "points": 26
+          "name": "Bravo",
+          "points": 5,
+          "aliases": []
         },
         {
-          "name": "I",
-          "aliases": [],
-          "points": 49
+          "name": "Charlie",
+          "points": 9,
+          "aliases": []
         },
         {
-          "name": "O",
-          "aliases": [],
-          "points": 74
+          "name": "Delta",
+          "points": 13,
+          "aliases": []
         },
         {
-          "name": "U",
-          "aliases": [],
-          "points": 100
+          "name": "Echo",
+          "points": 17,
+          "aliases": []
+        },
+        {
+          "name": "Foxtrot",
+          "points": 21,
+          "aliases": []
+        },
+        {
+          "name": "Golf",
+          "points": 25,
+          "aliases": []
+        },
+        {
+          "name": "Hotel",
+          "points": 29,
+          "aliases": []
+        },
+        {
+          "name": "India",
+          "points": 33,
+          "aliases": []
+        },
+        {
+          "name": "Juliet",
+          "points": 37,
+          "aliases": [
+            "Juliett"
+          ]
+        },
+        {
+          "name": "Kilo",
+          "points": 41,
+          "aliases": []
+        },
+        {
+          "name": "Lima",
+          "points": 45,
+          "aliases": []
+        },
+        {
+          "name": "Mike",
+          "points": 49,
+          "aliases": []
+        },
+        {
+          "name": "November",
+          "points": 52,
+          "aliases": []
+        },
+        {
+          "name": "Oscar",
+          "points": 56,
+          "aliases": []
+        },
+        {
+          "name": "Papa",
+          "points": 60,
+          "aliases": []
+        },
+        {
+          "name": "Quebec",
+          "points": 64,
+          "aliases": []
+        },
+        {
+          "name": "Romeo",
+          "points": 68,
+          "aliases": []
+        },
+        {
+          "name": "Sierra",
+          "points": 72,
+          "aliases": []
+        },
+        {
+          "name": "Tango",
+          "points": 76,
+          "aliases": []
+        },
+        {
+          "name": "Uniform",
+          "points": 80,
+          "aliases": []
+        },
+        {
+          "name": "Victor",
+          "points": 84,
+          "aliases": []
+        },
+        {
+          "name": "Whiskey",
+          "points": 88,
+          "aliases": [
+            "Whisky"
+          ]
+        },
+        {
+          "name": "X-ray",
+          "points": 92,
+          "aliases": [
+            "Xray"
+          ]
+        },
+        {
+          "name": "Yankee",
+          "points": 96,
+          "aliases": []
+        },
+        {
+          "name": "Zulu",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
     {
       "id": "hg-fanboys",
       "topic": "LANGUAGE",
-      "prompt": "Name a coordinating conjunction in FANBOYS.",
-      "scope": "Seven words in the English mnemonic.",
-      "source": "https://en.wikipedia.org/wiki/Coordinating_conjunction",
+      "prompt": "Name a letter of the Greek alphabet.",
+      "scope": "The conventional twenty-four letters; use their English names rather than Greek characters.",
+      "source": "https://www.britannica.com/topic/Greek-alphabet",
       "answers": [
         {
-          "name": "And",
-          "aliases": [],
-          "points": 6
+          "name": "Alpha",
+          "points": 1,
+          "aliases": []
         },
         {
-          "name": "But",
-          "aliases": [],
-          "points": 19
+          "name": "Beta",
+          "points": 5,
+          "aliases": []
         },
         {
-          "name": "Or",
-          "aliases": [],
-          "points": 33
+          "name": "Gamma",
+          "points": 10,
+          "aliases": []
         },
         {
-          "name": "So",
-          "aliases": [],
-          "points": 49
+          "name": "Delta",
+          "points": 14,
+          "aliases": []
         },
         {
-          "name": "For",
-          "aliases": [],
-          "points": 66
+          "name": "Epsilon",
+          "points": 18,
+          "aliases": []
         },
         {
-          "name": "Nor",
-          "aliases": [],
-          "points": 83
+          "name": "Zeta",
+          "points": 23,
+          "aliases": []
         },
         {
-          "name": "Yet",
-          "aliases": [],
-          "points": 100
+          "name": "Eta",
+          "points": 27,
+          "aliases": []
+        },
+        {
+          "name": "Theta",
+          "points": 31,
+          "aliases": []
+        },
+        {
+          "name": "Iota",
+          "points": 35,
+          "aliases": []
+        },
+        {
+          "name": "Kappa",
+          "points": 40,
+          "aliases": []
+        },
+        {
+          "name": "Lambda",
+          "points": 44,
+          "aliases": []
+        },
+        {
+          "name": "Mu",
+          "points": 48,
+          "aliases": []
+        },
+        {
+          "name": "Nu",
+          "points": 53,
+          "aliases": []
+        },
+        {
+          "name": "Xi",
+          "points": 57,
+          "aliases": []
+        },
+        {
+          "name": "Omicron",
+          "points": 61,
+          "aliases": []
+        },
+        {
+          "name": "Pi",
+          "points": 66,
+          "aliases": []
+        },
+        {
+          "name": "Rho",
+          "points": 70,
+          "aliases": []
+        },
+        {
+          "name": "Sigma",
+          "points": 74,
+          "aliases": []
+        },
+        {
+          "name": "Tau",
+          "points": 78,
+          "aliases": []
+        },
+        {
+          "name": "Upsilon",
+          "points": 83,
+          "aliases": []
+        },
+        {
+          "name": "Phi",
+          "points": 87,
+          "aliases": []
+        },
+        {
+          "name": "Chi",
+          "points": 91,
+          "aliases": []
+        },
+        {
+          "name": "Psi",
+          "points": 96,
+          "aliases": []
+        },
+        {
+          "name": "Omega",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
     {
       "id": "hg-subject-pronouns",
       "topic": "LANGUAGE",
-      "prompt": "Name a standard English personal subject pronoun.",
-      "scope": "Seven basic forms, not object pronouns or demonstratives.",
-      "source": "https://en.wikipedia.org/wiki/English_personal_pronouns",
+      "prompt": "Name an official language of the European Union in 2025.",
+      "scope": "The twenty-four official and working languages of EU institutions.",
+      "source": "https://european-union.europa.eu/principles-countries-history/languages_en",
       "answers": [
         {
-          "name": "I",
-          "aliases": [],
-          "points": 6
+          "name": "English",
+          "points": 1,
+          "aliases": []
         },
         {
-          "name": "You",
-          "aliases": [],
-          "points": 19
+          "name": "French",
+          "points": 5,
+          "aliases": []
         },
         {
-          "name": "He",
-          "aliases": [],
-          "points": 33
+          "name": "German",
+          "points": 10,
+          "aliases": []
         },
         {
-          "name": "She",
-          "aliases": [],
-          "points": 49
+          "name": "Spanish",
+          "points": 14,
+          "aliases": []
         },
         {
-          "name": "We",
-          "aliases": [],
-          "points": 66
+          "name": "Italian",
+          "points": 18,
+          "aliases": []
         },
         {
-          "name": "They",
-          "aliases": [],
-          "points": 83
+          "name": "Portuguese",
+          "points": 23,
+          "aliases": []
         },
         {
-          "name": "It",
-          "aliases": [],
-          "points": 100
+          "name": "Dutch",
+          "points": 27,
+          "aliases": []
+        },
+        {
+          "name": "Polish",
+          "points": 31,
+          "aliases": []
+        },
+        {
+          "name": "Greek",
+          "points": 35,
+          "aliases": []
+        },
+        {
+          "name": "Swedish",
+          "points": 40,
+          "aliases": []
+        },
+        {
+          "name": "Danish",
+          "points": 44,
+          "aliases": []
+        },
+        {
+          "name": "Finnish",
+          "points": 48,
+          "aliases": []
+        },
+        {
+          "name": "Irish",
+          "points": 53,
+          "aliases": [
+            "Irish Gaelic"
+          ]
+        },
+        {
+          "name": "Czech",
+          "points": 57,
+          "aliases": []
+        },
+        {
+          "name": "Slovak",
+          "points": 61,
+          "aliases": []
+        },
+        {
+          "name": "Slovenian",
+          "points": 66,
+          "aliases": []
+        },
+        {
+          "name": "Croatian",
+          "points": 70,
+          "aliases": []
+        },
+        {
+          "name": "Bulgarian",
+          "points": 74,
+          "aliases": []
+        },
+        {
+          "name": "Romanian",
+          "points": 78,
+          "aliases": []
+        },
+        {
+          "name": "Hungarian",
+          "points": 83,
+          "aliases": []
+        },
+        {
+          "name": "Lithuanian",
+          "points": 87,
+          "aliases": []
+        },
+        {
+          "name": "Latvian",
+          "points": 91,
+          "aliases": []
+        },
+        {
+          "name": "Estonian",
+          "points": 96,
+          "aliases": []
+        },
+        {
+          "name": "Maltese",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
     {
       "id": "hg-possessives",
       "topic": "LANGUAGE",
-      "prompt": "Name a basic English possessive determiner.",
-      "scope": "Seven forms before nouns; independent pronouns such as “mine” excluded.",
-      "source": "https://en.wikipedia.org/wiki/Possessive_determiner",
+      "prompt": "Name a language in the Eighth Schedule of India’s Constitution.",
+      "scope": "The twenty-two scheduled languages, as listed by the Government of India.",
+      "source": "https://knowindia.india.gov.in/profile/india-at-a-glance.php",
       "answers": [
         {
-          "name": "My",
-          "aliases": [],
-          "points": 6
+          "name": "Hindi",
+          "points": 1,
+          "aliases": []
         },
         {
-          "name": "Your",
-          "aliases": [],
-          "points": 19
+          "name": "Bengali",
+          "points": 6,
+          "aliases": [
+            "Bangla"
+          ]
         },
         {
-          "name": "His",
-          "aliases": [],
-          "points": 33
+          "name": "Tamil",
+          "points": 10,
+          "aliases": []
         },
         {
-          "name": "Her",
-          "aliases": [],
-          "points": 49
+          "name": "Telugu",
+          "points": 15,
+          "aliases": []
         },
         {
-          "name": "Our",
-          "aliases": [],
-          "points": 66
+          "name": "Urdu",
+          "points": 20,
+          "aliases": []
         },
         {
-          "name": "Their",
-          "aliases": [],
-          "points": 83
+          "name": "Punjabi",
+          "points": 25,
+          "aliases": [
+            "Panjabi"
+          ]
         },
         {
-          "name": "Its",
-          "aliases": [],
-          "points": 100
+          "name": "Gujarati",
+          "points": 29,
+          "aliases": []
+        },
+        {
+          "name": "Marathi",
+          "points": 34,
+          "aliases": []
+        },
+        {
+          "name": "Kannada",
+          "points": 39,
+          "aliases": []
+        },
+        {
+          "name": "Malayalam",
+          "points": 43,
+          "aliases": []
+        },
+        {
+          "name": "Sanskrit",
+          "points": 48,
+          "aliases": []
+        },
+        {
+          "name": "Assamese",
+          "points": 53,
+          "aliases": []
+        },
+        {
+          "name": "Kashmiri",
+          "points": 58,
+          "aliases": []
+        },
+        {
+          "name": "Konkani",
+          "points": 62,
+          "aliases": []
+        },
+        {
+          "name": "Manipuri",
+          "points": 67,
+          "aliases": [
+            "Meitei"
+          ]
+        },
+        {
+          "name": "Nepali",
+          "points": 72,
+          "aliases": []
+        },
+        {
+          "name": "Odia",
+          "points": 76,
+          "aliases": [
+            "Oriya"
+          ]
+        },
+        {
+          "name": "Sindhi",
+          "points": 81,
+          "aliases": []
+        },
+        {
+          "name": "Bodo",
+          "points": 86,
+          "aliases": []
+        },
+        {
+          "name": "Dogri",
+          "points": 91,
+          "aliases": []
+        },
+        {
+          "name": "Maithili",
+          "points": 95,
+          "aliases": []
+        },
+        {
+          "name": "Santali",
+          "points": 100,
+          "aliases": [
+            "Santhali"
+          ]
         }
       ]
     },
     {
       "id": "hg-demonstratives",
       "topic": "LANGUAGE",
-      "prompt": "Name a basic English demonstrative.",
-      "scope": "Four common forms, singular or plural.",
-      "source": "https://en.wikipedia.org/wiki/Demonstrative",
+      "prompt": "Name a letter worth at least three points in English Scrabble.",
+      "scope": "Standard English-language tile values, before any board bonuses. Enter the letter or its usual English name.",
+      "source": "https://scrabble.hasbro.com/en-us/rules",
       "answers": [
         {
-          "name": "This",
-          "aliases": [],
-          "points": 6
+          "name": "Q",
+          "points": 1,
+          "aliases": [
+            "Cue"
+          ]
         },
         {
-          "name": "That",
-          "aliases": [],
-          "points": 33
+          "name": "Z",
+          "points": 9,
+          "aliases": [
+            "Zed",
+            "Zee"
+          ]
         },
         {
-          "name": "These",
-          "aliases": [],
-          "points": 66
+          "name": "X",
+          "points": 16,
+          "aliases": [
+            "Ex"
+          ]
         },
         {
-          "name": "Those",
-          "aliases": [],
-          "points": 100
+          "name": "J",
+          "points": 24,
+          "aliases": [
+            "Jay"
+          ]
+        },
+        {
+          "name": "K",
+          "points": 31,
+          "aliases": [
+            "Kay"
+          ]
+        },
+        {
+          "name": "F",
+          "points": 39,
+          "aliases": [
+            "Ef"
+          ]
+        },
+        {
+          "name": "H",
+          "points": 47,
+          "aliases": [
+            "Aitch",
+            "Haitch"
+          ]
+        },
+        {
+          "name": "V",
+          "points": 54,
+          "aliases": [
+            "Vee"
+          ]
+        },
+        {
+          "name": "W",
+          "points": 62,
+          "aliases": [
+            "Double U"
+          ]
+        },
+        {
+          "name": "Y",
+          "points": 70,
+          "aliases": [
+            "Why"
+          ]
+        },
+        {
+          "name": "B",
+          "points": 77,
+          "aliases": [
+            "Bee"
+          ]
+        },
+        {
+          "name": "C",
+          "points": 85,
+          "aliases": [
+            "See"
+          ]
+        },
+        {
+          "name": "M",
+          "points": 92,
+          "aliases": [
+            "Em"
+          ]
+        },
+        {
+          "name": "P",
+          "points": 100,
+          "aliases": [
+            "Pee"
+          ]
         }
       ]
     },
     {
       "id": "hg-articles",
       "topic": "LANGUAGE",
-      "prompt": "Name a word used as an article in English grammar.",
-      "scope": "Articles go before nouns. Give a definite or indefinite article.",
-      "source": "https://en.wikipedia.org/wiki/English_articles",
+      "prompt": "Name a reserved keyword in Python 3.12.",
+      "scope": "Python 3.12 hard-keyword inventory. Case-insensitive input. Context-dependent soft keywords excluded.",
+      "source": "https://docs.python.org/3.12/reference/lexical_analysis.html#keywords",
       "answers": [
         {
-          "name": "The",
-          "aliases": [],
-          "points": 6
+          "name": "True",
+          "points": 1,
+          "aliases": []
         },
         {
-          "name": "A",
-          "aliases": [],
-          "points": 49
+          "name": "False",
+          "points": 4,
+          "aliases": []
         },
         {
-          "name": "An",
-          "aliases": [],
-          "points": 100
+          "name": "None",
+          "points": 7,
+          "aliases": []
+        },
+        {
+          "name": "If",
+          "points": 10,
+          "aliases": []
+        },
+        {
+          "name": "Else",
+          "points": 13,
+          "aliases": []
+        },
+        {
+          "name": "For",
+          "points": 16,
+          "aliases": []
+        },
+        {
+          "name": "While",
+          "points": 18,
+          "aliases": []
+        },
+        {
+          "name": "Def",
+          "points": 21,
+          "aliases": []
+        },
+        {
+          "name": "Class",
+          "points": 24,
+          "aliases": []
+        },
+        {
+          "name": "Return",
+          "points": 27,
+          "aliases": []
+        },
+        {
+          "name": "Import",
+          "points": 30,
+          "aliases": []
+        },
+        {
+          "name": "From",
+          "points": 33,
+          "aliases": []
+        },
+        {
+          "name": "As",
+          "points": 36,
+          "aliases": []
+        },
+        {
+          "name": "And",
+          "points": 39,
+          "aliases": []
+        },
+        {
+          "name": "Or",
+          "points": 42,
+          "aliases": []
+        },
+        {
+          "name": "Not",
+          "points": 45,
+          "aliases": []
+        },
+        {
+          "name": "In",
+          "points": 48,
+          "aliases": []
+        },
+        {
+          "name": "Is",
+          "points": 50,
+          "aliases": []
+        },
+        {
+          "name": "Try",
+          "points": 53,
+          "aliases": []
+        },
+        {
+          "name": "Except",
+          "points": 56,
+          "aliases": []
+        },
+        {
+          "name": "Finally",
+          "points": 59,
+          "aliases": []
+        },
+        {
+          "name": "With",
+          "points": 62,
+          "aliases": []
+        },
+        {
+          "name": "Pass",
+          "points": 65,
+          "aliases": []
+        },
+        {
+          "name": "Break",
+          "points": 68,
+          "aliases": []
+        },
+        {
+          "name": "Continue",
+          "points": 71,
+          "aliases": []
+        },
+        {
+          "name": "Raise",
+          "points": 74,
+          "aliases": []
+        },
+        {
+          "name": "Assert",
+          "points": 77,
+          "aliases": []
+        },
+        {
+          "name": "Del",
+          "points": 80,
+          "aliases": []
+        },
+        {
+          "name": "Elif",
+          "points": 83,
+          "aliases": []
+        },
+        {
+          "name": "Global",
+          "points": 85,
+          "aliases": []
+        },
+        {
+          "name": "Lambda",
+          "points": 88,
+          "aliases": []
+        },
+        {
+          "name": "Nonlocal",
+          "points": 91,
+          "aliases": []
+        },
+        {
+          "name": "Yield",
+          "points": 94,
+          "aliases": []
+        },
+        {
+          "name": "Async",
+          "points": 97,
+          "aliases": []
+        },
+        {
+          "name": "Await",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
     {
       "id": "hg-un",
       "topic": "LANGUAGE",
-      "prompt": "Name a UN official language.",
-      "scope": "Six official languages as of 2025.",
-      "source": "https://www.un.org/en/our-work/official-languages",
+      "prompt": "Name an officially recognised language of Zimbabwe.",
+      "scope": "The sixteen languages named in section 6 of the 2013 Constitution; common spellings accepted.",
+      "source": "https://www.constituteproject.org/constitution/Zimbabwe_2013",
       "answers": [
         {
           "name": "English",
-          "aliases": [],
-          "points": 6
+          "points": 1,
+          "aliases": []
         },
         {
-          "name": "French",
-          "aliases": [],
-          "points": 21
+          "name": "Shona",
+          "points": 8,
+          "aliases": []
         },
         {
-          "name": "Spanish",
-          "aliases": [],
-          "points": 40
-        },
-        {
-          "name": "Chinese",
+          "name": "Ndebele",
+          "points": 14,
           "aliases": [
-            "Mandarin",
-            "Mandarin Chinese"
-          ],
-          "points": 59
+            "isiNdebele"
+          ]
         },
         {
-          "name": "Arabic",
-          "aliases": [],
-          "points": 79
+          "name": "Chewa",
+          "points": 21,
+          "aliases": [
+            "Chichewa"
+          ]
         },
         {
-          "name": "Russian",
-          "aliases": [],
-          "points": 100
+          "name": "Chibarwe",
+          "points": 27,
+          "aliases": []
+        },
+        {
+          "name": "Kalanga",
+          "points": 34,
+          "aliases": []
+        },
+        {
+          "name": "Koisan",
+          "points": 41,
+          "aliases": [
+            "Khoisan"
+          ]
+        },
+        {
+          "name": "Nambya",
+          "points": 47,
+          "aliases": []
+        },
+        {
+          "name": "Ndau",
+          "points": 54,
+          "aliases": []
+        },
+        {
+          "name": "Shangani",
+          "points": 60,
+          "aliases": [
+            "Tsonga"
+          ]
+        },
+        {
+          "name": "Sotho",
+          "points": 67,
+          "aliases": [
+            "Sesotho"
+          ]
+        },
+        {
+          "name": "Tonga",
+          "points": 74,
+          "aliases": []
+        },
+        {
+          "name": "Tswana",
+          "points": 80,
+          "aliases": [
+            "Setswana"
+          ]
+        },
+        {
+          "name": "Venda",
+          "points": 87,
+          "aliases": [
+            "Tshivenda"
+          ]
+        },
+        {
+          "name": "Xhosa",
+          "points": 93,
+          "aliases": [
+            "isiXhosa"
+          ]
+        },
+        {
+          "name": "Sign language",
+          "points": 100,
+          "aliases": [
+            "Zimbabwean Sign Language"
+          ]
         }
       ]
     },
     {
       "id": "hg-nato-start",
       "topic": "LANGUAGE",
-      "prompt": "Name a NATO phonetic alphabet word for A–H.",
-      "scope": "The first eight codewords.",
-      "source": "https://www.nato.int/cps/en/natohq/declassified_136216.htm",
+      "prompt": "Name a UN member country with a four-letter English short name.",
+      "scope": "Use the usual English short name; sovereign UN members only.",
+      "source": "https://www.un.org/en/about-us/member-states",
       "answers": [
         {
-          "name": "Alfa",
-          "aliases": [
-            "Alpha"
-          ],
-          "points": 6
+          "name": "Peru",
+          "points": 1,
+          "aliases": []
         },
         {
-          "name": "Bravo",
-          "aliases": [],
-          "points": 17
+          "name": "Cuba",
+          "points": 12,
+          "aliases": []
         },
         {
-          "name": "Charlie",
-          "aliases": [],
-          "points": 29
+          "name": "Fiji",
+          "points": 23,
+          "aliases": []
         },
         {
-          "name": "Delta",
-          "aliases": [],
-          "points": 42
+          "name": "Iran",
+          "points": 34,
+          "aliases": []
         },
         {
-          "name": "Echo",
-          "aliases": [],
-          "points": 56
+          "name": "Iraq",
+          "points": 45,
+          "aliases": []
         },
         {
-          "name": "Foxtrot",
-          "aliases": [],
-          "points": 70
+          "name": "Chad",
+          "points": 56,
+          "aliases": []
         },
         {
-          "name": "Golf",
-          "aliases": [],
-          "points": 85
+          "name": "Mali",
+          "points": 67,
+          "aliases": []
         },
         {
-          "name": "Hotel",
-          "aliases": [],
-          "points": 100
+          "name": "Oman",
+          "points": 78,
+          "aliases": []
+        },
+        {
+          "name": "Laos",
+          "points": 89,
+          "aliases": []
+        },
+        {
+          "name": "Togo",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
     {
       "id": "hg-nato-end",
       "topic": "LANGUAGE",
-      "prompt": "Name a NATO phonetic alphabet word for S–Z.",
-      "scope": "The final eight codewords.",
-      "source": "https://www.nato.int/cps/en/natohq/declassified_136216.htm",
+      "prompt": "Name a US state whose name is two words.",
+      "scope": "The official full state names; abbreviations and territories do not count.",
+      "source": "https://www.usa.gov/states-and-territories",
       "answers": [
         {
-          "name": "Sierra",
-          "aliases": [],
-          "points": 6
+          "name": "New York",
+          "points": 1,
+          "aliases": []
         },
         {
-          "name": "Tango",
-          "aliases": [],
-          "points": 17
+          "name": "New Jersey",
+          "points": 12,
+          "aliases": []
         },
         {
-          "name": "Uniform",
-          "aliases": [],
-          "points": 29
+          "name": "New Mexico",
+          "points": 23,
+          "aliases": []
         },
         {
-          "name": "Victor",
-          "aliases": [],
-          "points": 42
+          "name": "New Hampshire",
+          "points": 34,
+          "aliases": []
         },
         {
-          "name": "Whiskey",
-          "aliases": [
-            "Whisky"
-          ],
-          "points": 56
+          "name": "North Carolina",
+          "points": 45,
+          "aliases": []
         },
         {
-          "name": "X-ray",
-          "aliases": [
-            "Xray"
-          ],
-          "points": 70
+          "name": "South Carolina",
+          "points": 56,
+          "aliases": []
         },
         {
-          "name": "Yankee",
-          "aliases": [],
-          "points": 85
+          "name": "North Dakota",
+          "points": 67,
+          "aliases": []
         },
         {
-          "name": "Zulu",
-          "aliases": [],
-          "points": 100
+          "name": "South Dakota",
+          "points": 78,
+          "aliases": []
+        },
+        {
+          "name": "Rhode Island",
+          "points": 89,
+          "aliases": []
+        },
+        {
+          "name": "West Virginia",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
     {
       "id": "hg-greek-start",
       "topic": "LANGUAGE",
-      "prompt": "Name a punctuation mark used to end an ordinary English sentence.",
-      "scope": "The three usual sentence endings; give the mark's name.",
-      "source": "https://dictionary.cambridge.org/grammar/british-grammar/punctuation",
+      "prompt": "Name a punctuation mark used in English writing.",
+      "scope": "Common marks used to punctuate prose or quotations; paired opening and closing forms count together. Use the mark’s name.",
+      "source": "https://www.britannica.com/topic/punctuation",
       "answers": [
         {
           "name": "Full stop",
+          "points": 1,
           "aliases": [
             "Period"
-          ],
-          "points": 8
+          ]
+        },
+        {
+          "name": "Comma",
+          "points": 8,
+          "aliases": []
         },
         {
           "name": "Question mark",
-          "aliases": [],
-          "points": 54
+          "points": 14,
+          "aliases": []
         },
         {
           "name": "Exclamation mark",
+          "points": 21,
           "aliases": [
             "Exclamation point"
-          ],
-          "points": 100
+          ]
+        },
+        {
+          "name": "Colon",
+          "points": 27,
+          "aliases": []
+        },
+        {
+          "name": "Semicolon",
+          "points": 34,
+          "aliases": [
+            "Semi colon"
+          ]
+        },
+        {
+          "name": "Apostrophe",
+          "points": 41,
+          "aliases": []
+        },
+        {
+          "name": "Quotation marks",
+          "points": 47,
+          "aliases": [
+            "Quotes",
+            "Inverted commas"
+          ]
+        },
+        {
+          "name": "Hyphen",
+          "points": 54,
+          "aliases": []
+        },
+        {
+          "name": "Dash",
+          "points": 60,
+          "aliases": [
+            "Em dash",
+            "En dash"
+          ]
+        },
+        {
+          "name": "Parentheses",
+          "points": 67,
+          "aliases": [
+            "Round brackets"
+          ]
+        },
+        {
+          "name": "Square brackets",
+          "points": 74,
+          "aliases": [
+            "Brackets"
+          ]
+        },
+        {
+          "name": "Ellipsis",
+          "points": 80,
+          "aliases": []
+        },
+        {
+          "name": "Slash",
+          "points": 87,
+          "aliases": [
+            "Forward slash"
+          ]
+        },
+        {
+          "name": "Braces",
+          "points": 93,
+          "aliases": [
+            "Curly brackets"
+          ]
+        },
+        {
+          "name": "Asterisk",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
     {
       "id": "hg-greek-end",
       "topic": "LANGUAGE",
-      "prompt": "Name a tile colour in Wordle's standard (non-colour-blind) theme.",
-      "scope": "The three result colours; American or British spelling is fine.",
-      "source": "https://www.nytimes.com/games/wordle/index.html",
+      "prompt": "Name one of the original sixteen basic CSS colour keywords.",
+      "scope": "The basic colour names defined in CSS, not the later expanded named-colour list. US or UK spelling is accepted.",
+      "source": "https://www.w3.org/TR/css-color-3/#html4",
       "answers": [
         {
+          "name": "Red",
+          "points": 1,
+          "aliases": []
+        },
+        {
+          "name": "Blue",
+          "points": 8,
+          "aliases": []
+        },
+        {
           "name": "Green",
-          "aliases": [],
-          "points": 8
+          "points": 14,
+          "aliases": []
         },
         {
           "name": "Yellow",
-          "aliases": [],
-          "points": 54
+          "points": 21,
+          "aliases": []
         },
         {
-          "name": "Grey",
+          "name": "Black",
+          "points": 27,
+          "aliases": []
+        },
+        {
+          "name": "White",
+          "points": 34,
+          "aliases": []
+        },
+        {
+          "name": "Purple",
+          "points": 41,
+          "aliases": []
+        },
+        {
+          "name": "Lime",
+          "points": 47,
+          "aliases": []
+        },
+        {
+          "name": "Aqua",
+          "points": 54,
+          "aliases": []
+        },
+        {
+          "name": "Fuchsia",
+          "points": 60,
+          "aliases": []
+        },
+        {
+          "name": "Gray",
+          "points": 67,
           "aliases": [
-            "Gray"
-          ],
-          "points": 100
+            "Grey"
+          ]
+        },
+        {
+          "name": "Maroon",
+          "points": 74,
+          "aliases": []
+        },
+        {
+          "name": "Navy",
+          "points": 80,
+          "aliases": []
+        },
+        {
+          "name": "Olive",
+          "points": 87,
+          "aliases": []
+        },
+        {
+          "name": "Silver",
+          "points": 93,
+          "aliases": []
+        },
+        {
+          "name": "Teal",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
     {
       "id": "hg-spanish-days",
       "topic": "LANGUAGE",
-      "prompt": "Name a group colour in the New York Times game Connections.",
-      "scope": "The four difficulty colours in the standard theme.",
-      "source": "https://www.nytimes.com/games/connections",
+      "prompt": "Name an author awarded the Nobel Prize in Literature in 2010–2024.",
+      "scope": "Laureates in the inclusive year range, including the delayed 2018 award. Full names or unambiguous surnames.",
+      "source": "https://www.nobelprize.org/prizes/lists/all-nobel-prizes-in-literature/",
       "answers": [
         {
-          "name": "Yellow",
-          "aliases": [],
-          "points": 8
+          "name": "Bob Dylan",
+          "points": 1,
+          "aliases": [
+            "Dylan"
+          ]
         },
         {
-          "name": "Green",
-          "aliases": [],
-          "points": 39
+          "name": "Kazuo Ishiguro",
+          "points": 8,
+          "aliases": [
+            "Ishiguro"
+          ]
         },
         {
-          "name": "Blue",
-          "aliases": [],
-          "points": 69
+          "name": "Alice Munro",
+          "points": 15,
+          "aliases": [
+            "Munro"
+          ]
         },
         {
-          "name": "Purple",
-          "aliases": [],
-          "points": 100
+          "name": "Han Kang",
+          "points": 22,
+          "aliases": []
+        },
+        {
+          "name": "Annie Ernaux",
+          "points": 29,
+          "aliases": [
+            "Ernaux"
+          ]
+        },
+        {
+          "name": "Abdulrazak Gurnah",
+          "points": 36,
+          "aliases": [
+            "Gurnah"
+          ]
+        },
+        {
+          "name": "Louise Gluck",
+          "points": 43,
+          "aliases": [
+            "Gluck"
+          ]
+        },
+        {
+          "name": "Peter Handke",
+          "points": 50,
+          "aliases": [
+            "Handke"
+          ]
+        },
+        {
+          "name": "Olga Tokarczuk",
+          "points": 58,
+          "aliases": [
+            "Tokarczuk"
+          ]
+        },
+        {
+          "name": "Svetlana Alexievich",
+          "points": 65,
+          "aliases": [
+            "Alexievich"
+          ]
+        },
+        {
+          "name": "Patrick Modiano",
+          "points": 72,
+          "aliases": [
+            "Modiano"
+          ]
+        },
+        {
+          "name": "Mo Yan",
+          "points": 79,
+          "aliases": []
+        },
+        {
+          "name": "Tomas Transtromer",
+          "points": 86,
+          "aliases": [
+            "Transtromer"
+          ]
+        },
+        {
+          "name": "Mario Vargas Llosa",
+          "points": 93,
+          "aliases": [
+            "Vargas Llosa"
+          ]
+        },
+        {
+          "name": "Jon Fosse",
+          "points": 100,
+          "aliases": [
+            "Fosse"
+          ]
         }
       ]
     },
     {
       "id": "hg-french-days",
       "topic": "LANGUAGE",
-      "prompt": "Name an original Facebook reaction introduced or retained in the six-reaction set in 2016.",
-      "scope": "The six English reaction labels; not the Care reaction added later.",
-      "source": "https://about.fb.com/news/2016/02/reactions-now-available-globally/",
+      "prompt": "Name a comedy listed in Shakespeare’s First Folio.",
+      "scope": "The fourteen plays classified as comedies in the 1623 collection, rather than a modern genre reassignment.",
+      "source": "https://www.folger.edu/explore/shakespeare-in-print/first-folio/",
       "answers": [
         {
-          "name": "Like",
-          "aliases": [],
-          "points": 8
-        },
-        {
-          "name": "Love",
-          "aliases": [],
-          "points": 26
-        },
-        {
-          "name": "Haha",
+          "name": "A Midsummer Night’s Dream",
+          "points": 1,
           "aliases": [
-            "Ha ha"
-          ],
-          "points": 45
+            "A Midsummer Nights Dream"
+          ]
         },
         {
-          "name": "Wow",
-          "aliases": [],
-          "points": 63
+          "name": "Twelfth Night",
+          "points": 9,
+          "aliases": []
         },
         {
-          "name": "Sad",
-          "aliases": [],
-          "points": 82
+          "name": "The Tempest",
+          "points": 16,
+          "aliases": []
         },
         {
-          "name": "Angry",
-          "aliases": [],
-          "points": 100
+          "name": "Much Ado About Nothing",
+          "points": 24,
+          "aliases": []
+        },
+        {
+          "name": "As You Like It",
+          "points": 31,
+          "aliases": []
+        },
+        {
+          "name": "The Merchant of Venice",
+          "points": 39,
+          "aliases": []
+        },
+        {
+          "name": "The Taming of the Shrew",
+          "points": 47,
+          "aliases": []
+        },
+        {
+          "name": "The Comedy of Errors",
+          "points": 54,
+          "aliases": []
+        },
+        {
+          "name": "The Merry Wives of Windsor",
+          "points": 62,
+          "aliases": []
+        },
+        {
+          "name": "Measure for Measure",
+          "points": 70,
+          "aliases": []
+        },
+        {
+          "name": "Love’s Labour’s Lost",
+          "points": 77,
+          "aliases": [
+            "Loves Labours Lost",
+            "Love’s Labor’s Lost"
+          ]
+        },
+        {
+          "name": "All’s Well That Ends Well",
+          "points": 85,
+          "aliases": [
+            "Alls Well That Ends Well"
+          ]
+        },
+        {
+          "name": "The Winter’s Tale",
+          "points": 92,
+          "aliases": [
+            "The Winters Tale"
+          ]
+        },
+        {
+          "name": "The Two Gentlemen of Verona",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
     {
       "id": "hg-persons",
       "topic": "LANGUAGE",
-      "prompt": "Name a grammatical person in standard English.",
-      "scope": "Three persons; give an ordinal, not a pronoun.",
-      "source": "https://en.wikipedia.org/wiki/Grammatical_person",
+      "prompt": "Name a winner of the Booker Prize for a novel in 2000–2024.",
+      "scope": "Winning authors of the main prize, not the International prize; joint winners count separately.",
+      "source": "https://thebookerprizes.com/the-booker-library/prize-years",
       "answers": [
         {
-          "name": "First person",
+          "name": "Margaret Atwood",
+          "points": 1,
           "aliases": [
-            "First",
-            "1st person",
-            "1st"
-          ],
-          "points": 6
+            "Atwood"
+          ]
         },
         {
-          "name": "Second person",
+          "name": "Hilary Mantel",
+          "points": 5,
           "aliases": [
-            "Second",
-            "2nd person",
-            "2nd"
-          ],
-          "points": 49
+            "Mantel"
+          ]
         },
         {
-          "name": "Third person",
+          "name": "Yann Martel",
+          "points": 10,
           "aliases": [
-            "Third",
-            "3rd person",
-            "3rd"
-          ],
-          "points": 100
+            "Martel"
+          ]
+        },
+        {
+          "name": "Peter Carey",
+          "points": 14,
+          "aliases": [
+            "Carey"
+          ]
+        },
+        {
+          "name": "DBC Pierre",
+          "points": 18,
+          "aliases": [
+            "D B C Pierre"
+          ]
+        },
+        {
+          "name": "Alan Hollinghurst",
+          "points": 23,
+          "aliases": [
+            "Hollinghurst"
+          ]
+        },
+        {
+          "name": "John Banville",
+          "points": 27,
+          "aliases": [
+            "Banville"
+          ]
+        },
+        {
+          "name": "Kiran Desai",
+          "points": 31,
+          "aliases": [
+            "Desai"
+          ]
+        },
+        {
+          "name": "Anne Enright",
+          "points": 35,
+          "aliases": [
+            "Enright"
+          ]
+        },
+        {
+          "name": "Aravind Adiga",
+          "points": 40,
+          "aliases": [
+            "Adiga"
+          ]
+        },
+        {
+          "name": "Howard Jacobson",
+          "points": 44,
+          "aliases": [
+            "Jacobson"
+          ]
+        },
+        {
+          "name": "Julian Barnes",
+          "points": 48,
+          "aliases": [
+            "Barnes"
+          ]
+        },
+        {
+          "name": "Eleanor Catton",
+          "points": 53,
+          "aliases": [
+            "Catton"
+          ]
+        },
+        {
+          "name": "Richard Flanagan",
+          "points": 57,
+          "aliases": [
+            "Flanagan"
+          ]
+        },
+        {
+          "name": "Marlon James",
+          "points": 61,
+          "aliases": [
+            "James"
+          ]
+        },
+        {
+          "name": "Paul Beatty",
+          "points": 66,
+          "aliases": [
+            "Beatty"
+          ]
+        },
+        {
+          "name": "George Saunders",
+          "points": 70,
+          "aliases": [
+            "Saunders"
+          ]
+        },
+        {
+          "name": "Anna Burns",
+          "points": 74,
+          "aliases": [
+            "Burns"
+          ]
+        },
+        {
+          "name": "Bernardine Evaristo",
+          "points": 78,
+          "aliases": [
+            "Evaristo"
+          ]
+        },
+        {
+          "name": "Douglas Stuart",
+          "points": 83,
+          "aliases": [
+            "Stuart"
+          ]
+        },
+        {
+          "name": "Damon Galgut",
+          "points": 87,
+          "aliases": [
+            "Galgut"
+          ]
+        },
+        {
+          "name": "Shehan Karunatilaka",
+          "points": 91,
+          "aliases": [
+            "Karunatilaka"
+          ]
+        },
+        {
+          "name": "Paul Lynch",
+          "points": 96,
+          "aliases": [
+            "Lynch"
+          ]
+        },
+        {
+          "name": "Samantha Harvey",
+          "points": 100,
+          "aliases": [
+            "Harvey"
+          ]
         }
       ]
     },
     {
       "id": "hg-be",
       "topic": "LANGUAGE",
-      "prompt": "Name a single-word form of the English verb “be”.",
-      "scope": "Eight standard forms, excluding contractions and dialect forms.",
-      "source": "https://en.wikipedia.org/wiki/English_verbs",
+      "prompt": "Name a main-series Narnia or Earthsea novel published before 2025.",
+      "scope": "The seven books in the former series and five novels in the latter; short-story collections are excluded. Full book titles.",
+      "source": "https://www.ursulakleguin.com/bibliography",
       "answers": [
         {
-          "name": "Be",
-          "aliases": [],
-          "points": 6
+          "name": "The Lion, the Witch and the Wardrobe",
+          "points": 1,
+          "aliases": [
+            "The Lion the Witch and the Wardrobe"
+          ]
         },
         {
-          "name": "Is",
-          "aliases": [],
-          "points": 17
+          "name": "Prince Caspian",
+          "points": 10,
+          "aliases": []
         },
         {
-          "name": "Are",
-          "aliases": [],
-          "points": 29
+          "name": "The Voyage of the Dawn Treader",
+          "points": 19,
+          "aliases": [
+            "Voyage of the Dawn Treader"
+          ]
         },
         {
-          "name": "Am",
-          "aliases": [],
-          "points": 42
+          "name": "The Silver Chair",
+          "points": 28,
+          "aliases": []
         },
         {
-          "name": "Was",
-          "aliases": [],
-          "points": 56
+          "name": "The Horse and His Boy",
+          "points": 37,
+          "aliases": []
         },
         {
-          "name": "Were",
-          "aliases": [],
-          "points": 70
+          "name": "The Magician’s Nephew",
+          "points": 46,
+          "aliases": [
+            "The Magicians Nephew"
+          ]
         },
         {
-          "name": "Being",
-          "aliases": [],
-          "points": 85
+          "name": "The Last Battle",
+          "points": 55,
+          "aliases": []
         },
         {
-          "name": "Been",
-          "aliases": [],
-          "points": 100
+          "name": "A Wizard of Earthsea",
+          "points": 64,
+          "aliases": []
+        },
+        {
+          "name": "The Tombs of Atuan",
+          "points": 73,
+          "aliases": []
+        },
+        {
+          "name": "The Farthest Shore",
+          "points": 82,
+          "aliases": []
+        },
+        {
+          "name": "Tehanu",
+          "points": 91,
+          "aliases": []
+        },
+        {
+          "name": "The Other Wind",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
     {
       "id": "hg-days",
       "topic": "EVERYDAY",
-      "prompt": "Name a day of the week in English.",
-      "scope": "Seven full names, not abbreviations.",
-      "source": "https://en.wikipedia.org/wiki/Week",
+      "prompt": "Name a modern birthstone listed by the Gemological Institute of America.",
+      "scope": "Modern monthly birthstones, including listed alternatives; gemstone names rather than months.",
+      "source": "https://www.gia.edu/birthstones",
       "answers": [
         {
-          "name": "Monday",
-          "aliases": [],
-          "points": 6
+          "name": "Diamond",
+          "points": 1,
+          "aliases": []
         },
         {
-          "name": "Friday",
-          "aliases": [],
-          "points": 19
+          "name": "Ruby",
+          "points": 6,
+          "aliases": []
         },
         {
-          "name": "Sunday",
-          "aliases": [],
-          "points": 33
+          "name": "Emerald",
+          "points": 11,
+          "aliases": []
         },
         {
-          "name": "Saturday",
-          "aliases": [],
-          "points": 49
+          "name": "Sapphire",
+          "points": 16,
+          "aliases": []
         },
         {
-          "name": "Tuesday",
-          "aliases": [],
-          "points": 66
+          "name": "Amethyst",
+          "points": 21,
+          "aliases": []
         },
         {
-          "name": "Wednesday",
-          "aliases": [],
-          "points": 83
+          "name": "Pearl",
+          "points": 26,
+          "aliases": []
         },
         {
-          "name": "Thursday",
-          "aliases": [],
-          "points": 100
+          "name": "Opal",
+          "points": 31,
+          "aliases": []
+        },
+        {
+          "name": "Aquamarine",
+          "points": 36,
+          "aliases": []
+        },
+        {
+          "name": "Garnet",
+          "points": 41,
+          "aliases": []
+        },
+        {
+          "name": "Topaz",
+          "points": 46,
+          "aliases": []
+        },
+        {
+          "name": "Turquoise",
+          "points": 50,
+          "aliases": []
+        },
+        {
+          "name": "Peridot",
+          "points": 55,
+          "aliases": []
+        },
+        {
+          "name": "Citrine",
+          "points": 60,
+          "aliases": []
+        },
+        {
+          "name": "Alexandrite",
+          "points": 65,
+          "aliases": []
+        },
+        {
+          "name": "Moonstone",
+          "points": 70,
+          "aliases": []
+        },
+        {
+          "name": "Tanzanite",
+          "points": 75,
+          "aliases": []
+        },
+        {
+          "name": "Zircon",
+          "points": 80,
+          "aliases": []
+        },
+        {
+          "name": "Tourmaline",
+          "points": 85,
+          "aliases": []
+        },
+        {
+          "name": "Bloodstone",
+          "points": 90,
+          "aliases": []
+        },
+        {
+          "name": "Spinel",
+          "points": 95,
+          "aliases": []
+        },
+        {
+          "name": "Sardonyx",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
@@ -19802,137 +23270,379 @@
     {
       "id": "hg-seasons",
       "topic": "EVERYDAY",
-      "prompt": "Name a season in the four-season model.",
-      "scope": "British and American names accepted.",
-      "source": "https://en.wikipedia.org/wiki/Season",
+      "prompt": "Name a named key on a standard PC keyboard that is not a letter, digit or punctuation mark.",
+      "scope": "Common named keys on a full-size PC keyboard. Arrow directions count separately; letter, number and punctuation keys are excluded.",
+      "source": "https://support.microsoft.com/en-us/windows/using-your-keyboard-18b2efc1-9e92-2292-c7bb-9f2dd03e0831",
       "answers": [
         {
-          "name": "Summer",
-          "aliases": [],
-          "points": 6
-        },
-        {
-          "name": "Winter",
-          "aliases": [],
-          "points": 33
-        },
-        {
-          "name": "Spring",
-          "aliases": [],
-          "points": 66
-        },
-        {
-          "name": "Autumn",
+          "name": "Enter",
+          "points": 1,
           "aliases": [
-            "Fall"
-          ],
-          "points": 100
+            "Return"
+          ]
+        },
+        {
+          "name": "Space",
+          "points": 5,
+          "aliases": [
+            "Spacebar"
+          ]
+        },
+        {
+          "name": "Escape",
+          "points": 9,
+          "aliases": [
+            "Esc"
+          ]
+        },
+        {
+          "name": "Shift",
+          "points": 13,
+          "aliases": []
+        },
+        {
+          "name": "Control",
+          "points": 18,
+          "aliases": [
+            "Ctrl"
+          ]
+        },
+        {
+          "name": "Alt",
+          "points": 22,
+          "aliases": []
+        },
+        {
+          "name": "Tab",
+          "points": 26,
+          "aliases": []
+        },
+        {
+          "name": "Caps Lock",
+          "points": 30,
+          "aliases": []
+        },
+        {
+          "name": "Backspace",
+          "points": 34,
+          "aliases": []
+        },
+        {
+          "name": "Delete",
+          "points": 38,
+          "aliases": [
+            "Del"
+          ]
+        },
+        {
+          "name": "Windows",
+          "points": 42,
+          "aliases": [
+            "Windows key"
+          ]
+        },
+        {
+          "name": "Up arrow",
+          "points": 46,
+          "aliases": [
+            "Up"
+          ]
+        },
+        {
+          "name": "Down arrow",
+          "points": 50,
+          "aliases": [
+            "Down"
+          ]
+        },
+        {
+          "name": "Left arrow",
+          "points": 55,
+          "aliases": [
+            "Left"
+          ]
+        },
+        {
+          "name": "Right arrow",
+          "points": 59,
+          "aliases": [
+            "Right"
+          ]
+        },
+        {
+          "name": "Home",
+          "points": 63,
+          "aliases": []
+        },
+        {
+          "name": "End",
+          "points": 67,
+          "aliases": []
+        },
+        {
+          "name": "Page Up",
+          "points": 71,
+          "aliases": [
+            "PgUp"
+          ]
+        },
+        {
+          "name": "Page Down",
+          "points": 75,
+          "aliases": [
+            "PgDn"
+          ]
+        },
+        {
+          "name": "Insert",
+          "points": 79,
+          "aliases": [
+            "Ins"
+          ]
+        },
+        {
+          "name": "Print Screen",
+          "points": 84,
+          "aliases": [
+            "PrtSc"
+          ]
+        },
+        {
+          "name": "Scroll Lock",
+          "points": 88,
+          "aliases": []
+        },
+        {
+          "name": "Pause",
+          "points": 92,
+          "aliases": [
+            "Pause Break"
+          ]
+        },
+        {
+          "name": "Num Lock",
+          "points": 96,
+          "aliases": []
+        },
+        {
+          "name": "Menu",
+          "points": 100,
+          "aliases": [
+            "Application key"
+          ]
         }
       ]
     },
     {
       "id": "hg-suits",
       "topic": "EVERYDAY",
-      "prompt": "Name a standard playing-card suit.",
-      "scope": "The French-suited 52-card deck; names, not symbols.",
-      "source": "https://en.wikipedia.org/wiki/French-suited_playing_cards",
+      "prompt": "Name a suspect or weapon in the classic UK edition of Cluedo.",
+      "scope": "The original six suspects and six weapons; later edition additions are excluded.",
+      "source": "https://www.hasbro.com/common/instruct/Clue_(2002).pdf",
       "answers": [
         {
-          "name": "Hearts",
+          "name": "Miss Scarlett",
+          "points": 1,
           "aliases": [
-            "Heart"
-          ],
-          "points": 6
+            "Miss Scarlet",
+            "Scarlett",
+            "Scarlet"
+          ]
         },
         {
-          "name": "Spades",
+          "name": "Colonel Mustard",
+          "points": 10,
           "aliases": [
-            "Spade"
-          ],
-          "points": 33
+            "Mustard"
+          ]
         },
         {
-          "name": "Diamonds",
+          "name": "Mrs White",
+          "points": 19,
           "aliases": [
-            "Diamond"
-          ],
-          "points": 66
+            "White"
+          ]
         },
         {
-          "name": "Clubs",
+          "name": "Reverend Green",
+          "points": 28,
           "aliases": [
-            "Club"
-          ],
-          "points": 100
+            "Mr Green",
+            "Green"
+          ]
+        },
+        {
+          "name": "Mrs Peacock",
+          "points": 37,
+          "aliases": [
+            "Peacock"
+          ]
+        },
+        {
+          "name": "Professor Plum",
+          "points": 46,
+          "aliases": [
+            "Plum"
+          ]
+        },
+        {
+          "name": "Candlestick",
+          "points": 55,
+          "aliases": []
+        },
+        {
+          "name": "Dagger",
+          "points": 64,
+          "aliases": [
+            "Knife"
+          ]
+        },
+        {
+          "name": "Lead pipe",
+          "points": 73,
+          "aliases": [
+            "Lead piping"
+          ]
+        },
+        {
+          "name": "Revolver",
+          "points": 82,
+          "aliases": [
+            "Gun"
+          ]
+        },
+        {
+          "name": "Rope",
+          "points": 91,
+          "aliases": []
+        },
+        {
+          "name": "Spanner",
+          "points": 100,
+          "aliases": [
+            "Wrench"
+          ]
         }
       ]
     },
     {
       "id": "hg-compass",
       "topic": "EVERYDAY",
-      "prompt": "Name one of the eight main compass points.",
-      "scope": "Cardinal and intercardinal only, not secondary points.",
-      "source": "https://en.wikipedia.org/wiki/Points_of_the_compass",
+      "prompt": "Name a street property on the classic London Monopoly board.",
+      "scope": "The twenty-two coloured street properties on the standard UK board; stations and utilities are excluded.",
+      "source": "https://www.hasbro.com/common/instruct/Monopoly(00009).pdf",
       "answers": [
         {
-          "name": "North",
-          "aliases": [
-            "N"
-          ],
-          "points": 6
+          "name": "Mayfair",
+          "points": 1,
+          "aliases": []
         },
         {
-          "name": "South",
-          "aliases": [
-            "S"
-          ],
-          "points": 17
+          "name": "Park Lane",
+          "points": 6,
+          "aliases": []
         },
         {
-          "name": "East",
-          "aliases": [
-            "E"
-          ],
-          "points": 29
+          "name": "Old Kent Road",
+          "points": 10,
+          "aliases": []
         },
         {
-          "name": "West",
-          "aliases": [
-            "W"
-          ],
-          "points": 42
+          "name": "Whitechapel Road",
+          "points": 15,
+          "aliases": []
         },
         {
-          "name": "North East",
+          "name": "The Angel Islington",
+          "points": 20,
           "aliases": [
-            "Northeast",
-            "NE"
-          ],
-          "points": 56
+            "Angel Islington"
+          ]
         },
         {
-          "name": "North West",
-          "aliases": [
-            "Northwest",
-            "NW"
-          ],
-          "points": 70
+          "name": "Euston Road",
+          "points": 25,
+          "aliases": []
         },
         {
-          "name": "South East",
-          "aliases": [
-            "Southeast",
-            "SE"
-          ],
-          "points": 85
+          "name": "Pentonville Road",
+          "points": 29,
+          "aliases": []
         },
         {
-          "name": "South West",
-          "aliases": [
-            "Southwest",
-            "SW"
-          ],
-          "points": 100
+          "name": "Pall Mall",
+          "points": 34,
+          "aliases": []
+        },
+        {
+          "name": "Whitehall",
+          "points": 39,
+          "aliases": []
+        },
+        {
+          "name": "Northumberland Avenue",
+          "points": 43,
+          "aliases": []
+        },
+        {
+          "name": "Bow Street",
+          "points": 48,
+          "aliases": []
+        },
+        {
+          "name": "Marlborough Street",
+          "points": 53,
+          "aliases": []
+        },
+        {
+          "name": "Vine Street",
+          "points": 58,
+          "aliases": []
+        },
+        {
+          "name": "Strand",
+          "points": 62,
+          "aliases": []
+        },
+        {
+          "name": "Fleet Street",
+          "points": 67,
+          "aliases": []
+        },
+        {
+          "name": "Trafalgar Square",
+          "points": 72,
+          "aliases": []
+        },
+        {
+          "name": "Leicester Square",
+          "points": 76,
+          "aliases": []
+        },
+        {
+          "name": "Coventry Street",
+          "points": 81,
+          "aliases": []
+        },
+        {
+          "name": "Piccadilly",
+          "points": 86,
+          "aliases": []
+        },
+        {
+          "name": "Regent Street",
+          "points": 91,
+          "aliases": []
+        },
+        {
+          "name": "Oxford Street",
+          "points": 95,
+          "aliases": []
+        },
+        {
+          "name": "Bond Street",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
@@ -20022,324 +23732,886 @@
     {
       "id": "hg-music-notes",
       "topic": "EVERYDAY",
-      "prompt": "Name a natural musical note letter in English notation.",
-      "scope": "Seven letter names, without sharps, flats or solfège.",
-      "source": "https://en.wikipedia.org/wiki/Musical_note",
+      "prompt": "Name a standard orchestral instrument.",
+      "scope": "Common instruments in modern symphony orchestras, including regular auxiliary and percussion instruments; instrument families alone do not count.",
+      "source": "https://www.philharmonia.co.uk/resources/instruments/",
       "answers": [
         {
-          "name": "C",
-          "aliases": [],
-          "points": 6
+          "name": "Violin",
+          "points": 1,
+          "aliases": []
         },
         {
-          "name": "A",
-          "aliases": [],
-          "points": 19
+          "name": "Viola",
+          "points": 4,
+          "aliases": []
         },
         {
-          "name": "G",
-          "aliases": [],
-          "points": 33
+          "name": "Cello",
+          "points": 7,
+          "aliases": [
+            "Violoncello"
+          ]
         },
         {
-          "name": "D",
-          "aliases": [],
-          "points": 49
+          "name": "Double bass",
+          "points": 10,
+          "aliases": [
+            "Contrabass"
+          ]
         },
         {
-          "name": "E",
-          "aliases": [],
-          "points": 66
+          "name": "Flute",
+          "points": 13,
+          "aliases": []
         },
         {
-          "name": "F",
-          "aliases": [],
-          "points": 83
+          "name": "Piccolo",
+          "points": 16,
+          "aliases": []
         },
         {
-          "name": "B",
-          "aliases": [],
-          "points": 100
+          "name": "Oboe",
+          "points": 19,
+          "aliases": []
+        },
+        {
+          "name": "Cor anglais",
+          "points": 22,
+          "aliases": [
+            "English horn"
+          ]
+        },
+        {
+          "name": "Clarinet",
+          "points": 25,
+          "aliases": []
+        },
+        {
+          "name": "Bass clarinet",
+          "points": 28,
+          "aliases": []
+        },
+        {
+          "name": "Bassoon",
+          "points": 31,
+          "aliases": []
+        },
+        {
+          "name": "Contrabassoon",
+          "points": 34,
+          "aliases": [
+            "Double bassoon"
+          ]
+        },
+        {
+          "name": "Trumpet",
+          "points": 37,
+          "aliases": []
+        },
+        {
+          "name": "French horn",
+          "points": 40,
+          "aliases": [
+            "Horn"
+          ]
+        },
+        {
+          "name": "Trombone",
+          "points": 43,
+          "aliases": []
+        },
+        {
+          "name": "Bass trombone",
+          "points": 46,
+          "aliases": []
+        },
+        {
+          "name": "Tuba",
+          "points": 49,
+          "aliases": []
+        },
+        {
+          "name": "Harp",
+          "points": 52,
+          "aliases": []
+        },
+        {
+          "name": "Piano",
+          "points": 55,
+          "aliases": []
+        },
+        {
+          "name": "Celesta",
+          "points": 58,
+          "aliases": []
+        },
+        {
+          "name": "Timpani",
+          "points": 61,
+          "aliases": [
+            "Kettledrums"
+          ]
+        },
+        {
+          "name": "Snare drum",
+          "points": 64,
+          "aliases": [
+            "Side drum"
+          ]
+        },
+        {
+          "name": "Bass drum",
+          "points": 67,
+          "aliases": []
+        },
+        {
+          "name": "Cymbals",
+          "points": 70,
+          "aliases": []
+        },
+        {
+          "name": "Triangle",
+          "points": 73,
+          "aliases": []
+        },
+        {
+          "name": "Tambourine",
+          "points": 76,
+          "aliases": []
+        },
+        {
+          "name": "Glockenspiel",
+          "points": 79,
+          "aliases": []
+        },
+        {
+          "name": "Xylophone",
+          "points": 82,
+          "aliases": []
+        },
+        {
+          "name": "Marimba",
+          "points": 85,
+          "aliases": []
+        },
+        {
+          "name": "Vibraphone",
+          "points": 88,
+          "aliases": []
+        },
+        {
+          "name": "Tubular bells",
+          "points": 91,
+          "aliases": [
+            "Chimes"
+          ]
+        },
+        {
+          "name": "Gong",
+          "points": 94,
+          "aliases": [
+            "Tam tam"
+          ]
+        },
+        {
+          "name": "Castanets",
+          "points": 97,
+          "aliases": []
+        },
+        {
+          "name": "Wood block",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
     {
       "id": "hg-orchestra",
       "topic": "EVERYDAY",
-      "prompt": "Name a standard symphony orchestra instrument family.",
-      "scope": "Four main sections; keyboards are not a separate family here.",
-      "source": "https://en.wikipedia.org/wiki/Orchestra",
+      "prompt": "Name one of the ten International Style ballroom dances.",
+      "scope": "The five Standard and five Latin dances used in international ten-dance competition; regional and social-only styles are excluded.",
+      "source": "https://www.worlddancesport.org/About/Dance-Styles",
       "answers": [
         {
-          "name": "Strings",
+          "name": "Waltz",
+          "points": 1,
           "aliases": [
-            "String"
-          ],
-          "points": 6
+            "Slow waltz"
+          ]
         },
         {
-          "name": "Brass",
-          "aliases": [],
-          "points": 33
+          "name": "Tango",
+          "points": 12,
+          "aliases": []
         },
         {
-          "name": "Woodwind",
+          "name": "Viennese waltz",
+          "points": 23,
+          "aliases": []
+        },
+        {
+          "name": "Slow foxtrot",
+          "points": 34,
           "aliases": [
-            "Woodwinds"
-          ],
-          "points": 66
+            "Foxtrot"
+          ]
         },
         {
-          "name": "Percussion",
-          "aliases": [],
-          "points": 100
+          "name": "Quickstep",
+          "points": 45,
+          "aliases": []
+        },
+        {
+          "name": "Samba",
+          "points": 56,
+          "aliases": []
+        },
+        {
+          "name": "Cha cha cha",
+          "points": 67,
+          "aliases": [
+            "Cha cha"
+          ]
+        },
+        {
+          "name": "Rumba",
+          "points": 78,
+          "aliases": []
+        },
+        {
+          "name": "Paso doble",
+          "points": 89,
+          "aliases": [
+            "Pasodoble"
+          ]
+        },
+        {
+          "name": "Jive",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
     {
       "id": "hg-us-coins",
       "topic": "EVERYDAY",
-      "prompt": "Name a US circulating coin denomination as of 2025.",
-      "scope": "Six denominations, including seldom-used coins; names or values accepted.",
-      "source": "https://www.usmint.gov/learn/coins-and-medals/circulating-coins",
+      "prompt": "Name a currency used by a G20 member country in 2025.",
+      "scope": "Currencies of the nineteen country members; the two regional organisation memberships do not add currencies. Currency names or ISO codes.",
+      "source": "https://www.g20.org/en/about-the-g20",
       "answers": [
         {
-          "name": "Quarter",
+          "name": "US dollar",
+          "points": 1,
           "aliases": [
-            "Quarter dollar",
-            "25 cents",
-            "25c"
-          ],
-          "points": 6
+            "United States dollar",
+            "USD"
+          ]
         },
         {
-          "name": "Penny",
+          "name": "Euro",
+          "points": 7,
           "aliases": [
-            "Cent",
-            "1 cent",
-            "1c"
-          ],
-          "points": 21
+            "EUR"
+          ]
         },
         {
-          "name": "Dime",
+          "name": "Pound sterling",
+          "points": 13,
           "aliases": [
-            "10 cents",
-            "10c"
-          ],
-          "points": 40
+            "British pound",
+            "GBP"
+          ]
         },
         {
-          "name": "Nickel",
+          "name": "Australian dollar",
+          "points": 20,
           "aliases": [
-            "5 cents",
-            "5c"
-          ],
-          "points": 59
+            "AUD"
+          ]
         },
         {
-          "name": "Dollar",
+          "name": "Canadian dollar",
+          "points": 26,
           "aliases": [
-            "Dollar coin",
-            "1 dollar",
-            "$1"
-          ],
-          "points": 79
+            "CAD"
+          ]
         },
         {
-          "name": "Half dollar",
+          "name": "Japanese yen",
+          "points": 32,
           "aliases": [
-            "50 cents",
-            "50c"
-          ],
-          "points": 100
+            "Yen",
+            "JPY"
+          ]
+        },
+        {
+          "name": "Chinese yuan",
+          "points": 38,
+          "aliases": [
+            "Renminbi",
+            "Yuan",
+            "CNY"
+          ]
+        },
+        {
+          "name": "Indian rupee",
+          "points": 44,
+          "aliases": [
+            "INR"
+          ]
+        },
+        {
+          "name": "Brazilian real",
+          "points": 50,
+          "aliases": [
+            "Real",
+            "BRL"
+          ]
+        },
+        {
+          "name": "Mexican peso",
+          "points": 57,
+          "aliases": [
+            "MXN"
+          ]
+        },
+        {
+          "name": "Argentine peso",
+          "points": 63,
+          "aliases": [
+            "Argentinian peso",
+            "ARS"
+          ]
+        },
+        {
+          "name": "South African rand",
+          "points": 69,
+          "aliases": [
+            "Rand",
+            "ZAR"
+          ]
+        },
+        {
+          "name": "South Korean won",
+          "points": 75,
+          "aliases": [
+            "Won",
+            "KRW"
+          ]
+        },
+        {
+          "name": "Russian ruble",
+          "points": 81,
+          "aliases": [
+            "Russian rouble",
+            "Ruble",
+            "Rouble",
+            "RUB"
+          ]
+        },
+        {
+          "name": "Turkish lira",
+          "points": 88,
+          "aliases": [
+            "Lira",
+            "TRY"
+          ]
+        },
+        {
+          "name": "Saudi riyal",
+          "points": 94,
+          "aliases": [
+            "SAR"
+          ]
+        },
+        {
+          "name": "Indonesian rupiah",
+          "points": 100,
+          "aliases": [
+            "Rupiah",
+            "IDR"
+          ]
         }
       ]
     },
     {
       "id": "hg-traffic",
       "topic": "EVERYDAY",
-      "prompt": "Name a standard road traffic signal colour.",
-      "scope": "The three-colour system; British and American names accepted.",
-      "source": "https://en.wikipedia.org/wiki/Traffic_light",
+      "prompt": "Name a London Underground line, the Elizabeth line or the DLR.",
+      "scope": "The eleven Tube lines plus the two separately named rail systems specified in the question; Overground routes are excluded.",
+      "source": "https://tfl.gov.uk/maps/track/tube",
       "answers": [
         {
-          "name": "Red",
-          "aliases": [],
-          "points": 6
-        },
-        {
-          "name": "Green",
-          "aliases": [],
-          "points": 49
-        },
-        {
-          "name": "Amber",
+          "name": "Central",
+          "points": 1,
           "aliases": [
-            "Yellow"
-          ],
-          "points": 100
+            "Central line"
+          ]
+        },
+        {
+          "name": "Northern",
+          "points": 11,
+          "aliases": [
+            "Northern line"
+          ]
+        },
+        {
+          "name": "Piccadilly",
+          "points": 21,
+          "aliases": [
+            "Piccadilly line"
+          ]
+        },
+        {
+          "name": "Victoria",
+          "points": 31,
+          "aliases": [
+            "Victoria line"
+          ]
+        },
+        {
+          "name": "Bakerloo",
+          "points": 41,
+          "aliases": [
+            "Bakerloo line"
+          ]
+        },
+        {
+          "name": "District",
+          "points": 50,
+          "aliases": [
+            "District line"
+          ]
+        },
+        {
+          "name": "Circle",
+          "points": 60,
+          "aliases": [
+            "Circle line"
+          ]
+        },
+        {
+          "name": "Jubilee",
+          "points": 70,
+          "aliases": [
+            "Jubilee line"
+          ]
+        },
+        {
+          "name": "Metropolitan",
+          "points": 80,
+          "aliases": [
+            "Metropolitan line"
+          ]
+        },
+        {
+          "name": "Hammersmith and City",
+          "points": 90,
+          "aliases": [
+            "Hammersmith & City line"
+          ]
+        },
+        {
+          "name": "Waterloo and City",
+          "points": 100,
+          "aliases": [
+            "Waterloo & City line"
+          ]
+        },
+        {
+          "name": "Elizabeth line",
+          "points": 1,
+          "aliases": [
+            "Elizabeth"
+          ]
+        },
+        {
+          "name": "Docklands Light Railway",
+          "points": 1,
+          "aliases": [
+            "DLR"
+          ]
         }
       ]
     },
     {
       "id": "hg-tastes",
       "topic": "EVERYDAY",
-      "prompt": "Name one of the five conventional basic tastes.",
-      "scope": "The standard five-taste model; spicy is excluded.",
-      "source": "https://en.wikipedia.org/wiki/Taste",
+      "prompt": "Name a UK bank holiday observed in at least one nation in 2025.",
+      "scope": "Distinct named bank holidays across the four UK nations in the 2025 GOV.UK calendars. Substitute dates do not create a second holiday.",
+      "source": "https://www.gov.uk/bank-holidays",
       "answers": [
         {
-          "name": "Sweet",
+          "name": "Christmas Day",
+          "points": 1,
           "aliases": [
-            "Sweetness"
-          ],
-          "points": 6
+            "Christmas"
+          ]
         },
         {
-          "name": "Salty",
-          "aliases": [
-            "Saltiness",
-            "Salt"
-          ],
-          "points": 26
+          "name": "Boxing Day",
+          "points": 10,
+          "aliases": []
         },
         {
-          "name": "Sour",
+          "name": "New Year’s Day",
+          "points": 19,
           "aliases": [
-            "Sourness"
-          ],
-          "points": 49
+            "New Years Day"
+          ]
         },
         {
-          "name": "Bitter",
-          "aliases": [
-            "Bitterness"
-          ],
-          "points": 74
+          "name": "Good Friday",
+          "points": 28,
+          "aliases": []
         },
         {
-          "name": "Umami",
+          "name": "Easter Monday",
+          "points": 37,
+          "aliases": []
+        },
+        {
+          "name": "Early May bank holiday",
+          "points": 46,
           "aliases": [
-            "Savoury",
-            "Savory"
-          ],
-          "points": 100
+            "May Day"
+          ]
+        },
+        {
+          "name": "Spring bank holiday",
+          "points": 55,
+          "aliases": []
+        },
+        {
+          "name": "Summer bank holiday",
+          "points": 64,
+          "aliases": []
+        },
+        {
+          "name": "St Patrick’s Day",
+          "points": 73,
+          "aliases": [
+            "Saint Patricks Day"
+          ]
+        },
+        {
+          "name": "St Andrew’s Day",
+          "points": 82,
+          "aliases": [
+            "Saint Andrews Day"
+          ]
+        },
+        {
+          "name": "Battle of the Boyne",
+          "points": 91,
+          "aliases": [
+            "Orangemens Day"
+          ]
+        },
+        {
+          "name": "2 January",
+          "points": 100,
+          "aliases": [
+            "January 2",
+            "Second of January"
+          ]
         }
       ]
     },
     {
       "id": "hg-rubik",
       "topic": "EVERYDAY",
-      "prompt": "Name a face colour on a standard Western-colour Rubik’s Cube.",
-      "scope": "The usual six-colour 3×3 cube, not custom schemes.",
-      "source": "https://en.wikipedia.org/wiki/Rubik%27s_Cube",
+      "prompt": "Name a Taylor Swift studio album released by the end of 2025.",
+      "scope": "The twelve original studio albums; re-recordings, live albums and extended editions are not separate answers.",
+      "source": "https://www.taylorswift.com/",
       "answers": [
         {
+          "name": "Taylor Swift",
+          "points": 1,
+          "aliases": []
+        },
+        {
+          "name": "Fearless",
+          "points": 10,
+          "aliases": []
+        },
+        {
+          "name": "Speak Now",
+          "points": 19,
+          "aliases": []
+        },
+        {
           "name": "Red",
-          "aliases": [],
-          "points": 6
+          "points": 28,
+          "aliases": []
         },
         {
-          "name": "Blue",
-          "aliases": [],
-          "points": 21
+          "name": "1989",
+          "points": 37,
+          "aliases": []
         },
         {
-          "name": "Green",
-          "aliases": [],
-          "points": 40
+          "name": "Reputation",
+          "points": 46,
+          "aliases": []
         },
         {
-          "name": "Yellow",
-          "aliases": [],
-          "points": 59
+          "name": "Lover",
+          "points": 55,
+          "aliases": []
         },
         {
-          "name": "White",
-          "aliases": [],
-          "points": 79
+          "name": "Folklore",
+          "points": 64,
+          "aliases": []
         },
         {
-          "name": "Orange",
-          "aliases": [],
-          "points": 100
+          "name": "Evermore",
+          "points": 73,
+          "aliases": []
+        },
+        {
+          "name": "Midnights",
+          "points": 82,
+          "aliases": []
+        },
+        {
+          "name": "The Tortured Poets Department",
+          "points": 91,
+          "aliases": [
+            "TTPD"
+          ]
+        },
+        {
+          "name": "The Life of a Showgirl",
+          "points": 100,
+          "aliases": [
+            "Life of a Showgirl"
+          ]
         }
       ]
     },
     {
       "id": "hg-sauces",
       "topic": "EVERYDAY",
-      "prompt": "Name a main topping on a classic Margherita pizza.",
-      "scope": "The three principal toppings in the traditional recipe. Exclude the dough, oil, salt and optional extra garnishes.",
-      "source": "https://en.wikipedia.org/wiki/Pizza_Margherita",
+      "prompt": "Name a Beatles studio album in their core UK catalogue.",
+      "scope": "The twelve original UK studio albums plus the 1967 US album included in the standard thirteen-album core catalogue. Compilations and live albums are excluded.",
+      "source": "https://www.thebeatles.com/albums",
       "answers": [
         {
-          "name": "Tomato",
-          "aliases": [
-            "Tomatoes",
-            "Tomato sauce"
-          ],
-          "points": 8
+          "name": "Abbey Road",
+          "points": 1,
+          "aliases": []
         },
         {
-          "name": "Mozzarella",
+          "name": "Sgt. Pepper’s Lonely Hearts Club Band",
+          "points": 9,
           "aliases": [
-            "Mozzarella cheese",
-            "Cheese"
-          ],
-          "points": 54
+            "Sgt Peppers Lonely Hearts Club Band",
+            "Sgt Pepper"
+          ]
         },
         {
-          "name": "Basil",
+          "name": "The Beatles",
+          "points": 1,
           "aliases": [
-            "Fresh basil"
-          ],
-          "points": 100
+            "White Album"
+          ]
+        },
+        {
+          "name": "Revolver",
+          "points": 26,
+          "aliases": []
+        },
+        {
+          "name": "Rubber Soul",
+          "points": 34,
+          "aliases": []
+        },
+        {
+          "name": "Help!",
+          "points": 42,
+          "aliases": [
+            "Help"
+          ]
+        },
+        {
+          "name": "A Hard Day’s Night",
+          "points": 50,
+          "aliases": [
+            "A Hard Days Night"
+          ]
+        },
+        {
+          "name": "Please Please Me",
+          "points": 59,
+          "aliases": []
+        },
+        {
+          "name": "With the Beatles",
+          "points": 67,
+          "aliases": []
+        },
+        {
+          "name": "Beatles for Sale",
+          "points": 75,
+          "aliases": []
+        },
+        {
+          "name": "Yellow Submarine",
+          "points": 84,
+          "aliases": []
+        },
+        {
+          "name": "Let It Be",
+          "points": 92,
+          "aliases": []
+        },
+        {
+          "name": "Magical Mystery Tour",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
     {
       "id": "hg-long-months",
       "topic": "EVERYDAY",
-      "prompt": "Name a month with 31 days.",
-      "scope": "Seven months in the Gregorian calendar; full English names.",
-      "source": "https://en.wikipedia.org/wiki/Month",
+      "prompt": "Name an official James Bond film released by Eon before 2025.",
+      "scope": "The twenty-five Eon-produced films released in 1962–2021; unofficial productions are excluded.",
+      "source": "https://www.007.com/the-films/",
       "answers": [
         {
-          "name": "January",
-          "aliases": [],
-          "points": 6
+          "name": "Casino Royale",
+          "points": 1,
+          "aliases": []
         },
         {
-          "name": "December",
-          "aliases": [],
-          "points": 19
+          "name": "Skyfall",
+          "points": 5,
+          "aliases": []
         },
         {
-          "name": "July",
-          "aliases": [],
-          "points": 33
+          "name": "Goldfinger",
+          "points": 9,
+          "aliases": []
         },
         {
-          "name": "May",
-          "aliases": [],
-          "points": 49
+          "name": "No Time to Die",
+          "points": 13,
+          "aliases": []
         },
         {
-          "name": "March",
-          "aliases": [],
-          "points": 66
+          "name": "GoldenEye",
+          "points": 18,
+          "aliases": []
         },
         {
-          "name": "August",
-          "aliases": [],
-          "points": 83
+          "name": "Dr. No",
+          "points": 22,
+          "aliases": [
+            "Dr No"
+          ]
         },
         {
-          "name": "October",
-          "aliases": [],
-          "points": 100
+          "name": "From Russia with Love",
+          "points": 26,
+          "aliases": []
+        },
+        {
+          "name": "Thunderball",
+          "points": 30,
+          "aliases": []
+        },
+        {
+          "name": "You Only Live Twice",
+          "points": 34,
+          "aliases": []
+        },
+        {
+          "name": "On Her Majesty’s Secret Service",
+          "points": 38,
+          "aliases": [
+            "On Her Majestys Secret Service"
+          ]
+        },
+        {
+          "name": "Diamonds Are Forever",
+          "points": 42,
+          "aliases": []
+        },
+        {
+          "name": "Live and Let Die",
+          "points": 46,
+          "aliases": []
+        },
+        {
+          "name": "The Man with the Golden Gun",
+          "points": 50,
+          "aliases": []
+        },
+        {
+          "name": "The Spy Who Loved Me",
+          "points": 55,
+          "aliases": []
+        },
+        {
+          "name": "Moonraker",
+          "points": 59,
+          "aliases": []
+        },
+        {
+          "name": "For Your Eyes Only",
+          "points": 63,
+          "aliases": []
+        },
+        {
+          "name": "Octopussy",
+          "points": 67,
+          "aliases": []
+        },
+        {
+          "name": "A View to a Kill",
+          "points": 71,
+          "aliases": []
+        },
+        {
+          "name": "The Living Daylights",
+          "points": 75,
+          "aliases": []
+        },
+        {
+          "name": "Licence to Kill",
+          "points": 79,
+          "aliases": [
+            "License to Kill"
+          ]
+        },
+        {
+          "name": "Tomorrow Never Dies",
+          "points": 84,
+          "aliases": []
+        },
+        {
+          "name": "The World Is Not Enough",
+          "points": 88,
+          "aliases": []
+        },
+        {
+          "name": "Die Another Day",
+          "points": 92,
+          "aliases": []
+        },
+        {
+          "name": "Quantum of Solace",
+          "points": 96,
+          "aliases": []
+        },
+        {
+          "name": "Spectre",
+          "points": 100,
+          "aliases": []
         }
       ]
     },
@@ -23668,5 +27940,5 @@
     "date": "2026-10-26",
     "reason": "Player feedback: recognisable answer sets and more contemporary subjects. Stable question slots and full saved snapshots retain their meanings."
   },
-  "revision": 4
+  "revision": 5
 }

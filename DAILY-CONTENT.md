@@ -13,7 +13,7 @@ This audit executes the shipped pure selectors and extracts the existing Stack U
 | Clue Ladder | 300 answers with five clues each | 60 days without repeating individual puzzles |
 | Seating Chart | 360 tables | 72 days without repeating individual tables |
 | Desk Jam | 180 boards: 120 Daily, 60 additional practice boards | 40 days without repeating individual Daily boards |
-| Sleeper | 160 questions / 4013 answers | 32 days without repeating individual questions |
+| Sleeper | 160 questions / 4722 answers | 32 days without repeating individual questions |
 | Stack Up | 160 non-maths Daily stacks + 134 active optional challenges | 32 days without repeating individual Daily stacks |
 | Pack | 212 bags, including 32 advanced Daily hard bags | 32 days without repeating individual bags |
 | Lowball | 128 products / 512 explicitly scoped regional references | 32 days without repeating individual products |

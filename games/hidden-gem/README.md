@@ -1,3 +1,9 @@
+## Broader Sleeper questions — owner correction, 28 October 2026
+
+Every newly offered Sleeper question must have at least ten canonical answers, preferably more. Revision 5 replaces all 55 undersized sets across SCIENCE, AUSTRALIA, LANGUAGE and EVERYDAY with broader scoped questions. The compass-point, demonstrative and states-of-matter prompts are retired. The bank has 160 questions and 4,722 answers; aliases do not count towards the minimum. Fixed editorial ratings remain 1–100, not popularity measurements.
+
+Preserve all IDs, topics, date slots, timers, scores and full captured snapshots. The prior revision is archived in `content/archive/2026-10-28/hidden-gem-questions.json`; historical two-answer snapshots remain valid in the model and SQL. Enforce the new minimum in source generation and bank tests, not legacy record validators. `design/content-reviews/2026-10-28-sleeper.json` records every replacement and the invalid Oceania alias removal. No SQL migration is needed.
+
 ## No answer giveaways — owner correction, 27 October 2026
 
 Sleeper descriptions must explain the scope without naming accepted answers or aliases, listing the solution set, or using an answer as a release cutoff. Use dates and neutral boundary wording. Where a prompt must name a series or character that is itself an accepted answer, assign that answer the minimum 1 point; it must never be a Sleeper/Breakout giveaway. Multiple such answers can share the 1-point floor. These are editorial common-answer choices, not measured popularity.
@@ -29,11 +35,11 @@ Each accepted answer has its own fixed integer editorial rating from 1–100. Di
 The first result is final. Daily has no replay/reset mechanism. Unlimited is free, has no Daily/cloud/profile score and resumes in this tab for the current account. Topic changes apply to the next question. Today's five IDs are excluded, leaving 155 eligible questions across all topics; no eligible ID repeats before the selected pool is exhausted.
 
 ## Content
-`content/hidden-gem-questions.json` is authoritative: 160 scoped prompts, 4,013 canonical answers, ten topics with sixteen questions each, plus aliases. Each question has a reference link and an explicit scope or historical cutoff. The current revision favours recognisable subjects, contemporary references and accessible answer sets. Ratings distinguish answers within a question; they do not establish equal real-world difficulty across questions.
+`content/hidden-gem-questions.json` is authoritative: 160 scoped prompts, 4,722 canonical answers, ten topics with sixteen questions each, plus aliases. Each question has a reference link and an explicit scope or historical cutoff. The current revision favours recognisable subjects, contemporary references and accessible answer sets. Ratings distinguish answers within a question; they do not establish equal real-world difficulty across questions.
 
 `scripts/build-hidden-gem-questions.cjs` reproduces the shipped `questions.js`. Daily cycles through 32 sets from 24 October 2026 Sydney, five different topics per set, no repeated question IDs before the cycle repeats. Do not reorder existing IDs or reinterpret frozen snapshots. The original standalone prototype and its v2 saves remain separate and are not imported into official stats.
 
-Scopes/aliases were editorially checked and automation validates every canonical answer, alias and score. References include primary sites and reference works; this is not independent primary-source certification of all 4,013 facts. Human question quality, missing aliases and difficulty calibration remain launch checks. Changes to future questions must retain existing captured snapshots and scores.
+Scopes/aliases were editorially checked and automation validates every canonical answer, alias and score. References include primary sites and reference works; this is not independent primary-source certification of all 4,722 facts. Human question quality, missing aliases and difficulty calibration remain launch checks. Changes to future questions must retain existing captured snapshots and scores.
 
 ## State and accessibility
 `hidden-gem-model.js` owns v1 records at `break-room:hidden-gem:daily:YYYY-MM-DD`. Store complete question/answer/rating snapshots, current input, retry state, immutable results, absolute deadline, round/phase and edit count. All edits save immediately. Refresh, Help, mode changes and backgrounding do not pause/reset the clock. Cross-tab progress loads before further input; account ownership changes block stale writes. A corrupt record is left untouched and explained; denied storage falls back to memory with a warning. Reset uses shared `daily-clock.js`, midnight Australia/Sydney, including DST.

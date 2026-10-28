@@ -1,0 +1,521 @@
+{
+  "date": "2026-10-28",
+  "game": "hidden-gem",
+  "baseRevision": 4,
+  "revision": 5,
+  "questions": 160,
+  "answers": 4722,
+  "minimumAnswers": 10,
+  "changes": [
+    {
+      "id": "si-base-units",
+      "topic": "SCIENCE",
+      "before": "Name an SI base unit.",
+      "after": "Name an SI derived unit with a special name.",
+      "answersBefore": 7,
+      "answersAfter": 22,
+      "source": "https://www.bipm.org/en/publications/si-brochure"
+    },
+    {
+      "id": "hg-noble-gases",
+      "topic": "SCIENCE",
+      "before": "Name a group 18 element.",
+      "after": "Name a chemical element named after a real person.",
+      "answersBefore": 7,
+      "answersAfter": 16,
+      "source": "https://www.rsc.org/periodic-table"
+    },
+    {
+      "id": "hg-halogens",
+      "topic": "SCIENCE",
+      "before": "Name one of the six main parts of a flowering plant.",
+      "after": "Name a type of bone in an adult human skeleton.",
+      "answersBefore": 6,
+      "answersAfter": 32,
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-introduction"
+    },
+    {
+      "id": "hg-alkali",
+      "topic": "SCIENCE",
+      "before": "Name a planet whose English name has exactly five letters.",
+      "after": "Name a Solar System planet or an IAU-recognised dwarf planet.",
+      "answersBefore": 2,
+      "answersAfter": 13,
+      "source": "https://science.nasa.gov/solar-system/planets/"
+    },
+    {
+      "id": "hg-alkaline-earth",
+      "topic": "SCIENCE",
+      "before": "Name one of the five major renewable energy sources.",
+      "after": "Name an official SI metric prefix.",
+      "answersBefore": 5,
+      "answersAfter": 24,
+      "source": "https://www.bipm.org/en/measurement-units/si-prefixes"
+    },
+    {
+      "id": "hg-big-prefixes",
+      "topic": "SCIENCE",
+      "before": "Name one of the three everyday states of matter.",
+      "after": "Name a chemical element with atomic number 21–40.",
+      "answersBefore": 3,
+      "answersAfter": 20,
+      "source": "https://www.rsc.org/periodic-table"
+    },
+    {
+      "id": "hg-small-prefixes",
+      "topic": "SCIENCE",
+      "before": "Name one of the five human senses traditionally taught at school.",
+      "after": "Name a chemical element whose symbol begins with C.",
+      "answersBefore": 5,
+      "answersAfter": 12,
+      "source": "https://www.rsc.org/periodic-table"
+    },
+    {
+      "id": "hg-rainbow",
+      "topic": "SCIENCE",
+      "before": "Name a traditional rainbow colour.",
+      "after": "Name a mineral in the traditional Mohs hardness scale.",
+      "answersBefore": 7,
+      "answersAfter": 10,
+      "source": "https://www.britannica.com/science/Mohs-hardness"
+    },
+    {
+      "id": "hg-spectrum",
+      "topic": "SCIENCE",
+      "before": "Name a major band of the electromagnetic spectrum.",
+      "after": "Name one of the ten main cloud genera.",
+      "answersBefore": 7,
+      "answersAfter": 10,
+      "source": "https://cloudatlas.wmo.int/en/clouds-genera.html"
+    },
+    {
+      "id": "hg-blood",
+      "topic": "SCIENCE",
+      "before": "Name an ABO blood group.",
+      "after": "Name one of the thirteen essential human vitamins.",
+      "answersBefore": 4,
+      "answersAfter": 13,
+      "source": "https://medlineplus.gov/ency/article/002399.htm"
+    },
+    {
+      "id": "hg-dna",
+      "topic": "SCIENCE",
+      "before": "Name a standard DNA base.",
+      "after": "Name one of the twenty standard amino acids.",
+      "answersBefore": 4,
+      "answersAfter": 20,
+      "source": "https://www.britannica.com/science/amino-acid"
+    },
+    {
+      "id": "hg-rna",
+      "topic": "SCIENCE",
+      "before": "Name one of the five traditionally recognised vital organs.",
+      "after": "Name one of the twelve cranial nerves.",
+      "answersBefore": 5,
+      "answersAfter": 12,
+      "source": "https://my.clevelandclinic.org/health/body/21998-cranial-nerves"
+    },
+    {
+      "id": "hg-vitamins",
+      "topic": "SCIENCE",
+      "before": "Name a fat-soluble vitamin.",
+      "after": "Name an element that is a gas at room temperature.",
+      "answersBefore": 4,
+      "answersAfter": 11,
+      "source": "https://www.rsc.org/periodic-table"
+    },
+    {
+      "id": "australian-states",
+      "topic": "AUSTRALIA",
+      "before": "Name an Australian state or one of the two main mainland territories.",
+      "after": "Name an Australian state or internal or external territory.",
+      "answersBefore": 8,
+      "answersAfter": 16,
+      "source": "https://www.ga.gov.au/scientific-topics/national-location-information/dimensions/australias-size-and-dimensions"
+    },
+    {
+      "id": "hg-capitals",
+      "topic": "AUSTRALIA",
+      "before": "Name an Australian state or mainland territory capital.",
+      "after": "Name an Australian UNESCO World Heritage property listed by the end of 2024.",
+      "answersBefore": 8,
+      "answersAfter": 20,
+      "source": "https://whc.unesco.org/en/statesparties/au"
+    },
+    {
+      "id": "hg-prime-ministers",
+      "topic": "AUSTRALIA",
+      "before": "Name an Australian prime minister who served during 2000–2024.",
+      "after": "Name an Australian prime minister who took office before 2026.",
+      "answersBefore": 7,
+      "answersAfter": 31,
+      "source": "https://www.nma.gov.au/explore/features/prime-ministers"
+    },
+    {
+      "id": "hg-coins",
+      "topic": "AUSTRALIA",
+      "before": "Name a circulating Australian coin denomination as of 2025.",
+      "after": "Name an AFL club in the 2025 season.",
+      "answersBefore": 6,
+      "answersAfter": 18,
+      "source": "https://www.afl.com.au/clubs"
+    },
+    {
+      "id": "hg-notes",
+      "topic": "AUSTRALIA",
+      "before": "Name a current Australian polymer banknote denomination.",
+      "after": "Name an NRL club in the 2025 season.",
+      "answersBefore": 5,
+      "answersAfter": 17,
+      "source": "https://www.nrl.com/clubs/"
+    },
+    {
+      "id": "hg-hosts",
+      "topic": "AUSTRALIA",
+      "before": "Name an Australian city that hosted a Summer Olympics before 2025.",
+      "after": "Name a city that hosted a Summer or Winter Olympics before 2025.",
+      "answersBefore": 2,
+      "answersAfter": 43,
+      "source": "https://olympics.com/en/olympic-games"
+    },
+    {
+      "id": "hg-mainland",
+      "topic": "AUSTRALIA",
+      "before": "Name an Australian state on the mainland.",
+      "after": "Name an A-League Men club in the 2024–25 season.",
+      "answersBefore": 5,
+      "answersAfter": 13,
+      "source": "https://aleagues.com.au/a-league-men/"
+    },
+    {
+      "id": "hg-sa-borders",
+      "topic": "AUSTRALIA",
+      "before": "Name a state sharing a land border with South Australia.",
+      "after": "Name an A-League Women club in the 2024–25 season.",
+      "answersBefore": 4,
+      "answersAfter": 12,
+      "source": "https://aleagues.com.au/a-league-women/"
+    },
+    {
+      "id": "hg-peaks",
+      "topic": "AUSTRALIA",
+      "before": "Name a city that hosted the Australian Open during the Open Era, through 2025.",
+      "after": "Name an Australian who won a Grand Slam singles title in the Open Era by the end of 2024.",
+      "answersBefore": 3,
+      "answersAfter": 13,
+      "source": "https://www.itftennis.com/en/itf-tours/grand-slam-tournaments/"
+    },
+    {
+      "id": "hg-ao-women",
+      "topic": "AUSTRALIA",
+      "before": "Name an Australian Open women's singles champion from 2018–2025.",
+      "after": "Name an Australian Open women’s singles champion from the Open Era through 2024.",
+      "answersBefore": 6,
+      "answersAfter": 28,
+      "source": "https://ausopen.com/history/honour-roll/womens-singles"
+    },
+    {
+      "id": "hg-arms",
+      "topic": "AUSTRALIA",
+      "before": "Name an animal supporting Australia’s Commonwealth Coat of Arms.",
+      "after": "Name a Commonwealth realm where Charles III was king in 2025.",
+      "answersBefore": 2,
+      "answersAfter": 15,
+      "source": "https://www.royal.uk/the-king-and-the-commonwealth"
+    },
+    {
+      "id": "hg-mens-slams",
+      "topic": "AUSTRALIA",
+      "before": "Name an Australian man who reached a Grand Slam singles final in 2000–2025.",
+      "after": "Name an Australian Open men’s singles champion from the Open Era through 2024.",
+      "answersBefore": 4,
+      "answersAfter": 27,
+      "source": "https://ausopen.com/history/honour-roll/mens-singles"
+    },
+    {
+      "id": "hg-womens-slams",
+      "topic": "AUSTRALIA",
+      "before": "Name an Australian woman who won a Grand Slam singles title in 2000–2025.",
+      "after": "Name an act that represented Australia at Eurovision in 2015–2025.",
+      "answersBefore": 2,
+      "answersAfter": 10,
+      "source": "https://eurovision.tv/country/australia"
+    },
+    {
+      "id": "hg-test-cities",
+      "topic": "AUSTRALIA",
+      "before": "Name a city that hosted a men's Ashes Test in Australia in the 2021–22 series.",
+      "after": "Name an ICC Full Member country or team as of 2025.",
+      "answersBefore": 5,
+      "answersAfter": 12,
+      "source": "https://www.icc-cricket.com/about/members"
+    },
+    {
+      "id": "parts-of-speech",
+      "topic": "LANGUAGE",
+      "before": "Name one of the traditional eight English parts of speech.",
+      "after": "Name an official language of South Africa as of 2025.",
+      "answersBefore": 8,
+      "answersAfter": 12,
+      "source": "https://www.gov.za/about-sa/south-africas-people"
+    },
+    {
+      "id": "hg-vowels",
+      "topic": "LANGUAGE",
+      "before": "Name a traditional English vowel letter.",
+      "after": "Name a word in the NATO phonetic alphabet.",
+      "answersBefore": 5,
+      "answersAfter": 26,
+      "source": "https://www.nato.int/cps/en/natohq/declassified_136216.htm"
+    },
+    {
+      "id": "hg-fanboys",
+      "topic": "LANGUAGE",
+      "before": "Name a coordinating conjunction in FANBOYS.",
+      "after": "Name a letter of the Greek alphabet.",
+      "answersBefore": 7,
+      "answersAfter": 24,
+      "source": "https://www.britannica.com/topic/Greek-alphabet"
+    },
+    {
+      "id": "hg-subject-pronouns",
+      "topic": "LANGUAGE",
+      "before": "Name a standard English personal subject pronoun.",
+      "after": "Name an official language of the European Union in 2025.",
+      "answersBefore": 7,
+      "answersAfter": 24,
+      "source": "https://european-union.europa.eu/principles-countries-history/languages_en"
+    },
+    {
+      "id": "hg-possessives",
+      "topic": "LANGUAGE",
+      "before": "Name a basic English possessive determiner.",
+      "after": "Name a language in the Eighth Schedule of India’s Constitution.",
+      "answersBefore": 7,
+      "answersAfter": 22,
+      "source": "https://knowindia.india.gov.in/profile/india-at-a-glance.php"
+    },
+    {
+      "id": "hg-demonstratives",
+      "topic": "LANGUAGE",
+      "before": "Name a basic English demonstrative.",
+      "after": "Name a letter worth at least three points in English Scrabble.",
+      "answersBefore": 4,
+      "answersAfter": 14,
+      "source": "https://scrabble.hasbro.com/en-us/rules"
+    },
+    {
+      "id": "hg-articles",
+      "topic": "LANGUAGE",
+      "before": "Name a word used as an article in English grammar.",
+      "after": "Name a reserved keyword in Python 3.12.",
+      "answersBefore": 3,
+      "answersAfter": 35,
+      "source": "https://docs.python.org/3.12/reference/lexical_analysis.html#keywords"
+    },
+    {
+      "id": "hg-un",
+      "topic": "LANGUAGE",
+      "before": "Name a UN official language.",
+      "after": "Name an officially recognised language of Zimbabwe.",
+      "answersBefore": 6,
+      "answersAfter": 16,
+      "source": "https://www.constituteproject.org/constitution/Zimbabwe_2013"
+    },
+    {
+      "id": "hg-nato-start",
+      "topic": "LANGUAGE",
+      "before": "Name a NATO phonetic alphabet word for A–H.",
+      "after": "Name a UN member country with a four-letter English short name.",
+      "answersBefore": 8,
+      "answersAfter": 10,
+      "source": "https://www.un.org/en/about-us/member-states"
+    },
+    {
+      "id": "hg-nato-end",
+      "topic": "LANGUAGE",
+      "before": "Name a NATO phonetic alphabet word for S–Z.",
+      "after": "Name a US state whose name is two words.",
+      "answersBefore": 8,
+      "answersAfter": 10,
+      "source": "https://www.usa.gov/states-and-territories"
+    },
+    {
+      "id": "hg-greek-start",
+      "topic": "LANGUAGE",
+      "before": "Name a punctuation mark used to end an ordinary English sentence.",
+      "after": "Name a punctuation mark used in English writing.",
+      "answersBefore": 3,
+      "answersAfter": 16,
+      "source": "https://www.britannica.com/topic/punctuation"
+    },
+    {
+      "id": "hg-greek-end",
+      "topic": "LANGUAGE",
+      "before": "Name a tile colour in Wordle's standard (non-colour-blind) theme.",
+      "after": "Name one of the original sixteen basic CSS colour keywords.",
+      "answersBefore": 3,
+      "answersAfter": 16,
+      "source": "https://www.w3.org/TR/css-color-3/#html4"
+    },
+    {
+      "id": "hg-spanish-days",
+      "topic": "LANGUAGE",
+      "before": "Name a group colour in the New York Times game Connections.",
+      "after": "Name an author awarded the Nobel Prize in Literature in 2010–2024.",
+      "answersBefore": 4,
+      "answersAfter": 15,
+      "source": "https://www.nobelprize.org/prizes/lists/all-nobel-prizes-in-literature/"
+    },
+    {
+      "id": "hg-french-days",
+      "topic": "LANGUAGE",
+      "before": "Name an original Facebook reaction introduced or retained in the six-reaction set in 2016.",
+      "after": "Name a comedy listed in Shakespeare’s First Folio.",
+      "answersBefore": 6,
+      "answersAfter": 14,
+      "source": "https://www.folger.edu/explore/shakespeare-in-print/first-folio/"
+    },
+    {
+      "id": "hg-persons",
+      "topic": "LANGUAGE",
+      "before": "Name a grammatical person in standard English.",
+      "after": "Name a winner of the Booker Prize for a novel in 2000–2024.",
+      "answersBefore": 3,
+      "answersAfter": 24,
+      "source": "https://thebookerprizes.com/the-booker-library/prize-years"
+    },
+    {
+      "id": "hg-be",
+      "topic": "LANGUAGE",
+      "before": "Name a single-word form of the English verb “be”.",
+      "after": "Name a main-series Narnia or Earthsea novel published before 2025.",
+      "answersBefore": 8,
+      "answersAfter": 12,
+      "source": "https://www.ursulakleguin.com/bibliography"
+    },
+    {
+      "id": "hg-days",
+      "topic": "EVERYDAY",
+      "before": "Name a day of the week in English.",
+      "after": "Name a modern birthstone listed by the Gemological Institute of America.",
+      "answersBefore": 7,
+      "answersAfter": 21,
+      "source": "https://www.gia.edu/birthstones"
+    },
+    {
+      "id": "hg-seasons",
+      "topic": "EVERYDAY",
+      "before": "Name a season in the four-season model.",
+      "after": "Name a named key on a standard PC keyboard that is not a letter, digit or punctuation mark.",
+      "answersBefore": 4,
+      "answersAfter": 25,
+      "source": "https://support.microsoft.com/en-us/windows/using-your-keyboard-18b2efc1-9e92-2292-c7bb-9f2dd03e0831"
+    },
+    {
+      "id": "hg-suits",
+      "topic": "EVERYDAY",
+      "before": "Name a standard playing-card suit.",
+      "after": "Name a suspect or weapon in the classic UK edition of Cluedo.",
+      "answersBefore": 4,
+      "answersAfter": 12,
+      "source": "https://www.hasbro.com/common/instruct/Clue_(2002).pdf"
+    },
+    {
+      "id": "hg-compass",
+      "topic": "EVERYDAY",
+      "before": "Name one of the eight main compass points.",
+      "after": "Name a street property on the classic London Monopoly board.",
+      "answersBefore": 8,
+      "answersAfter": 22,
+      "source": "https://www.hasbro.com/common/instruct/Monopoly(00009).pdf"
+    },
+    {
+      "id": "hg-music-notes",
+      "topic": "EVERYDAY",
+      "before": "Name a natural musical note letter in English notation.",
+      "after": "Name a standard orchestral instrument.",
+      "answersBefore": 7,
+      "answersAfter": 34,
+      "source": "https://www.philharmonia.co.uk/resources/instruments/"
+    },
+    {
+      "id": "hg-orchestra",
+      "topic": "EVERYDAY",
+      "before": "Name a standard symphony orchestra instrument family.",
+      "after": "Name one of the ten International Style ballroom dances.",
+      "answersBefore": 4,
+      "answersAfter": 10,
+      "source": "https://www.worlddancesport.org/About/Dance-Styles"
+    },
+    {
+      "id": "hg-us-coins",
+      "topic": "EVERYDAY",
+      "before": "Name a US circulating coin denomination as of 2025.",
+      "after": "Name a currency used by a G20 member country in 2025.",
+      "answersBefore": 6,
+      "answersAfter": 17,
+      "source": "https://www.g20.org/en/about-the-g20"
+    },
+    {
+      "id": "hg-traffic",
+      "topic": "EVERYDAY",
+      "before": "Name a standard road traffic signal colour.",
+      "after": "Name a London Underground line, the Elizabeth line or the DLR.",
+      "answersBefore": 3,
+      "answersAfter": 13,
+      "source": "https://tfl.gov.uk/maps/track/tube"
+    },
+    {
+      "id": "hg-tastes",
+      "topic": "EVERYDAY",
+      "before": "Name one of the five conventional basic tastes.",
+      "after": "Name a UK bank holiday observed in at least one nation in 2025.",
+      "answersBefore": 5,
+      "answersAfter": 12,
+      "source": "https://www.gov.uk/bank-holidays"
+    },
+    {
+      "id": "hg-rubik",
+      "topic": "EVERYDAY",
+      "before": "Name a face colour on a standard Western-colour Rubik’s Cube.",
+      "after": "Name a Taylor Swift studio album released by the end of 2025.",
+      "answersBefore": 6,
+      "answersAfter": 12,
+      "source": "https://www.taylorswift.com/"
+    },
+    {
+      "id": "hg-sauces",
+      "topic": "EVERYDAY",
+      "before": "Name a main topping on a classic Margherita pizza.",
+      "after": "Name a Beatles studio album in their core UK catalogue.",
+      "answersBefore": 3,
+      "answersAfter": 13,
+      "source": "https://www.thebeatles.com/albums"
+    },
+    {
+      "id": "hg-long-months",
+      "topic": "EVERYDAY",
+      "before": "Name a month with 31 days.",
+      "after": "Name an official James Bond film released by Eon before 2025.",
+      "answersBefore": 7,
+      "answersAfter": 25,
+      "source": "https://www.007.com/the-films/"
+    },
+    {
+      "id": "countries-a",
+      "topic": "WORLD",
+      "before": "Name a UN member country beginning with A or B.",
+      "after": "Name a UN member country beginning with A or B.",
+      "answersBefore": 28,
+      "answersAfter": 28,
+      "source": "https://www.un.org/en/about-us/member-states"
+    }
+  ],
+  "scope": "Replace all 55 undersized sets; preserve IDs, topics, order, calendar slots, timers, scoring, matching and old snapshots.",
+  "ratings": "Fixed editorial ordering and evenly spread 1–100 integer points, not survey data.",
+  "limits": "Membership and aliases reviewed against the stated scope. Reference links support further review; no claim of independent verification of every linked source or human difficulty calibration.",
+  "corrections": [
+    "Removed the invalid Oceania alias for Australia."
+  ]
+}

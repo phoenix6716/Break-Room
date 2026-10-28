@@ -3,7 +3,8 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('nod
 for(const p of ['daily-clock.js','hidden-gem-model.js','arcade-score.js','profile-records.js','cloud-saves.js'])require('../'+p);
 const M=BREAK_ROOM_HIDDEN_GEM,B=require('../content/hidden-gem-questions.json').questions,day='2026-10-24',key=M.PREFIX+day,encode=JSON.stringify;
 const runtime={window:{}};vm.runInNewContext(fs.readFileSync('games/hidden-gem/questions.js','utf8'),runtime);
-assert.deepEqual(JSON.parse(JSON.stringify(runtime.window.HIDDEN_GEM_QUESTIONS)),B);assert.equal(B.length,160);assert.equal(B.reduce((n,q)=>n+q.answers.length,0),4013);assert.equal(new Set(B.map(q=>q.id)).size,160);
+assert.deepEqual(JSON.parse(JSON.stringify(runtime.window.HIDDEN_GEM_QUESTIONS)),B);assert.equal(B.length,160);assert.equal(B.reduce((n,q)=>n+q.answers.length,0),4722);assert.equal(new Set(B.map(q=>q.id)).size,160);
+for(const q of B){assert(q.answers.length>=10,q.id+' must offer at least ten canonical answers');assert(!/eight main compass points|basic English demonstrative|three everyday states of matter/i.test(q.prompt));}
 const previous=require('../content/archive/2026-10-26/hidden-gem-questions.json').questions;
 const wide=B.find(q=>q.answers.length===151);assert(wide);assert.equal(M.match(wide,'Pikachu').name,'Pikachu');assert.equal(M.match(wide,'Mew').name,'Mew');
 assert(M.puzzle({...wide,answers:Array.from({length:160},(_,i)=>({name:'Answer '+i,points:1+i%100,aliases:[]}))}));
@@ -18,7 +19,7 @@ const titleAnswers={
  'hg-star-wars':['A New Hope'],'hg-ghostbusters':['Sonic'],'hg-parr':['Moana'],
  'hg-shrek':['Shrek','Puss in Boots'],'hg-hunger':['The Hunger Games','Divergent','Twilight','The Maze Runner'],
  'hg-holmes':['Alice'],'hg-weasleys':['Diary of a Wimpy Kid'],'hg-secret-seven':['Dog Man'],
- 'hg-tetris':['Mario'],'hg-kart64':['The Legend of Zelda']
+ 'hg-sauces':['The Beatles'],'hg-rubik':['Taylor Swift'],'hg-traffic':['Elizabeth line','Docklands Light Railway'],'hg-tetris':['Mario'],'hg-kart64':['The Legend of Zelda']
 };
 for(const q of B)for(const a of q.answers)for(const label of [a.name,...a.aliases]){
  assert(!mentioned(q.scope,label),q.id+' description gives away '+label);
@@ -31,6 +32,10 @@ for(const [id,input,points]of [['hg-parr','Moana',77],['hg-hunger','The Maze Run
  assert.equal(r.picks[0].points,points);assert.equal(encode(r.questions),frozen);
 }
 
+// Every prior revision-4 question, including tiny retired sets, remains finishable.
+const revision4=require('../content/archive/2026-10-28/hidden-gem-questions.json').questions;
+for(const q of revision4){const r=M.createPractice(q,day,'revision4:'+q.id),frozen=encode(r.questions),a=q.answers.at(-1);M.begin(r,1000);M.draft(r,a.name,1001);assert(M.finish(r,1002));assert(M.validRun(r));assert.equal(r.picks[0].points,a.points);assert.equal(encode(r.questions),frozen);}
+assert.equal(M.match(B.find(q=>q.id==='countries-a'),'Oceania'),null);
 const ids=[];for(let i=0;i<32;i++){const d=new Date(Date.UTC(2026,9,24+i)).toISOString().slice(0,10),qs=M.daily(B,d);assert.deepEqual(qs,M.daily([...B].reverse(),d));assert.equal(new Set(qs.map(q=>q.topic)).size,5);ids.push(...qs.map(q=>q.id));}assert.equal(new Set(ids).size,160);
 for(const [n,label]of [[0,'Time’s Up'],[1,'Familiar'],[19,'Familiar'],[20,'Nice Find'],[39,'Nice Find'],[40,'Offbeat'],[59,'Offbeat'],[60,'Hidden Gem'],[79,'Hidden Gem'],[80,'Crown Jewel'],[95,'Crown Jewel'],[100,'Crown Jewel']])assert.equal(M.scoreBand(n),label);
 const countries=B.find(q=>q.id==='countries-a');assert.equal(M.match(countries,'Azerbaijna').name,'Azerbaijan');assert.equal(M.match(countries,'Austria').name,'Austria');assert.equal(M.match(countries,'Canada'),null);

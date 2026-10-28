@@ -1,3 +1,9 @@
+## Broader Sleeper questions — owner correction, 28 October 2026
+
+Every newly offered Sleeper question must have at least ten canonical answers, preferably more. Revision 5 replaces all 55 undersized sets across SCIENCE, AUSTRALIA, LANGUAGE and EVERYDAY with broader scoped questions. The compass-point, demonstrative and states-of-matter prompts are retired. The bank has 160 questions and 4,722 answers; aliases do not count towards the minimum. Fixed editorial ratings remain 1–100, not popularity measurements.
+
+Preserve all IDs, topics, date slots, timers, scores and full captured snapshots. The prior revision is archived in `content/archive/2026-10-28/hidden-gem-questions.json`; historical two-answer snapshots remain valid in the model and SQL. Enforce the new minimum in source generation and bank tests, not legacy record validators. `design/content-reviews/2026-10-28-sleeper.json` records every replacement and the invalid Oceania alias removal. No SQL migration is needed.
+
 ## Stack Up without numerical trivia or time-unit tasks — owner correction, 27 October 2026
 
 The owner explicitly wants to keep ordering films/books by release and historical events by date, while removing maths, number facts and time-unit questions. New Dailies replace 32 weekday/month/duration slots and eight continent-area slots with story, nature, crafting and everyday-process ordering. Keep the other 120 familiar stacks, all 160 IDs, five 32-item lanes and their exact Daily assignments.

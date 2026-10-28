@@ -1,3 +1,9 @@
+## Broader Sleeper questions — owner correction, 28 October 2026
+
+Every newly offered Sleeper question must have at least ten canonical answers, preferably more. Revision 5 replaces all 55 undersized sets across SCIENCE, AUSTRALIA, LANGUAGE and EVERYDAY with broader scoped questions. The compass-point, demonstrative and states-of-matter prompts are retired. The bank has 160 questions and 4,722 answers; aliases do not count towards the minimum. Fixed editorial ratings remain 1–100, not popularity measurements.
+
+Preserve all IDs, topics, date slots, timers, scores and full captured snapshots. The prior revision is archived in `content/archive/2026-10-28/hidden-gem-questions.json`; historical two-answer snapshots remain valid in the model and SQL. Enforce the new minimum in source generation and bank tests, not legacy record validators. `design/content-reviews/2026-10-28-sleeper.json` records every replacement and the invalid Oceania alias removal. No SQL migration is needed.
+
 ## Homepage-style top bar on social pages — owner direction, 27 October 2026
 
 Use the homepage's text-link top bar on Leagues, Friends and Profile: Home → Leagues → Friends → Profile, the approved centred wordmark, coral underline on the current page, and the existing account/profile controls. `menu-brand.css` scopes the shared layout to `.hub-topbar` inside `.hub-header-frame`; it must not restyle page content or game headers. Keep the homepage artwork/layout and all social, account and score behaviour intact.

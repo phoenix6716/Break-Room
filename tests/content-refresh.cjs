@@ -3,6 +3,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('nod
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8')),copy=x=>JSON.parse(JSON.stringify(x));
 const changes=read('design/content-reviews/2026-10-26.json');
 const sleeper=read('design/content-reviews/2026-10-27-sleeper.json');
+const sleeperBreadth=read('design/content-reviews/2026-10-28-sleeper.json');
 const sleeperClues=read('design/content-reviews/2026-10-27-sleeper-no-giveaways.json');
 function model(id,key){const ctx={};vm.runInNewContext(fs.readFileSync(id+'-model.js','utf8'),ctx);return ctx[key];}
 const specs=[
@@ -16,7 +17,7 @@ for(const [id,key,global,period,bankGlobal,file]of specs){
  vm.runInNewContext(fs.readFileSync('games/'+id+'/'+file+'.js','utf8'),ctx);assert.deepEqual(copy(ctx.window[bankGlobal]),bank,'Generated '+id+' bank');
  assert.deepEqual(bank.map(p=>p.id),old.map(p=>p.id),'Frozen calendar slots '+id);
  const changed=bank.filter((p,i)=>JSON.stringify(p)!==JSON.stringify(old[i]));
- assert.deepEqual(changed.map(p=>p.id).sort(),[...new Set([...changes.games[id].changes,...(id==='hidden-gem'?[...sleeper.changes,...sleeperClues.changes]:[])].map(p=>p.id))].sort(),'Every edit is recorded '+id);
+ assert.deepEqual(changed.map(p=>p.id).sort(),[...new Set([...changes.games[id].changes,...(id==='hidden-gem'?[...sleeper.changes,...sleeperClues.changes,...sleeperBreadth.changes]:[])].map(p=>p.id))].sort(),'Every edit is recorded '+id);
  const schedule=new Map();for(let i=-31;i<period+32;i++){const before=copy(M.daily(old,date(i))),after=copy(M.daily(bank,date(i)));schedule.set(i,{before,after});assert.deepEqual(after.map(p=>p.id),before.map(p=>p.id),'Same date slots '+id+' '+date(i));}
  // Each possible old/new release boundary must remain unique within a rolling month.
  const identity=p=>id==='hidden-gem'?p.prompt:id==='clue-ladder'?M.norm(p.answer):p.title;
