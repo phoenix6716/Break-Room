@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="../../../game-help.css?v=first-visit-20261028">
+<script defer src="../../../game-help.js?v=first-visit-20261028" data-game="lowball"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lowball - Guess the price</title>
@@ -609,7 +611,7 @@
     <div class="stat"><b id="playedVal">0</b><span>Played</span></div>
   </div>
     <div class="head-btns">
-      <button type="button" class="icon-btn" id="helpBtn" aria-label="How to play">?</button>
+      <button type="button" class="icon-btn" id="helpBtn" aria-label="How to play">How To Play</button>
       <button type="button" class="icon-btn" id="statsBtn" aria-label="Your stats"><span id="statsArt"></span></button>
     </div>
 
@@ -1912,12 +1914,7 @@ function guessCountry() {
   detectCountry();
   updateStatStrip();
   startNormalMode();
-  if (!safeGet("pc_help_seen", "")) setTimeout(() => {
-    const embed = window.frameElement, outerFocus = embed?.ownerDocument.activeElement;
-    const outerBusy = embed && (embed.closest("[inert]") || (outerFocus !== embed && outerFocus !== embed.ownerDocument.body));
-    // A delayed first-visit hint must not interrupt the drawer, price entry or keyboard navigation.
-    if (!playerInteracted && !outerBusy && !document.querySelector(".modal.show")) openHelp();
-  }, 500);
+
 })();
 
 // ---------- Cookie consent (only active once an ad network is added) ----------

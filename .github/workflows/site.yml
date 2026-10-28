@@ -110,7 +110,7 @@ jobs:
           import os, pathlib, time, urllib.request
           base = os.environ["PUBLISHED_URL"].rstrip("/") + "/"
           paths = ["games/stack-up/familiar-stacks.js", "games/stack-up/stack-up.js", "games/time-drop/events.js", "games/clue-ladder/puzzles.js", "brand.css", "menu-brand.css", "assets/break-room-wordmark.png", "assets/break-room-mark.png", "assets/break-room-icon.svg", "assets/break-room-touch-icon.png", "assets/favicon.svg", "assets/logo.svg", "leagues.html", "leagues.js", "leagues-model.js", "leagues.css", "inner-clock-model.js", "arcade-score.js", "games/lowball/engine/index.html", "games/lowball/engine/reference-prices.js", "games/lowball/engine/item-art.js", "games/inner-clock/index.html", "games/inner-clock/inner-clock.js", "profile.html", "friends.html", "index.html", "games/shift-work/index.html", "games/shift-work/boards.js", "games/shift-work/shift-work.js", "games/shift-work/shift-work.css", "shift-work-model.js", "games/hidden-gem/index.html", "games/hidden-gem/questions.js", "games/hidden-gem/hidden-gem.js", "games/hidden-gem/hidden-gem.css", "hidden-gem-model.js", "cloud-saves.js", "accounts.js", "friends.js", "profile-records.js", "profile.js", "navigation.js", "game-config.js", "game-scenes.js", "game-scenes.css", "games/pack/item-art.js", "games/pack/pack.js", "games/pack/pack.css"]
-          paths += ["game-art.js", "game-art.css", "assets/game-art/manifest.js"]
+          paths += ["game-art.js", "game-art.css", "assets/game-art/manifest.js", "game-help.js", "game-help.css"]
           paths += [str(p) for p in pathlib.Path("assets/game-art").rglob("*.svg")]
           paths += [str(p) for p in pathlib.Path("games/pack/art").glob("*.svg")]
           import json
@@ -132,6 +132,7 @@ jobs:
                       elif path in ["games/inner-clock/index.html", "profile.html", "friends.html"]:
                           assert b"Desk Jam" in body and b"Sleeper" in body and b"Time Sense" in body and b"Inner Clock" not in body, path
                       elif path == "games/lowball/engine/index.html":
+                          assert b"How To Play</button>" in body and b"game-help.js?v=first-visit-20261028" in body and b'data-game="lowball"' in body, "Missing Lowball first-visit instructions"
                           assert b'data-game-art="lowball"' in body and b"game-art.js?v=objects-20261027" in body, path
                           assert b"DAILY_ITEM_PERIOD = 32" in body and b"DAILY_ITEM_CUTOVER = 25" in body and b"Fiskars scissors" in body, path
                       elif path == "leagues.html":
@@ -144,6 +145,7 @@ jobs:
                       request = urllib.request.Request(base + "games/" + current + "/index.html?release=" + os.environ["GITHUB_SHA"], headers={"Cache-Control":"no-cache"})
                       with urllib.request.urlopen(request, timeout=20) as response:
                           page = response.read()
+                      assert b"How To Play</button>" in page and b"game-help.js?v=first-visit-20261028" in page and ('data-game="' + current + '"').encode() in page, "Missing labelled first-visit instructions: " + current
                       if current == "clue-ladder":
                           assert b"clue-ladder.css" in page and b"clue-ladder.js" in page and b"puzzles.js?v=familiar-20261026" in page, "Missing original Clue Ladder assets"
                           assert b'data-game-scene=' not in page and b'data-game-art=' not in page and b"game-scenes.css" not in page and b"game-scenes.js" not in page and b"game-art.css" not in page and b"game-art.js" not in page, "Clue Ladder must keep its original appearance"

@@ -21,9 +21,13 @@ async function checkLayout(page, width) {
     assert.equal(reset.y, head.y);
     assert.ok(reset.x >= board.x + board.width + 23);
   } else assert.ok(reset.y + reset.height <= modes.y);
-  for (const selector of ['.br-game-title-group', '.quick-stats', '.br-game-tools']) {
+  if (width <= 650) {
+    const title=await page.locator('.br-game-title-group').boundingBox(),stats=await page.locator('.quick-stats').boundingBox(),tools=await page.locator('.br-game-tools').boundingBox();
+    assert.ok(Math.abs(title.y+title.height/2-stats.y-stats.height/2)<1,'Title and centred stats share the first row');
+    assert.ok(tools.y>=Math.max(title.y+title.height,stats.y+stats.height),'Labelled tools have their own phone row');
+  } else for (const selector of ['.br-game-title-group', '.quick-stats', '.br-game-tools']) {
     const box = await page.locator(selector).boundingBox();
-    assert.ok(Math.abs(box.y + box.height / 2 - head.y - head.height / 2) < 1, 'Header stays in one row');
+    assert.ok(Math.abs(box.y + box.height / 2 - head.y - head.height / 2) < 1, 'Desktop header stays in one row');
   }
   assert.equal(await page.locator('.daily-reset-card [data-daily-countdown]').innerText(), '10:00:00');
   assert.equal(await page.locator('.daily-reset-card').count(), 1);

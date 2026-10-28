@@ -1,3 +1,7 @@
+## First-visit instructions and labelled Help — owner direction, 28 October 2026
+
+All ten active games automatically open their own How To Play instructions on the first visit in a browser. `game-help.js` remembers each game separately, retaining Lowball’s `pc_help_seen` compatibility; preferences stay separate from native scores and cloud saves. Help buttons say “How To Play”. `game-help.css` places tools on a separate phone-header row. New Stack Up runs wait until initial instructions close before creating their timed round; captured deadlines are unchanged. Existing gameplay suites use returning-player profiles through `scripts/browser-fixtures.cjs`; `tests/first-visit-help.cjs` explicitly tests clean profiles and first-time behaviour.
+
 ## Closed B cube logo — owner selection, 28 October 2026
 
 Use the approved closed 2×2 B puzzle cube: lime top with one yellow tile, blue left face, and coral/yellow/blue right face. This replaces option05 stepped tiles. `assets/source/break-room-cube-b.png` is the transparent master; `scripts/export-break-room-brand.cjs` extracts the approved art and lettering into the horizontal header logo, cube mark and icons. Keep the original option05 source archived. Production URLs remain compatible with cache version `cube-b-20261028`. Verify headers/navigation at phone/tablet/desktop widths and update the Pages branding check together with future brand changes. Game artwork, content, scores and saves are unchanged.

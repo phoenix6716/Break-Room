@@ -1,0 +1,16 @@
+/* Explicit Help labels, with a separate tools row on narrow game headers. */
+.br-game-tools #help-popup-open,.br-game-tools #help-open,#helpBtn{width:auto!important;min-width:112px;min-height:44px!important;height:auto!important;padding:10px 12px!important;white-space:nowrap;font:800 12px/1.3 ui-monospace,monospace!important}
+@media(max-width:650px){
+ .br-game-shell .br-game-heading{grid-template-columns:minmax(0,1fr) 144px minmax(0,1fr);gap:8px}
+ .br-game-shell .br-game-title-group{grid-column:1;grid-row:1}
+ .br-game-shell .quick-stats{grid-column:2;grid-row:1}
+ .br-game-shell .br-game-tools{grid-column:1/-1;grid-row:2;justify-self:end;gap:8px}
+}
+@media(max-width:650px){
+ body:has(#helpBtn) header{grid-template-columns:minmax(0,1fr) 144px minmax(0,1fr);gap:8px}
+ body:has(#helpBtn) header .lowball-title-group{grid-column:1;grid-row:1}
+ body:has(#helpBtn) header .stat-strip{grid-column:2;grid-row:1}
+ body:has(#helpBtn) header .head-btns{grid-column:1/-1;grid-row:2;justify-self:end;gap:8px}
+}
+
+@media(max-width:360px){.br-game-shell .br-game-heading,body:has(#helpBtn) header{grid-template-columns:minmax(0,1fr) 124px minmax(0,1fr)}}

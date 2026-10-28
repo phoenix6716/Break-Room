@@ -98,6 +98,7 @@ function selectChecks(changed,available,{full=false}={}){
   else if(file==='arcade-score.css'){layout();}
   else if(file==='daily-clock.js'){add('daily-clock.cjs','homepage-reset.cjs');GAMES.forEach(id=>game(id));}
   else if(/^practice-session\.(?:js|css)$/.test(file)){add('practice-session-rules.cjs','extended-play.cjs','replay-unlimited.cjs');}
+  else if(/^game-help\.(?:js|css)$/.test(file)){add('first-visit-help.cjs','brand.cjs','mobile-access.cjs');['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','pack','lowball','inner-clock'].forEach(id=>game(id));}
   else if(/^game-art\.(?:js|css)$/.test(file)||file.startsWith('assets/game-art/')){add('game-art.cjs','game-art-catalog.cjs','game-scenes.cjs','smoke.cjs','mobile-access.cjs');['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','lowball','inner-clock'].forEach(id=>game(id));}
   else if(/^game-scenes\.(?:js|css)$/.test(file)){add('game-scenes.cjs','smoke.cjs','mobile-access.cjs','game-feel.cjs');['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','pack','lowball','inner-clock'].forEach(id=>game(id));}
   else if(/^game-feel\.(?:js|css)$/.test(file)){add('game-feel.cjs');}

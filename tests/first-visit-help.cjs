@@ -1,0 +1,34 @@
+/* Clean browser profiles: independent first visits, timer safety and labelled controls. */
+const assert=require('node:assert/strict'),{chromium}=require('playwright');
+const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000',ids=['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','pack','lowball','inner-clock'];
+async function game(p,id){await p.goto(base+'/games/'+id+'/index.html');return id==='lowball'?await(await p.locator('iframe').elementHandle()).contentFrame():p;}
+const selectors=id=>id==='lowball'?['#helpBtn','#helpModal']:id==='stack-up'?['#help-open','#help-dialog']:['#help-popup-open','#help-popup'];
+(async()=>{const browser=await chromium.launch({executablePath:process.env.ARCADE_CHROMIUM||'/usr/bin/chromium',args:['--no-sandbox']});try{
+ let stackSnapshot;
+ for(const width of [320,390,768,1440]){
+  const c=await browser.newContext({viewport:{width,height:1000},reducedMotion:'reduce'}),p=await c.newPage();
+  const fixed=new Date('2026-10-28T01:00:00Z');await p.clock.setFixedTime(fixed);
+  for(const id of ids){console.log('Checking '+id+' first visit at '+width);
+   const errors=[];const onError=e=>errors.push(e.message);p.on('pageerror',onError);
+   let f=await game(p,id);const [button,dialog]=selectors(id);await f.locator(dialog).waitFor({state:'visible'});assert.equal(await f.locator(button).textContent(),'How To Play',id);
+   const key=id==='lowball'?'pc_help_seen':'break-room:help-seen:'+id;assert.equal(await f.evaluate(k=>localStorage.getItem(k),key),'1',id+' remembered independently');
+   if(id==='stack-up'){
+    assert.equal(await p.evaluate(()=>localStorage.getItem('break-room:stack-up:daily:2026-10-28')),null,'Reading instructions creates no timed round');
+    await p.clock.setFixedTime(new Date(fixed.getTime()+120000));
+   }
+   await p.keyboard.press('Escape');await f.locator(dialog).waitFor({state:'hidden'});assert(await f.locator(id==='stack-up'?'#prompt':button).evaluate(e=>e===document.activeElement),id+' focus is restored or moves to the newly started question');
+   if(id==='stack-up'){await p.waitForFunction(()=>localStorage.getItem('break-room:stack-up:daily:2026-10-28'));const run=await p.evaluate(()=>JSON.parse(localStorage.getItem('break-room:stack-up:daily:2026-10-28')));assert.equal(run.deadline,fixed.getTime()+120000+90000,'Full 90 seconds begin after dismissal');assert.equal(run.status,'playing');assert.equal(run.results.length,0);if(width===320)stackSnapshot=run;}
+   assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,id+' no phone overflow');
+   {
+    const boxes=await f.locator(id==='lowball'?'.lowball-title-group,#statStrip,.head-btns':'.br-game-title-group,.quick-stats,.br-game-tools').evaluateAll(es=>es.filter(e=>e.getClientRects().length).map(e=>e.getBoundingClientRect().toJSON()));
+    for(let i=0;i<boxes.length;i++)for(let j=i+1;j<boxes.length;j++){const a=boxes[i],b=boxes[j];assert(!(Math.min(a.right,b.right)-Math.max(a.left,b.left)>1&&Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top)>1),id+' header fields do not overlap');}
+   }
+   await p.reload();f=id==='lowball'?await(await p.locator('iframe').elementHandle()).contentFrame():p;await f.locator(button).waitFor();assert.equal(await f.locator(dialog).isVisible(),false,id+' returning visit');
+   await f.locator(button).click();await f.locator(dialog).waitFor({state:'visible'});await p.keyboard.press('Escape');await f.locator(dialog).waitFor({state:'hidden'});
+   assert.deepEqual(errors,[]);p.off('pageerror',onError);
+  }
+  await c.close();console.log('PASS first visits '+width+'px: all ten games independently show once, text Help reopens, focus returns, headers fit, no timer spent on initial instructions.');
+ }
+ const old=await browser.newContext(),resume=await old.newPage();await resume.clock.setFixedTime(new Date('2026-10-28T01:02:00Z'));await old.addInitScript(r=>localStorage.setItem('break-room:stack-up:daily:2026-10-28',JSON.stringify(r)),stackSnapshot);await game(resume,'stack-up');await resume.locator('#help-dialog').waitFor({state:'visible'});await resume.clock.setFixedTime(new Date('2026-10-28T01:02:05Z'));await resume.keyboard.press('Escape');await resume.waitForFunction(()=>document.getElementById('timer').textContent==='01:25');assert.equal(await resume.evaluate(()=>JSON.parse(localStorage.getItem('break-room:stack-up:daily:2026-10-28')).deadline),stackSnapshot.deadline);await old.close();console.log('PASS saved Stack Up deadline remains unchanged while first-visit instructions are open.');
+ const c=await browser.newContext(),p=await c.newPage();await c.addInitScript(()=>{Storage.prototype.setItem=()=>{throw Error('Denied')};});await game(p,'laser');await p.locator('#help-popup').waitFor({state:'visible'});await p.keyboard.press('Escape');await p.locator('#help-popup-open').click();assert(await p.locator('#help-popup').isVisible());await c.close();console.log('PASS denied storage: instructions and manual Help still work.');
+}finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

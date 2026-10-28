@@ -114,5 +114,6 @@
  document.addEventListener('visibilitychange',tick);window.addEventListener('pageshow',tick);
  window.addEventListener('storage',e=>{if(mode==='daily'&&run&&e.key===prefix+run.day){const saved=load(run.day);if(saved){closeDialog();run=saved;render();tick();}}});
  setInterval(tick,250);refreshStats();
- start('daily');if(run.status==='playing')focusPrompt();
+ const launch=()=>{start('daily');if(run.status==='playing')focusPrompt();};
+ if(window.BREAK_ROOM_HELP)window.BREAK_ROOM_HELP.whenReady(launch);else launch();
 })();
