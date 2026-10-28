@@ -4,13 +4,22 @@
  .br-game-shell .br-game-heading{grid-template-columns:minmax(0,1fr) 144px minmax(0,1fr);gap:8px}
  .br-game-shell .br-game-title-group{grid-column:1;grid-row:1}
  .br-game-shell .quick-stats{grid-column:2;grid-row:1}
- .br-game-shell .br-game-tools{grid-column:1/-1;grid-row:2;justify-self:end;gap:8px}
+ .br-game-shell .br-game-tools{grid-column:1/-1;grid-row:2;justify-self:stretch;width:100%;justify-content:space-between;gap:8px}
 }
 @media(max-width:650px){
  body:has(#helpBtn) header{grid-template-columns:minmax(0,1fr) 144px minmax(0,1fr);gap:8px}
  body:has(#helpBtn) header .lowball-title-group{grid-column:1;grid-row:1}
  body:has(#helpBtn) header .stat-strip{grid-column:2;grid-row:1}
- body:has(#helpBtn) header .head-btns{grid-column:1/-1;grid-row:2;justify-self:end;gap:8px}
+ body:has(#helpBtn) header .head-btns{grid-column:1/-1;grid-row:2;justify-self:stretch;width:100%;justify-content:space-between;gap:8px}
 }
 
 @media(max-width:360px){.br-game-shell .br-game-heading,body:has(#helpBtn) header{grid-template-columns:minmax(0,1fr) 124px minmax(0,1fr)}}
+
+/* Keep the daily reset centred beneath the full-width mobile controls. */
+@media(max-width:650px){
+ .br-game-shell .br-reset-rail{align-self:center}
+ :root body .daily-reset-card{text-align:center}
+ :root body .daily-reset-card .card-heading{justify-content:center}
+ body:has(#helpBtn) .session-settings{align-self:center}
+ body:has(#helpBtn) .live-reset{justify-content:center}
+}
