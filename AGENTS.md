@@ -1,3 +1,7 @@
+## Original Clue Ladder appearance — owner correction, 28 October 2026
+
+Restore the original cream panel, orange ladder and native pixel climber. Clue Ladder opts out of the later shared game-scenes and game-art styles/scripts; the other games retain their artwork and motion. Keep the current question bank, clues, scores, Daily slots and captured saves. This supersedes the Clue Ladder portion of the shared scene/object artwork directions. The page matches its pre-scene version from before commit `1e56731`; the engine and bank are unchanged.
+
 ## Broader Sleeper questions — owner correction, 28 October 2026
 
 Every newly offered Sleeper question must have at least ten canonical answers, preferably more. Revision 5 replaces all 55 undersized sets across SCIENCE, AUSTRALIA, LANGUAGE and EVERYDAY with broader scoped questions. The compass-point, demonstrative and states-of-matter prompts are retired. The bank has 160 questions and 4,722 answers; aliases do not count towards the minimum. Fixed editorial ratings remain 1–100, not popularity measurements.

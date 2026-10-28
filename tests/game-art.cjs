@@ -1,8 +1,9 @@
 /* Check actual decorative objects at four widths, plus delayed blind-clock artwork. Native play/save/review is covered by game-scenes and each game's suite. */
 const assert=require('node:assert/strict'),{chromium}=require('playwright');
 const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
-const ids=['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','lowball','inner-clock'];
-async function view(page,id){await page.goto(base+'/games/'+id+'/index.html');const p=id==='lowball'?await(await page.locator('iframe').elementHandle()).contentFrame():page;await p.locator('body[data-game-art-ready=true]').waitFor();return p;}
+const allIds=['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','lowball','inner-clock'];
+const selected=(process.env.ARCADE_TEST_GAMES||'').split(',').filter(Boolean),ids=allIds.filter(id=>!selected.length||selected.includes(id));
+async function view(page,id){await page.goto(base+'/games/'+id+'/index.html');const p=id==='lowball'?await(await page.locator('iframe').elementHandle()).contentFrame():page;if(id==='clue-ladder')await p.locator('#guess-input').waitFor();else await p.locator('body[data-game-art-ready=true]').waitFor();return p;}
 async function settle(p){await p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));}
 (async()=>{const browser=await chromium.launch({executablePath:process.env.ARCADE_CHROMIUM||'/usr/bin/chromium',args:['--no-sandbox']});
 try{
@@ -26,13 +27,14 @@ try{
    if(id==='shift-work')assert.equal(await p.locator('.sw-piece img').count(),await p.locator('.sw-piece').count());
    if(id==='laser')assert(await p.locator('.laser-bullseye img').count());
    if(id==='time-drop'){assert.equal(await p.locator('#era-tag img').count(),1);}
-   if(id==='clue-ladder'){assert(await p.locator('.cl-climber img').count());assert(await p.locator('.native-lock').count());}
+   if(id==='clue-ladder'){assert.equal(await p.locator('.cl-climber svg').count(),1);assert.equal(await p.locator('.native-game-art,.native-lock').count(),0);assert.equal(await p.locator('body').getAttribute('data-game-art'),null);}
    if(id==='hidden-gem'){assert(await p.locator('img.hg-topic-art.large').count());await p.locator('#start-question').click();await settle(p);assert(await p.locator('img.hg-topic-art').count());}
    if(id==='inner-clock'){await p.locator('body[data-clock-art-loaded=true]').waitFor();assert((await p.locator('.clock-dial').evaluate(e=>getComputedStyle(e).backgroundImage)).includes('stopwatch.svg'));}
    if(id==='lowball')assert((await p.locator('.shelf-price-tag').evaluate(e=>getComputedStyle(e).backgroundImage)).includes('price-tag.svg'));
    assert.deepEqual(errors,[]);await page.close();
-  }await c.close();console.log('PASS custom objects: '+width+'px, decoded artwork, native label identities and controls.');
+  }await c.close();console.log('PASS selected artwork: '+width+'px, decoded artwork, native label identities and controls.');
  }
+ if(!selected.length||selected.includes('inner-clock')){
  const c=await browser.newContext({viewport:{width:390,height:1000},reducedMotion:'reduce'}),page=await c.newPage();let release;
  const delayed=new Promise(r=>release=r);await page.route('**/timing/stopwatch.svg*',async route=>{await delayed;await route.continue();});
  await page.goto(base+'/games/inner-clock/index.html',{waitUntil:'domcontentloaded'});await page.locator('body[data-game-art-ready=true]').waitFor();
@@ -42,4 +44,5 @@ try{
  assert.equal(await page.evaluate(()=>document.getAnimations().length),0);
  await page.locator('#clock-action').click();await page.locator('body[data-clock-art-loaded=true]').waitFor();
  await c.close();console.log('PASS delayed stopwatch decoding waits for the stopped attempt.');
+ }
 }finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

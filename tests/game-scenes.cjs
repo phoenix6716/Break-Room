@@ -1,7 +1,8 @@
 /* Real public surfaces, action-driven motion, silent hydration and a still timing game. */
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{chromium}=require('playwright');
 const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
-const ids=['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','pack','lowball','inner-clock'];
+const allIds=['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','pack','lowball','inner-clock'];
+const selected=(process.env.ARCADE_TEST_GAMES||'').split(',').filter(Boolean),ids=allIds.filter(id=>!selected.length||selected.includes(id));
 const names=['Laser','Time Drop','Clue Ladder','Seating Chart','Desk Jam','Sleeper','Stack Up','Pack','Lowball','Time Sense'];
 const dir='.artifacts/game-scenes';fs.mkdirSync(dir,{recursive:true});
 const snapshots={desktop:[],mobile:[],review:[],environment:[]};
@@ -11,7 +12,7 @@ async function view(page,id){
  if(id==='lowball'){
   const f=await(await page.locator('#lowball-game-frame').elementHandle()).contentFrame();await f.locator('body[data-scene-ready=true]').waitFor();return f;
  }
- await page.locator('body[data-scene-ready=true]').waitFor();return page;
+ if(id==='clue-ladder')await page.locator('#guess-input').waitFor();else await page.locator('body[data-scene-ready=true]').waitFor();return page;
 }
 const motions=p=>p.evaluate(()=>window.__sceneMotions);
 async function shot(p,id,group){
@@ -84,14 +85,14 @@ async function action(p,id){
     if(reducedMotion==='no-preference')await shot(p,id,'mobile');
     await action(p,id);
     const effects=await motions(p);
-    if(reducedMotion==='reduce')assert.equal(effects.length,0,id+' reduced motion');
+    if(reducedMotion==='reduce'||id==='clue-ladder')assert.equal(effects.length,0,id+' static original or reduced motion');
     else assert(effects.length>0,id+' has feedback from real play');
     assert(effects.every(e=>e.options.duration<=300),'Effects stay brief');
     const saved=await p.evaluate(()=>JSON.stringify({...localStorage}));
     await page.waitForTimeout(350);assert.equal(await p.evaluate(()=>JSON.stringify({...localStorage})),saved,id+' visual feedback does not write saves');
     if(reducedMotion==='no-preference'){await page.waitForTimeout(750);await shot(p,id,'review');}
     await page.reload();const restored=id==='lowball'?await(await page.locator('iframe').elementHandle()).contentFrame():page;
-    await restored.locator('body[data-scene-ready=true]').waitFor();await pause(restored);
+    if(id==='clue-ladder')await restored.locator('#guess-input').waitFor();else await restored.locator('body[data-scene-ready=true]').waitFor();await pause(restored);
     assert.equal((await motions(restored)).length,0,id+' restored result does not replay effects');
     assert.deepEqual(errors,[]);await page.close();
     console.log('PASS scene '+id+' '+reducedMotion+': actual action/review, quiet hydration, preserved saves, accessible static fallback.');
@@ -104,7 +105,7 @@ async function action(p,id){
   await c.close();
   const sheet=await browser.newPage();
   for(const [group,images]of Object.entries(snapshots)){
-   const inputs=images.map(({id,file})=>({name:names[ids.indexOf(id)],src:'data:image/png;base64,'+fs.readFileSync(file).toString('base64')}));
+   const inputs=images.map(({id,file})=>({name:names[allIds.indexOf(id)],src:'data:image/png;base64,'+fs.readFileSync(file).toString('base64')}));
    const data=await sheet.evaluate(async ({inputs,wide})=>{
     const canvas=document.createElement('canvas');const tw=wide?600:400,th=wide?500:568;canvas.width=tw*2;canvas.height=th*5;const ctx=canvas.getContext('2d');ctx.fillStyle='#f4eddc';ctx.fillRect(0,0,canvas.width,canvas.height);
     for(let i=0;i<inputs.length;i++){
@@ -119,6 +120,6 @@ async function action(p,id){
    console.log('SCENE_PREVIEW_'+group.toUpperCase()+'='+data);
   }
   await sheet.close();
-  console.log('PASS all ten themed surfaces: normal/reduced motion, real native actions, reload/save preservation, motionless blind timing and mobile/desktop screenshots.');
+  console.log('PASS selected surfaces: normal/reduced motion, real native actions, reload/save preservation and mobile/desktop screenshots.');
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

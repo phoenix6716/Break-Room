@@ -1,3 +1,7 @@
+## Original Clue Ladder appearance — owner correction, 28 October 2026
+
+Restore the original cream panel, orange ladder and native pixel climber. Clue Ladder opts out of the later shared game-scenes and game-art styles/scripts; the other games retain their artwork and motion. Keep the current question bank, clues, scores, Daily slots and captured saves. This supersedes the Clue Ladder portion of the shared scene/object artwork directions. The page matches its pre-scene version from before commit `1e56731`; the engine and bank are unchanged.
+
 # Clue Ladder
 
 ## Player-feedback revision — 26 October 2026
