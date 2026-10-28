@@ -126,7 +126,7 @@ jobs:
                       if path in ["leagues.html", "friends.html", "profile.html"]:
                           assert b"hub-topbar" in body and b"menu-brand.css?v=hub-topbar-20261027" in body, "Missing social top bar: " + path
                       if path.endswith(".html") and path != "games/lowball/engine/index.html":
-                          assert b"br-brand__image" in body and b"tile05-20261025" in body, "Missing approved logo: " + path
+                          assert b"br-brand__image" in body and b"cube-b-20261028" in body, "Missing approved logo: " + path
                       if path == "index.html":
                           assert b"Desk Jam" in body and b"<h3>Shift Work</h3>" not in body and b"Sleeper" in body and b"<h3>Hidden Gem</h3>" not in body and b"Time Sense" in body and b"Inner Clock" not in body and b"10 DAILY GAMES" in body and b"games/hidden-gem/index.html" in body and b"games/shift-work/index.html" in body and b"games/stake/index.html" not in body, path
                       elif path in ["games/inner-clock/index.html", "profile.html", "friends.html"]:
@@ -160,7 +160,7 @@ jobs:
                           redirect = response.read()
                       assert b'http-equiv="refresh"' in redirect and b'../../index.html' in redirect and b'<title>Break Room</title>' in redirect, "Retired game still public: " + retired
                   print("Verified retired game bookmarks return to the shelf.")
-                  print("Verified live option05 branding, selectors, logo-free Lowball artwork, references and shared clients:", base, os.environ["GITHUB_SHA"])
+                  print("Verified live cube B branding, selectors, logo-free Lowball artwork, references and shared clients:", base, os.environ["GITHUB_SHA"])
                   break
               except Exception:
                   if attempt == 5:

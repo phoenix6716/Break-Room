@@ -1,6 +1,6 @@
-/* Static shared branding for the owner-selected option 05. */
+/* Static shared branding for the owner-selected closed B puzzle cube. */
 const fs=require('node:fs'),path=require('node:path');
-const VERSION='tile05-20261025',wordmark=fs.readFileSync(path.resolve(__dirname,'../assets/break-room-wordmark.png')),width=wordmark.readUInt32BE(16),height=wordmark.readUInt32BE(20);
+const VERSION='cube-b-20261028',wordmark=fs.readFileSync(path.resolve(__dirname,'../assets/break-room-wordmark.png')),width=wordmark.readUInt32BE(16),height=wordmark.readUInt32BE(20);
 function applyBrand(html,relative){
  const prefix='../'.repeat(Math.max(0,relative.replaceAll('\\','/').split('/').length-1));
  let branded=false;

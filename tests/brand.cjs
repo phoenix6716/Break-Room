@@ -1,6 +1,6 @@
 /* Check only shared branding/navigation, never replay entire game sessions. */
 const assert=require('node:assert/strict'),fs=require('node:fs'),{chromium}=require('playwright');
-const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000',version='tile05-20261025';
+const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000',version='cube-b-20261028';
 const {applyBrand}=require('../scripts/site-brand.cjs');
 const socialSource=fs.readFileSync('leagues.html','utf8'),socialBuild=applyBrand(applyBrand(socialSource,'leagues.html'),'leagues.html');
 assert(socialBuild.includes('menu-brand.css?v=hub-topbar-20261027'),'Preserve the shared menu stylesheet');
@@ -22,16 +22,16 @@ const rootPages=['index.html','friends.html','profile.html','login.html','signup
     return [...header.querySelectorAll('a,button')].filter(e=>!e.closest('.br-brand')&&!e.closest('.game-menu')&&e.getClientRects().length).some(e=>{const b=e.getBoundingClientRect();return Math.min(a.right,b.right)-Math.max(a.left,b.left)>1&&Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top)>1;});
    });assert.equal(overlap,false,route+' logo overlaps navigation');
    assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,route+' overflow');
-   assert.match(await p.locator('link[rel=icon]').getAttribute('href'),/break-room-icon\.svg\?v=tile05-20261025$/);
+   assert.match(await p.locator('link[rel=icon]').getAttribute('href'),/break-room-icon\.svg\?v=cube-b-20261028$/);
    if(route.startsWith('games/')){await p.locator('#game-menu-toggle').click();await p.locator('#game-menu-close').waitFor({state:'visible'});await p.keyboard.press('Escape');assert(await p.locator('#game-menu').isHidden());assert(await p.locator('#game-menu-toggle').evaluate(e=>e===document.activeElement));}
    if(route==='index.html'||route==='games/laser/index.html'){fs.mkdirSync('.artifacts/brand',{recursive:true});await p.screenshot({path:'.artifacts/brand/'+(route==='index.html'?'home':'game')+'-'+width+'.png'});}
    await brand.click();await p.waitForURL(u=>u.pathname.endsWith('/index.html')&&!u.pathname.includes('/games/'));
   }
-  assert.deepEqual(errors,[]);await context.close();console.log('PASS option05 branding '+width+'px: all ten game headers, account/profile/Friends/legal pages, accessible home links, image loading, icon, no overlaps, drawer focus and no overflow.');
+  assert.deepEqual(errors,[]);await context.close();console.log('PASS cube B branding '+width+'px: all ten game headers, account/profile/Friends/legal pages, accessible home links, image loading, icon, no overlaps, drawer focus and no overflow.');
  }
  const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:320,height:900}}),p=await context.newPage();
  for(const route of ['index.html','login.html','friends.html','profile.html','games/laser/index.html']){
   await p.goto(base+'/'+route);const img=p.locator('header .br-brand__image');assert(await img.isVisible());assert(await img.evaluate(i=>i.complete&&i.naturalWidth>0));assert.match(await p.locator('header a.br-brand').getAttribute('href'),/index\.html$/);
  }
- await context.close();console.log('PASS option05 branding without JavaScript; existing page labels and links remain accessible.');
+ await context.close();console.log('PASS cube B branding without JavaScript; existing page labels and links remain accessible.');
 }finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1;});
