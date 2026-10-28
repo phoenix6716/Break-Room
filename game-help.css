@@ -24,3 +24,14 @@
  :root body:has(#helpBtn) .session-settings{align-self:center}
  :root body:has(#helpBtn) .live-reset{justify-content:center}
 }
+
+/* Approved compact reset strip on phones; desktop keeps the original card. */
+@media(max-width:650px){
+ :root body .br-game-shell .daily-reset-card,:root body:has(#helpBtn) .daily-reset-card{width:100%;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;padding:12px 10px;border:2px solid #17263a;box-shadow:none}
+ :root body .daily-reset-card .card-heading{font-size:9px;letter-spacing:.3px}
+ :root body .daily-reset-card .reset-clock{margin:0;padding-left:12px;border-left:1px solid #17263a55;font-size:19px;line-height:1.2}
+ :root body .daily-reset-card p{display:none}
+ :root body:has(#helpBtn) .session-settings{width:100%}
+ :root body:has(#helpBtn) .session-settings .country-row{width:min(260px,100%);justify-self:center}
+ :root body:has(#helpBtn) .daily-reset-card .new-daily-ready{flex-basis:100%}
+}

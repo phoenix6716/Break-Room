@@ -41,9 +41,21 @@ const selectors=id=>id==='lowball'?['#helpBtn','#helpModal']:id==='stack-up'?['#
     const viewport=await f.evaluate(()=>innerWidth);
     assert(Math.abs(reset.x+reset.width/2-viewport/2)<2,id+' reset card centred');
     assert.equal(await f.locator('.daily-reset-card').evaluate(e=>getComputedStyle(e).textAlign),'center',id+' countdown text centred');
+    const resetCard=f.locator('.daily-reset-card'),heading=await resetCard.locator('.card-heading').boundingBox(),clock=await resetCard.locator('.reset-clock').boundingBox();
+    assert(reset.height<=55,id+' compact reset height');
+    assert(Math.abs(reset.width-tools.width)<1,id+' full-width reset strip');
+    assert(Math.abs(heading.y+heading.height/2-clock.y-clock.height/2)<1,id+' reset label and countdown share a line');
+    assert.equal(await resetCard.locator('p').isVisible(),false,id+' mobile supporting text hidden');
+
    }
    const statsControl=f.locator(id==='lowball'?'#statsBtn':id==='stack-up'?'#stats-open':'#stats-popup-open');
-   if(width>650)assert.equal(await statsControl.locator('.mobile-stats-label').isVisible(),false,id+' desktop trophy retained');
+   if(width>650){
+    assert.equal(await statsControl.locator('.mobile-stats-label').isVisible(),false,id+' desktop trophy retained');
+    const resetCard=f.locator('.daily-reset-card');
+    assert(await resetCard.locator('p').isVisible(),id+' desktop reset supporting text retained');
+    assert.equal(await resetCard.locator('.reset-clock').evaluate(e=>getComputedStyle(e).fontSize),'27px',id+' desktop countdown size retained');
+    assert.notEqual(await resetCard.evaluate(e=>getComputedStyle(e).boxShadow),'none',id+' desktop reset shadow retained');
+   }
    await statsControl.click();const statsDialog=f.locator(id==='lowball'?'#statsModal':id==='stack-up'?'#stats-dialog':'#stats-popup');await statsDialog.waitFor({state:'visible'});await p.keyboard.press('Escape');await statsDialog.waitFor({state:'hidden'});assert(await statsControl.evaluate(e=>e===document.activeElement),id+' Stats focus restored');
    await p.reload();f=id==='lowball'?await(await p.locator('iframe').elementHandle()).contentFrame():p;await f.locator(button).waitFor();assert.equal(await f.locator(dialog).isVisible(),false,id+' returning visit');
    await f.locator(button).click();await f.locator(dialog).waitFor({state:'visible'});await p.keyboard.press('Escape');await f.locator(dialog).waitFor({state:'hidden'});

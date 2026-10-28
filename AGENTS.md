@@ -1,3 +1,7 @@
+## Compact mobile countdown — owner decision, 28 October 2026
+
+All ten games use the approved full-width compact reset strip through 650px: label and 19px countdown side by side, 2px navy border, no shadow or supporting paragraph. Keep the existing larger desktop/tablet reset card and rail. Lowball retains its region control and new-daily-ready action; Time Sense still hides the reset during timing. Presentation only: reset calculation, deadlines, saves and scores stay unchanged.
+
 ## Approved mobile stats strip — owner decision, 28 October 2026
 
 All ten games use the approved mobile preview at widths through 650px: title on its own row, full-width three-column Streak/Best/Played strip below with bold 2px navy borders and no shadow, then How To Play at the left and a text Stats button at the right. Keep the centred reset card. Desktop retains its original header and trophy icon. This supersedes the earlier phone title/stats same-row direction. Native stats, scores, saves and popup behaviour stay unchanged.
