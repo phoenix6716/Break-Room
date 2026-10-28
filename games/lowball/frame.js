@@ -49,6 +49,8 @@
   const frame = document.getElementById('lowball-game-frame');
   let background = [], overflow = null;
   function setDialog(open) {
+    document.body.classList.toggle("lowball-dialog-open", open);
+    document.getElementById("lowball-dialog-shade").hidden = !open;
     if (open && overflow === null) {
       overflow = document.body.style.overflow;
       background = [...document.body.children].filter(el => !el.contains(frame) && !['SCRIPT','STYLE','LINK'].includes(el.tagName)).map(el => [el, el.inert]);

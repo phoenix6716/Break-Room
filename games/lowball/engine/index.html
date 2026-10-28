@@ -595,6 +595,8 @@
 <script src="../../../daily-clock.js"></script><link rel="stylesheet" href="../../../game-access.css"><link rel="stylesheet" href="../../../game-feel.css"><script src="../../../game-feel.js" data-sound="existing"></script><link rel="stylesheet" href="../../../practice-session.css"><script src="../../../practice-session.js"></script><link rel="stylesheet" href="../../../game-scenes.css?v=sets-20261027"><script defer src="../../../game-scenes.js?v=sets-20261027"></script><link rel="stylesheet" href="../../../game-art.css?v=objects-20261027">
 <script defer src="../../../assets/game-art/manifest.js?v=objects-20261027"></script>
 <script defer src="../../../game-art.js?v=objects-20261027"></script>
+<link rel="stylesheet" href="../../../game-dialog.css">
+<link rel="stylesheet" href="dialogs.css?v=shared-dialogs-20261028">
 </head>
 <body data-game-art="lowball" data-game-scene="lowball-counter">
 <p id="lowball-announcement" class="game-sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
@@ -695,24 +697,28 @@
   <div class="feel-sound-row lowball-sound-row"><button type="button" class="feel-sound" id="soundBtn" aria-label="Game sound">♪  SOUND ON</button></div>
 
 
-  <div class="modal" id="helpModal" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
-    <div class="modal-panel">
-      <h2 class="modal-title" id="helpTitle">How to play</h2>
+  <div class="modal game-popup-backdrop" id="helpModal" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+    <div class="modal-panel game-popup">
+      <button type="button" class="game-popup-close" data-lowball-close aria-label="Close help">×</button>
+      <p class="popup-kicker">PLAYER GUIDE</p>
+      <h2 class="modal-title" id="helpTitle">How to play Lowball</h2>
       <div class="how-step"><span class="how-n">1</span><span>See an everyday item.</span></div>
       <div class="how-step"><span class="how-n">2</span><span>Guess its reference price in your selected currency.</span></div>
       <div class="how-step"><span class="how-n">3</span><span>The closer you are in either direction, the higher you score. A 1% miss costs about one point.</span></div>
       <p class="modal-copy">Guess the dated reference for the product, serving or service shown. Check the pack size, retailer, fees and whether the amount is a regular price, offer or published average. Prices vary by place and date; source links appear after your guess. Unlimited is free practice and never changes your Daily record.</p>
-      <button class="btn-gold" id="helpClose">GOT IT</button>
+      <button class="btn-gold popup-done" id="helpClose">GOT IT</button>
     </div>
   </div>
 
-  <div class="modal" id="statsModal" role="dialog" aria-modal="true" aria-labelledby="statsTitle">
-    <div class="modal-panel">
-      <h2 class="modal-title" id="statsTitle">Your stats</h2>
-      <div class="stats-grid" id="statsGrid"></div>
+  <div class="modal game-popup-backdrop" id="statsModal" role="dialog" aria-modal="true" aria-labelledby="statsTitle">
+    <div class="modal-panel game-popup">
+      <button type="button" class="game-popup-close" data-lowball-close aria-label="Close stats">×</button>
+      <p class="popup-kicker">ON THIS DEVICE</p>
+      <h2 class="modal-title" id="statsTitle">Lowball stats</h2>
+      <div class="stats-grid extended-stats-grid" id="statsGrid"></div>
       <div id="statsChartWrap"></div>
-      <button class="btn-gold" id="statsShare" style="display:none">COPY RESULT</button>
-      <button class="btn-outline" id="statsClose">CLOSE</button>
+      <button class="btn-gold popup-done" id="statsShare" style="display:none">COPY RESULT</button>
+      <button class="btn-outline popup-done" id="statsClose">CLOSE</button>
     </div>
   </div>
 
@@ -1665,6 +1671,7 @@ function closeModalsAndMark() {
   if (document.getElementById("helpModal").classList.contains("show")) safeSet("pc_help_seen", "1");
   closeModals(false);
 }
+document.querySelectorAll("[data-lowball-close]").forEach(button => button.addEventListener("click", closeModalsAndMark));
 function openHelp() { openModal("helpModal", "helpClose"); }
 document.getElementById("helpBtn").addEventListener("click", openHelp);
 document.getElementById("helpClose").addEventListener("click", closeModalsAndMark);
