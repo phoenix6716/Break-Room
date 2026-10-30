@@ -4,7 +4,8 @@ require('../hidden-gem-model.js');const M=BREAK_ROOM_HIDDEN_GEM;
 const plural=s=>({mouse:'mice',goose:'geese',foot:'feet',tooth:'teeth',child:'children',person:'people',man:'men',woman:'women',knife:'knives',leaf:'leaves',wolf:'wolves',shelf:'shelves',scarf:'scarves',sheep:'sheep',fish:'fish',deer:'deer'}[s]||(/[^aeiou]y$/.test(s)?s.slice(0,-1)+'ies':/(?:s|sh|ch|x|z)$/.test(s)?s+'es':s+'s'));
 const questions=source.questions.map((q,i)=>{
  const used=new Map();const literal=/English (?:word|name)|rhymes|letter|double letter|silent K/.test(q.prompt);
- const answers=q.answers.map((name,n)=>({name,points:Math.round(1+n*99/(q.answers.length-1)),aliases:[...new Set(q.aliases?.[name]||[])]}));
+ if(!q.points||q.answers.some(name=>!Number.isInteger(q.points[name])||q.points[name]<1||q.points[name]>100))throw Error('Missing explicit editorial rating: '+q.prompt);
+ const answers=q.answers.map(name=>({name,points:q.points[name],aliases:[...new Set(q.aliases?.[name]||[])]}));
  for(const a of answers){const n=M.normal(a.name);if(used.has(n))throw Error('Duplicate canonical '+q.prompt+': '+a.name);used.set(n,a.name);}
  for(const a of answers){if(q.prompt.includes('starts with B'))a.aliases=a.aliases.filter(x=>/^b/i.test(x));if(q.prompt.includes('starts with C'))a.aliases=a.aliases.filter(x=>/^c/i.test(x));if(q.prompt.includes('clothing whose'))a.aliases=a.aliases.filter(x=>/t/i.test(x));if(q.prompt.includes('ends in ER'))a.aliases=a.aliases.filter(x=>/er$/i.test(x));a.aliases=a.aliases.filter(x=>{const n=M.normal(x);if(used.has(n))return false;used.set(n,a.name);return true;});}
  if(!literal)for(const a of answers){

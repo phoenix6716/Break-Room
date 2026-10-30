@@ -8,6 +8,15 @@ for(const q of B){assert(q.answers.length>=10,q.id+' must offer at least ten can
 const legacy=require('../content/archive/2026-10-30/hidden-gem-questions.json').questions;
 // All old identities are recovery-only. Full snapshots, not active-bank lookups, define saves.
 assert(B.every(q=>q.id.startsWith('hg7-')&&!legacy.some(old=>old.id===q.id)));
+const accessibleV1=require('../content/archive/2026-10-30-accessible-v1/hidden-gem-questions.json').questions;
+for(const prior of accessibleV1){const current=B.find(q=>q.id===prior.id);assert.equal(current.dailySlot,prior.dailySlot);assert.equal(current.prompt,prior.prompt);for(const a of prior.answers){assert.equal(current.answers.find(x=>x.name===a.name)?.points,a.points,'Published rating '+prior.id+' '+a.name);for(const x of [a.name,...a.aliases])assert.equal(M.match(current,x)?.name,a.name,'Published wording '+prior.id+' '+x);}}
+const roll=B.find(q=>q.id==='hg7-207'),oldRoll=accessibleV1.find(q=>q.id===roll.id);
+for(const x of ['pants','jeans','trousers','pant legs'])assert.equal(M.match(roll,x)?.points,69,x);
+for(const x of ['sleeves','shirt sleeves','jacket sleeves'])assert.equal(M.match(roll,x)?.points,64,x);
+for(const x of ['giraffe','stone','keyboard'])assert.equal(M.match(roll,x),null,x);
+const oldMiss=M.createPractice(oldRoll,day,'old-miss');M.begin(oldMiss,1000);M.draft(oldMiss,'pants',1001);M.expire(oldMiss,31000);assert.equal(oldMiss.picks[0].points,0);assert(M.validRun(oldMiss),'Previously locked zero stays valid');
+const corrected=M.create(accessibleV1,'2026-10-30');for(const q of corrected.questions){const current=B.find(x=>x.id===q.id);for(const a of q.answers){const updated=current.answers.find(x=>x.name===a.name&&x.points===a.points);if(updated)a.aliases=updated.aliases.slice();}}
+M.begin(corrected,1000);for(let i=0;i<5;i++){M.draft(corrected,corrected.questions[i].id===roll.id?'pants':corrected.questions[i].answers[0].name,1001);assert(M.finish(corrected,1002));if(i<4)M.next(corrected,1000);}assert(M.validRun(corrected));assert.equal(corrected.picks.find((p,i)=>corrected.questions[i].id===roll.id).points,69);
 const author=require('../content/hidden-gem-accessible-source.json');
 assert.equal(new Set(B.map(q=>M.normal(q.prompt))).size,240);
 for(const [i,j] of author.spacingReview.conflictingPairs){const a=B[i].dailySlot,b=B[j].dailySlot;assert(![0,1,47].includes((a-b+48)%48),B[i].prompt+' too close to '+B[j].prompt);}
@@ -17,7 +26,7 @@ const wide=legacy.find(q=>q.answers.length===151);assert(wide);assert.equal(M.ma
 assert(M.puzzle({...wide,answers:Array.from({length:160},(_,i)=>({name:'Answer '+i,points:1+i%100,aliases:[]}))}));
 assert(!M.puzzle({...wide,answers:Array.from({length:161},(_,i)=>({name:'Answer '+i,points:1+i%100,aliases:[]}))}));
 const oldRun=M.create(previous,'2026-10-26');M.begin(oldRun,1000);for(let i=0;i<5;i++){M.draft(oldRun,oldRun.questions[i].answers[0].name,1001);assert(M.finish(oldRun,1002));if(i<4)M.next(oldRun,1000);}assert(M.record(oldRun,'2026-10-26'));
-for(const q of B){assert(M.puzzle(q),q.id);assert.equal(new Set(q.answers.map(a=>a.points)).size,Math.min(q.answers.length-Math.max(0,q.answers.filter(a=>a.points===1).length-1),100));assert(q.answers.some(a=>a.points===100));for(const a of q.answers)for(const x of [a.name,...a.aliases])assert.equal(M.match(q,x)?.name,a.name,q.id+': '+x);}
+for(const q of B){assert(M.puzzle(q),q.id);assert(q.answers.every(a=>Number.isInteger(a.points)&&a.points>=1&&a.points<=100));assert(q.answers.some(a=>a.points===100));for(const a of q.answers)for(const x of [a.name,...a.aliases])assert.equal(M.match(q,x)?.name,a.name,q.id+': '+x);}
 
 // A reference/cutoff must never give away a scored answer before submission.
 const mentioned=(text,label)=>{const n=M.normal(label);return n.length>=3&&(' '+M.normal(text)+' ').includes(' '+n+' ');};
@@ -66,6 +75,7 @@ const before={};for(const sig of ['save_game(text,jsonb,bigint)','_friend_score(
 for(const sig of Object.keys(before))assert.equal((await db.query('select pg_get_functiondef($1::regprocedure) d',['public.'+sig])).rows[0].d,before[sig],'Legacy function unchanged: '+sig);
 for(const r of [good,mixed,zero,M.create(B,day),...bad]){const actual=(await db.query('select public._friend_hidden_gem_score($1,$2) s',[encode(r),day])).rows[0].s;assert.equal(actual,M.record(r,day)?.arcadeScore??null,'SQL full snapshot parity');}
 assert.equal((await db.query('select public._friend_hidden_gem_score($1,$2) s',[encode(oldRun),oldRun.day])).rows[0].s,M.record(oldRun,oldRun.day).arcadeScore);
+assert.equal((await db.query('select public._friend_hidden_gem_score($1,$2) s',[encode(corrected),corrected.day])).rows[0].s,M.record(corrected,corrected.day).arcadeScore,'Reviewed aliases in captured snapshots retain SQL score parity');
 for(const size of [160,161]){const fixture={...wide,answers:Array.from({length:size},(_,i)=>({name:'Answer '+i,points:1+i%100,aliases:[]}))};assert.equal((await db.query('select public._hg_question($1) valid',[encode(fixture)])).rows[0].valid,size===160);}
 for(const q of B){assert.equal((await db.query('select public._hg_question($1) valid',[encode(q)])).rows[0].valid,true,q.id);for(const a of q.answers){const actual=(await db.query('select public._hg_match($1,$2) a',[encode(q),a.name])).rows[0].a;assert.equal(actual.answer,a.name,q.id);assert.equal(actual.points,a.points);}}
 for(const x of ['Azerbaijna','Austria','Canada','  Antigua & Barbuda  ','\u00a0Australia\u00a0']){const actual=(await db.query('select public._hg_match($1,$2) a',[encode(countries),x])).rows[0].a,expected=M.match(countries,x);assert.equal(actual?.answer??null,expected?.name??null);assert.equal(actual?.typo??null,expected?.typo??null);}

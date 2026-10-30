@@ -1,0 +1,6595 @@
+{
+  "date": "2026-10-30",
+  "revision": "7-offline-coverage",
+  "ownerChoice": "Keep it offline for now",
+  "reportedQuestion": "hg7-207",
+  "reportedInputs": {
+    "pants": "Previously rejected; now aliases Trouser leg, 69 points",
+    "jeans": "Previously rejected; now aliases Trouser leg, 69 points",
+    "sleeves": "Already matched Sleeve in first accessible release; actual reported rejection not reproduced. Real UI regression added, 64 points"
+  },
+  "questions": 240,
+  "canonicalAnswers": 6315,
+  "addedCanonicalAnswers": 834,
+  "range": [
+    19,
+    148
+  ],
+  "rotationDays": 48,
+  "previousArchive": "content/archive/2026-10-30-accessible-v1/hidden-gem-questions.json",
+  "compatibility": [
+    "All 5,481 original canonical names, ratings and alias mappings remain valid and unchanged.",
+    "Canonical additions have explicit editorial scores; inserting answers cannot redistribute published points.",
+    "Only aliases are copied into an unanswered current snapshot, with matching ID, prompt, canonical name and captured points.",
+    "No changes to existing completed results, prior picks, timers, native/cloud keys, record version or SQL.",
+    "New canonical answers require a fresh capture; old captured answer lists retain their original identities."
+  ],
+  "review": [
+    "New synonyms and regional names remain aliases, not extra canonical answers.",
+    "Literal word constraints still filter aliases that do not satisfy their spelling rule.",
+    "The reported clothing wording is tested in both modes on captured pre-fix questions.",
+    "Related object categories and common animal, food, household and action wording reviewed for analogous gaps.",
+    "Existing high-overlap pairs remain separated; no new same/adjacent-day pairs reach 35% canonical overlap."
+  ],
+  "verification": {
+    "rules": "Passed: all selected unit, content, SQL parity, original rating/alias and old-save compatibility checks.",
+    "browserCases": [
+      "Pants, jeans and sleeves at 390px and 1440px in Daily and Unlimited",
+      "Saved rejected draft can be recognised after reload without changing deadline",
+      "Wrong answer remains rejected; previous picks and historical timeout zero remain byte-identical",
+      "Accepted result remains valid after reload"
+    ],
+    "browser": "Passed: both complete gameplay suites, all 12 reported-wording cases at 390/1440px in both modes, five-width general coverage and unchanged historical results.",
+    "generatedFiles": "Byte-for-byte regeneration passed.",
+    "deployment": "Verified separately after publication; not inferred from local checks."
+  },
+  "limitations": [
+    "Finite offline lists cannot recognise every technically correct answer.",
+    "The reported sleeves failure was not reproduced against the first accessible source bank.",
+    "A completed historical zero is preserved; this release does not retroactively regrade history.",
+    "No physical-device testing or claim of measured player-popularity data."
+  ],
+  "changes": [
+    {
+      "id": "hg7-001",
+      "canonicalAdditions": [
+        "Breakfast sandwich",
+        "Breakfast roll",
+        "Toastie",
+        "Smoked salmon",
+        "Wheat biscuit cereal"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Eggs",
+          "points": 4,
+          "added": [
+            "scrambled egg",
+            "fried egg",
+            "boiled egg",
+            "poached egg"
+          ]
+        },
+        {
+          "canonical": "Yoghurt",
+          "points": 19,
+          "added": [
+            "greek yoghurt",
+            "greek yogurt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-002",
+      "canonicalAdditions": [
+        "Tea",
+        "Coffee",
+        "Omelette",
+        "Egg",
+        "Sausage",
+        "Bread",
+        "Sandwich",
+        "Couscous",
+        "Tofu"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Pizza",
+          "points": 1,
+          "added": [
+            "pizza slice",
+            "slice of pizza"
+          ]
+        },
+        {
+          "canonical": "Pasta",
+          "points": 11,
+          "added": [
+            "pasta salad"
+          ]
+        },
+        {
+          "canonical": "Rice",
+          "points": 17,
+          "added": [
+            "rice salad"
+          ]
+        },
+        {
+          "canonical": "Potatoes",
+          "points": 22,
+          "added": [
+            "potato"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-003",
+      "canonicalAdditions": [
+        "Pizza",
+        "Sausage roll",
+        "Fried chicken",
+        "Dumpling"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Candy floss",
+          "points": 1,
+          "added": [
+            "cottoncandy"
+          ]
+        },
+        {
+          "canonical": "Hot dog",
+          "points": 12,
+          "added": [
+            "hotdog",
+            "hotdogs"
+          ]
+        },
+        {
+          "canonical": "Burger",
+          "points": 18,
+          "added": [
+            "hamburger",
+            "hamburgers"
+          ]
+        },
+        {
+          "canonical": "Doughnut",
+          "points": 29,
+          "added": [
+            "donuts"
+          ]
+        },
+        {
+          "canonical": "Toffee apple",
+          "points": 40,
+          "added": [
+            "candy apples"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-004",
+      "canonicalAdditions": [
+        "Wrap",
+        "Baguette",
+        "Naan",
+        "Roti",
+        "Nuts",
+        "Strawberry",
+        "Pear",
+        "Orange",
+        "Chicken nugget",
+        "Crisps"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Sandwich",
+          "points": 1,
+          "added": [
+            "sarnie",
+            "sanga",
+            "sandwich roll"
+          ]
+        },
+        {
+          "canonical": "Pizza",
+          "points": 6,
+          "added": [
+            "pizza slice",
+            "slice of pizza"
+          ]
+        },
+        {
+          "canonical": "Burger",
+          "points": 10,
+          "added": [
+            "hamburger",
+            "cheeseburger",
+            "hamburgers"
+          ]
+        },
+        {
+          "canonical": "Hot dog",
+          "points": 39,
+          "added": [
+            "hotdog",
+            "hotdogs"
+          ]
+        },
+        {
+          "canonical": "Biscuit",
+          "points": 43,
+          "added": [
+            "cookies"
+          ]
+        },
+        {
+          "canonical": "Doughnut",
+          "points": 48,
+          "added": [
+            "donuts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-005",
+      "canonicalAdditions": [
+        "Tater tots",
+        "Bubble and squeak",
+        "Potato curry",
+        "Latke",
+        "Potato scone",
+        "Potato dumpling"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Chips",
+          "points": 1,
+          "added": [
+            "french fry"
+          ]
+        },
+        {
+          "canonical": "Mashed potatoes",
+          "points": 6,
+          "added": [
+            "mash",
+            "mashed potato"
+          ]
+        },
+        {
+          "canonical": "Baked potato",
+          "points": 26,
+          "added": [
+            "jacket potato",
+            "jacket potatoes"
+          ]
+        },
+        {
+          "canonical": "Crisps",
+          "points": 31,
+          "added": [
+            "potato chip"
+          ]
+        },
+        {
+          "canonical": "Potato wedges",
+          "points": 60,
+          "added": [
+            "wedges"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-006",
+      "canonicalAdditions": [
+        "Wrap",
+        "Baked potato",
+        "Stuffed mushroom",
+        "Bun",
+        "Cannelloni",
+        "Tortellini",
+        "Burger"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Pie",
+          "points": 6,
+          "added": [
+            "meat pie",
+            "apple pie"
+          ]
+        },
+        {
+          "canonical": "Doughnut",
+          "points": 11,
+          "added": [
+            "filled doughnut",
+            "jam doughnut",
+            "jam donut",
+            "cream doughnut",
+            "cream donut",
+            "donuts"
+          ]
+        },
+        {
+          "canonical": "Ravioli",
+          "points": 26,
+          "added": [
+            "raviolo"
+          ]
+        },
+        {
+          "canonical": "Pastie",
+          "points": 51,
+          "added": [
+            "cornish pasty"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-007",
+      "canonicalAdditions": [
+        "Dip",
+        "Crackers",
+        "Nachos",
+        "Fairy cake",
+        "Spring rolls",
+        "Mini quiche"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Cake",
+          "points": 1,
+          "added": [
+            "birthday cake"
+          ]
+        },
+        {
+          "canonical": "Pizza",
+          "points": 10,
+          "added": [
+            "pizza slice",
+            "slice of pizza"
+          ]
+        },
+        {
+          "canonical": "Sandwiches",
+          "points": 15,
+          "added": [
+            "sandwich",
+            "finger sandwiches"
+          ]
+        },
+        {
+          "canonical": "Chips",
+          "points": 20,
+          "added": [
+            "crisps",
+            "potato chips"
+          ]
+        },
+        {
+          "canonical": "Biscuits",
+          "points": 29,
+          "added": [
+            "cookie"
+          ]
+        },
+        {
+          "canonical": "Lollies",
+          "points": 58,
+          "added": [
+            "sweeties"
+          ]
+        },
+        {
+          "canonical": "Doughnuts",
+          "points": 100,
+          "added": [
+            "donut"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-008",
+      "canonicalAdditions": [
+        "Stock",
+        "Butter",
+        "Curry powder",
+        "Five spice",
+        "Fennel",
+        "Star anise",
+        "Clove",
+        "Cardamom",
+        "Allspice",
+        "Parsley",
+        "Dill",
+        "Sage",
+        "Chives",
+        "Lime juice",
+        "Tomato paste"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Pepper",
+          "points": 5,
+          "added": [
+            "black pepper",
+            "white pepper"
+          ]
+        },
+        {
+          "canonical": "Garlic",
+          "points": 10,
+          "added": [
+            "garlic powder"
+          ]
+        },
+        {
+          "canonical": "Onion",
+          "points": 14,
+          "added": [
+            "onion powder"
+          ]
+        },
+        {
+          "canonical": "Chilli",
+          "points": 23,
+          "added": [
+            "chili",
+            "chile",
+            "chilli pepper",
+            "chili pepper"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-009",
+      "canonicalAdditions": [
+        "Olives",
+        "Kimchi",
+        "Courgette",
+        "Capers",
+        "Peppers"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Cucumber",
+          "points": 1,
+          "added": [
+            "pickles",
+            "pickle",
+            "pickled cucumber",
+            "gherkin",
+            "gherkins"
+          ]
+        },
+        {
+          "canonical": "Onion",
+          "points": 6,
+          "added": [
+            "pickled onion",
+            "pickled onions"
+          ]
+        },
+        {
+          "canonical": "Beetroot",
+          "points": 10,
+          "added": [
+            "beets"
+          ]
+        },
+        {
+          "canonical": "Chilli",
+          "points": 29,
+          "added": [
+            "chili",
+            "chillies",
+            "chilies",
+            "jalapeno",
+            "jalapenos"
+          ]
+        },
+        {
+          "canonical": "Mango",
+          "points": 62,
+          "added": [
+            "mangoes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-010",
+      "canonicalAdditions": [
+        "Iced latte",
+        "Espresso tonic",
+        "Apple cider",
+        "Sangria",
+        "Daiquiri",
+        "Negroni",
+        "Spritz",
+        "Fruit punch",
+        "Cocktail",
+        "Mocktail",
+        "Lime cordial"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Iced tea",
+          "points": 11,
+          "added": [
+            "ice tea",
+            "cold tea"
+          ]
+        },
+        {
+          "canonical": "Iced coffee",
+          "points": 17,
+          "added": [
+            "ice coffee",
+            "cold coffee"
+          ]
+        },
+        {
+          "canonical": "Water",
+          "points": 22,
+          "added": [
+            "iced water",
+            "ice water",
+            "tap water"
+          ]
+        },
+        {
+          "canonical": "Whisky",
+          "points": 43,
+          "added": [
+            "scotch",
+            "bourbon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-011",
+      "canonicalAdditions": [
+        "Orange",
+        "Lemon",
+        "Tomato",
+        "Chilli",
+        "Pumpkin"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Mango",
+          "points": 58,
+          "added": [
+            "mangoes"
+          ]
+        },
+        {
+          "canonical": "Rhubarb",
+          "points": 76,
+          "added": [
+            "rhubarb jam"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-012",
+      "canonicalAdditions": [
+        "Swede",
+        "Celery",
+        "Corn",
+        "Artichoke",
+        "Kohlrabi"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Potato",
+          "points": 1,
+          "added": [
+            "potatoes"
+          ]
+        },
+        {
+          "canonical": "Sweet potato",
+          "points": 27,
+          "added": [
+            "sweet potatoes",
+            "kumara"
+          ]
+        },
+        {
+          "canonical": "Beetroot",
+          "points": 32,
+          "added": [
+            "beets"
+          ]
+        },
+        {
+          "canonical": "Pepper",
+          "points": 37,
+          "added": [
+            "bell peppers",
+            "capsicums"
+          ]
+        },
+        {
+          "canonical": "Tomato",
+          "points": 74,
+          "added": [
+            "tomatoes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-013",
+      "canonicalAdditions": [
+        "Margarine",
+        "Spaghetti",
+        "Tuna",
+        "Ricotta"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Cheese",
+          "points": 27,
+          "added": [
+            "cheddar",
+            "cheese spread"
+          ]
+        },
+        {
+          "canonical": "Egg",
+          "points": 37,
+          "added": [
+            "fried egg",
+            "fried eggs",
+            "Scrambled eggs",
+            "Poached eggs"
+          ]
+        },
+        {
+          "canonical": "Vegemite",
+          "points": 48,
+          "added": [
+            "vege mite"
+          ]
+        },
+        {
+          "canonical": "Nutella",
+          "points": 58,
+          "added": [
+            "hazelnut spread",
+            "Chocolate spread"
+          ]
+        },
+        {
+          "canonical": "Tomato",
+          "points": 69,
+          "added": [
+            "tomatoes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-014",
+      "canonicalAdditions": [
+        "Fish",
+        "Bread",
+        "Potatoes",
+        "Vegetables",
+        "Lobster",
+        "Duck",
+        "Venison",
+        "Marshmallow"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Sausage",
+          "points": 1,
+          "added": [
+            "snags"
+          ]
+        },
+        {
+          "canonical": "Burger",
+          "points": 6,
+          "added": [
+            "hamburger",
+            "hamburgers",
+            "beef burger"
+          ]
+        },
+        {
+          "canonical": "Steak",
+          "points": 11,
+          "added": [
+            "beef steak"
+          ]
+        },
+        {
+          "canonical": "Corn on the cob",
+          "points": 32,
+          "added": [
+            "sweet corn"
+          ]
+        },
+        {
+          "canonical": "Kebab",
+          "points": 64,
+          "added": [
+            "kabob",
+            "shish kebab",
+            "skewer",
+            "skewers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-015",
+      "canonicalAdditions": [
+        "Flatbread",
+        "Bread roll",
+        "Tiger bread",
+        "Multigrain bread",
+        "Potato bread",
+        "Crumpet",
+        "English muffin",
+        "Damper"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "White bread",
+          "points": 1,
+          "added": [
+            "white loaf"
+          ]
+        },
+        {
+          "canonical": "Wholemeal bread",
+          "points": 6,
+          "added": [
+            "brown bread",
+            "whole wheat",
+            "wholemeal",
+            "wholewheat bread"
+          ]
+        },
+        {
+          "canonical": "Pitta",
+          "points": 37,
+          "added": [
+            "pitta bread"
+          ]
+        },
+        {
+          "canonical": "Naan",
+          "points": 43,
+          "added": [
+            "naan bread"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-016",
+      "canonicalAdditions": [
+        "Doughnut",
+        "Biscuit",
+        "Sushi",
+        "Sausage roll",
+        "Toast",
+        "Bread",
+        "Chicken strip"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Nachos",
+          "points": 11,
+          "added": [
+            "Tortilla chip"
+          ]
+        },
+        {
+          "canonical": "Spring rolls",
+          "points": 17,
+          "added": [
+            "Spring roll"
+          ]
+        },
+        {
+          "canonical": "Breadsticks",
+          "points": 32,
+          "added": [
+            "bread sticks"
+          ]
+        },
+        {
+          "canonical": "Carrot sticks",
+          "points": 58,
+          "added": [
+            "carrots",
+            "carrot"
+          ]
+        },
+        {
+          "canonical": "Celery sticks",
+          "points": 64,
+          "added": [
+            "celery"
+          ]
+        },
+        {
+          "canonical": "Fish fingers",
+          "points": 90,
+          "added": [
+            "fish sticks"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-017",
+      "canonicalAdditions": [
+        "Tomato",
+        "Bacon",
+        "Salami",
+        "Prawn",
+        "Feta",
+        "Goat cheese",
+        "Blue cheese",
+        "Broccoli",
+        "Chilli"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Cheese",
+          "points": 1,
+          "added": [
+            "Mozzarella"
+          ]
+        },
+        {
+          "canonical": "Sweetcorn",
+          "points": 53,
+          "added": [
+            "sweet corn",
+            "corn"
+          ]
+        },
+        {
+          "canonical": "Capsicum",
+          "points": 74,
+          "added": [
+            "bell peppers",
+            "peppers"
+          ]
+        },
+        {
+          "canonical": "Parmesan",
+          "points": 90,
+          "added": [
+            "parmesan cheese"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-018",
+      "canonicalAdditions": [
+        "Yoghurt",
+        "Tiramisu",
+        "Pavlova",
+        "Banana split",
+        "Frozen yoghurt"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Ice cream",
+          "points": 1,
+          "added": [
+            "gelato",
+            "icecream"
+          ]
+        },
+        {
+          "canonical": "Mousse",
+          "points": 27,
+          "added": [
+            "Chocolate mousse"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-019",
+      "canonicalAdditions": [
+        "Sultanas",
+        "Currants",
+        "Cereal",
+        "Herbs",
+        "Spices",
+        "Tea",
+        "Coffee"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Apricots",
+          "points": 6,
+          "added": [
+            "Apricot"
+          ]
+        },
+        {
+          "canonical": "Prunes",
+          "points": 20,
+          "added": [
+            "Prune"
+          ]
+        },
+        {
+          "canonical": "Mango",
+          "points": 25,
+          "added": [
+            "mangoes"
+          ]
+        },
+        {
+          "canonical": "Beef jerky",
+          "points": 72,
+          "added": [
+            "biltong"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-020",
+      "canonicalAdditions": [
+        "Fruit",
+        "Corned beef",
+        "Evaporated milk",
+        "Custard",
+        "Potatoes",
+        "Beetroot",
+        "Olives"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Tuna",
+          "points": 6,
+          "added": [
+            "tinned tuna",
+            "canned tuna"
+          ]
+        },
+        {
+          "canonical": "Sweetcorn",
+          "points": 17,
+          "added": [
+            "corn",
+            "sweet corn"
+          ]
+        },
+        {
+          "canonical": "Tomatoes",
+          "points": 22,
+          "added": [
+            "tomato",
+            "canned tomatoes",
+            "tinned tomatoes"
+          ]
+        },
+        {
+          "canonical": "Chickpeas",
+          "points": 43,
+          "added": [
+            "garbanzo beans"
+          ]
+        },
+        {
+          "canonical": "Kidney beans",
+          "points": 48,
+          "added": [
+            "red beans"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-021",
+      "canonicalAdditions": [
+        "Lemon balm",
+        "Watercress",
+        "Cress"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Basil",
+          "points": 1,
+          "added": [
+            "Thai basil"
+          ]
+        },
+        {
+          "canonical": "Parsley",
+          "points": 6,
+          "added": [
+            "flat leaf parsley",
+            "curly parsley"
+          ]
+        },
+        {
+          "canonical": "Mint",
+          "points": 11,
+          "added": [
+            "peppermint",
+            "spearmint"
+          ]
+        },
+        {
+          "canonical": "Coriander",
+          "points": 17,
+          "added": [
+            "coriander leaf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-022",
+      "canonicalAdditions": [
+        "Sweet potato",
+        "Pumpkin",
+        "Turnip",
+        "Swede",
+        "Bread sauce",
+        "Roast duck",
+        "Roast vegetables"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Roast potatoes",
+          "points": 1,
+          "added": [
+            "roast potato",
+            "roasties"
+          ]
+        },
+        {
+          "canonical": "Yorkshire pudding",
+          "points": 20,
+          "added": [
+            "yorkshires"
+          ]
+        },
+        {
+          "canonical": "Brussels sprouts",
+          "points": 43,
+          "added": [
+            "brussel sprouts",
+            "sprouts"
+          ]
+        },
+        {
+          "canonical": "Cranberry sauce",
+          "points": 100,
+          "added": [
+            "Cranberry jelly"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-023",
+      "canonicalAdditions": [
+        "Ice lolly",
+        "Churros",
+        "Cookies",
+        "Donuts",
+        "Sandwich",
+        "Nuts"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Popcorn",
+          "points": 1,
+          "added": [
+            "pop corn"
+          ]
+        },
+        {
+          "canonical": "Hot dog",
+          "points": 17,
+          "added": [
+            "hotdog",
+            "hotdogs"
+          ]
+        },
+        {
+          "canonical": "Ice cream",
+          "points": 22,
+          "added": [
+            "choc top",
+            "icecream"
+          ]
+        },
+        {
+          "canonical": "Lollies",
+          "points": 27,
+          "added": [
+            "sweeties"
+          ]
+        },
+        {
+          "canonical": "Pizza",
+          "points": 37,
+          "added": [
+            "pizza slice",
+            "slice of pizza"
+          ]
+        },
+        {
+          "canonical": "Burger",
+          "points": 43,
+          "added": [
+            "hamburger",
+            "hamburgers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-024",
+      "canonicalAdditions": [
+        "Icing sugar",
+        "Cornflour",
+        "Buttermilk",
+        "Sour cream",
+        "Desiccated coconut",
+        "Berries",
+        "Food colouring",
+        "Cream cheese"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Flour",
+          "points": 1,
+          "added": [
+            "plain flour",
+            "all purpose flour",
+            "cake flour",
+            "Self-raising flour",
+            "self rising flour"
+          ]
+        },
+        {
+          "canonical": "Sugar",
+          "points": 6,
+          "added": [
+            "caster sugar",
+            "granulated sugar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-025",
+      "canonicalAdditions": [
+        "Bird",
+        "Fish",
+        "Reptile",
+        "Insect",
+        "Robin",
+        "Pigeon",
+        "Sparrow",
+        "Parrot",
+        "Peacock",
+        "Quail",
+        "Turkey",
+        "Tortoise",
+        "Moth",
+        "Locust",
+        "Ladybird"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Chicken",
+          "points": 1,
+          "added": [
+            "hens"
+          ]
+        },
+        {
+          "canonical": "Crocodile",
+          "points": 23,
+          "added": [
+            "croc"
+          ]
+        },
+        {
+          "canonical": "Octopus",
+          "points": 83,
+          "added": [
+            "octopuses",
+            "octopi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-026",
+      "canonicalAdditions": [
+        "Monkey",
+        "Dog",
+        "Catfish",
+        "Squirrel",
+        "Seagull",
+        "Cockroach",
+        "Emu",
+        "Ostrich",
+        "Ant"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Human",
+          "points": 1,
+          "added": [
+            "people",
+            "person",
+            "human being"
+          ]
+        },
+        {
+          "canonical": "Brown bear",
+          "points": 10,
+          "added": [
+            "Bear"
+          ]
+        },
+        {
+          "canonical": "Black bear",
+          "points": 15,
+          "added": [
+            "american black bear"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-027",
+      "canonicalAdditions": [
+        "Fish",
+        "Turtle",
+        "Snail",
+        "Duck",
+        "Goose",
+        "Swan",
+        "Water snake",
+        "Freshwater prawn",
+        "Freshwater crab"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Goldfish",
+          "points": 1,
+          "added": [
+            "gold fish"
+          ]
+        },
+        {
+          "canonical": "Crocodile",
+          "points": 72,
+          "added": [
+            "croc"
+          ]
+        },
+        {
+          "canonical": "Freshwater mussel",
+          "points": 86,
+          "added": [
+            "Mussel"
+          ]
+        },
+        {
+          "canonical": "Water vole",
+          "points": 95,
+          "added": [
+            "water rat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-028",
+      "canonicalAdditions": [
+        "Grasshopper",
+        "Scorpion",
+        "Spider",
+        "Termite",
+        "Cicada"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Woodlouse",
+          "points": 81,
+          "added": [
+            "woodlice",
+            "slater",
+            "pillbug"
+          ]
+        },
+        {
+          "canonical": "Pangolin",
+          "points": 91,
+          "added": [
+            "scaly anteater"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-029",
+      "canonicalAdditions": [
+        "Fish",
+        "Bird",
+        "Lizard",
+        "Turtle",
+        "Frog",
+        "Chicken",
+        "Horse",
+        "Pony",
+        "Duck",
+        "Goat",
+        "Pig",
+        "Alpaca"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Dog",
+          "points": 1,
+          "added": [
+            "puppy",
+            "puppies"
+          ]
+        },
+        {
+          "canonical": "Cat",
+          "points": 6,
+          "added": [
+            "kitten",
+            "kittens"
+          ]
+        },
+        {
+          "canonical": "Goldfish",
+          "points": 10,
+          "added": [
+            "gold fish"
+          ]
+        },
+        {
+          "canonical": "Rabbit",
+          "points": 15,
+          "added": [
+            "bunny",
+            "bunnies"
+          ]
+        },
+        {
+          "canonical": "Guinea pig",
+          "points": 25,
+          "added": [
+            "guineapig"
+          ]
+        },
+        {
+          "canonical": "Budgerigar",
+          "points": 29,
+          "added": [
+            "budgies"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-030",
+      "canonicalAdditions": [
+        "Crocodile",
+        "Shark",
+        "Great white shark",
+        "Dugong",
+        "Dolphin",
+        "Sea lion",
+        "Seal",
+        "Penguin",
+        "Little penguin",
+        "Australian magpie",
+        "Redback spider",
+        "Funnel-web spider",
+        "Brown snake",
+        "Blue-tongued lizard"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Kangaroo",
+          "points": 1,
+          "added": [
+            "roo",
+            "roos"
+          ]
+        },
+        {
+          "canonical": "Koala",
+          "points": 6,
+          "added": [
+            "koala bear"
+          ]
+        },
+        {
+          "canonical": "Platypus",
+          "points": 15,
+          "added": [
+            "duck billed platypus"
+          ]
+        },
+        {
+          "canonical": "Tasmanian devil",
+          "points": 39,
+          "added": [
+            "tassie devil"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-031",
+      "canonicalAdditions": [
+        "Kangaroo",
+        "Bull",
+        "Seagull",
+        "Woodlouse"
+      ],
+      "aliasAdditions": []
+    },
+    {
+      "id": "hg7-032",
+      "canonicalAdditions": [
+        "Seal",
+        "Dove",
+        "Swallow",
+        "Ram",
+        "Buck",
+        "Cock",
+        "Crow",
+        "Monkey",
+        "Horse",
+        "Pig"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Fish",
+          "points": 58,
+          "added": [
+            "fishes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-033",
+      "canonicalAdditions": [
+        "Bird",
+        "Fish",
+        "Antelope",
+        "Buffalo",
+        "Bison",
+        "Deer",
+        "Horse",
+        "Goat",
+        "Turkey",
+        "Pelican",
+        "Crow"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Cattle",
+          "points": 81,
+          "added": [
+            "cows"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-034",
+      "canonicalAdditions": [
+        "Fish",
+        "Human",
+        "Pig",
+        "Snake",
+        "Mouse",
+        "Rat",
+        "Hippopotamus",
+        "Walrus",
+        "Orca"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Dog",
+          "points": 1,
+          "added": [
+            "puppy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-035",
+      "canonicalAdditions": [
+        "Bird",
+        "Seagull",
+        "Robin",
+        "Swallow",
+        "Swift",
+        "Raven",
+        "Magpie",
+        "Cockatoo",
+        "Cockatiel",
+        "Finch",
+        "Wren",
+        "Kestrel",
+        "Falcon"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Fly",
+          "points": 1,
+          "added": [
+            "housefly",
+            "house fly"
+          ]
+        },
+        {
+          "canonical": "Ladybird",
+          "points": 81,
+          "added": [
+            "ladybugs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-036",
+      "canonicalAdditions": [
+        "Bee",
+        "Hornet",
+        "Striped catfish",
+        "Striped skunk",
+        "Striped mouse",
+        "Striped dolphin",
+        "Striped marlin",
+        "Striped skink",
+        "Krait"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Tabby cat",
+          "points": 69,
+          "added": [
+            "tabby",
+            "cat",
+            "striped cat"
+          ]
+        },
+        {
+          "canonical": "Ring-tailed lemur",
+          "points": 74,
+          "added": [
+            "lemur"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-037",
+      "canonicalAdditions": [
+        "Horse",
+        "Cow",
+        "Donkey",
+        "Parrot",
+        "Raccoon",
+        "Skunk"
+      ],
+      "aliasAdditions": []
+    },
+    {
+      "id": "hg7-038",
+      "canonicalAdditions": [
+        "Chestnut",
+        "Horse chestnut",
+        "Walnut",
+        "Hazel",
+        "Poplar",
+        "Rowan",
+        "Cypress",
+        "Plane tree",
+        "Jacaranda",
+        "Wattle",
+        "Bottlebrush"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Pine",
+          "points": 20,
+          "added": [
+            "pine tree"
+          ]
+        },
+        {
+          "canonical": "Fir",
+          "points": 25,
+          "added": [
+            "fir tree"
+          ]
+        },
+        {
+          "canonical": "Cherry",
+          "points": 39,
+          "added": [
+            "cherry tree",
+            "cherry blossom"
+          ]
+        },
+        {
+          "canonical": "Eucalyptus",
+          "points": 81,
+          "added": [
+            "eucalypt",
+            "Gum tree"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-039",
+      "canonicalAdditions": [
+        "Daisy",
+        "Protea",
+        "Lavender",
+        "Fuchsia",
+        "Marigold",
+        "Crocus",
+        "Snapdragon",
+        "Delphinium",
+        "Stock",
+        "Statice"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Chrysanthemum",
+          "points": 37,
+          "added": [
+            "mum",
+            "mums"
+          ]
+        },
+        {
+          "canonical": "Gerbera",
+          "points": 43,
+          "added": [
+            "gerbera daisy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-040",
+      "canonicalAdditions": [
+        "Fern",
+        "Ivy",
+        "Palm",
+        "Bamboo",
+        "Ficus",
+        "Calathea",
+        "Dracaena",
+        "Prayer plant",
+        "Anthurium",
+        "Dumb cane",
+        "Christmas cactus"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Monstera",
+          "points": 11,
+          "added": [
+            "swiss cheese plant"
+          ]
+        },
+        {
+          "canonical": "Snake plant",
+          "points": 17,
+          "added": [
+            "mother in laws tongue",
+            "mother-in-law's tongue",
+            "sansevieria"
+          ]
+        },
+        {
+          "canonical": "Aloe vera",
+          "points": 22,
+          "added": [
+            "aloe"
+          ]
+        },
+        {
+          "canonical": "Cactus",
+          "points": 32,
+          "added": [
+            "cacti",
+            "cactuses"
+          ]
+        },
+        {
+          "canonical": "ZZ plant",
+          "points": 84,
+          "added": [
+            "zamioculcas"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-041",
+      "canonicalAdditions": [
+        "Nutrients",
+        "Minerals"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Water",
+          "points": 1,
+          "added": [
+            "rain",
+            "rainwater"
+          ]
+        },
+        {
+          "canonical": "Sunlight",
+          "points": 6,
+          "added": [
+            "sunshine",
+            "sun light"
+          ]
+        },
+        {
+          "canonical": "Fertiliser",
+          "points": 25,
+          "added": [
+            "plant food"
+          ]
+        },
+        {
+          "canonical": "Carbon dioxide",
+          "points": 29,
+          "added": [
+            "co2"
+          ]
+        },
+        {
+          "canonical": "Oxygen",
+          "points": 34,
+          "added": [
+            "o2"
+          ]
+        },
+        {
+          "canonical": "Nitrogen",
+          "points": 39,
+          "added": [
+            "n"
+          ]
+        },
+        {
+          "canonical": "Phosphorus",
+          "points": 43,
+          "added": [
+            "phosphorous"
+          ]
+        },
+        {
+          "canonical": "Warmth",
+          "points": 95,
+          "added": [
+            "warm temperature",
+            "warm temperatures"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-042",
+      "canonicalAdditions": [
+        "Wax",
+        "Feather",
+        "Bone",
+        "Ivory",
+        "Straw",
+        "Reed",
+        "Willow",
+        "Rattan",
+        "Coir",
+        "Flax"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Leather",
+          "points": 20,
+          "added": [
+            "hide",
+            "animal hide"
+          ]
+        },
+        {
+          "canonical": "Rubber",
+          "points": 48,
+          "added": [
+            "natural rubber"
+          ]
+        },
+        {
+          "canonical": "Linen",
+          "points": 53,
+          "added": [
+            "flax linen"
+          ]
+        },
+        {
+          "canonical": "Jute",
+          "points": 62,
+          "added": [
+            "hessian",
+            "burlap"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-043",
+      "canonicalAdditions": [
+        "Nectarine",
+        "Tangerine",
+        "Mandarin",
+        "Satsuma",
+        "Clementine",
+        "Breadfruit",
+        "Jackfruit",
+        "Mulberry",
+        "Star fruit",
+        "Custard apple",
+        "Loquat"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Mango",
+          "points": 48,
+          "added": [
+            "mangoes"
+          ]
+        },
+        {
+          "canonical": "Lychee",
+          "points": 86,
+          "added": [
+            "litchi"
+          ]
+        },
+        {
+          "canonical": "Persimmon",
+          "points": 95,
+          "added": [
+            "sharon fruit"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-044",
+      "canonicalAdditions": [
+        "Pony",
+        "Buffalo",
+        "Mouse",
+        "Rat",
+        "Sparrow"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Cow",
+          "points": 1,
+          "added": [
+            "Bull",
+            "Calf"
+          ]
+        },
+        {
+          "canonical": "Sheep",
+          "points": 6,
+          "added": [
+            "Ram",
+            "Ewe"
+          ]
+        },
+        {
+          "canonical": "Pig",
+          "points": 10,
+          "added": [
+            "piglet",
+            "piglets"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-045",
+      "canonicalAdditions": [
+        "Fox",
+        "Mole cricket",
+        "Beetle larva",
+        "Chipmunk",
+        "Ground squirrel",
+        "Fennec fox",
+        "Bilby",
+        "Bandicoot"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Earthworm",
+          "points": 6,
+          "added": [
+            "worms"
+          ]
+        },
+        {
+          "canonical": "Rabbit",
+          "points": 22,
+          "added": [
+            "bunny"
+          ]
+        },
+        {
+          "canonical": "Cicada nymph",
+          "points": 84,
+          "added": [
+            "Cicada"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-046",
+      "canonicalAdditions": [
+        "Sea slug",
+        "Sea snail",
+        "Limpet",
+        "Whelk",
+        "Periwinkle",
+        "Sea worm",
+        "Krill",
+        "Sea spider",
+        "Comb jelly"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Octopus",
+          "points": 1,
+          "added": [
+            "octopuses",
+            "octopi"
+          ]
+        },
+        {
+          "canonical": "Jellyfish",
+          "points": 12,
+          "added": [
+            "jelly fish"
+          ]
+        },
+        {
+          "canonical": "Sea anemone",
+          "points": 78,
+          "added": [
+            "anemone"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-047",
+      "canonicalAdditions": [
+        "Animal calls",
+        "Crickets"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Birdsong",
+          "points": 1,
+          "added": [
+            "bird song",
+            "birds singing",
+            "birds chirping",
+            "chirping",
+            "tweeting",
+            "Bird",
+            "Bird call"
+          ]
+        },
+        {
+          "canonical": "Wind",
+          "points": 6,
+          "added": [
+            "Wind in trees"
+          ]
+        },
+        {
+          "canonical": "Rustling leaves",
+          "points": 11,
+          "added": [
+            "rustling",
+            "leaves rustling",
+            "Leaves"
+          ]
+        },
+        {
+          "canonical": "Rain",
+          "points": 17,
+          "added": [
+            "Rainfall"
+          ]
+        },
+        {
+          "canonical": "Stream",
+          "points": 27,
+          "added": [
+            "running water",
+            "flowing water"
+          ]
+        },
+        {
+          "canonical": "Woodpecker",
+          "points": 48,
+          "added": [
+            "Woodpecker tapping"
+          ]
+        },
+        {
+          "canonical": "Owl",
+          "points": 53,
+          "added": [
+            "Owl hoot"
+          ]
+        },
+        {
+          "canonical": "Footsteps",
+          "points": 58,
+          "added": [
+            "people walking",
+            "walking"
+          ]
+        },
+        {
+          "canonical": "Buzzing bee",
+          "points": 100,
+          "added": [
+            "Buzzing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-048",
+      "canonicalAdditions": [
+        "Bush",
+        "Scrubland",
+        "Reef",
+        "Estuary",
+        "Mangrove",
+        "Arctic",
+        "Antarctic",
+        "Nest",
+        "Den",
+        "Riverbank"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Forest",
+          "points": 1,
+          "added": [
+            "Woodland"
+          ]
+        },
+        {
+          "canonical": "Ocean",
+          "points": 10,
+          "added": [
+            "Sea"
+          ]
+        },
+        {
+          "canonical": "Savanna",
+          "points": 34,
+          "added": [
+            "savannah"
+          ]
+        },
+        {
+          "canonical": "Burrow",
+          "points": 95,
+          "added": [
+            "hole",
+            "underground"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-049",
+      "canonicalAdditions": [
+        "Body mass index",
+        "Hair length",
+        "Nail length",
+        "Fitness",
+        "Blood alcohol level",
+        "Hormone level",
+        "Muscle mass",
+        "Body water"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Height",
+          "points": 1,
+          "added": [
+            "tallness",
+            "Body length"
+          ]
+        },
+        {
+          "canonical": "Weight",
+          "points": 5,
+          "added": [
+            "body mass"
+          ]
+        },
+        {
+          "canonical": "Waist size",
+          "points": 35,
+          "added": [
+            "waist measurement"
+          ]
+        },
+        {
+          "canonical": "Lung capacity",
+          "points": 70,
+          "added": [
+            "lung volume"
+          ]
+        },
+        {
+          "canonical": "Blood oxygen",
+          "points": 74,
+          "added": [
+            "oxygen level"
+          ]
+        },
+        {
+          "canonical": "Breathing rate",
+          "points": 78,
+          "added": [
+            "respiratory rate"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-050",
+      "canonicalAdditions": [
+        "Buttock",
+        "Breast",
+        "Testicle",
+        "Ovary",
+        "Kneecap",
+        "Forearm",
+        "Upper arm",
+        "Palm",
+        "Sole",
+        "Temple",
+        "Earlobe",
+        "Collarbone",
+        "Shoulder blade"
+      ],
+      "aliasAdditions": []
+    },
+    {
+      "id": "hg7-051",
+      "canonicalAdditions": [
+        "Bowler hat",
+        "Top hat",
+        "Fedora",
+        "Trilby",
+        "Sunhat",
+        "Bucket hat",
+        "Bandana",
+        "Sombrero",
+        "Cowl",
+        "Hood",
+        "Ski mask"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Helmet",
+          "points": 10,
+          "added": [
+            "bike helmet",
+            "bicycle helmet",
+            "motorbike helmet"
+          ]
+        },
+        {
+          "canonical": "Beanie",
+          "points": 15,
+          "added": [
+            "beanie hat",
+            "bobble hat",
+            "wool hat"
+          ]
+        },
+        {
+          "canonical": "Scarf",
+          "points": 20,
+          "added": [
+            "head scarf",
+            "scarfs",
+            "Headscarf"
+          ]
+        },
+        {
+          "canonical": "Headband",
+          "points": 34,
+          "added": [
+            "hairband",
+            "hair band"
+          ]
+        },
+        {
+          "canonical": "Headphones",
+          "points": 72,
+          "added": [
+            "head phones",
+            "headset"
+          ]
+        },
+        {
+          "canonical": "Mortarboard",
+          "points": 95,
+          "added": [
+            "Graduation cap"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-052",
+      "canonicalAdditions": [
+        "Lie down",
+        "Sit down",
+        "Rest",
+        "Have a drink",
+        "Drink tea",
+        "Watch a film",
+        "Play an instrument",
+        "Crochet",
+        "Colour in",
+        "Go for a drive",
+        "Spend time with pets"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Read",
+          "points": 1,
+          "added": [
+            "read a book",
+            "reading a book"
+          ]
+        },
+        {
+          "canonical": "Listen to music",
+          "points": 6,
+          "added": [
+            "listen to songs"
+          ]
+        },
+        {
+          "canonical": "Walk",
+          "points": 29,
+          "added": [
+            "go for a walk",
+            "take a walk"
+          ]
+        },
+        {
+          "canonical": "Do yoga",
+          "points": 34,
+          "added": [
+            "practise yoga",
+            "practice yoga"
+          ]
+        },
+        {
+          "canonical": "Play games",
+          "points": 58,
+          "added": [
+            "gaming",
+            "play a game",
+            "video games",
+            "play video games"
+          ]
+        },
+        {
+          "canonical": "Swim",
+          "points": 72,
+          "added": [
+            "go swimming"
+          ]
+        },
+        {
+          "canonical": "Fish",
+          "points": 76,
+          "added": [
+            "fishes"
+          ]
+        },
+        {
+          "canonical": "Have a massage",
+          "points": 81,
+          "added": [
+            "massage"
+          ]
+        },
+        {
+          "canonical": "Do a puzzle",
+          "points": 86,
+          "added": [
+            "puzzles",
+            "jigsaw",
+            "do puzzles"
+          ]
+        },
+        {
+          "canonical": "Talk to friends",
+          "points": 91,
+          "added": [
+            "chat with friends",
+            "talking to friends"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-053",
+      "canonicalAdditions": [
+        "Read messages",
+        "Watch videos",
+        "Make a phone call",
+        "Do nothing",
+        "Wait",
+        "Tap feet",
+        "Bite nails"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Check phone",
+          "points": 1,
+          "added": [
+            "check mobile",
+            "look at mobile",
+            "checking phone"
+          ]
+        },
+        {
+          "canonical": "Read",
+          "points": 11,
+          "added": [
+            "read a magazine",
+            "read a book",
+            "reading a book"
+          ]
+        },
+        {
+          "canonical": "Listen to music",
+          "points": 17,
+          "added": [
+            "music",
+            "listen to headphones",
+            "listen to songs"
+          ]
+        },
+        {
+          "canonical": "Text",
+          "points": 64,
+          "added": [
+            "send messages",
+            "text messages"
+          ]
+        },
+        {
+          "canonical": "Play games",
+          "points": 69,
+          "added": [
+            "gaming",
+            "play a game",
+            "play video games",
+            "Play on phone"
+          ]
+        },
+        {
+          "canonical": "Browse social media",
+          "points": 74,
+          "added": [
+            "Check social media"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-054",
+      "canonicalAdditions": [
+        "Shoes",
+        "Bottlecaps",
+        "Jewellery",
+        "Crystals",
+        "Fossils",
+        "Sports cards",
+        "Pokemon cards",
+        "Cups",
+        "Mugs"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Stamps",
+          "points": 1,
+          "added": [
+            "postage stamp"
+          ]
+        },
+        {
+          "canonical": "Comics",
+          "points": 20,
+          "added": [
+            "comic books"
+          ]
+        },
+        {
+          "canonical": "Badges",
+          "points": 67,
+          "added": [
+            "buttons",
+            "pins"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-055",
+      "canonicalAdditions": [
+        "Doctor",
+        "Dentist",
+        "Army officer",
+        "Marine",
+        "Air force pilot",
+        "Naval officer",
+        "Hotel receptionist",
+        "Cashier",
+        "Supermarket worker",
+        "Fast food worker",
+        "Delivery driver"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Soldier",
+          "points": 15,
+          "added": [
+            "army",
+            "military",
+            "army soldier"
+          ]
+        },
+        {
+          "canonical": "Flight attendant",
+          "points": 25,
+          "added": [
+            "air hostess",
+            "steward",
+            "cabin crew"
+          ]
+        },
+        {
+          "canonical": "Chef",
+          "points": 29,
+          "added": [
+            "cook"
+          ]
+        },
+        {
+          "canonical": "Postman",
+          "points": 48,
+          "added": [
+            "postie",
+            "postal carrier"
+          ]
+        },
+        {
+          "canonical": "Mechanic",
+          "points": 95,
+          "added": [
+            "car mechanic"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-056",
+      "canonicalAdditions": [
+        "Fencer",
+        "Concrete worker",
+        "Miner",
+        "Geologist",
+        "Ecologist",
+        "Biologist",
+        "Zookeeper",
+        "Animal keeper",
+        "Traffic warden",
+        "Delivery driver"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Gardener",
+          "points": 1,
+          "added": [
+            "gardening"
+          ]
+        },
+        {
+          "canonical": "Farmer",
+          "points": 6,
+          "added": [
+            "farm worker",
+            "farmhand"
+          ]
+        },
+        {
+          "canonical": "Builder",
+          "points": 10,
+          "added": [
+            "construction worker"
+          ]
+        },
+        {
+          "canonical": "Park ranger",
+          "points": 25,
+          "added": [
+            "ranger"
+          ]
+        },
+        {
+          "canonical": "Fisherman",
+          "points": 29,
+          "added": [
+            "fishing"
+          ]
+        },
+        {
+          "canonical": "Bin collector",
+          "points": 58,
+          "added": [
+            "garbo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-057",
+      "canonicalAdditions": [
+        "Turn off phone",
+        "Check alarm",
+        "Drink tea",
+        "Have a bath",
+        "Get undressed",
+        "Watch TV",
+        "Say goodnight",
+        "Kiss partner"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Brush teeth",
+          "points": 1,
+          "added": [
+            "brush my teeth",
+            "brush your teeth",
+            "brush their teeth",
+            "clean teeth",
+            "brushing teeth"
+          ]
+        },
+        {
+          "canonical": "Put on pyjamas",
+          "points": 6,
+          "added": [
+            "put on pajamas",
+            "change into pyjamas",
+            "put on pjs"
+          ]
+        },
+        {
+          "canonical": "Read",
+          "points": 11,
+          "added": [
+            "read a book",
+            "reading a book"
+          ]
+        },
+        {
+          "canonical": "Set alarm",
+          "points": 17,
+          "added": [
+            "set an alarm",
+            "set alarm clock"
+          ]
+        },
+        {
+          "canonical": "Lock doors",
+          "points": 27,
+          "added": [
+            "lock the door"
+          ]
+        },
+        {
+          "canonical": "Wash face",
+          "points": 32,
+          "added": [
+            "wash my face",
+            "wash your face",
+            "wash their face",
+            "washing face"
+          ]
+        },
+        {
+          "canonical": "Check phone",
+          "points": 48,
+          "added": [
+            "check mobile",
+            "checking phone"
+          ]
+        },
+        {
+          "canonical": "Use toilet",
+          "points": 64,
+          "added": [
+            "go to the toilet"
+          ]
+        },
+        {
+          "canonical": "Drink water",
+          "points": 69,
+          "added": [
+            "have water",
+            "drinking water"
+          ]
+        },
+        {
+          "canonical": "Plug in phone",
+          "points": 79,
+          "added": [
+            "charge phone",
+            "charge mobile",
+            "Put phone on charge"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-058",
+      "canonicalAdditions": [
+        "Go to work",
+        "Get ready",
+        "Make tea",
+        "Make breakfast",
+        "Check email",
+        "Say good morning",
+        "Go for a run"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Check phone",
+          "points": 22,
+          "added": [
+            "check mobile",
+            "checking phone"
+          ]
+        },
+        {
+          "canonical": "Open curtains",
+          "points": 27,
+          "added": [
+            "open blinds"
+          ]
+        },
+        {
+          "canonical": "Brush teeth",
+          "points": 32,
+          "added": [
+            "brush my teeth",
+            "brush your teeth",
+            "brush their teeth",
+            "clean teeth",
+            "brushing teeth"
+          ]
+        },
+        {
+          "canonical": "Use toilet",
+          "points": 37,
+          "added": [
+            "go to the toilet"
+          ]
+        },
+        {
+          "canonical": "Make coffee",
+          "points": 53,
+          "added": [
+            "drink coffee",
+            "have coffee",
+            "making coffee"
+          ]
+        },
+        {
+          "canonical": "Eat breakfast",
+          "points": 58,
+          "added": [
+            "have breakfast",
+            "breakfast",
+            "eating breakfast"
+          ]
+        },
+        {
+          "canonical": "Drink water",
+          "points": 64,
+          "added": [
+            "have water",
+            "drinking water"
+          ]
+        },
+        {
+          "canonical": "Wash face",
+          "points": 69,
+          "added": [
+            "wash my face",
+            "wash your face",
+            "wash their face",
+            "washing face"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-059",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Dance",
+          "points": 1,
+          "added": [
+            "go dancing"
+          ]
+        },
+        {
+          "canonical": "Take photographs",
+          "points": 32,
+          "added": [
+            "take photos",
+            "take pictures",
+            "photography"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-061",
+      "canonicalAdditions": [
+        "Play sport",
+        "Play basketball",
+        "Play netball",
+        "Play cricket",
+        "Play rugby",
+        "Play badminton",
+        "Play squash",
+        "Do burpees",
+        "Use treadmill",
+        "Stretch"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Run",
+          "points": 1,
+          "added": [
+            "go running"
+          ]
+        },
+        {
+          "canonical": "Walk",
+          "points": 6,
+          "added": [
+            "go for a walk",
+            "take a walk"
+          ]
+        },
+        {
+          "canonical": "Swim",
+          "points": 10,
+          "added": [
+            "go swimming"
+          ]
+        },
+        {
+          "canonical": "Cycle",
+          "points": 15,
+          "added": [
+            "bike ride",
+            "ride a bicycle",
+            "ride bicycle"
+          ]
+        },
+        {
+          "canonical": "Dance",
+          "points": 20,
+          "added": [
+            "go dancing"
+          ]
+        },
+        {
+          "canonical": "Do yoga",
+          "points": 25,
+          "added": [
+            "practise yoga",
+            "practice yoga"
+          ]
+        },
+        {
+          "canonical": "Lift weights",
+          "points": 29,
+          "added": [
+            "weightlifting",
+            "weight lifting",
+            "lifting weights",
+            "weights"
+          ]
+        },
+        {
+          "canonical": "Skip",
+          "points": 53,
+          "added": [
+            "skipping",
+            "skip rope",
+            "jump rope"
+          ]
+        },
+        {
+          "canonical": "Play tennis",
+          "points": 62,
+          "added": [
+            "tennis",
+            "playing tennis"
+          ]
+        },
+        {
+          "canonical": "Play football",
+          "points": 67,
+          "added": [
+            "football",
+            "soccer",
+            "play soccer"
+          ]
+        },
+        {
+          "canonical": "Do jumping jacks",
+          "points": 100,
+          "added": [
+            "jumping jacks",
+            "Do star jumps",
+            "star jumps"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-064",
+      "canonicalAdditions": [
+        "Biology",
+        "Chemistry",
+        "Physics",
+        "German",
+        "Chinese",
+        "Japanese",
+        "Italian",
+        "Reading",
+        "Writing",
+        "Spelling",
+        "Sport",
+        "Computing",
+        "Business",
+        "Economics"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Maths",
+          "points": 1,
+          "added": [
+            "mathematics",
+            "arithmetic"
+          ]
+        },
+        {
+          "canonical": "English",
+          "points": 6,
+          "added": [
+            "english language",
+            "english literature"
+          ]
+        },
+        {
+          "canonical": "Woodwork",
+          "points": 43,
+          "added": [
+            "woodworking"
+          ]
+        },
+        {
+          "canonical": "Dance",
+          "points": 58,
+          "added": [
+            "go dancing"
+          ]
+        },
+        {
+          "canonical": "Coding",
+          "points": 81,
+          "added": [
+            "computer programming",
+            "programming"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-065",
+      "canonicalAdditions": [
+        "Gesture",
+        "Finger spelling",
+        "Middle finger",
+        "Raise a finger",
+        "Hold hands",
+        "Prayer hands",
+        "Shush"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Wave",
+          "points": 1,
+          "added": [
+            "wave hello",
+            "wave goodbye"
+          ]
+        },
+        {
+          "canonical": "Give thumbs up",
+          "points": 22,
+          "added": [
+            "thumb up",
+            "Thumbs up"
+          ]
+        },
+        {
+          "canonical": "Give thumbs down",
+          "points": 27,
+          "added": [
+            "thumb down",
+            "Thumbs down"
+          ]
+        },
+        {
+          "canonical": "Sign",
+          "points": 53,
+          "added": [
+            "signing",
+            "use sign language",
+            "Sign language"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-066",
+      "canonicalAdditions": [
+        "Calm",
+        "Confusion",
+        "Disappointment",
+        "Awe",
+        "Terror",
+        "Peace",
+        "Amusement",
+        "Anticipation"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Happiness",
+          "points": 1,
+          "added": [
+            "happy",
+            "Joy"
+          ]
+        },
+        {
+          "canonical": "Sadness",
+          "points": 6,
+          "added": [
+            "sad",
+            "Sorrow"
+          ]
+        },
+        {
+          "canonical": "Anger",
+          "points": 10,
+          "added": [
+            "angry",
+            "rage",
+            "mad"
+          ]
+        },
+        {
+          "canonical": "Fear",
+          "points": 15,
+          "added": [
+            "scared",
+            "afraid"
+          ]
+        },
+        {
+          "canonical": "Love",
+          "points": 29,
+          "added": [
+            "loving"
+          ]
+        },
+        {
+          "canonical": "Jealousy",
+          "points": 34,
+          "added": [
+            "Envy"
+          ]
+        },
+        {
+          "canonical": "Excitement",
+          "points": 53,
+          "added": [
+            "excited"
+          ]
+        },
+        {
+          "canonical": "Boredom",
+          "points": 58,
+          "added": [
+            "bored"
+          ]
+        },
+        {
+          "canonical": "Loneliness",
+          "points": 62,
+          "added": [
+            "lonely"
+          ]
+        },
+        {
+          "canonical": "Anxiety",
+          "points": 81,
+          "added": [
+            "anxious",
+            "Nervousness"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-067",
+      "canonicalAdditions": [
+        "Insects",
+        "Water",
+        "Loud noises",
+        "Blood",
+        "Worms",
+        "Bees",
+        "Wasps",
+        "Illness",
+        "Monsters",
+        "Bats",
+        "Roller coasters",
+        "Elevators"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Heights",
+          "points": 1,
+          "added": [
+            "high places",
+            "falling"
+          ]
+        },
+        {
+          "canonical": "Flying",
+          "points": 20,
+          "added": [
+            "aeroplanes",
+            "airplanes",
+            "planes"
+          ]
+        },
+        {
+          "canonical": "Dentists",
+          "points": 29,
+          "added": [
+            "the dentist"
+          ]
+        },
+        {
+          "canonical": "Thunder",
+          "points": 39,
+          "added": [
+            "thunderstorms"
+          ]
+        },
+        {
+          "canonical": "Public speaking",
+          "points": 43,
+          "added": [
+            "speaking in public"
+          ]
+        },
+        {
+          "canonical": "Small spaces",
+          "points": 48,
+          "added": [
+            "confined spaces",
+            "enclosed spaces"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-070",
+      "canonicalAdditions": [
+        "Engineer",
+        "Technician",
+        "Repairer",
+        "Handyman",
+        "Dressmaker",
+        "Furniture maker",
+        "Tiler",
+        "Glazier",
+        "Sculptor",
+        "Machinist",
+        "Fabricator"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Carpenter",
+          "points": 1,
+          "added": [
+            "chippy",
+            "joiner"
+          ]
+        },
+        {
+          "canonical": "Mechanic",
+          "points": 15,
+          "added": [
+            "auto mechanic",
+            "car mechanic"
+          ]
+        },
+        {
+          "canonical": "Tailor",
+          "points": 20,
+          "added": [
+            "tailoring"
+          ]
+        },
+        {
+          "canonical": "Panel beater",
+          "points": 95,
+          "added": [
+            "auto body repairer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-071",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Walk",
+          "points": 29,
+          "added": [
+            "go for a walk",
+            "take a walk"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-072",
+      "canonicalAdditions": [
+        "Wash",
+        "Wash clothes",
+        "Wash body",
+        "Use soap",
+        "Use shampoo",
+        "Change underwear",
+        "Clean nails",
+        "Use body wash",
+        "Wash ears"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Shower",
+          "points": 1,
+          "added": [
+            "have a shower",
+            "take a shower",
+            "showering"
+          ]
+        },
+        {
+          "canonical": "Bathe",
+          "points": 6,
+          "added": [
+            "take a bath",
+            "have a bath",
+            "bath"
+          ]
+        },
+        {
+          "canonical": "Wash hands",
+          "points": 11,
+          "added": [
+            "wash their hands",
+            "wash your hands",
+            "wash my hands",
+            "handwashing"
+          ]
+        },
+        {
+          "canonical": "Brush teeth",
+          "points": 17,
+          "added": [
+            "brush their teeth",
+            "brush your teeth",
+            "brush my teeth",
+            "clean teeth",
+            "brushing teeth"
+          ]
+        },
+        {
+          "canonical": "Wash face",
+          "points": 32,
+          "added": [
+            "wash their face",
+            "wash your face",
+            "wash my face",
+            "washing face"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-073",
+      "canonicalAdditions": [
+        "Cutlery",
+        "Matches",
+        "Lighter",
+        "Rubber bands",
+        "String",
+        "Pen",
+        "Pencil",
+        "Tape",
+        "Pizza cutter",
+        "Ice cream scoop",
+        "Potato masher",
+        "Measuring cup",
+        "Baking paper"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Spoon",
+          "points": 1,
+          "added": [
+            "teaspoon",
+            "teaspoons",
+            "tablespoon",
+            "tablespoons"
+          ]
+        },
+        {
+          "canonical": "Peeler",
+          "points": 15,
+          "added": [
+            "potato peeler",
+            "vegetable peeler"
+          ]
+        },
+        {
+          "canonical": "Tin opener",
+          "points": 20,
+          "added": [
+            "canopener"
+          ]
+        },
+        {
+          "canonical": "Corkscrew",
+          "points": 29,
+          "added": [
+            "wine opener"
+          ]
+        },
+        {
+          "canonical": "Scissors",
+          "points": 43,
+          "added": [
+            "pair of scissors"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-074",
+      "canonicalAdditions": [
+        "Headphones",
+        "Jewellery",
+        "Credit card",
+        "Sunglasses",
+        "Money",
+        "Hair clip",
+        "Water bottle"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Keys",
+          "points": 1,
+          "added": [
+            "car key",
+            "house key",
+            "Car keys",
+            "House keys"
+          ]
+        },
+        {
+          "canonical": "Phone",
+          "points": 6,
+          "added": [
+            "iphone",
+            "samsung phone"
+          ]
+        },
+        {
+          "canonical": "Glasses",
+          "points": 17,
+          "added": [
+            "reading glasses"
+          ]
+        },
+        {
+          "canonical": "Remote control",
+          "points": 22,
+          "added": [
+            "tv remote",
+            "television remote",
+            "remote"
+          ]
+        },
+        {
+          "canonical": "Umbrella",
+          "points": 27,
+          "added": [
+            "brolly"
+          ]
+        },
+        {
+          "canonical": "Earphones",
+          "points": 95,
+          "added": [
+            "ear phones",
+            "ear buds",
+            "AirPods"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-075",
+      "canonicalAdditions": [
+        "Cash",
+        "Card",
+        "Tobacco",
+        "Vape",
+        "Medication",
+        "Mask",
+        "Shopping list",
+        "Mint"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Keys",
+          "points": 6,
+          "added": [
+            "car key",
+            "car keys",
+            "house key",
+            "house keys"
+          ]
+        },
+        {
+          "canonical": "Wallet",
+          "points": 11,
+          "added": [
+            "billfold"
+          ]
+        },
+        {
+          "canonical": "Bank card",
+          "points": 22,
+          "added": [
+            "credit card"
+          ]
+        },
+        {
+          "canonical": "Tissue",
+          "points": 27,
+          "added": [
+            "kleenex"
+          ]
+        },
+        {
+          "canonical": "Pen",
+          "points": 37,
+          "added": [
+            "biro",
+            "ballpoint pen"
+          ]
+        },
+        {
+          "canonical": "Earphones",
+          "points": 64,
+          "added": [
+            "ear phones",
+            "ear buds"
+          ]
+        },
+        {
+          "canonical": "Sweets",
+          "points": 79,
+          "added": [
+            "candy",
+            "lollies"
+          ]
+        },
+        {
+          "canonical": "Glasses",
+          "points": 84,
+          "added": [
+            "reading glasses"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-076",
+      "canonicalAdditions": [
+        "Print",
+        "Sign",
+        "Wreath",
+        "Coat",
+        "Hat",
+        "Plant"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Painting",
+          "points": 1,
+          "added": [
+            "art",
+            "picture",
+            "Artwork"
+          ]
+        },
+        {
+          "canonical": "Photograph",
+          "points": 15,
+          "added": [
+            "photo",
+            "photos",
+            "family photo"
+          ]
+        },
+        {
+          "canonical": "Television",
+          "points": 39,
+          "added": [
+            "tv",
+            "flat screen tv"
+          ]
+        },
+        {
+          "canonical": "Coat hook",
+          "points": 48,
+          "added": [
+            "hook",
+            "Hooks"
+          ]
+        },
+        {
+          "canonical": "Certificate",
+          "points": 67,
+          "added": [
+            "Degree"
+          ]
+        },
+        {
+          "canonical": "Smoke alarm",
+          "points": 86,
+          "added": [
+            "smoke detector"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-077",
+      "canonicalAdditions": [
+        "Mouth",
+        "Hand",
+        "Tap",
+        "Valve",
+        "Padlock",
+        "Car boot",
+        "Car bonnet",
+        "Hatch",
+        "Lid",
+        "Case",
+        "Pencil case",
+        "Pencil box",
+        "Flower"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Cupboard",
+          "points": 25,
+          "added": [
+            "cabinet",
+            "wardrobe",
+            "closet"
+          ]
+        },
+        {
+          "canonical": "Bottle",
+          "points": 29,
+          "added": [
+            "bottle cap"
+          ]
+        },
+        {
+          "canonical": "Umbrella",
+          "points": 48,
+          "added": [
+            "brolly"
+          ]
+        },
+        {
+          "canonical": "Curtain",
+          "points": 53,
+          "added": [
+            "blinds"
+          ]
+        },
+        {
+          "canonical": "Laptop",
+          "points": 76,
+          "added": [
+            "notebook computer",
+            "laptop computer"
+          ]
+        },
+        {
+          "canonical": "Zipper",
+          "points": 91,
+          "added": [
+            "zip",
+            "zips"
+          ]
+        },
+        {
+          "canonical": "Eyes",
+          "points": 100,
+          "added": [
+            "eyelids"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-078",
+      "canonicalAdditions": [
+        "Tablet",
+        "Smartwatch",
+        "Electric scooter",
+        "Cordless vacuum",
+        "Electric bike",
+        "Walkie-talkie",
+        "Portable speaker",
+        "Headphones",
+        "Earbuds",
+        "Toy car"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Torch",
+          "points": 1,
+          "added": [
+            "flash light"
+          ]
+        },
+        {
+          "canonical": "Remote control",
+          "points": 6,
+          "added": [
+            "remote",
+            "tv remote",
+            "television remote"
+          ]
+        },
+        {
+          "canonical": "Phone",
+          "points": 10,
+          "added": [
+            "iphone",
+            "cell",
+            "android phone"
+          ]
+        },
+        {
+          "canonical": "Laptop",
+          "points": 15,
+          "added": [
+            "notebook computer",
+            "laptop computer"
+          ]
+        },
+        {
+          "canonical": "Toy",
+          "points": 34,
+          "added": [
+            "Electronic toy"
+          ]
+        },
+        {
+          "canonical": "Radio",
+          "points": 39,
+          "added": [
+            "portable radio"
+          ]
+        },
+        {
+          "canonical": "Smoke alarm",
+          "points": 43,
+          "added": [
+            "smoke detector"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-079",
+      "canonicalAdditions": [
+        "Cleaning spray",
+        "Disinfectant",
+        "Squeegee",
+        "Dish soap",
+        "Floor cleaner",
+        "Glass cleaner",
+        "Microfibre cloth",
+        "Wipes"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Vacuum cleaner",
+          "points": 1,
+          "added": [
+            "vacuumcleaner"
+          ]
+        },
+        {
+          "canonical": "Duster",
+          "points": 22,
+          "added": [
+            "dust cloth"
+          ]
+        },
+        {
+          "canonical": "Cloth",
+          "points": 27,
+          "added": [
+            "rag",
+            "cleaning cloth"
+          ]
+        },
+        {
+          "canonical": "Detergent",
+          "points": 43,
+          "added": [
+            "cleaning detergent",
+            "cleaning liquid"
+          ]
+        },
+        {
+          "canonical": "Soap",
+          "points": 48,
+          "added": [
+            "bar of soap",
+            "hand soap"
+          ]
+        },
+        {
+          "canonical": "Scrubbing brush",
+          "points": 69,
+          "added": [
+            "Scrubber"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-080",
+      "canonicalAdditions": [
+        "Toilet",
+        "Sink",
+        "Shower",
+        "Bath",
+        "Toilet brush",
+        "Toilet roll holder",
+        "Cotton wool",
+        "Sanitary pad",
+        "Tampon",
+        "Moisturiser",
+        "Perfume"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Toothbrush",
+          "points": 1,
+          "added": [
+            "tooth brush"
+          ]
+        },
+        {
+          "canonical": "Soap",
+          "points": 10,
+          "added": [
+            "bar of soap",
+            "hand soap"
+          ]
+        },
+        {
+          "canonical": "Towel",
+          "points": 20,
+          "added": [
+            "beach towel"
+          ]
+        },
+        {
+          "canonical": "Toilet paper",
+          "points": 25,
+          "added": [
+            "toilet rolls"
+          ]
+        },
+        {
+          "canonical": "Hairbrush",
+          "points": 29,
+          "added": [
+            "hair brush",
+            "brush"
+          ]
+        },
+        {
+          "canonical": "Scales",
+          "points": 76,
+          "added": [
+            "bathroom scale",
+            "bathroom scales"
+          ]
+        },
+        {
+          "canonical": "First aid kit",
+          "points": 86,
+          "added": [
+            "firstaid kit"
+          ]
+        },
+        {
+          "canonical": "Cotton buds",
+          "points": 91,
+          "added": [
+            "cotton swabs",
+            "q tips"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-081",
+      "canonicalAdditions": [
+        "Mattress",
+        "Sheet",
+        "Desk",
+        "Computer",
+        "Socks",
+        "Pyjamas",
+        "Dressing gown",
+        "Slippers",
+        "Phone charger",
+        "Clothes hanger",
+        "Jewellery",
+        "Bookshelf"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Duvet",
+          "points": 17,
+          "added": [
+            "quilt"
+          ]
+        },
+        {
+          "canonical": "Chest of drawers",
+          "points": 27,
+          "added": [
+            "drawers"
+          ]
+        },
+        {
+          "canonical": "Bedside table",
+          "points": 32,
+          "added": [
+            "nightstand",
+            "night stand"
+          ]
+        },
+        {
+          "canonical": "Alarm clock",
+          "points": 43,
+          "added": [
+            "clock"
+          ]
+        },
+        {
+          "canonical": "Shoes",
+          "points": 58,
+          "added": [
+            "pair of shoes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-082",
+      "canonicalAdditions": [
+        "Screwdriver",
+        "Pliers",
+        "Spanner",
+        "Nails",
+        "Screws",
+        "Leaf blower",
+        "Hedge trimmer",
+        "Weed trimmer",
+        "Sawhorse",
+        "Tyre",
+        "Car parts",
+        "Christmas decorations"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Lawn mower",
+          "points": 1,
+          "added": [
+            "mower"
+          ]
+        },
+        {
+          "canonical": "Bicycle",
+          "points": 6,
+          "added": [
+            "bike",
+            "pushbike",
+            "push bike"
+          ]
+        },
+        {
+          "canonical": "Spade",
+          "points": 10,
+          "added": [
+            "shovel"
+          ]
+        },
+        {
+          "canonical": "Hose",
+          "points": 53,
+          "added": [
+            "garden hose",
+            "hosepipe"
+          ]
+        },
+        {
+          "canonical": "Motorbike",
+          "points": 86,
+          "added": [
+            "motor cycle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-083",
+      "canonicalAdditions": [
+        "Cup",
+        "Mug",
+        "Table",
+        "Door",
+        "Glasses",
+        "Screen",
+        "Phone",
+        "Television",
+        "Oven",
+        "Microwave door",
+        "Carafe",
+        "Decanter"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Window",
+          "points": 1,
+          "added": [
+            "window pane",
+            "window glass"
+          ]
+        },
+        {
+          "canonical": "Drinking glass",
+          "points": 11,
+          "added": [
+            "tumbler",
+            "glass tumbler"
+          ]
+        },
+        {
+          "canonical": "Light bulb",
+          "points": 32,
+          "added": [
+            "lightbulb",
+            "bulb"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-084",
+      "canonicalAdditions": [
+        "Steak",
+        "Bacon",
+        "Fruit",
+        "Fish fingers",
+        "Mince",
+        "Burger",
+        "Leftovers"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Ice cubes",
+          "points": 6,
+          "added": [
+            "Ice"
+          ]
+        },
+        {
+          "canonical": "Frozen peas",
+          "points": 11,
+          "added": [
+            "peas"
+          ]
+        },
+        {
+          "canonical": "Meat",
+          "points": 17,
+          "added": [
+            "beef",
+            "pork",
+            "lamb"
+          ]
+        },
+        {
+          "canonical": "Fish",
+          "points": 22,
+          "added": [
+            "fishes"
+          ]
+        },
+        {
+          "canonical": "Pizza",
+          "points": 32,
+          "added": [
+            "pizza slice",
+            "slice of pizza"
+          ]
+        },
+        {
+          "canonical": "Vegetables",
+          "points": 48,
+          "added": [
+            "Frozen vegetables"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-085",
+      "canonicalAdditions": [
+        "Hotplate",
+        "Dutch oven",
+        "Casserole dish",
+        "Baking tray",
+        "Baking tin",
+        "Roasting tin"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Hob",
+          "points": 6,
+          "added": [
+            "Cooker",
+            "Gas burner",
+            "Induction hob"
+          ]
+        },
+        {
+          "canonical": "Microwave",
+          "points": 11,
+          "added": [
+            "microwave oven"
+          ]
+        },
+        {
+          "canonical": "Frying pan",
+          "points": 17,
+          "added": [
+            "frypan",
+            "fryingpan",
+            "Skillet"
+          ]
+        },
+        {
+          "canonical": "Grill",
+          "points": 37,
+          "added": [
+            "broiler"
+          ]
+        },
+        {
+          "canonical": "Barbecue",
+          "points": 43,
+          "added": [
+            "bbq",
+            "barbeque"
+          ]
+        },
+        {
+          "canonical": "Air fryer",
+          "points": 48,
+          "added": [
+            "airfryer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-086",
+      "canonicalAdditions": [
+        "Stain spray",
+        "Dryer balls",
+        "Laundry pods",
+        "Peg basket"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Detergent",
+          "points": 6,
+          "added": [
+            "Laundry soap"
+          ]
+        },
+        {
+          "canonical": "Clothes peg",
+          "points": 22,
+          "added": [
+            "pegs",
+            "peg"
+          ]
+        },
+        {
+          "canonical": "Clothesline",
+          "points": 27,
+          "added": [
+            "clothes line"
+          ]
+        },
+        {
+          "canonical": "Drying rack",
+          "points": 32,
+          "added": [
+            "clothes rack",
+            "laundry rack",
+            "clothes airer",
+            "Clothes horse"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-087",
+      "canonicalAdditions": [
+        "Bolt",
+        "Nut",
+        "Sealant",
+        "Superglue",
+        "Paint",
+        "Putty",
+        "Staple gun",
+        "Socket set",
+        "Ratchet",
+        "File",
+        "Chisel"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Screwdriver",
+          "points": 7,
+          "added": [
+            "screw driver"
+          ]
+        },
+        {
+          "canonical": "Pliers",
+          "points": 18,
+          "added": [
+            "pair of pliers"
+          ]
+        },
+        {
+          "canonical": "Spanner",
+          "points": 23,
+          "added": [
+            "wrenches",
+            "adjustable wrench"
+          ]
+        },
+        {
+          "canonical": "Duct tape",
+          "points": 62,
+          "added": [
+            "gaffer tape",
+            "duck tape",
+            "Tape"
+          ]
+        },
+        {
+          "canonical": "Allen key",
+          "points": 73,
+          "added": [
+            "hex key",
+            "hex wrench"
+          ]
+        },
+        {
+          "canonical": "Utility knife",
+          "points": 84,
+          "added": [
+            "boxcutter"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-088",
+      "canonicalAdditions": [
+        "Open door",
+        "Cold water",
+        "Cooling mat",
+        "Ice",
+        "Shower",
+        "Bath",
+        "Sprinkler"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Fan",
+          "points": 1,
+          "added": [
+            "electric fan",
+            "Portable fan",
+            "Desk fan"
+          ]
+        },
+        {
+          "canonical": "Air conditioner",
+          "points": 6,
+          "added": [
+            "aircon",
+            "air con",
+            "ac",
+            "a c",
+            "air conditioning unit",
+            "Air conditioning"
+          ]
+        },
+        {
+          "canonical": "Open window",
+          "points": 22,
+          "added": [
+            "opening a window"
+          ]
+        },
+        {
+          "canonical": "Cotton sheets",
+          "points": 84,
+          "added": [
+            "light bedding",
+            "cotton bedding"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-089",
+      "canonicalAdditions": [
+        "Lunch bag",
+        "Freezer bag",
+        "Sandwich bag",
+        "Bag",
+        "Box",
+        "Canister",
+        "Bowl"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Fridge",
+          "points": 1,
+          "added": [
+            "refrigerator"
+          ]
+        },
+        {
+          "canonical": "Pantry",
+          "points": 17,
+          "added": [
+            "larder"
+          ]
+        },
+        {
+          "canonical": "Plastic tub",
+          "points": 37,
+          "added": [
+            "food container",
+            "plastic container",
+            "Container",
+            "Tupperware",
+            "Tub"
+          ]
+        },
+        {
+          "canonical": "Food bag",
+          "points": 48,
+          "added": [
+            "plastic bag",
+            "Ziplock bag"
+          ]
+        },
+        {
+          "canonical": "Vacuum bag",
+          "points": 84,
+          "added": [
+            "vacuum sealed bag"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-090",
+      "canonicalAdditions": [
+        "Food",
+        "Bottle",
+        "Wine bottle",
+        "Flowers",
+        "Cutlery",
+        "Bread",
+        "Butter",
+        "Jam",
+        "Sauce",
+        "Chopsticks",
+        "Serving spoon",
+        "Pepper",
+        "Salt"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Napkin",
+          "points": 39,
+          "added": [
+            "serviette",
+            "serviettes"
+          ]
+        },
+        {
+          "canonical": "Salt shaker",
+          "points": 53,
+          "added": [
+            "salt cellar",
+            "salt pot"
+          ]
+        },
+        {
+          "canonical": "Pepper grinder",
+          "points": 58,
+          "added": [
+            "pepper mill",
+            "pepper shaker"
+          ]
+        },
+        {
+          "canonical": "Coaster",
+          "points": 86,
+          "added": [
+            "drink coaster"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-094",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Computer",
+          "points": 53,
+          "added": [
+            "pc",
+            "personal computer"
+          ]
+        },
+        {
+          "canonical": "Shoes",
+          "points": 69,
+          "added": [
+            "pair of shoes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-096",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Soap",
+          "points": 17,
+          "added": [
+            "bar of soap",
+            "hand soap"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-102",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Tram",
+          "points": 23,
+          "added": [
+            "street car"
+          ]
+        },
+        {
+          "canonical": "Bicycle",
+          "points": 31,
+          "added": [
+            "bike",
+            "pushbike",
+            "push bike"
+          ]
+        },
+        {
+          "canonical": "Motorbike",
+          "points": 35,
+          "added": [
+            "motor cycle"
+          ]
+        },
+        {
+          "canonical": "Coach",
+          "points": 40,
+          "added": [
+            "coach bus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-103",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Pyjamas",
+          "points": 1,
+          "added": [
+            "pj's"
+          ]
+        },
+        {
+          "canonical": "Hairbrush",
+          "points": 39,
+          "added": [
+            "hair brush",
+            "brush"
+          ]
+        },
+        {
+          "canonical": "Soap",
+          "points": 53,
+          "added": [
+            "bar of soap",
+            "hand soap"
+          ]
+        },
+        {
+          "canonical": "Towel",
+          "points": 58,
+          "added": [
+            "beach towel"
+          ]
+        },
+        {
+          "canonical": "Shoes",
+          "points": 76,
+          "added": [
+            "pair of shoes"
+          ]
+        },
+        {
+          "canonical": "Glasses",
+          "points": 81,
+          "added": [
+            "reading glasses"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-104",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Towel",
+          "points": 58,
+          "added": [
+            "beach towel"
+          ]
+        },
+        {
+          "canonical": "Soap",
+          "points": 62,
+          "added": [
+            "bar of soap",
+            "hand soap"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-105",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Read",
+          "points": 43,
+          "added": [
+            "read a book",
+            "reading a book"
+          ]
+        },
+        {
+          "canonical": "Use toilet",
+          "points": 69,
+          "added": [
+            "go to the toilet"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-109",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Theatre",
+          "points": 53,
+          "added": [
+            "theater"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-111",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Swim",
+          "points": 22,
+          "added": [
+            "go swimming"
+          ]
+        },
+        {
+          "canonical": "Fish",
+          "points": 27,
+          "added": [
+            "fishes"
+          ]
+        },
+        {
+          "canonical": "Read",
+          "points": 32,
+          "added": [
+            "read a book",
+            "reading a book"
+          ]
+        },
+        {
+          "canonical": "Play games",
+          "points": 37,
+          "added": [
+            "gaming",
+            "play a game",
+            "play video games"
+          ]
+        },
+        {
+          "canonical": "Take photographs",
+          "points": 64,
+          "added": [
+            "take photos",
+            "take pictures",
+            "photography"
+          ]
+        },
+        {
+          "canonical": "Cycle",
+          "points": 79,
+          "added": [
+            "ride a bicycle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-116",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Lifebuoy",
+          "points": 67,
+          "added": [
+            "life ring",
+            "life belt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-118",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Swim",
+          "points": 1,
+          "added": [
+            "go swimming"
+          ]
+        },
+        {
+          "canonical": "Dance",
+          "points": 17,
+          "added": [
+            "go dancing"
+          ]
+        },
+        {
+          "canonical": "Read",
+          "points": 32,
+          "added": [
+            "read a book",
+            "reading a book"
+          ]
+        },
+        {
+          "canonical": "Play games",
+          "points": 48,
+          "added": [
+            "gaming",
+            "play a game",
+            "play video games"
+          ]
+        },
+        {
+          "canonical": "Listen to music",
+          "points": 69,
+          "added": [
+            "listen to songs"
+          ]
+        },
+        {
+          "canonical": "Take photographs",
+          "points": 95,
+          "added": [
+            "take photos",
+            "take pictures",
+            "photography"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-120",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Toilet",
+          "points": 37,
+          "added": [
+            "loo",
+            "lavatory",
+            "restroom",
+            "bathroom"
+          ]
+        },
+        {
+          "canonical": "Bin",
+          "points": 84,
+          "added": [
+            "dustbin"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-121",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Table tennis",
+          "points": 48,
+          "added": [
+            "ping pong"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-122",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Badminton",
+          "points": 6,
+          "added": [
+            "badmington"
+          ]
+        },
+        {
+          "canonical": "Table tennis",
+          "points": 27,
+          "added": [
+            "ping pong"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-124",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Towel",
+          "points": 1,
+          "added": [
+            "beach towel"
+          ]
+        },
+        {
+          "canonical": "Sunscreen",
+          "points": 6,
+          "added": [
+            "sun screen",
+            "sunblock",
+            "sun cream",
+            "sun lotion"
+          ]
+        },
+        {
+          "canonical": "Sunglasses",
+          "points": 15,
+          "added": [
+            "sun glasses",
+            "sunnies",
+            "shades"
+          ]
+        },
+        {
+          "canonical": "Umbrella",
+          "points": 34,
+          "added": [
+            "brolly"
+          ]
+        },
+        {
+          "canonical": "Flip-flops",
+          "points": 72,
+          "added": [
+            "sliders"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-125",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Bin",
+          "points": 53,
+          "added": [
+            "dustbin"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-127",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Dumbbell",
+          "points": 17,
+          "added": [
+            "dumb bell",
+            "dumb bells"
+          ]
+        },
+        {
+          "canonical": "Barbell",
+          "points": 22,
+          "added": [
+            "bar bell"
+          ]
+        },
+        {
+          "canonical": "Skipping rope",
+          "points": 37,
+          "added": [
+            "jump rope",
+            "skip rope"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-131",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Take photographs",
+          "points": 74,
+          "added": [
+            "take photos",
+            "take pictures",
+            "photography"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-132",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Life jacket",
+          "points": 69,
+          "added": [
+            "lifejacket",
+            "life vest",
+            "pfd"
+          ]
+        },
+        {
+          "canonical": "Pliers",
+          "points": 74,
+          "added": [
+            "pair of pliers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-133",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Badminton",
+          "points": 20,
+          "added": [
+            "badmington"
+          ]
+        },
+        {
+          "canonical": "Table tennis",
+          "points": 29,
+          "added": [
+            "ping pong"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-134",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Coach",
+          "points": 95,
+          "added": [
+            "coach bus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-135",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Play games",
+          "points": 17,
+          "added": [
+            "gaming",
+            "play a game",
+            "play video games"
+          ]
+        },
+        {
+          "canonical": "Read",
+          "points": 22,
+          "added": [
+            "read a book",
+            "reading a book"
+          ]
+        },
+        {
+          "canonical": "Listen to music",
+          "points": 27,
+          "added": [
+            "listen to songs"
+          ]
+        },
+        {
+          "canonical": "Walk",
+          "points": 48,
+          "added": [
+            "go for a walk",
+            "take a walk"
+          ]
+        },
+        {
+          "canonical": "Take photographs",
+          "points": 58,
+          "added": [
+            "take photos",
+            "take pictures",
+            "photography"
+          ]
+        },
+        {
+          "canonical": "Play cards",
+          "points": 74,
+          "added": [
+            "card games",
+            "play a card game"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-136",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Skipping rope",
+          "points": 25,
+          "added": [
+            "jump rope",
+            "skip rope"
+          ]
+        },
+        {
+          "canonical": "Lego",
+          "points": 53,
+          "added": [
+            "lego bricks",
+            "lego blocks"
+          ]
+        },
+        {
+          "canonical": "Play-Doh",
+          "points": 81,
+          "added": [
+            "play dough",
+            "playdough"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-138",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Gloves",
+          "points": 40,
+          "added": [
+            "pair of gloves"
+          ]
+        },
+        {
+          "canonical": "Shoes",
+          "points": 89,
+          "added": [
+            "pair of shoes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-140",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Gloves",
+          "points": 58,
+          "added": [
+            "pair of gloves"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-142",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Lego house",
+          "points": 22,
+          "added": [
+            "lego building"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-143",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Swim",
+          "points": 1,
+          "added": [
+            "go swimming"
+          ]
+        },
+        {
+          "canonical": "Do yoga",
+          "points": 32,
+          "added": [
+            "practise yoga",
+            "practice yoga"
+          ]
+        },
+        {
+          "canonical": "Dance",
+          "points": 37,
+          "added": [
+            "go dancing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-144",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Take photographs",
+          "points": 43,
+          "added": [
+            "take photos",
+            "take pictures",
+            "photography"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-159",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Dance",
+          "points": 57,
+          "added": [
+            "go dancing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-160",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Dance",
+          "points": 6,
+          "added": [
+            "go dancing"
+          ]
+        },
+        {
+          "canonical": "Take photographs",
+          "points": 27,
+          "added": [
+            "take photos",
+            "take pictures",
+            "photography"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-161",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Theatre",
+          "points": 11,
+          "added": [
+            "theater"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-162",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Scarf",
+          "points": 6,
+          "added": [
+            "scarfs"
+          ]
+        },
+        {
+          "canonical": "Gloves",
+          "points": 15,
+          "added": [
+            "pair of gloves"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-163",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Computer",
+          "points": 25,
+          "added": [
+            "pc",
+            "personal computer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-169",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Sweets",
+          "points": 62,
+          "added": [
+            "candy",
+            "lollies"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-172",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Take photos",
+          "points": 11,
+          "added": [
+            "take pictures",
+            "take photographs",
+            "photography"
+          ]
+        },
+        {
+          "canonical": "Read",
+          "points": 22,
+          "added": [
+            "read a book",
+            "reading a book"
+          ]
+        },
+        {
+          "canonical": "Play games",
+          "points": 27,
+          "added": [
+            "gaming",
+            "play a game",
+            "play video games"
+          ]
+        },
+        {
+          "canonical": "Listen to music",
+          "points": 58,
+          "added": [
+            "listen to songs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-173",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Bicycle",
+          "points": 27,
+          "added": [
+            "bike",
+            "pushbike",
+            "push bike"
+          ]
+        },
+        {
+          "canonical": "Umbrella",
+          "points": 43,
+          "added": [
+            "brolly"
+          ]
+        },
+        {
+          "canonical": "Shoes",
+          "points": 58,
+          "added": [
+            "pair of shoes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-174",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Bicycle",
+          "points": 22,
+          "added": [
+            "bike",
+            "pushbike",
+            "push bike"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-175",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Tram",
+          "points": 22,
+          "added": [
+            "street car"
+          ]
+        },
+        {
+          "canonical": "Cinema",
+          "points": 32,
+          "added": [
+            "movie theater",
+            "movie theatre"
+          ]
+        },
+        {
+          "canonical": "Theatre",
+          "points": 37,
+          "added": [
+            "theater"
+          ]
+        },
+        {
+          "canonical": "Football match",
+          "points": 43,
+          "added": [
+            "soccer game",
+            "football game"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-176",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Photograph",
+          "points": 37,
+          "added": [
+            "photo",
+            "photos"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-177",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Read",
+          "points": 37,
+          "added": [
+            "read a book",
+            "reading a book"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-178",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Bicycle",
+          "points": 37,
+          "added": [
+            "bike",
+            "pushbike",
+            "push bike"
+          ]
+        },
+        {
+          "canonical": "Motorbike",
+          "points": 43,
+          "added": [
+            "motor cycle"
+          ]
+        },
+        {
+          "canonical": "Laptop",
+          "points": 69,
+          "added": [
+            "notebook computer",
+            "laptop computer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-181",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Read",
+          "points": 43,
+          "added": [
+            "read a book",
+            "reading a book"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-182",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Glasses",
+          "points": 17,
+          "added": [
+            "reading glasses"
+          ]
+        },
+        {
+          "canonical": "Umbrella",
+          "points": 32,
+          "added": [
+            "brolly"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-184",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Sweets",
+          "points": 22,
+          "added": [
+            "candy",
+            "lollies"
+          ]
+        },
+        {
+          "canonical": "Biscuits",
+          "points": 53,
+          "added": [
+            "cookie"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-185",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Photograph",
+          "points": 43,
+          "added": [
+            "photo",
+            "photos"
+          ]
+        },
+        {
+          "canonical": "Cheque",
+          "points": 74,
+          "added": [
+            "check"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-186",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Walk",
+          "points": 17,
+          "added": [
+            "go for a walk",
+            "take a walk"
+          ]
+        },
+        {
+          "canonical": "Cycle",
+          "points": 22,
+          "added": [
+            "ride a bicycle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-187",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Toilet",
+          "points": 32,
+          "added": [
+            "loo",
+            "lavatory",
+            "restroom",
+            "bathroom"
+          ]
+        },
+        {
+          "canonical": "Cinema",
+          "points": 69,
+          "added": [
+            "movie theater",
+            "movie theatre"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-188",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Pizza",
+          "points": 17,
+          "added": [
+            "pizza slice",
+            "slice of pizza"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-190",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Fish",
+          "points": 48,
+          "added": [
+            "fishes"
+          ]
+        },
+        {
+          "canonical": "Soap",
+          "points": 76,
+          "added": [
+            "bar of soap",
+            "hand soap"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-192",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Shoes",
+          "points": 11,
+          "added": [
+            "pair of shoes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-193",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Shirt",
+          "points": 9,
+          "added": [
+            "shirts"
+          ]
+        },
+        {
+          "canonical": "Shelf",
+          "points": 22,
+          "added": [
+            "shelves"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-194",
+      "canonicalAdditions": [
+        "Apron",
+        "Scarf",
+        "Tie",
+        "Belt",
+        "Necklace",
+        "Medal",
+        "Umbrella",
+        "Headphones",
+        "Guitar",
+        "Sign",
+        "Flag"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Shirt",
+          "points": 10,
+          "added": [
+            "t-shirt",
+            "tshirt",
+            "tee shirt"
+          ]
+        },
+        {
+          "canonical": "Trousers",
+          "points": 18,
+          "added": [
+            "jeans"
+          ]
+        },
+        {
+          "canonical": "Towel",
+          "points": 27,
+          "added": [
+            "beach towel"
+          ]
+        },
+        {
+          "canonical": "Washing",
+          "points": 31,
+          "added": [
+            "laundry",
+            "clothes",
+            "clothing",
+            "wet clothes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-199",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Shirt",
+          "points": 7,
+          "added": [
+            "shirts"
+          ]
+        },
+        {
+          "canonical": "Boots",
+          "points": 56,
+          "added": [
+            "boot",
+            "pair of boots"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-201",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Pizza",
+          "points": 53,
+          "added": [
+            "pizza slice",
+            "slice of pizza"
+          ]
+        },
+        {
+          "canonical": "Biscuit",
+          "points": 64,
+          "added": [
+            "cookies"
+          ]
+        },
+        {
+          "canonical": "Doughnut",
+          "points": 84,
+          "added": [
+            "donuts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-202",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Scissors",
+          "points": 6,
+          "added": [
+            "pair of scissors"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-203",
+      "canonicalAdditions": [
+        "Jumper",
+        "Leggings",
+        "Swimming cap",
+        "Hose",
+        "Condom",
+        "Hair scrunchie"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Rubber band",
+          "points": 1,
+          "added": [
+            "elastic band"
+          ]
+        },
+        {
+          "canonical": "Lycra",
+          "points": 48,
+          "added": [
+            "lycra fabric"
+          ]
+        },
+        {
+          "canonical": "Spandex",
+          "points": 53,
+          "added": [
+            "spandex fabric"
+          ]
+        },
+        {
+          "canonical": "Hair tie",
+          "points": 74,
+          "added": [
+            "hair band",
+            "ponytail holder"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-204",
+      "canonicalAdditions": [
+        "Air",
+        "Spectacles",
+        "Plastic bag",
+        "Window pane",
+        "Shower curtain",
+        "Resin"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Perspex",
+          "points": 64,
+          "added": [
+            "acrylic",
+            "plexiglass"
+          ]
+        },
+        {
+          "canonical": "Jellyfish",
+          "points": 79,
+          "added": [
+            "jelly fish"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-205",
+      "canonicalAdditions": [
+        "Ice lolly",
+        "Crayon",
+        "Margarine",
+        "Ghee",
+        "Coconut oil",
+        "Buttercream",
+        "Bronze",
+        "Brass",
+        "Mercury"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Ice",
+          "points": 1,
+          "added": [
+            "Ice cube"
+          ]
+        },
+        {
+          "canonical": "Ice cream",
+          "points": 11,
+          "added": [
+            "icecream",
+            "gelato"
+          ]
+        },
+        {
+          "canonical": "Aluminium",
+          "points": 74,
+          "added": [
+            "aluminum"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-206",
+      "canonicalAdditions": [
+        "Peanut butter",
+        "Golden syrup",
+        "Maple syrup",
+        "Blu Tack",
+        "Dried fruit",
+        "Rice",
+        "Cinnamon bun"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Glue",
+          "points": 1,
+          "added": [
+            "Adhesive",
+            "Glue stick"
+          ]
+        },
+        {
+          "canonical": "Sticky tape",
+          "points": 27,
+          "added": [
+            "sellotape",
+            "scotch tape",
+            "adhesive tape",
+            "tape"
+          ]
+        },
+        {
+          "canonical": "Adhesive label",
+          "points": 64,
+          "added": [
+            "sticky label",
+            "Sticker"
+          ]
+        },
+        {
+          "canonical": "Spiderweb",
+          "points": 90,
+          "added": [
+            "spider web",
+            "cobweb"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-207",
+      "canonicalAdditions": [
+        "Paper",
+        "Fabric",
+        "Sock",
+        "Shirt",
+        "Mattress",
+        "Belt",
+        "Ribbon",
+        "Bandage",
+        "Tarpaulin",
+        "Scarf"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Yoga mat",
+          "points": 27,
+          "added": [
+            "Exercise mat",
+            "gym mat",
+            "fitness mat"
+          ]
+        },
+        {
+          "canonical": "Towel",
+          "points": 43,
+          "added": [
+            "beach towel"
+          ]
+        },
+        {
+          "canonical": "Sleeve",
+          "points": 64,
+          "added": [
+            "shirt sleeve",
+            "shirt sleeves",
+            "jacket sleeve",
+            "jacket sleeves",
+            "cuff",
+            "cuffs"
+          ]
+        },
+        {
+          "canonical": "Trouser leg",
+          "points": 69,
+          "added": [
+            "pants",
+            "trousers",
+            "jeans",
+            "pant leg",
+            "pant legs",
+            "jean leg",
+            "jean legs",
+            "trouser cuff",
+            "trouser cuffs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-208",
+      "canonicalAdditions": [
+        "Shoes",
+        "Trainers",
+        "Curtain",
+        "Dressing gown",
+        "Bikini",
+        "Swimsuit"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Shoelace",
+          "points": 1,
+          "added": [
+            "shoe lace",
+            "shoe laces",
+            "Shoelaces",
+            "Laces"
+          ]
+        },
+        {
+          "canonical": "Tie",
+          "points": 6,
+          "added": [
+            "Necktie",
+            "neck tie"
+          ]
+        },
+        {
+          "canonical": "Scarf",
+          "points": 53,
+          "added": [
+            "scarfs"
+          ]
+        },
+        {
+          "canonical": "Hair",
+          "points": 58,
+          "added": [
+            "ponytail",
+            "plait",
+            "braid"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-209",
+      "canonicalAdditions": [
+        "Wine bottle",
+        "Drinking glass",
+        "Eggshell",
+        "Phone",
+        "Ceramic bowl",
+        "Christmas bauble",
+        "Test tube"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "China",
+          "points": 11,
+          "added": [
+            "fine china",
+            "chinaware"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-210",
+      "canonicalAdditions": [
+        "Tyre",
+        "Spinner",
+        "Washing machine",
+        "Tumble dryer",
+        "Pinwheel",
+        "Windmill",
+        "Ball",
+        "Hula hoop"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Wheel",
+          "points": 1,
+          "added": [
+            "Car wheel",
+            "Bicycle wheel",
+            "Wheelchair wheel"
+          ]
+        },
+        {
+          "canonical": "Potter's wheel",
+          "points": 79,
+          "added": [
+            "pottery wheel"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-211",
+      "canonicalAdditions": [
+        "Log",
+        "Stick",
+        "Paper",
+        "Plastic bottle",
+        "Sponge",
+        "Oil",
+        "Inflatable mattress"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Raft",
+          "points": 11,
+          "added": [
+            "Life raft"
+          ]
+        },
+        {
+          "canonical": "Cork",
+          "points": 16,
+          "added": [
+            "Cork stopper"
+          ]
+        },
+        {
+          "canonical": "Beach ball",
+          "points": 36,
+          "added": [
+            "inflatable ball",
+            "Waterproof ball"
+          ]
+        },
+        {
+          "canonical": "Lifebuoy",
+          "points": 41,
+          "added": [
+            "life ring",
+            "lifering",
+            "life belt"
+          ]
+        },
+        {
+          "canonical": "Life jacket",
+          "points": 46,
+          "added": [
+            "lifejacket",
+            "life vest",
+            "pfd"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-212",
+      "canonicalAdditions": [
+        "Vinyl flooring",
+        "Lino",
+        "Sushi",
+        "Pastry",
+        "Dough",
+        "Coins"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Toilet paper",
+          "points": 1,
+          "added": [
+            "toilet tissue",
+            "loo paper"
+          ]
+        },
+        {
+          "canonical": "Kitchen paper",
+          "points": 6,
+          "added": [
+            "kitchen towel",
+            "kitchen towels"
+          ]
+        },
+        {
+          "canonical": "Sticky tape",
+          "points": 22,
+          "added": [
+            "sellotape",
+            "scotch tape",
+            "adhesive tape"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-213",
+      "canonicalAdditions": [
+        "Jeans",
+        "Trousers",
+        "Shorts",
+        "Tights",
+        "Spectacles",
+        "Sunglasses",
+        "Headphones"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Shoes",
+          "points": 1,
+          "added": [
+            "pair of shoes",
+            "Trainers",
+            "sneakers",
+            "running shoes"
+          ]
+        },
+        {
+          "canonical": "Gloves",
+          "points": 11,
+          "added": [
+            "pair of gloves"
+          ]
+        },
+        {
+          "canonical": "Boots",
+          "points": 27,
+          "added": [
+            "pair of boots"
+          ]
+        },
+        {
+          "canonical": "Cufflinks",
+          "points": 69,
+          "added": [
+            "cuff links"
+          ]
+        },
+        {
+          "canonical": "Flippers",
+          "points": 84,
+          "added": [
+            "fins",
+            "swim fins"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-214",
+      "canonicalAdditions": [
+        "Boots",
+        "Outdoor cushion",
+        "Phone",
+        "Camera",
+        "Kayak",
+        "Rubber gloves"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Raincoat",
+          "points": 1,
+          "added": [
+            "Jacket",
+            "waterproof jacket",
+            "rain jacket",
+            "Coat",
+            "waterproof coat"
+          ]
+        },
+        {
+          "canonical": "Umbrella",
+          "points": 6,
+          "added": [
+            "brolly"
+          ]
+        },
+        {
+          "canonical": "Dry bag",
+          "points": 22,
+          "added": [
+            "drybag"
+          ]
+        },
+        {
+          "canonical": "Tarpaulin",
+          "points": 27,
+          "added": [
+            "tarp"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-215",
+      "canonicalAdditions": [
+        "Toothbrush",
+        "Hairbrush",
+        "Comb",
+        "Razor",
+        "Shaver",
+        "Iron",
+        "Ladle",
+        "Spatula",
+        "Trolley",
+        "Wheelbarrow",
+        "Bicycle",
+        "Motorbike",
+        "Pram",
+        "Pushchair",
+        "Corkscrew"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Door",
+          "points": 1,
+          "added": [
+            "door handle"
+          ]
+        },
+        {
+          "canonical": "Umbrella",
+          "points": 34,
+          "added": [
+            "brolly"
+          ]
+        },
+        {
+          "canonical": "Scissors",
+          "points": 89,
+          "added": [
+            "pair of scissors"
+          ]
+        },
+        {
+          "canonical": "Tennis racket",
+          "points": 100,
+          "added": [
+            "tennis racquet",
+            "racket",
+            "racquet"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-216",
+      "canonicalAdditions": [
+        "Pen",
+        "Marker",
+        "Lipstick",
+        "Tub",
+        "Container",
+        "Laundry basket",
+        "Coffin",
+        "Thermos"
+      ],
+      "aliasAdditions": [
+        {
+          "canonical": "Bin",
+          "points": 17,
+          "added": [
+            "dustbin",
+            "waste bin"
+          ]
+        },
+        {
+          "canonical": "Saucepan",
+          "points": 22,
+          "added": [
+            "cooking pot",
+            "pan"
+          ]
+        },
+        {
+          "canonical": "Toilet",
+          "points": 48,
+          "added": [
+            "loo",
+            "lavatory",
+            "restroom",
+            "bathroom"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-218",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Bin",
+          "points": 53,
+          "added": [
+            "dustbin"
+          ]
+        },
+        {
+          "canonical": "Toilet",
+          "points": 62,
+          "added": [
+            "loo",
+            "lavatory",
+            "restroom",
+            "bathroom"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-219",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Gloves",
+          "points": 43,
+          "added": [
+            "pair of gloves"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-220",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Skip",
+          "points": 86,
+          "added": [
+            "skipping",
+            "jump rope"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-221",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Motorbike",
+          "points": 17,
+          "added": [
+            "motor cycle"
+          ]
+        },
+        {
+          "canonical": "Bicycle",
+          "points": 22,
+          "added": [
+            "bike",
+            "pushbike",
+            "push bike"
+          ]
+        },
+        {
+          "canonical": "Fire engine",
+          "points": 48,
+          "added": [
+            "fire truck",
+            "firetruck"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-223",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Sunscreen",
+          "points": 1,
+          "added": [
+            "sun screen",
+            "sunblock",
+            "sun cream",
+            "sun lotion"
+          ]
+        },
+        {
+          "canonical": "Sunglasses",
+          "points": 11,
+          "added": [
+            "sun glasses",
+            "sunnies"
+          ]
+        },
+        {
+          "canonical": "Umbrella",
+          "points": 17,
+          "added": [
+            "brolly"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-224",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Fish",
+          "points": 6,
+          "added": [
+            "fishes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-225",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Walk",
+          "points": 11,
+          "added": [
+            "go for a walk",
+            "take a walk"
+          ]
+        },
+        {
+          "canonical": "Bathe",
+          "points": 27,
+          "added": [
+            "bath",
+            "have a bath",
+            "take a bath"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-228",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Shoes",
+          "points": 22,
+          "added": [
+            "pair of shoes"
+          ]
+        },
+        {
+          "canonical": "Fish",
+          "points": 53,
+          "added": [
+            "fishes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-231",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Motorbike",
+          "points": 37,
+          "added": [
+            "motor cycle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-232",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Potato",
+          "points": 6,
+          "added": [
+            "potatoes"
+          ]
+        },
+        {
+          "canonical": "Tomato",
+          "points": 10,
+          "added": [
+            "tomatoes"
+          ]
+        },
+        {
+          "canonical": "Beetroot",
+          "points": 67,
+          "added": [
+            "beets"
+          ]
+        },
+        {
+          "canonical": "Sweetcorn",
+          "points": 81,
+          "added": [
+            "sweet corn",
+            "corn"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-233",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Cactus",
+          "points": 15,
+          "added": [
+            "cacti",
+            "cactuses"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-234",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "First aid kit",
+          "points": 6,
+          "added": [
+            "firstaid kit"
+          ]
+        },
+        {
+          "canonical": "Plaster",
+          "points": 17,
+          "added": [
+            "band aid",
+            "bandaid"
+          ]
+        },
+        {
+          "canonical": "Life jacket",
+          "points": 48,
+          "added": [
+            "lifejacket",
+            "life vest",
+            "pfd"
+          ]
+        },
+        {
+          "canonical": "Lifebuoy",
+          "points": 53,
+          "added": [
+            "life ring",
+            "life belt"
+          ]
+        },
+        {
+          "canonical": "Smoke alarm",
+          "points": 100,
+          "added": [
+            "smoke detector"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-237",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Toilet",
+          "points": 22,
+          "added": [
+            "loo",
+            "lavatory",
+            "restroom",
+            "bathroom"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-238",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Gloves",
+          "points": 7,
+          "added": [
+            "pair of gloves"
+          ]
+        },
+        {
+          "canonical": "Life jacket",
+          "points": 100,
+          "added": [
+            "lifejacket",
+            "life vest",
+            "pfd"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hg7-240",
+      "canonicalAdditions": [],
+      "aliasAdditions": [
+        {
+          "canonical": "Scarf",
+          "points": 67,
+          "added": [
+            "scarfs"
+          ]
+        },
+        {
+          "canonical": "Gloves",
+          "points": 72,
+          "added": [
+            "pair of gloves"
+          ]
+        },
+        {
+          "canonical": "Beanie",
+          "points": 76,
+          "added": [
+            "beanie hat"
+          ]
+        }
+      ]
+    }
+  ]
+}

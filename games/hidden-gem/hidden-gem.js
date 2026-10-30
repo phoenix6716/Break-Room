@@ -21,7 +21,18 @@ function ensurePractice(){if(data.unlimited)return;try{const p=JSON.parse(sessio
 const active=()=>data[mode];
 function save(){if(mode==='daily')saveDaily();else savePractice();}
 function afterPick(r){if(r.kind==='unlimited'){data.practiceCount++;data.practicePoints+=r.picks[0].points;}}
-function tick(now=Date.now()){if(typeof now!=='number')now=Date.now();if(owner()!==bootOwner)return;current();let visible=false;for(const kind of ['daily','unlimited']){const r=data[kind];if(r&&!(kind==='daily'&&blocked)&&M.expire(r,now)){afterPick(r);if(kind==='daily')saveDaily();else savePractice();if(kind===mode)visible=true;}}if(visible)render(true);if(active())paintTimer();}
+// Apply reviewed spelling/wording corrections only to the unanswered current question.
+// Canonical identities and captured ratings remain authoritative; completed picks never change.
+function correctCurrentAliases(r){
+ if(!r||!['ready','active'].includes(r.phase))return false;
+ const q=r.questions[r.round],latest=B.find(x=>x.id===q.id&&x.prompt===q.prompt);if(!latest)return false;
+ const taken=new Set(q.answers.flatMap(a=>[a.name,...a.aliases]).map(M.normal));let changed=false;
+ for(const a of q.answers){const newer=latest.answers.find(x=>x.name===a.name&&x.points===a.points);if(!newer)continue;
+  for(const alias of newer.aliases){const n=M.normal(alias);if(!taken.has(n)&&a.aliases.length<12){a.aliases.push(alias);taken.add(n);changed=true;}}
+ }
+ if(changed){if(r.error==='unlisted'&&M.match(q,r.input))r.error='';r.edits++;}return changed;
+}
+function tick(now=Date.now()){if(typeof now!=='number')now=Date.now();if(owner()!==bootOwner)return;current();let visible=false;for(const kind of ['daily','unlimited']){const r=data[kind];if(!(kind==='daily'&&blocked)&&correctCurrentAliases(r)){if(kind==='daily')saveDaily();else savePractice();}if(r&&!(kind==='daily'&&blocked)&&M.expire(r,now)){afterPick(r);if(kind==='daily')saveDaily();else savePractice();if(kind===mode)visible=true;}}if(visible)render(true);if(active())paintTimer();}
 function stats(){const keys=new Set(mem.keys());try{for(let i=0;i<localStorage.length;i++)keys.add(localStorage.key(i));}catch{persistent=false;}data.history=[...keys].filter(k=>k?.startsWith(M.PREFIX)).map(k=>{const day=k.slice(M.PREFIX.length),r=M.date(day)&&day<=C.dayKey()?read(day):null;return r&&M.record(r,day)?r:null;}).filter(Boolean).sort((a,b)=>a.day.localeCompare(b.day));const rows=data.history,scores=rows.map(M.average),days=new Set(rows.map(r=>r.day));let day=C.dayKey(),streak=0;if(!days.has(day))day=C.previousDay(day);while(days.has(day)){streak++;day=C.previousDay(day);}const values={played:rows.length,streak,best:scores.length?fmt(Math.max(...scores)):'—',average:scores.length?fmt(scores.reduce((a,b)=>a+b,0)/scores.length):'—',last:scores.length?fmt(scores.at(-1)):'—',achievement:rows.reduce((n,r)=>n+r.picks.filter(p=>p.points===100).length,0)};for(const[k,v]of Object.entries(values))document.querySelectorAll('[data-summary-stat="'+k+'"],[data-detail-stat="'+k+'"]').forEach(e=>e.textContent=v);}
 /* Visual-only reveal: results are committed before the counter starts. */
 const revealedScores=new Set();

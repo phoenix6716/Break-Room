@@ -1,3 +1,7 @@
+## Offline Sleeper corrections — 30 October 2026
+
+Sleeper remains offline by owner choice. Its source includes explicit `points` for every answer; preserve existing ratings when adding coverage. The follow-up bank has 6,315 canonical answers across the same 240 questions and 48-day schedule. Only reviewed aliases for a matching canonical name/rating may be added to an unanswered captured question. New canonical answers are for fresh captures. Completed snapshots and scores stay untouched. The first accessible release is archived in `content/archive/2026-10-30-accessible-v1/`.
+
 ## Sleeper authoring — revision 7, 30 October 2026
 
 The active source is `content/hidden-gem-accessible-source.json`: 240 broad prompts, explicit aliases, editorial ordering and a fixed 48-day schedule. Run `node scripts/build-hidden-gem-questions.cjs` to emit `content/hidden-gem-questions.json` and `games/hidden-gem/questions.js`. Both generated files must be committed. Review additions for distinct canonical identities, ordinary obvious answers, regional aliases and clear boundaries. Do not inflate counts with synonyms or inflections. All fresh lists must contain at least ten canonical answers (this release has 19–148). Update the source's spacing review when editing categories or the schedule; conflicting pairs cannot share or neighbour a day, including the cycle boundary.

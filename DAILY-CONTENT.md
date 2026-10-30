@@ -1,3 +1,7 @@
+## Sleeper offline coverage follow-up — 30 October 2026
+
+The active bank now has 6,315 canonical answers (19–148 per question). All 240 IDs and date slots remain fixed, retaining the 48-day rotation. New canonical answers appear in fresh captures; reviewed aliases can also repair the current unanswered question without changing captured points, previous picks, deadlines or completed history. Offline lookup is finite, with no AI/network answer judge.
+
 ## Sleeper replacement — 30 October 2026
 
 Fresh Daily and Unlimited captures use revision 7 exclusively: 240 questions and 5,481 canonical answers (19–148 each). A fixed 48-day cycle starts 30 October 2026, with five distinct topics per day and reviewed overlapping pairs kept off the same and adjacent days, including wraparound. New Dailies unlock at midnight Australia/Sydney, including daylight-saving changes. Previously captured ready, active and completed rounds retain their original snapshots and deadlines. See the [current Sleeper contract](games/hidden-gem/README.md).
@@ -17,7 +21,7 @@ This audit executes the shipped pure selectors and extracts the existing Stack U
 | Clue Ladder | 300 answers with five clues each | 60 days without repeating individual puzzles |
 | Seating Chart | 360 tables | 72 days without repeating individual tables |
 | Desk Jam | 180 boards: 120 Daily, 60 additional practice boards | 40 days without repeating individual Daily boards |
-| Sleeper | 240 questions / 5481 answers | 48 days without repeating individual questions |
+| Sleeper | 240 questions / 6315 answers | 48 days without repeating individual questions |
 | Stack Up | 160 non-maths Daily stacks + 134 active optional challenges | 32 days without repeating individual Daily stacks |
 | Pack | 212 bags, including 32 advanced Daily hard bags | 32 days without repeating individual bags |
 | Lowball | 128 products / 512 explicitly scoped regional references | 32 days without repeating individual products |

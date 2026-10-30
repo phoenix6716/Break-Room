@@ -1,3 +1,11 @@
+## Offline answer coverage and captured-round alias corrections — 30 October 2026
+
+The owner reports valid answers being rejected and explicitly chooses to keep Sleeper offline. Revision 7's answer-coverage follow-up accepts pants/jeans/trousers as wording for the existing rolled-up trouser-leg answer (69), and sleeves/shirt sleeves as the existing sleeve answer (64). The current bank already accepted plain sleeves; that rejection was not reproduced, so regression checks exercise it through both real game modes. The wider review adds everyday answers and regional/action/plural wording: 240 questions, 6,315 canonical answers (19–148 each), with the same IDs, topics and 48-day slots.
+
+Every original canonical answer, alias mapping and rating stays fixed. The source now has explicit per-answer points; adding an answer cannot rescale existing ratings. `content/archive/2026-10-30-accessible-v1/` preserves the first accessible release. Before an unanswered current question is graded, the engine may copy reviewed aliases from the matching published question, only for the same canonical name and captured rating. It does not add new canonical answers to that snapshot, replace past picks, restart deadlines or alter completed records. This narrowly supersedes the former rule that even alias corrections must wait for a fresh capture. New canonical additions apply to fresh captures only. No model, SQL, account format, network judge or API billing change.
+
+Offline lists remain finite: this improves coverage but cannot promise to recognise every technically correct answer. Unrecognised input must not be treated as proof that the answer is factually wrong. See `design/content-reviews/2026-10-30-sleeper-offline.json` and the captured-round browser regressions in `tests/sleeper-expansion.cjs`.
+
 ## Complete accessible Sleeper replacement — 30 October 2026
 
 Revision 7 replaces all 240 active prompts in Daily and Unlimited with broad, original everyday categories: 5,481 canonical answers, 19–148 per question, plus aliases. The 50 owner-approved examples form the foundation; wording is tightened for Australia, paired body parts, human characters and word constraints. Food preservation includes culinary vegetables. New IDs are `hg7-001`–`hg7-240`; none of revision 6 remains in either fresh pool.
