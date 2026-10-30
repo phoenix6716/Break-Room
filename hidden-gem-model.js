@@ -11,6 +11,12 @@ function grade(p,input){const a=match(p,input);return a?{input:input.trim(),answ
 const date=d=>typeof d==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(d)&&Number.isFinite(Date.parse(d+'T00:00:00Z'))&&new Date(d+'T00:00:00Z').toISOString().slice(0,10)===d;
 function daily(bank,day){
  if(!date(day))throw Error('Invalid Sydney date');
+ if(bank.length===240&&bank.every(q=>q.id.startsWith('hg7-'))){
+  const ordinal=Math.floor((Date.parse(day+'T00:00:00Z')-Date.UTC(2026,9,30))/86400000),slot=((ordinal%48)+48)%48;
+  const selected=bank.filter(q=>q.dailySlot===slot).sort((a,b)=>a.id.localeCompare(b.id));
+  if(selected.length!==5||new Set(selected.map(q=>q.topic)).size!==5)throw Error('Invalid accessible bank');
+  return clone(selected);
+ }
  const original=bank.filter(q=>!q.id.startsWith('hg-extra-')),extra=bank.filter(q=>q.id.startsWith('hg-extra-'));
  const topics=[...new Set(original.map(q=>q.topic))].sort();
  if(original.length!==160||topics.length!==10||topics.some(t=>original.filter(q=>q.topic===t).length!==16))throw Error('Invalid bank');

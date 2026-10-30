@@ -1,0 +1,1757 @@
+{
+  "revision": 7,
+  "date": "2026-10-30",
+  "game": "hidden-gem",
+  "status": "Implementation editorial review; automated check results are reported separately.",
+  "previousArchive": "content/archive/2026-10-30/hidden-gem-questions.json",
+  "source": "content/hidden-gem-accessible-source.json",
+  "questionCount": 240,
+  "canonicalAnswers": 5481,
+  "answerRange": [
+    19,
+    148
+  ],
+  "rotationDays": 48,
+  "epoch": "2026-10-30",
+  "approvedExamples": [
+    {
+      "example": 1,
+      "id": "hg7-001",
+      "prompt": "Name a food commonly eaten for breakfast."
+    },
+    {
+      "example": 2,
+      "id": "hg7-002",
+      "prompt": "Name a food that can be served either hot or cold."
+    },
+    {
+      "example": 3,
+      "id": "hg7-003",
+      "prompt": "Name a food commonly sold at a fair or carnival."
+    },
+    {
+      "example": 4,
+      "id": "hg7-004",
+      "prompt": "Name a food commonly eaten with your hands."
+    },
+    {
+      "example": 5,
+      "id": "hg7-005",
+      "prompt": "Name a food made using potatoes."
+    },
+    {
+      "example": 6,
+      "id": "hg7-006",
+      "prompt": "Name a food that usually has a filling."
+    },
+    {
+      "example": 7,
+      "id": "hg7-007",
+      "prompt": "Name a food commonly served at a birthday party."
+    },
+    {
+      "example": 8,
+      "id": "hg7-008",
+      "prompt": "Name an ingredient used to flavour a savoury dish."
+    },
+    {
+      "example": 9,
+      "id": "hg7-009",
+      "prompt": "Name a food commonly pickled."
+    },
+    {
+      "example": 10,
+      "id": "hg7-010",
+      "prompt": "Name a drink commonly served over ice."
+    },
+    {
+      "example": 11,
+      "id": "hg7-025",
+      "prompt": "Name an animal that lays eggs."
+    },
+    {
+      "example": 12,
+      "id": "hg7-026",
+      "prompt": "Name an animal that eats both plants and animals."
+    },
+    {
+      "example": 13,
+      "id": "hg7-027",
+      "prompt": "Name an animal that can live in fresh water."
+    },
+    {
+      "example": 14,
+      "id": "hg7-028",
+      "prompt": "Name an animal with a shell or hard outer covering."
+    },
+    {
+      "example": 15,
+      "id": "hg7-029",
+      "prompt": "Name an animal that people keep as a pet."
+    },
+    {
+      "example": 16,
+      "id": "hg7-030",
+      "prompt": "Name an animal native to Australia."
+    },
+    {
+      "example": 17,
+      "id": "hg7-031",
+      "prompt": "Name an animal whose English name contains a double letter."
+    },
+    {
+      "example": 18,
+      "id": "hg7-032",
+      "prompt": "Name an animal name that is also an English verb."
+    },
+    {
+      "example": 19,
+      "id": "hg7-049",
+      "prompt": "Name something you can measure about the human body."
+    },
+    {
+      "example": 20,
+      "id": "hg7-050",
+      "prompt": "Name a body part that normally comes in a pair."
+    },
+    {
+      "example": 21,
+      "id": "hg7-051",
+      "prompt": "Name something people wear on their head."
+    },
+    {
+      "example": 22,
+      "id": "hg7-052",
+      "prompt": "Name something people do to relax."
+    },
+    {
+      "example": 23,
+      "id": "hg7-053",
+      "prompt": "Name something people do while waiting in a queue."
+    },
+    {
+      "example": 24,
+      "id": "hg7-054",
+      "prompt": "Name something people collect as a hobby."
+    },
+    {
+      "example": 25,
+      "id": "hg7-055",
+      "prompt": "Name a job that commonly involves wearing a uniform."
+    },
+    {
+      "example": 26,
+      "id": "hg7-056",
+      "prompt": "Name a job that involves working outdoors."
+    },
+    {
+      "example": 27,
+      "id": "hg7-073",
+      "prompt": "Name something you might find in a kitchen drawer."
+    },
+    {
+      "example": 28,
+      "id": "hg7-074",
+      "prompt": "Name something people commonly lose."
+    },
+    {
+      "example": 29,
+      "id": "hg7-075",
+      "prompt": "Name something people carry in a pocket."
+    },
+    {
+      "example": 30,
+      "id": "hg7-076",
+      "prompt": "Name something people put on a wall."
+    },
+    {
+      "example": 31,
+      "id": "hg7-124",
+      "prompt": "Name something people take to the beach."
+    },
+    {
+      "example": 32,
+      "id": "hg7-169",
+      "prompt": "Name something commonly sold at a petrol station."
+    },
+    {
+      "example": 33,
+      "id": "hg7-077",
+      "prompt": "Name something that can be opened and closed."
+    },
+    {
+      "example": 34,
+      "id": "hg7-078",
+      "prompt": "Name something powered by batteries."
+    },
+    {
+      "example": 35,
+      "id": "hg7-097",
+      "prompt": "Name a country with a coastline."
+    },
+    {
+      "example": 36,
+      "id": "hg7-098",
+      "prompt": "Name a country whose common English name contains the letter I."
+    },
+    {
+      "example": 37,
+      "id": "hg7-099",
+      "prompt": "Name a country that borders at least three other countries by land."
+    },
+    {
+      "example": 38,
+      "id": "hg7-100",
+      "prompt": "Name a city that has hosted the Summer or Winter Olympics."
+    },
+    {
+      "example": 39,
+      "id": "hg7-101",
+      "prompt": "Name something people travel to another country to see."
+    },
+    {
+      "example": 40,
+      "id": "hg7-102",
+      "prompt": "Name a form of transport that carries passengers."
+    },
+    {
+      "example": 41,
+      "id": "hg7-121",
+      "prompt": "Name a sport played with a ball."
+    },
+    {
+      "example": 42,
+      "id": "hg7-122",
+      "prompt": "Name a sport or game played with a net."
+    },
+    {
+      "example": 43,
+      "id": "hg7-123",
+      "prompt": "Name a board or card game played against other people."
+    },
+    {
+      "example": 44,
+      "id": "hg7-145",
+      "prompt": "Name a fictional character who wears a hat."
+    },
+    {
+      "example": 45,
+      "id": "hg7-146",
+      "prompt": "Name a fictional character who is an animal."
+    },
+    {
+      "example": 46,
+      "id": "hg7-147",
+      "prompt": "Name a superhero who has appeared in a film."
+    },
+    {
+      "example": 47,
+      "id": "hg7-148",
+      "prompt": "Name an animated film that features human characters."
+    },
+    {
+      "example": 48,
+      "id": "hg7-149",
+      "prompt": "Name a musical instrument commonly played using both hands."
+    },
+    {
+      "example": 49,
+      "id": "hg7-170",
+      "prompt": "Name something commonly shown on a warning sign."
+    },
+    {
+      "example": 50,
+      "id": "hg7-171",
+      "prompt": "Name something people associate with good luck."
+    }
+  ],
+  "scopeDecisions": [
+    "Australia means native animals, rather than an undefined cultural association.",
+    "Paired body parts normally come in pairs; ordinary anatomical variation is not excluded.",
+    "Animated film means released feature films with human characters, not human-like fantasy creatures.",
+    "Jam accepts culinary fruit and vegetable preserves.",
+    "Olympic hosts include Games through 2026.",
+    "Country names use common English names; land borders include overseas sovereign territory.",
+    "Simple spelling constraints are checked on accepted spellings; synonyms that break the constraint are excluded.",
+    "Inflections in the silent-K prompt resolve to their underlying canonical word and do not inflate its count.",
+    "Synonyms such as shrimp/prawn, spanner/wrench and cream puff/profiterole are collapsed within each list.",
+    "Explicitly named answers receive the 1-point floor to avoid valuable giveaways."
+  ],
+  "spacing": {
+    "pairs": 98,
+    "rule": "No listed pair occurs on the same or adjacent day, including wraparound."
+  },
+  "changes": [
+    {
+      "id": "hg7-001",
+      "topic": "FOOD",
+      "prompt": "Name a food commonly eaten for breakfast.",
+      "canonicalAnswers": 34
+    },
+    {
+      "id": "hg7-002",
+      "topic": "FOOD",
+      "prompt": "Name a food that can be served either hot or cold.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-003",
+      "topic": "FOOD",
+      "prompt": "Name a food commonly sold at a fair or carnival.",
+      "canonicalAnswers": 19
+    },
+    {
+      "id": "hg7-004",
+      "topic": "FOOD",
+      "prompt": "Name a food commonly eaten with your hands.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-005",
+      "topic": "FOOD",
+      "prompt": "Name a food made using potatoes.",
+      "canonicalAnswers": 21
+    },
+    {
+      "id": "hg7-006",
+      "topic": "FOOD",
+      "prompt": "Name a food that usually has a filling.",
+      "canonicalAnswers": 21
+    },
+    {
+      "id": "hg7-007",
+      "topic": "FOOD",
+      "prompt": "Name a food commonly served at a birthday party.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-008",
+      "topic": "FOOD",
+      "prompt": "Name an ingredient used to flavour a savoury dish.",
+      "canonicalAnswers": 24
+    },
+    {
+      "id": "hg7-009",
+      "topic": "FOOD",
+      "prompt": "Name a food commonly pickled.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-010",
+      "topic": "FOOD",
+      "prompt": "Name a drink commonly served over ice.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-011",
+      "topic": "FOOD",
+      "prompt": "Name a fruit or vegetable commonly used to make jam.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-012",
+      "topic": "FOOD",
+      "prompt": "Name a vegetable people commonly roast.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-013",
+      "topic": "FOOD",
+      "prompt": "Name a food people commonly put on toast.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-014",
+      "topic": "FOOD",
+      "prompt": "Name a food commonly cooked on a barbecue.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-015",
+      "topic": "FOOD",
+      "prompt": "Name a type of bread.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-016",
+      "topic": "FOOD",
+      "prompt": "Name a food commonly dipped in a sauce.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-017",
+      "topic": "FOOD",
+      "prompt": "Name a food people commonly sprinkle on a pizza.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-018",
+      "topic": "FOOD",
+      "prompt": "Name a dessert commonly served in a bowl or glass.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-019",
+      "topic": "FOOD",
+      "prompt": "Name a food commonly sold dried.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-020",
+      "topic": "FOOD",
+      "prompt": "Name a food commonly found in a tin or can.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-021",
+      "topic": "FOOD",
+      "prompt": "Name a herb commonly used in cooking.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-022",
+      "topic": "FOOD",
+      "prompt": "Name a food commonly served with a roast dinner.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-023",
+      "topic": "FOOD",
+      "prompt": "Name a food commonly eaten at a cinema.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-024",
+      "topic": "FOOD",
+      "prompt": "Name an ingredient commonly used in baking a cake.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-025",
+      "topic": "NATURE",
+      "prompt": "Name an animal that lays eggs.",
+      "canonicalAnswers": 24
+    },
+    {
+      "id": "hg7-026",
+      "topic": "NATURE",
+      "prompt": "Name an animal that eats both plants and animals.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-027",
+      "topic": "NATURE",
+      "prompt": "Name an animal that can live in fresh water.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-028",
+      "topic": "NATURE",
+      "prompt": "Name an animal with a shell or hard outer covering.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-029",
+      "topic": "NATURE",
+      "prompt": "Name an animal that people keep as a pet.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-030",
+      "topic": "NATURE",
+      "prompt": "Name an animal native to Australia.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-031",
+      "topic": "NATURE",
+      "prompt": "Name an animal whose English name contains a double letter.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-032",
+      "topic": "NATURE",
+      "prompt": "Name an animal name that is also an English verb.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-033",
+      "topic": "NATURE",
+      "prompt": "Name an animal that commonly lives in a group.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-034",
+      "topic": "NATURE",
+      "prompt": "Name an animal that can swim.",
+      "canonicalAnswers": 24
+    },
+    {
+      "id": "hg7-035",
+      "topic": "NATURE",
+      "prompt": "Name an animal that can fly under its own power.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-036",
+      "topic": "NATURE",
+      "prompt": "Name an animal with stripes.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-037",
+      "topic": "NATURE",
+      "prompt": "Name an animal with a long tail.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-038",
+      "topic": "NATURE",
+      "prompt": "Name a tree people commonly grow in a garden or park.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-039",
+      "topic": "NATURE",
+      "prompt": "Name a flower commonly sold by florists.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-040",
+      "topic": "NATURE",
+      "prompt": "Name a plant people commonly grow indoors.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-041",
+      "topic": "NATURE",
+      "prompt": "Name something a plant needs or uses to grow.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-042",
+      "topic": "NATURE",
+      "prompt": "Name a natural material people use to make things.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-043",
+      "topic": "NATURE",
+      "prompt": "Name a fruit that grows on a tree.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-044",
+      "topic": "NATURE",
+      "prompt": "Name an animal people commonly see on a farm.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-045",
+      "topic": "NATURE",
+      "prompt": "Name an animal that spends much of its life underground.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-046",
+      "topic": "NATURE",
+      "prompt": "Name a sea animal with no backbone.",
+      "canonicalAnswers": 19
+    },
+    {
+      "id": "hg7-047",
+      "topic": "NATURE",
+      "prompt": "Name something people can hear in a forest.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-048",
+      "topic": "NATURE",
+      "prompt": "Name a place where wild animals make their homes.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-049",
+      "topic": "PEOPLE",
+      "prompt": "Name something you can measure about the human body.",
+      "canonicalAnswers": 24
+    },
+    {
+      "id": "hg7-050",
+      "topic": "PEOPLE",
+      "prompt": "Name a body part that normally comes in a pair.",
+      "canonicalAnswers": 24
+    },
+    {
+      "id": "hg7-051",
+      "topic": "PEOPLE",
+      "prompt": "Name something people wear on their head.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-052",
+      "topic": "PEOPLE",
+      "prompt": "Name something people do to relax.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-053",
+      "topic": "PEOPLE",
+      "prompt": "Name something people do while waiting in a queue.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-054",
+      "topic": "PEOPLE",
+      "prompt": "Name something people collect as a hobby.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-055",
+      "topic": "PEOPLE",
+      "prompt": "Name a job that commonly involves wearing a uniform.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-056",
+      "topic": "PEOPLE",
+      "prompt": "Name a job that involves working outdoors.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-057",
+      "topic": "PEOPLE",
+      "prompt": "Name something people do before going to bed.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-058",
+      "topic": "PEOPLE",
+      "prompt": "Name something people do when they wake up.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-059",
+      "topic": "PEOPLE",
+      "prompt": "Name something people might do at a wedding.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-060",
+      "topic": "PEOPLE",
+      "prompt": "Name a reason someone might celebrate.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-061",
+      "topic": "PEOPLE",
+      "prompt": "Name something people do to exercise.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-062",
+      "topic": "PEOPLE",
+      "prompt": "Name a job that involves helping sick or injured people.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-063",
+      "topic": "PEOPLE",
+      "prompt": "Name something people might volunteer to do.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-064",
+      "topic": "PEOPLE",
+      "prompt": "Name something a person might learn in a class.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-065",
+      "topic": "PEOPLE",
+      "prompt": "Name something people do with their hands to communicate.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-066",
+      "topic": "PEOPLE",
+      "prompt": "Name an emotion or feeling people can have.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-067",
+      "topic": "PEOPLE",
+      "prompt": "Name something people might be afraid of.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-068",
+      "topic": "PEOPLE",
+      "prompt": "Name something people do to help a friend.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-069",
+      "topic": "PEOPLE",
+      "prompt": "Name something people might put on a job application.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-070",
+      "topic": "PEOPLE",
+      "prompt": "Name a job that involves making or repairing things.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-071",
+      "topic": "PEOPLE",
+      "prompt": "Name something a baby learns to do.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-072",
+      "topic": "PEOPLE",
+      "prompt": "Name something people do to stay clean.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-073",
+      "topic": "HOME",
+      "prompt": "Name something you might find in a kitchen drawer.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-074",
+      "topic": "HOME",
+      "prompt": "Name something people commonly lose.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-075",
+      "topic": "HOME",
+      "prompt": "Name something people carry in a pocket.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-076",
+      "topic": "HOME",
+      "prompt": "Name something people put on a wall.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-077",
+      "topic": "HOME",
+      "prompt": "Name something that can be opened and closed.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-078",
+      "topic": "HOME",
+      "prompt": "Name something powered by batteries.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-079",
+      "topic": "HOME",
+      "prompt": "Name something people use to clean a home.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-080",
+      "topic": "HOME",
+      "prompt": "Name something people keep in a bathroom.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-081",
+      "topic": "HOME",
+      "prompt": "Name something people keep in a bedroom.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-082",
+      "topic": "HOME",
+      "prompt": "Name something people might keep in a shed or garage.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-083",
+      "topic": "HOME",
+      "prompt": "Name a household object made partly or wholly of glass.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-084",
+      "topic": "HOME",
+      "prompt": "Name something people put in a freezer.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-085",
+      "topic": "HOME",
+      "prompt": "Name something people use to cook food.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-086",
+      "topic": "HOME",
+      "prompt": "Name something people use when doing laundry.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-087",
+      "topic": "HOME",
+      "prompt": "Name something people use to fix things around the home.",
+      "canonicalAnswers": 19
+    },
+    {
+      "id": "hg7-088",
+      "topic": "HOME",
+      "prompt": "Name something that makes a home more comfortable in hot weather.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-089",
+      "topic": "HOME",
+      "prompt": "Name something people use to store food.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-090",
+      "topic": "HOME",
+      "prompt": "Name something you might find on a dining table.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-091",
+      "topic": "HOME",
+      "prompt": "Name something people might use during a power cut.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-092",
+      "topic": "HOME",
+      "prompt": "Name something people might put beside their front door.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-093",
+      "topic": "HOME",
+      "prompt": "Name something people use to decorate a home for a celebration.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-094",
+      "topic": "HOME",
+      "prompt": "Name something people can recycle through an appropriate collection service.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-095",
+      "topic": "HOME",
+      "prompt": "Name something people use to keep a home secure.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-096",
+      "topic": "HOME",
+      "prompt": "Name something that needs to be replaced regularly in a home.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-097",
+      "topic": "TRAVEL",
+      "prompt": "Name a country with a coastline.",
+      "canonicalAnswers": 148
+    },
+    {
+      "id": "hg7-098",
+      "topic": "TRAVEL",
+      "prompt": "Name a country whose common English name contains the letter I.",
+      "canonicalAnswers": 117
+    },
+    {
+      "id": "hg7-099",
+      "topic": "TRAVEL",
+      "prompt": "Name a country that borders at least three other countries by land.",
+      "canonicalAnswers": 101
+    },
+    {
+      "id": "hg7-100",
+      "topic": "TRAVEL",
+      "prompt": "Name a city that has hosted the Summer or Winter Olympics.",
+      "canonicalAnswers": 44
+    },
+    {
+      "id": "hg7-101",
+      "topic": "TRAVEL",
+      "prompt": "Name something people travel to another country to see.",
+      "canonicalAnswers": 24
+    },
+    {
+      "id": "hg7-102",
+      "topic": "TRAVEL",
+      "prompt": "Name a form of transport that carries passengers.",
+      "canonicalAnswers": 24
+    },
+    {
+      "id": "hg7-103",
+      "topic": "TRAVEL",
+      "prompt": "Name something people pack for an overnight trip.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-104",
+      "topic": "TRAVEL",
+      "prompt": "Name something you might find in a hotel room.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-105",
+      "topic": "TRAVEL",
+      "prompt": "Name something people do at an airport.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-106",
+      "topic": "TRAVEL",
+      "prompt": "Name something people might buy as a souvenir.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-107",
+      "topic": "TRAVEL",
+      "prompt": "Name a place people might stay on holiday.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-108",
+      "topic": "TRAVEL",
+      "prompt": "Name something people check before setting off on a long car journey.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-109",
+      "topic": "TRAVEL",
+      "prompt": "Name a place tourists commonly visit in a city.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-110",
+      "topic": "TRAVEL",
+      "prompt": "Name something you might see from a train window.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-111",
+      "topic": "TRAVEL",
+      "prompt": "Name something you might do on a camping holiday.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-112",
+      "topic": "TRAVEL",
+      "prompt": "Name a famous landmark built by people.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-113",
+      "topic": "TRAVEL",
+      "prompt": "Name a country commonly associated with skiing.",
+      "canonicalAnswers": 24
+    },
+    {
+      "id": "hg7-114",
+      "topic": "TRAVEL",
+      "prompt": "Name a large island or island group people visit on holiday.",
+      "canonicalAnswers": 24
+    },
+    {
+      "id": "hg7-115",
+      "topic": "TRAVEL",
+      "prompt": "Name a reason people might travel abroad.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-116",
+      "topic": "TRAVEL",
+      "prompt": "Name something you might see at a harbour.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-117",
+      "topic": "TRAVEL",
+      "prompt": "Name a language spoken by millions of people.",
+      "canonicalAnswers": 24
+    },
+    {
+      "id": "hg7-118",
+      "topic": "TRAVEL",
+      "prompt": "Name something people might do on a cruise ship.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-119",
+      "topic": "TRAVEL",
+      "prompt": "Name an item people might use to find their way.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-120",
+      "topic": "TRAVEL",
+      "prompt": "Name something you might find at a railway station.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-121",
+      "topic": "PLAY",
+      "prompt": "Name a sport played with a ball.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-122",
+      "topic": "PLAY",
+      "prompt": "Name a sport or game played with a net.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-123",
+      "topic": "PLAY",
+      "prompt": "Name a board or card game played against other people.",
+      "canonicalAnswers": 24
+    },
+    {
+      "id": "hg7-124",
+      "topic": "PLAY",
+      "prompt": "Name something people take to the beach.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-125",
+      "topic": "PLAY",
+      "prompt": "Name something you might find in a children's playground.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-126",
+      "topic": "PLAY",
+      "prompt": "Name a game children play without a board or screen.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-127",
+      "topic": "PLAY",
+      "prompt": "Name a piece of equipment people use at a gym.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-128",
+      "topic": "PLAY",
+      "prompt": "Name something a referee or umpire might use.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-129",
+      "topic": "PLAY",
+      "prompt": "Name a sport people can do in water.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-130",
+      "topic": "PLAY",
+      "prompt": "Name a sport people can do on snow or ice.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-131",
+      "topic": "PLAY",
+      "prompt": "Name something people might do at a funfair or theme park.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-132",
+      "topic": "PLAY",
+      "prompt": "Name something people use when fishing.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-133",
+      "topic": "PLAY",
+      "prompt": "Name a sport that uses a bat, racket, club or stick.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-134",
+      "topic": "PLAY",
+      "prompt": "Name something you might see at a sports stadium.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-135",
+      "topic": "PLAY",
+      "prompt": "Name something people might do at a picnic.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-136",
+      "topic": "PLAY",
+      "prompt": "Name a toy that does not need batteries.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-137",
+      "topic": "PLAY",
+      "prompt": "Name a video game series familiar to many casual players.",
+      "canonicalAnswers": 23
+    },
+    {
+      "id": "hg7-138",
+      "topic": "PLAY",
+      "prompt": "Name something people need for a game of cricket.",
+      "canonicalAnswers": 19
+    },
+    {
+      "id": "hg7-139",
+      "topic": "PLAY",
+      "prompt": "Name a game people play at a party.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-140",
+      "topic": "PLAY",
+      "prompt": "Name something people use when riding a bicycle.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-141",
+      "topic": "PLAY",
+      "prompt": "Name a sport with races.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-142",
+      "topic": "PLAY",
+      "prompt": "Name something people might build for fun.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-143",
+      "topic": "PLAY",
+      "prompt": "Name an activity people do at a leisure centre.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-144",
+      "topic": "PLAY",
+      "prompt": "Name something spectators might do at a sporting event.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-145",
+      "topic": "ARTS",
+      "prompt": "Name a fictional character who wears a hat.",
+      "canonicalAnswers": 23
+    },
+    {
+      "id": "hg7-146",
+      "topic": "ARTS",
+      "prompt": "Name a fictional character who is an animal.",
+      "canonicalAnswers": 29
+    },
+    {
+      "id": "hg7-147",
+      "topic": "ARTS",
+      "prompt": "Name a superhero who has appeared in a film.",
+      "canonicalAnswers": 35
+    },
+    {
+      "id": "hg7-148",
+      "topic": "ARTS",
+      "prompt": "Name an animated film that features human characters.",
+      "canonicalAnswers": 35
+    },
+    {
+      "id": "hg7-149",
+      "topic": "ARTS",
+      "prompt": "Name a musical instrument commonly played using both hands.",
+      "canonicalAnswers": 24
+    },
+    {
+      "id": "hg7-150",
+      "topic": "ARTS",
+      "prompt": "Name something an artist might use to make a picture.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-151",
+      "topic": "ARTS",
+      "prompt": "Name a type of dance.",
+      "canonicalAnswers": 24
+    },
+    {
+      "id": "hg7-152",
+      "topic": "ARTS",
+      "prompt": "Name something people might see on a theatre stage.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-153",
+      "topic": "ARTS",
+      "prompt": "Name a kind of story people read or watch.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-154",
+      "topic": "ARTS",
+      "prompt": "Name a famous fictional detective.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-155",
+      "topic": "ARTS",
+      "prompt": "Name something commonly seen in a fairy tale.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-156",
+      "topic": "ARTS",
+      "prompt": "Name a fictional character known for using magic.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-157",
+      "topic": "ARTS",
+      "prompt": "Name something involved in making a film.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-158",
+      "topic": "ARTS",
+      "prompt": "Name a sound a person can make.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-159",
+      "topic": "ARTS",
+      "prompt": "Name a style of music.",
+      "canonicalAnswers": 24
+    },
+    {
+      "id": "hg7-160",
+      "topic": "ARTS",
+      "prompt": "Name something people do at a concert.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-161",
+      "topic": "ARTS",
+      "prompt": "Name a place where people might perform music.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-162",
+      "topic": "ARTS",
+      "prompt": "Name something a person might knit or sew.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-163",
+      "topic": "ARTS",
+      "prompt": "Name something commonly found in a library.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-164",
+      "topic": "ARTS",
+      "prompt": "Name a type of television programme.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-165",
+      "topic": "ARTS",
+      "prompt": "Name something people might photograph on holiday.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-166",
+      "topic": "ARTS",
+      "prompt": "Name something people use to make music without electricity.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-167",
+      "topic": "ARTS",
+      "prompt": "Name a fictional character who is a villain.",
+      "canonicalAnswers": 24
+    },
+    {
+      "id": "hg7-168",
+      "topic": "ARTS",
+      "prompt": "Name something someone might write for other people to read.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-169",
+      "topic": "EVERYDAY",
+      "prompt": "Name something commonly sold at a petrol station.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-170",
+      "topic": "EVERYDAY",
+      "prompt": "Name something commonly shown on a warning sign.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-171",
+      "topic": "EVERYDAY",
+      "prompt": "Name something people associate with good luck.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-172",
+      "topic": "EVERYDAY",
+      "prompt": "Name something people do on a smartphone.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-173",
+      "topic": "EVERYDAY",
+      "prompt": "Name something people commonly borrow.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-174",
+      "topic": "EVERYDAY",
+      "prompt": "Name something people commonly rent.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-175",
+      "topic": "EVERYDAY",
+      "prompt": "Name something people might need a ticket for.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-176",
+      "topic": "EVERYDAY",
+      "prompt": "Name something people might keep in a wallet or purse.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-177",
+      "topic": "EVERYDAY",
+      "prompt": "Name something people do with paper.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-178",
+      "topic": "EVERYDAY",
+      "prompt": "Name something people might insure.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-179",
+      "topic": "EVERYDAY",
+      "prompt": "Name something a person might book in advance.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-180",
+      "topic": "EVERYDAY",
+      "prompt": "Name something people might complain about in a restaurant.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-181",
+      "topic": "EVERYDAY",
+      "prompt": "Name something people might do when it rains.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-182",
+      "topic": "EVERYDAY",
+      "prompt": "Name something people might forget before leaving home.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-183",
+      "topic": "EVERYDAY",
+      "prompt": "Name something people might write in a diary or calendar.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-184",
+      "topic": "EVERYDAY",
+      "prompt": "Name something people can buy from a vending machine.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-185",
+      "topic": "EVERYDAY",
+      "prompt": "Name something people might send through the post.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-186",
+      "topic": "EVERYDAY",
+      "prompt": "Name something people might do to save money.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-187",
+      "topic": "EVERYDAY",
+      "prompt": "Name something people might queue for.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-188",
+      "topic": "EVERYDAY",
+      "prompt": "Name something that can be delivered to your home.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-189",
+      "topic": "EVERYDAY",
+      "prompt": "Name a place people might have to show identification.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-190",
+      "topic": "EVERYDAY",
+      "prompt": "Name something people might put on a shopping list.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-191",
+      "topic": "EVERYDAY",
+      "prompt": "Name something people might do on a computer at work.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-192",
+      "topic": "EVERYDAY",
+      "prompt": "Name something people might donate to charity.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-193",
+      "topic": "WORDS",
+      "prompt": "Name a common English word beginning with SH.",
+      "canonicalAnswers": 78
+    },
+    {
+      "id": "hg7-194",
+      "topic": "WORDS",
+      "prompt": "Name something people commonly hang up.",
+      "canonicalAnswers": 24
+    },
+    {
+      "id": "hg7-195",
+      "topic": "WORDS",
+      "prompt": "Name a common English word containing a silent K.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-196",
+      "topic": "WORDS",
+      "prompt": "Name an English word that rhymes with light.",
+      "canonicalAnswers": 24
+    },
+    {
+      "id": "hg7-197",
+      "topic": "WORDS",
+      "prompt": "Name a food whose English name starts with C.",
+      "canonicalAnswers": 26
+    },
+    {
+      "id": "hg7-198",
+      "topic": "WORDS",
+      "prompt": "Name an animal whose English name starts with B.",
+      "canonicalAnswers": 24
+    },
+    {
+      "id": "hg7-199",
+      "topic": "WORDS",
+      "prompt": "Name an item of clothing whose English name contains the letter T.",
+      "canonicalAnswers": 19
+    },
+    {
+      "id": "hg7-200",
+      "topic": "WORDS",
+      "prompt": "Name a job whose English name ends in ER.",
+      "canonicalAnswers": 25
+    },
+    {
+      "id": "hg7-201",
+      "topic": "WORDS",
+      "prompt": "Name something commonly described as round.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-202",
+      "topic": "WORDS",
+      "prompt": "Name something commonly described as sharp.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-203",
+      "topic": "WORDS",
+      "prompt": "Name something that stretches.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-204",
+      "topic": "WORDS",
+      "prompt": "Name something that can be transparent.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-205",
+      "topic": "WORDS",
+      "prompt": "Name something that can melt.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-206",
+      "topic": "WORDS",
+      "prompt": "Name something commonly described as sticky.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-207",
+      "topic": "WORDS",
+      "prompt": "Name something that can be rolled up.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-208",
+      "topic": "WORDS",
+      "prompt": "Name something that can be tied.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-209",
+      "topic": "WORDS",
+      "prompt": "Name something commonly described as fragile.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-210",
+      "topic": "WORDS",
+      "prompt": "Name something that spins.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-211",
+      "topic": "WORDS",
+      "prompt": "Name something that can float on water.",
+      "canonicalAnswers": 21
+    },
+    {
+      "id": "hg7-212",
+      "topic": "WORDS",
+      "prompt": "Name something that commonly comes in a roll.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-213",
+      "topic": "WORDS",
+      "prompt": "Name something commonly sold in pairs.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-214",
+      "topic": "WORDS",
+      "prompt": "Name something commonly described as waterproof.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-215",
+      "topic": "WORDS",
+      "prompt": "Name something with a handle.",
+      "canonicalAnswers": 19
+    },
+    {
+      "id": "hg7-216",
+      "topic": "WORDS",
+      "prompt": "Name something with a lid.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-217",
+      "topic": "OUTDOORS",
+      "prompt": "Name something people might see in the sky.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-218",
+      "topic": "OUTDOORS",
+      "prompt": "Name something found in a public park.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-219",
+      "topic": "OUTDOORS",
+      "prompt": "Name something gardeners use.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-220",
+      "topic": "OUTDOORS",
+      "prompt": "Name something you might see on a building site.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-221",
+      "topic": "OUTDOORS",
+      "prompt": "Name something you might see on a road.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-222",
+      "topic": "OUTDOORS",
+      "prompt": "Name something that can damage a building.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-223",
+      "topic": "OUTDOORS",
+      "prompt": "Name something people use to stay safe in strong sunshine.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-224",
+      "topic": "OUTDOORS",
+      "prompt": "Name something you might find in a garden pond.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-225",
+      "topic": "OUTDOORS",
+      "prompt": "Name something people do to care for a pet.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-226",
+      "topic": "OUTDOORS",
+      "prompt": "Name something people might see at a zoo.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-227",
+      "topic": "OUTDOORS",
+      "prompt": "Name something that can cause a delay to a journey.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-228",
+      "topic": "OUTDOORS",
+      "prompt": "Name something people might see at a market stall.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-229",
+      "topic": "OUTDOORS",
+      "prompt": "Name a place people might go for a walk.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-230",
+      "topic": "OUTDOORS",
+      "prompt": "Name something people can see in a rock pool.",
+      "canonicalAnswers": 19
+    },
+    {
+      "id": "hg7-231",
+      "topic": "OUTDOORS",
+      "prompt": "Name something that can make a loud noise outdoors.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-232",
+      "topic": "OUTDOORS",
+      "prompt": "Name something people might plant in a vegetable garden.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-233",
+      "topic": "OUTDOORS",
+      "prompt": "Name something seen in a desert.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-234",
+      "topic": "OUTDOORS",
+      "prompt": "Name something people use to help in an emergency.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-235",
+      "topic": "OUTDOORS",
+      "prompt": "Name something people might need to buy for a car.",
+      "canonicalAnswers": 24
+    },
+    {
+      "id": "hg7-236",
+      "topic": "OUTDOORS",
+      "prompt": "Name something people might see on a nature walk.",
+      "canonicalAnswers": 22
+    },
+    {
+      "id": "hg7-237",
+      "topic": "OUTDOORS",
+      "prompt": "Name something that needs water to work or be used properly.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-238",
+      "topic": "OUTDOORS",
+      "prompt": "Name something people use to protect themselves at work.",
+      "canonicalAnswers": 19
+    },
+    {
+      "id": "hg7-239",
+      "topic": "OUTDOORS",
+      "prompt": "Name a place where people can see art in public.",
+      "canonicalAnswers": 20
+    },
+    {
+      "id": "hg7-240",
+      "topic": "OUTDOORS",
+      "prompt": "Name something people might see on a snowy day.",
+      "canonicalAnswers": 22
+    }
+  ],
+  "compatibility": [
+    "No native keys, scoring, run version, timers or SQL changes.",
+    "All previous full snapshots remain authoritative, including old two-answer sets.",
+    "Practice restores retired topics and IDs without losing its captured run, deadline or counters.",
+    "Fresh Daily and every Unlimited filter use only revision 7."
+  ],
+  "limitations": [
+    "Finite editorial answer lists are generous, not exhaustive.",
+    "Ratings estimate familiarity within each question; they are not measured popularity.",
+    "No claim of independent primary-source certification or physical-device playtesting.",
+    "References provide background; individual pages were not retrieved as proof for every editorial answer.",
+    "Physical-device testing and human enjoyment/difficulty calibration are not claimed."
+  ],
+  "verification": {
+    "local": [
+      "hidden-gem-rules.cjs: canonical/alias matching, all revision-6 snapshots, previous small snapshots, timing/scoring/locks, PGlite SQL parity, RLS, cloud revisions and Friends boundaries",
+      "sleeper-expansion.cjs: new Dailies at 320/390/768/1100/1440px, two dates, new filters, old captured Unlimited restoration and transition",
+      "hidden-gem.cjs: five widths, completed results and pending timers, full 235-question active Unlimited pool and refill, cross-tab and error flows",
+      "cloud-saves.cjs and profile-records.cjs: historical save and score compatibility",
+      "content-refresh.cjs and content-tools.cjs: historical release audit and authoring tools",
+      "release.cjs and smoke.cjs: shared pages, navigation, branding and mobile/desktop asset checks",
+      "Byte-for-byte reproducibility of both generated bank files",
+      "Visual inspection of new Unlimited rounds at 390px and 1440px"
+    ],
+    "live": "Pages deployment and live-site checks reported separately after publication",
+    "notPerformed": [
+      "Physical-device testing",
+      "Live account authentication or database migration (no schema change)",
+      "Independent primary-source checking for every editorial answer"
+    ]
+  }
+}

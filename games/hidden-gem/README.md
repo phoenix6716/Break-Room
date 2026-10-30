@@ -1,3 +1,13 @@
+## Complete accessible Sleeper replacement — 30 October 2026
+
+Revision 7 replaces all 240 active prompts in Daily and Unlimited with broad, original everyday categories: 5,481 canonical answers, 19–148 per question, plus aliases. The 50 owner-approved examples form the foundation; wording is tightened for Australia, paired body parts, human characters and word constraints. Food preservation includes culinary vegetables. New IDs are `hg7-001`–`hg7-240`; none of revision 6 remains in either fresh pool.
+
+`content/hidden-gem-accessible-source.json` is the authoring source, including explicit aliases, the fixed 48-day rotation and reviewed conflicting pairs. Run `node scripts/build-hidden-gem-questions.cjs` to regenerate both `content/hidden-gem-questions.json` and `games/hidden-gem/questions.js`. Each day has five different topics. Marked semantic families and canonical-overlap pairs are separated by at least one intervening day, including cycle wraparound. The epoch is 30 October 2026; fresh captures use this bank immediately. Dailies reset at midnight Australia/Sydney (13:00 UTC during AEDT; 14:00 UTC during AEST).
+
+Revision 6 and its selector are archived in `content/archive/2026-10-30/`. Preserve every historical and unfinished full snapshot, rating, deadline, account save and first completion. Captured ready Dailies also stay unchanged until the next day. An already captured Unlimited question resumes under its original rules; its next question comes from revision 7. Retired filter choices fall back to All topics without replacing the current question or counters. No schema/SQL, scoring, timer, visual-design or save-version changes. This supersedes prior instructions to preserve future question IDs or calendar slots when refreshing Sleeper.
+
+Answer lists are finite editorial lists, not exhaustive dictionaries. Ratings are editorial familiarity estimates, not measured player popularity. General reference links are background resources, not per-answer primary-source certification. See `design/content-reviews/2026-10-30-sleeper.json` for the review and limits. Physical-device and human enjoyment testing remain separate from automated browser checks.
+
 ## Broader Sleeper questions — owner correction, 28 October 2026
 
 Every newly offered Sleeper question must have at least ten canonical answers, preferably more. Revision 5 replaces all 55 undersized sets across SCIENCE, AUSTRALIA, LANGUAGE and EVERYDAY with broader scoped questions. The compass-point, demonstrative and states-of-matter prompts are retired. The bank has 160 questions and 4,722 answers; aliases do not count towards the minimum. Fixed editorial ratings remain 1–100, not popularity measurements.

@@ -3,10 +3,17 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('nod
 for(const p of ['daily-clock.js','hidden-gem-model.js','arcade-score.js','profile-records.js','cloud-saves.js'])require('../'+p);
 const M=BREAK_ROOM_HIDDEN_GEM,B=require('../content/hidden-gem-questions.json').questions,day='2026-10-24',key=M.PREFIX+day,encode=JSON.stringify;
 const runtime={window:{}};vm.runInNewContext(fs.readFileSync('games/hidden-gem/questions.js','utf8'),runtime);
-assert.deepEqual(JSON.parse(JSON.stringify(runtime.window.HIDDEN_GEM_QUESTIONS)),B);assert.equal(B.length,240);assert.equal(B.reduce((n,q)=>n+q.answers.length,0),6642);assert.equal(new Set(B.map(q=>q.id)).size,240);
+assert.deepEqual(JSON.parse(JSON.stringify(runtime.window.HIDDEN_GEM_QUESTIONS)),B);assert.equal(B.length,240);assert(B.reduce((n,q)=>n+q.answers.length,0)>5000);assert.equal(new Set(B.map(q=>q.id)).size,240);
 for(const q of B){assert(q.answers.length>=10,q.id+' must offer at least ten canonical answers');assert(!/eight main compass points|basic English demonstrative|three everyday states of matter/i.test(q.prompt));}
+const legacy=require('../content/archive/2026-10-30/hidden-gem-questions.json').questions;
+// All old identities are recovery-only. Full snapshots, not active-bank lookups, define saves.
+assert(B.every(q=>q.id.startsWith('hg7-')&&!legacy.some(old=>old.id===q.id)));
+const author=require('../content/hidden-gem-accessible-source.json');
+assert.equal(new Set(B.map(q=>M.normal(q.prompt))).size,240);
+for(const [i,j] of author.spacingReview.conflictingPairs){const a=B[i].dailySlot,b=B[j].dailySlot;assert(![0,1,47].includes((a-b+48)%48),B[i].prompt+' too close to '+B[j].prompt);}
+for(const q of legacy){const r=M.createPractice(q,day,'revision6:'+q.id),before=encode(r.questions),a=q.answers.at(-1);M.begin(r,1000);M.draft(r,a.name,1001);const deadline=r.deadline;assert(M.validRun(r));assert.equal(r.deadline,deadline);assert(M.finish(r,1002));assert(M.validRun(r));assert.equal(r.picks[0].points,a.points);assert.equal(encode(r.questions),before);}
 const previous=require('../content/archive/2026-10-26/hidden-gem-questions.json').questions;
-const wide=B.find(q=>q.answers.length===151);assert(wide);assert.equal(M.match(wide,'Pikachu').name,'Pikachu');assert.equal(M.match(wide,'Mew').name,'Mew');
+const wide=legacy.find(q=>q.answers.length===151);assert(wide);assert.equal(M.match(wide,'Pikachu').name,'Pikachu');assert.equal(M.match(wide,'Mew').name,'Mew');
 assert(M.puzzle({...wide,answers:Array.from({length:160},(_,i)=>({name:'Answer '+i,points:1+i%100,aliases:[]}))}));
 assert(!M.puzzle({...wide,answers:Array.from({length:161},(_,i)=>({name:'Answer '+i,points:1+i%100,aliases:[]}))}));
 const oldRun=M.create(previous,'2026-10-26');M.begin(oldRun,1000);for(let i=0;i<5;i++){M.draft(oldRun,oldRun.questions[i].answers[0].name,1001);assert(M.finish(oldRun,1002));if(i<4)M.next(oldRun,1000);}assert(M.record(oldRun,'2026-10-26'));
@@ -23,7 +30,7 @@ const titleAnswers={
 };
 for(const q of B)for(const a of q.answers)for(const label of [a.name,...a.aliases]){
  assert(!mentioned(q.scope,label),q.id+' description gives away '+label);
- if(mentioned(q.prompt,label)){assert(q.id.startsWith('hg-extra-')||['hg-ao-women','hg-mens-slams','hg-peaks'].includes(q.id)||titleAnswers[q.id]?.includes(a.name),q.id+' unexpected answer in prompt: '+label);assert.equal(a.points,1,q.id+' named answer must receive minimum points');}
+ if(mentioned(q.prompt,label)){assert(q.id.startsWith('hg7-')||q.id.startsWith('hg-extra-')||['hg-ao-women','hg-mens-slams','hg-peaks'].includes(q.id)||titleAnswers[q.id]?.includes(a.name),q.id+' unexpected answer in prompt: '+label);assert.equal(a.points,1,q.id+' named answer must receive minimum points');}
 }
 const preFix=require('../content/archive/2026-10-27/hidden-gem-questions.json').questions;
 for(const [id,input,points]of [['hg-parr','Moana',77],['hg-hunger','The Maze Runner',67],['hg-rna','Stomach',54]]){
@@ -35,14 +42,14 @@ for(const [id,input,points]of [['hg-parr','Moana',77],['hg-hunger','The Maze Run
 // Every prior revision-4 question, including tiny retired sets, remains finishable.
 const revision4=require('../content/archive/2026-10-28/hidden-gem-questions.json').questions;
 for(const q of revision4){const r=M.createPractice(q,day,'revision4:'+q.id),frozen=encode(r.questions),a=q.answers.at(-1);M.begin(r,1000);M.draft(r,a.name,1001);assert(M.finish(r,1002));assert(M.validRun(r));assert.equal(r.picks[0].points,a.points);assert.equal(encode(r.questions),frozen);}
-assert.equal(M.match(B.find(q=>q.id==='countries-a'),'Oceania'),null);
-const ids=[];for(let i=0;i<32;i++){const d=new Date(Date.UTC(2026,9,24+i)).toISOString().slice(0,10),qs=M.daily(B,d);assert.deepEqual(qs,M.daily([...B].reverse(),d));assert.equal(new Set(qs.map(q=>q.topic)).size,5);ids.push(...qs.map(q=>q.id));}assert.equal(new Set(ids).size,160);
+assert.equal(M.match(legacy.find(q=>q.id==='countries-a'),'Oceania'),null);
+const ids=[];for(let i=0;i<32;i++){const d=new Date(Date.UTC(2026,9,24+i)).toISOString().slice(0,10),qs=M.daily(legacy,d);assert.deepEqual(qs,M.daily([...legacy].reverse(),d));assert.equal(new Set(qs.map(q=>q.topic)).size,5);ids.push(...qs.map(q=>q.id));}assert.equal(new Set(ids).size,160);
 const full=[];for(let i=0;i<48;i++){const d=new Date(Date.UTC(2026,9,24+i)).toISOString().slice(0,10),qs=M.daily(B,d);assert.deepEqual(qs,M.daily([...B].reverse(),d));assert.equal(new Set(qs.map(q=>q.topic)).size,5);assert(qs.filter(q=>/tennis|grand slam|ATP|WTA|Australian Open/i.test(q.prompt)).length<=1);full.push(...qs.map(q=>q.id));}assert.equal(new Set(full).size,240,'48 days contain 240 different questions');
-const revision5=require('../content/archive/2026-10-29/hidden-gem-questions.json').questions;for(let i=0;i<6;i++){const d=new Date(Date.UTC(2026,9,24+i)).toISOString().slice(0,10);assert.deepEqual(M.daily(B,d).map(q=>q.id),M.daily(revision5,d).map(q=>q.id),'Already released date slots stay fixed');}
+const revision5=require('../content/archive/2026-10-29/hidden-gem-questions.json').questions;for(let i=0;i<6;i++){const d=new Date(Date.UTC(2026,9,24+i)).toISOString().slice(0,10);assert.deepEqual(M.daily(legacy,d).map(q=>q.id),M.daily(revision5,d).map(q=>q.id),'Already released date slots stay fixed');}
 for(const q of revision5){const r=M.createPractice(q,day,'revision5:'+q.id),a=q.answers.at(-1);M.begin(r,1000);M.draft(r,a.name,1001);assert(M.finish(r,1002));assert.equal(r.picks[0].points,a.points);}
 
 for(const [n,label]of [[0,'Time’s Up'],[1,'Familiar'],[19,'Familiar'],[20,'Nice Find'],[39,'Nice Find'],[40,'Offbeat'],[59,'Offbeat'],[60,'Hidden Gem'],[79,'Hidden Gem'],[80,'Crown Jewel'],[95,'Crown Jewel'],[100,'Crown Jewel']])assert.equal(M.scoreBand(n),label);
-const countries=B.find(q=>q.id==='countries-a');assert.equal(M.match(countries,'Azerbaijna').name,'Azerbaijan');assert.equal(M.match(countries,'Austria').name,'Austria');assert.equal(M.match(countries,'Canada'),null);
+const countries=legacy.find(q=>q.id==='countries-a');assert.equal(M.match(countries,'Azerbaijna').name,'Azerbaijan');assert.equal(M.match(countries,'Austria').name,'Austria');assert.equal(M.match(countries,'Canada'),null);
 const ambiguous={...countries,answers:[{name:'Catapult',points:20,aliases:[]},{name:'Catapolt',points:95,aliases:[]}]};assert.equal(M.match(ambiguous,'Catapelt'),null);
 const retry=M.createPractice(countries,day,'retry');M.begin(retry,1000);for(const x of ['Canada','','Mexico']){M.draft(retry,x,2000);assert(!M.finish(retry,2001));assert.equal(retry.deadline,31000);assert.equal(retry.picks.length,0);assert.equal(retry.phase,'active');assert(M.validRun(retry));}M.draft(retry,'Azerbaijna',3000);assert(M.finish(retry,3001));assert.equal(retry.picks[0].points,95);assert.equal(retry.picks[0].answer,'Azerbaijan');assert(retry.picks[0].typo);const lock=encode(retry);assert(!M.finish(retry,3002));assert(!M.draft(retry,'Australia',3003));assert.equal(encode(retry),lock);
 const late=M.createPractice(countries,day,'late');M.begin(late,1000);M.draft(late,'Canada',2000);assert(!M.draft(late,'Azerbaijan',31000));assert.equal(late.picks[0].answer,null);assert.equal(late.picks[0].points,0);assert(M.validRun(late));

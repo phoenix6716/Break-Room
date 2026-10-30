@@ -1,3 +1,9 @@
+## Sleeper authoring — revision 7, 30 October 2026
+
+The active source is `content/hidden-gem-accessible-source.json`: 240 broad prompts, explicit aliases, editorial ordering and a fixed 48-day schedule. Run `node scripts/build-hidden-gem-questions.cjs` to emit `content/hidden-gem-questions.json` and `games/hidden-gem/questions.js`. Both generated files must be committed. Review additions for distinct canonical identities, ordinary obvious answers, regional aliases and clear boundaries. Do not inflate counts with synonyms or inflections. All fresh lists must contain at least ten canonical answers (this release has 19–148). Update the source's spacing review when editing categories or the schedule; conflicting pairs cannot share or neighbour a day, including the cycle boundary.
+
+The original 50 examples and scope decisions are mapped in `design/content-reviews/2026-10-30-sleeper.json`. The previous complete bank and selector are archived under `content/archive/2026-10-30/`. Captured questions and saves retain their own rules; the new minimum applies to authoring, never to old save validation. Fixed ratings estimate familiarity, without survey claims. The Studio's original three-game review export does not import Sleeper; integrate through this source/generator workflow.
+
 ## Broader Sleeper questions — owner correction, 28 October 2026
 
 Every newly offered Sleeper question must have at least ten canonical answers, preferably more. Revision 5 replaces all 55 undersized sets across SCIENCE, AUSTRALIA, LANGUAGE and EVERYDAY with broader scoped questions. The compass-point, demonstrative and states-of-matter prompts are retired. The bank has 160 questions and 4,722 answers; aliases do not count towards the minimum. Fixed editorial ratings remain 1–100, not popularity measurements.

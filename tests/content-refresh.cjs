@@ -14,8 +14,8 @@ const specs=[
 ];
 const date=i=>new Date(Date.UTC(2026,9,26+i)).toISOString().slice(0,10);
 for(const [id,key,global,period,bankGlobal,file]of specs){
- const M=model(id,global),old=read('content/archive/2026-10-25/'+id+'-'+key+'.json')[key],bank=read('content/'+id+'-'+key+'.json')[key],ctx={window:{}};
- vm.runInNewContext(fs.readFileSync('games/'+id+'/'+file+'.js','utf8'),ctx);assert.deepEqual(copy(ctx.window[bankGlobal]),bank,'Generated '+id+' bank');
+ const M=model(id,global),old=read('content/archive/2026-10-25/'+id+'-'+key+'.json')[key],bank=read((id==='hidden-gem'?'content/archive/2026-10-30/':'content/')+id+'-'+key+'.json')[key],ctx={window:{}};
+ vm.runInNewContext(fs.readFileSync('games/'+id+'/'+file+'.js','utf8'),ctx);assert.deepEqual(copy(ctx.window[bankGlobal]),read('content/'+id+'-'+key+'.json')[key],'Generated '+id+' bank');
  assert.deepEqual(bank.slice(0,old.length).map(p=>p.id),old.map(p=>p.id),'Frozen calendar slots '+id);
  const changed=bank.slice(0,old.length).filter((p,i)=>JSON.stringify(p)!==JSON.stringify(old[i]));
  assert.deepEqual(changed.map(p=>p.id).sort(),[...new Set([...changes.games[id].changes,...(id==='hidden-gem'?[...sleeper.changes,...sleeperClues.changes,...sleeperBreadth.changes,...sleeperExpansion.changes]:[])].map(p=>p.id))].sort(),'Every edit is recorded '+id);
@@ -31,7 +31,8 @@ for(const [id,key,global,period,bankGlobal,file]of specs){
  assert.equal(JSON.stringify(run[key]),frozen,'Old snapshots are unchanged '+id);
  console.log('PASS '+id+': revised bank matches source, '+(id==='hidden-gem'?'released slots preserved and future rotation expanded':'calendar slots unchanged')+', mixed-release month has no repeats, old frozen Daily still completes.');
 }
-const HG=read('content/hidden-gem-questions.json').questions,CL=read('content/clue-ladder-puzzles.json').puzzles,TD=read('content/time-drop-events.json').events;
+// Historical editorial anchors remain in the archived revision, not the active pool.
+const HG=read('content/archive/2026-10-30/hidden-gem-questions.json').questions,CL=read('content/clue-ladder-puzzles.json').puzzles,TD=read('content/time-drop-events.json').events;
 const by=(bank,id)=>bank.find(p=>p.id===id);
 assert(by(HG,'hg-princesses').answers.some(a=>a.name==='Nostalgia'));
 assert(by(HG,'pixar-2010').answers.some(a=>a.name==='Inside Out 2'));
