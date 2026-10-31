@@ -48706,7 +48706,8 @@
         {
           "name": "Necktie",
           "aliases": [
-            "necktie"
+            "necktie",
+            "Tie"
           ],
           "glyphs": [
             "👔"
@@ -49211,11 +49212,11 @@
           ]
         }
       ],
-      "rosterSha256": "a944dc35ea20079fc1aeafb66675a0faec553ac2d2b1bebe25c15057c6144be0"
+      "rosterSha256": "e59bc5e038cf1bfdd257eaea4f5bbea38219c7f14e2d26b0770b8fa5026af3c9"
     },
     "everyday-household": {
       "source": "https://unicode.org/Public/emoji/16.0/emoji-test.txt",
-      "expectedCount": 25,
+      "expectedCount": 32,
       "members": [
         {
           "name": "Door",
@@ -49281,7 +49282,9 @@
         {
           "name": "Couch And Lamp",
           "aliases": [
-            "couch and lamp"
+            "couch and lamp",
+            "Couch",
+            "Sofa"
           ],
           "glyphs": [
             "🛋️",
@@ -49426,7 +49429,9 @@
         {
           "name": "Roll Of Paper",
           "aliases": [
-            "roll of paper"
+            "roll of paper",
+            "Toilet paper",
+            "Toilet roll"
           ],
           "glyphs": [
             "🧻"
@@ -49518,9 +49523,108 @@
           "sourceMembers": [
             "shopping cart"
           ]
+        },
+        {
+          "name": "Key",
+          "aliases": [
+            "key",
+            "House key",
+            "Door key",
+            "Keys"
+          ],
+          "glyphs": [
+            "🔑",
+            "🔑"
+          ],
+          "sourceMembers": [
+            "key"
+          ]
+        },
+        {
+          "name": "Light Bulb",
+          "aliases": [
+            "light bulb"
+          ],
+          "glyphs": [
+            "💡",
+            "💡"
+          ],
+          "sourceMembers": [
+            "light bulb"
+          ]
+        },
+        {
+          "name": "Candle",
+          "aliases": [
+            "candle"
+          ],
+          "glyphs": [
+            "🕯️",
+            "🕯"
+          ],
+          "sourceMembers": [
+            "candle"
+          ]
+        },
+        {
+          "name": "Kitchen Knife",
+          "aliases": [
+            "kitchen knife",
+            "Knife"
+          ],
+          "glyphs": [
+            "🔪",
+            "🔪"
+          ],
+          "sourceMembers": [
+            "kitchen knife"
+          ]
+        },
+        {
+          "name": "Fork And Knife With Plate",
+          "aliases": [
+            "fork and knife with plate",
+            "Plate",
+            "Dinner plate"
+          ],
+          "glyphs": [
+            "🍽️",
+            "🍽"
+          ],
+          "sourceMembers": [
+            "fork and knife with plate"
+          ]
+        },
+        {
+          "name": "Fork And Knife",
+          "aliases": [
+            "fork and knife",
+            "Fork",
+            "Cutlery"
+          ],
+          "glyphs": [
+            "🍴",
+            "🍴"
+          ],
+          "sourceMembers": [
+            "fork and knife"
+          ]
+        },
+        {
+          "name": "Spoon",
+          "aliases": [
+            "spoon"
+          ],
+          "glyphs": [
+            "🥄",
+            "🥄"
+          ],
+          "sourceMembers": [
+            "spoon"
+          ]
         }
       ],
-      "rosterSha256": "cf6ef854c098eb3ae31ed3c59a59a03c1ba84292cc089c65851ae3b9d03ba81b"
+      "rosterSha256": "73d2aca39c289c22f718397241f924000955b326e31da2029e05ecfeaacf5623"
     },
     "everyday-tools": {
       "source": "https://unicode.org/Public/emoji/16.0/emoji-test.txt",
@@ -51812,7 +51916,9 @@
         {
           "name": "Game Die",
           "aliases": [
-            "game die"
+            "game die",
+            "Dice",
+            "Die"
           ],
           "glyphs": [
             "🎲"
@@ -51824,7 +51930,9 @@
         {
           "name": "Puzzle Piece",
           "aliases": [
-            "puzzle piece"
+            "puzzle piece",
+            "Puzzle",
+            "Jigsaw"
           ],
           "glyphs": [
             "🧩"
@@ -51836,7 +51944,9 @@
         {
           "name": "Teddy Bear",
           "aliases": [
-            "teddy bear"
+            "teddy bear",
+            "Teddy",
+            "Stuffed bear"
           ],
           "glyphs": [
             "🧸"
@@ -51872,7 +51982,9 @@
         {
           "name": "Nesting Dolls",
           "aliases": [
-            "nesting dolls"
+            "nesting dolls",
+            "Matryoshka",
+            "Russian dolls"
           ],
           "glyphs": [
             "🪆"
@@ -51983,7 +52095,7 @@
           ]
         }
       ],
-      "rosterSha256": "d31e643444c5e3ca6da84cc1b88c3799777febb0cae3bb129e804018b51ad0f6"
+      "rosterSha256": "05584399945781322ce317e99f4a81cc182d4877becd0db46fe7ce1e604f1634"
     },
     "everyday-wearables": {
       "source": "https://unicode.org/Public/emoji/16.0/emoji-test.txt",
@@ -52225,7 +52337,7 @@
     },
     "everyday-office": {
       "source": "https://unicode.org/Public/emoji/16.0/emoji-test.txt",
-      "expectedCount": 18,
+      "expectedCount": 42,
       "members": [
         {
           "name": "Briefcase",
@@ -52465,9 +52577,347 @@
           "sourceMembers": [
             "wastebasket"
           ]
+        },
+        {
+          "name": "Notebook",
+          "aliases": [
+            "notebook with decorative cover",
+            "notebook"
+          ],
+          "glyphs": [
+            "📔",
+            "📓"
+          ],
+          "sourceMembers": [
+            "notebook with decorative cover",
+            "notebook"
+          ]
+        },
+        {
+          "name": "Book",
+          "aliases": [
+            "closed book",
+            "open book",
+            "green book",
+            "blue book",
+            "orange book",
+            "books"
+          ],
+          "glyphs": [
+            "📕",
+            "📖",
+            "📗",
+            "📘",
+            "📙",
+            "📚"
+          ],
+          "sourceMembers": [
+            "closed book",
+            "open book",
+            "green book",
+            "blue book",
+            "orange book",
+            "books"
+          ]
+        },
+        {
+          "name": "Ledger",
+          "aliases": [
+            "ledger"
+          ],
+          "glyphs": [
+            "📒"
+          ],
+          "sourceMembers": [
+            "ledger"
+          ]
+        },
+        {
+          "name": "Page With Curl",
+          "aliases": [
+            "page with curl"
+          ],
+          "glyphs": [
+            "📃"
+          ],
+          "sourceMembers": [
+            "page with curl"
+          ]
+        },
+        {
+          "name": "Scroll",
+          "aliases": [
+            "scroll"
+          ],
+          "glyphs": [
+            "📜"
+          ],
+          "sourceMembers": [
+            "scroll"
+          ]
+        },
+        {
+          "name": "Page Facing Up",
+          "aliases": [
+            "page facing up"
+          ],
+          "glyphs": [
+            "📄"
+          ],
+          "sourceMembers": [
+            "page facing up"
+          ]
+        },
+        {
+          "name": "Newspaper",
+          "aliases": [
+            "newspaper",
+            "rolled-up newspaper"
+          ],
+          "glyphs": [
+            "📰",
+            "🗞️",
+            "🗞"
+          ],
+          "sourceMembers": [
+            "newspaper",
+            "rolled-up newspaper"
+          ]
+        },
+        {
+          "name": "Bookmark",
+          "aliases": [
+            "bookmark tabs",
+            "bookmark"
+          ],
+          "glyphs": [
+            "📑",
+            "🔖"
+          ],
+          "sourceMembers": [
+            "bookmark tabs",
+            "bookmark"
+          ]
+        },
+        {
+          "name": "Label",
+          "aliases": [
+            "label"
+          ],
+          "glyphs": [
+            "🏷️",
+            "🏷"
+          ],
+          "sourceMembers": [
+            "label"
+          ]
+        },
+        {
+          "name": "Pencil",
+          "aliases": [
+            "pencil",
+            "Pencils"
+          ],
+          "glyphs": [
+            "✏",
+            "✏️"
+          ],
+          "sourceMembers": [
+            "pencil"
+          ]
+        },
+        {
+          "name": "Black Nib",
+          "aliases": [
+            "black nib"
+          ],
+          "glyphs": [
+            "✒️",
+            "✒"
+          ],
+          "sourceMembers": [
+            "black nib"
+          ]
+        },
+        {
+          "name": "Fountain Pen",
+          "aliases": [
+            "fountain pen"
+          ],
+          "glyphs": [
+            "🖋",
+            "🖋️"
+          ],
+          "sourceMembers": [
+            "fountain pen"
+          ]
+        },
+        {
+          "name": "Pen",
+          "aliases": [
+            "pen",
+            "Ballpoint pen",
+            "Biro"
+          ],
+          "glyphs": [
+            "🖊️",
+            "🖊"
+          ],
+          "sourceMembers": [
+            "pen"
+          ]
+        },
+        {
+          "name": "Paintbrush",
+          "aliases": [
+            "paintbrush"
+          ],
+          "glyphs": [
+            "🖌",
+            "🖌️"
+          ],
+          "sourceMembers": [
+            "paintbrush"
+          ]
+        },
+        {
+          "name": "Crayon",
+          "aliases": [
+            "crayon"
+          ],
+          "glyphs": [
+            "🖍️",
+            "🖍"
+          ],
+          "sourceMembers": [
+            "crayon"
+          ]
+        },
+        {
+          "name": "Memo",
+          "aliases": [
+            "memo"
+          ],
+          "glyphs": [
+            "📝"
+          ],
+          "sourceMembers": [
+            "memo"
+          ]
+        },
+        {
+          "name": "Mobile Phone",
+          "aliases": [
+            "mobile phone",
+            "mobile phone with arrow",
+            "Phone",
+            "Cell phone",
+            "Cellphone",
+            "Smartphone"
+          ],
+          "glyphs": [
+            "📱",
+            "📲"
+          ],
+          "sourceMembers": [
+            "mobile phone",
+            "mobile phone with arrow"
+          ]
+        },
+        {
+          "name": "Telephone",
+          "aliases": [
+            "telephone",
+            "telephone receiver"
+          ],
+          "glyphs": [
+            "☎",
+            "☎️",
+            "📞"
+          ],
+          "sourceMembers": [
+            "telephone",
+            "telephone receiver"
+          ]
+        },
+        {
+          "name": "Fax Machine",
+          "aliases": [
+            "fax machine"
+          ],
+          "glyphs": [
+            "📠"
+          ],
+          "sourceMembers": [
+            "fax machine"
+          ]
+        },
+        {
+          "name": "Laptop",
+          "aliases": [
+            "laptop"
+          ],
+          "glyphs": [
+            "💻"
+          ],
+          "sourceMembers": [
+            "laptop"
+          ]
+        },
+        {
+          "name": "Desktop Computer",
+          "aliases": [
+            "desktop computer"
+          ],
+          "glyphs": [
+            "🖥",
+            "🖥️"
+          ],
+          "sourceMembers": [
+            "desktop computer"
+          ]
+        },
+        {
+          "name": "Printer",
+          "aliases": [
+            "printer"
+          ],
+          "glyphs": [
+            "🖨",
+            "🖨️"
+          ],
+          "sourceMembers": [
+            "printer"
+          ]
+        },
+        {
+          "name": "Keyboard",
+          "aliases": [
+            "keyboard"
+          ],
+          "glyphs": [
+            "⌨",
+            "⌨️"
+          ],
+          "sourceMembers": [
+            "keyboard"
+          ]
+        },
+        {
+          "name": "Computer Mouse",
+          "aliases": [
+            "computer mouse"
+          ],
+          "glyphs": [
+            "🖱️",
+            "🖱"
+          ],
+          "sourceMembers": [
+            "computer mouse"
+          ]
         }
       ],
-      "rosterSha256": "5c6c5e8906f84ccf23c78cc553ce5fba1f37b86ab3f913c1ea9a824c96b37ce6"
+      "rosterSha256": "1704f3d364ece7e7f8ef1fe1ef26a929bb3365e44b801b89e2f0010b4142f346"
     },
     "everyday-technology": {
       "source": "https://unicode.org/Public/emoji/16.0/emoji-test.txt",
@@ -53026,7 +53476,8 @@
         {
           "name": "Pencil",
           "aliases": [
-            "pencil"
+            "pencil",
+            "Pencils"
           ],
           "glyphs": [
             "✏",
@@ -53065,7 +53516,9 @@
         {
           "name": "Pen",
           "aliases": [
-            "pen"
+            "pen",
+            "Ballpoint pen",
+            "Biro"
           ],
           "glyphs": [
             "🖊️",
@@ -53114,7 +53567,7 @@
           ]
         }
       ],
-      "rosterSha256": "8c079c43fb837deb2a6cef1e62cb93a80e6e5f165a6049c99ad66b809db4a06c"
+      "rosterSha256": "0aed9ec3924b7ac87622d9a9067ce48b021fac4c726b8bfd61784069fbafd15f"
     },
     "everyday-audio": {
       "source": "https://unicode.org/Public/emoji/16.0/emoji-test.txt",
@@ -53893,7 +54346,9 @@
         {
           "name": "Waving Hand",
           "aliases": [
-            "waving hand"
+            "waving hand",
+            "Wave",
+            "Waving"
           ],
           "glyphs": [
             "👋"
@@ -54062,7 +54517,9 @@
         {
           "name": "Victory Hand",
           "aliases": [
-            "victory hand"
+            "victory hand",
+            "Peace sign",
+            "V sign"
           ],
           "glyphs": [
             "✌",
@@ -54294,7 +54751,10 @@
         {
           "name": "Clapping Hands",
           "aliases": [
-            "clapping hands"
+            "clapping hands",
+            "Clap",
+            "Clapping",
+            "Applause"
           ],
           "glyphs": [
             "👏"
@@ -54366,7 +54826,10 @@
         {
           "name": "Folded Hands",
           "aliases": [
-            "folded hands"
+            "folded hands",
+            "Prayer",
+            "Praying",
+            "Praying hands"
           ],
           "glyphs": [
             "🙏"
@@ -54376,7 +54839,7 @@
           ]
         }
       ],
-      "rosterSha256": "6a4e51baa6392dfe283a193e05893a7a9563c31fa5c108b5b7d996b133ba09f7"
+      "rosterSha256": "63be784e1cae82c0112254e19ec49108d7e1586ce04b5aa35a82f318945d9f06"
     },
     "everyday-jobs": {
       "source": "https://unicode.org/Public/emoji/16.0/emoji-test.txt",
@@ -55689,7 +56152,7 @@
     },
     "everyday-sea-reptiles": {
       "source": "https://unicode.org/Public/emoji/16.0/emoji-test.txt",
-      "expectedCount": 26,
+      "expectedCount": 23,
       "members": [
         {
           "name": "Frog",
@@ -55752,24 +56215,15 @@
           ]
         },
         {
-          "name": "Dragon Face",
-          "aliases": [
-            "dragon face"
-          ],
-          "glyphs": [
-            "🐲"
-          ],
-          "sourceMembers": [
-            "dragon face"
-          ]
-        },
-        {
           "name": "Dragon",
           "aliases": [
-            "dragon"
+            "dragon",
+            "Dragon Face",
+            "dragon face"
           ],
           "glyphs": [
-            "🐉"
+            "🐉",
+            "🐲"
           ],
           "sourceMembers": [
             "dragon"
@@ -55800,24 +56254,15 @@
           ]
         },
         {
-          "name": "Spouting Whale",
-          "aliases": [
-            "spouting whale"
-          ],
-          "glyphs": [
-            "🐳"
-          ],
-          "sourceMembers": [
-            "spouting whale"
-          ]
-        },
-        {
           "name": "Whale",
           "aliases": [
-            "whale"
+            "whale",
+            "Spouting Whale",
+            "spouting whale"
           ],
           "glyphs": [
-            "🐋"
+            "🐋",
+            "🐳"
           ],
           "sourceMembers": [
             "whale"
@@ -55908,18 +56353,6 @@
           ]
         },
         {
-          "name": "Spiral Shell",
-          "aliases": [
-            "spiral shell"
-          ],
-          "glyphs": [
-            "🐚"
-          ],
-          "sourceMembers": [
-            "spiral shell"
-          ]
-        },
-        {
           "name": "Coral",
           "aliases": [
             "coral"
@@ -56004,7 +56437,7 @@
           ]
         }
       ],
-      "rosterSha256": "842df8e3b85e4ac5bb11e9a12c944b5a5338cf33b90c2ceca5ea765b70e1d8b3"
+      "rosterSha256": "28a32d75ffcf8b0cdb90ac62a323025da00fe1407229ce55ceacf07e5b1ce5b6"
     },
     "everyday-asian-food": {
       "source": "https://unicode.org/Public/emoji/16.0/emoji-test.txt",
@@ -76307,7 +76740,14 @@
         "Toothbrush",
         "Sponge",
         "Fire Extinguisher",
-        "Shopping Cart"
+        "Shopping Cart",
+        "Key",
+        "Light Bulb",
+        "Candle",
+        "Kitchen Knife",
+        "Fork And Knife With Plate",
+        "Fork And Knife",
+        "Spoon"
       ],
       "family": "everyday-household",
       "points": {
@@ -76335,7 +76775,14 @@
         "Toothbrush": 50,
         "Sponge": 50,
         "Fire Extinguisher": 50,
-        "Shopping Cart": 50
+        "Shopping Cart": 50,
+        "Key": 50,
+        "Light Bulb": 50,
+        "Candle": 50,
+        "Kitchen Knife": 50,
+        "Fork And Knife With Plate": 50,
+        "Fork And Knife": 50,
+        "Spoon": 50
       },
       "selection": {
         "type": "all"
@@ -77078,7 +77525,31 @@
         "Scissors",
         "Card File Box",
         "File Cabinet",
-        "Wastebasket"
+        "Wastebasket",
+        "Notebook",
+        "Book",
+        "Ledger",
+        "Page With Curl",
+        "Scroll",
+        "Page Facing Up",
+        "Newspaper",
+        "Bookmark",
+        "Label",
+        "Pencil",
+        "Black Nib",
+        "Fountain Pen",
+        "Pen",
+        "Paintbrush",
+        "Crayon",
+        "Memo",
+        "Mobile Phone",
+        "Telephone",
+        "Fax Machine",
+        "Laptop",
+        "Desktop Computer",
+        "Printer",
+        "Keyboard",
+        "Computer Mouse"
       ],
       "family": "everyday-office",
       "points": {
@@ -77099,7 +77570,31 @@
         "Scissors": 50,
         "Card File Box": 50,
         "File Cabinet": 50,
-        "Wastebasket": 50
+        "Wastebasket": 50,
+        "Notebook": 50,
+        "Book": 50,
+        "Ledger": 50,
+        "Page With Curl": 50,
+        "Scroll": 50,
+        "Page Facing Up": 50,
+        "Newspaper": 50,
+        "Bookmark": 50,
+        "Label": 50,
+        "Pencil": 50,
+        "Black Nib": 50,
+        "Fountain Pen": 50,
+        "Pen": 50,
+        "Paintbrush": 50,
+        "Crayon": 50,
+        "Memo": 50,
+        "Mobile Phone": 50,
+        "Telephone": 50,
+        "Fax Machine": 50,
+        "Laptop": 50,
+        "Desktop Computer": 50,
+        "Printer": 50,
+        "Keyboard": 50,
+        "Computer Mouse": 50
       },
       "selection": {
         "type": "all"
@@ -77934,11 +78429,9 @@
         "Turtle",
         "Lizard",
         "Snake",
-        "Dragon Face",
         "Dragon",
         "Sauropod",
         "T-Rex",
-        "Spouting Whale",
         "Whale",
         "Dolphin",
         "Seal",
@@ -77947,7 +78440,6 @@
         "Blowfish",
         "Shark",
         "Octopus",
-        "Spiral Shell",
         "Coral",
         "Jellyfish",
         "Crab",
@@ -77963,11 +78455,9 @@
         "Turtle": 50,
         "Lizard": 50,
         "Snake": 50,
-        "Dragon Face": 50,
         "Dragon": 50,
         "Sauropod": 50,
         "T-Rex": 50,
-        "Spouting Whale": 50,
         "Whale": 50,
         "Dolphin": 50,
         "Seal": 50,
@@ -77976,7 +78466,6 @@
         "Blowfish": 100,
         "Shark": 50,
         "Octopus": 50,
-        "Spiral Shell": 50,
         "Coral": 50,
         "Jellyfish": 50,
         "Crab": 50,
@@ -87094,6 +87583,10 @@
     [
       144,
       154
+    ],
+    [
+      155,
+      158
     ],
     [
       52,

@@ -90,6 +90,7 @@ assert.equal(M.match(byUniverse('emoji-animals'),'🐘').name,'Elephant');
 assert.equal(M.match(byUniverse('un-states'),'USA').name,'United States');assert.equal(M.match(byUniverse('un-states'),'Atlantis'),null);
 assert.equal(M.match(byUniverse('dceu'),'The Suicide Squad').name,'The Suicide Squad (2021)');assert.equal(M.match(byUniverse('dceu'),'Suicide Squad').name,'Suicide Squad (2016)');
 for(const [u,input,name]of [['un-sg','Guterres','Antonio Guterres'],['aus-pm','Albanese','Anthony Albanese'],['nba','Lakers','Los Angeles Lakers'],['afl','Swans','Sydney Swans'],['premier','Man Utd','Manchester United']])assert.equal(M.match(byUniverse(u),input)?.name,name,'Common shortened name '+input);
+for(const [u,input]of [['everyday-office','Pencil'],['everyday-household','Key'],['everyday-household','Sofa'],['everyday-hands','Clapping'],['everyday-toys','Dice'],['everyday-sea-reptiles','Whale']])assert(M.match(byUniverse(u),input),'Ordinary everyday answer: '+input);
 const allDates=[];
 for(let i=0;i<48;i++){
  const d=new Date(Date.UTC(2026,9,31+i)).toISOString().slice(0,10),qs=M.daily(activeBank,d);assert.equal(qs.length,5);assert.equal(new Set(qs.map(q=>q.topic)).size,5);allDates.push(...qs.map(q=>q.id));

@@ -108,7 +108,7 @@
     {
       "id": "hg8-146",
       "prompt": "Name a household item represented by an emoji.",
-      "answers": 25
+      "answers": 32
     },
     {
       "id": "hg8-147",
@@ -158,7 +158,7 @@
     {
       "id": "hg8-156",
       "prompt": "Name an office supply or desk item represented by an emoji.",
-      "answers": 18
+      "answers": 42
     },
     {
       "id": "hg8-157",
@@ -213,7 +213,7 @@
     {
       "id": "hg8-167",
       "prompt": "Name a reptile, amphibian or sea creature represented by an emoji.",
-      "answers": 26
+      "answers": 23
     },
     {
       "id": "hg8-168",
@@ -222,9 +222,9 @@
     }
   ],
   "questions": 240,
-  "answers": 7605,
+  "answers": 7633,
   "days": 48,
-  "overlapPairs": 176,
+  "overlapPairs": 177,
   "capturedSnapshots": "Preserved unchanged; retired topic filters fall back to All topics.",
   "source": "content/hidden-gem-bounded-source.json"
 }

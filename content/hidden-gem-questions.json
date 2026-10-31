@@ -38872,7 +38872,9 @@
         {
           "name": "Necktie",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Tie"
+          ]
         },
         {
           "name": "T-Shirt",
@@ -39172,7 +39174,10 @@
         {
           "name": "Couch And Lamp",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Couch",
+            "Sofa"
+          ]
         },
         {
           "name": "Chair",
@@ -39232,7 +39237,10 @@
         {
           "name": "Roll Of Paper",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Toilet paper",
+            "Toilet roll"
+          ]
         },
         {
           "name": "Bucket",
@@ -39268,6 +39276,53 @@
           "name": "Shopping Cart",
           "points": 50,
           "aliases": []
+        },
+        {
+          "name": "Key",
+          "points": 50,
+          "aliases": [
+            "House key",
+            "Door key",
+            "Keys"
+          ]
+        },
+        {
+          "name": "Light Bulb",
+          "points": 50,
+          "aliases": []
+        },
+        {
+          "name": "Candle",
+          "points": 50,
+          "aliases": []
+        },
+        {
+          "name": "Kitchen Knife",
+          "points": 50,
+          "aliases": [
+            "Knife"
+          ]
+        },
+        {
+          "name": "Fork And Knife With Plate",
+          "points": 50,
+          "aliases": [
+            "Plate",
+            "Dinner plate"
+          ]
+        },
+        {
+          "name": "Fork And Knife",
+          "points": 50,
+          "aliases": [
+            "Fork",
+            "Cutlery"
+          ]
+        },
+        {
+          "name": "Spoon",
+          "points": 50,
+          "aliases": []
         }
       ],
       "inputMap": {
@@ -39297,7 +39352,16 @@
         "🪥": "Toothbrush",
         "🧽": "Sponge",
         "🧯": "Fire Extinguisher",
-        "🛒": "Shopping Cart"
+        "🛒": "Shopping Cart",
+        "🔑": "Key",
+        "💡": "Light Bulb",
+        "🕯️": "Candle",
+        "🕯": "Candle",
+        "🔪": "Kitchen Knife",
+        "🍽️": "Fork And Knife With Plate",
+        "🍽": "Fork And Knife With Plate",
+        "🍴": "Fork And Knife",
+        "🥄": "Spoon"
       },
       "inputMapCaseSensitive": false
     },
@@ -40545,17 +40609,26 @@
         {
           "name": "Game Die",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Dice",
+            "Die"
+          ]
         },
         {
           "name": "Puzzle Piece",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Puzzle",
+            "Jigsaw"
+          ]
         },
         {
           "name": "Teddy Bear",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "Teddy",
+            "Stuffed bear"
+          ]
         },
         {
           "name": "Piñata",
@@ -40570,7 +40643,10 @@
         {
           "name": "Nesting Dolls",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Matryoshka",
+            "Russian dolls"
+          ]
         },
         {
           "name": "Spade Suit",
@@ -40884,6 +40960,152 @@
           "name": "Wastebasket",
           "points": 50,
           "aliases": []
+        },
+        {
+          "name": "Notebook",
+          "points": 50,
+          "aliases": [
+            "notebook with decorative cover"
+          ]
+        },
+        {
+          "name": "Book",
+          "points": 50,
+          "aliases": [
+            "closed book",
+            "open book",
+            "green book",
+            "blue book",
+            "orange book",
+            "books"
+          ]
+        },
+        {
+          "name": "Ledger",
+          "points": 50,
+          "aliases": []
+        },
+        {
+          "name": "Page With Curl",
+          "points": 50,
+          "aliases": []
+        },
+        {
+          "name": "Scroll",
+          "points": 50,
+          "aliases": []
+        },
+        {
+          "name": "Page Facing Up",
+          "points": 50,
+          "aliases": []
+        },
+        {
+          "name": "Newspaper",
+          "points": 50,
+          "aliases": [
+            "rolled-up newspaper"
+          ]
+        },
+        {
+          "name": "Bookmark",
+          "points": 50,
+          "aliases": [
+            "bookmark tabs"
+          ]
+        },
+        {
+          "name": "Label",
+          "points": 50,
+          "aliases": []
+        },
+        {
+          "name": "Pencil",
+          "points": 50,
+          "aliases": [
+            "Pencils"
+          ]
+        },
+        {
+          "name": "Black Nib",
+          "points": 50,
+          "aliases": []
+        },
+        {
+          "name": "Fountain Pen",
+          "points": 50,
+          "aliases": []
+        },
+        {
+          "name": "Pen",
+          "points": 50,
+          "aliases": [
+            "Ballpoint pen",
+            "Biro"
+          ]
+        },
+        {
+          "name": "Paintbrush",
+          "points": 50,
+          "aliases": []
+        },
+        {
+          "name": "Crayon",
+          "points": 50,
+          "aliases": []
+        },
+        {
+          "name": "Memo",
+          "points": 50,
+          "aliases": []
+        },
+        {
+          "name": "Mobile Phone",
+          "points": 50,
+          "aliases": [
+            "mobile phone with arrow",
+            "Phone",
+            "Cell phone",
+            "Cellphone",
+            "Smartphone"
+          ]
+        },
+        {
+          "name": "Telephone",
+          "points": 50,
+          "aliases": [
+            "telephone receiver"
+          ]
+        },
+        {
+          "name": "Fax Machine",
+          "points": 50,
+          "aliases": []
+        },
+        {
+          "name": "Laptop",
+          "points": 50,
+          "aliases": []
+        },
+        {
+          "name": "Desktop Computer",
+          "points": 50,
+          "aliases": []
+        },
+        {
+          "name": "Printer",
+          "points": 50,
+          "aliases": []
+        },
+        {
+          "name": "Keyboard",
+          "points": 50,
+          "aliases": []
+        },
+        {
+          "name": "Computer Mouse",
+          "points": 50,
+          "aliases": []
         }
       ],
       "inputMap": {
@@ -40917,7 +41139,54 @@
         "🗄️": "File Cabinet",
         "🗄": "File Cabinet",
         "🗑️": "Wastebasket",
-        "🗑": "Wastebasket"
+        "🗑": "Wastebasket",
+        "📔": "Notebook",
+        "📓": "Notebook",
+        "📕": "Book",
+        "📖": "Book",
+        "📗": "Book",
+        "📘": "Book",
+        "📙": "Book",
+        "📚": "Book",
+        "📒": "Ledger",
+        "📃": "Page With Curl",
+        "📜": "Scroll",
+        "📄": "Page Facing Up",
+        "📰": "Newspaper",
+        "🗞️": "Newspaper",
+        "🗞": "Newspaper",
+        "📑": "Bookmark",
+        "🔖": "Bookmark",
+        "🏷️": "Label",
+        "🏷": "Label",
+        "✏": "Pencil",
+        "✏️": "Pencil",
+        "✒️": "Black Nib",
+        "✒": "Black Nib",
+        "🖋": "Fountain Pen",
+        "🖋️": "Fountain Pen",
+        "🖊️": "Pen",
+        "🖊": "Pen",
+        "🖌": "Paintbrush",
+        "🖌️": "Paintbrush",
+        "🖍️": "Crayon",
+        "🖍": "Crayon",
+        "📝": "Memo",
+        "📱": "Mobile Phone",
+        "📲": "Mobile Phone",
+        "☎": "Telephone",
+        "☎️": "Telephone",
+        "📞": "Telephone",
+        "📠": "Fax Machine",
+        "💻": "Laptop",
+        "🖥": "Desktop Computer",
+        "🖥️": "Desktop Computer",
+        "🖨": "Printer",
+        "🖨️": "Printer",
+        "⌨": "Keyboard",
+        "⌨️": "Keyboard",
+        "🖱️": "Computer Mouse",
+        "🖱": "Computer Mouse"
       },
       "inputMapCaseSensitive": false
     },
@@ -41235,7 +41504,9 @@
         {
           "name": "Pencil",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Pencils"
+          ]
         },
         {
           "name": "Black Nib",
@@ -41250,7 +41521,10 @@
         {
           "name": "Pen",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Ballpoint pen",
+            "Biro"
+          ]
         },
         {
           "name": "Paintbrush",
@@ -41736,7 +42010,10 @@
         {
           "name": "Waving Hand",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Wave",
+            "Waving"
+          ]
         },
         {
           "name": "Raised Back Of Hand",
@@ -41806,7 +42083,10 @@
         {
           "name": "Victory Hand",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Peace sign",
+            "V sign"
+          ]
         },
         {
           "name": "Crossed Fingers",
@@ -41903,7 +42183,11 @@
         {
           "name": "Clapping Hands",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Clap",
+            "Clapping",
+            "Applause"
+          ]
         },
         {
           "name": "Raising Hands",
@@ -41933,7 +42217,11 @@
         {
           "name": "Folded Hands",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Prayer",
+            "Praying",
+            "Praying hands"
+          ]
         }
       ],
       "inputMap": {
@@ -42752,14 +43040,11 @@
           "aliases": []
         },
         {
-          "name": "Dragon Face",
-          "points": 50,
-          "aliases": []
-        },
-        {
           "name": "Dragon",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Dragon Face"
+          ]
         },
         {
           "name": "Sauropod",
@@ -42772,14 +43057,11 @@
           "aliases": []
         },
         {
-          "name": "Spouting Whale",
-          "points": 50,
-          "aliases": []
-        },
-        {
           "name": "Whale",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Spouting Whale"
+          ]
         },
         {
           "name": "Dolphin",
@@ -42813,11 +43095,6 @@
         },
         {
           "name": "Octopus",
-          "points": 50,
-          "aliases": []
-        },
-        {
-          "name": "Spiral Shell",
           "points": 50,
           "aliases": []
         },
@@ -42863,12 +43140,12 @@
         "🐢": "Turtle",
         "🦎": "Lizard",
         "🐍": "Snake",
-        "🐲": "Dragon Face",
         "🐉": "Dragon",
+        "🐲": "Dragon",
         "🦕": "Sauropod",
         "🦖": "T-Rex",
-        "🐳": "Spouting Whale",
         "🐋": "Whale",
+        "🐳": "Whale",
         "🐬": "Dolphin",
         "🦭": "Seal",
         "🐟": "Fish",
@@ -42876,7 +43153,6 @@
         "🐡": "Blowfish",
         "🦈": "Shark",
         "🐙": "Octopus",
-        "🐚": "Spiral Shell",
         "🪸": "Coral",
         "🪼": "Jellyfish",
         "🦀": "Crab",
