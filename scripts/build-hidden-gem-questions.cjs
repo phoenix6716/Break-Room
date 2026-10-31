@@ -1,27 +1,38 @@
-/* Accessible Sleeper release. Editorial source and fixed schedule are authoritative. */
-const fs=require('node:fs'),source=require('../content/hidden-gem-accessible-source.json');
+/* Closed-roster Sleeper release. The dated factual source and rotation are authoritative. */
+'use strict';
+const fs=require('node:fs'),source=require('../content/hidden-gem-bounded-source.json');
 require('../hidden-gem-model.js');const M=BREAK_ROOM_HIDDEN_GEM;
-const plural=s=>({mouse:'mice',goose:'geese',foot:'feet',tooth:'teeth',child:'children',person:'people',man:'men',woman:'women',knife:'knives',leaf:'leaves',wolf:'wolves',shelf:'shelves',scarf:'scarves',sheep:'sheep',fish:'fish',deer:'deer'}[s]||(/[^aeiou]y$/.test(s)?s.slice(0,-1)+'ies':/(?:s|sh|ch|x|z)$/.test(s)?s+'es':s+'s'));
 const questions=source.questions.map((q,i)=>{
- const used=new Map();const literal=/English (?:word|name)|rhymes|letter|double letter|silent K/.test(q.prompt);
- if(!q.points||q.answers.some(name=>!Number.isInteger(q.points[name])||q.points[name]<1||q.points[name]>100))throw Error('Missing explicit editorial rating: '+q.prompt);
- const answers=q.answers.map(name=>({name,points:q.points[name],aliases:[...new Set(q.aliases?.[name]||[])]}));
- for(const a of answers){const n=M.normal(a.name);if(used.has(n))throw Error('Duplicate canonical '+q.prompt+': '+a.name);used.set(n,a.name);}
- for(const a of answers){if(q.prompt.includes('starts with B'))a.aliases=a.aliases.filter(x=>/^b/i.test(x));if(q.prompt.includes('starts with C'))a.aliases=a.aliases.filter(x=>/^c/i.test(x));if(q.prompt.includes('clothing whose'))a.aliases=a.aliases.filter(x=>/t/i.test(x));if(q.prompt.includes('ends in ER'))a.aliases=a.aliases.filter(x=>/er$/i.test(x));a.aliases=a.aliases.filter(x=>{const n=M.normal(x);if(used.has(n))return false;used.set(n,a.name);return true;});}
- if(!literal)for(const a of answers){
-  const n=M.normal(a.name),words=n.split(' '),last=words.pop(),variants=[words.concat(/s$/.test(last)?last:plural(last)).join(' ')];
-  if(n.endsWith('s')&&!/(ss|us|is|ics|gas|canvas|clothes|glasses|scissors|trousers|shorts|tights|news)$/.test(n))variants.push(n.slice(0,-1));
-  if(n.endsWith('ies'))variants.push(n.slice(0,-3)+'y');
-  for(const v of variants)if(v!==n&&!used.has(v)&&a.aliases.length<12){a.aliases.push(v);used.set(v,a.name);}
- }
+ const u=source.universes[q.universe],members=new Map(u.members.map(a=>[a.id||a.name,a]));
+ if(u.members.length!==u.expectedCount||members.size!==u.expectedCount)throw Error('Invalid roster '+q.universe);
+ if(new Set(q.memberIds).size!==q.memberIds.length||q.memberIds.some(id=>!members.has(id)))throw Error('Invalid selection '+q.prompt);
+ if(q.selection.type==='all'&&q.memberIds.length!==u.expectedCount)throw Error('Incomplete roster '+q.prompt);
+ const selected=q.memberIds.map(id=>members.get(id)),used=new Map(),inputMap=Object.create(null),sensitive=['si-units','si-prefixes'].includes(q.universe);
+ const answers=selected.map(a=>({name:a.name,points:q.points[a.name],aliases:[]}));
+ for(const a of answers){const n=M.normal(a.name);if(!n||used.has(n))throw Error('Duplicate canonical '+q.prompt+': '+a.name);used.set(n,a.name);}
+ const candidates=selected.map(a=>[...new Set(a.aliases)].filter(x=>!sensitive||!(a.rawSymbols||[]).includes(x)));
+ const owners=new Map();selected.forEach((a,i)=>candidates[i].forEach(x=>{const n=M.normal(x);if(!owners.has(n))owners.set(n,new Set());owners.get(n).add(a.name);}));
+ selected.forEach((a,i)=>{
+  answers[i].aliases=candidates[i].filter(x=>{const n=M.normal(x);return n&&x.length<=240&&!used.has(n)&&owners.get(n).size===1;}).filter((x,j,all)=>all.findIndex(y=>M.normal(y)===M.normal(x))===j).slice(0,32);
+  for(const x of answers[i].aliases)used.set(M.normal(x),a.name);
+  for(const raw of [...(a.glyphs||[]),...(a.rawSymbols||[])]){const k=sensitive?raw:raw.toLowerCase();if(inputMap[k]&&inputMap[k]!==a.name)throw Error('Ambiguous symbol '+raw);inputMap[k]=a.name;}
+ });
  for(const a of answers)if([a.name,...a.aliases].some(x=>M.normal(x).length>=3&&(' '+M.normal(q.prompt)+' ').includes(' '+M.normal(x)+' ')))a.points=1;
- const p={id:'hg7-'+String(i+1).padStart(3,'0'),topic:q.topic,prompt:q.prompt,scope:q.scope,source:q.source||'https://www.britannica.com/',dailySlot:source.rotation?.findIndex(day=>day.includes(i)),answers};
- if(!M.puzzle(p)||answers.length<10||answers.length>160)throw Error('Invalid question '+p.id);
+ if(!answers.some(a=>a.points===100))answers.reduce((a,b)=>a.points>b.points?a:b).points=100;
+ const p={id:'hg8-'+String(i+1).padStart(3,'0'),topic:q.topic,prompt:q.prompt,scope:q.scope,source:u.source,dailySlot:source.rotation.findIndex(day=>day.includes(i)),answers};
+ if(Object.keys(inputMap).length){p.inputMap=inputMap;p.inputMapCaseSensitive=sensitive;}
+ if(!M.puzzle(p)||answers.length<10)throw Error('Invalid question '+p.id);
  for(const a of answers)for(const x of [a.name,...a.aliases])if(M.match(p,x)?.name!==a.name)throw Error('Ambiguous answer '+p.id+': '+x);
+ for(const [raw,name]of Object.entries(inputMap))if(M.match(p,raw)?.name!==name)throw Error('Unmatched symbol '+p.id+': '+raw);
  return p;
 });
-if(questions.length!==240||!source.rotation||source.rotation.length!==48||new Set(source.rotation.flat()).size!==240||source.rotation.flat().some(i=>!Number.isInteger(i)||i<0||i>=240)||source.rotation.some(day=>day.length!==5||new Set(day.map(i=>questions[i].topic)).size!==5))throw Error('Invalid accessible rotation');
-const data={version:1,revision:7,epoch:'2026-10-30',days:48,ratings:source.ratings,questions};
+if(questions.length!==240||source.rotation.length!==48||new Set(source.rotation.flat()).size!==240||source.rotation.flat().some(i=>!Number.isInteger(i)||i<0||i>=240)||source.rotation.some(day=>day.length!==5||new Set(day.map(i=>questions[i].topic)).size!==5))throw Error('Invalid bounded rotation');
+const positions=new Map(source.rotation.flatMap((day,d)=>day.map(i=>[i,d])));
+for(const [i,j]of source.conflicts){const d=Math.abs(positions.get(i)-positions.get(j));if(Math.min(d,48-d)<=1)throw Error('Adjacent overlapping categories '+i+','+j);}
+// Recovery-only wording corrections for already captured hg7 rounds. These never enter either active pool.
+const legacy=require('../content/archive/2026-10-31/hidden-gem-questions.json').questions,first=require('../content/archive/2026-10-30-accessible-v1/hidden-gem-questions.json').questions;
+const corrections=legacy.map(q=>{const old=first.find(x=>x.id===q.id);return{id:q.id,prompt:q.prompt,answers:q.answers.filter(a=>old?.answers.some(x=>x.name===a.name&&x.points===a.points&&a.aliases.some(v=>!x.aliases.includes(v)))).map(a=>({name:a.name,points:a.points,aliases:a.aliases}))};}).filter(q=>q.answers.length);
+const data={version:1,revision:8,epoch:'2026-10-31',days:48,ratings:source.ratings,questions};
 fs.writeFileSync('content/hidden-gem-questions.json',JSON.stringify(data,null,2)+'\n');
-fs.writeFileSync('games/hidden-gem/questions.js','/* Frozen accessible answer bank; generated by scripts/build-hidden-gem-questions.cjs. */\nwindow.HIDDEN_GEM_QUESTIONS='+JSON.stringify(questions)+';\n');
+fs.writeFileSync('games/hidden-gem/questions.js','/* Complete dated rosters; generated by scripts/build-hidden-gem-questions.cjs. */\nwindow.HIDDEN_GEM_QUESTIONS='+JSON.stringify(questions)+';\nwindow.HIDDEN_GEM_LEGACY_ALIAS_CORRECTIONS='+JSON.stringify(corrections)+';\n');
 console.log('Sleeper: '+questions.length+' questions, '+questions.reduce((n,q)=>n+q.answers.length,0)+' answers, '+Math.min(...questions.map(q=>q.answers.length))+'–'+Math.max(...questions.map(q=>q.answers.length))+' per question, 48 days.');

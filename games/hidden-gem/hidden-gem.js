@@ -25,10 +25,10 @@ function afterPick(r){if(r.kind==='unlimited'){data.practiceCount++;data.practic
 // Canonical identities and captured ratings remain authoritative; completed picks never change.
 function correctCurrentAliases(r){
  if(!r||!['ready','active'].includes(r.phase))return false;
- const q=r.questions[r.round],latest=B.find(x=>x.id===q.id&&x.prompt===q.prompt);if(!latest)return false;
+ const q=r.questions[r.round],latest=[...B,...(window.HIDDEN_GEM_LEGACY_ALIAS_CORRECTIONS||[])].find(x=>x.id===q.id&&x.prompt===q.prompt);if(!latest)return false;
  const taken=new Set(q.answers.flatMap(a=>[a.name,...a.aliases]).map(M.normal));let changed=false;
  for(const a of q.answers){const newer=latest.answers.find(x=>x.name===a.name&&x.points===a.points);if(!newer)continue;
-  for(const alias of newer.aliases){const n=M.normal(alias);if(!taken.has(n)&&a.aliases.length<12){a.aliases.push(alias);taken.add(n);changed=true;}}
+  for(const alias of newer.aliases){const n=M.normal(alias);if(!taken.has(n)&&a.aliases.length<(q.id.startsWith('hg8-')?32:12)){a.aliases.push(alias);taken.add(n);changed=true;}}
  }
  if(changed){if(r.error==='unlisted'&&M.match(q,r.input))r.error='';r.edits++;}return changed;
 }
@@ -53,7 +53,7 @@ SPACE:['00000000','00001100','00012210','00122210','01222100','12221000','012100
 BOOKS:['11100111','12211221','12211221','12311321','12211221','12211221','11111111','00011000'],
 LANGUAGE:['01111110','12222221','12322321','12333321','12322321','12222221','01111110','00110000'],
 GAMES:['11000011','12211221','12322321','12233221','12222221','12211221','01100110','00000000']
-},grid=art[topic]||art.EVERYDAY,svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+},grid=art[topic]||art[{PLACES:'WORLD',LANDMARKS:'WORLD',SCREEN:'FILM',ARTS:'BOOKS',WORDS:'LANGUAGE',CULTURE:'EVERYDAY'}[topic]]||art.EVERYDAY,svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
 svg.setAttribute('viewBox','0 0 8 8');svg.setAttribute('aria-hidden','true');svg.setAttribute('focusable','false');svg.setAttribute('class','hg-topic-art'+(large?' large':''));svg.setAttribute('shape-rendering','crispEdges');
 grid.forEach((row,y)=>[...row].forEach((pixel,x)=>{if(pixel==='0')return;const rect=document.createElementNS(svg.namespaceURI,'rect');for(const[k,v]of Object.entries({x,y,width:1,height:1,fill:{1:'#17263a',2:'#91c7bc',3:'#edbd71'}[pixel]}))rect.setAttribute(k,v);svg.append(rect);}));return svg;
 }

@@ -1,3 +1,15 @@
+## Complete bounded Sleeper rosters — 31 October 2026
+
+Revision 8 supersedes the open-ended bank for fresh Daily and Unlimited rounds. It has **240 questions, 7,700 canonical answers, 10–321 per question**, plus reviewed aliases and symbol inputs. Each question names a finite roster, edition, classification or date cutoff. This provides a checkable complete canonical set within that boundary; it does not promise every arbitrary paraphrase or that external classifications never change. Earlier broad examples are replaced where their unrestricted membership cannot be enumerated fairly offline. No online judge or API billing is introduced.
+
+Author `content/hidden-gem-bounded-source.json`: dated factual universes, expected counts, roster fingerprints, explicit question membership, per-answer editorial ratings, provenance and the fixed rotation. Run `node scripts/build-hidden-gem-questions.cjs` to regenerate `content/hidden-gem-questions.json` and `games/hidden-gem/questions.js`. Include every selected canonical member; aliases are not additional answers. Update roster fingerprints with SHA-256 of `JSON.stringify(members)` after a factual edit. Keep scopes short, with no accepted answers disclosed. Ratings are designer estimates, not measured player-popularity data; earlier editorial familiarity estimates and roster-order tie breaking are documented in the source. Independent human difficulty and wording calibration remains outstanding.
+
+The **48-day rotation starts 31 October 2026**, with five distinct topics each day. All 444 marked family/overlap pairs avoid the same and adjacent days, including wraparound. Topics are WORLD, PLACES, SCIENCE, GAMES, WORDS, SPORT, LANDMARKS, CULTURE, SCREEN and ARTS. Dailies unlock at **midnight Australia/Sydney** (13:00 UTC in AEDT, 14:00 UTC in AEST). Already captured Dailies stay captured; the next newly captured day uses revision 8. An unfinished Unlimited question finishes under its captured rules, then draws only revision 8.
+
+Revision 7 is archived in `content/archive/2026-10-31/`. Preserve full old snapshots, completed and zero-point picks, deadlines, scores, cloud keys and first-completion locks. A recovery-only alias correction table retains the previously reviewed pants/jeans fix for unanswered hg7 questions; it never enters the active question pool. Browser and private SQL validators now allow 512 answers, 32 aliases and 240-character names/input. Optional snapshot-owned exact symbol maps handle emoji and symbols, including case-sensitive SI prefixes; old questions without those maps keep their original matching rules. No score formula, account data, public API, RLS, timer or save-version changes.
+
+Existing databases apply the updated **`supabase/hidden-gem-broader-answers.sql` before release**; fresh installs use updated `hidden-gem.sql`. This replaces only private validation/matching/score helpers and preserves their revoked client privileges. The existing 2 MB cloud limit is retained: a 120-day replacement-bank completion fixture is about 1.87 MB. Tests cover all canonical names/aliases/symbols, published roster sizes, generated-file reproducibility, Daily/Unlimited replacement, old captures, PostgreSQL parity, ownership/sharing gates and phone/desktop gameplay.
+
 ## Sleeper offline coverage follow-up — 30 October 2026
 
 The active bank now has 6,315 canonical answers (19–148 per question). All 240 IDs and date slots remain fixed, retaining the 48-day rotation. New canonical answers appear in fresh captures; reviewed aliases can also repair the current unanswered question without changing captured points, previous picks, deadlines or completed history. Offline lookup is finite, with no AI/network answer judge.
@@ -21,7 +33,7 @@ This audit executes the shipped pure selectors and extracts the existing Stack U
 | Clue Ladder | 300 answers with five clues each | 60 days without repeating individual puzzles |
 | Seating Chart | 360 tables | 72 days without repeating individual tables |
 | Desk Jam | 180 boards: 120 Daily, 60 additional practice boards | 40 days without repeating individual Daily boards |
-| Sleeper | 240 questions / 6315 answers | 48 days without repeating individual questions |
+| Sleeper | 240 questions / 7700 answers | 48 days without repeating individual questions |
 | Stack Up | 160 non-maths Daily stacks + 134 active optional challenges | 32 days without repeating individual Daily stacks |
 | Pack | 212 bags, including 32 advanced Daily hard bags | 32 days without repeating individual bags |
 | Lowball | 128 products / 512 explicitly scoped regional references | 32 days without repeating individual products |

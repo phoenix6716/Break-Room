@@ -1,9 +1,9 @@
 /* New Hidden Gem model and isolated score helpers; disposable database only. */
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),{PGlite}=require('@electric-sql/pglite');
 for(const p of ['daily-clock.js','hidden-gem-model.js','arcade-score.js','profile-records.js','cloud-saves.js'])require('../'+p);
-const M=BREAK_ROOM_HIDDEN_GEM,B=require('../content/hidden-gem-questions.json').questions,day='2026-10-24',key=M.PREFIX+day,encode=JSON.stringify;
+const M=BREAK_ROOM_HIDDEN_GEM,B=require('../content/archive/2026-10-31/hidden-gem-questions.json').questions,activeBank=require('../content/hidden-gem-questions.json').questions,day='2026-10-24',key=M.PREFIX+day,encode=JSON.stringify;
 const runtime={window:{}};vm.runInNewContext(fs.readFileSync('games/hidden-gem/questions.js','utf8'),runtime);
-assert.deepEqual(JSON.parse(JSON.stringify(runtime.window.HIDDEN_GEM_QUESTIONS)),B);assert.equal(B.length,240);assert(B.reduce((n,q)=>n+q.answers.length,0)>5000);assert.equal(new Set(B.map(q=>q.id)).size,240);
+assert.deepEqual(JSON.parse(JSON.stringify(runtime.window.HIDDEN_GEM_QUESTIONS)),activeBank);assert.equal(B.length,240);assert(B.reduce((n,q)=>n+q.answers.length,0)>5000);assert.equal(new Set(B.map(q=>q.id)).size,240);
 for(const q of B){assert(q.answers.length>=10,q.id+' must offer at least ten canonical answers');assert(!/eight main compass points|basic English demonstrative|three everyday states of matter/i.test(q.prompt));}
 const legacy=require('../content/archive/2026-10-30/hidden-gem-questions.json').questions;
 // All old identities are recovery-only. Full snapshots, not active-bank lookups, define saves.
@@ -17,14 +17,14 @@ for(const x of ['giraffe','stone','keyboard'])assert.equal(M.match(roll,x),null,
 const oldMiss=M.createPractice(oldRoll,day,'old-miss');M.begin(oldMiss,1000);M.draft(oldMiss,'pants',1001);M.expire(oldMiss,31000);assert.equal(oldMiss.picks[0].points,0);assert(M.validRun(oldMiss),'Previously locked zero stays valid');
 const corrected=M.create(accessibleV1,'2026-10-30');for(const q of corrected.questions){const current=B.find(x=>x.id===q.id);for(const a of q.answers){const updated=current.answers.find(x=>x.name===a.name&&x.points===a.points);if(updated)a.aliases=updated.aliases.slice();}}
 M.begin(corrected,1000);for(let i=0;i<5;i++){M.draft(corrected,corrected.questions[i].id===roll.id?'pants':corrected.questions[i].answers[0].name,1001);assert(M.finish(corrected,1002));if(i<4)M.next(corrected,1000);}assert(M.validRun(corrected));assert.equal(corrected.picks.find((p,i)=>corrected.questions[i].id===roll.id).points,69);
-const author=require('../content/hidden-gem-accessible-source.json');
+const author=require('../content/archive/2026-10-31/hidden-gem-accessible-source.json');
 assert.equal(new Set(B.map(q=>M.normal(q.prompt))).size,240);
 for(const [i,j] of author.spacingReview.conflictingPairs){const a=B[i].dailySlot,b=B[j].dailySlot;assert(![0,1,47].includes((a-b+48)%48),B[i].prompt+' too close to '+B[j].prompt);}
 for(const q of legacy){const r=M.createPractice(q,day,'revision6:'+q.id),before=encode(r.questions),a=q.answers.at(-1);M.begin(r,1000);M.draft(r,a.name,1001);const deadline=r.deadline;assert(M.validRun(r));assert.equal(r.deadline,deadline);assert(M.finish(r,1002));assert(M.validRun(r));assert.equal(r.picks[0].points,a.points);assert.equal(encode(r.questions),before);}
 const previous=require('../content/archive/2026-10-26/hidden-gem-questions.json').questions;
 const wide=legacy.find(q=>q.answers.length===151);assert(wide);assert.equal(M.match(wide,'Pikachu').name,'Pikachu');assert.equal(M.match(wide,'Mew').name,'Mew');
-assert(M.puzzle({...wide,answers:Array.from({length:160},(_,i)=>({name:'Answer '+i,points:1+i%100,aliases:[]}))}));
-assert(!M.puzzle({...wide,answers:Array.from({length:161},(_,i)=>({name:'Answer '+i,points:1+i%100,aliases:[]}))}));
+assert(M.puzzle({...wide,answers:Array.from({length:512},(_,i)=>({name:'Answer '+i,points:1+i%100,aliases:[]}))}));
+assert(!M.puzzle({...wide,answers:Array.from({length:513},(_,i)=>({name:'Answer '+i,points:1+i%100,aliases:[]}))}));
 const oldRun=M.create(previous,'2026-10-26');M.begin(oldRun,1000);for(let i=0;i<5;i++){M.draft(oldRun,oldRun.questions[i].answers[0].name,1001);assert(M.finish(oldRun,1002));if(i<4)M.next(oldRun,1000);}assert(M.record(oldRun,'2026-10-26'));
 for(const q of B){assert(M.puzzle(q),q.id);assert(q.answers.every(a=>Number.isInteger(a.points)&&a.points>=1&&a.points<=100));assert(q.answers.some(a=>a.points===100));for(const a of q.answers)for(const x of [a.name,...a.aliases])assert.equal(M.match(q,x)?.name,a.name,q.id+': '+x);}
 
@@ -68,6 +68,39 @@ const cloud=BREAK_ROOM_CLOUD_SAVES;assert(cloud.belongs('hidden-gem',key));asser
 const draft=M.create(B,day);M.begin(draft,1000);const earlier=encode(draft);M.draft(draft,'saved draft',1001);assert.equal(cloud.merge('hidden-gem',{[key]:encode(draft)},{[key]:earlier})[key],encode(draft));
 const storage={length:1,key:()=>key,getItem:k=>k===key?encode(mixed):null,setItem(){throw Error('read only');}};const profile=BREAK_ROOM_RECORDS.read(storage,day);assert.equal(profile.records[0].game,'hidden-gem');assert.equal(profile.records[0].score,M.record(mixed,day).score);assert.equal(profile.arcade.average,M.record(mixed,day).score);
 const bad=[];for(const mutate of [r=>r.version=2,r=>r.kind='unlimited',r=>r.day='2026-02-30',r=>r.edits=-1,r=>r.round=3,r=>r.phase='active',r=>r.deadline=1,r=>r.error='unlisted',r=>r.questions[0].answers[0].points=0,r=>r.questions[0].answers[0].points=101,r=>r.questions[1]=r.questions[0],r=>r.picks[0].points=99,r=>r.picks[0].answer='wrong',r=>r.picks[0].reason='timeout',r=>r.picks.pop(),r=>r.input='changed']){const r=structuredClone(good);mutate(r);assert.equal(M.record(r,day),null);bad.push(r);}
+// Revision 8's closed rosters: exhaustive source membership, all spellings, symbol maps and calendar spacing.
+const boundedSource=require('../content/hidden-gem-bounded-source.json');
+assert.equal(activeBank.length,240);assert(activeBank.every(q=>q.id.startsWith('hg8-')));
+assert.equal(new Set(activeBank.map(q=>q.topic)).size,10);
+for(const [i,q] of activeBank.entries()){
+ const spec=boundedSource.questions[i],u=boundedSource.universes[spec.universe],members=new Map(u.members.map(a=>[a.id||a.name,a]));
+ assert.equal(u.expectedCount,u.members.length);assert.equal(members.size,u.members.length);
+ assert.equal(require('node:crypto').createHash('sha256').update(JSON.stringify(u.members)).digest('hex'),u.rosterSha256,spec.universe+' factual roster fingerprint');
+ assert.deepEqual(q.answers.map(a=>a.name),spec.memberIds.map(id=>members.get(id).name));
+ if(spec.selection.type==='all')assert.equal(q.answers.length,u.members.length,'Complete '+spec.universe);
+ assert(q.answers.length>=10&&q.answers.length<=512);assert(q.answers.some(a=>a.points===100));
+ assert.equal(new Set(q.answers.map(a=>M.normal(a.name))).size,q.answers.length);
+ for(const a of q.answers)for(const x of [a.name,...a.aliases]){assert.equal(M.match(q,x)?.name,a.name,q.id+': '+x);assert.equal(a.points,spec.points[a.name]);assert(!mentioned(q.scope,x),q.id+' description gives away '+x);}
+ for(const [raw,name]of Object.entries(q.inputMap||{}))assert.equal(M.match(q,raw)?.name,name,q.id+' symbol '+raw);
+}
+const byUniverse=u=>activeBank[boundedSource.questions.findIndex(q=>q.universe===u)];
+for(const [u,n]of [['un-states',195],['elements',118],['planets',13],['constellations',88],['moonwalkers',12],['si-units',29],['si-prefixes',24],['discworld',41],['tintin',24],['first-folio',36]])assert.equal(byUniverse(u).answers.length,n,u+' independent published set size');
+assert.equal(M.match(byUniverse('si-prefixes'),'M').name,'Mega');assert.equal(M.match(byUniverse('si-prefixes'),'m').name,'Milli');
+assert.equal(M.match(byUniverse('emoji-animals'),'🐘').name,'Elephant');
+assert.equal(M.match(byUniverse('un-states'),'USA').name,'United States');assert.equal(M.match(byUniverse('un-states'),'Atlantis'),null);
+assert.equal(M.match(byUniverse('dceu'),'The Suicide Squad').name,'The Suicide Squad (2021)');assert.equal(M.match(byUniverse('dceu'),'Suicide Squad').name,'Suicide Squad (2016)');
+const allDates=[];
+for(let i=0;i<48;i++){
+ const d=new Date(Date.UTC(2026,9,31+i)).toISOString().slice(0,10),qs=M.daily(activeBank,d);assert.equal(qs.length,5);assert.equal(new Set(qs.map(q=>q.topic)).size,5);allDates.push(...qs.map(q=>q.id));
+}
+assert.equal(new Set(allDates).size,240);assert.deepEqual(M.daily(activeBank,'2026-12-18').map(q=>q.id),M.daily(activeBank,'2026-10-31').map(q=>q.id));
+for(const [i,j]of boundedSource.conflicts){const d=Math.abs(activeBank[i].dailySlot-activeBank[j].dailySlot);assert(Math.min(d,48-d)>1);}
+const boundedRun=M.create(activeBank,'2026-10-31');M.begin(boundedRun,1000);
+for(let i=0;i<5;i++){M.draft(boundedRun,boundedRun.questions[i].answers.at(-1).name,1001);assert(M.finish(boundedRun,1002));M.next(boundedRun,1003);}
+assert(M.record(boundedRun,boundedRun.day));
+const generatedBefore=['content/hidden-gem-questions.json','games/hidden-gem/questions.js'].map(p=>fs.readFileSync(p,'utf8'));
+require('node:child_process').execFileSync(process.execPath,['scripts/build-hidden-gem-questions.cjs']);
+assert.deepEqual(['content/hidden-gem-questions.json','games/hidden-gem/questions.js'].map(p=>fs.readFileSync(p,'utf8')),generatedBefore,'Generated files reproduce byte for byte');
 (async()=>{const db=new PGlite();try{
 await db.exec("create role anon;create role authenticated;create schema auth;create table auth.users(id uuid primary key);create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;grant usage on schema auth to anon,authenticated;grant execute on function auth.uid() to anon,authenticated;");
 for(const path of ['supabase/setup.sql','supabase/friends.sql'])await db.exec(fs.readFileSync(path,'utf8'));
@@ -76,11 +109,13 @@ for(const sig of Object.keys(before))assert.equal((await db.query('select pg_get
 for(const r of [good,mixed,zero,M.create(B,day),...bad]){const actual=(await db.query('select public._friend_hidden_gem_score($1,$2) s',[encode(r),day])).rows[0].s;assert.equal(actual,M.record(r,day)?.arcadeScore??null,'SQL full snapshot parity');}
 assert.equal((await db.query('select public._friend_hidden_gem_score($1,$2) s',[encode(oldRun),oldRun.day])).rows[0].s,M.record(oldRun,oldRun.day).arcadeScore);
 assert.equal((await db.query('select public._friend_hidden_gem_score($1,$2) s',[encode(corrected),corrected.day])).rows[0].s,M.record(corrected,corrected.day).arcadeScore,'Reviewed aliases in captured snapshots retain SQL score parity');
-for(const size of [160,161]){const fixture={...wide,answers:Array.from({length:size},(_,i)=>({name:'Answer '+i,points:1+i%100,aliases:[]}))};assert.equal((await db.query('select public._hg_question($1) valid',[encode(fixture)])).rows[0].valid,size===160);}
-for(const q of B){assert.equal((await db.query('select public._hg_question($1) valid',[encode(q)])).rows[0].valid,true,q.id);for(const a of q.answers){const actual=(await db.query('select public._hg_match($1,$2) a',[encode(q),a.name])).rows[0].a;assert.equal(actual.answer,a.name,q.id);assert.equal(actual.points,a.points);}}
+for(const size of [512,513]){const fixture={...wide,answers:Array.from({length:size},(_,i)=>({name:'Answer '+i,points:1+i%100,aliases:[]}))};assert.equal((await db.query('select public._hg_question($1) valid',[encode(fixture)])).rows[0].valid,size===512);}
+for(const q of [...B,...activeBank]){assert.equal((await db.query('select public._hg_question($1) valid',[encode(q)])).rows[0].valid,true,q.id);for(const a of [q.answers[0],q.answers.at(-1)]){const actual=(await db.query('select public._hg_match($1,$2) a',[encode(q),a.name])).rows[0].a;assert.equal(actual.answer,a.name,q.id);assert.equal(actual.points,a.points);}}
 for(const x of ['Azerbaijna','Austria','Canada','  Antigua & Barbuda  ','\u00a0Australia\u00a0']){const actual=(await db.query('select public._hg_match($1,$2) a',[encode(countries),x])).rows[0].a,expected=M.match(countries,x);assert.equal(actual?.answer??null,expected?.name??null);assert.equal(actual?.typo??null,expected?.typo??null);}
 assert.equal((await db.query('select public._hg_match($1,$2) a',[encode(ambiguous),'Catapelt'])).rows[0].a,null);
 
+for(const q of activeBank)for(const raw of Object.keys(q.inputMap||{})){const expected=M.match(q,raw),actual=(await db.query('select public._hg_match($1,$2) a',[encode(q),raw])).rows[0].a;assert.equal(actual?.answer,expected.name,q.id+' SQL symbol '+raw);assert.equal(actual?.points,expected.points);}
+assert.equal((await db.query('select public._friend_hidden_gem_score($1,$2) s',[encode(boundedRun),boundedRun.day])).rows[0].s,M.record(boundedRun,boundedRun.day).arcadeScore,'New complete-roster snapshot score parity');
 const users=['00000000-0000-4000-8000-000000000001','00000000-0000-4000-8000-000000000002'];for(const uid of users)await db.query('insert into auth.users values($1)',[uid]);
 const today=(await db.query("select timezone('Australia/Sydney',now())::date::text d")).rows[0].d,liveRun=structuredClone(good);liveRun.day=today;const liveKey=M.PREFIX+today;
 const session=async uid=>{await db.exec('reset role;set role authenticated');await db.query("select set_config('request.jwt.claim.sub',$1,false)",[uid]);};

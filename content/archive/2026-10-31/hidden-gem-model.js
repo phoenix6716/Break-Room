@@ -1,0 +1,53 @@
+/* Hidden Gem v1: one input, retry unlisted answers within the original deadline. */
+(root=>{'use strict';
+const PREFIX="break-room:hidden-gem:daily:",VERSION=1,ROUNDS=5,MS=30000,MAX=100,clone=x=>JSON.parse(JSON.stringify(x));
+const normal=s=>String(s).normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/&/g,' and ').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim().replace(/^the /,'');
+function distance(a,b){const d=Array.from({length:a.length+1},(_,i)=>Array.from({length:b.length+1},(_,j)=>i===0?j:j===0?i:0));for(let i=1;i<=a.length;i++)for(let j=1;j<=b.length;j++){d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));if(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1])d[i][j]=Math.min(d[i][j],d[i-2][j-2]+1);}return d[a.length][b.length];}
+const scoreBand=points=>points===0?'Time’s Up':!Number.isFinite(points)||points<1||points>100?'No Score':points>=80?'Crown Jewel':points>=60?'Hidden Gem':points>=40?'Offbeat':points>=20?'Nice Find':'Familiar';
+function puzzle(p){return p&&typeof p.id==='string'&&p.id.length>0&&p.id.length<=80&&typeof p.prompt==='string'&&p.prompt.length>0&&p.prompt.length<=240&&typeof p.scope==='string'&&p.scope.length<=400&&typeof p.topic==='string'&&p.topic.length<=30&&typeof p.source==='string'&&p.source.length<=400&&p.source.startsWith('https://')&&Array.isArray(p.answers)&&p.answers.length>=2&&p.answers.length<=160&&p.answers.every(a=>typeof a.name==='string'&&a.name.length>0&&a.name.length<=100&&normal(a.name).length<=100&&Number.isInteger(a.points)&&a.points>=1&&a.points<=100&&Array.isArray(a.aliases)&&a.aliases.length<=12&&a.aliases.every(s=>typeof s==='string'&&s.length>0&&s.length<=100&&normal(s).length<=100));}
+function match(p,input){if(!puzzle(p)||typeof input!=='string'||input.length>MAX||!normal(input))return null;const n=normal(input);if(n.length>MAX)return null;const exact=p.answers.filter(a=>[a.name,...a.aliases].some(s=>normal(s)===n));if(exact.length===1)return{...exact[0],typo:false};const close=p.answers.filter(a=>[a.name,...a.aliases].some(s=>{const target=normal(s);return target.length>=6&&Math.abs(target.length-n.length)<=1&&distance(n,target)<=1;}));return close.length===1?{...close[0],typo:true}:null;}
+
+function grade(p,input){const a=match(p,input);return a?{input:input.trim(),answer:a.name,points:a.points,typo:!!a.typo,reason:'accepted'}:null;}
+const date=d=>typeof d==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(d)&&Number.isFinite(Date.parse(d+'T00:00:00Z'))&&new Date(d+'T00:00:00Z').toISOString().slice(0,10)===d;
+function daily(bank,day){
+ if(!date(day))throw Error('Invalid Sydney date');
+ if(bank.length===240&&bank.every(q=>q.id.startsWith('hg7-'))){
+  const ordinal=Math.floor((Date.parse(day+'T00:00:00Z')-Date.UTC(2026,9,30))/86400000),slot=((ordinal%48)+48)%48;
+  const selected=bank.filter(q=>q.dailySlot===slot).sort((a,b)=>a.id.localeCompare(b.id));
+  if(selected.length!==5||new Set(selected.map(q=>q.topic)).size!==5)throw Error('Invalid accessible bank');
+  return clone(selected);
+ }
+ const original=bank.filter(q=>!q.id.startsWith('hg-extra-')),extra=bank.filter(q=>q.id.startsWith('hg-extra-'));
+ const topics=[...new Set(original.map(q=>q.topic))].sort();
+ if(original.length!==160||topics.length!==10||topics.some(t=>original.filter(q=>q.topic===t).length!==16))throw Error('Invalid bank');
+ const ordinal=Math.floor((Date.parse(day+'T00:00:00Z')-Date.UTC(2026,9,24))/86400000);
+ let n=((ordinal%32)+32)%32;
+ if(extra.length&&day>='2026-10-30'){
+  const extraTopics=[...new Set(extra.map(q=>q.topic))].sort();
+  if(extra.length!==80||extraTopics.length!==5||extraTopics.some(t=>extra.filter(q=>q.topic===t).length!==16))throw Error('Invalid expanded bank');
+  const slot=((ordinal%48)+48)%48;
+  // Keep the first six already-released days. Insert 16 fresh sets before
+  // continuing the unused original slots; no captured save is rewritten.
+  if(slot>=6&&slot<22)return clone(extraTopics.map(t=>extra.filter(q=>q.topic===t).sort((a,b)=>a.id.localeCompare(b.id))[slot-6]));
+  n=slot<6?slot:slot-16;
+ }
+ const block=Math.floor(n/2),offset=n%2*5;
+ return clone(Array.from({length:5},(_,i)=>original.filter(q=>q.topic===topics[(block+offset+i)%10]).sort((a,b)=>a.id.localeCompare(b.id))[block]));
+}
+
+function make(questions,kind,day,id){return{id,version:1,kind,day,questions:clone(questions),round:0,phase:'ready',input:'',error:'',rejections:0,deadline:null,picks:[],edits:0};}
+function validRun(r){if(!r||r.version!==1||(typeof r.id!=='string'||r.id.length>100)||!['daily','unlimited'].includes(r.kind)||!date(r.day)||!Array.isArray(r.questions)||r.questions.length!==(r.kind==='daily'?5:1)||(!r.questions.every(puzzle)||new Set(r.questions.map(q=>q.id)).size!==r.questions.length)||!Number.isInteger(r.round)||r.round<0||r.round>=r.questions.length||!['ready','active','review','summary'].includes(r.phase)||typeof r.input!=='string'||r.input.length>MAX||!['','blank','unlisted'].includes(r.error)||!Number.isInteger(r.rejections)||r.rejections<0||r.rejections>1000000||!Number.isInteger(r.edits)||r.edits<0||r.edits>1000000||!Array.isArray(r.picks)||r.picks.length>r.questions.length)return false;
+if(!r.picks.every((p,i)=>{if(!p||typeof p.timedOut!=='boolean'||typeof p.input!=='string'||p.input.length>MAX)return false;const accepted=grade(r.questions[i],p.input);const expected=accepted?{...accepted,timedOut:p.timedOut}:p.timedOut?{input:p.input.trim(),answer:null,points:0,typo:false,reason:'timeout',timedOut:true}:null;return expected&&Object.entries(expected).every(([k,v])=>p[k]===v);} ))return false;
+return r.phase==='active'?r.picks.length===r.round&&Number.isFinite(r.deadline)&&r.deadline>0:r.deadline===null&&(r.phase==='ready'?r.round===0&&r.picks.length===0&&r.input===''&&r.error===''&&r.rejections===0:r.error===''&&r.picks.length===r.round+1&&r.picks[r.round].input===r.input.trim()&&(r.phase!=='summary'||r.picks.length===r.questions.length));}
+function valid(r,day){return date(day)&&r?.day===day&&r.kind==='daily'&&validRun(r);}
+function create(bank,day){return make(daily(bank,day),'daily',day,'hg:'+day);}
+function createPractice(q,day,id){return make([q],'unlimited',day,id);}
+function record(r,day){if(!valid(r,day)||r.picks.length!==5)return null;const points=r.picks.reduce((n,p)=>n+p.points,0);return{points,score:points/5,arcadeScore:points/5,perfect:r.picks.filter(p=>p.points===100).length,crowns:r.picks.filter(p=>p.points>=80).length};}
+function begin(r,now){if(r.phase!=='ready')return false;r.phase='active';r.deadline=now+MS;r.edits++;return true;}
+function finish(r,now){if(r.phase!=='active')return false;const timedOut=now>=r.deadline,accepted=grade(r.questions[r.round],r.input);if(!accepted&&!timedOut){r.error=normal(r.input)?'unlisted':'blank';r.rejections++;r.edits++;return false;}r.picks.push(accepted?{...accepted,timedOut}:{input:r.input.trim(),answer:null,points:0,typo:false,reason:'timeout',timedOut:true});r.phase='review';r.error='';r.deadline=null;r.edits++;return true;}
+function expire(r,now){return r.phase==='active'&&now>=r.deadline?finish(r,now):false;}
+function draft(r,value,now){if(expire(r,now)||r.phase!=='active'||typeof value!=='string'||value.length>MAX)return false;r.input=value;r.error='';r.edits++;return true;}
+function next(r,now){if(r.phase!=='review')return false;if(r.picks.length===r.questions.length)r.phase='summary';else{r.round++;r.phase='active';r.input='';r.error='';r.rejections=0;r.deadline=now+MS;}r.edits++;return true;}
+const average=r=>r.picks.length?r.picks.reduce((n,p)=>n+p.points,0)/r.picks.length:0;
+root.BREAK_ROOM_HIDDEN_GEM=Object.freeze({PREFIX,VERSION,ROUNDS,MS,MAX,date,clone,normal,distance,scoreBand,puzzle,match,grade,daily,create,createPractice,valid,validRun,record,begin,finish,expire,draft,next,average});
+})(typeof window==='undefined'?globalThis:window);

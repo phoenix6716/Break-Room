@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-31",
+  "revision": 8,
+  "previousRevision": 7,
+  "change": "Replace every active question with a bounded factual roster; offline canonical membership rather than unrestricted categories.",
+  "questions": 240,
+  "answers": 7700,
+  "answerRange": [
+    10,
+    321
+  ],
+  "rotationDays": 48,
+  "epoch": "2026-10-31",
+  "reset": "00:00 Australia/Sydney",
+  "source": "content/hidden-gem-bounded-source.json",
+  "archive": "content/archive/2026-10-31/",
+  "overlapPairs": 444,
+  "oldScoresAndCaptures": "Unchanged; recovery-only hg7 aliases retained.",
+  "cloudMigration": {
+    "name": "sleeper_complete_bounded_rosters_v8",
+    "applied": true,
+    "verified": [
+      "195-answer roster valid",
+      "case-sensitive M=mega, m=milli",
+      "emoji elephant matches",
+      "private helpers remain revoked from anon/authenticated"
+    ]
+  },
+  "limitations": [
+    "Completeness is within the stated finite canonical set and cutoff, not every possible phrase.",
+    "Primary source URLs are references; provenance distinguishes actual retrieved data and secondary tables.",
+    "Editorial ratings require human calibration; no measured popularity claims."
+  ],
+  "validation": [
+    "Every canonical name, retained alias and symbol mapping",
+    "Published roster-count fixtures and generated-file reproducibility",
+    "48-day unique rotation and same/adjacent-day conflict separation",
+    "Legacy captures, deadlines, results, zeroes, cloud ownership and private score parity",
+    "Mobile/tablet/desktop Daily and Unlimited, reload, filters and captured hg7 pants/jeans/sleeves"
+  ]
+}
