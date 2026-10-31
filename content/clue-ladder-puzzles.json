@@ -1,8 +1,8 @@
 {
   "version": 1,
   "review": {
-    "date": "2026-10-26",
-    "method": "Player-feedback revision: contemporary technology and screen/music culture; later clues use everyday language and direct identifiers. New references are supplied per record; automation checks matching, progression structure, uniqueness and schedule stability, not human familiarity."
+    "date": "2026-10-31",
+    "method": "Cross-game answer-wording audit: common regional and alternate names added; film/person confusion removed for Oppenheimer. Scoring and frozen snapshots unchanged."
   },
   "puzzles": [
     {
@@ -119,7 +119,9 @@
       "category": "ANIMAL",
       "answer": "Koala",
       "aliases": [
-        "koalas"
+        "koalas",
+        "koala bear",
+        "koala bears"
       ],
       "clues": [
         "I spend much of my life resting.",
@@ -767,7 +769,8 @@
       "category": "PLACE",
       "answer": "Big Ben",
       "aliases": [
-        "elizabeth tower"
+        "elizabeth tower",
+        "Elizabeth Tower"
       ],
       "clues": [
         "My familiar name technically refers to a bell.",
@@ -786,7 +789,9 @@
       "answer": "Colosseum",
       "aliases": [
         "coliseum",
-        "roman colosseum"
+        "roman colosseum",
+        "Coliseum",
+        "Roman Colosseum"
       ],
       "clues": [
         "Underground passages supported my spectacles.",
@@ -843,7 +848,11 @@
       "aliases": [
         "great pyramid",
         "pyramid of giza",
-        "khufu pyramid"
+        "khufu pyramid",
+        "Great Pyramid",
+        "Pyramid of Khufu",
+        "Khufu’s pyramid",
+        "Pyramid of Cheops"
       ],
       "clues": [
         "My sides align closely with cardinal directions.",
@@ -988,7 +997,9 @@
       "answer": "Acropolis of Athens",
       "aliases": [
         "acropolis",
-        "athens acropolis"
+        "athens acropolis",
+        "Acropolis",
+        "Athens Acropolis"
       ],
       "clues": [
         "I stand on high ground above a city.",
@@ -1082,7 +1093,9 @@
       "aliases": [
         "fuji",
         "fuji san",
-        "fujisan"
+        "fujisan",
+        "Fujisan",
+        "Fuji"
       ],
       "clues": [
         "I am an active and symmetrical volcano.",
@@ -1174,7 +1187,9 @@
       "answer": "Amazon Rainforest",
       "aliases": [
         "amazon jungle",
-        "amazon forest"
+        "amazon forest",
+        "Amazon",
+        "Amazon rain forest"
       ],
       "clues": [
         "My trees recycle much moisture.",
@@ -1541,7 +1556,8 @@
       "aliases": [
         "yoghurt",
         "yoghurts",
-        "yogurts"
+        "yogurts",
+        "yoghourt"
       ],
       "clues": [
         "Bacteria are central to my production.",
@@ -1669,7 +1685,9 @@
       "category": "FOOD",
       "answer": "Dumpling",
       "aliases": [
-        "dumplings"
+        "dumplings",
+        "gyoza",
+        "jiaozi"
       ],
       "clues": [
         "My relatives appear in many cuisines.",
@@ -1760,7 +1778,8 @@
       "answer": "Hummus",
       "aliases": [
         "houmous",
-        "humus"
+        "humus",
+        "hummous"
       ],
       "clues": [
         "My ingredients are blended smooth.",
@@ -2980,7 +2999,7 @@
         "My creators often build on shared sounds.",
         "You can scroll from one vertical clip to the next.",
         "My personalised feed is called For You.",
-        "I am the video-sharing app owned by ByteDance."
+        "I am the video-sharing app created by ByteDance."
       ],
       "fact": "The app's duet and stitch tools let people respond to other videos.",
       "source": "https://en.wikipedia.org/wiki/TikTok",
@@ -3084,7 +3103,8 @@
       "answer": "Computer",
       "aliases": [
         "desktop computer",
-        "pc"
+        "pc",
+        "personal computer"
       ],
       "clues": [
         "I process instructions represented as data.",
@@ -3103,7 +3123,9 @@
       "answer": "Laptop",
       "aliases": [
         "notebook computer",
-        "laptop computer"
+        "laptop computer",
+        "notebook",
+        "notebook pc"
       ],
       "clues": [
         "I combine components in a portable unit.",
@@ -3122,7 +3144,10 @@
       "answer": "Smartphone",
       "aliases": [
         "smart phone",
-        "smartphones"
+        "smartphones",
+        "mobile phone",
+        "cell phone",
+        "cellphone"
       ],
       "clues": [
         "Sensors detect my movement and orientation.",
@@ -3372,7 +3397,8 @@
       "category": "TECH",
       "answer": "Air fryer",
       "aliases": [
-        "airfryer"
+        "airfryer",
+        "air fryers"
       ],
       "clues": [
         "I am a kitchen appliance.",
@@ -3483,7 +3509,9 @@
       "aliases": [
         "wireless earphones",
         "earbuds",
-        "ear buds"
+        "ear buds",
+        "wireless buds",
+        "bluetooth earbuds"
       ],
       "clues": [
         "I usually come as a pair.",
@@ -3541,7 +3569,9 @@
       "answer": "Power bank",
       "aliases": [
         "powerbank",
-        "portable charger"
+        "portable charger",
+        "battery pack",
+        "portable battery"
       ],
       "clues": [
         "I store energy for later.",
@@ -3563,7 +3593,9 @@
         "usb drive",
         "flash drive",
         "thumb drive",
-        "memory stick"
+        "memory stick",
+        "pen drive",
+        "pendrive"
       ],
       "clues": [
         "I am small enough to fit in a pocket.",
@@ -3643,7 +3675,7 @@
       ],
       "clues": [
         "Receivers compare precisely timed signals.",
-        "My transmitters orbit Earth.",
+        "The United States operates my satellite constellation.",
         "I help measure position, speed and time.",
         "Navigation apps use me outdoors.",
         "I am the satellite-based system helping phones locate you."
@@ -3691,7 +3723,9 @@
       "category": "CULTURE",
       "answer": "Piano",
       "aliases": [
-        "pianos"
+        "pianos",
+        "grand piano",
+        "upright piano"
       ],
       "clues": [
         "Hammers strike my strings.",
@@ -3895,7 +3929,8 @@
       "category": "CULTURE",
       "answer": "Harry Potter",
       "aliases": [
-        "harrypotter"
+        "harrypotter",
+        "Potter"
       ],
       "clues": [
         "My childhood hides an unusual identity.",
@@ -3906,7 +3941,9 @@
       ],
       "fact": "My owl is named Hedwig.",
       "source": "https://en.wikipedia.org/wiki/Harry_Potter_(character)",
-      "rejects": []
+      "rejects": [
+        "Otter"
+      ]
     },
     {
       "id": "cl-213",
@@ -3967,7 +4004,8 @@
       "category": "CULTURE",
       "answer": "Wednesday",
       "aliases": [
-        "wednesday addams"
+        "wednesday addams",
+        "Wednesday Addams"
       ],
       "clues": [
         "My dry humour rarely comes with a smile.",
@@ -4095,8 +4133,8 @@
       "category": "CULTURE",
       "answer": "Oppenheimer",
       "aliases": [
-        "j robert oppenheimer",
-        "robert oppenheimer"
+        "Oppenheimer film",
+        "Oppenheimer movie"
       ],
       "clues": [
         "A major historical science project sits at the centre of my story.",
@@ -4131,7 +4169,8 @@
       "answer": "BTS",
       "aliases": [
         "bangtan boys",
-        "bangtan sonyeondan"
+        "bangtan sonyeondan",
+        "Bangtan"
       ],
       "clues": [
         "My members began performing together in South Korea.",
@@ -4421,7 +4460,9 @@
       "category": "SPORT",
       "answer": "Field hockey",
       "aliases": [
-        "grass hockey"
+        "grass hockey",
+        "hockey",
+        "outdoor hockey"
       ],
       "clues": [
         "My sticks have curved ends.",
@@ -4811,7 +4852,8 @@
       "category": "EVERYDAY",
       "answer": "Scissors",
       "aliases": [
-        "pair of scissors"
+        "pair of scissors",
+        "scissor"
       ],
       "clues": [
         "My two parts share a pivot.",
@@ -5242,7 +5284,9 @@
       "aliases": [
         "clothes peg",
         "peg",
-        "clothes pin"
+        "clothes pin",
+        "clothes pegs",
+        "clothes pins"
       ],
       "clues": [
         "I often grip fabric outdoors.",
@@ -5340,7 +5384,8 @@
       "answer": "Sunglasses",
       "aliases": [
         "sun glasses",
-        "shades"
+        "shades",
+        "sunnies"
       ],
       "clues": [
         "My lenses reduce incoming light.",
@@ -5351,7 +5396,9 @@
       ],
       "fact": "UV protection depends on lens design, not darkness alone.",
       "source": "https://en.wikipedia.org/wiki/Sunglasses",
-      "rejects": []
+      "rejects": [
+        "spades"
+      ]
     },
     {
       "id": "cl-291",
@@ -5488,7 +5535,8 @@
       "answer": "Shovel",
       "aliases": [
         "spade",
-        "shovels"
+        "shovels",
+        "spades"
       ],
       "clues": [
         "My broad blade carries loose material.",
@@ -5499,7 +5547,9 @@
       ],
       "fact": "Blade shapes suit digging or lifting.",
       "source": "https://en.wikipedia.org/wiki/Shovel",
-      "rejects": []
+      "rejects": [
+        "shades"
+      ]
     },
     {
       "id": "cl-299",
@@ -5526,7 +5576,9 @@
       "aliases": [
         "sand timer",
         "sandglass",
-        "hour glass"
+        "hour glass",
+        "egg timer",
+        "sand clock"
       ],
       "clues": [
         "Gravity makes me work.",

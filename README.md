@@ -1,3 +1,9 @@
+## Ten-game content audit — 31 October 2026
+
+Sleeper revision 11 has 240 questions and 7,604 canonical answers (10–321 each), retaining the 48-day rotation and midnight Australia/Sydney reset. Merge duplicate emoji depictions, accept ordinary weather/paper wording and common plurals, remove non-job labels from the jobs roster, and correct obvious contextual rating inversions. Existing captured questions retain canonical membership, ratings, results and deadlines; narrowly scoped recovery aliases can accept corrected wording at the original captured points. Completed zeroes remain fixed. Ratings remain editorial estimates.
+
+Clue Ladder expands ordinary aliases, distinguishes the Oppenheimer film from the scientist, rejects Otter as Harry Potter, clarifies GPS and avoids a changing TikTok ownership claim. Time Drop identifies Henry Tudor's 1485 Bosworth victory without calling it the end of the Wars of the Roses. Archives are in `content/archive/2026-10-31-content-audit/`. See `design/content-reviews/2026-10-31-game-content.json` for all ten games, independent mathematical checks, freshly retrieved reference anchors and explicit limits. Lowball prices are dated scoped references: URL reachability alone does not certify a price; 64 source URLs were unavailable. No scoring formula, visuals, save version, account schema or SQL changes.
+
 # A month of Dailies — verified 25 October 2026
 
 All ten games pass 32 distinct Daily sets, covering 25 October–25 November inclusive, with current-date and later-window regression checks. [Daily coverage and exact inventory](DAILY-CONTENT.md) explain the longer repeat-free rotations and expected product/duration reuse in Lowball/Time Sense. No game or save changes were needed. Run `node tests/daily-content.cjs` to recheck.

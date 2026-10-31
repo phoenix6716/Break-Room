@@ -25,9 +25,9 @@ function afterPick(r){if(r.kind==='unlimited'){data.practiceCount++;data.practic
 // Canonical identities and captured ratings remain authoritative; completed picks never change.
 function correctCurrentAliases(r){
  if(!r||!['ready','active'].includes(r.phase))return false;
- const q=r.questions[r.round],latest=[...B,...(window.HIDDEN_GEM_LEGACY_ALIAS_CORRECTIONS||[])].find(x=>x.id===q.id&&x.prompt===q.prompt);if(!latest)return false;
+ const q=r.questions[r.round],latest=[...B,...(window.HIDDEN_GEM_LEGACY_ALIAS_CORRECTIONS||[])].filter(x=>x.id===q.id&&x.prompt===q.prompt);if(!latest.length)return false;
  const taken=new Set(q.answers.flatMap(a=>[a.name,...a.aliases]).map(M.normal));let changed=false;
- for(const a of q.answers){const newer=latest.answers.find(x=>x.name===a.name&&x.points===a.points);if(!newer)continue;
+ for(const a of q.answers){const newer=latest.flatMap(x=>x.answers).find(x=>x.name===a.name&&x.points===a.points);if(!newer)continue;
   for(const alias of newer.aliases){const n=M.normal(alias);if(!taken.has(n)&&a.aliases.length<(q.id.startsWith('hg8-')?32:12)){a.aliases.push(alias);taken.add(n);changed=true;}}
  }
  if(changed){if(r.error==='unlisted'&&M.match(q,r.input))r.error='';r.edits++;}return changed;

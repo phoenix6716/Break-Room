@@ -149,7 +149,7 @@ jobs:
                       assert b"How To Play</button>" in page and b"game-help.js?v=first-visit-20261028" in page and ('data-game="' + current + '"').encode() in page, "Missing labelled first-visit instructions: " + current
                       assert b'class="mobile-stats-label">Stats</span>' in page and b"game-help.css?v=mobile-stats-20261028" in page, "Missing mobile stats layout: " + current
                       if current == "clue-ladder":
-                          assert b"clue-ladder.css" in page and b"clue-ladder.js" in page and b"puzzles.js?v=familiar-20261026" in page, "Missing original Clue Ladder assets"
+                          assert b"clue-ladder.css" in page and b"clue-ladder.js" in page and b"puzzles.js?v=audit-20261031c" in page, "Missing original Clue Ladder assets"
                           assert b'data-game-scene=' not in page and b'data-game-art=' not in page and b"game-scenes.css" not in page and b"game-scenes.js" not in page and b"game-art.css" not in page and b"game-art.js" not in page, "Clue Ladder must keep its original appearance"
                           continue
                       assert ('data-game-scene="' + current + '"').encode() in page and b"game-scenes.css?v=sets-20261027" in page and (b"game-scenes.js?v=sets-smooth-20261027" if current == "shift-work" else b"game-scenes.js?v=sets-20261027") in page, "Missing themed surface: " + current

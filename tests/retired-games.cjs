@@ -29,7 +29,7 @@ for(const file of htmlFiles('dist')){
   await fallback.goto(base+'/games/stake/index.html');await fallback.waitForURL(home);await noJS.close();
   await page.clock.setFixedTime(new Date('2026-10-20T03:00:00Z'));await page.goto(base+'/profile.html');
   await page.evaluate(qs=>{
-   localStorage.clear();for(let i=14;i<=20;i++)localStorage.setItem('stake:d:2026-10-'+i,JSON.stringify({b:[3,3,3,3,3],p:[0,0,0,0,0],qs}));
+   const returningPlayerFlags=Object.keys(localStorage).filter(k=>k.startsWith('break-room:help-seen:')).map(k=>[k,localStorage.getItem(k)]);localStorage.clear();for(const [key,value] of returningPlayerFlags)localStorage.setItem(key,value);for(let i=14;i<=20;i++)localStorage.setItem('stake:d:2026-10-'+i,JSON.stringify({b:[3,3,3,3,3],p:[0,0,0,0,0],qs}));
   },qs);
   const snapshot=()=>page.evaluate(()=>JSON.stringify(Object.fromEntries(Object.keys(localStorage).sort().map(k=>[k,localStorage.getItem(k)]))));
   const before=await snapshot();await page.reload();

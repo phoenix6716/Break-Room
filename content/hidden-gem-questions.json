@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": 10,
+  "revision": 11,
   "epoch": "2026-10-31",
   "days": 48,
   "ratings": "Context-specific editorial estimates, not measured player popularity. Familiar and less-obvious anchors are reviewed within each question; other answers have a neutral 50 points. No alphabetical, chronological, roster-order or unrelated-question ranking. Captured snapshots retain their original ratings.",
@@ -11290,7 +11290,8 @@
           "aliases": [
             "JP-13",
             "13",
-            "tokyos"
+            "tokyos",
+            "tokio"
           ]
         },
         {
@@ -17285,7 +17286,8 @@
           "name": "Rome",
           "points": 50,
           "aliases": [
-            "romes"
+            "romes",
+            "roma"
           ]
         },
         {
@@ -17637,13 +17639,16 @@
         {
           "name": "Poodle",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Poodles"
+          ]
         },
         {
           "name": "Wolf",
           "points": 50,
           "aliases": [
-            "wolves"
+            "wolves",
+            "Wolfs"
           ]
         },
         {
@@ -17705,7 +17710,9 @@
         {
           "name": "Moose",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Mooses"
+          ]
         },
         {
           "name": "Donkey",
@@ -17747,7 +17754,9 @@
         {
           "name": "Ox",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Oxes"
+          ]
         },
         {
           "name": "Water Buffalo",
@@ -17771,7 +17780,9 @@
         {
           "name": "Boar",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Boars"
+          ]
         },
         {
           "name": "Ram",
@@ -17783,7 +17794,9 @@
         {
           "name": "Ewe",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Ewes"
+          ]
         },
         {
           "name": "Goat",
@@ -17802,7 +17815,9 @@
         {
           "name": "Two-Hump Camel",
           "points": 90,
-          "aliases": []
+          "aliases": [
+            "Two-Hump Camels"
+          ]
         },
         {
           "name": "Llama",
@@ -17828,18 +17843,25 @@
         {
           "name": "Mammoth",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Mammoths"
+          ]
         },
         {
           "name": "Rhinoceros",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "rhino",
+            "rhinos",
+            "rhinoceroses"
+          ]
         },
         {
           "name": "Hippopotamus",
           "points": 50,
           "aliases": [
-            "hippo"
+            "hippo",
+            "hippos"
           ]
         },
         {
@@ -17905,7 +17927,9 @@
         {
           "name": "Bear",
           "points": 30,
-          "aliases": []
+          "aliases": [
+            "Bears"
+          ]
         },
         {
           "name": "Polar Bear",
@@ -17919,24 +17943,31 @@
           "points": 50,
           "aliases": [
             "koala bear",
-            "koalas"
+            "koalas",
+            "koala bears"
           ]
         },
         {
           "name": "Panda",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "giant panda",
+            "pandas"
+          ]
         },
         {
           "name": "Sloth",
           "points": 75,
-          "aliases": []
+          "aliases": [
+            "sloths"
+          ]
         },
         {
           "name": "Otter",
           "points": 50,
           "aliases": [
-            "otters"
+            "otters",
+            "sea otter"
           ]
         },
         {
@@ -18036,7 +18067,9 @@
         {
           "name": "Dodo",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Dodos"
+          ]
         },
         {
           "name": "Flamingo",
@@ -18049,7 +18082,8 @@
           "name": "Peacock",
           "points": 50,
           "aliases": [
-            "peacocks"
+            "peacocks",
+            "peafowl"
           ]
         },
         {
@@ -18062,13 +18096,16 @@
         {
           "name": "Black Bird",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Black Birds"
+          ]
         },
         {
           "name": "Goose",
           "points": 50,
           "aliases": [
-            "geese"
+            "geese",
+            "Gooses"
           ]
         },
         {
@@ -18083,7 +18120,8 @@
           "points": 50,
           "aliases": [
             "croc",
-            "crocodiles"
+            "crocodiles",
+            "crocs"
           ]
         },
         {
@@ -18111,12 +18149,16 @@
         {
           "name": "Sauropod",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Sauropods"
+          ]
         },
         {
           "name": "T-Rex",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "T-Rexes"
+          ]
         },
         {
           "name": "Whale",
@@ -18185,7 +18227,8 @@
           "points": 50,
           "aliases": [
             "jelly fish",
-            "jellyfishes"
+            "jellyfishes",
+            "jellies"
           ]
         },
         {
@@ -18205,7 +18248,9 @@
         {
           "name": "Shrimp",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Shrimps"
+          ]
         },
         {
           "name": "Squid",
@@ -18238,7 +18283,9 @@
         {
           "name": "Bug",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Bugs"
+          ]
         },
         {
           "name": "Ant",
@@ -18250,7 +18297,9 @@
         {
           "name": "Honeybee",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Honeybees"
+          ]
         },
         {
           "name": "Beetle",
@@ -18262,13 +18311,16 @@
         {
           "name": "Lady Beetle",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Lady Beetles"
+          ]
         },
         {
           "name": "Cricket",
           "points": 50,
           "aliases": [
-            "crickets"
+            "crickets",
+            "cricket sport"
           ]
         },
         {
@@ -18489,13 +18541,16 @@
         {
           "name": "Poodle",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Poodles"
+          ]
         },
         {
           "name": "Wolf",
           "points": 50,
           "aliases": [
-            "wolves"
+            "wolves",
+            "Wolfs"
           ]
         },
         {
@@ -18557,7 +18612,9 @@
         {
           "name": "Moose",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Mooses"
+          ]
         },
         {
           "name": "Donkey",
@@ -18599,7 +18656,9 @@
         {
           "name": "Ox",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Oxes"
+          ]
         },
         {
           "name": "Water Buffalo",
@@ -18623,7 +18682,9 @@
         {
           "name": "Boar",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Boars"
+          ]
         },
         {
           "name": "Ram",
@@ -18635,7 +18696,9 @@
         {
           "name": "Ewe",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Ewes"
+          ]
         },
         {
           "name": "Goat",
@@ -18654,7 +18717,9 @@
         {
           "name": "Two-Hump Camel",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Two-Hump Camels"
+          ]
         },
         {
           "name": "Llama",
@@ -18680,18 +18745,25 @@
         {
           "name": "Mammoth",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Mammoths"
+          ]
         },
         {
           "name": "Rhinoceros",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "rhino",
+            "rhinos",
+            "rhinoceroses"
+          ]
         },
         {
           "name": "Hippopotamus",
           "points": 50,
           "aliases": [
-            "hippo"
+            "hippo",
+            "hippos"
           ]
         },
         {
@@ -18757,7 +18829,9 @@
         {
           "name": "Bear",
           "points": 30,
-          "aliases": []
+          "aliases": [
+            "Bears"
+          ]
         },
         {
           "name": "Polar Bear",
@@ -18771,24 +18845,31 @@
           "points": 50,
           "aliases": [
             "koala bear",
-            "koalas"
+            "koalas",
+            "koala bears"
           ]
         },
         {
           "name": "Panda",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "giant panda",
+            "pandas"
+          ]
         },
         {
           "name": "Sloth",
           "points": 80,
-          "aliases": []
+          "aliases": [
+            "sloths"
+          ]
         },
         {
           "name": "Otter",
           "points": 50,
           "aliases": [
-            "otters"
+            "otters",
+            "sea otter"
           ]
         },
         {
@@ -18993,7 +19074,9 @@
         {
           "name": "Dodo",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Dodos"
+          ]
         },
         {
           "name": "Flamingo",
@@ -19006,7 +19089,8 @@
           "name": "Peacock",
           "points": 90,
           "aliases": [
-            "peacocks"
+            "peacocks",
+            "peafowl"
           ]
         },
         {
@@ -19019,13 +19103,16 @@
         {
           "name": "Black Bird",
           "points": 85,
-          "aliases": []
+          "aliases": [
+            "Black Birds"
+          ]
         },
         {
           "name": "Goose",
           "points": 50,
           "aliases": [
-            "geese"
+            "geese",
+            "Gooses"
           ]
         }
       ],
@@ -19081,7 +19168,8 @@
           "points": 50,
           "aliases": [
             "jelly fish",
-            "jellyfishes"
+            "jellyfishes",
+            "jellies"
           ]
         },
         {
@@ -19101,7 +19189,9 @@
         {
           "name": "Shrimp",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Shrimps"
+          ]
         },
         {
           "name": "Squid",
@@ -19134,7 +19224,9 @@
         {
           "name": "Bug",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Bugs"
+          ]
         },
         {
           "name": "Ant",
@@ -19146,7 +19238,9 @@
         {
           "name": "Honeybee",
           "points": 15,
-          "aliases": []
+          "aliases": [
+            "Honeybees"
+          ]
         },
         {
           "name": "Beetle",
@@ -19158,13 +19252,16 @@
         {
           "name": "Lady Beetle",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Lady Beetles"
+          ]
         },
         {
           "name": "Cricket",
           "points": 85,
           "aliases": [
-            "crickets"
+            "crickets",
+            "cricket sport"
           ]
         },
         {
@@ -19257,12 +19354,16 @@
         {
           "name": "Melon",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Melons"
+          ]
         },
         {
           "name": "Watermelon",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "watermelons"
+          ]
         },
         {
           "name": "Tangerine",
@@ -19350,7 +19451,9 @@
         {
           "name": "Kiwi Fruit",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Kiwi Fruits"
+          ]
         },
         {
           "name": "Tomato",
@@ -19378,20 +19481,25 @@
           "name": "Avocado",
           "points": 50,
           "aliases": [
-            "avocados"
+            "avocados",
+            "avocado pear"
           ]
         },
         {
           "name": "Eggplant",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Eggplants"
+          ]
         },
         {
           "name": "Potato",
           "points": 50,
           "aliases": [
             "potatoes",
-            "potatos"
+            "potatos",
+            "spud",
+            "spuds"
           ]
         },
         {
@@ -19409,12 +19517,16 @@
         {
           "name": "Hot Pepper",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Hot Peppers"
+          ]
         },
         {
           "name": "Bell Pepper",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Bell Peppers"
+          ]
         },
         {
           "name": "Cucumber",
@@ -19431,7 +19543,9 @@
         {
           "name": "Leafy Green",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Leafy Greens"
+          ]
         },
         {
           "name": "Broccoli",
@@ -19445,7 +19559,8 @@
           "points": 50,
           "aliases": [
             "garlic powder",
-            "garlics"
+            "garlics",
+            "garlic bulb"
           ]
         },
         {
@@ -19480,28 +19595,38 @@
         {
           "name": "Ginger Root",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Ginger Roots"
+          ]
         },
         {
           "name": "Pea Pod",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Pea Pods"
+          ]
         },
         {
           "name": "Brown Mushroom",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Brown Mushrooms"
+          ]
         },
         {
           "name": "Root Vegetable",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Root Vegetables"
+          ]
         },
         {
           "name": "Bread",
           "points": 50,
           "aliases": [
-            "breads"
+            "breads",
+            "loaf",
+            "loaf of bread"
           ]
         },
         {
@@ -19554,22 +19679,30 @@
         {
           "name": "Cheese Wedge",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Cheese Wedges"
+          ]
         },
         {
           "name": "Meat On Bone",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Meat On Bones"
+          ]
         },
         {
           "name": "Poultry Leg",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Poultry Legs"
+          ]
         },
         {
           "name": "Cut Of Meat",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Cut Of Meats"
+          ]
         },
         {
           "name": "Bacon",
@@ -19581,7 +19714,9 @@
         {
           "name": "Hamburger",
           "points": 15,
-          "aliases": []
+          "aliases": [
+            "Hamburgers"
+          ]
         },
         {
           "name": "French Fries",
@@ -19633,7 +19768,9 @@
         {
           "name": "Tamale",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Tamales"
+          ]
         },
         {
           "name": "Stuffed Flatbread",
@@ -19668,27 +19805,37 @@
         {
           "name": "Shallow Pan Of Food",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Shallow Pan Of Foods"
+          ]
         },
         {
           "name": "Pot Of Food",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Pot Of Foods"
+          ]
         },
         {
           "name": "Fondue",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Fondues"
+          ]
         },
         {
           "name": "Bowl With Spoon",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Bowl With Spoons"
+          ]
         },
         {
           "name": "Green Salad",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Green Salads"
+          ]
         },
         {
           "name": "Popcorn",
@@ -19702,7 +19849,9 @@
           "name": "Butter",
           "points": 50,
           "aliases": [
-            "butters"
+            "butters",
+            "salted butter",
+            "unsalted butter"
           ]
         },
         {
@@ -19715,22 +19864,30 @@
         {
           "name": "Canned Food",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Canned Foods"
+          ]
         },
         {
           "name": "Bento Box",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Bento Boxes"
+          ]
         },
         {
           "name": "Rice Cracker",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Rice Crackers"
+          ]
         },
         {
           "name": "Rice Ball",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Rice Balls"
+          ]
         },
         {
           "name": "Cooked Rice",
@@ -19745,7 +19902,9 @@
         {
           "name": "Steaming Bowl",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Steaming Bowls"
+          ]
         },
         {
           "name": "Spaghetti",
@@ -19757,12 +19916,16 @@
         {
           "name": "Roasted Sweet Potato",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Roasted Sweet Potatos"
+          ]
         },
         {
           "name": "Oden",
           "points": 80,
-          "aliases": []
+          "aliases": [
+            "Odens"
+          ]
         },
         {
           "name": "Sushi",
@@ -19774,39 +19937,53 @@
         {
           "name": "Fried Shrimp",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Fried Shrimps"
+          ]
         },
         {
           "name": "Fish Cake With Swirl",
           "points": 90,
-          "aliases": []
+          "aliases": [
+            "Fish Cake With Swirls"
+          ]
         },
         {
           "name": "Moon Cake",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Moon Cakes"
+          ]
         },
         {
           "name": "Dango",
           "points": 85,
-          "aliases": []
+          "aliases": [
+            "Dangos"
+          ]
         },
         {
           "name": "Dumpling",
           "points": 50,
           "aliases": [
-            "dumplings"
+            "dumplings",
+            "gyoza",
+            "jiaozi"
           ]
         },
         {
           "name": "Fortune Cookie",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Fortune Cookies"
+          ]
         },
         {
           "name": "Takeout Box",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Takeout Boxes"
+          ]
         },
         {
           "name": "Ice Cream",
@@ -19841,22 +20018,30 @@
         {
           "name": "Cookie",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Cookies"
+          ]
         },
         {
           "name": "Birthday Cake",
           "points": 35,
-          "aliases": []
+          "aliases": [
+            "Birthday Cakes"
+          ]
         },
         {
           "name": "Shortcake",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Shortcakes"
+          ]
         },
         {
           "name": "Cupcake",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Cupcakes"
+          ]
         },
         {
           "name": "Pie",
@@ -19870,17 +20055,23 @@
         {
           "name": "Chocolate Bar",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Chocolate Bars"
+          ]
         },
         {
           "name": "Candy",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Candies"
+          ]
         },
         {
           "name": "Lollipop",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Lollipops"
+          ]
         },
         {
           "name": "Custard",
@@ -19892,12 +20083,16 @@
         {
           "name": "Honey Pot",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Honey Pots"
+          ]
         },
         {
           "name": "Baby Bottle",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Baby Bottles"
+          ]
         },
         {
           "name": "Glass Of Milk",
@@ -19907,7 +20102,9 @@
         {
           "name": "Hot Beverage",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Hot Beverages"
+          ]
         },
         {
           "name": "Teapot",
@@ -19919,17 +20116,23 @@
         {
           "name": "Teacup Without Handle",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Teacup Without Handles"
+          ]
         },
         {
           "name": "Sake",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Sakes"
+          ]
         },
         {
           "name": "Bottle With Popping Cork",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Bottle With Popping Corks"
+          ]
         },
         {
           "name": "Wine Glass",
@@ -19944,12 +20147,16 @@
         {
           "name": "Tropical Drink",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Tropical Drinks"
+          ]
         },
         {
           "name": "Beer Mug",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Beer Mugs"
+          ]
         },
         {
           "name": "Clinking Beer Mugs",
@@ -19969,27 +20176,37 @@
         {
           "name": "Pouring Liquid",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Pouring Liquids"
+          ]
         },
         {
           "name": "Cup With Straw",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Cup With Straws"
+          ]
         },
         {
           "name": "Bubble Tea",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Bubble Teas"
+          ]
         },
         {
           "name": "Beverage Box",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Beverage Boxes"
+          ]
         },
         {
           "name": "Mate",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Mates"
+          ]
         },
         {
           "name": "Ice",
@@ -20009,12 +20226,16 @@
         {
           "name": "Fork And Knife With Plate",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Fork And Knife With Plates"
+          ]
         },
         {
           "name": "Fork And Knife",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Fork And Knives"
+          ]
         },
         {
           "name": "Spoon",
@@ -20030,7 +20251,9 @@
         {
           "name": "Kitchen Knife",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Kitchen Knives"
+          ]
         },
         {
           "name": "Jar",
@@ -20042,7 +20265,9 @@
         {
           "name": "Amphora",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Amphoras"
+          ]
         }
       ],
       "inputMap": {
@@ -20200,12 +20425,16 @@
         {
           "name": "Melon",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Melons"
+          ]
         },
         {
           "name": "Watermelon",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "watermelons"
+          ]
         },
         {
           "name": "Tangerine",
@@ -20293,7 +20522,9 @@
         {
           "name": "Kiwi Fruit",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Kiwi Fruits"
+          ]
         },
         {
           "name": "Tomato",
@@ -20321,20 +20552,25 @@
           "name": "Avocado",
           "points": 50,
           "aliases": [
-            "avocados"
+            "avocados",
+            "avocado pear"
           ]
         },
         {
           "name": "Eggplant",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Eggplants"
+          ]
         },
         {
           "name": "Potato",
           "points": 20,
           "aliases": [
             "potatoes",
-            "potatos"
+            "potatos",
+            "spud",
+            "spuds"
           ]
         },
         {
@@ -20352,12 +20588,16 @@
         {
           "name": "Hot Pepper",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Hot Peppers"
+          ]
         },
         {
           "name": "Bell Pepper",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Bell Peppers"
+          ]
         },
         {
           "name": "Cucumber",
@@ -20374,7 +20614,9 @@
         {
           "name": "Leafy Green",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Leafy Greens"
+          ]
         },
         {
           "name": "Broccoli",
@@ -20388,7 +20630,8 @@
           "points": 50,
           "aliases": [
             "garlic powder",
-            "garlics"
+            "garlics",
+            "garlic bulb"
           ]
         },
         {
@@ -20423,22 +20666,30 @@
         {
           "name": "Ginger Root",
           "points": 85,
-          "aliases": []
+          "aliases": [
+            "Ginger Roots"
+          ]
         },
         {
           "name": "Pea Pod",
           "points": 80,
-          "aliases": []
+          "aliases": [
+            "Pea Pods"
+          ]
         },
         {
           "name": "Brown Mushroom",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Brown Mushrooms"
+          ]
         },
         {
           "name": "Root Vegetable",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Root Vegetables"
+          ]
         }
       ],
       "inputMap": {
@@ -20496,7 +20747,9 @@
         {
           "name": "Baby Bottle",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Baby Bottles"
+          ]
         },
         {
           "name": "Glass Of Milk",
@@ -20506,7 +20759,9 @@
         {
           "name": "Hot Beverage",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "Hot Beverages"
+          ]
         },
         {
           "name": "Teapot",
@@ -20518,17 +20773,23 @@
         {
           "name": "Teacup Without Handle",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Teacup Without Handles"
+          ]
         },
         {
           "name": "Sake",
           "points": 90,
-          "aliases": []
+          "aliases": [
+            "Sakes"
+          ]
         },
         {
           "name": "Bottle With Popping Cork",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Bottle With Popping Corks"
+          ]
         },
         {
           "name": "Wine Glass",
@@ -20543,12 +20804,16 @@
         {
           "name": "Tropical Drink",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Tropical Drinks"
+          ]
         },
         {
           "name": "Beer Mug",
           "points": 10,
-          "aliases": []
+          "aliases": [
+            "Beer Mugs"
+          ]
         },
         {
           "name": "Clinking Beer Mugs",
@@ -20568,27 +20833,37 @@
         {
           "name": "Pouring Liquid",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Pouring Liquids"
+          ]
         },
         {
           "name": "Cup With Straw",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Cup With Straws"
+          ]
         },
         {
           "name": "Bubble Tea",
           "points": 25,
-          "aliases": []
+          "aliases": [
+            "Bubble Teas"
+          ]
         },
         {
           "name": "Beverage Box",
           "points": 85,
-          "aliases": []
+          "aliases": [
+            "Beverage Boxes"
+          ]
         },
         {
           "name": "Mate",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Mates"
+          ]
         },
         {
           "name": "Ice",
@@ -20664,22 +20939,30 @@
         {
           "name": "Cookie",
           "points": 10,
-          "aliases": []
+          "aliases": [
+            "Cookies"
+          ]
         },
         {
           "name": "Birthday Cake",
           "points": 15,
-          "aliases": []
+          "aliases": [
+            "Birthday Cakes"
+          ]
         },
         {
           "name": "Shortcake",
           "points": 85,
-          "aliases": []
+          "aliases": [
+            "Shortcakes"
+          ]
         },
         {
           "name": "Cupcake",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Cupcakes"
+          ]
         },
         {
           "name": "Pie",
@@ -20693,17 +20976,23 @@
         {
           "name": "Chocolate Bar",
           "points": 20,
-          "aliases": []
+          "aliases": [
+            "Chocolate Bars"
+          ]
         },
         {
           "name": "Candy",
           "points": 25,
-          "aliases": []
+          "aliases": [
+            "Candies"
+          ]
         },
         {
           "name": "Lollipop",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Lollipops"
+          ]
         },
         {
           "name": "Custard",
@@ -20715,7 +21004,9 @@
         {
           "name": "Honey Pot",
           "points": 90,
-          "aliases": []
+          "aliases": [
+            "Honey Pots"
+          ]
         }
       ],
       "inputMap": {
@@ -21323,7 +21614,8 @@
           "points": 40,
           "aliases": [
             "Hg",
-            "mercuries"
+            "mercuries",
+            "planet mercury"
           ]
         },
         {
@@ -21607,45 +21899,59 @@
           "name": "Mercury",
           "points": 25,
           "aliases": [
-            "mercuries"
+            "mercuries",
+            "planet mercury"
           ]
         },
         {
           "name": "Venus",
           "points": 20,
-          "aliases": []
+          "aliases": [
+            "planet venus"
+          ]
         },
         {
           "name": "Earth",
           "points": 1,
           "aliases": [
-            "earths"
+            "earths",
+            "planet earth"
           ]
         },
         {
           "name": "Mars",
           "points": 5,
-          "aliases": []
+          "aliases": [
+            "planet mars"
+          ]
         },
         {
           "name": "Jupiter",
           "points": 10,
-          "aliases": []
+          "aliases": [
+            "planet jupiter"
+          ]
         },
         {
           "name": "Saturn",
           "points": 15,
-          "aliases": []
+          "aliases": [
+            "planet saturn"
+          ]
         },
         {
           "name": "Uranus",
           "points": 35,
-          "aliases": []
+          "aliases": [
+            "planet uranus"
+          ]
         },
         {
           "name": "Neptune",
           "points": 30,
-          "aliases": []
+          "aliases": [
+            "planet neptune"
+          ]
         },
         {
           "name": "Ceres",
@@ -26656,7 +26962,8 @@
           "name": "Pikachu",
           "points": 1,
           "aliases": [
-            "pikachus"
+            "pikachus",
+            "pika chu"
           ]
         },
         {
@@ -27335,7 +27642,8 @@
             "rain",
             "rainwater",
             "tap water",
-            "waters"
+            "waters",
+            "h2o"
           ]
         },
         {
@@ -27580,7 +27888,8 @@
           "name": "Pikachu",
           "points": 1,
           "aliases": [
-            "pikachus"
+            "pikachus",
+            "pika chu"
           ]
         },
         {
@@ -27642,7 +27951,8 @@
           "name": "Pikachu",
           "points": 5,
           "aliases": [
-            "pikachus"
+            "pikachus",
+            "pika chu"
           ]
         },
         {
@@ -27954,7 +28264,8 @@
           "name": "Hippopotamus",
           "points": 50,
           "aliases": [
-            "hippo"
+            "hippo",
+            "hippos"
           ]
         },
         {
@@ -27978,7 +28289,8 @@
           "points": 50,
           "aliases": [
             "koala bear",
-            "koalas"
+            "koalas",
+            "koala bears"
           ]
         },
         {
@@ -28046,7 +28358,11 @@
         {
           "name": "Rhinoceros",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "rhino",
+            "rhinos",
+            "rhinoceroses"
+          ]
         },
         {
           "name": "Sheep",
@@ -29362,7 +29678,8 @@
           "name": "Pikachu",
           "points": 5,
           "aliases": [
-            "pikachus"
+            "pikachus",
+            "pika chu"
           ]
         },
         {
@@ -30071,7 +30388,8 @@
           "name": "Golf",
           "points": 30,
           "aliases": [
-            "golfs"
+            "golfs",
+            "golf game"
           ]
         },
         {
@@ -34973,7 +35291,8 @@
           "name": "snow",
           "points": 50,
           "aliases": [
-            "snows"
+            "snows",
+            "snowflakes"
           ]
         },
         {
@@ -35498,7 +35817,8 @@
           "name": "Golf",
           "points": 15,
           "aliases": [
-            "golfs"
+            "golfs",
+            "golf game"
           ]
         },
         {
@@ -38510,7 +38830,9 @@
         {
           "name": "Archery",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "bow shooting"
+          ]
         },
         {
           "name": "Athletics",
@@ -38522,20 +38844,25 @@
           "points": 50,
           "aliases": [
             "badmington",
-            "badmintons"
+            "badmintons",
+            "badminton sport"
           ]
         },
         {
           "name": "Basketball",
           "points": 15,
           "aliases": [
-            "basketballs"
+            "basketballs",
+            "basket ball"
           ]
         },
         {
           "name": "Boxing",
           "points": 35,
-          "aliases": []
+          "aliases": [
+            "box",
+            "pugilism"
+          ]
         },
         {
           "name": "Breaking",
@@ -38560,7 +38887,10 @@
             "Mountain biking",
             "Road cycling",
             "Track cycling",
-            "cyclings"
+            "cyclings",
+            "bicycle racing",
+            "bike racing",
+            "cycle racing"
           ]
         },
         {
@@ -38576,7 +38906,9 @@
         {
           "name": "Fencing",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "sport fencing"
+          ]
         },
         {
           "name": "Hockey",
@@ -38599,7 +38931,8 @@
           "name": "Golf",
           "points": 50,
           "aliases": [
-            "golfs"
+            "golfs",
+            "golf game"
           ]
         },
         {
@@ -38608,7 +38941,8 @@
           "aliases": [
             "Artistic gymnastics",
             "Rhythmic gymnastics",
-            "Trampolining"
+            "Trampolining",
+            "gymnastic"
           ]
         },
         {
@@ -38632,7 +38966,9 @@
           "name": "Rowing",
           "points": 50,
           "aliases": [
-            "rowings"
+            "rowings",
+            "crew",
+            "rowing sport"
           ]
         },
         {
@@ -38641,7 +38977,8 @@
           "aliases": [
             "rugbies",
             "rugby league",
-            "rugby union"
+            "rugby union",
+            "rugby football"
           ]
         },
         {
@@ -38659,7 +38996,10 @@
         {
           "name": "Skateboarding",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "skateboard",
+            "skate boarding"
+          ]
         },
         {
           "name": "Sport climbing",
@@ -38670,14 +39010,16 @@
           "name": "Surfing",
           "points": 50,
           "aliases": [
-            "surfings"
+            "surfings",
+            "surf"
           ]
         },
         {
           "name": "Table tennis",
           "points": 50,
           "aliases": [
-            "ping pong"
+            "ping pong",
+            "pingpong"
           ]
         },
         {
@@ -38688,20 +39030,24 @@
         {
           "name": "Tennis",
           "points": 20,
-          "aliases": []
+          "aliases": [
+            "lawn tennis"
+          ]
         },
         {
           "name": "Triathlon",
           "points": 50,
           "aliases": [
-            "triathlons"
+            "triathlons",
+            "triathalon"
           ]
         },
         {
           "name": "Volleyball",
           "points": 50,
           "aliases": [
-            "volleyballs"
+            "volleyballs",
+            "volley ball"
           ]
         },
         {
@@ -38714,7 +39060,8 @@
           "points": 50,
           "aliases": [
             "Freestyle wrestling",
-            "Greco Roman wrestling"
+            "Greco Roman wrestling",
+            "wrestle"
           ]
         }
       ]
@@ -38758,7 +39105,8 @@
           "name": "Curling",
           "points": 20,
           "aliases": [
-            "curlings"
+            "curlings",
+            "curling sport"
           ]
         },
         {
@@ -38779,7 +39127,8 @@
           "name": "Ice hockey",
           "points": 10,
           "aliases": [
-            "ice hockeys"
+            "ice hockeys",
+            "icehockey"
           ]
         },
         {
@@ -38824,7 +39173,9 @@
           "name": "Snowboarding",
           "points": 5,
           "aliases": [
-            "snowboardings"
+            "snowboardings",
+            "snowboard",
+            "snow boarding"
           ]
         },
         {
@@ -38852,7 +39203,11 @@
         {
           "name": "Sunglasses",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "sun glasses",
+            "shades",
+            "sunnies"
+          ]
         },
         {
           "name": "Goggles",
@@ -38862,24 +39217,31 @@
         {
           "name": "Lab Coat",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Lab Coats"
+          ]
         },
         {
           "name": "Safety Vest",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Safety Vests"
+          ]
         },
         {
           "name": "Necktie",
           "points": 50,
           "aliases": [
-            "Tie"
+            "Tie",
+            "Neckties"
           ]
         },
         {
           "name": "T-Shirt",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "T-Shirts"
+          ]
         },
         {
           "name": "Jeans",
@@ -38889,7 +39251,9 @@
         {
           "name": "Scarf",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Scarves"
+          ]
         },
         {
           "name": "Gloves",
@@ -38899,7 +39263,9 @@
         {
           "name": "Coat",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Coats"
+          ]
         },
         {
           "name": "Socks",
@@ -38913,18 +39279,24 @@
         },
         {
           "name": "Kimono",
-          "points": 100,
-          "aliases": []
+          "points": 20,
+          "aliases": [
+            "Kimonos"
+          ]
         },
         {
           "name": "Sari",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Saris"
+          ]
         },
         {
           "name": "One-Piece Swimsuit",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "One-Piece Swimsuits"
+          ]
         },
         {
           "name": "Briefs",
@@ -38939,7 +39311,9 @@
         {
           "name": "Bikini",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Bikinis"
+          ]
         },
         {
           "name": "Woman’S Clothes",
@@ -38948,23 +39322,31 @@
         },
         {
           "name": "Folding Hand Fan",
-          "points": 50,
-          "aliases": []
+          "points": 100,
+          "aliases": [
+            "Folding Hand Fans"
+          ]
         },
         {
           "name": "Purse",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Purses"
+          ]
         },
         {
           "name": "Handbag",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Handbags"
+          ]
         },
         {
           "name": "Clutch Bag",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Clutch Bags"
+          ]
         },
         {
           "name": "Shopping Bags",
@@ -38974,42 +39356,60 @@
         {
           "name": "Backpack",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "rucksack",
+            "back pack",
+            "backpacks"
+          ]
         },
         {
           "name": "Thong Sandal",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Thong Sandals"
+          ]
         },
         {
           "name": "Man’S Shoe",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Man’S Shoes"
+          ]
         },
         {
           "name": "Running Shoe",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Running Shoes"
+          ]
         },
         {
           "name": "Hiking Boot",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Hiking Boots"
+          ]
         },
         {
           "name": "Flat Shoe",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Flat Shoes"
+          ]
         },
         {
           "name": "High-Heeled Shoe",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "High-Heeled Shoes"
+          ]
         },
         {
           "name": "Woman’S Sandal",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Woman’S Sandals"
+          ]
         },
         {
           "name": "Ballet Shoes",
@@ -39019,49 +39419,66 @@
         {
           "name": "Woman’S Boot",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Woman’S Boots"
+          ]
         },
         {
           "name": "Hair Pick",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Hair Picks"
+          ]
         },
         {
           "name": "Crown",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Crowns"
+          ]
         },
         {
           "name": "Woman’S Hat",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Woman’S Hats"
+          ]
         },
         {
           "name": "Top Hat",
           "points": 50,
           "aliases": [
-            "Tophat"
+            "Tophat",
+            "Top Hats"
           ]
         },
         {
           "name": "Graduation Cap",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Graduation Caps"
+          ]
         },
         {
           "name": "Billed Cap",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Billed Caps"
+          ]
         },
         {
           "name": "Military Helmet",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Military Helmets"
+          ]
         },
         {
           "name": "Rescue Worker’S Helmet",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Rescue Worker’S Helmets"
+          ]
         },
         {
           "name": "Prayer Beads",
@@ -39071,17 +39488,23 @@
         {
           "name": "Lipstick",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Lipsticks"
+          ]
         },
         {
           "name": "Ring",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Rings"
+          ]
         },
         {
           "name": "Gem Stone",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Gem Stones"
+          ]
         }
       ],
       "inputMap": {
@@ -39149,108 +39572,147 @@
         {
           "name": "Door",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Doors"
+          ]
         },
         {
           "name": "Elevator",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Elevators"
+          ]
         },
         {
           "name": "Mirror",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "mirrors"
+          ]
         },
         {
           "name": "Window",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Windows"
+          ]
         },
         {
           "name": "Bed",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "Beds"
+          ]
         },
         {
           "name": "Couch And Lamp",
           "points": 50,
           "aliases": [
             "Couch",
-            "Sofa"
+            "Sofa",
+            "Couch And Lamps"
           ]
         },
         {
           "name": "Chair",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Chairs"
+          ]
         },
         {
           "name": "Toilet",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Toilets"
+          ]
         },
         {
           "name": "Plunger",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Plungers"
+          ]
         },
         {
           "name": "Shower",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Showers"
+          ]
         },
         {
           "name": "Bathtub",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Bathtubs"
+          ]
         },
         {
           "name": "Mouse Trap",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Mouse Traps"
+          ]
         },
         {
           "name": "Razor",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Razors"
+          ]
         },
         {
           "name": "Lotion Bottle",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Lotion Bottles"
+          ]
         },
         {
           "name": "Safety Pin",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "safety pins"
+          ]
         },
         {
           "name": "Broom",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "brooms"
+          ]
         },
         {
           "name": "Basket",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Baskets"
+          ]
         },
         {
           "name": "Roll Of Paper",
           "points": 50,
           "aliases": [
             "Toilet paper",
-            "Toilet roll"
+            "Toilet roll",
+            "Roll Of Papers"
           ]
         },
         {
           "name": "Bucket",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "pail",
+            "buckets"
+          ]
         },
         {
           "name": "Soap",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Soaps"
+          ]
         },
         {
           "name": "Bubbles",
@@ -39260,22 +39722,32 @@
         {
           "name": "Toothbrush",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "tooth brush",
+            "toothbrushes"
+          ]
         },
         {
           "name": "Sponge",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "sponges",
+            "kitchen sponge"
+          ]
         },
         {
           "name": "Fire Extinguisher",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Fire Extinguishers"
+          ]
         },
         {
           "name": "Shopping Cart",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Shopping Carts"
+          ]
         },
         {
           "name": "Key",
@@ -39289,18 +39761,25 @@
         {
           "name": "Light Bulb",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "lightbulb",
+            "bulb",
+            "light bulbs"
+          ]
         },
         {
           "name": "Candle",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "candles"
+          ]
         },
         {
           "name": "Kitchen Knife",
           "points": 50,
           "aliases": [
-            "Knife"
+            "Knife",
+            "Kitchen Knives"
           ]
         },
         {
@@ -39308,7 +39787,8 @@
           "points": 50,
           "aliases": [
             "Plate",
-            "Dinner plate"
+            "Dinner plate",
+            "Fork And Knife With Plates"
           ]
         },
         {
@@ -39316,13 +39796,16 @@
           "points": 50,
           "aliases": [
             "Fork",
-            "Cutlery"
+            "Cutlery",
+            "Fork And Knives"
           ]
         },
         {
           "name": "Spoon",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Spoons"
+          ]
         }
       ],
       "inputMap": {
@@ -39376,32 +39859,44 @@
         {
           "name": "Hammer",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "Hammers"
+          ]
         },
         {
           "name": "Axe",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Axes"
+          ]
         },
         {
           "name": "Pick",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Picks"
+          ]
         },
         {
           "name": "Hammer And Pick",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Hammer And Picks"
+          ]
         },
         {
           "name": "Hammer And Wrench",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Hammer And Wrenches"
+          ]
         },
         {
           "name": "Dagger",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Daggers"
+          ]
         },
         {
           "name": "Crossed Swords",
@@ -39411,76 +39906,102 @@
         {
           "name": "Bomb",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Bombs"
+          ]
         },
         {
           "name": "Boomerang",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Boomerangs"
+          ]
         },
         {
           "name": "Bow And Arrow",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Bow And Arrows"
+          ]
         },
         {
           "name": "Shield",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Shields"
+          ]
         },
         {
           "name": "Carpentry Saw",
           "points": 50,
           "aliases": [
-            "Saw"
+            "Saw",
+            "Carpentry Saws"
           ]
         },
         {
           "name": "Wrench",
           "points": 50,
           "aliases": [
-            "Spanner"
+            "Spanner",
+            "Wrenches"
           ]
         },
         {
           "name": "Screwdriver",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Screwdrivers"
+          ]
         },
         {
           "name": "Nut And Bolt",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Nut And Bolts"
+          ]
         },
         {
           "name": "Gear",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Gears"
+          ]
         },
         {
           "name": "Clamp",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Clamps"
+          ]
         },
         {
           "name": "Balance Scale",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Balance Scales"
+          ]
         },
         {
           "name": "White Cane",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "White Canes"
+          ]
         },
         {
           "name": "Link",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Links"
+          ]
         },
         {
           "name": "Broken Chain",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Broken Chains"
+          ]
         },
         {
           "name": "Chains",
@@ -39490,27 +40011,39 @@
         {
           "name": "Hook",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Hooks"
+          ]
         },
         {
           "name": "Toolbox",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Toolboxes"
+          ]
         },
         {
           "name": "Magnet",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "magnets"
+          ]
         },
         {
           "name": "Ladder",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "ladders"
+          ]
         },
         {
           "name": "Shovel",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "spade",
+            "shovels",
+            "spades"
+          ]
         }
       ],
       "inputMap": {
@@ -39566,17 +40099,23 @@
         {
           "name": "Stadium",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Stadiums"
+          ]
         },
         {
           "name": "Classical Building",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Classical Buildings"
+          ]
         },
         {
           "name": "Hut",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Huts"
+          ]
         },
         {
           "name": "Houses",
@@ -39586,7 +40125,9 @@
         {
           "name": "Derelict House",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Derelict Houses"
+          ]
         },
         {
           "name": "House",
@@ -39596,12 +40137,16 @@
         {
           "name": "House With Garden",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "House With Gardens"
+          ]
         },
         {
           "name": "Office Building",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Office Buildings"
+          ]
         },
         {
           "name": "Japanese Post Office",
@@ -39616,97 +40161,136 @@
         {
           "name": "Hospital",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Hospitals"
+          ]
         },
         {
           "name": "Bank",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Banks"
+          ]
         },
         {
           "name": "Hotel",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Hotels"
+          ]
         },
         {
           "name": "Love Hotel",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Love Hotels"
+          ]
         },
         {
           "name": "Convenience Store",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Convenience Stores"
+          ]
         },
         {
           "name": "School",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Schools"
+          ]
         },
         {
           "name": "Department Store",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Department Stores"
+          ]
         },
         {
           "name": "Factory",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Factories"
+          ]
         },
         {
           "name": "Japanese Castle",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Japanese Castles"
+          ]
         },
         {
           "name": "Castle",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Castles"
+          ]
         },
         {
           "name": "Wedding",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Weddings"
+          ]
         },
         {
           "name": "Tokyo Tower",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Tokyo Towers"
+          ]
         },
         {
           "name": "Statue Of Liberty",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "lady liberty",
+            "Statue Of Liberties"
+          ]
         },
         {
           "name": "Church",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Churches"
+          ]
         },
         {
           "name": "Mosque",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Mosques"
+          ]
         },
         {
           "name": "Hindu Temple",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Hindu Temples"
+          ]
         },
         {
           "name": "Synagogue",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Synagogues"
+          ]
         },
         {
           "name": "Shinto Shrine",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Shinto Shrines"
+          ]
         },
         {
           "name": "Kaaba",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Kaabas"
+          ]
         }
       ],
       "inputMap": {
@@ -39759,7 +40343,8 @@
           "name": "Locomotive",
           "points": 50,
           "aliases": [
-            "Steam train"
+            "Steam train",
+            "Locomotives"
           ]
         },
         {
@@ -39767,7 +40352,8 @@
           "points": 50,
           "aliases": [
             "Train carriage",
-            "Rail carriage"
+            "Rail carriage",
+            "Railway Cars"
           ]
         },
         {
@@ -39778,7 +40364,9 @@
         {
           "name": "Bullet Train",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Shinkansen"
+          ]
         },
         {
           "name": "Train",
@@ -39788,43 +40376,59 @@
         {
           "name": "Metro",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Metros"
+          ]
         },
         {
           "name": "Light Rail",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "light rail train",
+            "Light Rails"
+          ]
         },
         {
           "name": "Station",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Stations"
+          ]
         },
         {
           "name": "Tram",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Trams"
+          ]
         },
         {
           "name": "Monorail",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Monorails"
+          ]
         },
         {
           "name": "Mountain Railway",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Mountain Railways"
+          ]
         },
         {
           "name": "Tram Car",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Tram Cars"
+          ]
         },
         {
           "name": "Bus",
           "points": 1,
           "aliases": [
-            "oncoming bus"
+            "oncoming bus",
+            "Buses"
           ]
         },
         {
@@ -39840,25 +40444,32 @@
         {
           "name": "Ambulance",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Ambulances"
+          ]
         },
         {
           "name": "Fire Engine",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "fire truck",
+            "Fire Engines"
+          ]
         },
         {
           "name": "Police Car",
           "points": 50,
           "aliases": [
-            "oncoming police car"
+            "oncoming police car",
+            "Police Cars"
           ]
         },
         {
           "name": "Taxi",
           "points": 50,
           "aliases": [
-            "oncoming taxi"
+            "oncoming taxi",
+            "Taxis"
           ]
         },
         {
@@ -39866,140 +40477,203 @@
           "points": 50,
           "aliases": [
             "oncoming automobile",
-            "Car"
+            "Car",
+            "Automobiles"
           ]
         },
         {
           "name": "Sport Utility Vehicle",
           "points": 50,
           "aliases": [
-            "SUV"
+            "SUV",
+            "Sport Utility Vehicles"
           ]
         },
         {
           "name": "Pickup Truck",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Pickup Trucks"
+          ]
         },
         {
           "name": "Delivery Truck",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Delivery Trucks"
+          ]
         },
         {
           "name": "Articulated Lorry",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "semi truck",
+            "articulated truck",
+            "Articulated Lorries"
+          ]
         },
         {
           "name": "Tractor",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Tractors"
+          ]
         },
         {
           "name": "Racing Car",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Racing Cars"
+          ]
         },
         {
           "name": "Motorcycle",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Motorcycles"
+          ]
         },
         {
           "name": "Motor Scooter",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Motor Scooters"
+          ]
         },
         {
           "name": "Manual Wheelchair",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "wheelchair",
+            "Manual Wheelchairs"
+          ]
         },
         {
           "name": "Motorized Wheelchair",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "electric wheelchair",
+            "Motorized Wheelchairs"
+          ]
         },
         {
           "name": "Auto Rickshaw",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Auto Rickshaws"
+          ]
         },
         {
           "name": "Bicycle",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "bike",
+            "bicycles",
+            "push bike"
+          ]
         },
         {
           "name": "Kick Scooter",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Kick Scooters"
+          ]
         },
         {
           "name": "Skateboard",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Skateboards"
+          ]
         },
         {
           "name": "Roller Skate",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Roller Skates"
+          ]
         },
         {
           "name": "Bus Stop",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Bus Stops"
+          ]
         },
         {
           "name": "Motorway",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Motorways"
+          ]
         },
         {
           "name": "Railway Track",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "railroad track",
+            "train track",
+            "Railway Tracks"
+          ]
         },
         {
           "name": "Oil Drum",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Oil Drums"
+          ]
         },
         {
           "name": "Fuel Pump",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "petrol pump",
+            "gas pump",
+            "Fuel Pumps"
+          ]
         },
         {
           "name": "Wheel",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Wheels"
+          ]
         },
         {
           "name": "Police Car Light",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "siren",
+            "Police Car Lights"
+          ]
         },
         {
           "name": "Horizontal Traffic Light",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Horizontal Traffic Lights"
+          ]
         },
         {
           "name": "Vertical Traffic Light",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Vertical Traffic Lights"
+          ]
         },
         {
           "name": "Stop Sign",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Stop Signs"
+          ]
         },
         {
           "name": "Construction",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Constructions"
+          ]
         }
       ],
       "inputMap": {
@@ -40072,37 +40746,51 @@
         {
           "name": "Sailboat",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Sailboats"
+          ]
         },
         {
           "name": "Canoe",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Canoes"
+          ]
         },
         {
           "name": "Speedboat",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Speedboats"
+          ]
         },
         {
           "name": "Passenger Ship",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Passenger Ships"
+          ]
         },
         {
           "name": "Ferry",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Ferries"
+          ]
         },
         {
           "name": "Motor Boat",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Motor Boats"
+          ]
         },
         {
           "name": "Ship",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Ships"
+          ]
         },
         {
           "name": "Airplane",
@@ -40110,43 +40798,62 @@
           "aliases": [
             "small airplane",
             "airplane departure",
-            "airplane arrival"
+            "airplane arrival",
+            "aeroplane",
+            "plane",
+            "Airplanes"
           ]
         },
         {
           "name": "Parachute",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Parachutes"
+          ]
         },
         {
           "name": "Helicopter",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "chopper",
+            "helicopters"
+          ]
         },
         {
           "name": "Suspension Railway",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Suspension Railways"
+          ]
         },
         {
           "name": "Mountain Cableway",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Mountain Cableways"
+          ]
         },
         {
           "name": "Aerial Tramway",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Aerial Tramways"
+          ]
         },
         {
           "name": "Rocket",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "rockets",
+            "space rocket"
+          ]
         },
         {
           "name": "Flying Saucer",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Flying Saucers"
+          ]
         }
       ],
       "inputMap": {
@@ -40187,17 +40894,23 @@
         {
           "name": "Bouquet",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Bouquets"
+          ]
         },
         {
           "name": "Cherry Blossom",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Cherry Blossoms"
+          ]
         },
         {
           "name": "White Flower",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "White Flowers"
+          ]
         },
         {
           "name": "Lotus",
@@ -40207,17 +40920,23 @@
         {
           "name": "Rosette",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Rosettes"
+          ]
         },
         {
           "name": "Rose",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "Roses"
+          ]
         },
         {
           "name": "Wilted Flower",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Wilted Flowers"
+          ]
         },
         {
           "name": "Hibiscus",
@@ -40227,22 +40946,30 @@
         {
           "name": "Sunflower",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Sunflowers"
+          ]
         },
         {
           "name": "Blossom",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Blossoms"
+          ]
         },
         {
           "name": "Tulip",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Tulips"
+          ]
         },
         {
           "name": "Hyacinth",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Hyacinths"
+          ]
         }
       ],
       "inputMap": {
@@ -40273,27 +41000,37 @@
         {
           "name": "Seedling",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Seedlings"
+          ]
         },
         {
           "name": "Potted Plant",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Potted Plants"
+          ]
         },
         {
           "name": "Evergreen Tree",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Evergreen Trees"
+          ]
         },
         {
           "name": "Deciduous Tree",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Deciduous Trees"
+          ]
         },
         {
           "name": "Palm Tree",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "Palm Trees"
+          ]
         },
         {
           "name": "Cactus",
@@ -40308,27 +41045,37 @@
         {
           "name": "Herb",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Herbs"
+          ]
         },
         {
           "name": "Shamrock",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Shamrocks"
+          ]
         },
         {
           "name": "Four Leaf Clover",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Four Leaf Clovers"
+          ]
         },
         {
           "name": "Maple Leaf",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Maple Leaves"
+          ]
         },
         {
           "name": "Fallen Leaf",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Fallen Leaves"
+          ]
         },
         {
           "name": "Leaf Fluttering In Wind",
@@ -40338,12 +41085,16 @@
         {
           "name": "Mushroom",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Mushrooms"
+          ]
         },
         {
           "name": "Leafless Tree",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Leafless Trees"
+          ]
         }
       ],
       "inputMap": {
@@ -40379,126 +41130,183 @@
           "points": 1,
           "aliases": [
             "Football",
-            "Soccer"
+            "Soccer",
+            "Soccer Balls"
           ]
         },
         {
           "name": "Baseball",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "base ball",
+            "Baseballs"
+          ]
         },
         {
           "name": "Softball",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Softballs"
+          ]
         },
         {
           "name": "Basketball",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "basket ball",
+            "Basketballs"
+          ]
         },
         {
           "name": "Volleyball",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "volley ball",
+            "Volleyballs"
+          ]
         },
         {
           "name": "American Football",
           "points": 50,
           "aliases": [
             "Gridiron",
-            "American football ball"
+            "American football ball",
+            "American Footballs"
           ]
         },
         {
           "name": "Rugby Football",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Rugby Footballs"
+          ]
         },
         {
           "name": "Tennis",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "lawn tennis"
+          ]
         },
         {
           "name": "Flying Disc",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Flying Discs"
+          ]
         },
         {
           "name": "Bowling",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "ten pin bowling",
+            "tenpin bowling",
+            "tenpin",
+            "Bowlings"
+          ]
         },
         {
           "name": "Cricket Game",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Cricket Games"
+          ]
         },
         {
           "name": "Field Hockey",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "grass hockey",
+            "hockey",
+            "outdoor hockey",
+            "Field Hockeys"
+          ]
         },
         {
           "name": "Ice Hockey",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "icehockey",
+            "Ice Hockeys"
+          ]
         },
         {
           "name": "Lacrosse",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Lacrosses"
+          ]
         },
         {
           "name": "Ping Pong",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Ping Pongs"
+          ]
         },
         {
           "name": "Badminton",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "badminton sport",
+            "Badmintons"
+          ]
         },
         {
           "name": "Boxing Glove",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Boxing Gloves"
+          ]
         },
         {
           "name": "Martial Arts Uniform",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Martial Arts Uniforms"
+          ]
         },
         {
           "name": "Goal Net",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Goal Nets"
+          ]
         },
         {
           "name": "Flag In Hole",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Flag In Holes"
+          ]
         },
         {
           "name": "Ice Skate",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Ice Skates"
+          ]
         },
         {
           "name": "Fishing Pole",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Fishing Poles"
+          ]
         },
         {
           "name": "Diving Mask",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Diving Masks"
+          ]
         },
         {
           "name": "Running Shirt",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Running Shirts"
+          ]
         },
         {
           "name": "Skis",
@@ -40508,12 +41316,16 @@
         {
           "name": "Sled",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Sleds"
+          ]
         },
         {
           "name": "Curling Stone",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Curling Stones"
+          ]
         }
       ],
       "inputMap": {
@@ -40559,59 +41371,80 @@
         {
           "name": "Bullseye",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Bullseyes"
+          ]
         },
         {
           "name": "Yo-Yo",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Yo-Yos"
+          ]
         },
         {
           "name": "Kite",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Kites"
+          ]
         },
         {
           "name": "Water Pistol",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Water Pistols"
+          ]
         },
         {
           "name": "Pool 8 Ball",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Pool 8 Balls"
+          ]
         },
         {
           "name": "Crystal Ball",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Crystal Balls"
+          ]
         },
         {
           "name": "Magic Wand",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Magic Wands"
+          ]
         },
         {
           "name": "Video Game",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Video Games"
+          ]
         },
         {
           "name": "Joystick",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Joysticks"
+          ]
         },
         {
           "name": "Slot Machine",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Slot Machines"
+          ]
         },
         {
           "name": "Game Die",
           "points": 50,
           "aliases": [
             "Dice",
-            "Die"
+            "Die",
+            "Game Dies"
           ]
         },
         {
@@ -40619,7 +41452,8 @@
           "points": 50,
           "aliases": [
             "Puzzle",
-            "Jigsaw"
+            "Jigsaw",
+            "Puzzle Pieces"
           ]
         },
         {
@@ -40627,18 +41461,23 @@
           "points": 1,
           "aliases": [
             "Teddy",
-            "Stuffed bear"
+            "Stuffed bear",
+            "Teddy Bears"
           ]
         },
         {
           "name": "Piñata",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Piñatas"
+          ]
         },
         {
           "name": "Mirror Ball",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Mirror Balls"
+          ]
         },
         {
           "name": "Nesting Dolls",
@@ -40651,37 +41490,51 @@
         {
           "name": "Spade Suit",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Spade Suits"
+          ]
         },
         {
           "name": "Heart Suit",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Heart Suits"
+          ]
         },
         {
           "name": "Diamond Suit",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Diamond Suits"
+          ]
         },
         {
           "name": "Club Suit",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Club Suits"
+          ]
         },
         {
           "name": "Chess Pawn",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Chess Pawns"
+          ]
         },
         {
           "name": "Joker",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Jokers"
+          ]
         },
         {
           "name": "Mahjong Red Dragon",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Mahjong Red Dragons"
+          ]
         },
         {
           "name": "Flower Playing Cards",
@@ -40739,7 +41592,11 @@
         {
           "name": "Sunglasses",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "sun glasses",
+            "shades",
+            "sunnies"
+          ]
         },
         {
           "name": "Goggles",
@@ -40749,37 +41606,51 @@
         {
           "name": "Thong Sandal",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Thong Sandals"
+          ]
         },
         {
           "name": "Man’S Shoe",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Man’S Shoes"
+          ]
         },
         {
           "name": "Running Shoe",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Running Shoes"
+          ]
         },
         {
           "name": "Hiking Boot",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Hiking Boots"
+          ]
         },
         {
           "name": "Flat Shoe",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Flat Shoes"
+          ]
         },
         {
           "name": "High-Heeled Shoe",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "High-Heeled Shoes"
+          ]
         },
         {
           "name": "Woman’S Sandal",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Woman’S Sandals"
+          ]
         },
         {
           "name": "Ballet Shoes",
@@ -40789,44 +41660,59 @@
         {
           "name": "Woman’S Boot",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Woman’S Boots"
+          ]
         },
         {
           "name": "Crown",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Crowns"
+          ]
         },
         {
           "name": "Woman’S Hat",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Woman’S Hats"
+          ]
         },
         {
           "name": "Top Hat",
           "points": 1,
           "aliases": [
-            "Tophat"
+            "Tophat",
+            "Top Hats"
           ]
         },
         {
           "name": "Graduation Cap",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Graduation Caps"
+          ]
         },
         {
           "name": "Billed Cap",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Billed Caps"
+          ]
         },
         {
           "name": "Military Helmet",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Military Helmets"
+          ]
         },
         {
           "name": "Rescue Worker’S Helmet",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Rescue Worker’S Helmets"
+          ]
         }
       ],
       "inputMap": {
@@ -40865,13 +41751,16 @@
         {
           "name": "Briefcase",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Briefcases"
+          ]
         },
         {
           "name": "File Folder",
           "points": 50,
           "aliases": [
-            "open file folder"
+            "open file folder",
+            "File Folders"
           ]
         },
         {
@@ -40884,88 +41773,111 @@
           "points": 50,
           "aliases": [
             "tear-off calendar",
-            "spiral calendar"
+            "spiral calendar",
+            "Calendars"
           ]
-        },
-        {
-          "name": "Spiral Notepad",
-          "points": 50,
-          "aliases": []
         },
         {
           "name": "Card Index",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Card Indexes"
+          ]
         },
         {
           "name": "Chart Increasing",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Chart Increasings"
+          ]
         },
         {
           "name": "Chart Decreasing",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Chart Decreasings"
+          ]
         },
         {
           "name": "Bar Chart",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Bar Charts"
+          ]
         },
         {
           "name": "Clipboard",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Clipboards"
+          ]
         },
         {
           "name": "Pushpin",
           "points": 50,
           "aliases": [
-            "round pushpin"
+            "round pushpin",
+            "Pushpins"
           ]
         },
         {
           "name": "Paperclip",
           "points": 1,
           "aliases": [
-            "linked paperclips"
+            "linked paperclips",
+            "Paperclips"
           ]
         },
         {
           "name": "Straight Ruler",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Straight Rulers"
+          ]
         },
         {
           "name": "Triangular Ruler",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Triangular Rulers"
+          ]
         },
         {
           "name": "Scissors",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "pair of scissors",
+            "scissor"
+          ]
         },
         {
           "name": "Card File Box",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Card File Boxes"
+          ]
         },
         {
           "name": "File Cabinet",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "File Cabinets"
+          ]
         },
         {
           "name": "Wastebasket",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Wastebaskets"
+          ]
         },
         {
           "name": "Notebook",
           "points": 50,
           "aliases": [
-            "notebook with decorative cover"
+            "notebook with decorative cover",
+            "Spiral Notepad",
+            "Notebooks"
           ]
         },
         {
@@ -40983,81 +41895,104 @@
         {
           "name": "Ledger",
           "points": 50,
-          "aliases": []
-        },
-        {
-          "name": "Page With Curl",
-          "points": 50,
-          "aliases": []
+          "aliases": [
+            "Ledgers"
+          ]
         },
         {
           "name": "Scroll",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Scrolls"
+          ]
         },
         {
-          "name": "Page Facing Up",
+          "name": "Page",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "page facing up",
+            "Page With Curl",
+            "Paper",
+            "Sheet of paper",
+            "Paper sheet",
+            "Pages"
+          ]
         },
         {
           "name": "Newspaper",
           "points": 50,
           "aliases": [
-            "rolled-up newspaper"
+            "rolled-up newspaper",
+            "Newspapers"
           ]
         },
         {
           "name": "Bookmark",
           "points": 50,
           "aliases": [
-            "bookmark tabs"
+            "bookmark tabs",
+            "book mark",
+            "bookmarks"
           ]
         },
         {
           "name": "Label",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Labels"
+          ]
         },
         {
           "name": "Pencil",
           "points": 50,
           "aliases": [
-            "Pencils"
+            "Pencils",
+            "lead pencil"
           ]
         },
         {
           "name": "Black Nib",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Black Nibs"
+          ]
         },
         {
           "name": "Fountain Pen",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Fountain Pens"
+          ]
         },
         {
           "name": "Pen",
           "points": 50,
           "aliases": [
             "Ballpoint pen",
-            "Biro"
+            "Biro",
+            "Pens"
           ]
         },
         {
           "name": "Paintbrush",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Paintbrushes"
+          ]
         },
         {
           "name": "Crayon",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Crayons"
+          ]
         },
         {
           "name": "Memo",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Memos"
+          ]
         },
         {
           "name": "Mobile Phone",
@@ -41067,45 +42002,64 @@
             "Phone",
             "Cell phone",
             "Cellphone",
-            "Smartphone"
+            "Smartphone",
+            "Mobile Phones"
           ]
         },
         {
           "name": "Telephone",
           "points": 50,
           "aliases": [
-            "telephone receiver"
+            "telephone receiver",
+            "Telephones"
           ]
         },
         {
           "name": "Fax Machine",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Fax Machines"
+          ]
         },
         {
           "name": "Laptop",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "notebook computer",
+            "laptop computer",
+            "notebook pc",
+            "Laptops"
+          ]
         },
         {
           "name": "Desktop Computer",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Desktop Computers"
+          ]
         },
         {
           "name": "Printer",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "printers"
+          ]
         },
         {
           "name": "Keyboard",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "computer keyboard",
+            "keyboards"
+          ]
         },
         {
           "name": "Computer Mouse",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "mouse",
+            "computer mice"
+          ]
         }
       ],
       "inputMap": {
@@ -41118,8 +42072,6 @@
         "📆": "Calendar",
         "🗓️": "Calendar",
         "🗓": "Calendar",
-        "🗒": "Spiral Notepad",
-        "🗒️": "Spiral Notepad",
         "📇": "Card Index",
         "📈": "Chart Increasing",
         "📉": "Chart Decreasing",
@@ -41142,6 +42094,8 @@
         "🗑": "Wastebasket",
         "📔": "Notebook",
         "📓": "Notebook",
+        "🗒": "Notebook",
+        "🗒️": "Notebook",
         "📕": "Book",
         "📖": "Book",
         "📗": "Book",
@@ -41149,9 +42103,9 @@
         "📙": "Book",
         "📚": "Book",
         "📒": "Ledger",
-        "📃": "Page With Curl",
         "📜": "Scroll",
-        "📄": "Page Facing Up",
+        "📄": "Page",
+        "📃": "Page",
         "📰": "Newspaper",
         "🗞️": "Newspaper",
         "🗞": "Newspaper",
@@ -41206,87 +42160,123 @@
             "Phone",
             "Cell phone",
             "Cellphone",
-            "Smartphone"
+            "Smartphone",
+            "Mobile Phones"
           ]
         },
         {
           "name": "Telephone",
           "points": 1,
           "aliases": [
-            "telephone receiver"
+            "telephone receiver",
+            "Telephones"
           ]
         },
         {
           "name": "Pager",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Pagers"
+          ]
         },
         {
           "name": "Fax Machine",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Fax Machines"
+          ]
         },
         {
           "name": "Battery",
           "points": 50,
           "aliases": [
-            "low battery"
+            "low battery",
+            "batteries",
+            "electric battery"
           ]
         },
         {
           "name": "Electric Plug",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Electric Plugs"
+          ]
         },
         {
           "name": "Laptop",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "notebook computer",
+            "laptop computer",
+            "notebook",
+            "notebook pc",
+            "Laptops"
+          ]
         },
         {
           "name": "Desktop Computer",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Desktop Computers"
+          ]
         },
         {
           "name": "Printer",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "printers"
+          ]
         },
         {
           "name": "Keyboard",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "computer keyboard",
+            "keyboards"
+          ]
         },
         {
           "name": "Computer Mouse",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "mouse",
+            "computer mice"
+          ]
         },
         {
           "name": "Trackball",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Trackballs"
+          ]
         },
         {
           "name": "Computer Disk",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Computer Disks"
+          ]
         },
         {
           "name": "Floppy Disk",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Floppy Disks"
+          ]
         },
         {
           "name": "Optical Disk",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Optical Disks"
+          ]
         },
         {
           "name": "Dvd",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Dvds"
+          ]
         },
         {
           "name": "Abacus",
@@ -41335,7 +42325,9 @@
         {
           "name": "Movie Camera",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Movie Cameras"
+          ]
         },
         {
           "name": "Film Frames",
@@ -41345,36 +42337,46 @@
         {
           "name": "Film Projector",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Film Projectors"
+          ]
         },
         {
           "name": "Clapper Board",
           "points": 50,
           "aliases": [
-            "Clapperboard"
+            "Clapperboard",
+            "Clapper Boards"
           ]
         },
         {
           "name": "Television",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Televisions"
+          ]
         },
         {
           "name": "Camera",
           "points": 1,
           "aliases": [
-            "camera with flash"
+            "camera with flash",
+            "cameras"
           ]
         },
         {
           "name": "Video Camera",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Video Cameras"
+          ]
         },
         {
           "name": "Videocassette",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Videocassettes"
+          ]
         },
         {
           "name": "Magnifying Glass",
@@ -41387,29 +42389,40 @@
         {
           "name": "Candle",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "candles"
+          ]
         },
         {
           "name": "Light Bulb",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "lightbulb",
+            "bulb",
+            "light bulbs"
+          ]
         },
         {
           "name": "Flashlight",
           "points": 50,
           "aliases": [
-            "Torch"
+            "Torch",
+            "Flashlights"
           ]
         },
         {
           "name": "Red Paper Lantern",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Red Paper Lanterns"
+          ]
         },
         {
           "name": "Diya Lamp",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Diya Lamps"
+          ]
         }
       ],
       "inputMap": {
@@ -41447,7 +42460,8 @@
           "name": "Notebook",
           "points": 50,
           "aliases": [
-            "notebook with decorative cover"
+            "notebook with decorative cover",
+            "Notebooks"
           ]
         },
         {
@@ -41465,81 +42479,104 @@
         {
           "name": "Ledger",
           "points": 100,
-          "aliases": []
-        },
-        {
-          "name": "Page With Curl",
-          "points": 50,
-          "aliases": []
+          "aliases": [
+            "Ledgers"
+          ]
         },
         {
           "name": "Scroll",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Scrolls"
+          ]
         },
         {
-          "name": "Page Facing Up",
-          "points": 50,
-          "aliases": []
+          "name": "Page",
+          "points": 1,
+          "aliases": [
+            "page facing up",
+            "Page With Curl",
+            "Paper",
+            "Sheet of paper",
+            "Paper sheet",
+            "Pages"
+          ]
         },
         {
           "name": "Newspaper",
           "points": 50,
           "aliases": [
-            "rolled-up newspaper"
+            "rolled-up newspaper",
+            "Newspapers"
           ]
         },
         {
           "name": "Bookmark",
           "points": 50,
           "aliases": [
-            "bookmark tabs"
+            "bookmark tabs",
+            "book mark",
+            "bookmarks"
           ]
         },
         {
           "name": "Label",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Labels"
+          ]
         },
         {
           "name": "Pencil",
           "points": 50,
           "aliases": [
-            "Pencils"
+            "Pencils",
+            "lead pencil"
           ]
         },
         {
           "name": "Black Nib",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Black Nibs"
+          ]
         },
         {
           "name": "Fountain Pen",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Fountain Pens"
+          ]
         },
         {
           "name": "Pen",
           "points": 50,
           "aliases": [
             "Ballpoint pen",
-            "Biro"
+            "Biro",
+            "Pens"
           ]
         },
         {
           "name": "Paintbrush",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Paintbrushes"
+          ]
         },
         {
           "name": "Crayon",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Crayons"
+          ]
         },
         {
           "name": "Memo",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Memos"
+          ]
         }
       ],
       "inputMap": {
@@ -41552,9 +42589,9 @@
         "📙": "Book",
         "📚": "Book",
         "📒": "Ledger",
-        "📃": "Page With Curl",
         "📜": "Scroll",
-        "📄": "Page Facing Up",
+        "📄": "Page",
+        "📃": "Page",
         "📰": "Newspaper",
         "🗞️": "Newspaper",
         "🗞": "Newspaper",
@@ -41593,35 +42630,45 @@
             "muted speaker",
             "speaker low volume",
             "speaker medium volume",
-            "speaker high volume"
+            "speaker high volume",
+            "Speakers"
           ]
         },
         {
           "name": "Loudspeaker",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Loudspeakers"
+          ]
         },
         {
           "name": "Megaphone",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Megaphones"
+          ]
         },
         {
           "name": "Postal Horn",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Postal Horns"
+          ]
         },
         {
           "name": "Bell",
           "points": 50,
           "aliases": [
-            "bell with slash"
+            "bell with slash",
+            "Bells"
           ]
         },
         {
           "name": "Musical Score",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Musical Scores"
+          ]
         },
         {
           "name": "Musical Note",
@@ -41633,12 +42680,16 @@
         {
           "name": "Studio Microphone",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Studio Microphones"
+          ]
         },
         {
           "name": "Level Slider",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Level Sliders"
+          ]
         },
         {
           "name": "Control Knobs",
@@ -41648,17 +42699,23 @@
         {
           "name": "Microphone",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "Microphones"
+          ]
         },
         {
           "name": "Headphone",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Headphones"
+          ]
         },
         {
           "name": "Radio",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Radios"
+          ]
         }
       ],
       "inputMap": {
@@ -41697,202 +42754,225 @@
         {
           "name": "New Moon",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "New Moon Face",
+            "New Moons"
+          ]
         },
         {
           "name": "Waxing Crescent Moon",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Waxing Crescent Moons"
+          ]
         },
         {
           "name": "First Quarter Moon",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "First Quarter Moon Face",
+            "First Quarter Moons"
+          ]
         },
         {
           "name": "Waxing Gibbous Moon",
-          "points": 50,
-          "aliases": []
+          "points": 90,
+          "aliases": [
+            "Waxing Gibbous Moons"
+          ]
         },
         {
           "name": "Full Moon",
-          "points": 50,
-          "aliases": []
+          "points": 25,
+          "aliases": [
+            "Full Moon Face",
+            "Moon",
+            "Full Moons"
+          ]
         },
         {
           "name": "Waning Gibbous Moon",
-          "points": 50,
-          "aliases": []
+          "points": 100,
+          "aliases": [
+            "Waning Gibbous Moons"
+          ]
         },
         {
           "name": "Last Quarter Moon",
-          "points": 50,
-          "aliases": []
+          "points": 85,
+          "aliases": [
+            "Last Quarter Moon Face",
+            "Last Quarter Moons"
+          ]
         },
         {
           "name": "Waning Crescent Moon",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Waning Crescent Moons"
+          ]
         },
         {
           "name": "Crescent Moon",
           "points": 50,
-          "aliases": []
-        },
-        {
-          "name": "New Moon Face",
-          "points": 50,
-          "aliases": []
-        },
-        {
-          "name": "First Quarter Moon Face",
-          "points": 50,
-          "aliases": []
-        },
-        {
-          "name": "Last Quarter Moon Face",
-          "points": 50,
-          "aliases": []
+          "aliases": [
+            "Crescent Moons"
+          ]
         },
         {
           "name": "Thermometer",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Thermometers"
+          ]
         },
         {
           "name": "Sun",
           "points": 1,
-          "aliases": []
-        },
-        {
-          "name": "Full Moon Face",
-          "points": 50,
-          "aliases": []
-        },
-        {
-          "name": "Sun With Face",
-          "points": 50,
-          "aliases": []
+          "aliases": [
+            "Sun With Face",
+            "sol",
+            "Suns"
+          ]
         },
         {
           "name": "Ringed Planet",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Saturn",
+            "Ringed Planets"
+          ]
         },
         {
           "name": "Star",
           "points": 50,
-          "aliases": []
-        },
-        {
-          "name": "Glowing Star",
-          "points": 50,
-          "aliases": []
+          "aliases": [
+            "Glowing Star",
+            "Stars"
+          ]
         },
         {
           "name": "Shooting Star",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Shooting Stars"
+          ]
         },
         {
           "name": "Milky Way",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Milky Ways"
+          ]
         },
         {
           "name": "Cloud",
-          "points": 50,
-          "aliases": []
+          "points": 5,
+          "aliases": [
+            "Clouds"
+          ]
         },
         {
-          "name": "Sun Behind Cloud",
+          "name": "Partly Cloudy",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "sun behind cloud",
+            "Sun Behind Small Cloud",
+            "Sun Behind Large Cloud",
+            "partly sunny",
+            "Partly Cloudies"
+          ]
         },
         {
-          "name": "Cloud With Lightning And Rain",
+          "name": "Thunderstorm",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "cloud with lightning and rain",
+            "storm",
+            "thunder storm",
+            "Thunderstorms"
+          ]
         },
         {
-          "name": "Sun Behind Small Cloud",
+          "name": "Sun Shower",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "sun behind rain cloud",
+            "sunshower",
+            "Sun Showers"
+          ]
         },
         {
-          "name": "Sun Behind Large Cloud",
-          "points": 50,
-          "aliases": []
+          "name": "Rain",
+          "points": 10,
+          "aliases": [
+            "cloud with rain",
+            "rainfall",
+            "rain cloud"
+          ]
         },
         {
-          "name": "Sun Behind Rain Cloud",
-          "points": 50,
-          "aliases": []
+          "name": "Snow",
+          "points": 15,
+          "aliases": [
+            "cloud with snow",
+            "snowfall"
+          ]
         },
         {
-          "name": "Cloud With Rain",
-          "points": 50,
-          "aliases": []
-        },
-        {
-          "name": "Cloud With Snow",
-          "points": 50,
-          "aliases": []
-        },
-        {
-          "name": "Cloud With Lightning",
-          "points": 50,
-          "aliases": []
+          "name": "Lightning",
+          "points": 35,
+          "aliases": [
+            "cloud with lightning",
+            "High Voltage",
+            "lightning bolt"
+          ]
         },
         {
           "name": "Tornado",
-          "points": 50,
-          "aliases": []
+          "points": 40,
+          "aliases": [
+            "Tornados"
+          ]
         },
         {
           "name": "Fog",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Fogs"
+          ]
         },
         {
-          "name": "Wind Face",
-          "points": 100,
-          "aliases": []
+          "name": "Wind",
+          "points": 30,
+          "aliases": [
+            "wind face",
+            "blowing wind"
+          ]
         },
         {
           "name": "Cyclone",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Cyclones"
+          ]
         },
         {
           "name": "Rainbow",
-          "points": 50,
-          "aliases": []
-        },
-        {
-          "name": "Closed Umbrella",
-          "points": 50,
-          "aliases": []
+          "points": 20,
+          "aliases": [
+            "rainbows"
+          ]
         },
         {
           "name": "Umbrella",
           "points": 50,
-          "aliases": []
-        },
-        {
-          "name": "Umbrella With Rain Drops",
-          "points": 50,
-          "aliases": []
-        },
-        {
-          "name": "Umbrella On Ground",
-          "points": 50,
-          "aliases": []
-        },
-        {
-          "name": "High Voltage",
-          "points": 50,
-          "aliases": []
+          "aliases": [
+            "Closed Umbrella",
+            "Umbrella With Rain Drops",
+            "Umbrella On Ground",
+            "umbrellas"
+          ]
         },
         {
           "name": "Snowflake",
@@ -41902,95 +42982,101 @@
         {
           "name": "Snowman",
           "points": 50,
-          "aliases": []
-        },
-        {
-          "name": "Snowman Without Snow",
-          "points": 50,
-          "aliases": []
+          "aliases": [
+            "Snowman Without Snow",
+            "Snowmans"
+          ]
         },
         {
           "name": "Comet",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "comets"
+          ]
         },
         {
           "name": "Fire",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Fires"
+          ]
         },
         {
           "name": "Droplet",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Droplets"
+          ]
         },
         {
           "name": "Water Wave",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Water Waves"
+          ]
         }
       ],
       "inputMap": {
         "🌑": "New Moon",
+        "🌚": "New Moon",
         "🌒": "Waxing Crescent Moon",
         "🌓": "First Quarter Moon",
+        "🌛": "First Quarter Moon",
         "🌔": "Waxing Gibbous Moon",
         "🌕": "Full Moon",
+        "🌝": "Full Moon",
         "🌖": "Waning Gibbous Moon",
         "🌗": "Last Quarter Moon",
+        "🌜": "Last Quarter Moon",
         "🌘": "Waning Crescent Moon",
         "🌙": "Crescent Moon",
-        "🌚": "New Moon Face",
-        "🌛": "First Quarter Moon Face",
-        "🌜": "Last Quarter Moon Face",
         "🌡️": "Thermometer",
         "🌡": "Thermometer",
         "☀": "Sun",
         "☀️": "Sun",
-        "🌝": "Full Moon Face",
-        "🌞": "Sun With Face",
+        "🌞": "Sun",
         "🪐": "Ringed Planet",
         "⭐": "Star",
-        "🌟": "Glowing Star",
+        "🌟": "Star",
         "🌠": "Shooting Star",
         "🌌": "Milky Way",
         "☁": "Cloud",
         "☁️": "Cloud",
-        "⛅": "Sun Behind Cloud",
-        "⛈": "Cloud With Lightning And Rain",
-        "⛈️": "Cloud With Lightning And Rain",
-        "🌤": "Sun Behind Small Cloud",
-        "🌤️": "Sun Behind Small Cloud",
-        "🌥": "Sun Behind Large Cloud",
-        "🌥️": "Sun Behind Large Cloud",
-        "🌦️": "Sun Behind Rain Cloud",
-        "🌦": "Sun Behind Rain Cloud",
-        "🌧️": "Cloud With Rain",
-        "🌧": "Cloud With Rain",
-        "🌨": "Cloud With Snow",
-        "🌨️": "Cloud With Snow",
-        "🌩️": "Cloud With Lightning",
-        "🌩": "Cloud With Lightning",
+        "⛅": "Partly Cloudy",
+        "🌤": "Partly Cloudy",
+        "🌤️": "Partly Cloudy",
+        "🌥": "Partly Cloudy",
+        "🌥️": "Partly Cloudy",
+        "⛈": "Thunderstorm",
+        "⛈️": "Thunderstorm",
+        "🌦️": "Sun Shower",
+        "🌦": "Sun Shower",
+        "🌧️": "Rain",
+        "🌧": "Rain",
+        "🌨": "Snow",
+        "🌨️": "Snow",
+        "🌩️": "Lightning",
+        "🌩": "Lightning",
+        "⚡": "Lightning",
         "🌪️": "Tornado",
         "🌪": "Tornado",
         "🌫️": "Fog",
         "🌫": "Fog",
-        "🌬": "Wind Face",
-        "🌬️": "Wind Face",
+        "🌬": "Wind",
+        "🌬️": "Wind",
         "🌀": "Cyclone",
         "🌈": "Rainbow",
-        "🌂": "Closed Umbrella",
         "☂": "Umbrella",
         "☂️": "Umbrella",
-        "☔": "Umbrella With Rain Drops",
-        "⛱": "Umbrella On Ground",
-        "⛱️": "Umbrella On Ground",
-        "⚡": "High Voltage",
+        "🌂": "Umbrella",
+        "☔": "Umbrella",
+        "⛱": "Umbrella",
+        "⛱️": "Umbrella",
         "❄": "Snowflake",
         "❄️": "Snowflake",
         "☃": "Snowman",
         "☃️": "Snowman",
-        "⛄": "Snowman Without Snow",
+        "⛄": "Snowman",
         "☄️": "Comet",
         "☄": "Comet",
         "🔥": "Fire",
@@ -42012,63 +43098,87 @@
           "points": 50,
           "aliases": [
             "Wave",
-            "Waving"
+            "Waving",
+            "Waving Hands"
           ]
         },
         {
           "name": "Raised Back Of Hand",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Raised Back Of Hands"
+          ]
         },
         {
           "name": "Hand With Fingers Splayed",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Hand With Fingers Splayeds"
+          ]
         },
         {
           "name": "Raised Hand",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "hand up",
+            "Raised Hands"
+          ]
         },
         {
           "name": "Vulcan Salute",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Vulcan Salutes"
+          ]
         },
         {
           "name": "Rightwards Hand",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Rightwards Hands"
+          ]
         },
         {
           "name": "Leftwards Hand",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Leftwards Hands"
+          ]
         },
         {
           "name": "Palm Down Hand",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Palm Down Hands"
+          ]
         },
         {
           "name": "Palm Up Hand",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Palm Up Hands"
+          ]
         },
         {
           "name": "Leftwards Pushing Hand",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Leftwards Pushing Hands"
+          ]
         },
         {
           "name": "Rightwards Pushing Hand",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Rightwards Pushing Hands"
+          ]
         },
         {
           "name": "Ok Hand",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Ok Hands"
+          ]
         },
         {
           "name": "Pinched Fingers",
@@ -42078,30 +43188,39 @@
         {
           "name": "Pinching Hand",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Pinching Hands"
+          ]
         },
         {
           "name": "Victory Hand",
           "points": 50,
           "aliases": [
             "Peace sign",
-            "V sign"
+            "V sign",
+            "Victory Hands"
           ]
         },
         {
           "name": "Crossed Fingers",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "fingers crossed"
+          ]
         },
         {
           "name": "Hand With Index Finger And Thumb Crossed",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Hand With Index Finger And Thumb Crosseds"
+          ]
         },
         {
           "name": "Love-You Gesture",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Love-You Gestures"
+          ]
         },
         {
           "name": "Sign Of The Horns",
@@ -42111,74 +43230,105 @@
         {
           "name": "Call Me Hand",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Call Me Hands"
+          ]
         },
         {
           "name": "Backhand Index Pointing Left",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "pointing left",
+            "Backhand Index Pointing Lefts"
+          ]
         },
         {
           "name": "Backhand Index Pointing Right",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "pointing right",
+            "Backhand Index Pointing Rights"
+          ]
         },
         {
           "name": "Backhand Index Pointing Up",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Backhand Index Pointing Ups"
+          ]
         },
         {
           "name": "Middle Finger",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Middle Fingers"
+          ]
         },
         {
           "name": "Backhand Index Pointing Down",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Backhand Index Pointing Downs"
+          ]
         },
         {
           "name": "Index Pointing Up",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Index Pointing Ups"
+          ]
         },
         {
           "name": "Index Pointing At The Viewer",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Index Pointing At The Viewers"
+          ]
         },
         {
           "name": "Thumbs Up",
           "points": 1,
           "aliases": [
-            "Like"
+            "Like",
+            "thumb up",
+            "Thumbs Ups"
           ]
         },
         {
           "name": "Thumbs Down",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "thumb down",
+            "Thumbs Downs"
+          ]
         },
         {
           "name": "Raised Fist",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Raised Fists"
+          ]
         },
         {
           "name": "Oncoming Fist",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Oncoming Fists"
+          ]
         },
         {
           "name": "Left-Facing Fist",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Left-Facing Fists"
+          ]
         },
         {
           "name": "Right-Facing Fist",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Right-Facing Fists"
+          ]
         },
         {
           "name": "Clapping Hands",
@@ -42197,7 +43347,9 @@
         {
           "name": "Heart Hands",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "hand heart"
+          ]
         },
         {
           "name": "Open Hands",
@@ -42207,12 +43359,16 @@
         {
           "name": "Palms Up Together",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Palms Up Togethers"
+          ]
         },
         {
           "name": "Handshake",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Handshakes"
+          ]
         },
         {
           "name": "Folded Hands",
@@ -42285,53 +43441,73 @@
           "aliases": [
             "Doctor",
             "Physician",
-            "Nurse"
+            "Nurse",
+            "Health Workers"
           ]
         },
         {
           "name": "Student",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Students"
+          ]
         },
         {
           "name": "Teacher",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "Teachers"
+          ]
         },
         {
           "name": "Judge",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Judges"
+          ]
         },
         {
           "name": "Farmer",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Farmers"
+          ]
         },
         {
           "name": "Cook",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Chef",
+            "Cooks"
+          ]
         },
         {
           "name": "Mechanic",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Mechanics"
+          ]
         },
         {
           "name": "Factory Worker",
-          "points": 50,
-          "aliases": []
+          "points": 100,
+          "aliases": [
+            "Factory Workers"
+          ]
         },
         {
           "name": "Office Worker",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Office Workers"
+          ]
         },
         {
           "name": "Scientist",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Scientists"
+          ]
         },
         {
           "name": "Technologist",
@@ -42339,131 +43515,79 @@
           "aliases": [
             "Programmer",
             "Coder",
-            "Software developer"
+            "Software developer",
+            "Technologists"
           ]
         },
         {
           "name": "Singer",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Singers"
+          ]
         },
         {
           "name": "Artist",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Artists"
+          ]
         },
         {
           "name": "Pilot",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Pilots"
+          ]
         },
         {
           "name": "Astronaut",
-          "points": 100,
-          "aliases": []
+          "points": 20,
+          "aliases": [
+            "Astronauts"
+          ]
         },
         {
           "name": "Firefighter",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Firefighters"
+          ]
         },
         {
           "name": "Police Officer",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Police Officers"
+          ]
         },
         {
           "name": "Detective",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Detectives"
+          ]
         },
         {
           "name": "Guard",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Guards"
+          ]
         },
         {
           "name": "Ninja",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Ninjas"
+          ]
         },
         {
           "name": "Construction Worker",
           "points": 50,
           "aliases": [
-            "Builder"
-          ]
-        },
-        {
-          "name": "With Crown",
-          "points": 50,
-          "aliases": [
-            "person with crown"
-          ]
-        },
-        {
-          "name": "Prince",
-          "points": 50,
-          "aliases": []
-        },
-        {
-          "name": "Princess",
-          "points": 50,
-          "aliases": []
-        },
-        {
-          "name": "Wearing Turban",
-          "points": 50,
-          "aliases": [
-            "person wearing turban"
-          ]
-        },
-        {
-          "name": "With Skullcap",
-          "points": 50,
-          "aliases": [
-            "person with skullcap"
-          ]
-        },
-        {
-          "name": "In Tuxedo",
-          "points": 50,
-          "aliases": [
-            "person in tuxedo"
-          ]
-        },
-        {
-          "name": "With Veil",
-          "points": 50,
-          "aliases": [
-            "person with veil"
-          ]
-        },
-        {
-          "name": "Pregnant Woman",
-          "points": 50,
-          "aliases": []
-        },
-        {
-          "name": "Pregnant Man",
-          "points": 50,
-          "aliases": []
-        },
-        {
-          "name": "Pregnant Person",
-          "points": 50,
-          "aliases": []
-        },
-        {
-          "name": "Breast-Feeding",
-          "points": 50,
-          "aliases": []
-        },
-        {
-          "name": "Feeding Baby",
-          "points": 50,
-          "aliases": [
-            "person feeding baby"
+            "Builder",
+            "Construction Workers"
           ]
         }
       ],
@@ -42492,19 +43616,7 @@
         "🕵": "Detective",
         "💂": "Guard",
         "🥷": "Ninja",
-        "👷": "Construction Worker",
-        "🫅": "With Crown",
-        "🤴": "Prince",
-        "👸": "Princess",
-        "👳": "Wearing Turban",
-        "👲": "With Skullcap",
-        "🤵": "In Tuxedo",
-        "👰": "With Veil",
-        "🤰": "Pregnant Woman",
-        "🫃": "Pregnant Man",
-        "🫄": "Pregnant Person",
-        "🤱": "Breast-Feeding",
-        "🧑‍🍼": "Feeding Baby"
+        "👷": "Construction Worker"
       },
       "inputMapCaseSensitive": false
     },
@@ -42524,63 +43636,84 @@
         {
           "name": "Melon",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Melons"
+          ]
         },
         {
           "name": "Watermelon",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "watermelons"
+          ]
         },
         {
           "name": "Tangerine",
           "points": 50,
           "aliases": [
             "Orange",
-            "Mandarin"
+            "Mandarin",
+            "Tangerines"
           ]
         },
         {
           "name": "Lemon",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "lemons"
+          ]
         },
         {
           "name": "Lime",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Limes"
+          ]
         },
         {
           "name": "Banana",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "bananas"
+          ]
         },
         {
           "name": "Pineapple",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "pineapples"
+          ]
         },
         {
           "name": "Mango",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "mangoes",
+            "mangos"
+          ]
         },
         {
           "name": "Apple",
           "points": 50,
           "aliases": [
             "red apple",
-            "green apple"
+            "green apple",
+            "Apples"
           ]
         },
         {
           "name": "Pear",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Pears"
+          ]
         },
         {
           "name": "Peach",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Peaches"
+          ]
         },
         {
           "name": "Cherries",
@@ -42590,7 +43723,9 @@
         {
           "name": "Strawberry",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "strawberries"
+          ]
         },
         {
           "name": "Blueberries",
@@ -42600,22 +43735,30 @@
         {
           "name": "Kiwi Fruit",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Kiwi Fruits"
+          ]
         },
         {
           "name": "Tomato",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Tomatos"
+          ]
         },
         {
           "name": "Olive",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Olives"
+          ]
         },
         {
           "name": "Coconut",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "coconuts"
+          ]
         }
       ],
       "inputMap": {
@@ -42645,32 +43788,43 @@
     {
       "id": "hg8-165",
       "topic": "EVERYDAY",
-      "prompt": "Name a food represented by a vegetable emoji.",
-      "scope": "Standard emoji set, version 16.0. Names or emoji accepted; duplicate depictions share a score.",
+      "prompt": "Name a culinary vegetable represented by an emoji.",
+      "scope": "Culinary vegetables include edible fungi. Standard emoji set, version 16.0; names or emoji accepted.",
       "source": "https://unicode.org/Public/emoji/16.0/emoji-test.txt",
       "dailySlot": 2,
       "answers": [
         {
           "name": "Avocado",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "avocados",
+            "avocado pear"
+          ]
         },
         {
           "name": "Eggplant",
           "points": 50,
           "aliases": [
-            "Aubergine"
+            "Aubergine",
+            "Eggplants"
           ]
         },
         {
           "name": "Potato",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "potatoes",
+            "spud",
+            "spuds",
+            "Potatos"
+          ]
         },
         {
           "name": "Carrot",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "carrots"
+          ]
         },
         {
           "name": "Ear Of Corn",
@@ -42686,7 +43840,8 @@
           "aliases": [
             "Chilli",
             "Chili",
-            "Chilli pepper"
+            "Chilli pepper",
+            "Hot Peppers"
           ]
         },
         {
@@ -42694,41 +43849,46 @@
           "points": 50,
           "aliases": [
             "Capsicum",
-            "Sweet pepper"
+            "Sweet pepper",
+            "Bell Peppers"
           ]
         },
         {
           "name": "Cucumber",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Cucumbers"
+          ]
         },
         {
           "name": "Leafy Green",
           "points": 50,
           "aliases": [
             "Lettuce",
-            "Salad greens"
+            "Salad greens",
+            "Leafy Greens"
           ]
         },
         {
           "name": "Broccoli",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Broccolis"
+          ]
         },
         {
           "name": "Garlic",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "garlic bulb"
+          ]
         },
         {
           "name": "Onion",
           "points": 50,
-          "aliases": []
-        },
-        {
-          "name": "Peanuts",
-          "points": 50,
-          "aliases": []
+          "aliases": [
+            "onions"
+          ]
         },
         {
           "name": "Beans",
@@ -42736,25 +43896,26 @@
           "aliases": []
         },
         {
-          "name": "Chestnut",
-          "points": 100,
-          "aliases": []
-        },
-        {
           "name": "Ginger Root",
-          "points": 50,
-          "aliases": []
+          "points": 100,
+          "aliases": [
+            "Ginger Roots",
+            "Ginger"
+          ]
         },
         {
           "name": "Pea Pod",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Pea Pods"
+          ]
         },
         {
           "name": "Brown Mushroom",
           "points": 50,
           "aliases": [
-            "Mushroom"
+            "Mushroom",
+            "Brown Mushrooms"
           ]
         },
         {
@@ -42762,7 +43923,15 @@
           "points": 50,
           "aliases": [
             "Turnip",
-            "Radish"
+            "Radish",
+            "Root Vegetables"
+          ]
+        },
+        {
+          "name": "Tomato",
+          "points": 50,
+          "aliases": [
+            "Tomatos"
           ]
         }
       ],
@@ -42780,13 +43949,12 @@
         "🥦": "Broccoli",
         "🧄": "Garlic",
         "🧅": "Onion",
-        "🥜": "Peanuts",
         "🫘": "Beans",
-        "🌰": "Chestnut",
         "🫚": "Ginger Root",
         "🫛": "Pea Pod",
         "🍄‍🟫": "Brown Mushroom",
-        "🫜": "Root Vegetable"
+        "🫜": "Root Vegetable",
+        "🍅": "Tomato"
       },
       "inputMapCaseSensitive": false
     },
@@ -42801,12 +43969,17 @@
         {
           "name": "Bread",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "loaf",
+            "loaf of bread"
+          ]
         },
         {
           "name": "Croissant",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "croissants"
+          ]
         },
         {
           "name": "Baguette Bread",
@@ -42821,12 +43994,16 @@
         {
           "name": "Pretzel",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "pretzels"
+          ]
         },
         {
           "name": "Bagel",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "bagels"
+          ]
         },
         {
           "name": "Pancakes",
@@ -42836,38 +44013,51 @@
         {
           "name": "Waffle",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "waffles"
+          ]
         },
         {
           "name": "Cheese Wedge",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Cheese Wedges"
+          ]
         },
         {
           "name": "Meat On Bone",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Meat On Bones"
+          ]
         },
         {
           "name": "Poultry Leg",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Poultry Legs"
+          ]
         },
         {
           "name": "Cut Of Meat",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Cut Of Meats"
+          ]
         },
         {
           "name": "Bacon",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Bacons"
+          ]
         },
         {
           "name": "Hamburger",
           "points": 50,
           "aliases": [
-            "Burger"
+            "Burger",
+            "Hamburgers"
           ]
         },
         {
@@ -42881,32 +44071,44 @@
         {
           "name": "Pizza",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "pizzas"
+          ]
         },
         {
           "name": "Hot Dog",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Hot Dogs"
+          ]
         },
         {
           "name": "Sandwich",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Sandwiches"
+          ]
         },
         {
           "name": "Taco",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "tacos"
+          ]
         },
         {
           "name": "Burrito",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "burritos"
+          ]
         },
         {
           "name": "Tamale",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Tamales"
+          ]
         },
         {
           "name": "Stuffed Flatbread",
@@ -42916,57 +44118,80 @@
         {
           "name": "Falafel",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "falafels"
+          ]
         },
         {
           "name": "Egg",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Eggs"
+          ]
         },
         {
           "name": "Shallow Pan Of Food",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Shallow Pan Of Foods"
+          ]
         },
         {
           "name": "Pot Of Food",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Pot Of Foods"
+          ]
         },
         {
           "name": "Fondue",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Fondues"
+          ]
         },
         {
           "name": "Bowl With Spoon",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Bowl With Spoons"
+          ]
         },
         {
           "name": "Green Salad",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Green Salads"
+          ]
         },
         {
           "name": "Popcorn",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "pop corn"
+          ]
         },
         {
           "name": "Butter",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "salted butter",
+            "unsalted butter"
+          ]
         },
         {
           "name": "Salt",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Salts"
+          ]
         },
         {
           "name": "Canned Food",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Canned Foods"
+          ]
         }
       ],
       "inputMap": {
@@ -43017,61 +44242,83 @@
         {
           "name": "Frog",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "frogs"
+          ]
         },
         {
           "name": "Crocodile",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "croc",
+            "crocs",
+            "crocodiles"
+          ]
         },
         {
           "name": "Turtle",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Turtles"
+          ]
         },
         {
           "name": "Lizard",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Lizards"
+          ]
         },
         {
           "name": "Snake",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Snakes"
+          ]
         },
         {
           "name": "Dragon",
           "points": 50,
           "aliases": [
-            "Dragon Face"
+            "Dragon Face",
+            "Dragons"
           ]
         },
         {
           "name": "Sauropod",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Sauropods"
+          ]
         },
         {
           "name": "T-Rex",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "T-Rexes"
+          ]
         },
         {
           "name": "Whale",
           "points": 50,
           "aliases": [
-            "Spouting Whale"
+            "Spouting Whale",
+            "Whales"
           ]
         },
         {
           "name": "Dolphin",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "dolphins"
+          ]
         },
         {
           "name": "Seal",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Seals"
+          ]
         },
         {
           "name": "Fish",
@@ -43091,47 +44338,67 @@
         {
           "name": "Shark",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Sharks"
+          ]
         },
         {
           "name": "Octopus",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "octopuses",
+            "octopi"
+          ]
         },
         {
           "name": "Coral",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Corals"
+          ]
         },
         {
           "name": "Jellyfish",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "jelly fish",
+            "jellies"
+          ]
         },
         {
           "name": "Crab",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Crabs"
+          ]
         },
         {
           "name": "Lobster",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Lobsters"
+          ]
         },
         {
           "name": "Shrimp",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Shrimps"
+          ]
         },
         {
           "name": "Squid",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Squids"
+          ]
         },
         {
           "name": "Oyster",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Oysters"
+          ]
         }
       ],
       "inputMap": {
@@ -43174,17 +44441,23 @@
         {
           "name": "Bento Box",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Bento Boxes"
+          ]
         },
         {
           "name": "Rice Cracker",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Rice Crackers"
+          ]
         },
         {
           "name": "Rice Ball",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Rice Balls"
+          ]
         },
         {
           "name": "Cooked Rice",
@@ -43203,61 +44476,81 @@
           "points": 50,
           "aliases": [
             "Noodles",
-            "Ramen"
+            "Ramen",
+            "Steaming Bowls"
           ]
         },
         {
           "name": "Spaghetti",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Spaghettis"
+          ]
         },
         {
           "name": "Roasted Sweet Potato",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Roasted Sweet Potatos"
+          ]
         },
         {
           "name": "Oden",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Odens"
+          ]
         },
         {
           "name": "Sushi",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "sushis"
+          ]
         },
         {
           "name": "Fried Shrimp",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Fried Shrimps"
+          ]
         },
         {
           "name": "Fish Cake With Swirl",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Fish Cake With Swirls"
+          ]
         },
         {
           "name": "Moon Cake",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Moon Cakes"
+          ]
         },
         {
           "name": "Dango",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Dangos"
+          ]
         },
         {
           "name": "Dumpling",
           "points": 50,
           "aliases": [
             "Dumplings",
-            "Gyoza"
+            "Gyoza",
+            "jiaozi"
           ]
         },
         {
           "name": "Fortune Cookie",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "Fortune Cookies"
+          ]
         }
       ],
       "inputMap": {
@@ -43720,14 +45013,16 @@
           "name": "The Moon",
           "points": 20,
           "aliases": [
-            "moons"
+            "moons",
+            "luna"
           ]
         },
         {
           "name": "The Sun",
           "points": 15,
           "aliases": [
-            "suns"
+            "suns",
+            "sol"
           ]
         },
         {
@@ -44464,21 +45759,26 @@
           "name": "Great Wall of China",
           "points": 1,
           "aliases": [
-            "great wall of chinas"
+            "great wall of chinas",
+            "great wall",
+            "wall of china"
           ]
         },
         {
           "name": "Petra",
           "points": 50,
           "aliases": [
-            "petras"
+            "petras",
+            "petra jordan"
           ]
         },
         {
           "name": "Colosseum",
           "points": 15,
           "aliases": [
-            "colosseums"
+            "colosseums",
+            "coliseum",
+            "roman colosseum"
           ]
         },
         {
@@ -44491,14 +45791,16 @@
           "points": 20,
           "aliases": [
             "machu picchus",
-            "machu pichu"
+            "machu pichu",
+            "machupicchu"
           ]
         },
         {
           "name": "Taj Mahal",
           "points": 5,
           "aliases": [
-            "taj mahals"
+            "taj mahals",
+            "tajmahal"
           ]
         },
         {
@@ -44511,12 +45813,24 @@
         {
           "name": "Great Pyramid of Giza",
           "points": 10,
-          "aliases": []
+          "aliases": [
+            "great pyramid",
+            "pyramid of giza",
+            "khufu pyramid",
+            "Pyramid of Khufu",
+            "Khufu’s pyramid",
+            "Pyramid of Cheops"
+          ]
         },
         {
           "name": "Amazon Rainforest",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "amazon jungle",
+            "amazon forest",
+            "Amazon",
+            "Amazon rain forest"
+          ]
         },
         {
           "name": "Ha Long Bay",
@@ -48484,7 +49798,8 @@
           "name": "Cinderella",
           "points": 15,
           "aliases": [
-            "cinderellas"
+            "cinderellas",
+            "cinder ella"
           ]
         },
         {
@@ -48735,7 +50050,8 @@
           "name": "Moana",
           "points": 30,
           "aliases": [
-            "moanas"
+            "moanas",
+            "vaiana"
           ]
         },
         {
@@ -49897,7 +51213,10 @@
         {
           "name": "Oppenheimer",
           "points": 20,
-          "aliases": []
+          "aliases": [
+            "Oppenheimer film",
+            "Oppenheimer movie"
+          ]
         },
         {
           "name": "Anora",
@@ -51199,7 +52518,10 @@
         {
           "name": "Oppenheimer",
           "points": 10,
-          "aliases": []
+          "aliases": [
+            "Oppenheimer film",
+            "Oppenheimer movie"
+          ]
         }
       ]
     },
@@ -51470,14 +52792,19 @@
           "name": "Cinderella",
           "points": 1,
           "aliases": [
-            "cinderellas"
+            "cinderellas",
+            "cinder ella"
           ]
         },
         {
           "name": "Aurora",
           "points": 50,
           "aliases": [
-            "auroras"
+            "auroras",
+            "northern lights",
+            "southern lights",
+            "aurora borealis",
+            "aurora australis"
           ]
         },
         {
@@ -51528,7 +52855,8 @@
           "name": "Moana",
           "points": 25,
           "aliases": [
-            "moanas"
+            "moanas",
+            "vaiana"
           ]
         },
         {
@@ -53790,7 +55118,10 @@
         {
           "name": "Billie Eilish",
           "points": 50,
-          "aliases": []
+          "aliases": [
+            "billie",
+            "eilish"
+          ]
         },
         {
           "name": "Kendrick Lamar",
@@ -54800,13 +56131,17 @@
           "name": "Guitar",
           "points": 1,
           "aliases": [
-            "guitars"
+            "guitars",
+            "acoustic guitar",
+            "electric guitar"
           ]
         },
         {
           "name": "Musical Keyboard",
           "points": 5,
-          "aliases": []
+          "aliases": [
+            "Musical Keyboards"
+          ]
         },
         {
           "name": "Trumpet",
@@ -54819,7 +56154,8 @@
           "name": "Violin",
           "points": 15,
           "aliases": [
-            "violins"
+            "violins",
+            "fiddle"
           ]
         },
         {
@@ -54839,7 +56175,9 @@
         {
           "name": "Long Drum",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Long Drums"
+          ]
         },
         {
           "name": "Maracas",
@@ -55290,7 +56628,10 @@
         {
           "name": "Taylor Swift",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "taylor",
+            "swift"
+          ]
         },
         {
           "name": "Arcade Fire",
@@ -55330,7 +56671,10 @@
         {
           "name": "Billie Eilish",
           "points": 20,
-          "aliases": []
+          "aliases": [
+            "billie",
+            "eilish"
+          ]
         },
         {
           "name": "Jon Batiste",
@@ -55662,7 +57006,10 @@
         {
           "name": "Billie Eilish",
           "points": 5,
-          "aliases": []
+          "aliases": [
+            "billie",
+            "eilish"
+          ]
         },
         {
           "name": "Silk Sonic",

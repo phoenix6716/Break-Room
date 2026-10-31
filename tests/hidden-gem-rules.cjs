@@ -91,6 +91,8 @@ assert.equal(M.match(byUniverse('un-states'),'USA').name,'United States');assert
 assert.equal(M.match(byUniverse('dceu'),'The Suicide Squad').name,'The Suicide Squad (2021)');assert.equal(M.match(byUniverse('dceu'),'Suicide Squad').name,'Suicide Squad (2016)');
 for(const [u,input,name]of [['un-sg','Guterres','Antonio Guterres'],['aus-pm','Albanese','Anthony Albanese'],['nba','Lakers','Los Angeles Lakers'],['afl','Swans','Sydney Swans'],['premier','Man Utd','Manchester United']])assert.equal(M.match(byUniverse(u),input)?.name,name,'Common shortened name '+input);
 for(const [u,input]of [['everyday-office','Pencil'],['everyday-household','Key'],['everyday-household','Sofa'],['everyday-hands','Clapping'],['everyday-toys','Dice'],['everyday-sea-reptiles','Whale']])assert(M.match(byUniverse(u),input),'Ordinary everyday answer: '+input);
+for(const [u,input]of [['everyday-sky','Rain'],['everyday-sky','Snow'],['everyday-sky','Wind'],['everyday-sky','Moon'],['everyday-stationery','Paper'],['everyday-office','Paper'],['everyday-fruit','Apples'],['everyday-household','Chairs']])assert(M.match(byUniverse(u),input),'Ordinary correct wording '+input);
+assert(M.match(byUniverse('everyday-sky'),'Sun').points<M.match(byUniverse('everyday-sky'),'Waning Gibbous Moon').points);
 const allDates=[];
 for(let i=0;i<48;i++){
  const d=new Date(Date.UTC(2026,9,31+i)).toISOString().slice(0,10),qs=M.daily(activeBank,d);assert.equal(qs.length,5);assert.equal(new Set(qs.map(q=>q.topic)).size,5);allDates.push(...qs.map(q=>q.id));
@@ -107,7 +109,7 @@ assert(encode(fullHistory).length>1500000);assert(Buffer.byteLength(encode(fullH
 // Editorial ratings are question-specific. Famous leads and title answers cannot inherit rare-answer scores.
 assert(activeBank.every(q=>!/UNESCO|World Heritage property/i.test(q.prompt)));assert.equal(activeBank.filter(q=>q.topic==='EVERYDAY').length,24);
 const priorBounded=require('../content/archive/2026-10-31-bounded-v1/hidden-gem-questions.json').questions;
-assert.equal(require('../content/hidden-gem-questions.json').revision,10);
+assert.equal(require('../content/hidden-gem-questions.json').revision,11);
 for(const [i,q]of activeBank.entries()){
  if(i>=144&&i<168)continue;
  assert.equal(q.id,priorBounded[i].id);assert.equal(q.prompt,priorBounded[i].prompt);assert.equal(q.dailySlot,priorBounded[i].dailySlot);

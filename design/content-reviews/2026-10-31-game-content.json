@@ -1,0 +1,597 @@
+{
+  "date": "2026-10-31",
+  "scope": "All ten current games: answer matching, contextual scores, factual sequences/year scopes and independent puzzle optima.",
+  "games": {
+    "clue-ladder": {
+      "count": 300,
+      "changes": [
+        {
+          "id": "cl-007",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-042",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-043",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-046",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-054",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-059",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-064",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-084",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-091",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-096",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-162",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-168",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-169",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-170",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-184",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-190",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-193",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-194",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-198",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-201",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-212",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-216",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-223",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-225",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-241",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-262",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-285",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-290",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-298",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        },
+        {
+          "id": "cl-300",
+          "reason": "Reviewed accepted wording, clue specificity and target identity."
+        }
+      ]
+    },
+    "time-drop": {
+      "count": 330,
+      "changes": [
+        {
+          "id": "td-040",
+          "reason": "Identify the 1485 battle without claiming the wars ended then."
+        }
+      ]
+    },
+    "hidden-gem": {
+      "count": 240,
+      "canonicalAnswers": 7604,
+      "minimumAnswers": 10,
+      "maximumAnswers": 321,
+      "rotationDays": 48,
+      "review": "Merged duplicate depictions, added ordinary wording and plurals, corrected weather/job familiarity anchors and culinary vegetable membership. Contextual ratings remain editorial; unanchored entries stay neutral 50."
+    },
+    "shift-work": {
+      "count": 180,
+      "review": "Independent breadth-first search verifies published move minima."
+    },
+    "seating-chart": {
+      "count": 360,
+      "review": "Independent exhaustive enumeration verifies published minimum costs."
+    },
+    "pack": {
+      "count": 212,
+      "review": "Independent capacity dynamic programming verifies published optima."
+    },
+    "laser": {
+      "count": 248,
+      "review": "Independent ray tracing/enumeration verifies boards and accepts alternate legal solutions."
+    },
+    "inner-clock": {
+      "review": "Independent target-relative scoring, timeout and native minimum-error checks."
+    },
+    "stack-up": {
+      "count": 294,
+      "default": 160,
+      "challenge": 134,
+      "sourceIncludingRetiredMaths": 368,
+      "review": "Editorial review of all 160 default and 134 active Challenge sequences. Independent numerical checks also cover 74 retired mathematical sets retained for captured-save compatibility. No clear new active ordering error found; no claim of freshly re-verifying every primary reference."
+    },
+    "lowball": {
+      "count": 128,
+      "regionalReferences": 512,
+      "distinctSourceUrls": 502,
+      "retrievedSources": 438,
+      "unavailableSources": 64,
+      "verifiedAnchors": [
+        "July 2026 Economist Big Mac national reference: AU 8.50, US 6.22, UK 5.49, CA 8.17",
+        "Apple AU iPhone 16 128GB: AUD 1349",
+        "IKEA LACK 55x55 white: AU AUD 19.99; US USD 16.99"
+      ],
+      "review": "Source reachability is not verification of every product/pack/channel price. Targets remain explicitly dated reference prices. No unverified price replacement.",
+      "unavailableReferences": [
+        {
+          "url": "https://business.walmart.com/ip/Athletic-Works-Printed-Yoga-Mat-3mm-68in-long-and-24in-wide-light-weight-durable-slip-resistance/946771649",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://costdb.com/store/mcdonalds",
+          "status": "unavailable",
+          "error": "HTTP Error 502: Bad Gateway"
+        },
+        {
+          "url": "https://frenchycoffeenyc.com/food-menu",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://grovena.com.au/product/10174-dr-oetker-ristorante-mozzarella-pizza-355g",
+          "status": "unavailable",
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "url": "https://gvzoo.com/visit/hours-rates-getting-here/",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://kwiknezytaree.com.au/services/",
+          "status": "unavailable",
+          "error": "HTTP Error 500: Internal Server Error"
+        },
+        {
+          "url": "https://oldenglishfishnchips.com.au/menu/",
+          "status": "unavailable",
+          "error": "HTTP Error 503: Service Unavailable"
+        },
+        {
+          "url": "https://princesscinemas.com/princess-cinemas-ticket-prices",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://roundtabletavern.ca/menu/",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.bigw.com.au/mens-clothing-accessories/mens-clothing/hoodies-sweatshirts/c/6812105",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.bigw.com.au/product/colgate-extra-clean-medium-manual-toothbrush-single/p/9901058710",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.bigw.com.au/product/monopoly-classic-board-game/p/9902597727",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.boots.com/colgate-cavity-protection-great-regular-flavour-toothpaste-75ml-10171940",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.boots.com/colgate/colgate-manual-toothbrushes/colgate-extra-clean-toothbrush-10345319",
+          "status": "unavailable",
+          "error": "HTTP Error 503: Service Unavailable"
+        },
+        {
+          "url": "https://www.boots.com/health-pharmacy/medicines-treatments/first-aid/bandages-dressings-and-plasters/elastoplast-fabric-plasters-40pack-10022346",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.boots.com/soltan-protect-and-moisturise-suncare-lotion-spf50-200ml-10362372",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.boots.com/totes-slim-round-black-10280584",
+          "status": "unavailable",
+          "error": "HTTP Error 503: Service Unavailable"
+        },
+        {
+          "url": "https://www.canadacomputers.com/en/portable-bluetooth-speakers/278274/jbl-flip-7-portable-bluetooth-speaker-black-jblflip7blkam.html",
+          "status": "unavailable",
+          "error": "HTTP Error 301: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nMov"
+        },
+        {
+          "url": "https://www.fivebelow.com/products/banana-boat-sport-ultra-spf50-sunscreen-lotion-8oz-9235220",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.foodbasics.ca/aisles/beverages/coffee/coffee-pods/dark-roast-nespresso-espresso-coffee-pods/p/8445291834736",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.foodbasics.ca/aisles/fruits-vegetables/fruits/avocadoes-exotic-fruits/hass-avocado/p/4770",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.foodbasics.ca/aisles/pet-care/cats/canned-cat-food/chicken-wet-cat-food/p/056366006866",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.homedepot.com/p/202319355",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.homehardware.ca/en/traditional-sized-soccer-ball-size-5/p/7152012",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.jbl.com.au/bluetooth-speakers/FLIP-7.html",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.jbl.com/FLIP-7.html?dwvar_FLIP-7_color=Sand-AM-Current",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.lambeth.gov.uk/parking/emission-based-parking-charges/street-car-park-charges",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.lcbo.com/en/corona-extra-17818",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.lcbo.com/en/yellow-tail-shiraz-624544",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.levi.com/CA/en_CA/jeans-by-fit-number/men/jeans/501/501-original/c/levi_jeans_by_fit_number_men_jeans_501_original/facets/feature-fit_name/501%C2%AE",
+          "status": "unavailable",
+          "error": "The read operation timed out"
+        },
+        {
+          "url": "https://www.levi.com/GB/en_GB/levis-501/c/levi_clothing_501",
+          "status": "unavailable",
+          "error": "The read operation timed out"
+        },
+        {
+          "url": "https://www.meijer.com/shopping/product/original-green/7084781116",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.metro.ca/en/online-grocery/aisles/beverages/juices-drinks/refrigerated-juices-drinks/100-pure-orange-juice/p/048500203545",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.metro.ca/en/online-grocery/aisles/beverages/sports-energy-drinks/energy-drinks/original-flavour-energy-drink/p/070847811190",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.metro.ca/en/online-grocery/aisles/dairy-eggs/milk-cream-butter/2-whole-milk/3-25-homogenized-milk/p/068200010014",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.metro.ca/en/online-grocery/aisles/frozen/ice-cream-treats/ice-cream/natural-vanilla-ice-cream/p/058779133733",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.metro.ca/en/online-grocery/aisles/fruits-vegetables/fruits/bananas-plantains/banana/p/4011",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.metro.ca/en/online-grocery/aisles/household-cleaning/dishwashing/dishwashing-liquid/original-scented-dish-soap/p/037000748342",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.metro.ca/en/online-grocery/aisles/meat-poultry/chicken-turkey/breasts/boneless-chicken-breast/p/234383",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.metro.ca/en/online-grocery/aisles/snacks/sweet-snacks-candy/chocolate/milk-chocolate-bar/p/061200003802",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.officeworks.com.au/brands/stabilo",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.officeworks.com.au/shop/officeworks/p/-GG41004",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.officeworks.com.au/shop/officeworks/p/casio-fx-8200au-scientific-calculator-black-casfx8200",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.officeworks.com.au/shop/officeworks/p/moleskine-classic-hard-cover-ruled-large-notebook-black-msqp060",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.officeworks.com.au/shop/officeworks/p/samsung-t7-portable-ssd-drive-1tb-grey-sassd1tbgy",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.target.com/p/-/A-94757304",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.uniqlo.com/uk/en/women/uv-protection/accessories",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.visions.ca/playstation-5-console-model-group-slim-v2-1000049888",
+          "status": "unavailable",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.walmart.ca/en/ip/Air-Canada-Micro-Compact-Travel-Umbrella-with-UPF-50-Sun-Protection-Black-One-Size/6S8ZZFXL6RDW",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.walmart.ca/en/ip/Coleman-Sundome-2-Person-Camping-Tent/25IBF0HIQHKN",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.walmart.ca/en/ip/Colgate-Cavity-Protection-Fluoride-Toothpaste-Regular/6000195573257?classType=REGULAR",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.walmart.ca/en/ip/Great-Value-Liquid-Laundry-Detergent-OXI-4-in-1-43-wash-1-92L/2DCC865C1BOU?classType=REGULAR",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.walmart.ca/en/ip/Great-Value-Organic-Free-Run-Large-Brown-12-Eggs/6000196119460",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.walmart.ca/en/ip/Great-Value-Salted-Butter/6000200237828",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.walmart.ca/en/ip/Lay-s-Classic-potato-chips/6000201210244",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.walmart.ca/en/ip/Lean-Ground-Beef-Your-Fresh-Market-450-g/6000191288138",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.walmart.ca/en/ip/RAVENSBURGER-Disney-Pixar-Toy-Store-1000-pc-Puzzle/6000208009277",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.walmart.ca/en/ip/RR-ORANGE-PEKOE/3UQTKWT7RU7O",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.walmart.ca/en/ip/Softsoap-Liquid-Hand-Soap-Pump-Aquarium/6000196692606",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.walmart.ca/en/ip/Wilson-Tennis-Balls-T1003-Championship-Tennis-Ball-3-Pack/6MJI6E9SD1D5",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.walmart.ca/en/ip/black-decker-2-slice-toaster-black/10221861",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.walmart.ca/en/ip/colgate-extra-clean-toothbrush-medium/10220113",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.walmart.ca/en/ip/great-value-ultra-soft-toilet-paper-12-double-equal-24-rolls/10186201",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.walmart.ca/en/ip/rubiks-3x3-original-cube-multi/10230773",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found"
+        }
+      ],
+      "structuredOfferReview": {
+        "referencesWithProductPriceMetadata": 230,
+        "method": "Reviewed metadata against named product, pack/unit and regular-versus-offer scope. Metadata is not substituted automatically: six-glass totals, per-litre conversions, original prices and dated offers differ legitimately from current single-offer fields.",
+        "unresolvedSourceDrift": [
+          "The robot-vacuum UK source currently returns eufy C10 metadata while the captured reference names C20.",
+          "The Decathlon backpack source currently returns a generic womens-rucksack product."
+        ],
+        "effect": "Preserve explicitly dated captured references; these URLs cannot freshly substantiate those older product references."
+      }
+    }
+  },
+  "limits": [
+    "Editorial Sleeper rarity estimates are not measured player-popularity data. Unanchored answers remain neutral 50.",
+    "Factual dates/orders received an editorial review with independent anchors; not every external primary document was freshly retrieved.",
+    "Lowball uses displayed dated product/pack/channel references, not live universal prices.",
+    "64 of 502 distinct Lowball source URLs could not be retrieved during this audit; the complete 512-reference bank is not freshly price-certified.",
+    "Current retailer pages may change variants, prices or promotions. Two retrieved sources now identify a different product; this audit does not certify those older price references."
+  ],
+  "preservation": "All old full snapshots, captured scores, first-completion locks and timers remain unchanged.",
+  "retrievedReferenceAnchors": [
+    {
+      "key": "bigmac",
+      "url": "https://raw.githubusercontent.com/TheEconomist/big-mac-data/master/output-data/big-mac-full-index.csv",
+      "finalUrl": "https://raw.githubusercontent.com/TheEconomist/big-mac-data/master/output-data/big-mac-full-index.csv",
+      "bytes": 336855,
+      "status": "retrieved"
+    },
+    {
+      "key": "apple-au",
+      "url": "https://www.apple.com/au/shop/buy-iphone/iphone-16",
+      "finalUrl": "https://www.apple.com/au/shop/buy-iphone/iphone-16",
+      "bytes": 411925,
+      "status": "retrieved"
+    },
+    {
+      "key": "ikea-au",
+      "url": "https://www.ikea.com/au/en/p/lack-side-table-white-10449909/",
+      "finalUrl": "https://www.ikea.com/au/en/p/lack-side-table-white-10449909/",
+      "bytes": 1189700,
+      "status": "retrieved"
+    },
+    {
+      "key": "ikea-us",
+      "url": "https://www.ikea.com/us/en/p/lack-side-table-white-30449908/",
+      "finalUrl": "https://www.ikea.com/us/en/p/lack-side-table-white-30449908/",
+      "bytes": 1117658,
+      "status": "retrieved"
+    },
+    {
+      "key": "apollo",
+      "url": "https://www.nasa.gov/mission/apollo-11/",
+      "finalUrl": "https://www.nasa.gov/mission/apollo-11/",
+      "bytes": 395886,
+      "status": "retrieved"
+    },
+    {
+      "key": "webb",
+      "url": "https://science.nasa.gov/mission/webb/launch/",
+      "finalUrl": "https://science.nasa.gov/mission/webb/launch/",
+      "bytes": 317105,
+      "status": "retrieved"
+    },
+    {
+      "key": "chatgpt",
+      "url": "https://openai.com/index/chatgpt/",
+      "finalUrl": "https://openai.com/index/chatgpt/",
+      "bytes": 484314,
+      "status": "retrieved"
+    }
+  ],
+  "cloudHistoryStress": {
+    "rotationOffsets": 48,
+    "completedDays": 120,
+    "maximumBytes": 1886758,
+    "clientLimitBytes": 1990000
+  },
+  "validation": {
+    "unit": "All repository unit checks passed, including disposable PostgreSQL score parity and cloud/save compatibility.",
+    "static": "Production build, shipped reference/syntax checks, legal-footer check and content report passed.",
+    "browser": "Focused native gameplay checks passed for all ten current games at mobile and desktop widths, plus account restore, private retired-save preservation, public routes and Sleeper captured-round regressions.",
+    "widths": [
+      320,
+      390,
+      768,
+      1100,
+      1440
+    ],
+    "sleeperCapturedRounds": "Old Rain wording accepts the original canonical label and rating; pending deadlines and membership stay fixed; completed zeroes and old Crash scores stay frozen. Pants/jeans/sleeves pass Daily and Unlimited at 390 and 1440px.",
+    "limits": "Automated Chromium and isolated PostgreSQL checks; independent human difficulty calibration and physical-device testing remain separate."
+  }
+}

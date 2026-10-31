@@ -29,6 +29,7 @@ M.next(legacy);assert.equal(legacy.phase,'summary');assert(M.valid(legacy,day));
 const legacyKey=M.PREFIX+day;
 assert.equal(C.merge('time-drop',{[legacyKey]:encode(good)},{[legacyKey]:encode(legacy)})[legacyKey],encode(legacy));
 
+const bosworth=B.find(e=>e.id==='td-040');assert.equal(bosworth.year,1485);assert(!/Wars of the Roses end/.test(bosworth.title));assert(bosworth.fact.includes('1487'));const oldBosworth=require('../content/archive/2026-10-31-content-audit/time-drop-events.json').events.find(e=>e.id==='td-040');assert.equal(M.result(oldBosworth,1485).points,1000);
 (async()=>{const db=new PGlite();try{
  await db.exec("create role anon;create role authenticated;create schema auth;create table auth.users(id uuid primary key);create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;grant usage on schema auth to anon,authenticated;grant execute on function auth.uid() to anon,authenticated;");
  for(const file of ['supabase/setup.sql','supabase/friends.sql','supabase/time-drop.sql','supabase/time-drop.sql'])await db.exec(fs.readFileSync(file,'utf8'));
