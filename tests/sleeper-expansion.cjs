@@ -19,6 +19,15 @@ for(const width of [390,1440])for(const test of [{topic:'SCIENCE',prompt:'Name a
  console.log('PASS bounded input '+width+'px: '+test.input+' → '+test.answer);
 }
 
+// The reported score inversion: new captures use contextual points; old captured scores/deadlines stay frozen.
+const oldRatings=require('../content/archive/2026-10-31-bounded-v1/hidden-gem-questions.json').questions;
+for(const width of [390,1440])for(const test of [{q:newBank.find(q=>q.id==='hg8-095'),input:'Crash',points:1},{q:newBank.find(q=>q.id==='hg8-095'),input:'Penta Penguin',points:100},{q:oldRatings.find(q=>q.id==='hg8-095'),input:'Crash Bandicoot',points:100}]){
+ const c=await b.newContext({viewport:{width,height:1000},reducedMotion:'reduce'}),p=await c.newPage();await c.addInitScript(()=>localStorage.setItem('break-room:help-seen:hidden-gem','1'));await p.goto(base+'/games/hidden-gem/index.html');
+ const deadline=await p.evaluate(({q,input})=>{const M=BREAK_ROOM_HIDDEN_GEM,r=M.createPractice(q,MIDNIGHT_ARCADE_CLOCK.dayKey(),'contextual-ratings');M.begin(r,Date.now());M.draft(r,input,Date.now());sessionStorage.setItem('break-room:hidden-gem:practice:guest',JSON.stringify({run:r,seen:[q.id],topic:'GAMES',count:0,points:0}));return r.deadline;},test);
+ await p.reload();await p.locator('#mode-unlimited').click();assert.equal(await p.evaluate(()=>JSON.parse(sessionStorage.getItem('break-room:hidden-gem:practice:guest')).run.deadline),deadline);await p.locator('#answer-input').press('Enter');await p.locator('#dc-review-heading').waitFor();
+ const frozen=await p.evaluate(()=>sessionStorage.getItem('break-room:hidden-gem:practice:guest'));assert.equal(JSON.parse(frozen).run.picks[0].points,test.points);await p.reload();await p.locator('#mode-unlimited').click();assert.equal(await p.evaluate(()=>sessionStorage.getItem('break-room:hidden-gem:practice:guest')),frozen);assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await c.close();console.log('PASS contextual ratings '+width+'px: '+test.input+' → '+test.points+', original deadline and locked score survive reload.');
+}
+
 // Reproduce reported wording against already-captured, pre-correction questions.
 require('../hidden-gem-model.js');const M=BREAK_ROOM_HIDDEN_GEM,priorBank=require('../content/archive/2026-10-30-accessible-v1/hidden-gem-questions.json').questions,day='2026-10-30',now=Date.parse(day+'T01:00:00Z');
 function pending(input){const r=M.create(priorBank,day);M.begin(r,now);while(r.questions[r.round].id!=='hg7-207'){M.draft(r,r.questions[r.round].answers[0].name,now);M.finish(r,now);M.next(r,now);}M.draft(r,input,now);if(!M.match(r.questions[r.round],input))assert(!M.finish(r,now));return r;}

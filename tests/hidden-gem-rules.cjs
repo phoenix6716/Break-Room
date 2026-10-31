@@ -103,6 +103,21 @@ assert(M.record(boundedRun,boundedRun.day));
 const fullHistory={};
 for(let i=0;i<120;i++){const d=new Date(Date.UTC(2026,9,31+i)).toISOString().slice(0,10),r=M.create(activeBank,d);M.begin(r,1);for(let j=0;j<5;j++){M.draft(r,r.questions[j].answers.reduce((a,b)=>a.name.length>b.name.length?a:b).name,2);M.finish(r,3);M.next(r,4);}fullHistory[M.PREFIX+d]=encode(r);}
 assert(encode(fullHistory).length>1500000);assert(Buffer.byteLength(encode(fullHistory))<1990000);assert.deepEqual(cloud.clean('hidden-gem',fullHistory),fullHistory,'120 full snapshots fit client and server caps without pruning');
+// Editorial ratings are question-specific. Famous leads and title answers cannot inherit rare-answer scores.
+const priorBounded=require('../content/archive/2026-10-31-bounded-v1/hidden-gem-questions.json').questions;
+assert.equal(require('../content/hidden-gem-questions.json').revision,9);
+for(const [i,q]of activeBank.entries()){
+ assert.equal(q.id,priorBounded[i].id);assert.equal(q.prompt,priorBounded[i].prompt);assert.equal(q.dailySlot,priorBounded[i].dailySlot);
+ assert.deepEqual(q.answers.map(a=>a.name),priorBounded[i].answers.map(a=>a.name),'Rating review must not change membership');
+ assert(boundedSource.questions[i].ratingReview.familiar.length);assert(boundedSource.questions[i].ratingReview.lessObvious.length);
+ for(const a of boundedSource.questions[i].ratingReview.familiar)assert(M.match(q,a.answer).points<=40,'Familiar answer must not be a top-rated answer: '+q.id+' '+a.answer);
+}
+for(const [u,obvious,rare]of [['ctr','Crash Bandicoot','Penta Penguin'],['pokemon-kanto','Pikachu','Seaking'],['smash64','Mario','Ness'],['mkwii','Mario','Dry Bowser'],['planets','Earth','Haumea'],['us-parks','Yellowstone','Kobuk Valley'],['us-presidents','Donald Trump','Millard Fillmore'],['pixar','Toy Story','The Good Dinosaur'],['illumination','Despicable Me','Hop'],['nolan','The Dark Knight','Following']]){
+ const q=byUniverse(u);assert.equal(M.match(q,obvious).points,1,obvious+' is an obvious answer in '+u);assert.equal(M.match(q,rare).points,100);assert(M.match(q,obvious).points<M.match(q,rare).points);
+}
+const oldCrash=priorBounded.find(q=>q.id==='hg8-095'),newCrash=byUniverse('ctr');assert.equal(M.match(oldCrash,'Crash Bandicoot').points,100);assert.equal(M.match(newCrash,'Crash').points,1);assert.equal(M.match(newCrash,'Coco').points,5);
+const frozenRatingRun=M.createPractice(oldCrash,'2026-10-31','old-context-ratings');M.begin(frozenRatingRun,1000);M.draft(frozenRatingRun,'Crash Bandicoot',1001);const frozenRatingDeadline=frozenRatingRun.deadline;assert(M.validRun(frozenRatingRun));assert(M.finish(frozenRatingRun,1002));assert.equal(frozenRatingRun.picks[0].points,100);assert(M.validRun(frozenRatingRun));assert.equal(frozenRatingDeadline,31000);
+const oldRatingDaily=M.create(priorBounded,'2026-11-02');M.begin(oldRatingDaily,1000);for(let i=0;i<5;i++){M.draft(oldRatingDaily,oldRatingDaily.questions[i].id==='hg8-095'?'Crash Bandicoot':oldRatingDaily.questions[i].answers.find(a=>a.points===100).name,1001);assert(M.finish(oldRatingDaily,1002));M.next(oldRatingDaily,1003);}assert.equal(M.record(oldRatingDaily,oldRatingDaily.day).score,100);
 const generatedBefore=['content/hidden-gem-questions.json','games/hidden-gem/questions.js'].map(p=>fs.readFileSync(p,'utf8'));
 require('node:child_process').execFileSync(process.execPath,['scripts/build-hidden-gem-questions.cjs']);
 assert.deepEqual(['content/hidden-gem-questions.json','games/hidden-gem/questions.js'].map(p=>fs.readFileSync(p,'utf8')),generatedBefore,'Generated files reproduce byte for byte');
@@ -121,6 +136,8 @@ assert.equal((await db.query('select public._hg_match($1,$2) a',[encode(ambiguou
 
 for(const q of activeBank)for(const raw of Object.keys(q.inputMap||{})){const expected=M.match(q,raw),actual=(await db.query('select public._hg_match($1,$2) a',[encode(q),raw])).rows[0].a;assert.equal(actual?.answer,expected.name,q.id+' SQL symbol '+raw);assert.equal(actual?.points,expected.points);}
 assert.equal((await db.query('select public._friend_hidden_gem_score($1,$2) s',[encode(boundedRun),boundedRun.day])).rows[0].s,M.record(boundedRun,boundedRun.day).arcadeScore,'New complete-roster snapshot score parity');
+assert.equal((await db.query('select public._friend_hidden_gem_score($1,$2) s',[encode(oldRatingDaily),oldRatingDaily.day])).rows[0].s,100,'Archived hg8 completed scores retain their original rules');
+for(const input of ['Crash','Crash Bandicoot','Coco','Penta Penguin']){const actual=(await db.query('select public._hg_match($1,$2) a',[encode(newCrash),input])).rows[0].a;assert.equal(actual.points,M.match(newCrash,input).points,'New contextual score SQL parity: '+input);}
 const users=['00000000-0000-4000-8000-000000000001','00000000-0000-4000-8000-000000000002'];for(const uid of users)await db.query('insert into auth.users values($1)',[uid]);
 const today=(await db.query("select timezone('Australia/Sydney',now())::date::text d")).rows[0].d,liveRun=structuredClone(good);liveRun.day=today;const liveKey=M.PREFIX+today;
 const session=async uid=>{await db.exec('reset role;set role authenticated');await db.query("select set_config('request.jwt.claim.sub',$1,false)",[uid]);};
