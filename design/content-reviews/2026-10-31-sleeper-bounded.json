@@ -37,5 +37,19 @@
     "48-day unique rotation and same/adjacent-day conflict separation",
     "Legacy captures, deadlines, results, zeroes, cloud ownership and private score parity",
     "Mobile/tablet/desktop Daily and Unlimited, reload, filters and captured hg7 pants/jeans/sleeves"
-  ]
+  ],
+  "commonNameRegressions": [
+    "Lakers",
+    "Swans",
+    "Man Utd",
+    "Guterres",
+    "Albanese"
+  ],
+  "historyBudget": {
+    "clientCharacters": 1950000,
+    "clientUtf8Bytes": 1990000,
+    "serverBytes": 2000000,
+    "largest120DayFixtureBytes": 1908989,
+    "prunedHistory": false
+  }
 }

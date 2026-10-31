@@ -89,6 +89,7 @@ assert.equal(M.match(byUniverse('si-prefixes'),'M').name,'Mega');assert.equal(M.
 assert.equal(M.match(byUniverse('emoji-animals'),'🐘').name,'Elephant');
 assert.equal(M.match(byUniverse('un-states'),'USA').name,'United States');assert.equal(M.match(byUniverse('un-states'),'Atlantis'),null);
 assert.equal(M.match(byUniverse('dceu'),'The Suicide Squad').name,'The Suicide Squad (2021)');assert.equal(M.match(byUniverse('dceu'),'Suicide Squad').name,'Suicide Squad (2016)');
+for(const [u,input,name]of [['un-sg','Guterres','Antonio Guterres'],['aus-pm','Albanese','Anthony Albanese'],['nba','Lakers','Los Angeles Lakers'],['afl','Swans','Sydney Swans'],['premier','Man Utd','Manchester United']])assert.equal(M.match(byUniverse(u),input)?.name,name,'Common shortened name '+input);
 const allDates=[];
 for(let i=0;i<48;i++){
  const d=new Date(Date.UTC(2026,9,31+i)).toISOString().slice(0,10),qs=M.daily(activeBank,d);assert.equal(qs.length,5);assert.equal(new Set(qs.map(q=>q.topic)).size,5);allDates.push(...qs.map(q=>q.id));
@@ -98,6 +99,10 @@ for(const [i,j]of boundedSource.conflicts){const d=Math.abs(activeBank[i].dailyS
 const boundedRun=M.create(activeBank,'2026-10-31');M.begin(boundedRun,1000);
 for(let i=0;i<5;i++){M.draft(boundedRun,boundedRun.questions[i].answers.at(-1).name,1001);assert(M.finish(boundedRun,1002));M.next(boundedRun,1003);}
 assert(M.record(boundedRun,boundedRun.day));
+// New snapshots fit the existing server budget without dropping any history; other games keep their cap.
+const fullHistory={};
+for(let i=0;i<120;i++){const d=new Date(Date.UTC(2026,9,31+i)).toISOString().slice(0,10),r=M.create(activeBank,d);M.begin(r,1);for(let j=0;j<5;j++){M.draft(r,r.questions[j].answers.reduce((a,b)=>a.name.length>b.name.length?a:b).name,2);M.finish(r,3);M.next(r,4);}fullHistory[M.PREFIX+d]=encode(r);}
+assert(encode(fullHistory).length>1500000);assert(Buffer.byteLength(encode(fullHistory))<1990000);assert.deepEqual(cloud.clean('hidden-gem',fullHistory),fullHistory,'120 full snapshots fit client and server caps without pruning');
 const generatedBefore=['content/hidden-gem-questions.json','games/hidden-gem/questions.js'].map(p=>fs.readFileSync(p,'utf8'));
 require('node:child_process').execFileSync(process.execPath,['scripts/build-hidden-gem-questions.cjs']);
 assert.deepEqual(['content/hidden-gem-questions.json','games/hidden-gem/questions.js'].map(p=>fs.readFileSync(p,'utf8')),generatedBefore,'Generated files reproduce byte for byte');
@@ -126,5 +131,5 @@ const alice=(await hub('enable',null,null,'Alice',true)).me;await session(users[
 await session(users[0]);await hub('settings',null,null,'Alice',false);await session(users[1]);assert.equal((await scores()).length,0);await session(users[0]);await hub('settings',null,null,'Alice',true);await hub('block',null,users[1]);await session(users[1]);assert.equal((await scores()).length,0);await db.exec('reset role');
 
 await db.exec('set role authenticated');await assert.rejects(db.query('select public._friend_hidden_gem_score($1,$2)',[encode(good),day]),/permission denied/);await db.exec('reset role;set role anon');await assert.rejects(db.query('select public._hg_match($1,$2)',[encode(countries),'Australia']),/permission denied/);
-console.log('PASS Hidden Gem dedicated cloud/RLS/revision/Friends/legacy-function invariance;  240 questions/'+B.reduce((n,q)=>n+q.answers.length,0)+' answers; 48 nonrepeating sets; alias/typo/retry/deadline/locks; score bands; cloud completion; read-only profile; isolated PostgreSQL parity and revoked helper access.');
+console.log('PASS Hidden Gem dedicated cloud/RLS/revision/Friends/legacy-function invariance;  240 questions/'+activeBank.reduce((n,q)=>n+q.answers.length,0)+' active answers; archived-bank compatibility; 48 nonrepeating sets; alias/typo/retry/deadline/locks; score bands; cloud completion; read-only profile; isolated PostgreSQL parity and revoked helper access.');
 }finally{await db.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

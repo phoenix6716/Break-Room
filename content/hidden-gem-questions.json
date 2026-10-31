@@ -16407,7 +16407,10 @@
         {
           "name": "Franklin D. Roosevelt",
           "points": 33,
-          "aliases": []
+          "aliases": [
+            "FDR",
+            "Franklin Roosevelt"
+          ]
         },
         {
           "name": "Front Populaire",
@@ -22675,6 +22678,7 @@
         "c": "Centi",
         "m": "Milli",
         "μ": "Micro",
+        "µ": "Micro",
         "n": "Nano",
         "p": "Pico",
         "f": "Femto",
@@ -23633,7 +23637,8 @@
           "name": "Theodore Roosevelt",
           "points": 86,
           "aliases": [
-            "Theodore Roosevelt National Park"
+            "Theodore Roosevelt National Park",
+            "Teddy Roosevelt"
           ]
         },
         {
@@ -35625,12 +35630,17 @@
         {
           "name": "Adelaide Crows",
           "points": 7,
-          "aliases": []
+          "aliases": [
+            "Crows"
+          ]
         },
         {
           "name": "Brisbane Lions",
           "points": 13,
-          "aliases": []
+          "aliases": [
+            "Brisbane",
+            "Lions"
+          ]
         },
         {
           "name": "Carlton",
@@ -35655,17 +35665,29 @@
         {
           "name": "Geelong Cats",
           "points": 42,
-          "aliases": []
+          "aliases": [
+            "Cats"
+          ]
         },
         {
           "name": "Gold Coast Suns",
           "points": 48,
-          "aliases": []
+          "aliases": [
+            "Coast Suns",
+            "Suns"
+          ]
         },
         {
           "name": "Greater Western Sydney Giants",
           "points": 53,
-          "aliases": []
+          "aliases": [
+            "GWS",
+            "GWS Giants",
+            "Greater Western Sydney",
+            "Western Sydney Giants",
+            "Sydney Giants",
+            "Giants"
+          ]
         },
         {
           "name": "Hawthorn",
@@ -35687,7 +35709,9 @@
         {
           "name": "Port Adelaide",
           "points": 71,
-          "aliases": []
+          "aliases": [
+            "Adelaide"
+          ]
         },
         {
           "name": "Richmond",
@@ -35697,22 +35721,33 @@
         {
           "name": "St Kilda",
           "points": 83,
-          "aliases": []
+          "aliases": [
+            "Kilda"
+          ]
         },
         {
           "name": "Sydney Swans",
           "points": 88,
-          "aliases": []
+          "aliases": [
+            "Sydney",
+            "Swans"
+          ]
         },
         {
           "name": "West Coast Eagles",
           "points": 94,
-          "aliases": []
+          "aliases": [
+            "West Coast",
+            "Coast Eagles",
+            "Eagles"
+          ]
         },
         {
           "name": "Western Bulldogs",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Bulldogs"
+          ]
         }
       ]
     },
@@ -35727,22 +35762,30 @@
         {
           "name": "Brisbane Broncos",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "Broncos"
+          ]
         },
         {
           "name": "Canberra Raiders",
           "points": 7,
-          "aliases": []
+          "aliases": [
+            "Raiders"
+          ]
         },
         {
           "name": "Canterbury-Bankstown Bulldogs",
           "points": 13,
-          "aliases": []
+          "aliases": [
+            "Bulldogs"
+          ]
         },
         {
           "name": "Cronulla-Sutherland Sharks",
           "points": 20,
-          "aliases": []
+          "aliases": [
+            "Sharks"
+          ]
         },
         {
           "name": "Dolphins",
@@ -35752,62 +35795,97 @@
         {
           "name": "Gold Coast Titans",
           "points": 32,
-          "aliases": []
+          "aliases": [
+            "Coast Titans",
+            "Titans"
+          ]
         },
         {
           "name": "Manly Warringah Sea Eagles",
           "points": 38,
-          "aliases": []
+          "aliases": [
+            "Warringah Sea Eagles",
+            "Sea Eagles",
+            "Eagles"
+          ]
         },
         {
           "name": "Melbourne Storm",
           "points": 44,
-          "aliases": []
+          "aliases": [
+            "Storm"
+          ]
         },
         {
           "name": "Newcastle Knights",
           "points": 51,
-          "aliases": []
+          "aliases": [
+            "Knights"
+          ]
         },
         {
           "name": "New Zealand Warriors",
           "points": 57,
-          "aliases": []
+          "aliases": [
+            "Zealand Warriors",
+            "Warriors"
+          ]
         },
         {
           "name": "North Queensland Cowboys",
           "points": 63,
-          "aliases": []
+          "aliases": [
+            "Queensland Cowboys",
+            "Cowboys"
+          ]
         },
         {
           "name": "Parramatta Eels",
           "points": 69,
-          "aliases": []
+          "aliases": [
+            "Eels"
+          ]
         },
         {
           "name": "Penrith Panthers",
           "points": 75,
-          "aliases": []
+          "aliases": [
+            "Panthers"
+          ]
         },
         {
           "name": "South Sydney Rabbitohs",
           "points": 81,
-          "aliases": []
+          "aliases": [
+            "Sydney Rabbitohs",
+            "Rabbitohs"
+          ]
         },
         {
           "name": "St George Illawarra Dragons",
           "points": 88,
-          "aliases": []
+          "aliases": [
+            "St George Illawarra",
+            "St George",
+            "Saint George Illawarra",
+            "George Illawarra Dragons",
+            "Illawarra Dragons",
+            "Dragons"
+          ]
         },
         {
           "name": "Sydney Roosters",
           "points": 94,
-          "aliases": []
+          "aliases": [
+            "Roosters"
+          ]
         },
         {
           "name": "Wests Tigers",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Tigers"
+          ]
         }
       ]
     },
@@ -35822,152 +35900,225 @@
         {
           "name": "Atlanta Hawks",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "Hawks"
+          ]
         },
         {
           "name": "Boston Celtics",
           "points": 4,
-          "aliases": []
+          "aliases": [
+            "Celtics"
+          ]
         },
         {
           "name": "Brooklyn Nets",
           "points": 8,
-          "aliases": []
+          "aliases": [
+            "Nets"
+          ]
         },
         {
           "name": "Charlotte Hornets",
           "points": 11,
-          "aliases": []
+          "aliases": [
+            "Hornets"
+          ]
         },
         {
           "name": "Chicago Bulls",
           "points": 15,
-          "aliases": []
+          "aliases": [
+            "Bulls"
+          ]
         },
         {
           "name": "Cleveland Cavaliers",
           "points": 18,
-          "aliases": []
+          "aliases": [
+            "Cavaliers"
+          ]
         },
         {
           "name": "Dallas Mavericks",
           "points": 21,
-          "aliases": []
+          "aliases": [
+            "Mavericks"
+          ]
         },
         {
           "name": "Denver Nuggets",
           "points": 25,
-          "aliases": []
+          "aliases": [
+            "Nuggets"
+          ]
         },
         {
           "name": "Detroit Pistons",
           "points": 28,
-          "aliases": []
+          "aliases": [
+            "Pistons"
+          ]
         },
         {
           "name": "Golden State Warriors",
           "points": 32,
-          "aliases": []
+          "aliases": [
+            "State Warriors",
+            "Warriors"
+          ]
         },
         {
           "name": "Houston Rockets",
           "points": 35,
-          "aliases": []
+          "aliases": [
+            "Rockets"
+          ]
         },
         {
           "name": "Indiana Pacers",
           "points": 39,
-          "aliases": []
+          "aliases": [
+            "Pacers"
+          ]
         },
         {
           "name": "Los Angeles Clippers",
           "points": 42,
-          "aliases": []
+          "aliases": [
+            "LA Clippers",
+            "L.A. Clippers",
+            "Angeles Clippers",
+            "Clippers"
+          ]
         },
         {
           "name": "Los Angeles Lakers",
           "points": 45,
-          "aliases": []
+          "aliases": [
+            "LA Lakers",
+            "L.A. Lakers",
+            "Angeles Lakers",
+            "Lakers"
+          ]
         },
         {
           "name": "Memphis Grizzlies",
           "points": 49,
-          "aliases": []
+          "aliases": [
+            "Grizzlies"
+          ]
         },
         {
           "name": "Miami Heat",
           "points": 52,
-          "aliases": []
+          "aliases": [
+            "Heat"
+          ]
         },
         {
           "name": "Milwaukee Bucks",
           "points": 56,
-          "aliases": []
+          "aliases": [
+            "Bucks"
+          ]
         },
         {
           "name": "Minnesota Timberwolves",
           "points": 59,
-          "aliases": []
+          "aliases": [
+            "Timberwolves"
+          ]
         },
         {
           "name": "New Orleans Pelicans",
           "points": 62,
-          "aliases": []
+          "aliases": [
+            "Orleans Pelicans",
+            "Pelicans"
+          ]
         },
         {
           "name": "New York Knicks",
           "points": 66,
-          "aliases": []
+          "aliases": [
+            "NY Knicks",
+            "York Knicks",
+            "Knicks"
+          ]
         },
         {
           "name": "Oklahoma City Thunder",
           "points": 69,
-          "aliases": []
+          "aliases": [
+            "City Thunder",
+            "Thunder"
+          ]
         },
         {
           "name": "Orlando Magic",
           "points": 73,
-          "aliases": []
+          "aliases": [
+            "Magic"
+          ]
         },
         {
           "name": "Philadelphia 76ers",
           "points": 76,
-          "aliases": []
+          "aliases": [
+            "76ers"
+          ]
         },
         {
           "name": "Phoenix Suns",
           "points": 80,
-          "aliases": []
+          "aliases": [
+            "Suns"
+          ]
         },
         {
           "name": "Portland Trail Blazers",
           "points": 83,
-          "aliases": []
+          "aliases": [
+            "Trail Blazers",
+            "Blazers"
+          ]
         },
         {
           "name": "Sacramento Kings",
           "points": 86,
-          "aliases": []
+          "aliases": [
+            "Kings"
+          ]
         },
         {
           "name": "San Antonio Spurs",
           "points": 90,
-          "aliases": []
+          "aliases": [
+            "Antonio Spurs",
+            "Spurs"
+          ]
         },
         {
           "name": "Toronto Raptors",
           "points": 93,
-          "aliases": []
+          "aliases": [
+            "Raptors"
+          ]
         },
         {
           "name": "Utah Jazz",
           "points": 97,
-          "aliases": []
+          "aliases": [
+            "Jazz"
+          ]
         },
         {
           "name": "Washington Wizards",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Wizards"
+          ]
         }
       ]
     },
@@ -35982,162 +36133,237 @@
         {
           "name": "Arizona Cardinals",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "Cardinals"
+          ]
         },
         {
           "name": "Atlanta Falcons",
           "points": 4,
-          "aliases": []
+          "aliases": [
+            "Falcons"
+          ]
         },
         {
           "name": "Baltimore Ravens",
           "points": 7,
-          "aliases": []
+          "aliases": [
+            "Ravens"
+          ]
         },
         {
           "name": "Buffalo Bills",
           "points": 11,
-          "aliases": []
+          "aliases": [
+            "Bills"
+          ]
         },
         {
           "name": "Carolina Panthers",
           "points": 14,
-          "aliases": []
+          "aliases": [
+            "Panthers"
+          ]
         },
         {
           "name": "Chicago Bears",
           "points": 17,
-          "aliases": []
+          "aliases": [
+            "Bears"
+          ]
         },
         {
           "name": "Cincinnati Bengals",
           "points": 20,
-          "aliases": []
+          "aliases": [
+            "Bengals"
+          ]
         },
         {
           "name": "Cleveland Browns",
           "points": 23,
-          "aliases": []
+          "aliases": [
+            "Browns"
+          ]
         },
         {
           "name": "Dallas Cowboys",
           "points": 27,
-          "aliases": []
+          "aliases": [
+            "Cowboys"
+          ]
         },
         {
           "name": "Denver Broncos",
           "points": 30,
-          "aliases": []
+          "aliases": [
+            "Broncos"
+          ]
         },
         {
           "name": "Detroit Lions",
           "points": 33,
-          "aliases": []
+          "aliases": [
+            "Lions"
+          ]
         },
         {
           "name": "Green Bay Packers",
           "points": 36,
-          "aliases": []
+          "aliases": [
+            "Bay Packers",
+            "Packers"
+          ]
         },
         {
           "name": "Houston Texans",
           "points": 39,
-          "aliases": []
+          "aliases": [
+            "Texans"
+          ]
         },
         {
           "name": "Indianapolis Colts",
           "points": 43,
-          "aliases": []
+          "aliases": [
+            "Colts"
+          ]
         },
         {
           "name": "Jacksonville Jaguars",
           "points": 46,
-          "aliases": []
+          "aliases": [
+            "Jaguars"
+          ]
         },
         {
           "name": "Kansas City Chiefs",
           "points": 49,
-          "aliases": []
+          "aliases": [
+            "City Chiefs",
+            "Chiefs"
+          ]
         },
         {
           "name": "Las Vegas Raiders",
           "points": 52,
-          "aliases": []
+          "aliases": [
+            "Vegas Raiders",
+            "Raiders"
+          ]
         },
         {
           "name": "Los Angeles Chargers",
           "points": 55,
-          "aliases": []
+          "aliases": [
+            "Angeles Chargers",
+            "Chargers"
+          ]
         },
         {
           "name": "Los Angeles Rams",
           "points": 58,
-          "aliases": []
+          "aliases": [
+            "Angeles Rams",
+            "Rams"
+          ]
         },
         {
           "name": "Miami Dolphins",
           "points": 62,
-          "aliases": []
+          "aliases": [
+            "Dolphins"
+          ]
         },
         {
           "name": "Minnesota Vikings",
           "points": 65,
-          "aliases": []
+          "aliases": [
+            "Vikings"
+          ]
         },
         {
           "name": "New England Patriots",
           "points": 68,
-          "aliases": []
+          "aliases": [
+            "England Patriots",
+            "Patriots"
+          ]
         },
         {
           "name": "New Orleans Saints",
           "points": 71,
-          "aliases": []
+          "aliases": [
+            "Orleans Saints",
+            "Saints"
+          ]
         },
         {
           "name": "New York Giants",
           "points": 74,
-          "aliases": []
+          "aliases": [
+            "York Giants",
+            "Giants"
+          ]
         },
         {
           "name": "New York Jets",
           "points": 78,
-          "aliases": []
+          "aliases": [
+            "York Jets",
+            "Jets"
+          ]
         },
         {
           "name": "Philadelphia Eagles",
           "points": 81,
-          "aliases": []
+          "aliases": [
+            "Eagles"
+          ]
         },
         {
           "name": "Pittsburgh Steelers",
           "points": 84,
-          "aliases": []
+          "aliases": [
+            "Steelers"
+          ]
         },
         {
           "name": "San Francisco 49ers",
           "points": 87,
-          "aliases": []
+          "aliases": [
+            "Francisco 49ers",
+            "49ers"
+          ]
         },
         {
           "name": "Seattle Seahawks",
           "points": 90,
-          "aliases": []
+          "aliases": [
+            "Seahawks"
+          ]
         },
         {
           "name": "Tampa Bay Buccaneers",
           "points": 94,
-          "aliases": []
+          "aliases": [
+            "Bay Buccaneers",
+            "Buccaneers"
+          ]
         },
         {
           "name": "Tennessee Titans",
           "points": 97,
-          "aliases": []
+          "aliases": [
+            "Titans"
+          ]
         },
         {
           "name": "Washington Commanders",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Commanders"
+          ]
         }
       ]
     },
@@ -36152,162 +36378,238 @@
         {
           "name": "Anaheim Ducks",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "Ducks"
+          ]
         },
         {
           "name": "Boston Bruins",
           "points": 4,
-          "aliases": []
+          "aliases": [
+            "Bruins"
+          ]
         },
         {
           "name": "Buffalo Sabres",
           "points": 7,
-          "aliases": []
+          "aliases": [
+            "Sabres"
+          ]
         },
         {
           "name": "Calgary Flames",
           "points": 11,
-          "aliases": []
+          "aliases": [
+            "Flames"
+          ]
         },
         {
           "name": "Carolina Hurricanes",
           "points": 14,
-          "aliases": []
+          "aliases": [
+            "Hurricanes"
+          ]
         },
         {
           "name": "Chicago Blackhawks",
           "points": 17,
-          "aliases": []
+          "aliases": [
+            "Blackhawks"
+          ]
         },
         {
           "name": "Colorado Avalanche",
           "points": 20,
-          "aliases": []
+          "aliases": [
+            "Avalanche"
+          ]
         },
         {
           "name": "Columbus Blue Jackets",
           "points": 23,
-          "aliases": []
+          "aliases": [
+            "Blue Jackets",
+            "Jackets"
+          ]
         },
         {
           "name": "Dallas Stars",
           "points": 27,
-          "aliases": []
+          "aliases": [
+            "Stars"
+          ]
         },
         {
           "name": "Detroit Red Wings",
           "points": 30,
-          "aliases": []
+          "aliases": [
+            "Red Wings",
+            "Wings"
+          ]
         },
         {
           "name": "Edmonton Oilers",
           "points": 33,
-          "aliases": []
+          "aliases": [
+            "Oilers"
+          ]
         },
         {
           "name": "Florida Panthers",
           "points": 36,
-          "aliases": []
+          "aliases": [
+            "Panthers"
+          ]
         },
         {
           "name": "Los Angeles Kings",
           "points": 39,
-          "aliases": []
+          "aliases": [
+            "Angeles Kings",
+            "Kings"
+          ]
         },
         {
           "name": "Minnesota Wild",
           "points": 43,
-          "aliases": []
+          "aliases": [
+            "Wild"
+          ]
         },
         {
           "name": "Montreal Canadiens",
           "points": 46,
-          "aliases": []
+          "aliases": [
+            "Canadiens"
+          ]
         },
         {
           "name": "Nashville Predators",
           "points": 49,
-          "aliases": []
+          "aliases": [
+            "Predators"
+          ]
         },
         {
           "name": "New Jersey Devils",
           "points": 52,
-          "aliases": []
+          "aliases": [
+            "Jersey Devils",
+            "Devils"
+          ]
         },
         {
           "name": "New York Islanders",
           "points": 55,
-          "aliases": []
+          "aliases": [
+            "York Islanders",
+            "Islanders"
+          ]
         },
         {
           "name": "New York Rangers",
           "points": 58,
-          "aliases": []
+          "aliases": [
+            "York Rangers",
+            "Rangers"
+          ]
         },
         {
           "name": "Ottawa Senators",
           "points": 62,
-          "aliases": []
+          "aliases": [
+            "Senators"
+          ]
         },
         {
           "name": "Philadelphia Flyers",
           "points": 65,
-          "aliases": []
+          "aliases": [
+            "Flyers"
+          ]
         },
         {
           "name": "Pittsburgh Penguins",
           "points": 68,
-          "aliases": []
+          "aliases": [
+            "Penguins"
+          ]
         },
         {
           "name": "San Jose Sharks",
           "points": 71,
-          "aliases": []
+          "aliases": [
+            "Jose Sharks",
+            "Sharks"
+          ]
         },
         {
           "name": "Seattle Kraken",
           "points": 74,
-          "aliases": []
+          "aliases": [
+            "Kraken"
+          ]
         },
         {
           "name": "St Louis Blues",
           "points": 78,
-          "aliases": []
+          "aliases": [
+            "Louis Blues",
+            "Blues"
+          ]
         },
         {
           "name": "Tampa Bay Lightning",
           "points": 81,
-          "aliases": []
+          "aliases": [
+            "Bay Lightning",
+            "Lightning"
+          ]
         },
         {
           "name": "Toronto Maple Leafs",
           "points": 84,
-          "aliases": []
+          "aliases": [
+            "Maple Leafs",
+            "Leafs"
+          ]
         },
         {
           "name": "Utah Hockey Club",
           "points": 87,
-          "aliases": []
+          "aliases": [
+            "Hockey Club",
+            "Club"
+          ]
         },
         {
           "name": "Vancouver Canucks",
           "points": 90,
-          "aliases": []
+          "aliases": [
+            "Canucks"
+          ]
         },
         {
           "name": "Vegas Golden Knights",
           "points": 94,
-          "aliases": []
+          "aliases": [
+            "Golden Knights",
+            "Knights"
+          ]
         },
         {
           "name": "Washington Capitals",
           "points": 97,
-          "aliases": []
+          "aliases": [
+            "Capitals"
+          ]
         },
         {
           "name": "Winnipeg Jets",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Jets"
+          ]
         }
       ]
     },
@@ -36322,7 +36624,9 @@
         {
           "name": "Arizona Diamondbacks",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "Diamondbacks"
+          ]
         },
         {
           "name": "Athletics",
@@ -36332,142 +36636,208 @@
         {
           "name": "Atlanta Braves",
           "points": 8,
-          "aliases": []
+          "aliases": [
+            "Braves"
+          ]
         },
         {
           "name": "Baltimore Orioles",
           "points": 11,
-          "aliases": []
+          "aliases": [
+            "Orioles"
+          ]
         },
         {
           "name": "Boston Red Sox",
           "points": 15,
-          "aliases": []
+          "aliases": [
+            "Red Sox"
+          ]
         },
         {
           "name": "Chicago Cubs",
           "points": 18,
-          "aliases": []
+          "aliases": [
+            "Cubs"
+          ]
         },
         {
           "name": "Chicago White Sox",
           "points": 21,
-          "aliases": []
+          "aliases": [
+            "White Sox"
+          ]
         },
         {
           "name": "Cincinnati Reds",
           "points": 25,
-          "aliases": []
+          "aliases": [
+            "Reds"
+          ]
         },
         {
           "name": "Cleveland Guardians",
           "points": 28,
-          "aliases": []
+          "aliases": [
+            "Guardians"
+          ]
         },
         {
           "name": "Colorado Rockies",
           "points": 32,
-          "aliases": []
+          "aliases": [
+            "Rockies"
+          ]
         },
         {
           "name": "Detroit Tigers",
           "points": 35,
-          "aliases": []
+          "aliases": [
+            "Tigers"
+          ]
         },
         {
           "name": "Houston Astros",
           "points": 39,
-          "aliases": []
+          "aliases": [
+            "Astros"
+          ]
         },
         {
           "name": "Kansas City Royals",
           "points": 42,
-          "aliases": []
+          "aliases": [
+            "City Royals",
+            "Royals"
+          ]
         },
         {
           "name": "Los Angeles Angels",
           "points": 45,
-          "aliases": []
+          "aliases": [
+            "Angeles Angels",
+            "Angels"
+          ]
         },
         {
           "name": "Los Angeles Dodgers",
           "points": 49,
-          "aliases": []
+          "aliases": [
+            "Angeles Dodgers",
+            "Dodgers"
+          ]
         },
         {
           "name": "Miami Marlins",
           "points": 52,
-          "aliases": []
+          "aliases": [
+            "Marlins"
+          ]
         },
         {
           "name": "Milwaukee Brewers",
           "points": 56,
-          "aliases": []
+          "aliases": [
+            "Brewers"
+          ]
         },
         {
           "name": "Minnesota Twins",
           "points": 59,
-          "aliases": []
+          "aliases": [
+            "Twins"
+          ]
         },
         {
           "name": "New York Mets",
           "points": 62,
-          "aliases": []
+          "aliases": [
+            "York Mets",
+            "Mets"
+          ]
         },
         {
           "name": "New York Yankees",
           "points": 66,
-          "aliases": []
+          "aliases": [
+            "York Yankees",
+            "Yankees"
+          ]
         },
         {
           "name": "Philadelphia Phillies",
           "points": 69,
-          "aliases": []
+          "aliases": [
+            "Phillies"
+          ]
         },
         {
           "name": "Pittsburgh Pirates",
           "points": 73,
-          "aliases": []
+          "aliases": [
+            "Pirates"
+          ]
         },
         {
           "name": "San Diego Padres",
           "points": 76,
-          "aliases": []
+          "aliases": [
+            "Diego Padres",
+            "Padres"
+          ]
         },
         {
           "name": "San Francisco Giants",
           "points": 80,
-          "aliases": []
+          "aliases": [
+            "Francisco Giants",
+            "Giants"
+          ]
         },
         {
           "name": "Seattle Mariners",
           "points": 83,
-          "aliases": []
+          "aliases": [
+            "Mariners"
+          ]
         },
         {
           "name": "St Louis Cardinals",
           "points": 86,
-          "aliases": []
+          "aliases": [
+            "Louis Cardinals",
+            "Cardinals"
+          ]
         },
         {
           "name": "Tampa Bay Rays",
           "points": 90,
-          "aliases": []
+          "aliases": [
+            "Bay Rays",
+            "Rays"
+          ]
         },
         {
           "name": "Texas Rangers",
           "points": 93,
-          "aliases": []
+          "aliases": [
+            "Rangers"
+          ]
         },
         {
           "name": "Toronto Blue Jays",
           "points": 97,
-          "aliases": []
+          "aliases": [
+            "Blue Jays",
+            "Jays"
+          ]
         },
         {
           "name": "Washington Nationals",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Nationals"
+          ]
         }
       ]
     },
@@ -36482,67 +36852,97 @@
         {
           "name": "Atlanta Dream",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "Dream"
+          ]
         },
         {
           "name": "Chicago Sky",
           "points": 9,
-          "aliases": []
+          "aliases": [
+            "Sky"
+          ]
         },
         {
           "name": "Connecticut Sun",
           "points": 17,
-          "aliases": []
+          "aliases": [
+            "Sun"
+          ]
         },
         {
           "name": "Dallas Wings",
           "points": 26,
-          "aliases": []
+          "aliases": [
+            "Wings"
+          ]
         },
         {
           "name": "Golden State Valkyries",
           "points": 34,
-          "aliases": []
+          "aliases": [
+            "State Valkyries",
+            "Valkyries"
+          ]
         },
         {
           "name": "Indiana Fever",
           "points": 42,
-          "aliases": []
+          "aliases": [
+            "Fever"
+          ]
         },
         {
           "name": "Las Vegas Aces",
           "points": 51,
-          "aliases": []
+          "aliases": [
+            "Vegas Aces",
+            "Aces"
+          ]
         },
         {
           "name": "Los Angeles Sparks",
           "points": 59,
-          "aliases": []
+          "aliases": [
+            "Angeles Sparks",
+            "Sparks"
+          ]
         },
         {
           "name": "Minnesota Lynx",
           "points": 67,
-          "aliases": []
+          "aliases": [
+            "Lynx"
+          ]
         },
         {
           "name": "New York Liberty",
           "points": 75,
-          "aliases": []
+          "aliases": [
+            "York Liberty",
+            "Liberty"
+          ]
         },
         {
           "name": "Phoenix Mercury",
           "points": 83,
-          "aliases": []
+          "aliases": [
+            "Mercury"
+          ]
         },
         {
           "name": "Seattle Storm",
           "points": 92,
-          "aliases": []
+          "aliases": [
+            "Storm"
+          ]
         },
         {
           "name": "Washington Mystics",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Mystics"
+          ]
         }
       ]
     },
@@ -36562,7 +36962,9 @@
         {
           "name": "Aston Villa",
           "points": 6,
-          "aliases": []
+          "aliases": [
+            "Villa"
+          ]
         },
         {
           "name": "Bournemouth",
@@ -36577,7 +36979,11 @@
         {
           "name": "Brighton and Hove Albion",
           "points": 22,
-          "aliases": []
+          "aliases": [
+            "and Hove Albion",
+            "Hove Albion",
+            "Albion"
+          ]
         },
         {
           "name": "Burnley",
@@ -36592,7 +36998,9 @@
         {
           "name": "Crystal Palace",
           "points": 37,
-          "aliases": []
+          "aliases": [
+            "Palace"
+          ]
         },
         {
           "name": "Everton",
@@ -36607,7 +37015,9 @@
         {
           "name": "Leeds United",
           "points": 53,
-          "aliases": []
+          "aliases": [
+            "Leeds"
+          ]
         },
         {
           "name": "Liverpool",
@@ -36617,22 +37027,39 @@
         {
           "name": "Manchester City",
           "points": 64,
-          "aliases": []
+          "aliases": [
+            "Man City",
+            "MCFC",
+            "City"
+          ]
         },
         {
           "name": "Manchester United",
           "points": 69,
-          "aliases": []
+          "aliases": [
+            "Man United",
+            "Man U",
+            "Man Utd",
+            "MUFC"
+          ]
         },
         {
           "name": "Newcastle United",
           "points": 74,
-          "aliases": []
+          "aliases": [
+            "Newcastle",
+            "Newcastle Utd",
+            "NUFC"
+          ]
         },
         {
           "name": "Nottingham Forest",
           "points": 79,
-          "aliases": []
+          "aliases": [
+            "Notts Forest",
+            "Nottm Forest",
+            "Forest"
+          ]
         },
         {
           "name": "Sunderland",
@@ -36642,17 +37069,27 @@
         {
           "name": "Tottenham Hotspur",
           "points": 90,
-          "aliases": []
+          "aliases": [
+            "Tottenham",
+            "Spurs",
+            "Hotspur"
+          ]
         },
         {
           "name": "West Ham United",
           "points": 95,
-          "aliases": []
+          "aliases": [
+            "Ham United",
+            "West Ham"
+          ]
         },
         {
           "name": "Wolverhampton Wanderers",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Wolves",
+            "Wanderers"
+          ]
         }
       ]
     },
@@ -36672,12 +37109,17 @@
         {
           "name": "Athletic Bilbao",
           "points": 11,
-          "aliases": []
+          "aliases": [
+            "Bilbao"
+          ]
         },
         {
           "name": "Atletico Madrid",
           "points": 17,
-          "aliases": []
+          "aliases": [
+            "Atleti",
+            "Atletico"
+          ]
         },
         {
           "name": "Barcelona",
@@ -36689,7 +37131,9 @@
         {
           "name": "Celta Vigo",
           "points": 22,
-          "aliases": []
+          "aliases": [
+            "Vigo"
+          ]
         },
         {
           "name": "Elche",
@@ -36729,12 +37173,16 @@
         {
           "name": "Rayo Vallecano",
           "points": 64,
-          "aliases": []
+          "aliases": [
+            "Vallecano"
+          ]
         },
         {
           "name": "Real Betis",
           "points": 69,
-          "aliases": []
+          "aliases": [
+            "Betis"
+          ]
         },
         {
           "name": "Real Madrid",
@@ -36744,12 +37192,16 @@
         {
           "name": "Real Oviedo",
           "points": 79,
-          "aliases": []
+          "aliases": [
+            "Oviedo"
+          ]
         },
         {
           "name": "Real Sociedad",
           "points": 84,
-          "aliases": []
+          "aliases": [
+            "Sociedad"
+          ]
         },
         {
           "name": "Sevilla",
@@ -36814,7 +37266,9 @@
         {
           "name": "Hellas Verona",
           "points": 37,
-          "aliases": []
+          "aliases": [
+            "Verona"
+          ]
         },
         {
           "name": "Inter Milan",
@@ -36894,27 +37348,39 @@
         {
           "name": "Bayer Leverkusen",
           "points": 7,
-          "aliases": []
+          "aliases": [
+            "Leverkusen"
+          ]
         },
         {
           "name": "Bayern Munich",
           "points": 13,
-          "aliases": []
+          "aliases": [
+            "Bayern",
+            "Bayern Munchen",
+            "Munich"
+          ]
         },
         {
           "name": "Borussia Dortmund",
           "points": 18,
-          "aliases": []
+          "aliases": [
+            "Dortmund"
+          ]
         },
         {
           "name": "Borussia Monchengladbach",
           "points": 24,
-          "aliases": []
+          "aliases": [
+            "Monchengladbach"
+          ]
         },
         {
           "name": "Eintracht Frankfurt",
           "points": 30,
-          "aliases": []
+          "aliases": [
+            "Frankfurt"
+          ]
         },
         {
           "name": "Freiburg",
@@ -36924,7 +37390,9 @@
         {
           "name": "Hamburger SV",
           "points": 42,
-          "aliases": []
+          "aliases": [
+            "SV"
+          ]
         },
         {
           "name": "Heidenheim",
@@ -36949,12 +37417,16 @@
         {
           "name": "RB Leipzig",
           "points": 71,
-          "aliases": []
+          "aliases": [
+            "Leipzig"
+          ]
         },
         {
           "name": "St Pauli",
           "points": 77,
-          "aliases": []
+          "aliases": [
+            "Pauli"
+          ]
         },
         {
           "name": "Stuttgart",
@@ -36964,12 +37436,16 @@
         {
           "name": "Union Berlin",
           "points": 88,
-          "aliases": []
+          "aliases": [
+            "Berlin"
+          ]
         },
         {
           "name": "Werder Bremen",
           "points": 94,
-          "aliases": []
+          "aliases": [
+            "Bremen"
+          ]
         },
         {
           "name": "Wolfsburg",
@@ -37004,7 +37480,9 @@
         {
           "name": "Le Havre",
           "points": 18,
-          "aliases": []
+          "aliases": [
+            "Havre"
+          ]
         },
         {
           "name": "Lens",
@@ -37058,12 +37536,18 @@
         {
           "name": "Paris FC",
           "points": 65,
-          "aliases": []
+          "aliases": [
+            "FC",
+            "Paris"
+          ]
         },
         {
           "name": "Paris Saint-Germain",
           "points": 71,
-          "aliases": []
+          "aliases": [
+            "PSG",
+            "Saint-Germain"
+          ]
         },
         {
           "name": "Rennes",
@@ -37108,7 +37592,9 @@
         {
           "name": "Dundee United",
           "points": 28,
-          "aliases": []
+          "aliases": [
+            "United"
+          ]
         },
         {
           "name": "Falkirk",
@@ -37118,7 +37604,10 @@
         {
           "name": "Heart of Midlothian",
           "points": 46,
-          "aliases": []
+          "aliases": [
+            "of Midlothian",
+            "Midlothian"
+          ]
         },
         {
           "name": "Hibernian",
@@ -37148,7 +37637,9 @@
         {
           "name": "St Mirren",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Mirren"
+          ]
         }
       ]
     },
@@ -37163,67 +37654,97 @@
         {
           "name": "Adelaide United",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "Adelaide"
+          ]
         },
         {
           "name": "Auckland FC",
           "points": 9,
-          "aliases": []
+          "aliases": [
+            "Auckland"
+          ]
         },
         {
           "name": "Brisbane Roar",
           "points": 17,
-          "aliases": []
+          "aliases": [
+            "Roar"
+          ]
         },
         {
           "name": "Central Coast Mariners",
           "points": 26,
-          "aliases": []
+          "aliases": [
+            "Coast Mariners",
+            "Mariners"
+          ]
         },
         {
           "name": "Macarthur FC",
           "points": 34,
-          "aliases": []
+          "aliases": [
+            "Macarthur"
+          ]
         },
         {
           "name": "Melbourne City",
           "points": 42,
-          "aliases": []
+          "aliases": [
+            "Melbourne City FC",
+            "City",
+            "Melbourne"
+          ]
         },
         {
           "name": "Melbourne Victory",
           "points": 51,
-          "aliases": []
+          "aliases": [
+            "Victory"
+          ]
         },
         {
           "name": "Newcastle Jets",
           "points": 59,
-          "aliases": []
+          "aliases": [
+            "Jets"
+          ]
         },
         {
           "name": "Perth Glory",
           "points": 67,
-          "aliases": []
+          "aliases": [
+            "Glory"
+          ]
         },
         {
           "name": "Sydney FC",
           "points": 75,
-          "aliases": []
+          "aliases": [
+            "Sydney"
+          ]
         },
         {
           "name": "Wellington Phoenix",
           "points": 83,
-          "aliases": []
+          "aliases": [
+            "Phoenix"
+          ]
         },
         {
           "name": "Western Sydney Wanderers",
           "points": 92,
-          "aliases": []
+          "aliases": [
+            "Sydney Wanderers",
+            "Wanderers"
+          ]
         },
         {
           "name": "Western United",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Western"
+          ]
         }
       ]
     },
@@ -37350,7 +37871,9 @@
         {
           "name": "Fijian Drua",
           "points": 41,
-          "aliases": []
+          "aliases": [
+            "Drua"
+          ]
         },
         {
           "name": "Highlanders",
@@ -37365,22 +37888,30 @@
         {
           "name": "Moana Pasifika",
           "points": 70,
-          "aliases": []
+          "aliases": [
+            "Pasifika"
+          ]
         },
         {
           "name": "Queensland Reds",
           "points": 80,
-          "aliases": []
+          "aliases": [
+            "Reds"
+          ]
         },
         {
           "name": "NSW Waratahs",
           "points": 90,
-          "aliases": []
+          "aliases": [
+            "Waratahs"
+          ]
         },
         {
           "name": "Western Force",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Force"
+          ]
         }
       ]
     },
@@ -37455,107 +37986,170 @@
         {
           "name": "Alexander Albon",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "Alexander",
+            "Albon"
+          ]
         },
         {
           "name": "Fernando Alonso",
           "points": 6,
-          "aliases": []
+          "aliases": [
+            "Fernando",
+            "Alonso"
+          ]
         },
         {
           "name": "Kimi Antonelli",
           "points": 11,
-          "aliases": []
+          "aliases": [
+            "Kimi",
+            "Antonelli"
+          ]
         },
         {
           "name": "Oliver Bearman",
           "points": 16,
-          "aliases": []
+          "aliases": [
+            "Oliver",
+            "Bearman"
+          ]
         },
         {
           "name": "Gabriel Bortoleto",
           "points": 21,
-          "aliases": []
+          "aliases": [
+            "Gabriel",
+            "Bortoleto"
+          ]
         },
         {
           "name": "Franco Colapinto",
           "points": 26,
-          "aliases": []
+          "aliases": [
+            "Franco",
+            "Colapinto"
+          ]
         },
         {
           "name": "Jack Doohan",
           "points": 31,
-          "aliases": []
+          "aliases": [
+            "Jack",
+            "Doohan"
+          ]
         },
         {
           "name": "Pierre Gasly",
           "points": 36,
-          "aliases": []
+          "aliases": [
+            "Pierre",
+            "Gasly"
+          ]
         },
         {
           "name": "Isack Hadjar",
           "points": 41,
-          "aliases": []
+          "aliases": [
+            "Isack",
+            "Hadjar"
+          ]
         },
         {
           "name": "Lewis Hamilton",
           "points": 46,
-          "aliases": []
+          "aliases": [
+            "Hamilton",
+            "Lewis"
+          ]
         },
         {
           "name": "Nico Hulkenberg",
           "points": 51,
-          "aliases": []
+          "aliases": [
+            "Nico",
+            "Hulkenberg"
+          ]
         },
         {
           "name": "Liam Lawson",
           "points": 55,
-          "aliases": []
+          "aliases": [
+            "Liam",
+            "Lawson"
+          ]
         },
         {
           "name": "Charles Leclerc",
           "points": 60,
-          "aliases": []
+          "aliases": [
+            "Charles",
+            "Leclerc"
+          ]
         },
         {
           "name": "Lando Norris",
           "points": 65,
-          "aliases": []
+          "aliases": [
+            "Norris",
+            "Lando"
+          ]
         },
         {
           "name": "Esteban Ocon",
           "points": 70,
-          "aliases": []
+          "aliases": [
+            "Esteban",
+            "Ocon"
+          ]
         },
         {
           "name": "Oscar Piastri",
           "points": 75,
-          "aliases": []
+          "aliases": [
+            "Oscar",
+            "Piastri"
+          ]
         },
         {
           "name": "George Russell",
           "points": 80,
-          "aliases": []
+          "aliases": [
+            "George",
+            "Russell"
+          ]
         },
         {
           "name": "Carlos Sainz",
           "points": 85,
-          "aliases": []
+          "aliases": [
+            "Carlos",
+            "Sainz"
+          ]
         },
         {
           "name": "Lance Stroll",
           "points": 90,
-          "aliases": []
+          "aliases": [
+            "Lance",
+            "Stroll"
+          ]
         },
         {
           "name": "Yuki Tsunoda",
           "points": 95,
-          "aliases": []
+          "aliases": [
+            "Yuki",
+            "Tsunoda"
+          ]
         },
         {
           "name": "Max Verstappen",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Verstappen",
+            "Max"
+          ]
         }
       ]
     },
@@ -44302,7 +44896,8 @@
           "name": "Theodore Roosevelt",
           "points": 55,
           "aliases": [
-            "Theodore"
+            "Theodore",
+            "Teddy Roosevelt"
           ]
         },
         {
@@ -44347,7 +44942,10 @@
         {
           "name": "Franklin D. Roosevelt",
           "points": 69,
-          "aliases": []
+          "aliases": [
+            "FDR",
+            "Franklin Roosevelt"
+          ]
         },
         {
           "name": "Harry S. Truman",
@@ -44362,14 +44960,17 @@
           "points": 73,
           "aliases": [
             "Dwight",
-            "Eisenhower"
+            "Eisenhower",
+            "Ike"
           ]
         },
         {
           "name": "John F. Kennedy",
           "points": 75,
           "aliases": [
-            "Kennedy"
+            "Kennedy",
+            "JFK",
+            "John Kennedy"
           ]
         },
         {
@@ -44466,92 +45067,145 @@
         {
           "name": "Winston Churchill",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "Winston",
+            "Churchill"
+          ]
         },
         {
           "name": "Clement Attlee",
           "points": 7,
-          "aliases": []
+          "aliases": [
+            "Clement",
+            "Attlee"
+          ]
         },
         {
           "name": "Anthony Eden",
           "points": 13,
-          "aliases": []
+          "aliases": [
+            "Anthony",
+            "Eden"
+          ]
         },
         {
           "name": "Harold Macmillan",
           "points": 18,
-          "aliases": []
+          "aliases": [
+            "Macmillan"
+          ]
         },
         {
           "name": "Alec Douglas-Home",
           "points": 24,
-          "aliases": []
+          "aliases": [
+            "Alec",
+            "Douglas-Home"
+          ]
         },
         {
           "name": "Harold Wilson",
           "points": 30,
-          "aliases": []
+          "aliases": [
+            "Wilson"
+          ]
         },
         {
           "name": "Edward Heath",
           "points": 36,
-          "aliases": []
+          "aliases": [
+            "Edward",
+            "Heath"
+          ]
         },
         {
           "name": "James Callaghan",
           "points": 42,
-          "aliases": []
+          "aliases": [
+            "James",
+            "Callaghan"
+          ]
         },
         {
           "name": "Margaret Thatcher",
           "points": 48,
-          "aliases": []
+          "aliases": [
+            "Margaret",
+            "Thatcher"
+          ]
         },
         {
           "name": "John Major",
           "points": 53,
-          "aliases": []
+          "aliases": [
+            "John",
+            "Major"
+          ]
         },
         {
           "name": "Tony Blair",
           "points": 59,
-          "aliases": []
+          "aliases": [
+            "Tony",
+            "Blair"
+          ]
         },
         {
           "name": "Gordon Brown",
           "points": 65,
-          "aliases": []
+          "aliases": [
+            "Gordon",
+            "Brown"
+          ]
         },
         {
           "name": "David Cameron",
           "points": 71,
-          "aliases": []
+          "aliases": [
+            "David",
+            "Cameron"
+          ]
         },
         {
           "name": "Theresa May",
           "points": 77,
-          "aliases": []
+          "aliases": [
+            "Theresa",
+            "May"
+          ]
         },
         {
           "name": "Boris Johnson",
           "points": 83,
-          "aliases": []
+          "aliases": [
+            "BoJo",
+            "Boris",
+            "Johnson"
+          ]
         },
         {
           "name": "Liz Truss",
           "points": 88,
-          "aliases": []
+          "aliases": [
+            "Liz",
+            "Truss"
+          ]
         },
         {
           "name": "Rishi Sunak",
           "points": 94,
-          "aliases": []
+          "aliases": [
+            "Rishi",
+            "Sunak"
+          ]
         },
         {
           "name": "Keir Starmer",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Keir",
+            "Starmer"
+          ]
         }
       ]
     },
@@ -44566,157 +45220,244 @@
         {
           "name": "Edmund Barton",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "Edmund",
+            "Barton"
+          ]
         },
         {
           "name": "Alfred Deakin",
           "points": 4,
-          "aliases": []
+          "aliases": [
+            "Alfred",
+            "Deakin"
+          ]
         },
         {
           "name": "Chris Watson",
           "points": 8,
-          "aliases": []
+          "aliases": [
+            "Chris",
+            "Watson"
+          ]
         },
         {
           "name": "George Reid",
           "points": 11,
-          "aliases": []
+          "aliases": [
+            "George",
+            "Reid"
+          ]
         },
         {
           "name": "Andrew Fisher",
           "points": 14,
-          "aliases": []
+          "aliases": [
+            "Andrew",
+            "Fisher"
+          ]
         },
         {
           "name": "Joseph Cook",
           "points": 17,
-          "aliases": []
+          "aliases": [
+            "Cook"
+          ]
         },
         {
           "name": "Billy Hughes",
           "points": 21,
-          "aliases": []
+          "aliases": [
+            "Billy",
+            "Hughes"
+          ]
         },
         {
           "name": "Stanley Bruce",
           "points": 24,
-          "aliases": []
+          "aliases": [
+            "Stanley",
+            "Bruce"
+          ]
         },
         {
           "name": "James Scullin",
           "points": 27,
-          "aliases": []
+          "aliases": [
+            "James",
+            "Scullin"
+          ]
         },
         {
           "name": "Joseph Lyons",
           "points": 31,
-          "aliases": []
+          "aliases": [
+            "Lyons"
+          ]
         },
         {
           "name": "Earle Page",
           "points": 34,
-          "aliases": []
+          "aliases": [
+            "Earle",
+            "Page"
+          ]
         },
         {
           "name": "Robert Menzies",
           "points": 37,
-          "aliases": []
+          "aliases": [
+            "Robert",
+            "Menzies"
+          ]
         },
         {
           "name": "Arthur Fadden",
           "points": 41,
-          "aliases": []
+          "aliases": [
+            "Arthur",
+            "Fadden"
+          ]
         },
         {
           "name": "John Curtin",
           "points": 44,
-          "aliases": []
+          "aliases": [
+            "Curtin"
+          ]
         },
         {
           "name": "Frank Forde",
           "points": 47,
-          "aliases": []
+          "aliases": [
+            "Frank",
+            "Forde"
+          ]
         },
         {
           "name": "Ben Chifley",
           "points": 51,
-          "aliases": []
+          "aliases": [
+            "Ben",
+            "Chifley"
+          ]
         },
         {
           "name": "Harold Holt",
           "points": 54,
-          "aliases": []
+          "aliases": [
+            "Harold",
+            "Holt"
+          ]
         },
         {
           "name": "John McEwen",
           "points": 57,
-          "aliases": []
+          "aliases": [
+            "McEwen"
+          ]
         },
         {
           "name": "John Gorton",
           "points": 60,
-          "aliases": []
+          "aliases": [
+            "Gorton"
+          ]
         },
         {
           "name": "William McMahon",
           "points": 64,
-          "aliases": []
+          "aliases": [
+            "William",
+            "McMahon"
+          ]
         },
         {
           "name": "Gough Whitlam",
           "points": 67,
-          "aliases": []
+          "aliases": [
+            "Gough",
+            "Whitlam"
+          ]
         },
         {
           "name": "Malcolm Fraser",
           "points": 70,
-          "aliases": []
+          "aliases": [
+            "Fraser"
+          ]
         },
         {
           "name": "Bob Hawke",
           "points": 74,
-          "aliases": []
+          "aliases": [
+            "Bob",
+            "Hawke"
+          ]
         },
         {
           "name": "Paul Keating",
           "points": 77,
-          "aliases": []
+          "aliases": [
+            "Paul",
+            "Keating"
+          ]
         },
         {
           "name": "John Howard",
           "points": 80,
-          "aliases": []
+          "aliases": [
+            "Howard"
+          ]
         },
         {
           "name": "Kevin Rudd",
           "points": 83,
-          "aliases": []
+          "aliases": [
+            "Kevin",
+            "Rudd"
+          ]
         },
         {
           "name": "Julia Gillard",
           "points": 87,
-          "aliases": []
+          "aliases": [
+            "Julia",
+            "Gillard"
+          ]
         },
         {
           "name": "Tony Abbott",
           "points": 90,
-          "aliases": []
+          "aliases": [
+            "Tony",
+            "Abbott"
+          ]
         },
         {
           "name": "Malcolm Turnbull",
           "points": 93,
-          "aliases": []
+          "aliases": [
+            "Turnbull"
+          ]
         },
         {
           "name": "Scott Morrison",
           "points": 97,
-          "aliases": []
+          "aliases": [
+            "ScoMo",
+            "Scott",
+            "Morrison"
+          ]
         },
         {
           "name": "Anthony Albanese",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Albo",
+            "Anthony",
+            "Albanese"
+          ]
         }
       ]
     },
@@ -44731,122 +45472,191 @@
         {
           "name": "John A. Macdonald",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "John Macdonald",
+            "Sir John Macdonald",
+            "Macdonald"
+          ]
         },
         {
           "name": "Alexander Mackenzie",
           "points": 5,
-          "aliases": []
+          "aliases": [
+            "Alexander"
+          ]
         },
         {
           "name": "John Abbott",
           "points": 10,
-          "aliases": []
+          "aliases": [
+            "Abbott"
+          ]
         },
         {
           "name": "John Thompson",
           "points": 14,
-          "aliases": []
+          "aliases": [
+            "Thompson"
+          ]
         },
         {
           "name": "Mackenzie Bowell",
           "points": 18,
-          "aliases": []
+          "aliases": [
+            "Bowell"
+          ]
         },
         {
           "name": "Charles Tupper",
           "points": 23,
-          "aliases": []
+          "aliases": [
+            "Charles",
+            "Tupper"
+          ]
         },
         {
           "name": "Wilfrid Laurier",
           "points": 27,
-          "aliases": []
+          "aliases": [
+            "Wilfrid",
+            "Laurier"
+          ]
         },
         {
           "name": "Robert Borden",
           "points": 31,
-          "aliases": []
+          "aliases": [
+            "Robert",
+            "Borden"
+          ]
         },
         {
           "name": "Arthur Meighen",
           "points": 35,
-          "aliases": []
+          "aliases": [
+            "Arthur",
+            "Meighen"
+          ]
         },
         {
           "name": "William Lyon Mackenzie King",
           "points": 40,
-          "aliases": []
+          "aliases": [
+            "William",
+            "King"
+          ]
         },
         {
           "name": "R. B. Bennett",
           "points": 44,
-          "aliases": []
+          "aliases": [
+            "Richard Bennett",
+            "RB Bennett",
+            "R.",
+            "Bennett"
+          ]
         },
         {
           "name": "Louis St. Laurent",
           "points": 48,
-          "aliases": []
+          "aliases": [
+            "Louis Saint Laurent",
+            "Louis",
+            "Laurent"
+          ]
         },
         {
           "name": "John Diefenbaker",
           "points": 53,
-          "aliases": []
+          "aliases": [
+            "Diefenbaker"
+          ]
         },
         {
           "name": "Lester B. Pearson",
           "points": 57,
-          "aliases": []
+          "aliases": [
+            "Lester Pearson",
+            "Lester",
+            "Pearson"
+          ]
         },
         {
           "name": "Pierre Trudeau",
           "points": 61,
-          "aliases": []
+          "aliases": [
+            "Pierre"
+          ]
         },
         {
           "name": "Joe Clark",
           "points": 66,
-          "aliases": []
+          "aliases": [
+            "Joe",
+            "Clark"
+          ]
         },
         {
           "name": "John Turner",
           "points": 70,
-          "aliases": []
+          "aliases": [
+            "Turner"
+          ]
         },
         {
           "name": "Brian Mulroney",
           "points": 74,
-          "aliases": []
+          "aliases": [
+            "Brian",
+            "Mulroney"
+          ]
         },
         {
           "name": "Kim Campbell",
           "points": 78,
-          "aliases": []
+          "aliases": [
+            "Kim",
+            "Campbell"
+          ]
         },
         {
           "name": "Jean Chretien",
           "points": 83,
-          "aliases": []
+          "aliases": [
+            "Jean",
+            "Chretien"
+          ]
         },
         {
           "name": "Paul Martin",
           "points": 87,
-          "aliases": []
+          "aliases": [
+            "Paul",
+            "Martin"
+          ]
         },
         {
           "name": "Stephen Harper",
           "points": 91,
-          "aliases": []
+          "aliases": [
+            "Stephen",
+            "Harper"
+          ]
         },
         {
           "name": "Justin Trudeau",
           "points": 96,
-          "aliases": []
+          "aliases": [
+            "Justin"
+          ]
         },
         {
           "name": "Mark Carney",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Mark",
+            "Carney"
+          ]
         }
       ]
     },
@@ -44861,102 +45671,160 @@
         {
           "name": "Michael Joseph Savage",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "Michael",
+            "Savage"
+          ]
         },
         {
           "name": "Peter Fraser",
           "points": 6,
-          "aliases": []
+          "aliases": [
+            "Peter",
+            "Fraser"
+          ]
         },
         {
           "name": "Sidney Holland",
           "points": 11,
-          "aliases": []
+          "aliases": [
+            "Sidney",
+            "Holland"
+          ]
         },
         {
           "name": "Keith Holyoake",
           "points": 17,
-          "aliases": []
+          "aliases": [
+            "Keith",
+            "Holyoake"
+          ]
         },
         {
           "name": "Walter Nash",
           "points": 22,
-          "aliases": []
+          "aliases": [
+            "Walter",
+            "Nash"
+          ]
         },
         {
           "name": "Jack Marshall",
           "points": 27,
-          "aliases": []
+          "aliases": [
+            "Jack",
+            "Marshall"
+          ]
         },
         {
           "name": "Norman Kirk",
           "points": 32,
-          "aliases": []
+          "aliases": [
+            "Norman",
+            "Kirk"
+          ]
         },
         {
           "name": "Bill Rowling",
           "points": 37,
-          "aliases": []
+          "aliases": [
+            "Rowling"
+          ]
         },
         {
           "name": "Robert Muldoon",
           "points": 43,
-          "aliases": []
+          "aliases": [
+            "Robert",
+            "Muldoon"
+          ]
         },
         {
           "name": "David Lange",
           "points": 48,
-          "aliases": []
+          "aliases": [
+            "David",
+            "Lange"
+          ]
         },
         {
           "name": "Geoffrey Palmer",
           "points": 53,
-          "aliases": []
+          "aliases": [
+            "Geoffrey",
+            "Palmer"
+          ]
         },
         {
           "name": "Mike Moore",
           "points": 58,
-          "aliases": []
+          "aliases": [
+            "Mike",
+            "Moore"
+          ]
         },
         {
           "name": "Jim Bolger",
           "points": 64,
-          "aliases": []
+          "aliases": [
+            "Jim",
+            "Bolger"
+          ]
         },
         {
           "name": "Jenny Shipley",
           "points": 69,
-          "aliases": []
+          "aliases": [
+            "Jenny",
+            "Shipley"
+          ]
         },
         {
           "name": "Helen Clark",
           "points": 74,
-          "aliases": []
+          "aliases": [
+            "Helen",
+            "Clark"
+          ]
         },
         {
           "name": "John Key",
           "points": 79,
-          "aliases": []
+          "aliases": [
+            "John",
+            "Key"
+          ]
         },
         {
           "name": "Bill English",
           "points": 84,
-          "aliases": []
+          "aliases": [
+            "English"
+          ]
         },
         {
           "name": "Jacinda Ardern",
           "points": 90,
-          "aliases": []
+          "aliases": [
+            "Jacinda",
+            "Ardern"
+          ]
         },
         {
           "name": "Chris Hipkins",
           "points": 95,
-          "aliases": []
+          "aliases": [
+            "Chris",
+            "Hipkins"
+          ]
         },
         {
           "name": "Christopher Luxon",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Christopher",
+            "Luxon"
+          ]
         }
       ]
     },
@@ -44971,212 +45839,334 @@
         {
           "name": "William I",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "King William I",
+            "William 1"
+          ]
         },
         {
           "name": "William II",
           "points": 3,
-          "aliases": []
+          "aliases": [
+            "King William II",
+            "William 2"
+          ]
         },
         {
           "name": "Henry I",
           "points": 6,
-          "aliases": []
+          "aliases": [
+            "King Henry I",
+            "Henry 1"
+          ]
         },
         {
           "name": "Stephen",
           "points": 8,
-          "aliases": []
+          "aliases": [
+            "King Stephen"
+          ]
         },
         {
           "name": "Henry II",
           "points": 11,
-          "aliases": []
+          "aliases": [
+            "King Henry II",
+            "Henry 2"
+          ]
         },
         {
           "name": "Richard I",
           "points": 13,
-          "aliases": []
+          "aliases": [
+            "King Richard I",
+            "Richard 1"
+          ]
         },
         {
           "name": "John",
           "points": 15,
-          "aliases": []
+          "aliases": [
+            "King John"
+          ]
         },
         {
           "name": "Henry III",
           "points": 18,
-          "aliases": []
+          "aliases": [
+            "King Henry III",
+            "Henry 3"
+          ]
         },
         {
           "name": "Edward I",
           "points": 20,
-          "aliases": []
+          "aliases": [
+            "King Edward I",
+            "Edward 1"
+          ]
         },
         {
           "name": "Edward II",
           "points": 23,
-          "aliases": []
+          "aliases": [
+            "King Edward II",
+            "Edward 2"
+          ]
         },
         {
           "name": "Edward III",
           "points": 25,
-          "aliases": []
+          "aliases": [
+            "King Edward III",
+            "Edward 3"
+          ]
         },
         {
           "name": "Richard II",
           "points": 28,
-          "aliases": []
+          "aliases": [
+            "King Richard II",
+            "Richard 2"
+          ]
         },
         {
           "name": "Henry IV",
           "points": 30,
-          "aliases": []
+          "aliases": [
+            "King Henry IV",
+            "Henry 4"
+          ]
         },
         {
           "name": "Henry V",
           "points": 32,
-          "aliases": []
+          "aliases": [
+            "King Henry V",
+            "Henry 5"
+          ]
         },
         {
           "name": "Henry VI",
           "points": 35,
-          "aliases": []
+          "aliases": [
+            "King Henry VI",
+            "Henry 6"
+          ]
         },
         {
           "name": "Edward IV",
           "points": 37,
-          "aliases": []
+          "aliases": [
+            "King Edward IV",
+            "Edward 4"
+          ]
         },
         {
           "name": "Edward V",
           "points": 40,
-          "aliases": []
+          "aliases": [
+            "King Edward V",
+            "Edward 5"
+          ]
         },
         {
           "name": "Richard III",
           "points": 42,
-          "aliases": []
+          "aliases": [
+            "King Richard III",
+            "Richard 3"
+          ]
         },
         {
           "name": "Henry VII",
           "points": 44,
-          "aliases": []
+          "aliases": [
+            "King Henry VII",
+            "Henry 7"
+          ]
         },
         {
           "name": "Henry VIII",
           "points": 47,
-          "aliases": []
+          "aliases": [
+            "King Henry VIII",
+            "Henry 8"
+          ]
         },
         {
           "name": "Edward VI",
           "points": 49,
-          "aliases": []
+          "aliases": [
+            "King Edward VI",
+            "Edward 6"
+          ]
         },
         {
           "name": "Mary I",
           "points": 52,
-          "aliases": []
+          "aliases": [
+            "Queen Mary I",
+            "Mary 1"
+          ]
         },
         {
           "name": "Elizabeth I",
           "points": 54,
-          "aliases": []
+          "aliases": [
+            "Queen Elizabeth I",
+            "Elizabeth 1"
+          ]
         },
         {
           "name": "James I",
           "points": 57,
-          "aliases": []
+          "aliases": [
+            "King James I",
+            "James 1"
+          ]
         },
         {
           "name": "Charles I",
           "points": 59,
-          "aliases": []
+          "aliases": [
+            "King Charles I",
+            "Charles 1"
+          ]
         },
         {
           "name": "Charles II",
           "points": 61,
-          "aliases": []
+          "aliases": [
+            "King Charles II",
+            "Charles 2"
+          ]
         },
         {
           "name": "James II",
           "points": 64,
-          "aliases": []
+          "aliases": [
+            "King James II",
+            "James 2"
+          ]
         },
         {
           "name": "William III",
           "points": 66,
-          "aliases": []
+          "aliases": [
+            "King William III",
+            "William 3"
+          ]
         },
         {
           "name": "Mary II",
           "points": 69,
-          "aliases": []
+          "aliases": [
+            "Queen Mary II",
+            "Mary 2"
+          ]
         },
         {
           "name": "Anne",
           "points": 71,
-          "aliases": []
+          "aliases": [
+            "Queen Anne"
+          ]
         },
         {
           "name": "George I",
           "points": 73,
-          "aliases": []
+          "aliases": [
+            "King George I",
+            "George 1"
+          ]
         },
         {
           "name": "George II",
           "points": 76,
-          "aliases": []
+          "aliases": [
+            "King George II",
+            "George 2"
+          ]
         },
         {
           "name": "George III",
           "points": 78,
-          "aliases": []
+          "aliases": [
+            "King George III",
+            "George 3"
+          ]
         },
         {
           "name": "George IV",
           "points": 81,
-          "aliases": []
+          "aliases": [
+            "King George IV",
+            "George 4"
+          ]
         },
         {
           "name": "William IV",
           "points": 83,
-          "aliases": []
+          "aliases": [
+            "King William IV",
+            "William 4"
+          ]
         },
         {
           "name": "Victoria",
           "points": 86,
-          "aliases": []
+          "aliases": [
+            "Queen Victoria"
+          ]
         },
         {
           "name": "Edward VII",
           "points": 88,
-          "aliases": []
+          "aliases": [
+            "King Edward VII",
+            "Edward 7"
+          ]
         },
         {
           "name": "George V",
           "points": 90,
-          "aliases": []
+          "aliases": [
+            "King George V",
+            "George 5"
+          ]
         },
         {
           "name": "Edward VIII",
           "points": 93,
-          "aliases": []
+          "aliases": [
+            "King Edward VIII",
+            "Edward 8"
+          ]
         },
         {
           "name": "George VI",
           "points": 95,
-          "aliases": []
+          "aliases": [
+            "King George VI",
+            "George 6"
+          ]
         },
         {
           "name": "Elizabeth II",
           "points": 98,
-          "aliases": []
+          "aliases": [
+            "Queen Elizabeth II",
+            "Elizabeth 2"
+          ]
         },
         {
           "name": "Charles III",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "King Charles III",
+            "Charles 3"
+          ]
         }
       ]
     },
@@ -45192,42 +46182,48 @@
           "name": "Leo XIII",
           "points": 1,
           "aliases": [
-            "XIII"
+            "XIII",
+            "Pope Leo XIII"
           ]
         },
         {
           "name": "Pius X",
           "points": 10,
           "aliases": [
-            "X"
+            "X",
+            "Pope Pius X"
           ]
         },
         {
           "name": "Benedict XV",
           "points": 19,
           "aliases": [
-            "XV"
+            "XV",
+            "Pope Benedict XV"
           ]
         },
         {
           "name": "Pius XI",
           "points": 28,
           "aliases": [
-            "XI"
+            "XI",
+            "Pope Pius XI"
           ]
         },
         {
           "name": "Pius XII",
           "points": 37,
           "aliases": [
-            "XII"
+            "XII",
+            "Pope Pius XII"
           ]
         },
         {
           "name": "John XXIII",
           "points": 46,
           "aliases": [
-            "XXIII"
+            "XXIII",
+            "Pope John XXIII"
           ]
         },
         {
@@ -45235,40 +46231,51 @@
           "points": 55,
           "aliases": [
             "Paul",
-            "VI"
+            "VI",
+            "Pope Paul VI"
           ]
         },
         {
           "name": "John Paul I",
           "points": 64,
           "aliases": [
-            "I"
+            "I",
+            "Pope John Paul I",
+            "JPI",
+            "JP1"
           ]
         },
         {
           "name": "John Paul II",
           "points": 73,
           "aliases": [
-            "II"
+            "II",
+            "Pope John Paul II",
+            "JPII",
+            "JP2"
           ]
         },
         {
           "name": "Benedict XVI",
           "points": 82,
           "aliases": [
-            "XVI"
+            "XVI",
+            "Pope Benedict XVI"
           ]
         },
         {
           "name": "Francis",
           "points": 91,
-          "aliases": []
+          "aliases": [
+            "Pope Francis"
+          ]
         },
         {
           "name": "Leo XIV",
           "points": 100,
           "aliases": [
-            "XIV"
+            "XIV",
+            "Pope Leo XIV"
           ]
         }
       ]
@@ -45284,52 +46291,82 @@
         {
           "name": "Gladwyn Jebb",
           "points": 1,
-          "aliases": []
+          "aliases": [
+            "Gladwyn",
+            "Jebb"
+          ]
         },
         {
           "name": "Trygve Lie",
           "points": 12,
-          "aliases": []
+          "aliases": [
+            "Trygve",
+            "Lie"
+          ]
         },
         {
           "name": "Dag Hammarskjold",
           "points": 23,
-          "aliases": []
+          "aliases": [
+            "Dag",
+            "Hammarskjold"
+          ]
         },
         {
           "name": "U Thant",
           "points": 34,
-          "aliases": []
+          "aliases": [
+            "U",
+            "Thant"
+          ]
         },
         {
           "name": "Kurt Waldheim",
           "points": 45,
-          "aliases": []
+          "aliases": [
+            "Kurt",
+            "Waldheim"
+          ]
         },
         {
           "name": "Javier Perez de Cuellar",
           "points": 56,
-          "aliases": []
+          "aliases": [
+            "Javier",
+            "Cuellar"
+          ]
         },
         {
           "name": "Boutros Boutros-Ghali",
           "points": 67,
-          "aliases": []
+          "aliases": [
+            "Boutros",
+            "Boutros-Ghali"
+          ]
         },
         {
           "name": "Kofi Annan",
           "points": 78,
-          "aliases": []
+          "aliases": [
+            "Kofi",
+            "Annan"
+          ]
         },
         {
           "name": "Ban Ki-moon",
           "points": 89,
-          "aliases": []
+          "aliases": [
+            "Ban",
+            "Ki-moon"
+          ]
         },
         {
           "name": "Antonio Guterres",
           "points": 100,
-          "aliases": []
+          "aliases": [
+            "Antonio",
+            "Guterres"
+          ]
         }
       ]
     },
@@ -45404,7 +46441,8 @@
           "aliases": [
             "Theodore Roosevelt Jr.",
             "Theodore",
-            "Roosevelt"
+            "Roosevelt",
+            "Teddy Roosevelt"
           ]
         },
         {
@@ -45503,7 +46541,9 @@
           "name": "International Committee of the Red Cross",
           "points": 15,
           "aliases": [
-            "Cross"
+            "Cross",
+            "ICRC",
+            "Red Cross"
           ]
         },
         {
@@ -45759,7 +46799,9 @@
           "name": "Office of the United Nations High Commissioner for Refugees",
           "points": 38,
           "aliases": [
-            "Office"
+            "Office",
+            "UNHCR",
+            "UN Refugee Agency"
           ]
         },
         {
@@ -45833,7 +46875,8 @@
           "name": "United Nations Children's Fund",
           "points": 44,
           "aliases": [
-            "Fund"
+            "Fund",
+            "UNICEF"
           ]
         },
         {
@@ -46002,7 +47045,8 @@
           "name": "International Physicians for the Prevention of Nuclear War",
           "points": 59,
           "aliases": [
-            "War"
+            "War",
+            "IPPNW"
           ]
         },
         {
@@ -46024,7 +47068,9 @@
           "name": "United Nations Peacekeeping Forces",
           "points": 61,
           "aliases": [
-            "Forces"
+            "Forces",
+            "UN Peacekeepers",
+            "UN Peacekeeping"
           ]
         },
         {
@@ -46369,7 +47415,9 @@
         {
           "name": "International Campaign to Abolish Nuclear Weapons",
           "points": 92,
-          "aliases": []
+          "aliases": [
+            "ICAN"
+          ]
         },
         {
           "name": "Denis Mukwege",
@@ -46401,7 +47449,9 @@
           "points": 95,
           "aliases": [
             "World",
-            "Programme"
+            "Programme",
+            "WFP",
+            "UN World Food Programme"
           ]
         },
         {

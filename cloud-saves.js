@@ -13,7 +13,8 @@
    if(!belongs(game,key)||typeof value!=='string'||value.length>250000)throw Error('Unsupported cloud save entry.');
    out[key]=value;
   }
-  if(Object.keys(out).length>2000||JSON.stringify(out).length>1500000)throw Error('Cloud save is too large. Export a backup before continuing.');
+  const serialized=JSON.stringify(out),limit=game==='hidden-gem'?1950000:1500000;
+  if(Object.keys(out).length>2000||serialized.length>limit||(game==='hidden-gem'&&encodeURIComponent(serialized).replace(/%[A-F0-9]{2}/gi,'x').length>1990000))throw Error('Cloud save is too large. Export a backup before continuing.');
   return out;
  }
  function capture(storage,validate=true){
