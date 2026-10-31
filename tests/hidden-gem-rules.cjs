@@ -104,9 +104,11 @@ const fullHistory={};
 for(let i=0;i<120;i++){const d=new Date(Date.UTC(2026,9,31+i)).toISOString().slice(0,10),r=M.create(activeBank,d);M.begin(r,1);for(let j=0;j<5;j++){M.draft(r,r.questions[j].answers.reduce((a,b)=>a.name.length>b.name.length?a:b).name,2);M.finish(r,3);M.next(r,4);}fullHistory[M.PREFIX+d]=encode(r);}
 assert(encode(fullHistory).length>1500000);assert(Buffer.byteLength(encode(fullHistory))<1990000);assert.deepEqual(cloud.clean('hidden-gem',fullHistory),fullHistory,'120 full snapshots fit client and server caps without pruning');
 // Editorial ratings are question-specific. Famous leads and title answers cannot inherit rare-answer scores.
+assert(activeBank.every(q=>!/UNESCO|World Heritage property/i.test(q.prompt)));assert.equal(activeBank.filter(q=>q.topic==='EVERYDAY').length,24);
 const priorBounded=require('../content/archive/2026-10-31-bounded-v1/hidden-gem-questions.json').questions;
-assert.equal(require('../content/hidden-gem-questions.json').revision,9);
+assert.equal(require('../content/hidden-gem-questions.json').revision,10);
 for(const [i,q]of activeBank.entries()){
+ if(i>=144&&i<168)continue;
  assert.equal(q.id,priorBounded[i].id);assert.equal(q.prompt,priorBounded[i].prompt);assert.equal(q.dailySlot,priorBounded[i].dailySlot);
  assert.deepEqual(q.answers.map(a=>a.name),priorBounded[i].answers.map(a=>a.name),'Rating review must not change membership');
  assert(boundedSource.questions[i].ratingReview.familiar.length);assert(boundedSource.questions[i].ratingReview.lessObvious.length);

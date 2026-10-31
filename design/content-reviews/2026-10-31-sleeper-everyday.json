@@ -1,0 +1,230 @@
+{
+  "revision": 10,
+  "reason": "Owner rejects all UNESCO World Heritage property prompts as unfamiliar.",
+  "removedPrompts": [
+    {
+      "id": "hg8-145",
+      "prompt": "Name a UNESCO World Heritage property on the Australia state-party list, inscribed by 2024."
+    },
+    {
+      "id": "hg8-146",
+      "prompt": "Name a UNESCO World Heritage property on the United States state-party list, inscribed by 2024."
+    },
+    {
+      "id": "hg8-147",
+      "prompt": "Name a UNESCO World Heritage property on the United Kingdom state-party list, inscribed by 2024."
+    },
+    {
+      "id": "hg8-148",
+      "prompt": "Name a UNESCO World Heritage property on the France state-party list, inscribed by 2024."
+    },
+    {
+      "id": "hg8-149",
+      "prompt": "Name a UNESCO World Heritage property on the Italy state-party list, inscribed by 2024."
+    },
+    {
+      "id": "hg8-150",
+      "prompt": "Name a UNESCO World Heritage property on the Spain state-party list, inscribed by 2024."
+    },
+    {
+      "id": "hg8-151",
+      "prompt": "Name a UNESCO World Heritage property on the Portugal state-party list, inscribed by 2024."
+    },
+    {
+      "id": "hg8-152",
+      "prompt": "Name a UNESCO World Heritage property on the Germany state-party list, inscribed by 2024."
+    },
+    {
+      "id": "hg8-153",
+      "prompt": "Name a UNESCO World Heritage property on the Greece state-party list, inscribed by 2024."
+    },
+    {
+      "id": "hg8-154",
+      "prompt": "Name a UNESCO World Heritage property on the Turkey state-party list, inscribed by 2024."
+    },
+    {
+      "id": "hg8-155",
+      "prompt": "Name a UNESCO World Heritage property on the Japan state-party list, inscribed by 2024."
+    },
+    {
+      "id": "hg8-156",
+      "prompt": "Name a UNESCO World Heritage property on the China state-party list, inscribed by 2024."
+    },
+    {
+      "id": "hg8-157",
+      "prompt": "Name a UNESCO World Heritage property on the India state-party list, inscribed by 2024."
+    },
+    {
+      "id": "hg8-158",
+      "prompt": "Name a UNESCO World Heritage property on the South Korea state-party list, inscribed by 2024."
+    },
+    {
+      "id": "hg8-159",
+      "prompt": "Name a UNESCO World Heritage property on the Russia state-party list, inscribed by 2024."
+    },
+    {
+      "id": "hg8-160",
+      "prompt": "Name a UNESCO World Heritage property on the Mexico state-party list, inscribed by 2024."
+    },
+    {
+      "id": "hg8-161",
+      "prompt": "Name a UNESCO World Heritage property on the Canada state-party list, inscribed by 2024."
+    },
+    {
+      "id": "hg8-162",
+      "prompt": "Name a UNESCO World Heritage property on the Brazil state-party list, inscribed by 2024."
+    },
+    {
+      "id": "hg8-163",
+      "prompt": "Name a UNESCO World Heritage property on the Argentina state-party list, inscribed by 2024."
+    },
+    {
+      "id": "hg8-164",
+      "prompt": "Name a UNESCO World Heritage property on the Peru state-party list, inscribed by 2024."
+    },
+    {
+      "id": "hg8-165",
+      "prompt": "Name a UNESCO World Heritage property on the Switzerland state-party list, inscribed by 2024."
+    },
+    {
+      "id": "hg8-166",
+      "prompt": "Name a UNESCO World Heritage property on the Austria state-party list, inscribed by 2024."
+    },
+    {
+      "id": "hg8-167",
+      "prompt": "Name a UNESCO World Heritage property on the Netherlands state-party list, inscribed by 2024."
+    },
+    {
+      "id": "hg8-168",
+      "prompt": "Name a UNESCO World Heritage property on the Poland state-party list, inscribed by 2024."
+    }
+  ],
+  "replacements": [
+    {
+      "id": "hg8-145",
+      "prompt": "Name an item of clothing or an accessory represented by an emoji.",
+      "answers": 47
+    },
+    {
+      "id": "hg8-146",
+      "prompt": "Name a household item represented by an emoji.",
+      "answers": 25
+    },
+    {
+      "id": "hg8-147",
+      "prompt": "Name a tool or piece of hardware represented by an emoji.",
+      "answers": 27
+    },
+    {
+      "id": "hg8-148",
+      "prompt": "Name a type of building represented by an emoji.",
+      "answers": 29
+    },
+    {
+      "id": "hg8-149",
+      "prompt": "Name a land vehicle or railway feature represented by an emoji.",
+      "answers": 46
+    },
+    {
+      "id": "hg8-150",
+      "prompt": "Name an aircraft, watercraft or aerial transport represented by an emoji.",
+      "answers": 15
+    },
+    {
+      "id": "hg8-151",
+      "prompt": "Name a flower or flower arrangement represented by an emoji.",
+      "answers": 12
+    },
+    {
+      "id": "hg8-152",
+      "prompt": "Name a plant, leaf or fungus represented by an emoji.",
+      "answers": 15
+    },
+    {
+      "id": "hg8-153",
+      "prompt": "Name a sport or piece of sporting equipment represented by an emoji.",
+      "answers": 27
+    },
+    {
+      "id": "hg8-154",
+      "prompt": "Name a toy or game-related object represented by an emoji.",
+      "answers": 24
+    },
+    {
+      "id": "hg8-155",
+      "prompt": "Name headwear or footwear represented by an emoji.",
+      "answers": 19
+    },
+    {
+      "id": "hg8-156",
+      "prompt": "Name an office supply or desk item represented by an emoji.",
+      "answers": 18
+    },
+    {
+      "id": "hg8-157",
+      "prompt": "Name a computer or telephone-related object represented by an emoji.",
+      "answers": 17
+    },
+    {
+      "id": "hg8-158",
+      "prompt": "Name a camera, film or lighting object represented by an emoji.",
+      "answers": 14
+    },
+    {
+      "id": "hg8-159",
+      "prompt": "Name a writing, reading or paper item represented by an emoji.",
+      "answers": 16
+    },
+    {
+      "id": "hg8-160",
+      "prompt": "Name a sound or music-related object represented by an emoji, excluding instruments.",
+      "answers": 13
+    },
+    {
+      "id": "hg8-161",
+      "prompt": "Name a sky or weather symbol represented by an emoji.",
+      "answers": 47
+    },
+    {
+      "id": "hg8-162",
+      "prompt": "Name a hand gesture represented by an emoji.",
+      "answers": 40
+    },
+    {
+      "id": "hg8-163",
+      "prompt": "Name a job or role represented by an emoji.",
+      "answers": 33
+    },
+    {
+      "id": "hg8-164",
+      "prompt": "Name a fruit represented by a fruit emoji.",
+      "answers": 19
+    },
+    {
+      "id": "hg8-165",
+      "prompt": "Name a food represented by a vegetable emoji.",
+      "answers": 19
+    },
+    {
+      "id": "hg8-166",
+      "prompt": "Name a food represented by a prepared-food emoji.",
+      "answers": 33
+    },
+    {
+      "id": "hg8-167",
+      "prompt": "Name a reptile, amphibian or sea creature represented by an emoji.",
+      "answers": 26
+    },
+    {
+      "id": "hg8-168",
+      "prompt": "Name an Asian dish or snack represented by an emoji.",
+      "answers": 16
+    }
+  ],
+  "questions": 240,
+  "answers": 7605,
+  "days": 48,
+  "overlapPairs": 176,
+  "capturedSnapshots": "Preserved unchanged; retired topic filters fall back to All topics.",
+  "source": "content/hidden-gem-bounded-source.json"
+}
