@@ -1,0 +1,4183 @@
+{
+  "date": "2026-11-01",
+  "revision": 13,
+  "reason": "Replace the blanket neutral-50 fallback and single selected maximum with individual contextual ratings for every accepted canonical answer.",
+  "questions": 240,
+  "canonicalAnswers": 6402,
+  "questionWordingAndMembership": "Unchanged. IDs, scopes, aliases, date slots, epoch and rotation preserved.",
+  "method": {
+    "reviewed": "2026-11-01",
+    "method": "Each canonical answer reviewed in its question context. Rounded editorial estimates and ties reflect approximate familiarity, not measured player-popularity percentages.",
+    "coverage": "Every answer has an explicit score. No default 50, random jitter, interpolation by array order or scores copied across unrelated questions.",
+    "bands": {
+      "1-19": "Immediate, everyday choices",
+      "20-39": "Familiar alternatives",
+      "40-59": "Less immediate but readily recognised choices",
+      "60-79": "Less obvious choices",
+      "80-94": "Uncommon choices for this prompt",
+      "95-100": "Least immediate valid choices in this list"
+    },
+    "ties": "Similarly immediate answers can share scores, including 100."
+  },
+  "beforeDistribution": {
+    "1": 242,
+    "10": 240,
+    "15": 14,
+    "20": 14,
+    "25": 13,
+    "30": 11,
+    "35": 7,
+    "40": 3,
+    "50": 5618,
+    "100": 240
+  },
+  "afterDistribution": {
+    "1": 243,
+    "3": 4,
+    "5": 178,
+    "8": 1,
+    "10": 278,
+    "12": 1,
+    "15": 276,
+    "18": 1,
+    "20": 317,
+    "22": 1,
+    "25": 334,
+    "28": 1,
+    "30": 307,
+    "35": 338,
+    "40": 318,
+    "45": 330,
+    "50": 318,
+    "55": 348,
+    "60": 353,
+    "65": 357,
+    "70": 338,
+    "75": 322,
+    "80": 287,
+    "85": 322,
+    "90": 284,
+    "95": 251,
+    "100": 294
+  },
+  "minimumDistinctRatingsPerQuestion": 14,
+  "minimumDistinctIntermediateRatingsPerQuestion": 4,
+  "changedCanonicalScores": 5571,
+  "examples": {
+    "breakfast": {
+      "Toast": 1,
+      "Eggs": 3,
+      "Cereal": 5,
+      "Porridge": 12,
+      "Pancakes": 15,
+      "Bacon": 10,
+      "Yoghurt": 18,
+      "Waffles": 25,
+      "Bagel": 30,
+      "Croissant": 28,
+      "Muesli": 22,
+      "Fruit salad": 35,
+      "Banana": 20,
+      "Apple": 40,
+      "Orange": 45,
+      "Fruit": 15,
+      "Cereal bar": 50,
+      "Omelette": 30,
+      "Breakfast burrito": 65,
+      "Avocado toast": 25,
+      "Rice": 70,
+      "Noodles": 80,
+      "Baked beans": 45,
+      "Sausages": 30,
+      "Hash browns": 35,
+      "French toast": 40,
+      "Congee": 90,
+      "Idli": 100,
+      "Dosa": 100,
+      "Shakshuka": 95,
+      "Kippers": 85,
+      "Granola": 35,
+      "Muffin": 45,
+      "Crumpet": 20,
+      "Breakfast sandwich": 55,
+      "Breakfast roll": 60,
+      "Toastie": 50,
+      "Smoked salmon": 75,
+      "Wheat biscuit cereal": 15
+    },
+    "context": "Milan is 40 among Olympic host cities; Mario is 1 among video games/hat-wearing characters; Superman is 1 and Frozone 80 among film superheroes."
+  },
+  "preservation": "Old full captures keep original answer points, completed and zero results, deadlines and first-completion locks. Same IDs do not cause score replacement. No model, SQL, scoring formula, timer, layout or account schema change.",
+  "archive": "content/archive/2026-11-01-pre-graded-ratings/",
+  "limits": [
+    "Editorial familiarity judgments, not measured player-popularity percentages.",
+    "Rounded scores and ties indicate approximate judgments; no claim of a statistically calibrated ranking."
+  ],
+  "questionsReviewed": [
+    {
+      "id": "hg12-001",
+      "answerCount": 39,
+      "distinctRatings": 26,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-002",
+      "answerCount": 29,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-003",
+      "answerCount": 23,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-004",
+      "answerCount": 32,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        85,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-005",
+      "answerCount": 27,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-006",
+      "answerCount": 28,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-007",
+      "answerCount": 28,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-008",
+      "answerCount": 39,
+      "distinctRatings": 22,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 3,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-009",
+      "answerCount": 27,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-010",
+      "answerCount": 31,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-011",
+      "answerCount": 27,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-012",
+      "answerCount": 25,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-013",
+      "answerCount": 24,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-014",
+      "answerCount": 28,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-015",
+      "answerCount": 28,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 0,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-016",
+      "answerCount": 27,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-017",
+      "answerCount": 29,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-018",
+      "answerCount": 25,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-019",
+      "answerCount": 29,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-020",
+      "answerCount": 27,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-021",
+      "answerCount": 23,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-022",
+      "answerCount": 29,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-023",
+      "answerCount": 26,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-024",
+      "answerCount": 30,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-025",
+      "answerCount": 39,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-026",
+      "answerCount": 31,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-027",
+      "answerCount": 31,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-028",
+      "answerCount": 27,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-029",
+      "answerCount": 34,
+      "distinctRatings": 22,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-030",
+      "answerCount": 36,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-031",
+      "answerCount": 26,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-032",
+      "answerCount": 32,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-033",
+      "answerCount": 33,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-034",
+      "answerCount": 33,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        95
+      ],
+      "fifties": 0,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-035",
+      "answerCount": 35,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-036",
+      "answerCount": 28,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 4
+    },
+    {
+      "id": "hg12-037",
+      "answerCount": 28,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-038",
+      "answerCount": 33,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 3,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-039",
+      "answerCount": 30,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-040",
+      "answerCount": 31,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-041",
+      "answerCount": 24,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-042",
+      "answerCount": 32,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-043",
+      "answerCount": 33,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-044",
+      "answerCount": 27,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-045",
+      "answerCount": 28,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-046",
+      "answerCount": 28,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-047",
+      "answerCount": 22,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-048",
+      "answerCount": 32,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-049",
+      "answerCount": 32,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-050",
+      "answerCount": 37,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-051",
+      "answerCount": 33,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 3,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-052",
+      "answerCount": 33,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-053",
+      "answerCount": 27,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-054",
+      "answerCount": 31,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-055",
+      "answerCount": 33,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-056",
+      "answerCount": 32,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-057",
+      "answerCount": 28,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-058",
+      "answerCount": 27,
+      "distinctRatings": 16,
+      "intermediateRatings": [
+        60,
+        65,
+        70,
+        75
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-059",
+      "answerCount": 20,
+      "distinctRatings": 14,
+      "intermediateRatings": [
+        65,
+        70,
+        80,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-060",
+      "answerCount": 20,
+      "distinctRatings": 17,
+      "intermediateRatings": [
+        60,
+        65,
+        70,
+        75,
+        80,
+        95
+      ],
+      "fifties": 0,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-061",
+      "answerCount": 32,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-062",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-063",
+      "answerCount": 20,
+      "distinctRatings": 16,
+      "intermediateRatings": [
+        60,
+        70,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 0,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-064",
+      "answerCount": 36,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 3,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-065",
+      "answerCount": 27,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-066",
+      "answerCount": 30,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-067",
+      "answerCount": 34,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-068",
+      "answerCount": 20,
+      "distinctRatings": 16,
+      "intermediateRatings": [
+        55,
+        65,
+        70,
+        75,
+        80,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-069",
+      "answerCount": 20,
+      "distinctRatings": 16,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        85
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-070",
+      "answerCount": 33,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 3,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-071",
+      "answerCount": 22,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-072",
+      "answerCount": 29,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-073",
+      "answerCount": 35,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-074",
+      "answerCount": 27,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-075",
+      "answerCount": 28,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-076",
+      "answerCount": 28,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-077",
+      "answerCount": 35,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-078",
+      "answerCount": 32,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-079",
+      "answerCount": 28,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        85,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-080",
+      "answerCount": 33,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-081",
+      "answerCount": 32,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-082",
+      "answerCount": 34,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-083",
+      "answerCount": 32,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-084",
+      "answerCount": 27,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        85,
+        90
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-085",
+      "answerCount": 26,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-086",
+      "answerCount": 24,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-087",
+      "answerCount": 30,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-088",
+      "answerCount": 27,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-089",
+      "answerCount": 27,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        90
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-090",
+      "answerCount": 35,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 4,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-091",
+      "answerCount": 20,
+      "distinctRatings": 17,
+      "intermediateRatings": [
+        60,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-092",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-093",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-094",
+      "answerCount": 20,
+      "distinctRatings": 17,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-095",
+      "answerCount": 20,
+      "distinctRatings": 17,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        75,
+        80,
+        85
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-096",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        70,
+        75,
+        85,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-097",
+      "answerCount": 154,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 4,
+      "hundreds": 10
+    },
+    {
+      "id": "hg12-098",
+      "answerCount": 120,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 3,
+      "hundreds": 6
+    },
+    {
+      "id": "hg12-099",
+      "answerCount": 54,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 3
+    },
+    {
+      "id": "hg12-100",
+      "answerCount": 44,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 0,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-101",
+      "answerCount": 24,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-102",
+      "answerCount": 24,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-103",
+      "answerCount": 22,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        85,
+        90
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-104",
+      "answerCount": 22,
+      "distinctRatings": 17,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        75,
+        85
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-105",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-106",
+      "answerCount": 20,
+      "distinctRatings": 17,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-107",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        75,
+        80,
+        85,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-108",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        85,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-109",
+      "answerCount": 22,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-110",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        85,
+        90
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-111",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 0,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-112",
+      "answerCount": 22,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        75,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-113",
+      "answerCount": 24,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-114",
+      "answerCount": 48,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-115",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-116",
+      "answerCount": 22,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-117",
+      "answerCount": 24,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-118",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-119",
+      "answerCount": 20,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-120",
+      "answerCount": 20,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-121",
+      "answerCount": 22,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 0,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-122",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-123",
+      "answerCount": 24,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-124",
+      "answerCount": 22,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-125",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-126",
+      "answerCount": 22,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-127",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        80,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-128",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-129",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-130",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-131",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-132",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-133",
+      "answerCount": 22,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        85,
+        90,
+        95
+      ],
+      "fifties": 0,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-134",
+      "answerCount": 20,
+      "distinctRatings": 17,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        80,
+        85,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-135",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-136",
+      "answerCount": 22,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        75,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-137",
+      "answerCount": 32,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-138",
+      "answerCount": 19,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 0,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-139",
+      "answerCount": 20,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-140",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-141",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-142",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        65,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-143",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-144",
+      "answerCount": 20,
+      "distinctRatings": 17,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        75,
+        85,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-145",
+      "answerCount": 31,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-146",
+      "answerCount": 40,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-147",
+      "answerCount": 51,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 3
+    },
+    {
+      "id": "hg12-148",
+      "answerCount": 74,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 3,
+      "hundreds": 4
+    },
+    {
+      "id": "hg12-149",
+      "answerCount": 24,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-150",
+      "answerCount": 22,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        85,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-151",
+      "answerCount": 24,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-152",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        75,
+        80,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-153",
+      "answerCount": 22,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-154",
+      "answerCount": 22,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-155",
+      "answerCount": 22,
+      "distinctRatings": 17,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-156",
+      "answerCount": 22,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        85,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-157",
+      "answerCount": 22,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-158",
+      "answerCount": 22,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        80,
+        85
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-159",
+      "answerCount": 24,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        85,
+        90
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-160",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-161",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        65,
+        70,
+        75,
+        80,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-162",
+      "answerCount": 22,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-163",
+      "answerCount": 22,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-164",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-165",
+      "answerCount": 22,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-166",
+      "answerCount": 22,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-167",
+      "answerCount": 24,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-168",
+      "answerCount": 22,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-169",
+      "answerCount": 22,
+      "distinctRatings": 17,
+      "intermediateRatings": [
+        55,
+        65,
+        70,
+        80,
+        85
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-170",
+      "answerCount": 22,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-171",
+      "answerCount": 22,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 0,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-172",
+      "answerCount": 22,
+      "distinctRatings": 17,
+      "intermediateRatings": [
+        55,
+        70,
+        75,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-173",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-174",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-175",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-176",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-177",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        70,
+        75,
+        80,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-178",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-179",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        80,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-180",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-181",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-182",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        90
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-183",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        85,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-184",
+      "answerCount": 20,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-185",
+      "answerCount": 20,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-186",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-187",
+      "answerCount": 20,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-188",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-189",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-190",
+      "answerCount": 22,
+      "distinctRatings": 17,
+      "intermediateRatings": [
+        55,
+        65,
+        75,
+        80,
+        85,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-191",
+      "answerCount": 21,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        90
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-192",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-193",
+      "answerCount": 78,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 4,
+      "hundreds": 5
+    },
+    {
+      "id": "hg12-194",
+      "answerCount": 35,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-195",
+      "answerCount": 20,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-196",
+      "answerCount": 24,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-197",
+      "answerCount": 26,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-198",
+      "answerCount": 24,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-199",
+      "answerCount": 19,
+      "distinctRatings": 17,
+      "intermediateRatings": [
+        55,
+        60,
+        75,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-200",
+      "answerCount": 25,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-201",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-202",
+      "answerCount": 20,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-203",
+      "answerCount": 23,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-204",
+      "answerCount": 26,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-205",
+      "answerCount": 30,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-206",
+      "answerCount": 27,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-207",
+      "answerCount": 30,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-208",
+      "answerCount": 26,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-209",
+      "answerCount": 27,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-210",
+      "answerCount": 27,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-211",
+      "answerCount": 28,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-212",
+      "answerCount": 26,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-213",
+      "answerCount": 27,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-214",
+      "answerCount": 26,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-215",
+      "answerCount": 34,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-216",
+      "answerCount": 28,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-217",
+      "answerCount": 42,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-218",
+      "answerCount": 22,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-219",
+      "answerCount": 22,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-220",
+      "answerCount": 21,
+      "distinctRatings": 17,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-221",
+      "answerCount": 20,
+      "distinctRatings": 16,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-222",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-223",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-224",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-225",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-226",
+      "answerCount": 22,
+      "distinctRatings": 21,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-227",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 0,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-228",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-229",
+      "answerCount": 20,
+      "distinctRatings": 17,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-230",
+      "answerCount": 19,
+      "distinctRatings": 16,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        80,
+        85
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-231",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-232",
+      "answerCount": 22,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 2,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-233",
+      "answerCount": 22,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 2
+    },
+    {
+      "id": "hg12-234",
+      "answerCount": 20,
+      "distinctRatings": 19,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 0,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-235",
+      "answerCount": 24,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-236",
+      "answerCount": 22,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-237",
+      "answerCount": 20,
+      "distinctRatings": 20,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-238",
+      "answerCount": 19,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        85,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-239",
+      "answerCount": 20,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    },
+    {
+      "id": "hg12-240",
+      "answerCount": 22,
+      "distinctRatings": 18,
+      "intermediateRatings": [
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        95
+      ],
+      "fifties": 1,
+      "hundreds": 1
+    }
+  ],
+  "validation": {
+    "requiredChecks": "npm test: all selected checks passed.",
+    "content": "All 6,402 canonical names and aliases match; explicit assignment fingerprints validate complete review; all 240 questions have at least 14 distinct ratings and four distinct ratings strictly between 50 and 100.",
+    "preservation": "Question IDs/prompts/scopes/topics/date slots, answer membership and aliases equal revision 12. Current versus captured matching and score calculation pass disposable PostgreSQL parity checks.",
+    "browser": "Full Daily/Unlimited flows and saved rounds pass at mobile and desktop widths. At 390 and 1440px, actual submissions render 65, 70, 80, 90 and two distinct 100-point answers; old same-ID captures retain 50/100 and pending Daily deadlines/scores.",
+    "static": "Production build, shipped reference/syntax, content report and legal checks passed."
+  }
+}

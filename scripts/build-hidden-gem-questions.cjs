@@ -1,9 +1,11 @@
 /* Everyday Sleeper release: reviewed wording, named familiarity anchors and a fixed 48-day calendar. */
 'use strict';
-const fs=require('node:fs'),source=require('../content/hidden-gem-accessible-source.json');
+const fs=require('node:fs'),crypto=require('node:crypto'),source=require('../content/hidden-gem-accessible-source.json');
 require('../hidden-gem-model.js');const M=BREAK_ROOM_HIDDEN_GEM;
 const questions=source.questions.map((q,i)=>{
  const used=new Map(),answers=q.answers.map(name=>({name,points:q.points[name],aliases:[]}));
+ if(Object.keys(q.points).length!==answers.length||q.ratingReview?.answersReviewed!==answers.length||q.ratingReview.assignmentsSha256!==crypto.createHash('sha256').update(JSON.stringify(q.answers.map(n=>[n,q.points[n]]))).digest('hex'))throw Error('Incomplete explicit rating review '+q.prompt);
+ const ratings=answers.map(a=>a.points);if(new Set(ratings).size<10||new Set(ratings.filter(n=>n>50&&n<100)).size<3)throw Error('Compressed rating distribution '+q.prompt);
  for(const a of answers){const n=M.normal(a.name);if(!n||used.has(n))throw Error('Duplicate canonical '+q.prompt+': '+a.name);used.set(n,a.name);}
  for(const a of answers){
   for(const alias of q.aliases?.[a.name]||[]){const n=M.normal(alias);if(n&&alias.length<=240&&!used.has(n)){a.aliases.push(alias);used.set(n,a.name);}}

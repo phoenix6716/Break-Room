@@ -70,11 +70,12 @@ const storage={length:1,key:()=>key,getItem:k=>k===key?encode(mixed):null,setIte
 const bad=[];for(const mutate of [r=>r.version=2,r=>r.kind='unlimited',r=>r.day='2026-02-30',r=>r.edits=-1,r=>r.round=3,r=>r.phase='active',r=>r.deadline=1,r=>r.error='unlisted',r=>r.questions[0].answers[0].points=0,r=>r.questions[0].answers[0].points=101,r=>r.questions[1]=r.questions[0],r=>r.picks[0].points=99,r=>r.picks[0].answer='wrong',r=>r.picks[0].reason='timeout',r=>r.picks.pop(),r=>r.input='changed']){const r=structuredClone(good);mutate(r);assert.equal(M.record(r,day),null);bad.push(r);}
 // Revision 12: broad everyday prompts with reviewed, low-scoring familiar footholds.
 const accessibleSource=require('../content/hidden-gem-accessible-source.json');
-assert.equal(require('../content/hidden-gem-questions.json').revision,12);
+assert.equal(require('../content/hidden-gem-questions.json').revision,13);
 assert.equal(activeBank.length,240);assert(activeBank.every(q=>q.id.startsWith('hg12-')));
 assert.equal(new Set(activeBank.map(q=>q.prompt)).size,240);
 for(const [i,q]of activeBank.entries()){
  const spec=accessibleSource.questions[i];assert(q.answers.length>=10);assert(q.answers.some(a=>a.points===100));
+ assert.equal(spec.ratingReview.answersReviewed,q.answers.length);assert.equal(new Set(q.answers.map(a=>a.points)).size>=10,true);assert(new Set(q.answers.filter(a=>a.points>50&&a.points<100).map(a=>a.points)).size>=3,'Every question needs graded intermediate ratings: '+q.id);assert(q.answers.filter(a=>a.points===50).length<q.answers.length/4,'No blanket default-50 fallback: '+q.id);
  assert(!/\b(?:19|20)\d{2}\b|Unicode|UNESCO|prime minister|chemical symbol|skull|Grammy/i.test(q.prompt+' '+q.scope));
  assert.deepEqual(q.answers.map(a=>a.name),spec.answers);
  assert(spec.accessibilityReview.familiar.filter(name=>M.match(q,name)?.points<=19).length>=2);
@@ -84,6 +85,11 @@ for(const [i,q]of activeBank.entries()){
 }
 const accessibleById=n=>activeBank.find(q=>q.id==='hg12-'+String(n).padStart(3,'0'));
 for(const [n,input]of [[1,'Toast'],[1,'eggs'],[29,'dog'],[40,'Cactus'],[49,'height'],[50,'eyes'],[97,'Australia'],[99,'France'],[100,'Milano'],[137,'Minecraft'],[145,'Mario'],[146,'Mickey Mouse'],[147,'Batman'],[148,'Toy Story 5'],[148,'Hoppers'],[148,'The Super Mario Galaxy Movie'],[148,'KPop Demon Hunters'],[154,'Scooby-Doo'],[172,'FaceTime'],[207,'pants'],[207,'jeans'],[207,'sleeves'],[217,'Rain'],[217,'Snow'],[217,'Wind'],[217,'hurricane']])assert(M.match(accessibleById(n),input),'Ordinary/current answer '+n+': '+input);
+// Review examples independently pin familiar choices, intermediate levels and comparable rare choices.
+for(const [n,input,points]of [[1,'Toast',1],[1,'Eggs',3],[1,'Cereal',5],[1,'Crumpet',20],[1,'Breakfast burrito',65],[1,'Rice',70],[1,'Noodles',80],[1,'Congee',90],[1,'Idli',100],[1,'Dosa',100],[100,'Sydney',1],[100,'Milan',40],[137,'Mario',1],[145,'Mario',1],[145,'Woody',5],[147,'Superman',1],[147,'Spider-Man',10],[147,'Frozone',80],[147,'Hawkgirl',100],[148,'Frozen',1],[148,'Toy Story',5],[148,'Toy Story 5',65],[207,'pants',35],[207,'sleeves',25],[217,'Wind',25]])assert.equal(M.match(accessibleById(n),input)?.points,points,'Individually reviewed contextual rating '+n+' '+input);
+const beforeGrading=require('../content/archive/2026-11-01-pre-graded-ratings/hidden-gem-questions.json').questions;
+for(const [i,q]of activeBank.entries()){const old=beforeGrading[i];assert.equal(q.id,old.id);assert.equal(q.prompt,old.prompt);assert.equal(q.scope,old.scope);assert.equal(q.topic,old.topic);assert.equal(q.dailySlot,old.dailySlot);assert.deepEqual(q.answers.map(a=>[a.name,a.aliases]),old.answers.map(a=>[a.name,a.aliases]));}
+const oldDefaultRun=M.createPractice(beforeGrading[0],'2026-11-01','old-default-50');M.begin(oldDefaultRun,1000);M.draft(oldDefaultRun,'Noodles',1001);assert(M.finish(oldDefaultRun,1002));assert.equal(oldDefaultRun.picks[0].points,50);assert(M.validRun(oldDefaultRun));
 const accessibleDates=[];
 for(let i=0;i<48;i++){const day=new Date(Date.UTC(2026,10,1+i)).toISOString().slice(0,10),set=M.daily(activeBank,day);assert.equal(set.length,5);assert.equal(new Set(set.map(q=>q.topic)).size,5);accessibleDates.push(...set.map(q=>q.id));}
 const previouslyReleased=new Set(['2026-10-30','2026-10-31'].flatMap(day=>M.daily(B,day).map(q=>q.id.replace('hg7-',''))));for(let i=0;i<46;i++){const day=new Date(Date.UTC(2026,10,1+i)).toISOString().slice(0,10);assert(M.daily(activeBank,day).every(q=>!previouslyReleased.has(q.id.replace('hg12-',''))),'No recent accessible release repeats: '+day);}
@@ -166,6 +172,7 @@ assert.equal((await db.query('select public._hg_match($1,$2) a',[encode(ambiguou
 for(const q of boundedBank)for(const raw of Object.keys(q.inputMap||{})){const expected=M.match(q,raw),actual=(await db.query('select public._hg_match($1,$2) a',[encode(q),raw])).rows[0].a;assert.equal(actual?.answer,expected.name,q.id+' SQL symbol '+raw);assert.equal(actual?.points,expected.points);}
 assert.equal((await db.query('select public._friend_hidden_gem_score($1,$2) s',[encode(boundedRun),boundedRun.day])).rows[0].s,M.record(boundedRun,boundedRun.day).arcadeScore,'New complete-roster snapshot score parity');
 assert.equal((await db.query('select public._friend_hidden_gem_score($1,$2) s',[encode(accessibleRun),accessibleRun.day])).rows[0].s,M.record(accessibleRun,accessibleRun.day).arcadeScore,'Accessible 2026 snapshot score parity');
+for(const [q,input,points]of [[beforeGrading[0],'Noodles',50],[activeBank[0],'Noodles',80],[activeBank[0],'Congee',90],[activeBank[0],'Idli',100]]){const actual=(await db.query('select public._hg_match($1,$2) a',[encode(q),input])).rows[0].a;assert.equal(actual.points,points,'Captured/current graded rating SQL parity '+input);}
 assert.equal((await db.query('select public._friend_hidden_gem_score($1,$2) s',[encode(oldRatingDaily),oldRatingDaily.day])).rows[0].s,100,'Archived hg8 completed scores retain their original rules');
 for(const input of ['Crash','Crash Bandicoot','Coco','Penta Penguin']){const actual=(await db.query('select public._hg_match($1,$2) a',[encode(newCrash),input])).rows[0].a;assert.equal(actual.points,M.match(newCrash,input).points,'New contextual score SQL parity: '+input);}
 const users=['00000000-0000-4000-8000-000000000001','00000000-0000-4000-8000-000000000002'];for(const uid of users)await db.query('insert into auth.users values($1)',[uid]);
