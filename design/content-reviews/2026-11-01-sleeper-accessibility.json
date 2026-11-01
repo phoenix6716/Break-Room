@@ -1,0 +1,1552 @@
+{
+  "date": "2026-11-01",
+  "revision": 12,
+  "reason": "Owner could not name an answer to three 1 November Daily prompts. Accessible everyday categories take precedence over exhaustive specialist rosters.",
+  "replacesRevision": 11,
+  "questions": 240,
+  "canonicalAnswers": 6402,
+  "answerCountRange": [
+    19,
+    154
+  ],
+  "rotationDays": 48,
+  "conflictingPairs": 105,
+  "familiarityReview": "Every prompt has at least two explicitly named everyday answers rated 1–19. Additional familiar anchors are rated at most 40. Each maximum is explicitly chosen within its question. Unanchored answers remain neutral 50. No player-survey claim.",
+  "playerCutoffs": "No dates, Unicode versions or through-2024 style restrictions in any active prompt or scope.",
+  "source": "content/hidden-gem-accessible-source.json",
+  "generation": "node scripts/build-hidden-gem-questions.cjs",
+  "calendar": "Epoch 1 November, continuing the earlier accessible schedule by two slots. The two 30/31 October sets return on 17/18 December, 48 days after those dates. New captures use the bank immediately; existing captures stay frozen. Midnight Australia/Sydney Daily reset remains unchanged.",
+  "freshnessReview": {
+    "asOf": "2026-11-01",
+    "facts": [
+      "Milan and Cortina d’Ampezzo are accepted Olympic host cities after the completed 2026 Winter Games.",
+      "Toy Story 5, Hoppers and The Super Mario Galaxy Movie are accepted animated films with human characters, released in 2026.",
+      "Recent human-character films also include Elio and KPop Demon Hunters (2025)."
+    ],
+    "retrievals": [
+      {
+        "key": "olympics",
+        "url": "https://www.olympics.com/en/olympic-games/milano-cortina-2026",
+        "error": "HTTP Error 503: Service Unavailable"
+      },
+      {
+        "key": "toy-story-5",
+        "url": "https://www.pixar.com/toy-story-5",
+        "finalUrl": "https://www.pixar.com/toy-story-5",
+        "bytes": 623360,
+        "status": 200
+      },
+      {
+        "key": "hoppers",
+        "url": "https://www.pixar.com/hoppers",
+        "finalUrl": "https://www.pixar.com/hoppers",
+        "bytes": 864962,
+        "status": 200
+      },
+      {
+        "key": "mario-galaxy",
+        "url": "https://www.thesupermariogalaxymovie.com/",
+        "finalUrl": "https://www.thesupermariogalaxymovie.com/",
+        "bytes": 186955,
+        "status": 200
+      },
+      {
+        "key": "elio",
+        "url": "https://www.pixar.com/elio",
+        "finalUrl": "https://www.pixar.com/elio",
+        "bytes": 1432273,
+        "status": 200
+      },
+      {
+        "key": "kpop",
+        "url": "https://www.netflix.com/tudum/articles/kpop-demon-hunters-release-date-photos-news",
+        "error": "HTTP Error 404: Not Found"
+      },
+      {
+        "key": "olympics-secondary",
+        "url": "https://en.wikipedia.org/wiki/2026_Winter_Olympics",
+        "status": 200,
+        "bytes": 1173221
+      },
+      {
+        "key": "kpop-secondary",
+        "url": "https://en.wikipedia.org/wiki/KPop_Demon_Hunters",
+        "status": 200,
+        "bytes": 1330036
+      },
+      {
+        "key": "toy-story-5-secondary",
+        "url": "https://en.wikipedia.org/wiki/Toy_Story_5",
+        "status": 200,
+        "bytes": 560913
+      },
+      {
+        "key": "hoppers-secondary",
+        "url": "https://en.wikipedia.org/wiki/Hoppers_(film)",
+        "status": 200,
+        "bytes": 540996
+      }
+    ]
+  },
+  "preservation": "No save version, account keys, SQL schema, timers or scoring formula changes. All prior full snapshots, pending rounds, completed results and zeroes keep their canonical answers and captured ratings. Prior alias-recovery tables remain recovery-only. Revision 11 bank/source/generator/runtime are archived.",
+  "limitations": [
+    "Offline curated lists are generous but finite; arbitrary valid phrasing cannot be guaranteed.",
+    "Familiarity and rarity are editorial estimates, not measured population data.",
+    "Future facts after 1 November 2026 require later content review."
+  ],
+  "replaced": [
+    {
+      "oldId": "hg8-001",
+      "oldPrompt": "Name a UN member or non-member observer state.",
+      "newId": "hg12-001",
+      "newPrompt": "Name a food commonly eaten for breakfast."
+    },
+    {
+      "oldId": "hg8-002",
+      "oldPrompt": "Name a UN member or observer state in Africa.",
+      "newId": "hg12-002",
+      "newPrompt": "Name a food that can be served either hot or cold."
+    },
+    {
+      "oldId": "hg8-003",
+      "oldPrompt": "Name a UN member or observer state in Asia.",
+      "newId": "hg12-003",
+      "newPrompt": "Name a food commonly sold at a fair or carnival."
+    },
+    {
+      "oldId": "hg8-004",
+      "oldPrompt": "Name a UN member or observer state in Europe.",
+      "newId": "hg12-004",
+      "newPrompt": "Name a food commonly eaten with your hands."
+    },
+    {
+      "oldId": "hg8-005",
+      "oldPrompt": "Name a UN member or observer state in Oceania.",
+      "newId": "hg12-005",
+      "newPrompt": "Name a food made using potatoes."
+    },
+    {
+      "oldId": "hg8-006",
+      "oldPrompt": "Name a UN member or observer state in North America.",
+      "newId": "hg12-006",
+      "newPrompt": "Name a food that usually has a filling."
+    },
+    {
+      "oldId": "hg8-007",
+      "oldPrompt": "Name a UN member state in South America.",
+      "newId": "hg12-007",
+      "newPrompt": "Name a food commonly served at a birthday party."
+    },
+    {
+      "oldId": "hg8-008",
+      "oldPrompt": "Name a UN member or observer state in the UN’s Northern Europe group.",
+      "newId": "hg12-008",
+      "newPrompt": "Name an ingredient used to flavour a savoury dish."
+    },
+    {
+      "oldId": "hg8-009",
+      "oldPrompt": "Name a UN member or observer state in the UN’s Southern Europe group.",
+      "newId": "hg12-009",
+      "newPrompt": "Name a food commonly pickled."
+    },
+    {
+      "oldId": "hg8-010",
+      "oldPrompt": "Name a UN member or observer state in the UN’s Eastern Europe group.",
+      "newId": "hg12-010",
+      "newPrompt": "Name a drink commonly served over ice."
+    },
+    {
+      "oldId": "hg8-011",
+      "oldPrompt": "Name a UN member or observer state in the UN’s Caribbean group.",
+      "newId": "hg12-011",
+      "newPrompt": "Name a fruit or vegetable commonly used to make jam."
+    },
+    {
+      "oldId": "hg8-012",
+      "oldPrompt": "Name a UN member or observer state in the UN’s Western Africa group.",
+      "newId": "hg12-012",
+      "newPrompt": "Name a vegetable people commonly roast."
+    },
+    {
+      "oldId": "hg8-013",
+      "oldPrompt": "Name a UN member or observer state in the UN’s Eastern Africa group.",
+      "newId": "hg12-013",
+      "newPrompt": "Name a food people commonly put on toast."
+    },
+    {
+      "oldId": "hg8-014",
+      "oldPrompt": "Name a UN member or observer state in the UN’s Western Asia group.",
+      "newId": "hg12-014",
+      "newPrompt": "Name a food commonly cooked on a barbecue."
+    },
+    {
+      "oldId": "hg8-015",
+      "oldPrompt": "Name a UN member or observer state in the UN’s South-eastern Asia group.",
+      "newId": "hg12-015",
+      "newPrompt": "Name a type of bread."
+    },
+    {
+      "oldId": "hg8-016",
+      "oldPrompt": "Name a European Union member country at the end of 2025.",
+      "newId": "hg12-016",
+      "newPrompt": "Name a food commonly dipped in a sauce."
+    },
+    {
+      "oldId": "hg8-017",
+      "oldPrompt": "Name a NATO member country at the end of 2025.",
+      "newId": "hg12-017",
+      "newPrompt": "Name a food people commonly sprinkle on a pizza."
+    },
+    {
+      "oldId": "hg8-018",
+      "oldPrompt": "Name a Commonwealth member country at the end of 2025.",
+      "newId": "hg12-018",
+      "newPrompt": "Name a dessert commonly served in a bowl or glass."
+    },
+    {
+      "oldId": "hg8-019",
+      "oldPrompt": "Name a national G20 member at the end of 2025.",
+      "newId": "hg12-019",
+      "newPrompt": "Name a food commonly sold dried."
+    },
+    {
+      "oldId": "hg8-020",
+      "oldPrompt": "Name an ASEAN member country at the end of 2025.",
+      "newId": "hg12-020",
+      "newPrompt": "Name a food commonly found in a tin or can."
+    },
+    {
+      "oldId": "hg8-021",
+      "oldPrompt": "Name an OECD member country at the end of 2025.",
+      "newId": "hg12-021",
+      "newPrompt": "Name a herb commonly used in cooking."
+    },
+    {
+      "oldId": "hg8-022",
+      "oldPrompt": "Name a euro-area member country at the end of 2025.",
+      "newId": "hg12-022",
+      "newPrompt": "Name a food commonly served with a roast dinner."
+    },
+    {
+      "oldId": "hg8-023",
+      "oldPrompt": "Name a Commonwealth realm with Charles III as monarch at the end of 2025.",
+      "newId": "hg12-023",
+      "newPrompt": "Name a food commonly eaten at a cinema."
+    },
+    {
+      "oldId": "hg8-024",
+      "oldPrompt": "Name a currency in the current ISO 4217 currency register.",
+      "newId": "hg12-024",
+      "newPrompt": "Name an ingredient commonly used in baking a cake."
+    },
+    {
+      "oldId": "hg8-025",
+      "oldPrompt": "Name a US state.",
+      "newId": "hg12-025",
+      "newPrompt": "Name an animal that lays eggs."
+    },
+    {
+      "oldId": "hg8-026",
+      "oldPrompt": "Name a Canadian province or territory.",
+      "newId": "hg12-026",
+      "newPrompt": "Name an animal that eats both plants and animals."
+    },
+    {
+      "oldId": "hg8-027",
+      "oldPrompt": "Name a German federal state.",
+      "newId": "hg12-027",
+      "newPrompt": "Name an animal that can live in fresh water."
+    },
+    {
+      "oldId": "hg8-028",
+      "oldPrompt": "Name a Swiss canton.",
+      "newId": "hg12-028",
+      "newPrompt": "Name an animal with a shell or hard outer covering."
+    },
+    {
+      "oldId": "hg8-029",
+      "oldPrompt": "Name an Italian region.",
+      "newId": "hg12-029",
+      "newPrompt": "Name an animal that people keep as a pet."
+    },
+    {
+      "oldId": "hg8-030",
+      "oldPrompt": "Name a Spanish autonomous community or autonomous city.",
+      "newId": "hg12-030",
+      "newPrompt": "Name an animal commonly associated with Australia."
+    },
+    {
+      "oldId": "hg8-031",
+      "oldPrompt": "Name a Brazilian state or its Federal District.",
+      "newId": "hg12-031",
+      "newPrompt": "Name an animal whose English name contains a double letter."
+    },
+    {
+      "oldId": "hg8-032",
+      "oldPrompt": "Name an Indian state or union territory.",
+      "newId": "hg12-032",
+      "newPrompt": "Name an animal name that is also an English verb."
+    },
+    {
+      "oldId": "hg8-033",
+      "oldPrompt": "Name a Japanese prefecture.",
+      "newId": "hg12-033",
+      "newPrompt": "Name an animal that commonly lives in a group."
+    },
+    {
+      "oldId": "hg8-034",
+      "oldPrompt": "Name an Indonesian province or province-level special region.",
+      "newId": "hg12-034",
+      "newPrompt": "Name an animal that can swim."
+    },
+    {
+      "oldId": "hg8-035",
+      "oldPrompt": "Name a Malaysian state or federal territory.",
+      "newId": "hg12-035",
+      "newPrompt": "Name an animal that can fly under its own power."
+    },
+    {
+      "oldId": "hg8-036",
+      "oldPrompt": "Name an Argentine province or its autonomous capital city.",
+      "newId": "hg12-036",
+      "newPrompt": "Name an animal with stripes."
+    },
+    {
+      "oldId": "hg8-037",
+      "oldPrompt": "Name a South Korean first-level province or special/metropolitan city.",
+      "newId": "hg12-037",
+      "newPrompt": "Name an animal with a long tail."
+    },
+    {
+      "oldId": "hg8-038",
+      "oldPrompt": "Name a Chilean region.",
+      "newId": "hg12-038",
+      "newPrompt": "Name a tree people commonly grow in a garden or park."
+    },
+    {
+      "oldId": "hg8-039",
+      "oldPrompt": "Name a Mexican federal entity.",
+      "newId": "hg12-039",
+      "newPrompt": "Name a flower commonly sold by florists."
+    },
+    {
+      "oldId": "hg8-040",
+      "oldPrompt": "Name a province of the Netherlands.",
+      "newId": "hg12-040",
+      "newPrompt": "Name a plant people commonly grow indoors."
+    },
+    {
+      "oldId": "hg8-041",
+      "oldPrompt": "Name a New Zealand region.",
+      "newId": "hg12-041",
+      "newPrompt": "Name something a plant needs or uses to grow."
+    },
+    {
+      "oldId": "hg8-042",
+      "oldPrompt": "Name an Australian state or internal/external territory.",
+      "newId": "hg12-042",
+      "newPrompt": "Name a natural material people use to make things."
+    },
+    {
+      "oldId": "hg8-043",
+      "oldPrompt": "Name a US state capital.",
+      "newId": "hg12-043",
+      "newPrompt": "Name a fruit that grows on a tree."
+    },
+    {
+      "oldId": "hg8-044",
+      "oldPrompt": "Name one of England’s 48 ceremonial counties.",
+      "newId": "hg12-044",
+      "newPrompt": "Name an animal people commonly see on a farm."
+    },
+    {
+      "oldId": "hg8-045",
+      "oldPrompt": "Name one of Ireland’s traditional 32 counties.",
+      "newId": "hg12-045",
+      "newPrompt": "Name an animal that lives in or uses a burrow."
+    },
+    {
+      "oldId": "hg8-046",
+      "oldPrompt": "Name one of France’s 18 metropolitan or overseas regions.",
+      "newId": "hg12-046",
+      "newPrompt": "Name a sea animal with no backbone."
+    },
+    {
+      "oldId": "hg8-047",
+      "oldPrompt": "Name a London Underground station.",
+      "newId": "hg12-047",
+      "newPrompt": "Name something people can hear in a forest."
+    },
+    {
+      "oldId": "hg8-048",
+      "oldPrompt": "Name a Paris Metro station opened by the end of 2025.",
+      "newId": "hg12-048",
+      "newPrompt": "Name a place where wild animals make their homes."
+    },
+    {
+      "oldId": "hg8-049",
+      "oldPrompt": "Name a real animal explicitly represented by a Unicode 16.0 animal emoji.",
+      "newId": "hg12-049",
+      "newPrompt": "Name something you can measure about the human body."
+    },
+    {
+      "oldId": "hg8-050",
+      "oldPrompt": "Name a real mammal explicitly represented by a Unicode 16.0 animal emoji.",
+      "newId": "hg12-050",
+      "newPrompt": "Name a body part that normally comes in a pair."
+    },
+    {
+      "oldId": "hg8-051",
+      "oldPrompt": "Name a real bird explicitly represented by a Unicode 16.0 animal emoji.",
+      "newId": "hg12-051",
+      "newPrompt": "Name something people wear on their head."
+    },
+    {
+      "oldId": "hg8-052",
+      "oldPrompt": "Name an invertebrate explicitly represented by a Unicode 16.0 animal emoji.",
+      "newId": "hg12-052",
+      "newPrompt": "Name something people do to relax."
+    },
+    {
+      "oldId": "hg8-053",
+      "oldPrompt": "Name an emoji in Unicode 16.0’s Food & Drink group.",
+      "newId": "hg12-053",
+      "newPrompt": "Name something people do while waiting in a queue."
+    },
+    {
+      "oldId": "hg8-054",
+      "oldPrompt": "Name an emoji in Unicode 16.0’s fruit or vegetable groups.",
+      "newId": "hg12-054",
+      "newPrompt": "Name something people collect as a hobby."
+    },
+    {
+      "oldId": "hg8-055",
+      "oldPrompt": "Name an emoji in Unicode 16.0’s drinks group.",
+      "newId": "hg12-055",
+      "newPrompt": "Name a job that commonly involves wearing a uniform."
+    },
+    {
+      "oldId": "hg8-056",
+      "oldPrompt": "Name an emoji in Unicode 16.0’s sweets group.",
+      "newId": "hg12-056",
+      "newPrompt": "Name a job that involves working outdoors."
+    },
+    {
+      "oldId": "hg8-057",
+      "oldPrompt": "Name one of the 118 officially named chemical elements.",
+      "newId": "hg12-057",
+      "newPrompt": "Name something people do before going to bed."
+    },
+    {
+      "oldId": "hg8-058",
+      "oldPrompt": "Name a Solar System planet or an officially recognised dwarf planet.",
+      "newId": "hg12-058",
+      "newPrompt": "Name something people do when they wake up."
+    },
+    {
+      "oldId": "hg8-059",
+      "oldPrompt": "Name one of the 88 official constellations.",
+      "newId": "hg12-059",
+      "newPrompt": "Name something people might do at a wedding."
+    },
+    {
+      "oldId": "hg8-060",
+      "oldPrompt": "Name a person who walked on the Moon during the Apollo missions.",
+      "newId": "hg12-060",
+      "newPrompt": "Name a reason someone might celebrate."
+    },
+    {
+      "oldId": "hg8-061",
+      "oldPrompt": "Name an SI base unit or an SI derived unit with a special name.",
+      "newId": "hg12-061",
+      "newPrompt": "Name something people do to exercise."
+    },
+    {
+      "oldId": "hg8-062",
+      "oldPrompt": "Name an official SI prefix.",
+      "newId": "hg12-062",
+      "newPrompt": "Name a job that involves helping sick or injured people."
+    },
+    {
+      "oldId": "hg8-063",
+      "oldPrompt": "Name one of the thirteen essential human vitamins.",
+      "newId": "hg12-063",
+      "newPrompt": "Name something people might volunteer to do."
+    },
+    {
+      "oldId": "hg8-064",
+      "oldPrompt": "Name a bone type in the adult human skull.",
+      "newId": "hg12-064",
+      "newPrompt": "Name something a person might learn in a class."
+    },
+    {
+      "oldId": "hg8-065",
+      "oldPrompt": "Name a human organ system in the standard eleven-system model.",
+      "newId": "hg12-065",
+      "newPrompt": "Name something people do with their hands to communicate."
+    },
+    {
+      "oldId": "hg8-066",
+      "oldPrompt": "Name one of the ten main cloud types.",
+      "newId": "hg12-066",
+      "newPrompt": "Name an emotion or feeling people can have."
+    },
+    {
+      "oldId": "hg8-067",
+      "oldPrompt": "Name a wind description on the Beaufort scale.",
+      "newId": "hg12-067",
+      "newPrompt": "Name something people might be afraid of."
+    },
+    {
+      "oldId": "hg8-068",
+      "oldPrompt": "Name a gemstone on the modern US birthstone list.",
+      "newId": "hg12-068",
+      "newPrompt": "Name something people do to help a friend."
+    },
+    {
+      "oldId": "hg8-069",
+      "oldPrompt": "Name a US National Park designated by the end of 2025.",
+      "newId": "hg12-069",
+      "newPrompt": "Name something people might put on a job application."
+    },
+    {
+      "oldId": "hg8-070",
+      "oldPrompt": "Name one of the UK’s national parks at the end of 2025.",
+      "newId": "hg12-070",
+      "newPrompt": "Name a job that involves making or repairing things."
+    },
+    {
+      "oldId": "hg8-071",
+      "oldPrompt": "Name one of New Zealand’s thirteen national parks.",
+      "newId": "hg12-071",
+      "newPrompt": "Name something a baby learns to do."
+    },
+    {
+      "oldId": "hg8-072",
+      "oldPrompt": "Name a dinosaur genus shown alive in the original Jurassic Park trilogy.",
+      "newId": "hg12-072",
+      "newPrompt": "Name something people do to stay clean."
+    },
+    {
+      "oldId": "hg8-073",
+      "oldPrompt": "Name a card in a standard 52-card deck, including its suit.",
+      "newId": "hg12-073",
+      "newPrompt": "Name something you might find in a kitchen drawer."
+    },
+    {
+      "oldId": "hg8-074",
+      "oldPrompt": "Name a chess piece type together with its colour.",
+      "newId": "hg12-074",
+      "newPrompt": "Name something people commonly lose."
+    },
+    {
+      "oldId": "hg8-075",
+      "oldPrompt": "Name a square on a standard chessboard using algebraic notation.",
+      "newId": "hg12-075",
+      "newPrompt": "Name something people carry in a pocket."
+    },
+    {
+      "oldId": "hg8-076",
+      "oldPrompt": "Name a card type in the classic 108-card UNO deck.",
+      "newId": "hg12-076",
+      "newPrompt": "Name something people put on a wall."
+    },
+    {
+      "oldId": "hg8-077",
+      "oldPrompt": "Name a tile in a standard double-six domino set.",
+      "newId": "hg12-077",
+      "newPrompt": "Name something that can be opened and closed."
+    },
+    {
+      "oldId": "hg8-078",
+      "oldPrompt": "Name a number on a standard American double-zero roulette wheel.",
+      "newId": "hg12-078",
+      "newPrompt": "Name something powered by batteries."
+    },
+    {
+      "oldId": "hg8-079",
+      "oldPrompt": "Name a square name on the classic London-edition Monopoly board.",
+      "newId": "hg12-079",
+      "newPrompt": "Name something people use to clean a home."
+    },
+    {
+      "oldId": "hg8-080",
+      "oldPrompt": "Name a square name on the classic US Monopoly board.",
+      "newId": "hg12-080",
+      "newPrompt": "Name something people keep in a bathroom."
+    },
+    {
+      "oldId": "hg8-081",
+      "oldPrompt": "Name a suspect, weapon or room in classic Cluedo.",
+      "newId": "hg12-081",
+      "newPrompt": "Name something people keep in a bedroom."
+    },
+    {
+      "oldId": "hg8-082",
+      "oldPrompt": "Name one of the original 151 Pokemon species.",
+      "newId": "hg12-082",
+      "newPrompt": "Name something people might keep in a shed or garage."
+    },
+    {
+      "oldId": "hg8-083",
+      "oldPrompt": "Name an official Pokemon battle type.",
+      "newId": "hg12-083",
+      "newPrompt": "Name a household object made partly or wholly of glass."
+    },
+    {
+      "oldId": "hg8-084",
+      "oldPrompt": "Name an initial partner Pokemon offered in the core RPG games through 2022.",
+      "newId": "hg12-084",
+      "newPrompt": "Name something people put in a freezer."
+    },
+    {
+      "oldId": "hg8-085",
+      "oldPrompt": "Name a playable fighter in the original 1999 Super Smash Bros.",
+      "newId": "hg12-085",
+      "newPrompt": "Name something people use to cook food."
+    },
+    {
+      "oldId": "hg8-086",
+      "oldPrompt": "Name a playable character in Mario Kart Wii.",
+      "newId": "hg12-086",
+      "newPrompt": "Name something people use when doing laundry."
+    },
+    {
+      "oldId": "hg8-087",
+      "oldPrompt": "Name a villager species in Animal Crossing: New Horizons.",
+      "newId": "hg12-087",
+      "newPrompt": "Name something people use to fix things around the home."
+    },
+    {
+      "oldId": "hg8-088",
+      "oldPrompt": "Name a biome in vanilla Minecraft Java Edition 1.21.4.",
+      "newId": "hg12-088",
+      "newPrompt": "Name something that makes a home more comfortable in hot weather."
+    },
+    {
+      "oldId": "hg8-089",
+      "oldPrompt": "Name a wood set in Minecraft Java Edition 1.21.4.",
+      "newId": "hg12-089",
+      "newPrompt": "Name something people use to store food."
+    },
+    {
+      "oldId": "hg8-090",
+      "oldPrompt": "Name a standard dye or wool colour in Minecraft.",
+      "newId": "hg12-090",
+      "newPrompt": "Name something you might find on a dining table."
+    },
+    {
+      "oldId": "hg8-091",
+      "oldPrompt": "Name a selectable fighter in Street Fighter II Turbo: Hyper Fighting.",
+      "newId": "hg12-091",
+      "newPrompt": "Name something people might use during a power cut."
+    },
+    {
+      "oldId": "hg8-092",
+      "oldPrompt": "Name a selectable fighter in the original Mortal Kombat II.",
+      "newId": "hg12-092",
+      "newPrompt": "Name something people might put beside their front door."
+    },
+    {
+      "oldId": "hg8-093",
+      "oldPrompt": "Name a territory on the classic 42-territory Risk world map.",
+      "newId": "hg12-093",
+      "newPrompt": "Name something people use to decorate a home for a celebration."
+    },
+    {
+      "oldId": "hg8-094",
+      "oldPrompt": "Name a destination city on the original Ticket to Ride USA board.",
+      "newId": "hg12-094",
+      "newPrompt": "Name something people can recycle through an appropriate collection service."
+    },
+    {
+      "oldId": "hg8-095",
+      "oldPrompt": "Name a playable racer in the original 1999 Crash Team Racing.",
+      "newId": "hg12-095",
+      "newPrompt": "Name something people use to keep a home secure."
+    },
+    {
+      "oldId": "hg8-096",
+      "oldPrompt": "Name a playable fighter in Super Smash Bros. Ultimate’s base game.",
+      "newId": "hg12-096",
+      "newPrompt": "Name something that needs to be replaced regularly in a home."
+    },
+    {
+      "oldId": "hg8-097",
+      "oldPrompt": "Name a letter of the modern English alphabet.",
+      "newId": "hg12-097",
+      "newPrompt": "Name a country with a coastline."
+    },
+    {
+      "oldId": "hg8-098",
+      "oldPrompt": "Name a letter of the standard Greek alphabet.",
+      "newId": "hg12-098",
+      "newPrompt": "Name a country whose common English name contains the letter I."
+    },
+    {
+      "oldId": "hg8-099",
+      "oldPrompt": "Name a word in the NATO spelling alphabet.",
+      "newId": "hg12-099",
+      "newPrompt": "Name a country in Europe."
+    },
+    {
+      "oldId": "hg8-100",
+      "oldPrompt": "Name an English Scrabble letter tile worth more than one point.",
+      "newId": "hg12-100",
+      "newPrompt": "Name a city that has hosted the Summer or Winter Olympics."
+    },
+    {
+      "oldId": "hg8-101",
+      "oldPrompt": "Give a standard Roman numeral for a whole number from 1 to 20.",
+      "newId": "hg12-101",
+      "newPrompt": "Name something people travel to another country to see."
+    },
+    {
+      "oldId": "hg8-102",
+      "oldPrompt": "Name a prime number smaller than 100.",
+      "newId": "hg12-102",
+      "newPrompt": "Name a form of transport that carries passengers."
+    },
+    {
+      "oldId": "hg8-103",
+      "oldPrompt": "Name a US state whose standard English name has two words.",
+      "newId": "hg12-103",
+      "newPrompt": "Name something people pack for an overnight trip."
+    },
+    {
+      "oldId": "hg8-104",
+      "oldPrompt": "Name a US state whose standard English name ends in A.",
+      "newId": "hg12-104",
+      "newPrompt": "Name something you might find in a hotel room."
+    },
+    {
+      "oldId": "hg8-105",
+      "oldPrompt": "Name a UN member or observer state whose common English name contains I.",
+      "newId": "hg12-105",
+      "newPrompt": "Name something people do at an airport."
+    },
+    {
+      "oldId": "hg8-106",
+      "oldPrompt": "Name a UN member or observer state whose common English name starts with A or B.",
+      "newId": "hg12-106",
+      "newPrompt": "Name something people might buy as a souvenir."
+    },
+    {
+      "oldId": "hg8-107",
+      "oldPrompt": "Name a UN member or observer state whose common English name ends in A.",
+      "newId": "hg12-107",
+      "newPrompt": "Name a place people might stay on holiday."
+    },
+    {
+      "oldId": "hg8-108",
+      "oldPrompt": "Name a UN member or observer state with a six-letter common English name.",
+      "newId": "hg12-108",
+      "newPrompt": "Name something people check before setting off on a long car journey."
+    },
+    {
+      "oldId": "hg8-109",
+      "oldPrompt": "Name an element with a one-letter chemical symbol.",
+      "newId": "hg12-109",
+      "newPrompt": "Name a place tourists commonly visit in a city."
+    },
+    {
+      "oldId": "hg8-110",
+      "oldPrompt": "Name an element whose official chemical symbol starts with C.",
+      "newId": "hg12-110",
+      "newPrompt": "Name something you might see from a train window."
+    },
+    {
+      "oldId": "hg8-111",
+      "oldPrompt": "Name an element whose standard English name starts with C or S.",
+      "newId": "hg12-111",
+      "newPrompt": "Name something you might do on a camping holiday."
+    },
+    {
+      "oldId": "hg8-112",
+      "oldPrompt": "Name a standard CSS colour with a keyword containing BLUE.",
+      "newId": "hg12-112",
+      "newPrompt": "Name a famous landmark built by people."
+    },
+    {
+      "oldId": "hg8-113",
+      "oldPrompt": "Name a standard CSS colour with a keyword containing GREEN.",
+      "newId": "hg12-113",
+      "newPrompt": "Name a country commonly associated with skiing."
+    },
+    {
+      "oldId": "hg8-114",
+      "oldPrompt": "Name a standard CSS colour with a keyword starting with LIGHT.",
+      "newId": "hg12-114",
+      "newPrompt": "Name an island or island group people visit on holiday."
+    },
+    {
+      "oldId": "hg8-115",
+      "oldPrompt": "Name a standard named CSS web colour.",
+      "newId": "hg12-115",
+      "newPrompt": "Name a reason people might travel abroad."
+    },
+    {
+      "oldId": "hg8-116",
+      "oldPrompt": "Name a pitch class in the twelve-note chromatic scale.",
+      "newId": "hg12-116",
+      "newPrompt": "Name something you might see at a harbour."
+    },
+    {
+      "oldId": "hg8-117",
+      "oldPrompt": "Name a specially named SI unit that honours a person.",
+      "newId": "hg12-117",
+      "newPrompt": "Name a language spoken by millions of people."
+    },
+    {
+      "oldId": "hg8-118",
+      "oldPrompt": "Give the two-letter ISO country code of an EU member at the end of 2025.",
+      "newId": "hg12-118",
+      "newPrompt": "Name something people might do on a cruise ship."
+    },
+    {
+      "oldId": "hg8-119",
+      "oldPrompt": "Name a NATO spelling-alphabet word containing O.",
+      "newId": "hg12-119",
+      "newPrompt": "Name an item people might use to find their way."
+    },
+    {
+      "oldId": "hg8-120",
+      "oldPrompt": "Name a playing-card rank or suit whose English word has at least four letters.",
+      "newId": "hg12-120",
+      "newPrompt": "Name something you might find at a railway station."
+    },
+    {
+      "oldId": "hg8-121",
+      "oldPrompt": "Name an AFL club in the 2025 premiership season.",
+      "newId": "hg12-121",
+      "newPrompt": "Name a sport played with a ball."
+    },
+    {
+      "oldId": "hg8-122",
+      "oldPrompt": "Name an NRL club in the 2025 premiership season.",
+      "newId": "hg12-122",
+      "newPrompt": "Name a sport or game played with a net."
+    },
+    {
+      "oldId": "hg8-123",
+      "oldPrompt": "Name an NBA team in the 2024–25 season.",
+      "newId": "hg12-123",
+      "newPrompt": "Name a board or card game played against other people."
+    },
+    {
+      "oldId": "hg8-124",
+      "oldPrompt": "Name an NFL team in the 2025 season.",
+      "newId": "hg12-124",
+      "newPrompt": "Name something people take to the beach."
+    },
+    {
+      "oldId": "hg8-125",
+      "oldPrompt": "Name an NHL team in the 2024–25 season.",
+      "newId": "hg12-125",
+      "newPrompt": "Name something you might find in a children's playground."
+    },
+    {
+      "oldId": "hg8-126",
+      "oldPrompt": "Name an MLB team in the 2025 season.",
+      "newId": "hg12-126",
+      "newPrompt": "Name a game children play without a board or screen."
+    },
+    {
+      "oldId": "hg8-127",
+      "oldPrompt": "Name a WNBA team in the 2025 season.",
+      "newId": "hg12-127",
+      "newPrompt": "Name a piece of equipment people use at a gym."
+    },
+    {
+      "oldId": "hg8-128",
+      "oldPrompt": "Name a club in the 2025–26 English Premier League.",
+      "newId": "hg12-128",
+      "newPrompt": "Name something a referee or umpire might use."
+    },
+    {
+      "oldId": "hg8-129",
+      "oldPrompt": "Name a club in the 2025–26 Spanish La Liga.",
+      "newId": "hg12-129",
+      "newPrompt": "Name a sport people can do in water."
+    },
+    {
+      "oldId": "hg8-130",
+      "oldPrompt": "Name a club in the 2025–26 Italian Serie A.",
+      "newId": "hg12-130",
+      "newPrompt": "Name a sport people can do on snow or ice."
+    },
+    {
+      "oldId": "hg8-131",
+      "oldPrompt": "Name a club in the 2025–26 German Bundesliga.",
+      "newId": "hg12-131",
+      "newPrompt": "Name something people might do at a funfair or theme park."
+    },
+    {
+      "oldId": "hg8-132",
+      "oldPrompt": "Name a club in the 2025–26 French Ligue 1.",
+      "newId": "hg12-132",
+      "newPrompt": "Name something people use when fishing."
+    },
+    {
+      "oldId": "hg8-133",
+      "oldPrompt": "Name a club in the 2025–26 Scottish Premiership.",
+      "newId": "hg12-133",
+      "newPrompt": "Name a sport that uses a bat, racket, club or stick."
+    },
+    {
+      "oldId": "hg8-134",
+      "oldPrompt": "Name a club in the 2024–25 A-League Men season.",
+      "newId": "hg12-134",
+      "newPrompt": "Name something you might see at a sports stadium."
+    },
+    {
+      "oldId": "hg8-135",
+      "oldPrompt": "Name an ICC full-member cricket side at the end of 2025.",
+      "newId": "hg12-135",
+      "newPrompt": "Name something people might do at a picnic."
+    },
+    {
+      "oldId": "hg8-136",
+      "oldPrompt": "Name a team in the 2025 Super Rugby Pacific season.",
+      "newId": "hg12-136",
+      "newPrompt": "Name a toy that does not need batteries."
+    },
+    {
+      "oldId": "hg8-137",
+      "oldPrompt": "Name a Formula One constructor competing in the 2025 season.",
+      "newId": "hg12-137",
+      "newPrompt": "Name a video game or video game series."
+    },
+    {
+      "oldId": "hg8-138",
+      "oldPrompt": "Name a driver who started a Formula One Grand Prix in the 2025 season.",
+      "newId": "hg12-138",
+      "newPrompt": "Name something used when playing cricket."
+    },
+    {
+      "oldId": "hg8-139",
+      "oldPrompt": "Name a Grand Prix on the 2024 Formula One race calendar.",
+      "newId": "hg12-139",
+      "newPrompt": "Name a game people play at a party."
+    },
+    {
+      "oldId": "hg8-140",
+      "oldPrompt": "Name a standard named position in fifteen-a-side rugby union.",
+      "newId": "hg12-140",
+      "newPrompt": "Name something people use when riding a bicycle."
+    },
+    {
+      "oldId": "hg8-141",
+      "oldPrompt": "Name a standard baseball fielding position or the designated hitter.",
+      "newId": "hg12-141",
+      "newPrompt": "Name a sport with races."
+    },
+    {
+      "oldId": "hg8-142",
+      "oldPrompt": "Name a way a batter can be dismissed under the modern Laws of Cricket.",
+      "newId": "hg12-142",
+      "newPrompt": "Name something people might build for fun."
+    },
+    {
+      "oldId": "hg8-143",
+      "oldPrompt": "Name one of the thirty-two sports on the Paris 2024 Olympic programme.",
+      "newId": "hg12-143",
+      "newPrompt": "Name an activity people do at a leisure centre."
+    },
+    {
+      "oldId": "hg8-144",
+      "oldPrompt": "Name a discipline on the Milano Cortina 2026 Winter Olympic programme.",
+      "newId": "hg12-144",
+      "newPrompt": "Name something spectators might do at a sporting event."
+    },
+    {
+      "oldId": "hg8-145",
+      "oldPrompt": "Name an item of clothing or an accessory represented by an emoji.",
+      "newId": "hg12-145",
+      "newPrompt": "Name a fictional character who wears a hat."
+    },
+    {
+      "oldId": "hg8-146",
+      "oldPrompt": "Name a household item represented by an emoji.",
+      "newId": "hg12-146",
+      "newPrompt": "Name a fictional character who is an animal."
+    },
+    {
+      "oldId": "hg8-147",
+      "oldPrompt": "Name a tool or piece of hardware represented by an emoji.",
+      "newId": "hg12-147",
+      "newPrompt": "Name a superhero who has appeared in a film."
+    },
+    {
+      "oldId": "hg8-148",
+      "oldPrompt": "Name a type of building represented by an emoji.",
+      "newId": "hg12-148",
+      "newPrompt": "Name an animated film that features human characters."
+    },
+    {
+      "oldId": "hg8-149",
+      "oldPrompt": "Name a land vehicle or railway feature represented by an emoji.",
+      "newId": "hg12-149",
+      "newPrompt": "Name a musical instrument commonly played using both hands."
+    },
+    {
+      "oldId": "hg8-150",
+      "oldPrompt": "Name an aircraft, watercraft or aerial transport represented by an emoji.",
+      "newId": "hg12-150",
+      "newPrompt": "Name something an artist might use to make a picture."
+    },
+    {
+      "oldId": "hg8-151",
+      "oldPrompt": "Name a flower or flower arrangement represented by an emoji.",
+      "newId": "hg12-151",
+      "newPrompt": "Name a type of dance."
+    },
+    {
+      "oldId": "hg8-152",
+      "oldPrompt": "Name a plant, leaf or fungus represented by an emoji.",
+      "newId": "hg12-152",
+      "newPrompt": "Name something people might see on a theatre stage."
+    },
+    {
+      "oldId": "hg8-153",
+      "oldPrompt": "Name a sport or piece of sporting equipment represented by an emoji.",
+      "newId": "hg12-153",
+      "newPrompt": "Name a kind of story people read or watch."
+    },
+    {
+      "oldId": "hg8-154",
+      "oldPrompt": "Name a toy or game-related object represented by an emoji.",
+      "newId": "hg12-154",
+      "newPrompt": "Name a famous fictional detective."
+    },
+    {
+      "oldId": "hg8-155",
+      "oldPrompt": "Name headwear or footwear represented by an emoji.",
+      "newId": "hg12-155",
+      "newPrompt": "Name something commonly seen in a fairy tale."
+    },
+    {
+      "oldId": "hg8-156",
+      "oldPrompt": "Name an office supply or desk item represented by an emoji.",
+      "newId": "hg12-156",
+      "newPrompt": "Name a fictional character known for using magic."
+    },
+    {
+      "oldId": "hg8-157",
+      "oldPrompt": "Name a computer or telephone-related object represented by an emoji.",
+      "newId": "hg12-157",
+      "newPrompt": "Name something involved in making a film."
+    },
+    {
+      "oldId": "hg8-158",
+      "oldPrompt": "Name a camera, film or lighting object represented by an emoji.",
+      "newId": "hg12-158",
+      "newPrompt": "Name a sound a person can make."
+    },
+    {
+      "oldId": "hg8-159",
+      "oldPrompt": "Name a writing, reading or paper item represented by an emoji.",
+      "newId": "hg12-159",
+      "newPrompt": "Name a style of music."
+    },
+    {
+      "oldId": "hg8-160",
+      "oldPrompt": "Name a sound or music-related object represented by an emoji, excluding instruments.",
+      "newId": "hg12-160",
+      "newPrompt": "Name something people do at a concert."
+    },
+    {
+      "oldId": "hg8-161",
+      "oldPrompt": "Name a sky or weather symbol represented by an emoji.",
+      "newId": "hg12-161",
+      "newPrompt": "Name a place where people might perform music."
+    },
+    {
+      "oldId": "hg8-162",
+      "oldPrompt": "Name a hand gesture represented by an emoji.",
+      "newId": "hg12-162",
+      "newPrompt": "Name something a person might knit or sew."
+    },
+    {
+      "oldId": "hg8-163",
+      "oldPrompt": "Name a job or role represented by an emoji.",
+      "newId": "hg12-163",
+      "newPrompt": "Name something commonly found in a library."
+    },
+    {
+      "oldId": "hg8-164",
+      "oldPrompt": "Name a fruit represented by a fruit emoji.",
+      "newId": "hg12-164",
+      "newPrompt": "Name a type of television programme."
+    },
+    {
+      "oldId": "hg8-165",
+      "oldPrompt": "Name a culinary vegetable represented by an emoji.",
+      "newId": "hg12-165",
+      "newPrompt": "Name something people might photograph on holiday."
+    },
+    {
+      "oldId": "hg8-166",
+      "oldPrompt": "Name a food represented by a prepared-food emoji.",
+      "newId": "hg12-166",
+      "newPrompt": "Name something people use to make music without electricity."
+    },
+    {
+      "oldId": "hg8-167",
+      "oldPrompt": "Name a reptile, amphibian or sea creature represented by an emoji.",
+      "newId": "hg12-167",
+      "newPrompt": "Name a fictional character who is a villain."
+    },
+    {
+      "oldId": "hg8-168",
+      "oldPrompt": "Name an Asian dish or snack represented by an emoji.",
+      "newId": "hg12-168",
+      "newPrompt": "Name something someone might write for other people to read."
+    },
+    {
+      "oldId": "hg8-169",
+      "oldPrompt": "Name a month of the Gregorian calendar.",
+      "newId": "hg12-169",
+      "newPrompt": "Name something commonly sold at a petrol station."
+    },
+    {
+      "oldId": "hg8-170",
+      "oldPrompt": "Name a god counted among the traditional Twelve Olympians.",
+      "newId": "hg12-170",
+      "newPrompt": "Name something commonly shown on a warning sign."
+    },
+    {
+      "oldId": "hg8-171",
+      "oldPrompt": "Name an animal in the twelve-animal Chinese zodiac.",
+      "newId": "hg12-171",
+      "newPrompt": "Name something people associate with good luck."
+    },
+    {
+      "oldId": "hg8-172",
+      "oldPrompt": "Name a sign of the Western zodiac.",
+      "newId": "hg12-172",
+      "newPrompt": "Name something people do on a smartphone."
+    },
+    {
+      "oldId": "hg8-173",
+      "oldPrompt": "Name one of the twenty-two Major Arcana in the Rider-Waite-Smith tarot deck.",
+      "newId": "hg12-173",
+      "newPrompt": "Name something people commonly borrow."
+    },
+    {
+      "oldId": "hg8-174",
+      "oldPrompt": "Name a book in the New Testament.",
+      "newId": "hg12-174",
+      "newPrompt": "Name something people commonly rent."
+    },
+    {
+      "oldId": "hg8-175",
+      "oldPrompt": "Name a book in the 39-book Protestant Old Testament.",
+      "newId": "hg12-175",
+      "newPrompt": "Name something people might need a ticket for."
+    },
+    {
+      "oldId": "hg8-176",
+      "oldPrompt": "Name a nationwide US federal holiday.",
+      "newId": "hg12-176",
+      "newPrompt": "Name something people might keep in a wallet or purse."
+    },
+    {
+      "oldId": "hg8-177",
+      "oldPrompt": "Name a general holiday under the Canada Labour Code.",
+      "newId": "hg12-177",
+      "newPrompt": "Name something people do with paper."
+    },
+    {
+      "oldId": "hg8-178",
+      "oldPrompt": "Name a national New Zealand public holiday in 2025.",
+      "newId": "hg12-178",
+      "newPrompt": "Name something people might insure."
+    },
+    {
+      "oldId": "hg8-179",
+      "oldPrompt": "Name a public holiday observed in Melbourne in 2025.",
+      "newId": "hg12-179",
+      "newPrompt": "Name something a person might book in advance."
+    },
+    {
+      "oldId": "hg8-180",
+      "oldPrompt": "Name one of the United Nations’ seventeen Sustainable Development Goals.",
+      "newId": "hg12-180",
+      "newPrompt": "Name something people might complain about in a restaurant."
+    },
+    {
+      "oldId": "hg8-181",
+      "oldPrompt": "Name a site recognised in the New7Wonders world or nature lists.",
+      "newId": "hg12-181",
+      "newPrompt": "Name something people might do when it rains."
+    },
+    {
+      "oldId": "hg8-182",
+      "oldPrompt": "Name a person on a standard US small-size banknote portrait design since 1928.",
+      "newId": "hg12-182",
+      "newPrompt": "Name something people might forget before leaving home."
+    },
+    {
+      "oldId": "hg8-183",
+      "oldPrompt": "Name a person who served as US president by the end of 2025.",
+      "newId": "hg12-183",
+      "newPrompt": "Name something people might write in a diary or calendar."
+    },
+    {
+      "oldId": "hg8-184",
+      "oldPrompt": "Name a UK prime minister who served at any time from 1945 through 2025.",
+      "newId": "hg12-184",
+      "newPrompt": "Name something people can buy from a vending machine."
+    },
+    {
+      "oldId": "hg8-185",
+      "oldPrompt": "Name a person who served as Australian prime minister by the end of 2025.",
+      "newId": "hg12-185",
+      "newPrompt": "Name something people might send through the post."
+    },
+    {
+      "oldId": "hg8-186",
+      "oldPrompt": "Name a person who served as Canadian prime minister by the end of 2025.",
+      "newId": "hg12-186",
+      "newPrompt": "Name something people might do to save money."
+    },
+    {
+      "oldId": "hg8-187",
+      "oldPrompt": "Name a New Zealand prime minister whose first term began from 1935 through 2025.",
+      "newId": "hg12-187",
+      "newPrompt": "Name something people might queue for."
+    },
+    {
+      "oldId": "hg8-188",
+      "oldPrompt": "Name an English or British monarch after the Norman Conquest, through 2025.",
+      "newId": "hg12-188",
+      "newPrompt": "Name something that can be delivered to your home."
+    },
+    {
+      "oldId": "hg8-189",
+      "oldPrompt": "Name a pope who served at any time from 1903 through 2025.",
+      "newId": "hg12-189",
+      "newPrompt": "Name a place people might have to show identification."
+    },
+    {
+      "oldId": "hg8-190",
+      "oldPrompt": "Name a United Nations Secretary-General, including the initial acting holder.",
+      "newId": "hg12-190",
+      "newPrompt": "Name something people might put on a shopping list."
+    },
+    {
+      "oldId": "hg8-191",
+      "oldPrompt": "Name a Nobel Prize in Peace laureate awarded by the end of 2024.",
+      "newId": "hg12-191",
+      "newPrompt": "Name something people might do on a computer at work."
+    },
+    {
+      "oldId": "hg8-192",
+      "oldPrompt": "Name a Nobel Prize in Literature laureate awarded by the end of 2024.",
+      "newId": "hg12-192",
+      "newPrompt": "Name something people might donate to charity."
+    },
+    {
+      "oldId": "hg8-193",
+      "oldPrompt": "Name a film in Walt Disney Animation Studios’ numbered feature canon, released by 2025.",
+      "newId": "hg12-193",
+      "newPrompt": "Name a common English word beginning with SH."
+    },
+    {
+      "oldId": "hg8-194",
+      "oldPrompt": "Name a Pixar feature film released by the end of 2025.",
+      "newId": "hg12-194",
+      "newPrompt": "Name something people commonly hang up."
+    },
+    {
+      "oldId": "hg8-195",
+      "oldPrompt": "Name a DreamWorks Animation feature film released by the end of 2025.",
+      "newId": "hg12-195",
+      "newPrompt": "Name a common English word containing a silent K."
+    },
+    {
+      "oldId": "hg8-196",
+      "oldPrompt": "Name an Illumination feature film released by the end of 2025.",
+      "newId": "hg12-196",
+      "newPrompt": "Name an English word that rhymes with light."
+    },
+    {
+      "oldId": "hg8-197",
+      "oldPrompt": "Name a feature film produced by Blue Sky Studios.",
+      "newId": "hg12-197",
+      "newPrompt": "Name a food whose English name starts with C."
+    },
+    {
+      "oldId": "hg8-198",
+      "oldPrompt": "Name a film that won the Best Picture Oscar at a ceremony held by the end of 2025.",
+      "newId": "hg12-198",
+      "newPrompt": "Name an animal whose English name starts with B."
+    },
+    {
+      "oldId": "hg8-199",
+      "oldPrompt": "Name a film that won the Best Animated Feature Oscar at a ceremony held by the end of 2025.",
+      "newId": "hg12-199",
+      "newPrompt": "Name an item of clothing whose English name contains the letter T."
+    },
+    {
+      "oldId": "hg8-200",
+      "oldPrompt": "Name a Marvel Cinematic Universe feature film released by the end of 2025.",
+      "newId": "hg12-200",
+      "newPrompt": "Name a job whose English name ends in ER."
+    },
+    {
+      "oldId": "hg8-201",
+      "oldPrompt": "Name a feature-film story in the DC Extended Universe.",
+      "newId": "hg12-201",
+      "newPrompt": "Name something commonly described as round."
+    },
+    {
+      "oldId": "hg8-202",
+      "oldPrompt": "Name a feature film in the Wizarding World released by the end of 2025.",
+      "newId": "hg12-202",
+      "newPrompt": "Name something commonly described as sharp."
+    },
+    {
+      "oldId": "hg8-203",
+      "oldPrompt": "Name a theatrically released Star Wars feature film from 1977 through 2025.",
+      "newId": "hg12-203",
+      "newPrompt": "Name something that stretches."
+    },
+    {
+      "oldId": "hg8-204",
+      "oldPrompt": "Name an Eon-produced James Bond feature film released by the end of 2025.",
+      "newId": "hg12-204",
+      "newPrompt": "Name something that can be transparent."
+    },
+    {
+      "oldId": "hg8-205",
+      "oldPrompt": "Name a theatrically released Star Trek feature film through 2025.",
+      "newId": "hg12-205",
+      "newPrompt": "Name something that melts."
+    },
+    {
+      "oldId": "hg8-206",
+      "oldPrompt": "Name a Fast and Furious franchise feature film released by the end of 2023.",
+      "newId": "hg12-206",
+      "newPrompt": "Name something commonly described as sticky."
+    },
+    {
+      "oldId": "hg8-207",
+      "oldPrompt": "Name a feature film in the Indiana Jones or Jurassic Park/World series through 2025.",
+      "newId": "hg12-207",
+      "newPrompt": "Name something that can be rolled up."
+    },
+    {
+      "oldId": "hg8-208",
+      "oldPrompt": "Name a theatrical Muppets or Sesame Street feature film released by the end of 2025.",
+      "newId": "hg12-208",
+      "newPrompt": "Name something that can be tied."
+    },
+    {
+      "oldId": "hg8-209",
+      "oldPrompt": "Name a feature-length film directed in full by Steven Spielberg, released by 2024.",
+      "newId": "hg12-209",
+      "newPrompt": "Name something commonly described as fragile."
+    },
+    {
+      "oldId": "hg8-210",
+      "oldPrompt": "Name a feature film directed by Christopher Nolan, released by 2024.",
+      "newId": "hg12-210",
+      "newPrompt": "Name something that spins."
+    },
+    {
+      "oldId": "hg8-211",
+      "oldPrompt": "Name a completed feature film directed by Quentin Tarantino, released by 2024.",
+      "newId": "hg12-211",
+      "newPrompt": "Name something that can float on water."
+    },
+    {
+      "oldId": "hg8-212",
+      "oldPrompt": "Name a feature film directed by Tim Burton, released by 2024.",
+      "newId": "hg12-212",
+      "newPrompt": "Name something that commonly comes in a roll."
+    },
+    {
+      "oldId": "hg8-213",
+      "oldPrompt": "Name a feature film directed by Hayao Miyazaki, released by 2024.",
+      "newId": "hg12-213",
+      "newPrompt": "Name something commonly sold in pairs."
+    },
+    {
+      "oldId": "hg8-214",
+      "oldPrompt": "Name a member of Disney’s official Disney Princess line-up at the end of 2025.",
+      "newId": "hg12-214",
+      "newPrompt": "Name something designed to resist water."
+    },
+    {
+      "oldId": "hg8-215",
+      "oldPrompt": "Name a named human member of the Madrigal family depicted in Disney’s Encanto.",
+      "newId": "hg12-215",
+      "newPrompt": "Name something with a handle."
+    },
+    {
+      "oldId": "hg8-216",
+      "oldPrompt": "Name a named emotion character in Inside Out or Inside Out 2.",
+      "newId": "hg12-216",
+      "newPrompt": "Name something with a lid."
+    },
+    {
+      "oldId": "hg8-217",
+      "oldPrompt": "Name a children’s novel or story collection written by Roald Dahl.",
+      "newId": "hg12-217",
+      "newPrompt": "Name something people associate with the sky or weather."
+    },
+    {
+      "oldId": "hg8-218",
+      "oldPrompt": "Name a novel in Terry Pratchett’s Discworld series.",
+      "newId": "hg12-218",
+      "newPrompt": "Name something found in a public park."
+    },
+    {
+      "oldId": "hg8-219",
+      "oldPrompt": "Name one of Hergé’s 24 Tintin albums.",
+      "newId": "hg12-219",
+      "newPrompt": "Name something gardeners use."
+    },
+    {
+      "oldId": "hg8-220",
+      "oldPrompt": "Name a Stephen King novel first published by the end of 2024.",
+      "newId": "hg12-220",
+      "newPrompt": "Name something you might see on a building site."
+    },
+    {
+      "oldId": "hg8-221",
+      "oldPrompt": "Name an original Harry Potter or Chronicles of Narnia novel.",
+      "newId": "hg12-221",
+      "newPrompt": "Name something you might see on a road."
+    },
+    {
+      "oldId": "hg8-222",
+      "oldPrompt": "Name a Charles Dickens novel or one of his five Christmas Books.",
+      "newId": "hg12-222",
+      "newPrompt": "Name something that can damage a building."
+    },
+    {
+      "oldId": "hg8-223",
+      "oldPrompt": "Name a Shakespeare play printed in the 1623 First Folio.",
+      "newId": "hg12-223",
+      "newPrompt": "Name something people use to stay safe in strong sunshine."
+    },
+    {
+      "oldId": "hg8-224",
+      "oldPrompt": "Name an Ian Fleming James Bond novel or Bond short-story collection.",
+      "newId": "hg12-224",
+      "newPrompt": "Name something you might find in a garden pond."
+    },
+    {
+      "oldId": "hg8-225",
+      "oldPrompt": "Name one of Beatrix Potter’s original 23 little books.",
+      "newId": "hg12-225",
+      "newPrompt": "Name something people do to care for a pet."
+    },
+    {
+      "oldId": "hg8-226",
+      "oldPrompt": "Name an act inducted into the Rock & Roll Hall of Fame as a Performer from 1986 to 1995.",
+      "newId": "hg12-226",
+      "newPrompt": "Name something people might see at a zoo."
+    },
+    {
+      "oldId": "hg8-227",
+      "oldPrompt": "Name an act that actually headlined Glastonbury’s Pyramid Stage from 2000 to 2024.",
+      "newId": "hg12-227",
+      "newPrompt": "Name something that can cause a delay to a journey."
+    },
+    {
+      "oldId": "hg8-228",
+      "oldPrompt": "Name a country that competed in the Eurovision Song Contest by the end of 2024.",
+      "newId": "hg12-228",
+      "newPrompt": "Name something people might see at a market stall."
+    },
+    {
+      "oldId": "hg8-229",
+      "oldPrompt": "Name a member of ABBA, the Beatles’ recording line-up, or Queen’s classic four.",
+      "newId": "hg12-229",
+      "newPrompt": "Name a place people might go for a walk."
+    },
+    {
+      "oldId": "hg8-230",
+      "oldPrompt": "Name a recording member of the Spice Girls, One Direction or Destiny’s Child.",
+      "newId": "hg12-230",
+      "newPrompt": "Name something people can see in a rock pool."
+    },
+    {
+      "oldId": "hg8-231",
+      "oldPrompt": "Name a Rolling Stones or Pink Floyd member inducted with the band into the Rock Hall.",
+      "newId": "hg12-231",
+      "newPrompt": "Name something that can make a loud noise outdoors."
+    },
+    {
+      "oldId": "hg8-232",
+      "oldPrompt": "Name an instrument represented in Unicode 16.0’s musical-instrument emoji group.",
+      "newId": "hg12-232",
+      "newPrompt": "Name something people might plant in a vegetable garden."
+    },
+    {
+      "oldId": "hg8-233",
+      "oldPrompt": "Name a billed musical act with its own set at London’s Live 8 concert in 2005.",
+      "newId": "hg12-233",
+      "newPrompt": "Name something seen in a desert."
+    },
+    {
+      "oldId": "hg8-234",
+      "oldPrompt": "Name a credited artist on a Grammy Album of the Year winner awarded through 2024.",
+      "newId": "hg12-234",
+      "newPrompt": "Name something people use to help in an emergency."
+    },
+    {
+      "oldId": "hg8-235",
+      "oldPrompt": "Name a credited artist on a Grammy Record of the Year winner awarded through 2024.",
+      "newId": "hg12-235",
+      "newPrompt": "Name something people might need to buy for a car."
+    },
+    {
+      "oldId": "hg8-236",
+      "oldPrompt": "Name a series that won the Outstanding Comedy Series Emmy from 2000 through 2024.",
+      "newId": "hg12-236",
+      "newPrompt": "Name something people might see on a nature walk."
+    },
+    {
+      "oldId": "hg8-237",
+      "oldPrompt": "Name a series that won the Outstanding Drama Series Emmy from 2000 through 2024.",
+      "newId": "hg12-237",
+      "newPrompt": "Name something that needs water to work or be used properly."
+    },
+    {
+      "oldId": "hg8-238",
+      "oldPrompt": "Name a main series-regular character in Modern Family.",
+      "newId": "hg12-238",
+      "newPrompt": "Name something people use to protect themselves at work."
+    },
+    {
+      "oldId": "hg8-239",
+      "oldPrompt": "Name a main series-regular character in the US version of The Office.",
+      "newId": "hg12-239",
+      "newPrompt": "Name a place where people can see art in public."
+    },
+    {
+      "oldId": "hg8-240",
+      "oldPrompt": "Name a main series-regular character in HBO’s Game of Thrones.",
+      "newId": "hg12-240",
+      "newPrompt": "Name something people might see on a snowy day."
+    }
+  ],
+  "cloudHistoryStress": {
+    "rotationOffsets": 48,
+    "completedDays": 120,
+    "maximumBytes": 1367189,
+    "clientLimitBytes": 1990000
+  },
+  "validation": {
+    "content": "All canonical names and aliases match; every prompt has at least two named familiar anchors rated at most 19. Generated data reproduces byte for byte. No active prompt/scope includes a dated cutoff or specialist roster restriction.",
+    "calendar": "48 nonrepeating sets, five topics per day, all 105 overlap pairs separated on the cyclic calendar, and no early reuse of the 30/31 October accessible sets.",
+    "compatibility": "New and archived snapshots pass actual disposable PostgreSQL score parity and cloud validation; no SQL/schema update. Old November 1 partial Daily preserves questions, picks, draft and deadline; completed zero stays byte-for-byte frozen. Existing symbol, Crash, Rain and pants/jeans recovery regressions pass.",
+    "browser": "Native Daily, Unlimited and retained rounds pass at 320, 390, 768, 1100 and 1440px; ordinary starter guesses, regional names and 2026 films pass actual submission at 390 and 1440px. Updated filters and site smoke checks pass.",
+    "static": "Production build, shipped syntax/reference validation, legal check and content report pass."
+  }
+}

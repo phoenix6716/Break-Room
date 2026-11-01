@@ -1,0 +1,7028 @@
+[
+  {
+    "id": "hg7-001",
+    "prompt": "Name a food commonly eaten for breakfast.",
+    "answers": [
+      {
+        "name": "Eggs",
+        "points": 4,
+        "aliases": [
+          "egg",
+          "scrambled eggs",
+          "fried eggs",
+          "boiled eggs",
+          "poached eggs",
+          "scrambled egg",
+          "fried egg",
+          "boiled egg",
+          "poached egg"
+        ]
+      },
+      {
+        "name": "Yoghurt",
+        "points": 19,
+        "aliases": [
+          "yogurt",
+          "greek yoghurt",
+          "greek yogurt",
+          "yoghurts"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-002",
+    "prompt": "Name a food that can be served either hot or cold.",
+    "answers": [
+      {
+        "name": "Pizza",
+        "points": 1,
+        "aliases": [
+          "pizza slice",
+          "slice of pizza",
+          "pizzas"
+        ]
+      },
+      {
+        "name": "Pasta",
+        "points": 11,
+        "aliases": [
+          "pasta salad",
+          "pastas"
+        ]
+      },
+      {
+        "name": "Rice",
+        "points": 17,
+        "aliases": [
+          "rice salad",
+          "rices"
+        ]
+      },
+      {
+        "name": "Potatoes",
+        "points": 22,
+        "aliases": [
+          "potato",
+          "potatoe"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-003",
+    "prompt": "Name a food commonly sold at a fair or carnival.",
+    "answers": [
+      {
+        "name": "Candy floss",
+        "points": 1,
+        "aliases": [
+          "cotton candy",
+          "fairy floss",
+          "candyfloss",
+          "cottoncandy"
+        ]
+      },
+      {
+        "name": "Hot dog",
+        "points": 12,
+        "aliases": [
+          "hotdog",
+          "hot dogs",
+          "hotdogs"
+        ]
+      },
+      {
+        "name": "Burger",
+        "points": 18,
+        "aliases": [
+          "hamburger",
+          "hamburgers",
+          "burgers"
+        ]
+      },
+      {
+        "name": "Doughnut",
+        "points": 29,
+        "aliases": [
+          "donut",
+          "donuts",
+          "doughnuts"
+        ]
+      },
+      {
+        "name": "Toffee apple",
+        "points": 40,
+        "aliases": [
+          "candy apple",
+          "toffee apples",
+          "candy apples"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-004",
+    "prompt": "Name a food commonly eaten with your hands.",
+    "answers": [
+      {
+        "name": "Sandwich",
+        "points": 1,
+        "aliases": [
+          "sandwiches",
+          "sarnie",
+          "sanga",
+          "sandwich roll"
+        ]
+      },
+      {
+        "name": "Pizza",
+        "points": 6,
+        "aliases": [
+          "pizza slice",
+          "slice of pizza",
+          "pizzas"
+        ]
+      },
+      {
+        "name": "Burger",
+        "points": 10,
+        "aliases": [
+          "hamburger",
+          "cheeseburger",
+          "hamburgers",
+          "burgers"
+        ]
+      },
+      {
+        "name": "Hot dog",
+        "points": 39,
+        "aliases": [
+          "hotdog",
+          "hot dogs",
+          "hotdogs"
+        ]
+      },
+      {
+        "name": "Biscuit",
+        "points": 43,
+        "aliases": [
+          "cookie",
+          "cookies",
+          "biscuits"
+        ]
+      },
+      {
+        "name": "Doughnut",
+        "points": 48,
+        "aliases": [
+          "donut",
+          "donuts",
+          "doughnuts"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-005",
+    "prompt": "Name a food made using potatoes.",
+    "answers": [
+      {
+        "name": "Chips",
+        "points": 1,
+        "aliases": [
+          "fries",
+          "French fries",
+          "hot chips",
+          "french fry",
+          "chip"
+        ]
+      },
+      {
+        "name": "Mashed potatoes",
+        "points": 6,
+        "aliases": [
+          "mash",
+          "mashed potato",
+          "mashed potatoe"
+        ]
+      },
+      {
+        "name": "Baked potato",
+        "points": 26,
+        "aliases": [
+          "jacket potato",
+          "jacket potatoes",
+          "baked potatos"
+        ]
+      },
+      {
+        "name": "Crisps",
+        "points": 31,
+        "aliases": [
+          "potato chips",
+          "potato crisps",
+          "potato chip",
+          "crisp"
+        ]
+      },
+      {
+        "name": "Potato wedges",
+        "points": 60,
+        "aliases": [
+          "wedges",
+          "potato wedge"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-006",
+    "prompt": "Name a food that usually has a filling.",
+    "answers": [
+      {
+        "name": "Pie",
+        "points": 6,
+        "aliases": [
+          "meat pie",
+          "apple pie",
+          "pies"
+        ]
+      },
+      {
+        "name": "Doughnut",
+        "points": 11,
+        "aliases": [
+          "donut",
+          "filled doughnut",
+          "jam doughnut",
+          "jam donut",
+          "cream doughnut",
+          "cream donut",
+          "donuts",
+          "doughnuts"
+        ]
+      },
+      {
+        "name": "Ravioli",
+        "points": 26,
+        "aliases": [
+          "raviolo",
+          "raviolis"
+        ]
+      },
+      {
+        "name": "Pastie",
+        "points": 51,
+        "aliases": [
+          "pasty",
+          "cornish pasty",
+          "pasties"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-007",
+    "prompt": "Name a food commonly served at a birthday party.",
+    "answers": [
+      {
+        "name": "Cake",
+        "points": 1,
+        "aliases": [
+          "birthday cake",
+          "cakes"
+        ]
+      },
+      {
+        "name": "Pizza",
+        "points": 10,
+        "aliases": [
+          "pizza slice",
+          "slice of pizza",
+          "pizzas"
+        ]
+      },
+      {
+        "name": "Sandwiches",
+        "points": 15,
+        "aliases": [
+          "sandwich",
+          "finger sandwiches",
+          "sandwiche"
+        ]
+      },
+      {
+        "name": "Chips",
+        "points": 20,
+        "aliases": [
+          "fries",
+          "French fries",
+          "hot chips",
+          "crisps",
+          "potato chips",
+          "chip"
+        ]
+      },
+      {
+        "name": "Biscuits",
+        "points": 29,
+        "aliases": [
+          "cookies",
+          "cookie",
+          "biscuit"
+        ]
+      },
+      {
+        "name": "Lollies",
+        "points": 58,
+        "aliases": [
+          "sweets",
+          "candy",
+          "sweeties",
+          "lollie",
+          "lolly"
+        ]
+      },
+      {
+        "name": "Doughnuts",
+        "points": 100,
+        "aliases": [
+          "donuts",
+          "donut",
+          "doughnut"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-008",
+    "prompt": "Name an ingredient used to flavour a savoury dish.",
+    "answers": [
+      {
+        "name": "Pepper",
+        "points": 5,
+        "aliases": [
+          "bell pepper",
+          "capsicum",
+          "black pepper",
+          "white pepper",
+          "peppers"
+        ]
+      },
+      {
+        "name": "Garlic",
+        "points": 10,
+        "aliases": [
+          "garlic powder",
+          "garlics"
+        ]
+      },
+      {
+        "name": "Onion",
+        "points": 14,
+        "aliases": [
+          "onion powder",
+          "onions"
+        ]
+      },
+      {
+        "name": "Chilli",
+        "points": 23,
+        "aliases": [
+          "chili",
+          "chile",
+          "chilli pepper",
+          "chili pepper",
+          "chillis"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-009",
+    "prompt": "Name a food commonly pickled.",
+    "answers": [
+      {
+        "name": "Cucumber",
+        "points": 1,
+        "aliases": [
+          "pickles",
+          "pickle",
+          "pickled cucumber",
+          "gherkin",
+          "gherkins",
+          "cucumbers"
+        ]
+      },
+      {
+        "name": "Onion",
+        "points": 6,
+        "aliases": [
+          "pickled onion",
+          "pickled onions",
+          "onions"
+        ]
+      },
+      {
+        "name": "Beetroot",
+        "points": 10,
+        "aliases": [
+          "beet",
+          "beets",
+          "beetroots"
+        ]
+      },
+      {
+        "name": "Chilli",
+        "points": 29,
+        "aliases": [
+          "chili",
+          "chillies",
+          "chilies",
+          "jalapeno",
+          "jalapenos",
+          "chillis"
+        ]
+      },
+      {
+        "name": "Mango",
+        "points": 62,
+        "aliases": [
+          "mangoes",
+          "mangos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-010",
+    "prompt": "Name a drink commonly served over ice.",
+    "answers": [
+      {
+        "name": "Iced tea",
+        "points": 11,
+        "aliases": [
+          "ice tea",
+          "cold tea",
+          "iced teas"
+        ]
+      },
+      {
+        "name": "Iced coffee",
+        "points": 17,
+        "aliases": [
+          "ice coffee",
+          "cold coffee",
+          "iced coffees"
+        ]
+      },
+      {
+        "name": "Water",
+        "points": 22,
+        "aliases": [
+          "iced water",
+          "ice water",
+          "tap water",
+          "waters"
+        ]
+      },
+      {
+        "name": "Whisky",
+        "points": 43,
+        "aliases": [
+          "whiskey",
+          "scotch",
+          "bourbon",
+          "whiskies"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-011",
+    "prompt": "Name a fruit or vegetable commonly used to make jam.",
+    "answers": [
+      {
+        "name": "Mango",
+        "points": 58,
+        "aliases": [
+          "mangoes",
+          "mangos"
+        ]
+      },
+      {
+        "name": "Rhubarb",
+        "points": 76,
+        "aliases": [
+          "rhubarb jam",
+          "rhubarbs"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-012",
+    "prompt": "Name a vegetable people commonly roast.",
+    "answers": [
+      {
+        "name": "Potato",
+        "points": 1,
+        "aliases": [
+          "potatoes",
+          "potatos"
+        ]
+      },
+      {
+        "name": "Sweet potato",
+        "points": 27,
+        "aliases": [
+          "sweet potatoes",
+          "kumara",
+          "sweet potatos"
+        ]
+      },
+      {
+        "name": "Beetroot",
+        "points": 32,
+        "aliases": [
+          "beet",
+          "beets",
+          "beetroots"
+        ]
+      },
+      {
+        "name": "Pepper",
+        "points": 37,
+        "aliases": [
+          "bell pepper",
+          "capsicum",
+          "bell peppers",
+          "capsicums",
+          "peppers"
+        ]
+      },
+      {
+        "name": "Tomato",
+        "points": 74,
+        "aliases": [
+          "tomatoes",
+          "tomatos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-013",
+    "prompt": "Name a food people commonly put on toast.",
+    "answers": [
+      {
+        "name": "Cheese",
+        "points": 27,
+        "aliases": [
+          "cheddar",
+          "cheese spread",
+          "cheeses"
+        ]
+      },
+      {
+        "name": "Egg",
+        "points": 37,
+        "aliases": [
+          "eggs",
+          "fried egg",
+          "fried eggs",
+          "Scrambled eggs",
+          "Poached eggs"
+        ]
+      },
+      {
+        "name": "Vegemite",
+        "points": 48,
+        "aliases": [
+          "vege mite",
+          "vegemites"
+        ]
+      },
+      {
+        "name": "Nutella",
+        "points": 58,
+        "aliases": [
+          "hazelnut spread",
+          "Chocolate spread",
+          "nutellas"
+        ]
+      },
+      {
+        "name": "Tomato",
+        "points": 69,
+        "aliases": [
+          "tomatoes",
+          "tomatos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-014",
+    "prompt": "Name a food commonly cooked on a barbecue.",
+    "answers": [
+      {
+        "name": "Sausage",
+        "points": 1,
+        "aliases": [
+          "snag",
+          "sausages",
+          "snags"
+        ]
+      },
+      {
+        "name": "Burger",
+        "points": 6,
+        "aliases": [
+          "hamburger",
+          "hamburgers",
+          "beef burger",
+          "burgers"
+        ]
+      },
+      {
+        "name": "Steak",
+        "points": 11,
+        "aliases": [
+          "beef steak",
+          "steaks"
+        ]
+      },
+      {
+        "name": "Corn on the cob",
+        "points": 32,
+        "aliases": [
+          "sweetcorn",
+          "corn",
+          "sweet corn",
+          "corn on the cobs"
+        ]
+      },
+      {
+        "name": "Kebab",
+        "points": 64,
+        "aliases": [
+          "kabob",
+          "shish kebab",
+          "skewer",
+          "skewers",
+          "kebabs"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-015",
+    "prompt": "Name a type of bread.",
+    "answers": [
+      {
+        "name": "White bread",
+        "points": 1,
+        "aliases": [
+          "white loaf",
+          "white breads"
+        ]
+      },
+      {
+        "name": "Wholemeal bread",
+        "points": 6,
+        "aliases": [
+          "whole wheat bread",
+          "wholegrain bread",
+          "brown bread",
+          "whole wheat",
+          "wholemeal",
+          "wholewheat bread",
+          "wholemeal breads"
+        ]
+      },
+      {
+        "name": "Pitta",
+        "points": 37,
+        "aliases": [
+          "pita",
+          "pita bread",
+          "pitta bread",
+          "pittas"
+        ]
+      },
+      {
+        "name": "Naan",
+        "points": 43,
+        "aliases": [
+          "naan bread",
+          "naans"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-016",
+    "prompt": "Name a food commonly dipped in a sauce.",
+    "answers": [
+      {
+        "name": "Nachos",
+        "points": 11,
+        "aliases": [
+          "Tortilla chip",
+          "nacho"
+        ]
+      },
+      {
+        "name": "Spring rolls",
+        "points": 17,
+        "aliases": [
+          "Spring roll"
+        ]
+      },
+      {
+        "name": "Breadsticks",
+        "points": 32,
+        "aliases": [
+          "bread sticks",
+          "breadstick"
+        ]
+      },
+      {
+        "name": "Carrot sticks",
+        "points": 58,
+        "aliases": [
+          "carrots",
+          "carrot",
+          "carrot stick"
+        ]
+      },
+      {
+        "name": "Celery sticks",
+        "points": 64,
+        "aliases": [
+          "celery",
+          "celery stick"
+        ]
+      },
+      {
+        "name": "Fish fingers",
+        "points": 90,
+        "aliases": [
+          "fish sticks",
+          "fish finger"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-017",
+    "prompt": "Name a food people commonly sprinkle on a pizza.",
+    "answers": [
+      {
+        "name": "Cheese",
+        "points": 1,
+        "aliases": [
+          "Mozzarella",
+          "cheeses"
+        ]
+      },
+      {
+        "name": "Sweetcorn",
+        "points": 53,
+        "aliases": [
+          "sweet corn",
+          "corn",
+          "sweetcorns"
+        ]
+      },
+      {
+        "name": "Capsicum",
+        "points": 74,
+        "aliases": [
+          "bell pepper",
+          "pepper",
+          "bell peppers",
+          "peppers",
+          "capsicums"
+        ]
+      },
+      {
+        "name": "Parmesan",
+        "points": 90,
+        "aliases": [
+          "parmesan cheese",
+          "parmesans"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-018",
+    "prompt": "Name a dessert commonly served in a bowl or glass.",
+    "answers": [
+      {
+        "name": "Ice cream",
+        "points": 1,
+        "aliases": [
+          "gelato",
+          "icecream",
+          "ice creams"
+        ]
+      },
+      {
+        "name": "Mousse",
+        "points": 27,
+        "aliases": [
+          "Chocolate mousse",
+          "mousses"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-019",
+    "prompt": "Name a food commonly sold dried.",
+    "answers": [
+      {
+        "name": "Apricots",
+        "points": 6,
+        "aliases": [
+          "Apricot"
+        ]
+      },
+      {
+        "name": "Prunes",
+        "points": 20,
+        "aliases": [
+          "Prune"
+        ]
+      },
+      {
+        "name": "Mango",
+        "points": 25,
+        "aliases": [
+          "mangoes",
+          "mangos"
+        ]
+      },
+      {
+        "name": "Beef jerky",
+        "points": 72,
+        "aliases": [
+          "jerky",
+          "biltong",
+          "beef jerkies"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-020",
+    "prompt": "Name a food commonly found in a tin or can.",
+    "answers": [
+      {
+        "name": "Tuna",
+        "points": 6,
+        "aliases": [
+          "tinned tuna",
+          "canned tuna",
+          "tunas"
+        ]
+      },
+      {
+        "name": "Sweetcorn",
+        "points": 17,
+        "aliases": [
+          "corn",
+          "sweet corn",
+          "sweetcorns"
+        ]
+      },
+      {
+        "name": "Tomatoes",
+        "points": 22,
+        "aliases": [
+          "tomato",
+          "canned tomatoes",
+          "tinned tomatoes",
+          "tomatoe"
+        ]
+      },
+      {
+        "name": "Chickpeas",
+        "points": 43,
+        "aliases": [
+          "garbanzo beans",
+          "chickpea"
+        ]
+      },
+      {
+        "name": "Kidney beans",
+        "points": 48,
+        "aliases": [
+          "red beans",
+          "kidney bean"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-021",
+    "prompt": "Name a herb commonly used in cooking.",
+    "answers": [
+      {
+        "name": "Basil",
+        "points": 1,
+        "aliases": [
+          "Thai basil",
+          "basils"
+        ]
+      },
+      {
+        "name": "Parsley",
+        "points": 6,
+        "aliases": [
+          "flat leaf parsley",
+          "curly parsley",
+          "parsleys"
+        ]
+      },
+      {
+        "name": "Mint",
+        "points": 11,
+        "aliases": [
+          "peppermint",
+          "spearmint",
+          "mints"
+        ]
+      },
+      {
+        "name": "Coriander",
+        "points": 17,
+        "aliases": [
+          "cilantro",
+          "coriander leaf",
+          "corianders"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-022",
+    "prompt": "Name a food commonly served with a roast dinner.",
+    "answers": [
+      {
+        "name": "Roast potatoes",
+        "points": 1,
+        "aliases": [
+          "roast potato",
+          "roasties",
+          "roast potatoe"
+        ]
+      },
+      {
+        "name": "Yorkshire pudding",
+        "points": 20,
+        "aliases": [
+          "yorkshire puddings",
+          "yorkshires"
+        ]
+      },
+      {
+        "name": "Brussels sprouts",
+        "points": 43,
+        "aliases": [
+          "brussel sprouts",
+          "sprouts",
+          "brussels sprout"
+        ]
+      },
+      {
+        "name": "Cranberry sauce",
+        "points": 100,
+        "aliases": [
+          "Cranberry jelly",
+          "cranberry sauces"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-023",
+    "prompt": "Name a food commonly eaten at a cinema.",
+    "answers": [
+      {
+        "name": "Popcorn",
+        "points": 1,
+        "aliases": [
+          "pop corn",
+          "popcorns"
+        ]
+      },
+      {
+        "name": "Hot dog",
+        "points": 17,
+        "aliases": [
+          "hotdog",
+          "hot dogs",
+          "hotdogs"
+        ]
+      },
+      {
+        "name": "Ice cream",
+        "points": 22,
+        "aliases": [
+          "choc top",
+          "icecream",
+          "ice creams"
+        ]
+      },
+      {
+        "name": "Lollies",
+        "points": 27,
+        "aliases": [
+          "sweets",
+          "candy",
+          "sweeties",
+          "lollie",
+          "lolly"
+        ]
+      },
+      {
+        "name": "Pizza",
+        "points": 37,
+        "aliases": [
+          "pizza slice",
+          "slice of pizza",
+          "pizzas"
+        ]
+      },
+      {
+        "name": "Burger",
+        "points": 43,
+        "aliases": [
+          "hamburger",
+          "hamburgers",
+          "burgers"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-024",
+    "prompt": "Name an ingredient commonly used in baking a cake.",
+    "answers": [
+      {
+        "name": "Flour",
+        "points": 1,
+        "aliases": [
+          "plain flour",
+          "all purpose flour",
+          "cake flour",
+          "Self-raising flour",
+          "self rising flour",
+          "flours"
+        ]
+      },
+      {
+        "name": "Sugar",
+        "points": 6,
+        "aliases": [
+          "caster sugar",
+          "granulated sugar",
+          "sugars"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-025",
+    "prompt": "Name an animal that lays eggs.",
+    "answers": [
+      {
+        "name": "Chicken",
+        "points": 1,
+        "aliases": [
+          "hen",
+          "rooster",
+          "chickens",
+          "hens"
+        ]
+      },
+      {
+        "name": "Crocodile",
+        "points": 23,
+        "aliases": [
+          "croc",
+          "crocodiles"
+        ]
+      },
+      {
+        "name": "Octopus",
+        "points": 83,
+        "aliases": [
+          "octopuses",
+          "octopi"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-026",
+    "prompt": "Name an animal that eats both plants and animals.",
+    "answers": [
+      {
+        "name": "Human",
+        "points": 1,
+        "aliases": [
+          "people",
+          "person",
+          "humans",
+          "human being"
+        ]
+      },
+      {
+        "name": "Brown bear",
+        "points": 10,
+        "aliases": [
+          "grizzly bear",
+          "grizzly",
+          "Bear",
+          "brown bears"
+        ]
+      },
+      {
+        "name": "Black bear",
+        "points": 15,
+        "aliases": [
+          "american black bear",
+          "black bears"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-027",
+    "prompt": "Name an animal that can live in fresh water.",
+    "answers": [
+      {
+        "name": "Goldfish",
+        "points": 1,
+        "aliases": [
+          "gold fish",
+          "goldfishes"
+        ]
+      },
+      {
+        "name": "Crocodile",
+        "points": 72,
+        "aliases": [
+          "croc",
+          "crocodiles"
+        ]
+      },
+      {
+        "name": "Freshwater mussel",
+        "points": 86,
+        "aliases": [
+          "Mussel",
+          "freshwater mussels"
+        ]
+      },
+      {
+        "name": "Water vole",
+        "points": 95,
+        "aliases": [
+          "water rat",
+          "water voles"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-028",
+    "prompt": "Name an animal with a shell or hard outer covering.",
+    "answers": [
+      {
+        "name": "Woodlouse",
+        "points": 81,
+        "aliases": [
+          "pill bug",
+          "roly poly",
+          "woodlice",
+          "slater",
+          "pillbug",
+          "woodlouses"
+        ]
+      },
+      {
+        "name": "Pangolin",
+        "points": 91,
+        "aliases": [
+          "scaly anteater",
+          "pangolins"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-029",
+    "prompt": "Name an animal that people keep as a pet.",
+    "answers": [
+      {
+        "name": "Dog",
+        "points": 1,
+        "aliases": [
+          "puppy",
+          "puppies",
+          "dogs"
+        ]
+      },
+      {
+        "name": "Cat",
+        "points": 6,
+        "aliases": [
+          "kitten",
+          "kittens",
+          "cats"
+        ]
+      },
+      {
+        "name": "Goldfish",
+        "points": 10,
+        "aliases": [
+          "gold fish",
+          "goldfishes"
+        ]
+      },
+      {
+        "name": "Rabbit",
+        "points": 15,
+        "aliases": [
+          "bunny",
+          "bunnies",
+          "rabbits"
+        ]
+      },
+      {
+        "name": "Guinea pig",
+        "points": 25,
+        "aliases": [
+          "guinea pigs",
+          "guineapig"
+        ]
+      },
+      {
+        "name": "Budgerigar",
+        "points": 29,
+        "aliases": [
+          "budgie",
+          "parakeet",
+          "budgies",
+          "budgerigars"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-030",
+    "prompt": "Name an animal native to Australia.",
+    "answers": [
+      {
+        "name": "Kangaroo",
+        "points": 1,
+        "aliases": [
+          "roo",
+          "roos",
+          "kangaroos"
+        ]
+      },
+      {
+        "name": "Koala",
+        "points": 6,
+        "aliases": [
+          "koala bear",
+          "koalas"
+        ]
+      },
+      {
+        "name": "Platypus",
+        "points": 15,
+        "aliases": [
+          "duck billed platypus"
+        ]
+      },
+      {
+        "name": "Tasmanian devil",
+        "points": 39,
+        "aliases": [
+          "tassie devil",
+          "tasmanian devils"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-032",
+    "prompt": "Name an animal name that is also an English verb.",
+    "answers": [
+      {
+        "name": "Fish",
+        "points": 58,
+        "aliases": [
+          "fishing",
+          "fishes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-033",
+    "prompt": "Name an animal that commonly lives in a group.",
+    "answers": [
+      {
+        "name": "Cattle",
+        "points": 81,
+        "aliases": [
+          "cow",
+          "cows",
+          "cattles"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-034",
+    "prompt": "Name an animal that can swim.",
+    "answers": [
+      {
+        "name": "Dog",
+        "points": 1,
+        "aliases": [
+          "dogs",
+          "puppy"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-035",
+    "prompt": "Name an animal that can fly under its own power.",
+    "answers": [
+      {
+        "name": "Fly",
+        "points": 1,
+        "aliases": [
+          "flies",
+          "housefly",
+          "house fly"
+        ]
+      },
+      {
+        "name": "Ladybird",
+        "points": 81,
+        "aliases": [
+          "ladybug",
+          "ladybugs",
+          "ladybirds"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-036",
+    "prompt": "Name an animal with stripes.",
+    "answers": [
+      {
+        "name": "Tabby cat",
+        "points": 69,
+        "aliases": [
+          "tabby",
+          "cat",
+          "striped cat",
+          "tabby cats"
+        ]
+      },
+      {
+        "name": "Ring-tailed lemur",
+        "points": 74,
+        "aliases": [
+          "lemur",
+          "ring tailed lemurs"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-038",
+    "prompt": "Name a tree people commonly grow in a garden or park.",
+    "answers": [
+      {
+        "name": "Pine",
+        "points": 20,
+        "aliases": [
+          "pine tree",
+          "pines"
+        ]
+      },
+      {
+        "name": "Fir",
+        "points": 25,
+        "aliases": [
+          "fir tree",
+          "firs"
+        ]
+      },
+      {
+        "name": "Cherry",
+        "points": 39,
+        "aliases": [
+          "cherry tree",
+          "cherry blossom",
+          "cherries"
+        ]
+      },
+      {
+        "name": "Eucalyptus",
+        "points": 81,
+        "aliases": [
+          "eucalypt",
+          "Gum tree"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-039",
+    "prompt": "Name a flower commonly sold by florists.",
+    "answers": [
+      {
+        "name": "Chrysanthemum",
+        "points": 37,
+        "aliases": [
+          "mum",
+          "mums",
+          "chrysanthemums"
+        ]
+      },
+      {
+        "name": "Gerbera",
+        "points": 43,
+        "aliases": [
+          "gerbera daisy",
+          "gerberas"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-040",
+    "prompt": "Name a plant people commonly grow indoors.",
+    "answers": [
+      {
+        "name": "Monstera",
+        "points": 11,
+        "aliases": [
+          "swiss cheese plant",
+          "monsteras"
+        ]
+      },
+      {
+        "name": "Snake plant",
+        "points": 17,
+        "aliases": [
+          "mother in laws tongue",
+          "mother-in-law's tongue",
+          "sansevieria",
+          "snake plants"
+        ]
+      },
+      {
+        "name": "Aloe vera",
+        "points": 22,
+        "aliases": [
+          "aloe",
+          "aloe veras"
+        ]
+      },
+      {
+        "name": "Cactus",
+        "points": 32,
+        "aliases": [
+          "cacti",
+          "cactuses"
+        ]
+      },
+      {
+        "name": "ZZ plant",
+        "points": 84,
+        "aliases": [
+          "zamioculcas",
+          "zz plants"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-041",
+    "prompt": "Name something a plant needs or uses to grow.",
+    "answers": [
+      {
+        "name": "Water",
+        "points": 1,
+        "aliases": [
+          "rain",
+          "rainwater",
+          "waters"
+        ]
+      },
+      {
+        "name": "Sunlight",
+        "points": 6,
+        "aliases": [
+          "sun",
+          "light",
+          "sunshine",
+          "sun light",
+          "sunlights"
+        ]
+      },
+      {
+        "name": "Fertiliser",
+        "points": 25,
+        "aliases": [
+          "fertilizer",
+          "plant food",
+          "fertilisers"
+        ]
+      },
+      {
+        "name": "Carbon dioxide",
+        "points": 29,
+        "aliases": [
+          "co2",
+          "carbon dioxides"
+        ]
+      },
+      {
+        "name": "Oxygen",
+        "points": 34,
+        "aliases": [
+          "o2",
+          "oxygens"
+        ]
+      },
+      {
+        "name": "Nitrogen",
+        "points": 39,
+        "aliases": [
+          "n",
+          "nitrogens"
+        ]
+      },
+      {
+        "name": "Phosphorus",
+        "points": 43,
+        "aliases": [
+          "phosphorous"
+        ]
+      },
+      {
+        "name": "Warmth",
+        "points": 95,
+        "aliases": [
+          "heat",
+          "temperature",
+          "warm temperature",
+          "warm temperatures",
+          "warmths"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-042",
+    "prompt": "Name a natural material people use to make things.",
+    "answers": [
+      {
+        "name": "Leather",
+        "points": 20,
+        "aliases": [
+          "hide",
+          "animal hide",
+          "leathers"
+        ]
+      },
+      {
+        "name": "Rubber",
+        "points": 48,
+        "aliases": [
+          "natural rubber",
+          "rubbers"
+        ]
+      },
+      {
+        "name": "Linen",
+        "points": 53,
+        "aliases": [
+          "flax linen",
+          "linens"
+        ]
+      },
+      {
+        "name": "Jute",
+        "points": 62,
+        "aliases": [
+          "hessian",
+          "burlap",
+          "jutes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-043",
+    "prompt": "Name a fruit that grows on a tree.",
+    "answers": [
+      {
+        "name": "Mango",
+        "points": 48,
+        "aliases": [
+          "mangoes",
+          "mangos"
+        ]
+      },
+      {
+        "name": "Lychee",
+        "points": 86,
+        "aliases": [
+          "litchi",
+          "lychees"
+        ]
+      },
+      {
+        "name": "Persimmon",
+        "points": 95,
+        "aliases": [
+          "sharon fruit",
+          "persimmons"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-044",
+    "prompt": "Name an animal people commonly see on a farm.",
+    "answers": [
+      {
+        "name": "Cow",
+        "points": 1,
+        "aliases": [
+          "cattle",
+          "cows",
+          "Bull",
+          "Calf"
+        ]
+      },
+      {
+        "name": "Sheep",
+        "points": 6,
+        "aliases": [
+          "lamb",
+          "Ram",
+          "Ewe"
+        ]
+      },
+      {
+        "name": "Pig",
+        "points": 10,
+        "aliases": [
+          "swine",
+          "piglet",
+          "piglets",
+          "pigs"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-045",
+    "prompt": "Name an animal that spends much of its life underground.",
+    "answers": [
+      {
+        "name": "Earthworm",
+        "points": 6,
+        "aliases": [
+          "worm",
+          "worms",
+          "earthworms"
+        ]
+      },
+      {
+        "name": "Rabbit",
+        "points": 22,
+        "aliases": [
+          "bunny",
+          "rabbits"
+        ]
+      },
+      {
+        "name": "Cicada nymph",
+        "points": 84,
+        "aliases": [
+          "Cicada",
+          "cicada nymphs"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-046",
+    "prompt": "Name a sea animal with no backbone.",
+    "answers": [
+      {
+        "name": "Octopus",
+        "points": 1,
+        "aliases": [
+          "octopuses",
+          "octopi"
+        ]
+      },
+      {
+        "name": "Jellyfish",
+        "points": 12,
+        "aliases": [
+          "jelly fish",
+          "jellyfishes"
+        ]
+      },
+      {
+        "name": "Sea anemone",
+        "points": 78,
+        "aliases": [
+          "anemone",
+          "sea anemones"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-047",
+    "prompt": "Name something people can hear in a forest.",
+    "answers": [
+      {
+        "name": "Birdsong",
+        "points": 1,
+        "aliases": [
+          "bird song",
+          "birds singing",
+          "birds chirping",
+          "chirping",
+          "tweeting",
+          "Bird",
+          "Bird call",
+          "birdsongs"
+        ]
+      },
+      {
+        "name": "Wind",
+        "points": 6,
+        "aliases": [
+          "Wind in trees",
+          "winds"
+        ]
+      },
+      {
+        "name": "Rustling leaves",
+        "points": 11,
+        "aliases": [
+          "rustling",
+          "leaves rustling",
+          "Leaves",
+          "rustling leave"
+        ]
+      },
+      {
+        "name": "Rain",
+        "points": 17,
+        "aliases": [
+          "Rainfall",
+          "rains"
+        ]
+      },
+      {
+        "name": "Stream",
+        "points": 27,
+        "aliases": [
+          "running water",
+          "flowing water",
+          "streams"
+        ]
+      },
+      {
+        "name": "Woodpecker",
+        "points": 48,
+        "aliases": [
+          "Woodpecker tapping",
+          "woodpeckers"
+        ]
+      },
+      {
+        "name": "Owl",
+        "points": 53,
+        "aliases": [
+          "Owl hoot",
+          "owls"
+        ]
+      },
+      {
+        "name": "Footsteps",
+        "points": 58,
+        "aliases": [
+          "people walking",
+          "walking",
+          "footstep"
+        ]
+      },
+      {
+        "name": "Buzzing bee",
+        "points": 100,
+        "aliases": [
+          "Buzzing",
+          "buzzing bees"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-048",
+    "prompt": "Name a place where wild animals make their homes.",
+    "answers": [
+      {
+        "name": "Forest",
+        "points": 1,
+        "aliases": [
+          "Woodland",
+          "forests"
+        ]
+      },
+      {
+        "name": "Ocean",
+        "points": 10,
+        "aliases": [
+          "Sea",
+          "oceans"
+        ]
+      },
+      {
+        "name": "Savanna",
+        "points": 34,
+        "aliases": [
+          "savannah",
+          "savannas"
+        ]
+      },
+      {
+        "name": "Burrow",
+        "points": 95,
+        "aliases": [
+          "hole",
+          "underground",
+          "burrows"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-049",
+    "prompt": "Name something you can measure about the human body.",
+    "answers": [
+      {
+        "name": "Height",
+        "points": 1,
+        "aliases": [
+          "tallness",
+          "Body length",
+          "heights"
+        ]
+      },
+      {
+        "name": "Weight",
+        "points": 5,
+        "aliases": [
+          "body weight",
+          "mass",
+          "body mass",
+          "weights"
+        ]
+      },
+      {
+        "name": "Waist size",
+        "points": 35,
+        "aliases": [
+          "waist circumference",
+          "waist measurement",
+          "waist sizes"
+        ]
+      },
+      {
+        "name": "Lung capacity",
+        "points": 70,
+        "aliases": [
+          "lung volume",
+          "lung capacities"
+        ]
+      },
+      {
+        "name": "Blood oxygen",
+        "points": 74,
+        "aliases": [
+          "oxygen saturation",
+          "spo2",
+          "oxygen level",
+          "blood oxygens"
+        ]
+      },
+      {
+        "name": "Breathing rate",
+        "points": 78,
+        "aliases": [
+          "respiratory rate",
+          "breathing rates"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-051",
+    "prompt": "Name something people wear on their head.",
+    "answers": [
+      {
+        "name": "Helmet",
+        "points": 10,
+        "aliases": [
+          "hard hat",
+          "safety helmet",
+          "bike helmet",
+          "bicycle helmet",
+          "motorbike helmet",
+          "helmets"
+        ]
+      },
+      {
+        "name": "Beanie",
+        "points": 15,
+        "aliases": [
+          "knit cap",
+          "woolly hat",
+          "beanie hat",
+          "bobble hat",
+          "wool hat",
+          "beanies"
+        ]
+      },
+      {
+        "name": "Scarf",
+        "points": 20,
+        "aliases": [
+          "head scarf",
+          "scarves",
+          "scarfs",
+          "Headscarf"
+        ]
+      },
+      {
+        "name": "Headband",
+        "points": 34,
+        "aliases": [
+          "hairband",
+          "hair band",
+          "headbands"
+        ]
+      },
+      {
+        "name": "Headphones",
+        "points": 72,
+        "aliases": [
+          "head phones",
+          "headset",
+          "headphone"
+        ]
+      },
+      {
+        "name": "Mortarboard",
+        "points": 95,
+        "aliases": [
+          "Graduation cap",
+          "mortarboards"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-052",
+    "prompt": "Name something people do to relax.",
+    "answers": [
+      {
+        "name": "Read",
+        "points": 1,
+        "aliases": [
+          "reading",
+          "read a book",
+          "reading a book",
+          "reads"
+        ]
+      },
+      {
+        "name": "Listen to music",
+        "points": 6,
+        "aliases": [
+          "listening to music",
+          "listen to songs",
+          "listen to musics"
+        ]
+      },
+      {
+        "name": "Walk",
+        "points": 29,
+        "aliases": [
+          "walking",
+          "go for a walk",
+          "take a walk",
+          "walks"
+        ]
+      },
+      {
+        "name": "Do yoga",
+        "points": 34,
+        "aliases": [
+          "yoga",
+          "practise yoga",
+          "practice yoga",
+          "do yogas"
+        ]
+      },
+      {
+        "name": "Play games",
+        "points": 58,
+        "aliases": [
+          "gaming",
+          "play a game",
+          "video games",
+          "play video games",
+          "play game"
+        ]
+      },
+      {
+        "name": "Swim",
+        "points": 72,
+        "aliases": [
+          "swimming",
+          "go swimming",
+          "swims"
+        ]
+      },
+      {
+        "name": "Fish",
+        "points": 76,
+        "aliases": [
+          "fishing",
+          "fishes"
+        ]
+      },
+      {
+        "name": "Have a massage",
+        "points": 81,
+        "aliases": [
+          "massage",
+          "have a massages"
+        ]
+      },
+      {
+        "name": "Do a puzzle",
+        "points": 86,
+        "aliases": [
+          "puzzles",
+          "jigsaw",
+          "do puzzles",
+          "do a puzzles"
+        ]
+      },
+      {
+        "name": "Talk to friends",
+        "points": 91,
+        "aliases": [
+          "chat with friends",
+          "talking to friends",
+          "talk to friend"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-053",
+    "prompt": "Name something people do while waiting in a queue.",
+    "answers": [
+      {
+        "name": "Check phone",
+        "points": 1,
+        "aliases": [
+          "look at phone",
+          "use phone",
+          "scroll phone",
+          "check mobile",
+          "look at mobile",
+          "checking phone",
+          "check phones"
+        ]
+      },
+      {
+        "name": "Read",
+        "points": 11,
+        "aliases": [
+          "reading",
+          "read a magazine",
+          "read a book",
+          "reading a book",
+          "reads"
+        ]
+      },
+      {
+        "name": "Listen to music",
+        "points": 17,
+        "aliases": [
+          "listening to music",
+          "music",
+          "listen to headphones",
+          "listen to songs",
+          "listen to musics"
+        ]
+      },
+      {
+        "name": "Text",
+        "points": 64,
+        "aliases": [
+          "texting",
+          "send a text",
+          "send text message",
+          "send messages",
+          "text messages",
+          "texts"
+        ]
+      },
+      {
+        "name": "Play games",
+        "points": 69,
+        "aliases": [
+          "gaming",
+          "play a game",
+          "play video games",
+          "Play on phone",
+          "play game"
+        ]
+      },
+      {
+        "name": "Browse social media",
+        "points": 74,
+        "aliases": [
+          "Check social media",
+          "browse social medias"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-054",
+    "prompt": "Name something people collect as a hobby.",
+    "answers": [
+      {
+        "name": "Stamps",
+        "points": 1,
+        "aliases": [
+          "postage stamps",
+          "stamp",
+          "postage stamp"
+        ]
+      },
+      {
+        "name": "Comics",
+        "points": 20,
+        "aliases": [
+          "comic books"
+        ]
+      },
+      {
+        "name": "Badges",
+        "points": 67,
+        "aliases": [
+          "badge",
+          "buttons",
+          "pins"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-055",
+    "prompt": "Name a job that commonly involves wearing a uniform.",
+    "answers": [
+      {
+        "name": "Soldier",
+        "points": 15,
+        "aliases": [
+          "army",
+          "military",
+          "army soldier",
+          "soldiers"
+        ]
+      },
+      {
+        "name": "Flight attendant",
+        "points": 25,
+        "aliases": [
+          "air hostess",
+          "steward",
+          "cabin crew",
+          "flight attendants"
+        ]
+      },
+      {
+        "name": "Chef",
+        "points": 29,
+        "aliases": [
+          "cook",
+          "chefs"
+        ]
+      },
+      {
+        "name": "Postman",
+        "points": 48,
+        "aliases": [
+          "postwoman",
+          "postal worker",
+          "mail carrier",
+          "mailman",
+          "postie",
+          "postal carrier",
+          "postmans"
+        ]
+      },
+      {
+        "name": "Mechanic",
+        "points": 95,
+        "aliases": [
+          "car mechanic",
+          "mechanics"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-056",
+    "prompt": "Name a job that involves working outdoors.",
+    "answers": [
+      {
+        "name": "Gardener",
+        "points": 1,
+        "aliases": [
+          "gardening",
+          "gardeners"
+        ]
+      },
+      {
+        "name": "Farmer",
+        "points": 6,
+        "aliases": [
+          "farm worker",
+          "farmhand",
+          "farmers"
+        ]
+      },
+      {
+        "name": "Builder",
+        "points": 10,
+        "aliases": [
+          "construction worker",
+          "builders"
+        ]
+      },
+      {
+        "name": "Park ranger",
+        "points": 25,
+        "aliases": [
+          "ranger",
+          "park rangers"
+        ]
+      },
+      {
+        "name": "Fisherman",
+        "points": 29,
+        "aliases": [
+          "fisherwoman",
+          "fisher",
+          "fishing",
+          "fishermans"
+        ]
+      },
+      {
+        "name": "Bin collector",
+        "points": 58,
+        "aliases": [
+          "garbage collector",
+          "garbage man",
+          "refuse collector",
+          "garbo",
+          "bin collectors"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-057",
+    "prompt": "Name something people do before going to bed.",
+    "answers": [
+      {
+        "name": "Brush teeth",
+        "points": 1,
+        "aliases": [
+          "brush my teeth",
+          "brush your teeth",
+          "brush their teeth",
+          "clean teeth",
+          "brushing teeth",
+          "brush teeths"
+        ]
+      },
+      {
+        "name": "Put on pyjamas",
+        "points": 6,
+        "aliases": [
+          "put on pajamas",
+          "change into pyjamas",
+          "put on pjs",
+          "put on pyjama"
+        ]
+      },
+      {
+        "name": "Read",
+        "points": 11,
+        "aliases": [
+          "reading",
+          "read a book",
+          "reading a book",
+          "reads"
+        ]
+      },
+      {
+        "name": "Set alarm",
+        "points": 17,
+        "aliases": [
+          "set an alarm",
+          "set alarm clock",
+          "set alarms"
+        ]
+      },
+      {
+        "name": "Lock doors",
+        "points": 27,
+        "aliases": [
+          "lock the door",
+          "lock door"
+        ]
+      },
+      {
+        "name": "Wash face",
+        "points": 32,
+        "aliases": [
+          "wash my face",
+          "wash your face",
+          "wash their face",
+          "washing face",
+          "wash faces"
+        ]
+      },
+      {
+        "name": "Check phone",
+        "points": 48,
+        "aliases": [
+          "look at phone",
+          "use phone",
+          "scroll phone",
+          "check mobile",
+          "checking phone",
+          "check phones"
+        ]
+      },
+      {
+        "name": "Use toilet",
+        "points": 64,
+        "aliases": [
+          "use the toilet",
+          "go to toilet",
+          "go to the bathroom",
+          "go to the toilet",
+          "use toilets"
+        ]
+      },
+      {
+        "name": "Drink water",
+        "points": 69,
+        "aliases": [
+          "have water",
+          "drinking water",
+          "drink waters"
+        ]
+      },
+      {
+        "name": "Plug in phone",
+        "points": 79,
+        "aliases": [
+          "charge phone",
+          "charge mobile",
+          "Put phone on charge",
+          "plug in phones"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-058",
+    "prompt": "Name something people do when they wake up.",
+    "answers": [
+      {
+        "name": "Check phone",
+        "points": 22,
+        "aliases": [
+          "look at phone",
+          "use phone",
+          "scroll phone",
+          "check mobile",
+          "checking phone",
+          "check phones"
+        ]
+      },
+      {
+        "name": "Open curtains",
+        "points": 27,
+        "aliases": [
+          "open blinds",
+          "open curtain"
+        ]
+      },
+      {
+        "name": "Brush teeth",
+        "points": 32,
+        "aliases": [
+          "brush my teeth",
+          "brush your teeth",
+          "brush their teeth",
+          "clean teeth",
+          "brushing teeth",
+          "brush teeths"
+        ]
+      },
+      {
+        "name": "Use toilet",
+        "points": 37,
+        "aliases": [
+          "use the toilet",
+          "go to toilet",
+          "go to the bathroom",
+          "go to the toilet",
+          "use toilets"
+        ]
+      },
+      {
+        "name": "Make coffee",
+        "points": 53,
+        "aliases": [
+          "drink coffee",
+          "have coffee",
+          "making coffee",
+          "make coffees"
+        ]
+      },
+      {
+        "name": "Eat breakfast",
+        "points": 58,
+        "aliases": [
+          "have breakfast",
+          "breakfast",
+          "eating breakfast",
+          "eat breakfasts"
+        ]
+      },
+      {
+        "name": "Drink water",
+        "points": 64,
+        "aliases": [
+          "have water",
+          "drinking water",
+          "drink waters"
+        ]
+      },
+      {
+        "name": "Wash face",
+        "points": 69,
+        "aliases": [
+          "wash my face",
+          "wash your face",
+          "wash their face",
+          "washing face",
+          "wash faces"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-059",
+    "prompt": "Name something people might do at a wedding.",
+    "answers": [
+      {
+        "name": "Dance",
+        "points": 1,
+        "aliases": [
+          "dancing",
+          "go dancing",
+          "dances"
+        ]
+      },
+      {
+        "name": "Take photographs",
+        "points": 32,
+        "aliases": [
+          "take photos",
+          "take pictures",
+          "photography",
+          "take photograph"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-061",
+    "prompt": "Name something people do to exercise.",
+    "answers": [
+      {
+        "name": "Run",
+        "points": 1,
+        "aliases": [
+          "running",
+          "jog",
+          "jogging",
+          "go running",
+          "runs"
+        ]
+      },
+      {
+        "name": "Walk",
+        "points": 6,
+        "aliases": [
+          "walking",
+          "go for a walk",
+          "take a walk",
+          "walks"
+        ]
+      },
+      {
+        "name": "Swim",
+        "points": 10,
+        "aliases": [
+          "swimming",
+          "go swimming",
+          "swims"
+        ]
+      },
+      {
+        "name": "Cycle",
+        "points": 15,
+        "aliases": [
+          "cycling",
+          "ride a bike",
+          "biking",
+          "bike ride",
+          "ride a bicycle",
+          "ride bicycle",
+          "cycles"
+        ]
+      },
+      {
+        "name": "Dance",
+        "points": 20,
+        "aliases": [
+          "dancing",
+          "go dancing",
+          "dances"
+        ]
+      },
+      {
+        "name": "Do yoga",
+        "points": 25,
+        "aliases": [
+          "yoga",
+          "practise yoga",
+          "practice yoga",
+          "do yogas"
+        ]
+      },
+      {
+        "name": "Lift weights",
+        "points": 29,
+        "aliases": [
+          "weightlifting",
+          "weight lifting",
+          "lifting weights",
+          "weights",
+          "lift weight"
+        ]
+      },
+      {
+        "name": "Skip",
+        "points": 53,
+        "aliases": [
+          "skipping",
+          "skip rope",
+          "jump rope",
+          "skips"
+        ]
+      },
+      {
+        "name": "Play tennis",
+        "points": 62,
+        "aliases": [
+          "tennis",
+          "playing tennis"
+        ]
+      },
+      {
+        "name": "Play football",
+        "points": 67,
+        "aliases": [
+          "football",
+          "soccer",
+          "play soccer",
+          "play footballs"
+        ]
+      },
+      {
+        "name": "Do jumping jacks",
+        "points": 100,
+        "aliases": [
+          "jumping jacks",
+          "Do star jumps",
+          "star jumps",
+          "do jumping jack"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-064",
+    "prompt": "Name something a person might learn in a class.",
+    "answers": [
+      {
+        "name": "Maths",
+        "points": 1,
+        "aliases": [
+          "math",
+          "mathematics",
+          "arithmetic"
+        ]
+      },
+      {
+        "name": "English",
+        "points": 6,
+        "aliases": [
+          "english language",
+          "english literature",
+          "englishes"
+        ]
+      },
+      {
+        "name": "Woodwork",
+        "points": 43,
+        "aliases": [
+          "woodworking",
+          "woodworks"
+        ]
+      },
+      {
+        "name": "Dance",
+        "points": 58,
+        "aliases": [
+          "dancing",
+          "go dancing",
+          "dances"
+        ]
+      },
+      {
+        "name": "Coding",
+        "points": 81,
+        "aliases": [
+          "computer programming",
+          "programming",
+          "codings"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-065",
+    "prompt": "Name something people do with their hands to communicate.",
+    "answers": [
+      {
+        "name": "Wave",
+        "points": 1,
+        "aliases": [
+          "waving",
+          "wave hello",
+          "wave goodbye",
+          "waves"
+        ]
+      },
+      {
+        "name": "Give thumbs up",
+        "points": 22,
+        "aliases": [
+          "thumb up",
+          "Thumbs up",
+          "give thumbs ups"
+        ]
+      },
+      {
+        "name": "Give thumbs down",
+        "points": 27,
+        "aliases": [
+          "thumb down",
+          "Thumbs down",
+          "give thumbs downs"
+        ]
+      },
+      {
+        "name": "Sign",
+        "points": 53,
+        "aliases": [
+          "signing",
+          "use sign language",
+          "Sign language",
+          "signs"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-066",
+    "prompt": "Name an emotion or feeling people can have.",
+    "answers": [
+      {
+        "name": "Happiness",
+        "points": 1,
+        "aliases": [
+          "happy",
+          "Joy"
+        ]
+      },
+      {
+        "name": "Sadness",
+        "points": 6,
+        "aliases": [
+          "sad",
+          "Sorrow"
+        ]
+      },
+      {
+        "name": "Anger",
+        "points": 10,
+        "aliases": [
+          "angry",
+          "rage",
+          "mad",
+          "angers"
+        ]
+      },
+      {
+        "name": "Fear",
+        "points": 15,
+        "aliases": [
+          "scared",
+          "afraid",
+          "fears"
+        ]
+      },
+      {
+        "name": "Love",
+        "points": 29,
+        "aliases": [
+          "loving",
+          "loves"
+        ]
+      },
+      {
+        "name": "Jealousy",
+        "points": 34,
+        "aliases": [
+          "Envy",
+          "jealousies"
+        ]
+      },
+      {
+        "name": "Excitement",
+        "points": 53,
+        "aliases": [
+          "excited",
+          "excitements"
+        ]
+      },
+      {
+        "name": "Boredom",
+        "points": 58,
+        "aliases": [
+          "bored",
+          "boredoms"
+        ]
+      },
+      {
+        "name": "Loneliness",
+        "points": 62,
+        "aliases": [
+          "lonely"
+        ]
+      },
+      {
+        "name": "Anxiety",
+        "points": 81,
+        "aliases": [
+          "anxious",
+          "Nervousness",
+          "anxieties"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-067",
+    "prompt": "Name something people might be afraid of.",
+    "answers": [
+      {
+        "name": "Heights",
+        "points": 1,
+        "aliases": [
+          "high places",
+          "falling",
+          "height"
+        ]
+      },
+      {
+        "name": "Flying",
+        "points": 20,
+        "aliases": [
+          "aeroplanes",
+          "airplanes",
+          "planes",
+          "flyings"
+        ]
+      },
+      {
+        "name": "Dentists",
+        "points": 29,
+        "aliases": [
+          "the dentist"
+        ]
+      },
+      {
+        "name": "Thunder",
+        "points": 39,
+        "aliases": [
+          "thunderstorms",
+          "thunders"
+        ]
+      },
+      {
+        "name": "Public speaking",
+        "points": 43,
+        "aliases": [
+          "speaking in public",
+          "public speakings"
+        ]
+      },
+      {
+        "name": "Small spaces",
+        "points": 48,
+        "aliases": [
+          "confined spaces",
+          "enclosed spaces",
+          "small space"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-070",
+    "prompt": "Name a job that involves making or repairing things.",
+    "answers": [
+      {
+        "name": "Carpenter",
+        "points": 1,
+        "aliases": [
+          "chippy",
+          "joiner",
+          "carpenters"
+        ]
+      },
+      {
+        "name": "Mechanic",
+        "points": 15,
+        "aliases": [
+          "auto mechanic",
+          "car mechanic",
+          "mechanics"
+        ]
+      },
+      {
+        "name": "Tailor",
+        "points": 20,
+        "aliases": [
+          "tailoring",
+          "tailors"
+        ]
+      },
+      {
+        "name": "Panel beater",
+        "points": 95,
+        "aliases": [
+          "auto body repairer",
+          "panel beaters"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-071",
+    "prompt": "Name something a baby learns to do.",
+    "answers": [
+      {
+        "name": "Walk",
+        "points": 29,
+        "aliases": [
+          "walking",
+          "go for a walk",
+          "take a walk",
+          "walks"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-072",
+    "prompt": "Name something people do to stay clean.",
+    "answers": [
+      {
+        "name": "Shower",
+        "points": 1,
+        "aliases": [
+          "have a shower",
+          "take a shower",
+          "showering",
+          "showers"
+        ]
+      },
+      {
+        "name": "Bathe",
+        "points": 6,
+        "aliases": [
+          "take a bath",
+          "have a bath",
+          "bath",
+          "bathes"
+        ]
+      },
+      {
+        "name": "Wash hands",
+        "points": 11,
+        "aliases": [
+          "wash their hands",
+          "wash your hands",
+          "wash my hands",
+          "handwashing",
+          "wash hand"
+        ]
+      },
+      {
+        "name": "Brush teeth",
+        "points": 17,
+        "aliases": [
+          "brush their teeth",
+          "brush your teeth",
+          "brush my teeth",
+          "clean teeth",
+          "brushing teeth",
+          "brush teeths"
+        ]
+      },
+      {
+        "name": "Wash face",
+        "points": 32,
+        "aliases": [
+          "wash their face",
+          "wash your face",
+          "wash my face",
+          "washing face",
+          "wash faces"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-073",
+    "prompt": "Name something you might find in a kitchen drawer.",
+    "answers": [
+      {
+        "name": "Spoon",
+        "points": 1,
+        "aliases": [
+          "spoons",
+          "teaspoon",
+          "teaspoons",
+          "tablespoon",
+          "tablespoons"
+        ]
+      },
+      {
+        "name": "Peeler",
+        "points": 15,
+        "aliases": [
+          "potato peeler",
+          "vegetable peeler",
+          "peelers"
+        ]
+      },
+      {
+        "name": "Tin opener",
+        "points": 20,
+        "aliases": [
+          "can opener",
+          "canopener",
+          "tin openers"
+        ]
+      },
+      {
+        "name": "Corkscrew",
+        "points": 29,
+        "aliases": [
+          "wine opener",
+          "corkscrews"
+        ]
+      },
+      {
+        "name": "Scissors",
+        "points": 43,
+        "aliases": [
+          "pair of scissors"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-074",
+    "prompt": "Name something people commonly lose.",
+    "answers": [
+      {
+        "name": "Keys",
+        "points": 1,
+        "aliases": [
+          "key",
+          "car key",
+          "house key",
+          "Car keys",
+          "House keys"
+        ]
+      },
+      {
+        "name": "Phone",
+        "points": 6,
+        "aliases": [
+          "mobile",
+          "mobile phone",
+          "cellphone",
+          "cell phone",
+          "smartphone",
+          "iphone",
+          "samsung phone",
+          "phones"
+        ]
+      },
+      {
+        "name": "Glasses",
+        "points": 17,
+        "aliases": [
+          "spectacles",
+          "eyeglasses",
+          "reading glasses"
+        ]
+      },
+      {
+        "name": "Remote control",
+        "points": 22,
+        "aliases": [
+          "tv remote",
+          "television remote",
+          "remote",
+          "remote controls"
+        ]
+      },
+      {
+        "name": "Umbrella",
+        "points": 27,
+        "aliases": [
+          "umbrellas",
+          "brolly"
+        ]
+      },
+      {
+        "name": "Earphones",
+        "points": 95,
+        "aliases": [
+          "earbuds",
+          "earbuds headphones",
+          "ear phones",
+          "ear buds",
+          "AirPods",
+          "earphone"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-075",
+    "prompt": "Name something people carry in a pocket.",
+    "answers": [
+      {
+        "name": "Keys",
+        "points": 6,
+        "aliases": [
+          "key",
+          "car key",
+          "car keys",
+          "house key",
+          "house keys"
+        ]
+      },
+      {
+        "name": "Wallet",
+        "points": 11,
+        "aliases": [
+          "billfold",
+          "wallets"
+        ]
+      },
+      {
+        "name": "Bank card",
+        "points": 22,
+        "aliases": [
+          "debit card",
+          "eftpos card",
+          "credit card",
+          "bank cards"
+        ]
+      },
+      {
+        "name": "Tissue",
+        "points": 27,
+        "aliases": [
+          "tissues",
+          "kleenex"
+        ]
+      },
+      {
+        "name": "Pen",
+        "points": 37,
+        "aliases": [
+          "biro",
+          "ballpoint pen",
+          "pens"
+        ]
+      },
+      {
+        "name": "Earphones",
+        "points": 64,
+        "aliases": [
+          "earbuds",
+          "earbuds headphones",
+          "ear phones",
+          "ear buds",
+          "earphone"
+        ]
+      },
+      {
+        "name": "Sweets",
+        "points": 79,
+        "aliases": [
+          "candy",
+          "lollies",
+          "sweet"
+        ]
+      },
+      {
+        "name": "Glasses",
+        "points": 84,
+        "aliases": [
+          "spectacles",
+          "eyeglasses",
+          "reading glasses"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-076",
+    "prompt": "Name something people put on a wall.",
+    "answers": [
+      {
+        "name": "Painting",
+        "points": 1,
+        "aliases": [
+          "art",
+          "picture",
+          "paintings",
+          "Artwork"
+        ]
+      },
+      {
+        "name": "Photograph",
+        "points": 15,
+        "aliases": [
+          "photo",
+          "photos",
+          "family photo",
+          "photographs"
+        ]
+      },
+      {
+        "name": "Television",
+        "points": 39,
+        "aliases": [
+          "tv",
+          "flat screen tv",
+          "televisions"
+        ]
+      },
+      {
+        "name": "Coat hook",
+        "points": 48,
+        "aliases": [
+          "hook",
+          "coat hooks",
+          "Hooks"
+        ]
+      },
+      {
+        "name": "Certificate",
+        "points": 67,
+        "aliases": [
+          "Degree",
+          "certificates"
+        ]
+      },
+      {
+        "name": "Smoke alarm",
+        "points": 86,
+        "aliases": [
+          "smoke detector",
+          "smoke alarms"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-077",
+    "prompt": "Name something that can be opened and closed.",
+    "answers": [
+      {
+        "name": "Cupboard",
+        "points": 25,
+        "aliases": [
+          "cabinet",
+          "wardrobe",
+          "closet",
+          "cupboards"
+        ]
+      },
+      {
+        "name": "Bottle",
+        "points": 29,
+        "aliases": [
+          "bottle cap",
+          "bottles"
+        ]
+      },
+      {
+        "name": "Umbrella",
+        "points": 48,
+        "aliases": [
+          "umbrellas",
+          "brolly"
+        ]
+      },
+      {
+        "name": "Curtain",
+        "points": 53,
+        "aliases": [
+          "curtains",
+          "blinds"
+        ]
+      },
+      {
+        "name": "Laptop",
+        "points": 76,
+        "aliases": [
+          "notebook computer",
+          "laptop computer",
+          "laptops"
+        ]
+      },
+      {
+        "name": "Zipper",
+        "points": 91,
+        "aliases": [
+          "zip",
+          "zips",
+          "zippers"
+        ]
+      },
+      {
+        "name": "Eyes",
+        "points": 100,
+        "aliases": [
+          "eye",
+          "eyelids"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-078",
+    "prompt": "Name something powered by batteries.",
+    "answers": [
+      {
+        "name": "Torch",
+        "points": 1,
+        "aliases": [
+          "flashlight",
+          "flash light",
+          "torches"
+        ]
+      },
+      {
+        "name": "Remote control",
+        "points": 6,
+        "aliases": [
+          "remote",
+          "tv remote",
+          "television remote",
+          "remote controls"
+        ]
+      },
+      {
+        "name": "Phone",
+        "points": 10,
+        "aliases": [
+          "mobile",
+          "mobile phone",
+          "cellphone",
+          "cell phone",
+          "smartphone",
+          "iphone",
+          "cell",
+          "android phone",
+          "phones"
+        ]
+      },
+      {
+        "name": "Laptop",
+        "points": 15,
+        "aliases": [
+          "notebook computer",
+          "laptop computer",
+          "laptops"
+        ]
+      },
+      {
+        "name": "Toy",
+        "points": 34,
+        "aliases": [
+          "Electronic toy",
+          "toys"
+        ]
+      },
+      {
+        "name": "Radio",
+        "points": 39,
+        "aliases": [
+          "portable radio",
+          "radios"
+        ]
+      },
+      {
+        "name": "Smoke alarm",
+        "points": 43,
+        "aliases": [
+          "smoke detector",
+          "smoke alarms"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-079",
+    "prompt": "Name something people use to clean a home.",
+    "answers": [
+      {
+        "name": "Vacuum cleaner",
+        "points": 1,
+        "aliases": [
+          "vacuum",
+          "hoover",
+          "vacuumcleaner",
+          "vacuum cleaners"
+        ]
+      },
+      {
+        "name": "Duster",
+        "points": 22,
+        "aliases": [
+          "dust cloth",
+          "dusters"
+        ]
+      },
+      {
+        "name": "Cloth",
+        "points": 27,
+        "aliases": [
+          "rag",
+          "cleaning cloth",
+          "cloths"
+        ]
+      },
+      {
+        "name": "Detergent",
+        "points": 43,
+        "aliases": [
+          "washing liquid",
+          "washing detergent",
+          "cleaning detergent",
+          "cleaning liquid",
+          "detergents"
+        ]
+      },
+      {
+        "name": "Soap",
+        "points": 48,
+        "aliases": [
+          "bar of soap",
+          "hand soap",
+          "soaps"
+        ]
+      },
+      {
+        "name": "Scrubbing brush",
+        "points": 69,
+        "aliases": [
+          "Scrubber",
+          "scrubbing brushes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-080",
+    "prompt": "Name something people keep in a bathroom.",
+    "answers": [
+      {
+        "name": "Toothbrush",
+        "points": 1,
+        "aliases": [
+          "tooth brush",
+          "toothbrushes"
+        ]
+      },
+      {
+        "name": "Soap",
+        "points": 10,
+        "aliases": [
+          "bar of soap",
+          "hand soap",
+          "soaps"
+        ]
+      },
+      {
+        "name": "Towel",
+        "points": 20,
+        "aliases": [
+          "towels",
+          "beach towel"
+        ]
+      },
+      {
+        "name": "Toilet paper",
+        "points": 25,
+        "aliases": [
+          "loo roll",
+          "toilet roll",
+          "toilet rolls",
+          "toilet papers"
+        ]
+      },
+      {
+        "name": "Hairbrush",
+        "points": 29,
+        "aliases": [
+          "hair brush",
+          "brush",
+          "hairbrushes"
+        ]
+      },
+      {
+        "name": "Scales",
+        "points": 76,
+        "aliases": [
+          "bathroom scale",
+          "bathroom scales",
+          "scale"
+        ]
+      },
+      {
+        "name": "First aid kit",
+        "points": 86,
+        "aliases": [
+          "firstaid kit",
+          "first aid kits"
+        ]
+      },
+      {
+        "name": "Cotton buds",
+        "points": 91,
+        "aliases": [
+          "cotton swabs",
+          "q tips",
+          "cotton bud"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-081",
+    "prompt": "Name something people keep in a bedroom.",
+    "answers": [
+      {
+        "name": "Duvet",
+        "points": 17,
+        "aliases": [
+          "doona",
+          "comforter",
+          "quilt",
+          "duvets"
+        ]
+      },
+      {
+        "name": "Chest of drawers",
+        "points": 27,
+        "aliases": [
+          "dresser",
+          "drawers",
+          "chest of drawer"
+        ]
+      },
+      {
+        "name": "Bedside table",
+        "points": 32,
+        "aliases": [
+          "nightstand",
+          "night stand",
+          "bedside tables"
+        ]
+      },
+      {
+        "name": "Alarm clock",
+        "points": 43,
+        "aliases": [
+          "clock",
+          "alarm clocks"
+        ]
+      },
+      {
+        "name": "Shoes",
+        "points": 58,
+        "aliases": [
+          "shoe",
+          "pair of shoes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-082",
+    "prompt": "Name something people might keep in a shed or garage.",
+    "answers": [
+      {
+        "name": "Lawn mower",
+        "points": 1,
+        "aliases": [
+          "lawnmower",
+          "mower",
+          "lawn mowers"
+        ]
+      },
+      {
+        "name": "Bicycle",
+        "points": 6,
+        "aliases": [
+          "bike",
+          "pushbike",
+          "push bike",
+          "bicycles"
+        ]
+      },
+      {
+        "name": "Spade",
+        "points": 10,
+        "aliases": [
+          "shovel",
+          "spades"
+        ]
+      },
+      {
+        "name": "Hose",
+        "points": 53,
+        "aliases": [
+          "garden hose",
+          "hosepipe",
+          "hoses"
+        ]
+      },
+      {
+        "name": "Motorbike",
+        "points": 86,
+        "aliases": [
+          "motorcycle",
+          "motor cycle",
+          "motorbikes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-083",
+    "prompt": "Name a household object made partly or wholly of glass.",
+    "answers": [
+      {
+        "name": "Window",
+        "points": 1,
+        "aliases": [
+          "window pane",
+          "window glass",
+          "windows"
+        ]
+      },
+      {
+        "name": "Drinking glass",
+        "points": 11,
+        "aliases": [
+          "tumbler",
+          "glass tumbler"
+        ]
+      },
+      {
+        "name": "Light bulb",
+        "points": 32,
+        "aliases": [
+          "lightbulb",
+          "bulb",
+          "light bulbs"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-084",
+    "prompt": "Name something people put in a freezer.",
+    "answers": [
+      {
+        "name": "Ice cubes",
+        "points": 6,
+        "aliases": [
+          "ice cube",
+          "Ice"
+        ]
+      },
+      {
+        "name": "Frozen peas",
+        "points": 11,
+        "aliases": [
+          "peas",
+          "frozen pea"
+        ]
+      },
+      {
+        "name": "Meat",
+        "points": 17,
+        "aliases": [
+          "beef",
+          "pork",
+          "lamb",
+          "meats"
+        ]
+      },
+      {
+        "name": "Fish",
+        "points": 22,
+        "aliases": [
+          "fishing",
+          "fishes"
+        ]
+      },
+      {
+        "name": "Pizza",
+        "points": 32,
+        "aliases": [
+          "pizza slice",
+          "slice of pizza",
+          "pizzas"
+        ]
+      },
+      {
+        "name": "Vegetables",
+        "points": 48,
+        "aliases": [
+          "Frozen vegetables",
+          "vegetable"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-085",
+    "prompt": "Name something people use to cook food.",
+    "answers": [
+      {
+        "name": "Hob",
+        "points": 6,
+        "aliases": [
+          "stove",
+          "stovetop",
+          "cooktop",
+          "Cooker",
+          "Gas burner",
+          "Induction hob",
+          "hobs"
+        ]
+      },
+      {
+        "name": "Microwave",
+        "points": 11,
+        "aliases": [
+          "microwave oven",
+          "microwaves"
+        ]
+      },
+      {
+        "name": "Frying pan",
+        "points": 17,
+        "aliases": [
+          "frypan",
+          "fryingpan",
+          "Skillet",
+          "frying pans"
+        ]
+      },
+      {
+        "name": "Grill",
+        "points": 37,
+        "aliases": [
+          "broiler",
+          "grills"
+        ]
+      },
+      {
+        "name": "Barbecue",
+        "points": 43,
+        "aliases": [
+          "bbq",
+          "barbeque",
+          "barbecues"
+        ]
+      },
+      {
+        "name": "Air fryer",
+        "points": 48,
+        "aliases": [
+          "airfryer",
+          "air fryers"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-086",
+    "prompt": "Name something people use when doing laundry.",
+    "answers": [
+      {
+        "name": "Detergent",
+        "points": 6,
+        "aliases": [
+          "washing liquid",
+          "washing detergent",
+          "Laundry soap",
+          "detergents"
+        ]
+      },
+      {
+        "name": "Clothes peg",
+        "points": 22,
+        "aliases": [
+          "clothespin",
+          "clothes pin",
+          "clothes pegs",
+          "pegs",
+          "peg"
+        ]
+      },
+      {
+        "name": "Clothesline",
+        "points": 27,
+        "aliases": [
+          "washing line",
+          "clothes line",
+          "clotheslines"
+        ]
+      },
+      {
+        "name": "Drying rack",
+        "points": 32,
+        "aliases": [
+          "clothes rack",
+          "laundry rack",
+          "clothes airer",
+          "Clothes horse",
+          "drying racks"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-087",
+    "prompt": "Name something people use to fix things around the home.",
+    "answers": [
+      {
+        "name": "Screwdriver",
+        "points": 7,
+        "aliases": [
+          "screw driver",
+          "screwdrivers"
+        ]
+      },
+      {
+        "name": "Pliers",
+        "points": 18,
+        "aliases": [
+          "pair of pliers",
+          "plier"
+        ]
+      },
+      {
+        "name": "Spanner",
+        "points": 23,
+        "aliases": [
+          "wrench",
+          "wrenches",
+          "adjustable wrench",
+          "spanners"
+        ]
+      },
+      {
+        "name": "Duct tape",
+        "points": 62,
+        "aliases": [
+          "gaffer tape",
+          "duck tape",
+          "Tape",
+          "duct tapes"
+        ]
+      },
+      {
+        "name": "Allen key",
+        "points": 73,
+        "aliases": [
+          "hex key",
+          "hex wrench",
+          "allen keys"
+        ]
+      },
+      {
+        "name": "Utility knife",
+        "points": 84,
+        "aliases": [
+          "stanley knife",
+          "box cutter",
+          "boxcutter",
+          "utility knives"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-088",
+    "prompt": "Name something that makes a home more comfortable in hot weather.",
+    "answers": [
+      {
+        "name": "Fan",
+        "points": 1,
+        "aliases": [
+          "electric fan",
+          "Portable fan",
+          "Desk fan",
+          "fans"
+        ]
+      },
+      {
+        "name": "Air conditioner",
+        "points": 6,
+        "aliases": [
+          "aircon",
+          "air con",
+          "ac",
+          "a c",
+          "air conditioning unit",
+          "Air conditioning",
+          "air conditioners"
+        ]
+      },
+      {
+        "name": "Open window",
+        "points": 22,
+        "aliases": [
+          "opening a window",
+          "open windows"
+        ]
+      },
+      {
+        "name": "Cotton sheets",
+        "points": 84,
+        "aliases": [
+          "light bedding",
+          "cotton bedding",
+          "cotton sheet"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-089",
+    "prompt": "Name something people use to store food.",
+    "answers": [
+      {
+        "name": "Fridge",
+        "points": 1,
+        "aliases": [
+          "refrigerator",
+          "fridges"
+        ]
+      },
+      {
+        "name": "Pantry",
+        "points": 17,
+        "aliases": [
+          "larder",
+          "pantries"
+        ]
+      },
+      {
+        "name": "Plastic tub",
+        "points": 37,
+        "aliases": [
+          "food container",
+          "plastic container",
+          "Container",
+          "Tupperware",
+          "Tub",
+          "plastic tubs"
+        ]
+      },
+      {
+        "name": "Food bag",
+        "points": 48,
+        "aliases": [
+          "food bags",
+          "plastic bag",
+          "Ziplock bag"
+        ]
+      },
+      {
+        "name": "Vacuum bag",
+        "points": 84,
+        "aliases": [
+          "vacuum sealed bag",
+          "vacuum bags"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-090",
+    "prompt": "Name something you might find on a dining table.",
+    "answers": [
+      {
+        "name": "Napkin",
+        "points": 39,
+        "aliases": [
+          "serviette",
+          "napkins",
+          "serviettes"
+        ]
+      },
+      {
+        "name": "Salt shaker",
+        "points": 53,
+        "aliases": [
+          "salt cellar",
+          "salt pot",
+          "salt shakers"
+        ]
+      },
+      {
+        "name": "Pepper grinder",
+        "points": 58,
+        "aliases": [
+          "pepper mill",
+          "pepper shaker",
+          "pepper grinders"
+        ]
+      },
+      {
+        "name": "Coaster",
+        "points": 86,
+        "aliases": [
+          "drink coaster",
+          "coasters"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-094",
+    "prompt": "Name something people can recycle through an appropriate collection service.",
+    "answers": [
+      {
+        "name": "Computer",
+        "points": 53,
+        "aliases": [
+          "pc",
+          "personal computer",
+          "computers"
+        ]
+      },
+      {
+        "name": "Shoes",
+        "points": 69,
+        "aliases": [
+          "shoe",
+          "pair of shoes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-096",
+    "prompt": "Name something that needs to be replaced regularly in a home.",
+    "answers": [
+      {
+        "name": "Soap",
+        "points": 17,
+        "aliases": [
+          "bar of soap",
+          "hand soap",
+          "soaps"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-102",
+    "prompt": "Name a form of transport that carries passengers.",
+    "answers": [
+      {
+        "name": "Tram",
+        "points": 23,
+        "aliases": [
+          "streetcar",
+          "street car",
+          "trams"
+        ]
+      },
+      {
+        "name": "Bicycle",
+        "points": 31,
+        "aliases": [
+          "bike",
+          "pushbike",
+          "push bike",
+          "bicycles"
+        ]
+      },
+      {
+        "name": "Motorbike",
+        "points": 35,
+        "aliases": [
+          "motorcycle",
+          "motor cycle",
+          "motorbikes"
+        ]
+      },
+      {
+        "name": "Coach",
+        "points": 40,
+        "aliases": [
+          "coach bus",
+          "coaches"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-103",
+    "prompt": "Name something people pack for an overnight trip.",
+    "answers": [
+      {
+        "name": "Pyjamas",
+        "points": 1,
+        "aliases": [
+          "pajamas",
+          "pjs",
+          "pj's",
+          "pyjama"
+        ]
+      },
+      {
+        "name": "Hairbrush",
+        "points": 39,
+        "aliases": [
+          "hair brush",
+          "brush",
+          "hairbrushes"
+        ]
+      },
+      {
+        "name": "Soap",
+        "points": 53,
+        "aliases": [
+          "bar of soap",
+          "hand soap",
+          "soaps"
+        ]
+      },
+      {
+        "name": "Towel",
+        "points": 58,
+        "aliases": [
+          "towels",
+          "beach towel"
+        ]
+      },
+      {
+        "name": "Shoes",
+        "points": 76,
+        "aliases": [
+          "shoe",
+          "pair of shoes"
+        ]
+      },
+      {
+        "name": "Glasses",
+        "points": 81,
+        "aliases": [
+          "spectacles",
+          "eyeglasses",
+          "reading glasses"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-104",
+    "prompt": "Name something you might find in a hotel room.",
+    "answers": [
+      {
+        "name": "Towel",
+        "points": 58,
+        "aliases": [
+          "towels",
+          "beach towel"
+        ]
+      },
+      {
+        "name": "Soap",
+        "points": 62,
+        "aliases": [
+          "bar of soap",
+          "hand soap",
+          "soaps"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-105",
+    "prompt": "Name something people do at an airport.",
+    "answers": [
+      {
+        "name": "Read",
+        "points": 43,
+        "aliases": [
+          "reading",
+          "read a book",
+          "reading a book",
+          "reads"
+        ]
+      },
+      {
+        "name": "Use toilet",
+        "points": 69,
+        "aliases": [
+          "use the toilet",
+          "go to toilet",
+          "go to the bathroom",
+          "go to the toilet",
+          "use toilets"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-109",
+    "prompt": "Name a place tourists commonly visit in a city.",
+    "answers": [
+      {
+        "name": "Theatre",
+        "points": 53,
+        "aliases": [
+          "theater",
+          "theatres"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-111",
+    "prompt": "Name something you might do on a camping holiday.",
+    "answers": [
+      {
+        "name": "Swim",
+        "points": 22,
+        "aliases": [
+          "swimming",
+          "go swimming",
+          "swims"
+        ]
+      },
+      {
+        "name": "Fish",
+        "points": 27,
+        "aliases": [
+          "fishing",
+          "fishes"
+        ]
+      },
+      {
+        "name": "Read",
+        "points": 32,
+        "aliases": [
+          "reading",
+          "read a book",
+          "reading a book",
+          "reads"
+        ]
+      },
+      {
+        "name": "Play games",
+        "points": 37,
+        "aliases": [
+          "gaming",
+          "play a game",
+          "play video games",
+          "play game"
+        ]
+      },
+      {
+        "name": "Take photographs",
+        "points": 64,
+        "aliases": [
+          "take photos",
+          "take pictures",
+          "photography",
+          "take photograph"
+        ]
+      },
+      {
+        "name": "Cycle",
+        "points": 79,
+        "aliases": [
+          "cycling",
+          "ride a bike",
+          "biking",
+          "ride a bicycle",
+          "cycles"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-116",
+    "prompt": "Name something you might see at a harbour.",
+    "answers": [
+      {
+        "name": "Lifebuoy",
+        "points": 67,
+        "aliases": [
+          "life ring",
+          "life belt",
+          "lifebuoys"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-118",
+    "prompt": "Name something people might do on a cruise ship.",
+    "answers": [
+      {
+        "name": "Swim",
+        "points": 1,
+        "aliases": [
+          "swimming",
+          "go swimming",
+          "swims"
+        ]
+      },
+      {
+        "name": "Dance",
+        "points": 17,
+        "aliases": [
+          "dancing",
+          "go dancing",
+          "dances"
+        ]
+      },
+      {
+        "name": "Read",
+        "points": 32,
+        "aliases": [
+          "reading",
+          "read a book",
+          "reading a book",
+          "reads"
+        ]
+      },
+      {
+        "name": "Play games",
+        "points": 48,
+        "aliases": [
+          "gaming",
+          "play a game",
+          "play video games",
+          "play game"
+        ]
+      },
+      {
+        "name": "Listen to music",
+        "points": 69,
+        "aliases": [
+          "listening to music",
+          "listen to songs",
+          "listen to musics"
+        ]
+      },
+      {
+        "name": "Take photographs",
+        "points": 95,
+        "aliases": [
+          "take photos",
+          "take pictures",
+          "photography",
+          "take photograph"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-120",
+    "prompt": "Name something you might find at a railway station.",
+    "answers": [
+      {
+        "name": "Toilet",
+        "points": 37,
+        "aliases": [
+          "loo",
+          "lavatory",
+          "restroom",
+          "bathroom",
+          "toilets"
+        ]
+      },
+      {
+        "name": "Bin",
+        "points": 84,
+        "aliases": [
+          "trash can",
+          "garbage can",
+          "rubbish bin",
+          "dustbin",
+          "bins"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-121",
+    "prompt": "Name a sport played with a ball.",
+    "answers": [
+      {
+        "name": "Table tennis",
+        "points": 48,
+        "aliases": [
+          "ping pong"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-122",
+    "prompt": "Name a sport or game played with a net.",
+    "answers": [
+      {
+        "name": "Badminton",
+        "points": 6,
+        "aliases": [
+          "badmington",
+          "badmintons"
+        ]
+      },
+      {
+        "name": "Table tennis",
+        "points": 27,
+        "aliases": [
+          "ping pong"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-124",
+    "prompt": "Name something people take to the beach.",
+    "answers": [
+      {
+        "name": "Towel",
+        "points": 1,
+        "aliases": [
+          "towels",
+          "beach towel"
+        ]
+      },
+      {
+        "name": "Sunscreen",
+        "points": 6,
+        "aliases": [
+          "sun screen",
+          "sunblock",
+          "sun cream",
+          "sun lotion",
+          "sunscreens"
+        ]
+      },
+      {
+        "name": "Sunglasses",
+        "points": 15,
+        "aliases": [
+          "sun glasses",
+          "sunnies",
+          "shades"
+        ]
+      },
+      {
+        "name": "Umbrella",
+        "points": 34,
+        "aliases": [
+          "umbrellas",
+          "brolly"
+        ]
+      },
+      {
+        "name": "Flip-flops",
+        "points": 72,
+        "aliases": [
+          "thongs",
+          "jandals",
+          "sliders",
+          "flip flop"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-125",
+    "prompt": "Name something you might find in a children's playground.",
+    "answers": [
+      {
+        "name": "Bin",
+        "points": 53,
+        "aliases": [
+          "trash can",
+          "garbage can",
+          "rubbish bin",
+          "dustbin",
+          "bins"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-127",
+    "prompt": "Name a piece of equipment people use at a gym.",
+    "answers": [
+      {
+        "name": "Dumbbell",
+        "points": 17,
+        "aliases": [
+          "dumbbells",
+          "dumb bell",
+          "dumb bells"
+        ]
+      },
+      {
+        "name": "Barbell",
+        "points": 22,
+        "aliases": [
+          "barbells",
+          "bar bell"
+        ]
+      },
+      {
+        "name": "Skipping rope",
+        "points": 37,
+        "aliases": [
+          "jump rope",
+          "skip rope",
+          "skipping ropes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-131",
+    "prompt": "Name something people might do at a funfair or theme park.",
+    "answers": [
+      {
+        "name": "Take photographs",
+        "points": 74,
+        "aliases": [
+          "take photos",
+          "take pictures",
+          "photography",
+          "take photograph"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-132",
+    "prompt": "Name something people use when fishing.",
+    "answers": [
+      {
+        "name": "Life jacket",
+        "points": 69,
+        "aliases": [
+          "lifejacket",
+          "life vest",
+          "pfd",
+          "life jackets"
+        ]
+      },
+      {
+        "name": "Pliers",
+        "points": 74,
+        "aliases": [
+          "pair of pliers",
+          "plier"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-133",
+    "prompt": "Name a sport that uses a bat, racket, club or stick.",
+    "answers": [
+      {
+        "name": "Badminton",
+        "points": 20,
+        "aliases": [
+          "badmington",
+          "badmintons"
+        ]
+      },
+      {
+        "name": "Table tennis",
+        "points": 29,
+        "aliases": [
+          "ping pong"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-134",
+    "prompt": "Name something you might see at a sports stadium.",
+    "answers": [
+      {
+        "name": "Coach",
+        "points": 95,
+        "aliases": [
+          "coach bus",
+          "coaches"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-135",
+    "prompt": "Name something people might do at a picnic.",
+    "answers": [
+      {
+        "name": "Play games",
+        "points": 17,
+        "aliases": [
+          "gaming",
+          "play a game",
+          "play video games",
+          "play game"
+        ]
+      },
+      {
+        "name": "Read",
+        "points": 22,
+        "aliases": [
+          "reading",
+          "read a book",
+          "reading a book",
+          "reads"
+        ]
+      },
+      {
+        "name": "Listen to music",
+        "points": 27,
+        "aliases": [
+          "listening to music",
+          "listen to songs",
+          "listen to musics"
+        ]
+      },
+      {
+        "name": "Walk",
+        "points": 48,
+        "aliases": [
+          "walking",
+          "go for a walk",
+          "take a walk",
+          "walks"
+        ]
+      },
+      {
+        "name": "Take photographs",
+        "points": 58,
+        "aliases": [
+          "take photos",
+          "take pictures",
+          "photography",
+          "take photograph"
+        ]
+      },
+      {
+        "name": "Play cards",
+        "points": 74,
+        "aliases": [
+          "card games",
+          "play a card game",
+          "play card"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-136",
+    "prompt": "Name a toy that does not need batteries.",
+    "answers": [
+      {
+        "name": "Skipping rope",
+        "points": 25,
+        "aliases": [
+          "jump rope",
+          "skip rope",
+          "skipping ropes"
+        ]
+      },
+      {
+        "name": "Lego",
+        "points": 53,
+        "aliases": [
+          "lego bricks",
+          "lego blocks",
+          "legos"
+        ]
+      },
+      {
+        "name": "Play-Doh",
+        "points": 81,
+        "aliases": [
+          "play dough",
+          "playdough",
+          "play dohs"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-138",
+    "prompt": "Name something people need for a game of cricket.",
+    "answers": [
+      {
+        "name": "Gloves",
+        "points": 40,
+        "aliases": [
+          "pair of gloves",
+          "glove"
+        ]
+      },
+      {
+        "name": "Shoes",
+        "points": 89,
+        "aliases": [
+          "shoe",
+          "pair of shoes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-140",
+    "prompt": "Name something people use when riding a bicycle.",
+    "answers": [
+      {
+        "name": "Gloves",
+        "points": 58,
+        "aliases": [
+          "pair of gloves",
+          "glove"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-142",
+    "prompt": "Name something people might build for fun.",
+    "answers": [
+      {
+        "name": "Lego house",
+        "points": 22,
+        "aliases": [
+          "lego building",
+          "lego houses"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-143",
+    "prompt": "Name an activity people do at a leisure centre.",
+    "answers": [
+      {
+        "name": "Swim",
+        "points": 1,
+        "aliases": [
+          "swimming",
+          "go swimming",
+          "swims"
+        ]
+      },
+      {
+        "name": "Do yoga",
+        "points": 32,
+        "aliases": [
+          "yoga",
+          "practise yoga",
+          "practice yoga",
+          "do yogas"
+        ]
+      },
+      {
+        "name": "Dance",
+        "points": 37,
+        "aliases": [
+          "dancing",
+          "go dancing",
+          "dances"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-144",
+    "prompt": "Name something spectators might do at a sporting event.",
+    "answers": [
+      {
+        "name": "Take photographs",
+        "points": 43,
+        "aliases": [
+          "take photos",
+          "take pictures",
+          "photography",
+          "take photograph"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-159",
+    "prompt": "Name a style of music.",
+    "answers": [
+      {
+        "name": "Dance",
+        "points": 57,
+        "aliases": [
+          "dancing",
+          "go dancing",
+          "dances"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-160",
+    "prompt": "Name something people do at a concert.",
+    "answers": [
+      {
+        "name": "Dance",
+        "points": 6,
+        "aliases": [
+          "dancing",
+          "go dancing",
+          "dances"
+        ]
+      },
+      {
+        "name": "Take photographs",
+        "points": 27,
+        "aliases": [
+          "take photos",
+          "take pictures",
+          "photography",
+          "take photograph"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-161",
+    "prompt": "Name a place where people might perform music.",
+    "answers": [
+      {
+        "name": "Theatre",
+        "points": 11,
+        "aliases": [
+          "theater",
+          "theatres"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-162",
+    "prompt": "Name something a person might knit or sew.",
+    "answers": [
+      {
+        "name": "Scarf",
+        "points": 6,
+        "aliases": [
+          "scarves",
+          "scarfs"
+        ]
+      },
+      {
+        "name": "Gloves",
+        "points": 15,
+        "aliases": [
+          "pair of gloves",
+          "glove"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-163",
+    "prompt": "Name something commonly found in a library.",
+    "answers": [
+      {
+        "name": "Computer",
+        "points": 25,
+        "aliases": [
+          "pc",
+          "personal computer",
+          "computers"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-169",
+    "prompt": "Name something commonly sold at a petrol station.",
+    "answers": [
+      {
+        "name": "Sweets",
+        "points": 62,
+        "aliases": [
+          "candy",
+          "lollies",
+          "sweet"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-172",
+    "prompt": "Name something people do on a smartphone.",
+    "answers": [
+      {
+        "name": "Take photos",
+        "points": 11,
+        "aliases": [
+          "take pictures",
+          "take photographs",
+          "photography",
+          "take photo"
+        ]
+      },
+      {
+        "name": "Read",
+        "points": 22,
+        "aliases": [
+          "reading",
+          "read a book",
+          "reading a book",
+          "reads"
+        ]
+      },
+      {
+        "name": "Play games",
+        "points": 27,
+        "aliases": [
+          "gaming",
+          "play a game",
+          "play video games",
+          "play game"
+        ]
+      },
+      {
+        "name": "Listen to music",
+        "points": 58,
+        "aliases": [
+          "listening to music",
+          "listen to songs",
+          "listen to musics"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-173",
+    "prompt": "Name something people commonly borrow.",
+    "answers": [
+      {
+        "name": "Bicycle",
+        "points": 27,
+        "aliases": [
+          "bike",
+          "pushbike",
+          "push bike",
+          "bicycles"
+        ]
+      },
+      {
+        "name": "Umbrella",
+        "points": 43,
+        "aliases": [
+          "umbrellas",
+          "brolly"
+        ]
+      },
+      {
+        "name": "Shoes",
+        "points": 58,
+        "aliases": [
+          "shoe",
+          "pair of shoes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-174",
+    "prompt": "Name something people commonly rent.",
+    "answers": [
+      {
+        "name": "Bicycle",
+        "points": 22,
+        "aliases": [
+          "bike",
+          "pushbike",
+          "push bike",
+          "bicycles"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-175",
+    "prompt": "Name something people might need a ticket for.",
+    "answers": [
+      {
+        "name": "Tram",
+        "points": 22,
+        "aliases": [
+          "streetcar",
+          "street car",
+          "trams"
+        ]
+      },
+      {
+        "name": "Cinema",
+        "points": 32,
+        "aliases": [
+          "movie theater",
+          "movie theatre",
+          "cinemas"
+        ]
+      },
+      {
+        "name": "Theatre",
+        "points": 37,
+        "aliases": [
+          "theater",
+          "theatres"
+        ]
+      },
+      {
+        "name": "Football match",
+        "points": 43,
+        "aliases": [
+          "soccer game",
+          "football game",
+          "football matches"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-176",
+    "prompt": "Name something people might keep in a wallet or purse.",
+    "answers": [
+      {
+        "name": "Photograph",
+        "points": 37,
+        "aliases": [
+          "photo",
+          "photos",
+          "photographs"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-177",
+    "prompt": "Name something people do with paper.",
+    "answers": [
+      {
+        "name": "Read",
+        "points": 37,
+        "aliases": [
+          "reading",
+          "read a book",
+          "reading a book",
+          "reads"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-178",
+    "prompt": "Name something people might insure.",
+    "answers": [
+      {
+        "name": "Bicycle",
+        "points": 37,
+        "aliases": [
+          "bike",
+          "pushbike",
+          "push bike",
+          "bicycles"
+        ]
+      },
+      {
+        "name": "Motorbike",
+        "points": 43,
+        "aliases": [
+          "motorcycle",
+          "motor cycle",
+          "motorbikes"
+        ]
+      },
+      {
+        "name": "Laptop",
+        "points": 69,
+        "aliases": [
+          "notebook computer",
+          "laptop computer",
+          "laptops"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-181",
+    "prompt": "Name something people might do when it rains.",
+    "answers": [
+      {
+        "name": "Read",
+        "points": 43,
+        "aliases": [
+          "reading",
+          "read a book",
+          "reading a book",
+          "reads"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-182",
+    "prompt": "Name something people might forget before leaving home.",
+    "answers": [
+      {
+        "name": "Glasses",
+        "points": 17,
+        "aliases": [
+          "spectacles",
+          "eyeglasses",
+          "reading glasses"
+        ]
+      },
+      {
+        "name": "Umbrella",
+        "points": 32,
+        "aliases": [
+          "umbrellas",
+          "brolly"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-184",
+    "prompt": "Name something people can buy from a vending machine.",
+    "answers": [
+      {
+        "name": "Sweets",
+        "points": 22,
+        "aliases": [
+          "candy",
+          "lollies",
+          "sweet"
+        ]
+      },
+      {
+        "name": "Biscuits",
+        "points": 53,
+        "aliases": [
+          "cookies",
+          "cookie",
+          "biscuit"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-185",
+    "prompt": "Name something people might send through the post.",
+    "answers": [
+      {
+        "name": "Photograph",
+        "points": 43,
+        "aliases": [
+          "photo",
+          "photos",
+          "photographs"
+        ]
+      },
+      {
+        "name": "Cheque",
+        "points": 74,
+        "aliases": [
+          "check",
+          "cheques"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-186",
+    "prompt": "Name something people might do to save money.",
+    "answers": [
+      {
+        "name": "Walk",
+        "points": 17,
+        "aliases": [
+          "walking",
+          "go for a walk",
+          "take a walk",
+          "walks"
+        ]
+      },
+      {
+        "name": "Cycle",
+        "points": 22,
+        "aliases": [
+          "cycling",
+          "ride a bike",
+          "biking",
+          "ride a bicycle",
+          "cycles"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-187",
+    "prompt": "Name something people might queue for.",
+    "answers": [
+      {
+        "name": "Toilet",
+        "points": 32,
+        "aliases": [
+          "loo",
+          "lavatory",
+          "restroom",
+          "bathroom",
+          "toilets"
+        ]
+      },
+      {
+        "name": "Cinema",
+        "points": 69,
+        "aliases": [
+          "movie theater",
+          "movie theatre",
+          "cinemas"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-188",
+    "prompt": "Name something that can be delivered to your home.",
+    "answers": [
+      {
+        "name": "Pizza",
+        "points": 17,
+        "aliases": [
+          "pizza slice",
+          "slice of pizza",
+          "pizzas"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-190",
+    "prompt": "Name something people might put on a shopping list.",
+    "answers": [
+      {
+        "name": "Fish",
+        "points": 48,
+        "aliases": [
+          "fishing",
+          "fishes"
+        ]
+      },
+      {
+        "name": "Soap",
+        "points": 76,
+        "aliases": [
+          "bar of soap",
+          "hand soap",
+          "soaps"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-192",
+    "prompt": "Name something people might donate to charity.",
+    "answers": [
+      {
+        "name": "Shoes",
+        "points": 11,
+        "aliases": [
+          "shoe",
+          "pair of shoes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-193",
+    "prompt": "Name a common English word beginning with SH.",
+    "answers": [
+      {
+        "name": "Shirt",
+        "points": 9,
+        "aliases": [
+          "shirts"
+        ]
+      },
+      {
+        "name": "Shelf",
+        "points": 22,
+        "aliases": [
+          "shelves"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-194",
+    "prompt": "Name something people commonly hang up.",
+    "answers": [
+      {
+        "name": "Shirt",
+        "points": 10,
+        "aliases": [
+          "shirts",
+          "t-shirt",
+          "tshirt",
+          "tee shirt"
+        ]
+      },
+      {
+        "name": "Trousers",
+        "points": 18,
+        "aliases": [
+          "pants",
+          "jeans"
+        ]
+      },
+      {
+        "name": "Towel",
+        "points": 27,
+        "aliases": [
+          "towels",
+          "beach towel"
+        ]
+      },
+      {
+        "name": "Washing",
+        "points": 31,
+        "aliases": [
+          "laundry",
+          "clothes",
+          "clothing",
+          "wet clothes",
+          "washings"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-199",
+    "prompt": "Name an item of clothing whose English name contains the letter T.",
+    "answers": [
+      {
+        "name": "Shirt",
+        "points": 7,
+        "aliases": [
+          "shirts"
+        ]
+      },
+      {
+        "name": "Boots",
+        "points": 56,
+        "aliases": [
+          "boot",
+          "pair of boots"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-201",
+    "prompt": "Name something commonly described as round.",
+    "answers": [
+      {
+        "name": "Pizza",
+        "points": 53,
+        "aliases": [
+          "pizza slice",
+          "slice of pizza",
+          "pizzas"
+        ]
+      },
+      {
+        "name": "Biscuit",
+        "points": 64,
+        "aliases": [
+          "cookie",
+          "cookies",
+          "biscuits"
+        ]
+      },
+      {
+        "name": "Doughnut",
+        "points": 84,
+        "aliases": [
+          "donut",
+          "donuts",
+          "doughnuts"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-202",
+    "prompt": "Name something commonly described as sharp.",
+    "answers": [
+      {
+        "name": "Scissors",
+        "points": 6,
+        "aliases": [
+          "pair of scissors"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-203",
+    "prompt": "Name something that stretches.",
+    "answers": [
+      {
+        "name": "Rubber band",
+        "points": 1,
+        "aliases": [
+          "elastic band",
+          "rubber bands"
+        ]
+      },
+      {
+        "name": "Lycra",
+        "points": 48,
+        "aliases": [
+          "lycra fabric",
+          "lycras"
+        ]
+      },
+      {
+        "name": "Spandex",
+        "points": 53,
+        "aliases": [
+          "spandex fabric",
+          "spandexes"
+        ]
+      },
+      {
+        "name": "Hair tie",
+        "points": 74,
+        "aliases": [
+          "hair band",
+          "ponytail holder",
+          "hair ties"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-204",
+    "prompt": "Name something that can be transparent.",
+    "answers": [
+      {
+        "name": "Perspex",
+        "points": 64,
+        "aliases": [
+          "acrylic",
+          "plexiglass",
+          "perspexes"
+        ]
+      },
+      {
+        "name": "Jellyfish",
+        "points": 79,
+        "aliases": [
+          "jelly fish",
+          "jellyfishes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-205",
+    "prompt": "Name something that can melt.",
+    "answers": [
+      {
+        "name": "Ice",
+        "points": 1,
+        "aliases": [
+          "Ice cube",
+          "ices"
+        ]
+      },
+      {
+        "name": "Ice cream",
+        "points": 11,
+        "aliases": [
+          "icecream",
+          "gelato",
+          "ice creams"
+        ]
+      },
+      {
+        "name": "Aluminium",
+        "points": 74,
+        "aliases": [
+          "aluminum",
+          "aluminiums"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-206",
+    "prompt": "Name something commonly described as sticky.",
+    "answers": [
+      {
+        "name": "Glue",
+        "points": 1,
+        "aliases": [
+          "Adhesive",
+          "Glue stick",
+          "glues"
+        ]
+      },
+      {
+        "name": "Sticky tape",
+        "points": 27,
+        "aliases": [
+          "sellotape",
+          "scotch tape",
+          "adhesive tape",
+          "tape",
+          "sticky tapes"
+        ]
+      },
+      {
+        "name": "Adhesive label",
+        "points": 64,
+        "aliases": [
+          "sticky label",
+          "Sticker",
+          "adhesive labels"
+        ]
+      },
+      {
+        "name": "Spiderweb",
+        "points": 90,
+        "aliases": [
+          "spider web",
+          "cobweb",
+          "spiderwebs"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-207",
+    "prompt": "Name something that can be rolled up.",
+    "answers": [
+      {
+        "name": "Yoga mat",
+        "points": 27,
+        "aliases": [
+          "Exercise mat",
+          "gym mat",
+          "fitness mat",
+          "yoga mats"
+        ]
+      },
+      {
+        "name": "Towel",
+        "points": 43,
+        "aliases": [
+          "towels",
+          "beach towel"
+        ]
+      },
+      {
+        "name": "Sleeve",
+        "points": 64,
+        "aliases": [
+          "sleeves",
+          "shirt sleeve",
+          "shirt sleeves",
+          "jacket sleeve",
+          "jacket sleeves",
+          "cuff",
+          "cuffs"
+        ]
+      },
+      {
+        "name": "Trouser leg",
+        "points": 69,
+        "aliases": [
+          "pants",
+          "trousers",
+          "jeans",
+          "pant leg",
+          "pant legs",
+          "jean leg",
+          "jean legs",
+          "trouser cuff",
+          "trouser cuffs",
+          "trouser legs"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-208",
+    "prompt": "Name something that can be tied.",
+    "answers": [
+      {
+        "name": "Shoelace",
+        "points": 1,
+        "aliases": [
+          "shoe lace",
+          "shoe laces",
+          "Shoelaces",
+          "Laces"
+        ]
+      },
+      {
+        "name": "Tie",
+        "points": 6,
+        "aliases": [
+          "Necktie",
+          "neck tie",
+          "ties"
+        ]
+      },
+      {
+        "name": "Scarf",
+        "points": 53,
+        "aliases": [
+          "scarves",
+          "scarfs"
+        ]
+      },
+      {
+        "name": "Hair",
+        "points": 58,
+        "aliases": [
+          "ponytail",
+          "plait",
+          "braid",
+          "hairs"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-209",
+    "prompt": "Name something commonly described as fragile.",
+    "answers": [
+      {
+        "name": "China",
+        "points": 11,
+        "aliases": [
+          "fine china",
+          "chinaware",
+          "chinas"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-210",
+    "prompt": "Name something that spins.",
+    "answers": [
+      {
+        "name": "Wheel",
+        "points": 1,
+        "aliases": [
+          "Car wheel",
+          "Bicycle wheel",
+          "Wheelchair wheel",
+          "wheels"
+        ]
+      },
+      {
+        "name": "Potter's wheel",
+        "points": 79,
+        "aliases": [
+          "pottery wheel",
+          "potter s wheels"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-211",
+    "prompt": "Name something that can float on water.",
+    "answers": [
+      {
+        "name": "Raft",
+        "points": 11,
+        "aliases": [
+          "Life raft",
+          "rafts"
+        ]
+      },
+      {
+        "name": "Cork",
+        "points": 16,
+        "aliases": [
+          "Cork stopper",
+          "corks"
+        ]
+      },
+      {
+        "name": "Beach ball",
+        "points": 36,
+        "aliases": [
+          "inflatable ball",
+          "Waterproof ball",
+          "beach balls"
+        ]
+      },
+      {
+        "name": "Lifebuoy",
+        "points": 41,
+        "aliases": [
+          "life ring",
+          "lifering",
+          "life belt",
+          "lifebuoys"
+        ]
+      },
+      {
+        "name": "Life jacket",
+        "points": 46,
+        "aliases": [
+          "lifejacket",
+          "life vest",
+          "pfd",
+          "life jackets"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-212",
+    "prompt": "Name something that commonly comes in a roll.",
+    "answers": [
+      {
+        "name": "Toilet paper",
+        "points": 1,
+        "aliases": [
+          "loo roll",
+          "toilet roll",
+          "toilet tissue",
+          "loo paper",
+          "toilet papers"
+        ]
+      },
+      {
+        "name": "Kitchen paper",
+        "points": 6,
+        "aliases": [
+          "paper towel",
+          "paper towels",
+          "kitchen roll",
+          "kitchen towel",
+          "kitchen towels",
+          "kitchen papers"
+        ]
+      },
+      {
+        "name": "Sticky tape",
+        "points": 22,
+        "aliases": [
+          "sellotape",
+          "scotch tape",
+          "adhesive tape",
+          "sticky tapes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-213",
+    "prompt": "Name something commonly sold in pairs.",
+    "answers": [
+      {
+        "name": "Shoes",
+        "points": 1,
+        "aliases": [
+          "shoe",
+          "pair of shoes",
+          "Trainers",
+          "sneakers",
+          "running shoes"
+        ]
+      },
+      {
+        "name": "Gloves",
+        "points": 11,
+        "aliases": [
+          "pair of gloves",
+          "glove"
+        ]
+      },
+      {
+        "name": "Boots",
+        "points": 27,
+        "aliases": [
+          "boot",
+          "pair of boots"
+        ]
+      },
+      {
+        "name": "Cufflinks",
+        "points": 69,
+        "aliases": [
+          "cuff links",
+          "cufflink"
+        ]
+      },
+      {
+        "name": "Flippers",
+        "points": 84,
+        "aliases": [
+          "fins",
+          "swim fins",
+          "flipper"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-214",
+    "prompt": "Name something commonly described as waterproof.",
+    "answers": [
+      {
+        "name": "Raincoat",
+        "points": 1,
+        "aliases": [
+          "Jacket",
+          "waterproof jacket",
+          "rain jacket",
+          "Coat",
+          "waterproof coat",
+          "raincoats"
+        ]
+      },
+      {
+        "name": "Umbrella",
+        "points": 6,
+        "aliases": [
+          "umbrellas",
+          "brolly"
+        ]
+      },
+      {
+        "name": "Dry bag",
+        "points": 22,
+        "aliases": [
+          "drybag",
+          "dry bags"
+        ]
+      },
+      {
+        "name": "Tarpaulin",
+        "points": 27,
+        "aliases": [
+          "tarp",
+          "tarpaulins"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-215",
+    "prompt": "Name something with a handle.",
+    "answers": [
+      {
+        "name": "Door",
+        "points": 1,
+        "aliases": [
+          "door handle",
+          "doors"
+        ]
+      },
+      {
+        "name": "Umbrella",
+        "points": 34,
+        "aliases": [
+          "umbrellas",
+          "brolly"
+        ]
+      },
+      {
+        "name": "Scissors",
+        "points": 89,
+        "aliases": [
+          "pair of scissors"
+        ]
+      },
+      {
+        "name": "Tennis racket",
+        "points": 100,
+        "aliases": [
+          "tennis racquet",
+          "racket",
+          "racquet",
+          "tennis rackets"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-216",
+    "prompt": "Name something with a lid.",
+    "answers": [
+      {
+        "name": "Bin",
+        "points": 17,
+        "aliases": [
+          "trash can",
+          "garbage can",
+          "rubbish bin",
+          "dustbin",
+          "waste bin",
+          "bins"
+        ]
+      },
+      {
+        "name": "Saucepan",
+        "points": 22,
+        "aliases": [
+          "sauce pan",
+          "cooking pot",
+          "pan",
+          "saucepans"
+        ]
+      },
+      {
+        "name": "Toilet",
+        "points": 48,
+        "aliases": [
+          "loo",
+          "lavatory",
+          "restroom",
+          "bathroom",
+          "toilets"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-218",
+    "prompt": "Name something found in a public park.",
+    "answers": [
+      {
+        "name": "Bin",
+        "points": 53,
+        "aliases": [
+          "trash can",
+          "garbage can",
+          "rubbish bin",
+          "dustbin",
+          "bins"
+        ]
+      },
+      {
+        "name": "Toilet",
+        "points": 62,
+        "aliases": [
+          "loo",
+          "lavatory",
+          "restroom",
+          "bathroom",
+          "toilets"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-219",
+    "prompt": "Name something gardeners use.",
+    "answers": [
+      {
+        "name": "Gloves",
+        "points": 43,
+        "aliases": [
+          "pair of gloves",
+          "glove"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-220",
+    "prompt": "Name something you might see on a building site.",
+    "answers": [
+      {
+        "name": "Skip",
+        "points": 86,
+        "aliases": [
+          "skipping",
+          "jump rope",
+          "skips"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-221",
+    "prompt": "Name something you might see on a road.",
+    "answers": [
+      {
+        "name": "Motorbike",
+        "points": 17,
+        "aliases": [
+          "motorcycle",
+          "motor cycle",
+          "motorbikes"
+        ]
+      },
+      {
+        "name": "Bicycle",
+        "points": 22,
+        "aliases": [
+          "bike",
+          "pushbike",
+          "push bike",
+          "bicycles"
+        ]
+      },
+      {
+        "name": "Fire engine",
+        "points": 48,
+        "aliases": [
+          "fire truck",
+          "firetruck",
+          "fire engines"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-223",
+    "prompt": "Name something people use to stay safe in strong sunshine.",
+    "answers": [
+      {
+        "name": "Sunscreen",
+        "points": 1,
+        "aliases": [
+          "sun screen",
+          "sunblock",
+          "sun cream",
+          "sun lotion",
+          "sunscreens"
+        ]
+      },
+      {
+        "name": "Sunglasses",
+        "points": 11,
+        "aliases": [
+          "sun glasses",
+          "sunnies"
+        ]
+      },
+      {
+        "name": "Umbrella",
+        "points": 17,
+        "aliases": [
+          "umbrellas",
+          "brolly"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-224",
+    "prompt": "Name something you might find in a garden pond.",
+    "answers": [
+      {
+        "name": "Fish",
+        "points": 6,
+        "aliases": [
+          "fishing",
+          "fishes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-225",
+    "prompt": "Name something people do to care for a pet.",
+    "answers": [
+      {
+        "name": "Walk",
+        "points": 11,
+        "aliases": [
+          "walking",
+          "go for a walk",
+          "take a walk",
+          "walks"
+        ]
+      },
+      {
+        "name": "Bathe",
+        "points": 27,
+        "aliases": [
+          "bath",
+          "have a bath",
+          "take a bath",
+          "bathes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-228",
+    "prompt": "Name something people might see at a market stall.",
+    "answers": [
+      {
+        "name": "Shoes",
+        "points": 22,
+        "aliases": [
+          "shoe",
+          "pair of shoes"
+        ]
+      },
+      {
+        "name": "Fish",
+        "points": 53,
+        "aliases": [
+          "fishing",
+          "fishes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-231",
+    "prompt": "Name something that can make a loud noise outdoors.",
+    "answers": [
+      {
+        "name": "Motorbike",
+        "points": 37,
+        "aliases": [
+          "motorcycle",
+          "motor cycle",
+          "motorbikes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-232",
+    "prompt": "Name something people might plant in a vegetable garden.",
+    "answers": [
+      {
+        "name": "Potato",
+        "points": 6,
+        "aliases": [
+          "potatoes",
+          "potatos"
+        ]
+      },
+      {
+        "name": "Tomato",
+        "points": 10,
+        "aliases": [
+          "tomatoes",
+          "tomatos"
+        ]
+      },
+      {
+        "name": "Beetroot",
+        "points": 67,
+        "aliases": [
+          "beet",
+          "beets",
+          "beetroots"
+        ]
+      },
+      {
+        "name": "Sweetcorn",
+        "points": 81,
+        "aliases": [
+          "sweet corn",
+          "corn",
+          "sweetcorns"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-233",
+    "prompt": "Name something seen in a desert.",
+    "answers": [
+      {
+        "name": "Cactus",
+        "points": 15,
+        "aliases": [
+          "cacti",
+          "cactuses"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-234",
+    "prompt": "Name something people use to help in an emergency.",
+    "answers": [
+      {
+        "name": "First aid kit",
+        "points": 6,
+        "aliases": [
+          "firstaid kit",
+          "first aid kits"
+        ]
+      },
+      {
+        "name": "Plaster",
+        "points": 17,
+        "aliases": [
+          "band aid",
+          "bandaid",
+          "plasters"
+        ]
+      },
+      {
+        "name": "Life jacket",
+        "points": 48,
+        "aliases": [
+          "lifejacket",
+          "life vest",
+          "pfd",
+          "life jackets"
+        ]
+      },
+      {
+        "name": "Lifebuoy",
+        "points": 53,
+        "aliases": [
+          "life ring",
+          "life belt",
+          "lifebuoys"
+        ]
+      },
+      {
+        "name": "Smoke alarm",
+        "points": 100,
+        "aliases": [
+          "smoke detector",
+          "smoke alarms"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-237",
+    "prompt": "Name something that needs water to work or be used properly.",
+    "answers": [
+      {
+        "name": "Toilet",
+        "points": 22,
+        "aliases": [
+          "loo",
+          "lavatory",
+          "restroom",
+          "bathroom",
+          "toilets"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-238",
+    "prompt": "Name something people use to protect themselves at work.",
+    "answers": [
+      {
+        "name": "Gloves",
+        "points": 7,
+        "aliases": [
+          "pair of gloves",
+          "glove"
+        ]
+      },
+      {
+        "name": "Life jacket",
+        "points": 100,
+        "aliases": [
+          "lifejacket",
+          "life vest",
+          "pfd",
+          "life jackets"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg7-240",
+    "prompt": "Name something people might see on a snowy day.",
+    "answers": [
+      {
+        "name": "Scarf",
+        "points": 67,
+        "aliases": [
+          "scarves",
+          "scarfs"
+        ]
+      },
+      {
+        "name": "Gloves",
+        "points": 72,
+        "aliases": [
+          "pair of gloves",
+          "glove"
+        ]
+      },
+      {
+        "name": "Beanie",
+        "points": 76,
+        "aliases": [
+          "knit cap",
+          "woolly hat",
+          "beanie hat",
+          "beanies"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg8-156",
+    "prompt": "Name an office supply or desk item represented by an emoji.",
+    "answers": [
+      {
+        "name": "Briefcase",
+        "points": 50,
+        "aliases": [
+          "Briefcases"
+        ]
+      },
+      {
+        "name": "File Folder",
+        "points": 50,
+        "aliases": [
+          "File Folders"
+        ]
+      },
+      {
+        "name": "Calendar",
+        "points": 50,
+        "aliases": [
+          "Calendars"
+        ]
+      },
+      {
+        "name": "Card Index",
+        "points": 50,
+        "aliases": [
+          "Card Indexes"
+        ]
+      },
+      {
+        "name": "Chart Increasing",
+        "points": 50,
+        "aliases": [
+          "Chart Increasings"
+        ]
+      },
+      {
+        "name": "Chart Decreasing",
+        "points": 50,
+        "aliases": [
+          "Chart Decreasings"
+        ]
+      },
+      {
+        "name": "Bar Chart",
+        "points": 50,
+        "aliases": [
+          "Bar Charts"
+        ]
+      },
+      {
+        "name": "Clipboard",
+        "points": 50,
+        "aliases": [
+          "Clipboards"
+        ]
+      },
+      {
+        "name": "Pushpin",
+        "points": 50,
+        "aliases": [
+          "Pushpins"
+        ]
+      },
+      {
+        "name": "Paperclip",
+        "points": 1,
+        "aliases": [
+          "Paperclips"
+        ]
+      },
+      {
+        "name": "Straight Ruler",
+        "points": 50,
+        "aliases": [
+          "Straight Rulers"
+        ]
+      },
+      {
+        "name": "Triangular Ruler",
+        "points": 50,
+        "aliases": [
+          "Triangular Rulers"
+        ]
+      },
+      {
+        "name": "Scissors",
+        "points": 50,
+        "aliases": [
+          "pair of scissors",
+          "scissor"
+        ]
+      },
+      {
+        "name": "Card File Box",
+        "points": 50,
+        "aliases": [
+          "Card File Boxes"
+        ]
+      },
+      {
+        "name": "File Cabinet",
+        "points": 50,
+        "aliases": [
+          "File Cabinets"
+        ]
+      },
+      {
+        "name": "Wastebasket",
+        "points": 50,
+        "aliases": [
+          "Wastebaskets"
+        ]
+      },
+      {
+        "name": "Notebook",
+        "points": 50,
+        "aliases": [
+          "Spiral Notepad",
+          "Notebooks"
+        ]
+      },
+      {
+        "name": "Ledger",
+        "points": 50,
+        "aliases": [
+          "Ledgers"
+        ]
+      },
+      {
+        "name": "Scroll",
+        "points": 50,
+        "aliases": [
+          "Scrolls"
+        ]
+      },
+      {
+        "name": "Page Facing Up",
+        "points": 50,
+        "aliases": [
+          "Page",
+          "Page With Curl",
+          "Paper",
+          "Sheet of paper",
+          "Paper sheet",
+          "Pages"
+        ]
+      },
+      {
+        "name": "Newspaper",
+        "points": 50,
+        "aliases": [
+          "Newspapers"
+        ]
+      },
+      {
+        "name": "Bookmark",
+        "points": 50,
+        "aliases": [
+          "book mark",
+          "bookmarks"
+        ]
+      },
+      {
+        "name": "Label",
+        "points": 50,
+        "aliases": [
+          "Labels"
+        ]
+      },
+      {
+        "name": "Pencil",
+        "points": 50,
+        "aliases": [
+          "lead pencil"
+        ]
+      },
+      {
+        "name": "Black Nib",
+        "points": 50,
+        "aliases": [
+          "Black Nibs"
+        ]
+      },
+      {
+        "name": "Fountain Pen",
+        "points": 50,
+        "aliases": [
+          "Fountain Pens"
+        ]
+      },
+      {
+        "name": "Pen",
+        "points": 50,
+        "aliases": [
+          "Pens"
+        ]
+      },
+      {
+        "name": "Paintbrush",
+        "points": 50,
+        "aliases": [
+          "Paintbrushes"
+        ]
+      },
+      {
+        "name": "Crayon",
+        "points": 50,
+        "aliases": [
+          "Crayons"
+        ]
+      },
+      {
+        "name": "Memo",
+        "points": 50,
+        "aliases": [
+          "Memos"
+        ]
+      },
+      {
+        "name": "Mobile Phone",
+        "points": 50,
+        "aliases": [
+          "Mobile Phones"
+        ]
+      },
+      {
+        "name": "Telephone",
+        "points": 50,
+        "aliases": [
+          "Telephones"
+        ]
+      },
+      {
+        "name": "Fax Machine",
+        "points": 50,
+        "aliases": [
+          "Fax Machines"
+        ]
+      },
+      {
+        "name": "Laptop",
+        "points": 50,
+        "aliases": [
+          "notebook computer",
+          "laptop computer",
+          "notebook pc",
+          "Laptops"
+        ]
+      },
+      {
+        "name": "Desktop Computer",
+        "points": 50,
+        "aliases": [
+          "Desktop Computers"
+        ]
+      },
+      {
+        "name": "Printer",
+        "points": 50,
+        "aliases": [
+          "printers"
+        ]
+      },
+      {
+        "name": "Keyboard",
+        "points": 50,
+        "aliases": [
+          "computer keyboard",
+          "keyboards"
+        ]
+      },
+      {
+        "name": "Computer Mouse",
+        "points": 50,
+        "aliases": [
+          "mouse",
+          "computer mice"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg8-159",
+    "prompt": "Name a writing, reading or paper item represented by an emoji.",
+    "answers": [
+      {
+        "name": "Notebook",
+        "points": 50,
+        "aliases": [
+          "Notebooks"
+        ]
+      },
+      {
+        "name": "Ledger",
+        "points": 100,
+        "aliases": [
+          "Ledgers"
+        ]
+      },
+      {
+        "name": "Scroll",
+        "points": 50,
+        "aliases": [
+          "Scrolls"
+        ]
+      },
+      {
+        "name": "Page Facing Up",
+        "points": 50,
+        "aliases": [
+          "Page",
+          "Page With Curl",
+          "Paper",
+          "Sheet of paper",
+          "Paper sheet",
+          "Pages"
+        ]
+      },
+      {
+        "name": "Newspaper",
+        "points": 50,
+        "aliases": [
+          "Newspapers"
+        ]
+      },
+      {
+        "name": "Bookmark",
+        "points": 50,
+        "aliases": [
+          "book mark",
+          "bookmarks"
+        ]
+      },
+      {
+        "name": "Label",
+        "points": 50,
+        "aliases": [
+          "Labels"
+        ]
+      },
+      {
+        "name": "Pencil",
+        "points": 50,
+        "aliases": [
+          "lead pencil"
+        ]
+      },
+      {
+        "name": "Black Nib",
+        "points": 50,
+        "aliases": [
+          "Black Nibs"
+        ]
+      },
+      {
+        "name": "Fountain Pen",
+        "points": 50,
+        "aliases": [
+          "Fountain Pens"
+        ]
+      },
+      {
+        "name": "Pen",
+        "points": 50,
+        "aliases": [
+          "Pens"
+        ]
+      },
+      {
+        "name": "Paintbrush",
+        "points": 50,
+        "aliases": [
+          "Paintbrushes"
+        ]
+      },
+      {
+        "name": "Crayon",
+        "points": 50,
+        "aliases": [
+          "Crayons"
+        ]
+      },
+      {
+        "name": "Memo",
+        "points": 50,
+        "aliases": [
+          "Memos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hg8-161",
+    "prompt": "Name a sky or weather symbol represented by an emoji.",
+    "answers": [
+      {
+        "name": "New Moon",
+        "points": 50,
+        "aliases": [
+          "New Moon Face",
+          "New Moons"
+        ]
+      },
+      {
+        "name": "Waxing Crescent Moon",
+        "points": 50,
+        "aliases": [
+          "Waxing Crescent Moons"
+        ]
+      },
+      {
+        "name": "First Quarter Moon",
+        "points": 50,
+        "aliases": [
+          "First Quarter Moon Face",
+          "First Quarter Moons"
+        ]
+      },
+      {
+        "name": "Waxing Gibbous Moon",
+        "points": 50,
+        "aliases": [
+          "Waxing Gibbous Moons"
+        ]
+      },
+      {
+        "name": "Full Moon",
+        "points": 50,
+        "aliases": [
+          "Full Moon Face",
+          "Moon",
+          "Full Moons"
+        ]
+      },
+      {
+        "name": "Waning Gibbous Moon",
+        "points": 50,
+        "aliases": [
+          "Waning Gibbous Moons"
+        ]
+      },
+      {
+        "name": "Last Quarter Moon",
+        "points": 50,
+        "aliases": [
+          "Last Quarter Moon Face",
+          "Last Quarter Moons"
+        ]
+      },
+      {
+        "name": "Waning Crescent Moon",
+        "points": 50,
+        "aliases": [
+          "Waning Crescent Moons"
+        ]
+      },
+      {
+        "name": "Crescent Moon",
+        "points": 50,
+        "aliases": [
+          "Crescent Moons"
+        ]
+      },
+      {
+        "name": "Thermometer",
+        "points": 50,
+        "aliases": [
+          "Thermometers"
+        ]
+      },
+      {
+        "name": "Sun",
+        "points": 1,
+        "aliases": [
+          "Sun With Face",
+          "sol",
+          "Suns"
+        ]
+      },
+      {
+        "name": "Ringed Planet",
+        "points": 50,
+        "aliases": [
+          "Saturn",
+          "Ringed Planets"
+        ]
+      },
+      {
+        "name": "Star",
+        "points": 50,
+        "aliases": [
+          "Glowing Star",
+          "Stars"
+        ]
+      },
+      {
+        "name": "Shooting Star",
+        "points": 50,
+        "aliases": [
+          "Shooting Stars"
+        ]
+      },
+      {
+        "name": "Milky Way",
+        "points": 50,
+        "aliases": [
+          "Milky Ways"
+        ]
+      },
+      {
+        "name": "Cloud",
+        "points": 50,
+        "aliases": [
+          "Clouds"
+        ]
+      },
+      {
+        "name": "Cloud With Lightning And Rain",
+        "points": 50,
+        "aliases": [
+          "Thunderstorm",
+          "storm",
+          "thunder storm",
+          "Thunderstorms"
+        ]
+      },
+      {
+        "name": "Cloud With Rain",
+        "points": 50,
+        "aliases": [
+          "Rain",
+          "rainfall",
+          "rain cloud"
+        ]
+      },
+      {
+        "name": "Cloud With Snow",
+        "points": 50,
+        "aliases": [
+          "Snow",
+          "snowfall"
+        ]
+      },
+      {
+        "name": "Cloud With Lightning",
+        "points": 50,
+        "aliases": [
+          "Lightning",
+          "High Voltage",
+          "lightning bolt"
+        ]
+      },
+      {
+        "name": "Tornado",
+        "points": 50,
+        "aliases": [
+          "Tornados"
+        ]
+      },
+      {
+        "name": "Fog",
+        "points": 50,
+        "aliases": [
+          "Fogs"
+        ]
+      },
+      {
+        "name": "Wind Face",
+        "points": 100,
+        "aliases": [
+          "Wind",
+          "blowing wind"
+        ]
+      },
+      {
+        "name": "Cyclone",
+        "points": 50,
+        "aliases": [
+          "Cyclones"
+        ]
+      },
+      {
+        "name": "Rainbow",
+        "points": 50,
+        "aliases": [
+          "rainbows"
+        ]
+      },
+      {
+        "name": "Umbrella",
+        "points": 50,
+        "aliases": [
+          "Closed Umbrella",
+          "Umbrella With Rain Drops",
+          "Umbrella On Ground",
+          "umbrellas"
+        ]
+      },
+      {
+        "name": "Snowman",
+        "points": 50,
+        "aliases": [
+          "Snowman Without Snow",
+          "Snowmans"
+        ]
+      },
+      {
+        "name": "Comet",
+        "points": 50,
+        "aliases": [
+          "comets"
+        ]
+      },
+      {
+        "name": "Fire",
+        "points": 50,
+        "aliases": [
+          "Fires"
+        ]
+      },
+      {
+        "name": "Droplet",
+        "points": 50,
+        "aliases": [
+          "Droplets"
+        ]
+      },
+      {
+        "name": "Water Wave",
+        "points": 50,
+        "aliases": [
+          "Water Waves"
+        ]
+      }
+    ]
+  }
+]
