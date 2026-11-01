@@ -37,6 +37,11 @@ if (select count(*) from jsonb_each(q->'inputMap'))>512 or (q ? 'inputMapCaseSen
 for k,x in select key,value from jsonb_each(q->'inputMap') loop
 if char_length(k) not between 1 and 240 or jsonb_typeof(x) is distinct from 'string' or not exists(select 1 from jsonb_array_elements(q->'answers') as entry(value) where entry.value->>'name'=(x#>>'{}')) then return false;end if;
 end loop;end if;
+if q ? 'exactRejections' then
+if jsonb_typeof(q->'exactRejections') is distinct from 'array' or jsonb_array_length(q->'exactRejections')>512 then return false;end if;
+for x in select value from jsonb_array_elements(q->'exactRejections') loop
+if jsonb_typeof(x) is distinct from 'string' or char_length(x#>>'{}') not between 1 and 240 or char_length(public._hg_normal(x#>>'{}')) not between 1 and 240 then return false;end if;
+end loop;end if;
 return true;exception when others then return false;end $$;
 create or replace function public._hg_match(q jsonb,input text) returns jsonb language plpgsql immutable set search_path='' as $$
 declare n text;a jsonb;x text;target text;exact jsonb;nearby jsonb;ne int:=0;nc int:=0;hit boolean;close_hit boolean;
@@ -53,7 +58,7 @@ for a in select value from jsonb_array_elements(q->'answers') loop hit=false;clo
 for x in select a->>'name' union all select value from jsonb_array_elements_text(a->'aliases') loop target=public._hg_normal(x);if target=n then hit=true;end if;
 if char_length(target)>=6 and abs(char_length(target)-char_length(n))<=1 and public._hg_distance(n,target)<=1 then close_hit=true;end if;end loop;
 if hit then ne=ne+1;exact=a;end if;if close_hit then nc=nc+1;nearby=a;end if;end loop;
-if ne=1 then return jsonb_build_object('answer',exact->'name','points',exact->'points','typo',false);elsif ne=0 and nc=1 then return jsonb_build_object('answer',nearby->'name','points',nearby->'points','typo',true);end if;return null;
+if ne=1 then return jsonb_build_object('answer',exact->'name','points',exact->'points','typo',false);elsif ne=0 and nc=1 and not exists(select 1 from jsonb_array_elements_text(coalesce(q->'exactRejections','[]'::jsonb)) as excluded(value) where public._hg_normal(excluded.value)=n) then return jsonb_build_object('answer',nearby->'name','points',nearby->'points','typo',true);end if;return null;
 exception when others then return null;end $$;
 create or replace function public._friend_hidden_gem_score(v jsonb,d date) returns double precision language plpgsql immutable set search_path='' as $$
 declare q jsonb;p jsonb;a jsonb;i int;total int:=0;ids text[]:='{}';

@@ -19,6 +19,7 @@ const questions=source.questions.map((q,i)=>{
  if(answers.some(a=>!Number.isInteger(a.points)||a.points<1||a.points>100)||!answers.some(a=>a.points===100))throw Error('Invalid editorial ratings '+q.prompt);
  if(/\b(?:through|as of|up to|by the end of)\b.*\b20\d\d\b|\b(?:19|20)\d\d\b|Unicode|UNESCO|prime minister|chemical symbol|skull bone|Grammy/i.test(q.prompt+' '+q.scope))throw Error('Specialist or dated wording '+q.prompt);
  const p={id:'hg12-'+String(i+1).padStart(3,'0'),topic:q.topic,prompt:q.prompt,scope:q.scope,source:q.source,dailySlot:source.rotation.findIndex(day=>day.includes(i)),answers};
+ if(q.exactRejections){p.exactRejections=q.exactRejections;for(const x of p.exactRejections)if(answers.some(a=>[a.name,...a.aliases].some(n=>M.normal(n)===M.normal(x))))throw Error('Excluded exact answer '+p.id+': '+x);}
  if(!M.puzzle(p)||answers.length<10)throw Error('Invalid question '+p.id);
  for(const a of answers)for(const x of [a.name,...a.aliases])if(M.match(p,x)?.name!==a.name)throw Error('Ambiguous answer '+p.id+': '+x);
  return p;

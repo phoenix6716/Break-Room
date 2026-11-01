@@ -1,0 +1,5652 @@
+{
+  "reviewed": "2026-11-01",
+  "revision": 15,
+  "questions": 240,
+  "canonicalAnswers": 8974,
+  "canonicalRange": [
+    25,
+    159
+  ],
+  "canonicalAdded": 780,
+  "aliases": 10377,
+  "aliasesAdded": 2005,
+  "challengeSha256": "8f6e2233417419953f19067ee6b648d6456d26f60fe4b9dc742a2b90ca6db7d0",
+  "checkedInputs": 5998,
+  "acceptedBefore": 4546,
+  "rejectedBefore": 1452,
+  "acceptedAfter": 5998,
+  "questionCoverage": 240,
+  "negativeCases": 35,
+  "externalGeographyProbes": 930,
+  "grammarVariantsAdded": 585,
+  "method": "Prompt-led editorial examples authored before matching; first-pass everyday answers plus a separate pass of common concepts and natural/regional wording. Duplicate identical inputs per question removed. This is a regression challenge set, not a representative sample of players or all valid answers.",
+  "claim": "Every reviewed challenge input passes. The cases establish an editorial acceptance benchmark; they do not establish a player-weighted or all-possible-answer coverage percentage.",
+  "sources": {
+    "challenge": "content/hidden-gem-coverage-cases.json",
+    "geography": "design/content-reviews/2026-11-01-sleeper-geography-reference.json"
+  },
+  "corrections": [
+    "Added missing Jordan and accepted Caspian inland-sea coasts under an explicit scope.",
+    "Preserved all previous canonical names, aliases and scores.",
+    "Mapped ordinary inflections, regional terms and natural phrases explicitly; no substring or online AI acceptance.",
+    "Snapshot-owned exactRejections prevents Zambia becoming Gambia on new coastline captures. Captured old rules and points remain fixed.",
+    "Shortened three scopes to avoid an answer giveaway and clarify geographic membership."
+  ],
+  "rotationDays": 48,
+  "rotationUnchanged": true,
+  "gameplayFormulaAndSaveVersionUnchanged": true,
+  "maximum120DayCloudBytes": 1821024,
+  "cloudByteLimit": 1990000,
+  "archive": "content/archive/2026-11-01-pre-coverage-audit/",
+  "limitations": [
+    "Cases were authored and reviewed by the implementing assistant, not an independent player study.",
+    "Lists remain finite. Passing all reviewed examples does not prove acceptance of most conceivable valid answers.",
+    "Familiarity ratings are editorial estimates, not measured popularity."
+  ],
+  "changes": [
+    {
+      "question": 1,
+      "added": [
+        "Avocado",
+        "Smoothie"
+      ],
+      "aliases": [
+        [
+          "breakfast potatoes",
+          "Hash browns"
+        ],
+        [
+          "peanut butter toast",
+          "Toast"
+        ],
+        [
+          "toast and jam",
+          "Toast"
+        ],
+        [
+          "breakfast wrap",
+          "Breakfast burrito"
+        ],
+        [
+          "porridge oats",
+          "Porridge"
+        ],
+        [
+          "fruit smoothie",
+          "Smoothie"
+        ]
+      ]
+    },
+    {
+      "question": 2,
+      "added": [
+        "Pudding",
+        "Tart",
+        "Rice pudding",
+        "Salad",
+        "Meatloaf"
+      ],
+      "aliases": [
+        [
+          "roast chicken",
+          "Chicken"
+        ]
+      ]
+    },
+    {
+      "question": 3,
+      "added": [
+        "Sweets",
+        "Chocolate",
+        "Fried dough",
+        "Deep-fried Mars bar",
+        "Roasted chestnut",
+        "Onion bhaji"
+      ],
+      "aliases": [
+        [
+          "corn on the cob",
+          "Roasted corn"
+        ],
+        [
+          "candy",
+          "Sweets"
+        ],
+        [
+          "roasted chestnuts",
+          "Roasted chestnut"
+        ],
+        [
+          "sausage in a bun",
+          "Hot dog"
+        ]
+      ]
+    },
+    {
+      "question": 4,
+      "added": [
+        "Chicken drumstick",
+        "Fruit",
+        "Bread",
+        "Dumpling",
+        "Toast",
+        "Banana chips"
+      ],
+      "aliases": [
+        [
+          "chicken drumsticks",
+          "Chicken drumstick"
+        ],
+        [
+          "chicken leg",
+          "Chicken drumstick"
+        ],
+        [
+          "dumplings",
+          "Dumpling"
+        ],
+        [
+          "grilled cheese sandwich",
+          "Sandwich"
+        ]
+      ]
+    },
+    {
+      "question": 5,
+      "added": [
+        "Fishcake",
+        "Potato skins",
+        "Potato waffle"
+      ],
+      "aliases": [
+        [
+          "fishcakes",
+          "Fishcake"
+        ],
+        [
+          "scalloped potatoes",
+          "Dauphinoise potatoes"
+        ],
+        [
+          "potato fritter",
+          "Potato pancake"
+        ],
+        [
+          "potato waffles",
+          "Potato waffle"
+        ]
+      ]
+    },
+    {
+      "question": 6,
+      "added": [
+        "Jam tart",
+        "Chocolate truffle",
+        "Macaron",
+        "Custard tart"
+      ],
+      "aliases": [
+        [
+          "sausage bun",
+          "Bun"
+        ],
+        [
+          "stuffed pasta",
+          "Ravioli"
+        ],
+        [
+          "chicken wrap",
+          "Wrap"
+        ]
+      ]
+    },
+    {
+      "question": 7,
+      "added": [
+        "Fruit",
+        "Cheese and crackers"
+      ],
+      "aliases": [
+        [
+          "carrot sticks",
+          "Vegetable sticks"
+        ],
+        [
+          "jelly and ice cream",
+          "Jelly"
+        ],
+        [
+          "mini pizzas",
+          "Pizza"
+        ],
+        [
+          "party sandwiches",
+          "Sandwiches"
+        ],
+        [
+          "sausage on a stick",
+          "Cocktail sausages"
+        ]
+      ]
+    },
+    {
+      "question": 8,
+      "added": [
+        "Lemon",
+        "Herbs",
+        "Spices",
+        "Red wine",
+        "White wine"
+      ],
+      "aliases": [
+        [
+          "mixed herbs",
+          "Herbs"
+        ],
+        [
+          "tomato puree",
+          "Tomato paste"
+        ],
+        [
+          "chicken stock",
+          "Stock"
+        ]
+      ]
+    },
+    {
+      "question": 9,
+      "added": [
+        "Sauerkraut"
+      ],
+      "aliases": [
+        [
+          "banana pepper",
+          "Chilli"
+        ]
+      ]
+    },
+    {
+      "question": 10,
+      "added": [
+        "Vodka",
+        "Rum",
+        "Gin",
+        "Tequila",
+        "Fruit juice",
+        "Cordial",
+        "Iced chocolate"
+      ],
+      "aliases": [
+        [
+          "coffee",
+          "Iced coffee"
+        ],
+        [
+          "rum and cola",
+          "Rum and coke"
+        ],
+        [
+          "squash",
+          "Lemon squash"
+        ],
+        [
+          "orange squash",
+          "Lemon squash"
+        ],
+        [
+          "cider",
+          "Apple cider"
+        ],
+        [
+          "fruit cordial",
+          "Cordial"
+        ],
+        [
+          "iced matcha",
+          "Matcha latte"
+        ]
+      ]
+    },
+    {
+      "question": 11,
+      "added": [
+        "Grapefruit",
+        "Crab apple",
+        "Greengage",
+        "Citrus fruit",
+        "Strawberry and rhubarb"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 12,
+      "added": [
+        "Chicory",
+        "Romanesco"
+      ],
+      "aliases": [
+        [
+          "butternut squash",
+          "Squash"
+        ],
+        [
+          "rutabaga",
+          "Swede"
+        ],
+        [
+          "roasted corn",
+          "Corn"
+        ]
+      ]
+    },
+    {
+      "question": 13,
+      "added": [],
+      "aliases": [
+        [
+          "sliced cheese",
+          "Cheese"
+        ],
+        [
+          "yeast extract",
+          "Marmite"
+        ]
+      ]
+    },
+    {
+      "question": 14,
+      "added": [
+        "Lamb",
+        "Pork",
+        "Sweet potato"
+      ],
+      "aliases": [
+        [
+          "chicken skewers",
+          "Kebab"
+        ],
+        [
+          "chicken thighs",
+          "Chicken"
+        ],
+        [
+          "fish fillet",
+          "Fish"
+        ],
+        [
+          "veggie burger",
+          "Burger"
+        ]
+      ]
+    },
+    {
+      "question": 15,
+      "added": [
+        "Gluten-free bread",
+        "Granary bread",
+        "Turkish bread",
+        "Crispbread",
+        "Seeded bread"
+      ],
+      "aliases": [
+        [
+          "rye",
+          "Rye bread"
+        ]
+      ]
+    },
+    {
+      "question": 16,
+      "added": [
+        "Vegetable sticks",
+        "Naan"
+      ],
+      "aliases": [
+        [
+          "chicken tenders",
+          "Chicken strip"
+        ],
+        [
+          "crudites",
+          "Vegetable sticks"
+        ],
+        [
+          "naan bread",
+          "Naan"
+        ],
+        [
+          "bread roll",
+          "Bread"
+        ]
+      ]
+    },
+    {
+      "question": 17,
+      "added": [
+        "Mixed herbs"
+      ],
+      "aliases": [
+        [
+          "black pepper",
+          "Capsicum"
+        ],
+        [
+          "dried oregano",
+          "Oregano"
+        ],
+        [
+          "red pepper flakes",
+          "Chilli flakes"
+        ]
+      ]
+    },
+    {
+      "question": 18,
+      "added": [
+        "Crumble",
+        "Pudding"
+      ],
+      "aliases": [
+        [
+          "tapioca",
+          "Tapioca pudding"
+        ],
+        [
+          "custard pudding",
+          "Pudding"
+        ],
+        [
+          "stewed fruit",
+          "Fruit compote"
+        ],
+        [
+          "fruit jelly",
+          "Jelly"
+        ]
+      ]
+    },
+    {
+      "question": 19,
+      "added": [
+        "Breadcrumbs",
+        "Dried fruit"
+      ],
+      "aliases": [
+        [
+          "dried herbs",
+          "Herbs"
+        ],
+        [
+          "dried spices",
+          "Spices"
+        ],
+        [
+          "milk powder",
+          "Milk"
+        ],
+        [
+          "dried fish",
+          "Fish"
+        ]
+      ]
+    },
+    {
+      "question": 20,
+      "added": [
+        "Dog food",
+        "Cat food",
+        "Green beans",
+        "Chilli con carne",
+        "Ravioli",
+        "Macaroni cheese"
+      ],
+      "aliases": [
+        [
+          "beans",
+          "Baked beans"
+        ]
+      ]
+    },
+    {
+      "question": 21,
+      "added": [
+        "Fennel",
+        "Chamomile",
+        "Spring onion greens",
+        "Anise"
+      ],
+      "aliases": [
+        [
+          "fennel fronds",
+          "Fennel"
+        ],
+        [
+          "rosemary leaves",
+          "Rosemary"
+        ],
+        [
+          "Italian parsley",
+          "Parsley"
+        ]
+      ]
+    },
+    {
+      "question": 22,
+      "added": [
+        "Creamed spinach"
+      ],
+      "aliases": [
+        [
+          "horseradish",
+          "Horseradish sauce"
+        ],
+        [
+          "runner beans",
+          "Green beans"
+        ],
+        [
+          "buttered carrots",
+          "Carrots"
+        ],
+        [
+          "roasted onions",
+          "Roast vegetables"
+        ]
+      ]
+    },
+    {
+      "question": 23,
+      "added": [
+        "Crisps",
+        "Gummy sweets",
+        "Sundae",
+        "Brownie",
+        "Dried squid",
+        "Jelly babies"
+      ],
+      "aliases": [
+        [
+          "pick and mix",
+          "Lollies"
+        ],
+        [
+          "choc ice",
+          "Ice cream"
+        ],
+        [
+          "salted peanuts",
+          "Nuts"
+        ],
+        [
+          "peanuts",
+          "Nuts"
+        ],
+        [
+          "brownies",
+          "Brownie"
+        ],
+        [
+          "chocolate buttons",
+          "Chocolate"
+        ],
+        [
+          "chocolate covered raisins",
+          "Raisinets"
+        ]
+      ]
+    },
+    {
+      "question": 24,
+      "added": [
+        "Sprinkles",
+        "Apple"
+      ],
+      "aliases": [
+        [
+          "cocoa powder",
+          "Cocoa"
+        ],
+        [
+          "vanilla extract",
+          "Vanilla"
+        ],
+        [
+          "coconut",
+          "Desiccated coconut"
+        ]
+      ]
+    },
+    {
+      "question": 25,
+      "added": [
+        "Goldfish",
+        "Shark",
+        "Louse",
+        "Fly"
+      ],
+      "aliases": [
+        [
+          "hen chicken",
+          "Chicken"
+        ],
+        [
+          "housefly",
+          "Fly"
+        ]
+      ]
+    },
+    {
+      "question": 26,
+      "added": [
+        "Blackbird",
+        "Robin",
+        "Sparrow",
+        "Blue tit"
+      ],
+      "aliases": [
+        [
+          "gull",
+          "Seagull"
+        ]
+      ]
+    },
+    {
+      "question": 27,
+      "added": [
+        "Freshwater dolphin",
+        "Freshwater stingray",
+        "Water buffalo",
+        "Cormorant"
+      ],
+      "aliases": [
+        [
+          "freshwater shrimp",
+          "Freshwater prawn"
+        ]
+      ]
+    },
+    {
+      "question": 28,
+      "added": [
+        "Crayfish",
+        "Tick",
+        "Mite",
+        "Flea",
+        "Weevil"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 29,
+      "added": [
+        "Ant"
+      ],
+      "aliases": [
+        [
+          "tropical fish",
+          "Fish"
+        ],
+        [
+          "miniature pig",
+          "Pig"
+        ],
+        [
+          "bearded dragon lizard",
+          "Bearded dragon"
+        ],
+        [
+          "ant farm ants",
+          "Ant"
+        ]
+      ]
+    },
+    {
+      "question": 30,
+      "added": [
+        "Huntsman spider",
+        "Black swan"
+      ],
+      "aliases": [
+        [
+          "rat kangaroo",
+          "Bettong"
+        ],
+        [
+          "red kangaroo",
+          "Kangaroo"
+        ]
+      ]
+    },
+    {
+      "question": 31,
+      "added": [
+        "Honeybee",
+        "Buzzard",
+        "Aardvark",
+        "Aardwolf",
+        "Daddy longlegs"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 32,
+      "added": [
+        "Bull"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 33,
+      "added": [
+        "Donkey",
+        "Reindeer",
+        "Pigeon",
+        "Starling"
+      ],
+      "aliases": [
+        [
+          "killer whale",
+          "Orca"
+        ]
+      ]
+    },
+    {
+      "question": 34,
+      "added": [
+        "Reindeer",
+        "Raccoon"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 35,
+      "added": [
+        "Bumblebee",
+        "Crane fly",
+        "Gnat",
+        "Termite"
+      ],
+      "aliases": [
+        [
+          "bumble bee",
+          "Bumblebee"
+        ]
+      ]
+    },
+    {
+      "question": 36,
+      "added": [
+        "Banded krait",
+        "Zebrafish",
+        "Mandrill",
+        "Pyjama shark",
+        "Thirteen-lined ground squirrel"
+      ],
+      "aliases": [
+        [
+          "hyena",
+          "Striped hyena"
+        ]
+      ]
+    },
+    {
+      "question": 37,
+      "added": [
+        "Snow leopard",
+        "Panther",
+        "Red panda",
+        "Coati"
+      ],
+      "aliases": [
+        [
+          "cheetah cub",
+          "Cheetah"
+        ]
+      ]
+    },
+    {
+      "question": 38,
+      "added": [
+        "Hawthorn",
+        "Blackthorn",
+        "Crab apple",
+        "Lilac",
+        "Larch"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 39,
+      "added": [
+        "Bluebell",
+        "Lilac",
+        "Lily of the valley",
+        "Hyacinth",
+        "Pussy willow",
+        "Forget-me-not"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 40,
+      "added": [
+        "Basil",
+        "Mint",
+        "Chives",
+        "Parsley",
+        "Lavender",
+        "Rosemary"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 41,
+      "added": [
+        "Roots"
+      ],
+      "aliases": [
+        [
+          "daylight",
+          "Sunlight"
+        ],
+        [
+          "potting soil",
+          "Soil"
+        ]
+      ]
+    },
+    {
+      "question": 42,
+      "added": [
+        "Bark",
+        "Gourd",
+        "Paper pulp"
+      ],
+      "aliases": [
+        [
+          "coconut shell",
+          "Shell"
+        ],
+        [
+          "tree bark",
+          "Bark"
+        ],
+        [
+          "gourds",
+          "Gourd"
+        ]
+      ]
+    },
+    {
+      "question": 43,
+      "added": [
+        "Pomelo",
+        "Tamarind"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 45,
+      "added": [
+        "Hamster",
+        "Gerbil",
+        "Rat",
+        "Mouse"
+      ],
+      "aliases": [
+        [
+          "kingfisher bird",
+          "Kingfisher"
+        ]
+      ]
+    },
+    {
+      "question": 46,
+      "added": [
+        "Abalone",
+        "Chiton",
+        "Sand dollar"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 47,
+      "added": [
+        "Dog"
+      ],
+      "aliases": [
+        [
+          "birds",
+          "Birdsong"
+        ],
+        [
+          "a bird singing",
+          "Birdsong"
+        ],
+        [
+          "a dog barking",
+          "Dog"
+        ],
+        [
+          "a bee buzzing",
+          "Buzzing bee"
+        ],
+        [
+          "a river flowing",
+          "Stream"
+        ],
+        [
+          "rain falling",
+          "Rain"
+        ]
+      ]
+    },
+    {
+      "question": 48,
+      "added": [
+        "Tree",
+        "Rock crevice"
+      ],
+      "aliases": [
+        [
+          "hedge",
+          "Hedgerow"
+        ],
+        [
+          "in a tree",
+          "Tree"
+        ],
+        [
+          "under a rock",
+          "Rock crevice"
+        ]
+      ]
+    },
+    {
+      "question": 49,
+      "added": [
+        "Hand size",
+        "Finger length",
+        "Heart rhythm"
+      ],
+      "aliases": [
+        [
+          "neck size",
+          "Neck circumference"
+        ]
+      ]
+    },
+    {
+      "question": 50,
+      "added": [
+        "Little finger",
+        "Index finger",
+        "Ring finger",
+        "Middle finger"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 51,
+      "added": [
+        "Sunglasses",
+        "Hair clip"
+      ],
+      "aliases": [
+        [
+          "hair clips",
+          "Hair clip"
+        ],
+        [
+          "hair slide",
+          "Hair clip"
+        ],
+        [
+          "bathing cap",
+          "Swimming cap"
+        ]
+      ]
+    },
+    {
+      "question": 52,
+      "added": [
+        "Hammock"
+      ],
+      "aliases": [
+        [
+          "taking a bath",
+          "Take a bath"
+        ],
+        [
+          "playing games",
+          "Play games"
+        ],
+        [
+          "getting a massage",
+          "Have a massage"
+        ],
+        [
+          "doing a puzzle",
+          "Do a puzzle"
+        ],
+        [
+          "have a nap",
+          "Sleep"
+        ],
+        [
+          "go for a swim",
+          "Swim"
+        ],
+        [
+          "watch a movie",
+          "Watch a film"
+        ],
+        [
+          "lie in a hammock",
+          "Hammock"
+        ]
+      ]
+    },
+    {
+      "question": 53,
+      "added": [
+        "Cross arms",
+        "Whistle"
+      ],
+      "aliases": [
+        [
+          "checking their phone",
+          "Check phone"
+        ],
+        [
+          "scroll on their phone",
+          "Check phone"
+        ],
+        [
+          "looking around",
+          "Look around"
+        ],
+        [
+          "checking the time",
+          "Check watch"
+        ],
+        [
+          "checking tickets",
+          "Check tickets"
+        ],
+        [
+          "playing games",
+          "Play games"
+        ],
+        [
+          "using social media",
+          "Browse social media"
+        ],
+        [
+          "complaining",
+          "Complain"
+        ],
+        [
+          "biting nails",
+          "Bite nails"
+        ],
+        [
+          "look at the menu",
+          "Look at a menu"
+        ],
+        [
+          "tap their feet",
+          "Tap feet"
+        ],
+        [
+          "cross their arms",
+          "Cross arms"
+        ]
+      ]
+    },
+    {
+      "question": 54,
+      "added": [
+        "Matchboxes",
+        "Beer mats",
+        "Football shirts",
+        "Newspaper"
+      ],
+      "aliases": [
+        [
+          "fridge magnets",
+          "Magnets"
+        ],
+        [
+          "old newspapers",
+          "Newspaper"
+        ]
+      ]
+    },
+    {
+      "question": 55,
+      "added": [
+        "Maid",
+        "Train conductor",
+        "Traffic officer"
+      ],
+      "aliases": [
+        [
+          "prison guard",
+          "Prison officer"
+        ],
+        [
+          "train guard",
+          "Train conductor"
+        ],
+        [
+          "parking attendant",
+          "Car park attendant"
+        ],
+        [
+          "restaurant server",
+          "Waiter"
+        ],
+        [
+          "supermarket cashier",
+          "Cashier"
+        ]
+      ]
+    },
+    {
+      "question": 56,
+      "added": [
+        "Fruit picker",
+        "Street sweeper"
+      ],
+      "aliases": [
+        [
+          "bin man",
+          "Bin collector"
+        ],
+        [
+          "rubbish collector",
+          "Bin collector"
+        ]
+      ]
+    },
+    {
+      "question": 57,
+      "added": [
+        "Kiss",
+        "Put the cat out"
+      ],
+      "aliases": [
+        [
+          "turn off the lights",
+          "Turn off lights"
+        ],
+        [
+          "have a shower",
+          "Shower"
+        ],
+        [
+          "check their phone",
+          "Check phone"
+        ],
+        [
+          "close the curtains",
+          "Close curtains"
+        ],
+        [
+          "charge their phone",
+          "Plug in phone"
+        ],
+        [
+          "pray",
+          "Say prayers"
+        ],
+        [
+          "kiss someone",
+          "Kiss"
+        ],
+        [
+          "use the loo",
+          "Use toilet"
+        ],
+        [
+          "take off clothes",
+          "Get undressed"
+        ],
+        [
+          "read a bedtime story",
+          "Read"
+        ],
+        [
+          "check the doors are locked",
+          "Lock doors"
+        ]
+      ]
+    },
+    {
+      "question": 58,
+      "added": [
+        "Snooze alarm",
+        "Check news",
+        "Read messages",
+        "Put on slippers",
+        "Put on glasses"
+      ],
+      "aliases": [
+        [
+          "get up",
+          "Get out of bed"
+        ],
+        [
+          "check their phone",
+          "Check phone"
+        ],
+        [
+          "open the curtains",
+          "Open curtains"
+        ],
+        [
+          "feed the dog",
+          "Feed pet"
+        ],
+        [
+          "comb their hair",
+          "Comb hair"
+        ],
+        [
+          "snooze the alarm",
+          "Snooze alarm"
+        ],
+        [
+          "hit snooze",
+          "Snooze alarm"
+        ],
+        [
+          "check the news",
+          "Check news"
+        ]
+      ]
+    },
+    {
+      "question": 59,
+      "added": [
+        "Throw rice",
+        "Throw bouquet",
+        "Hug"
+      ],
+      "aliases": [
+        [
+          "toast the couple",
+          "Make a toast"
+        ],
+        [
+          "give presents",
+          "Give a gift"
+        ],
+        [
+          "walk down the aisle",
+          "Walk down aisle"
+        ],
+        [
+          "throw a bouquet",
+          "Throw bouquet"
+        ],
+        [
+          "take a selfie",
+          "Take photographs"
+        ],
+        [
+          "pose for photographs",
+          "Take photographs"
+        ],
+        [
+          "hug the couple",
+          "Hug"
+        ]
+      ]
+    },
+    {
+      "question": 60,
+      "added": [
+        "New pet",
+        "Becoming a grandparent",
+        "Finishing a project"
+      ],
+      "aliases": [
+        [
+          "new house",
+          "New home"
+        ],
+        [
+          "moving house",
+          "New home"
+        ],
+        [
+          "passing an exam",
+          "Exam pass"
+        ],
+        [
+          "an exam result",
+          "Exam pass"
+        ],
+        [
+          "winning a match",
+          "Sporting win"
+        ],
+        [
+          "getting a pet",
+          "New pet"
+        ],
+        [
+          "getting a degree",
+          "Graduation"
+        ]
+      ]
+    },
+    {
+      "question": 61,
+      "added": [
+        "Gym",
+        "Exercise bike",
+        "Plank",
+        "Golf",
+        "Volleyball"
+      ],
+      "aliases": [
+        [
+          "climbing",
+          "Climb"
+        ],
+        [
+          "skating",
+          "Skate"
+        ],
+        [
+          "aerobics",
+          "Do aerobics"
+        ],
+        [
+          "go to the gym",
+          "Gym"
+        ],
+        [
+          "use an exercise bike",
+          "Exercise bike"
+        ],
+        [
+          "do a plank",
+          "Plank"
+        ],
+        [
+          "play golf",
+          "Golf"
+        ],
+        [
+          "play volleyball",
+          "Volleyball"
+        ]
+      ]
+    },
+    {
+      "question": 62,
+      "added": [
+        "Ambulance driver",
+        "Care worker",
+        "Counsellor",
+        "Dental hygienist",
+        "Optician",
+        "First aider",
+        "Osteopath"
+      ],
+      "aliases": [
+        [
+          "counselor",
+          "Counsellor"
+        ],
+        [
+          "GP",
+          "Doctor"
+        ]
+      ]
+    },
+    {
+      "question": 63,
+      "added": [
+        "Collect food",
+        "Clean a river",
+        "Help refugees"
+      ],
+      "aliases": [
+        [
+          "fundraising",
+          "Fundraise"
+        ],
+        [
+          "beach clean up",
+          "Clean a beach"
+        ],
+        [
+          "planting trees",
+          "Plant trees"
+        ],
+        [
+          "serving food",
+          "Serve food"
+        ],
+        [
+          "run a soup kitchen",
+          "Serve food"
+        ],
+        [
+          "visiting elderly people",
+          "Visit elderly people"
+        ],
+        [
+          "dog walking",
+          "Walk shelter dogs"
+        ],
+        [
+          "tutoring",
+          "Tutor"
+        ],
+        [
+          "teach reading",
+          "Tutor"
+        ],
+        [
+          "coaching",
+          "Coach sport"
+        ],
+        [
+          "collecting donations",
+          "Collect donations"
+        ],
+        [
+          "working in a charity shop",
+          "Work in a charity shop"
+        ],
+        [
+          "delivering meals",
+          "Deliver meals"
+        ],
+        [
+          "giving blood",
+          "Give blood"
+        ],
+        [
+          "picking up litter",
+          "Pick up litter"
+        ],
+        [
+          "litter picking",
+          "Pick up litter"
+        ],
+        [
+          "mentoring",
+          "Mentor"
+        ],
+        [
+          "translating",
+          "Translate"
+        ],
+        [
+          "building homes",
+          "Build homes"
+        ],
+        [
+          "fighting fires",
+          "Fight fires"
+        ],
+        [
+          "rescuing wildlife",
+          "Rescue wildlife"
+        ],
+        [
+          "answering a helpline",
+          "Staff a helpline"
+        ]
+      ]
+    },
+    {
+      "question": 64,
+      "added": [
+        "Sign language",
+        "Public speaking",
+        "Meditation",
+        "Knitting"
+      ],
+      "aliases": [
+        [
+          "ceramics",
+          "Pottery"
+        ]
+      ]
+    },
+    {
+      "question": 65,
+      "added": [
+        "Finger guns",
+        "Tap a desk"
+      ],
+      "aliases": [
+        [
+          "peace sign",
+          "Make peace sign"
+        ],
+        [
+          "raise a hand",
+          "Raise hand"
+        ],
+        [
+          "heart sign",
+          "Make heart sign"
+        ],
+        [
+          "OK sign",
+          "Make OK sign"
+        ],
+        [
+          "a fist salute",
+          "Salute"
+        ],
+        [
+          "a thumbs up",
+          "Give thumbs up"
+        ],
+        [
+          "a wave",
+          "Wave"
+        ],
+        [
+          "tap on a desk",
+          "Tap a desk"
+        ]
+      ]
+    },
+    {
+      "question": 66,
+      "added": [
+        "Irritation",
+        "Exhaustion",
+        "Determination",
+        "Sympathy"
+      ],
+      "aliases": [
+        [
+          "disgusted",
+          "Disgust"
+        ],
+        [
+          "proud",
+          "Pride"
+        ],
+        [
+          "ashamed",
+          "Shame"
+        ],
+        [
+          "relieved",
+          "Relief"
+        ],
+        [
+          "grateful",
+          "Gratitude"
+        ],
+        [
+          "hopeful",
+          "Hope"
+        ],
+        [
+          "embarrassed",
+          "Embarrassment"
+        ],
+        [
+          "frustrated",
+          "Frustration"
+        ]
+      ]
+    },
+    {
+      "question": 67,
+      "added": [
+        "Germs",
+        "Doctors",
+        "Cancer",
+        "Robots"
+      ],
+      "aliases": [
+        [
+          "the dark",
+          "Darkness"
+        ],
+        [
+          "needles and injections",
+          "Needles"
+        ]
+      ]
+    },
+    {
+      "question": 68,
+      "added": [
+        "Help",
+        "Keep company",
+        "Lend a charger"
+      ],
+      "aliases": [
+        [
+          "listen to them",
+          "Listen"
+        ],
+        [
+          "give them a lift",
+          "Give a lift"
+        ],
+        [
+          "cook for them",
+          "Cook a meal"
+        ],
+        [
+          "help them move house",
+          "Help move"
+        ],
+        [
+          "visit them",
+          "Visit"
+        ],
+        [
+          "call them",
+          "Call"
+        ],
+        [
+          "send a text",
+          "Send message"
+        ],
+        [
+          "give them a hug",
+          "Give a hug"
+        ],
+        [
+          "fix something",
+          "Repair something"
+        ],
+        [
+          "clean their house",
+          "Clean"
+        ],
+        [
+          "give them a hand",
+          "Help"
+        ],
+        [
+          "offer support",
+          "Help"
+        ],
+        [
+          "help with childcare",
+          "Babysit"
+        ],
+        [
+          "keep them company",
+          "Keep company"
+        ]
+      ]
+    },
+    {
+      "question": 69,
+      "added": [
+        "Achievements",
+        "Date of birth",
+        "Nationality",
+        "Hobbies",
+        "Interests"
+      ],
+      "aliases": [
+        [
+          "email",
+          "Email address"
+        ],
+        [
+          "voluntary work",
+          "Volunteer experience"
+        ]
+      ]
+    },
+    {
+      "question": 70,
+      "added": [
+        "Painter and decorator",
+        "Sewing machinist"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 71,
+      "added": [
+        "Eat",
+        "Drink",
+        "Sleep through the night",
+        "Hold a bottle",
+        "Hold head up",
+        "Use a toilet"
+      ],
+      "aliases": [
+        [
+          "sit up",
+          "Sit"
+        ],
+        [
+          "say mama",
+          "Talk"
+        ],
+        [
+          "hold their head up",
+          "Hold head up"
+        ],
+        [
+          "recognize their mother",
+          "Recognise faces"
+        ],
+        [
+          "use the toilet",
+          "Use a toilet"
+        ]
+      ]
+    },
+    {
+      "question": 72,
+      "added": [
+        "Wipe",
+        "Wipe nose",
+        "Use wet wipes",
+        "Change bedsheets",
+        "Blow nose"
+      ],
+      "aliases": [
+        [
+          "wash their hair",
+          "Wash hair"
+        ],
+        [
+          "shampoo",
+          "Wash hair"
+        ],
+        [
+          "change their clothes",
+          "Change clothes"
+        ],
+        [
+          "wash their underwear",
+          "Wash clothes"
+        ],
+        [
+          "floss their teeth",
+          "Floss"
+        ],
+        [
+          "clean their nails",
+          "Clean nails"
+        ],
+        [
+          "wash their feet",
+          "Wash feet"
+        ],
+        [
+          "wipe themselves",
+          "Wipe"
+        ],
+        [
+          "wash their body",
+          "Wash body"
+        ],
+        [
+          "wash with soap",
+          "Wash body"
+        ],
+        [
+          "use shower gel",
+          "Wash body"
+        ],
+        [
+          "clean their ears",
+          "Clean ears"
+        ],
+        [
+          "trim their nails",
+          "Trim nails"
+        ],
+        [
+          "use hand sanitiser",
+          "Use sanitiser"
+        ],
+        [
+          "use hand sanitizer",
+          "Use sanitiser"
+        ],
+        [
+          "wipe their nose",
+          "Wipe nose"
+        ],
+        [
+          "blow their nose",
+          "Blow nose"
+        ]
+      ]
+    },
+    {
+      "question": 73,
+      "added": [
+        "Batteries",
+        "Cookie cutter",
+        "Pastry cutter"
+      ],
+      "aliases": [
+        [
+          "sharp knife",
+          "Knife"
+        ]
+      ]
+    },
+    {
+      "question": 74,
+      "added": [
+        "Purse",
+        "Toy",
+        "Document",
+        "Luggage"
+      ],
+      "aliases": [
+        [
+          "toys",
+          "Toy"
+        ],
+        [
+          "documents",
+          "Document"
+        ]
+      ]
+    },
+    {
+      "question": 75,
+      "added": [
+        "Lipstick",
+        "Fidget toy",
+        "Pocket watch",
+        "Dog treat",
+        "Safety pin"
+      ],
+      "aliases": [
+        [
+          "gum",
+          "Chewing gum"
+        ],
+        [
+          "hanky",
+          "Handkerchief"
+        ],
+        [
+          "bus ticket",
+          "Ticket"
+        ],
+        [
+          "dog treats",
+          "Dog treat"
+        ]
+      ]
+    },
+    {
+      "question": 76,
+      "added": [
+        "Paint",
+        "Sticker"
+      ],
+      "aliases": [
+        [
+          "wall clock",
+          "Clock"
+        ],
+        [
+          "art print",
+          "Painting"
+        ],
+        [
+          "wall hanging",
+          "Tapestry"
+        ],
+        [
+          "wall calendar",
+          "Calendar"
+        ]
+      ]
+    },
+    {
+      "question": 77,
+      "added": [
+        "Lock",
+        "Scissors",
+        "Safety pin"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 78,
+      "added": [
+        "Car",
+        "Vacuum cleaner",
+        "Hair clippers",
+        "Electric razor",
+        "Smart lock"
+      ],
+      "aliases": [
+        [
+          "mouse",
+          "Computer mouse"
+        ],
+        [
+          "electronic door lock",
+          "Smart lock"
+        ]
+      ]
+    },
+    {
+      "question": 79,
+      "added": [
+        "Dustpan and brush",
+        "Washing soda"
+      ],
+      "aliases": [
+        [
+          "antibacterial spray",
+          "Disinfectant"
+        ]
+      ]
+    },
+    {
+      "question": 80,
+      "added": [
+        "Shaving foam",
+        "Hairdryer",
+        "Medicine",
+        "Bath salts",
+        "Body lotion",
+        "Face wash",
+        "Contact lens solution"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 81,
+      "added": [
+        "Television",
+        "Bed frame",
+        "Bedding"
+      ],
+      "aliases": [
+        [
+          "TV",
+          "Television"
+        ],
+        [
+          "bed linen",
+          "Bedding"
+        ]
+      ]
+    },
+    {
+      "question": 82,
+      "added": [
+        "Tools",
+        "Wood",
+        "Garden furniture",
+        "Fertiliser"
+      ],
+      "aliases": [
+        [
+          "gardening tools",
+          "Tools"
+        ],
+        [
+          "power tools",
+          "Tools"
+        ],
+        [
+          "hand tools",
+          "Tools"
+        ],
+        [
+          "fertilizer",
+          "Fertiliser"
+        ]
+      ]
+    },
+    {
+      "question": 83,
+      "added": [
+        "Jug",
+        "Glass door",
+        "Candle holder",
+        "Marble",
+        "Casserole dish"
+      ],
+      "aliases": [
+        [
+          "drinking tumbler",
+          "Drinking glass"
+        ],
+        [
+          "glass plate",
+          "Plate"
+        ]
+      ]
+    },
+    {
+      "question": 84,
+      "added": [
+        "Chicken",
+        "Vodka",
+        "Spinach"
+      ],
+      "aliases": [
+        [
+          "frozen fruit",
+          "Fruit"
+        ],
+        [
+          "frozen chips",
+          "Chips"
+        ],
+        [
+          "frozen fish",
+          "Fish"
+        ],
+        [
+          "frozen pizza",
+          "Pizza"
+        ],
+        [
+          "frozen spinach",
+          "Spinach"
+        ]
+      ]
+    },
+    {
+      "question": 85,
+      "added": [
+        "Pan",
+        "Spatula",
+        "Wooden spoon",
+        "Tongs",
+        "Whisk",
+        "Chopsticks"
+      ],
+      "aliases": [
+        [
+          "spatulas",
+          "Spatula"
+        ],
+        [
+          "wooden spoons",
+          "Wooden spoon"
+        ]
+      ]
+    },
+    {
+      "question": 86,
+      "added": [
+        "Rubber gloves",
+        "Water",
+        "Soap",
+        "Laundry capsule"
+      ],
+      "aliases": [
+        [
+          "washing up gloves",
+          "Rubber gloves"
+        ],
+        [
+          "washing tablets",
+          "Laundry capsule"
+        ],
+        [
+          "laundry liquid",
+          "Detergent"
+        ],
+        [
+          "colour catcher sheets",
+          "Colour catcher"
+        ],
+        [
+          "wash balls",
+          "Dryer balls"
+        ]
+      ]
+    },
+    {
+      "question": 87,
+      "added": [
+        "Ladder",
+        "Wall plug",
+        "Socket wrench",
+        "Plunger",
+        "Wire cutter",
+        "Paint scraper"
+      ],
+      "aliases": [
+        [
+          "wall plugs",
+          "Wall plug"
+        ],
+        [
+          "caulk",
+          "Sealant"
+        ],
+        [
+          "wire cutters",
+          "Wire cutter"
+        ]
+      ]
+    },
+    {
+      "question": 88,
+      "added": [
+        "Shade",
+        "Cold shower",
+        "Flyscreen"
+      ],
+      "aliases": [
+        [
+          "shaded window",
+          "Shade"
+        ],
+        [
+          "cool drink",
+          "Cold drink"
+        ],
+        [
+          "fly screen",
+          "Flyscreen"
+        ],
+        [
+          "insect screen",
+          "Flyscreen"
+        ],
+        [
+          "cross breeze",
+          "Cross ventilation"
+        ],
+        [
+          "blackout blinds",
+          "Blinds"
+        ],
+        [
+          "window shutters",
+          "Shutters"
+        ]
+      ]
+    },
+    {
+      "question": 89,
+      "added": [
+        "Cool bag"
+      ],
+      "aliases": [
+        [
+          "storage tub",
+          "Plastic tub"
+        ],
+        [
+          "takeaway container",
+          "Plastic tub"
+        ],
+        [
+          "mason jar",
+          "Jar"
+        ]
+      ]
+    },
+    {
+      "question": 90,
+      "added": [
+        "Water"
+      ],
+      "aliases": [
+        [
+          "wine glasses",
+          "Glass"
+        ],
+        [
+          "teaspoon",
+          "Spoon"
+        ],
+        [
+          "dessert spoon",
+          "Spoon"
+        ]
+      ]
+    },
+    {
+      "question": 91,
+      "added": [
+        "Radio",
+        "Phone",
+        "Solar light",
+        "Bottled water",
+        "Tinned food",
+        "Battery lamp",
+        "Fan"
+      ],
+      "aliases": [
+        [
+          "emergency light",
+          "Battery lamp"
+        ],
+        [
+          "LED lantern",
+          "Battery lamp"
+        ],
+        [
+          "camping lantern",
+          "Battery lamp"
+        ],
+        [
+          "headlamp",
+          "Torch"
+        ],
+        [
+          "battery powered fan",
+          "Fan"
+        ],
+        [
+          "portable charger",
+          "Power bank"
+        ]
+      ]
+    },
+    {
+      "question": 92,
+      "added": [
+        "Boots",
+        "Shoes",
+        "Coat stand",
+        "Potted plant",
+        "Lantern",
+        "Broom",
+        "Key bowl",
+        "Basket",
+        "Shoe brush",
+        "Outdoor light",
+        "Spare key"
+      ],
+      "aliases": [
+        [
+          "flowerpot",
+          "Plant pot"
+        ],
+        [
+          "welcome mat",
+          "Doormat"
+        ]
+      ]
+    },
+    {
+      "question": 94,
+      "added": [
+        "Milk bottle",
+        "Foil",
+        "Engine oil",
+        "Food waste",
+        "Steel",
+        "Aluminium",
+        "Copper wire",
+        "Used cooking oil",
+        "Fluorescent tube"
+      ],
+      "aliases": [
+        [
+          "old phone",
+          "Mobile phone"
+        ],
+        [
+          "aluminum",
+          "Aluminium"
+        ]
+      ]
+    },
+    {
+      "question": 95,
+      "added": [
+        "Dog",
+        "Burglar bars",
+        "Reinforced door"
+      ],
+      "aliases": [
+        [
+          "burglar alarm",
+          "Alarm"
+        ],
+        [
+          "security system",
+          "Alarm"
+        ],
+        [
+          "doorbell camera",
+          "Video doorbell"
+        ],
+        [
+          "CCTV",
+          "Security camera"
+        ],
+        [
+          "guard dog",
+          "Dog"
+        ],
+        [
+          "motion detector",
+          "Motion sensor"
+        ],
+        [
+          "floodlight",
+          "Security light"
+        ]
+      ]
+    },
+    {
+      "question": 96,
+      "added": [
+        "Cleaning products",
+        "Dishwasher tablets",
+        "Washing-up liquid",
+        "Cling film",
+        "Kitchen paper"
+      ],
+      "aliases": [
+        [
+          "washing powder",
+          "Laundry powder"
+        ],
+        [
+          "dish soap",
+          "Washing-up liquid"
+        ],
+        [
+          "cling wrap",
+          "Cling film"
+        ]
+      ]
+    },
+    {
+      "question": 97,
+      "added": [],
+      "aliases": [
+        [
+          "Holland",
+          "Netherlands"
+        ]
+      ]
+    },
+    {
+      "question": 101,
+      "added": [
+        "Art",
+        "Pyramids",
+        "Sport",
+        "Architecture",
+        "Safari",
+        "Solar eclipse"
+      ],
+      "aliases": [
+        [
+          "a football match",
+          "Sport"
+        ],
+        [
+          "relatives",
+          "Family"
+        ],
+        [
+          "a music festival",
+          "Festival"
+        ],
+        [
+          "a safari",
+          "Safari"
+        ],
+        [
+          "a solar eclipse",
+          "Solar eclipse"
+        ]
+      ]
+    },
+    {
+      "question": 102,
+      "added": [
+        "Boat",
+        "Ship",
+        "Submarine",
+        "Horse-drawn carriage"
+      ],
+      "aliases": [
+        [
+          "pedal boat",
+          "Boat"
+        ],
+        [
+          "underground train",
+          "Metro"
+        ],
+        [
+          "tramcar",
+          "Tram"
+        ]
+      ]
+    },
+    {
+      "question": 103,
+      "added": [
+        "Phone",
+        "Toiletries"
+      ],
+      "aliases": [
+        [
+          "charger",
+          "Phone charger"
+        ],
+        [
+          "clean underwear",
+          "Underwear"
+        ],
+        [
+          "nightwear",
+          "Pyjamas"
+        ]
+      ]
+    },
+    {
+      "question": 104,
+      "added": [
+        "Blanket",
+        "Duvet",
+        "Phone",
+        "Slippers",
+        "Bed sheets",
+        "Remote control",
+        "Electric socket",
+        "Tea bag"
+      ],
+      "aliases": [
+        [
+          "tea bags",
+          "Tea bag"
+        ]
+      ]
+    },
+    {
+      "question": 105,
+      "added": [
+        "Show passport",
+        "Get boarding pass",
+        "Eat",
+        "Customs",
+        "Take off",
+        "Land",
+        "Visit a lounge"
+      ],
+      "aliases": [
+        [
+          "board a plane",
+          "Board plane"
+        ],
+        [
+          "get a boarding pass",
+          "Get boarding pass"
+        ],
+        [
+          "drink",
+          "Have a drink"
+        ],
+        [
+          "check flight times",
+          "Check departure board"
+        ],
+        [
+          "go through customs",
+          "Customs"
+        ],
+        [
+          "drop bags",
+          "Check in"
+        ],
+        [
+          "pick up bags",
+          "Collect luggage"
+        ],
+        [
+          "passport control",
+          "Check passport"
+        ],
+        [
+          "go to the lounge",
+          "Visit a lounge"
+        ]
+      ]
+    },
+    {
+      "question": 106,
+      "added": [
+        "Local wine",
+        "Perfume",
+        "Artwork",
+        "Toy",
+        "Souvenir spoon",
+        "Local cheese",
+        "Chocolate",
+        "Seashell"
+      ],
+      "aliases": [
+        [
+          "cap",
+          "Hat"
+        ],
+        [
+          "spices",
+          "Local spices"
+        ],
+        [
+          "sweets",
+          "Local sweets"
+        ],
+        [
+          "pin badge",
+          "Badge"
+        ]
+      ]
+    },
+    {
+      "question": 107,
+      "added": [
+        "Campsite",
+        "Friend's house",
+        "Relative's house",
+        "Holiday rental"
+      ],
+      "aliases": [
+        [
+          "holiday cottage",
+          "Cottage"
+        ],
+        [
+          "farm",
+          "Farm stay"
+        ],
+        [
+          "friends house",
+          "Friend's house"
+        ],
+        [
+          "relatives house",
+          "Relative's house"
+        ],
+        [
+          "Airbnb",
+          "Holiday rental"
+        ],
+        [
+          "log cabin",
+          "Cabin"
+        ],
+        [
+          "static caravan",
+          "Caravan"
+        ]
+      ]
+    },
+    {
+      "question": 108,
+      "added": [
+        "Tyre pressure",
+        "Battery",
+        "Satnav",
+        "Windscreen wipers",
+        "Brake fluid"
+      ],
+      "aliases": [
+        [
+          "petrol",
+          "Fuel"
+        ],
+        [
+          "tire pressure",
+          "Tyre pressure"
+        ],
+        [
+          "headlights",
+          "Lights"
+        ],
+        [
+          "toll tag",
+          "Toll pass"
+        ],
+        [
+          "driving route",
+          "Route"
+        ]
+      ]
+    },
+    {
+      "question": 109,
+      "added": [
+        "Church",
+        "Tower",
+        "Restaurant",
+        "Old town",
+        "Fort",
+        "Town hall"
+      ],
+      "aliases": [
+        [
+          "observation tower",
+          "Tower"
+        ]
+      ]
+    },
+    {
+      "question": 110,
+      "added": [
+        "Farm",
+        "Wind turbine",
+        "Boat",
+        "Track",
+        "Railway sleeper"
+      ],
+      "aliases": [
+        [
+          "farms",
+          "Farm"
+        ],
+        [
+          "wind turbines",
+          "Wind turbine"
+        ],
+        [
+          "boats",
+          "Boat"
+        ],
+        [
+          "railway signals",
+          "Signals"
+        ],
+        [
+          "rail crossings",
+          "Level crossing"
+        ],
+        [
+          "railway lines",
+          "Track"
+        ],
+        [
+          "railway sleepers",
+          "Railway sleeper"
+        ]
+      ]
+    },
+    {
+      "question": 111,
+      "added": [
+        "Eat",
+        "Walk",
+        "Play cards",
+        "Explore",
+        "Drink tea"
+      ],
+      "aliases": [
+        [
+          "put up a tent",
+          "Pitch a tent"
+        ],
+        [
+          "set up camp",
+          "Pitch a tent"
+        ],
+        [
+          "make a fire",
+          "Build a campfire"
+        ],
+        [
+          "go bushwalking",
+          "Walk"
+        ],
+        [
+          "go trekking",
+          "Walk"
+        ],
+        [
+          "sing songs",
+          "Sing"
+        ],
+        [
+          "wash up",
+          "Wash dishes"
+        ]
+      ]
+    },
+    {
+      "question": 112,
+      "added": [
+        "Empire State Building",
+        "Palace of Westminster",
+        "Buckingham Palace",
+        "London Eye",
+        "Tower of London",
+        "Petronas Towers"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 113,
+      "added": [
+        "United Kingdom",
+        "Russia",
+        "Scotland"
+      ],
+      "aliases": [
+        [
+          "UK",
+          "United Kingdom"
+        ]
+      ]
+    },
+    {
+      "question": 114,
+      "added": [
+        "Corfu",
+        "Mykonos",
+        "Isle of Skye"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 115,
+      "added": [
+        "Funeral",
+        "Backpacking",
+        "Shopping",
+        "Skiing"
+      ],
+      "aliases": [
+        [
+          "language learning",
+          "Learn a language"
+        ],
+        [
+          "get married",
+          "Wedding"
+        ],
+        [
+          "retire abroad",
+          "Retirement"
+        ],
+        [
+          "see a doctor",
+          "Medical treatment"
+        ],
+        [
+          "go skiing",
+          "Skiing"
+        ]
+      ]
+    },
+    {
+      "question": 116,
+      "added": [
+        "Fishing boat",
+        "Fish",
+        "Water",
+        "Mast",
+        "Sail"
+      ],
+      "aliases": [
+        [
+          "fishing boats",
+          "Fishing boat"
+        ],
+        [
+          "boat masts",
+          "Mast"
+        ],
+        [
+          "sails",
+          "Sail"
+        ],
+        [
+          "shipping containers",
+          "Container"
+        ]
+      ]
+    },
+    {
+      "question": 117,
+      "added": [
+        "Cantonese",
+        "Greek",
+        "Ukrainian",
+        "Romanian"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 118,
+      "added": [
+        "Play bingo",
+        "Play cards",
+        "Watch a film",
+        "Sing karaoke",
+        "Walk",
+        "Attend a class",
+        "Tennis",
+        "Lecture",
+        "Library",
+        "Basketball"
+      ],
+      "aliases": [
+        [
+          "visit a spa",
+          "Visit the spa"
+        ],
+        [
+          "get a massage",
+          "Have a massage"
+        ],
+        [
+          "go to the gym",
+          "Exercise"
+        ],
+        [
+          "do a quiz",
+          "Attend a quiz"
+        ],
+        [
+          "go on a waterslide",
+          "Use a water slide"
+        ],
+        [
+          "walk on deck",
+          "Walk"
+        ],
+        [
+          "play tennis",
+          "Tennis"
+        ],
+        [
+          "attend a lecture",
+          "Lecture"
+        ],
+        [
+          "visit the library",
+          "Library"
+        ],
+        [
+          "play basketball",
+          "Basketball"
+        ]
+      ]
+    },
+    {
+      "question": 119,
+      "added": [
+        "Directions",
+        "Stars",
+        "Sun",
+        "Google Maps",
+        "Navigation app"
+      ],
+      "aliases": [
+        [
+          "road map",
+          "Map"
+        ],
+        [
+          "paper map",
+          "Map"
+        ],
+        [
+          "phone app",
+          "Navigation app"
+        ],
+        [
+          "GPS device",
+          "Satnav"
+        ],
+        [
+          "walking guide",
+          "Guidebook"
+        ]
+      ]
+    },
+    {
+      "question": 120,
+      "added": [
+        "Timetable",
+        "Guard",
+        "Track",
+        "Signal"
+      ],
+      "aliases": [
+        [
+          "train conductor",
+          "Guard"
+        ],
+        [
+          "station guard",
+          "Guard"
+        ],
+        [
+          "railway tracks",
+          "Track"
+        ],
+        [
+          "tracks",
+          "Track"
+        ],
+        [
+          "buffet",
+          "Cafe"
+        ]
+      ]
+    },
+    {
+      "question": 121,
+      "added": [
+        "Kickball"
+      ],
+      "aliases": [
+        [
+          "beach soccer",
+          "Football"
+        ],
+        [
+          "beach volleyball",
+          "Volleyball"
+        ]
+      ]
+    },
+    {
+      "question": 122,
+      "added": [
+        "Football tennis",
+        "Goalball",
+        "Korfball"
+      ],
+      "aliases": [
+        [
+          "tennis doubles",
+          "Tennis"
+        ],
+        [
+          "beach handball",
+          "Handball"
+        ]
+      ]
+    },
+    {
+      "question": 123,
+      "added": [
+        "Guess Who",
+        "Ludo",
+        "Snakes and Ladders",
+        "Happy Families"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 124,
+      "added": [
+        "Water",
+        "Snacks"
+      ],
+      "aliases": [
+        [
+          "drinking water",
+          "Water"
+        ],
+        [
+          "food",
+          "Snacks"
+        ],
+        [
+          "beach chair",
+          "Chair"
+        ],
+        [
+          "folding chair",
+          "Chair"
+        ]
+      ]
+    },
+    {
+      "question": 125,
+      "added": [
+        "Stepping stones",
+        "Climbing rope",
+        "Hopscotch",
+        "Noughts and crosses"
+      ],
+      "aliases": [
+        [
+          "climbing tower",
+          "Climbing frame"
+        ],
+        [
+          "hopscotch markings",
+          "Hopscotch"
+        ],
+        [
+          "noughts and crosses panel",
+          "Noughts and crosses"
+        ]
+      ]
+    },
+    {
+      "question": 126,
+      "added": [
+        "British bulldog",
+        "Kick the can",
+        "Dodgeball",
+        "Elastics"
+      ],
+      "aliases": [
+        [
+          "knucklebones",
+          "Jacks"
+        ],
+        [
+          "chasey",
+          "Tag"
+        ],
+        [
+          "ball tig",
+          "Tag"
+        ]
+      ]
+    },
+    {
+      "question": 127,
+      "added": [
+        "Weights",
+        "Boxing gloves",
+        "Weight machine"
+      ],
+      "aliases": [
+        [
+          "balance ball",
+          "Gym ball"
+        ],
+        [
+          "Swiss ball",
+          "Gym ball"
+        ],
+        [
+          "exercise ball",
+          "Gym ball"
+        ],
+        [
+          "stationary bicycle",
+          "Exercise bike"
+        ],
+        [
+          "elliptical trainer",
+          "Cross trainer"
+        ]
+      ]
+    },
+    {
+      "question": 128,
+      "added": [
+        "Video replay",
+        "VAR",
+        "Hawk-Eye"
+      ],
+      "aliases": [
+        [
+          "electronic review",
+          "Video replay"
+        ],
+        [
+          "touchline flag",
+          "Flag"
+        ],
+        [
+          "linesman's flag",
+          "Flag"
+        ]
+      ]
+    },
+    {
+      "question": 129,
+      "added": [
+        "Triathlon",
+        "Freediving"
+      ],
+      "aliases": [
+        [
+          "open water swimming",
+          "Swimming"
+        ],
+        [
+          "lifesaving",
+          "Lifesaving sport"
+        ],
+        [
+          "sailing dinghy racing",
+          "Sailing"
+        ]
+      ]
+    },
+    {
+      "question": 130,
+      "added": [
+        "Ice skating",
+        "Snowmobiling"
+      ],
+      "aliases": [
+        [
+          "downhill skiing",
+          "Skiing"
+        ],
+        [
+          "slalom",
+          "Skiing"
+        ],
+        [
+          "giant slalom",
+          "Skiing"
+        ],
+        [
+          "ice speed skating",
+          "Speed skating"
+        ],
+        [
+          "ice dancing",
+          "Figure skating"
+        ]
+      ]
+    },
+    {
+      "question": 131,
+      "added": [
+        "Ride a ghost train",
+        "Play games",
+        "Win prizes",
+        "Eat",
+        "Buy souvenirs",
+        "Waterslide",
+        "Buy tickets"
+      ],
+      "aliases": [
+        [
+          "ride a rollercoaster",
+          "Ride roller coaster"
+        ],
+        [
+          "play hook a duck",
+          "Play games"
+        ],
+        [
+          "win a teddy bear",
+          "Win prizes"
+        ],
+        [
+          "eat a hot dog",
+          "Eat"
+        ],
+        [
+          "get candyfloss",
+          "Eat"
+        ],
+        [
+          "meet characters",
+          "Meet a character"
+        ],
+        [
+          "have face painted",
+          "Get face paint"
+        ],
+        [
+          "go on a waterslide",
+          "Waterslide"
+        ],
+        [
+          "ride the dodgems",
+          "Ride dodgems"
+        ]
+      ]
+    },
+    {
+      "question": 132,
+      "added": [
+        "Chair"
+      ],
+      "aliases": [
+        [
+          "rod",
+          "Fishing rod"
+        ],
+        [
+          "fishing pole",
+          "Fishing rod"
+        ],
+        [
+          "licence",
+          "Fishing licence"
+        ],
+        [
+          "fishing tackle",
+          "Tackle box"
+        ],
+        [
+          "fishing line",
+          "Line"
+        ],
+        [
+          "fishing float",
+          "Float"
+        ],
+        [
+          "worms",
+          "Bait"
+        ]
+      ]
+    },
+    {
+      "question": 134,
+      "added": [
+        "Net",
+        "Banner",
+        "Commentator",
+        "Substitutes bench"
+      ],
+      "aliases": [
+        [
+          "field",
+          "Pitch"
+        ],
+        [
+          "crowd",
+          "Fans"
+        ],
+        [
+          "stands",
+          "Seats"
+        ],
+        [
+          "banners",
+          "Banner"
+        ]
+      ]
+    },
+    {
+      "question": 135,
+      "added": [
+        "Laugh",
+        "Kick a ball",
+        "Relax",
+        "Spread a blanket",
+        "Barbecue",
+        "Share food",
+        "Play cricket"
+      ],
+      "aliases": [
+        [
+          "sleep",
+          "Take a nap"
+        ],
+        [
+          "have a barbecue",
+          "Barbecue"
+        ],
+        [
+          "have a chat",
+          "Talk"
+        ]
+      ]
+    },
+    {
+      "question": 136,
+      "added": [
+        "Wooden train",
+        "Doll's house"
+      ],
+      "aliases": [
+        [
+          "dollhouse",
+          "Doll's house"
+        ],
+        [
+          "stuffed animal",
+          "Teddy bear"
+        ],
+        [
+          "soft toy",
+          "Teddy bear"
+        ],
+        [
+          "rag doll",
+          "Doll"
+        ],
+        [
+          "wooden blocks",
+          "Building blocks"
+        ]
+      ]
+    },
+    {
+      "question": 137,
+      "added": [
+        "Red Dead Redemption",
+        "Forza",
+        "Gran Turismo"
+      ],
+      "aliases": [
+        [
+          "GTA",
+          "Grand Theft Auto"
+        ]
+      ]
+    },
+    {
+      "question": 138,
+      "added": [
+        "Wicket",
+        "Cap",
+        "Clothing"
+      ],
+      "aliases": [
+        [
+          "cricket cap",
+          "Cap"
+        ],
+        [
+          "cricket whites",
+          "Clothing"
+        ],
+        [
+          "cricket trousers",
+          "Clothing"
+        ],
+        [
+          "cricket shoes",
+          "Shoes"
+        ]
+      ]
+    },
+    {
+      "question": 139,
+      "added": [
+        "Heads Up",
+        "Hot potato",
+        "Spin the bottle",
+        "Ring toss",
+        "Egg and spoon race",
+        "Sack race"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 140,
+      "added": [
+        "Bicycle",
+        "Padded shorts",
+        "Cycling shoes",
+        "Sunglasses",
+        "Speedometer"
+      ],
+      "aliases": [
+        [
+          "bike",
+          "Bicycle"
+        ],
+        [
+          "high vis vest",
+          "Reflective vest"
+        ],
+        [
+          "bike chain",
+          "Chain"
+        ]
+      ]
+    },
+    {
+      "question": 141,
+      "added": [
+        "Boat racing",
+        "Athletics",
+        "Dog racing",
+        "Camel racing",
+        "Mountain biking",
+        "Obstacle course racing"
+      ],
+      "aliases": [
+        [
+          "car racing",
+          "Motor racing"
+        ],
+        [
+          "motorbike racing",
+          "Motorcycle racing"
+        ],
+        [
+          "cross country running",
+          "Athletics"
+        ]
+      ]
+    },
+    {
+      "question": 142,
+      "added": [
+        "LEGO model",
+        "Model boat",
+        "Go-kart",
+        "Model rocket"
+      ],
+      "aliases": [
+        [
+          "model aeroplane",
+          "Model plane"
+        ],
+        [
+          "model ship",
+          "Model boat"
+        ],
+        [
+          "blanket fort",
+          "Fort"
+        ],
+        [
+          "pillow fort",
+          "Fort"
+        ],
+        [
+          "paper plane",
+          "Paper aeroplane"
+        ]
+      ]
+    },
+    {
+      "question": 143,
+      "added": [
+        "Gym",
+        "Tennis",
+        "Basketball",
+        "Netball",
+        "Football",
+        "Aerobics",
+        "Martial arts",
+        "Sauna",
+        "Spinning",
+        "Indoor bowls",
+        "Gymnastics"
+      ],
+      "aliases": [
+        [
+          "basketball training",
+          "Basketball"
+        ],
+        [
+          "five a side football",
+          "Football"
+        ],
+        [
+          "karate",
+          "Martial arts"
+        ],
+        [
+          "climbing",
+          "Indoor climbing"
+        ]
+      ]
+    },
+    {
+      "question": 144,
+      "added": [
+        "Buy merchandise",
+        "Heckle",
+        "Whistle",
+        "Face paint"
+      ],
+      "aliases": [
+        [
+          "hold a banner",
+          "Hold up a banner"
+        ],
+        [
+          "film",
+          "Record video"
+        ],
+        [
+          "watch replays",
+          "Watch a replay"
+        ],
+        [
+          "root for their team",
+          "Cheer"
+        ],
+        [
+          "celebrate a goal",
+          "Cheer"
+        ],
+        [
+          "paint their face",
+          "Face paint"
+        ]
+      ]
+    },
+    {
+      "question": 145,
+      "added": [
+        "Winnie the Pooh",
+        "Fred Flintstone",
+        "Yogi Bear",
+        "Huckleberry Hound",
+        "Speedy Gonzales",
+        "Link"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 146,
+      "added": [
+        "Minnie Mouse",
+        "Goofy",
+        "Pluto",
+        "Tweety",
+        "Sylvester",
+        "Shaun the Sheep",
+        "Timmy"
+      ],
+      "aliases": [
+        [
+          "Timmy the lamb",
+          "Timmy"
+        ]
+      ]
+    },
+    {
+      "question": 148,
+      "added": [
+        "The Croods",
+        "Cloudy with a Chance of Meatballs",
+        "Meet the Robinsons",
+        "The Emperor's New Groove",
+        "Monster House"
+      ],
+      "aliases": [
+        [
+          "Snow White",
+          "Snow White and the Seven Dwarfs"
+        ]
+      ]
+    },
+    {
+      "question": 149,
+      "added": [
+        "French horn",
+        "Tuba",
+        "Cornet",
+        "Flugelhorn",
+        "Euphonium"
+      ],
+      "aliases": [
+        [
+          "drums",
+          "Drum kit"
+        ]
+      ]
+    },
+    {
+      "question": 150,
+      "added": [
+        "Coloured pencil",
+        "Pencil sharpener",
+        "Drawing tablet"
+      ],
+      "aliases": [
+        [
+          "felt tip pen",
+          "Marker"
+        ],
+        [
+          "colored pencil",
+          "Coloured pencil"
+        ]
+      ]
+    },
+    {
+      "question": 151,
+      "added": [
+        "Disco",
+        "Modern dance",
+        "Country dancing",
+        "Morris dancing",
+        "Scottish dancing"
+      ],
+      "aliases": [
+        [
+          "breakdancing",
+          "Breakdance"
+        ]
+      ]
+    },
+    {
+      "question": 152,
+      "added": [
+        "Comedian",
+        "Band"
+      ],
+      "aliases": [
+        [
+          "a comedian",
+          "Comedian"
+        ],
+        [
+          "ballet dancer",
+          "Dancer"
+        ],
+        [
+          "opera singer",
+          "Singer"
+        ],
+        [
+          "a band",
+          "Band"
+        ],
+        [
+          "an orchestra",
+          "Orchestra"
+        ]
+      ]
+    },
+    {
+      "question": 153,
+      "added": [
+        "Short story",
+        "Novella",
+        "Parable",
+        "Epic",
+        "True story"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 154,
+      "added": [
+        "Enola Holmes",
+        "Father Brown",
+        "Detective Pikachu",
+        "Frank Drebin",
+        "Tintin"
+      ],
+      "aliases": [
+        [
+          "Monk",
+          "Adrian Monk"
+        ],
+        [
+          "Tin Tin",
+          "Tintin"
+        ]
+      ]
+    },
+    {
+      "question": 156,
+      "added": [
+        "Tinker Bell",
+        "Peter Pan",
+        "Baba Yaga",
+        "Raven",
+        "Zatanna"
+      ],
+      "aliases": [
+        [
+          "Wicked Witch",
+          "Wicked Witch of the West"
+        ]
+      ]
+    },
+    {
+      "question": 157,
+      "added": [
+        "Stunts",
+        "Editing",
+        "Music",
+        "Sound",
+        "Film crew",
+        "Tripod",
+        "Studio",
+        "Screenwriter"
+      ],
+      "aliases": [
+        [
+          "boom microphone",
+          "Microphone"
+        ],
+        [
+          "camera tripod",
+          "Tripod"
+        ],
+        [
+          "film studio",
+          "Studio"
+        ]
+      ]
+    },
+    {
+      "question": 158,
+      "added": [],
+      "aliases": [
+        [
+          "raspberry",
+          "Blow raspberry"
+        ],
+        [
+          "tongue click",
+          "Click tongue"
+        ],
+        [
+          "wolf whistle",
+          "Whistle"
+        ]
+      ]
+    },
+    {
+      "question": 159,
+      "added": [
+        "Indie",
+        "Alternative"
+      ],
+      "aliases": [
+        [
+          "heavy metal",
+          "Metal"
+        ],
+        [
+          "soft rock",
+          "Rock"
+        ]
+      ]
+    },
+    {
+      "question": 160,
+      "added": [
+        "Sway",
+        "Whistle"
+      ],
+      "aliases": [
+        [
+          "hold up a phone",
+          "Hold up phone"
+        ],
+        [
+          "ask for an encore",
+          "Ask for encore"
+        ],
+        [
+          "request an encore",
+          "Ask for encore"
+        ],
+        [
+          "join a mosh pit",
+          "Mosh"
+        ],
+        [
+          "hold up a lightstick",
+          "Wave a light stick"
+        ]
+      ]
+    },
+    {
+      "question": 147,
+      "added": [
+        "Batgirl",
+        "Robin"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 155,
+      "added": [
+        "Troll",
+        "Goblin",
+        "Ogre",
+        "Elf",
+        "Unicorn"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 161,
+      "added": [
+        "Bus",
+        "Train",
+        "Square",
+        "Garden",
+        "Town hall"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 162,
+      "added": [
+        "Poncho"
+      ],
+      "aliases": [
+        [
+          "beanie",
+          "Hat"
+        ],
+        [
+          "teddy bear",
+          "Toy"
+        ],
+        [
+          "cushion cover",
+          "Cushion"
+        ]
+      ]
+    },
+    {
+      "question": 163,
+      "added": [
+        "Help desk"
+      ],
+      "aliases": [
+        [
+          "reference book",
+          "Book"
+        ],
+        [
+          "periodical",
+          "Magazine"
+        ],
+        [
+          "bookcase",
+          "Shelf"
+        ],
+        [
+          "reading chair",
+          "Chair"
+        ]
+      ]
+    },
+    {
+      "question": 164,
+      "added": [
+        "Current affairs",
+        "Business news",
+        "Breakfast television",
+        "Shopping channel"
+      ],
+      "aliases": [
+        [
+          "reality TV",
+          "Reality show"
+        ],
+        [
+          "sport",
+          "Sports coverage"
+        ],
+        [
+          "crime drama",
+          "Crime series"
+        ],
+        [
+          "home improvement",
+          "Home renovation"
+        ]
+      ]
+    },
+    {
+      "question": 165,
+      "added": [
+        "Building",
+        "City lights",
+        "Snow",
+        "People",
+        "Selfie"
+      ],
+      "aliases": [
+        [
+          "buildings",
+          "Building"
+        ],
+        [
+          "selfies",
+          "Selfie"
+        ]
+      ]
+    },
+    {
+      "question": 166,
+      "added": [
+        "Trombone",
+        "Saxophone",
+        "Clarinet",
+        "Comb and paper"
+      ],
+      "aliases": [
+        [
+          "mouth organ",
+          "Harmonica"
+        ]
+      ]
+    },
+    {
+      "question": 167,
+      "added": [
+        "Riddler",
+        "Penguin",
+        "Two-Face",
+        "Doctor Doom",
+        "Harley Quinn"
+      ],
+      "aliases": [
+        [
+          "Cruella",
+          "Cruella de Vil"
+        ]
+      ]
+    },
+    {
+      "question": 168,
+      "added": [
+        "Newspaper column",
+        "Recipe book"
+      ],
+      "aliases": [
+        [
+          "text",
+          "Text message"
+        ],
+        [
+          "blog",
+          "Blog post"
+        ],
+        [
+          "advert",
+          "Advertisement"
+        ],
+        [
+          "instruction manual",
+          "Instructions"
+        ],
+        [
+          "song",
+          "Song lyrics"
+        ],
+        [
+          "screenplay",
+          "Script"
+        ]
+      ]
+    },
+    {
+      "question": 169,
+      "added": [
+        "Snacks",
+        "Cigarettes"
+      ],
+      "aliases": [
+        [
+          "gum",
+          "Chewing gum"
+        ],
+        [
+          "car air freshener",
+          "Car freshener"
+        ],
+        [
+          "air freshener",
+          "Car freshener"
+        ],
+        [
+          "windshield washer fluid",
+          "Windscreen wash"
+        ],
+        [
+          "windscreen cleaner",
+          "Windscreen wash"
+        ]
+      ]
+    },
+    {
+      "question": 170,
+      "added": [
+        "No swimming",
+        "Dangerous dogs"
+      ],
+      "aliases": [
+        [
+          "flammable",
+          "Flammable material"
+        ],
+        [
+          "high voltage",
+          "Electricity"
+        ],
+        [
+          "live wire",
+          "Electricity"
+        ],
+        [
+          "toxic chemicals",
+          "Dangerous chemicals"
+        ]
+      ]
+    },
+    {
+      "question": 171,
+      "added": [
+        "Lucky number",
+        "Lucky charm",
+        "Crossed fingers"
+      ],
+      "aliases": [
+        [
+          "four leafed clover",
+          "Four-leaf clover"
+        ],
+        [
+          "fingers crossed",
+          "Crossed fingers"
+        ]
+      ]
+    },
+    {
+      "question": 172,
+      "added": [
+        "Check time",
+        "Read news",
+        "Online banking"
+      ],
+      "aliases": [
+        [
+          "call someone",
+          "Call"
+        ],
+        [
+          "take a photo",
+          "Take photos"
+        ],
+        [
+          "record a video",
+          "Record video"
+        ],
+        [
+          "check the weather",
+          "Check weather"
+        ],
+        [
+          "browse the internet",
+          "Browse web"
+        ],
+        [
+          "set an alarm",
+          "Set alarm"
+        ],
+        [
+          "use a calculator",
+          "Use calculator"
+        ],
+        [
+          "send messages",
+          "Text"
+        ],
+        [
+          "use GPS",
+          "Use maps"
+        ],
+        [
+          "check the time",
+          "Check time"
+        ],
+        [
+          "do online banking",
+          "Online banking"
+        ]
+      ]
+    },
+    {
+      "question": 173,
+      "added": [
+        "Laptop",
+        "Vacuum cleaner"
+      ],
+      "aliases": [
+        [
+          "cash",
+          "Money"
+        ],
+        [
+          "hoover",
+          "Vacuum cleaner"
+        ]
+      ]
+    },
+    {
+      "question": 174,
+      "added": [
+        "Room",
+        "Mobile phone",
+        "Television",
+        "Washing machine"
+      ],
+      "aliases": [
+        [
+          "bedroom",
+          "Room"
+        ]
+      ]
+    },
+    {
+      "question": 175,
+      "added": [
+        "Show",
+        "Circus",
+        "Sports event"
+      ],
+      "aliases": [
+        [
+          "gig",
+          "Concert"
+        ],
+        [
+          "sporting event",
+          "Sports event"
+        ],
+        [
+          "guided walk",
+          "Guided tour"
+        ]
+      ]
+    },
+    {
+      "question": 176,
+      "added": [],
+      "aliases": [
+        [
+          "ID",
+          "Identity card"
+        ],
+        [
+          "photo ID",
+          "Identity card"
+        ],
+        [
+          "emergency contact details",
+          "Emergency contact"
+        ],
+        [
+          "small change",
+          "Coins"
+        ],
+        [
+          "discount card",
+          "Loyalty card"
+        ]
+      ]
+    },
+    {
+      "question": 177,
+      "added": [
+        "Make a paper chain",
+        "Make a paper snowflake"
+      ],
+      "aliases": [
+        [
+          "write on it",
+          "Write"
+        ],
+        [
+          "scribble",
+          "Write"
+        ],
+        [
+          "draw on it",
+          "Draw"
+        ],
+        [
+          "doodle",
+          "Draw"
+        ],
+        [
+          "print on it",
+          "Print"
+        ],
+        [
+          "fold it",
+          "Fold"
+        ],
+        [
+          "cut it",
+          "Cut"
+        ],
+        [
+          "tear it",
+          "Tear"
+        ],
+        [
+          "wrap presents",
+          "Wrap"
+        ],
+        [
+          "read it",
+          "Read"
+        ],
+        [
+          "recycle it",
+          "Recycle"
+        ],
+        [
+          "make paper planes",
+          "Make aeroplane"
+        ],
+        [
+          "make paper boats",
+          "Make boat"
+        ],
+        [
+          "paint on it",
+          "Paint"
+        ],
+        [
+          "shred it",
+          "Shred"
+        ],
+        [
+          "crumple it",
+          "Crumple"
+        ],
+        [
+          "make a paper fan",
+          "Fold a fan"
+        ]
+      ]
+    },
+    {
+      "question": 178,
+      "added": [
+        "Computer",
+        "Tablet",
+        "Smartwatch",
+        "Hearing aid",
+        "Dentures"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 179,
+      "added": [
+        "Seat",
+        "Parking",
+        "Appointment"
+      ],
+      "aliases": [
+        [
+          "table",
+          "Restaurant"
+        ],
+        [
+          "car parking space",
+          "Parking"
+        ]
+      ]
+    },
+    {
+      "question": 180,
+      "added": [
+        "Poor service",
+        "Stale food",
+        "Dirty glass"
+      ],
+      "aliases": [
+        [
+          "uncomfortable chair",
+          "Uncomfortable seat"
+        ],
+        [
+          "burnt food",
+          "Overcooked food"
+        ],
+        [
+          "uncooked chicken",
+          "Undercooked food"
+        ]
+      ]
+    },
+    {
+      "question": 181,
+      "added": [
+        "Put a hood up"
+      ],
+      "aliases": [
+        [
+          "use an umbrella",
+          "Use umbrella"
+        ],
+        [
+          "put up an umbrella",
+          "Use umbrella"
+        ],
+        [
+          "wear a raincoat",
+          "Wear raincoat"
+        ],
+        [
+          "cancel a picnic",
+          "Cancel picnic"
+        ],
+        [
+          "wipe their feet",
+          "Wipe feet"
+        ],
+        [
+          "check the forecast",
+          "Check forecast"
+        ],
+        [
+          "use the wipers",
+          "Use windscreen wipers"
+        ],
+        [
+          "run for cover",
+          "Take shelter"
+        ],
+        [
+          "shelter under a tree",
+          "Take shelter"
+        ],
+        [
+          "stay home",
+          "Stay indoors"
+        ]
+      ]
+    },
+    {
+      "question": 182,
+      "added": [
+        "Hairbrush",
+        "Phone charger",
+        "Deodorant",
+        "Earphones",
+        "Turn off oven"
+      ],
+      "aliases": [
+        [
+          "turn off the lights",
+          "Turn off lights"
+        ],
+        [
+          "lock the door",
+          "Lock door"
+        ],
+        [
+          "close the window",
+          "Close window"
+        ],
+        [
+          "feed the pet",
+          "Feed pet"
+        ],
+        [
+          "turn off the iron",
+          "Switch off iron"
+        ],
+        [
+          "charger",
+          "Phone charger"
+        ],
+        [
+          "turn off the oven",
+          "Turn off oven"
+        ]
+      ]
+    },
+    {
+      "question": 183,
+      "added": [
+        "Diary entry",
+        "Thoughts",
+        "Feelings",
+        "Goals",
+        "Notes"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 184,
+      "added": [
+        "SIM card",
+        "Batteries",
+        "Condom",
+        "Toothbrush",
+        "Dog treats"
+      ],
+      "aliases": [
+        [
+          "condoms",
+          "Condom"
+        ]
+      ]
+    },
+    {
+      "question": 185,
+      "added": [
+        "Christmas card",
+        "Flowers"
+      ],
+      "aliases": [
+        [
+          "birthday present",
+          "Gift"
+        ],
+        [
+          "food hamper",
+          "Gift"
+        ],
+        [
+          "package",
+          "Parcel"
+        ],
+        [
+          "letterbox flowers",
+          "Flowers"
+        ]
+      ]
+    },
+    {
+      "question": 186,
+      "added": [
+        "Use discounts",
+        "Use leftovers"
+      ],
+      "aliases": [
+        [
+          "pack a lunch",
+          "Pack lunch"
+        ],
+        [
+          "use the library",
+          "Use library"
+        ],
+        [
+          "sell unused things",
+          "Sell unused items"
+        ],
+        [
+          "carpool",
+          "Share a lift"
+        ],
+        [
+          "use vouchers",
+          "Use coupons"
+        ],
+        [
+          "shop around",
+          "Compare prices"
+        ],
+        [
+          "turn off the heating",
+          "Reduce heating"
+        ]
+      ]
+    },
+    {
+      "question": 187,
+      "added": [
+        "Ice cream",
+        "Festival entrance"
+      ],
+      "aliases": [
+        [
+          "coffee shop",
+          "Coffee"
+        ],
+        [
+          "burger",
+          "Food"
+        ],
+        [
+          "bus stop",
+          "Bus"
+        ]
+      ]
+    },
+    {
+      "question": 188,
+      "added": [],
+      "aliases": [
+        [
+          "hot food",
+          "Takeaway"
+        ],
+        [
+          "restaurant meal",
+          "Takeaway"
+        ],
+        [
+          "Chinese food",
+          "Takeaway"
+        ],
+        [
+          "Indian food",
+          "Takeaway"
+        ],
+        [
+          "takeout",
+          "Takeaway"
+        ]
+      ]
+    },
+    {
+      "question": 189,
+      "added": [
+        "Off licence",
+        "Cinema",
+        "Front door"
+      ],
+      "aliases": [
+        [
+          "pub",
+          "Bar"
+        ],
+        [
+          "liquor store",
+          "Off licence"
+        ]
+      ]
+    },
+    {
+      "question": 190,
+      "added": [
+        "Cooking oil",
+        "Salt",
+        "Pepper",
+        "Spices",
+        "Kitchen paper"
+      ],
+      "aliases": [
+        [
+          "kitchen roll",
+          "Kitchen paper"
+        ]
+      ]
+    },
+    {
+      "question": 191,
+      "added": [
+        "Check news",
+        "Calculate",
+        "Copy and paste"
+      ],
+      "aliases": [
+        [
+          "send emails",
+          "Email"
+        ],
+        [
+          "video calls",
+          "Join video call"
+        ],
+        [
+          "make presentations",
+          "Create presentation"
+        ],
+        [
+          "browse the web",
+          "Browse web"
+        ],
+        [
+          "data entry",
+          "Enter data"
+        ],
+        [
+          "programming",
+          "Code"
+        ],
+        [
+          "schedule a meeting",
+          "Schedule meeting"
+        ],
+        [
+          "book meetings",
+          "Schedule meeting"
+        ],
+        [
+          "use a calendar",
+          "Use calendar"
+        ],
+        [
+          "check the news",
+          "Check news"
+        ],
+        [
+          "take meeting notes",
+          "Make notes"
+        ]
+      ]
+    },
+    {
+      "question": 192,
+      "added": [],
+      "aliases": [
+        [
+          "tinned goods",
+          "Tinned food"
+        ],
+        [
+          "old clothes",
+          "Clothes"
+        ],
+        [
+          "used books",
+          "Books"
+        ],
+        [
+          "second hand furniture",
+          "Furniture"
+        ]
+      ]
+    },
+    {
+      "question": 193,
+      "added": [
+        "Shredder"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 194,
+      "added": [],
+      "aliases": [
+        [
+          "bathrobe",
+          "Dressing gown"
+        ],
+        [
+          "bath towel",
+          "Towel"
+        ],
+        [
+          "hand towel",
+          "Towel"
+        ],
+        [
+          "dinner jacket",
+          "Jacket"
+        ]
+      ]
+    },
+    {
+      "question": 195,
+      "added": [],
+      "aliases": [
+        [
+          "knees",
+          "Knee"
+        ]
+      ]
+    },
+    {
+      "question": 196,
+      "added": [
+        "Overnight",
+        "Midnight",
+        "Sunlight",
+        "Moonlight",
+        "Flashlight"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 197,
+      "added": [
+        "Chowder",
+        "Chilli con carne"
+      ],
+      "aliases": [
+        [
+          "chicken curry",
+          "Curry"
+        ],
+        [
+          "chocolate cake",
+          "Cake"
+        ]
+      ]
+    },
+    {
+      "question": 198,
+      "added": [
+        "Blue tit",
+        "Black panther",
+        "Bearded dragon"
+      ],
+      "aliases": [
+        [
+          "brown bear",
+          "Bear"
+        ],
+        [
+          "black bear",
+          "Bear"
+        ]
+      ]
+    },
+    {
+      "question": 199,
+      "added": [
+        "Tunic",
+        "Top",
+        "Turtleneck",
+        "Sweatshirt"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 200,
+      "added": [
+        "Roofer",
+        "Miner",
+        "Fisher"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 201,
+      "added": [
+        "Grape",
+        "Pea",
+        "Bowl",
+        "CD"
+      ],
+      "aliases": [
+        [
+          "tennis ball",
+          "Ball"
+        ]
+      ]
+    },
+    {
+      "question": 202,
+      "added": [
+        "Pencil",
+        "Pointed stick",
+        "Paper edge"
+      ],
+      "aliases": [
+        [
+          "razor blade",
+          "Razor"
+        ],
+        [
+          "broken bottle",
+          "Broken glass"
+        ],
+        [
+          "edge of paper",
+          "Paper edge"
+        ]
+      ]
+    },
+    {
+      "question": 203,
+      "added": [
+        "Swimsuit",
+        "Rubber tyre"
+      ],
+      "aliases": [
+        [
+          "elastic waistband",
+          "Elastic"
+        ],
+        [
+          "elasticated fabric",
+          "Elastic"
+        ],
+        [
+          "swimming costume",
+          "Swimsuit"
+        ]
+      ]
+    },
+    {
+      "question": 204,
+      "added": [],
+      "aliases": [
+        [
+          "clear glass",
+          "Glass"
+        ],
+        [
+          "window glass",
+          "Glass"
+        ],
+        [
+          "clear plastic",
+          "Plastic"
+        ],
+        [
+          "clear resin",
+          "Resin"
+        ]
+      ]
+    },
+    {
+      "question": 205,
+      "added": [],
+      "aliases": [
+        [
+          "snowman",
+          "Snow"
+        ],
+        [
+          "cheddar",
+          "Cheese"
+        ],
+        [
+          "plastic bag",
+          "Plastic"
+        ]
+      ]
+    },
+    {
+      "question": 206,
+      "added": [],
+      "aliases": [
+        [
+          "sticky note",
+          "Post-it note"
+        ],
+        [
+          "cooked rice",
+          "Rice"
+        ]
+      ]
+    },
+    {
+      "question": 207,
+      "added": [],
+      "aliases": [
+        [
+          "roller blind",
+          "Window blind"
+        ]
+      ]
+    },
+    {
+      "question": 208,
+      "added": [],
+      "aliases": [
+        [
+          "hair ribbon",
+          "Ribbon"
+        ],
+        [
+          "drawstring bag",
+          "Bag"
+        ]
+      ]
+    },
+    {
+      "question": 209,
+      "added": [],
+      "aliases": [
+        [
+          "champagne flute",
+          "Wine glass"
+        ],
+        [
+          "thin glass",
+          "Glass"
+        ],
+        [
+          "crystal glass",
+          "Crystal"
+        ],
+        [
+          "porcelain cup",
+          "Teacup"
+        ]
+      ]
+    },
+    {
+      "question": 210,
+      "added": [
+        "Record player"
+      ],
+      "aliases": [
+        [
+          "spinning top",
+          "Top"
+        ],
+        [
+          "electric fan",
+          "Fan"
+        ],
+        [
+          "washing drum",
+          "Washing machine drum"
+        ]
+      ]
+    },
+    {
+      "question": 211,
+      "added": [
+        "Inflatable ring"
+      ],
+      "aliases": [
+        [
+          "ice cube",
+          "Ice"
+        ]
+      ]
+    },
+    {
+      "question": 213,
+      "added": [],
+      "aliases": [
+        [
+          "pair of socks",
+          "Socks"
+        ],
+        [
+          "pair of earrings",
+          "Earrings"
+        ],
+        [
+          "pair of slippers",
+          "Slippers"
+        ]
+      ]
+    },
+    {
+      "question": 214,
+      "added": [],
+      "aliases": [
+        [
+          "waterproof phone case",
+          "Phone case"
+        ],
+        [
+          "waterproof watch",
+          "Watch"
+        ],
+        [
+          "water resistant watch",
+          "Watch"
+        ],
+        [
+          "oilskin coat",
+          "Raincoat"
+        ],
+        [
+          "waterproof bag",
+          "Dry bag"
+        ]
+      ]
+    },
+    {
+      "question": 215,
+      "added": [],
+      "aliases": [
+        [
+          "coffee mug",
+          "Mug"
+        ],
+        [
+          "tea cup",
+          "Cup"
+        ],
+        [
+          "soup ladle",
+          "Ladle"
+        ]
+      ]
+    },
+    {
+      "question": 216,
+      "added": [],
+      "aliases": [
+        [
+          "cookie jar",
+          "Jar"
+        ],
+        [
+          "jam jar",
+          "Jar"
+        ],
+        [
+          "water bottle",
+          "Bottle"
+        ]
+      ]
+    },
+    {
+      "question": 217,
+      "added": [
+        "Sky"
+      ],
+      "aliases": [
+        [
+          "blue sky",
+          "Sky"
+        ],
+        [
+          "cloudy sky",
+          "Sky"
+        ],
+        [
+          "dark clouds",
+          "Sky"
+        ],
+        [
+          "clear sky",
+          "Sky"
+        ]
+      ]
+    },
+    {
+      "question": 218,
+      "added": [
+        "Dog walker",
+        "Jogger",
+        "Picnic blanket"
+      ],
+      "aliases": [
+        [
+          "public toilet",
+          "Toilet"
+        ]
+      ]
+    },
+    {
+      "question": 219,
+      "added": [],
+      "aliases": [
+        [
+          "gardening gloves",
+          "Gloves"
+        ],
+        [
+          "garden fork",
+          "Fork"
+        ],
+        [
+          "garden rake",
+          "Rake"
+        ],
+        [
+          "garden trowel",
+          "Trowel"
+        ],
+        [
+          "garden hose",
+          "Hose"
+        ]
+      ]
+    },
+    {
+      "question": 220,
+      "added": [
+        "Building materials",
+        "Blocks"
+      ],
+      "aliases": [
+        [
+          "cement bags",
+          "Cement"
+        ],
+        [
+          "building blocks",
+          "Blocks"
+        ],
+        [
+          "concrete blocks",
+          "Blocks"
+        ],
+        [
+          "cement truck",
+          "Concrete mixer"
+        ]
+      ]
+    },
+    {
+      "question": 221,
+      "added": [
+        "Pedestrian"
+      ],
+      "aliases": [
+        [
+          "pedestrians",
+          "Pedestrian"
+        ],
+        [
+          "people",
+          "Pedestrian"
+        ]
+      ]
+    },
+    {
+      "question": 222,
+      "added": [
+        "Rain",
+        "Water",
+        "Corrosion"
+      ],
+      "aliases": [
+        [
+          "leak",
+          "Leaking pipe"
+        ],
+        [
+          "rust",
+          "Corrosion"
+        ]
+      ]
+    },
+    {
+      "question": 223,
+      "added": [],
+      "aliases": [
+        [
+          "SPF lip balm",
+          "Sunscreen lip balm"
+        ],
+        [
+          "sun hat",
+          "Hat"
+        ]
+      ]
+    },
+    {
+      "question": 224,
+      "added": [
+        "Goldfish",
+        "Koi",
+        "Frogspawn"
+      ],
+      "aliases": [
+        [
+          "koi carp",
+          "Koi"
+        ],
+        [
+          "frogs eggs",
+          "Frogspawn"
+        ]
+      ]
+    },
+    {
+      "question": 225,
+      "added": [],
+      "aliases": [
+        [
+          "feed them",
+          "Feed"
+        ],
+        [
+          "feed the cat",
+          "Feed"
+        ],
+        [
+          "feed the dog",
+          "Feed"
+        ],
+        [
+          "give them treats",
+          "Feed"
+        ],
+        [
+          "give them water",
+          "Give water"
+        ],
+        [
+          "walk them",
+          "Walk"
+        ],
+        [
+          "take them for a walk",
+          "Walk"
+        ],
+        [
+          "groom them",
+          "Groom"
+        ],
+        [
+          "brush their fur",
+          "Brush"
+        ],
+        [
+          "bathe them",
+          "Bathe"
+        ],
+        [
+          "trim their nails",
+          "Trim nails"
+        ],
+        [
+          "clean their cage",
+          "Clean cage"
+        ],
+        [
+          "clean the litter tray",
+          "Clean litter tray"
+        ],
+        [
+          "take them to the vet",
+          "Visit vet"
+        ],
+        [
+          "vaccinate them",
+          "Vaccinate"
+        ],
+        [
+          "give them medicine",
+          "Give medicine"
+        ],
+        [
+          "play with them",
+          "Play"
+        ],
+        [
+          "train them",
+          "Train"
+        ],
+        [
+          "treat fleas",
+          "Remove fleas"
+        ],
+        [
+          "check their teeth",
+          "Check teeth"
+        ],
+        [
+          "microchip them",
+          "Microchip"
+        ],
+        [
+          "wash their bedding",
+          "Clean bedding"
+        ],
+        [
+          "clean their tank",
+          "Clean an aquarium"
+        ]
+      ]
+    },
+    {
+      "question": 226,
+      "added": [],
+      "aliases": [
+        [
+          "zookeeper",
+          "Keeper"
+        ],
+        [
+          "animal keeper",
+          "Keeper"
+        ],
+        [
+          "zoo keeper",
+          "Keeper"
+        ],
+        [
+          "hippopotamus",
+          "Hippo"
+        ]
+      ]
+    },
+    {
+      "question": 227,
+      "added": [
+        "Late train",
+        "Flight delay",
+        "Cancelled flight"
+      ],
+      "aliases": [
+        [
+          "train delay",
+          "Late train"
+        ],
+        [
+          "train cancellation",
+          "Cancelled train"
+        ]
+      ]
+    },
+    {
+      "question": 228,
+      "added": [
+        "Trader",
+        "Customer",
+        "Money"
+      ],
+      "aliases": [
+        [
+          "market trader",
+          "Trader"
+        ],
+        [
+          "stallholder",
+          "Trader"
+        ],
+        [
+          "seller",
+          "Trader"
+        ],
+        [
+          "customers",
+          "Customer"
+        ]
+      ]
+    },
+    {
+      "question": 229,
+      "added": [
+        "Seafront"
+      ],
+      "aliases": [
+        [
+          "woods",
+          "Forest"
+        ],
+        [
+          "wood",
+          "Forest"
+        ],
+        [
+          "sea front",
+          "Seafront"
+        ],
+        [
+          "hiking trail",
+          "Footpath"
+        ]
+      ]
+    },
+    {
+      "question": 230,
+      "added": [
+        "Sea slug",
+        "Rock"
+      ],
+      "aliases": [
+        [
+          "rocks",
+          "Rock"
+        ],
+        [
+          "shore crab",
+          "Crab"
+        ]
+      ]
+    },
+    {
+      "question": 231,
+      "added": [
+        "Fire alarm",
+        "Car engine"
+      ],
+      "aliases": [
+        [
+          "barking dog",
+          "Dog"
+        ],
+        [
+          "police siren",
+          "Siren"
+        ],
+        [
+          "smoke alarm",
+          "Fire alarm"
+        ]
+      ]
+    },
+    {
+      "question": 232,
+      "added": [
+        "Herbs",
+        "Mint",
+        "Parsley",
+        "Basil",
+        "Rosemary"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 233,
+      "added": [
+        "Rat",
+        "Tumbleweed",
+        "Animal bones"
+      ],
+      "aliases": [
+        [
+          "desert fox",
+          "Fox"
+        ],
+        [
+          "desert rat",
+          "Rat"
+        ],
+        [
+          "cactus plant",
+          "Cactus"
+        ]
+      ]
+    },
+    {
+      "question": 234,
+      "added": [],
+      "aliases": [
+        [
+          "first aid box",
+          "First aid kit"
+        ]
+      ]
+    },
+    {
+      "question": 235,
+      "added": [
+        "Fuel",
+        "Brake disc"
+      ],
+      "aliases": [
+        [
+          "petrol cap",
+          "Fuel cap"
+        ],
+        [
+          "brake discs",
+          "Brake disc"
+        ],
+        [
+          "headlight",
+          "Headlight bulb"
+        ]
+      ]
+    },
+    {
+      "question": 236,
+      "added": [
+        "Animal"
+      ],
+      "aliases": [
+        [
+          "wildflowers",
+          "Flower"
+        ],
+        [
+          "wild flowers",
+          "Flower"
+        ],
+        [
+          "butterfly wings",
+          "Butterfly"
+        ],
+        [
+          "animals",
+          "Animal"
+        ],
+        [
+          "wildlife",
+          "Animal"
+        ]
+      ]
+    },
+    {
+      "question": 237,
+      "added": [
+        "Tea",
+        "Pasta",
+        "Paintbrush",
+        "Watercolour paint"
+      ],
+      "aliases": [
+        [
+          "cement",
+          "Concrete mix"
+        ]
+      ]
+    },
+    {
+      "question": 238,
+      "added": [
+        "High-vis jacket"
+      ],
+      "aliases": [
+        [
+          "protective gloves",
+          "Gloves"
+        ],
+        [
+          "hi vis jacket",
+          "High-vis jacket"
+        ],
+        [
+          "safety goggles",
+          "Goggles"
+        ]
+      ]
+    },
+    {
+      "question": 239,
+      "added": [
+        "Graffiti wall"
+      ],
+      "aliases": [
+        [
+          "art gallery",
+          "Gallery"
+        ],
+        [
+          "public gallery",
+          "Gallery"
+        ],
+        [
+          "public park",
+          "Park"
+        ],
+        [
+          "church window",
+          "Church"
+        ]
+      ]
+    },
+    {
+      "question": 240,
+      "added": [
+        "Snow",
+        "Snow-covered roof",
+        "Snow-covered car",
+        "Snow-covered road"
+      ],
+      "aliases": [
+        [
+          "white snow",
+          "Snow"
+        ]
+      ]
+    },
+    {
+      "question": 93,
+      "added": [
+        "Christmas tree"
+      ],
+      "aliases": [
+        [
+          "birthday banner",
+          "Banner"
+        ],
+        [
+          "birthday candles",
+          "Candles"
+        ],
+        [
+          "Chinese lanterns",
+          "Paper lantern"
+        ],
+        [
+          "paper flowers",
+          "Flowers"
+        ]
+      ]
+    },
+    {
+      "question": 133,
+      "added": [
+        "Paddle tennis"
+      ],
+      "aliases": [
+        [
+          "mini golf",
+          "Golf"
+        ]
+      ]
+    },
+    {
+      "question": 97,
+      "added": [
+        "Jordan",
+        "Azerbaijan",
+        "Kazakhstan",
+        "Turkmenistan"
+      ],
+      "aliases": []
+    },
+    {
+      "question": 195,
+      "added": [],
+      "aliases": [
+        [
+          "knows",
+          "Know"
+        ],
+        [
+          "knits",
+          "Knit"
+        ],
+        [
+          "knitter",
+          "Knit"
+        ]
+      ]
+    }
+  ],
+  "validation": {
+    "repositoryChecks": "npm test: all selected unit, content, private PostgreSQL, cloud/profile, browser, release and smoke checks passed.",
+    "browser": "5998 challenge inputs checked against the shipped browser bundle; real Daily/Unlimited submissions, rejection/retry deadlines and old captured rules tested at 390px and 1440px; existing gameplay checks pass at 320/390/768/1100/1440px.",
+    "preservation": "All revision-14 canonical names, alias owners and scores remain identical. New exclusions are not injected into old captures.",
+    "rotation": "48 days unchanged, five topics/day, all 105 semantic conflicts remain separated; no new canonical overlaps at the 35-percent threshold.",
+    "productionDatabase": "Applied sleeper_snapshot_exact_rejections; synthetic new/old snapshots confirm Jordan=55, new Zambia rejected, valid Gambai typo and old Zambia correction retain Gambia=100. Helpers remain SECURITY INVOKER and not executable by anon/authenticated; advisor findings unchanged.",
+    "geographicReference": "All 930 external country probes pass. Landlocked UN names without an inland-sea coast are rejected on new coastline questions.",
+    "sourceAvailability": "The REST Countries endpoint returned 403; the public mledoze/countries dataset was retrieved instead. The IOC Games page returned 503; this audit does not claim a fresh independent IOC verification."
+  }
+}

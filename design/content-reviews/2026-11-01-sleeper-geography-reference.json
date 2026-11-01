@@ -1,0 +1,9844 @@
+{
+  "reviewed": "2026-11-01",
+  "source": "https://raw.githubusercontent.com/mledoze/countries/master/countries.json",
+  "sourceSha256": "af37c5b3eb88cc1210e68cfd9baced8851e140dc832e76858025b106a2a08fd5",
+  "method": "Cross-check common English names and ISO abbreviations against a separate geographic dataset. UN membership uses the 193 member codes (excluding observer Vatican City and Palestine); the reference currently flags Vatican City unMember=true, which is corrected here. Coastal set excludes ocean-landlocked members; Caspian-only coasts are checked separately under the clarified question scope.",
+  "unMembers": [
+    {
+      "code": "AFG",
+      "name": "Afghanistan",
+      "landlocked": true,
+      "region": "Asia"
+    },
+    {
+      "code": "AGO",
+      "name": "Angola",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "ALB",
+      "name": "Albania",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "AND",
+      "name": "Andorra",
+      "landlocked": true,
+      "region": "Europe"
+    },
+    {
+      "code": "ARE",
+      "name": "United Arab Emirates",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "ARG",
+      "name": "Argentina",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "ARM",
+      "name": "Armenia",
+      "landlocked": true,
+      "region": "Asia"
+    },
+    {
+      "code": "ATG",
+      "name": "Antigua and Barbuda",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "AUS",
+      "name": "Australia",
+      "landlocked": false,
+      "region": "Oceania"
+    },
+    {
+      "code": "AUT",
+      "name": "Austria",
+      "landlocked": true,
+      "region": "Europe"
+    },
+    {
+      "code": "AZE",
+      "name": "Azerbaijan",
+      "landlocked": true,
+      "region": "Asia"
+    },
+    {
+      "code": "BDI",
+      "name": "Burundi",
+      "landlocked": true,
+      "region": "Africa"
+    },
+    {
+      "code": "BEL",
+      "name": "Belgium",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "BEN",
+      "name": "Benin",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "BFA",
+      "name": "Burkina Faso",
+      "landlocked": true,
+      "region": "Africa"
+    },
+    {
+      "code": "BGD",
+      "name": "Bangladesh",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "BGR",
+      "name": "Bulgaria",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "BHR",
+      "name": "Bahrain",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "BHS",
+      "name": "Bahamas",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "BIH",
+      "name": "Bosnia and Herzegovina",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "BLR",
+      "name": "Belarus",
+      "landlocked": true,
+      "region": "Europe"
+    },
+    {
+      "code": "BLZ",
+      "name": "Belize",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "BOL",
+      "name": "Bolivia",
+      "landlocked": true,
+      "region": "Americas"
+    },
+    {
+      "code": "BRA",
+      "name": "Brazil",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "BRB",
+      "name": "Barbados",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "BRN",
+      "name": "Brunei",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "BTN",
+      "name": "Bhutan",
+      "landlocked": true,
+      "region": "Asia"
+    },
+    {
+      "code": "BWA",
+      "name": "Botswana",
+      "landlocked": true,
+      "region": "Africa"
+    },
+    {
+      "code": "CAF",
+      "name": "Central African Republic",
+      "landlocked": true,
+      "region": "Africa"
+    },
+    {
+      "code": "CAN",
+      "name": "Canada",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "CHE",
+      "name": "Switzerland",
+      "landlocked": true,
+      "region": "Europe"
+    },
+    {
+      "code": "CHL",
+      "name": "Chile",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "CHN",
+      "name": "China",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "CIV",
+      "name": "Ivory Coast",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "CMR",
+      "name": "Cameroon",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "COD",
+      "name": "DR Congo",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "COG",
+      "name": "Congo",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "COL",
+      "name": "Colombia",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "COM",
+      "name": "Comoros",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "CPV",
+      "name": "Cape Verde",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "CRI",
+      "name": "Costa Rica",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "CUB",
+      "name": "Cuba",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "CYP",
+      "name": "Cyprus",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "CZE",
+      "name": "Czechia",
+      "landlocked": true,
+      "region": "Europe"
+    },
+    {
+      "code": "DEU",
+      "name": "Germany",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "DJI",
+      "name": "Djibouti",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "DMA",
+      "name": "Dominica",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "DNK",
+      "name": "Denmark",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "DOM",
+      "name": "Dominican Republic",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "DZA",
+      "name": "Algeria",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "ECU",
+      "name": "Ecuador",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "EGY",
+      "name": "Egypt",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "ERI",
+      "name": "Eritrea",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "ESP",
+      "name": "Spain",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "EST",
+      "name": "Estonia",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "ETH",
+      "name": "Ethiopia",
+      "landlocked": true,
+      "region": "Africa"
+    },
+    {
+      "code": "FIN",
+      "name": "Finland",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "FJI",
+      "name": "Fiji",
+      "landlocked": false,
+      "region": "Oceania"
+    },
+    {
+      "code": "FRA",
+      "name": "France",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "FSM",
+      "name": "Micronesia",
+      "landlocked": false,
+      "region": "Oceania"
+    },
+    {
+      "code": "GAB",
+      "name": "Gabon",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "GBR",
+      "name": "United Kingdom",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "GEO",
+      "name": "Georgia",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "GHA",
+      "name": "Ghana",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "GIN",
+      "name": "Guinea",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "GMB",
+      "name": "Gambia",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "GNB",
+      "name": "Guinea-Bissau",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "GNQ",
+      "name": "Equatorial Guinea",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "GRC",
+      "name": "Greece",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "GRD",
+      "name": "Grenada",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "GTM",
+      "name": "Guatemala",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "GUY",
+      "name": "Guyana",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "HND",
+      "name": "Honduras",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "HRV",
+      "name": "Croatia",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "HTI",
+      "name": "Haiti",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "HUN",
+      "name": "Hungary",
+      "landlocked": true,
+      "region": "Europe"
+    },
+    {
+      "code": "IDN",
+      "name": "Indonesia",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "IND",
+      "name": "India",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "IRL",
+      "name": "Ireland",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "IRN",
+      "name": "Iran",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "IRQ",
+      "name": "Iraq",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "ISL",
+      "name": "Iceland",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "ISR",
+      "name": "Israel",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "ITA",
+      "name": "Italy",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "JAM",
+      "name": "Jamaica",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "JOR",
+      "name": "Jordan",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "JPN",
+      "name": "Japan",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "KAZ",
+      "name": "Kazakhstan",
+      "landlocked": true,
+      "region": "Asia"
+    },
+    {
+      "code": "KEN",
+      "name": "Kenya",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "KGZ",
+      "name": "Kyrgyzstan",
+      "landlocked": true,
+      "region": "Asia"
+    },
+    {
+      "code": "KHM",
+      "name": "Cambodia",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "KIR",
+      "name": "Kiribati",
+      "landlocked": false,
+      "region": "Oceania"
+    },
+    {
+      "code": "KNA",
+      "name": "Saint Kitts and Nevis",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "KOR",
+      "name": "South Korea",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "KWT",
+      "name": "Kuwait",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "LAO",
+      "name": "Laos",
+      "landlocked": true,
+      "region": "Asia"
+    },
+    {
+      "code": "LBN",
+      "name": "Lebanon",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "LBR",
+      "name": "Liberia",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "LBY",
+      "name": "Libya",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "LCA",
+      "name": "Saint Lucia",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "LIE",
+      "name": "Liechtenstein",
+      "landlocked": true,
+      "region": "Europe"
+    },
+    {
+      "code": "LKA",
+      "name": "Sri Lanka",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "LSO",
+      "name": "Lesotho",
+      "landlocked": true,
+      "region": "Africa"
+    },
+    {
+      "code": "LTU",
+      "name": "Lithuania",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "LUX",
+      "name": "Luxembourg",
+      "landlocked": true,
+      "region": "Europe"
+    },
+    {
+      "code": "LVA",
+      "name": "Latvia",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "MAR",
+      "name": "Morocco",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "MCO",
+      "name": "Monaco",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "MDA",
+      "name": "Moldova",
+      "landlocked": true,
+      "region": "Europe"
+    },
+    {
+      "code": "MDG",
+      "name": "Madagascar",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "MDV",
+      "name": "Maldives",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "MEX",
+      "name": "Mexico",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "MHL",
+      "name": "Marshall Islands",
+      "landlocked": false,
+      "region": "Oceania"
+    },
+    {
+      "code": "MKD",
+      "name": "North Macedonia",
+      "landlocked": true,
+      "region": "Europe"
+    },
+    {
+      "code": "MLI",
+      "name": "Mali",
+      "landlocked": true,
+      "region": "Africa"
+    },
+    {
+      "code": "MLT",
+      "name": "Malta",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "MMR",
+      "name": "Myanmar",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "MNE",
+      "name": "Montenegro",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "MNG",
+      "name": "Mongolia",
+      "landlocked": true,
+      "region": "Asia"
+    },
+    {
+      "code": "MOZ",
+      "name": "Mozambique",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "MRT",
+      "name": "Mauritania",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "MUS",
+      "name": "Mauritius",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "MWI",
+      "name": "Malawi",
+      "landlocked": true,
+      "region": "Africa"
+    },
+    {
+      "code": "MYS",
+      "name": "Malaysia",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "NAM",
+      "name": "Namibia",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "NER",
+      "name": "Niger",
+      "landlocked": true,
+      "region": "Africa"
+    },
+    {
+      "code": "NGA",
+      "name": "Nigeria",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "NIC",
+      "name": "Nicaragua",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "NLD",
+      "name": "Netherlands",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "NOR",
+      "name": "Norway",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "NPL",
+      "name": "Nepal",
+      "landlocked": true,
+      "region": "Asia"
+    },
+    {
+      "code": "NRU",
+      "name": "Nauru",
+      "landlocked": false,
+      "region": "Oceania"
+    },
+    {
+      "code": "NZL",
+      "name": "New Zealand",
+      "landlocked": false,
+      "region": "Oceania"
+    },
+    {
+      "code": "OMN",
+      "name": "Oman",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "PAK",
+      "name": "Pakistan",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "PAN",
+      "name": "Panama",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "PER",
+      "name": "Peru",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "PHL",
+      "name": "Philippines",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "PLW",
+      "name": "Palau",
+      "landlocked": false,
+      "region": "Oceania"
+    },
+    {
+      "code": "PNG",
+      "name": "Papua New Guinea",
+      "landlocked": false,
+      "region": "Oceania"
+    },
+    {
+      "code": "POL",
+      "name": "Poland",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "PRK",
+      "name": "North Korea",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "PRT",
+      "name": "Portugal",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "PRY",
+      "name": "Paraguay",
+      "landlocked": true,
+      "region": "Americas"
+    },
+    {
+      "code": "QAT",
+      "name": "Qatar",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "ROU",
+      "name": "Romania",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "RUS",
+      "name": "Russia",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "RWA",
+      "name": "Rwanda",
+      "landlocked": true,
+      "region": "Africa"
+    },
+    {
+      "code": "SAU",
+      "name": "Saudi Arabia",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "SDN",
+      "name": "Sudan",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "SEN",
+      "name": "Senegal",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "SGP",
+      "name": "Singapore",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "SLB",
+      "name": "Solomon Islands",
+      "landlocked": false,
+      "region": "Oceania"
+    },
+    {
+      "code": "SLE",
+      "name": "Sierra Leone",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "SLV",
+      "name": "El Salvador",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "SMR",
+      "name": "San Marino",
+      "landlocked": true,
+      "region": "Europe"
+    },
+    {
+      "code": "SOM",
+      "name": "Somalia",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "SRB",
+      "name": "Serbia",
+      "landlocked": true,
+      "region": "Europe"
+    },
+    {
+      "code": "SSD",
+      "name": "South Sudan",
+      "landlocked": true,
+      "region": "Africa"
+    },
+    {
+      "code": "STP",
+      "name": "São Tomé and Príncipe",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "SUR",
+      "name": "Suriname",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "SVK",
+      "name": "Slovakia",
+      "landlocked": true,
+      "region": "Europe"
+    },
+    {
+      "code": "SVN",
+      "name": "Slovenia",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "SWE",
+      "name": "Sweden",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "SWZ",
+      "name": "Eswatini",
+      "landlocked": true,
+      "region": "Africa"
+    },
+    {
+      "code": "SYC",
+      "name": "Seychelles",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "SYR",
+      "name": "Syria",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "TCD",
+      "name": "Chad",
+      "landlocked": true,
+      "region": "Africa"
+    },
+    {
+      "code": "TGO",
+      "name": "Togo",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "THA",
+      "name": "Thailand",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "TJK",
+      "name": "Tajikistan",
+      "landlocked": true,
+      "region": "Asia"
+    },
+    {
+      "code": "TKM",
+      "name": "Turkmenistan",
+      "landlocked": true,
+      "region": "Asia"
+    },
+    {
+      "code": "TLS",
+      "name": "Timor-Leste",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "TON",
+      "name": "Tonga",
+      "landlocked": false,
+      "region": "Oceania"
+    },
+    {
+      "code": "TTO",
+      "name": "Trinidad and Tobago",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "TUN",
+      "name": "Tunisia",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "TUR",
+      "name": "Türkiye",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "TUV",
+      "name": "Tuvalu",
+      "landlocked": false,
+      "region": "Oceania"
+    },
+    {
+      "code": "TZA",
+      "name": "Tanzania",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "UGA",
+      "name": "Uganda",
+      "landlocked": true,
+      "region": "Africa"
+    },
+    {
+      "code": "UKR",
+      "name": "Ukraine",
+      "landlocked": false,
+      "region": "Europe"
+    },
+    {
+      "code": "URY",
+      "name": "Uruguay",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "USA",
+      "name": "United States",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "UZB",
+      "name": "Uzbekistan",
+      "landlocked": true,
+      "region": "Asia"
+    },
+    {
+      "code": "VCT",
+      "name": "Saint Vincent and the Grenadines",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "VEN",
+      "name": "Venezuela",
+      "landlocked": false,
+      "region": "Americas"
+    },
+    {
+      "code": "VNM",
+      "name": "Vietnam",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "VUT",
+      "name": "Vanuatu",
+      "landlocked": false,
+      "region": "Oceania"
+    },
+    {
+      "code": "WSM",
+      "name": "Samoa",
+      "landlocked": false,
+      "region": "Oceania"
+    },
+    {
+      "code": "YEM",
+      "name": "Yemen",
+      "landlocked": false,
+      "region": "Asia"
+    },
+    {
+      "code": "ZAF",
+      "name": "South Africa",
+      "landlocked": false,
+      "region": "Africa"
+    },
+    {
+      "code": "ZMB",
+      "name": "Zambia",
+      "landlocked": true,
+      "region": "Africa"
+    },
+    {
+      "code": "ZWE",
+      "name": "Zimbabwe",
+      "landlocked": true,
+      "region": "Africa"
+    }
+  ],
+  "cases": [
+    {
+      "question": 97,
+      "code": "AGO",
+      "input": "Angola",
+      "canonical": "Angola"
+    },
+    {
+      "question": 97,
+      "code": "AGO",
+      "input": "AO",
+      "canonical": "Angola"
+    },
+    {
+      "question": 97,
+      "code": "AGO",
+      "input": "AGO",
+      "canonical": "Angola"
+    },
+    {
+      "question": 97,
+      "code": "ALB",
+      "input": "Albania",
+      "canonical": "Albania"
+    },
+    {
+      "question": 97,
+      "code": "ALB",
+      "input": "AL",
+      "canonical": "Albania"
+    },
+    {
+      "question": 97,
+      "code": "ALB",
+      "input": "ALB",
+      "canonical": "Albania"
+    },
+    {
+      "question": 97,
+      "code": "ARE",
+      "input": "United Arab Emirates",
+      "canonical": "United Arab Emirates"
+    },
+    {
+      "question": 97,
+      "code": "ARE",
+      "input": "AE",
+      "canonical": "United Arab Emirates"
+    },
+    {
+      "question": 97,
+      "code": "ARE",
+      "input": "ARE",
+      "canonical": "United Arab Emirates"
+    },
+    {
+      "question": 97,
+      "code": "ARG",
+      "input": "Argentina",
+      "canonical": "Argentina"
+    },
+    {
+      "question": 97,
+      "code": "ARG",
+      "input": "AR",
+      "canonical": "Argentina"
+    },
+    {
+      "question": 97,
+      "code": "ARG",
+      "input": "ARG",
+      "canonical": "Argentina"
+    },
+    {
+      "question": 97,
+      "code": "ATG",
+      "input": "Antigua and Barbuda",
+      "canonical": "Antigua and Barbuda"
+    },
+    {
+      "question": 97,
+      "code": "ATG",
+      "input": "AG",
+      "canonical": "Antigua and Barbuda"
+    },
+    {
+      "question": 97,
+      "code": "ATG",
+      "input": "ATG",
+      "canonical": "Antigua and Barbuda"
+    },
+    {
+      "question": 97,
+      "code": "AUS",
+      "input": "Australia",
+      "canonical": "Australia"
+    },
+    {
+      "question": 97,
+      "code": "AUS",
+      "input": "AU",
+      "canonical": "Australia"
+    },
+    {
+      "question": 97,
+      "code": "AUS",
+      "input": "AUS",
+      "canonical": "Australia"
+    },
+    {
+      "question": 97,
+      "code": "BEL",
+      "input": "Belgium",
+      "canonical": "Belgium"
+    },
+    {
+      "question": 97,
+      "code": "BEL",
+      "input": "BE",
+      "canonical": "Belgium"
+    },
+    {
+      "question": 97,
+      "code": "BEL",
+      "input": "BEL",
+      "canonical": "Belgium"
+    },
+    {
+      "question": 97,
+      "code": "BEN",
+      "input": "Benin",
+      "canonical": "Benin"
+    },
+    {
+      "question": 97,
+      "code": "BEN",
+      "input": "BJ",
+      "canonical": "Benin"
+    },
+    {
+      "question": 97,
+      "code": "BEN",
+      "input": "BEN",
+      "canonical": "Benin"
+    },
+    {
+      "question": 97,
+      "code": "BGD",
+      "input": "Bangladesh",
+      "canonical": "Bangladesh"
+    },
+    {
+      "question": 97,
+      "code": "BGD",
+      "input": "BD",
+      "canonical": "Bangladesh"
+    },
+    {
+      "question": 97,
+      "code": "BGD",
+      "input": "BGD",
+      "canonical": "Bangladesh"
+    },
+    {
+      "question": 97,
+      "code": "BGR",
+      "input": "Bulgaria",
+      "canonical": "Bulgaria"
+    },
+    {
+      "question": 97,
+      "code": "BGR",
+      "input": "BG",
+      "canonical": "Bulgaria"
+    },
+    {
+      "question": 97,
+      "code": "BGR",
+      "input": "BGR",
+      "canonical": "Bulgaria"
+    },
+    {
+      "question": 97,
+      "code": "BHR",
+      "input": "Bahrain",
+      "canonical": "Bahrain"
+    },
+    {
+      "question": 97,
+      "code": "BHR",
+      "input": "BH",
+      "canonical": "Bahrain"
+    },
+    {
+      "question": 97,
+      "code": "BHR",
+      "input": "BHR",
+      "canonical": "Bahrain"
+    },
+    {
+      "question": 97,
+      "code": "BHS",
+      "input": "Bahamas",
+      "canonical": "Bahamas"
+    },
+    {
+      "question": 97,
+      "code": "BHS",
+      "input": "BS",
+      "canonical": "Bahamas"
+    },
+    {
+      "question": 97,
+      "code": "BHS",
+      "input": "BHS",
+      "canonical": "Bahamas"
+    },
+    {
+      "question": 97,
+      "code": "BIH",
+      "input": "Bosnia and Herzegovina",
+      "canonical": "Bosnia and Herzegovina"
+    },
+    {
+      "question": 97,
+      "code": "BIH",
+      "input": "BA",
+      "canonical": "Bosnia and Herzegovina"
+    },
+    {
+      "question": 97,
+      "code": "BIH",
+      "input": "BIH",
+      "canonical": "Bosnia and Herzegovina"
+    },
+    {
+      "question": 97,
+      "code": "BLZ",
+      "input": "Belize",
+      "canonical": "Belize"
+    },
+    {
+      "question": 97,
+      "code": "BLZ",
+      "input": "BZ",
+      "canonical": "Belize"
+    },
+    {
+      "question": 97,
+      "code": "BLZ",
+      "input": "BLZ",
+      "canonical": "Belize"
+    },
+    {
+      "question": 97,
+      "code": "BRA",
+      "input": "Brazil",
+      "canonical": "Brazil"
+    },
+    {
+      "question": 97,
+      "code": "BRA",
+      "input": "BR",
+      "canonical": "Brazil"
+    },
+    {
+      "question": 97,
+      "code": "BRA",
+      "input": "BRA",
+      "canonical": "Brazil"
+    },
+    {
+      "question": 97,
+      "code": "BRB",
+      "input": "Barbados",
+      "canonical": "Barbados"
+    },
+    {
+      "question": 97,
+      "code": "BRB",
+      "input": "BB",
+      "canonical": "Barbados"
+    },
+    {
+      "question": 97,
+      "code": "BRB",
+      "input": "BRB",
+      "canonical": "Barbados"
+    },
+    {
+      "question": 97,
+      "code": "BRN",
+      "input": "Brunei",
+      "canonical": "Brunei"
+    },
+    {
+      "question": 97,
+      "code": "BRN",
+      "input": "BN",
+      "canonical": "Brunei"
+    },
+    {
+      "question": 97,
+      "code": "BRN",
+      "input": "BRN",
+      "canonical": "Brunei"
+    },
+    {
+      "question": 97,
+      "code": "CAN",
+      "input": "Canada",
+      "canonical": "Canada"
+    },
+    {
+      "question": 97,
+      "code": "CAN",
+      "input": "CA",
+      "canonical": "Canada"
+    },
+    {
+      "question": 97,
+      "code": "CAN",
+      "input": "CAN",
+      "canonical": "Canada"
+    },
+    {
+      "question": 97,
+      "code": "CHL",
+      "input": "Chile",
+      "canonical": "Chile"
+    },
+    {
+      "question": 97,
+      "code": "CHL",
+      "input": "CL",
+      "canonical": "Chile"
+    },
+    {
+      "question": 97,
+      "code": "CHL",
+      "input": "CHL",
+      "canonical": "Chile"
+    },
+    {
+      "question": 97,
+      "code": "CHN",
+      "input": "China",
+      "canonical": "China"
+    },
+    {
+      "question": 97,
+      "code": "CHN",
+      "input": "CN",
+      "canonical": "China"
+    },
+    {
+      "question": 97,
+      "code": "CHN",
+      "input": "CHN",
+      "canonical": "China"
+    },
+    {
+      "question": 97,
+      "code": "CIV",
+      "input": "Ivory Coast",
+      "canonical": "Ivory Coast"
+    },
+    {
+      "question": 97,
+      "code": "CIV",
+      "input": "CI",
+      "canonical": "Ivory Coast"
+    },
+    {
+      "question": 97,
+      "code": "CIV",
+      "input": "CIV",
+      "canonical": "Ivory Coast"
+    },
+    {
+      "question": 97,
+      "code": "CMR",
+      "input": "Cameroon",
+      "canonical": "Cameroon"
+    },
+    {
+      "question": 97,
+      "code": "CMR",
+      "input": "CM",
+      "canonical": "Cameroon"
+    },
+    {
+      "question": 97,
+      "code": "CMR",
+      "input": "CMR",
+      "canonical": "Cameroon"
+    },
+    {
+      "question": 97,
+      "code": "COD",
+      "input": "DR Congo",
+      "canonical": "Democratic Republic of the Congo"
+    },
+    {
+      "question": 97,
+      "code": "COD",
+      "input": "CD",
+      "canonical": "Democratic Republic of the Congo"
+    },
+    {
+      "question": 97,
+      "code": "COD",
+      "input": "COD",
+      "canonical": "Democratic Republic of the Congo"
+    },
+    {
+      "question": 97,
+      "code": "COG",
+      "input": "Congo",
+      "canonical": "Republic of the Congo"
+    },
+    {
+      "question": 97,
+      "code": "COG",
+      "input": "CG",
+      "canonical": "Republic of the Congo"
+    },
+    {
+      "question": 97,
+      "code": "COG",
+      "input": "COG",
+      "canonical": "Republic of the Congo"
+    },
+    {
+      "question": 97,
+      "code": "COL",
+      "input": "Colombia",
+      "canonical": "Colombia"
+    },
+    {
+      "question": 97,
+      "code": "COL",
+      "input": "CO",
+      "canonical": "Colombia"
+    },
+    {
+      "question": 97,
+      "code": "COL",
+      "input": "COL",
+      "canonical": "Colombia"
+    },
+    {
+      "question": 97,
+      "code": "COM",
+      "input": "Comoros",
+      "canonical": "Comoros"
+    },
+    {
+      "question": 97,
+      "code": "COM",
+      "input": "KM",
+      "canonical": "Comoros"
+    },
+    {
+      "question": 97,
+      "code": "COM",
+      "input": "COM",
+      "canonical": "Comoros"
+    },
+    {
+      "question": 97,
+      "code": "CPV",
+      "input": "Cape Verde",
+      "canonical": "Cape Verde"
+    },
+    {
+      "question": 97,
+      "code": "CPV",
+      "input": "CV",
+      "canonical": "Cape Verde"
+    },
+    {
+      "question": 97,
+      "code": "CPV",
+      "input": "CPV",
+      "canonical": "Cape Verde"
+    },
+    {
+      "question": 97,
+      "code": "CRI",
+      "input": "Costa Rica",
+      "canonical": "Costa Rica"
+    },
+    {
+      "question": 97,
+      "code": "CRI",
+      "input": "CR",
+      "canonical": "Costa Rica"
+    },
+    {
+      "question": 97,
+      "code": "CRI",
+      "input": "CRI",
+      "canonical": "Costa Rica"
+    },
+    {
+      "question": 97,
+      "code": "CUB",
+      "input": "Cuba",
+      "canonical": "Cuba"
+    },
+    {
+      "question": 97,
+      "code": "CUB",
+      "input": "CU",
+      "canonical": "Cuba"
+    },
+    {
+      "question": 97,
+      "code": "CUB",
+      "input": "CUB",
+      "canonical": "Cuba"
+    },
+    {
+      "question": 97,
+      "code": "CYP",
+      "input": "Cyprus",
+      "canonical": "Cyprus"
+    },
+    {
+      "question": 97,
+      "code": "CYP",
+      "input": "CY",
+      "canonical": "Cyprus"
+    },
+    {
+      "question": 97,
+      "code": "CYP",
+      "input": "CYP",
+      "canonical": "Cyprus"
+    },
+    {
+      "question": 97,
+      "code": "DEU",
+      "input": "Germany",
+      "canonical": "Germany"
+    },
+    {
+      "question": 97,
+      "code": "DEU",
+      "input": "DE",
+      "canonical": "Germany"
+    },
+    {
+      "question": 97,
+      "code": "DEU",
+      "input": "DEU",
+      "canonical": "Germany"
+    },
+    {
+      "question": 97,
+      "code": "DJI",
+      "input": "Djibouti",
+      "canonical": "Djibouti"
+    },
+    {
+      "question": 97,
+      "code": "DJI",
+      "input": "DJ",
+      "canonical": "Djibouti"
+    },
+    {
+      "question": 97,
+      "code": "DJI",
+      "input": "DJI",
+      "canonical": "Djibouti"
+    },
+    {
+      "question": 97,
+      "code": "DMA",
+      "input": "Dominica",
+      "canonical": "Dominica"
+    },
+    {
+      "question": 97,
+      "code": "DMA",
+      "input": "DM",
+      "canonical": "Dominica"
+    },
+    {
+      "question": 97,
+      "code": "DMA",
+      "input": "DMA",
+      "canonical": "Dominica"
+    },
+    {
+      "question": 97,
+      "code": "DNK",
+      "input": "Denmark",
+      "canonical": "Denmark"
+    },
+    {
+      "question": 97,
+      "code": "DNK",
+      "input": "DK",
+      "canonical": "Denmark"
+    },
+    {
+      "question": 97,
+      "code": "DNK",
+      "input": "DNK",
+      "canonical": "Denmark"
+    },
+    {
+      "question": 97,
+      "code": "DOM",
+      "input": "Dominican Republic",
+      "canonical": "Dominican Republic"
+    },
+    {
+      "question": 97,
+      "code": "DOM",
+      "input": "DO",
+      "canonical": "Dominican Republic"
+    },
+    {
+      "question": 97,
+      "code": "DOM",
+      "input": "DOM",
+      "canonical": "Dominican Republic"
+    },
+    {
+      "question": 97,
+      "code": "DZA",
+      "input": "Algeria",
+      "canonical": "Algeria"
+    },
+    {
+      "question": 97,
+      "code": "DZA",
+      "input": "DZ",
+      "canonical": "Algeria"
+    },
+    {
+      "question": 97,
+      "code": "DZA",
+      "input": "DZA",
+      "canonical": "Algeria"
+    },
+    {
+      "question": 97,
+      "code": "ECU",
+      "input": "Ecuador",
+      "canonical": "Ecuador"
+    },
+    {
+      "question": 97,
+      "code": "ECU",
+      "input": "EC",
+      "canonical": "Ecuador"
+    },
+    {
+      "question": 97,
+      "code": "ECU",
+      "input": "ECU",
+      "canonical": "Ecuador"
+    },
+    {
+      "question": 97,
+      "code": "EGY",
+      "input": "Egypt",
+      "canonical": "Egypt"
+    },
+    {
+      "question": 97,
+      "code": "EGY",
+      "input": "EG",
+      "canonical": "Egypt"
+    },
+    {
+      "question": 97,
+      "code": "EGY",
+      "input": "EGY",
+      "canonical": "Egypt"
+    },
+    {
+      "question": 97,
+      "code": "ERI",
+      "input": "Eritrea",
+      "canonical": "Eritrea"
+    },
+    {
+      "question": 97,
+      "code": "ERI",
+      "input": "ER",
+      "canonical": "Eritrea"
+    },
+    {
+      "question": 97,
+      "code": "ERI",
+      "input": "ERI",
+      "canonical": "Eritrea"
+    },
+    {
+      "question": 97,
+      "code": "ESP",
+      "input": "Spain",
+      "canonical": "Spain"
+    },
+    {
+      "question": 97,
+      "code": "ESP",
+      "input": "ES",
+      "canonical": "Spain"
+    },
+    {
+      "question": 97,
+      "code": "ESP",
+      "input": "ESP",
+      "canonical": "Spain"
+    },
+    {
+      "question": 97,
+      "code": "EST",
+      "input": "Estonia",
+      "canonical": "Estonia"
+    },
+    {
+      "question": 97,
+      "code": "EST",
+      "input": "EE",
+      "canonical": "Estonia"
+    },
+    {
+      "question": 97,
+      "code": "EST",
+      "input": "EST",
+      "canonical": "Estonia"
+    },
+    {
+      "question": 97,
+      "code": "FIN",
+      "input": "Finland",
+      "canonical": "Finland"
+    },
+    {
+      "question": 97,
+      "code": "FIN",
+      "input": "FI",
+      "canonical": "Finland"
+    },
+    {
+      "question": 97,
+      "code": "FIN",
+      "input": "FIN",
+      "canonical": "Finland"
+    },
+    {
+      "question": 97,
+      "code": "FJI",
+      "input": "Fiji",
+      "canonical": "Fiji"
+    },
+    {
+      "question": 97,
+      "code": "FJI",
+      "input": "FJ",
+      "canonical": "Fiji"
+    },
+    {
+      "question": 97,
+      "code": "FJI",
+      "input": "FJI",
+      "canonical": "Fiji"
+    },
+    {
+      "question": 97,
+      "code": "FRA",
+      "input": "France",
+      "canonical": "France"
+    },
+    {
+      "question": 97,
+      "code": "FRA",
+      "input": "FR",
+      "canonical": "France"
+    },
+    {
+      "question": 97,
+      "code": "FRA",
+      "input": "FRA",
+      "canonical": "France"
+    },
+    {
+      "question": 97,
+      "code": "FSM",
+      "input": "Micronesia",
+      "canonical": "Micronesia"
+    },
+    {
+      "question": 97,
+      "code": "FSM",
+      "input": "FM",
+      "canonical": "Micronesia"
+    },
+    {
+      "question": 97,
+      "code": "FSM",
+      "input": "FSM",
+      "canonical": "Micronesia"
+    },
+    {
+      "question": 97,
+      "code": "GAB",
+      "input": "Gabon",
+      "canonical": "Gabon"
+    },
+    {
+      "question": 97,
+      "code": "GAB",
+      "input": "GA",
+      "canonical": "Gabon"
+    },
+    {
+      "question": 97,
+      "code": "GAB",
+      "input": "GAB",
+      "canonical": "Gabon"
+    },
+    {
+      "question": 97,
+      "code": "GBR",
+      "input": "United Kingdom",
+      "canonical": "United Kingdom"
+    },
+    {
+      "question": 97,
+      "code": "GBR",
+      "input": "GB",
+      "canonical": "United Kingdom"
+    },
+    {
+      "question": 97,
+      "code": "GBR",
+      "input": "GBR",
+      "canonical": "United Kingdom"
+    },
+    {
+      "question": 97,
+      "code": "GEO",
+      "input": "Georgia",
+      "canonical": "Georgia"
+    },
+    {
+      "question": 97,
+      "code": "GEO",
+      "input": "GE",
+      "canonical": "Georgia"
+    },
+    {
+      "question": 97,
+      "code": "GEO",
+      "input": "GEO",
+      "canonical": "Georgia"
+    },
+    {
+      "question": 97,
+      "code": "GHA",
+      "input": "Ghana",
+      "canonical": "Ghana"
+    },
+    {
+      "question": 97,
+      "code": "GHA",
+      "input": "GH",
+      "canonical": "Ghana"
+    },
+    {
+      "question": 97,
+      "code": "GHA",
+      "input": "GHA",
+      "canonical": "Ghana"
+    },
+    {
+      "question": 97,
+      "code": "GIN",
+      "input": "Guinea",
+      "canonical": "Guinea"
+    },
+    {
+      "question": 97,
+      "code": "GIN",
+      "input": "GN",
+      "canonical": "Guinea"
+    },
+    {
+      "question": 97,
+      "code": "GIN",
+      "input": "GIN",
+      "canonical": "Guinea"
+    },
+    {
+      "question": 97,
+      "code": "GMB",
+      "input": "Gambia",
+      "canonical": "Gambia"
+    },
+    {
+      "question": 97,
+      "code": "GMB",
+      "input": "GM",
+      "canonical": "Gambia"
+    },
+    {
+      "question": 97,
+      "code": "GMB",
+      "input": "GMB",
+      "canonical": "Gambia"
+    },
+    {
+      "question": 97,
+      "code": "GNB",
+      "input": "Guinea-Bissau",
+      "canonical": "Guinea-Bissau"
+    },
+    {
+      "question": 97,
+      "code": "GNB",
+      "input": "GW",
+      "canonical": "Guinea-Bissau"
+    },
+    {
+      "question": 97,
+      "code": "GNB",
+      "input": "GNB",
+      "canonical": "Guinea-Bissau"
+    },
+    {
+      "question": 97,
+      "code": "GNQ",
+      "input": "Equatorial Guinea",
+      "canonical": "Equatorial Guinea"
+    },
+    {
+      "question": 97,
+      "code": "GNQ",
+      "input": "GQ",
+      "canonical": "Equatorial Guinea"
+    },
+    {
+      "question": 97,
+      "code": "GNQ",
+      "input": "GNQ",
+      "canonical": "Equatorial Guinea"
+    },
+    {
+      "question": 97,
+      "code": "GRC",
+      "input": "Greece",
+      "canonical": "Greece"
+    },
+    {
+      "question": 97,
+      "code": "GRC",
+      "input": "GR",
+      "canonical": "Greece"
+    },
+    {
+      "question": 97,
+      "code": "GRC",
+      "input": "GRC",
+      "canonical": "Greece"
+    },
+    {
+      "question": 97,
+      "code": "GRD",
+      "input": "Grenada",
+      "canonical": "Grenada"
+    },
+    {
+      "question": 97,
+      "code": "GRD",
+      "input": "GD",
+      "canonical": "Grenada"
+    },
+    {
+      "question": 97,
+      "code": "GRD",
+      "input": "GRD",
+      "canonical": "Grenada"
+    },
+    {
+      "question": 97,
+      "code": "GTM",
+      "input": "Guatemala",
+      "canonical": "Guatemala"
+    },
+    {
+      "question": 97,
+      "code": "GTM",
+      "input": "GT",
+      "canonical": "Guatemala"
+    },
+    {
+      "question": 97,
+      "code": "GTM",
+      "input": "GTM",
+      "canonical": "Guatemala"
+    },
+    {
+      "question": 97,
+      "code": "GUY",
+      "input": "Guyana",
+      "canonical": "Guyana"
+    },
+    {
+      "question": 97,
+      "code": "GUY",
+      "input": "GY",
+      "canonical": "Guyana"
+    },
+    {
+      "question": 97,
+      "code": "GUY",
+      "input": "GUY",
+      "canonical": "Guyana"
+    },
+    {
+      "question": 97,
+      "code": "HND",
+      "input": "Honduras",
+      "canonical": "Honduras"
+    },
+    {
+      "question": 97,
+      "code": "HND",
+      "input": "HN",
+      "canonical": "Honduras"
+    },
+    {
+      "question": 97,
+      "code": "HND",
+      "input": "HND",
+      "canonical": "Honduras"
+    },
+    {
+      "question": 97,
+      "code": "HRV",
+      "input": "Croatia",
+      "canonical": "Croatia"
+    },
+    {
+      "question": 97,
+      "code": "HRV",
+      "input": "HR",
+      "canonical": "Croatia"
+    },
+    {
+      "question": 97,
+      "code": "HRV",
+      "input": "HRV",
+      "canonical": "Croatia"
+    },
+    {
+      "question": 97,
+      "code": "HTI",
+      "input": "Haiti",
+      "canonical": "Haiti"
+    },
+    {
+      "question": 97,
+      "code": "HTI",
+      "input": "HT",
+      "canonical": "Haiti"
+    },
+    {
+      "question": 97,
+      "code": "HTI",
+      "input": "HTI",
+      "canonical": "Haiti"
+    },
+    {
+      "question": 97,
+      "code": "IDN",
+      "input": "Indonesia",
+      "canonical": "Indonesia"
+    },
+    {
+      "question": 97,
+      "code": "IDN",
+      "input": "ID",
+      "canonical": "Indonesia"
+    },
+    {
+      "question": 97,
+      "code": "IDN",
+      "input": "IDN",
+      "canonical": "Indonesia"
+    },
+    {
+      "question": 97,
+      "code": "IND",
+      "input": "India",
+      "canonical": "India"
+    },
+    {
+      "question": 97,
+      "code": "IND",
+      "input": "IN",
+      "canonical": "India"
+    },
+    {
+      "question": 97,
+      "code": "IND",
+      "input": "IND",
+      "canonical": "India"
+    },
+    {
+      "question": 97,
+      "code": "IRL",
+      "input": "Ireland",
+      "canonical": "Ireland"
+    },
+    {
+      "question": 97,
+      "code": "IRL",
+      "input": "IE",
+      "canonical": "Ireland"
+    },
+    {
+      "question": 97,
+      "code": "IRL",
+      "input": "IRL",
+      "canonical": "Ireland"
+    },
+    {
+      "question": 97,
+      "code": "IRN",
+      "input": "Iran",
+      "canonical": "Iran"
+    },
+    {
+      "question": 97,
+      "code": "IRN",
+      "input": "IR",
+      "canonical": "Iran"
+    },
+    {
+      "question": 97,
+      "code": "IRN",
+      "input": "IRN",
+      "canonical": "Iran"
+    },
+    {
+      "question": 97,
+      "code": "IRQ",
+      "input": "Iraq",
+      "canonical": "Iraq"
+    },
+    {
+      "question": 97,
+      "code": "IRQ",
+      "input": "IQ",
+      "canonical": "Iraq"
+    },
+    {
+      "question": 97,
+      "code": "IRQ",
+      "input": "IRQ",
+      "canonical": "Iraq"
+    },
+    {
+      "question": 97,
+      "code": "ISL",
+      "input": "Iceland",
+      "canonical": "Iceland"
+    },
+    {
+      "question": 97,
+      "code": "ISL",
+      "input": "IS",
+      "canonical": "Iceland"
+    },
+    {
+      "question": 97,
+      "code": "ISL",
+      "input": "ISL",
+      "canonical": "Iceland"
+    },
+    {
+      "question": 97,
+      "code": "ISR",
+      "input": "Israel",
+      "canonical": "Israel"
+    },
+    {
+      "question": 97,
+      "code": "ISR",
+      "input": "IL",
+      "canonical": "Israel"
+    },
+    {
+      "question": 97,
+      "code": "ISR",
+      "input": "ISR",
+      "canonical": "Israel"
+    },
+    {
+      "question": 97,
+      "code": "ITA",
+      "input": "Italy",
+      "canonical": "Italy"
+    },
+    {
+      "question": 97,
+      "code": "ITA",
+      "input": "IT",
+      "canonical": "Italy"
+    },
+    {
+      "question": 97,
+      "code": "ITA",
+      "input": "ITA",
+      "canonical": "Italy"
+    },
+    {
+      "question": 97,
+      "code": "JAM",
+      "input": "Jamaica",
+      "canonical": "Jamaica"
+    },
+    {
+      "question": 97,
+      "code": "JAM",
+      "input": "JM",
+      "canonical": "Jamaica"
+    },
+    {
+      "question": 97,
+      "code": "JAM",
+      "input": "JAM",
+      "canonical": "Jamaica"
+    },
+    {
+      "question": 97,
+      "code": "JOR",
+      "input": "Jordan",
+      "canonical": "Jordan"
+    },
+    {
+      "question": 97,
+      "code": "JOR",
+      "input": "JO",
+      "canonical": "Jordan"
+    },
+    {
+      "question": 97,
+      "code": "JOR",
+      "input": "JOR",
+      "canonical": "Jordan"
+    },
+    {
+      "question": 97,
+      "code": "JPN",
+      "input": "Japan",
+      "canonical": "Japan"
+    },
+    {
+      "question": 97,
+      "code": "JPN",
+      "input": "JP",
+      "canonical": "Japan"
+    },
+    {
+      "question": 97,
+      "code": "JPN",
+      "input": "JPN",
+      "canonical": "Japan"
+    },
+    {
+      "question": 97,
+      "code": "KEN",
+      "input": "Kenya",
+      "canonical": "Kenya"
+    },
+    {
+      "question": 97,
+      "code": "KEN",
+      "input": "KE",
+      "canonical": "Kenya"
+    },
+    {
+      "question": 97,
+      "code": "KEN",
+      "input": "KEN",
+      "canonical": "Kenya"
+    },
+    {
+      "question": 97,
+      "code": "KHM",
+      "input": "Cambodia",
+      "canonical": "Cambodia"
+    },
+    {
+      "question": 97,
+      "code": "KHM",
+      "input": "KH",
+      "canonical": "Cambodia"
+    },
+    {
+      "question": 97,
+      "code": "KHM",
+      "input": "KHM",
+      "canonical": "Cambodia"
+    },
+    {
+      "question": 97,
+      "code": "KIR",
+      "input": "Kiribati",
+      "canonical": "Kiribati"
+    },
+    {
+      "question": 97,
+      "code": "KIR",
+      "input": "KI",
+      "canonical": "Kiribati"
+    },
+    {
+      "question": 97,
+      "code": "KIR",
+      "input": "KIR",
+      "canonical": "Kiribati"
+    },
+    {
+      "question": 97,
+      "code": "KNA",
+      "input": "Saint Kitts and Nevis",
+      "canonical": "Saint Kitts and Nevis"
+    },
+    {
+      "question": 97,
+      "code": "KNA",
+      "input": "KN",
+      "canonical": "Saint Kitts and Nevis"
+    },
+    {
+      "question": 97,
+      "code": "KNA",
+      "input": "KNA",
+      "canonical": "Saint Kitts and Nevis"
+    },
+    {
+      "question": 97,
+      "code": "KOR",
+      "input": "South Korea",
+      "canonical": "South Korea"
+    },
+    {
+      "question": 97,
+      "code": "KOR",
+      "input": "KR",
+      "canonical": "South Korea"
+    },
+    {
+      "question": 97,
+      "code": "KOR",
+      "input": "KOR",
+      "canonical": "South Korea"
+    },
+    {
+      "question": 97,
+      "code": "KWT",
+      "input": "Kuwait",
+      "canonical": "Kuwait"
+    },
+    {
+      "question": 97,
+      "code": "KWT",
+      "input": "KW",
+      "canonical": "Kuwait"
+    },
+    {
+      "question": 97,
+      "code": "KWT",
+      "input": "KWT",
+      "canonical": "Kuwait"
+    },
+    {
+      "question": 97,
+      "code": "LBN",
+      "input": "Lebanon",
+      "canonical": "Lebanon"
+    },
+    {
+      "question": 97,
+      "code": "LBN",
+      "input": "LB",
+      "canonical": "Lebanon"
+    },
+    {
+      "question": 97,
+      "code": "LBN",
+      "input": "LBN",
+      "canonical": "Lebanon"
+    },
+    {
+      "question": 97,
+      "code": "LBR",
+      "input": "Liberia",
+      "canonical": "Liberia"
+    },
+    {
+      "question": 97,
+      "code": "LBR",
+      "input": "LR",
+      "canonical": "Liberia"
+    },
+    {
+      "question": 97,
+      "code": "LBR",
+      "input": "LBR",
+      "canonical": "Liberia"
+    },
+    {
+      "question": 97,
+      "code": "LBY",
+      "input": "Libya",
+      "canonical": "Libya"
+    },
+    {
+      "question": 97,
+      "code": "LBY",
+      "input": "LY",
+      "canonical": "Libya"
+    },
+    {
+      "question": 97,
+      "code": "LBY",
+      "input": "LBY",
+      "canonical": "Libya"
+    },
+    {
+      "question": 97,
+      "code": "LCA",
+      "input": "Saint Lucia",
+      "canonical": "Saint Lucia"
+    },
+    {
+      "question": 97,
+      "code": "LCA",
+      "input": "LC",
+      "canonical": "Saint Lucia"
+    },
+    {
+      "question": 97,
+      "code": "LCA",
+      "input": "LCA",
+      "canonical": "Saint Lucia"
+    },
+    {
+      "question": 97,
+      "code": "LKA",
+      "input": "Sri Lanka",
+      "canonical": "Sri Lanka"
+    },
+    {
+      "question": 97,
+      "code": "LKA",
+      "input": "LK",
+      "canonical": "Sri Lanka"
+    },
+    {
+      "question": 97,
+      "code": "LKA",
+      "input": "LKA",
+      "canonical": "Sri Lanka"
+    },
+    {
+      "question": 97,
+      "code": "LTU",
+      "input": "Lithuania",
+      "canonical": "Lithuania"
+    },
+    {
+      "question": 97,
+      "code": "LTU",
+      "input": "LT",
+      "canonical": "Lithuania"
+    },
+    {
+      "question": 97,
+      "code": "LTU",
+      "input": "LTU",
+      "canonical": "Lithuania"
+    },
+    {
+      "question": 97,
+      "code": "LVA",
+      "input": "Latvia",
+      "canonical": "Latvia"
+    },
+    {
+      "question": 97,
+      "code": "LVA",
+      "input": "LV",
+      "canonical": "Latvia"
+    },
+    {
+      "question": 97,
+      "code": "LVA",
+      "input": "LVA",
+      "canonical": "Latvia"
+    },
+    {
+      "question": 97,
+      "code": "MAR",
+      "input": "Morocco",
+      "canonical": "Morocco"
+    },
+    {
+      "question": 97,
+      "code": "MAR",
+      "input": "MA",
+      "canonical": "Morocco"
+    },
+    {
+      "question": 97,
+      "code": "MAR",
+      "input": "MAR",
+      "canonical": "Morocco"
+    },
+    {
+      "question": 97,
+      "code": "MCO",
+      "input": "Monaco",
+      "canonical": "Monaco"
+    },
+    {
+      "question": 97,
+      "code": "MCO",
+      "input": "MC",
+      "canonical": "Monaco"
+    },
+    {
+      "question": 97,
+      "code": "MCO",
+      "input": "MCO",
+      "canonical": "Monaco"
+    },
+    {
+      "question": 97,
+      "code": "MDG",
+      "input": "Madagascar",
+      "canonical": "Madagascar"
+    },
+    {
+      "question": 97,
+      "code": "MDG",
+      "input": "MG",
+      "canonical": "Madagascar"
+    },
+    {
+      "question": 97,
+      "code": "MDG",
+      "input": "MDG",
+      "canonical": "Madagascar"
+    },
+    {
+      "question": 97,
+      "code": "MDV",
+      "input": "Maldives",
+      "canonical": "Maldives"
+    },
+    {
+      "question": 97,
+      "code": "MDV",
+      "input": "MV",
+      "canonical": "Maldives"
+    },
+    {
+      "question": 97,
+      "code": "MDV",
+      "input": "MDV",
+      "canonical": "Maldives"
+    },
+    {
+      "question": 97,
+      "code": "MEX",
+      "input": "Mexico",
+      "canonical": "Mexico"
+    },
+    {
+      "question": 97,
+      "code": "MEX",
+      "input": "MX",
+      "canonical": "Mexico"
+    },
+    {
+      "question": 97,
+      "code": "MEX",
+      "input": "MEX",
+      "canonical": "Mexico"
+    },
+    {
+      "question": 97,
+      "code": "MHL",
+      "input": "Marshall Islands",
+      "canonical": "Marshall Islands"
+    },
+    {
+      "question": 97,
+      "code": "MHL",
+      "input": "MH",
+      "canonical": "Marshall Islands"
+    },
+    {
+      "question": 97,
+      "code": "MHL",
+      "input": "MHL",
+      "canonical": "Marshall Islands"
+    },
+    {
+      "question": 97,
+      "code": "MLT",
+      "input": "Malta",
+      "canonical": "Malta"
+    },
+    {
+      "question": 97,
+      "code": "MLT",
+      "input": "MT",
+      "canonical": "Malta"
+    },
+    {
+      "question": 97,
+      "code": "MLT",
+      "input": "MLT",
+      "canonical": "Malta"
+    },
+    {
+      "question": 97,
+      "code": "MMR",
+      "input": "Myanmar",
+      "canonical": "Myanmar"
+    },
+    {
+      "question": 97,
+      "code": "MMR",
+      "input": "MM",
+      "canonical": "Myanmar"
+    },
+    {
+      "question": 97,
+      "code": "MMR",
+      "input": "MMR",
+      "canonical": "Myanmar"
+    },
+    {
+      "question": 97,
+      "code": "MNE",
+      "input": "Montenegro",
+      "canonical": "Montenegro"
+    },
+    {
+      "question": 97,
+      "code": "MNE",
+      "input": "ME",
+      "canonical": "Montenegro"
+    },
+    {
+      "question": 97,
+      "code": "MNE",
+      "input": "MNE",
+      "canonical": "Montenegro"
+    },
+    {
+      "question": 97,
+      "code": "MOZ",
+      "input": "Mozambique",
+      "canonical": "Mozambique"
+    },
+    {
+      "question": 97,
+      "code": "MOZ",
+      "input": "MZ",
+      "canonical": "Mozambique"
+    },
+    {
+      "question": 97,
+      "code": "MOZ",
+      "input": "MOZ",
+      "canonical": "Mozambique"
+    },
+    {
+      "question": 97,
+      "code": "MRT",
+      "input": "Mauritania",
+      "canonical": "Mauritania"
+    },
+    {
+      "question": 97,
+      "code": "MRT",
+      "input": "MR",
+      "canonical": "Mauritania"
+    },
+    {
+      "question": 97,
+      "code": "MRT",
+      "input": "MRT",
+      "canonical": "Mauritania"
+    },
+    {
+      "question": 97,
+      "code": "MUS",
+      "input": "Mauritius",
+      "canonical": "Mauritius"
+    },
+    {
+      "question": 97,
+      "code": "MUS",
+      "input": "MU",
+      "canonical": "Mauritius"
+    },
+    {
+      "question": 97,
+      "code": "MUS",
+      "input": "MUS",
+      "canonical": "Mauritius"
+    },
+    {
+      "question": 97,
+      "code": "MYS",
+      "input": "Malaysia",
+      "canonical": "Malaysia"
+    },
+    {
+      "question": 97,
+      "code": "MYS",
+      "input": "MY",
+      "canonical": "Malaysia"
+    },
+    {
+      "question": 97,
+      "code": "MYS",
+      "input": "MYS",
+      "canonical": "Malaysia"
+    },
+    {
+      "question": 97,
+      "code": "NAM",
+      "input": "Namibia",
+      "canonical": "Namibia"
+    },
+    {
+      "question": 97,
+      "code": "NAM",
+      "input": "NA",
+      "canonical": "Namibia"
+    },
+    {
+      "question": 97,
+      "code": "NAM",
+      "input": "NAM",
+      "canonical": "Namibia"
+    },
+    {
+      "question": 97,
+      "code": "NGA",
+      "input": "Nigeria",
+      "canonical": "Nigeria"
+    },
+    {
+      "question": 97,
+      "code": "NGA",
+      "input": "NG",
+      "canonical": "Nigeria"
+    },
+    {
+      "question": 97,
+      "code": "NGA",
+      "input": "NGA",
+      "canonical": "Nigeria"
+    },
+    {
+      "question": 97,
+      "code": "NIC",
+      "input": "Nicaragua",
+      "canonical": "Nicaragua"
+    },
+    {
+      "question": 97,
+      "code": "NIC",
+      "input": "NI",
+      "canonical": "Nicaragua"
+    },
+    {
+      "question": 97,
+      "code": "NIC",
+      "input": "NIC",
+      "canonical": "Nicaragua"
+    },
+    {
+      "question": 97,
+      "code": "NLD",
+      "input": "Netherlands",
+      "canonical": "Netherlands"
+    },
+    {
+      "question": 97,
+      "code": "NLD",
+      "input": "NL",
+      "canonical": "Netherlands"
+    },
+    {
+      "question": 97,
+      "code": "NLD",
+      "input": "NLD",
+      "canonical": "Netherlands"
+    },
+    {
+      "question": 97,
+      "code": "NOR",
+      "input": "Norway",
+      "canonical": "Norway"
+    },
+    {
+      "question": 97,
+      "code": "NOR",
+      "input": "NO",
+      "canonical": "Norway"
+    },
+    {
+      "question": 97,
+      "code": "NOR",
+      "input": "NOR",
+      "canonical": "Norway"
+    },
+    {
+      "question": 97,
+      "code": "NRU",
+      "input": "Nauru",
+      "canonical": "Nauru"
+    },
+    {
+      "question": 97,
+      "code": "NRU",
+      "input": "NR",
+      "canonical": "Nauru"
+    },
+    {
+      "question": 97,
+      "code": "NRU",
+      "input": "NRU",
+      "canonical": "Nauru"
+    },
+    {
+      "question": 97,
+      "code": "NZL",
+      "input": "New Zealand",
+      "canonical": "New Zealand"
+    },
+    {
+      "question": 97,
+      "code": "NZL",
+      "input": "NZ",
+      "canonical": "New Zealand"
+    },
+    {
+      "question": 97,
+      "code": "NZL",
+      "input": "NZL",
+      "canonical": "New Zealand"
+    },
+    {
+      "question": 97,
+      "code": "OMN",
+      "input": "Oman",
+      "canonical": "Oman"
+    },
+    {
+      "question": 97,
+      "code": "OMN",
+      "input": "OM",
+      "canonical": "Oman"
+    },
+    {
+      "question": 97,
+      "code": "OMN",
+      "input": "OMN",
+      "canonical": "Oman"
+    },
+    {
+      "question": 97,
+      "code": "PAK",
+      "input": "Pakistan",
+      "canonical": "Pakistan"
+    },
+    {
+      "question": 97,
+      "code": "PAK",
+      "input": "PK",
+      "canonical": "Pakistan"
+    },
+    {
+      "question": 97,
+      "code": "PAK",
+      "input": "PAK",
+      "canonical": "Pakistan"
+    },
+    {
+      "question": 97,
+      "code": "PAN",
+      "input": "Panama",
+      "canonical": "Panama"
+    },
+    {
+      "question": 97,
+      "code": "PAN",
+      "input": "PA",
+      "canonical": "Panama"
+    },
+    {
+      "question": 97,
+      "code": "PAN",
+      "input": "PAN",
+      "canonical": "Panama"
+    },
+    {
+      "question": 97,
+      "code": "PER",
+      "input": "Peru",
+      "canonical": "Peru"
+    },
+    {
+      "question": 97,
+      "code": "PER",
+      "input": "PE",
+      "canonical": "Peru"
+    },
+    {
+      "question": 97,
+      "code": "PER",
+      "input": "PER",
+      "canonical": "Peru"
+    },
+    {
+      "question": 97,
+      "code": "PHL",
+      "input": "Philippines",
+      "canonical": "Philippines"
+    },
+    {
+      "question": 97,
+      "code": "PHL",
+      "input": "PH",
+      "canonical": "Philippines"
+    },
+    {
+      "question": 97,
+      "code": "PHL",
+      "input": "PHL",
+      "canonical": "Philippines"
+    },
+    {
+      "question": 97,
+      "code": "PLW",
+      "input": "Palau",
+      "canonical": "Palau"
+    },
+    {
+      "question": 97,
+      "code": "PLW",
+      "input": "PW",
+      "canonical": "Palau"
+    },
+    {
+      "question": 97,
+      "code": "PLW",
+      "input": "PLW",
+      "canonical": "Palau"
+    },
+    {
+      "question": 97,
+      "code": "PNG",
+      "input": "Papua New Guinea",
+      "canonical": "Papua New Guinea"
+    },
+    {
+      "question": 97,
+      "code": "PNG",
+      "input": "PG",
+      "canonical": "Papua New Guinea"
+    },
+    {
+      "question": 97,
+      "code": "PNG",
+      "input": "PNG",
+      "canonical": "Papua New Guinea"
+    },
+    {
+      "question": 97,
+      "code": "POL",
+      "input": "Poland",
+      "canonical": "Poland"
+    },
+    {
+      "question": 97,
+      "code": "POL",
+      "input": "PL",
+      "canonical": "Poland"
+    },
+    {
+      "question": 97,
+      "code": "POL",
+      "input": "POL",
+      "canonical": "Poland"
+    },
+    {
+      "question": 97,
+      "code": "PRK",
+      "input": "North Korea",
+      "canonical": "North Korea"
+    },
+    {
+      "question": 97,
+      "code": "PRK",
+      "input": "KP",
+      "canonical": "North Korea"
+    },
+    {
+      "question": 97,
+      "code": "PRK",
+      "input": "PRK",
+      "canonical": "North Korea"
+    },
+    {
+      "question": 97,
+      "code": "PRT",
+      "input": "Portugal",
+      "canonical": "Portugal"
+    },
+    {
+      "question": 97,
+      "code": "PRT",
+      "input": "PT",
+      "canonical": "Portugal"
+    },
+    {
+      "question": 97,
+      "code": "PRT",
+      "input": "PRT",
+      "canonical": "Portugal"
+    },
+    {
+      "question": 97,
+      "code": "QAT",
+      "input": "Qatar",
+      "canonical": "Qatar"
+    },
+    {
+      "question": 97,
+      "code": "QAT",
+      "input": "QA",
+      "canonical": "Qatar"
+    },
+    {
+      "question": 97,
+      "code": "QAT",
+      "input": "QAT",
+      "canonical": "Qatar"
+    },
+    {
+      "question": 97,
+      "code": "ROU",
+      "input": "Romania",
+      "canonical": "Romania"
+    },
+    {
+      "question": 97,
+      "code": "ROU",
+      "input": "RO",
+      "canonical": "Romania"
+    },
+    {
+      "question": 97,
+      "code": "ROU",
+      "input": "ROU",
+      "canonical": "Romania"
+    },
+    {
+      "question": 97,
+      "code": "RUS",
+      "input": "Russia",
+      "canonical": "Russia"
+    },
+    {
+      "question": 97,
+      "code": "RUS",
+      "input": "RU",
+      "canonical": "Russia"
+    },
+    {
+      "question": 97,
+      "code": "RUS",
+      "input": "RUS",
+      "canonical": "Russia"
+    },
+    {
+      "question": 97,
+      "code": "SAU",
+      "input": "Saudi Arabia",
+      "canonical": "Saudi Arabia"
+    },
+    {
+      "question": 97,
+      "code": "SAU",
+      "input": "SA",
+      "canonical": "Saudi Arabia"
+    },
+    {
+      "question": 97,
+      "code": "SAU",
+      "input": "SAU",
+      "canonical": "Saudi Arabia"
+    },
+    {
+      "question": 97,
+      "code": "SDN",
+      "input": "Sudan",
+      "canonical": "Sudan"
+    },
+    {
+      "question": 97,
+      "code": "SDN",
+      "input": "SD",
+      "canonical": "Sudan"
+    },
+    {
+      "question": 97,
+      "code": "SDN",
+      "input": "SDN",
+      "canonical": "Sudan"
+    },
+    {
+      "question": 97,
+      "code": "SEN",
+      "input": "Senegal",
+      "canonical": "Senegal"
+    },
+    {
+      "question": 97,
+      "code": "SEN",
+      "input": "SN",
+      "canonical": "Senegal"
+    },
+    {
+      "question": 97,
+      "code": "SEN",
+      "input": "SEN",
+      "canonical": "Senegal"
+    },
+    {
+      "question": 97,
+      "code": "SGP",
+      "input": "Singapore",
+      "canonical": "Singapore"
+    },
+    {
+      "question": 97,
+      "code": "SGP",
+      "input": "SG",
+      "canonical": "Singapore"
+    },
+    {
+      "question": 97,
+      "code": "SGP",
+      "input": "SGP",
+      "canonical": "Singapore"
+    },
+    {
+      "question": 97,
+      "code": "SLB",
+      "input": "Solomon Islands",
+      "canonical": "Solomon Islands"
+    },
+    {
+      "question": 97,
+      "code": "SLB",
+      "input": "SB",
+      "canonical": "Solomon Islands"
+    },
+    {
+      "question": 97,
+      "code": "SLB",
+      "input": "SLB",
+      "canonical": "Solomon Islands"
+    },
+    {
+      "question": 97,
+      "code": "SLE",
+      "input": "Sierra Leone",
+      "canonical": "Sierra Leone"
+    },
+    {
+      "question": 97,
+      "code": "SLE",
+      "input": "SL",
+      "canonical": "Sierra Leone"
+    },
+    {
+      "question": 97,
+      "code": "SLE",
+      "input": "SLE",
+      "canonical": "Sierra Leone"
+    },
+    {
+      "question": 97,
+      "code": "SLV",
+      "input": "El Salvador",
+      "canonical": "El Salvador"
+    },
+    {
+      "question": 97,
+      "code": "SLV",
+      "input": "SV",
+      "canonical": "El Salvador"
+    },
+    {
+      "question": 97,
+      "code": "SLV",
+      "input": "SLV",
+      "canonical": "El Salvador"
+    },
+    {
+      "question": 97,
+      "code": "SOM",
+      "input": "Somalia",
+      "canonical": "Somalia"
+    },
+    {
+      "question": 97,
+      "code": "SOM",
+      "input": "SO",
+      "canonical": "Somalia"
+    },
+    {
+      "question": 97,
+      "code": "SOM",
+      "input": "SOM",
+      "canonical": "Somalia"
+    },
+    {
+      "question": 97,
+      "code": "STP",
+      "input": "São Tomé and Príncipe",
+      "canonical": "Sao Tome and Principe"
+    },
+    {
+      "question": 97,
+      "code": "STP",
+      "input": "ST",
+      "canonical": "Sao Tome and Principe"
+    },
+    {
+      "question": 97,
+      "code": "STP",
+      "input": "STP",
+      "canonical": "Sao Tome and Principe"
+    },
+    {
+      "question": 97,
+      "code": "SUR",
+      "input": "Suriname",
+      "canonical": "Suriname"
+    },
+    {
+      "question": 97,
+      "code": "SUR",
+      "input": "SR",
+      "canonical": "Suriname"
+    },
+    {
+      "question": 97,
+      "code": "SUR",
+      "input": "SUR",
+      "canonical": "Suriname"
+    },
+    {
+      "question": 97,
+      "code": "SVN",
+      "input": "Slovenia",
+      "canonical": "Slovenia"
+    },
+    {
+      "question": 97,
+      "code": "SVN",
+      "input": "SI",
+      "canonical": "Slovenia"
+    },
+    {
+      "question": 97,
+      "code": "SVN",
+      "input": "SVN",
+      "canonical": "Slovenia"
+    },
+    {
+      "question": 97,
+      "code": "SWE",
+      "input": "Sweden",
+      "canonical": "Sweden"
+    },
+    {
+      "question": 97,
+      "code": "SWE",
+      "input": "SE",
+      "canonical": "Sweden"
+    },
+    {
+      "question": 97,
+      "code": "SWE",
+      "input": "SWE",
+      "canonical": "Sweden"
+    },
+    {
+      "question": 97,
+      "code": "SYC",
+      "input": "Seychelles",
+      "canonical": "Seychelles"
+    },
+    {
+      "question": 97,
+      "code": "SYC",
+      "input": "SC",
+      "canonical": "Seychelles"
+    },
+    {
+      "question": 97,
+      "code": "SYC",
+      "input": "SYC",
+      "canonical": "Seychelles"
+    },
+    {
+      "question": 97,
+      "code": "SYR",
+      "input": "Syria",
+      "canonical": "Syria"
+    },
+    {
+      "question": 97,
+      "code": "SYR",
+      "input": "SY",
+      "canonical": "Syria"
+    },
+    {
+      "question": 97,
+      "code": "SYR",
+      "input": "SYR",
+      "canonical": "Syria"
+    },
+    {
+      "question": 97,
+      "code": "TGO",
+      "input": "Togo",
+      "canonical": "Togo"
+    },
+    {
+      "question": 97,
+      "code": "TGO",
+      "input": "TG",
+      "canonical": "Togo"
+    },
+    {
+      "question": 97,
+      "code": "TGO",
+      "input": "TGO",
+      "canonical": "Togo"
+    },
+    {
+      "question": 97,
+      "code": "THA",
+      "input": "Thailand",
+      "canonical": "Thailand"
+    },
+    {
+      "question": 97,
+      "code": "THA",
+      "input": "TH",
+      "canonical": "Thailand"
+    },
+    {
+      "question": 97,
+      "code": "THA",
+      "input": "THA",
+      "canonical": "Thailand"
+    },
+    {
+      "question": 97,
+      "code": "TLS",
+      "input": "Timor-Leste",
+      "canonical": "Timor-Leste"
+    },
+    {
+      "question": 97,
+      "code": "TLS",
+      "input": "TL",
+      "canonical": "Timor-Leste"
+    },
+    {
+      "question": 97,
+      "code": "TLS",
+      "input": "TLS",
+      "canonical": "Timor-Leste"
+    },
+    {
+      "question": 97,
+      "code": "TON",
+      "input": "Tonga",
+      "canonical": "Tonga"
+    },
+    {
+      "question": 97,
+      "code": "TON",
+      "input": "TO",
+      "canonical": "Tonga"
+    },
+    {
+      "question": 97,
+      "code": "TON",
+      "input": "TON",
+      "canonical": "Tonga"
+    },
+    {
+      "question": 97,
+      "code": "TTO",
+      "input": "Trinidad and Tobago",
+      "canonical": "Trinidad and Tobago"
+    },
+    {
+      "question": 97,
+      "code": "TTO",
+      "input": "TT",
+      "canonical": "Trinidad and Tobago"
+    },
+    {
+      "question": 97,
+      "code": "TTO",
+      "input": "TTO",
+      "canonical": "Trinidad and Tobago"
+    },
+    {
+      "question": 97,
+      "code": "TUN",
+      "input": "Tunisia",
+      "canonical": "Tunisia"
+    },
+    {
+      "question": 97,
+      "code": "TUN",
+      "input": "TN",
+      "canonical": "Tunisia"
+    },
+    {
+      "question": 97,
+      "code": "TUN",
+      "input": "TUN",
+      "canonical": "Tunisia"
+    },
+    {
+      "question": 97,
+      "code": "TUR",
+      "input": "Türkiye",
+      "canonical": "Turkey"
+    },
+    {
+      "question": 97,
+      "code": "TUR",
+      "input": "TR",
+      "canonical": "Turkey"
+    },
+    {
+      "question": 97,
+      "code": "TUR",
+      "input": "TUR",
+      "canonical": "Turkey"
+    },
+    {
+      "question": 97,
+      "code": "TUV",
+      "input": "Tuvalu",
+      "canonical": "Tuvalu"
+    },
+    {
+      "question": 97,
+      "code": "TUV",
+      "input": "TV",
+      "canonical": "Tuvalu"
+    },
+    {
+      "question": 97,
+      "code": "TUV",
+      "input": "TUV",
+      "canonical": "Tuvalu"
+    },
+    {
+      "question": 97,
+      "code": "TZA",
+      "input": "Tanzania",
+      "canonical": "Tanzania"
+    },
+    {
+      "question": 97,
+      "code": "TZA",
+      "input": "TZ",
+      "canonical": "Tanzania"
+    },
+    {
+      "question": 97,
+      "code": "TZA",
+      "input": "TZA",
+      "canonical": "Tanzania"
+    },
+    {
+      "question": 97,
+      "code": "UKR",
+      "input": "Ukraine",
+      "canonical": "Ukraine"
+    },
+    {
+      "question": 97,
+      "code": "UKR",
+      "input": "UA",
+      "canonical": "Ukraine"
+    },
+    {
+      "question": 97,
+      "code": "UKR",
+      "input": "UKR",
+      "canonical": "Ukraine"
+    },
+    {
+      "question": 97,
+      "code": "URY",
+      "input": "Uruguay",
+      "canonical": "Uruguay"
+    },
+    {
+      "question": 97,
+      "code": "URY",
+      "input": "UY",
+      "canonical": "Uruguay"
+    },
+    {
+      "question": 97,
+      "code": "URY",
+      "input": "URY",
+      "canonical": "Uruguay"
+    },
+    {
+      "question": 97,
+      "code": "USA",
+      "input": "United States",
+      "canonical": "United States"
+    },
+    {
+      "question": 97,
+      "code": "USA",
+      "input": "US",
+      "canonical": "United States"
+    },
+    {
+      "question": 97,
+      "code": "USA",
+      "input": "USA",
+      "canonical": "United States"
+    },
+    {
+      "question": 97,
+      "code": "VCT",
+      "input": "Saint Vincent and the Grenadines",
+      "canonical": "Saint Vincent and the Grenadines"
+    },
+    {
+      "question": 97,
+      "code": "VCT",
+      "input": "VC",
+      "canonical": "Saint Vincent and the Grenadines"
+    },
+    {
+      "question": 97,
+      "code": "VCT",
+      "input": "VCT",
+      "canonical": "Saint Vincent and the Grenadines"
+    },
+    {
+      "question": 97,
+      "code": "VEN",
+      "input": "Venezuela",
+      "canonical": "Venezuela"
+    },
+    {
+      "question": 97,
+      "code": "VEN",
+      "input": "VE",
+      "canonical": "Venezuela"
+    },
+    {
+      "question": 97,
+      "code": "VEN",
+      "input": "VEN",
+      "canonical": "Venezuela"
+    },
+    {
+      "question": 97,
+      "code": "VNM",
+      "input": "Vietnam",
+      "canonical": "Vietnam"
+    },
+    {
+      "question": 97,
+      "code": "VNM",
+      "input": "VN",
+      "canonical": "Vietnam"
+    },
+    {
+      "question": 97,
+      "code": "VNM",
+      "input": "VNM",
+      "canonical": "Vietnam"
+    },
+    {
+      "question": 97,
+      "code": "VUT",
+      "input": "Vanuatu",
+      "canonical": "Vanuatu"
+    },
+    {
+      "question": 97,
+      "code": "VUT",
+      "input": "VU",
+      "canonical": "Vanuatu"
+    },
+    {
+      "question": 97,
+      "code": "VUT",
+      "input": "VUT",
+      "canonical": "Vanuatu"
+    },
+    {
+      "question": 97,
+      "code": "WSM",
+      "input": "Samoa",
+      "canonical": "Samoa"
+    },
+    {
+      "question": 97,
+      "code": "WSM",
+      "input": "WS",
+      "canonical": "Samoa"
+    },
+    {
+      "question": 97,
+      "code": "WSM",
+      "input": "WSM",
+      "canonical": "Samoa"
+    },
+    {
+      "question": 97,
+      "code": "YEM",
+      "input": "Yemen",
+      "canonical": "Yemen"
+    },
+    {
+      "question": 97,
+      "code": "YEM",
+      "input": "YE",
+      "canonical": "Yemen"
+    },
+    {
+      "question": 97,
+      "code": "YEM",
+      "input": "YEM",
+      "canonical": "Yemen"
+    },
+    {
+      "question": 97,
+      "code": "ZAF",
+      "input": "South Africa",
+      "canonical": "South Africa"
+    },
+    {
+      "question": 97,
+      "code": "ZAF",
+      "input": "ZA",
+      "canonical": "South Africa"
+    },
+    {
+      "question": 97,
+      "code": "ZAF",
+      "input": "ZAF",
+      "canonical": "South Africa"
+    },
+    {
+      "question": 98,
+      "code": "AFG",
+      "input": "Afghanistan",
+      "canonical": "Afghanistan"
+    },
+    {
+      "question": 98,
+      "code": "AFG",
+      "input": "AF",
+      "canonical": "Afghanistan"
+    },
+    {
+      "question": 98,
+      "code": "AFG",
+      "input": "AFG",
+      "canonical": "Afghanistan"
+    },
+    {
+      "question": 98,
+      "code": "ALB",
+      "input": "Albania",
+      "canonical": "Albania"
+    },
+    {
+      "question": 98,
+      "code": "ALB",
+      "input": "AL",
+      "canonical": "Albania"
+    },
+    {
+      "question": 98,
+      "code": "ALB",
+      "input": "ALB",
+      "canonical": "Albania"
+    },
+    {
+      "question": 98,
+      "code": "ARE",
+      "input": "United Arab Emirates",
+      "canonical": "United Arab Emirates"
+    },
+    {
+      "question": 98,
+      "code": "ARE",
+      "input": "AE",
+      "canonical": "United Arab Emirates"
+    },
+    {
+      "question": 98,
+      "code": "ARE",
+      "input": "ARE",
+      "canonical": "United Arab Emirates"
+    },
+    {
+      "question": 98,
+      "code": "ARG",
+      "input": "Argentina",
+      "canonical": "Argentina"
+    },
+    {
+      "question": 98,
+      "code": "ARG",
+      "input": "AR",
+      "canonical": "Argentina"
+    },
+    {
+      "question": 98,
+      "code": "ARG",
+      "input": "ARG",
+      "canonical": "Argentina"
+    },
+    {
+      "question": 98,
+      "code": "ARM",
+      "input": "Armenia",
+      "canonical": "Armenia"
+    },
+    {
+      "question": 98,
+      "code": "ARM",
+      "input": "AM",
+      "canonical": "Armenia"
+    },
+    {
+      "question": 98,
+      "code": "ARM",
+      "input": "ARM",
+      "canonical": "Armenia"
+    },
+    {
+      "question": 98,
+      "code": "ATG",
+      "input": "Antigua and Barbuda",
+      "canonical": "Antigua and Barbuda"
+    },
+    {
+      "question": 98,
+      "code": "ATG",
+      "input": "AG",
+      "canonical": "Antigua and Barbuda"
+    },
+    {
+      "question": 98,
+      "code": "ATG",
+      "input": "ATG",
+      "canonical": "Antigua and Barbuda"
+    },
+    {
+      "question": 98,
+      "code": "AUS",
+      "input": "Australia",
+      "canonical": "Australia"
+    },
+    {
+      "question": 98,
+      "code": "AUS",
+      "input": "AU",
+      "canonical": "Australia"
+    },
+    {
+      "question": 98,
+      "code": "AUS",
+      "input": "AUS",
+      "canonical": "Australia"
+    },
+    {
+      "question": 98,
+      "code": "AUT",
+      "input": "Austria",
+      "canonical": "Austria"
+    },
+    {
+      "question": 98,
+      "code": "AUT",
+      "input": "AT",
+      "canonical": "Austria"
+    },
+    {
+      "question": 98,
+      "code": "AUT",
+      "input": "AUT",
+      "canonical": "Austria"
+    },
+    {
+      "question": 98,
+      "code": "AZE",
+      "input": "Azerbaijan",
+      "canonical": "Azerbaijan"
+    },
+    {
+      "question": 98,
+      "code": "AZE",
+      "input": "AZ",
+      "canonical": "Azerbaijan"
+    },
+    {
+      "question": 98,
+      "code": "AZE",
+      "input": "AZE",
+      "canonical": "Azerbaijan"
+    },
+    {
+      "question": 98,
+      "code": "BDI",
+      "input": "Burundi",
+      "canonical": "Burundi"
+    },
+    {
+      "question": 98,
+      "code": "BDI",
+      "input": "BI",
+      "canonical": "Burundi"
+    },
+    {
+      "question": 98,
+      "code": "BDI",
+      "input": "BDI",
+      "canonical": "Burundi"
+    },
+    {
+      "question": 98,
+      "code": "BEL",
+      "input": "Belgium",
+      "canonical": "Belgium"
+    },
+    {
+      "question": 98,
+      "code": "BEL",
+      "input": "BE",
+      "canonical": "Belgium"
+    },
+    {
+      "question": 98,
+      "code": "BEL",
+      "input": "BEL",
+      "canonical": "Belgium"
+    },
+    {
+      "question": 98,
+      "code": "BEN",
+      "input": "Benin",
+      "canonical": "Benin"
+    },
+    {
+      "question": 98,
+      "code": "BEN",
+      "input": "BJ",
+      "canonical": "Benin"
+    },
+    {
+      "question": 98,
+      "code": "BEN",
+      "input": "BEN",
+      "canonical": "Benin"
+    },
+    {
+      "question": 98,
+      "code": "BFA",
+      "input": "Burkina Faso",
+      "canonical": "Burkina Faso"
+    },
+    {
+      "question": 98,
+      "code": "BFA",
+      "input": "BF",
+      "canonical": "Burkina Faso"
+    },
+    {
+      "question": 98,
+      "code": "BFA",
+      "input": "BFA",
+      "canonical": "Burkina Faso"
+    },
+    {
+      "question": 98,
+      "code": "BGR",
+      "input": "Bulgaria",
+      "canonical": "Bulgaria"
+    },
+    {
+      "question": 98,
+      "code": "BGR",
+      "input": "BG",
+      "canonical": "Bulgaria"
+    },
+    {
+      "question": 98,
+      "code": "BGR",
+      "input": "BGR",
+      "canonical": "Bulgaria"
+    },
+    {
+      "question": 98,
+      "code": "BHR",
+      "input": "Bahrain",
+      "canonical": "Bahrain"
+    },
+    {
+      "question": 98,
+      "code": "BHR",
+      "input": "BH",
+      "canonical": "Bahrain"
+    },
+    {
+      "question": 98,
+      "code": "BHR",
+      "input": "BHR",
+      "canonical": "Bahrain"
+    },
+    {
+      "question": 98,
+      "code": "BIH",
+      "input": "Bosnia and Herzegovina",
+      "canonical": "Bosnia and Herzegovina"
+    },
+    {
+      "question": 98,
+      "code": "BIH",
+      "input": "BA",
+      "canonical": "Bosnia and Herzegovina"
+    },
+    {
+      "question": 98,
+      "code": "BIH",
+      "input": "BIH",
+      "canonical": "Bosnia and Herzegovina"
+    },
+    {
+      "question": 98,
+      "code": "BLZ",
+      "input": "Belize",
+      "canonical": "Belize"
+    },
+    {
+      "question": 98,
+      "code": "BLZ",
+      "input": "BZ",
+      "canonical": "Belize"
+    },
+    {
+      "question": 98,
+      "code": "BLZ",
+      "input": "BLZ",
+      "canonical": "Belize"
+    },
+    {
+      "question": 98,
+      "code": "BOL",
+      "input": "Bolivia",
+      "canonical": "Bolivia"
+    },
+    {
+      "question": 98,
+      "code": "BOL",
+      "input": "BO",
+      "canonical": "Bolivia"
+    },
+    {
+      "question": 98,
+      "code": "BOL",
+      "input": "BOL",
+      "canonical": "Bolivia"
+    },
+    {
+      "question": 98,
+      "code": "BRA",
+      "input": "Brazil",
+      "canonical": "Brazil"
+    },
+    {
+      "question": 98,
+      "code": "BRA",
+      "input": "BR",
+      "canonical": "Brazil"
+    },
+    {
+      "question": 98,
+      "code": "BRA",
+      "input": "BRA",
+      "canonical": "Brazil"
+    },
+    {
+      "question": 98,
+      "code": "BRN",
+      "input": "Brunei",
+      "canonical": "Brunei"
+    },
+    {
+      "question": 98,
+      "code": "BRN",
+      "input": "BN",
+      "canonical": "Brunei"
+    },
+    {
+      "question": 98,
+      "code": "BRN",
+      "input": "BRN",
+      "canonical": "Brunei"
+    },
+    {
+      "question": 98,
+      "code": "CAF",
+      "input": "Central African Republic",
+      "canonical": "Central African Republic"
+    },
+    {
+      "question": 98,
+      "code": "CAF",
+      "input": "CF",
+      "canonical": "Central African Republic"
+    },
+    {
+      "question": 98,
+      "code": "CAF",
+      "input": "CAF",
+      "canonical": "Central African Republic"
+    },
+    {
+      "question": 98,
+      "code": "CHE",
+      "input": "Switzerland",
+      "canonical": "Switzerland"
+    },
+    {
+      "question": 98,
+      "code": "CHE",
+      "input": "CH",
+      "canonical": "Switzerland"
+    },
+    {
+      "question": 98,
+      "code": "CHE",
+      "input": "CHE",
+      "canonical": "Switzerland"
+    },
+    {
+      "question": 98,
+      "code": "CHL",
+      "input": "Chile",
+      "canonical": "Chile"
+    },
+    {
+      "question": 98,
+      "code": "CHL",
+      "input": "CL",
+      "canonical": "Chile"
+    },
+    {
+      "question": 98,
+      "code": "CHL",
+      "input": "CHL",
+      "canonical": "Chile"
+    },
+    {
+      "question": 98,
+      "code": "CHN",
+      "input": "China",
+      "canonical": "China"
+    },
+    {
+      "question": 98,
+      "code": "CHN",
+      "input": "CN",
+      "canonical": "China"
+    },
+    {
+      "question": 98,
+      "code": "CHN",
+      "input": "CHN",
+      "canonical": "China"
+    },
+    {
+      "question": 98,
+      "code": "CIV",
+      "input": "Ivory Coast",
+      "canonical": "Ivory Coast"
+    },
+    {
+      "question": 98,
+      "code": "CIV",
+      "input": "CI",
+      "canonical": "Ivory Coast"
+    },
+    {
+      "question": 98,
+      "code": "CIV",
+      "input": "CIV",
+      "canonical": "Ivory Coast"
+    },
+    {
+      "question": 98,
+      "code": "COL",
+      "input": "Colombia",
+      "canonical": "Colombia"
+    },
+    {
+      "question": 98,
+      "code": "COL",
+      "input": "CO",
+      "canonical": "Colombia"
+    },
+    {
+      "question": 98,
+      "code": "COL",
+      "input": "COL",
+      "canonical": "Colombia"
+    },
+    {
+      "question": 98,
+      "code": "CRI",
+      "input": "Costa Rica",
+      "canonical": "Costa Rica"
+    },
+    {
+      "question": 98,
+      "code": "CRI",
+      "input": "CR",
+      "canonical": "Costa Rica"
+    },
+    {
+      "question": 98,
+      "code": "CRI",
+      "input": "CRI",
+      "canonical": "Costa Rica"
+    },
+    {
+      "question": 98,
+      "code": "CZE",
+      "input": "Czechia",
+      "canonical": "Czechia"
+    },
+    {
+      "question": 98,
+      "code": "CZE",
+      "input": "CZ",
+      "canonical": "Czechia"
+    },
+    {
+      "question": 98,
+      "code": "CZE",
+      "input": "CZE",
+      "canonical": "Czechia"
+    },
+    {
+      "question": 98,
+      "code": "DJI",
+      "input": "Djibouti",
+      "canonical": "Djibouti"
+    },
+    {
+      "question": 98,
+      "code": "DJI",
+      "input": "DJ",
+      "canonical": "Djibouti"
+    },
+    {
+      "question": 98,
+      "code": "DJI",
+      "input": "DJI",
+      "canonical": "Djibouti"
+    },
+    {
+      "question": 98,
+      "code": "DMA",
+      "input": "Dominica",
+      "canonical": "Dominica"
+    },
+    {
+      "question": 98,
+      "code": "DMA",
+      "input": "DM",
+      "canonical": "Dominica"
+    },
+    {
+      "question": 98,
+      "code": "DMA",
+      "input": "DMA",
+      "canonical": "Dominica"
+    },
+    {
+      "question": 98,
+      "code": "DOM",
+      "input": "Dominican Republic",
+      "canonical": "Dominican Republic"
+    },
+    {
+      "question": 98,
+      "code": "DOM",
+      "input": "DO",
+      "canonical": "Dominican Republic"
+    },
+    {
+      "question": 98,
+      "code": "DOM",
+      "input": "DOM",
+      "canonical": "Dominican Republic"
+    },
+    {
+      "question": 98,
+      "code": "DZA",
+      "input": "Algeria",
+      "canonical": "Algeria"
+    },
+    {
+      "question": 98,
+      "code": "DZA",
+      "input": "DZ",
+      "canonical": "Algeria"
+    },
+    {
+      "question": 98,
+      "code": "DZA",
+      "input": "DZA",
+      "canonical": "Algeria"
+    },
+    {
+      "question": 98,
+      "code": "ERI",
+      "input": "Eritrea",
+      "canonical": "Eritrea"
+    },
+    {
+      "question": 98,
+      "code": "ERI",
+      "input": "ER",
+      "canonical": "Eritrea"
+    },
+    {
+      "question": 98,
+      "code": "ERI",
+      "input": "ERI",
+      "canonical": "Eritrea"
+    },
+    {
+      "question": 98,
+      "code": "ESP",
+      "input": "Spain",
+      "canonical": "Spain"
+    },
+    {
+      "question": 98,
+      "code": "ESP",
+      "input": "ES",
+      "canonical": "Spain"
+    },
+    {
+      "question": 98,
+      "code": "ESP",
+      "input": "ESP",
+      "canonical": "Spain"
+    },
+    {
+      "question": 98,
+      "code": "EST",
+      "input": "Estonia",
+      "canonical": "Estonia"
+    },
+    {
+      "question": 98,
+      "code": "EST",
+      "input": "EE",
+      "canonical": "Estonia"
+    },
+    {
+      "question": 98,
+      "code": "EST",
+      "input": "EST",
+      "canonical": "Estonia"
+    },
+    {
+      "question": 98,
+      "code": "ETH",
+      "input": "Ethiopia",
+      "canonical": "Ethiopia"
+    },
+    {
+      "question": 98,
+      "code": "ETH",
+      "input": "ET",
+      "canonical": "Ethiopia"
+    },
+    {
+      "question": 98,
+      "code": "ETH",
+      "input": "ETH",
+      "canonical": "Ethiopia"
+    },
+    {
+      "question": 98,
+      "code": "FIN",
+      "input": "Finland",
+      "canonical": "Finland"
+    },
+    {
+      "question": 98,
+      "code": "FIN",
+      "input": "FI",
+      "canonical": "Finland"
+    },
+    {
+      "question": 98,
+      "code": "FIN",
+      "input": "FIN",
+      "canonical": "Finland"
+    },
+    {
+      "question": 98,
+      "code": "FJI",
+      "input": "Fiji",
+      "canonical": "Fiji"
+    },
+    {
+      "question": 98,
+      "code": "FJI",
+      "input": "FJ",
+      "canonical": "Fiji"
+    },
+    {
+      "question": 98,
+      "code": "FJI",
+      "input": "FJI",
+      "canonical": "Fiji"
+    },
+    {
+      "question": 98,
+      "code": "FSM",
+      "input": "Micronesia",
+      "canonical": "Micronesia"
+    },
+    {
+      "question": 98,
+      "code": "FSM",
+      "input": "FM",
+      "canonical": "Micronesia"
+    },
+    {
+      "question": 98,
+      "code": "FSM",
+      "input": "FSM",
+      "canonical": "Micronesia"
+    },
+    {
+      "question": 98,
+      "code": "GBR",
+      "input": "United Kingdom",
+      "canonical": "United Kingdom"
+    },
+    {
+      "question": 98,
+      "code": "GBR",
+      "input": "GB",
+      "canonical": "United Kingdom"
+    },
+    {
+      "question": 98,
+      "code": "GBR",
+      "input": "GBR",
+      "canonical": "United Kingdom"
+    },
+    {
+      "question": 98,
+      "code": "GEO",
+      "input": "Georgia",
+      "canonical": "Georgia"
+    },
+    {
+      "question": 98,
+      "code": "GEO",
+      "input": "GE",
+      "canonical": "Georgia"
+    },
+    {
+      "question": 98,
+      "code": "GEO",
+      "input": "GEO",
+      "canonical": "Georgia"
+    },
+    {
+      "question": 98,
+      "code": "GIN",
+      "input": "Guinea",
+      "canonical": "Guinea"
+    },
+    {
+      "question": 98,
+      "code": "GIN",
+      "input": "GN",
+      "canonical": "Guinea"
+    },
+    {
+      "question": 98,
+      "code": "GIN",
+      "input": "GIN",
+      "canonical": "Guinea"
+    },
+    {
+      "question": 98,
+      "code": "GMB",
+      "input": "Gambia",
+      "canonical": "Gambia"
+    },
+    {
+      "question": 98,
+      "code": "GMB",
+      "input": "GM",
+      "canonical": "Gambia"
+    },
+    {
+      "question": 98,
+      "code": "GMB",
+      "input": "GMB",
+      "canonical": "Gambia"
+    },
+    {
+      "question": 98,
+      "code": "GNB",
+      "input": "Guinea-Bissau",
+      "canonical": "Guinea-Bissau"
+    },
+    {
+      "question": 98,
+      "code": "GNB",
+      "input": "GW",
+      "canonical": "Guinea-Bissau"
+    },
+    {
+      "question": 98,
+      "code": "GNB",
+      "input": "GNB",
+      "canonical": "Guinea-Bissau"
+    },
+    {
+      "question": 98,
+      "code": "GNQ",
+      "input": "Equatorial Guinea",
+      "canonical": "Equatorial Guinea"
+    },
+    {
+      "question": 98,
+      "code": "GNQ",
+      "input": "GQ",
+      "canonical": "Equatorial Guinea"
+    },
+    {
+      "question": 98,
+      "code": "GNQ",
+      "input": "GNQ",
+      "canonical": "Equatorial Guinea"
+    },
+    {
+      "question": 98,
+      "code": "HRV",
+      "input": "Croatia",
+      "canonical": "Croatia"
+    },
+    {
+      "question": 98,
+      "code": "HRV",
+      "input": "HR",
+      "canonical": "Croatia"
+    },
+    {
+      "question": 98,
+      "code": "HRV",
+      "input": "HRV",
+      "canonical": "Croatia"
+    },
+    {
+      "question": 98,
+      "code": "HTI",
+      "input": "Haiti",
+      "canonical": "Haiti"
+    },
+    {
+      "question": 98,
+      "code": "HTI",
+      "input": "HT",
+      "canonical": "Haiti"
+    },
+    {
+      "question": 98,
+      "code": "HTI",
+      "input": "HTI",
+      "canonical": "Haiti"
+    },
+    {
+      "question": 98,
+      "code": "IDN",
+      "input": "Indonesia",
+      "canonical": "Indonesia"
+    },
+    {
+      "question": 98,
+      "code": "IDN",
+      "input": "ID",
+      "canonical": "Indonesia"
+    },
+    {
+      "question": 98,
+      "code": "IDN",
+      "input": "IDN",
+      "canonical": "Indonesia"
+    },
+    {
+      "question": 98,
+      "code": "IND",
+      "input": "India",
+      "canonical": "India"
+    },
+    {
+      "question": 98,
+      "code": "IND",
+      "input": "IN",
+      "canonical": "India"
+    },
+    {
+      "question": 98,
+      "code": "IND",
+      "input": "IND",
+      "canonical": "India"
+    },
+    {
+      "question": 98,
+      "code": "IRL",
+      "input": "Ireland",
+      "canonical": "Ireland"
+    },
+    {
+      "question": 98,
+      "code": "IRL",
+      "input": "IE",
+      "canonical": "Ireland"
+    },
+    {
+      "question": 98,
+      "code": "IRL",
+      "input": "IRL",
+      "canonical": "Ireland"
+    },
+    {
+      "question": 98,
+      "code": "IRN",
+      "input": "Iran",
+      "canonical": "Iran"
+    },
+    {
+      "question": 98,
+      "code": "IRN",
+      "input": "IR",
+      "canonical": "Iran"
+    },
+    {
+      "question": 98,
+      "code": "IRN",
+      "input": "IRN",
+      "canonical": "Iran"
+    },
+    {
+      "question": 98,
+      "code": "IRQ",
+      "input": "Iraq",
+      "canonical": "Iraq"
+    },
+    {
+      "question": 98,
+      "code": "IRQ",
+      "input": "IQ",
+      "canonical": "Iraq"
+    },
+    {
+      "question": 98,
+      "code": "IRQ",
+      "input": "IRQ",
+      "canonical": "Iraq"
+    },
+    {
+      "question": 98,
+      "code": "ISL",
+      "input": "Iceland",
+      "canonical": "Iceland"
+    },
+    {
+      "question": 98,
+      "code": "ISL",
+      "input": "IS",
+      "canonical": "Iceland"
+    },
+    {
+      "question": 98,
+      "code": "ISL",
+      "input": "ISL",
+      "canonical": "Iceland"
+    },
+    {
+      "question": 98,
+      "code": "ISR",
+      "input": "Israel",
+      "canonical": "Israel"
+    },
+    {
+      "question": 98,
+      "code": "ISR",
+      "input": "IL",
+      "canonical": "Israel"
+    },
+    {
+      "question": 98,
+      "code": "ISR",
+      "input": "ISR",
+      "canonical": "Israel"
+    },
+    {
+      "question": 98,
+      "code": "ITA",
+      "input": "Italy",
+      "canonical": "Italy"
+    },
+    {
+      "question": 98,
+      "code": "ITA",
+      "input": "IT",
+      "canonical": "Italy"
+    },
+    {
+      "question": 98,
+      "code": "ITA",
+      "input": "ITA",
+      "canonical": "Italy"
+    },
+    {
+      "question": 98,
+      "code": "JAM",
+      "input": "Jamaica",
+      "canonical": "Jamaica"
+    },
+    {
+      "question": 98,
+      "code": "JAM",
+      "input": "JM",
+      "canonical": "Jamaica"
+    },
+    {
+      "question": 98,
+      "code": "JAM",
+      "input": "JAM",
+      "canonical": "Jamaica"
+    },
+    {
+      "question": 98,
+      "code": "KHM",
+      "input": "Cambodia",
+      "canonical": "Cambodia"
+    },
+    {
+      "question": 98,
+      "code": "KHM",
+      "input": "KH",
+      "canonical": "Cambodia"
+    },
+    {
+      "question": 98,
+      "code": "KHM",
+      "input": "KHM",
+      "canonical": "Cambodia"
+    },
+    {
+      "question": 98,
+      "code": "KIR",
+      "input": "Kiribati",
+      "canonical": "Kiribati"
+    },
+    {
+      "question": 98,
+      "code": "KIR",
+      "input": "KI",
+      "canonical": "Kiribati"
+    },
+    {
+      "question": 98,
+      "code": "KIR",
+      "input": "KIR",
+      "canonical": "Kiribati"
+    },
+    {
+      "question": 98,
+      "code": "KNA",
+      "input": "Saint Kitts and Nevis",
+      "canonical": "Saint Kitts and Nevis"
+    },
+    {
+      "question": 98,
+      "code": "KNA",
+      "input": "KN",
+      "canonical": "Saint Kitts and Nevis"
+    },
+    {
+      "question": 98,
+      "code": "KNA",
+      "input": "KNA",
+      "canonical": "Saint Kitts and Nevis"
+    },
+    {
+      "question": 98,
+      "code": "KWT",
+      "input": "Kuwait",
+      "canonical": "Kuwait"
+    },
+    {
+      "question": 98,
+      "code": "KWT",
+      "input": "KW",
+      "canonical": "Kuwait"
+    },
+    {
+      "question": 98,
+      "code": "KWT",
+      "input": "KWT",
+      "canonical": "Kuwait"
+    },
+    {
+      "question": 98,
+      "code": "LBR",
+      "input": "Liberia",
+      "canonical": "Liberia"
+    },
+    {
+      "question": 98,
+      "code": "LBR",
+      "input": "LR",
+      "canonical": "Liberia"
+    },
+    {
+      "question": 98,
+      "code": "LBR",
+      "input": "LBR",
+      "canonical": "Liberia"
+    },
+    {
+      "question": 98,
+      "code": "LBY",
+      "input": "Libya",
+      "canonical": "Libya"
+    },
+    {
+      "question": 98,
+      "code": "LBY",
+      "input": "LY",
+      "canonical": "Libya"
+    },
+    {
+      "question": 98,
+      "code": "LBY",
+      "input": "LBY",
+      "canonical": "Libya"
+    },
+    {
+      "question": 98,
+      "code": "LCA",
+      "input": "Saint Lucia",
+      "canonical": "Saint Lucia"
+    },
+    {
+      "question": 98,
+      "code": "LCA",
+      "input": "LC",
+      "canonical": "Saint Lucia"
+    },
+    {
+      "question": 98,
+      "code": "LCA",
+      "input": "LCA",
+      "canonical": "Saint Lucia"
+    },
+    {
+      "question": 98,
+      "code": "LIE",
+      "input": "Liechtenstein",
+      "canonical": "Liechtenstein"
+    },
+    {
+      "question": 98,
+      "code": "LIE",
+      "input": "LI",
+      "canonical": "Liechtenstein"
+    },
+    {
+      "question": 98,
+      "code": "LIE",
+      "input": "LIE",
+      "canonical": "Liechtenstein"
+    },
+    {
+      "question": 98,
+      "code": "LKA",
+      "input": "Sri Lanka",
+      "canonical": "Sri Lanka"
+    },
+    {
+      "question": 98,
+      "code": "LKA",
+      "input": "LK",
+      "canonical": "Sri Lanka"
+    },
+    {
+      "question": 98,
+      "code": "LKA",
+      "input": "LKA",
+      "canonical": "Sri Lanka"
+    },
+    {
+      "question": 98,
+      "code": "LTU",
+      "input": "Lithuania",
+      "canonical": "Lithuania"
+    },
+    {
+      "question": 98,
+      "code": "LTU",
+      "input": "LT",
+      "canonical": "Lithuania"
+    },
+    {
+      "question": 98,
+      "code": "LTU",
+      "input": "LTU",
+      "canonical": "Lithuania"
+    },
+    {
+      "question": 98,
+      "code": "LVA",
+      "input": "Latvia",
+      "canonical": "Latvia"
+    },
+    {
+      "question": 98,
+      "code": "LVA",
+      "input": "LV",
+      "canonical": "Latvia"
+    },
+    {
+      "question": 98,
+      "code": "LVA",
+      "input": "LVA",
+      "canonical": "Latvia"
+    },
+    {
+      "question": 98,
+      "code": "MDV",
+      "input": "Maldives",
+      "canonical": "Maldives"
+    },
+    {
+      "question": 98,
+      "code": "MDV",
+      "input": "MV",
+      "canonical": "Maldives"
+    },
+    {
+      "question": 98,
+      "code": "MDV",
+      "input": "MDV",
+      "canonical": "Maldives"
+    },
+    {
+      "question": 98,
+      "code": "MEX",
+      "input": "Mexico",
+      "canonical": "Mexico"
+    },
+    {
+      "question": 98,
+      "code": "MEX",
+      "input": "MX",
+      "canonical": "Mexico"
+    },
+    {
+      "question": 98,
+      "code": "MEX",
+      "input": "MEX",
+      "canonical": "Mexico"
+    },
+    {
+      "question": 98,
+      "code": "MHL",
+      "input": "Marshall Islands",
+      "canonical": "Marshall Islands"
+    },
+    {
+      "question": 98,
+      "code": "MHL",
+      "input": "MH",
+      "canonical": "Marshall Islands"
+    },
+    {
+      "question": 98,
+      "code": "MHL",
+      "input": "MHL",
+      "canonical": "Marshall Islands"
+    },
+    {
+      "question": 98,
+      "code": "MKD",
+      "input": "North Macedonia",
+      "canonical": "North Macedonia"
+    },
+    {
+      "question": 98,
+      "code": "MKD",
+      "input": "MK",
+      "canonical": "North Macedonia"
+    },
+    {
+      "question": 98,
+      "code": "MKD",
+      "input": "MKD",
+      "canonical": "North Macedonia"
+    },
+    {
+      "question": 98,
+      "code": "MLI",
+      "input": "Mali",
+      "canonical": "Mali"
+    },
+    {
+      "question": 98,
+      "code": "MLI",
+      "input": "ML",
+      "canonical": "Mali"
+    },
+    {
+      "question": 98,
+      "code": "MLI",
+      "input": "MLI",
+      "canonical": "Mali"
+    },
+    {
+      "question": 98,
+      "code": "MNG",
+      "input": "Mongolia",
+      "canonical": "Mongolia"
+    },
+    {
+      "question": 98,
+      "code": "MNG",
+      "input": "MN",
+      "canonical": "Mongolia"
+    },
+    {
+      "question": 98,
+      "code": "MNG",
+      "input": "MNG",
+      "canonical": "Mongolia"
+    },
+    {
+      "question": 98,
+      "code": "MOZ",
+      "input": "Mozambique",
+      "canonical": "Mozambique"
+    },
+    {
+      "question": 98,
+      "code": "MOZ",
+      "input": "MZ",
+      "canonical": "Mozambique"
+    },
+    {
+      "question": 98,
+      "code": "MOZ",
+      "input": "MOZ",
+      "canonical": "Mozambique"
+    },
+    {
+      "question": 98,
+      "code": "MRT",
+      "input": "Mauritania",
+      "canonical": "Mauritania"
+    },
+    {
+      "question": 98,
+      "code": "MRT",
+      "input": "MR",
+      "canonical": "Mauritania"
+    },
+    {
+      "question": 98,
+      "code": "MRT",
+      "input": "MRT",
+      "canonical": "Mauritania"
+    },
+    {
+      "question": 98,
+      "code": "MUS",
+      "input": "Mauritius",
+      "canonical": "Mauritius"
+    },
+    {
+      "question": 98,
+      "code": "MUS",
+      "input": "MU",
+      "canonical": "Mauritius"
+    },
+    {
+      "question": 98,
+      "code": "MUS",
+      "input": "MUS",
+      "canonical": "Mauritius"
+    },
+    {
+      "question": 98,
+      "code": "MWI",
+      "input": "Malawi",
+      "canonical": "Malawi"
+    },
+    {
+      "question": 98,
+      "code": "MWI",
+      "input": "MW",
+      "canonical": "Malawi"
+    },
+    {
+      "question": 98,
+      "code": "MWI",
+      "input": "MWI",
+      "canonical": "Malawi"
+    },
+    {
+      "question": 98,
+      "code": "MYS",
+      "input": "Malaysia",
+      "canonical": "Malaysia"
+    },
+    {
+      "question": 98,
+      "code": "MYS",
+      "input": "MY",
+      "canonical": "Malaysia"
+    },
+    {
+      "question": 98,
+      "code": "MYS",
+      "input": "MYS",
+      "canonical": "Malaysia"
+    },
+    {
+      "question": 98,
+      "code": "NAM",
+      "input": "Namibia",
+      "canonical": "Namibia"
+    },
+    {
+      "question": 98,
+      "code": "NAM",
+      "input": "NA",
+      "canonical": "Namibia"
+    },
+    {
+      "question": 98,
+      "code": "NAM",
+      "input": "NAM",
+      "canonical": "Namibia"
+    },
+    {
+      "question": 98,
+      "code": "NER",
+      "input": "Niger",
+      "canonical": "Niger"
+    },
+    {
+      "question": 98,
+      "code": "NER",
+      "input": "NE",
+      "canonical": "Niger"
+    },
+    {
+      "question": 98,
+      "code": "NER",
+      "input": "NER",
+      "canonical": "Niger"
+    },
+    {
+      "question": 98,
+      "code": "NGA",
+      "input": "Nigeria",
+      "canonical": "Nigeria"
+    },
+    {
+      "question": 98,
+      "code": "NGA",
+      "input": "NG",
+      "canonical": "Nigeria"
+    },
+    {
+      "question": 98,
+      "code": "NGA",
+      "input": "NGA",
+      "canonical": "Nigeria"
+    },
+    {
+      "question": 98,
+      "code": "NIC",
+      "input": "Nicaragua",
+      "canonical": "Nicaragua"
+    },
+    {
+      "question": 98,
+      "code": "NIC",
+      "input": "NI",
+      "canonical": "Nicaragua"
+    },
+    {
+      "question": 98,
+      "code": "NIC",
+      "input": "NIC",
+      "canonical": "Nicaragua"
+    },
+    {
+      "question": 98,
+      "code": "PAK",
+      "input": "Pakistan",
+      "canonical": "Pakistan"
+    },
+    {
+      "question": 98,
+      "code": "PAK",
+      "input": "PK",
+      "canonical": "Pakistan"
+    },
+    {
+      "question": 98,
+      "code": "PAK",
+      "input": "PAK",
+      "canonical": "Pakistan"
+    },
+    {
+      "question": 98,
+      "code": "PHL",
+      "input": "Philippines",
+      "canonical": "Philippines"
+    },
+    {
+      "question": 98,
+      "code": "PHL",
+      "input": "PH",
+      "canonical": "Philippines"
+    },
+    {
+      "question": 98,
+      "code": "PHL",
+      "input": "PHL",
+      "canonical": "Philippines"
+    },
+    {
+      "question": 98,
+      "code": "PNG",
+      "input": "Papua New Guinea",
+      "canonical": "Papua New Guinea"
+    },
+    {
+      "question": 98,
+      "code": "PNG",
+      "input": "PG",
+      "canonical": "Papua New Guinea"
+    },
+    {
+      "question": 98,
+      "code": "PNG",
+      "input": "PNG",
+      "canonical": "Papua New Guinea"
+    },
+    {
+      "question": 98,
+      "code": "ROU",
+      "input": "Romania",
+      "canonical": "Romania"
+    },
+    {
+      "question": 98,
+      "code": "ROU",
+      "input": "RO",
+      "canonical": "Romania"
+    },
+    {
+      "question": 98,
+      "code": "ROU",
+      "input": "ROU",
+      "canonical": "Romania"
+    },
+    {
+      "question": 98,
+      "code": "RUS",
+      "input": "Russia",
+      "canonical": "Russia"
+    },
+    {
+      "question": 98,
+      "code": "RUS",
+      "input": "RU",
+      "canonical": "Russia"
+    },
+    {
+      "question": 98,
+      "code": "RUS",
+      "input": "RUS",
+      "canonical": "Russia"
+    },
+    {
+      "question": 98,
+      "code": "SAU",
+      "input": "Saudi Arabia",
+      "canonical": "Saudi Arabia"
+    },
+    {
+      "question": 98,
+      "code": "SAU",
+      "input": "SA",
+      "canonical": "Saudi Arabia"
+    },
+    {
+      "question": 98,
+      "code": "SAU",
+      "input": "SAU",
+      "canonical": "Saudi Arabia"
+    },
+    {
+      "question": 98,
+      "code": "SGP",
+      "input": "Singapore",
+      "canonical": "Singapore"
+    },
+    {
+      "question": 98,
+      "code": "SGP",
+      "input": "SG",
+      "canonical": "Singapore"
+    },
+    {
+      "question": 98,
+      "code": "SGP",
+      "input": "SGP",
+      "canonical": "Singapore"
+    },
+    {
+      "question": 98,
+      "code": "SLB",
+      "input": "Solomon Islands",
+      "canonical": "Solomon Islands"
+    },
+    {
+      "question": 98,
+      "code": "SLB",
+      "input": "SB",
+      "canonical": "Solomon Islands"
+    },
+    {
+      "question": 98,
+      "code": "SLB",
+      "input": "SLB",
+      "canonical": "Solomon Islands"
+    },
+    {
+      "question": 98,
+      "code": "SLE",
+      "input": "Sierra Leone",
+      "canonical": "Sierra Leone"
+    },
+    {
+      "question": 98,
+      "code": "SLE",
+      "input": "SL",
+      "canonical": "Sierra Leone"
+    },
+    {
+      "question": 98,
+      "code": "SLE",
+      "input": "SLE",
+      "canonical": "Sierra Leone"
+    },
+    {
+      "question": 98,
+      "code": "SMR",
+      "input": "San Marino",
+      "canonical": "San Marino"
+    },
+    {
+      "question": 98,
+      "code": "SMR",
+      "input": "SM",
+      "canonical": "San Marino"
+    },
+    {
+      "question": 98,
+      "code": "SMR",
+      "input": "SMR",
+      "canonical": "San Marino"
+    },
+    {
+      "question": 98,
+      "code": "SOM",
+      "input": "Somalia",
+      "canonical": "Somalia"
+    },
+    {
+      "question": 98,
+      "code": "SOM",
+      "input": "SO",
+      "canonical": "Somalia"
+    },
+    {
+      "question": 98,
+      "code": "SOM",
+      "input": "SOM",
+      "canonical": "Somalia"
+    },
+    {
+      "question": 98,
+      "code": "SRB",
+      "input": "Serbia",
+      "canonical": "Serbia"
+    },
+    {
+      "question": 98,
+      "code": "SRB",
+      "input": "RS",
+      "canonical": "Serbia"
+    },
+    {
+      "question": 98,
+      "code": "SRB",
+      "input": "SRB",
+      "canonical": "Serbia"
+    },
+    {
+      "question": 98,
+      "code": "STP",
+      "input": "São Tomé and Príncipe",
+      "canonical": "Sao Tome and Principe"
+    },
+    {
+      "question": 98,
+      "code": "STP",
+      "input": "ST",
+      "canonical": "Sao Tome and Principe"
+    },
+    {
+      "question": 98,
+      "code": "STP",
+      "input": "STP",
+      "canonical": "Sao Tome and Principe"
+    },
+    {
+      "question": 98,
+      "code": "SUR",
+      "input": "Suriname",
+      "canonical": "Suriname"
+    },
+    {
+      "question": 98,
+      "code": "SUR",
+      "input": "SR",
+      "canonical": "Suriname"
+    },
+    {
+      "question": 98,
+      "code": "SUR",
+      "input": "SUR",
+      "canonical": "Suriname"
+    },
+    {
+      "question": 98,
+      "code": "SVK",
+      "input": "Slovakia",
+      "canonical": "Slovakia"
+    },
+    {
+      "question": 98,
+      "code": "SVK",
+      "input": "SK",
+      "canonical": "Slovakia"
+    },
+    {
+      "question": 98,
+      "code": "SVK",
+      "input": "SVK",
+      "canonical": "Slovakia"
+    },
+    {
+      "question": 98,
+      "code": "SVN",
+      "input": "Slovenia",
+      "canonical": "Slovenia"
+    },
+    {
+      "question": 98,
+      "code": "SVN",
+      "input": "SI",
+      "canonical": "Slovenia"
+    },
+    {
+      "question": 98,
+      "code": "SVN",
+      "input": "SVN",
+      "canonical": "Slovenia"
+    },
+    {
+      "question": 98,
+      "code": "SWZ",
+      "input": "Eswatini",
+      "canonical": "Eswatini"
+    },
+    {
+      "question": 98,
+      "code": "SWZ",
+      "input": "SZ",
+      "canonical": "Eswatini"
+    },
+    {
+      "question": 98,
+      "code": "SWZ",
+      "input": "SWZ",
+      "canonical": "Eswatini"
+    },
+    {
+      "question": 98,
+      "code": "SYR",
+      "input": "Syria",
+      "canonical": "Syria"
+    },
+    {
+      "question": 98,
+      "code": "SYR",
+      "input": "SY",
+      "canonical": "Syria"
+    },
+    {
+      "question": 98,
+      "code": "SYR",
+      "input": "SYR",
+      "canonical": "Syria"
+    },
+    {
+      "question": 98,
+      "code": "THA",
+      "input": "Thailand",
+      "canonical": "Thailand"
+    },
+    {
+      "question": 98,
+      "code": "THA",
+      "input": "TH",
+      "canonical": "Thailand"
+    },
+    {
+      "question": 98,
+      "code": "THA",
+      "input": "THA",
+      "canonical": "Thailand"
+    },
+    {
+      "question": 98,
+      "code": "TJK",
+      "input": "Tajikistan",
+      "canonical": "Tajikistan"
+    },
+    {
+      "question": 98,
+      "code": "TJK",
+      "input": "TJ",
+      "canonical": "Tajikistan"
+    },
+    {
+      "question": 98,
+      "code": "TJK",
+      "input": "TJK",
+      "canonical": "Tajikistan"
+    },
+    {
+      "question": 98,
+      "code": "TKM",
+      "input": "Turkmenistan",
+      "canonical": "Turkmenistan"
+    },
+    {
+      "question": 98,
+      "code": "TKM",
+      "input": "TM",
+      "canonical": "Turkmenistan"
+    },
+    {
+      "question": 98,
+      "code": "TKM",
+      "input": "TKM",
+      "canonical": "Turkmenistan"
+    },
+    {
+      "question": 98,
+      "code": "TLS",
+      "input": "Timor-Leste",
+      "canonical": "Timor-Leste"
+    },
+    {
+      "question": 98,
+      "code": "TLS",
+      "input": "TL",
+      "canonical": "Timor-Leste"
+    },
+    {
+      "question": 98,
+      "code": "TLS",
+      "input": "TLS",
+      "canonical": "Timor-Leste"
+    },
+    {
+      "question": 98,
+      "code": "TTO",
+      "input": "Trinidad and Tobago",
+      "canonical": "Trinidad and Tobago"
+    },
+    {
+      "question": 98,
+      "code": "TTO",
+      "input": "TT",
+      "canonical": "Trinidad and Tobago"
+    },
+    {
+      "question": 98,
+      "code": "TTO",
+      "input": "TTO",
+      "canonical": "Trinidad and Tobago"
+    },
+    {
+      "question": 98,
+      "code": "TUN",
+      "input": "Tunisia",
+      "canonical": "Tunisia"
+    },
+    {
+      "question": 98,
+      "code": "TUN",
+      "input": "TN",
+      "canonical": "Tunisia"
+    },
+    {
+      "question": 98,
+      "code": "TUN",
+      "input": "TUN",
+      "canonical": "Tunisia"
+    },
+    {
+      "question": 98,
+      "code": "TUR",
+      "input": "Türkiye",
+      "canonical": "Türkiye"
+    },
+    {
+      "question": 98,
+      "code": "TUR",
+      "input": "TR",
+      "canonical": "Türkiye"
+    },
+    {
+      "question": 98,
+      "code": "TUR",
+      "input": "TUR",
+      "canonical": "Türkiye"
+    },
+    {
+      "question": 98,
+      "code": "TZA",
+      "input": "Tanzania",
+      "canonical": "Tanzania"
+    },
+    {
+      "question": 98,
+      "code": "TZA",
+      "input": "TZ",
+      "canonical": "Tanzania"
+    },
+    {
+      "question": 98,
+      "code": "TZA",
+      "input": "TZA",
+      "canonical": "Tanzania"
+    },
+    {
+      "question": 98,
+      "code": "UKR",
+      "input": "Ukraine",
+      "canonical": "Ukraine"
+    },
+    {
+      "question": 98,
+      "code": "UKR",
+      "input": "UA",
+      "canonical": "Ukraine"
+    },
+    {
+      "question": 98,
+      "code": "UKR",
+      "input": "UKR",
+      "canonical": "Ukraine"
+    },
+    {
+      "question": 98,
+      "code": "USA",
+      "input": "United States",
+      "canonical": "United States"
+    },
+    {
+      "question": 98,
+      "code": "USA",
+      "input": "US",
+      "canonical": "United States"
+    },
+    {
+      "question": 98,
+      "code": "USA",
+      "input": "USA",
+      "canonical": "United States"
+    },
+    {
+      "question": 98,
+      "code": "UZB",
+      "input": "Uzbekistan",
+      "canonical": "Uzbekistan"
+    },
+    {
+      "question": 98,
+      "code": "UZB",
+      "input": "UZ",
+      "canonical": "Uzbekistan"
+    },
+    {
+      "question": 98,
+      "code": "UZB",
+      "input": "UZB",
+      "canonical": "Uzbekistan"
+    },
+    {
+      "question": 98,
+      "code": "VCT",
+      "input": "Saint Vincent and the Grenadines",
+      "canonical": "Saint Vincent and the Grenadines"
+    },
+    {
+      "question": 98,
+      "code": "VCT",
+      "input": "VC",
+      "canonical": "Saint Vincent and the Grenadines"
+    },
+    {
+      "question": 98,
+      "code": "VCT",
+      "input": "VCT",
+      "canonical": "Saint Vincent and the Grenadines"
+    },
+    {
+      "question": 98,
+      "code": "VNM",
+      "input": "Vietnam",
+      "canonical": "Vietnam"
+    },
+    {
+      "question": 98,
+      "code": "VNM",
+      "input": "VN",
+      "canonical": "Vietnam"
+    },
+    {
+      "question": 98,
+      "code": "VNM",
+      "input": "VNM",
+      "canonical": "Vietnam"
+    },
+    {
+      "question": 98,
+      "code": "ZAF",
+      "input": "South Africa",
+      "canonical": "South Africa"
+    },
+    {
+      "question": 98,
+      "code": "ZAF",
+      "input": "ZA",
+      "canonical": "South Africa"
+    },
+    {
+      "question": 98,
+      "code": "ZAF",
+      "input": "ZAF",
+      "canonical": "South Africa"
+    },
+    {
+      "question": 98,
+      "code": "ZMB",
+      "input": "Zambia",
+      "canonical": "Zambia"
+    },
+    {
+      "question": 98,
+      "code": "ZMB",
+      "input": "ZM",
+      "canonical": "Zambia"
+    },
+    {
+      "question": 98,
+      "code": "ZMB",
+      "input": "ZMB",
+      "canonical": "Zambia"
+    },
+    {
+      "question": 98,
+      "code": "ZWE",
+      "input": "Zimbabwe",
+      "canonical": "Zimbabwe"
+    },
+    {
+      "question": 98,
+      "code": "ZWE",
+      "input": "ZW",
+      "canonical": "Zimbabwe"
+    },
+    {
+      "question": 98,
+      "code": "ZWE",
+      "input": "ZWE",
+      "canonical": "Zimbabwe"
+    },
+    {
+      "question": 99,
+      "code": "ALB",
+      "input": "Albania",
+      "canonical": "Albania"
+    },
+    {
+      "question": 99,
+      "code": "ALB",
+      "input": "AL",
+      "canonical": "Albania"
+    },
+    {
+      "question": 99,
+      "code": "ALB",
+      "input": "ALB",
+      "canonical": "Albania"
+    },
+    {
+      "question": 99,
+      "code": "AND",
+      "input": "Andorra",
+      "canonical": "Andorra"
+    },
+    {
+      "question": 99,
+      "code": "AND",
+      "input": "AD",
+      "canonical": "Andorra"
+    },
+    {
+      "question": 99,
+      "code": "AND",
+      "input": "AND",
+      "canonical": "Andorra"
+    },
+    {
+      "question": 99,
+      "code": "AUT",
+      "input": "Austria",
+      "canonical": "Austria"
+    },
+    {
+      "question": 99,
+      "code": "AUT",
+      "input": "AT",
+      "canonical": "Austria"
+    },
+    {
+      "question": 99,
+      "code": "AUT",
+      "input": "AUT",
+      "canonical": "Austria"
+    },
+    {
+      "question": 99,
+      "code": "BEL",
+      "input": "Belgium",
+      "canonical": "Belgium"
+    },
+    {
+      "question": 99,
+      "code": "BEL",
+      "input": "BE",
+      "canonical": "Belgium"
+    },
+    {
+      "question": 99,
+      "code": "BEL",
+      "input": "BEL",
+      "canonical": "Belgium"
+    },
+    {
+      "question": 99,
+      "code": "BGR",
+      "input": "Bulgaria",
+      "canonical": "Bulgaria"
+    },
+    {
+      "question": 99,
+      "code": "BGR",
+      "input": "BG",
+      "canonical": "Bulgaria"
+    },
+    {
+      "question": 99,
+      "code": "BGR",
+      "input": "BGR",
+      "canonical": "Bulgaria"
+    },
+    {
+      "question": 99,
+      "code": "BIH",
+      "input": "Bosnia and Herzegovina",
+      "canonical": "Bosnia and Herzegovina"
+    },
+    {
+      "question": 99,
+      "code": "BIH",
+      "input": "BA",
+      "canonical": "Bosnia and Herzegovina"
+    },
+    {
+      "question": 99,
+      "code": "BIH",
+      "input": "BIH",
+      "canonical": "Bosnia and Herzegovina"
+    },
+    {
+      "question": 99,
+      "code": "BLR",
+      "input": "Belarus",
+      "canonical": "Belarus"
+    },
+    {
+      "question": 99,
+      "code": "BLR",
+      "input": "BY",
+      "canonical": "Belarus"
+    },
+    {
+      "question": 99,
+      "code": "BLR",
+      "input": "BLR",
+      "canonical": "Belarus"
+    },
+    {
+      "question": 99,
+      "code": "CHE",
+      "input": "Switzerland",
+      "canonical": "Switzerland"
+    },
+    {
+      "question": 99,
+      "code": "CHE",
+      "input": "CH",
+      "canonical": "Switzerland"
+    },
+    {
+      "question": 99,
+      "code": "CHE",
+      "input": "CHE",
+      "canonical": "Switzerland"
+    },
+    {
+      "question": 99,
+      "code": "CYP",
+      "input": "Cyprus",
+      "canonical": "Cyprus"
+    },
+    {
+      "question": 99,
+      "code": "CYP",
+      "input": "CY",
+      "canonical": "Cyprus"
+    },
+    {
+      "question": 99,
+      "code": "CYP",
+      "input": "CYP",
+      "canonical": "Cyprus"
+    },
+    {
+      "question": 99,
+      "code": "CZE",
+      "input": "Czechia",
+      "canonical": "Czechia"
+    },
+    {
+      "question": 99,
+      "code": "CZE",
+      "input": "CZ",
+      "canonical": "Czechia"
+    },
+    {
+      "question": 99,
+      "code": "CZE",
+      "input": "CZE",
+      "canonical": "Czechia"
+    },
+    {
+      "question": 99,
+      "code": "DEU",
+      "input": "Germany",
+      "canonical": "Germany"
+    },
+    {
+      "question": 99,
+      "code": "DEU",
+      "input": "DE",
+      "canonical": "Germany"
+    },
+    {
+      "question": 99,
+      "code": "DEU",
+      "input": "DEU",
+      "canonical": "Germany"
+    },
+    {
+      "question": 99,
+      "code": "DNK",
+      "input": "Denmark",
+      "canonical": "Denmark"
+    },
+    {
+      "question": 99,
+      "code": "DNK",
+      "input": "DK",
+      "canonical": "Denmark"
+    },
+    {
+      "question": 99,
+      "code": "DNK",
+      "input": "DNK",
+      "canonical": "Denmark"
+    },
+    {
+      "question": 99,
+      "code": "ESP",
+      "input": "Spain",
+      "canonical": "Spain"
+    },
+    {
+      "question": 99,
+      "code": "ESP",
+      "input": "ES",
+      "canonical": "Spain"
+    },
+    {
+      "question": 99,
+      "code": "ESP",
+      "input": "ESP",
+      "canonical": "Spain"
+    },
+    {
+      "question": 99,
+      "code": "EST",
+      "input": "Estonia",
+      "canonical": "Estonia"
+    },
+    {
+      "question": 99,
+      "code": "EST",
+      "input": "EE",
+      "canonical": "Estonia"
+    },
+    {
+      "question": 99,
+      "code": "EST",
+      "input": "EST",
+      "canonical": "Estonia"
+    },
+    {
+      "question": 99,
+      "code": "FIN",
+      "input": "Finland",
+      "canonical": "Finland"
+    },
+    {
+      "question": 99,
+      "code": "FIN",
+      "input": "FI",
+      "canonical": "Finland"
+    },
+    {
+      "question": 99,
+      "code": "FIN",
+      "input": "FIN",
+      "canonical": "Finland"
+    },
+    {
+      "question": 99,
+      "code": "FRA",
+      "input": "France",
+      "canonical": "France"
+    },
+    {
+      "question": 99,
+      "code": "FRA",
+      "input": "FR",
+      "canonical": "France"
+    },
+    {
+      "question": 99,
+      "code": "FRA",
+      "input": "FRA",
+      "canonical": "France"
+    },
+    {
+      "question": 99,
+      "code": "GBR",
+      "input": "United Kingdom",
+      "canonical": "United Kingdom"
+    },
+    {
+      "question": 99,
+      "code": "GBR",
+      "input": "GB",
+      "canonical": "United Kingdom"
+    },
+    {
+      "question": 99,
+      "code": "GBR",
+      "input": "GBR",
+      "canonical": "United Kingdom"
+    },
+    {
+      "question": 99,
+      "code": "GRC",
+      "input": "Greece",
+      "canonical": "Greece"
+    },
+    {
+      "question": 99,
+      "code": "GRC",
+      "input": "GR",
+      "canonical": "Greece"
+    },
+    {
+      "question": 99,
+      "code": "GRC",
+      "input": "GRC",
+      "canonical": "Greece"
+    },
+    {
+      "question": 99,
+      "code": "HRV",
+      "input": "Croatia",
+      "canonical": "Croatia"
+    },
+    {
+      "question": 99,
+      "code": "HRV",
+      "input": "HR",
+      "canonical": "Croatia"
+    },
+    {
+      "question": 99,
+      "code": "HRV",
+      "input": "HRV",
+      "canonical": "Croatia"
+    },
+    {
+      "question": 99,
+      "code": "HUN",
+      "input": "Hungary",
+      "canonical": "Hungary"
+    },
+    {
+      "question": 99,
+      "code": "HUN",
+      "input": "HU",
+      "canonical": "Hungary"
+    },
+    {
+      "question": 99,
+      "code": "HUN",
+      "input": "HUN",
+      "canonical": "Hungary"
+    },
+    {
+      "question": 99,
+      "code": "IRL",
+      "input": "Ireland",
+      "canonical": "Ireland"
+    },
+    {
+      "question": 99,
+      "code": "IRL",
+      "input": "IE",
+      "canonical": "Ireland"
+    },
+    {
+      "question": 99,
+      "code": "IRL",
+      "input": "IRL",
+      "canonical": "Ireland"
+    },
+    {
+      "question": 99,
+      "code": "ISL",
+      "input": "Iceland",
+      "canonical": "Iceland"
+    },
+    {
+      "question": 99,
+      "code": "ISL",
+      "input": "IS",
+      "canonical": "Iceland"
+    },
+    {
+      "question": 99,
+      "code": "ISL",
+      "input": "ISL",
+      "canonical": "Iceland"
+    },
+    {
+      "question": 99,
+      "code": "ITA",
+      "input": "Italy",
+      "canonical": "Italy"
+    },
+    {
+      "question": 99,
+      "code": "ITA",
+      "input": "IT",
+      "canonical": "Italy"
+    },
+    {
+      "question": 99,
+      "code": "ITA",
+      "input": "ITA",
+      "canonical": "Italy"
+    },
+    {
+      "question": 99,
+      "code": "LIE",
+      "input": "Liechtenstein",
+      "canonical": "Liechtenstein"
+    },
+    {
+      "question": 99,
+      "code": "LIE",
+      "input": "LI",
+      "canonical": "Liechtenstein"
+    },
+    {
+      "question": 99,
+      "code": "LIE",
+      "input": "LIE",
+      "canonical": "Liechtenstein"
+    },
+    {
+      "question": 99,
+      "code": "LTU",
+      "input": "Lithuania",
+      "canonical": "Lithuania"
+    },
+    {
+      "question": 99,
+      "code": "LTU",
+      "input": "LT",
+      "canonical": "Lithuania"
+    },
+    {
+      "question": 99,
+      "code": "LTU",
+      "input": "LTU",
+      "canonical": "Lithuania"
+    },
+    {
+      "question": 99,
+      "code": "LUX",
+      "input": "Luxembourg",
+      "canonical": "Luxembourg"
+    },
+    {
+      "question": 99,
+      "code": "LUX",
+      "input": "LU",
+      "canonical": "Luxembourg"
+    },
+    {
+      "question": 99,
+      "code": "LUX",
+      "input": "LUX",
+      "canonical": "Luxembourg"
+    },
+    {
+      "question": 99,
+      "code": "LVA",
+      "input": "Latvia",
+      "canonical": "Latvia"
+    },
+    {
+      "question": 99,
+      "code": "LVA",
+      "input": "LV",
+      "canonical": "Latvia"
+    },
+    {
+      "question": 99,
+      "code": "LVA",
+      "input": "LVA",
+      "canonical": "Latvia"
+    },
+    {
+      "question": 99,
+      "code": "MCO",
+      "input": "Monaco",
+      "canonical": "Monaco"
+    },
+    {
+      "question": 99,
+      "code": "MCO",
+      "input": "MC",
+      "canonical": "Monaco"
+    },
+    {
+      "question": 99,
+      "code": "MCO",
+      "input": "MCO",
+      "canonical": "Monaco"
+    },
+    {
+      "question": 99,
+      "code": "MDA",
+      "input": "Moldova",
+      "canonical": "Moldova"
+    },
+    {
+      "question": 99,
+      "code": "MDA",
+      "input": "MD",
+      "canonical": "Moldova"
+    },
+    {
+      "question": 99,
+      "code": "MDA",
+      "input": "MDA",
+      "canonical": "Moldova"
+    },
+    {
+      "question": 99,
+      "code": "MKD",
+      "input": "North Macedonia",
+      "canonical": "North Macedonia"
+    },
+    {
+      "question": 99,
+      "code": "MKD",
+      "input": "MK",
+      "canonical": "North Macedonia"
+    },
+    {
+      "question": 99,
+      "code": "MKD",
+      "input": "MKD",
+      "canonical": "North Macedonia"
+    },
+    {
+      "question": 99,
+      "code": "MLT",
+      "input": "Malta",
+      "canonical": "Malta"
+    },
+    {
+      "question": 99,
+      "code": "MLT",
+      "input": "MT",
+      "canonical": "Malta"
+    },
+    {
+      "question": 99,
+      "code": "MLT",
+      "input": "MLT",
+      "canonical": "Malta"
+    },
+    {
+      "question": 99,
+      "code": "MNE",
+      "input": "Montenegro",
+      "canonical": "Montenegro"
+    },
+    {
+      "question": 99,
+      "code": "MNE",
+      "input": "ME",
+      "canonical": "Montenegro"
+    },
+    {
+      "question": 99,
+      "code": "MNE",
+      "input": "MNE",
+      "canonical": "Montenegro"
+    },
+    {
+      "question": 99,
+      "code": "NLD",
+      "input": "Netherlands",
+      "canonical": "Netherlands"
+    },
+    {
+      "question": 99,
+      "code": "NLD",
+      "input": "NL",
+      "canonical": "Netherlands"
+    },
+    {
+      "question": 99,
+      "code": "NLD",
+      "input": "NLD",
+      "canonical": "Netherlands"
+    },
+    {
+      "question": 99,
+      "code": "NOR",
+      "input": "Norway",
+      "canonical": "Norway"
+    },
+    {
+      "question": 99,
+      "code": "NOR",
+      "input": "NO",
+      "canonical": "Norway"
+    },
+    {
+      "question": 99,
+      "code": "NOR",
+      "input": "NOR",
+      "canonical": "Norway"
+    },
+    {
+      "question": 99,
+      "code": "POL",
+      "input": "Poland",
+      "canonical": "Poland"
+    },
+    {
+      "question": 99,
+      "code": "POL",
+      "input": "PL",
+      "canonical": "Poland"
+    },
+    {
+      "question": 99,
+      "code": "POL",
+      "input": "POL",
+      "canonical": "Poland"
+    },
+    {
+      "question": 99,
+      "code": "PRT",
+      "input": "Portugal",
+      "canonical": "Portugal"
+    },
+    {
+      "question": 99,
+      "code": "PRT",
+      "input": "PT",
+      "canonical": "Portugal"
+    },
+    {
+      "question": 99,
+      "code": "PRT",
+      "input": "PRT",
+      "canonical": "Portugal"
+    },
+    {
+      "question": 99,
+      "code": "ROU",
+      "input": "Romania",
+      "canonical": "Romania"
+    },
+    {
+      "question": 99,
+      "code": "ROU",
+      "input": "RO",
+      "canonical": "Romania"
+    },
+    {
+      "question": 99,
+      "code": "ROU",
+      "input": "ROU",
+      "canonical": "Romania"
+    },
+    {
+      "question": 99,
+      "code": "RUS",
+      "input": "Russia",
+      "canonical": "Russia"
+    },
+    {
+      "question": 99,
+      "code": "RUS",
+      "input": "RU",
+      "canonical": "Russia"
+    },
+    {
+      "question": 99,
+      "code": "RUS",
+      "input": "RUS",
+      "canonical": "Russia"
+    },
+    {
+      "question": 99,
+      "code": "SMR",
+      "input": "San Marino",
+      "canonical": "San Marino"
+    },
+    {
+      "question": 99,
+      "code": "SMR",
+      "input": "SM",
+      "canonical": "San Marino"
+    },
+    {
+      "question": 99,
+      "code": "SMR",
+      "input": "SMR",
+      "canonical": "San Marino"
+    },
+    {
+      "question": 99,
+      "code": "SRB",
+      "input": "Serbia",
+      "canonical": "Serbia"
+    },
+    {
+      "question": 99,
+      "code": "SRB",
+      "input": "RS",
+      "canonical": "Serbia"
+    },
+    {
+      "question": 99,
+      "code": "SRB",
+      "input": "SRB",
+      "canonical": "Serbia"
+    },
+    {
+      "question": 99,
+      "code": "SVK",
+      "input": "Slovakia",
+      "canonical": "Slovakia"
+    },
+    {
+      "question": 99,
+      "code": "SVK",
+      "input": "SK",
+      "canonical": "Slovakia"
+    },
+    {
+      "question": 99,
+      "code": "SVK",
+      "input": "SVK",
+      "canonical": "Slovakia"
+    },
+    {
+      "question": 99,
+      "code": "SVN",
+      "input": "Slovenia",
+      "canonical": "Slovenia"
+    },
+    {
+      "question": 99,
+      "code": "SVN",
+      "input": "SI",
+      "canonical": "Slovenia"
+    },
+    {
+      "question": 99,
+      "code": "SVN",
+      "input": "SVN",
+      "canonical": "Slovenia"
+    },
+    {
+      "question": 99,
+      "code": "SWE",
+      "input": "Sweden",
+      "canonical": "Sweden"
+    },
+    {
+      "question": 99,
+      "code": "SWE",
+      "input": "SE",
+      "canonical": "Sweden"
+    },
+    {
+      "question": 99,
+      "code": "SWE",
+      "input": "SWE",
+      "canonical": "Sweden"
+    },
+    {
+      "question": 99,
+      "code": "UKR",
+      "input": "Ukraine",
+      "canonical": "Ukraine"
+    },
+    {
+      "question": 99,
+      "code": "UKR",
+      "input": "UA",
+      "canonical": "Ukraine"
+    },
+    {
+      "question": 99,
+      "code": "UKR",
+      "input": "UKR",
+      "canonical": "Ukraine"
+    }
+  ],
+  "caspianOnly": [
+    "Azerbaijan",
+    "Kazakhstan",
+    "Turkmenistan"
+  ],
+  "observations": [
+    "Jordan has a Red Sea coast and was missing.",
+    "Zambia must not be corrected to Gambia on new coastline questions."
+  ],
+  "aliasesAdded": [
+    {
+      "question": 97,
+      "input": "AO",
+      "canonical": "Angola"
+    },
+    {
+      "question": 97,
+      "input": "AGO",
+      "canonical": "Angola"
+    },
+    {
+      "question": 97,
+      "input": "AL",
+      "canonical": "Albania"
+    },
+    {
+      "question": 97,
+      "input": "ALB",
+      "canonical": "Albania"
+    },
+    {
+      "question": 97,
+      "input": "AE",
+      "canonical": "United Arab Emirates"
+    },
+    {
+      "question": 97,
+      "input": "ARE",
+      "canonical": "United Arab Emirates"
+    },
+    {
+      "question": 97,
+      "input": "AR",
+      "canonical": "Argentina"
+    },
+    {
+      "question": 97,
+      "input": "ARG",
+      "canonical": "Argentina"
+    },
+    {
+      "question": 97,
+      "input": "AG",
+      "canonical": "Antigua and Barbuda"
+    },
+    {
+      "question": 97,
+      "input": "ATG",
+      "canonical": "Antigua and Barbuda"
+    },
+    {
+      "question": 97,
+      "input": "AU",
+      "canonical": "Australia"
+    },
+    {
+      "question": 97,
+      "input": "AUS",
+      "canonical": "Australia"
+    },
+    {
+      "question": 97,
+      "input": "BE",
+      "canonical": "Belgium"
+    },
+    {
+      "question": 97,
+      "input": "BEL",
+      "canonical": "Belgium"
+    },
+    {
+      "question": 97,
+      "input": "BJ",
+      "canonical": "Benin"
+    },
+    {
+      "question": 97,
+      "input": "BEN",
+      "canonical": "Benin"
+    },
+    {
+      "question": 97,
+      "input": "BD",
+      "canonical": "Bangladesh"
+    },
+    {
+      "question": 97,
+      "input": "BGD",
+      "canonical": "Bangladesh"
+    },
+    {
+      "question": 97,
+      "input": "BG",
+      "canonical": "Bulgaria"
+    },
+    {
+      "question": 97,
+      "input": "BGR",
+      "canonical": "Bulgaria"
+    },
+    {
+      "question": 97,
+      "input": "BH",
+      "canonical": "Bahrain"
+    },
+    {
+      "question": 97,
+      "input": "BHR",
+      "canonical": "Bahrain"
+    },
+    {
+      "question": 97,
+      "input": "BS",
+      "canonical": "Bahamas"
+    },
+    {
+      "question": 97,
+      "input": "BHS",
+      "canonical": "Bahamas"
+    },
+    {
+      "question": 97,
+      "input": "BA",
+      "canonical": "Bosnia and Herzegovina"
+    },
+    {
+      "question": 97,
+      "input": "BIH",
+      "canonical": "Bosnia and Herzegovina"
+    },
+    {
+      "question": 97,
+      "input": "BZ",
+      "canonical": "Belize"
+    },
+    {
+      "question": 97,
+      "input": "BLZ",
+      "canonical": "Belize"
+    },
+    {
+      "question": 97,
+      "input": "BR",
+      "canonical": "Brazil"
+    },
+    {
+      "question": 97,
+      "input": "BRA",
+      "canonical": "Brazil"
+    },
+    {
+      "question": 97,
+      "input": "BB",
+      "canonical": "Barbados"
+    },
+    {
+      "question": 97,
+      "input": "BRB",
+      "canonical": "Barbados"
+    },
+    {
+      "question": 97,
+      "input": "BN",
+      "canonical": "Brunei"
+    },
+    {
+      "question": 97,
+      "input": "BRN",
+      "canonical": "Brunei"
+    },
+    {
+      "question": 97,
+      "input": "CA",
+      "canonical": "Canada"
+    },
+    {
+      "question": 97,
+      "input": "CAN",
+      "canonical": "Canada"
+    },
+    {
+      "question": 97,
+      "input": "CL",
+      "canonical": "Chile"
+    },
+    {
+      "question": 97,
+      "input": "CHL",
+      "canonical": "Chile"
+    },
+    {
+      "question": 97,
+      "input": "CN",
+      "canonical": "China"
+    },
+    {
+      "question": 97,
+      "input": "CHN",
+      "canonical": "China"
+    },
+    {
+      "question": 97,
+      "input": "CI",
+      "canonical": "Ivory Coast"
+    },
+    {
+      "question": 97,
+      "input": "CIV",
+      "canonical": "Ivory Coast"
+    },
+    {
+      "question": 97,
+      "input": "CM",
+      "canonical": "Cameroon"
+    },
+    {
+      "question": 97,
+      "input": "CMR",
+      "canonical": "Cameroon"
+    },
+    {
+      "question": 97,
+      "input": "CD",
+      "canonical": "Democratic Republic of the Congo"
+    },
+    {
+      "question": 97,
+      "input": "COD",
+      "canonical": "Democratic Republic of the Congo"
+    },
+    {
+      "question": 97,
+      "input": "Congo",
+      "canonical": "Republic of the Congo"
+    },
+    {
+      "question": 97,
+      "input": "CG",
+      "canonical": "Republic of the Congo"
+    },
+    {
+      "question": 97,
+      "input": "COG",
+      "canonical": "Republic of the Congo"
+    },
+    {
+      "question": 97,
+      "input": "CO",
+      "canonical": "Colombia"
+    },
+    {
+      "question": 97,
+      "input": "COL",
+      "canonical": "Colombia"
+    },
+    {
+      "question": 97,
+      "input": "KM",
+      "canonical": "Comoros"
+    },
+    {
+      "question": 97,
+      "input": "COM",
+      "canonical": "Comoros"
+    },
+    {
+      "question": 97,
+      "input": "CV",
+      "canonical": "Cape Verde"
+    },
+    {
+      "question": 97,
+      "input": "CPV",
+      "canonical": "Cape Verde"
+    },
+    {
+      "question": 97,
+      "input": "CR",
+      "canonical": "Costa Rica"
+    },
+    {
+      "question": 97,
+      "input": "CRI",
+      "canonical": "Costa Rica"
+    },
+    {
+      "question": 97,
+      "input": "CU",
+      "canonical": "Cuba"
+    },
+    {
+      "question": 97,
+      "input": "CUB",
+      "canonical": "Cuba"
+    },
+    {
+      "question": 97,
+      "input": "CY",
+      "canonical": "Cyprus"
+    },
+    {
+      "question": 97,
+      "input": "CYP",
+      "canonical": "Cyprus"
+    },
+    {
+      "question": 97,
+      "input": "DE",
+      "canonical": "Germany"
+    },
+    {
+      "question": 97,
+      "input": "DEU",
+      "canonical": "Germany"
+    },
+    {
+      "question": 97,
+      "input": "DJ",
+      "canonical": "Djibouti"
+    },
+    {
+      "question": 97,
+      "input": "DJI",
+      "canonical": "Djibouti"
+    },
+    {
+      "question": 97,
+      "input": "DM",
+      "canonical": "Dominica"
+    },
+    {
+      "question": 97,
+      "input": "DMA",
+      "canonical": "Dominica"
+    },
+    {
+      "question": 97,
+      "input": "DK",
+      "canonical": "Denmark"
+    },
+    {
+      "question": 97,
+      "input": "DNK",
+      "canonical": "Denmark"
+    },
+    {
+      "question": 97,
+      "input": "DO",
+      "canonical": "Dominican Republic"
+    },
+    {
+      "question": 97,
+      "input": "DOM",
+      "canonical": "Dominican Republic"
+    },
+    {
+      "question": 97,
+      "input": "DZ",
+      "canonical": "Algeria"
+    },
+    {
+      "question": 97,
+      "input": "DZA",
+      "canonical": "Algeria"
+    },
+    {
+      "question": 97,
+      "input": "EC",
+      "canonical": "Ecuador"
+    },
+    {
+      "question": 97,
+      "input": "ECU",
+      "canonical": "Ecuador"
+    },
+    {
+      "question": 97,
+      "input": "EG",
+      "canonical": "Egypt"
+    },
+    {
+      "question": 97,
+      "input": "EGY",
+      "canonical": "Egypt"
+    },
+    {
+      "question": 97,
+      "input": "ER",
+      "canonical": "Eritrea"
+    },
+    {
+      "question": 97,
+      "input": "ERI",
+      "canonical": "Eritrea"
+    },
+    {
+      "question": 97,
+      "input": "ES",
+      "canonical": "Spain"
+    },
+    {
+      "question": 97,
+      "input": "ESP",
+      "canonical": "Spain"
+    },
+    {
+      "question": 97,
+      "input": "EE",
+      "canonical": "Estonia"
+    },
+    {
+      "question": 97,
+      "input": "EST",
+      "canonical": "Estonia"
+    },
+    {
+      "question": 97,
+      "input": "FI",
+      "canonical": "Finland"
+    },
+    {
+      "question": 97,
+      "input": "FIN",
+      "canonical": "Finland"
+    },
+    {
+      "question": 97,
+      "input": "FJ",
+      "canonical": "Fiji"
+    },
+    {
+      "question": 97,
+      "input": "FJI",
+      "canonical": "Fiji"
+    },
+    {
+      "question": 97,
+      "input": "FR",
+      "canonical": "France"
+    },
+    {
+      "question": 97,
+      "input": "FRA",
+      "canonical": "France"
+    },
+    {
+      "question": 97,
+      "input": "FM",
+      "canonical": "Micronesia"
+    },
+    {
+      "question": 97,
+      "input": "FSM",
+      "canonical": "Micronesia"
+    },
+    {
+      "question": 97,
+      "input": "GA",
+      "canonical": "Gabon"
+    },
+    {
+      "question": 97,
+      "input": "GAB",
+      "canonical": "Gabon"
+    },
+    {
+      "question": 97,
+      "input": "GB",
+      "canonical": "United Kingdom"
+    },
+    {
+      "question": 97,
+      "input": "GBR",
+      "canonical": "United Kingdom"
+    },
+    {
+      "question": 97,
+      "input": "GE",
+      "canonical": "Georgia"
+    },
+    {
+      "question": 97,
+      "input": "GEO",
+      "canonical": "Georgia"
+    },
+    {
+      "question": 97,
+      "input": "GH",
+      "canonical": "Ghana"
+    },
+    {
+      "question": 97,
+      "input": "GHA",
+      "canonical": "Ghana"
+    },
+    {
+      "question": 97,
+      "input": "GN",
+      "canonical": "Guinea"
+    },
+    {
+      "question": 97,
+      "input": "GIN",
+      "canonical": "Guinea"
+    },
+    {
+      "question": 97,
+      "input": "GM",
+      "canonical": "Gambia"
+    },
+    {
+      "question": 97,
+      "input": "GMB",
+      "canonical": "Gambia"
+    },
+    {
+      "question": 97,
+      "input": "GW",
+      "canonical": "Guinea-Bissau"
+    },
+    {
+      "question": 97,
+      "input": "GNB",
+      "canonical": "Guinea-Bissau"
+    },
+    {
+      "question": 97,
+      "input": "GQ",
+      "canonical": "Equatorial Guinea"
+    },
+    {
+      "question": 97,
+      "input": "GNQ",
+      "canonical": "Equatorial Guinea"
+    },
+    {
+      "question": 97,
+      "input": "GR",
+      "canonical": "Greece"
+    },
+    {
+      "question": 97,
+      "input": "GRC",
+      "canonical": "Greece"
+    },
+    {
+      "question": 97,
+      "input": "GD",
+      "canonical": "Grenada"
+    },
+    {
+      "question": 97,
+      "input": "GRD",
+      "canonical": "Grenada"
+    },
+    {
+      "question": 97,
+      "input": "GT",
+      "canonical": "Guatemala"
+    },
+    {
+      "question": 97,
+      "input": "GTM",
+      "canonical": "Guatemala"
+    },
+    {
+      "question": 97,
+      "input": "GY",
+      "canonical": "Guyana"
+    },
+    {
+      "question": 97,
+      "input": "GUY",
+      "canonical": "Guyana"
+    },
+    {
+      "question": 97,
+      "input": "HN",
+      "canonical": "Honduras"
+    },
+    {
+      "question": 97,
+      "input": "HND",
+      "canonical": "Honduras"
+    },
+    {
+      "question": 97,
+      "input": "HR",
+      "canonical": "Croatia"
+    },
+    {
+      "question": 97,
+      "input": "HRV",
+      "canonical": "Croatia"
+    },
+    {
+      "question": 97,
+      "input": "HT",
+      "canonical": "Haiti"
+    },
+    {
+      "question": 97,
+      "input": "HTI",
+      "canonical": "Haiti"
+    },
+    {
+      "question": 97,
+      "input": "ID",
+      "canonical": "Indonesia"
+    },
+    {
+      "question": 97,
+      "input": "IDN",
+      "canonical": "Indonesia"
+    },
+    {
+      "question": 97,
+      "input": "IN",
+      "canonical": "India"
+    },
+    {
+      "question": 97,
+      "input": "IND",
+      "canonical": "India"
+    },
+    {
+      "question": 97,
+      "input": "IE",
+      "canonical": "Ireland"
+    },
+    {
+      "question": 97,
+      "input": "IRL",
+      "canonical": "Ireland"
+    },
+    {
+      "question": 97,
+      "input": "IR",
+      "canonical": "Iran"
+    },
+    {
+      "question": 97,
+      "input": "IRN",
+      "canonical": "Iran"
+    },
+    {
+      "question": 97,
+      "input": "IQ",
+      "canonical": "Iraq"
+    },
+    {
+      "question": 97,
+      "input": "IRQ",
+      "canonical": "Iraq"
+    },
+    {
+      "question": 97,
+      "input": "IS",
+      "canonical": "Iceland"
+    },
+    {
+      "question": 97,
+      "input": "ISL",
+      "canonical": "Iceland"
+    },
+    {
+      "question": 97,
+      "input": "IL",
+      "canonical": "Israel"
+    },
+    {
+      "question": 97,
+      "input": "ISR",
+      "canonical": "Israel"
+    },
+    {
+      "question": 97,
+      "input": "IT",
+      "canonical": "Italy"
+    },
+    {
+      "question": 97,
+      "input": "ITA",
+      "canonical": "Italy"
+    },
+    {
+      "question": 97,
+      "input": "JM",
+      "canonical": "Jamaica"
+    },
+    {
+      "question": 97,
+      "input": "JAM",
+      "canonical": "Jamaica"
+    },
+    {
+      "question": 97,
+      "input": "JO",
+      "canonical": "Jordan"
+    },
+    {
+      "question": 97,
+      "input": "JOR",
+      "canonical": "Jordan"
+    },
+    {
+      "question": 97,
+      "input": "JP",
+      "canonical": "Japan"
+    },
+    {
+      "question": 97,
+      "input": "JPN",
+      "canonical": "Japan"
+    },
+    {
+      "question": 97,
+      "input": "KE",
+      "canonical": "Kenya"
+    },
+    {
+      "question": 97,
+      "input": "KEN",
+      "canonical": "Kenya"
+    },
+    {
+      "question": 97,
+      "input": "KH",
+      "canonical": "Cambodia"
+    },
+    {
+      "question": 97,
+      "input": "KHM",
+      "canonical": "Cambodia"
+    },
+    {
+      "question": 97,
+      "input": "KI",
+      "canonical": "Kiribati"
+    },
+    {
+      "question": 97,
+      "input": "KIR",
+      "canonical": "Kiribati"
+    },
+    {
+      "question": 97,
+      "input": "KN",
+      "canonical": "Saint Kitts and Nevis"
+    },
+    {
+      "question": 97,
+      "input": "KNA",
+      "canonical": "Saint Kitts and Nevis"
+    },
+    {
+      "question": 97,
+      "input": "KR",
+      "canonical": "South Korea"
+    },
+    {
+      "question": 97,
+      "input": "KOR",
+      "canonical": "South Korea"
+    },
+    {
+      "question": 97,
+      "input": "KW",
+      "canonical": "Kuwait"
+    },
+    {
+      "question": 97,
+      "input": "KWT",
+      "canonical": "Kuwait"
+    },
+    {
+      "question": 97,
+      "input": "LB",
+      "canonical": "Lebanon"
+    },
+    {
+      "question": 97,
+      "input": "LBN",
+      "canonical": "Lebanon"
+    },
+    {
+      "question": 97,
+      "input": "LR",
+      "canonical": "Liberia"
+    },
+    {
+      "question": 97,
+      "input": "LBR",
+      "canonical": "Liberia"
+    },
+    {
+      "question": 97,
+      "input": "LY",
+      "canonical": "Libya"
+    },
+    {
+      "question": 97,
+      "input": "LBY",
+      "canonical": "Libya"
+    },
+    {
+      "question": 97,
+      "input": "LC",
+      "canonical": "Saint Lucia"
+    },
+    {
+      "question": 97,
+      "input": "LCA",
+      "canonical": "Saint Lucia"
+    },
+    {
+      "question": 97,
+      "input": "LK",
+      "canonical": "Sri Lanka"
+    },
+    {
+      "question": 97,
+      "input": "LKA",
+      "canonical": "Sri Lanka"
+    },
+    {
+      "question": 97,
+      "input": "LT",
+      "canonical": "Lithuania"
+    },
+    {
+      "question": 97,
+      "input": "LTU",
+      "canonical": "Lithuania"
+    },
+    {
+      "question": 97,
+      "input": "LV",
+      "canonical": "Latvia"
+    },
+    {
+      "question": 97,
+      "input": "LVA",
+      "canonical": "Latvia"
+    },
+    {
+      "question": 97,
+      "input": "MA",
+      "canonical": "Morocco"
+    },
+    {
+      "question": 97,
+      "input": "MAR",
+      "canonical": "Morocco"
+    },
+    {
+      "question": 97,
+      "input": "MC",
+      "canonical": "Monaco"
+    },
+    {
+      "question": 97,
+      "input": "MCO",
+      "canonical": "Monaco"
+    },
+    {
+      "question": 97,
+      "input": "MG",
+      "canonical": "Madagascar"
+    },
+    {
+      "question": 97,
+      "input": "MDG",
+      "canonical": "Madagascar"
+    },
+    {
+      "question": 97,
+      "input": "MV",
+      "canonical": "Maldives"
+    },
+    {
+      "question": 97,
+      "input": "MDV",
+      "canonical": "Maldives"
+    },
+    {
+      "question": 97,
+      "input": "MX",
+      "canonical": "Mexico"
+    },
+    {
+      "question": 97,
+      "input": "MEX",
+      "canonical": "Mexico"
+    },
+    {
+      "question": 97,
+      "input": "MH",
+      "canonical": "Marshall Islands"
+    },
+    {
+      "question": 97,
+      "input": "MHL",
+      "canonical": "Marshall Islands"
+    },
+    {
+      "question": 97,
+      "input": "MT",
+      "canonical": "Malta"
+    },
+    {
+      "question": 97,
+      "input": "MLT",
+      "canonical": "Malta"
+    },
+    {
+      "question": 97,
+      "input": "MM",
+      "canonical": "Myanmar"
+    },
+    {
+      "question": 97,
+      "input": "MMR",
+      "canonical": "Myanmar"
+    },
+    {
+      "question": 97,
+      "input": "ME",
+      "canonical": "Montenegro"
+    },
+    {
+      "question": 97,
+      "input": "MNE",
+      "canonical": "Montenegro"
+    },
+    {
+      "question": 97,
+      "input": "MZ",
+      "canonical": "Mozambique"
+    },
+    {
+      "question": 97,
+      "input": "MOZ",
+      "canonical": "Mozambique"
+    },
+    {
+      "question": 97,
+      "input": "MR",
+      "canonical": "Mauritania"
+    },
+    {
+      "question": 97,
+      "input": "MRT",
+      "canonical": "Mauritania"
+    },
+    {
+      "question": 97,
+      "input": "MU",
+      "canonical": "Mauritius"
+    },
+    {
+      "question": 97,
+      "input": "MUS",
+      "canonical": "Mauritius"
+    },
+    {
+      "question": 97,
+      "input": "MY",
+      "canonical": "Malaysia"
+    },
+    {
+      "question": 97,
+      "input": "MYS",
+      "canonical": "Malaysia"
+    },
+    {
+      "question": 97,
+      "input": "NA",
+      "canonical": "Namibia"
+    },
+    {
+      "question": 97,
+      "input": "NAM",
+      "canonical": "Namibia"
+    },
+    {
+      "question": 97,
+      "input": "NG",
+      "canonical": "Nigeria"
+    },
+    {
+      "question": 97,
+      "input": "NGA",
+      "canonical": "Nigeria"
+    },
+    {
+      "question": 97,
+      "input": "NI",
+      "canonical": "Nicaragua"
+    },
+    {
+      "question": 97,
+      "input": "NIC",
+      "canonical": "Nicaragua"
+    },
+    {
+      "question": 97,
+      "input": "NL",
+      "canonical": "Netherlands"
+    },
+    {
+      "question": 97,
+      "input": "NLD",
+      "canonical": "Netherlands"
+    },
+    {
+      "question": 97,
+      "input": "NO",
+      "canonical": "Norway"
+    },
+    {
+      "question": 97,
+      "input": "NOR",
+      "canonical": "Norway"
+    },
+    {
+      "question": 97,
+      "input": "NR",
+      "canonical": "Nauru"
+    },
+    {
+      "question": 97,
+      "input": "NRU",
+      "canonical": "Nauru"
+    },
+    {
+      "question": 97,
+      "input": "NZ",
+      "canonical": "New Zealand"
+    },
+    {
+      "question": 97,
+      "input": "NZL",
+      "canonical": "New Zealand"
+    },
+    {
+      "question": 97,
+      "input": "OM",
+      "canonical": "Oman"
+    },
+    {
+      "question": 97,
+      "input": "OMN",
+      "canonical": "Oman"
+    },
+    {
+      "question": 97,
+      "input": "PK",
+      "canonical": "Pakistan"
+    },
+    {
+      "question": 97,
+      "input": "PAK",
+      "canonical": "Pakistan"
+    },
+    {
+      "question": 97,
+      "input": "PA",
+      "canonical": "Panama"
+    },
+    {
+      "question": 97,
+      "input": "PAN",
+      "canonical": "Panama"
+    },
+    {
+      "question": 97,
+      "input": "PE",
+      "canonical": "Peru"
+    },
+    {
+      "question": 97,
+      "input": "PER",
+      "canonical": "Peru"
+    },
+    {
+      "question": 97,
+      "input": "PH",
+      "canonical": "Philippines"
+    },
+    {
+      "question": 97,
+      "input": "PHL",
+      "canonical": "Philippines"
+    },
+    {
+      "question": 97,
+      "input": "PW",
+      "canonical": "Palau"
+    },
+    {
+      "question": 97,
+      "input": "PLW",
+      "canonical": "Palau"
+    },
+    {
+      "question": 97,
+      "input": "PG",
+      "canonical": "Papua New Guinea"
+    },
+    {
+      "question": 97,
+      "input": "PNG",
+      "canonical": "Papua New Guinea"
+    },
+    {
+      "question": 97,
+      "input": "PL",
+      "canonical": "Poland"
+    },
+    {
+      "question": 97,
+      "input": "POL",
+      "canonical": "Poland"
+    },
+    {
+      "question": 97,
+      "input": "KP",
+      "canonical": "North Korea"
+    },
+    {
+      "question": 97,
+      "input": "PRK",
+      "canonical": "North Korea"
+    },
+    {
+      "question": 97,
+      "input": "PT",
+      "canonical": "Portugal"
+    },
+    {
+      "question": 97,
+      "input": "PRT",
+      "canonical": "Portugal"
+    },
+    {
+      "question": 97,
+      "input": "QA",
+      "canonical": "Qatar"
+    },
+    {
+      "question": 97,
+      "input": "QAT",
+      "canonical": "Qatar"
+    },
+    {
+      "question": 97,
+      "input": "RO",
+      "canonical": "Romania"
+    },
+    {
+      "question": 97,
+      "input": "ROU",
+      "canonical": "Romania"
+    },
+    {
+      "question": 97,
+      "input": "RU",
+      "canonical": "Russia"
+    },
+    {
+      "question": 97,
+      "input": "RUS",
+      "canonical": "Russia"
+    },
+    {
+      "question": 97,
+      "input": "SA",
+      "canonical": "Saudi Arabia"
+    },
+    {
+      "question": 97,
+      "input": "SAU",
+      "canonical": "Saudi Arabia"
+    },
+    {
+      "question": 97,
+      "input": "SD",
+      "canonical": "Sudan"
+    },
+    {
+      "question": 97,
+      "input": "SDN",
+      "canonical": "Sudan"
+    },
+    {
+      "question": 97,
+      "input": "SN",
+      "canonical": "Senegal"
+    },
+    {
+      "question": 97,
+      "input": "SEN",
+      "canonical": "Senegal"
+    },
+    {
+      "question": 97,
+      "input": "SG",
+      "canonical": "Singapore"
+    },
+    {
+      "question": 97,
+      "input": "SGP",
+      "canonical": "Singapore"
+    },
+    {
+      "question": 97,
+      "input": "SB",
+      "canonical": "Solomon Islands"
+    },
+    {
+      "question": 97,
+      "input": "SLB",
+      "canonical": "Solomon Islands"
+    },
+    {
+      "question": 97,
+      "input": "SL",
+      "canonical": "Sierra Leone"
+    },
+    {
+      "question": 97,
+      "input": "SLE",
+      "canonical": "Sierra Leone"
+    },
+    {
+      "question": 97,
+      "input": "SV",
+      "canonical": "El Salvador"
+    },
+    {
+      "question": 97,
+      "input": "SLV",
+      "canonical": "El Salvador"
+    },
+    {
+      "question": 97,
+      "input": "SO",
+      "canonical": "Somalia"
+    },
+    {
+      "question": 97,
+      "input": "SOM",
+      "canonical": "Somalia"
+    },
+    {
+      "question": 97,
+      "input": "ST",
+      "canonical": "Sao Tome and Principe"
+    },
+    {
+      "question": 97,
+      "input": "STP",
+      "canonical": "Sao Tome and Principe"
+    },
+    {
+      "question": 97,
+      "input": "SR",
+      "canonical": "Suriname"
+    },
+    {
+      "question": 97,
+      "input": "SUR",
+      "canonical": "Suriname"
+    },
+    {
+      "question": 97,
+      "input": "SI",
+      "canonical": "Slovenia"
+    },
+    {
+      "question": 97,
+      "input": "SVN",
+      "canonical": "Slovenia"
+    },
+    {
+      "question": 97,
+      "input": "SE",
+      "canonical": "Sweden"
+    },
+    {
+      "question": 97,
+      "input": "SWE",
+      "canonical": "Sweden"
+    },
+    {
+      "question": 97,
+      "input": "SC",
+      "canonical": "Seychelles"
+    },
+    {
+      "question": 97,
+      "input": "SYC",
+      "canonical": "Seychelles"
+    },
+    {
+      "question": 97,
+      "input": "SY",
+      "canonical": "Syria"
+    },
+    {
+      "question": 97,
+      "input": "SYR",
+      "canonical": "Syria"
+    },
+    {
+      "question": 97,
+      "input": "TG",
+      "canonical": "Togo"
+    },
+    {
+      "question": 97,
+      "input": "TGO",
+      "canonical": "Togo"
+    },
+    {
+      "question": 97,
+      "input": "TH",
+      "canonical": "Thailand"
+    },
+    {
+      "question": 97,
+      "input": "THA",
+      "canonical": "Thailand"
+    },
+    {
+      "question": 97,
+      "input": "TL",
+      "canonical": "Timor-Leste"
+    },
+    {
+      "question": 97,
+      "input": "TLS",
+      "canonical": "Timor-Leste"
+    },
+    {
+      "question": 97,
+      "input": "TO",
+      "canonical": "Tonga"
+    },
+    {
+      "question": 97,
+      "input": "TON",
+      "canonical": "Tonga"
+    },
+    {
+      "question": 97,
+      "input": "TT",
+      "canonical": "Trinidad and Tobago"
+    },
+    {
+      "question": 97,
+      "input": "TTO",
+      "canonical": "Trinidad and Tobago"
+    },
+    {
+      "question": 97,
+      "input": "TN",
+      "canonical": "Tunisia"
+    },
+    {
+      "question": 97,
+      "input": "TUN",
+      "canonical": "Tunisia"
+    },
+    {
+      "question": 97,
+      "input": "TR",
+      "canonical": "Turkey"
+    },
+    {
+      "question": 97,
+      "input": "TUR",
+      "canonical": "Turkey"
+    },
+    {
+      "question": 97,
+      "input": "TV",
+      "canonical": "Tuvalu"
+    },
+    {
+      "question": 97,
+      "input": "TUV",
+      "canonical": "Tuvalu"
+    },
+    {
+      "question": 97,
+      "input": "TZ",
+      "canonical": "Tanzania"
+    },
+    {
+      "question": 97,
+      "input": "TZA",
+      "canonical": "Tanzania"
+    },
+    {
+      "question": 97,
+      "input": "UA",
+      "canonical": "Ukraine"
+    },
+    {
+      "question": 97,
+      "input": "UKR",
+      "canonical": "Ukraine"
+    },
+    {
+      "question": 97,
+      "input": "UY",
+      "canonical": "Uruguay"
+    },
+    {
+      "question": 97,
+      "input": "URY",
+      "canonical": "Uruguay"
+    },
+    {
+      "question": 97,
+      "input": "VC",
+      "canonical": "Saint Vincent and the Grenadines"
+    },
+    {
+      "question": 97,
+      "input": "VCT",
+      "canonical": "Saint Vincent and the Grenadines"
+    },
+    {
+      "question": 97,
+      "input": "VE",
+      "canonical": "Venezuela"
+    },
+    {
+      "question": 97,
+      "input": "VEN",
+      "canonical": "Venezuela"
+    },
+    {
+      "question": 97,
+      "input": "VN",
+      "canonical": "Vietnam"
+    },
+    {
+      "question": 97,
+      "input": "VNM",
+      "canonical": "Vietnam"
+    },
+    {
+      "question": 97,
+      "input": "VU",
+      "canonical": "Vanuatu"
+    },
+    {
+      "question": 97,
+      "input": "VUT",
+      "canonical": "Vanuatu"
+    },
+    {
+      "question": 97,
+      "input": "WS",
+      "canonical": "Samoa"
+    },
+    {
+      "question": 97,
+      "input": "WSM",
+      "canonical": "Samoa"
+    },
+    {
+      "question": 97,
+      "input": "YE",
+      "canonical": "Yemen"
+    },
+    {
+      "question": 97,
+      "input": "YEM",
+      "canonical": "Yemen"
+    },
+    {
+      "question": 97,
+      "input": "ZA",
+      "canonical": "South Africa"
+    },
+    {
+      "question": 97,
+      "input": "ZAF",
+      "canonical": "South Africa"
+    },
+    {
+      "question": 98,
+      "input": "AF",
+      "canonical": "Afghanistan"
+    },
+    {
+      "question": 98,
+      "input": "AFG",
+      "canonical": "Afghanistan"
+    },
+    {
+      "question": 98,
+      "input": "AL",
+      "canonical": "Albania"
+    },
+    {
+      "question": 98,
+      "input": "ALB",
+      "canonical": "Albania"
+    },
+    {
+      "question": 98,
+      "input": "AE",
+      "canonical": "United Arab Emirates"
+    },
+    {
+      "question": 98,
+      "input": "ARE",
+      "canonical": "United Arab Emirates"
+    },
+    {
+      "question": 98,
+      "input": "AR",
+      "canonical": "Argentina"
+    },
+    {
+      "question": 98,
+      "input": "ARG",
+      "canonical": "Argentina"
+    },
+    {
+      "question": 98,
+      "input": "AM",
+      "canonical": "Armenia"
+    },
+    {
+      "question": 98,
+      "input": "ARM",
+      "canonical": "Armenia"
+    },
+    {
+      "question": 98,
+      "input": "AG",
+      "canonical": "Antigua and Barbuda"
+    },
+    {
+      "question": 98,
+      "input": "ATG",
+      "canonical": "Antigua and Barbuda"
+    },
+    {
+      "question": 98,
+      "input": "AU",
+      "canonical": "Australia"
+    },
+    {
+      "question": 98,
+      "input": "AUS",
+      "canonical": "Australia"
+    },
+    {
+      "question": 98,
+      "input": "AT",
+      "canonical": "Austria"
+    },
+    {
+      "question": 98,
+      "input": "AUT",
+      "canonical": "Austria"
+    },
+    {
+      "question": 98,
+      "input": "AZ",
+      "canonical": "Azerbaijan"
+    },
+    {
+      "question": 98,
+      "input": "AZE",
+      "canonical": "Azerbaijan"
+    },
+    {
+      "question": 98,
+      "input": "BI",
+      "canonical": "Burundi"
+    },
+    {
+      "question": 98,
+      "input": "BDI",
+      "canonical": "Burundi"
+    },
+    {
+      "question": 98,
+      "input": "BE",
+      "canonical": "Belgium"
+    },
+    {
+      "question": 98,
+      "input": "BEL",
+      "canonical": "Belgium"
+    },
+    {
+      "question": 98,
+      "input": "BJ",
+      "canonical": "Benin"
+    },
+    {
+      "question": 98,
+      "input": "BEN",
+      "canonical": "Benin"
+    },
+    {
+      "question": 98,
+      "input": "BF",
+      "canonical": "Burkina Faso"
+    },
+    {
+      "question": 98,
+      "input": "BFA",
+      "canonical": "Burkina Faso"
+    },
+    {
+      "question": 98,
+      "input": "BG",
+      "canonical": "Bulgaria"
+    },
+    {
+      "question": 98,
+      "input": "BGR",
+      "canonical": "Bulgaria"
+    },
+    {
+      "question": 98,
+      "input": "BH",
+      "canonical": "Bahrain"
+    },
+    {
+      "question": 98,
+      "input": "BHR",
+      "canonical": "Bahrain"
+    },
+    {
+      "question": 98,
+      "input": "BA",
+      "canonical": "Bosnia and Herzegovina"
+    },
+    {
+      "question": 98,
+      "input": "BIH",
+      "canonical": "Bosnia and Herzegovina"
+    },
+    {
+      "question": 98,
+      "input": "BZ",
+      "canonical": "Belize"
+    },
+    {
+      "question": 98,
+      "input": "BLZ",
+      "canonical": "Belize"
+    },
+    {
+      "question": 98,
+      "input": "BO",
+      "canonical": "Bolivia"
+    },
+    {
+      "question": 98,
+      "input": "BOL",
+      "canonical": "Bolivia"
+    },
+    {
+      "question": 98,
+      "input": "BR",
+      "canonical": "Brazil"
+    },
+    {
+      "question": 98,
+      "input": "BRA",
+      "canonical": "Brazil"
+    },
+    {
+      "question": 98,
+      "input": "BN",
+      "canonical": "Brunei"
+    },
+    {
+      "question": 98,
+      "input": "BRN",
+      "canonical": "Brunei"
+    },
+    {
+      "question": 98,
+      "input": "CF",
+      "canonical": "Central African Republic"
+    },
+    {
+      "question": 98,
+      "input": "CAF",
+      "canonical": "Central African Republic"
+    },
+    {
+      "question": 98,
+      "input": "CH",
+      "canonical": "Switzerland"
+    },
+    {
+      "question": 98,
+      "input": "CHE",
+      "canonical": "Switzerland"
+    },
+    {
+      "question": 98,
+      "input": "CL",
+      "canonical": "Chile"
+    },
+    {
+      "question": 98,
+      "input": "CHL",
+      "canonical": "Chile"
+    },
+    {
+      "question": 98,
+      "input": "CN",
+      "canonical": "China"
+    },
+    {
+      "question": 98,
+      "input": "CHN",
+      "canonical": "China"
+    },
+    {
+      "question": 98,
+      "input": "CI",
+      "canonical": "Ivory Coast"
+    },
+    {
+      "question": 98,
+      "input": "CIV",
+      "canonical": "Ivory Coast"
+    },
+    {
+      "question": 98,
+      "input": "CO",
+      "canonical": "Colombia"
+    },
+    {
+      "question": 98,
+      "input": "COL",
+      "canonical": "Colombia"
+    },
+    {
+      "question": 98,
+      "input": "CR",
+      "canonical": "Costa Rica"
+    },
+    {
+      "question": 98,
+      "input": "CRI",
+      "canonical": "Costa Rica"
+    },
+    {
+      "question": 98,
+      "input": "CZ",
+      "canonical": "Czechia"
+    },
+    {
+      "question": 98,
+      "input": "CZE",
+      "canonical": "Czechia"
+    },
+    {
+      "question": 98,
+      "input": "DJ",
+      "canonical": "Djibouti"
+    },
+    {
+      "question": 98,
+      "input": "DJI",
+      "canonical": "Djibouti"
+    },
+    {
+      "question": 98,
+      "input": "DM",
+      "canonical": "Dominica"
+    },
+    {
+      "question": 98,
+      "input": "DMA",
+      "canonical": "Dominica"
+    },
+    {
+      "question": 98,
+      "input": "DO",
+      "canonical": "Dominican Republic"
+    },
+    {
+      "question": 98,
+      "input": "DOM",
+      "canonical": "Dominican Republic"
+    },
+    {
+      "question": 98,
+      "input": "DZ",
+      "canonical": "Algeria"
+    },
+    {
+      "question": 98,
+      "input": "DZA",
+      "canonical": "Algeria"
+    },
+    {
+      "question": 98,
+      "input": "ER",
+      "canonical": "Eritrea"
+    },
+    {
+      "question": 98,
+      "input": "ERI",
+      "canonical": "Eritrea"
+    },
+    {
+      "question": 98,
+      "input": "ES",
+      "canonical": "Spain"
+    },
+    {
+      "question": 98,
+      "input": "ESP",
+      "canonical": "Spain"
+    },
+    {
+      "question": 98,
+      "input": "EE",
+      "canonical": "Estonia"
+    },
+    {
+      "question": 98,
+      "input": "EST",
+      "canonical": "Estonia"
+    },
+    {
+      "question": 98,
+      "input": "ET",
+      "canonical": "Ethiopia"
+    },
+    {
+      "question": 98,
+      "input": "ETH",
+      "canonical": "Ethiopia"
+    },
+    {
+      "question": 98,
+      "input": "FI",
+      "canonical": "Finland"
+    },
+    {
+      "question": 98,
+      "input": "FIN",
+      "canonical": "Finland"
+    },
+    {
+      "question": 98,
+      "input": "FJ",
+      "canonical": "Fiji"
+    },
+    {
+      "question": 98,
+      "input": "FJI",
+      "canonical": "Fiji"
+    },
+    {
+      "question": 98,
+      "input": "FM",
+      "canonical": "Micronesia"
+    },
+    {
+      "question": 98,
+      "input": "FSM",
+      "canonical": "Micronesia"
+    },
+    {
+      "question": 98,
+      "input": "GB",
+      "canonical": "United Kingdom"
+    },
+    {
+      "question": 98,
+      "input": "GBR",
+      "canonical": "United Kingdom"
+    },
+    {
+      "question": 98,
+      "input": "GE",
+      "canonical": "Georgia"
+    },
+    {
+      "question": 98,
+      "input": "GEO",
+      "canonical": "Georgia"
+    },
+    {
+      "question": 98,
+      "input": "GN",
+      "canonical": "Guinea"
+    },
+    {
+      "question": 98,
+      "input": "GIN",
+      "canonical": "Guinea"
+    },
+    {
+      "question": 98,
+      "input": "GM",
+      "canonical": "Gambia"
+    },
+    {
+      "question": 98,
+      "input": "GMB",
+      "canonical": "Gambia"
+    },
+    {
+      "question": 98,
+      "input": "GW",
+      "canonical": "Guinea-Bissau"
+    },
+    {
+      "question": 98,
+      "input": "GNB",
+      "canonical": "Guinea-Bissau"
+    },
+    {
+      "question": 98,
+      "input": "GQ",
+      "canonical": "Equatorial Guinea"
+    },
+    {
+      "question": 98,
+      "input": "GNQ",
+      "canonical": "Equatorial Guinea"
+    },
+    {
+      "question": 98,
+      "input": "HR",
+      "canonical": "Croatia"
+    },
+    {
+      "question": 98,
+      "input": "HRV",
+      "canonical": "Croatia"
+    },
+    {
+      "question": 98,
+      "input": "HT",
+      "canonical": "Haiti"
+    },
+    {
+      "question": 98,
+      "input": "HTI",
+      "canonical": "Haiti"
+    },
+    {
+      "question": 98,
+      "input": "ID",
+      "canonical": "Indonesia"
+    },
+    {
+      "question": 98,
+      "input": "IDN",
+      "canonical": "Indonesia"
+    },
+    {
+      "question": 98,
+      "input": "IN",
+      "canonical": "India"
+    },
+    {
+      "question": 98,
+      "input": "IND",
+      "canonical": "India"
+    },
+    {
+      "question": 98,
+      "input": "IE",
+      "canonical": "Ireland"
+    },
+    {
+      "question": 98,
+      "input": "IRL",
+      "canonical": "Ireland"
+    },
+    {
+      "question": 98,
+      "input": "IR",
+      "canonical": "Iran"
+    },
+    {
+      "question": 98,
+      "input": "IRN",
+      "canonical": "Iran"
+    },
+    {
+      "question": 98,
+      "input": "IQ",
+      "canonical": "Iraq"
+    },
+    {
+      "question": 98,
+      "input": "IRQ",
+      "canonical": "Iraq"
+    },
+    {
+      "question": 98,
+      "input": "IS",
+      "canonical": "Iceland"
+    },
+    {
+      "question": 98,
+      "input": "ISL",
+      "canonical": "Iceland"
+    },
+    {
+      "question": 98,
+      "input": "IL",
+      "canonical": "Israel"
+    },
+    {
+      "question": 98,
+      "input": "ISR",
+      "canonical": "Israel"
+    },
+    {
+      "question": 98,
+      "input": "IT",
+      "canonical": "Italy"
+    },
+    {
+      "question": 98,
+      "input": "ITA",
+      "canonical": "Italy"
+    },
+    {
+      "question": 98,
+      "input": "JM",
+      "canonical": "Jamaica"
+    },
+    {
+      "question": 98,
+      "input": "JAM",
+      "canonical": "Jamaica"
+    },
+    {
+      "question": 98,
+      "input": "KH",
+      "canonical": "Cambodia"
+    },
+    {
+      "question": 98,
+      "input": "KHM",
+      "canonical": "Cambodia"
+    },
+    {
+      "question": 98,
+      "input": "KI",
+      "canonical": "Kiribati"
+    },
+    {
+      "question": 98,
+      "input": "KIR",
+      "canonical": "Kiribati"
+    },
+    {
+      "question": 98,
+      "input": "KN",
+      "canonical": "Saint Kitts and Nevis"
+    },
+    {
+      "question": 98,
+      "input": "KNA",
+      "canonical": "Saint Kitts and Nevis"
+    },
+    {
+      "question": 98,
+      "input": "KW",
+      "canonical": "Kuwait"
+    },
+    {
+      "question": 98,
+      "input": "KWT",
+      "canonical": "Kuwait"
+    },
+    {
+      "question": 98,
+      "input": "LR",
+      "canonical": "Liberia"
+    },
+    {
+      "question": 98,
+      "input": "LBR",
+      "canonical": "Liberia"
+    },
+    {
+      "question": 98,
+      "input": "LY",
+      "canonical": "Libya"
+    },
+    {
+      "question": 98,
+      "input": "LBY",
+      "canonical": "Libya"
+    },
+    {
+      "question": 98,
+      "input": "LC",
+      "canonical": "Saint Lucia"
+    },
+    {
+      "question": 98,
+      "input": "LCA",
+      "canonical": "Saint Lucia"
+    },
+    {
+      "question": 98,
+      "input": "LI",
+      "canonical": "Liechtenstein"
+    },
+    {
+      "question": 98,
+      "input": "LIE",
+      "canonical": "Liechtenstein"
+    },
+    {
+      "question": 98,
+      "input": "LK",
+      "canonical": "Sri Lanka"
+    },
+    {
+      "question": 98,
+      "input": "LKA",
+      "canonical": "Sri Lanka"
+    },
+    {
+      "question": 98,
+      "input": "LT",
+      "canonical": "Lithuania"
+    },
+    {
+      "question": 98,
+      "input": "LTU",
+      "canonical": "Lithuania"
+    },
+    {
+      "question": 98,
+      "input": "LV",
+      "canonical": "Latvia"
+    },
+    {
+      "question": 98,
+      "input": "LVA",
+      "canonical": "Latvia"
+    },
+    {
+      "question": 98,
+      "input": "MV",
+      "canonical": "Maldives"
+    },
+    {
+      "question": 98,
+      "input": "MDV",
+      "canonical": "Maldives"
+    },
+    {
+      "question": 98,
+      "input": "MX",
+      "canonical": "Mexico"
+    },
+    {
+      "question": 98,
+      "input": "MEX",
+      "canonical": "Mexico"
+    },
+    {
+      "question": 98,
+      "input": "MH",
+      "canonical": "Marshall Islands"
+    },
+    {
+      "question": 98,
+      "input": "MHL",
+      "canonical": "Marshall Islands"
+    },
+    {
+      "question": 98,
+      "input": "MK",
+      "canonical": "North Macedonia"
+    },
+    {
+      "question": 98,
+      "input": "MKD",
+      "canonical": "North Macedonia"
+    },
+    {
+      "question": 98,
+      "input": "ML",
+      "canonical": "Mali"
+    },
+    {
+      "question": 98,
+      "input": "MLI",
+      "canonical": "Mali"
+    },
+    {
+      "question": 98,
+      "input": "MN",
+      "canonical": "Mongolia"
+    },
+    {
+      "question": 98,
+      "input": "MNG",
+      "canonical": "Mongolia"
+    },
+    {
+      "question": 98,
+      "input": "MZ",
+      "canonical": "Mozambique"
+    },
+    {
+      "question": 98,
+      "input": "MOZ",
+      "canonical": "Mozambique"
+    },
+    {
+      "question": 98,
+      "input": "MR",
+      "canonical": "Mauritania"
+    },
+    {
+      "question": 98,
+      "input": "MRT",
+      "canonical": "Mauritania"
+    },
+    {
+      "question": 98,
+      "input": "MU",
+      "canonical": "Mauritius"
+    },
+    {
+      "question": 98,
+      "input": "MUS",
+      "canonical": "Mauritius"
+    },
+    {
+      "question": 98,
+      "input": "MW",
+      "canonical": "Malawi"
+    },
+    {
+      "question": 98,
+      "input": "MWI",
+      "canonical": "Malawi"
+    },
+    {
+      "question": 98,
+      "input": "MY",
+      "canonical": "Malaysia"
+    },
+    {
+      "question": 98,
+      "input": "MYS",
+      "canonical": "Malaysia"
+    },
+    {
+      "question": 98,
+      "input": "NA",
+      "canonical": "Namibia"
+    },
+    {
+      "question": 98,
+      "input": "NAM",
+      "canonical": "Namibia"
+    },
+    {
+      "question": 98,
+      "input": "NE",
+      "canonical": "Niger"
+    },
+    {
+      "question": 98,
+      "input": "NER",
+      "canonical": "Niger"
+    },
+    {
+      "question": 98,
+      "input": "NG",
+      "canonical": "Nigeria"
+    },
+    {
+      "question": 98,
+      "input": "NGA",
+      "canonical": "Nigeria"
+    },
+    {
+      "question": 98,
+      "input": "NI",
+      "canonical": "Nicaragua"
+    },
+    {
+      "question": 98,
+      "input": "NIC",
+      "canonical": "Nicaragua"
+    },
+    {
+      "question": 98,
+      "input": "PK",
+      "canonical": "Pakistan"
+    },
+    {
+      "question": 98,
+      "input": "PAK",
+      "canonical": "Pakistan"
+    },
+    {
+      "question": 98,
+      "input": "PH",
+      "canonical": "Philippines"
+    },
+    {
+      "question": 98,
+      "input": "PHL",
+      "canonical": "Philippines"
+    },
+    {
+      "question": 98,
+      "input": "PG",
+      "canonical": "Papua New Guinea"
+    },
+    {
+      "question": 98,
+      "input": "PNG",
+      "canonical": "Papua New Guinea"
+    },
+    {
+      "question": 98,
+      "input": "RO",
+      "canonical": "Romania"
+    },
+    {
+      "question": 98,
+      "input": "ROU",
+      "canonical": "Romania"
+    },
+    {
+      "question": 98,
+      "input": "RU",
+      "canonical": "Russia"
+    },
+    {
+      "question": 98,
+      "input": "RUS",
+      "canonical": "Russia"
+    },
+    {
+      "question": 98,
+      "input": "SA",
+      "canonical": "Saudi Arabia"
+    },
+    {
+      "question": 98,
+      "input": "SAU",
+      "canonical": "Saudi Arabia"
+    },
+    {
+      "question": 98,
+      "input": "SG",
+      "canonical": "Singapore"
+    },
+    {
+      "question": 98,
+      "input": "SGP",
+      "canonical": "Singapore"
+    },
+    {
+      "question": 98,
+      "input": "SB",
+      "canonical": "Solomon Islands"
+    },
+    {
+      "question": 98,
+      "input": "SLB",
+      "canonical": "Solomon Islands"
+    },
+    {
+      "question": 98,
+      "input": "SL",
+      "canonical": "Sierra Leone"
+    },
+    {
+      "question": 98,
+      "input": "SLE",
+      "canonical": "Sierra Leone"
+    },
+    {
+      "question": 98,
+      "input": "SM",
+      "canonical": "San Marino"
+    },
+    {
+      "question": 98,
+      "input": "SMR",
+      "canonical": "San Marino"
+    },
+    {
+      "question": 98,
+      "input": "SO",
+      "canonical": "Somalia"
+    },
+    {
+      "question": 98,
+      "input": "SOM",
+      "canonical": "Somalia"
+    },
+    {
+      "question": 98,
+      "input": "RS",
+      "canonical": "Serbia"
+    },
+    {
+      "question": 98,
+      "input": "SRB",
+      "canonical": "Serbia"
+    },
+    {
+      "question": 98,
+      "input": "ST",
+      "canonical": "Sao Tome and Principe"
+    },
+    {
+      "question": 98,
+      "input": "STP",
+      "canonical": "Sao Tome and Principe"
+    },
+    {
+      "question": 98,
+      "input": "SR",
+      "canonical": "Suriname"
+    },
+    {
+      "question": 98,
+      "input": "SUR",
+      "canonical": "Suriname"
+    },
+    {
+      "question": 98,
+      "input": "SK",
+      "canonical": "Slovakia"
+    },
+    {
+      "question": 98,
+      "input": "SVK",
+      "canonical": "Slovakia"
+    },
+    {
+      "question": 98,
+      "input": "SI",
+      "canonical": "Slovenia"
+    },
+    {
+      "question": 98,
+      "input": "SVN",
+      "canonical": "Slovenia"
+    },
+    {
+      "question": 98,
+      "input": "SZ",
+      "canonical": "Eswatini"
+    },
+    {
+      "question": 98,
+      "input": "SWZ",
+      "canonical": "Eswatini"
+    },
+    {
+      "question": 98,
+      "input": "SY",
+      "canonical": "Syria"
+    },
+    {
+      "question": 98,
+      "input": "SYR",
+      "canonical": "Syria"
+    },
+    {
+      "question": 98,
+      "input": "TH",
+      "canonical": "Thailand"
+    },
+    {
+      "question": 98,
+      "input": "THA",
+      "canonical": "Thailand"
+    },
+    {
+      "question": 98,
+      "input": "TJ",
+      "canonical": "Tajikistan"
+    },
+    {
+      "question": 98,
+      "input": "TJK",
+      "canonical": "Tajikistan"
+    },
+    {
+      "question": 98,
+      "input": "TM",
+      "canonical": "Turkmenistan"
+    },
+    {
+      "question": 98,
+      "input": "TKM",
+      "canonical": "Turkmenistan"
+    },
+    {
+      "question": 98,
+      "input": "TL",
+      "canonical": "Timor-Leste"
+    },
+    {
+      "question": 98,
+      "input": "TLS",
+      "canonical": "Timor-Leste"
+    },
+    {
+      "question": 98,
+      "input": "TT",
+      "canonical": "Trinidad and Tobago"
+    },
+    {
+      "question": 98,
+      "input": "TTO",
+      "canonical": "Trinidad and Tobago"
+    },
+    {
+      "question": 98,
+      "input": "TN",
+      "canonical": "Tunisia"
+    },
+    {
+      "question": 98,
+      "input": "TUN",
+      "canonical": "Tunisia"
+    },
+    {
+      "question": 98,
+      "input": "TR",
+      "canonical": "Türkiye"
+    },
+    {
+      "question": 98,
+      "input": "TUR",
+      "canonical": "Türkiye"
+    },
+    {
+      "question": 98,
+      "input": "TZ",
+      "canonical": "Tanzania"
+    },
+    {
+      "question": 98,
+      "input": "TZA",
+      "canonical": "Tanzania"
+    },
+    {
+      "question": 98,
+      "input": "UA",
+      "canonical": "Ukraine"
+    },
+    {
+      "question": 98,
+      "input": "UKR",
+      "canonical": "Ukraine"
+    },
+    {
+      "question": 98,
+      "input": "UZ",
+      "canonical": "Uzbekistan"
+    },
+    {
+      "question": 98,
+      "input": "UZB",
+      "canonical": "Uzbekistan"
+    },
+    {
+      "question": 98,
+      "input": "VC",
+      "canonical": "Saint Vincent and the Grenadines"
+    },
+    {
+      "question": 98,
+      "input": "VCT",
+      "canonical": "Saint Vincent and the Grenadines"
+    },
+    {
+      "question": 98,
+      "input": "VN",
+      "canonical": "Vietnam"
+    },
+    {
+      "question": 98,
+      "input": "VNM",
+      "canonical": "Vietnam"
+    },
+    {
+      "question": 98,
+      "input": "ZA",
+      "canonical": "South Africa"
+    },
+    {
+      "question": 98,
+      "input": "ZAF",
+      "canonical": "South Africa"
+    },
+    {
+      "question": 98,
+      "input": "ZM",
+      "canonical": "Zambia"
+    },
+    {
+      "question": 98,
+      "input": "ZMB",
+      "canonical": "Zambia"
+    },
+    {
+      "question": 98,
+      "input": "ZW",
+      "canonical": "Zimbabwe"
+    },
+    {
+      "question": 98,
+      "input": "ZWE",
+      "canonical": "Zimbabwe"
+    },
+    {
+      "question": 99,
+      "input": "AL",
+      "canonical": "Albania"
+    },
+    {
+      "question": 99,
+      "input": "ALB",
+      "canonical": "Albania"
+    },
+    {
+      "question": 99,
+      "input": "AD",
+      "canonical": "Andorra"
+    },
+    {
+      "question": 99,
+      "input": "AND",
+      "canonical": "Andorra"
+    },
+    {
+      "question": 99,
+      "input": "AT",
+      "canonical": "Austria"
+    },
+    {
+      "question": 99,
+      "input": "AUT",
+      "canonical": "Austria"
+    },
+    {
+      "question": 99,
+      "input": "BE",
+      "canonical": "Belgium"
+    },
+    {
+      "question": 99,
+      "input": "BEL",
+      "canonical": "Belgium"
+    },
+    {
+      "question": 99,
+      "input": "BG",
+      "canonical": "Bulgaria"
+    },
+    {
+      "question": 99,
+      "input": "BGR",
+      "canonical": "Bulgaria"
+    },
+    {
+      "question": 99,
+      "input": "BA",
+      "canonical": "Bosnia and Herzegovina"
+    },
+    {
+      "question": 99,
+      "input": "BIH",
+      "canonical": "Bosnia and Herzegovina"
+    },
+    {
+      "question": 99,
+      "input": "BY",
+      "canonical": "Belarus"
+    },
+    {
+      "question": 99,
+      "input": "BLR",
+      "canonical": "Belarus"
+    },
+    {
+      "question": 99,
+      "input": "CH",
+      "canonical": "Switzerland"
+    },
+    {
+      "question": 99,
+      "input": "CHE",
+      "canonical": "Switzerland"
+    },
+    {
+      "question": 99,
+      "input": "CY",
+      "canonical": "Cyprus"
+    },
+    {
+      "question": 99,
+      "input": "CYP",
+      "canonical": "Cyprus"
+    },
+    {
+      "question": 99,
+      "input": "CZ",
+      "canonical": "Czechia"
+    },
+    {
+      "question": 99,
+      "input": "CZE",
+      "canonical": "Czechia"
+    },
+    {
+      "question": 99,
+      "input": "DE",
+      "canonical": "Germany"
+    },
+    {
+      "question": 99,
+      "input": "DEU",
+      "canonical": "Germany"
+    },
+    {
+      "question": 99,
+      "input": "DK",
+      "canonical": "Denmark"
+    },
+    {
+      "question": 99,
+      "input": "DNK",
+      "canonical": "Denmark"
+    },
+    {
+      "question": 99,
+      "input": "ES",
+      "canonical": "Spain"
+    },
+    {
+      "question": 99,
+      "input": "ESP",
+      "canonical": "Spain"
+    },
+    {
+      "question": 99,
+      "input": "EE",
+      "canonical": "Estonia"
+    },
+    {
+      "question": 99,
+      "input": "EST",
+      "canonical": "Estonia"
+    },
+    {
+      "question": 99,
+      "input": "FI",
+      "canonical": "Finland"
+    },
+    {
+      "question": 99,
+      "input": "FIN",
+      "canonical": "Finland"
+    },
+    {
+      "question": 99,
+      "input": "FR",
+      "canonical": "France"
+    },
+    {
+      "question": 99,
+      "input": "FRA",
+      "canonical": "France"
+    },
+    {
+      "question": 99,
+      "input": "GB",
+      "canonical": "United Kingdom"
+    },
+    {
+      "question": 99,
+      "input": "GBR",
+      "canonical": "United Kingdom"
+    },
+    {
+      "question": 99,
+      "input": "GR",
+      "canonical": "Greece"
+    },
+    {
+      "question": 99,
+      "input": "GRC",
+      "canonical": "Greece"
+    },
+    {
+      "question": 99,
+      "input": "HR",
+      "canonical": "Croatia"
+    },
+    {
+      "question": 99,
+      "input": "HRV",
+      "canonical": "Croatia"
+    },
+    {
+      "question": 99,
+      "input": "HU",
+      "canonical": "Hungary"
+    },
+    {
+      "question": 99,
+      "input": "HUN",
+      "canonical": "Hungary"
+    },
+    {
+      "question": 99,
+      "input": "IE",
+      "canonical": "Ireland"
+    },
+    {
+      "question": 99,
+      "input": "IRL",
+      "canonical": "Ireland"
+    },
+    {
+      "question": 99,
+      "input": "IS",
+      "canonical": "Iceland"
+    },
+    {
+      "question": 99,
+      "input": "ISL",
+      "canonical": "Iceland"
+    },
+    {
+      "question": 99,
+      "input": "IT",
+      "canonical": "Italy"
+    },
+    {
+      "question": 99,
+      "input": "ITA",
+      "canonical": "Italy"
+    },
+    {
+      "question": 99,
+      "input": "LI",
+      "canonical": "Liechtenstein"
+    },
+    {
+      "question": 99,
+      "input": "LIE",
+      "canonical": "Liechtenstein"
+    },
+    {
+      "question": 99,
+      "input": "LT",
+      "canonical": "Lithuania"
+    },
+    {
+      "question": 99,
+      "input": "LTU",
+      "canonical": "Lithuania"
+    },
+    {
+      "question": 99,
+      "input": "LU",
+      "canonical": "Luxembourg"
+    },
+    {
+      "question": 99,
+      "input": "LUX",
+      "canonical": "Luxembourg"
+    },
+    {
+      "question": 99,
+      "input": "LV",
+      "canonical": "Latvia"
+    },
+    {
+      "question": 99,
+      "input": "LVA",
+      "canonical": "Latvia"
+    },
+    {
+      "question": 99,
+      "input": "MC",
+      "canonical": "Monaco"
+    },
+    {
+      "question": 99,
+      "input": "MCO",
+      "canonical": "Monaco"
+    },
+    {
+      "question": 99,
+      "input": "MD",
+      "canonical": "Moldova"
+    },
+    {
+      "question": 99,
+      "input": "MDA",
+      "canonical": "Moldova"
+    },
+    {
+      "question": 99,
+      "input": "MK",
+      "canonical": "North Macedonia"
+    },
+    {
+      "question": 99,
+      "input": "MKD",
+      "canonical": "North Macedonia"
+    },
+    {
+      "question": 99,
+      "input": "MT",
+      "canonical": "Malta"
+    },
+    {
+      "question": 99,
+      "input": "MLT",
+      "canonical": "Malta"
+    },
+    {
+      "question": 99,
+      "input": "ME",
+      "canonical": "Montenegro"
+    },
+    {
+      "question": 99,
+      "input": "MNE",
+      "canonical": "Montenegro"
+    },
+    {
+      "question": 99,
+      "input": "NL",
+      "canonical": "Netherlands"
+    },
+    {
+      "question": 99,
+      "input": "NLD",
+      "canonical": "Netherlands"
+    },
+    {
+      "question": 99,
+      "input": "NO",
+      "canonical": "Norway"
+    },
+    {
+      "question": 99,
+      "input": "NOR",
+      "canonical": "Norway"
+    },
+    {
+      "question": 99,
+      "input": "PL",
+      "canonical": "Poland"
+    },
+    {
+      "question": 99,
+      "input": "POL",
+      "canonical": "Poland"
+    },
+    {
+      "question": 99,
+      "input": "PT",
+      "canonical": "Portugal"
+    },
+    {
+      "question": 99,
+      "input": "PRT",
+      "canonical": "Portugal"
+    },
+    {
+      "question": 99,
+      "input": "RO",
+      "canonical": "Romania"
+    },
+    {
+      "question": 99,
+      "input": "ROU",
+      "canonical": "Romania"
+    },
+    {
+      "question": 99,
+      "input": "RU",
+      "canonical": "Russia"
+    },
+    {
+      "question": 99,
+      "input": "RUS",
+      "canonical": "Russia"
+    },
+    {
+      "question": 99,
+      "input": "SM",
+      "canonical": "San Marino"
+    },
+    {
+      "question": 99,
+      "input": "SMR",
+      "canonical": "San Marino"
+    },
+    {
+      "question": 99,
+      "input": "RS",
+      "canonical": "Serbia"
+    },
+    {
+      "question": 99,
+      "input": "SRB",
+      "canonical": "Serbia"
+    },
+    {
+      "question": 99,
+      "input": "SK",
+      "canonical": "Slovakia"
+    },
+    {
+      "question": 99,
+      "input": "SVK",
+      "canonical": "Slovakia"
+    },
+    {
+      "question": 99,
+      "input": "SI",
+      "canonical": "Slovenia"
+    },
+    {
+      "question": 99,
+      "input": "SVN",
+      "canonical": "Slovenia"
+    },
+    {
+      "question": 99,
+      "input": "SE",
+      "canonical": "Sweden"
+    },
+    {
+      "question": 99,
+      "input": "SWE",
+      "canonical": "Sweden"
+    },
+    {
+      "question": 99,
+      "input": "UA",
+      "canonical": "Ukraine"
+    },
+    {
+      "question": 99,
+      "input": "UKR",
+      "canonical": "Ukraine"
+    }
+  ]
+}

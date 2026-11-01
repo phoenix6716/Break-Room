@@ -70,7 +70,7 @@ const storage={length:1,key:()=>key,getItem:k=>k===key?encode(mixed):null,setIte
 const bad=[];for(const mutate of [r=>r.version=2,r=>r.kind='unlimited',r=>r.day='2026-02-30',r=>r.edits=-1,r=>r.round=3,r=>r.phase='active',r=>r.deadline=1,r=>r.error='unlisted',r=>r.questions[0].answers[0].points=0,r=>r.questions[0].answers[0].points=101,r=>r.questions[1]=r.questions[0],r=>r.picks[0].points=99,r=>r.picks[0].answer='wrong',r=>r.picks[0].reason='timeout',r=>r.picks.pop(),r=>r.input='changed']){const r=structuredClone(good);mutate(r);assert.equal(M.record(r,day),null);bad.push(r);}
 // Revision 12: broad everyday prompts with reviewed, low-scoring familiar footholds.
 const accessibleSource=require('../content/hidden-gem-accessible-source.json');
-assert.equal(require('../content/hidden-gem-questions.json').revision,14);
+assert.equal(require('../content/hidden-gem-questions.json').revision,15);
 assert.equal(activeBank.length,240);assert(activeBank.every(q=>q.id.startsWith('hg12-')));
 assert.equal(new Set(activeBank.map(q=>q.prompt)).size,240);
 for(const [i,q]of activeBank.entries()){
@@ -91,7 +91,7 @@ const beforeGrading=require('../content/archive/2026-11-01-pre-graded-ratings/hi
 const beforeExpansion=require('../content/archive/2026-11-01-pre-answer-expansion/hidden-gem-questions.json').questions;
 for(const [i,q]of beforeExpansion.entries()){const old=beforeGrading[i];assert.deepEqual(q.answers.map(a=>[a.name,a.aliases]),old.answers.map(a=>[a.name,a.aliases]),'Revision 13 changed ratings only');}
 for(const [i,q]of activeBank.entries()){
- const old=beforeExpansion[i];for(const field of ['id','prompt','scope','topic','dailySlot'])assert.equal(q[field],old[field]);
+ const old=beforeExpansion[i];for(const field of ['id','prompt','topic','dailySlot'])assert.equal(q[field],old[field]);if(![96,100,216].includes(i))assert.equal(q.scope,old.scope);
  let additions=0;const oldInputs=new Set(old.answers.flatMap(a=>[a.name,...a.aliases]).map(M.normal));
  for(const a of old.answers)for(const input of [a.name,...a.aliases]){const now=M.match(q,input);assert.equal(now?.name,a.name,q.id+' preserved mapping '+input);assert.equal(now.points,a.points,q.id+' preserved score '+input);}
  for(const a of q.answers)for(const input of [a.name,...a.aliases])if(!oldInputs.has(M.normal(input)))additions++;
@@ -101,6 +101,19 @@ for(const [i,q]of activeBank.entries()){
 }
 for(const [n,input,canonical,points]of [[1,'Cottage cheese','Cottage cheese',60],[26,'tegu','Tegu',100],[49,'wingspan','Arm span',35],[50,'ureters','Ureter',95],[97,'Syrian Arab Republic','Syria',80],[98,'Turkiye','Türkiye',30],[100,'Muenchen','Munich',65],[162,'Mittens','Mittens',35],[207,'Sleeping mat','Sleeping mat',40],[237,'Water clock','Water clock',95]]){const q=accessibleById(n),a=M.match(q,input);assert.equal(a?.name,canonical);assert.equal(a.points,points);const r=M.createPractice(q,'2026-11-01','expanded:'+q.id);M.begin(r,1000);M.draft(r,input,1001);assert(M.finish(r,1002));assert.equal(r.picks[0].points,points);}
 // Expanded lists must not be injected into old captures or completed zeroes.
+const beforeCoverage=require('../content/archive/2026-11-01-pre-coverage-audit/hidden-gem-questions.json').questions;
+for(const [i,q]of beforeCoverage.entries())for(const a of q.answers)for(const input of [a.name,...a.aliases]){const now=M.match(activeBank[i],input);assert.equal(now?.name,a.name);assert.equal(now.points,a.points);}
+const coverage=require('../content/hidden-gem-coverage-cases.json'),geography=require('../design/content-reviews/2026-11-01-sleeper-geography-reference.json');
+assert.equal(coverage.questions.length,240);for(const q of coverage.questions){const actual=activeBank.find(x=>x.id===q.id);assert.equal(actual.prompt,q.prompt);assert(q.cases.length>=24);for(const c of q.cases){const match=M.match(actual,c.input);assert.equal(match?.name,c.canonical,q.id+' natural input '+c.input);assert.equal(match.points,c.points);assert.equal(!!M.match(beforeCoverage.find(x=>x.id===q.id),c.input),c.acceptedBefore);}}
+for(const c of coverage.negativeCases)assert.equal(M.match(activeBank.find(q=>q.id===c.id),c.input),null,'Invalid input '+c.id+' '+c.input);
+for(const c of geography.cases)assert.equal(M.match(activeBank[c.question-1],c.input)?.name,c.canonical,'External country reference '+c.question+' '+c.input);
+for(const name of ['Jordan','Azerbaijan','Kazakhstan','Turkmenistan'])assert(M.match(activeBank[96],name));
+assert.equal(M.match(activeBank[96],'Zambia'),null);assert.equal(M.match(beforeCoverage[96],'Zambia')?.name,'Gambia','Old captured typo rules stay fixed');assert(M.match(activeBank[96],'Gambia'));assert(M.match(activeBank[97],'Zambia'));
+assert.equal(M.match(activeBank[96],'Gambai')?.name,'Gambia','Unambiguous typos still work');
+const coastDay=new Date(Date.UTC(2026,10,1+activeBank[96].dailySlot)).toISOString().slice(0,10);
+function coastHistory(bank){const r=M.create(bank,coastDay);M.begin(r,1);for(let i=0;i<5;i++){const q=r.questions[i],input=q.id==='hg12-097'?'Zambia':q.answers.find(a=>a.points===100).name;M.draft(r,input,2);if(!M.finish(r,3))M.expire(r,r.deadline);M.next(r,4);}assert(M.record(r,coastDay));return r;}
+const currentCoastHistory=coastHistory(activeBank),oldCoastHistory=coastHistory(beforeCoverage);assert.equal(currentCoastHistory.picks.find(p=>p.input==='Zambia').points,0);assert.equal(oldCoastHistory.picks.find(p=>p.input==='Zambia').answer,'Gambia');
+for(const invalid of [null,'Zambia',[null],[''],Array(513).fill('Zambia')])assert.equal(M.puzzle({...activeBank[96],exactRejections:invalid}),false);
 const oldExpandedRun=M.createPractice(beforeExpansion[0],'2026-11-01','old-membership');M.begin(oldExpandedRun,1000);const originalDeadline=oldExpandedRun.deadline;M.draft(oldExpandedRun,'Cottage cheese',1001);assert(!M.finish(oldExpandedRun,1002));assert.equal(oldExpandedRun.deadline,originalDeadline);M.expire(oldExpandedRun,originalDeadline);const completedZero=encode(oldExpandedRun);assert(M.validRun(oldExpandedRun));assert.equal(oldExpandedRun.picks[0].points,0);assert.equal(encode(oldExpandedRun),completedZero);
 
 const oldDefaultRun=M.createPractice(beforeGrading[0],'2026-11-01','old-default-50');M.begin(oldDefaultRun,1000);M.draft(oldDefaultRun,'Noodles',1001);assert(M.finish(oldDefaultRun,1002));assert.equal(oldDefaultRun.picks[0].points,50);assert(M.validRun(oldDefaultRun));
@@ -175,6 +188,10 @@ await db.exec("create role anon;create role authenticated;create schema auth;cre
 for(const path of ['supabase/setup.sql','supabase/friends.sql'])await db.exec(fs.readFileSync(path,'utf8'));
 const before={};for(const sig of ['save_game(text,jsonb,bigint)','_friend_score(text,jsonb,date)','_friend_records(uuid,date)','friend_scores()'])before[sig]=(await db.query('select pg_get_functiondef($1::regprocedure) d',['public.'+sig])).rows[0].d;await db.exec(fs.readFileSync('supabase/hidden-gem.sql','utf8'));await db.exec(fs.readFileSync('supabase/hidden-gem.sql','utf8'));
 for(const sig of Object.keys(before))assert.equal((await db.query('select pg_get_functiondef($1::regprocedure) d',['public.'+sig])).rows[0].d,before[sig],'Legacy function unchanged: '+sig);
+await db.exec(fs.readFileSync('supabase/hidden-gem-exact-rejections.sql','utf8'));await db.exec(fs.readFileSync('supabase/hidden-gem-exact-rejections.sql','utf8'));
+for(const r of [currentCoastHistory,oldCoastHistory])assert.equal((await db.query('select public._friend_hidden_gem_score($1,$2) s',[encode(r),coastDay])).rows[0].s,M.record(r,coastDay).arcadeScore,'New exclusion zero and old accepted typo cloud-score parity');
+for(const [q,input]of [[activeBank[96],'Zambia'],[beforeCoverage[96],'Zambia'],[activeBank[96],'Jordan'],[activeBank[96],'Gambia']]){const actual=(await db.query('select public._hg_match($1,$2) a',[encode(q),input])).rows[0].a;assert.equal(actual?.points??null,M.match(q,input)?.points??null,'Snapshot-owned exclusion SQL parity '+input);}
+for(const invalid of [null,'Zambia',[null],[''],Array(513).fill('Zambia')])assert.equal((await db.query('select public._hg_question($1) a',[encode({...activeBank[96],exactRejections:invalid})])).rows[0].a,false);
 for(const r of [good,mixed,zero,M.create(B,day),...bad]){const actual=(await db.query('select public._friend_hidden_gem_score($1,$2) s',[encode(r),day])).rows[0].s;assert.equal(actual,M.record(r,day)?.arcadeScore??null,'SQL full snapshot parity');}
 assert.equal((await db.query('select public._friend_hidden_gem_score($1,$2) s',[encode(oldRun),oldRun.day])).rows[0].s,M.record(oldRun,oldRun.day).arcadeScore);
 assert.equal((await db.query('select public._friend_hidden_gem_score($1,$2) s',[encode(corrected),corrected.day])).rows[0].s,M.record(corrected,corrected.day).arcadeScore,'Reviewed aliases in captured snapshots retain SQL score parity');

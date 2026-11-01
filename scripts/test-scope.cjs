@@ -62,7 +62,7 @@ function selectChecks(changed,available,{full=false}={}){
    }
   }else if(model){game(model[1],true);add('profile-records.cjs','cloud-saves.cjs');if(model[1]==='inner-clock')add('accounts.cjs','friends.cjs','profile.cjs');}
   else if(file==='supabase/leagues.sql'){add('leagues-database.cjs','leagues.cjs','leagues-freshness.cjs');}
-  else if(['supabase/hidden-gem.sql','supabase/hidden-gem-broader-answers.sql'].includes(file)){game('hidden-gem',true);}
+  else if(['supabase/hidden-gem.sql','supabase/hidden-gem-broader-answers.sql','supabase/hidden-gem-exact-rejections.sql'].includes(file)){game('hidden-gem',true);}
   else if(/^supabase\//.test(file)){add('friends-database.cjs','cloud-database.cjs','playtest-feedback.cjs');}
   else if(file==='content/drafts/sleeper-broader-questions.json'){game('hidden-gem',true);content=true;}
   else if(/^content\//.test(file)){
