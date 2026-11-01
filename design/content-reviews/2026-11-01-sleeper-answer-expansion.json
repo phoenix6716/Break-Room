@@ -1,0 +1,5847 @@
+{
+  "reviewed": "2026-11-01",
+  "revision": 14,
+  "questions": 240,
+  "canonicalAnswers": 8194,
+  "previousCanonicalAnswers": 6402,
+  "newCanonicalAnswers": 1792,
+  "canonicalRange": [
+    23,
+    155
+  ],
+  "aliases": 8372,
+  "newAliases": 481,
+  "rotationDays": 48,
+  "unchangedRotation": true,
+  "unchangedOldExactMatchesAndScores": true,
+  "scope": "Every question has new accepted canonical answers or wording. Olympic host cities already enumerate all host cities through the completed 2026 Games; that roster expands only genuine alternative names. Syria, Turkiye and Armenia repair missing country coverage.",
+  "ratings": "Every addition explicitly rated in its question context; all prior scores kept. Editorial estimates, not survey data.",
+  "archive": "content/archive/2026-11-01-pre-answer-expansion/",
+  "limitations": [
+    "Familiarity is an editorial review, not a promise that every player knows every answer.",
+    "Offline answer lists are finite.",
+    "Time-sensitive examples are reviewed as of 1 November 2026; future events are not presumed to have occurred."
+  ],
+  "questionsExpanded": [
+    {
+      "question": 1,
+      "added": [
+        "Frittata",
+        "Black pudding",
+        "Quiche",
+        "Cottage cheese",
+        "Cinnamon roll",
+        "Danish pastry",
+        "Chia pudding",
+        "Acai bowl",
+        "Scone",
+        "Poha",
+        "Upma",
+        "Paratha",
+        "Chilaquiles",
+        "Arepa"
+      ],
+      "aliases": [
+        [
+          "cinnamon bun",
+          "Cinnamon roll"
+        ]
+      ],
+      "before": 39,
+      "after": 53
+    },
+    {
+      "question": 2,
+      "added": [
+        "Soba noodles",
+        "Frittata",
+        "Pie",
+        "Peas",
+        "Sweetcorn",
+        "Beetroot",
+        "Tofu salad",
+        "Oatcakes",
+        "Flan",
+        "Nuts"
+      ],
+      "aliases": [
+        [
+          "Bread and butter pudding",
+          "Bread pudding"
+        ],
+        [
+          "flans",
+          "Flan"
+        ],
+        [
+          "nut",
+          "Nuts"
+        ]
+      ],
+      "before": 29,
+      "after": 39
+    },
+    {
+      "question": 3,
+      "added": [
+        "Corn fritters",
+        "Fried pickles",
+        "Elephant ear pastry",
+        "Lemonade",
+        "Tornado potato",
+        "Snow cone",
+        "Slushie",
+        "Kettle corn",
+        "Pork roll",
+        "Baked potato"
+      ],
+      "aliases": [
+        [
+          "Belgian waffle",
+          "Waffle"
+        ],
+        [
+          "spiral potato",
+          "Tornado potato"
+        ],
+        [
+          "slushy",
+          "Slushie"
+        ],
+        [
+          "Caramel apple",
+          "Toffee apple"
+        ]
+      ],
+      "before": 23,
+      "after": 33
+    },
+    {
+      "question": 4,
+      "added": [
+        "Quesadilla",
+        "Empanada",
+        "Bao",
+        "Arepa",
+        "Pork bun",
+        "Kofta",
+        "Sausage roll",
+        "Meat pie",
+        "Onion ring",
+        "Pakora",
+        "Dried fruit"
+      ],
+      "aliases": [
+        [
+          "Pita sandwich",
+          "Sandwich"
+        ],
+        [
+          "bao bun",
+          "Bao"
+        ]
+      ],
+      "before": 32,
+      "after": 43
+    },
+    {
+      "question": 5,
+      "added": [
+        "Poutine",
+        "Fish pie",
+        "Dum aloo",
+        "Pierogi",
+        "Frittata",
+        "Spanish tortilla",
+        "Vada pav",
+        "Aloo paratha",
+        "Potato scallop",
+        "Boxty"
+      ],
+      "aliases": [
+        [
+          "potato cake",
+          "Potato scallop"
+        ],
+        [
+          "Potato farl",
+          "Potato scone"
+        ]
+      ],
+      "before": 27,
+      "after": 37
+    },
+    {
+      "question": 6,
+      "added": [
+        "Pelmeni",
+        "Pierogi",
+        "Rugelach",
+        "Kachori",
+        "Pupusa",
+        "Arepa",
+        "Onigiri",
+        "Crepe",
+        "Arancini"
+      ],
+      "aliases": [
+        [
+          "Gyoza",
+          "Dumpling"
+        ],
+        [
+          "Flaky pastry turnover",
+          "Pastie"
+        ],
+        [
+          "Choux bun",
+          "Profiterole"
+        ]
+      ],
+      "before": 28,
+      "after": 37
+    },
+    {
+      "question": 7,
+      "added": [
+        "Fruit platter",
+        "Cheese platter",
+        "Meatballs",
+        "Chicken wings",
+        "Cocktail sausages",
+        "Pretzels",
+        "Pinwheel sandwiches",
+        "Tacos",
+        "Donut holes",
+        "Profiteroles",
+        "Cheese straws",
+        "Pizza scrolls"
+      ],
+      "aliases": [],
+      "before": 28,
+      "after": 40
+    },
+    {
+      "question": 8,
+      "added": [
+        "Worcestershire sauce",
+        "Miso",
+        "Anchovy",
+        "Capers",
+        "Curry paste",
+        "Harissa",
+        "Sumac",
+        "Za'atar",
+        "Garam masala",
+        "Smoked paprika",
+        "Gochujang",
+        "Tamarind"
+      ],
+      "aliases": [],
+      "before": 39,
+      "after": 51
+    },
+    {
+      "question": 9,
+      "added": [
+        "Bamboo shoots",
+        "Fish",
+        "Pig's feet",
+        "Nasturtium seeds",
+        "Mustard seeds",
+        "Fennel",
+        "Peach",
+        "Watermelon rind",
+        "Daikon greens",
+        "Apple",
+        "Celery"
+      ],
+      "aliases": [
+        [
+          "Daikon",
+          "Radish"
+        ]
+      ],
+      "before": 27,
+      "after": 38
+    },
+    {
+      "question": 10,
+      "added": [
+        "Tonic water",
+        "Coconut water",
+        "Milk",
+        "Chocolate milk",
+        "Caipirinha",
+        "Paloma",
+        "Mai Tai",
+        "White Russian",
+        "Matcha latte",
+        "Bubble tea",
+        "Horchata",
+        "Lassi"
+      ],
+      "aliases": [
+        [
+          "boba tea",
+          "Bubble tea"
+        ]
+      ],
+      "before": 31,
+      "after": 43
+    },
+    {
+      "question": 11,
+      "added": [
+        "Elderberry",
+        "Loganberry",
+        "Boysenberry",
+        "Mulberry",
+        "Cranberry",
+        "Lychee",
+        "Melon",
+        "Watermelon",
+        "Kiwi fruit",
+        "Papaya",
+        "Sweet potato",
+        "Beetroot"
+      ],
+      "aliases": [],
+      "before": 27,
+      "after": 39
+    },
+    {
+      "question": 12,
+      "added": [
+        "Kale",
+        "Cabbage",
+        "Radish",
+        "Leek",
+        "Mushroom",
+        "Green bean",
+        "Sugar snap pea",
+        "Chickpea",
+        "Chilli pepper",
+        "Spring onion",
+        "Daikon",
+        "Jerusalem artichoke"
+      ],
+      "aliases": [],
+      "before": 25,
+      "after": 37
+    },
+    {
+      "question": 13,
+      "added": [
+        "Tapenade",
+        "Lemon curd",
+        "Biscoff spread",
+        "Melted marshmallow",
+        "Scrambled tofu",
+        "Cottage cheese",
+        "Garlic butter",
+        "Chocolate sprinkles",
+        "Kimchi"
+      ],
+      "aliases": [
+        [
+          "Sardine spread",
+          "Sardines"
+        ],
+        [
+          "Fried tomato",
+          "Tomato"
+        ],
+        [
+          "Banana spread",
+          "Banana"
+        ]
+      ],
+      "before": 24,
+      "after": 33
+    },
+    {
+      "question": 14,
+      "added": [
+        "Pork belly",
+        "Octopus",
+        "Oyster",
+        "Mussel",
+        "Asparagus",
+        "Peach",
+        "Nectarine",
+        "Banana",
+        "Garlic bread",
+        "Jackfruit"
+      ],
+      "aliases": [
+        [
+          "Duck breast",
+          "Duck"
+        ],
+        [
+          "Lamb shoulder",
+          "Lamb chop"
+        ]
+      ],
+      "before": 28,
+      "after": 38
+    },
+    {
+      "question": 15,
+      "added": [
+        "Bannock",
+        "Pandesal",
+        "Milk bread",
+        "Zopf",
+        "Pain de mie",
+        "Barmbrack",
+        "Arepa",
+        "Boule",
+        "Bialy",
+        "Bara brith",
+        "Lefse"
+      ],
+      "aliases": [
+        [
+          "Bap",
+          "Bread roll"
+        ],
+        [
+          "baps",
+          "Bread roll"
+        ]
+      ],
+      "before": 28,
+      "after": 39
+    },
+    {
+      "question": 16,
+      "added": [
+        "Edamame",
+        "Tempura",
+        "Satay skewer",
+        "Dim sim",
+        "Poppadom",
+        "Prawn cracker",
+        "Chips and gravy",
+        "Artichoke leaf",
+        "Banana fritter"
+      ],
+      "aliases": [
+        [
+          "dim sims",
+          "Dim sim"
+        ],
+        [
+          "Corn chip",
+          "Nachos"
+        ],
+        [
+          "Potsticker",
+          "Dumplings"
+        ]
+      ],
+      "before": 27,
+      "after": 36
+    },
+    {
+      "question": 17,
+      "added": [
+        "Peas",
+        "Courgette",
+        "Egg",
+        "Potato",
+        "Prosciutto",
+        "Burrata",
+        "Sun-dried tomato",
+        "Chorizo",
+        "Pine nut",
+        "Truffle",
+        "Parsley",
+        "Sesame seed"
+      ],
+      "aliases": [],
+      "before": 29,
+      "after": 41
+    },
+    {
+      "question": 18,
+      "added": [
+        "Flan",
+        "Fruit compote",
+        "Sticky date pudding",
+        "Chia pudding",
+        "Semifreddo",
+        "Granita",
+        "Baked apple",
+        "Poached pear",
+        "Zabaglione",
+        "Posset"
+      ],
+      "aliases": [
+        [
+          "flans",
+          "Flan"
+        ],
+        [
+          "Bread pudding",
+          "Bread and butter pudding"
+        ],
+        [
+          "Sago pudding",
+          "Tapioca pudding"
+        ]
+      ],
+      "before": 25,
+      "after": 35
+    },
+    {
+      "question": 19,
+      "added": [
+        "Anchovy",
+        "Scallop",
+        "Squid",
+        "Fish",
+        "Milk",
+        "Egg",
+        "Sweet potato",
+        "Tofu",
+        "Sausage",
+        "Sea cucumber",
+        "Lemon",
+        "Papaya"
+      ],
+      "aliases": [],
+      "before": 29,
+      "after": 41
+    },
+    {
+      "question": 20,
+      "added": [
+        "Crab",
+        "Clam",
+        "Oyster",
+        "Mussel",
+        "Jackfruit",
+        "Lychee",
+        "Artichoke heart",
+        "Asparagus",
+        "Bamboo shoot",
+        "Water chestnut",
+        "Dulce de leche"
+      ],
+      "aliases": [
+        [
+          "crab meat",
+          "Crab"
+        ],
+        [
+          "Luncheon meat",
+          "Spam"
+        ]
+      ],
+      "before": 27,
+      "after": 38
+    },
+    {
+      "question": 21,
+      "added": [
+        "Shiso",
+        "Epazote",
+        "Culantro",
+        "Borage",
+        "Burnet",
+        "Hyssop",
+        "Myrtle",
+        "Lemon verbena"
+      ],
+      "aliases": [
+        [
+          "Chervil leaf",
+          "Chervil"
+        ],
+        [
+          "Lemon thyme",
+          "Thyme"
+        ],
+        [
+          "Holy basil",
+          "Basil"
+        ]
+      ],
+      "before": 23,
+      "after": 31
+    },
+    {
+      "question": 22,
+      "added": [
+        "Leeks",
+        "Peppers",
+        "Kale",
+        "Salad",
+        "Dinner roll",
+        "Pease pudding",
+        "Roast beetroot"
+      ],
+      "aliases": [
+        [
+          "Red cabbage",
+          "Cabbage"
+        ],
+        [
+          "Cauliflower cheese",
+          "Cauliflower"
+        ],
+        [
+          "Roast onion",
+          "Roast vegetables"
+        ],
+        [
+          "Roast garlic",
+          "Roast vegetables"
+        ],
+        [
+          "Sage and onion stuffing",
+          "Stuffing"
+        ]
+      ],
+      "before": 29,
+      "after": 36
+    },
+    {
+      "question": 23,
+      "added": [
+        "Frozen yoghurt",
+        "Potato wedges",
+        "Corn dog",
+        "Spring roll",
+        "Chicken nuggets",
+        "Chicken tenders",
+        "Cheese bites",
+        "Edamame",
+        "Sweet potato fries",
+        "Candy floss",
+        "Trail mix"
+      ],
+      "aliases": [
+        [
+          "choc tops",
+          "Ice cream"
+        ]
+      ],
+      "before": 26,
+      "after": 37
+    },
+    {
+      "question": 24,
+      "added": [
+        "Almond flour",
+        "Oat flour",
+        "Yeast",
+        "Gelatine",
+        "Treacle",
+        "Maple syrup",
+        "Honey",
+        "Golden syrup",
+        "Semolina",
+        "Polenta",
+        "Cream of tartar"
+      ],
+      "aliases": [],
+      "before": 30,
+      "after": 41
+    },
+    {
+      "question": 25,
+      "added": [
+        "Hawk",
+        "Falcon",
+        "Albatross",
+        "Kingfisher",
+        "Seagull",
+        "Sardine",
+        "Cod",
+        "Sturgeon",
+        "Cuttlefish",
+        "Jellyfish",
+        "Clam",
+        "Crab"
+      ],
+      "aliases": [
+        [
+          "hawks",
+          "Hawk"
+        ],
+        [
+          "falcons",
+          "Falcon"
+        ],
+        [
+          "codfish",
+          "Cod"
+        ],
+        [
+          "clams",
+          "Clam"
+        ],
+        [
+          "crabs",
+          "Crab"
+        ]
+      ],
+      "before": 39,
+      "after": 51
+    },
+    {
+      "question": 26,
+      "added": [
+        "Crab",
+        "Lobster",
+        "Tench",
+        "Carp",
+        "Piranha",
+        "Cricket",
+        "Wasp",
+        "Tegu",
+        "Blue-tongued skink",
+        "Cockatoo"
+      ],
+      "aliases": [
+        [
+          "crabs",
+          "Crab"
+        ],
+        [
+          "carps",
+          "Carp"
+        ],
+        [
+          "crickets",
+          "Cricket"
+        ],
+        [
+          "wasps",
+          "Wasp"
+        ],
+        [
+          "tegus",
+          "Tegu"
+        ]
+      ],
+      "before": 31,
+      "after": 41
+    },
+    {
+      "question": 27,
+      "added": [
+        "Guppy",
+        "Molly",
+        "Tench",
+        "Bream",
+        "Zander",
+        "Sturgeon",
+        "Loach",
+        "Tadpole",
+        "Daphnia",
+        "Freshwater sponge",
+        "Diving beetle",
+        "Hydra"
+      ],
+      "aliases": [
+        [
+          "guppies",
+          "Guppy"
+        ],
+        [
+          "mollies",
+          "Molly"
+        ],
+        [
+          "tenches",
+          "Tench"
+        ],
+        [
+          "breams",
+          "Bream"
+        ],
+        [
+          "loaches",
+          "Loach"
+        ],
+        [
+          "hydras",
+          "Hydra"
+        ]
+      ],
+      "before": 31,
+      "after": 43
+    },
+    {
+      "question": 28,
+      "added": [
+        "Locust",
+        "Earwig",
+        "Silverfish",
+        "Cricket",
+        "Millipede",
+        "Centipede",
+        "Dragonfly",
+        "Mantis",
+        "Sea urchin",
+        "Chiton",
+        "Abalone"
+      ],
+      "aliases": [
+        [
+          "praying mantis",
+          "Mantis"
+        ]
+      ],
+      "before": 27,
+      "after": 38
+    },
+    {
+      "question": 29,
+      "added": [
+        "Bearded dragon",
+        "Iguana",
+        "Degu",
+        "Sugar glider",
+        "Lovebird",
+        "Finch",
+        "Pigeon",
+        "Dove",
+        "Koi",
+        "Betta",
+        "Hermit crab",
+        "Snail"
+      ],
+      "aliases": [
+        [
+          "degus",
+          "Degu"
+        ],
+        [
+          "finches",
+          "Finch"
+        ],
+        [
+          "doves",
+          "Dove"
+        ],
+        [
+          "koi carp",
+          "Koi"
+        ],
+        [
+          "Siamese fighting fish",
+          "Betta"
+        ],
+        [
+          "snails",
+          "Snail"
+        ]
+      ],
+      "before": 34,
+      "after": 46
+    },
+    {
+      "question": 30,
+      "added": [
+        "Quoll",
+        "Brolga",
+        "Bowerbird",
+        "Rainbow lorikeet",
+        "Ibis",
+        "Murray cod",
+        "Barramundi",
+        "Cane toad",
+        "Perentie",
+        "Dunnart",
+        "Bettong",
+        "Antechinus"
+      ],
+      "aliases": [
+        [
+          "quolls",
+          "Quoll"
+        ],
+        [
+          "brolgas",
+          "Brolga"
+        ],
+        [
+          "ibises",
+          "Ibis"
+        ]
+      ],
+      "before": 36,
+      "after": 48
+    },
+    {
+      "question": 31,
+      "added": [
+        "Beetle",
+        "Bass",
+        "Buffalo",
+        "Cockatoo",
+        "Possum",
+        "Bumblebee",
+        "Rook",
+        "Terrier",
+        "Poodle",
+        "Bulldog",
+        "Cuttlefish",
+        "Pufferfish"
+      ],
+      "aliases": [
+        [
+          "basses",
+          "Bass"
+        ],
+        [
+          "rooks",
+          "Rook"
+        ]
+      ],
+      "before": 26,
+      "after": 38
+    },
+    {
+      "question": 32,
+      "added": [
+        "Fly",
+        "Hound",
+        "Bug",
+        "Shark",
+        "Snake",
+        "Skate",
+        "Lark",
+        "Swan",
+        "Lobster",
+        "Peacock",
+        "Bear",
+        "Chicken",
+        "Goose",
+        "Crab",
+        "Perch",
+        "Carp",
+        "Flounder",
+        "Fluke",
+        "Slug"
+      ],
+      "aliases": [
+        [
+          "flies",
+          "Fly"
+        ],
+        [
+          "hounds",
+          "Hound"
+        ],
+        [
+          "bugs",
+          "Bug"
+        ],
+        [
+          "sharks",
+          "Shark"
+        ],
+        [
+          "snakes",
+          "Snake"
+        ],
+        [
+          "skates",
+          "Skate"
+        ],
+        [
+          "larks",
+          "Lark"
+        ],
+        [
+          "swans",
+          "Swan"
+        ]
+      ],
+      "before": 32,
+      "after": 51
+    },
+    {
+      "question": 33,
+      "added": [
+        "Walrus",
+        "Seal",
+        "Sea lion",
+        "Bat",
+        "Parrot",
+        "Cockatoo",
+        "Macaw",
+        "Ibis",
+        "Rabbit",
+        "Prairie dog",
+        "Clownfish",
+        "Musk ox"
+      ],
+      "aliases": [
+        [
+          "seals",
+          "Seal"
+        ],
+        [
+          "bats",
+          "Bat"
+        ],
+        [
+          "macaws",
+          "Macaw"
+        ],
+        [
+          "ibises",
+          "Ibis"
+        ]
+      ],
+      "before": 33,
+      "after": 45
+    },
+    {
+      "question": 34,
+      "added": [
+        "Guinea pig",
+        "Gerbil",
+        "Hamster",
+        "Goat",
+        "Cow",
+        "Deer",
+        "Moose",
+        "Tapir",
+        "Armadillo",
+        "Sloth",
+        "Peccary",
+        "Mink"
+      ],
+      "aliases": [
+        [
+          "goats",
+          "Goat"
+        ],
+        [
+          "cows",
+          "Cow"
+        ],
+        [
+          "deers",
+          "Deer"
+        ],
+        [
+          "mooses",
+          "Moose"
+        ],
+        [
+          "tapirs",
+          "Tapir"
+        ],
+        [
+          "sloths",
+          "Sloth"
+        ],
+        [
+          "minks",
+          "Mink"
+        ]
+      ],
+      "before": 33,
+      "after": 45
+    },
+    {
+      "question": 35,
+      "added": [
+        "Peacock",
+        "Peahen",
+        "Turkey",
+        "Pheasant",
+        "Gull",
+        "Puffin",
+        "Kingfisher",
+        "Toucan",
+        "Macaw",
+        "Firefly",
+        "Lacewing",
+        "Mayfly"
+      ],
+      "aliases": [
+        [
+          "gulls",
+          "Gull"
+        ],
+        [
+          "macaws",
+          "Macaw"
+        ]
+      ],
+      "before": 35,
+      "after": 47
+    },
+    {
+      "question": 36,
+      "added": [
+        "Tiger shark",
+        "Bongo",
+        "Banded mongoose",
+        "Zebra moray",
+        "Killdeer",
+        "Striped possum",
+        "Raccoon",
+        "Zebra mussel",
+        "Sumatran striped rabbit"
+      ],
+      "aliases": [
+        [
+          "Honeybee",
+          "Bee"
+        ],
+        [
+          "bongos",
+          "Bongo"
+        ],
+        [
+          "striped rabbit",
+          "Sumatran striped rabbit"
+        ]
+      ],
+      "before": 28,
+      "after": 37
+    },
+    {
+      "question": 37,
+      "added": [
+        "Giraffe",
+        "Elephant",
+        "Zebra",
+        "Wildebeest",
+        "Opossum",
+        "Sugar glider",
+        "Possum",
+        "Long-tailed tit"
+      ],
+      "aliases": [
+        [
+          "Cattle",
+          "Cow"
+        ],
+        [
+          "Macaque",
+          "Monkey"
+        ],
+        [
+          "Spider monkey",
+          "Monkey"
+        ]
+      ],
+      "before": 28,
+      "after": 36
+    },
+    {
+      "question": 38,
+      "added": [
+        "Apricot",
+        "Peach",
+        "Lime",
+        "Fig",
+        "Date palm",
+        "Ginkgo",
+        "Redwood",
+        "Dogwood",
+        "Alder",
+        "Sweetgum"
+      ],
+      "aliases": [
+        [
+          "figs",
+          "Fig"
+        ],
+        [
+          "Sequoia",
+          "Redwood"
+        ],
+        [
+          "Acer",
+          "Maple"
+        ]
+      ],
+      "before": 33,
+      "after": 43
+    },
+    {
+      "question": 39,
+      "added": [
+        "Alstroemeria",
+        "Amaryllis",
+        "Anthurium",
+        "Calla lily",
+        "Clematis",
+        "Cosmos",
+        "Hellebore",
+        "Lupin",
+        "Zinnia",
+        "Waxflower"
+      ],
+      "aliases": [
+        [
+          "Larkspur",
+          "Delphinium"
+        ],
+        [
+          "lupine",
+          "Lupin"
+        ],
+        [
+          "Narcissus",
+          "Daffodil"
+        ]
+      ],
+      "before": 30,
+      "after": 40
+    },
+    {
+      "question": 40,
+      "added": [
+        "Tradescantia",
+        "Peperomia",
+        "Yucca",
+        "Kentia palm",
+        "Areca palm",
+        "String of pearls",
+        "String of hearts",
+        "Venus flytrap",
+        "Pitcher plant",
+        "Umbrella plant",
+        "Cast iron plant",
+        "Asparagus fern"
+      ],
+      "aliases": [
+        [
+          "yuccas",
+          "Yucca"
+        ]
+      ],
+      "before": 31,
+      "after": 43
+    },
+    {
+      "question": 41,
+      "added": [
+        "Mulch",
+        "Drainage",
+        "Shelter from wind",
+        "Pruning",
+        "Worms"
+      ],
+      "aliases": [
+        [
+          "Growing space",
+          "Space"
+        ],
+        [
+          "Suitable temperature",
+          "Warmth"
+        ]
+      ],
+      "before": 24,
+      "after": 29
+    },
+    {
+      "question": 42,
+      "added": [
+        "Limestone",
+        "Sandstone",
+        "Amber",
+        "Obsidian",
+        "Pumice",
+        "Felt",
+        "Seagrass",
+        "Loofah"
+      ],
+      "aliases": [
+        [
+          "Mother of pearl",
+          "Shell"
+        ]
+      ],
+      "before": 32,
+      "after": 40
+    },
+    {
+      "question": 43,
+      "added": [
+        "Quince",
+        "Medlar",
+        "Soursop",
+        "Rambutan",
+        "Longan"
+      ],
+      "aliases": [
+        [
+          "Starfruit",
+          "Star fruit"
+        ]
+      ],
+      "before": 33,
+      "after": 38
+    },
+    {
+      "question": 44,
+      "added": [
+        "Reindeer",
+        "Yak",
+        "Quail",
+        "Pheasant",
+        "Ferret",
+        "Mule",
+        "Silkworm",
+        "Deer"
+      ],
+      "aliases": [],
+      "before": 27,
+      "after": 35
+    },
+    {
+      "question": 45,
+      "added": [
+        "Puffin",
+        "Kingfisher",
+        "Sand martin",
+        "Trapdoor spider",
+        "Crayfish",
+        "Crab",
+        "Pangolin",
+        "Armadillo"
+      ],
+      "aliases": [],
+      "before": 28,
+      "after": 36
+    },
+    {
+      "question": 46,
+      "added": [
+        "Sea squirt",
+        "Brittle star",
+        "Feather star",
+        "Horseshoe crab",
+        "Sea hare",
+        "Copepod"
+      ],
+      "aliases": [],
+      "before": 28,
+      "after": 34
+    },
+    {
+      "question": 47,
+      "added": [
+        "Acorn falling",
+        "Mosquito buzzing",
+        "Wings flapping",
+        "Bat squeaking",
+        "Water dripping"
+      ],
+      "aliases": [
+        [
+          "Deer calling",
+          "Deer"
+        ],
+        [
+          "Leaves crunching",
+          "Rustling leaves"
+        ],
+        [
+          "Branches creaking",
+          "Creaking tree"
+        ],
+        [
+          "Animal footsteps",
+          "Footsteps"
+        ]
+      ],
+      "before": 22,
+      "after": 27
+    },
+    {
+      "question": 48,
+      "added": [
+        "Termite mound",
+        "Beaver lodge",
+        "Drey",
+        "Holt",
+        "Spider burrow",
+        "Ant nest",
+        "Wasp nest",
+        "Rock pool",
+        "Tree bark"
+      ],
+      "aliases": [
+        [
+          "squirrel drey",
+          "Drey"
+        ],
+        [
+          "otter holt",
+          "Holt"
+        ]
+      ],
+      "before": 32,
+      "after": 41
+    },
+    {
+      "question": 49,
+      "added": [
+        "Stride length",
+        "Arm span",
+        "Neck circumference",
+        "Dental bite force",
+        "Pupil diameter",
+        "Blood type",
+        "Uric acid level"
+      ],
+      "aliases": [
+        [
+          "Blood oxygen level",
+          "Blood oxygen"
+        ],
+        [
+          "Hearing range",
+          "Hearing"
+        ],
+        [
+          "wingspan",
+          "Arm span"
+        ],
+        [
+          "bite force",
+          "Dental bite force"
+        ]
+      ],
+      "before": 32,
+      "after": 39
+    },
+    {
+      "question": 50,
+      "added": [
+        "Achilles tendon",
+        "Bicep",
+        "Tricep",
+        "Hamstring",
+        "Adrenal gland",
+        "Ureter",
+        "Optic nerve",
+        "Fallopian tube"
+      ],
+      "aliases": [
+        [
+          "clavicle",
+          "Collarbone"
+        ],
+        [
+          "clavicles",
+          "Collarbone"
+        ],
+        [
+          "scapulae",
+          "Shoulder blade"
+        ],
+        [
+          "Achilles tendons",
+          "Achilles tendon"
+        ],
+        [
+          "Hip bone",
+          "Hip"
+        ],
+        [
+          "hip bones",
+          "Hip"
+        ],
+        [
+          "patellae",
+          "Kneecap"
+        ],
+        [
+          "biceps",
+          "Bicep"
+        ],
+        [
+          "triceps",
+          "Tricep"
+        ],
+        [
+          "hamstrings",
+          "Hamstring"
+        ],
+        [
+          "adrenal glands",
+          "Adrenal gland"
+        ],
+        [
+          "ureters",
+          "Ureter"
+        ],
+        [
+          "optic nerves",
+          "Optic nerve"
+        ],
+        [
+          "fallopian tubes",
+          "Fallopian tube"
+        ]
+      ],
+      "before": 37,
+      "after": 45
+    },
+    {
+      "question": 51,
+      "added": [
+        "Nightcap",
+        "Shower cap",
+        "Swimming cap",
+        "Surgical cap",
+        "Hair bow",
+        "Head torch",
+        "Flower garland"
+      ],
+      "aliases": [
+        [
+          "swim cap",
+          "Swimming cap"
+        ],
+        [
+          "bandanna",
+          "Bandana"
+        ],
+        [
+          "headlamp",
+          "Head torch"
+        ]
+      ],
+      "before": 33,
+      "after": 40
+    },
+    {
+      "question": 52,
+      "added": [
+        "Birdwatching",
+        "Stargazing",
+        "Jigsaw puzzle",
+        "Whittling",
+        "Tai chi",
+        "Sitting by a fire",
+        "People watching",
+        "Floating in water"
+      ],
+      "aliases": [
+        [
+          "watch birds",
+          "Birdwatching"
+        ],
+        [
+          "look at stars",
+          "Stargazing"
+        ],
+        [
+          "do a jigsaw",
+          "Jigsaw puzzle"
+        ],
+        [
+          "Cuddling a pet",
+          "Stroke a pet"
+        ]
+      ],
+      "before": 33,
+      "after": 41
+    },
+    {
+      "question": 53,
+      "added": [
+        "Look at a menu",
+        "Hold hands",
+        "Rock a baby",
+        "Shift weight",
+        "Plan the day",
+        "Listen to announcements"
+      ],
+      "aliases": [
+        [
+          "read the menu",
+          "Look at a menu"
+        ],
+        [
+          "Check a watch",
+          "Check watch"
+        ],
+        [
+          "check the time",
+          "Check watch"
+        ],
+        [
+          "Sip a drink",
+          "Drink"
+        ]
+      ],
+      "before": 27,
+      "after": 33
+    },
+    {
+      "question": 54,
+      "added": [
+        "Bookmarks",
+        "Marbles",
+        "Model trains",
+        "Vintage cameras",
+        "Sea glass",
+        "Patches",
+        "Perfume bottles"
+      ],
+      "aliases": [
+        [
+          "enamel pins",
+          "Badges"
+        ],
+        [
+          "Bottle tops",
+          "Bottlecaps"
+        ],
+        [
+          "bottle caps",
+          "Bottlecaps"
+        ]
+      ],
+      "before": 31,
+      "after": 38
+    },
+    {
+      "question": 55,
+      "added": [
+        "Refuse collector",
+        "Baker",
+        "Butcher",
+        "Dental nurse",
+        "Car park attendant",
+        "Doorman",
+        "Chauffeur"
+      ],
+      "aliases": [
+        [
+          "correctional officer",
+          "Prison officer"
+        ],
+        [
+          "garbage collector",
+          "Refuse collector"
+        ],
+        [
+          "bin man",
+          "Refuse collector"
+        ],
+        [
+          "lollipop person",
+          "School crossing guard"
+        ],
+        [
+          "Military pilot",
+          "Air force pilot"
+        ],
+        [
+          "door attendant",
+          "Doorman"
+        ]
+      ],
+      "before": 33,
+      "after": 40
+    },
+    {
+      "question": 56,
+      "added": [
+        "Marine biologist",
+        "Pool cleaner",
+        "Photographer",
+        "Wildlife camera operator",
+        "Beekeeper",
+        "Tennis coach",
+        "Golf caddie",
+        "Pest controller"
+      ],
+      "aliases": [],
+      "before": 32,
+      "after": 40
+    },
+    {
+      "question": 57,
+      "added": [
+        "Feed a pet",
+        "Write in a journal",
+        "Apply moisturiser",
+        "Turn down the bed"
+      ],
+      "aliases": [
+        [
+          "Charge a phone",
+          "Plug in phone"
+        ],
+        [
+          "Lock the doors",
+          "Lock doors"
+        ],
+        [
+          "Take medication",
+          "Take medicine"
+        ],
+        [
+          "apply moisturizer",
+          "Apply moisturiser"
+        ]
+      ],
+      "before": 28,
+      "after": 32
+    },
+    {
+      "question": 58,
+      "added": [
+        "Check the weather",
+        "Let the dog out",
+        "Water plants",
+        "Pack a bag"
+      ],
+      "aliases": [
+        [
+          "Make the bed",
+          "Make bed"
+        ],
+        [
+          "Feed a pet",
+          "Feed pet"
+        ],
+        [
+          "Take medication",
+          "Take medicine"
+        ],
+        [
+          "Turn off the alarm",
+          "Turn off alarm"
+        ]
+      ],
+      "before": 27,
+      "after": 31
+    },
+    {
+      "question": 59,
+      "added": [
+        "Light a candle",
+        "Release doves",
+        "Light a unity candle",
+        "Henna painting",
+        "Break a glass",
+        "Jump the broom",
+        "Have a tea ceremony"
+      ],
+      "aliases": [
+        [
+          "Sign the register",
+          "Sign register"
+        ],
+        [
+          "Exchange vows",
+          "Say vows"
+        ],
+        [
+          "Cut the cake",
+          "Cut cake"
+        ],
+        [
+          "Catch the bouquet",
+          "Catch bouquet"
+        ]
+      ],
+      "before": 20,
+      "after": 27
+    },
+    {
+      "question": 60,
+      "added": [
+        "Passing a driving test",
+        "Paying off a mortgage",
+        "Religious festival",
+        "Religious conversion",
+        "Adoption",
+        "Finishing a marathon",
+        "Winning a scholarship",
+        "Starting school"
+      ],
+      "aliases": [
+        [
+          "Recovery from illness",
+          "Recovery"
+        ],
+        [
+          "Winning a competition",
+          "Sporting win"
+        ],
+        [
+          "Becoming a citizen",
+          "Citizenship"
+        ]
+      ],
+      "before": 20,
+      "after": 28
+    },
+    {
+      "question": 61,
+      "added": [
+        "Kickboxing",
+        "Tai chi",
+        "Rock climbing",
+        "Water aerobics",
+        "Trampolining",
+        "Chair exercises",
+        "Skateboarding"
+      ],
+      "aliases": [
+        [
+          "Rowing",
+          "Row"
+        ],
+        [
+          "Boxing",
+          "Box"
+        ],
+        [
+          "jumping rope",
+          "Skip"
+        ],
+        [
+          "Hiking",
+          "Hike"
+        ]
+      ],
+      "before": 32,
+      "after": 39
+    },
+    {
+      "question": 62,
+      "added": [
+        "Sonographer",
+        "Audiologist",
+        "Prosthetist",
+        "Orthotist",
+        "Respiratory therapist",
+        "Clinical perfusionist",
+        "Art therapist"
+      ],
+      "aliases": [
+        [
+          "speech pathologist",
+          "Speech therapist"
+        ],
+        [
+          "dietician",
+          "Dietitian"
+        ]
+      ],
+      "before": 20,
+      "after": 27
+    },
+    {
+      "question": 63,
+      "added": [
+        "Foster animals",
+        "Drive patients",
+        "Make charity calls",
+        "Repair donated bikes",
+        "Read to children"
+      ],
+      "aliases": [
+        [
+          "Coach a youth team",
+          "Coach sport"
+        ],
+        [
+          "Help at a food bank",
+          "Serve food"
+        ],
+        [
+          "Translate documents",
+          "Translate"
+        ]
+      ],
+      "before": 20,
+      "after": 25
+    },
+    {
+      "question": 64,
+      "added": [
+        "Astronomy",
+        "Philosophy",
+        "Citizenship",
+        "Media studies",
+        "Religious education"
+      ],
+      "aliases": [
+        [
+          "computer science",
+          "Computing"
+        ],
+        [
+          "Food technology",
+          "Cooking"
+        ],
+        [
+          "religious studies",
+          "Religious education"
+        ]
+      ],
+      "before": 36,
+      "after": 41
+    },
+    {
+      "question": 65,
+      "added": [
+        "Counting fingers",
+        "Air quotes",
+        "Make a stop gesture",
+        "Give a shaka sign",
+        "Make a time-out sign",
+        "Tap someone's shoulder"
+      ],
+      "aliases": [
+        [
+          "fingerspelling",
+          "Finger spelling"
+        ],
+        [
+          "Beckoning",
+          "Beckon"
+        ],
+        [
+          "Pointing",
+          "Point"
+        ],
+        [
+          "Saluting",
+          "Salute"
+        ],
+        [
+          "Crossing fingers",
+          "Cross fingers"
+        ],
+        [
+          "Making a heart",
+          "Make heart sign"
+        ],
+        [
+          "shaka",
+          "Give a shaka sign"
+        ]
+      ],
+      "before": 27,
+      "after": 33
+    },
+    {
+      "question": 66,
+      "added": [
+        "Nostalgia",
+        "Homesickness",
+        "Resentment",
+        "Affection",
+        "Compassion",
+        "Empathy",
+        "Bewilderment",
+        "Indifference"
+      ],
+      "aliases": [],
+      "before": 30,
+      "after": 38
+    },
+    {
+      "question": 67,
+      "added": [
+        "Rejection",
+        "Burglary",
+        "Commitment",
+        "Change",
+        "Losing a loved one",
+        "Unemployment",
+        "War",
+        "Crime"
+      ],
+      "aliases": [
+        [
+          "Injections",
+          "Needles"
+        ]
+      ],
+      "before": 34,
+      "after": 42
+    },
+    {
+      "question": 68,
+      "added": [
+        "Lend tools",
+        "Walk their dog",
+        "Water their plants",
+        "Translate for them",
+        "Fix their computer"
+      ],
+      "aliases": [
+        [
+          "offer a ride",
+          "Give a lift"
+        ],
+        [
+          "Help them move",
+          "Help move"
+        ],
+        [
+          "Look after their child",
+          "Babysit"
+        ],
+        [
+          "Help with homework",
+          "Help study"
+        ]
+      ],
+      "before": 20,
+      "after": 25
+    },
+    {
+      "question": 69,
+      "added": [
+        "Preferred hours",
+        "Notice period",
+        "Visa status",
+        "Emergency contact",
+        "Right to work",
+        "Professional membership",
+        "Publication",
+        "Volunteer experience"
+      ],
+      "aliases": [
+        [
+          "Employment history",
+          "Work experience"
+        ],
+        [
+          "work history",
+          "Work experience"
+        ]
+      ],
+      "before": 20,
+      "after": 28
+    },
+    {
+      "question": 70,
+      "added": [
+        "Roofer",
+        "Bicycle mechanic",
+        "Instrument maker",
+        "Bookbinder",
+        "Ceramic restorer",
+        "Denture technician",
+        "Shipwright"
+      ],
+      "aliases": [
+        [
+          "jeweler",
+          "Jeweller"
+        ]
+      ],
+      "before": 33,
+      "after": 40
+    },
+    {
+      "question": 71,
+      "added": [
+        "Grasp objects",
+        "Imitate sounds",
+        "Use a spoon",
+        "Put on shoes",
+        "Stack blocks",
+        "Turn pages",
+        "Chew food",
+        "Drink from a cup"
+      ],
+      "aliases": [
+        [
+          "pointing",
+          "Point"
+        ],
+        [
+          "recognize faces",
+          "Recognise faces"
+        ],
+        [
+          "babbling",
+          "Babble"
+        ]
+      ],
+      "before": 22,
+      "after": 30
+    },
+    {
+      "question": 72,
+      "added": [
+        "Apply deodorant",
+        "Clean dentures",
+        "Scrub nails",
+        "Clean contact lenses"
+      ],
+      "aliases": [
+        [
+          "Floss teeth",
+          "Floss"
+        ],
+        [
+          "flossing",
+          "Floss"
+        ]
+      ],
+      "before": 29,
+      "after": 33
+    },
+    {
+      "question": 73,
+      "added": [
+        "Bottle stopper",
+        "Melon baller",
+        "Apple corer",
+        "Tea strainer",
+        "Trivet",
+        "Oven thermometer",
+        "Corn cob holder",
+        "Cake tester"
+      ],
+      "aliases": [],
+      "before": 35,
+      "after": 43
+    },
+    {
+      "question": 74,
+      "added": [
+        "Hearing aid",
+        "Glasses case",
+        "Contact lens",
+        "Earring back",
+        "Lunch box",
+        "Bus pass"
+      ],
+      "aliases": [],
+      "before": 27,
+      "after": 33
+    },
+    {
+      "question": 75,
+      "added": [
+        "Earplugs",
+        "Guitar pick",
+        "Hair clip",
+        "Breath mints",
+        "Small torch",
+        "Dog poo bag",
+        "Parking ticket"
+      ],
+      "aliases": [
+        [
+          "plectrum",
+          "Guitar pick"
+        ],
+        [
+          "Shopping receipt",
+          "Receipt"
+        ],
+        [
+          "pocket flashlight",
+          "Small torch"
+        ],
+        [
+          "flash drive",
+          "USB stick"
+        ],
+        [
+          "dog waste bag",
+          "Dog poo bag"
+        ]
+      ],
+      "before": 28,
+      "after": 35
+    },
+    {
+      "question": 76,
+      "added": [
+        "Quilt",
+        "Wall planter",
+        "Key rack",
+        "Dartboard",
+        "Acoustic panel"
+      ],
+      "aliases": [
+        [
+          "bulletin board",
+          "Noticeboard"
+        ]
+      ],
+      "before": 28,
+      "after": 33
+    },
+    {
+      "question": 77,
+      "added": [
+        "Oyster",
+        "Clam",
+        "Mussel",
+        "Vent",
+        "Shutter",
+        "Compact mirror"
+      ],
+      "aliases": [],
+      "before": 35,
+      "after": 41
+    },
+    {
+      "question": 78,
+      "added": [
+        "Insulin pump",
+        "Wireless keyboard",
+        "Computer mouse",
+        "Baby monitor",
+        "Digital thermometer",
+        "Laser pointer"
+      ],
+      "aliases": [],
+      "before": 32,
+      "after": 38
+    },
+    {
+      "question": 79,
+      "added": [
+        "Steam mop",
+        "Scouring pad",
+        "Lint roller",
+        "Drain cleaner",
+        "Oven cleaner",
+        "Carpet shampoo"
+      ],
+      "aliases": [
+        [
+          "microfiber cloth",
+          "Microfibre cloth"
+        ]
+      ],
+      "before": 28,
+      "after": 34
+    },
+    {
+      "question": 80,
+      "added": [
+        "Dental floss",
+        "Shower curtain",
+        "Tweezers",
+        "Weighing scales",
+        "Bath plug"
+      ],
+      "aliases": [],
+      "before": 33,
+      "after": 38
+    },
+    {
+      "question": 81,
+      "added": [
+        "Bedside lamp",
+        "Hot water bottle",
+        "Eye mask",
+        "Humidifier"
+      ],
+      "aliases": [],
+      "before": 32,
+      "after": 36
+    },
+    {
+      "question": 82,
+      "added": [
+        "Vice",
+        "Extension lead",
+        "Paint roller",
+        "Seed tray",
+        "Potting mix",
+        "Spare tyre",
+        "Socket set"
+      ],
+      "aliases": [
+        [
+          "vise",
+          "Vice"
+        ],
+        [
+          "extension cord",
+          "Extension lead"
+        ],
+        [
+          "spare tire",
+          "Spare tyre"
+        ]
+      ],
+      "before": 34,
+      "after": 41
+    },
+    {
+      "question": 83,
+      "added": [
+        "Aquarium",
+        "Terrarium",
+        "Hourglass",
+        "Glass ornament",
+        "Glass chopping board",
+        "Glass kettle",
+        "Splashback"
+      ],
+      "aliases": [],
+      "before": 32,
+      "after": 39
+    },
+    {
+      "question": 84,
+      "added": [
+        "Ice pack",
+        "Breast milk",
+        "Pizza dough",
+        "Herbs",
+        "Fruit puree",
+        "Soup portions"
+      ],
+      "aliases": [
+        [
+          "fish sticks",
+          "Fish fingers"
+        ]
+      ],
+      "before": 27,
+      "after": 33
+    },
+    {
+      "question": 85,
+      "added": [
+        "Slotted spoon",
+        "Ladle",
+        "Skimmer",
+        "Meat tenderiser",
+        "Potato masher",
+        "Garlic press",
+        "Ricer",
+        "Kitchen thermometer",
+        "Kitchen blowtorch",
+        "Mandoline"
+      ],
+      "aliases": [
+        [
+          "meat tenderizer",
+          "Meat tenderiser"
+        ]
+      ],
+      "before": 26,
+      "after": 36
+    },
+    {
+      "question": 86,
+      "added": [
+        "Peg bag",
+        "Colour catcher",
+        "Lint filter",
+        "Wash bag",
+        "Washing line prop",
+        "Laundry sanitiser",
+        "Laundry sink"
+      ],
+      "aliases": [
+        [
+          "color catcher",
+          "Colour catcher"
+        ],
+        [
+          "laundry sanitizer",
+          "Laundry sanitiser"
+        ]
+      ],
+      "before": 24,
+      "after": 31
+    },
+    {
+      "question": 87,
+      "added": [
+        "Torx driver",
+        "Pipe wrench",
+        "Rivet gun",
+        "Wire stripper",
+        "Multimeter",
+        "Stud finder",
+        "Caulking gun"
+      ],
+      "aliases": [
+        [
+          "Adjustable spanner",
+          "Spanner"
+        ]
+      ],
+      "before": 30,
+      "after": 37
+    },
+    {
+      "question": 88,
+      "added": [
+        "Extractor fan",
+        "Window film",
+        "Outdoor awning",
+        "Shade sail",
+        "Night ventilation",
+        "Reflective roof coating"
+      ],
+      "aliases": [
+        [
+          "swamp cooler",
+          "Evaporative cooler"
+        ]
+      ],
+      "before": 27,
+      "after": 33
+    },
+    {
+      "question": 89,
+      "added": [
+        "Lunch box",
+        "Beeswax wrap",
+        "Cellar",
+        "Oilskin wrap",
+        "Cheese dome",
+        "Root cellar",
+        "Preserving bottle"
+      ],
+      "aliases": [
+        [
+          "bread box",
+          "Bread bin"
+        ],
+        [
+          "cookie tin",
+          "Biscuit tin"
+        ],
+        [
+          "Clip-top jar",
+          "Jar"
+        ]
+      ],
+      "before": 27,
+      "after": 34
+    },
+    {
+      "question": 90,
+      "added": [
+        "Table runner",
+        "Gravy boat",
+        "Butter dish",
+        "Serving platter",
+        "Napkin ring",
+        "Cruet"
+      ],
+      "aliases": [
+        [
+          "Place mat",
+          "Placemat"
+        ]
+      ],
+      "before": 35,
+      "after": 41
+    },
+    {
+      "question": 91,
+      "added": [
+        "Hand-crank torch",
+        "Ice box",
+        "Warm blanket",
+        "Cash",
+        "Gas lantern",
+        "Oil lamp",
+        "UPS"
+      ],
+      "aliases": [
+        [
+          "uninterruptible power supply",
+          "UPS"
+        ]
+      ],
+      "before": 20,
+      "after": 27
+    },
+    {
+      "question": 92,
+      "added": [
+        "Doorbell camera",
+        "Potted tree",
+        "Boot tray",
+        "Door mat",
+        "Parcel delivery sign"
+      ],
+      "aliases": [
+        [
+          "mailbox",
+          "Letterbox"
+        ]
+      ],
+      "before": 20,
+      "after": 25
+    },
+    {
+      "question": 93,
+      "added": [
+        "Table confetti",
+        "Table centrepiece",
+        "Pinwheel",
+        "Honeycomb ball",
+        "Disco ball",
+        "LED candle"
+      ],
+      "aliases": [
+        [
+          "string lights",
+          "Fairy lights"
+        ],
+        [
+          "table centerpiece",
+          "Table centrepiece"
+        ]
+      ],
+      "before": 20,
+      "after": 26
+    },
+    {
+      "question": 94,
+      "added": [
+        "Foil tray",
+        "Cardboard tube",
+        "Glass jar",
+        "Plastic milk bottle",
+        "Brown paper bag",
+        "Egg carton"
+      ],
+      "aliases": [
+        [
+          "aluminum can",
+          "Aluminium can"
+        ]
+      ],
+      "before": 20,
+      "after": 26
+    },
+    {
+      "question": 95,
+      "added": [
+        "Motion sensor light",
+        "Video doorbell",
+        "Security shutter",
+        "Door chain",
+        "Smart lock",
+        "Security film",
+        "Locked gate",
+        "Neighbourhood watch"
+      ],
+      "aliases": [
+        [
+          "neighborhood watch",
+          "Neighbourhood watch"
+        ]
+      ],
+      "before": 20,
+      "after": 28
+    },
+    {
+      "question": 96,
+      "added": [
+        "Bin liner",
+        "Mop head",
+        "Dish brush",
+        "Vacuum filter",
+        "Smoke detector battery",
+        "Toilet brush",
+        "Kitchen towel"
+      ],
+      "aliases": [
+        [
+          "Toothbrush head",
+          "Toothbrush"
+        ]
+      ],
+      "before": 20,
+      "after": 27
+    },
+    {
+      "question": 97,
+      "added": [
+        "Syria"
+      ],
+      "aliases": [
+        [
+          "Syrian Arab Republic",
+          "Syria"
+        ]
+      ],
+      "before": 154,
+      "after": 155
+    },
+    {
+      "question": 98,
+      "added": [
+        "Syria",
+        "Türkiye"
+      ],
+      "aliases": [
+        [
+          "Syrian Arab Republic",
+          "Syria"
+        ],
+        [
+          "Turkey",
+          "Türkiye"
+        ],
+        [
+          "Republic of Turkiye",
+          "Türkiye"
+        ]
+      ],
+      "before": 120,
+      "after": 122
+    },
+    {
+      "question": 99,
+      "added": [
+        "Armenia"
+      ],
+      "aliases": [
+        [
+          "Republic of Armenia",
+          "Armenia"
+        ],
+        [
+          "Hayastan",
+          "Armenia"
+        ]
+      ],
+      "before": 54,
+      "after": 55
+    },
+    {
+      "question": 100,
+      "added": [],
+      "aliases": [
+        [
+          "Muenchen",
+          "Munich"
+        ],
+        [
+          "München",
+          "Munich"
+        ],
+        [
+          "Antwerpen",
+          "Antwerp"
+        ],
+        [
+          "Anvers",
+          "Antwerp"
+        ],
+        [
+          "Ciudad de Mexico",
+          "Mexico City"
+        ],
+        [
+          "CDMX",
+          "Mexico City"
+        ],
+        [
+          "Chamonix Mont Blanc",
+          "Chamonix"
+        ],
+        [
+          "Sankt Moritz",
+          "St Moritz"
+        ],
+        [
+          "Cortina Dampezzo",
+          "Cortina d'Ampezzo"
+        ]
+      ],
+      "before": 44,
+      "after": 44
+    },
+    {
+      "question": 101,
+      "added": [
+        "Wildlife migration",
+        "Hot spring",
+        "Ancient ruins",
+        "Family grave",
+        "Religious shrine",
+        "Film location"
+      ],
+      "aliases": [
+        [
+          "aurora borealis",
+          "Northern lights"
+        ]
+      ],
+      "before": 24,
+      "after": 30
+    },
+    {
+      "question": 102,
+      "added": [
+        "Hydrofoil",
+        "Chairlift",
+        "Pedicab",
+        "Airship",
+        "Dog sled",
+        "Snowmobile"
+      ],
+      "aliases": [],
+      "before": 24,
+      "after": 30
+    },
+    {
+      "question": 103,
+      "added": [
+        "Medication",
+        "Eye mask",
+        "Travel adaptor",
+        "Slippers",
+        "Water bottle",
+        "Retainer"
+      ],
+      "aliases": [
+        [
+          "travel adapter",
+          "Travel adaptor"
+        ]
+      ],
+      "before": 22,
+      "after": 28
+    },
+    {
+      "question": 104,
+      "added": [
+        "Luggage rack",
+        "Do not disturb sign",
+        "Ironing board",
+        "Bathrobe",
+        "Sewing kit",
+        "Emergency exit plan"
+      ],
+      "aliases": [
+        [
+          "hair dryer",
+          "Hairdryer"
+        ]
+      ],
+      "before": 22,
+      "after": 28
+    },
+    {
+      "question": 105,
+      "added": [
+        "Check departure board",
+        "Use a luggage trolley",
+        "Fill a water bottle",
+        "Buy duty-free goods",
+        "Declare goods",
+        "Exchange currency",
+        "Weigh luggage",
+        "Charge a phone",
+        "Visit a prayer room",
+        "Collect a hire car"
+      ],
+      "aliases": [],
+      "before": 20,
+      "after": 30
+    },
+    {
+      "question": 106,
+      "added": [
+        "Fridge magnet",
+        "Local spices",
+        "Local sweets",
+        "Pottery",
+        "Shot glass",
+        "Bookmark",
+        "Woven basket",
+        "Pressed coin"
+      ],
+      "aliases": [],
+      "before": 20,
+      "after": 28
+    },
+    {
+      "question": 107,
+      "added": [
+        "Farm stay",
+        "Safari lodge",
+        "Serviced apartment",
+        "Monastery guesthouse",
+        "Capsule hotel"
+      ],
+      "aliases": [],
+      "before": 20,
+      "after": 25
+    },
+    {
+      "question": 108,
+      "added": [
+        "Washer fluid",
+        "Spare wheel",
+        "Fuel range",
+        "Child seat",
+        "Roof rack",
+        "Breakdown cover",
+        "Toll pass"
+      ],
+      "aliases": [
+        [
+          "Brake lights",
+          "Lights"
+        ],
+        [
+          "Indicator lights",
+          "Lights"
+        ],
+        [
+          "turn signals",
+          "Lights"
+        ]
+      ],
+      "before": 20,
+      "after": 27
+    },
+    {
+      "question": 109,
+      "added": [
+        "Planetarium",
+        "Food market",
+        "River cruise",
+        "Historic cemetery",
+        "Public square",
+        "Street mural"
+      ],
+      "aliases": [
+        [
+          "botanic garden",
+          "Botanical garden"
+        ]
+      ],
+      "before": 22,
+      "after": 28
+    },
+    {
+      "question": 110,
+      "added": [
+        "Signal box",
+        "Level crossing",
+        "Electricity pylon",
+        "Canal",
+        "Wind farm",
+        "Allotment",
+        "Cemetery",
+        "Quarry",
+        "Freight train",
+        "Railway depot"
+      ],
+      "aliases": [],
+      "before": 20,
+      "after": 30
+    },
+    {
+      "question": 111,
+      "added": [
+        "Pitch a tent",
+        "Build a campfire",
+        "Cook outdoors",
+        "Stargaze",
+        "Wash dishes",
+        "Fetch water",
+        "Hang a hammock",
+        "Watch wildlife",
+        "Read a map"
+      ],
+      "aliases": [],
+      "before": 20,
+      "after": 29
+    },
+    {
+      "question": 112,
+      "added": [
+        "Chichen Itza",
+        "Marina Bay Sands",
+        "Mont Saint Michel",
+        "Atomium",
+        "Gateway Arch",
+        "Space Needle",
+        "CN Tower"
+      ],
+      "aliases": [],
+      "before": 22,
+      "after": 29
+    },
+    {
+      "question": 113,
+      "added": [
+        "Greece",
+        "Turkey",
+        "Lebanon",
+        "Iran",
+        "India",
+        "Pakistan",
+        "Morocco",
+        "South Africa"
+      ],
+      "aliases": [
+        [
+          "Turkiye",
+          "Turkey"
+        ]
+      ],
+      "before": 24,
+      "after": 32
+    },
+    {
+      "question": 114,
+      "added": [
+        "Mallorca",
+        "Menorca",
+        "Lanzarote",
+        "Fuerteventura",
+        "Reunion",
+        "Zanzibar"
+      ],
+      "aliases": [
+        [
+          "Minorca",
+          "Menorca"
+        ]
+      ],
+      "before": 48,
+      "after": 54
+    },
+    {
+      "question": 115,
+      "added": [
+        "Visit relatives",
+        "Study abroad",
+        "Attend a wedding",
+        "Attend a funeral",
+        "Religious pilgrimage",
+        "Sporting event",
+        "Business conference",
+        "Learn a language"
+      ],
+      "aliases": [],
+      "before": 20,
+      "after": 28
+    },
+    {
+      "question": 116,
+      "added": [
+        "Mooring buoy",
+        "Bollard",
+        "Lifeboat",
+        "Chandlery",
+        "Fuel pump",
+        "Floating pontoon"
+      ],
+      "aliases": [],
+      "before": 22,
+      "after": 28
+    },
+    {
+      "question": 117,
+      "added": [
+        "Marathi",
+        "Javanese",
+        "Hausa",
+        "Yoruba",
+        "Igbo",
+        "Amharic",
+        "Burmese",
+        "Khmer",
+        "Sinhala",
+        "Nepali"
+      ],
+      "aliases": [
+        [
+          "Bangla",
+          "Bengali"
+        ],
+        [
+          "Panjabi",
+          "Punjabi"
+        ],
+        [
+          "Kiswahili",
+          "Swahili"
+        ],
+        [
+          "Myanmar language",
+          "Burmese"
+        ]
+      ],
+      "before": 24,
+      "after": 34
+    },
+    {
+      "question": 118,
+      "added": [
+        "Attend a quiz",
+        "Visit the spa",
+        "Play shuffleboard",
+        "Go to a casino",
+        "Use a water slide",
+        "Take a dance class",
+        "Attend a cooking class",
+        "Watch wildlife",
+        "Go to an art auction"
+      ],
+      "aliases": [],
+      "before": 20,
+      "after": 29
+    },
+    {
+      "question": 119,
+      "added": [
+        "Road atlas",
+        "Lighthouse",
+        "Nautical chart",
+        "Walking directions",
+        "Topographic map",
+        "Trail app"
+      ],
+      "aliases": [],
+      "before": 20,
+      "after": 26
+    },
+    {
+      "question": 120,
+      "added": [
+        "Ticket barrier",
+        "Help point",
+        "Luggage locker",
+        "Lost property office",
+        "Platform number",
+        "Vending machine",
+        "Cycle rack"
+      ],
+      "aliases": [],
+      "before": 20,
+      "after": 27
+    },
+    {
+      "question": 121,
+      "added": [
+        "Gaelic football",
+        "Australian rules football",
+        "Sepak takraw",
+        "Bandy",
+        "Hurling",
+        "Camogie",
+        "Footvolley"
+      ],
+      "aliases": [
+        [
+          "Aussie rules",
+          "Australian rules football"
+        ],
+        [
+          "AFL",
+          "Australian rules football"
+        ]
+      ],
+      "before": 22,
+      "after": 29
+    },
+    {
+      "question": 122,
+      "added": [
+        "Bossaball",
+        "Throwball",
+        "Beach tennis",
+        "Real tennis"
+      ],
+      "aliases": [],
+      "before": 20,
+      "after": 24
+    },
+    {
+      "question": 123,
+      "added": [
+        "Azul",
+        "Wingspan",
+        "Bananagrams",
+        "Dobble",
+        "Codenames",
+        "Rummikub"
+      ],
+      "aliases": [
+        [
+          "Settlers of Catan",
+          "Catan"
+        ],
+        [
+          "Spot It",
+          "Dobble"
+        ]
+      ],
+      "before": 24,
+      "after": 30
+    },
+    {
+      "question": 124,
+      "added": [
+        "Rash vest",
+        "Beach umbrella",
+        "Windbreak",
+        "Beach trolley",
+        "Talcum powder",
+        "Dry bag",
+        "Flippers",
+        "Water shoes",
+        "Change of clothes"
+      ],
+      "aliases": [
+        [
+          "rash guard",
+          "Rash vest"
+        ],
+        [
+          "beach wagon",
+          "Beach trolley"
+        ],
+        [
+          "swim fins",
+          "Flippers"
+        ]
+      ],
+      "before": 22,
+      "after": 31
+    },
+    {
+      "question": 125,
+      "added": [
+        "Balance beam",
+        "Climbing net",
+        "Water pump",
+        "Fireman's pole",
+        "Music wall",
+        "Zip wire"
+      ],
+      "aliases": [
+        [
+          "sandbox",
+          "Sandpit"
+        ],
+        [
+          "fire pole",
+          "Fireman's pole"
+        ]
+      ],
+      "before": 20,
+      "after": 26
+    },
+    {
+      "question": 126,
+      "added": [
+        "Red rover",
+        "Stuck in the mud",
+        "What's the time Mr Wolf",
+        "Mother may I"
+      ],
+      "aliases": [
+        [
+          "Tig",
+          "Tag"
+        ],
+        [
+          "tiggy",
+          "Tag"
+        ]
+      ],
+      "before": 22,
+      "after": 26
+    },
+    {
+      "question": 127,
+      "added": [
+        "Battle rope",
+        "Ab wheel",
+        "Plyometric box",
+        "Balance board",
+        "Smith machine",
+        "Leg press",
+        "Dip bars"
+      ],
+      "aliases": [],
+      "before": 20,
+      "after": 27
+    },
+    {
+      "question": 128,
+      "added": [
+        "Cards",
+        "Earpiece",
+        "Chest camera",
+        "Pitch gauge",
+        "Light meter"
+      ],
+      "aliases": [
+        [
+          "penalty cards",
+          "Cards"
+        ],
+        [
+          "vanishing spray",
+          "Spray"
+        ]
+      ],
+      "before": 20,
+      "after": 25
+    },
+    {
+      "question": 129,
+      "added": [
+        "Stand-up paddleboarding",
+        "Canoe polo",
+        "Dragon boat racing",
+        "Lifesaving sport",
+        "Underwater rugby",
+        "Wakesurfing",
+        "Cliff diving"
+      ],
+      "aliases": [
+        [
+          "SUP",
+          "Stand-up paddleboarding"
+        ]
+      ],
+      "before": 20,
+      "after": 27
+    },
+    {
+      "question": 130,
+      "added": [
+        "Snowshoe racing",
+        "Skijoring",
+        "Snowkiting",
+        "Nordic combined",
+        "Snow volleyball",
+        "Speed skiing"
+      ],
+      "aliases": [],
+      "before": 20,
+      "after": 26
+    },
+    {
+      "question": 131,
+      "added": [
+        "Ride a carousel",
+        "Ride a Ferris wheel",
+        "Watch a parade",
+        "Meet a character",
+        "Get face paint",
+        "Play an arcade game",
+        "Visit a haunted house",
+        "Watch fireworks",
+        "Ride a log flume",
+        "Visit a gift shop"
+      ],
+      "aliases": [],
+      "before": 20,
+      "after": 30
+    },
+    {
+      "question": 132,
+      "added": [
+        "Keepnet",
+        "Bait box",
+        "Rod rest",
+        "Disgorger",
+        "Crimping pliers",
+        "Polarised sunglasses",
+        "Fishing licence"
+      ],
+      "aliases": [
+        [
+          "polarized sunglasses",
+          "Polarised sunglasses"
+        ],
+        [
+          "fishing license",
+          "Fishing licence"
+        ]
+      ],
+      "before": 20,
+      "after": 27
+    },
+    {
+      "question": 133,
+      "added": [
+        "Pesapallo",
+        "Gateball",
+        "Underwater hockey",
+        "Shuttleball"
+      ],
+      "aliases": [
+        [
+          "Finnish baseball",
+          "Pesapallo"
+        ]
+      ],
+      "before": 22,
+      "after": 26
+    },
+    {
+      "question": 134,
+      "added": [
+        "Dugout",
+        "Press box",
+        "VIP box",
+        "Emergency exit",
+        "Medics",
+        "Camera",
+        "Team mascot",
+        "Advertising board"
+      ],
+      "aliases": [
+        [
+          "locker room",
+          "Changing rooms"
+        ],
+        [
+          "Concession stand",
+          "Food stall"
+        ]
+      ],
+      "before": 20,
+      "after": 28
+    },
+    {
+      "question": 135,
+      "added": [
+        "Fly a kite",
+        "Throw a frisbee",
+        "Play rounders",
+        "Take a nap",
+        "Make daisy chains",
+        "Roll down a hill",
+        "Have a scavenger hunt"
+      ],
+      "aliases": [],
+      "before": 20,
+      "after": 27
+    },
+    {
+      "question": 136,
+      "added": [
+        "Kaleidoscope",
+        "Cup and ball",
+        "Jacob's ladder",
+        "Jack-in-the-box",
+        "Marionette",
+        "Diabolo",
+        "Hoop"
+      ],
+      "aliases": [],
+      "before": 22,
+      "after": 29
+    },
+    {
+      "question": 137,
+      "added": [
+        "Terraria",
+        "Hollow Knight",
+        "Hades",
+        "Celeste",
+        "Portal",
+        "Civilization"
+      ],
+      "aliases": [
+        [
+          "Civilisation",
+          "Civilization"
+        ]
+      ],
+      "before": 32,
+      "after": 38
+    },
+    {
+      "question": 138,
+      "added": [
+        "Thigh pad",
+        "Arm guard",
+        "Chest guard",
+        "Helmet grille",
+        "Batting tee",
+        "Boundary rope"
+      ],
+      "aliases": [
+        [
+          "Abdominal guard",
+          "Box"
+        ]
+      ],
+      "before": 19,
+      "after": 25
+    },
+    {
+      "question": 139,
+      "added": [
+        "Musical statues",
+        "Sardines",
+        "Celebrity heads",
+        "Spoons",
+        "Murder mystery",
+        "Consequences"
+      ],
+      "aliases": [],
+      "before": 20,
+      "after": 26
+    },
+    {
+      "question": 140,
+      "added": [
+        "Bike pump",
+        "Puncture repair kit",
+        "Tyre lever",
+        "Chain tool",
+        "Cycling computer",
+        "Water bottle cage",
+        "Rear-view mirror",
+        "Reflective vest"
+      ],
+      "aliases": [
+        [
+          "fender",
+          "Mudguards"
+        ],
+        [
+          "tire lever",
+          "Tyre lever"
+        ]
+      ],
+      "before": 20,
+      "after": 28
+    },
+    {
+      "question": 141,
+      "added": [
+        "Harness racing",
+        "Greyhound racing",
+        "Pigeon racing",
+        "Drone racing",
+        "Short-track skating",
+        "Canoe sprint",
+        "Cyclo-cross"
+      ],
+      "aliases": [
+        [
+          "cyclocross",
+          "Cyclo-cross"
+        ]
+      ],
+      "before": 20,
+      "after": 27
+    },
+    {
+      "question": 142,
+      "added": [
+        "Bottle rocket",
+        "Terrarium",
+        "Cushion fort"
+      ],
+      "aliases": [
+        [
+          "house of cards",
+          "Card tower"
+        ]
+      ],
+      "before": 20,
+      "after": 23
+    },
+    {
+      "question": 143,
+      "added": [
+        "Aqua aerobics",
+        "Squash",
+        "Badminton",
+        "Table tennis",
+        "Indoor climbing",
+        "Soft play",
+        "Trampolining",
+        "Dance class"
+      ],
+      "aliases": [
+        [
+          "water aerobics",
+          "Aqua aerobics"
+        ]
+      ],
+      "before": 20,
+      "after": 28
+    },
+    {
+      "question": 144,
+      "added": [
+        "Chant",
+        "Wave a flag",
+        "Hold up a banner",
+        "Buy a programme",
+        "Check the score",
+        "Do a Mexican wave",
+        "Watch a replay",
+        "Listen to commentary"
+      ],
+      "aliases": [
+        [
+          "chanting",
+          "Chant"
+        ],
+        [
+          "buy a program",
+          "Buy a programme"
+        ],
+        [
+          "Take a photograph",
+          "Take photographs"
+        ],
+        [
+          "Applaud",
+          "Clap"
+        ]
+      ],
+      "before": 20,
+      "after": 28
+    },
+    {
+      "question": 145,
+      "added": [
+        "Strawberry Shortcake",
+        "Kung Lao",
+        "Popeye",
+        "Olive Oyl",
+        "Minnie Mouse",
+        "Moominpappa",
+        "Snufkin",
+        "Tuxedo Mask"
+      ],
+      "aliases": [],
+      "before": 31,
+      "after": 39
+    },
+    {
+      "question": 146,
+      "added": [
+        "Babe",
+        "Toothless",
+        "Dug",
+        "Bolt",
+        "Maximus",
+        "Krypto",
+        "Danger Mouse",
+        "Fantastic Mr Fox"
+      ],
+      "aliases": [
+        [
+          "Remy the rat",
+          "Remy"
+        ],
+        [
+          "Babe the pig",
+          "Babe"
+        ],
+        [
+          "Dug the dog",
+          "Dug"
+        ],
+        [
+          "Maximus the horse",
+          "Maximus"
+        ]
+      ],
+      "before": 40,
+      "after": 48
+    },
+    {
+      "question": 147,
+      "added": [
+        "Ms Marvel",
+        "Shang-Chi",
+        "America Chavez",
+        "Captain Carter",
+        "Namor"
+      ],
+      "aliases": [],
+      "before": 51,
+      "after": 56
+    },
+    {
+      "question": 148,
+      "added": [
+        "The Road to El Dorado",
+        "Sinbad Legend of the Seven Seas",
+        "Anastasia",
+        "The Prince of Egypt",
+        "Persepolis",
+        "The Breadwinner",
+        "A Silent Voice"
+      ],
+      "aliases": [],
+      "before": 74,
+      "after": 81
+    },
+    {
+      "question": 149,
+      "added": [
+        "Bandoneon",
+        "Concertina",
+        "Melodica",
+        "Dulcimer",
+        "Zither",
+        "Shamisen",
+        "Sarod",
+        "Kora",
+        "Kalimba"
+      ],
+      "aliases": [],
+      "before": 24,
+      "after": 33
+    },
+    {
+      "question": 150,
+      "added": [
+        "Dip pen",
+        "Lino cutter",
+        "Brayer",
+        "Masking fluid",
+        "Fixative",
+        "Blending stump"
+      ],
+      "aliases": [],
+      "before": 22,
+      "after": 28
+    },
+    {
+      "question": 151,
+      "added": [
+        "Bachata",
+        "Merengue",
+        "Kizomba",
+        "Lindy hop",
+        "Quickstep",
+        "Pasodoble",
+        "Bhangra"
+      ],
+      "aliases": [
+        [
+          "paso doble",
+          "Pasodoble"
+        ]
+      ],
+      "before": 24,
+      "after": 31
+    },
+    {
+      "question": 152,
+      "added": [
+        "Footlight",
+        "Stage monitor",
+        "Microphone stand",
+        "Music stand",
+        "Riser",
+        "Prompt box",
+        "Cyclorama"
+      ],
+      "aliases": [],
+      "before": 20,
+      "after": 27
+    },
+    {
+      "question": 153,
+      "added": [
+        "Dystopian fiction",
+        "Urban fantasy",
+        "Magical realism",
+        "Spy thriller",
+        "Paranormal romance"
+      ],
+      "aliases": [
+        [
+          "Bildungsroman",
+          "Coming-of-age story"
+        ],
+        [
+          "Superhero fiction",
+          "Superhero story"
+        ]
+      ],
+      "before": 22,
+      "after": 27
+    },
+    {
+      "question": 154,
+      "added": [
+        "Miss Fisher",
+        "Lord Peter Wimsey",
+        "Adam Dalgliesh",
+        "Vera Stanhope",
+        "Precious Ramotswe",
+        "Harry Hole",
+        "Rebus"
+      ],
+      "aliases": [
+        [
+          "Phryne Fisher",
+          "Miss Fisher"
+        ],
+        [
+          "Endeavour Morse",
+          "Inspector Morse"
+        ],
+        [
+          "John Rebus",
+          "Rebus"
+        ]
+      ],
+      "before": 22,
+      "after": 29
+    },
+    {
+      "question": 155,
+      "added": [
+        "Glass slipper",
+        "Spinning wheel",
+        "Golden goose",
+        "Magic beans",
+        "Gingerbread house",
+        "Breadcrumb trail",
+        "Pumpkin carriage",
+        "Poisoned apple",
+        "Seven-league boots"
+      ],
+      "aliases": [],
+      "before": 22,
+      "after": 31
+    },
+    {
+      "question": 156,
+      "added": [
+        "Elphaba",
+        "Willow Rosenberg",
+        "Samantha Stephens",
+        "Jeannie",
+        "Morgana",
+        "Rincewind"
+      ],
+      "aliases": [
+        [
+          "Sabrina Spellman",
+          "Sabrina"
+        ],
+        [
+          "Morgan le Fay",
+          "Morgana"
+        ],
+        [
+          "Howl Pendragon",
+          "Howl"
+        ]
+      ],
+      "before": 22,
+      "after": 28
+    },
+    {
+      "question": 157,
+      "added": [
+        "Casting",
+        "Costume design",
+        "Set dressing",
+        "Colour grading",
+        "Foley recording",
+        "Motion capture",
+        "Dubbing",
+        "Subtitling"
+      ],
+      "aliases": [
+        [
+          "Location scouting",
+          "Location"
+        ],
+        [
+          "Storyboarding",
+          "Storyboard"
+        ],
+        [
+          "color grading",
+          "Colour grading"
+        ]
+      ],
+      "before": 22,
+      "after": 30
+    },
+    {
+      "question": 158,
+      "added": [
+        "Gurgle",
+        "Sniff",
+        "Snort",
+        "Wheeze",
+        "Tsk",
+        "Click tongue",
+        "Blow raspberry",
+        "Whoop"
+      ],
+      "aliases": [
+        [
+          "tut",
+          "Tsk"
+        ]
+      ],
+      "before": 22,
+      "after": 30
+    },
+    {
+      "question": 159,
+      "added": [
+        "Reggaeton",
+        "Afrobeats",
+        "Bossa nova",
+        "Dub",
+        "Grime",
+        "Drum and bass",
+        "Shoegaze"
+      ],
+      "aliases": [],
+      "before": 24,
+      "after": 31
+    },
+    {
+      "question": 160,
+      "added": [
+        "Wave a light stick",
+        "Request a song",
+        "Crowd surf",
+        "Mosh",
+        "Hold a lighter up"
+      ],
+      "aliases": [
+        [
+          "Sing along",
+          "Sing"
+        ],
+        [
+          "Give an encore call",
+          "Ask for encore"
+        ],
+        [
+          "Take a photograph",
+          "Take photographs"
+        ],
+        [
+          "moshing",
+          "Mosh"
+        ]
+      ],
+      "before": 20,
+      "after": 25
+    },
+    {
+      "question": 161,
+      "added": [
+        "Cathedral",
+        "Warehouse",
+        "Cruise ship",
+        "Railway station",
+        "Balcony",
+        "Busking pitch",
+        "Train carriage",
+        "Nursing home"
+      ],
+      "aliases": [
+        [
+          "Village hall",
+          "Community hall"
+        ],
+        [
+          "School hall",
+          "School"
+        ],
+        [
+          "Sports arena",
+          "Arena"
+        ]
+      ],
+      "before": 20,
+      "after": 28
+    },
+    {
+      "question": 162,
+      "added": [
+        "Mittens",
+        "Leg warmers",
+        "Balaclava",
+        "Waistcoat",
+        "Tie",
+        "Bunting",
+        "Oven glove",
+        "Potholder",
+        "Slippers",
+        "Snood",
+        "Fabric face mask",
+        "Dog coat"
+      ],
+      "aliases": [],
+      "before": 22,
+      "after": 34
+    },
+    {
+      "question": 163,
+      "added": [
+        "Large-print book",
+        "Microfilm",
+        "Study carrel",
+        "Self-service kiosk",
+        "Return chute",
+        "Scanner",
+        "Braille book"
+      ],
+      "aliases": [],
+      "before": 22,
+      "after": 29
+    },
+    {
+      "question": 164,
+      "added": [
+        "Political debate",
+        "Home renovation",
+        "True crime",
+        "Medical drama",
+        "Legal drama",
+        "Panel show"
+      ],
+      "aliases": [
+        [
+          "Travel programme",
+          "Travel show"
+        ],
+        [
+          "travel program",
+          "Travel show"
+        ],
+        [
+          "Wildlife documentary",
+          "Nature programme"
+        ],
+        [
+          "Cookery show",
+          "Cooking show"
+        ],
+        [
+          "Animated series",
+          "Cartoon"
+        ]
+      ],
+      "before": 20,
+      "after": 26
+    },
+    {
+      "question": 165,
+      "added": [
+        "Street performer",
+        "Shop window",
+        "Public artwork",
+        "Local transport",
+        "Festival"
+      ],
+      "aliases": [
+        [
+          "Local food",
+          "Food"
+        ],
+        [
+          "Hotel room",
+          "Hotel"
+        ],
+        [
+          "Market stall",
+          "Market"
+        ],
+        [
+          "Wildflower",
+          "Flower"
+        ]
+      ],
+      "before": 22,
+      "after": 27
+    },
+    {
+      "question": 166,
+      "added": [
+        "Clavichord",
+        "Harpsichord",
+        "Panpipes",
+        "Ocarina",
+        "Jaw harp",
+        "Musical saw",
+        "Wash tub bass",
+        "Spoons",
+        "Didgeridoo"
+      ],
+      "aliases": [
+        [
+          "Jew's harp",
+          "Jaw harp"
+        ],
+        [
+          "washtub bass",
+          "Wash tub bass"
+        ]
+      ],
+      "before": 22,
+      "after": 31
+    },
+    {
+      "question": 167,
+      "added": [
+        "Megamind",
+        "Yzma",
+        "Mother Gothel",
+        "Azula",
+        "Fire Lord Ozai",
+        "Moriarty",
+        "Hannibal Lecter",
+        "Nurse Ratched"
+      ],
+      "aliases": [],
+      "before": 24,
+      "after": 32
+    },
+    {
+      "question": 168,
+      "added": [
+        "Obituary",
+        "Newsletter",
+        "Press release",
+        "User manual",
+        "Testimonial",
+        "Petition",
+        "Job advert"
+      ],
+      "aliases": [
+        [
+          "job advertisement",
+          "Job advert"
+        ]
+      ],
+      "before": 22,
+      "after": 29
+    },
+    {
+      "question": 169,
+      "added": [
+        "AdBlue",
+        "Gift card",
+        "Road map",
+        "Flowers",
+        "Barbecue gas"
+      ],
+      "aliases": [
+        [
+          "Screenwash",
+          "Windscreen wash"
+        ],
+        [
+          "washer fluid",
+          "Windscreen wash"
+        ],
+        [
+          "BBQ gas",
+          "Barbecue gas"
+        ]
+      ],
+      "before": 22,
+      "after": 27
+    },
+    {
+      "question": 170,
+      "added": [
+        "Low flying aircraft",
+        "Thin ice",
+        "Automatic doors",
+        "Magnetic field",
+        "Confined space",
+        "Uneven surface",
+        "Trip hazard"
+      ],
+      "aliases": [
+        [
+          "Laser beam",
+          "Laser"
+        ]
+      ],
+      "before": 22,
+      "after": 29
+    },
+    {
+      "question": 171,
+      "added": [
+        "Fish",
+        "Number eight",
+        "Carp",
+        "Tortoise",
+        "White heather",
+        "Touching wood",
+        "Goldfish"
+      ],
+      "aliases": [
+        [
+          "lucky pig",
+          "Pig"
+        ],
+        [
+          "knock on wood",
+          "Touching wood"
+        ]
+      ],
+      "before": 22,
+      "after": 29
+    },
+    {
+      "question": 172,
+      "added": [
+        "Scan a QR code",
+        "Order food",
+        "Book a taxi",
+        "Use a torch",
+        "Set a timer",
+        "Record a voice memo",
+        "Track a workout",
+        "Tune a guitar"
+      ],
+      "aliases": [
+        [
+          "Pay a bill",
+          "Pay"
+        ],
+        [
+          "Translate text",
+          "Translate"
+        ],
+        [
+          "use a flashlight",
+          "Use a torch"
+        ]
+      ],
+      "before": 22,
+      "after": 30
+    },
+    {
+      "question": 173,
+      "added": [
+        "Lawnmower",
+        "Board game",
+        "Power bank",
+        "Camping stove",
+        "Bike pump",
+        "Iron",
+        "Sewing machine",
+        "Telescope"
+      ],
+      "aliases": [
+        [
+          "Drill",
+          "Tools"
+        ],
+        [
+          "Formal clothes",
+          "Clothes"
+        ],
+        [
+          "Textbook",
+          "Book"
+        ]
+      ],
+      "before": 20,
+      "after": 28
+    },
+    {
+      "question": 174,
+      "added": [
+        "Kayak",
+        "Wedding dress",
+        "Camera",
+        "Bouncy castle",
+        "Carpet cleaner",
+        "Pressure washer",
+        "Generator",
+        "Scaffolding"
+      ],
+      "aliases": [
+        [
+          "Tuxedo",
+          "Suit"
+        ],
+        [
+          "Garden tool",
+          "Tool"
+        ]
+      ],
+      "before": 20,
+      "after": 28
+    },
+    {
+      "question": 175,
+      "added": [
+        "Horse race",
+        "Ice rink",
+        "Planetarium",
+        "Cable car",
+        "Funicular",
+        "Guided tour",
+        "Comedy show"
+      ],
+      "aliases": [
+        [
+          "Museum exhibition",
+          "Exhibition"
+        ],
+        [
+          "Car park",
+          "Parking"
+        ]
+      ],
+      "before": 20,
+      "after": 27
+    },
+    {
+      "question": 176,
+      "added": [
+        "Organ donor card",
+        "Dental appointment card",
+        "Locker token",
+        "Foreign currency",
+        "Medical alert card",
+        "Small key"
+      ],
+      "aliases": [
+        [
+          "Postage stamp",
+          "Stamp"
+        ],
+        [
+          "Passport photograph",
+          "Photograph"
+        ],
+        [
+          "Emergency contact card",
+          "Emergency contact"
+        ],
+        [
+          "Banknote",
+          "Cash"
+        ]
+      ],
+      "before": 20,
+      "after": 26
+    },
+    {
+      "question": 177,
+      "added": [
+        "Make confetti",
+        "Line a drawer",
+        "Fold a fan",
+        "Make a stencil",
+        "Make a bookmark",
+        "Press flowers",
+        "Blot ink"
+      ],
+      "aliases": [
+        [
+          "Make a paper boat",
+          "Make boat"
+        ],
+        [
+          "Make a collage",
+          "Make collage"
+        ],
+        [
+          "Wrap a present",
+          "Wrap"
+        ]
+      ],
+      "before": 20,
+      "after": 27
+    },
+    {
+      "question": 178,
+      "added": [
+        "Event cancellation",
+        "Farm",
+        "Crop",
+        "Income",
+        "Public liability"
+      ],
+      "aliases": [
+        [
+          "jewelry",
+          "Jewellery"
+        ]
+      ],
+      "before": 20,
+      "after": 25
+    },
+    {
+      "question": 179,
+      "added": [
+        "Escape room",
+        "Kennel place",
+        "Spa treatment",
+        "Blood test",
+        "Vaccination",
+        "Ferry crossing",
+        "Car service"
+      ],
+      "aliases": [
+        [
+          "Medical appointment",
+          "Doctor appointment"
+        ],
+        [
+          "Guided tour",
+          "Tour"
+        ],
+        [
+          "Restaurant table",
+          "Restaurant"
+        ],
+        [
+          "Tennis court",
+          "Sports court"
+        ]
+      ],
+      "before": 20,
+      "after": 27
+    },
+    {
+      "question": 180,
+      "added": [
+        "Dirty cutlery",
+        "Missing ingredient",
+        "Allergen in food",
+        "Undercooked meat",
+        "Missing reservation",
+        "Inaccessible entrance",
+        "No vegetarian option",
+        "Dirty toilets"
+      ],
+      "aliases": [
+        [
+          "Overcharging",
+          "Wrong bill"
+        ],
+        [
+          "Rude service",
+          "Rude staff"
+        ],
+        [
+          "Loud music",
+          "Noise"
+        ]
+      ],
+      "before": 20,
+      "after": 28
+    },
+    {
+      "question": 181,
+      "added": [
+        "Listen to the rain",
+        "Bake a cake",
+        "Check for leaks",
+        "Dry a wet dog",
+        "Unblock a drain",
+        "Put a cover on a bicycle"
+      ],
+      "aliases": [
+        [
+          "Wear wellies",
+          "Put on boots"
+        ],
+        [
+          "wear rain boots",
+          "Put on boots"
+        ],
+        [
+          "Put on a raincoat",
+          "Wear raincoat"
+        ],
+        [
+          "Close the windows",
+          "Close windows"
+        ],
+        [
+          "Bring washing inside",
+          "Bring washing in"
+        ],
+        [
+          "Watch a film",
+          "Watch television"
+        ],
+        [
+          "Play a board game",
+          "Play board games"
+        ]
+      ],
+      "before": 20,
+      "after": 26
+    },
+    {
+      "question": 182,
+      "added": [
+        "Shopping bags",
+        "Turn off the stove",
+        "Unplug hair straighteners",
+        "Put the bins out",
+        "Leave a note"
+      ],
+      "aliases": [
+        [
+          "Medication",
+          "Medicine"
+        ],
+        [
+          "Bus pass",
+          "Ticket"
+        ],
+        [
+          "Work badge",
+          "Work pass"
+        ],
+        [
+          "Switch off the iron",
+          "Switch off iron"
+        ],
+        [
+          "Lock the window",
+          "Close window"
+        ]
+      ],
+      "before": 20,
+      "after": 25
+    },
+    {
+      "question": 183,
+      "added": [
+        "Bin collection day",
+        "School holiday",
+        "Payday",
+        "Vehicle inspection",
+        "Library book due date",
+        "TV programme time"
+      ],
+      "aliases": [
+        [
+          "Dentist appointment",
+          "Appointment"
+        ],
+        [
+          "Tax deadline",
+          "Deadline"
+        ],
+        [
+          "Medication reminder",
+          "Reminder"
+        ],
+        [
+          "Match fixture",
+          "Sports match"
+        ]
+      ],
+      "before": 20,
+      "after": 26
+    },
+    {
+      "question": 184,
+      "added": [
+        "Sanitary product",
+        "Face mask",
+        "Umbrella",
+        "Fresh pizza",
+        "Hot chocolate",
+        "Postage stamp",
+        "Phone cable"
+      ],
+      "aliases": [
+        [
+          "menstrual product",
+          "Sanitary product"
+        ],
+        [
+          "Train ticket",
+          "Ticket"
+        ]
+      ],
+      "before": 20,
+      "after": 27
+    },
+    {
+      "question": 185,
+      "added": [
+        "Sample",
+        "Wedding announcement",
+        "Subscription box",
+        "Seeds",
+        "Artwork",
+        "Socks"
+      ],
+      "aliases": [
+        [
+          "Greeting card",
+          "Birthday card"
+        ],
+        [
+          "Legal document",
+          "Document"
+        ],
+        [
+          "Small parcel",
+          "Parcel"
+        ]
+      ],
+      "before": 20,
+      "after": 26
+    },
+    {
+      "question": 186,
+      "added": [
+        "Use a clothesline",
+        "Batch cook",
+        "Refill a water bottle",
+        "Use rechargeable batteries",
+        "Avoid bank fees",
+        "Buy own-brand goods"
+      ],
+      "aliases": [
+        [
+          "Cancel a subscription",
+          "Cancel subscriptions"
+        ],
+        [
+          "Use a library",
+          "Use library"
+        ],
+        [
+          "Repair clothing",
+          "Repair things"
+        ],
+        [
+          "Turn down the heating",
+          "Reduce heating"
+        ]
+      ],
+      "before": 20,
+      "after": 26
+    },
+    {
+      "question": 187,
+      "added": [
+        "Check-in desk",
+        "Visa appointment",
+        "Charity food",
+        "Water slide",
+        "Book signing",
+        "Food bank",
+        "Petrol pump"
+      ],
+      "aliases": [
+        [
+          "Public toilet",
+          "Toilet"
+        ],
+        [
+          "Ride",
+          "Theme park ride"
+        ],
+        [
+          "ATM",
+          "Cash machine"
+        ]
+      ],
+      "before": 20,
+      "after": 27
+    },
+    {
+      "question": 188,
+      "added": [
+        "Heating oil",
+        "Bottled gas",
+        "Laundry",
+        "Laundry detergent",
+        "Wine",
+        "DIY supplies",
+        "Coffee beans"
+      ],
+      "aliases": [
+        [
+          "Prescription",
+          "Medicine"
+        ]
+      ],
+      "before": 20,
+      "after": 27
+    },
+    {
+      "question": 189,
+      "added": [
+        "Hotel reception",
+        "Age-restricted shop",
+        "Pharmacy",
+        "Prison visitor centre",
+        "Rental property viewing",
+        "Blood donation centre"
+      ],
+      "aliases": [],
+      "before": 20,
+      "after": 26
+    },
+    {
+      "question": 190,
+      "added": [
+        "Dishwasher tablets",
+        "Cat litter",
+        "Shampoo",
+        "Batteries",
+        "Light bulbs",
+        "Pet treats",
+        "Baking paper"
+      ],
+      "aliases": [
+        [
+          "Laundry detergent",
+          "Detergent"
+        ]
+      ],
+      "before": 22,
+      "after": 29
+    },
+    {
+      "question": 191,
+      "added": [
+        "Process payroll",
+        "Design a poster",
+        "Book travel",
+        "Submit an invoice",
+        "Update a website",
+        "Run a simulation",
+        "Review a contract"
+      ],
+      "aliases": [
+        [
+          "Make a spreadsheet",
+          "Make spreadsheet"
+        ],
+        [
+          "Join a video meeting",
+          "Join video call"
+        ],
+        [
+          "Write a report",
+          "Write report"
+        ],
+        [
+          "Edit a photograph",
+          "Edit photos"
+        ],
+        [
+          "Create a presentation",
+          "Create presentation"
+        ],
+        [
+          "Write code",
+          "Code"
+        ]
+      ],
+      "before": 21,
+      "after": 28
+    },
+    {
+      "question": 192,
+      "added": [
+        "Towels",
+        "School uniform",
+        "Mobile phone",
+        "Tinned food",
+        "Skills"
+      ],
+      "aliases": [
+        [
+          "cell phone",
+          "Mobile phone"
+        ],
+        [
+          "canned food",
+          "Tinned food"
+        ]
+      ],
+      "before": 20,
+      "after": 25
+    },
+    {
+      "question": 193,
+      "added": [
+        "Shimmer",
+        "Shelter",
+        "Sherbet",
+        "Shenanigans",
+        "Shoreline"
+      ],
+      "aliases": [],
+      "before": 78,
+      "after": 83
+    },
+    {
+      "question": 194,
+      "added": [
+        "Bird feeder",
+        "Wind chime",
+        "Dreamcatcher",
+        "Dressing gown",
+        "Bicycle"
+      ],
+      "aliases": [],
+      "before": 35,
+      "after": 40
+    },
+    {
+      "question": 195,
+      "added": [
+        "Knell",
+        "Knickerbockers",
+        "Knighthood",
+        "Knucklehead",
+        "Knifepoint"
+      ],
+      "aliases": [],
+      "before": 20,
+      "after": 25
+    },
+    {
+      "question": 196,
+      "added": [
+        "Smite",
+        "Trite",
+        "Mite",
+        "Sleight",
+        "Alight",
+        "Ignite",
+        "Recite",
+        "Rewrite",
+        "Uptight",
+        "Airtight"
+      ],
+      "aliases": [],
+      "before": 24,
+      "after": 34
+    },
+    {
+      "question": 197,
+      "added": [
+        "Courgette",
+        "Celeriac",
+        "Cassava",
+        "Chestnut",
+        "Clementine",
+        "Churro",
+        "Cannoli",
+        "Ceviche",
+        "Chapati"
+      ],
+      "aliases": [],
+      "before": 26,
+      "after": 35
+    },
+    {
+      "question": 198,
+      "added": [
+        "Bongo",
+        "Binturong",
+        "Bettong",
+        "Brolga",
+        "Bowerbird",
+        "Bream",
+        "Barramundi",
+        "Blowfish",
+        "Brittle star"
+      ],
+      "aliases": [],
+      "before": 24,
+      "after": 33
+    },
+    {
+      "question": 199,
+      "added": [
+        "Petticoat",
+        "Leotard",
+        "Wetsuit",
+        "Trench coat",
+        "Tube top",
+        "Dungaree shorts",
+        "Unitard",
+        "Tutu",
+        "Stole"
+      ],
+      "aliases": [],
+      "before": 19,
+      "after": 28
+    },
+    {
+      "question": 200,
+      "added": [
+        "Upholsterer",
+        "Plasterer",
+        "Tiler",
+        "Engraver",
+        "Proofreader",
+        "Interpreter",
+        "Auctioneer",
+        "Puppeteer",
+        "Glassblower",
+        "Undertaker",
+        "Stockbroker",
+        "Bookbinder"
+      ],
+      "aliases": [],
+      "before": 25,
+      "after": 37
+    },
+    {
+      "question": 201,
+      "added": [
+        "Manhole cover",
+        "Porthole",
+        "Petri dish",
+        "Tambourine",
+        "Dartboard"
+      ],
+      "aliases": [],
+      "before": 20,
+      "after": 25
+    },
+    {
+      "question": 202,
+      "added": [
+        "Compass point",
+        "Arrowhead",
+        "Broken shell",
+        "Cigar cutter",
+        "Cheese grater",
+        "Vegetable peeler",
+        "Box cutter"
+      ],
+      "aliases": [
+        [
+          "Drawing pin",
+          "Pin"
+        ],
+        [
+          "thumbtack",
+          "Pin"
+        ],
+        [
+          "Fish hook",
+          "Fishhook"
+        ],
+        [
+          "Rose prickle",
+          "Thorn"
+        ],
+        [
+          "Shark tooth",
+          "Tooth"
+        ],
+        [
+          "Crocodile tooth",
+          "Tooth"
+        ]
+      ],
+      "before": 20,
+      "after": 27
+    },
+    {
+      "question": 203,
+      "added": [
+        "Mozzarella",
+        "Toffee",
+        "Silly Putty",
+        "Bungee trampoline",
+        "Seat belt webbing",
+        "Rubber hose",
+        "Silicone seal",
+        "Accordion bellows"
+      ],
+      "aliases": [
+        [
+          "Pizza dough",
+          "Dough"
+        ]
+      ],
+      "before": 23,
+      "after": 31
+    },
+    {
+      "question": 204,
+      "added": [
+        "Acetate sheet",
+        "Clear nail polish",
+        "Sapphire",
+        "Topaz",
+        "Glass sculpture",
+        "Clear aligner",
+        "Swim goggles"
+      ],
+      "aliases": [
+        [
+          "Microscope slide",
+          "Glass"
+        ],
+        [
+          "Glass marble",
+          "Glass"
+        ],
+        [
+          "Plexiglas",
+          "Perspex"
+        ],
+        [
+          "Glass lens",
+          "Lens"
+        ]
+      ],
+      "before": 26,
+      "after": 33
+    },
+    {
+      "question": 205,
+      "added": [
+        "Asphalt",
+        "Pewter",
+        "Gallium",
+        "Indium",
+        "Hot-melt glue"
+      ],
+      "aliases": [
+        [
+          "Candle wax",
+          "Wax"
+        ],
+        [
+          "Paraffin",
+          "Wax"
+        ],
+        [
+          "Beeswax",
+          "Wax"
+        ]
+      ],
+      "before": 30,
+      "after": 35
+    },
+    {
+      "question": 206,
+      "added": [
+        "Flypaper",
+        "Lip gloss",
+        "Date syrup",
+        "Sweet chilli sauce",
+        "Oyster sauce",
+        "Balsamic glaze",
+        "Fruit leather"
+      ],
+      "aliases": [
+        [
+          "Pine sap",
+          "Sap"
+        ]
+      ],
+      "before": 27,
+      "after": 34
+    },
+    {
+      "question": 207,
+      "added": [
+        "Sleeping mat",
+        "Necktie",
+        "Blueprint",
+        "Draught excluder",
+        "Bath mat",
+        "Windscreen sunshade",
+        "Car window"
+      ],
+      "aliases": [
+        [
+          "Camping mattress",
+          "Mattress"
+        ],
+        [
+          "Bamboo blind",
+          "Window blind"
+        ],
+        [
+          "Fire hose",
+          "Hose"
+        ],
+        [
+          "Garden hose",
+          "Hose"
+        ],
+        [
+          "Measuring tape",
+          "Tape measure"
+        ],
+        [
+          "Music poster",
+          "Poster"
+        ],
+        [
+          "Compression bandage",
+          "Bandage"
+        ],
+        [
+          "car window glass",
+          "Car window"
+        ]
+      ],
+      "before": 30,
+      "after": 37
+    },
+    {
+      "question": 208,
+      "added": [
+        "Ballet shoe",
+        "Bow tie",
+        "Fishing fly",
+        "Surgical suture",
+        "Corset",
+        "Drawstring",
+        "Straw bale"
+      ],
+      "aliases": [
+        [
+          "Horse lead rope",
+          "Rope"
+        ],
+        [
+          "Boat mooring line",
+          "Rope"
+        ],
+        [
+          "Gift ribbon",
+          "Ribbon"
+        ]
+      ],
+      "before": 26,
+      "after": 33
+    },
+    {
+      "question": 209,
+      "added": [
+        "Ceramic tile",
+        "Thin ice",
+        "Porcelain doll",
+        "Dried leaf",
+        "Biscuit",
+        "Meringue",
+        "Balsa wood model",
+        "Glass figurine"
+      ],
+      "aliases": [
+        [
+          "Seashell",
+          "Shell"
+        ]
+      ],
+      "before": 27,
+      "after": 35
+    },
+    {
+      "question": 210,
+      "added": [
+        "Ballet dancer",
+        "Ice skater",
+        "Cement mixer",
+        "Yo-yo",
+        "Spinning wheel",
+        "Gyroscope",
+        "Food processor blade",
+        "Salad spinner"
+      ],
+      "aliases": [
+        [
+          "Turbine",
+          "Wind turbine"
+        ]
+      ],
+      "before": 27,
+      "after": 35
+    },
+    {
+      "question": 211,
+      "added": [
+        "Pumice",
+        "Pool noodle",
+        "Styrofoam",
+        "Raft of reeds",
+        "Floating candle",
+        "Ping-pong ball",
+        "Apple",
+        "Lemon"
+      ],
+      "aliases": [
+        [
+          "Driftwood",
+          "Wood"
+        ],
+        [
+          "polystyrene foam",
+          "Styrofoam"
+        ],
+        [
+          "Iceberg",
+          "Ice"
+        ],
+        [
+          "Dead leaf",
+          "Leaf"
+        ]
+      ],
+      "before": 28,
+      "after": 36
+    },
+    {
+      "question": 212,
+      "added": [
+        "Roofing felt",
+        "Artificial grass",
+        "Chicken wire",
+        "Wire mesh",
+        "Shelf liner",
+        "Dental floss"
+      ],
+      "aliases": [
+        [
+          "Kitchen foil",
+          "Foil"
+        ]
+      ],
+      "before": 26,
+      "after": 32
+    },
+    {
+      "question": 213,
+      "added": [
+        "Pillowcases",
+        "Bicycle pedals",
+        "Shoe insoles",
+        "Handlebar grips",
+        "Motorbike mirrors",
+        "Car wiper blades",
+        "Knitting needles"
+      ],
+      "aliases": [],
+      "before": 27,
+      "after": 34
+    },
+    {
+      "question": 214,
+      "added": [
+        "Swim cap",
+        "Roof tile",
+        "Waterproof mascara",
+        "Marine plywood",
+        "Rubber seal",
+        "Wet-weather notebook",
+        "Oilskin"
+      ],
+      "aliases": [
+        [
+          "Waxed jacket",
+          "Raincoat"
+        ],
+        [
+          "Gore-Tex coat",
+          "Raincoat"
+        ],
+        [
+          "Rubber boot",
+          "Wellington boots"
+        ]
+      ],
+      "before": 26,
+      "after": 33
+    },
+    {
+      "question": 215,
+      "added": [
+        "Teapot",
+        "Watering can",
+        "Briefcase",
+        "Magnifying glass",
+        "Bell",
+        "Cricket bat",
+        "Walking stick"
+      ],
+      "aliases": [
+        [
+          "Milk jug",
+          "Jug"
+        ],
+        [
+          "Garden spade",
+          "Spade"
+        ]
+      ],
+      "before": 34,
+      "after": 41
+    },
+    {
+      "question": 216,
+      "added": [
+        "Coffee pot",
+        "Bread bin",
+        "Jewellery box",
+        "Washing machine",
+        "Pressure cooker",
+        "Picnic hamper"
+      ],
+      "aliases": [
+        [
+          "jewelry box",
+          "Jewellery box"
+        ],
+        [
+          "Toilet cistern",
+          "Toilet"
+        ]
+      ],
+      "before": 28,
+      "after": 34
+    },
+    {
+      "question": 217,
+      "added": [
+        "Contrail",
+        "Parhelion",
+        "Lunar halo",
+        "Dust storm",
+        "Virga"
+      ],
+      "aliases": [
+        [
+          "vapour trail",
+          "Contrail"
+        ],
+        [
+          "vapor trail",
+          "Contrail"
+        ],
+        [
+          "sun dog",
+          "Parhelion"
+        ],
+        [
+          "northern lights",
+          "Aurora"
+        ]
+      ],
+      "before": 42,
+      "after": 47
+    },
+    {
+      "question": 218,
+      "added": [
+        "Drinking fountain",
+        "Noticeboard",
+        "Outdoor gym",
+        "Skate ramp",
+        "War memorial",
+        "Picnic shelter"
+      ],
+      "aliases": [
+        [
+          "Dog waste bin",
+          "Bin"
+        ],
+        [
+          "Flower bed",
+          "Flower"
+        ]
+      ],
+      "before": 22,
+      "after": 28
+    },
+    {
+      "question": 219,
+      "added": [
+        "Bulb planter",
+        "Loppers",
+        "Soil sieve",
+        "Lawn edger",
+        "Leaf blower"
+      ],
+      "aliases": [
+        [
+          "Hedge shears",
+          "Shears"
+        ],
+        [
+          "Hand fork",
+          "Fork"
+        ],
+        [
+          "Garden kneeler",
+          "Kneeling pad"
+        ]
+      ],
+      "before": 22,
+      "after": 27
+    },
+    {
+      "question": 220,
+      "added": [
+        "Pallet",
+        "Rebar",
+        "Spirit level",
+        "Surveying tripod"
+      ],
+      "aliases": [
+        [
+          "Cement mixer",
+          "Concrete mixer"
+        ],
+        [
+          "dumpster",
+          "Skip"
+        ],
+        [
+          "Temporary fence",
+          "Fence"
+        ]
+      ],
+      "before": 21,
+      "after": 25
+    },
+    {
+      "question": 221,
+      "added": [
+        "Traffic island",
+        "Cycle lane",
+        "Bus lane",
+        "Bollard",
+        "Cat's eye",
+        "Rumble strip"
+      ],
+      "aliases": [
+        [
+          "Zebra crossing",
+          "Pedestrian crossing"
+        ],
+        [
+          "crosswalk",
+          "Pedestrian crossing"
+        ],
+        [
+          "bike lane",
+          "Cycle lane"
+        ],
+        [
+          "Drain cover",
+          "Drain"
+        ],
+        [
+          "road stud",
+          "Cat's eye"
+        ]
+      ],
+      "before": 20,
+      "after": 26
+    },
+    {
+      "question": 222,
+      "added": [
+        "Tree roots",
+        "Leaking pipe",
+        "Frost",
+        "Salt corrosion",
+        "Roots",
+        "Woodworm",
+        "Acid rain"
+      ],
+      "aliases": [
+        [
+          "Rising damp",
+          "Damp"
+        ]
+      ],
+      "before": 20,
+      "after": 27
+    },
+    {
+      "question": 223,
+      "added": [
+        "UV window film",
+        "Shade sail",
+        "Sun visor",
+        "UV umbrella",
+        "Sun protective swimsuit",
+        "Sun shelter"
+      ],
+      "aliases": [
+        [
+          "rash guard",
+          "Rash vest"
+        ],
+        [
+          "Lip balm with SPF",
+          "Sunscreen lip balm"
+        ],
+        [
+          "Wide-brimmed hat",
+          "Hat"
+        ]
+      ],
+      "before": 20,
+      "after": 26
+    },
+    {
+      "question": 224,
+      "added": [
+        "Water boatman",
+        "Dragonfly nymph",
+        "Water forget-me-not",
+        "Caddisfly larva",
+        "Mayfly nymph",
+        "Water mite",
+        "Pond liner"
+      ],
+      "aliases": [
+        [
+          "Water snail",
+          "Snail"
+        ],
+        [
+          "Pond pump",
+          "Pump"
+        ]
+      ],
+      "before": 20,
+      "after": 27
+    },
+    {
+      "question": 225,
+      "added": [
+        "Clean an aquarium",
+        "Provide a scratching post",
+        "Check for ticks",
+        "Give worming treatment",
+        "Socialise a puppy",
+        "Provide a heat lamp",
+        "Change drinking water",
+        "Clean food bowls",
+        "Protect from heat",
+        "Exercise a hamster"
+      ],
+      "aliases": [
+        [
+          "socialize a puppy",
+          "Socialise a puppy"
+        ]
+      ],
+      "before": 20,
+      "after": 30
+    },
+    {
+      "question": 226,
+      "added": [
+        "Capybara",
+        "Red panda",
+        "Tapir",
+        "Okapi",
+        "Pygmy hippo",
+        "Ring-tailed lemur",
+        "Fennec fox",
+        "Keeper talk"
+      ],
+      "aliases": [],
+      "before": 22,
+      "after": 30
+    },
+    {
+      "question": 227,
+      "added": [
+        "Passport problem",
+        "Security alert",
+        "Leaves on the line",
+        "Animals on the road",
+        "Customs inspection",
+        "Border queue",
+        "Rail replacement bus",
+        "Low fuel"
+      ],
+      "aliases": [
+        [
+          "Burst tyre",
+          "Flat tyre"
+        ],
+        [
+          "flat tire",
+          "Flat tyre"
+        ],
+        [
+          "Engine trouble",
+          "Breakdown"
+        ],
+        [
+          "Road closure",
+          "Closed road"
+        ]
+      ],
+      "before": 20,
+      "after": 28
+    },
+    {
+      "question": 228,
+      "added": [
+        "Pickles",
+        "Handmade soap",
+        "Leather goods",
+        "Seedlings",
+        "Fabric"
+      ],
+      "aliases": [
+        [
+          "jewelry",
+          "Jewellery"
+        ],
+        [
+          "Second-hand books",
+          "Books"
+        ],
+        [
+          "Cut flowers",
+          "Flowers"
+        ]
+      ],
+      "before": 20,
+      "after": 25
+    },
+    {
+      "question": 229,
+      "added": [
+        "Clifftop path",
+        "Boardwalk",
+        "Cemetery",
+        "Botanical garden",
+        "Village green"
+      ],
+      "aliases": [
+        [
+          "Canal towpath",
+          "Canal path"
+        ],
+        [
+          "Riverside path",
+          "Riverbank"
+        ]
+      ],
+      "before": 20,
+      "after": 25
+    },
+    {
+      "question": 230,
+      "added": [
+        "Blenny",
+        "Goby",
+        "Sea lettuce",
+        "Coralline algae",
+        "Sea hare"
+      ],
+      "aliases": [
+        [
+          "Anemone",
+          "Sea anemone"
+        ]
+      ],
+      "before": 19,
+      "after": 24
+    },
+    {
+      "question": 231,
+      "added": [
+        "Car alarm",
+        "Megaphone",
+        "Crow scarer",
+        "Pile driver",
+        "Air compressor",
+        "Outdoor loudspeaker"
+      ],
+      "aliases": [
+        [
+          "pneumatic drill",
+          "Jackhammer"
+        ],
+        [
+          "airplane",
+          "Aeroplane"
+        ],
+        [
+          "Church bell",
+          "Bell"
+        ]
+      ],
+      "before": 20,
+      "after": 26
+    },
+    {
+      "question": 232,
+      "added": [
+        "Kohlrabi",
+        "Celeriac",
+        "Parsnip",
+        "Swede",
+        "Turnip",
+        "Broad bean",
+        "Runner bean",
+        "Chard",
+        "Sorrel",
+        "Asparagus"
+      ],
+      "aliases": [
+        [
+          "rutabaga",
+          "Swede"
+        ],
+        [
+          "fava bean",
+          "Broad bean"
+        ]
+      ],
+      "before": 22,
+      "after": 32
+    },
+    {
+      "question": 233,
+      "added": [
+        "Fennec fox",
+        "Meerkat",
+        "Oryx",
+        "Addax",
+        "Jerboa",
+        "Roadrunner",
+        "Gila monster",
+        "Joshua tree",
+        "Sand dune"
+      ],
+      "aliases": [],
+      "before": 22,
+      "after": 31
+    },
+    {
+      "question": 234,
+      "added": [
+        "Rescue boat",
+        "Fire escape",
+        "Emergency stop button",
+        "Fire hose",
+        "Tourniquet",
+        "Rescue ladder",
+        "Satellite phone",
+        "Distress beacon"
+      ],
+      "aliases": [
+        [
+          "AED",
+          "Defibrillator"
+        ]
+      ],
+      "before": 20,
+      "after": 28
+    },
+    {
+      "question": 235,
+      "added": [
+        "Brake fluid",
+        "Fuel filter",
+        "Clutch plate",
+        "Timing belt",
+        "Fuel cap",
+        "Replacement key",
+        "Number plate",
+        "Dashcam"
+      ],
+      "aliases": [
+        [
+          "Windscreen wiper",
+          "Wiper blade"
+        ],
+        [
+          "windshield wiper",
+          "Wiper blade"
+        ],
+        [
+          "antifreeze",
+          "Coolant"
+        ]
+      ],
+      "before": 24,
+      "after": 32
+    },
+    {
+      "question": 236,
+      "added": [
+        "Fungus",
+        "Acorn",
+        "Pine cone",
+        "Spider web",
+        "Deer antler",
+        "Animal droppings",
+        "Cobweb",
+        "Reed bed"
+      ],
+      "aliases": [
+        [
+          "Animal track",
+          "Footprint"
+        ],
+        [
+          "Bird nest",
+          "Nest"
+        ]
+      ],
+      "before": 22,
+      "after": 30
+    },
+    {
+      "question": 237,
+      "added": [
+        "Aquarium",
+        "Car radiator",
+        "Concrete mix",
+        "Cooling tower",
+        "Water clock",
+        "Waterbed",
+        "Ice maker",
+        "Rice cooker",
+        "Hydraulic ram pump",
+        "Evaporative cooler"
+      ],
+      "aliases": [],
+      "before": 20,
+      "after": 30
+    },
+    {
+      "question": 238,
+      "added": [
+        "Chainsaw trousers",
+        "Cut-resistant glove",
+        "Safety lanyard",
+        "Toe cap",
+        "Lead apron",
+        "Anti-vibration glove",
+        "Sun hat"
+      ],
+      "aliases": [
+        [
+          "Steel-toe boots",
+          "Safety boots"
+        ],
+        [
+          "Welding mask",
+          "Welding helmet"
+        ],
+        [
+          "Fall-arrest harness",
+          "Harness"
+        ],
+        [
+          "Chemical apron",
+          "Apron"
+        ]
+      ],
+      "before": 19,
+      "after": 26
+    },
+    {
+      "question": 239,
+      "added": [
+        "Underpass",
+        "Roundabout",
+        "Waterfront",
+        "Sculpture trail",
+        "Civic centre",
+        "Festival site",
+        "Bus shelter",
+        "Community mural"
+      ],
+      "aliases": [
+        [
+          "University campus",
+          "University"
+        ],
+        [
+          "Railway station",
+          "Train station"
+        ],
+        [
+          "Town hall",
+          "City hall"
+        ],
+        [
+          "shopping center",
+          "Shopping centre"
+        ]
+      ],
+      "before": 20,
+      "after": 28
+    },
+    {
+      "question": 240,
+      "added": [
+        "Igloo",
+        "Snow angel",
+        "Snowball fight",
+        "Ski lift",
+        "Snowmobile",
+        "Avalanche",
+        "Frozen waterfall",
+        "Snow fence",
+        "Snowdrift",
+        "Snowshoe"
+      ],
+      "aliases": [],
+      "before": 22,
+      "after": 32
+    }
+  ],
+  "validation": {
+    "oldCanonicalAndAliasScores": "Every previous exact name/alias retains its canonical owner and points.",
+    "rotation": "48 days unchanged; all 105 semantic conflicts separated, no additional 35-percent canonical-overlap conflicts.",
+    "maximum120DayCloudBytes": 1638651,
+    "cloudByteLimit": 1990000,
+    "cloudReview": "120 completed full-snapshot days across all 48 starting slots; no history pruning.",
+    "content": "Generator validates every canonical and alias, minimum answer counts, individual score fingerprints, accessible anchors and rating range.",
+    "gameplay": "Existing gameplay, design and save version unchanged. Focused tests cover phone/tablet/desktop, old snapshots and newly accepted Daily/Unlimited inputs."
+  }
+}

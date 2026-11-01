@@ -70,7 +70,7 @@ const storage={length:1,key:()=>key,getItem:k=>k===key?encode(mixed):null,setIte
 const bad=[];for(const mutate of [r=>r.version=2,r=>r.kind='unlimited',r=>r.day='2026-02-30',r=>r.edits=-1,r=>r.round=3,r=>r.phase='active',r=>r.deadline=1,r=>r.error='unlisted',r=>r.questions[0].answers[0].points=0,r=>r.questions[0].answers[0].points=101,r=>r.questions[1]=r.questions[0],r=>r.picks[0].points=99,r=>r.picks[0].answer='wrong',r=>r.picks[0].reason='timeout',r=>r.picks.pop(),r=>r.input='changed']){const r=structuredClone(good);mutate(r);assert.equal(M.record(r,day),null);bad.push(r);}
 // Revision 12: broad everyday prompts with reviewed, low-scoring familiar footholds.
 const accessibleSource=require('../content/hidden-gem-accessible-source.json');
-assert.equal(require('../content/hidden-gem-questions.json').revision,13);
+assert.equal(require('../content/hidden-gem-questions.json').revision,14);
 assert.equal(activeBank.length,240);assert(activeBank.every(q=>q.id.startsWith('hg12-')));
 assert.equal(new Set(activeBank.map(q=>q.prompt)).size,240);
 for(const [i,q]of activeBank.entries()){
@@ -88,7 +88,21 @@ for(const [n,input]of [[1,'Toast'],[1,'eggs'],[29,'dog'],[40,'Cactus'],[49,'heig
 // Review examples independently pin familiar choices, intermediate levels and comparable rare choices.
 for(const [n,input,points]of [[1,'Toast',1],[1,'Eggs',3],[1,'Cereal',5],[1,'Crumpet',20],[1,'Breakfast burrito',65],[1,'Rice',70],[1,'Noodles',80],[1,'Congee',90],[1,'Idli',100],[1,'Dosa',100],[100,'Sydney',1],[100,'Milan',40],[137,'Mario',1],[145,'Mario',1],[145,'Woody',5],[147,'Superman',1],[147,'Spider-Man',10],[147,'Frozone',80],[147,'Hawkgirl',100],[148,'Frozen',1],[148,'Toy Story',5],[148,'Toy Story 5',65],[207,'pants',35],[207,'sleeves',25],[217,'Wind',25]])assert.equal(M.match(accessibleById(n),input)?.points,points,'Individually reviewed contextual rating '+n+' '+input);
 const beforeGrading=require('../content/archive/2026-11-01-pre-graded-ratings/hidden-gem-questions.json').questions;
-for(const [i,q]of activeBank.entries()){const old=beforeGrading[i];assert.equal(q.id,old.id);assert.equal(q.prompt,old.prompt);assert.equal(q.scope,old.scope);assert.equal(q.topic,old.topic);assert.equal(q.dailySlot,old.dailySlot);assert.deepEqual(q.answers.map(a=>[a.name,a.aliases]),old.answers.map(a=>[a.name,a.aliases]));}
+const beforeExpansion=require('../content/archive/2026-11-01-pre-answer-expansion/hidden-gem-questions.json').questions;
+for(const [i,q]of beforeExpansion.entries()){const old=beforeGrading[i];assert.deepEqual(q.answers.map(a=>[a.name,a.aliases]),old.answers.map(a=>[a.name,a.aliases]),'Revision 13 changed ratings only');}
+for(const [i,q]of activeBank.entries()){
+ const old=beforeExpansion[i];for(const field of ['id','prompt','scope','topic','dailySlot'])assert.equal(q[field],old[field]);
+ let additions=0;const oldInputs=new Set(old.answers.flatMap(a=>[a.name,...a.aliases]).map(M.normal));
+ for(const a of old.answers)for(const input of [a.name,...a.aliases]){const now=M.match(q,input);assert.equal(now?.name,a.name,q.id+' preserved mapping '+input);assert.equal(now.points,a.points,q.id+' preserved score '+input);}
+ for(const a of q.answers)for(const input of [a.name,...a.aliases])if(!oldInputs.has(M.normal(input)))additions++;
+ assert(additions>0,'Every question expands actual accepted wording: '+q.id);
+ if(i!==99)assert(q.answers.length>old.answers.length,'Expand canonical membership except complete Olympic host roster: '+q.id);
+ const frozen=M.createPractice(old,'2026-11-01','pre-expansion:'+q.id),raw=encode(frozen);assert(M.validRun(frozen));assert.equal(encode(frozen),raw);assert.deepEqual(frozen.questions[0].answers,old.answers);
+}
+for(const [n,input,canonical,points]of [[1,'Cottage cheese','Cottage cheese',60],[26,'tegu','Tegu',100],[49,'wingspan','Arm span',35],[50,'ureters','Ureter',95],[97,'Syrian Arab Republic','Syria',80],[98,'Turkiye','Türkiye',30],[100,'Muenchen','Munich',65],[162,'Mittens','Mittens',35],[207,'Sleeping mat','Sleeping mat',40],[237,'Water clock','Water clock',95]]){const q=accessibleById(n),a=M.match(q,input);assert.equal(a?.name,canonical);assert.equal(a.points,points);const r=M.createPractice(q,'2026-11-01','expanded:'+q.id);M.begin(r,1000);M.draft(r,input,1001);assert(M.finish(r,1002));assert.equal(r.picks[0].points,points);}
+// Expanded lists must not be injected into old captures or completed zeroes.
+const oldExpandedRun=M.createPractice(beforeExpansion[0],'2026-11-01','old-membership');M.begin(oldExpandedRun,1000);const originalDeadline=oldExpandedRun.deadline;M.draft(oldExpandedRun,'Cottage cheese',1001);assert(!M.finish(oldExpandedRun,1002));assert.equal(oldExpandedRun.deadline,originalDeadline);M.expire(oldExpandedRun,originalDeadline);const completedZero=encode(oldExpandedRun);assert(M.validRun(oldExpandedRun));assert.equal(oldExpandedRun.picks[0].points,0);assert.equal(encode(oldExpandedRun),completedZero);
+
 const oldDefaultRun=M.createPractice(beforeGrading[0],'2026-11-01','old-default-50');M.begin(oldDefaultRun,1000);M.draft(oldDefaultRun,'Noodles',1001);assert(M.finish(oldDefaultRun,1002));assert.equal(oldDefaultRun.picks[0].points,50);assert(M.validRun(oldDefaultRun));
 const accessibleDates=[];
 for(let i=0;i<48;i++){const day=new Date(Date.UTC(2026,10,1+i)).toISOString().slice(0,10),set=M.daily(activeBank,day);assert.equal(set.length,5);assert.equal(new Set(set.map(q=>q.topic)).size,5);accessibleDates.push(...set.map(q=>q.id));}

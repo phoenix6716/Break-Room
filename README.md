@@ -1,3 +1,11 @@
+## Answer coverage expansion — owner request, 1 November 2026
+
+Revision 14 expands all 240 current Sleeper lists from 6,402 to 8,194 canonical answers (23–155 per question), plus 8,372 aliases. Each question gains new accepted input. Complete Olympic host-city membership gains real alternative city names rather than invented hosts. Other additions include everyday food, household objects, activities, valid word-constraint answers and missing countries. Synonyms share a canonical score. Offline lists remain finite; they cannot guarantee every conceivable valid answer.
+
+Author `content/hidden-gem-accessible-source.json` and regenerate with `node scripts/build-hidden-gem-questions.cjs`. Every new canonical answer has an explicit contextual editorial rating; all previous canonical answers, aliases and ratings stay fixed. The hg12 IDs, prompts, topics, scopes, 48-day calendar, midnight Australia/Sydney reset, gameplay formula and design stay fixed. Archive revision 13 in `content/archive/2026-11-01-pre-answer-expansion/`; see `design/content-reviews/2026-11-01-sleeper-answer-expansion.json` for per-question additions.
+
+Fresh Daily and Unlimited captures use expanded lists. Previously captured questions retain their original membership, scores, deadlines and results; new aliases may repair pending captures only under the existing same-ID/name/points rules. Do not inject new canonical answers into old snapshots or change completed zeroes. Cloud keys, validators, account schema and save version remain unchanged. This coverage request supersedes the previous instruction to freeze current membership and aliases.
+
 ## Individually graded answer ratings — owner correction, 1 November 2026
 
 Revision 13 supersedes revision 12's neutral-50 fallback and single selected maximum. Every one of the 6,402 canonical answers across all 240 prompts now has an explicit, question-specific editorial rating. Each question has at least 14 distinct ratings and four distinct ratings strictly between 50 and 100. Comparable choices may tie, including at 100. These are rounded familiarity estimates, not player-survey percentages. Do not fill missing scores with 50, random noise, roster-order interpolation or a score borrowed from an unrelated question.
