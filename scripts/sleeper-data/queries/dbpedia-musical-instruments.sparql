@@ -1,0 +1,1 @@
+SELECT ?item ?name WHERE {?item <http://purl.org/dc/terms/subject>/<http://www.w3.org/2004/02/skos/core#broader>? <http://dbpedia.org/resource/Category:Musical_instruments>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)="en")} LIMIT 10000

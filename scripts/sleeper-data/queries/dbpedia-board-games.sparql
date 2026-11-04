@@ -1,0 +1,2 @@
+# Bounded legacy CC BY-SA DBpedia candidate capture.
+SELECT DISTINCT ?item ?name WHERE { ?item a <http://dbpedia.org/ontology/BoardGame>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)="en") } LIMIT 10000

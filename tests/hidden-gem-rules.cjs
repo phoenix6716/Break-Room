@@ -1,9 +1,9 @@
 /* New Hidden Gem model and isolated score helpers; disposable database only. */
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),{PGlite}=require('@electric-sql/pglite');
 for(const p of ['daily-clock.js','hidden-gem-model.js','arcade-score.js','profile-records.js','cloud-saves.js'])require('../'+p);
-const M=BREAK_ROOM_HIDDEN_GEM,B=require('../content/archive/2026-10-31/hidden-gem-questions.json').questions,activeBank=require('../content/hidden-gem-questions.json').questions,day='2026-10-24',key=M.PREFIX+day,encode=JSON.stringify;
+const M=BREAK_ROOM_HIDDEN_GEM,B=require('../content/archive/2026-10-31/hidden-gem-questions.json').questions,activeBank=require('../content/archive/2026-11-02-pre-large-banks/hidden-gem-questions.json').questions,day='2026-10-24',key=M.PREFIX+day,encode=JSON.stringify;
 const runtime={window:{}};vm.runInNewContext(fs.readFileSync('games/hidden-gem/questions.js','utf8'),runtime);
-assert.deepEqual(JSON.parse(JSON.stringify(runtime.window.HIDDEN_GEM_QUESTIONS)),activeBank);assert.equal(B.length,240);assert(B.reduce((n,q)=>n+q.answers.length,0)>5000);assert.equal(new Set(B.map(q=>q.id)).size,240);
+assert.deepEqual(JSON.parse(JSON.stringify(runtime.window.HIDDEN_GEM_QUESTIONS)),require('../content/hidden-gem-questions.json').questions);assert.equal(B.length,240);assert(B.reduce((n,q)=>n+q.answers.length,0)>5000);assert.equal(new Set(B.map(q=>q.id)).size,240);
 for(const q of B){assert(q.answers.length>=10,q.id+' must offer at least ten canonical answers');assert(!/eight main compass points|basic English demonstrative|three everyday states of matter/i.test(q.prompt));}
 const legacy=require('../content/archive/2026-10-30/hidden-gem-questions.json').questions;
 // All old identities are recovery-only. Full snapshots, not active-bank lookups, define saves.
@@ -70,7 +70,7 @@ const storage={length:1,key:()=>key,getItem:k=>k===key?encode(mixed):null,setIte
 const bad=[];for(const mutate of [r=>r.version=2,r=>r.kind='unlimited',r=>r.day='2026-02-30',r=>r.edits=-1,r=>r.round=3,r=>r.phase='active',r=>r.deadline=1,r=>r.error='unlisted',r=>r.questions[0].answers[0].points=0,r=>r.questions[0].answers[0].points=101,r=>r.questions[1]=r.questions[0],r=>r.picks[0].points=99,r=>r.picks[0].answer='wrong',r=>r.picks[0].reason='timeout',r=>r.picks.pop(),r=>r.input='changed']){const r=structuredClone(good);mutate(r);assert.equal(M.record(r,day),null);bad.push(r);}
 // Revision 12: broad everyday prompts with reviewed, low-scoring familiar footholds.
 const accessibleSource=require('../content/hidden-gem-accessible-source.json');
-assert.equal(require('../content/hidden-gem-questions.json').revision,15);
+assert.equal(require('../content/archive/2026-11-02-pre-large-banks/hidden-gem-questions.json').revision,15);
 assert.equal(activeBank.length,240);assert(activeBank.every(q=>q.id.startsWith('hg12-')));
 assert.equal(new Set(activeBank.map(q=>q.prompt)).size,240);
 for(const [i,q]of activeBank.entries()){

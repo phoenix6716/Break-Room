@@ -1,0 +1,1 @@
+SELECT ?item ?name WHERE {?item a <http://dbpedia.org/ontology/Painting>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)="en")} LIMIT 10000

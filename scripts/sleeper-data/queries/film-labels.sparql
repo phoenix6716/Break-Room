@@ -1,0 +1,5 @@
+# Bounded candidate inventory, never claimed to be a complete film catalogue.
+SELECT ?item ?name WHERE {
+  ?item wdt:P31 wd:Q11424; rdfs:label ?name.
+  FILTER(LANG(?name)="en")
+} LIMIT 30000

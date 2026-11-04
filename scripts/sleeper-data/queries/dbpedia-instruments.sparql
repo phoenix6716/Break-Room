@@ -1,0 +1,2 @@
+# DBpedia bounded source capture, not an exhaustive catalogue.
+SELECT DISTINCT ?item ?name WHERE { ?item a <http://dbpedia.org/ontology/MusicalInstrument>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)="en") } LIMIT 10000

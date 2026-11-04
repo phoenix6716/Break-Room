@@ -1,3 +1,9 @@
+## Source-based large-bank rebuild — in progress, 2 November 2026
+
+The owner requests at least 300 distinct canonical answers per question and much larger open sets, using independently licensed datasets, familiarity estimates and editorial review. Offline judging remains required. Preparation adds compact immutable bank references, integrity-checked lazy loading/cache, searchable paginated reviews and a private append-only server registry. Existing full snapshots, scores, receipts, zeroes, timers and account saves stay unchanged. See `scripts/sleeper-data/README.md` and `design/content-reviews/2026-11-02-sleeper-source-method.md`.
+
+**This work has not replaced or deployed the active revision-15 bank.** Source candidates and synthetic 20,000-answer test fixtures are not published answer banks. Never present those counts as shipped coverage. A complete reviewed release descriptor, source documents with explicit contextual ratings, 300-answer floor on every question, familiar footholds and reviewed long rotation are required before export/deployment. The existing content generator continues to reproduce revision 15 while that descriptor is absent. Full legacy source/model/generator/SQL are archived in `content/archive/2026-11-02-pre-large-banks/`.
+
 ## Answer acceptance audit — owner request, 1 November 2026
 
 Revision 15 closes 1,452 rejected inputs from a prompt-led 5,998-case editorial challenge spanning all 240 Sleeper questions. The cases include everyday concepts, regional wording and natural phrases; all pass after correction. A separate geographic reference contributes 930 common-name/ISO probes. Explicit grammar variants broaden action answers. The active bank has 8,974 canonical answers (25–159 per question), 10,377 aliases, and the unchanged 48-day rotation. Passing this regression set is evidence about the reviewed cases, not proof that most conceivable answers or actual player guesses are covered.

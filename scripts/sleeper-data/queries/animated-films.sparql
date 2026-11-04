@@ -1,0 +1,1 @@
+SELECT ?item ?name WHERE {?item wdt:P31 wd:Q202866; rdfs:label ?name. FILTER(LANG(?name)="en")} LIMIT 20000

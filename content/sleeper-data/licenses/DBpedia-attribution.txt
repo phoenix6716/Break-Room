@@ -1,0 +1,8 @@
+Legacy DBpedia Wikipedia-derived data
+Source: https://dbpedia.org/sparql
+Primary licence statement: https://wiki.dbpedia.org/about
+Creative Commons Attribution-ShareAlike 3.0: https://creativecommons.org/licenses/by-sa/3.0/
+
+DBpedia extracts structured information from Wikipedia and makes it available under CC BY-SA 3.0 and the GNU Free Documentation License. This adaptation uses the CC BY-SA option. It does not use the separately licensed Fusion KG.
+
+Credit DBpedia and the contributors of the corresponding English Wikipedia pages. Per-record sourcePage URLs identify source articles; their History tabs identify contributing authors. Source labels and disambiguation suffixes are transformed. The dataset is a bounded reference capture, not a complete media inventory or a 2026 popularity survey.

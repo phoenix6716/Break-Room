@@ -20,7 +20,7 @@ function challenge(id,p){
  case 'clue-ladder':return [p.answer,p.clues];
  case 'seating-chart':return [p.g,p.names,p.rules.map(r=>[r.type,r.a,r.b]).sort()];
  case 'shift-work':return [p.pieces.map(v=>[v.axis,v.len,v.lane]),p.start];
- case 'hidden-gem':return [p.prompt,p.scope,p.answers.map(a=>[a.name,a.points]).sort()];
+ case 'hidden-gem':return [p.prompt,p.scope,p.bankRef||p.answers.map(a=>[a.name,a.points]).sort()];
  case 'pack':return [p.limit,p.items.map(i=>[i.name,i.weight,i.points]).sort()];
  case 'stack-up':return [p.prompt,p.cards.map(c=>[c.name,c.value]).sort()];
  case 'lowball':return p.name;

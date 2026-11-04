@@ -1,0 +1,2308 @@
+{
+  "reviewed": "2026-11-02",
+  "status": "source candidates, not published answer banks",
+  "sources": [
+    {
+      "file": "content/sleeper-data/catalogues/usda-candidates.json.gz",
+      "sha256": "622ad8af5148d8db25ec9ae3ee1145fa6d6d5896263fda26d645862aa9601a11",
+      "compressedSha256": "6967a36d9b08170cc7e128170683b3093906b292e205484f4f5ee1a51de9f4b3",
+      "bytes": 301632066,
+      "compressedBytes": 47853780,
+      "concepts": 473371,
+      "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/",
+      "attribution": "USDA FoodData Central, CC0 1.0 public domain",
+      "rawSha256": "17f1e52ea91854d8c6c266487597bf1dd6ce63441bfe27c9e61f64e2768440c7",
+      "sourceRelease": "2026-10-29",
+      "reviewed": "2026-11-02",
+      "license": "CC0-1.0",
+      "categories": {
+        "Biscuits/Cookies (Shelf Stable)": 334,
+        "Cereals Products - Ready to Eat (Shelf Stable)": 113,
+        "Chips/Crisps/Snack Mixes - Natural/Extruded (Shelf Stable)": 104,
+        "Fruit - Prepared/Processed (Shelf Stable)": 76,
+        "Pies/Pastries - Sweet (Shelf Stable)": 38,
+        "Vegetable Based Products / Meals - Not Ready to Eat (Frozen)": 50,
+        "Cereal/Muesli Bars": 107,
+        "Cereals Products - Not Ready to Eat (Shelf Stable)": 8,
+        "Ice Cream/Ice Novelties (Shelf Stable)": 20,
+        "": 232,
+        "Cakes - Sweet (Frozen)": 40,
+        "Egg Based Products / Meals - Not Ready to Eat (Frozen)": 4,
+        "Popcorn (Shelf Stable)": 5,
+        "Nuts/Seeds - Prepared/Processed (Shelf Stable)": 9,
+        "Pork Sausages - Prepared/Processed": 2,
+        "Vegetables - Prepared/Processed (Shelf Stable)": 10,
+        "Dough Based Products / Meals - Not Ready to Eat - Savoury (Frozen)": 1,
+        "Baking/Cooking Mixes/Supplies Variety Packs": 1,
+        "Drinks Flavoured - Ready to Drink": 37,
+        "Baking/Cooking Supplies (Shelf Stable)": 15,
+        "Baking/Cooking Mixes (Shelf Stable)": 5,
+        "Dough Based Products / Meals - Not Ready to Eat - Savoury (Shelf Stable)": 5,
+        "Dressings/Dips (Shelf Stable)": 2,
+        "Soups - Prepared (Shelf Stable)": 3,
+        "Flour - Cereal/Pulse (Shelf Stable)": 1,
+        "Sauces - Cooking (Shelf Stable)": 1,
+        "Cakes - Sweet (Shelf Stable)": 1,
+        "Yogurt/Yogurt Substitutes (Perishable)": 4,
+        "Pies/Pastries/Pizzas/Quiches - Savoury (Frozen)": 11,
+        "Baking/Cooking Mixes (Perishable)": 3,
+        "Ketchup, Mustard, BBQ & Cheese Sauce": 7242,
+        "Salad Dressing & Mayonnaise": 6179,
+        "Ice Cream & Frozen Yogurt": 13683,
+        "Bread & Muffin Mixes": 1138,
+        "Vegetable & Cooking Oils": 4562,
+        "Pasta by Shape & Type": 6837,
+        "Other Grains & Seeds": 1145,
+        "All Noodles": 1017,
+        "Cheese": 18581,
+        "Prepared Pasta & Pizza Sauces": 3861,
+        "Tomatoes": 3127,
+        "Oriental, Mexican & Ethnic Sauces": 3760,
+        "Other Cooking Sauces": 2259,
+        "Canned Fruit": 3145,
+        "Jam, Jelly & Fruit Spreads": 3539,
+        "Cooked & Prepared": 1325,
+        "Pepperoni, Salami & Cold Cuts": 4992,
+        "Frozen Appetizers & Hors D'oeuvres": 4919,
+        "Frozen Fish & Seafood": 3778,
+        "Frozen Pancakes, Waffles, French Toast & Crepes": 987,
+        "Pasta Dinners": 1662,
+        "Rice": 2016,
+        "Entrees, Sides & Small Meals": 1519,
+        "Pizza Mixes & Other Dry Dinners": 585,
+        "Vegetable and Lentil Mixes": 1867,
+        "Seasoning Mixes, Salts, Marinades & Tenderizers": 8723,
+        "Pickles, Olives, Peppers & Relishes": 10568,
+        "Canned Seafood": 1354,
+        "Herbs & Spices": 2411,
+        "Poultry, Chicken & Turkey": 817,
+        "Cereal": 8468,
+        "Granulated, Brown & Powdered Sugar": 1854,
+        "Breads & Buns": 10543,
+        "Chips, Pretzels & Snacks": 12669,
+        "Tea Bags": 1606,
+        "Dips & Salsa": 7244,
+        "Puddings & Custards": 1311,
+        "Other Meats": 2396,
+        "Nut & Seed Butters": 2770,
+        "Popcorn, Peanuts, Seeds & Related Snacks": 22339,
+        "Cakes, Cupcakes, Snack Cakes": 9513,
+        "Sausages, Hotdogs & Brats": 4882,
+        "Cookies & Biscuits": 13629,
+        "Chili & Stew": 1230,
+        "Canned & Bottled Beans": 3221,
+        "Crackers & Biscotti": 4309,
+        "Other Snacks": 8538,
+        "Flavored Rice Dishes": 805,
+        "Canned Vegetables": 4462,
+        "Canned Tuna": 1034,
+        "Canned Meat": 797,
+        "Honey": 1411,
+        "Pre-Packaged Fruit & Vegetables": 6209,
+        "Frozen Poultry, Chicken & Turkey": 446,
+        "Butter & Spread": 1912,
+        "Wholesome Snacks": 6375,
+        "Powdered Drinks": 4438,
+        "Cream": 1721,
+        "Yogurt": 7126,
+        "Baking Decorations & Dessert Toppings": 4221,
+        "Canned Soup": 2402,
+        "Other Soups": 3076,
+        "Alcohol": 1148,
+        "Flavored Snack Crackers": 802,
+        "Chocolate": 10779,
+        "Fish & Seafood": 1306,
+        "Frozen Bread & Dough": 1151,
+        "Frozen Dinners & Entrees": 5721,
+        "Bacon, Sausages & Ribs": 1689,
+        "Candy": 23105,
+        "Cake, Cookie & Cupcake Mixes": 3587,
+        "Croissants, Sweet Rolls, Muffins & Other Pastries": 2898,
+        "Lunch Snacks & Combinations": 910,
+        "Baking Additives & Extracts": 881,
+        "Flours & Corn Meal": 1384,
+        "Chewing Gum & Mints": 1717,
+        "Milk": 4722,
+        "Pastry Shells & Fillings": 483,
+        "Frozen Vegetables": 4306,
+        "Gravy Mix": 863,
+        "Other Deli": 3566,
+        "Syrups & Molasses": 2015,
+        "French Fries, Potatoes & Onion Rings": 959,
+        "Snack, Energy & Granola Bars": 8450,
+        "Frozen Prepared Sides": 864,
+        "Pizza": 3662,
+        "Frozen Patties and Burgers": 1202,
+        "Milk Additives": 1829,
+        "Coffee": 482,
+        "Canned Condensed Soup": 907,
+        "Eggs & Egg Substitutes": 932,
+        "Stuffing": 338,
+        "Other Frozen Desserts": 2037,
+        "Frozen Fruit & Fruit Juice Concentrates": 2240,
+        "Other Drinks": 4989,
+        "Crusts & Dough": 1485,
+        "Plant Based Milk": 1522,
+        "Mexican Dinner Mixes": 1707,
+        "Gelatin, Gels, Pectins & Desserts": 932,
+        "Frozen Sausages, Hotdogs & Brats": 230,
+        "Fruit & Vegetable Juice, Nectars & Fruit Drinks": 9314,
+        "Soda": 8234,
+        "Other Condiments": 627,
+        "Other Frozen Meats": 190,
+        "Liquid Water Enhancer": 787,
+        "Energy, Protein & Muscle Recovery Drinks": 1974,
+        "Water": 5942,
+        "Iced & Bottle Tea": 2308,
+        "Sport Drinks": 788,
+        "Plant Based Water": 720,
+        "Deli Salads": 1317,
+        "Breakfast Sandwiches, Biscuits & Meals": 300,
+        "Pancakes, Waffles, French Toast & Crepes": 167,
+        "Prepared Subs & Sandwiches": 1082,
+        "Frozen Bacon, Sausages & Ribs": 380,
+        "Breakfast Drinks": 78,
+        "Prepared Wraps and Burittos": 717,
+        "Vegetarian Frozen Meats": 324,
+        "Sushi": 553,
+        "Frozen Breakfast Sandwiches, Biscuits & Meals": 1003,
+        "Baking Accessories": 3,
+        "Baking": 4,
+        "Specialty Formula Supplements": 197,
+        "Green Supplements": 30,
+        "Amino Acid Supplements": 1,
+        "Health Care": 45,
+        "Herbal Supplements": 21,
+        "Vegetables  Prepared/Processed": 205,
+        "Vegetable Based Products / Meals": 613,
+        "Meat/Poultry/Other Animals  Unprepared/Unprocessed": 767,
+        "Sauces/Spreads/Dips/Condiments": 1329,
+        "Fats Edible": 16,
+        "Prepared Soups": 1204,
+        "Non Alcoholic Beverages  Ready to Drink": 639,
+        "Meat/Poultry/Other Animals  Prepared/Processed": 680,
+        "Baking/Cooking Mixes/Supplies": 1249,
+        "Processed Cereal Products": 2751,
+        "Snacks": 2561,
+        "Sweet Spreads": 233,
+        "Nuts/Seeds  Prepared/Processed": 31,
+        "Sweet Bakery Products": 898,
+        "Dough Based Products / Meals": 606,
+        "Yogurt/Yogurt Substitutes": 783,
+        "Savoury Bakery Products": 1156,
+        "Fruit  Prepared/Processed": 52,
+        "Baby/Infant  Foods/Beverages": 119,
+        "Non Alcoholic Beverages  Not Ready to Drink": 113,
+        "Biscuits/Cookies": 2599,
+        "Bread": 841,
+        "Herbs/Spices/Extracts": 239,
+        "Alcoholic Beverages": 10,
+        "Meat/Poultry/Other Animals Sausages  Prepared/Processed": 61,
+        "Children's Nutritional Supplements": 7,
+        "Digestive & Fiber Supplements": 22,
+        "Desserts/Dessert Sauces/Toppings": 624,
+        "Ready-Made Combination Meals": 389,
+        "Prepared/Preserved Foods Variety Packs": 167,
+        "Pasta/Noodles": 283,
+        "Pork - Prepared/Processed": 1,
+        "Sandwiches/Filled Rolls/Wraps": 507,
+        "Grain Based Products / Meals": 175,
+        "Milk/Milk Substitutes": 2297,
+        "Butter/Butter Substitutes": 91,
+        "Dairy/Egg Based Products / Meals": 24,
+        "Cheese/Cheese Substitutes": 302,
+        "Fruit/Nuts/Seeds Combination": 39,
+        "Beef - Prepared/Processed": 1,
+        "Vinegars/Cooking Wines": 2,
+        "Grains/Flour": 252,
+        "Grain Based Products / Meals - Not Ready to Eat - Savoury (Shelf Stable)": 1,
+        "Food/Beverage/Tobacco Variety Packs": 8,
+        "Shellfish Unprepared/Unprocessed": 494,
+        "Fish  Unprepared/Unprocessed": 546,
+        "Confectionery Products": 1056,
+        "Coffee/Tea/Substitutes": 68,
+        "Aquatic Invertebrates/Fish/Shellfish/Seafood Combination": 5,
+        "Sugars/Sugar Substitute Products": 41,
+        "Bread/Bakery Products Variety Packs": 83,
+        "Vitamins": 10,
+        "Gardening": 1,
+        "Weight Control": 75,
+        "Meal Replacement Supplements": 159,
+        "Fish  Prepared/Processed": 3,
+        "Shellfish Prepared/Processed": 9,
+        "Vegetables  Unprepared/Unprocessed (Frozen)": 2,
+        "Miscellanious": 2,
+        "Fatty Acid Supplements": 6,
+        "Oral Hygiene Products": 2,
+        "Beer": 4,
+        "Media": 1,
+        "Fruits, Vegetables & Produce": 2,
+        "Frozen Meals": 17,
+        "Sausages/Smallgoods": 21,
+        "Bacon": 13,
+        "Sugar And Flour": 15,
+        "Bread - Incl. Buns And Rolls": 16,
+        "Canned/Dried Veges": 11,
+        "Health Supplements and Vitamins": 9,
+        "Puddings and desserts": 5,
+        "Ham/Cold Meats": 4,
+        "Confectionery": 83,
+        "Frozen Foods": 7,
+        "Prepared Meals": 50,
+        "Pastries/Pies/Pizzas": 6,
+        "Fruit": 3,
+        "Breakfast Cereals - Hot And Cold": 32,
+        "Seafood Miscellaneous": 38,
+        "Biscuits Cracker": 12,
+        "Snack Foods - Other": 31,
+        "Sauces": 38,
+        "Spreads": 65,
+        "Canned Fish and Meat": 61,
+        "Frozen Fish/Seafood": 104,
+        "Vegetarian": 10,
+        "Rice & Grains": 3,
+        "Drinks - Juices, Drinks and Cordials": 25,
+        "Biscuits Plain/Sweet": 5,
+        "Smoked fish": 9,
+        "Frozen Fruit": 10,
+        "Dips/Hummus/Pate": 11,
+        "Drinks - Energy Drinks": 2,
+        "Biscuits Chocolate": 10,
+        "Milk/Cream - Shelf Stable": 11,
+        "Herbs And Spices": 9,
+        "Snack Foods - Nuts": 7,
+        "Snack Foods - Cereal Snacks": 8,
+        "Dairy Foods/Yoghurts": 34,
+        "Frozen Pies/Savouries": 4,
+        "Sauces- Cooking": 7,
+        "Fresh Pasta": 1,
+        "Snack Foods - Chips": 15,
+        "Desserts & Custard": 7,
+        "Taco Shells": 7,
+        "Baking Needs": 26,
+        "Wrapped Snacks - Muesli Bars": 8,
+        "Frozen Meat": 12,
+        "Salami / Cured Meat": 7,
+        "Wrapped Snacks - Nut Bars": 6,
+        "Mussels": 1,
+        "Frozen Chicken - Processed": 17,
+        "Ice-Cream Take Home": 15,
+        "Ice-Cream/Block Single": 1,
+        "Snack Foods - Corn Chips": 2,
+        "Cakes/Slices/Biscuits": 1,
+        "Cheese - Block": 11,
+        "Frozen Potato": 5,
+        "Wrapped Snacks - Fruit Bars": 1,
+        "Fresh Chicken - Portions": 1,
+        "Fresh Meat": 6,
+        "S/O Fresh Fish Fillets/Steaks": 1,
+        "Noodles": 1,
+        "Cheese - Speciality ": 27,
+        "Vegetables": 3,
+        "Wrapped Snacks - Cereal": 3,
+        "Drinks - Soft Drinks": 10,
+        "Drinks - Powdered": 4,
+        "Frozen Snack": 2,
+        "Deli and Chilled Foods": 2,
+        "Salad Dressings": 10,
+        "Pickles, Relishes and Vinegar": 7,
+        "Pasta": 3,
+        "Tofu": 1,
+        "Cooking Oils and Fats": 5,
+        "Salads": 7,
+        "Margarine/Butter": 1,
+        "Fresh Chicken - Processed": 4,
+        "Tea - Bags, Loose Leaf, Speciality": 2,
+        "Milk/Cream": 4,
+        "Fresh Chicken - Whole": 1,
+        "Frozen Chicken - Portions": 3,
+        "Antipasto": 2,
+        "Fresh Fruit and Vegetables": 1,
+        "Pasta - Instant Meals": 2,
+        "Cakes and Slices": 8,
+        "Ready To Drink": 2,
+        "Dips - Shelf Stable": 2,
+        "Sports and Weight Management": 5,
+        "Pastry": 1,
+        "Eggs": 4,
+        "Frozen Desserts": 3,
+        "Infant Formula": 1,
+        "Potato - Instant Meals": 1,
+        "Fresh Meat, Poultry and Seafood": 1,
+        "Snack Foods - Multi Packs": 1,
+        "Biscuits Kids": 1,
+        "Snack Foods - Dried Fruit": 1,
+        "Ice-Cream/Ice-Block Multi Pack": 4,
+        "Coffee - Instant, Roast and Ground": 2,
+        "Minerals": 1,
+        "Turkey - Unprepared/Unprocessed": 2,
+        "Pork - Unprepared/Unprocessed": 1,
+        "Antioxidant Supplements": 1,
+        "Pickles/Relishes/Chutneys/Olives": 257,
+        "Cream/Cream Substitutes": 236,
+        "Oils Edible": 184,
+        "Breakfast Foods": 1,
+        "Processed Cheese & Cheese Novelties": 1,
+        "Children's Natural Remedies": 1,
+        "Seasonings/Preservatives/Extracts Variety Packs": 45,
+        "Nuts/Seeds - Prepared/Processed": 212,
+        "Vegetables - Prepared/Processed": 1161,
+        "Meat/Poultry/Other Animals - Prepared/Processed": 2793,
+        "Non Alcoholic Beverages - Ready to Drink": 1579,
+        "Fruit - Prepared/Processed": 383,
+        "Fish - Prepared/Processed": 75,
+        "Meat/Poultry/Other Animals Sausages - Prepared/Processed": 307,
+        "Non Alcoholic Beverages - Not Ready to Drink": 205,
+        "Meat/Poultry/Other Animals - Unprepared/Unprocessed": 204,
+        "Eggs/Eggs Substitutes": 38,
+        "Chickpeas": 1,
+        "Tea and Infusions/Tisanes": 61,
+        "Vegetables - Unprepared/Unprocessed (Shelf Stable)": 6,
+        "Vegetables - Unprepared/Unprocessed (Frozen)": 7,
+        "Fish Substitutes": 9,
+        "Peppers": 2,
+        "Fruits - Unprepared/Unprocessed (Shelf Stable)": 4,
+        "Fruits - Unprepared/Unprocessed (Frozen)": 6,
+        "Berries/Small Fruit": 2,
+        "Vitamins/Minerals/Nutritional Supplements": 3,
+        "Nuts/Seeds - Unprepared/Unprocessed (In Shell)": 1,
+        "Fruits/Vegetables/Nuts/Seeds Variety Packs": 2,
+        "Coffee/Coffee Substitutes": 59,
+        "Baby/Infant - Foods/Beverages": 202,
+        "Nuts/Seeds - Unprepared/Unprocessed (Perishable)": 1
+      },
+      "limitation": "UPCs merge historical revisions; separate products still require concept/synonym review and must not inflate a generic-food question."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/ncit.json.gz",
+      "sha256": "6ca524408cf1b34a08e572e645b96658c71adafa6f03e7635a4b9fed381693ce",
+      "compressedSha256": "a908da71c43f35bf238c9fc0eacd742f81965084224593841144dfca46a165ea",
+      "bytes": 81221799,
+      "compressedBytes": 15506152,
+      "concepts": 204940,
+      "sourceUrl": "https://evs.nci.nih.gov/thesaurus-downloads",
+      "rawSha256": "bbb28631799046e1227ac221636c2de6bb1d2b79bf6c8e0a1143a797176d6736",
+      "sourceVersion": "26.10d",
+      "attribution": "NCI Enterprise Vocabulary Services, Center for Biomedical Informatics and Information Technology, National Cancer Institute, Maryland, USA. CC BY 4.0. Transformed source candidates; not an official NCI Thesaurus distribution."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/species-candidates.json.gz",
+      "sha256": "f5f109eefefc8021d2ca92c5d4dd5ef0ce6ec8aaef91961bddd4417525502e2a",
+      "compressedSha256": "b0e21aee7942ab1cb0339450784a6ad0155f2cc44ef729f57521454b5d12b898",
+      "bytes": 15288797,
+      "compressedBytes": 1440351,
+      "concepts": 40414,
+      "sourceUrl": "https://www.gbif.org/dataset/7ddf754f-d193-4cc9-b351-99906754a03b",
+      "attribution": "Catalogue of Life / GBIF, CC BY 4.0",
+      "captures": [
+        {
+          "source": "GBIF species API, Catalogue of Life XR",
+          "dataset": "7ddf754f-d193-4cc9-b351-99906754a03b",
+          "taxon": "Mammalia",
+          "taxonKey": 302160612,
+          "rank": "CLASS",
+          "limit": 20000,
+          "rawFilesSha256": "504e017f315d97c5469cc1f52f73fa6eb114f632e22a4938111df7c08bb9e705",
+          "license": "http://creativecommons.org/licenses/by/4.0/legalcode",
+          "sourcePublicationDate": "2026-06-19T00:00:00.000+00:00",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "source": "GBIF species API, Catalogue of Life XR",
+          "dataset": "7ddf754f-d193-4cc9-b351-99906754a03b",
+          "taxon": "Aves",
+          "taxonKey": 299343440,
+          "rank": "CLASS",
+          "limit": 20000,
+          "rawFilesSha256": "6ce71445e03dd593af4a152714327c7bfda4e47a97822f3b6cda543b3eb6a981",
+          "license": "http://creativecommons.org/licenses/by/4.0/legalcode",
+          "sourcePublicationDate": "2026-06-19T00:00:00.000+00:00",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "source": "GBIF species API, Catalogue of Life XR",
+          "dataset": "7ddf754f-d193-4cc9-b351-99906754a03b",
+          "taxon": "Plantae",
+          "taxonKey": 293994071,
+          "rank": "KINGDOM",
+          "limit": 20000,
+          "rawFilesSha256": "eb8e8712b43a011a5bf893dccfe225e75e6609550ca17a88c94d27cd6a14220c",
+          "license": "http://creativecommons.org/licenses/by/4.0/legalcode",
+          "sourcePublicationDate": "2026-06-19T00:00:00.000+00:00",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "quarantinedRecords": [
+        {
+          "key": 288526980,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337829657,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 288448149,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 288465323,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 288467482,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 288467630,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 288471219,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 302144647,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 330988930,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828147,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828161,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828162,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828164,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828178,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828179,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828180,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828201,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828203,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828204,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828205,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828206,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828208,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828210,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828211,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828212,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828214,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828215,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828216,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828217,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828218,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828221,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828222,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828230,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828232,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828233,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828235,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828237,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828241,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828243,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828245,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828249,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828251,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828253,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828257,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828261,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828263,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828265,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828267,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828268,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828269,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828270,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828272,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828273,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828275,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828279,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828280,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828284,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828286,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828287,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828289,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828290,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828295,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828296,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828297,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828298,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828303,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828304,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828305,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828306,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828310,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828312,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828314,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828315,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828326,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828332,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828333,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828346,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828352,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828369,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828521,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828574,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828589,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828609,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828613,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828622,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828623,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828638,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828639,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828640,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828673,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828714,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828715,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828785,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828823,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828826,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828828,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828831,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828835,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828843,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828888,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 337828924,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283414241,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283461717,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283488366,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283507034,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283507765,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283507964,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283511691,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283532689,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283532692,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283537640,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283552711,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283552716,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283552728,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283552731,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283552735,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283552738,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283552892,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283552899,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283552976,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283552989,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283553737,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283553746,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283567672,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283650372,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283661920,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283714791,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283748450,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283748478,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283763412,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283813754,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283822149,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283956780,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 283989442,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284057365,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284067528,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284085527,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284103445,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284103572,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284112090,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284112101,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284112185,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284114206,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284119151,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284119155,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284119157,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284119159,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284119161,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284121634,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284121674,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284137743,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284156211,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284156215,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284158339,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284192834,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284192838,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284193938,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284193961,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284193972,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284223718,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284223729,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284244109,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284244115,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284323877,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284324938,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284338048,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284353675,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284353698,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284353715,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284358840,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284409280,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284410710,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284410748,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284418831,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284453301,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284459529,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284541739,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284547479,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284547786,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284554176,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284610247,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284610263,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284631004,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284646488,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284665709,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284670379,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284670383,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284702458,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284703301,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284703305,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284706077,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284711265,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284717372,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284727435,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284737106,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284737127,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284737199,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284737215,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284737266,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284737724,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284737810,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284737817,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284794574,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284841710,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284841718,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284856116,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284858559,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284862828,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284866692,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284868822,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284869308,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284873664,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284875718,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284876011,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284905540,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284909701,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284914242,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284928857,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284928867,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284931455,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284948288,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284948292,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284949478,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284949483,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284949518,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284949527,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284949547,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 284981526,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285006069,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285006077,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285006091,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285006679,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285017259,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285028459,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285040247,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285041189,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285060024,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285060054,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285060760,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285060767,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285065098,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285079754,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285079756,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285079758,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285079760,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285079793,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285082841,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285082844,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285082849,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285082858,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285082870,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285093827,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285093863,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285093872,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285093901,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285099679,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285133087,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285133623,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285190007,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285190011,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285190020,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285190043,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285190150,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285190163,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285190172,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285190175,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285190185,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285190283,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285190405,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285190483,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285190531,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285190534,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285190658,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285190672,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285190678,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285190714,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285190728,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285190787,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285190836,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285206539,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285206542,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285213709,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285214258,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285232458,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285241859,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285241861,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285241866,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285241870,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285249465,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285252252,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285252428,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285252430,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285345861,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285350464,
+          "reason": "accepted record lacks a parseable canonical name"
+        },
+        {
+          "key": 285355095,
+          "reason": "accepted record lacks a parseable canonical name"
+        }
+      ]
+    },
+    {
+      "file": "content/sleeper-data/catalogues/animal-traits.json.gz",
+      "sha256": "18ba20db22f88e2c5f3a3f70bdf6e68ea72e37982fd45c0655e411e93d3b6393",
+      "compressedSha256": "df2c18863fd32444e9d097290d4cb90795ddfe00ae7f5c89d468045179087001",
+      "bytes": 7744051,
+      "compressedBytes": 654384,
+      "concepts": 15390,
+      "sourceUrl": "https://api.figshare.com/v2/articles/3559887",
+      "attribution": "Wilman H., Belmaker J., Simpson J., de la Rosa C., Rivadeneira M.M. and Jetz W. (2014), EltonTraits 1.0, Ecology 95:2027. Primary archived data under CC0. Current GBIF common-name joins are CC BY 4.0.",
+      "reviewed": "2026-11-02",
+      "rawFiles": [
+        {
+          "name": "default.htm",
+          "computed_md5": "87225659a56b0c97b91202c32bb0e064",
+          "download_url": "https://ndownloader.figshare.com/files/5631078"
+        },
+        {
+          "name": "BirdFuncDat.txt",
+          "computed_md5": "d6197b2cd90ca3ece0a7393abbf8b7fc",
+          "download_url": "https://ndownloader.figshare.com/files/5631081"
+        },
+        {
+          "name": "MamFuncDat.txt",
+          "computed_md5": "59c3eee29d3ed0a33a002975a5a8cc75",
+          "download_url": "https://ndownloader.figshare.com/files/5631084"
+        },
+        {
+          "name": "BirdFuncDatSources.txt",
+          "computed_md5": "e4793ab8baa813bba7d168a3d2d6b6a7",
+          "download_url": "https://ndownloader.figshare.com/files/5631087"
+        },
+        {
+          "name": "MamFuncDatSources.txt",
+          "computed_md5": "0c67fa8bf6b6ccb7a38fc5229f84508b",
+          "download_url": "https://ndownloader.figshare.com/files/5631090"
+        },
+        {
+          "name": "metadata.htm",
+          "computed_md5": "03779ecd83873d08ff7def0249e93456",
+          "download_url": "https://ndownloader.figshare.com/files/5631093"
+        }
+      ],
+      "primaryMetadataSha256": "269259bfde3d2ca2ccb470475818ae1b136f9ea5012475906cdd305ea15c4a21",
+      "limitation": "Trait source taxonomy predates 2026; unresolved scientific-name joins remain explicit. Inferred diet values cannot establish an observed-trait question."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/places.json.gz",
+      "sha256": "c17ee24519e90103279ce9cbd113d3ebbcf3a8efd7b0fcb7da04c55a1dbfbe1a",
+      "compressedSha256": "9ea2c75d31dbdf8560c30f803c2a7a1b9d9f265ec341ef3da75d281330035fbd",
+      "bytes": 21760029,
+      "compressedBytes": 3806262,
+      "concepts": 69991,
+      "sourceUrl": "https://download.geonames.org/export/dump/cities5000.zip",
+      "rawSha256": "38874eb66122c9aff04d82b0e4dbda510a542c667c0b36f0172ec9efba61343f",
+      "attribution": "GeoNames, CC BY 4.0"
+    },
+    {
+      "file": "content/sleeper-data/catalogues/dbpedia-books.json.gz",
+      "sha256": "818571adef91cd3f7171308932ee861112c24c35b49dcce93af6644d961df4b6",
+      "compressedSha256": "6b96404bfa9ed26dd724101ee073a906425e182c63642a7b8081bf2625d35e98",
+      "bytes": 2169499,
+      "compressedBytes": 294587,
+      "concepts": 9843,
+      "sourceUrl": "https://dbpedia.org/sparql",
+      "rawSha256": "9df25712bb9df25204ba31c80f845fa1af12790c4ad047779b823c191458530b",
+      "query": "# Bounded legacy CC BY-SA DBpedia candidate capture.\nSELECT DISTINCT ?item ?name WHERE { ?item a <http://dbpedia.org/ontology/Book>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)=\"en\") } LIMIT 10000\n",
+      "attribution": "DBpedia and English Wikipedia contributors, legacy Wikipedia-derived data under CC BY-SA 3.0; source pages and their author histories retained per record. Labels and disambiguation metadata transformed. This does not use the Fusion KG.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "licenseReference": "https://wiki.dbpedia.org/about",
+      "reviewed": "2026-11-02",
+      "limitation": "Bounded capture of the public legacy endpoint. Capture date is not a claim that every source article was updated that day."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/dbpedia-songs.json.gz",
+      "sha256": "a7343b7f845f7d583774c2326403a0f5eb509c5ecda1e706b89ea069be280358",
+      "compressedSha256": "7c3eaad6d66d5f54fa841ebabf79e597d174107f1cb17b72d8ada86eb9b442bd",
+      "bytes": 2112110,
+      "compressedBytes": 297921,
+      "concepts": 9876,
+      "sourceUrl": "https://dbpedia.org/sparql",
+      "rawSha256": "8b4f9fb9f46691f3c051bcfad2679ca592955e242d1c6fda20fd888b10ed98b3",
+      "query": "# Bounded legacy CC BY-SA DBpedia candidate capture.\nSELECT DISTINCT ?item ?name WHERE { ?item a <http://dbpedia.org/ontology/Song>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)=\"en\") } LIMIT 10000\n",
+      "attribution": "DBpedia and English Wikipedia contributors, legacy Wikipedia-derived data under CC BY-SA 3.0; source pages and their author histories retained per record. Labels and disambiguation metadata transformed. This does not use the Fusion KG.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "licenseReference": "https://wiki.dbpedia.org/about",
+      "reviewed": "2026-11-02",
+      "limitation": "Bounded capture of the public legacy endpoint. Capture date is not a claim that every source article was updated that day."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/dbpedia-television.json.gz",
+      "sha256": "b8a33cc6616a7a0dbe1bc98621617cb174c15e746f78c2b0d64c5b7c5571f6ed",
+      "compressedSha256": "79159720f7d80834d45baa20040f21fafd4d833bdc8035a371959ce0572fc687",
+      "bytes": 2129835,
+      "compressedBytes": 279980,
+      "concepts": 9737,
+      "sourceUrl": "https://dbpedia.org/sparql",
+      "rawSha256": "e1a0914c590e5c3ae6a7b99000b8a3f8a29cdac31e4bf48c98812c4212a0a320",
+      "query": "# Bounded legacy CC BY-SA DBpedia candidate capture.\nSELECT DISTINCT ?item ?name WHERE { ?item a <http://dbpedia.org/ontology/TelevisionShow>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)=\"en\") } LIMIT 10000\n",
+      "attribution": "DBpedia and English Wikipedia contributors, legacy Wikipedia-derived data under CC BY-SA 3.0; source pages and their author histories retained per record. Labels and disambiguation metadata transformed. This does not use the Fusion KG.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "licenseReference": "https://wiki.dbpedia.org/about",
+      "reviewed": "2026-11-02",
+      "limitation": "Bounded capture of the public legacy endpoint. Capture date is not a claim that every source article was updated that day."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/dbpedia-video-games.json.gz",
+      "sha256": "256d53d97115221ddca9b5ed44d486885a67864158fb6a2ec3a763292781046f",
+      "compressedSha256": "3c4f033a5db383a6eaab34b28b5cf3a77470ebc999917495fd47d29134ec170a",
+      "bytes": 2145974,
+      "compressedBytes": 286836,
+      "concepts": 9831,
+      "sourceUrl": "https://dbpedia.org/sparql",
+      "rawSha256": "35878021b86c9f1f98e462357cc7ae778652a72a8506b25706a873bafbfa542a",
+      "query": "# Bounded legacy CC BY-SA DBpedia candidate capture.\nSELECT DISTINCT ?item ?name WHERE { ?item a <http://dbpedia.org/ontology/VideoGame>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)=\"en\") } LIMIT 10000\n",
+      "attribution": "DBpedia and English Wikipedia contributors, legacy Wikipedia-derived data under CC BY-SA 3.0; source pages and their author histories retained per record. Labels and disambiguation metadata transformed. This does not use the Fusion KG.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "licenseReference": "https://wiki.dbpedia.org/about",
+      "reviewed": "2026-11-02",
+      "limitation": "Bounded capture of the public legacy endpoint. Capture date is not a claim that every source article was updated that day."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/dbpedia-characters.json.gz",
+      "sha256": "cd16701c26b74e46c82221fafc9e7c9466ba3b8ba4b034e088d23047d53d400d",
+      "compressedSha256": "b91525b7a933659c219909cac3802ef7bbc4b696da1771581c2b23e809803dec",
+      "bytes": 1872005,
+      "compressedBytes": 240319,
+      "concepts": 9438,
+      "sourceUrl": "https://dbpedia.org/sparql",
+      "rawSha256": "9b3e218b7e877afb1e19ed253c1feb2cf8be4119999ca54146f8e05d91677d03",
+      "query": "# Bounded legacy CC BY-SA DBpedia candidate capture.\nSELECT DISTINCT ?item ?name WHERE { ?item a <http://dbpedia.org/ontology/FictionalCharacter>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)=\"en\") } LIMIT 10000\n",
+      "attribution": "DBpedia and English Wikipedia contributors, legacy Wikipedia-derived data under CC BY-SA 3.0; source pages and their author histories retained per record. Labels and disambiguation metadata transformed. This does not use the Fusion KG.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "licenseReference": "https://wiki.dbpedia.org/about",
+      "reviewed": "2026-11-02",
+      "limitation": "Bounded capture of the public legacy endpoint. Capture date is not a claim that every source article was updated that day."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/dbpedia-comics-characters.json.gz",
+      "sha256": "40825102a6dfe87f7bae83a1c85fdc4f7979c7dd5b4351c560f38d9794e180d6",
+      "compressedSha256": "8d20e344b80cd6473f46a87e73df258c24a75e12cbbb25cbb96621a12d0cdad3",
+      "bytes": 751916,
+      "compressedBytes": 80707,
+      "concepts": 3667,
+      "sourceUrl": "https://dbpedia.org/sparql",
+      "rawSha256": "500c674421f3db99779bafbd848bdd11c817cca6a44f887a9452784de0745550",
+      "query": "# Bounded legacy CC BY-SA DBpedia candidate capture.\nSELECT DISTINCT ?item ?name WHERE { ?item a <http://dbpedia.org/ontology/ComicsCharacter>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)=\"en\") } ORDER BY ?item LIMIT 10000\n",
+      "attribution": "DBpedia and English Wikipedia contributors, legacy Wikipedia-derived data under CC BY-SA 3.0; source pages and their author histories retained per record. Labels and disambiguation metadata transformed. This does not use the Fusion KG.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "licenseReference": "https://wiki.dbpedia.org/about",
+      "reviewed": "2026-11-02",
+      "limitation": "Bounded capture of the public legacy endpoint. Capture date is not a claim that every source article was updated that day."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/dbpedia-musicians.json.gz",
+      "sha256": "1786fd395f2ef05ba6e38ac8c559be03b86829e77ed200bf965a09956cf21e6c",
+      "compressedSha256": "a01336cf0840be32b8f4267f1b17d64bc491c5fbff8d11e5096f6c95a818eaa0",
+      "bytes": 1834462,
+      "compressedBytes": 201292,
+      "concepts": 9835,
+      "sourceUrl": "https://dbpedia.org/sparql",
+      "rawSha256": "db3b3feb78bd39700c23ecf85309cda4dcb2bfde3c69cced5590f4ac16f00a2c",
+      "query": "# Bounded legacy CC BY-SA DBpedia candidate capture.\nSELECT DISTINCT ?item ?name WHERE { ?item a <http://dbpedia.org/ontology/MusicalArtist>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)=\"en\") } ORDER BY ?item LIMIT 10000\n",
+      "attribution": "DBpedia and English Wikipedia contributors, legacy Wikipedia-derived data under CC BY-SA 3.0; source pages and their author histories retained per record. Labels and disambiguation metadata transformed. This does not use the Fusion KG.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "licenseReference": "https://wiki.dbpedia.org/about",
+      "reviewed": "2026-11-02",
+      "limitation": "Bounded capture of the public legacy endpoint. Capture date is not a claim that every source article was updated that day."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/dbpedia-actors.json.gz",
+      "sha256": "1ac239dd0bdadc34c9d6a398053c8ebb28f9f3705b35850853a79b83ba69f959",
+      "compressedSha256": "6f8896eb87af1591645400d5f5321177e1eae31e3ba886e1d3f65de965841ba0",
+      "bytes": 941418,
+      "compressedBytes": 105624,
+      "concepts": 5123,
+      "sourceUrl": "https://dbpedia.org/sparql",
+      "rawSha256": "05a7d2f9c5de2ffb532ee039433b2085ee86a7c0554e970bca7175147908b88f",
+      "query": "# Bounded legacy CC BY-SA DBpedia candidate capture.\nSELECT DISTINCT ?item ?name WHERE { ?item a <http://dbpedia.org/ontology/Actor>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)=\"en\") } ORDER BY ?item LIMIT 10000\n",
+      "attribution": "DBpedia and English Wikipedia contributors, legacy Wikipedia-derived data under CC BY-SA 3.0; source pages and their author histories retained per record. Labels and disambiguation metadata transformed. This does not use the Fusion KG.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "licenseReference": "https://wiki.dbpedia.org/about",
+      "reviewed": "2026-11-02",
+      "limitation": "Bounded capture of the public legacy endpoint. Capture date is not a claim that every source article was updated that day."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/dbpedia-writers.json.gz",
+      "sha256": "98470dc74db71d9993a2c1bd4024f1e4c3bf21d5b8e3a2ab0267d6dd1df010d0",
+      "compressedSha256": "b497e6903b8bb3d40996504b89c0cddcd7b4041aa879f96027550d5a050715c4",
+      "bytes": 1897995,
+      "compressedBytes": 205072,
+      "concepts": 9956,
+      "sourceUrl": "https://dbpedia.org/sparql",
+      "rawSha256": "356c7fcecaa40f2a72fa38010ddcebc386bf93df45d4a095f708ee78768320a6",
+      "query": "# Bounded legacy CC BY-SA DBpedia candidate capture.\nSELECT DISTINCT ?item ?name WHERE { ?item a <http://dbpedia.org/ontology/Writer>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)=\"en\") } ORDER BY ?item LIMIT 10000\n",
+      "attribution": "DBpedia and English Wikipedia contributors, legacy Wikipedia-derived data under CC BY-SA 3.0; source pages and their author histories retained per record. Labels and disambiguation metadata transformed. This does not use the Fusion KG.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "licenseReference": "https://wiki.dbpedia.org/about",
+      "reviewed": "2026-11-02",
+      "limitation": "Bounded capture of the public legacy endpoint. Capture date is not a claim that every source article was updated that day."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/dbpedia-aircraft.json.gz",
+      "sha256": "c36085b24cb19ed63718c697ffece590c398e09c0e64db7bf6360b037cc36577",
+      "compressedSha256": "273e5e1e0d2008f3c1343a013aa7199e8fc3a56f56251aab73a53eaea9cd3bba",
+      "bytes": 1914843,
+      "compressedBytes": 193393,
+      "concepts": 9953,
+      "sourceUrl": "https://dbpedia.org/sparql",
+      "rawSha256": "ff5346f2576db8c35872a37b07d5c245df7bfb85bcc91e55289e81eeaa6338eb",
+      "query": "# Bounded legacy CC BY-SA DBpedia candidate capture.\nSELECT DISTINCT ?item ?name WHERE { ?item a <http://dbpedia.org/ontology/Aircraft>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)=\"en\") } ORDER BY ?item LIMIT 10000\n",
+      "attribution": "DBpedia and English Wikipedia contributors, legacy Wikipedia-derived data under CC BY-SA 3.0; source pages and their author histories retained per record. Labels and disambiguation metadata transformed. This does not use the Fusion KG.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "licenseReference": "https://wiki.dbpedia.org/about",
+      "reviewed": "2026-11-02",
+      "limitation": "Bounded capture of the public legacy endpoint. Capture date is not a claim that every source article was updated that day."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/dbpedia-cars.json.gz",
+      "sha256": "4dde0a9468fb54c246f6b9a2e61bcd308112baeb5cfab684141f0e68b6e2e221",
+      "compressedSha256": "46fc764d41184717c72c39c5fc0cf7b22eea62fa626cffd31864dec63945aaa9",
+      "bytes": 1542910,
+      "compressedBytes": 190958,
+      "concepts": 8406,
+      "sourceUrl": "https://dbpedia.org/sparql",
+      "rawSha256": "77eaa439a5589e406a02fce659e850707e7c1738c9055e84007dcb17716f2a15",
+      "query": "# Bounded legacy CC BY-SA DBpedia candidate capture.\nSELECT DISTINCT ?item ?name WHERE { ?item a <http://dbpedia.org/ontology/Automobile>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)=\"en\") } LIMIT 10000\n",
+      "attribution": "DBpedia and English Wikipedia contributors, legacy Wikipedia-derived data under CC BY-SA 3.0; source pages and their author histories retained per record. Labels and disambiguation metadata transformed. This does not use the Fusion KG.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "licenseReference": "https://wiki.dbpedia.org/about",
+      "reviewed": "2026-11-02",
+      "limitation": "Bounded capture of the public legacy endpoint. Capture date is not a claim that every source article was updated that day."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/dbpedia-vehicles.json.gz",
+      "sha256": "b18364349eb859d02fb58d5ac703c37af96f15c86d0f4f9253642e7f4851a38e",
+      "compressedSha256": "e1780aa18375ba629451302b22f12073d484e9c5a9f809f521570798e44d0f76",
+      "bytes": 1976514,
+      "compressedBytes": 242483,
+      "concepts": 9738,
+      "sourceUrl": "https://dbpedia.org/sparql",
+      "rawSha256": "20a186b98776855fb107f22ee66dbca5f13d9eb8a40d1faa9268c9e9c5eeb795",
+      "query": "# Bounded legacy CC BY-SA DBpedia candidate capture.\nSELECT DISTINCT ?item ?name WHERE { ?item a <http://dbpedia.org/ontology/MeanOfTransportation>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)=\"en\") } LIMIT 10000\n",
+      "attribution": "DBpedia and English Wikipedia contributors, legacy Wikipedia-derived data under CC BY-SA 3.0; source pages and their author histories retained per record. Labels and disambiguation metadata transformed. This does not use the Fusion KG.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "licenseReference": "https://wiki.dbpedia.org/about",
+      "reviewed": "2026-11-02",
+      "limitation": "Bounded capture of the public legacy endpoint. Capture date is not a claim that every source article was updated that day."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/dbpedia-food.json.gz",
+      "sha256": "97572ee1e160a6dc9bcc45a7ccdc68ec06f87e8e37decc09766ad655777b48f3",
+      "compressedSha256": "98780039d86fa4d90d69bc80ef3d9bcffc9b775023a06a7b7658dcd7fdd29184",
+      "bytes": 1506091,
+      "compressedBytes": 167146,
+      "concepts": 8805,
+      "sourceUrl": "https://dbpedia.org/sparql",
+      "rawSha256": "ae3fdd037ef70abe60893e8c4021e7860e3770c342b5fb839f5c8a44ca5788cc",
+      "query": "# Bounded legacy CC BY-SA DBpedia candidate capture.\nSELECT DISTINCT ?item ?name WHERE { ?item a <http://dbpedia.org/ontology/Food>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)=\"en\") } ORDER BY ?item LIMIT 10000\n",
+      "attribution": "DBpedia and English Wikipedia contributors, legacy Wikipedia-derived data under CC BY-SA 3.0; source pages and their author histories retained per record. Labels and disambiguation metadata transformed. This does not use the Fusion KG.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "licenseReference": "https://wiki.dbpedia.org/about",
+      "reviewed": "2026-11-02",
+      "limitation": "Bounded capture of the public legacy endpoint. Capture date is not a claim that every source article was updated that day."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/dbpedia-teams.json.gz",
+      "sha256": "522f9371499061e7b9f948c10a3abcacc24dfb29fa0ac3b79063f0a5bdb9452a",
+      "compressedSha256": "78ca485acdf4e23594be55780c9eb46e3fdaeeca744155c2efd3225d7690b47f",
+      "bytes": 2018348,
+      "compressedBytes": 224158,
+      "concepts": 9737,
+      "sourceUrl": "https://dbpedia.org/sparql",
+      "rawSha256": "4311d65f982bd3a18ef3208c29c16b1ade8443c57046c49f411988549bd63ca6",
+      "query": "# Bounded legacy CC BY-SA DBpedia candidate capture.\nSELECT DISTINCT ?item ?name WHERE { ?item a <http://dbpedia.org/ontology/SportsTeam>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)=\"en\") } ORDER BY ?item LIMIT 10000\n",
+      "attribution": "DBpedia and English Wikipedia contributors, legacy Wikipedia-derived data under CC BY-SA 3.0; source pages and their author histories retained per record. Labels and disambiguation metadata transformed. This does not use the Fusion KG.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "licenseReference": "https://wiki.dbpedia.org/about",
+      "reviewed": "2026-11-02",
+      "limitation": "Bounded capture of the public legacy endpoint. Capture date is not a claim that every source article was updated that day."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/dbpedia-companies.json.gz",
+      "sha256": "3705527f9056253a4af487671af53eca6d36fba6ed99afa7baef454fc7d5fe1f",
+      "compressedSha256": "ca630b7b185ddab5f8dbbe510f0841643ad9d77be981e53c3af6d47a9ba7a350",
+      "bytes": 1933974,
+      "compressedBytes": 225074,
+      "concepts": 9717,
+      "sourceUrl": "https://dbpedia.org/sparql",
+      "rawSha256": "0c6d081dc4a917fde7430ca88e63ab625dc2cdb856637f60464b29aceea5c4b3",
+      "query": "# Bounded legacy CC BY-SA DBpedia candidate capture.\nSELECT DISTINCT ?item ?name WHERE { ?item a <http://dbpedia.org/ontology/Company>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)=\"en\") } ORDER BY ?item LIMIT 10000\n",
+      "attribution": "DBpedia and English Wikipedia contributors, legacy Wikipedia-derived data under CC BY-SA 3.0; source pages and their author histories retained per record. Labels and disambiguation metadata transformed. This does not use the Fusion KG.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "licenseReference": "https://wiki.dbpedia.org/about",
+      "reviewed": "2026-11-02",
+      "limitation": "Bounded capture of the public legacy endpoint. Capture date is not a claim that every source article was updated that day."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/dbpedia-software.json.gz",
+      "sha256": "feb861aaee0817192aa0751c484f4f90b1e074a8662b8ee4a95c193f17394ee7",
+      "compressedSha256": "edf918644455f9529f771c4167788369175340ac0cb4bc8e358c61d8c8bf07d0",
+      "bytes": 1979471,
+      "compressedBytes": 235869,
+      "concepts": 9810,
+      "sourceUrl": "https://dbpedia.org/sparql",
+      "rawSha256": "987934172e970a14403bf1521dd8b4c6d649b8786fa8863d10188bfbce6a7ee2",
+      "query": "# Bounded legacy CC BY-SA DBpedia candidate capture.\nSELECT DISTINCT ?item ?name WHERE { ?item a <http://dbpedia.org/ontology/Software>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)=\"en\") } ORDER BY ?item LIMIT 10000\n",
+      "attribution": "DBpedia and English Wikipedia contributors, legacy Wikipedia-derived data under CC BY-SA 3.0; source pages and their author histories retained per record. Labels and disambiguation metadata transformed. This does not use the Fusion KG.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "licenseReference": "https://wiki.dbpedia.org/about",
+      "reviewed": "2026-11-02",
+      "limitation": "Bounded capture of the public legacy endpoint. Capture date is not a claim that every source article was updated that day."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/dbpedia-websites.json.gz",
+      "sha256": "76af070b4b775d2080f44bbc049b5276c3eb6885df7ab513001e235b6df6a70c",
+      "compressedSha256": "230e8dca098dbc4907d91bca720dc179f83b187741f0155d18fb6dfc3cb9f42a",
+      "bytes": 1148727,
+      "compressedBytes": 128328,
+      "concepts": 6387,
+      "sourceUrl": "https://dbpedia.org/sparql",
+      "rawSha256": "92839942360ab5a0d7c6821baf20ff6eabf6a0ed84e8600b09a81ebebe25ce40",
+      "query": "# Bounded legacy CC BY-SA DBpedia candidate capture.\nSELECT DISTINCT ?item ?name WHERE { ?item a <http://dbpedia.org/ontology/Website>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)=\"en\") } ORDER BY ?item LIMIT 10000\n",
+      "attribution": "DBpedia and English Wikipedia contributors, legacy Wikipedia-derived data under CC BY-SA 3.0; source pages and their author histories retained per record. Labels and disambiguation metadata transformed. This does not use the Fusion KG.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "licenseReference": "https://wiki.dbpedia.org/about",
+      "reviewed": "2026-11-02",
+      "limitation": "Bounded capture of the public legacy endpoint. Capture date is not a claim that every source article was updated that day."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/dbpedia-albums.json.gz",
+      "sha256": "7b8b932f780fd50b701fdd0017dbd6e0f1ec8872a429286b6f7dd67a55bf6249",
+      "compressedSha256": "21900c7a884214032ca029ece90db925688836f72fa10309d43a2ce36093802f",
+      "bytes": 2151262,
+      "compressedBytes": 269572,
+      "concepts": 9889,
+      "sourceUrl": "https://dbpedia.org/sparql",
+      "rawSha256": "64631545260fb9a15913907878e7cf3d41029bba2507a12699241a60b93fa099",
+      "query": "# Bounded legacy CC BY-SA DBpedia candidate capture.\nSELECT DISTINCT ?item ?name WHERE { ?item a <http://dbpedia.org/ontology/Album>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)=\"en\") } ORDER BY ?item LIMIT 10000\n",
+      "attribution": "DBpedia and English Wikipedia contributors, legacy Wikipedia-derived data under CC BY-SA 3.0; source pages and their author histories retained per record. Labels and disambiguation metadata transformed. This does not use the Fusion KG.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "licenseReference": "https://wiki.dbpedia.org/about",
+      "reviewed": "2026-11-02",
+      "limitation": "Bounded capture of the public legacy endpoint. Capture date is not a claim that every source article was updated that day."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/dbpedia-plants.json.gz",
+      "sha256": "e25de92cbd2e83d9d1c09a2c6b1115c8570ada3b053e78310dc91a4046d7c39c",
+      "compressedSha256": "f5833bc35c2e3ae9d49e6005bf5649e0bcd253da992ca11c6f158cfe5cbd66ad",
+      "bytes": 732374,
+      "compressedBytes": 77556,
+      "concepts": 3856,
+      "sourceUrl": "https://dbpedia.org/sparql",
+      "rawSha256": "cdc381977eb2425d1b358f5aa39c9d01c71f343c5410a02390d14ca3a630ff2c",
+      "query": "# Bounded legacy CC BY-SA DBpedia candidate capture.\nSELECT DISTINCT ?item ?name WHERE { ?item a <http://dbpedia.org/ontology/Plant>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)=\"en\") } ORDER BY ?item LIMIT 10000\n",
+      "attribution": "DBpedia and English Wikipedia contributors, legacy Wikipedia-derived data under CC BY-SA 3.0; source pages and their author histories retained per record. Labels and disambiguation metadata transformed. This does not use the Fusion KG.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "licenseReference": "https://wiki.dbpedia.org/about",
+      "reviewed": "2026-11-02",
+      "limitation": "Bounded capture of the public legacy endpoint. Capture date is not a claim that every source article was updated that day."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/dbpedia-films.json.gz",
+      "sha256": "99272e8174a7db3f009b534d1f4c3ba1686c2f956259ca13c20454ec12839e29",
+      "compressedSha256": "169e3d56cef1109347c48cd0ea0fda40d91ab377a297834315a3f5825d4f29b9",
+      "bytes": 883406,
+      "compressedBytes": 123379,
+      "concepts": 4230,
+      "sourceUrl": "https://dbpedia.org/sparql",
+      "rawSha256": "b16a2321c25e126bd0a1441b4c34c6938c4a4dbed23bcf036f69e793afd8e03c",
+      "query": "# Bounded legacy CC BY-SA DBpedia candidate capture.\nSELECT ?item ?name WHERE { ?item a <http://dbpedia.org/ontology/Film>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)=\"en\") } LIMIT 20000\n",
+      "attribution": "DBpedia and English Wikipedia contributors, legacy Wikipedia-derived data under CC BY-SA 3.0; source pages and their author histories retained per record. Labels and disambiguation metadata transformed. This does not use the Fusion KG.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "licenseReference": "https://wiki.dbpedia.org/about",
+      "reviewed": "2026-11-02",
+      "limitation": "Bounded capture of the public legacy endpoint. Capture date is not a claim that every source article was updated that day."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/exercises.json.gz",
+      "sha256": "bfbf51b3102c97b13179d22aae87831d330898df317a01195f3e8276492eecce",
+      "compressedSha256": "0c80f3ab53803161953c887f38ccbb08f1ffbbf51b356c39e9c47614b1db98e3",
+      "bytes": 332204,
+      "compressedBytes": 52290,
+      "concepts": 904,
+      "sourceUrl": "https://wger.de/api/v2/exerciseinfo/?language=2&limit=1000",
+      "rawSha256": "d8e6e852cd3f7b634eba81800334f4b369d9315a2faa3faf9ae0810dff9a18ea",
+      "attribution": "wger exercise contributors. Individual author histories, source URLs and licences are retained per record. English titles and supplied aliases adapted; no images or exercise instructions copied.",
+      "reviewed": "2026-11-02",
+      "limitation": "Names are catalogued exercises, not invented combinations of equipment, repetitions or weights. Alternate spelling and synonymous exercise names must be merged before canonical counting."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/dbpedia-paintings.json.gz",
+      "sha256": "c723854391b70f99b7a194a70a46a233b4d2a62da1295c3ecfae9b771d719939",
+      "compressedSha256": "95d3edc26239ff4aaea39dc868ff1e8dcc0bec522a98cda7a4177b602000346c",
+      "bytes": 2309426,
+      "compressedBytes": 328733,
+      "concepts": 9336,
+      "sourceUrl": "https://dbpedia.org/sparql",
+      "rawSha256": "8afbd40a88de92673599a387a847527b03bf370864a5c8fbdd11aadce8680ee3",
+      "query": "SELECT ?item ?name WHERE {?item a <http://dbpedia.org/ontology/Painting>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)=\"en\")} LIMIT 10000\n",
+      "attribution": "DBpedia and English Wikipedia contributors, legacy Wikipedia-derived data under CC BY-SA 3.0; source pages and their author histories retained per record. Labels and disambiguation metadata transformed. This does not use the Fusion KG.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "licenseReference": "https://wiki.dbpedia.org/about",
+      "reviewed": "2026-11-02",
+      "limitation": "Bounded capture of the public legacy endpoint. Capture date is not a claim that every source article was updated that day."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/english-words.json.gz",
+      "sha256": "ab492baf4495779421a146abe6266904c4fe6364668ab4a930ea7c753ddaf6a6",
+      "compressedSha256": "8e149d78b95e2a20a2a9b716aa51483abfcc78099b848afbdc573b7cae6117d1",
+      "bytes": 13758706,
+      "compressedBytes": 1760565,
+      "concepts": 53501,
+      "sourceUrl": "https://kaikki.org/simplewiktionary/rawdata.html",
+      "rawSha256": "2308c6f7805445796a68f8cdbe3d2f8b70143c3a9ef28aa20be5da982f125f87",
+      "attribution": "Simple English Wiktionary contributors; extracted by Tatu Ylonen / Wiktextract / Kaikki.org; CC BY-SA. Source pages and author histories: https://simple.wiktionary.org/",
+      "sourceDump": "2026-10-02",
+      "wordnetCompressedSha256": "fccade0aeb10cafcb5805222bde6f0d9ceb48542b6c4c20bcbff2786d61df84d",
+      "wordnetLexicalSource": "Princeton WordNet 3.0, included licence; conceptual synonyms remain different lexical words",
+      "cmudictSource": "Carnegie Mellon Pronouncing Dictionary, included redistribution notice",
+      "cmudictSha256": "d07cca47fd72ad32ea9d8ad1219f85301eeaf4568f8b6b73747506a71fb5afd6",
+      "status": "lexical candidates; question constraints and contextual ratings still require review",
+      "excluded": {
+        "nonlexical or proper-name entries": 3536,
+        "multiword or unsupported orthography": 2011
+      }
+    },
+    {
+      "file": "content/sleeper-data/catalogues/onet-occupations.json.gz",
+      "sha256": "1fb48ddda1f106ab981f2ab190a1bb74c9914e0bf863099e35f469a33dd2ac49",
+      "compressedSha256": "13b64397ee936fd503a942bfe3fea5b435ecb515966098b4b629d1f01bebebcf",
+      "bytes": 6656227,
+      "compressedBytes": 747543,
+      "concepts": 1016,
+      "sourceUrl": "https://www.onetcenter.org/database.html",
+      "rawSha256": "55033fc68b4c13ec23e7f74dc6378660f6e854e75d55d6e333ae0a761d3987cd",
+      "attribution": "WordNet lexical aliases use the included Princeton licence. Based on O*NET 31.0, U.S. Department of Labor, Employment and Training Administration (USDOL/ETA), CC BY 4.0; transformed for source evaluation. O*NET is a trademark of USDOL/ETA. No endorsement is implied."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/onet-job-titles.json.gz",
+      "sha256": "d5277c98c4a05d5bc01b150c862389b86c3fc2803afd55c7c01dc2e3565d8fd8",
+      "compressedSha256": "f1526c51af8fe67feb96fdb65b5c0d990d5ba5865444c538a0dff7c1e331d1b7",
+      "bytes": 6197124,
+      "compressedBytes": 635510,
+      "concepts": 44679,
+      "sourceUrl": "https://www.onetcenter.org/database.html",
+      "rawSha256": "55033fc68b4c13ec23e7f74dc6378660f6e854e75d55d6e333ae0a761d3987cd",
+      "attribution": "WordNet lexical aliases use the included Princeton licence. Based on O*NET 31.0, U.S. Department of Labor, Employment and Training Administration (USDOL/ETA), CC BY 4.0; transformed for source evaluation. O*NET is a trademark of USDOL/ETA. No endorsement is implied."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/onet-activities.json.gz",
+      "sha256": "9d0d3f8b98ba948150b5f6ae1a853fc1809d9fa9538505107907b5ebd674ba67",
+      "compressedSha256": "769da97ed30ee0050513fcaeee746afe27fa2cd77155a02f06ccd79d8189a400",
+      "bytes": 3965859,
+      "compressedBytes": 682529,
+      "concepts": 21229,
+      "sourceUrl": "https://www.onetcenter.org/database.html",
+      "rawSha256": "55033fc68b4c13ec23e7f74dc6378660f6e854e75d55d6e333ae0a761d3987cd",
+      "attribution": "WordNet lexical aliases use the included Princeton licence. Based on O*NET 31.0, U.S. Department of Labor, Employment and Training Administration (USDOL/ETA), CC BY 4.0; transformed for source evaluation. O*NET is a trademark of USDOL/ETA. No endorsement is implied."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/onet-software.json.gz",
+      "sha256": "8558fd64f8fdad78c252f9077b26e036130ff664a3221c8d02ebf56946a5bb9c",
+      "compressedSha256": "216d2dd33d29f1bb224adef6482e4735e4a77218132cf50804b2238656750975",
+      "bytes": 1585972,
+      "compressedBytes": 228303,
+      "concepts": 8751,
+      "sourceUrl": "https://www.onetcenter.org/database.html",
+      "rawSha256": "55033fc68b4c13ec23e7f74dc6378660f6e854e75d55d6e333ae0a761d3987cd",
+      "attribution": "WordNet lexical aliases use the included Princeton licence. Based on O*NET 31.0, U.S. Department of Labor, Employment and Training Administration (USDOL/ETA), CC BY 4.0; transformed for source evaluation. O*NET is a trademark of USDOL/ETA. No endorsement is implied."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/fma-anatomy.json.gz",
+      "sha256": "4d702f7bdcf5ee245b8f97858de2fdf3b58611a58d4edd8302cbe9443cb1c4a9",
+      "compressedSha256": "d6ac0ea95bee998d59aa2565977b77fc0615a17f6567efc2e6433932c213d206",
+      "bytes": 23530852,
+      "compressedBytes": 1876035,
+      "concepts": 104719,
+      "sourceUrl": "https://github.com/uw-sig/FMA",
+      "rawSha256": "beb3dc47979ad5434ef70fd02af4307f147f2023f7d8c2c57103b995191194c3",
+      "attribution": "University of Washington Structural Informatics Group; Cornelius Rosse, Jose Leonardo V. Mejino Jr. and FMA contributors; CC BY 4.0",
+      "sourceVersion": "5.1.0",
+      "limitation": "A side-specific class does not establish simultaneous bilateral occurrence. Use explicit counterpart wording; never infer that the whole heart is paired from its left/right regions."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/fma-pairs.json.gz",
+      "sha256": "8af9c18bf2928ccb9966f88b93fbefa82691296837db28140b755f9795792413",
+      "compressedSha256": "2c44dadbcd9f99818d5756a57ad7d6f3da6e7816485b571f7943a19692528bb1",
+      "bytes": 8031196,
+      "compressedBytes": 861751,
+      "concepts": 27144,
+      "sourceUrl": "https://github.com/uw-sig/FMA",
+      "rawSha256": "beb3dc47979ad5434ef70fd02af4307f147f2023f7d8c2c57103b995191194c3",
+      "attribution": "University of Washington Structural Informatics Group; Cornelius Rosse, Jose Leonardo V. Mejino Jr. and FMA contributors; CC BY 4.0",
+      "sourceVersion": "5.1.0",
+      "limitation": "A side-specific class does not establish simultaneous bilateral occurrence. Use explicit counterpart wording; never infer that the whole heart is paired from its left/right regions."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/colours.json.gz",
+      "sha256": "95fc86a182712f1647d343079aff47c79c33bf41a998114231383b5905276457",
+      "compressedSha256": "3dc1da1cb3155021a93665e20e5df679262bc6c6ec9956c8517ed8977b3e485d",
+      "bytes": 5605261,
+      "compressedBytes": 742966,
+      "concepts": 31999,
+      "sourceUrl": "https://github.com/meodai/color-names/tree/f0d02e2ca47d4ac395534a75c86b9766986c347c",
+      "rawSha256": "f658b43c5c5e706845203de2c7283d61f5acbedf2bcf6376e8cc4e943d7c5bf8",
+      "sourceCommit": "f0d02e2ca47d4ac395534a75c86b9766986c347c",
+      "attribution": "Color Names, Copyright (c) 2017 David Aerne and contributors, MIT licence. Existing published names/RGB definitions retained; UK/US grey/gray forms and the standard aqua/cyan and fuchsia/magenta synonym pairs merged.",
+      "reviewed": "2026-11-02",
+      "limitation": "Published named shades, including paint and digital palettes; not a universal authoritative name for every possible RGB value. No cross-product of adjectives or invented shade names is generated."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/wordnet.json.gz",
+      "sha256": "fd09105b0c6cffed5d6fb5adf64745eac42c7c7fea8788405ce256288713d887",
+      "compressedSha256": "fccade0aeb10cafcb5805222bde6f0d9ceb48542b6c4c20bcbff2786d61df84d",
+      "bytes": 19615525,
+      "compressedBytes": 3808291,
+      "rawSha256": "cbda5ea6eef7f36a97a43d4a75f85e07fccbb4f23657d27b4ccbc93e2646ab59",
+      "concepts": 82115,
+      "sourceUrl": "https://wordnet.princeton.edu/",
+      "attribution": "WordNet 3.0 Copyright 2006 Princeton University",
+      "frequencySource": "wordfreq 3.1.1",
+      "frequencyAttribution": "Robyn Speer; see NOTICE and source-specific credits",
+      "frequencyLicense": "CC-BY-SA-4.0"
+    },
+    {
+      "file": "content/sleeper-data/catalogues/films-candidates.json.gz",
+      "sha256": "8eaf52fcaac5c11942ce78fa5c99a1ebd410e94d277277b13a64edd8d0e0bcbe",
+      "compressedSha256": "1009f42991ce9e0c5e0b48e92bded3ca84250578a51b8f5c2b3afaee88e41867",
+      "bytes": 7887686,
+      "compressedBytes": 1043112,
+      "seedLabelsSha256": "ad5205cb62c5793d2b90ae4b91d45828ec620d67e466c0c92f40105ced2a1394",
+      "factsSha256": "769a4d603cafe0fdce25915e61575732da205b9e1a1f63ee1d42a6f4f612b0ef",
+      "properties": [
+        "P31",
+        "P577",
+        "P136",
+        "wikibase:sitelinks"
+      ],
+      "labelQuery": "SELECT ?item ?name WHERE { ?item wdt:P31 wd:Q11424; rdfs:label ?name. FILTER(LANG(?name)=\"en\") } LIMIT 30000",
+      "concepts": 33528,
+      "sourceUrl": "https://query.wikidata.org/",
+      "rawSha256": "cc29e7a485847405ea59caefcb9317276a0328f2bd70c4fca7d0f141e8552e60",
+      "attribution": "Wikidata structured data, CC0"
+    },
+    {
+      "file": "content/sleeper-data/catalogues/geonames-features.json.gz",
+      "sha256": "3d766301f959fd7b5708c3600e8e258b3ff91bd23c923a1791bd4d9b64bc04c8",
+      "compressedSha256": "14ff3c098ec6ceae71563851e4dabf42642366a9e3cfddbbc59decd309b2f2a4",
+      "bytes": 209322716,
+      "compressedBytes": 22839405,
+      "concepts": 564090,
+      "sourceUrl": "https://download.geonames.org/export/dump/allCountries.zip",
+      "rawSha256": "4e2ccc61c8d53edc5d83b1bfba4267f0f072a0e00786402bdf034787a478720e",
+      "featureCodesSha256": "d44f129c1cffdeabf759c99fe7ea5b84f615c7f3e7366fb76ccf990f408f6af7",
+      "attribution": "GeoNames, CC BY 4.0; physical feature code definitions retained. Bounded candidate selection, not an exhaustive world inventory.",
+      "reviewed": "2026-11-02",
+      "limitPerGroup": 30000,
+      "availableByGroup": {
+        "mountains": 1035503,
+        "lakes": 318418,
+        "rivers": 992094,
+        "forests": 91974,
+        "valleys": 149488,
+        "waterfalls": 8067,
+        "bridges": 41533,
+        "religious-buildings": 281482,
+        "regions": 51625,
+        "dams": 70192,
+        "parks": 94010,
+        "hotels": 241671,
+        "stadiums": 3326,
+        "islands": 191887,
+        "buildings": 155161,
+        "bays": 53303,
+        "castles": 9490,
+        "towers": 34288,
+        "gardens": 2545,
+        "airports": 23574,
+        "stations": 68726,
+        "museums": 11160,
+        "beaches": 16219,
+        "monuments": 4827,
+        "zoos": 490,
+        "deserts": 1002,
+        "universities": 1531,
+        "theatres": 1859
+      },
+      "selectedByGroup": {
+        "airports": 23574,
+        "bays": 30000,
+        "beaches": 16219,
+        "bridges": 30000,
+        "buildings": 30000,
+        "castles": 9490,
+        "dams": 30000,
+        "deserts": 1002,
+        "forests": 30000,
+        "gardens": 2545,
+        "hotels": 30000,
+        "islands": 30000,
+        "lakes": 30000,
+        "monuments": 4827,
+        "mountains": 30000,
+        "museums": 11160,
+        "parks": 30000,
+        "regions": 30000,
+        "religious-buildings": 30000,
+        "rivers": 30000,
+        "stadiums": 3326,
+        "stations": 30000,
+        "theatres": 1859,
+        "towers": 30000,
+        "universities": 1531,
+        "valleys": 30000,
+        "waterfalls": 8067,
+        "zoos": 490
+      },
+      "quarantined": {
+        "unlabelled/placeholder": 6
+      }
+    },
+    {
+      "file": "content/sleeper-data/catalogues/dbpedia-evidence.json.gz",
+      "sha256": "8993ddb10fd1b57f6f20910dc479543d0225541d77b34a3180ab3bfb8cc8898d",
+      "compressedSha256": "9b2fe1878b931b729c3f39ae25ced87874a0ed6d3ccb3a313a7232235159190a",
+      "bytes": 21176464,
+      "compressedBytes": 2595452,
+      "concepts": 166637,
+      "sourceUrl": "https://dbpedia.org/sparql",
+      "attribution": "DBpedia and Wikipedia contributors, legacy data under CC BY-SA 3.0. Cross-language link counts are a knowledge-base familiarity signal, not measured answer popularity or a player survey. Missing facts remain unknown.",
+      "rawBatchesSha256": "90e218ff8a629eed6d6f2f4000a2ade4ef97e87c74c456c6b8921e413d759df7",
+      "batches": 1111,
+      "reviewed": "2026-11-02",
+      "properties": [
+        "cross-language-links",
+        "computingPlatform",
+        "genre",
+        "publisher",
+        "developer",
+        "species",
+        "occupation",
+        "industry"
+      ],
+      "limitation": "Only captured positive predicates establish membership. Source records without a requested property are not evidence that an answer is factually invalid."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/human-genes.json.gz",
+      "sha256": "529d61dee50bb5a21d23b30063c5c6c6e00aaf84741e19dc114f4d5881f893a4",
+      "compressedSha256": "1070bf2adb756ba331f302598caff5e7bf15fa5e077ec2ec688bddafd04f53e2",
+      "bytes": 6444757,
+      "compressedBytes": 1068259,
+      "concepts": 19299,
+      "sourceUrl": "https://www.genenames.org/",
+      "rawSha256": "d93ce6b22d01dc1e1ded28857246951d605ead47ed17ef973ad1142b1d13bed0",
+      "attribution": "HGNC, HUGO Gene Nomenclature Committee, RRID:SCR_002827, CC0. Approved human protein-coding loci, names and former symbols; no nonhuman homologues.",
+      "licenseUrl": "https://www.genenames.org/about/license/",
+      "reviewed": "2026-11-02",
+      "limitation": "DNA features that can be tested by sequencing, not a claim that every gene has a dedicated approved clinical test."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/music-making.json.gz",
+      "sha256": "e7a66693f3ce756015944b3d2ead0766bedb9d5ac47760c16c231d6591ac2607",
+      "compressedSha256": "15aa1ab964157ba212b97d89aad125ba23f85a410ef53e1d32c5fa8eed934cc8",
+      "bytes": 125708,
+      "compressedBytes": 43835,
+      "concepts": 461,
+      "sourceUrl": "https://musicbrainz.org/",
+      "rawSha256": "bd65abaa64f283dd98844506aebb24d0c15a4e1b1ea3bef7da31a613f66e7a28",
+      "attribution": "MusicBrainz / MetaBrainz Foundation and contributors, core names and identifiers under CC0. Supplementary tags, annotations, descriptions and search scores excluded.",
+      "licenseUrl": "https://musicbrainz.org/doc/About/Data_License",
+      "reviewed": "2026-11-02",
+      "limitation": "Bounded 500-result core-name capture; includes instrument families and ensembles, for the broad music-making prompt."
+    },
+    {
+      "file": "content/sleeper-data/catalogues/dbpedia-board-games.json.gz",
+      "sha256": "f6a6af799e7109c3283eab60b1cc15cab807667167a71fc6d16837f4df57b16d",
+      "compressedSha256": "ae79f487abfd32455b52f88b828129748c25091cd333b6e00ab984805b85b13e",
+      "bytes": 384965,
+      "compressedBytes": 51033,
+      "concepts": 1800,
+      "sourceUrl": "https://dbpedia.org/sparql",
+      "rawSha256": "4fd63d4829820ca03e5603840ad16c4fd5ab65523fdd041da71593a0e320fa1f",
+      "query": "# Bounded legacy CC BY-SA DBpedia candidate capture.\nSELECT DISTINCT ?item ?name WHERE { ?item a <http://dbpedia.org/ontology/BoardGame>; <http://www.w3.org/2000/01/rdf-schema#label> ?name. FILTER(LANG(?name)=\"en\") } LIMIT 10000\n",
+      "attribution": "DBpedia and English Wikipedia contributors, legacy Wikipedia-derived data under CC BY-SA 3.0; source pages and their author histories retained per record. Labels and disambiguation metadata transformed. This does not use the Fusion KG.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "licenseReference": "https://wiki.dbpedia.org/about",
+      "reviewed": "2026-11-02",
+      "limitation": "Bounded capture of the public legacy endpoint. Capture date is not a claim that every source article was updated that day."
+    }
+  ]
+}

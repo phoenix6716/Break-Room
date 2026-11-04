@@ -1,0 +1,2 @@
+# Bounded candidate capture, not a complete catalogue.
+SELECT DISTINCT ?item ?name ?sitelinks WHERE { { SELECT DISTINCT ?item WHERE { ?item wdt:P31/wdt:P279* wd:Q142714. } LIMIT 30000 } ?item rdfs:label ?name; wikibase:sitelinks ?sitelinks. FILTER(LANG(?name)="en") }

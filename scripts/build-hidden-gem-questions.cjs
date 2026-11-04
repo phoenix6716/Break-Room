@@ -2,6 +2,7 @@
 'use strict';
 const fs=require('node:fs'),crypto=require('node:crypto'),source=require('../content/hidden-gem-accessible-source.json');
 require('../hidden-gem-model.js');const M=BREAK_ROOM_HIDDEN_GEM;
+if(fs.existsSync('content/sleeper-data/release.json')){require('node:child_process').execFileSync(process.execPath,['scripts/build-hidden-gem-catalogues.cjs',...process.argv.slice(2)],{stdio:'inherit'});process.exit(0);}
 const questions=source.questions.map((q,i)=>{
  const used=new Map(),answers=q.answers.map(name=>({name,points:q.points[name],aliases:[]}));
  if(Object.keys(q.points).length!==answers.length||q.ratingReview?.answersReviewed!==answers.length||q.ratingReview.assignmentsSha256!==crypto.createHash('sha256').update(JSON.stringify(q.answers.map(n=>[n,q.points[n]]))).digest('hex'))throw Error('Incomplete explicit rating review '+q.prompt);

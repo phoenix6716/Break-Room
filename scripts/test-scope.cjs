@@ -1,5 +1,5 @@
 /* Pure changed-file selection. Full game sweeps require an explicit --full request. */
-const UNITS=["leagues-database.cjs","content-refresh.cjs","daily-content.cjs","shift-work-rules.cjs","hidden-gem-rules.cjs","seating-chart-rules.cjs","clue-ladder-rules.cjs","time-drop-rules.cjs","test-scope.cjs","playtest-feedback.cjs","factual-review.cjs","launch-content.cjs","inner-clock-rules.cjs","bouncer-rules.cjs","alibi-scenarios.cjs","alibi-rules.cjs","laser-rules.cjs","practice-session-rules.cjs","prior-rules.cjs","pack-rules.cjs","content-tools.cjs","friends-database.cjs","account-navigation.cjs","cloud-saves.cjs","cloud-database.cjs","arcade-score.cjs","daily-clock.cjs","profile-records.cjs","question-banks.cjs"];
+const UNITS=["hidden-gem-bank-rules.cjs","hidden-gem-bank-database.cjs","hidden-gem-catalogue-authoring.cjs","hidden-gem-sources.cjs","leagues-database.cjs","content-refresh.cjs","daily-content.cjs","shift-work-rules.cjs","hidden-gem-rules.cjs","seating-chart-rules.cjs","clue-ladder-rules.cjs","time-drop-rules.cjs","test-scope.cjs","playtest-feedback.cjs","factual-review.cjs","launch-content.cjs","inner-clock-rules.cjs","bouncer-rules.cjs","alibi-scenarios.cjs","alibi-rules.cjs","laser-rules.cjs","practice-session-rules.cjs","prior-rules.cjs","pack-rules.cjs","content-tools.cjs","friends-database.cjs","account-navigation.cjs","cloud-saves.cjs","cloud-database.cjs","arcade-score.cjs","daily-clock.cjs","profile-records.cjs","question-banks.cjs"];
 
 const DAILY_CONTENT_FILES=new Set(["index.html","game-config.js","pack-model.js","laser-model.js","inner-clock-model.js","time-drop-model.js","clue-ladder-model.js","seating-chart-model.js","hidden-gem-model.js","shift-work-model.js","games/pack/puzzles.js","games/laser/boards.js","games/inner-clock/inner-clock.js","games/time-drop/events.js","games/clue-ladder/puzzles.js","games/seating-chart/puzzles.js","games/hidden-gem/questions.js","games/shift-work/boards.js","games/stack-up/stack-up.js","games/stack-up/stacks.js","games/stack-up/familiar-stacks.js","games/lowball/engine/index.html","content/time-drop-events.json","content/clue-ladder-puzzles.json","content/seating-chart-puzzles.json","content/hidden-gem-questions.json","content/shift-work-boards.json","content/stack-up-familiar.json","content/lowball-additions.json","content/lowball-original-items.json","content/lowball-original-selector.js"]);
 
@@ -7,7 +7,7 @@ const PLACEHOLDERS=['pixel-pairs','word-forge','gridlock','number-drop','memory-
 const GAMES=['shift-work','hidden-gem','seating-chart','clue-ladder','lowball','stake','stack-up','pack','prior','laser','alibi','bouncer','inner-clock','time-drop'];
 const GAME_UI={
  'shift-work':['shift-work.cjs'],
- 'hidden-gem':['hidden-gem.cjs'],
+ 'hidden-gem':['hidden-gem.cjs','hidden-gem-bank-browser.cjs'],
  'seating-chart':['seating-chart.cjs'],
  'clue-ladder':['clue-ladder.cjs'],
  'time-drop':['time-drop.cjs'],
@@ -19,7 +19,7 @@ const GAME_UI={
 };
 const GAME_RULES={
  'shift-work':['shift-work-rules.cjs'],
- 'hidden-gem':['hidden-gem-rules.cjs','sleeper-expansion.cjs'],
+ 'hidden-gem':['hidden-gem-rules.cjs','sleeper-expansion.cjs','hidden-gem-bank-rules.cjs','hidden-gem-bank-database.cjs','hidden-gem-catalogue-authoring.cjs','hidden-gem-sources.cjs'],
  'seating-chart':['seating-chart-rules.cjs'],
  'clue-ladder':['clue-ladder-rules.cjs'],
  'time-drop':['time-drop-rules.cjs'],
@@ -46,6 +46,7 @@ function selectChecks(changed,available,{full=false}={}){
   // Check date coverage when shipped banks, selectors or the active shelf change; no game sessions.
   if(DAILY_CONTENT_FILES.has(file))add('daily-content.cjs');
   if(['hidden-gem-model.js','content/hidden-gem-questions.json','games/hidden-gem/questions.js'].includes(file))add('sleeper-expansion.cjs');
+  if(file.startsWith('source/hidden-gem/')||file==='hidden-gem-banks.js'||file.startsWith('content/sleeper-data/')||file.startsWith('scripts/sleeper-data/')){game('hidden-gem',true);continue;}
   if(/\.md$/i.test(file)||/^(?:design|game-drafts|source)\//.test(file)||['.gitignore','.DS_Store'].includes(file))continue;
   if(file.startsWith('content/archive/'))continue;
   if(/^tests\/[^/]+\.cjs$/.test(file)){const name=file.slice(6);if(known.has(name))add(name);else reasons.push('Deleted check: '+file);continue;}
@@ -62,7 +63,7 @@ function selectChecks(changed,available,{full=false}={}){
    }
   }else if(model){game(model[1],true);add('profile-records.cjs','cloud-saves.cjs');if(model[1]==='inner-clock')add('accounts.cjs','friends.cjs','profile.cjs');}
   else if(file==='supabase/leagues.sql'){add('leagues-database.cjs','leagues.cjs','leagues-freshness.cjs');}
-  else if(['supabase/hidden-gem.sql','supabase/hidden-gem-broader-answers.sql','supabase/hidden-gem-exact-rejections.sql'].includes(file)){game('hidden-gem',true);}
+  else if(['supabase/hidden-gem.sql','supabase/hidden-gem-catalogues.sql','supabase/hidden-gem-broader-answers.sql','supabase/hidden-gem-exact-rejections.sql'].includes(file)){game('hidden-gem',true);}
   else if(/^supabase\//.test(file)){add('friends-database.cjs','cloud-database.cjs','playtest-feedback.cjs');}
   else if(file==='content/drafts/sleeper-broader-questions.json'){game('hidden-gem',true);content=true;}
   else if(/^content\//.test(file)){

@@ -1,0 +1,21 @@
+{
+  "reviewed": "2026-11-02",
+  "purpose": "Quarantine contradictory COL XR mammal records, not a blanket second-source verification of every species.",
+  "cases": [
+    {
+      "rejectedGenus": "Trypanosoma",
+      "incorrectCaptureGroup": "Mammalia",
+      "independentSource": "https://api.gbif.org/v1/species/8938149",
+      "backbone": {
+        "canonicalName": "Trypanosoma yongi",
+        "kingdom": "Protozoa",
+        "phylum": "Euglenozoa",
+        "class": "Kinetoplastea",
+        "order": "Trypanosomatida",
+        "genus": "Trypanosoma",
+        "rank": "SPECIES",
+        "taxonomicStatus": "ACCEPTED"
+      }
+    }
+  ]
+}
