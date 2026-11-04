@@ -121,6 +121,19 @@
         "width": 322,
         "height": 243
       }
+    },
+    "codebreak": {
+      "path": "assets/cards/codebreak-pixel.webp",
+      "source": "assets/cards/source/codebreak-original.svg",
+      "width": 1200,
+      "height": 400,
+      "bytes": 19724,
+      "foreground": {
+        "left": 410,
+        "top": 83,
+        "width": 379,
+        "height": 235
+      }
     }
   }
 }

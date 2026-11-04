@@ -1,9 +1,9 @@
 /* Real public surfaces, action-driven motion, silent hydration and a still timing game. */
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{chromium}=require('playwright');
 const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
-const allIds=['laser','time-drop','clue-ladder','seating-chart','shift-work','stack-up','pack','lowball','inner-clock'];
+const allIds=['laser','time-drop','clue-ladder','seating-chart','shift-work','codebreak','stack-up','pack','lowball','inner-clock'];
 const selected=(process.env.ARCADE_TEST_GAMES||'').split(',').filter(Boolean),ids=allIds.filter(id=>!selected.length||selected.includes(id));
-const names=['Laser','Time Drop','Clue Ladder','Seating Chart','Desk Jam','Stack Up','Pack','Lowball','Time Sense'];
+const names=['Laser','Time Drop','Clue Ladder','Seating Chart','Desk Jam','Codebreak','Stack Up','Pack','Lowball','Time Sense'];
 const dir='.artifacts/game-scenes';fs.mkdirSync(dir,{recursive:true});
 const snapshots={desktop:[],mobile:[],review:[],environment:[]};
 async function pause(p){await p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));}
@@ -39,6 +39,8 @@ async function action(p,id){
   const plan=await p.evaluate(()=>{const b=SHIFT_WORK_BOARDS.find(x=>x.id===document.querySelector('#floor').dataset.boardId);return BREAK_ROOM_SHIFT_WORK.solve(b).path;});
   for(const[i,d]of plan){await p.locator('[data-piece="'+i+'"]').click();await p.locator('#slide-options [data-delta="'+d+'"]').click();}
   assert(await p.locator('.sw-review').isVisible());
+ }else if(id==='codebreak'){
+  const code=await p.evaluate(()=>JSON.parse(localStorage.getItem(BREAK_ROOM_CODEBREAK.PREFIX+MIDNIGHT_ARCADE_CLOCK.dayKey())).code);await p.locator('#code-input').fill(code);await p.locator('#code-input').press('Enter');assert(await p.locator('.cb-result').isVisible());
  }else if(id==='hidden-gem'){
   await p.locator('#start-question').click();
   const answer=await p.evaluate(()=>{const d=MIDNIGHT_ARCADE_CLOCK.dayKey(),r=JSON.parse(localStorage.getItem(BREAK_ROOM_HIDDEN_GEM.PREFIX+d));return r.questions[r.round].answers.find(a=>a.points===100).name;});

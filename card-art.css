@@ -17,3 +17,7 @@
 @media(max-width:540px){.game-card-image[data-art="stack-up"]{transform:scale(1.5)}.game-card-image[data-art="inner-clock"]{transform:scale(1.25)}}
 @media(max-width:420px){.game-card-image[data-art="stack-up"]{transform:scale(1.25)}.game-card-image[data-art="shift-work"]{transform:scale(1.05)}}
 @media(max-width:360px){.game-card-image[data-art="stack-up"],.game-card-image[data-art="seating-chart"]{transform:scale(1.05)}.game-card-image[data-art="time-drop"],.game-card-image[data-art="lowball"],.game-card-image[data-art="inner-clock"]{transform:scale(1.1)}.game-card-image[data-art="shift-work"]{transform:none}}
+
+/* Original Codebreak safe: keep its measured outline inside narrow cards. */
+.game-card-image[data-art="codebreak"]{transform:scale(1.25)}
+@media(max-width:360px){.game-card-image[data-art="codebreak"]{transform:scale(1.1)}}

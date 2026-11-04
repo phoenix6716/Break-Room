@@ -6,7 +6,7 @@ const complete=HM.create(HB,'2026-10-19');HM.begin(complete,1);for(let i=0;i<5;i
 const unfinished=HM.create(HB,'2026-10-20');HM.begin(unfinished,1000);HM.draft(unfinished,unfinished.questions[0].answers[0].name,1001);
 const sleeperSaves={[HM.PREFIX+complete.day]:JSON.stringify(complete),[HM.PREFIX+unfinished.day]:JSON.stringify(unfinished)};
 const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
-const retired=["hidden-gem","stake","prior","alibi","bouncer","pixel-pairs","word-forge","gridlock","number-drop","memory-lane","mystery-cabinet"],active=["laser","time-drop","clue-ladder","seating-chart","shift-work","stack-up","pack","lowball","inner-clock"];
+const retired=["hidden-gem","stake","prior","alibi","bouncer","pixel-pairs","word-forge","gridlock","number-drop","memory-lane","mystery-cabinet"],active=["laser","time-drop","clue-ladder","seating-chart","shift-work","codebreak","stack-up","pack","lowball","inner-clock"];
 const registry={window:{}};vm.runInNewContext(fs.readFileSync('dist/game-config.js','utf8'),registry);
 assert.deepEqual(Array.from(registry.window.MIDNIGHT_ARCADE_GAMES,g=>g.id).sort(),[...active].sort());
 for(const id of retired){
@@ -45,7 +45,7 @@ for(const file of htmlFiles('dist')){
   await page.goto(base+'/games/hidden-gem/index.html');await page.waitForURL(home);assert.equal(await snapshot(),before,'Redirect leaves all player saves unchanged');
   await page.goto(base+'/profile.html');
   for(const text of ['Stake','Prior','Alibi','Bouncer','Sleeper','Clean sweep'])assert(!(await page.locator('body').innerText()).includes(text),'No retired label: '+text);
-  assert.equal(await page.locator('.profile-game').count(),9);assert.equal(await page.locator('#result-filter option').count(),10);
+  assert.equal(await page.locator('.profile-game').count(),10);assert.equal(await page.locator('#result-filter option').count(),11);
   await page.evaluate(()=>{localStorage.setItem('pc_played','1');localStorage.setItem('pc_last','2026-10-20');localStorage.setItem('pc_last_avg','100');});
   const mixed=await snapshot();await page.reload();
   assert.equal(await page.locator('#total-runs').innerText(),'1');assert.equal(await page.locator('#arcade-average').innerText(),'100');

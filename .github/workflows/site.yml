@@ -109,7 +109,7 @@ jobs:
           python3 - <<'PY'
           import os, pathlib, time, urllib.request
           base = os.environ["PUBLISHED_URL"].rstrip("/") + "/"
-          paths = ["games/stack-up/familiar-stacks.js", "games/stack-up/stack-up.js", "games/time-drop/events.js", "games/clue-ladder/puzzles.js", "brand.css", "menu-brand.css", "assets/break-room-wordmark.png", "assets/break-room-mark.png", "assets/break-room-icon.svg", "assets/break-room-touch-icon.png", "assets/favicon.svg", "assets/logo.svg", "leagues.html", "leagues.js", "leagues-model.js", "leagues.css", "inner-clock-model.js", "arcade-score.js", "games/lowball/engine/index.html", "games/lowball/engine/reference-prices.js", "games/lowball/engine/item-art.js", "games/inner-clock/index.html", "games/inner-clock/inner-clock.js", "profile.html", "friends.html", "index.html", "games/shift-work/index.html", "games/shift-work/boards.js", "games/shift-work/shift-work.js", "games/shift-work/shift-work.css", "shift-work-model.js", "games/hidden-gem/index.html", "hidden-gem-model.js", "cloud-saves.js", "accounts.js", "friends.js", "profile-records.js", "profile.js", "navigation.js", "game-config.js", "game-scenes.js", "game-scenes.css", "games/pack/item-art.js", "games/pack/pack.js", "games/pack/pack.css"]
+          paths = ["games/stack-up/familiar-stacks.js", "games/stack-up/stack-up.js", "games/time-drop/events.js", "games/clue-ladder/puzzles.js", "brand.css", "menu-brand.css", "assets/break-room-wordmark.png", "assets/break-room-mark.png", "assets/break-room-icon.svg", "assets/break-room-touch-icon.png", "assets/favicon.svg", "assets/logo.svg", "leagues.html", "leagues.js", "leagues-model.js", "leagues.css", "inner-clock-model.js", "arcade-score.js", "games/lowball/engine/index.html", "games/lowball/engine/reference-prices.js", "games/lowball/engine/item-art.js", "games/inner-clock/index.html", "games/inner-clock/inner-clock.js", "profile.html", "friends.html", "index.html", "games/codebreak/index.html", "games/codebreak/codebreak.js", "games/codebreak/codebreak.css", "games/codebreak/shell.js", "codebreak-model.js", "assets/cards/codebreak-pixel.webp", "games/shift-work/index.html", "games/shift-work/boards.js", "games/shift-work/shift-work.js", "games/shift-work/shift-work.css", "shift-work-model.js", "games/hidden-gem/index.html", "hidden-gem-model.js", "cloud-saves.js", "accounts.js", "friends.js", "profile-records.js", "profile.js", "navigation.js", "game-config.js", "game-scenes.js", "game-scenes.css", "games/pack/item-art.js", "games/pack/pack.js", "games/pack/pack.css"]
           paths += ["game-art.js", "game-art.css", "assets/game-art/manifest.js", "game-help.js", "game-help.css"]
           paths += [str(p) for p in pathlib.Path("assets/game-art").rglob("*.svg")]
           paths += [str(p) for p in pathlib.Path("games/pack/art").glob("*.svg")]
@@ -128,7 +128,7 @@ jobs:
                       if path.endswith(".html") and path not in ["games/lowball/engine/index.html", "games/hidden-gem/index.html"]:
                           assert b"br-brand__image" in body and b"cube-b-20261028" in body, "Missing approved logo: " + path
                       if path == "index.html":
-                          assert b"Desk Jam" in body and b"<h3>Shift Work</h3>" not in body and b"Sleeper" not in body and b"<h3>Hidden Gem</h3>" not in body and b"Time Sense" in body and b"Inner Clock" not in body and b"9 DAILY GAMES" in body and b"games/hidden-gem/index.html" not in body and b"games/shift-work/index.html" in body and b"games/stake/index.html" not in body, path
+                          assert b"Desk Jam" in body and b"<h3>Shift Work</h3>" not in body and b"Codebreak" in body and b"Sleeper" not in body and b"<h3>Hidden Gem</h3>" not in body and b"Time Sense" in body and b"Inner Clock" not in body and b"10 DAILY GAMES" in body and b"games/hidden-gem/index.html" not in body and b"games/shift-work/index.html" in body and b"games/stake/index.html" not in body, path
                       elif path in ["games/inner-clock/index.html", "profile.html", "friends.html"]:
                           assert b"Desk Jam" in body and b"Sleeper" not in body and b"Time Sense" in body and b"Inner Clock" not in body, path
                       elif path == "games/lowball/engine/index.html":
@@ -138,18 +138,23 @@ jobs:
                           assert b"DAILY_ITEM_PERIOD = 32" in body and b"DAILY_ITEM_CUTOVER = 25" in body and b"Fiskars scissors" in body, path
                       elif path == "leagues.html":
                           assert b"leagues.js" in body and b"2,100" in body and b"JOIN LEAGUE" in body, path
+                      elif path == "games/codebreak/index.html":
+                          assert b"<title>Codebreak" in body and b"codebreak.js" in body and b"codebreak-model.js" in body, path
                       elif path == "games/hidden-gem/index.html":
                           assert b'http-equiv="refresh"' in body and b"hidden-gem.js" not in body, path
                       elif path.endswith(".html"):
                           assert ((b"<title>Desk Jam" in body and b"shift-work.js" in body) if "shift-work" in path else (b"<title>Sleeper" in body and b"hidden-gem.js" in body)), path
                       else:
                           assert body == pathlib.Path(path).read_bytes(), "Published file differs: " + path
-                  for current in ["laser","time-drop","clue-ladder","seating-chart","shift-work","stack-up","pack","inner-clock"]:
+                  for current in ["laser","time-drop","clue-ladder","seating-chart","shift-work","codebreak","stack-up","pack","inner-clock"]:
                       request = urllib.request.Request(base + "games/" + current + "/index.html?release=" + os.environ["GITHUB_SHA"], headers={"Cache-Control":"no-cache"})
                       with urllib.request.urlopen(request, timeout=20) as response:
                           page = response.read()
                       assert b"How To Play</button>" in page and b"game-help.js?v=first-visit-20261028" in page and ('data-game="' + current + '"').encode() in page, "Missing labelled first-visit instructions: " + current
                       assert b'class="mobile-stats-label">Stats</span>' in page and b"game-help.css?v=mobile-stats-20261028" in page, "Missing mobile stats layout: " + current
+                      if current == "codebreak":
+                          assert b'data-game-scene="codebreak"' in page and b"codebreak.css" in page and b"codebreak.js" in page, "Missing original Codebreak safe"
+                          continue
                       if current == "clue-ladder":
                           assert b"clue-ladder.css" in page and b"clue-ladder.js" in page and b"puzzles.js?v=audit-20261031c" in page, "Missing original Clue Ladder assets"
                           assert b'data-game-scene=' not in page and b'data-game-art=' not in page and b"game-scenes.css" not in page and b"game-scenes.js" not in page and b"game-art.css" not in page and b"game-art.js" not in page, "Clue Ladder must keep its original appearance"
@@ -160,7 +165,7 @@ jobs:
                       if current == "pack":
                           assert b"item-art.js?v=items-20261027" in page and b"pack.js?v=items-20261027" in page and b"pack.css?v=items-20261027" in page, "Missing custom Pack item graphics"
                   print("Verified current game sets, original Clue Ladder, Pack item artwork and shared motion assets.")
-                  for retired in ["stake","prior","alibi","bouncer","pixel-pairs","word-forge","gridlock","number-drop","memory-lane","mystery-cabinet"]:
+                  for retired in ["hidden-gem","stake","prior","alibi","bouncer","pixel-pairs","word-forge","gridlock","number-drop","memory-lane","mystery-cabinet"]:
                       request = urllib.request.Request(base + "games/" + retired + "/index.html?release=" + os.environ["GITHUB_SHA"], headers={"Cache-Control":"no-cache"})
                       with urllib.request.urlopen(request, timeout=20) as response:
                           redirect = response.read()

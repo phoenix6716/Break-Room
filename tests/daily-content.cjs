@@ -1,4 +1,4 @@
-/* Check the nine shipped Daily selectors without opening engines or touching player saves. */
+/* Check the ten shipped Daily selectors without opening engines or touching player saves. */
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
 const read=p=>fs.readFileSync(p,'utf8'),box={window:{}},HORIZON=32;
 const dates=(start,n)=>Array.from({length:n},(_,i)=>new Date(Date.parse(start+'T00:00:00Z')+i*86400000).toISOString().slice(0,10));
@@ -24,6 +24,7 @@ function challenge(id,p){
  case 'stack-up':return [p.prompt,p.cards.map(c=>[c.name,c.value]).sort()];
  case 'lowball':return p.name;
  case 'inner-clock':return p;
+ case 'codebreak':return p;
  default:throw Error('Add a challenge fingerprint for '+id);
  }
 }
@@ -51,10 +52,11 @@ for(const item of items)for(const region of ['AU','US','UK','CA'])assert(Number.
 specs.push({id:'lowball',name:'Lowball',rounds:4,period:32,bankCount:items.length,pool:items,identity:p=>p.name,select:low});
 const clock=model('inner-clock');
 specs.push({id:'inner-clock',name:'Time Sense',rounds:5,period:39,bankCount:195,identity:p=>p,select:day=>clock.daily(day)});
+const codebreak=model('codebreak');specs.push({id:'codebreak',name:'Codebreak',rounds:1,period:1296,bankCount:1296,pool:codebreak.CODES,identity:p=>p,select:day=>[codebreak.daily(day)]});
 const sourceShelf=read('index.html').match(/<article\b[\s\S]*?<\/article>/g)||[];
 const shelfIds=sourceShelf.map(card=>card.match(/href="games\/([^/]+)\/index\.html"/)?.[1]).filter(Boolean);
-const order=['laser','time-drop','clue-ladder','seating-chart','shift-work','stack-up','pack','lowball','inner-clock'];
-assert.deepEqual(shelfIds,order,'The audit must cover the actual nine-game shelf');
+const order=['laser','time-drop','clue-ladder','seating-chart','shift-work','codebreak','stack-up','pack','lowball','inner-clock'];
+assert.deepEqual(shelfIds,order,'The audit must cover the actual ten-game shelf');
 assert.deepEqual(specs.map(s=>s.id).sort(),order.slice().sort());
 const ymd=new Intl.DateTimeFormat('en-CA',{timeZone:'Australia/Sydney',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
 const part=k=>ymd.find(p=>p.type===k).value,today=part('year')+'-'+part('month')+'-'+part('day');
@@ -96,4 +98,4 @@ fs.mkdirSync('.artifacts',{recursive:true});
 const report={sourceCommit:process.env.ARCADE_DIFF_HEAD||null,timezone:'Australia/Sydney',checkedAt:new Date().toISOString(),requiredDays:31,checkedDaysPerWindow:HORIZON,scope:'Actual shipped date selectors; content availability/selection only, not fresh price verification or a new human quality rating.',windows,periods};
 fs.writeFileSync('.artifacts/daily-content.json',JSON.stringify(report,null,2)+'\n');
 for(const row of windows.find(w=>w.start==='2026-10-25').games)console.log('PASS '+row.name+': '+HORIZON+' distinct Dailies; '+row.uniqueIngredients+'/'+row.ingredientSlots+' distinct ingredients'+(row.noIngredientRepeats?' (no repeats).':' (ingredient reuse is expected).'));
-console.log('PASS all nine active games: 31-day requirement plus one-day buffer, cycle-boundary/future/leap-day windows, deterministic selection. No player storage was read or written.');
+console.log('PASS all ten active games: 31-day requirement plus one-day buffer, cycle-boundary/future/leap-day windows, deterministic selection. No player storage was read or written.');

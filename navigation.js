@@ -11,6 +11,7 @@
   if(!menu.querySelector('a[href*="/games/clue-ladder/"]')){const link=document.createElement('a');link.href=new URL('games/clue-ladder/index.html',new URL('.',document.currentScript.src)).href;link.textContent='Clue Ladder';const after=menu.querySelector('a[href*="/games/time-drop/"]');if(after)after.after(link);}
   if(!menu.querySelector('a[href*="/games/seating-chart/"]')){const link=document.createElement('a');link.href=new URL('games/seating-chart/index.html',new URL('.',document.currentScript.src)).href;link.textContent='Seating Chart';const after=menu.querySelector('a[href*="/games/clue-ladder/"]');if(after)after.after(link);}
   if(!menu.querySelector('a[href*="/games/shift-work/"]')){const link=document.createElement('a');link.href=new URL('games/shift-work/index.html',new URL('.',document.currentScript.src)).href;link.textContent='Desk Jam';const after=menu.querySelector('a[href*="/games/seating-chart/"]');if(after)after.after(link);}
+  if(!menu.querySelector('a[href*="/games/codebreak/"]')){const link=document.createElement('a');link.href=new URL('games/codebreak/index.html',new URL('.',document.currentScript.src)).href;link.textContent='Codebreak';const after=menu.querySelector('a[href*="/games/shift-work/"]');if(after)after.after(link);}
   // Display name only: retain the original route and all saved-game identifiers.
   menu.querySelectorAll('a[href*="/games/inner-clock/"]').forEach(link => { link.textContent = 'Time Sense'; });
   menu.querySelectorAll('a[href*="/games/shift-work/"]').forEach(link => { link.textContent = 'Desk Jam'; });

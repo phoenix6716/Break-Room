@@ -1,4 +1,4 @@
-/* Public launch registry: nine games; Sleeper is shelved with saves preserved. */
+/* Ten launch games. Sleeper stays shelved with its private saves preserved. */
 window.MIDNIGHT_ARCADE_GAMES = [
   {
     "id": "shift-work",
@@ -11,6 +11,18 @@ window.MIDNIGHT_ARCADE_GAMES = [
     "scoreMax": 100,
     "attemptsPerDay": 1,
     "engine": "shift-work"
+  },
+  {
+    "id": "codebreak",
+    "title": "Codebreak",
+    "category": "DEDUCTION / LOGIC",
+    "description": "Four digits. Eight guesses. Crack the code.",
+    "instructions": "Crack a four-digit code using digits 1\u20136. Repeats allowed. Eight untimed guesses; count feedback narrows the code. One Daily and free Unlimited.",
+    "accent": "green",
+    "status": "live",
+    "scoreMax": 100,
+    "attemptsPerDay": 1,
+    "engine": "codebreak"
   },
   {
     "id": "seating-chart",

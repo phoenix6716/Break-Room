@@ -1,3 +1,7 @@
+## Codebreak is the tenth launch game — 4 November 2026
+
+The owner chose Codebreak to replace shelved Sleeper in the ten-game launch. One untimed Daily code, four digits from 1–6 with repeats, eight guesses, separate free Unlimited. Full points within three guesses, then 10 fewer per extra guess; an uncracked code scores zero. Read `games/codebreak/README.md` for the frozen v1 rotation, saves, scores, accessibility and verification contract. Preserve every existing game's source and native/cloud history. Existing installations apply `supabase/codebreak.sql` after the current league setup; the new game uses a separate validated save table and private score helpers. The nine-game shelving entries below are historical; Sleeper stays hidden.
+
 ## Sleeper shelved for initial release — owner decision, 4 November 2026
 
 The owner explicitly chose “Shelve Sleeper for launch”. Only nine games are public. Sleeper has no homepage card, public menu/profile/Friends/league entry or playable public route; its old URLs redirect home. Preserve its repository source, native/cloud saves, original validators and scores. Never delete or migrate player data to hide a game. The unfinished large-bank rebuild is preserved on branch `sleeper-rebuild-shelved-20261104` (commit `9bd170e`); it is not a published or reviewed bank. No new Sleeper registry/schema is deployed. Future reactivation needs a separate owner instruction and a completed content review.

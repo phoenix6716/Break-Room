@@ -5,7 +5,7 @@ const {applyBrand}=require('../scripts/site-brand.cjs');
 const socialSource=fs.readFileSync('leagues.html','utf8'),socialBuild=applyBrand(applyBrand(socialSource,'leagues.html'),'leagues.html');
 assert(socialBuild.includes('menu-brand.css?v=hub-topbar-20261027'),'Preserve the shared menu stylesheet');
 assert.equal((socialBuild.match(/href="brand\.css(?:\?[^"]*)?"/g)||[]).length,1,'Deduplicate only the exact brand.css filename');
-const games=['laser','time-drop','clue-ladder','seating-chart','shift-work','stack-up','pack','lowball','inner-clock'];
+const games=['laser','time-drop','clue-ladder','seating-chart','shift-work','codebreak','stack-up','pack','lowball','inner-clock'];
 const rootPages=['account.html','index.html','friends.html','profile.html','login.html','signup.html','forgot-password.html','reset-password.html','privacy.html','terms.html','contact.html','style-guide.html'];
 (async()=>{const browser=await chromium.launch({executablePath:process.env.ARCADE_CHROMIUM||'/usr/bin/chromium',args:['--no-sandbox']});try{
  for(const width of [320,390,768,1440]){
@@ -27,7 +27,7 @@ const rootPages=['account.html','index.html','friends.html','profile.html','logi
    if(route==='index.html'||route==='games/laser/index.html'){fs.mkdirSync('.artifacts/brand',{recursive:true});await p.screenshot({path:'.artifacts/brand/'+(route==='index.html'?'home':'game')+'-'+width+'.png'});}
    await brand.click();await p.waitForURL(u=>u.pathname.endsWith('/index.html')&&!u.pathname.includes('/games/'));
   }
-  assert.deepEqual(errors,[]);await context.close();console.log('PASS cube B branding '+width+'px: all nine game headers, account/profile/Friends/legal pages, accessible home links, image loading, icon, no overlaps, drawer focus and no overflow.');
+  assert.deepEqual(errors,[]);await context.close();console.log('PASS cube B branding '+width+'px: all ten game headers, account/profile/Friends/legal pages, accessible home links, image loading, icon, no overlaps, drawer focus and no overflow.');
  }
  const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:320,height:900}}),p=await context.newPage();
  for(const route of ['index.html','login.html','friends.html','profile.html','games/laser/index.html']){

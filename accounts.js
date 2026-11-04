@@ -48,10 +48,10 @@
    let done=false;
    for(let attempt=0;attempt<4;attempt++){
     if((await authenticated()).user.id!==userId)throw Error('Account changed. Please reload this page.');
-    const {data,error}=await client.from(game==='shift-work'?'shift_work_saves':game==='hidden-gem'?'hidden_gem_saves':'game_saves').select('data,revision').eq('user_id',userId).eq('game',game).maybeSingle();if(error)throw error;
+    const {data,error}=await client.from(game==='codebreak'?'codebreak_saves':game==='shift-work'?'shift_work_saves':game==='hidden-gem'?'hidden_gem_saves':'game_saves').select('data,revision').eq('user_id',userId).eq('game',game).maybeSingle();if(error)throw error;
     const merged=saves.merge(game,local[game]||{},data?.data||{});result[game]=merged;
     if(JSON.stringify(merged)===JSON.stringify(data?.data||{})){done=true;break;}
-    const {data:reply,error:writeError}=await client.rpc(game==='shift-work'?'save_shift_work':game==='hidden-gem'?'save_hidden_gem':'save_game',{p_game:game,p_data:merged,p_revision:data?.revision||0});if(writeError){if(['seating-chart','clue-ladder','time-drop','pack','prior','laser','alibi','bouncer','inner-clock'].includes(game)&&/Invalid save|Unsupported save entry|game_saves_game_check/i.test(writeError.message||''))throw Error(({'seating-chart':'Seating Chart','clue-ladder':'Clue Ladder','time-drop':'Time Drop',prior:'Prior',pack:'Pack',laser:'Laser',alibi:'Alibi',bouncer:'Bouncer','inner-clock':'Time Sense'}[game])+' cloud saves need a database update. The site owner must run supabase/inner-clock.sql (the latest complete update, including Seating Chart) in Supabase. Your browser saves are safe.');throw writeError;}
+    const {data:reply,error:writeError}=await client.rpc(game==='codebreak'?'save_codebreak':game==='shift-work'?'save_shift_work':game==='hidden-gem'?'save_hidden_gem':'save_game',{p_game:game,p_data:merged,p_revision:data?.revision||0});if(writeError){if(['seating-chart','clue-ladder','time-drop','pack','prior','laser','alibi','bouncer','inner-clock'].includes(game)&&/Invalid save|Unsupported save entry|game_saves_game_check/i.test(writeError.message||''))throw Error(({'seating-chart':'Seating Chart','clue-ladder':'Clue Ladder','time-drop':'Time Drop',prior:'Prior',pack:'Pack',laser:'Laser',alibi:'Alibi',bouncer:'Bouncer','inner-clock':'Time Sense'}[game])+' cloud saves need a database update. The site owner must run supabase/inner-clock.sql (the latest complete update, including Seating Chart) in Supabase. Your browser saves are safe.');throw writeError;}
     if(!reply?.conflict){done=true;break;}
    }
    if(!done)throw Error('Another device is saving. Please try syncing again shortly.');
@@ -198,7 +198,7 @@
     const restored=await syncUpload();
     if(isAccount&&restored){
      const target=new URLSearchParams(location.search).get('continue');
-     if(target){const dest=new URL(target,base);const allowed=['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','pack','lowball','inner-clock'].some(id=>dest.pathname===new URL('games/'+id+'/index.html',base).pathname);if(dest.origin===base.origin&&allowed){redirecting=true;location.replace(dest.href);}}
+     if(target){const dest=new URL(target,base);const allowed=['laser','time-drop','clue-ladder','seating-chart','shift-work','codebreak','hidden-gem','stack-up','pack','lowball','inner-clock'].some(id=>dest.pathname===new URL('games/'+id+'/index.html',base).pathname);if(dest.origin===base.origin&&allowed){redirecting=true;location.replace(dest.href);}}
     }
    }
    else if(!isAccount)syncUpload();
@@ -207,7 +207,7 @@
  function schedule(){clearTimeout(schedule.timer);schedule.timer=setTimeout(()=>syncUpload(),800);}
  window.BREAK_ROOM_ACCOUNTS=Object.freeze({sync:syncUpload,ready,getUser:()=>session?.user||null,
   cloudActive:()=>{try{return !!session&&owner()===session.user.id;}catch{return false;}},
-  async friendsRPC(name,args={}){await ready;if(!['friend_hub','friend_scores','hidden_gem_friend_scores','shift_work_friend_scores','league_hub'].includes(name))throw Error('Unknown friends operation.');if(!client||!session)throw Error('Please sign in to use friends.');const {data,error}=await client.rpc(name,args);if(error)throw error;return data;}
+  async friendsRPC(name,args={}){await ready;if(!['friend_hub','friend_scores','hidden_gem_friend_scores','shift_work_friend_scores','codebreak_friend_scores','league_hub'].includes(name))throw Error('Unknown friends operation.');if(!client||!session)throw Error('Please sign in to use friends.');const {data,error}=await client.rpc(name,args);if(error)throw error;return data;}
  });
  boot();
 })();

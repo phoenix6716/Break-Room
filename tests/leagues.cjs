@@ -8,7 +8,7 @@ let offline=false,missing=false,queue=Promise.resolve();
 (async()=>{const db=new PGlite();let browser;try{
 await db.exec("create role anon;create role authenticated;create schema auth;create table auth.users(id uuid primary key);create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;grant usage on schema auth to anon,authenticated;grant execute on function auth.uid() to anon,authenticated;");
 for(const id of Object.values(ids))await db.query('insert into auth.users values($1)',[id]);
-for(const f of ['setup','friends','hidden-gem','shift-work','leagues'])await db.exec(fs.readFileSync('supabase/'+f+'.sql','utf8'));
+for(const f of ['setup','friends','hidden-gem','shift-work','leagues','codebreak'])await db.exec(fs.readFileSync('supabase/'+f+'.sql','utf8'));
 const today=(await db.query("select timezone('Australia/Sydney',now())::date::text d")).rows[0].d,day=(Date.parse(today+'T00:00:00Z')-Date.UTC(2026,9,1))/86400000;
 for(const name of ['alice','bob'])await db.query('insert into public.game_saves(user_id,game,data) values($1,$2,$3)',[ids[name],'lowball',JSON.stringify({pc_history:JSON.stringify({[day]:name==='alice'?80:0})})]);
 browser=await chromium.launch({executablePath:process.env.ARCADE_CHROMIUM||'/usr/bin/chromium',args:['--no-sandbox']});
@@ -20,7 +20,7 @@ async function context(){
   const send=(data,status=200)=>route.fulfill({status,headers,body:JSON.stringify(data)});if(req.method()==='OPTIONS')return send({});
   if(url.pathname.endsWith('/token')){const name=body.email.startsWith('bob')?'bob':'alice';return send({access_token:jwt(name),refresh_token:'refresh-'+name,token_type:'bearer',expires_in:3600,expires_at:Math.floor(Date.now()/1000)+3600,user:user(name)});}
   if(url.pathname.endsWith('/logout'))return send({});
-  if(/\/(game_saves|hidden_gem_saves|shift_work_saves)$/.test(url.pathname)||/\/rpc\/(save_game|save_hidden_gem|save_shift_work)$/.test(url.pathname)){
+  if(/\/(game_saves|hidden_gem_saves|shift_work_saves|codebreak_saves)$/.test(url.pathname)||/\/rpc\/(save_game|save_hidden_gem|save_shift_work|save_codebreak)$/.test(url.pathname)){
    const uid=JSON.parse(Buffer.from(req.headers().authorization.slice(7).split('.')[1],'base64url').toString()).sub;
    let finish;const pending=new Promise(r=>finish=r);
    queue=queue.then(async()=>{try{await db.exec('reset role;set role authenticated');await db.query("select set_config('request.jwt.claim.sub',$1,false)",[uid]);let value;
@@ -54,7 +54,7 @@ assert.equal(await b.locator('#league-owner').isVisible(),false);
 await a.locator('#refresh-leagues').click();await a.waitForFunction(()=>document.querySelectorAll('.league-entry').length===2);await settled(a);
 const own=a.locator('.league-entry.you');assert.match(await own.locator('.league-total').innerText(),/^80/);assert.match(await own.innerText(),/Lowball/);
 assert.equal(await own.locator('.league-slots .league-slot').count(),3);
-await own.locator('summary').click();assert.equal(await own.locator('tbody tr').count(),9);assert.equal(await a.locator('#league-content').innerText().then(t=>/pc_history|example.com/.test(t)),false);
+await own.locator('summary').click();assert.equal(await own.locator('tbody tr').count(),10);assert.equal(await a.locator('#league-content').innerText().then(t=>/pc_history|example.com/.test(t)),false);
 fs.mkdirSync('.artifacts/leagues',{recursive:true});
 for(const width of [320,390,768,1100,1440]){await a.setViewportSize({width,height:1000});const overflow=await a.evaluate(()=>document.documentElement.scrollWidth>innerWidth);if(overflow)console.log('LEAGUE_OVERFLOW',width,await a.evaluate(()=>[...document.querySelectorAll('body *')].filter(e=>{const r=e.getBoundingClientRect();return r.right>innerWidth+1&&getComputedStyle(e).position!=='fixed'&&!e.closest('.league-daily');}).map(e=>({tag:e.tagName,id:e.id,class:e.className,right:e.getBoundingClientRect().right})).slice(0,20)));assert.equal(overflow,false,'Leagues fit '+width);assert.equal(await a.locator('#required-games img').evaluateAll(imgs=>imgs.length===2&&imgs.every(i=>i.complete&&i.naturalWidth>0)),true);await a.screenshot({path:'.artifacts/leagues/'+width+'.png',fullPage:true});}
 await a.evaluate(()=>scrollTo(0,0));console.log('LEAGUES_PREVIEW_1440 '+(await a.screenshot({type:'jpeg',quality:65})).toString('base64'));await a.setViewportSize({width:390,height:1000});await a.evaluate(()=>scrollTo(0,0));console.log('LEAGUES_PREVIEW_390 '+(await a.screenshot({type:'jpeg',quality:65})).toString('base64'));

@@ -1,3 +1,7 @@
+## Codebreak is the tenth launch game — 4 November 2026
+
+The owner chose Codebreak to replace shelved Sleeper in the ten-game launch. One untimed Daily code, four digits from 1–6 with repeats, eight guesses, separate free Unlimited. Full points within three guesses, then 10 fewer per extra guess; an uncracked code scores zero. Read `games/codebreak/README.md` for the frozen v1 rotation, saves, scores, accessibility and verification contract. Preserve every existing game's source and native/cloud history. Existing installations apply `supabase/codebreak.sql` after the current league setup; the new game uses a separate validated save table and private score helpers. The nine-game shelving entries below are historical; Sleeper stays hidden.
+
 # Private weekly leagues — 26 October 2026
 
 [Leagues](LEAGUES.md) adds invite-based weekly competition separately from Friends averages. League membership explicitly shares completed Daily scores with current members regardless of the Friends sharing toggle. Two required games plus one best optional weekly total count, up to 2,100. Existing Friends consent, comparisons, blocks and saved scores retain their meanings. Apply supabase/leagues.sql after the current save/Friends/game migrations; no earlier migration is replaced.

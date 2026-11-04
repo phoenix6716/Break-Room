@@ -16,6 +16,7 @@
     {id:'clue-ladder',name:'Clue Ladder',category:'CLUES / KNOWLEDGE',unit:'points',max:5000,note:'Five untimed puzzles. Solves earn 1,000 / 800 / 600 / 400 / 200 by clue used; unsolved scores zero. Arcade score = Daily points divided by 50.'},
     {id:'seating-chart',name:'Seating Chart',category:'SEATING / LOGIC',unit:'drama',max:60,lowerBetter:true,note:'Total broken guest requests across five tables: lower is better. Arcade credit penalises only avoidable drama above each table’s optimum.'},
     {id:'hidden-gem',name:'Sleeper',category:'TRIVIA / INSTINCT',unit:'points',max:100,note:'Five timed questions. Native and Arcade score are the average of five individual answer ratings, out of 100. Editorial ratings, not surveys.'},
+    {id:'codebreak',name:'Codebreak',category:'DEDUCTION / LOGIC',unit:'points',max:100,note:'One untimed four-digit code. Solve within three guesses for 100 points, then 10 fewer per extra guess; an uncracked code scores zero.'},
     {id:'shift-work',name:'Desk Jam',category:'SLIDING / LOGIC',unit:'moves',max:6000,lowerBetter:true,note:'Total moves across three untimed Daily boards: lower is better. Arcade score compares moves with each board’s minimum; hints cap board credit at 75.'},
   ];
   const isObject = value => value && typeof value === 'object' && !Array.isArray(value);
@@ -64,6 +65,7 @@
     let keys=[];
     try{for(let i=0;i<storage.length;i++)keys.push(storage.key(i));}catch{unavailable=true;}
     for(const key of keys){
+      if(key?.startsWith('break-room:codebreak:daily:')){const day=key.slice('break-room:codebreak:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_CODEBREAK?.record(r,day);if(record)add('codebreak',day,record.score,record.perfect,record.arcadeScore);else if(root.BREAK_ROOM_CODEBREAK?.valid(r,day)){if(day===today&&r.edits>0)progress.add('codebreak');}else skipped++;continue;}
       if(key?.startsWith('break-room:shift-work:daily:')){const day=key.slice('break-room:shift-work:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_SHIFT_WORK?.record(r,day);if(record)add('shift-work',day,record.moves,record.perfect,root.BREAK_ROOM_SCORE.shiftWork(r));else if(root.BREAK_ROOM_SHIFT_WORK?.valid(r,day)){if(day===today&&r.edits>0)progress.add('shift-work');}else skipped++;continue;}
       if(key?.startsWith('break-room:hidden-gem:daily:')){const day=key.slice('break-room:hidden-gem:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_HIDDEN_GEM?.record(r,day);if(record)add('hidden-gem',day,record.score,record.perfect===5,root.BREAK_ROOM_SCORE.hiddenGem(r));else if(root.BREAK_ROOM_HIDDEN_GEM?.valid(r,day)){if(day===today&&(r.picks.length||r.edits>0))progress.add('hidden-gem');}else skipped++;continue;}
       if(key?.startsWith('break-room:seating-chart:daily:')){const day=key.slice('break-room:seating-chart:daily:'.length);if(!allowed(dateKey(day))||dateKey(day)!==day){skipped++;continue;}const r=parse(key),record=root.BREAK_ROOM_SEATING_CHART?.record(r,day);if(record)add('seating-chart',day,record.drama,record.perfect===5,root.BREAK_ROOM_SCORE.seatingChart(r));else if(root.BREAK_ROOM_SEATING_CHART?.valid(r,day)){if(day===today&&(r.picks.length||r.edits>0))progress.add('seating-chart');}else skipped++;continue;}
@@ -110,6 +112,7 @@
     const days=new Map();for(const record of records){if(!days.has(record.date))days.set(record.date,new Set());days.get(record.date).add(record.game);}
     const streak=streaks([...days.keys()],today), total=summaries.reduce((n,g)=>n+g.played,0);
     const achievements=[
+      {id:'codebreak',name:'Clear signal',detail:'Crack a Daily Codebreak code in three guesses or fewer.',earned:records.some(r=>r.game==='codebreak'&&r.perfect)},
       {id:'shift-work',name:'Smooth shift',detail:'Solve all three Daily Desk Jam boards in their minimum moves without hints.',earned:records.some(r=>r.game==='shift-work'&&r.perfect)},
       {id:'hidden-gem',name:'Breakout run',detail:'Find a 100-point answer in all five Daily Sleeper questions.',earned:records.some(r=>r.game==='hidden-gem'&&r.perfect)},
       {id:'seating-chart',name:'Perfect host',detail:'Match the minimum drama at all five Daily Seating Chart tables.',earned:records.some(r=>r.game==='seating-chart'&&r.perfect)},
@@ -133,7 +136,7 @@
 
   // Public presentation excludes retired games; native readers remain for private save compatibility.
   function active(model) {
-    const ids=new Set(["laser","time-drop","clue-ladder","seating-chart","shift-work","stack-up","pack","lowball","inner-clock"]);
+    const ids=new Set(["laser","time-drop","clue-ladder","seating-chart","shift-work","codebreak","stack-up","pack","lowball","inner-clock"]);
     const records=model.records.filter(r=>ids.has(r.game));
     const arcade=root.BREAK_ROOM_SCORE.summary(records,model.today,[...ids]);
     const summaries=model.games.filter(g=>ids.has(g.id)).map(g=>({...g,arcade:arcade.games.find(a=>a.id===g.id)}));
