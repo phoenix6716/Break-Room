@@ -26,14 +26,20 @@ alter table br_league.leagues enable row level security;
 alter table br_league.members enable row level security;
 revoke all on br_league.leagues,br_league.members from public,anon,authenticated;
 create or replace function br_league.games() returns text[] language sql immutable set search_path='' as $$
- select array['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','pack','lowball','inner-clock']::text[]
+ select array['laser','time-drop','clue-ladder','seating-chart','shift-work','stack-up','pack','lowball','inner-clock']::text[]
+$$;
+-- Preserve historical league membership and required pairs before the launch week.
+create or replace function br_league.games_on(d date) returns text[] language sql immutable set search_path='' as $$
+ select case when d<date '2026-11-02' then array['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','pack','lowball','inner-clock']::text[] else br_league.games() end
 $$;
 create or replace function br_league.week_start(d date) returns date language sql immutable set search_path='' as $$
  select d-(extract(isodow from d)::int-1)
 $$;
 create or replace function br_league.required(d date) returns text[] language sql immutable set search_path='' as $$
- select array[(br_league.games())[1+i*2],(br_league.games())[2+i*2]]
- from (select (((br_league.week_start(d)-date '2026-10-26')/7%5)+5)%5 i) s
+ select array[g[1+i],g[1+(i+1)%cardinality(g)]]
+ from (select br_league.games_on(d) g,case when d<date '2026-11-02'
+ then (((br_league.week_start(d)-date '2026-10-26')/7%5)+5)%5*2
+ else (((br_league.week_start(d)-date '2026-10-26')/7*2%9)+9)%9 end i) s
 $$;
 -- Input is server-derived normalized records, never accepted as a public RPC parameter.
 create or replace function br_league.rollup(records jsonb,today date) returns jsonb language sql stable set search_path='' as $$
@@ -41,7 +47,7 @@ create or replace function br_league.rollup(records jsonb,today date) returns js
  valid as (
   select x->>'game' game,(x->>'date')::date d,max((x->>'arcadeScore')::numeric) score
   from jsonb_array_elements(records) x
-  where x->>'game'=any(br_league.games())
+  where x->>'game'=any(br_league.games_on(today))
    and (x->>'date')::date between br_league.week_start(today) and today
    and (x->>'arcadeScore')::numeric between 0 and 100
   group by 1,2
@@ -49,7 +55,7 @@ create or replace function br_league.rollup(records jsonb,today date) returns js
   select g,coalesce(sum(v.score),0) total,count(v.score)::int completed,
    coalesce(jsonb_agg(v.score order by days.n),'[]'::jsonb) scores,
    g=any(br_league.required(today)) required
-  from unnest(br_league.games()) g cross join days
+  from unnest(br_league.games_on(today)) g cross join days
   left join valid v on v.game=g and v.d=br_league.week_start(today)+days.n
   group by g
  ), optional as (
@@ -61,7 +67,7 @@ create or replace function br_league.rollup(records jsonb,today date) returns js
   'total',(select coalesce(sum(total),0) from selected where chosen),
   'completed',(select coalesce(sum(completed),0) from selected where chosen),
   'optional',(select g from optional),
-  'games',(select jsonb_agg(jsonb_build_object('game',g,'total',total,'completed',completed,'scores',scores,'required',required,'counted',coalesce(chosen,false)) order by array_position(br_league.games(),g)) from selected))
+  'games',(select jsonb_agg(jsonb_build_object('game',g,'total',total,'completed',completed,'scores',scores,'required',required,'counted',coalesce(chosen,false)) order by array_position(br_league.games_on(today),g)) from selected))
 $$;
 -- Only decode this week's snapshots. Reuse the established private native scorers.
 create or replace function br_league.records(who uuid,today date)
@@ -69,8 +75,8 @@ returns jsonb language plpgsql stable set search_path='' as $$
 declare rowdata record;e record;v jsonb;d date;s double precision;outrows jsonb:='[]';startday date:=br_league.week_start(today);h jsonb;i int;
 begin
  for rowdata in
-  select game,data from public.game_saves where user_id=who and game=any(br_league.games())
-  union all select game,data from public.hidden_gem_saves where user_id=who
+  select game,data from public.game_saves where user_id=who and game=any(br_league.games_on(today))
+  union all select game,data from public.hidden_gem_saves where user_id=who and today<date '2026-11-02'
   union all select game,data from public.shift_work_saves where user_id=who
  loop
   if rowdata.game='lowball' then
@@ -169,6 +175,6 @@ create or replace function public.league_hub(p_action text default 'list',p_leag
 returns jsonb language sql security invoker set search_path='' as $$
  select br_league.api(p_action,p_league,p_token,p_name,p_display_name,p_consent,p_target)
 $$;
-revoke all on function br_league.games(),br_league.week_start(date),br_league.required(date),br_league.rollup(jsonb,date),br_league.records(uuid,date),br_league.api(text,uuid,text,text,text,boolean,uuid),public.league_hub(text,uuid,text,text,text,boolean,uuid) from public,anon,authenticated;
+revoke all on function br_league.games(),br_league.games_on(date),br_league.week_start(date),br_league.required(date),br_league.rollup(jsonb,date),br_league.records(uuid,date),br_league.api(text,uuid,text,text,text,boolean,uuid),public.league_hub(text,uuid,text,text,text,boolean,uuid) from public,anon,authenticated;
 grant execute on function br_league.api(text,uuid,text,text,text,boolean,uuid),public.league_hub(text,uuid,text,text,text,boolean,uuid) to authenticated;
 commit;

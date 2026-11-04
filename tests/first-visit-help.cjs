@@ -1,6 +1,6 @@
 /* Clean browser profiles: independent first visits, timer safety and labelled controls. */
 const assert=require('node:assert/strict'),{chromium}=require('playwright');
-const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000',ids=['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','pack','lowball','inner-clock'];
+const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000',ids=['laser','time-drop','clue-ladder','seating-chart','shift-work','stack-up','pack','lowball','inner-clock'];
 async function game(p,id){await p.goto(base+'/games/'+id+'/index.html');return id==='lowball'?await(await p.locator('iframe').elementHandle()).contentFrame():p;}
 const selectors=id=>id==='lowball'?['#helpBtn','#helpModal']:id==='stack-up'?['#help-open','#help-dialog']:['#help-popup-open','#help-popup'];
 (async()=>{const browser=await chromium.launch({executablePath:process.env.ARCADE_CHROMIUM||'/usr/bin/chromium',args:['--no-sandbox']});try{
@@ -61,7 +61,7 @@ const selectors=id=>id==='lowball'?['#helpBtn','#helpModal']:id==='stack-up'?['#
    await f.locator(button).click();await f.locator(dialog).waitFor({state:'visible'});await p.keyboard.press('Escape');await f.locator(dialog).waitFor({state:'hidden'});
    assert.deepEqual(errors,[]);p.off('pageerror',onError);
   }
-  await c.close();console.log('PASS first visits '+width+'px: all ten games independently show once, text Help reopens, focus returns, headers fit, no timer spent on initial instructions.');
+  await c.close();console.log('PASS first visits '+width+'px: all nine games independently show once, text Help reopens, focus returns, headers fit, no timer spent on initial instructions.');
  }
  const old=await browser.newContext(),resume=await old.newPage();await resume.clock.setFixedTime(new Date('2026-10-28T01:02:00Z'));await old.addInitScript(r=>localStorage.setItem('break-room:stack-up:daily:2026-10-28',JSON.stringify(r)),stackSnapshot);await game(resume,'stack-up');await resume.locator('#help-dialog').waitFor({state:'visible'});await resume.clock.setFixedTime(new Date('2026-10-28T01:02:05Z'));await resume.keyboard.press('Escape');await resume.waitForFunction(()=>document.getElementById('timer').textContent==='01:25');assert.equal(await resume.evaluate(()=>JSON.parse(localStorage.getItem('break-room:stack-up:daily:2026-10-28')).deadline),stackSnapshot.deadline);await old.close();console.log('PASS saved Stack Up deadline remains unchanged while first-visit instructions are open.');
  const c=await browser.newContext(),p=await c.newPage();await c.addInitScript(()=>{Storage.prototype.setItem=()=>{throw Error('Denied')};});await game(p,'laser');await p.locator('#help-popup').waitFor({state:'visible'});await p.keyboard.press('Escape');await p.locator('#help-popup-open').click();assert(await p.locator('#help-popup').isVisible());await c.close();console.log('PASS denied storage: instructions and manual Help still work.');

@@ -1,3 +1,7 @@
+## Launch roster update — 4 November 2026
+
+Sleeper is shelved by owner decision. The launch has nine games; earlier ten-game inventories below are historical. Public Sleeper routes redirect home, with source, native/cloud saves and scores preserved. `tests/daily-content.cjs` checks the nine shipped selectors. See the current roster in `game-config.js` and [README.md](README.md).
+
 # Current ten-game Daily coverage — 25 October 2026
 
 Read [DAILY-CONTENT.md](DAILY-CONTENT.md) for the verified current inventory and 32-day coverage check. It supersedes the older nine-game roster, generic bank-reversal claim and full-suite/PR instructions below. The eight puzzle/question games have at least 32 days without individual repeats. Lowball reuses products after a 25-day pool and Time Sense reuses durations; their full Daily sets remain distinct in the checked windows. Existing saves, scoring and content are unchanged. Use focused checks and the authorised automatic-publication workflow.

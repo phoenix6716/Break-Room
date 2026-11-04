@@ -1,7 +1,7 @@
 /* Check actual decorative objects at four widths, plus delayed blind-clock artwork. Native play/save/review is covered by game-scenes and each game's suite. */
 const assert=require('node:assert/strict'),{chromium}=require('playwright');
 const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
-const allIds=['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','lowball','inner-clock'];
+const allIds=['laser','time-drop','clue-ladder','seating-chart','shift-work','stack-up','lowball','inner-clock'];
 const selected=(process.env.ARCADE_TEST_GAMES||'').split(',').filter(Boolean),ids=allIds.filter(id=>!selected.length||selected.includes(id));
 async function view(page,id){await page.goto(base+'/games/'+id+'/index.html');const p=id==='lowball'?await(await page.locator('iframe').elementHandle()).contentFrame():page;if(id==='clue-ladder')await p.locator('#guess-input').waitFor();else await p.locator('body[data-game-art-ready=true]').waitFor();return p;}
 async function settle(p){await p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));}

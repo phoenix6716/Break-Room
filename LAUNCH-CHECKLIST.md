@@ -1,3 +1,7 @@
+## Launch roster update — 4 November 2026
+
+Sleeper is shelved by owner decision. The launch has nine games; earlier ten-game inventories below are historical. Public Sleeper routes redirect home, with source, native/cloud saves and scores preserved. `tests/daily-content.cjs` checks the nine shipped selectors. See the current roster in `game-config.js` and [README.md](README.md).
+
 # Ordered public-launch checklist
 
 Prepared 22 October 2026 (Australia/Sydney). Unchecked means evidence is still required. Code present, a pushed commit, green CI and a confirmed public deployment are separate milestones.

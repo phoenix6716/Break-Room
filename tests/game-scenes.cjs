@@ -1,9 +1,9 @@
 /* Real public surfaces, action-driven motion, silent hydration and a still timing game. */
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{chromium}=require('playwright');
 const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
-const allIds=['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','pack','lowball','inner-clock'];
+const allIds=['laser','time-drop','clue-ladder','seating-chart','shift-work','stack-up','pack','lowball','inner-clock'];
 const selected=(process.env.ARCADE_TEST_GAMES||'').split(',').filter(Boolean),ids=allIds.filter(id=>!selected.length||selected.includes(id));
-const names=['Laser','Time Drop','Clue Ladder','Seating Chart','Desk Jam','Sleeper','Stack Up','Pack','Lowball','Time Sense'];
+const names=['Laser','Time Drop','Clue Ladder','Seating Chart','Desk Jam','Stack Up','Pack','Lowball','Time Sense'];
 const dir='.artifacts/game-scenes';fs.mkdirSync(dir,{recursive:true});
 const snapshots={desktop:[],mobile:[],review:[],environment:[]};
 async function pause(p){await p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));}

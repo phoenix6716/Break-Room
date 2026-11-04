@@ -92,6 +92,7 @@ function selectChecks(changed,available,{full=false}={}){
   else if(file==='brand.css'||file==='scripts/site-brand.cjs'||file==='scripts/export-break-room-brand.cjs'||/^assets\/(?:source\/)?break-room-/.test(file)){add('brand.cjs','smoke.cjs');}
   else if(/^scripts\//.test(file)||/^\.github\/workflows\//.test(file)||/^package(?:-lock)?\.json$/.test(file)||file==='.node-version'){infra();}
   else if(/^(?:accounts|account-config|cloud-saves)\.(?:js|css)$/.test(file)||/^(?:account|login|signup|forgot-password|reset-password)\.html$/.test(file)||/^assets\/vendor\//.test(file)){auth();}
+  else if(file==='supabase/shelve-sleeper.sql'){add('leagues-database.cjs','leagues.cjs','retired-games.cjs');}
   else if(/^leagues(?:-model)?\.(?:js|css|html)$/.test(file)){add('leagues-database.cjs','leagues.cjs','leagues-freshness.cjs');}
   else if(/^friends\.(?:js|css|html)$/.test(file)){add('friends-database.cjs','friends.cjs','friends-freshness.cjs');}
   else if(/^profile(?:-records)?\.(?:js|css|html)$/.test(file)){add('profile-records.cjs','profile.cjs');}

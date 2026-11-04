@@ -5,17 +5,17 @@ const {applyBrand}=require('./site-brand.cjs');
 const root=path.resolve(__dirname,'..'),output=path.join(root,'dist');
 const registry={window:{}};require('node:vm').runInNewContext(fs.readFileSync(path.join(root,'game-config.js'),'utf8'),registry);
 const activeGames=new Set(registry.window.MIDNIGHT_ARCADE_GAMES.filter(g=>g.status==='live').map(g=>g.id));
-const retiredGames=["stake","prior","alibi","bouncer","pixel-pairs","word-forge","gridlock","number-drop","memory-lane","mystery-cabinet"];
-if(activeGames.size!==10)throw Error('Expected the ten current public games');
+const retiredGames=["hidden-gem","stake","prior","alibi","bouncer","pixel-pairs","word-forge","gridlock","number-drop","memory-lane","mystery-cabinet"];
+if(activeGames.size!==9)throw Error('Expected the nine launch games');
 const web=new Set(['.html','.css','.js','.json','.webmanifest','.svg','.png','.jpg','.jpeg','.gif','.webp','.ico','.ttf','.woff','.woff2','.mp3','.wav','.ogg']);
 const excluded=new Set(['node_modules','.git','source','_template','__pycache__']);
 let count=0,total=0;
 function copy(file,relative){
  const target=path.join(output,relative);fs.mkdirSync(path.dirname(target),{recursive:true});if(path.extname(file).toLowerCase()==='.html'){
-  const html=fs.readFileSync(file,'utf8').replace(/<nav\b[^>]*class="[^"]*\bgame-menu\b[^"]*"[^>]*>[\s\S]*?<\/nav>/g,nav=>nav.replace(/<a\b[^>]*href="[^"]*games\/(?:alibi|bouncer|prior|stake|pixel-pairs|word-forge|gridlock|number-drop|memory-lane|mystery-cabinet|time-drop|clue-ladder|seating-chart|shift-work|hidden-gem)\/index\.html"[^>]*>[\s\S]*?<\/a>/g,'').replace(/(<a\b[^>]*href="([^"]*)games\/laser\/index\.html"[^>]*>[\s\S]*?<\/a>)/,(_,link,prefix)=>link+'<a href="'+prefix+'games/time-drop/index.html">Time Drop</a><a href="'+prefix+'games/clue-ladder/index.html">Clue Ladder</a><a href="'+prefix+'games/seating-chart/index.html">Seating Chart</a><a href="'+prefix+'games/shift-work/index.html">Desk Jam</a><a href="'+prefix+'games/hidden-gem/index.html">Sleeper</a>'));
+  const html=fs.readFileSync(file,'utf8').replace(/<nav\b[^>]*class="[^"]*\bgame-menu\b[^"]*"[^>]*>[\s\S]*?<\/nav>/g,nav=>nav.replace(/<a\b[^>]*href="[^"]*games\/(?:alibi|bouncer|prior|stake|pixel-pairs|word-forge|gridlock|number-drop|memory-lane|mystery-cabinet|time-drop|clue-ladder|seating-chart|shift-work|hidden-gem)\/index\.html"[^>]*>[\s\S]*?<\/a>/g,'').replace(/(<a\b[^>]*href="([^"]*)games\/laser\/index\.html"[^>]*>[\s\S]*?<\/a>)/,(_,link,prefix)=>link+'<a href="'+prefix+'games/time-drop/index.html">Time Drop</a><a href="'+prefix+'games/clue-ladder/index.html">Clue Ladder</a><a href="'+prefix+'games/seating-chart/index.html">Seating Chart</a><a href="'+prefix+'games/shift-work/index.html">Desk Jam</a>'));
   // Keep generated static drawer labels aligned with the approved display name.
-  const rendered=html.replace(/(src="[^"]*(?:navigation|game-config)\.js)(?:\?[^\"]*)?"/g,'$1?v=current-games-20261027"').replace(/(src="[^"]*inner-clock-model\.js)(?:\?[^\"]*)?"/g,'$1?v=no-repeat-20261026"').replace(/<nav\b[^>]*class="[^"]*\bgame-menu\b[^"]*"[^>]*>[\s\S]*?<\/nav>/g,nav=>nav.replace(/(<a\b[^>]*href="[^"]*games\/inner-clock\/index\.html"[^>]*>)[\s\S]*?(<\/a>)/g,(_,open,close)=>open+'Time Sense'+close));
-  fs.writeFileSync(target,applyBrand(rendered.replace(/(src="[^"]*cloud-saves\.js)(?:\?[^"]*)?"/g,'$1?v=sleeper-bounded-20261031"').replace(/(src="[^"]*hidden-gem-model\.js)(?:\?[^"]*)?"/g,'$1?v=coverage-20261101"').replace(/(src="[^"]*accounts\.js)(?:\?[^"]*)?"/g,'$1?v=automatic-20261028"'),relative));
+  const rendered=html.replace(/(src="[^"]*(?:navigation|game-config)\.js)(?:\?[^\"]*)?"/g,'$1?v=launch-nine-20261104"').replace(/(src="[^"]*inner-clock-model\.js)(?:\?[^\"]*)?"/g,'$1?v=no-repeat-20261026"').replace(/<nav\b[^>]*class="[^"]*\bgame-menu\b[^"]*"[^>]*>[\s\S]*?<\/nav>/g,nav=>nav.replace(/(<a\b[^>]*href="[^"]*games\/inner-clock\/index\.html"[^>]*>)[\s\S]*?(<\/a>)/g,(_,open,close)=>open+'Time Sense'+close));
+  fs.writeFileSync(target,applyBrand(rendered.replace(/(src="[^"]*cloud-saves\.js)(?:\?[^"]*)?"/g,'$1?v=sleeper-bounded-20261031"').replace(/(src="[^"]*hidden-gem-model\.js)(?:\?[^"]*)?"/g,'$1?v=coverage-20261101"').replace(/(src="[^"]*(?:profile-records|friends|leagues|leagues-model)\.js)(?:\?[^"]*)?"/g,'$1?v=launch-nine-20261104"').replace(/(src="[^"]*accounts\.js)(?:\?[^"]*)?"/g,'$1?v=automatic-20261028"'),relative));
  }else fs.copyFileSync(file,target);
  count++;total+=fs.statSync(target).size;
 }

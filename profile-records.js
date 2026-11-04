@@ -133,7 +133,7 @@
 
   // Public presentation excludes retired games; native readers remain for private save compatibility.
   function active(model) {
-    const ids=new Set(["laser","time-drop","clue-ladder","seating-chart","shift-work","hidden-gem","stack-up","pack","lowball","inner-clock"]);
+    const ids=new Set(["laser","time-drop","clue-ladder","seating-chart","shift-work","stack-up","pack","lowball","inner-clock"]);
     const records=model.records.filter(r=>ids.has(r.game));
     const arcade=root.BREAK_ROOM_SCORE.summary(records,model.today,[...ids]);
     const summaries=model.games.filter(g=>ids.has(g.id)).map(g=>({...g,arcade:arcade.games.find(a=>a.id===g.id)}));

@@ -1,3 +1,7 @@
+## Sleeper shelved for initial release — owner decision, 4 November 2026
+
+The owner explicitly chose “Shelve Sleeper for launch”. Only nine games are public. Sleeper has no homepage card, public menu/profile/Friends/league entry or playable public route; its old URLs redirect home. Preserve its repository source, native/cloud saves, original validators and scores. Never delete or migrate player data to hide a game. The unfinished large-bank rebuild is preserved on branch `sleeper-rebuild-shelved-20261104` (commit `9bd170e`); it is not a published or reviewed bank. No new Sleeper registry/schema is deployed. Future reactivation needs a separate owner instruction and a completed content review.
+
 ## Answer acceptance audit — owner request, 1 November 2026
 
 Revision 15 closes 1,452 rejected inputs from a prompt-led 5,998-case editorial challenge spanning all 240 Sleeper questions. The cases include everyday concepts, regional wording and natural phrases; all pass after correction. A separate geographic reference contributes 930 common-name/ISO probes. Explicit grammar variants broaden action answers. The active bank has 8,974 canonical answers (25–159 per question), 10,377 aliases, and the unchanged 48-day rotation. Passing this regression set is evidence about the reviewed cases, not proof that most conceivable answers or actual player guesses are covered.

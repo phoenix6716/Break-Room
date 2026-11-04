@@ -10,3 +10,6 @@ __pycache__/
 
 # Local editorial drafts are proposals, not published content.
 /content/drafts/*.json
+
+# Shelved source-import coordination file.
+/content/sleeper-data/.sources.lock

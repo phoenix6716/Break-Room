@@ -1,28 +1,16 @@
-/* Public registry: only the ten current games are offered. */
+/* Public launch registry: nine games; Sleeper is shelved with saves preserved. */
 window.MIDNIGHT_ARCADE_GAMES = [
   {
     "id": "shift-work",
     "title": "Desk Jam",
     "category": "SLIDING / LOGIC",
     "description": "Slide the furniture. Clear a path. Clock off.",
-    "instructions": "Clear a route for the blue trolley in three untimed boards. Move count determines your 0–100 Arcade score; Unlimited is free.",
+    "instructions": "Clear a route for the blue trolley in three untimed boards. Move count determines your 0\u2013100 Arcade score; Unlimited is free.",
     "accent": "green",
     "status": "live",
     "scoreMax": 100,
     "attemptsPerDay": 1,
     "engine": "shift-work"
-  },
-  {
-    "id": "hidden-gem",
-    "title": "Sleeper",
-    "category": "TRIVIA / INSTINCT",
-    "description": "Quiet answers. Big points. Think off the radar.",
-    "instructions": "Type one answer in 30 seconds. Unlisted guesses can retry. Five Daily questions with individual editorial ratings; free Unlimited.",
-    "accent": "yellow",
-    "status": "live",
-    "scoreMax": 100,
-    "attemptsPerDay": 1,
-    "engine": "hidden-gem"
   },
   {
     "id": "seating-chart",

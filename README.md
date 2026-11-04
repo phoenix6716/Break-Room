@@ -1,3 +1,7 @@
+## Initial release: nine games
+
+Sleeper is shelved by owner decision on 4 November 2026. Its source and all native/cloud saves remain intact; public links and routes are hidden, and it no longer contributes to public profiles, Friends or current league standings. The unfinished rebuild is preserved on branch `sleeper-rebuild-shelved-20261104` (`9bd170e`), not deployed. Existing projects apply `supabase/shelve-sleeper.sql` after the league setup. Historical league weeks retain their original rules; the nine active games each become required twice per nine-week cycle.
+
 ## Answer acceptance audit — owner request, 1 November 2026
 
 Revision 15 closes 1,452 rejected inputs from a prompt-led 5,998-case editorial challenge spanning all 240 Sleeper questions. The cases include everyday concepts, regional wording and natural phrases; all pass after correction. A separate geographic reference contributes 930 common-name/ISO probes. Explicit grammar variants broaden action answers. The active bank has 8,974 canonical answers (25–159 per question), 10,377 aliases, and the unchanged 48-day rotation. Passing this regression set is evidence about the reviewed cases, not proof that most conceivable answers or actual player guesses are covered.

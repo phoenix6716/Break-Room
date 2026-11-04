@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const { chromium } = require('playwright');
 const base = process.env.ARCADE_TEST_URL || 'http://127.0.0.1:8000';
 const placeholderIds = ['pixel-pairs', 'word-forge', 'gridlock', 'number-drop', 'memory-lane', 'mystery-cabinet'];
-const routes = ['lowball','stack-up','pack','laser','time-drop','clue-ladder','seating-chart','hidden-gem','shift-work','inner-clock'].map(id=>`games/${id}/`);
+const routes = ['lowball','stack-up','pack','laser','time-drop','clue-ladder','seating-chart','shift-work','inner-clock'].map(id=>`games/${id}/`);
 async function lowballFrame(page) {
   const handle = await page.locator('#lowball-game-frame').elementHandle();
   const frame = await handle.contentFrame();
@@ -29,8 +29,8 @@ function check(condition, message) { assert.ok(condition, message); checks++; }
       await page.goto(base, {waitUntil: 'domcontentloaded'});
       check((await page.title()).includes('Break Room'), 'Homepage branding');
       const cards = page.locator('.game-grid .game-card');
-      check(await cards.count() === 10, 'Ten active homepage cards');
-      check((await page.locator('.section-head p').innerText()).includes('10 DAILY GAMES'), 'Shelf label matches current lineup');
+      check(await cards.count() === 9, 'Nine active homepage cards');
+      check((await page.locator('.section-head p').innerText()).includes('9 DAILY GAMES'), 'Shelf label matches current lineup');
       check((await cards.nth(0).locator('a').getAttribute('href')).includes('laser'), 'Laser first');
       check((await cards.nth(1).locator('a').getAttribute('href')).includes('time-drop'), 'Time Drop second');
       check(await page.locator('.coming-stamp').count() === 0, 'No placeholder cards on the homepage');

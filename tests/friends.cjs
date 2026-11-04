@@ -70,7 +70,7 @@ let offline=false,missing=false,queue=Promise.resolve();
 
  require('../hidden-gem-model.js');const HM=BREAK_ROOM_HIDDEN_GEM,HB=require('../content/hidden-gem-questions.json').questions;
  await db.exec('reset role');for(const name of ['alice','bob']){const r=HM.create(HB,today);HM.begin(r,1000);for(let i=0;i<5;i++){if(name==='alice'){HM.draft(r,r.questions[i].answers.find(a=>a.points===100).name,1001);HM.finish(r,1002);}else HM.expire(r,r.deadline);if(i<4)HM.next(r,1000);}await db.query('insert into public.hidden_gem_saves(user_id,game,data) values($1,$2,$3)',[ids[name],'hidden-gem',JSON.stringify({[HM.PREFIX+today]:JSON.stringify(r)})]);}
- await a.locator('#refresh-friends').click();await a.locator('#friend-content[aria-busy="false"]').waitFor();await a.locator('#comparison-game').selectOption('hidden-gem');assert.equal(await card(a,'Alice').locator('.overall strong').innerText(),'100');assert.equal(await card(a,'Bob').locator('.overall strong').innerText(),'0');assert.ok(!await a.locator('#friend-content').innerText().then(t=>t.includes(HB[0].prompt)));await a.locator('#comparison-game').selectOption('all');
+ await a.locator('#refresh-friends').click();await a.locator('#friend-content[aria-busy="false"]').waitFor();assert.equal(await a.locator('#comparison-game option[value=hidden-gem]').count(),0);assert.equal(await a.locator('#friend-content').innerText().then(t=>t.includes('SLEEPER')),false);assert.ok(!await a.locator('#friend-content').innerText().then(t=>t.includes(HB[0].prompt)));await a.locator('#comparison-game').selectOption('all');
 
 
  require('../shift-work-model.js');const WM=BREAK_ROOM_SHIFT_WORK,WB=require('../content/shift-work-boards.json').boards;

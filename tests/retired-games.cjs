@@ -1,8 +1,12 @@
 /* Public artifact contract: retired engines and history never become visible. */
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
 const {chromium}=require('playwright'),{qs}=require('./profile-records.cjs');
+require('../hidden-gem-model.js');const HM=BREAK_ROOM_HIDDEN_GEM,HB=require('../content/hidden-gem-questions.json').questions;
+const complete=HM.create(HB,'2026-10-19');HM.begin(complete,1);for(let i=0;i<5;i++){HM.draft(complete,complete.questions[i].answers[0].name,2);HM.finish(complete,3);HM.next(complete,4);}
+const unfinished=HM.create(HB,'2026-10-20');HM.begin(unfinished,1000);HM.draft(unfinished,unfinished.questions[0].answers[0].name,1001);
+const sleeperSaves={[HM.PREFIX+complete.day]:JSON.stringify(complete),[HM.PREFIX+unfinished.day]:JSON.stringify(unfinished)};
 const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
-const retired=["stake","prior","alibi","bouncer","pixel-pairs","word-forge","gridlock","number-drop","memory-lane","mystery-cabinet"],active=["laser","time-drop","clue-ladder","seating-chart","shift-work","hidden-gem","stack-up","pack","lowball","inner-clock"];
+const retired=["hidden-gem","stake","prior","alibi","bouncer","pixel-pairs","word-forge","gridlock","number-drop","memory-lane","mystery-cabinet"],active=["laser","time-drop","clue-ladder","seating-chart","shift-work","stack-up","pack","lowball","inner-clock"];
 const registry={window:{}};vm.runInNewContext(fs.readFileSync('dist/game-config.js','utf8'),registry);
 assert.deepEqual(Array.from(registry.window.MIDNIGHT_ARCADE_GAMES,g=>g.id).sort(),[...active].sort());
 for(const id of retired){
@@ -32,13 +36,16 @@ for(const file of htmlFiles('dist')){
    const returningPlayerFlags=Object.keys(localStorage).filter(k=>k.startsWith('break-room:help-seen:')).map(k=>[k,localStorage.getItem(k)]);localStorage.clear();for(const [key,value] of returningPlayerFlags)localStorage.setItem(key,value);for(let i=14;i<=20;i++)localStorage.setItem('stake:d:2026-10-'+i,JSON.stringify({b:[3,3,3,3,3],p:[0,0,0,0,0],qs}));
   },qs);
   const snapshot=()=>page.evaluate(()=>JSON.stringify(Object.fromEntries(Object.keys(localStorage).sort().map(k=>[k,localStorage.getItem(k)]))));
+  await page.evaluate(saves=>{for(const [key,value]of Object.entries(saves))localStorage.setItem(key,value);},sleeperSaves);
   const before=await snapshot();await page.reload();
   assert.equal(await page.locator('#total-runs').innerText(),'0');assert.equal(await page.locator('#arcade-average').innerText(),'—');
   assert.equal(await page.locator('#overall-streak').innerText(),'0 days');assert.equal(await page.locator('.profile-result').count(),0);
   assert.equal(await page.locator('.profile-achievement.earned').count(),0);assert.equal(await page.locator('.activity-day:not([data-count="0"])').count(),0);
-  assert.equal(await snapshot(),before,'Viewing profile preserves private saves');
-  for(const text of ['Stake','Prior','Alibi','Bouncer','Clean sweep'])assert(!(await page.locator('body').innerText()).includes(text),'No retired label: '+text);
-  assert.equal(await page.locator('.profile-game').count(),10);assert.equal(await page.locator('#result-filter option').count(),11);
+  assert.equal(await snapshot(),before,'Viewing profile preserves completed Sleeper results and unfinished captured questions, scores and deadlines byte for byte');
+  await page.goto(base+'/games/hidden-gem/index.html');await page.waitForURL(home);assert.equal(await snapshot(),before,'Redirect leaves all player saves unchanged');
+  await page.goto(base+'/profile.html');
+  for(const text of ['Stake','Prior','Alibi','Bouncer','Sleeper','Clean sweep'])assert(!(await page.locator('body').innerText()).includes(text),'No retired label: '+text);
+  assert.equal(await page.locator('.profile-game').count(),9);assert.equal(await page.locator('#result-filter option').count(),10);
   await page.evaluate(()=>{localStorage.setItem('pc_played','1');localStorage.setItem('pc_last','2026-10-20');localStorage.setItem('pc_last_avg','100');});
   const mixed=await snapshot();await page.reload();
   assert.equal(await page.locator('#total-runs').innerText(),'1');assert.equal(await page.locator('#arcade-average').innerText(),'100');

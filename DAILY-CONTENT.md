@@ -1,3 +1,7 @@
+## Launch roster update — 4 November 2026
+
+Sleeper is shelved by owner decision. The launch has nine games; earlier ten-game inventories below are historical. Public Sleeper routes redirect home, with source, native/cloud saves and scores preserved. `tests/daily-content.cjs` checks the nine shipped selectors. See the current roster in `game-config.js` and [README.md](README.md).
+
 ## Remove UNESCO prompts — owner correction, 31 October 2026
 
 Revision 10 removes all 24 UNESCO World Heritage property prompts from fresh Daily and Unlimited pools and replaces them with familiar everyday emoji categories: clothing, household items, tools, buildings, transport, flowers/plants, sporting equipment, toys, office items, technology, cameras/lighting, stationery, sound objects, weather/sky, hand gestures, jobs and foods. The category filter is now Everyday instead of Landmarks. All 240 prompts have at least ten canonical answers; the active bank has 7,633 answers, 10–321 per question. Each replacement uses the complete stated Unicode 16.0 subgroup roster with merged duplicate depictions, common aliases and emoji input; short scopes identify that finite boundary. Ratings use reviewed familiar/less-obvious anchors and neutral 50 for other entries.
