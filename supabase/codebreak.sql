@@ -35,8 +35,13 @@ create table if not exists public.codebreak_saves(
 alter table public.codebreak_saves enable row level security;
 revoke all on public.codebreak_saves from public,anon,authenticated;
 grant select on public.codebreak_saves to authenticated;
-drop policy if exists own_codebreak_read on public.codebreak_saves;
-create policy own_codebreak_read on public.codebreak_saves for select to authenticated using((select auth.uid())=user_id);
+do $$ begin
+ if exists(select 1 from pg_catalog.pg_policy where polrelid='public.codebreak_saves'::regclass and polname='own_codebreak_read') then
+  alter policy own_codebreak_read on public.codebreak_saves to authenticated using((select auth.uid())=user_id);
+ else
+  create policy own_codebreak_read on public.codebreak_saves for select to authenticated using((select auth.uid())=user_id);
+ end if;
+end $$;
 create or replace function br_codebreak.save(p_game text,p_data jsonb,p_revision bigint)
 returns jsonb language plpgsql security definer set search_path='' as $$
 declare who uuid:=auth.uid();stored public.codebreak_saves;k text;d date;v jsonb;
