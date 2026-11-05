@@ -1,4 +1,4 @@
-Profile, Friends and Leagues use compact dashboards. Profile separates Overview, Game stats, paged History and paged Achievements; social setup and detailed score breakdowns expand on demand. Existing scores, saves and sharing choices are unchanged. Responsive/navigation coverage: `tests/compact-hubs.cjs`.
+Profile, Friends and Leagues use compact dashboards. Profile separates Overview, paged Game stats, paged History and paged Achievements; social setup and detailed score breakdowns expand on demand. Existing scores, saves and sharing choices are unchanged. Responsive/navigation coverage: `tests/compact-hubs.cjs`.
 
 ## Sound and smooth feedback — owner request, 5 November 2026
 

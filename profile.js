@@ -10,7 +10,7 @@
   const dateLabel=day=>dates.format(new Date(day+'T00:00:00Z'));
   const readCurrent = storage => window.BREAK_ROOM_RECORDS.active(window.BREAK_ROOM_RECORDS.read(storage));
   const url=game=>'games/'+game+'/index.html';
-  let model=null,resultPage=0,signature='',achievementPage=0;
+  let model=null,resultPage=0,signature='',achievementPage=0,gamePage=0,gamePageSize=matchMedia('(max-width:760px)').matches?1:2;
   function score(value,game,average=false){
     if(value===null)return '—';
     if(game==='inner-clock')return value.toFixed(3);
@@ -33,10 +33,8 @@
     $('profile-dailies').replaceChildren(...model.games.map(game=>{const link=create('a','profile-daily '+game.today),state=game.today==='complete'?'✓ Complete':game.today==='progress'?'Resume →':'Play →';link.href=url(game.id);link.setAttribute('aria-label',game.name+' — '+state.replace(' →',''));link.append(create('strong',null,game.name),create('span',null,state));return link;}));
   }
   function renderGames(){
-    const selected=$('profile-game-filter').value||model.games[0]?.id;
-    $('profile-game-filter').replaceChildren(...model.games.map(game=>{const option=create('option',null,game.name);option.value=game.id;return option;}));$('profile-game-filter').value=selected;
     $('profile-games').replaceChildren(...model.games.map((game,index)=>{
-      const card=create('article','profile-game');card.dataset.game=game.id;card.hidden=game.id!==selected;
+      const card=create('article','profile-game');card.dataset.game=game.id;
       const top=create('div','profile-game-top'),state=game.today==='complete'?'✓ DAILY COMPLETE':game.today==='progress'?'DAILY IN PROGRESS':'DAILY READY';
       top.append(create('span','profile-game-number',String(index+1).padStart(2,'0')),create('span','profile-game-status '+game.today,state));
       const performance=create('div','profile-game-arcade');performance.append(create('span','profile-label',commonScore.has(game.id)?'AVERAGE SCORE · LAST 120 DAYS':'ARCADE AVERAGE · LAST 120 DAYS'));const average=create('strong',null,window.BREAK_ROOM_SCORE.format(game.arcade.average));average.append(create('small',null,' / 100'));performance.append(average,create('p',null,game.arcade.count+' saved Daily '+(game.arcade.count===1?'run':'runs')));
@@ -44,8 +42,9 @@
       const unified=commonScore.has(game.id),values=game.records.map(r=>r.arcadeScore),allAverage=values.length?values.reduce((a,b)=>a+b,0)/values.length:null,allBest=values.length?Math.max(...values):null;
       metrics.append(metric(unified?'Average score':'Original average',unified?window.BREAK_ROOM_SCORE.format(allAverage):score(game.average,game.id,true),unified?'out of 100':game.unit),metric(unified?'Best score':'Original best',unified?window.BREAK_ROOM_SCORE.format(allBest):score(game.best,game.id),unified||game.id==='lowball'?'out of 100':game.unit),metric('Daily runs',numbers.format(game.played),'completed'),metric('History streak',numbers.format(game.streak),game.streak===1?'day':'days'));
       const link=create('a','button',game.today==='complete'?'VIEW DAILY RESULT →':game.today==='progress'?'RESUME DAILY →':'PLAY DAILY →');link.href=url(game.id);link.setAttribute('aria-label',link.textContent.replace(' →','')+' — '+game.name);
-      card.append(top,create('span','profile-label',game.category),create('h3',null,game.name),performance,metrics,create('p','profile-game-note',game.note));card.append(link);return card;
+      card.append(top,create('span','profile-label',game.category),create('h3',null,game.name),performance,metrics);card.append(link);return card;
     }));
+    $('profile-game-notes').replaceChildren(...model.games.map(game=>{const note=create('p','profile-game-note',game.name+': '+game.note);note.dataset.game=game.id;return note;}));pageGames();
   }
   function renderActivity(){
     const end=Date.parse(model.today+'T00:00:00Z');
@@ -77,7 +76,13 @@
     const shown=new Set(eligible.slice(achievementPage*size,achievementPage*size+size));for(const card of cards)card.hidden=!shown.has(card);
     $('achievement-page').textContent=eligible.length?'Page '+(achievementPage+1)+' of '+pages:'No '+(filter==='earned'?'unlocked':'locked')+' achievements yet.';$('achievement-previous').disabled=achievementPage===0;$('achievement-next').disabled=achievementPage>=pages-1;
   }
-  $('profile-game-filter').onchange=()=>{for(const card of $('profile-games').children)card.hidden=card.dataset.game!==$('profile-game-filter').value;};
+  function pageGames(){
+    const cards=[...$('profile-games').children],pages=Math.max(1,Math.ceil(cards.length/gamePageSize));gamePage=Math.min(gamePage,pages-1);
+    for(const items of [cards,[...$('profile-game-notes').children]])items.forEach((card,index)=>{card.hidden=index<gamePage*gamePageSize||index>=(gamePage+1)*gamePageSize;});
+    $('game-page').textContent='Page '+(gamePage+1)+' of '+pages;$('game-previous').disabled=gamePage===0;$('game-next').disabled=gamePage>=pages-1;
+  }
+  $('game-previous').onclick=()=>{gamePage--;pageGames();};$('game-next').onclick=()=>{gamePage++;pageGames();};
+  matchMedia('(max-width:760px)').addEventListener('change',e=>{const first=gamePage*gamePageSize;gamePageSize=e.matches?1:2;gamePage=Math.floor(first/gamePageSize);pageGames();});
   $('achievement-filter').onchange=()=>{achievementPage=0;pageAchievements();};
   $('achievement-previous').onclick=()=>{achievementPage--;pageAchievements();};$('achievement-next').onclick=()=>{achievementPage++;pageAchievements();};
   function renderAchievements(){
