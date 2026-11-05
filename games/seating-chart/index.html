@@ -19,7 +19,7 @@
   <script src="../../arcade-score.js?v=shift-work-20261025"></script>
   <link rel="stylesheet" href="../../arcade-score.css">
   <script defer src="../../navigation.js?v=shift-work-20261025"></script>
-  <script src="../../pack-model.js?v=launch-20261023"></script><script src="../../prior-model.js?v=launch-20261023"></script><script src="../../laser-model.js?v=launch-20261023"></script><script src="../../alibi-model.js?v=playtest-20261023"></script><script src="../../bouncer-model.js?v=launch-20261023"></script><script src="../../inner-clock-model.js"></script><script defer src="shell.js"></script><script src="../../time-drop-model.js"></script><script src="../../clue-ladder-model.js"></script><script src="../../seating-chart-model.js"></script><script defer src="puzzles.js"></script><script defer src="seating-chart.js"></script>
+  <script src="../../pack-model.js?v=launch-20261023"></script><script src="../../prior-model.js?v=launch-20261023"></script><script src="../../laser-model.js?v=launch-20261023"></script><script src="../../alibi-model.js?v=playtest-20261023"></script><script src="../../bouncer-model.js?v=launch-20261023"></script><script src="../../inner-clock-model.js"></script><script defer src="shell.js?v=three-tables-20261105"></script><script src="../../time-drop-model.js"></script><script src="../../clue-ladder-model.js"></script><script src="../../seating-chart-model.js?v=three-tables-20261105"></script><script defer src="puzzles.js"></script><script defer src="seating-chart.js?v=three-tables-20261105"></script>
 <link rel="stylesheet" href="../../legal.css"><link rel="stylesheet" href="seating-chart.css"><link rel="stylesheet" href="../../game-access.css"><link rel="stylesheet" href="../../accounts.css"><script defer src="../../assets/vendor/supabase.js"></script><script defer src="../../account-config.js"></script><script src="../../hidden-gem-model.js"></script><script defer src="../../cloud-saves.js?v=shift-work-20261025"></script><script defer src="../../accounts.js?v=shift-work-20261025"></script><script src="../../shift-work-model.js?v=shift-work-20261025"></script><link rel="stylesheet" href="../../game-scenes.css?v=sets-20261027"><script defer src="../../game-scenes.js?v=sets-20261027"></script><link rel="stylesheet" href="../../game-art.css?v=objects-20261027">
 <script defer src="../../assets/game-art/manifest.js?v=objects-20261027"></script>
 <script defer src="../../game-art.js?v=objects-20261027"></script>
@@ -63,13 +63,13 @@
           <button id="mode-unlimited" role="tab" type="button" aria-selected="false" aria-controls="game-panel" tabindex="-1" data-game-mode="unlimited">Unlimited</button>
         </div>
         <!-- 05 REPLACE: progress content/round count; preserve the centred slot. -->
-        <div class="br-game-progress" id="game-progress" data-template-slot="progress" aria-label="Daily progress">TABLE 1 / 5</div>
+        <div class="br-game-progress" id="game-progress" data-template-slot="progress" aria-label="Daily progress">TABLE 1 / 3</div>
         <!-- 06 REPLACE: ONLY this area is the game's playing surface/engine. -->
         <section class="br-game-board" id="game-panel" role="tabpanel" aria-labelledby="mode-daily" tabindex="0">
           <p id="save-warning" role="status" hidden>Saving is unavailable. Your progress stays in memory while this page remains open.</p>
           <p id="sc-notice" role="status"></p>
           <div id="practice-settings" hidden><label>Table difficulty <select id="practice-tier"><option value="all">Mixed tables</option><option value="1">Easy · 6 guests</option><option value="2">Standard · 7 guests</option><option value="3">Tricky · 8 guests</option><option value="4">Hard · 9 guests</option><option value="5">Expert · 10 guests</option></select></label><p id="practice-note" role="status">Changes apply to the next table. Practice resumes in this tab.</p></div><div id="engine-slot"></div>
-          <p id="mode-description" class="game-sr-only" role="status">Daily · Five untimed tables.</p>
+          <p id="mode-description" class="game-sr-only" role="status">Daily · Three untimed tables.</p>
         </section>
       </div>
 
@@ -88,9 +88,10 @@
 <p><strong>2. Read the requests.</strong> Next to means immediate neighbours. Apart means not neighbours. One between means exactly one guest on the shorter path. Opposite means directly across an even-sized table. Every broken request creates one drama point. Select a guest to highlight their requests.</p>
 <p><strong>3. Aim for the stated minimum.</strong> Some hard tables have conflicting requests. Minimum drama is shown before you play; matching it is a perfect table, even when it is above zero. Every optimal arrangement counts.</p>
 <p><strong>4. Start the reception.</strong> Fill every seat, then commit once. The result locks immediately. Review each request, the reception mishaps and one optimal seating with its explanation. Undo and Reset are free before committing.</p>
-<p><strong>5. Five untimed Daily tables.</strong> Native score is total drama (lower is better). Arcade credit per table is 100 minus 20 for each avoidable drama point, floored at zero. Daily Arcade is the average of five tables. No timer, lives or speed bonus. Completed results, including zeroes, count towards stats, Profile and Friends.</p>
+<p data-sc-version="1" hidden><strong>5. Five untimed Daily tables.</strong> Native score is total drama (lower is better). Arcade credit per table is 100 minus 20 for each avoidable drama point, floored at zero. Daily Arcade is the average of five tables. No timer, lives or speed bonus. Completed results, including zeroes, count towards stats, Profile and Friends.</p>
 <p><strong>6. Saves and reset.</strong> Seating, selection, undo and locked results save as you go. Everyone gets the same set, resetting at midnight Australia/Sydney. There are 360 tables: 72 Daily sets before the deck repeats.</p>
-<p><strong>7. Unlimited.</strong> Free practice excludes today's five tables and does not repeat eligible table IDs until the chosen pool is exhausted. Difficulty changes apply next table. Practice is saved in this tab for the current account and stays separate from Daily/cloud history. Use the site's private Friends comparisons after completing Daily.</p></div>
+<p data-sc-version="2"><strong>5. Three untimed Daily tables.</strong> Play Easy (6 guests), Medium (8 guests), then Hard (10 guests). Native score is total drama, lower is better. Arcade credit is the average of the three tables. Each table earns 100 minus 20 for each avoidable drama point, floored at zero. Your third reception records the Daily result immediately. No timer, lives or speed bonus.</p>
+<p><strong>7. Unlimited.</strong> Free practice excludes today's captured Daily tables and does not repeat eligible table IDs until the chosen pool is exhausted. Difficulty changes apply next table. Practice is saved in this tab for the current account and stays separate from Daily/cloud history. Use the site's private Friends comparisons after completing Daily.</p></div>
 <button class="button pink popup-done" type="button" data-popup-close>GOT IT</button>
     </section>
   </div>

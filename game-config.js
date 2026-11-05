@@ -29,7 +29,7 @@ window.MIDNIGHT_ARCADE_GAMES = [
     "title": "Seating Chart",
     "category": "SEATING / LOGIC",
     "description": "Seat the guests. Keep the drama to a minimum.",
-    "instructions": "Arrange five untimed Daily tables. Match the stated minimum drama for full credit. First reception counts; free Unlimited practice.",
+    "instructions": "Arrange three untimed Daily tables: easy, medium and hard. Match the stated minimum drama for full credit. First reception counts; free Unlimited practice.",
     "accent": "green",
     "status": "live",
     "scoreMax": 60,

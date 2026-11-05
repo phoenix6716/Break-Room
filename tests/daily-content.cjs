@@ -8,7 +8,7 @@ const defs=[
  {id:'laser',name:'Laser',file:'boards',key:'LASER_BOARDS',rounds:4,period:32,validate:'board'},
  {id:'time-drop',name:'Time Drop',file:'events',key:'TIME_DROP_EVENTS',rounds:5,period:66,validate:'event'},
  {id:'clue-ladder',name:'Clue Ladder',file:'puzzles',key:'CLUE_LADDER_PUZZLES',rounds:5,period:60,validate:'puzzle'},
- {id:'seating-chart',name:'Seating Chart',file:'puzzles',key:'SEATING_CHART_PUZZLES',rounds:5,period:72,validate:'puzzle'},
+ {id:'seating-chart',name:'Seating Chart',file:'puzzles',key:'SEATING_CHART_PUZZLES',rounds:3,defaultBankCount:216,period:72,validate:'puzzle'},
  {id:'shift-work',name:'Desk Jam',file:'boards',key:'SHIFT_WORK_BOARDS',rounds:3,period:40,validate:'validBoard'},
  {id:'pack',name:'Pack',file:'puzzles',key:'PACK_PUZZLES',rounds:3,period:32,validate:'validBag'}
 ];

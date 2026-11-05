@@ -27,7 +27,7 @@
   if(game==='codebreak')return root.BREAK_ROOM_CODEBREAK?.valid(v,key.slice(-10))?root.BREAK_ROOM_CODEBREAK.rank(v):-1;
   if(game==='shift-work')return root.BREAK_ROOM_SHIFT_WORK?.valid(v,key.slice(-10))?v.results.length===3?999999:v.round*100000+(v.phase==='review'?30000:10000)+v.edits/1000000:-1;
   if(game==='hidden-gem')return root.BREAK_ROOM_HIDDEN_GEM?.valid(v,key.slice(-10))?v.picks.length===5?999999:v.round*100000+({ready:0,active:10000,review:30000,summary:40000}[v.phase]||0)+v.edits/1000000:-1;
-  if(game==='seating-chart')return root.BREAK_ROOM_SEATING_CHART?.valid(v,key.slice(-10))?v.picks.length===5?999999:v.round*100000+(v.phase==='review'?30000:10000)+v.edits/1000000:-1;
+  if(game==='seating-chart')return root.BREAK_ROOM_SEATING_CHART?.valid(v,key.slice(-10))?v.picks.length===root.BREAK_ROOM_SEATING_CHART.rounds(v)?999999:v.round*100000+(v.phase==='review'?30000:10000)+v.edits/1000000:-1;
   if(game==='clue-ladder')return root.BREAK_ROOM_CLUE_LADDER?.valid(v,key.slice(-10))?v.picks.length===5?999999:v.round*100000+(v.phase==='review'?30000:10000)+v.attempts.length*1000+v.edits/1000000:-1;
   if(game==='time-drop')return root.BREAK_ROOM_TIME_DROP?.valid(v,key.slice(-10))?v.picks.length===root.BREAK_ROOM_TIME_DROP.rounds(v)?999999:v.round*100000+(v.phase==='review'?30000:10000)+v.edits/1000000:-1;
   if(game==='inner-clock')return root.BREAK_ROOM_INNER_CLOCK?.valid(v,key.slice(-10))?v.picks.length===5?999999:v.round*100000+(v.phase==='review'?30000:10000)+v.edits/1000000:-1;
@@ -72,9 +72,9 @@
   if(game==='lowball')return clean(game,lowMerge(local,remote));
   const out={...remote};
   for(const [key,value]of Object.entries(local)){
-   // A captured cloud Codebreak round owns its rules, even before completion.
+   // A captured cloud round owns its rules, even before completion.
    // Never combine attempts made with different clue or score versions.
-   if(game==='codebreak'&&out[key]!==undefined&&rank(game,value,key)>=0&&rank(game,out[key],key)>=0&&parse(value).version!==parse(out[key]).version)continue;
+   if(['codebreak','seating-chart'].includes(game)&&out[key]!==undefined&&rank(game,value,key)>=0&&rank(game,out[key],key)>=0&&parse(value).version!==parse(out[key]).version)continue;
    if(out[key]===undefined||rank(game,value,key)>rank(game,out[key],key))out[key]=value;
   }
   if(game==='stake'){

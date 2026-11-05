@@ -1,3 +1,11 @@
+## Seating Chart has three Daily puzzles — 5 November 2026
+
+Fresh version-2 Dailies contain Easy (6 guests, original tier 1), Medium (8 guests, tier 3) and Hard (10 guests, tier 5), in that order. Keep the original 72-day index/epoch and unchanged 360-table bank. These 216 tables provide 72 nonrepeating three-table sets; all five original practice tiers remain available in Unlimited. Structural tiers are not human difficulty certification.
+
+Each table retains the original avoidable-drama formula. Daily Arcade is the three-table average (3,000 internal points / 30); native total drama remains lower-is-better. Saved version-1 Dailies keep five tables, their picks/drafts/Undo, original points / 50 and history. The third or fifth reception counts immediately according to its captured version. Perfect host means all tables in that captured Daily. Cloud merges retain the first remote capture's version. Do not mix three/five-table attempts or regrade history.
+
+Existing projects apply `supabase/seating-chart-three.sql`. Fresh Friends, Inner Clock and standalone Seating Chart installers include both score formats. The live update changes only the private score reader; no player rows or shared write API change. Archive: `content/archive/2026-11-05-pre-seating-chart-three/`. See [the current contract](games/seating-chart/README.md); earlier five-table notes below are historical.
+
 ## Codebreak safe input and four-guess scoring — 5 November 2026
 
 The safe display is now the single native code input. Keep tap/keyboard entry, keypad, deletion, clearing, focus visibility, screen-reader labels and immediate draft saves working through that input. Fresh version-4 rounds award 100 through four guesses, then 90 / 80 / 70 / 60 on guesses 5–8; failure remains zero. Existing v1/v2/v3 captures retain their original digit ranges, clues and scoring, while using the new input surface. Do not regrade or change captured versions. The 6,561-day current calendar and eight-guess limit are unchanged; Clear signal still means within three guesses.

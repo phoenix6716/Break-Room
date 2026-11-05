@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-05",
+  "change": "Three Daily Seating Chart puzzles in increasing structural tiers",
+  "newVersion": 2,
+  "daily": [
+    {
+      "label": "Easy",
+      "tier": 1,
+      "guests": 6,
+      "requests": 4
+    },
+    {
+      "label": "Medium",
+      "tier": 3,
+      "guests": 8,
+      "requests": 7
+    },
+    {
+      "label": "Hard",
+      "tier": 5,
+      "guests": 10,
+      "requests": 11
+    }
+  ],
+  "rotationDays": 72,
+  "dailyPool": 216,
+  "unchangedPracticeBank": 360,
+  "bankWorkflow": "Source and generated bank unchanged; reproducible generator equality and all 360 independently exhausted optima checked. Only Daily selection/run format changes.",
+  "scoring": {
+    "table": "max(0,100 - 20 \u00d7 avoidable drama)",
+    "daily": "mean of three table credits",
+    "internalMax": 3000,
+    "arcadeDivisor": 30,
+    "legacyVersion1": {
+      "tables": 5,
+      "internalMax": 5000,
+      "arcadeDivisor": 50
+    }
+  },
+  "preservation": [
+    "All captured v1 tables, picks, drafts, Undo and phases",
+    "Completed five-table scores and zeroes",
+    "Owner-scoped Unlimited state and five practice filters",
+    "Original 72-day calendar positions of retained tiers",
+    "Read-only profile history and cloud key format"
+  ],
+  "cloud": "Remote captured version wins cross-version client merges. Shared live write API is unchanged.",
+  "migration": "supabase/seating-chart-three.sql",
+  "archive": "content/archive/2026-11-05-pre-seating-chart-three/",
+  "verification": [
+    "All 360 original table optima independently exhausted",
+    "72 three-table sets without repeated IDs and exact subset parity against archived v1",
+    "Legacy SQL row unchanged through repeatable migration; old/new score parity",
+    "Three-table Daily completion on third reception; captured five-table restoration",
+    "320\u20131440px real seating controls, Undo/Reset, review, help, sharing and profile",
+    "Full 357-table new Unlimited eligible pool and refill",
+    "Affected accounts, Friends and league privacy/score checks"
+  ],
+  "limits": [
+    "Difficulty labels follow increasing guests/requests and original tiers, not measured human difficulty",
+    "Optimal arrangement fractions can overlap between tiers",
+    "Responsive Chromium checks do not certify real-device Safari",
+    "Deployment and live verification are separate release checks"
+  ],
+  "localChecks": "Passed: all selected content/model/database/calendar/profile/cloud unit checks and account, Friends freshness/Friends, game surface, league, profile, release, Seating Chart and smoke browser suites; build/static references and legal footer checks.",
+  "liveDatabase": {
+    "migration": "seating_chart_three_daily",
+    "applied": true,
+    "playerRowsUnchanged": true,
+    "sharedWriteApiUnchanged": true,
+    "oldFiveAndNewThreeTableScoresVerified": true,
+    "privateScoreExecutionRevoked": true,
+    "newSecurityAdvisorTypes": 0
+  }
+}
