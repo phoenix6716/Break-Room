@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "reviewedAt": "2026-10-27",
+  "version": 2,
+  "reviewedAt": "2026-11-05",
   "policy": "No maths, numerical-fact or time-unit tasks. Retain chronology and qualitative knowledge ordering. Ranks are internal sort keys, not content questions.",
   "challenge": [
     {
@@ -467,7 +467,7 @@
     },
     {
       "category": "SCREEN TIME",
-      "prompt": "Order these story moments from The Wizard of Oz, following the film's story.",
+      "prompt": "Order these story moments from the 1939 film The Wizard of Oz, following Dorothy's journey.",
       "ends": [
         "FIRST",
         "LAST"

@@ -1,13 +1,13 @@
 /* Familiar default stacks. Saved snapshots and the original challenge bank stay intact; maths is excluded from new practice. */
-const fs=require('node:fs'),ref=JSON.parse(fs.readFileSync('content/reference-data.json','utf8'));
+const fs=require('node:fs');
 function rng(seed){let h=2166136261;for(const c of seed)h=Math.imul(h^c.charCodeAt(0),16777619);return()=>{h+=0x6D2B79F5;let x=Math.imul(h^(h>>>15),1|h);x^=x+Math.imul(x^(x>>>7),61|x);return((x^(x>>>14))>>>0)/4294967296;};}
 function shuffled(a,r){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function combos(items,k=5){const out=[];function add(a,start){if(a.length===k){out.push(a);return;}for(let i=start;i<items.length;i++)add([...a,items[i]],i+1);}add([],0);return out;}
 const rows=[],audit=[],counts=Array(5).fill(0);
-function add(lane,category,prompt,ends,values,unit,sources,explanation){
+function add(lane,category,prompt,ends,values,unit,sources,explanation,idOverride,ordering='sequence'){
  const sorted=values.slice().sort((a,b)=>a.value-b.value);if(sorted.some((x,i)=>i&&x.value<=sorted[i-1].value))throw Error('Tied familiar stack');
- const id='stack-familiar-'+lane+'-'+String(++counts[lane]).padStart(3,'0');
- rows.push({id,collection:'familiar',lane,difficulty:lane<2?'easy':lane<4?'medium':'hard',category,prompt,ends,fact:explanation?explanation+' '+sorted.map(x=>x.name).join(' → ')+'.':sorted.map(x=>x.name+': '+(x.display||x.value)+(unit?' '+unit:'')).join('; ')+'.',cards:sorted.map((x,i)=>({name:x.name,detail:'',value:i+1,symbol:lane===2?'★':lane>=3?'◆':'◇'}))});
+ counts[lane]++;const id=idOverride||'stack-familiar-'+lane+'-'+String(counts[lane]).padStart(3,'0');
+ rows.push({id,collection:'familiar',theme:prompt,ordering,lane,difficulty:lane<2?'easy':lane<4?'medium':'hard',category,prompt,ends,fact:explanation?explanation+' '+sorted.map(x=>x.name).join(' → ')+'.':sorted.map(x=>x.name+': '+(x.display||x.value)+(unit?' '+unit:'')).join('; ')+'.',cards:sorted.map((x,i)=>({name:x.name,detail:'',value:i+1,symbol:lane===2?'★':lane>=3?'◆':'◇'}))});
  audit.push({id,source:category,unit,sources,ordered:sorted});
 }
 function family(lane,category,prompt,ends,items,count,unit,sources,seed,explanation){
@@ -15,14 +15,26 @@ function family(lane,category,prompt,ends,items,count,unit,sources,seed,explanat
  if(candidates.length<count)throw Error('Not enough familiar combinations');
  for(const values of candidates.slice(0,count))add(lane,category,prompt,ends,values,unit,sources,explanation);
 }
-const sequence=names=>names.map((name,i)=>({name,value:i+1}));
-family(1,'SCIENCE','Order these planets by distance from the Sun, nearest first.',['NEARER','FARTHER'],sequence(['Mercury','Venus','Earth','Mars','Jupiter','Saturn','Uranus','Neptune']),16,'(planet from the Sun)',['https://science.nasa.gov/solar-system/planets/'],'familiar:planets:1');
 const topics=JSON.parse(fs.readFileSync('content/stack-up-familiar-topics.json','utf8')).families;
-function authored(lane){for(const f of topics.filter(f=>f.lane===lane))family(lane,f.category,f.prompt,f.ends,f.items,f.count,f.unit,f.sources,f.seed,f.explanation);}
-authored(0);authored(1);
-const films=['The Lion King','Toy Story','Finding Nemo','Shrek','The Incredibles','Ratatouille','Up','Titanic','Jurassic Park','Back to the Future','The Dark Knight','The Matrix','Jaws','The Terminator','Monsters, Inc.','The Truman Show'];
-family(2,'SCREEN TIME','Order these original films by their first US release, oldest first.',['OLDER','NEWER'],films.map(name=>({name,value:ref.movies[name].year})),32,'',['https://www.afi.com/afi-catalog/'],'familiar:films:1');
-authored(3);authored(4);
+// Use the existing shuffled ID calendar. Each theme occupies slots k and k+16.
+// Interleave related topics rather than grouping recipes, life cycles or film releases.
+const themeOrder=[
+ [0,4,8,1,5,13,2,6,15,3,7,10,14,9,12,11],
+ [0,2,9,6,1,3,11,7,4,10,5,14,12,15,13,8],
+ [0,7,1,8,13,2,9,3,10,14,4,11,5,15,6,12],
+ [0,5,10,7,1,6,11,9,3,14,12,8,2,15,13,4],
+ [1,0,4,11,5,6,2,13,7,12,8,3,9,14,10,15]
+];
+for(let lane=0;lane<5;lane++){
+ const ids=shuffled(Array.from({length:32},(_,i)=>'stack-familiar-'+lane+'-'+String(i+1).padStart(3,'0')),rng('stack-up:familiar:1:'+lane));
+ for(let slot=0;slot<16;slot++){
+  const f=topics.find(f=>f.lane===lane&&f.slot===themeOrder[lane][slot]);if(!f)throw Error('Missing authored theme');
+  const candidates=shuffled(combos(f.items),rng(f.seed)),first=candidates[0],names=new Set(first.map(x=>x.name));
+  const second=candidates.slice(1).sort((a,b)=>a.filter(x=>names.has(x.name)).length-b.filter(x=>names.has(x.name)).length)[0];
+  if(!second)throw Error('A theme needs two distinct five-card selections');
+  [first,second].forEach((values,i)=>add(lane,f.category,f.prompt,f.ends,values,f.unit,f.sources,f.explanation,ids[slot+16*i],f.ordering));
+ }
+}
 if(counts.some(n=>n!==32)||rows.length!==160)throw Error('Familiar lane coverage');
 const replacements=[],replacementAudit=[];
 const replacementTopics=JSON.parse(fs.readFileSync('content/stack-up-familiar-challenge-topics.json','utf8'));
@@ -31,12 +43,12 @@ for(const f of replacementTopics.challenge){
  if(candidates.length<f.ids.length)throw Error('Not enough challenge combinations');
  f.ids.forEach((id,index)=>{
   const sorted=candidates[index].slice().sort((a,b)=>a.value-b.value);
-  replacements.push({id,collection:'challenge',difficulty:'hard',category:f.category,prompt:f.prompt,ends:f.ends,fact:f.explanation+' '+sorted.map(x=>x.name).join(' → ')+'.',cards:sorted.map((x,i)=>({name:x.name,detail:'',value:i+1,symbol:'◆'}))});
+  replacements.push({id,collection:'challenge',theme:f.prompt,difficulty:'hard',category:f.category,prompt:f.prompt,ends:f.ends,fact:f.explanation+' '+sorted.map(x=>x.name).join(' → ')+'.',cards:sorted.map((x,i)=>({name:x.name,detail:'',value:i+1,symbol:'◆'}))});
   replacementAudit.push({id,source:f.category,unit:'sequence position',sources:f.sources,ordered:sorted});
  });
 }
 if(replacements.length!==105||new Set(replacements.map(s=>s.id)).size!==105)throw Error('Challenge replacement coverage');
 rows.sort((a,b)=>a.id.localeCompare(b.id));audit.sort((a,b)=>a.id.localeCompare(b.id));
 fs.writeFileSync('games/stack-up/familiar-stacks.js','/* Generated by scripts/build-familiar-stacks.cjs. */\nwindow.STACK_UP_FAMILIAR_STACKS='+JSON.stringify(rows)+';\nwindow.STACK_UP_REPLACEMENT_STACKS='+JSON.stringify(replacements)+';\n');
-fs.writeFileSync('content/stack-up-familiar.json',JSON.stringify({version:3,reviewedAt:'2026-10-27',note:'No maths, numerical facts or time-unit questions in new Dailies or Unlimited. Chronology stays available. Stable lane slots and immutable saved snapshots.',stacks:audit},null,2)+'\n');
-fs.writeFileSync('content/stack-up-familiar-challenge-audit.json',JSON.stringify({version:1,reviewedAt:'2026-10-27',note:'Active replacements for quantitative legacy Challenge slots; originals are frozen for saved-history compatibility.',stacks:replacementAudit},null,2)+'\n');
+fs.writeFileSync('content/stack-up-familiar.json',JSON.stringify({version:4,reviewedAt:'2026-11-05',note:'80 distinct themes; two five-card variants 16 calendar slots apart. Stable 32-day ID rotation, immutable saved captures and no numerical-fact or time-unit questions.',stacks:audit},null,2)+'\n');
+fs.writeFileSync('content/stack-up-familiar-challenge-audit.json',JSON.stringify({version:2,reviewedAt:'2026-11-05',note:'Retained replacements for quantitative legacy slots; Wizard of Oz wording identifies the 1939 film. Fresh practice deduplicates themes; originals remain for saved-history compatibility.',stacks:replacementAudit},null,2)+'\n');

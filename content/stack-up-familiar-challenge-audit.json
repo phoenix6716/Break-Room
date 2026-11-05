@@ -1,7 +1,7 @@
 {
-  "version": 1,
-  "reviewedAt": "2026-10-27",
-  "note": "Active replacements for quantitative legacy Challenge slots; originals are frozen for saved-history compatibility.",
+  "version": 2,
+  "reviewedAt": "2026-11-05",
+  "note": "Retained replacements for quantitative legacy slots; Wizard of Oz wording identifies the 1939 film. Fresh practice deduplicates themes; originals remain for saved-history compatibility.",
   "stacks": [
     {
       "id": "stack-001",

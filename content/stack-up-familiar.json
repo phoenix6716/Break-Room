@@ -1,35 +1,35 @@
 {
-  "version": 3,
-  "reviewedAt": "2026-10-27",
-  "note": "No maths, numerical facts or time-unit questions in new Dailies or Unlimited. Chronology stays available. Stable lane slots and immutable saved snapshots.",
+  "version": 4,
+  "reviewedAt": "2026-11-05",
+  "note": "80 distinct themes; two five-card variants 16 calendar slots apart. Stable 32-day ID rotation, immutable saved captures and no numerical-fact or time-unit questions.",
   "stacks": [
     {
       "id": "stack-familiar-0-001",
       "source": "EVERYDAY",
       "unit": "sequence position",
       "sources": [
-        "https://www.bbcgoodfood.com/recipes/easy-white-bread"
+        "https://en.wikipedia.org/wiki/Library_circulation"
       ],
       "ordered": [
         {
-          "name": "Mix the dough ingredients",
+          "name": "Choose a book from the shelves",
           "value": 1
         },
         {
-          "name": "Let the dough complete its first rise",
+          "name": "Take the borrowed book home",
           "value": 3
         },
         {
-          "name": "Let the shaped loaf prove",
+          "name": "Return the book to the library",
+          "value": 5
+        },
+        {
+          "name": "The library checks the returned book in",
           "value": 6
         },
         {
-          "name": "Bake the loaf",
+          "name": "The returned book goes back on the shelf",
           "value": 7
-        },
-        {
-          "name": "Cool the baked loaf",
-          "value": 8
         }
       ]
     },
@@ -38,88 +38,88 @@
       "source": "EVERYDAY",
       "unit": "sequence position",
       "sources": [
-        "https://www.bbcgoodfood.com/recipes/easy-white-bread"
+        "https://en.wikipedia.org/wiki/Mail"
       ],
       "ordered": [
         {
-          "name": "Mix the dough ingredients",
+          "name": "Write the letter",
           "value": 1
         },
         {
-          "name": "Knead the dough",
-          "value": 2
-        },
-        {
-          "name": "Let the dough complete its first rise",
+          "name": "Seal and address the envelope",
           "value": 3
         },
         {
-          "name": "Shape the loaf",
+          "name": "Post the letter",
           "value": 5
         },
         {
-          "name": "Let the shaped loaf prove",
-          "value": 6
+          "name": "A postal worker delivers the letter",
+          "value": 7
+        },
+        {
+          "name": "The recipient opens the envelope",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-0-003",
-      "source": "EVERYDAY",
+      "source": "FOOD",
       "unit": "sequence position",
       "sources": [
-        "https://www.bbcgoodfood.com/recipes/easy-white-bread"
+        "https://en.wikipedia.org/wiki/Popcorn"
       ],
       "ordered": [
         {
-          "name": "Mix the dough ingredients",
-          "value": 1
-        },
-        {
-          "name": "Knead the dough",
+          "name": "Add popcorn kernels to the hot oil",
           "value": 2
         },
         {
-          "name": "Let the dough complete its first rise",
+          "name": "Cover the pan",
           "value": 3
         },
         {
-          "name": "Cool the baked loaf",
-          "value": 8
+          "name": "The heated kernels start to pop",
+          "value": 4
         },
         {
-          "name": "Slice the cooled loaf",
-          "value": 9
+          "name": "Take the pan off the heat as popping slows",
+          "value": 5
+        },
+        {
+          "name": "Tip the popped corn into a serving bowl",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-0-004",
-      "source": "EVERYDAY",
+      "source": "FOOD",
       "unit": "sequence position",
       "sources": [
-        "https://www.bbcgoodfood.com/recipes/easy-white-bread"
+        "https://en.wikipedia.org/wiki/Rice"
       ],
       "ordered": [
         {
-          "name": "Let the dough complete its first rise",
+          "name": "Rinse the uncooked rice",
+          "value": 1
+        },
+        {
+          "name": "Put the rinsed rice and measured water in a pan",
+          "value": 2
+        },
+        {
+          "name": "Bring the pan to a boil",
           "value": 3
         },
         {
-          "name": "Knock back the risen dough",
-          "value": 4
+          "name": "Turn off the heat and let the rice stand",
+          "value": 5
         },
         {
-          "name": "Let the shaped loaf prove",
+          "name": "Fluff the cooked rice",
           "value": 6
-        },
-        {
-          "name": "Bake the loaf",
-          "value": 7
-        },
-        {
-          "name": "Cool the baked loaf",
-          "value": 8
         }
       ]
     },
@@ -128,853 +128,879 @@
       "source": "EVERYDAY",
       "unit": "sequence position",
       "sources": [
-        "https://www.bbcgoodfood.com/recipes/easy-white-bread"
+        "https://en.wikipedia.org/wiki/Mail"
       ],
       "ordered": [
         {
-          "name": "Mix the dough ingredients",
-          "value": 1
-        },
-        {
-          "name": "Shape the loaf",
-          "value": 5
-        },
-        {
-          "name": "Let the shaped loaf prove",
-          "value": 6
-        },
-        {
-          "name": "Bake the loaf",
-          "value": 7
-        },
-        {
-          "name": "Slice the cooled loaf",
-          "value": 9
-        }
-      ]
-    },
-    {
-      "id": "stack-familiar-0-006",
-      "source": "EVERYDAY",
-      "unit": "sequence position",
-      "sources": [
-        "https://www.bbcgoodfood.com/recipes/easy-white-bread"
-      ],
-      "ordered": [
-        {
-          "name": "Knead the dough",
+          "name": "Put the finished letter in an envelope",
           "value": 2
         },
         {
-          "name": "Let the dough complete its first rise",
+          "name": "Seal and address the envelope",
           "value": 3
         },
         {
-          "name": "Knock back the risen dough",
+          "name": "Pay the postage",
           "value": 4
         },
         {
-          "name": "Bake the loaf",
-          "value": 7
-        },
-        {
-          "name": "Slice the cooled loaf",
-          "value": 9
-        }
-      ]
-    },
-    {
-      "id": "stack-familiar-0-007",
-      "source": "EVERYDAY",
-      "unit": "sequence position",
-      "sources": [
-        "https://www.bbcgoodfood.com/recipes/easy-white-bread"
-      ],
-      "ordered": [
-        {
-          "name": "Mix the dough ingredients",
-          "value": 1
-        },
-        {
-          "name": "Knead the dough",
-          "value": 2
-        },
-        {
-          "name": "Knock back the risen dough",
-          "value": 4
-        },
-        {
-          "name": "Let the shaped loaf prove",
+          "name": "The postal service sorts the letter",
           "value": 6
         },
         {
-          "name": "Cool the baked loaf",
+          "name": "The recipient opens the envelope",
           "value": 8
         }
       ]
     },
     {
-      "id": "stack-familiar-0-008",
-      "source": "EVERYDAY",
+      "id": "stack-familiar-0-006",
+      "source": "FOOD",
       "unit": "sequence position",
       "sources": [
-        "https://www.bbcgoodfood.com/recipes/easy-white-bread"
+        "https://en.wikipedia.org/wiki/Pasta"
       ],
       "ordered": [
         {
-          "name": "Mix the dough ingredients",
+          "name": "Fill a saucepan with water",
           "value": 1
         },
         {
-          "name": "Knock back the risen dough",
+          "name": "Bring the water to a boil",
+          "value": 2
+        },
+        {
+          "name": "Add the dried pasta to the boiling water",
+          "value": 3
+        },
+        {
+          "name": "Cook until the pasta is ready",
           "value": 4
         },
         {
-          "name": "Shape the loaf",
+          "name": "Drain the cooked pasta",
           "value": 5
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-007",
+      "source": "PHOTOGRAPHY",
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Photographic_processing"
+      ],
+      "ordered": [
+        {
+          "name": "Load an unused roll of film into the camera",
+          "value": 1
         },
         {
-          "name": "Let the shaped loaf prove",
+          "name": "Rewind the exposed roll",
+          "value": 3
+        },
+        {
+          "name": "Remove the exposed roll from the camera",
+          "value": 4
+        },
+        {
+          "name": "Print photographs from the developed negatives",
           "value": 6
         },
         {
-          "name": "Slice the cooled loaf",
-          "value": 9
+          "name": "Display the finished prints",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-0-008",
+      "source": "GARDEN",
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Seedling"
+      ],
+      "ordered": [
+        {
+          "name": "Water the newly sown seed",
+          "value": 3
+        },
+        {
+          "name": "The seed germinates",
+          "value": 4
+        },
+        {
+          "name": "A shoot appears above the soil",
+          "value": 5
+        },
+        {
+          "name": "The seedling grows its first true leaves",
+          "value": 6
+        },
+        {
+          "name": "Repot the established seedling into a larger pot",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-0-009",
-      "source": "NATURE",
+      "source": "TRAVEL",
       "unit": "sequence position",
       "sources": [
-        "https://www.floridamuseum.ufl.edu/educators/resource/butterfly-life-cycle/"
+        "https://en.wikipedia.org/wiki/Air_travel"
       ],
       "ordered": [
         {
-          "name": "An egg is laid",
+          "name": "Check in for the flight",
           "value": 1
         },
         {
-          "name": "The caterpillar hatches",
-          "value": 2
+          "name": "The aircraft taxis to the runway",
+          "value": 4
         },
         {
-          "name": "The caterpillar feeds and grows",
-          "value": 3
-        },
-        {
-          "name": "The adult butterfly emerges",
+          "name": "The aircraft takes off",
           "value": 5
         },
         {
-          "name": "The butterfly expands its wings",
+          "name": "The aircraft lands at the destination",
           "value": 6
+        },
+        {
+          "name": "Leave the arrivals area",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-0-010",
-      "source": "NATURE",
+      "source": "EVERYDAY",
       "unit": "sequence position",
       "sources": [
-        "https://www.floridamuseum.ufl.edu/educators/resource/butterfly-life-cycle/"
+        "https://en.wikipedia.org/wiki/Printing"
       ],
       "ordered": [
         {
-          "name": "The caterpillar hatches",
+          "name": "Finish editing the document",
+          "value": 1
+        },
+        {
+          "name": "Open the print settings",
           "value": 2
         },
         {
-          "name": "The caterpillar forms a chrysalis",
+          "name": "Send the print job to the printer",
+          "value": 3
+        },
+        {
+          "name": "The printer feeds in the paper",
           "value": 4
         },
         {
-          "name": "The adult butterfly emerges",
-          "value": 5
-        },
-        {
-          "name": "The butterfly expands its wings",
-          "value": 6
-        },
-        {
-          "name": "The adult takes its first flight",
+          "name": "Collect the finished printout",
           "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-0-011",
-      "source": "NATURE",
+      "source": "TRAVEL",
       "unit": "sequence position",
       "sources": [
-        "https://www.floridamuseum.ufl.edu/educators/resource/butterfly-life-cycle/"
+        "https://en.wikipedia.org/wiki/Air_travel"
       ],
       "ordered": [
         {
-          "name": "The caterpillar feeds and grows",
+          "name": "Check in for the flight",
+          "value": 1
+        },
+        {
+          "name": "Go through departure security",
+          "value": 2
+        },
+        {
+          "name": "Board the aircraft",
           "value": 3
         },
         {
-          "name": "The caterpillar forms a chrysalis",
-          "value": 4
-        },
-        {
-          "name": "The adult butterfly emerges",
-          "value": 5
-        },
-        {
-          "name": "The butterfly expands its wings",
-          "value": 6
-        },
-        {
-          "name": "The adult takes its first flight",
+          "name": "Passengers leave the aircraft",
           "value": 7
+        },
+        {
+          "name": "Leave the arrivals area",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-0-012",
-      "source": "NATURE",
+      "source": "EVERYDAY",
       "unit": "sequence position",
       "sources": [
-        "https://www.floridamuseum.ufl.edu/educators/resource/butterfly-life-cycle/"
+        "https://en.wikipedia.org/wiki/Dishwashing"
       ],
       "ordered": [
         {
-          "name": "An egg is laid",
-          "value": 1
-        },
-        {
-          "name": "The caterpillar hatches",
+          "name": "Fill the sink with warm soapy water",
           "value": 2
         },
         {
-          "name": "The caterpillar feeds and grows",
+          "name": "Wash the dishes in the soapy water",
           "value": 3
         },
         {
-          "name": "The butterfly expands its wings",
+          "name": "Rinse the washed dishes",
+          "value": 4
+        },
+        {
+          "name": "Let the dishes dry",
           "value": 6
         },
         {
-          "name": "The adult takes its first flight",
+          "name": "Put the dry dishes away",
           "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-0-013",
-      "source": "NATURE",
+      "source": "EVERYDAY",
       "unit": "sequence position",
       "sources": [
-        "https://www.floridamuseum.ufl.edu/educators/resource/butterfly-life-cycle/"
+        "https://en.wikipedia.org/wiki/Bread"
       ],
       "ordered": [
         {
-          "name": "An egg is laid",
-          "value": 1
-        },
-        {
-          "name": "The caterpillar hatches",
+          "name": "Knead the dough",
           "value": 2
         },
         {
-          "name": "The caterpillar feeds and grows",
+          "name": "Let the dough rise",
           "value": 3
         },
         {
-          "name": "The caterpillar forms a chrysalis",
+          "name": "Shape the risen dough into a loaf",
           "value": 4
         },
         {
-          "name": "The adult takes its first flight",
-          "value": 7
+          "name": "Bake the loaf",
+          "value": 6
+        },
+        {
+          "name": "Slice the cooled loaf",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-0-014",
-      "source": "NATURE",
+      "source": "FOOD",
       "unit": "sequence position",
       "sources": [
-        "https://www.floridamuseum.ufl.edu/educators/resource/butterfly-life-cycle/"
+        "https://en.wikipedia.org/wiki/Popcorn"
       ],
       "ordered": [
         {
-          "name": "An egg is laid",
+          "name": "Heat the oil in a pan",
           "value": 1
         },
         {
-          "name": "The caterpillar hatches",
+          "name": "Add popcorn kernels to the hot oil",
           "value": 2
         },
         {
-          "name": "The adult butterfly emerges",
-          "value": 5
+          "name": "The heated kernels start to pop",
+          "value": 4
         },
         {
-          "name": "The butterfly expands its wings",
+          "name": "Tip the popped corn into a serving bowl",
           "value": 6
         },
         {
-          "name": "The adult takes its first flight",
+          "name": "Eat the finished popcorn",
           "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-0-015",
-      "source": "NATURE",
+      "source": "SHOPPING",
       "unit": "sequence position",
       "sources": [
-        "https://www.floridamuseum.ufl.edu/educators/resource/butterfly-life-cycle/"
+        "https://en.wikipedia.org/wiki/Online_shopping"
       ],
       "ordered": [
         {
-          "name": "An egg is laid",
-          "value": 1
-        },
-        {
-          "name": "The caterpillar hatches",
+          "name": "Add the item to the basket",
           "value": 2
         },
         {
-          "name": "The caterpillar feeds and grows",
+          "name": "Complete checkout",
           "value": 3
         },
         {
-          "name": "The caterpillar forms a chrysalis",
+          "name": "The shop confirms the order",
           "value": 4
         },
         {
-          "name": "The butterfly expands its wings",
-          "value": 6
+          "name": "The shop dispatches the parcel",
+          "value": 5
+        },
+        {
+          "name": "Open the delivered parcel",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-0-016",
-      "source": "NATURE",
+      "source": "EVERYDAY",
       "unit": "sequence position",
       "sources": [
-        "https://www.floridamuseum.ufl.edu/educators/resource/butterfly-life-cycle/"
+        "https://en.wikipedia.org/wiki/Library_circulation"
       ],
       "ordered": [
         {
-          "name": "An egg is laid",
-          "value": 1
+          "name": "Check the book out",
+          "value": 2
         },
         {
-          "name": "The caterpillar feeds and grows",
+          "name": "Take the borrowed book home",
           "value": 3
         },
         {
-          "name": "The caterpillar forms a chrysalis",
+          "name": "Read the borrowed book",
           "value": 4
         },
         {
-          "name": "The adult butterfly emerges",
+          "name": "Return the book to the library",
           "value": 5
         },
         {
-          "name": "The adult takes its first flight",
-          "value": 7
+          "name": "The library checks the returned book in",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-0-017",
-      "source": "SCREEN TIME",
+      "source": "PHOTOGRAPHY",
       "unit": "sequence position",
       "sources": [
-        "https://www.harrypotter.com/discover/films/harry-potter-and-the-philosophers-stone"
+        "https://en.wikipedia.org/wiki/Photographic_processing"
       ],
       "ordered": [
         {
-          "name": "Hagrid tells Harry he is a wizard",
+          "name": "Load an unused roll of film into the camera",
+          "value": 1
+        },
+        {
+          "name": "Take photographs on the film",
           "value": 2
         },
         {
-          "name": "Harry shops in Diagon Alley",
-          "value": 3
+          "name": "Develop the exposed film",
+          "value": 5
         },
         {
-          "name": "Harry boards the Hogwarts Express",
-          "value": 4
-        },
-        {
-          "name": "Harry helps defeat the troll",
+          "name": "Print photographs from the developed negatives",
           "value": 6
         },
         {
-          "name": "Harry returns to the Dursleys",
-          "value": 10
+          "name": "Display the finished prints",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-0-018",
-      "source": "SCREEN TIME",
+      "source": "GARDEN",
       "unit": "sequence position",
       "sources": [
-        "https://www.harrypotter.com/discover/films/harry-potter-and-the-philosophers-stone"
+        "https://en.wikipedia.org/wiki/Seedling"
       ],
       "ordered": [
         {
-          "name": "Harry shops in Diagon Alley",
+          "name": "Fill a pot with potting mix",
+          "value": 1
+        },
+        {
+          "name": "Sow the seed in the prepared pot",
+          "value": 2
+        },
+        {
+          "name": "Water the newly sown seed",
           "value": 3
         },
         {
-          "name": "The Sorting Hat places Harry in Gryffindor",
+          "name": "A shoot appears above the soil",
           "value": 5
         },
         {
-          "name": "Harry plays his first Quidditch match",
-          "value": 7
-        },
-        {
-          "name": "Harry finds the Mirror of Erised",
-          "value": 8
-        },
-        {
-          "name": "Harry faces Quirrell",
-          "value": 9
+          "name": "The seedling grows its first true leaves",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-0-019",
-      "source": "SCREEN TIME",
+      "source": "SHOPPING",
       "unit": "sequence position",
       "sources": [
-        "https://www.harrypotter.com/discover/films/harry-potter-and-the-philosophers-stone"
+        "https://en.wikipedia.org/wiki/Online_shopping"
       ],
       "ordered": [
         {
-          "name": "Harry's first Hogwarts letter arrives",
+          "name": "Choose an item on the website",
           "value": 1
         },
         {
-          "name": "Harry shops in Diagon Alley",
+          "name": "Complete checkout",
           "value": 3
         },
         {
-          "name": "The Sorting Hat places Harry in Gryffindor",
+          "name": "The shop dispatches the parcel",
           "value": 5
         },
         {
-          "name": "Harry plays his first Quidditch match",
-          "value": 7
+          "name": "The courier delivers the parcel",
+          "value": 6
         },
         {
-          "name": "Harry returns to the Dursleys",
-          "value": 10
+          "name": "Open the delivered parcel",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-0-020",
-      "source": "SCREEN TIME",
+      "source": "EVERYDAY",
       "unit": "sequence position",
       "sources": [
-        "https://www.harrypotter.com/discover/films/harry-potter-and-the-philosophers-stone"
+        "https://en.wikipedia.org/wiki/Movie_theater"
       ],
       "ordered": [
         {
-          "name": "Harry boards the Hogwarts Express",
-          "value": 4
+          "name": "Show the ticket at the entrance",
+          "value": 2
         },
         {
-          "name": "The Sorting Hat places Harry in Gryffindor",
+          "name": "Find the seat for the screening",
+          "value": 3
+        },
+        {
+          "name": "Watch the feature film",
           "value": 5
         },
         {
-          "name": "Harry plays his first Quidditch match",
+          "name": "Watch the end credits",
+          "value": 6
+        },
+        {
+          "name": "Leave the auditorium after the screening",
           "value": 7
-        },
-        {
-          "name": "Harry faces Quirrell",
-          "value": 9
-        },
-        {
-          "name": "Harry returns to the Dursleys",
-          "value": 10
         }
       ]
     },
     {
       "id": "stack-familiar-0-021",
-      "source": "SCREEN TIME",
+      "source": "EVERYDAY",
       "unit": "sequence position",
       "sources": [
-        "https://www.harrypotter.com/discover/films/harry-potter-and-the-philosophers-stone"
+        "https://en.wikipedia.org/wiki/Bread"
       ],
       "ordered": [
         {
-          "name": "Harry shops in Diagon Alley",
+          "name": "Mix the dough ingredients",
+          "value": 1
+        },
+        {
+          "name": "Let the dough rise",
           "value": 3
         },
         {
-          "name": "The Sorting Hat places Harry in Gryffindor",
+          "name": "Let the shaped loaf prove",
           "value": 5
         },
         {
-          "name": "Harry finds the Mirror of Erised",
+          "name": "Cool the baked loaf",
+          "value": 7
+        },
+        {
+          "name": "Slice the cooled loaf",
           "value": 8
-        },
-        {
-          "name": "Harry faces Quirrell",
-          "value": 9
-        },
-        {
-          "name": "Harry returns to the Dursleys",
-          "value": 10
         }
       ]
     },
     {
       "id": "stack-familiar-0-022",
-      "source": "SCREEN TIME",
+      "source": "EVERYDAY",
       "unit": "sequence position",
       "sources": [
-        "https://www.harrypotter.com/discover/films/harry-potter-and-the-philosophers-stone"
+        "https://en.wikipedia.org/wiki/Movie_theater"
       ],
       "ordered": [
         {
-          "name": "Harry shops in Diagon Alley",
-          "value": 3
+          "name": "Buy a ticket for the screening",
+          "value": 1
         },
         {
-          "name": "The Sorting Hat places Harry in Gryffindor",
-          "value": 5
+          "name": "Show the ticket at the entrance",
+          "value": 2
         },
         {
-          "name": "Harry helps defeat the troll",
+          "name": "Watch the pre-film trailers",
+          "value": 4
+        },
+        {
+          "name": "Watch the end credits",
           "value": 6
         },
         {
-          "name": "Harry plays his first Quidditch match",
+          "name": "Leave the auditorium after the screening",
           "value": 7
-        },
-        {
-          "name": "Harry finds the Mirror of Erised",
-          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-0-023",
-      "source": "SCREEN TIME",
+      "source": "FOOD",
       "unit": "sequence position",
       "sources": [
-        "https://www.harrypotter.com/discover/films/harry-potter-and-the-philosophers-stone"
+        "https://en.wikipedia.org/wiki/Tea"
       ],
       "ordered": [
         {
-          "name": "Hagrid tells Harry he is a wizard",
+          "name": "Boil the water",
           "value": 2
         },
         {
-          "name": "Harry shops in Diagon Alley",
+          "name": "Pour the hot water over the teabag",
           "value": 3
         },
         {
-          "name": "Harry boards the Hogwarts Express",
+          "name": "Let the tea brew",
           "value": 4
         },
         {
-          "name": "Harry helps defeat the troll",
-          "value": 6
+          "name": "Remove the teabag",
+          "value": 5
         },
         {
-          "name": "Harry plays his first Quidditch match",
-          "value": 7
+          "name": "Drink the finished tea",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-0-024",
-      "source": "SCREEN TIME",
+      "source": "EVERYDAY",
       "unit": "sequence position",
       "sources": [
-        "https://www.harrypotter.com/discover/films/harry-potter-and-the-philosophers-stone"
+        "https://en.wikipedia.org/wiki/Laundry"
       ],
       "ordered": [
         {
-          "name": "Harry shops in Diagon Alley",
+          "name": "Start the wash cycle",
           "value": 3
         },
         {
-          "name": "Harry boards the Hogwarts Express",
+          "name": "Remove the washed clothes",
           "value": 4
         },
         {
-          "name": "Harry helps defeat the troll",
+          "name": "Hang the wet clothes on the line",
+          "value": 5
+        },
+        {
+          "name": "Take down the dry clothes",
           "value": 6
         },
         {
-          "name": "Harry plays his first Quidditch match",
+          "name": "Fold the dry clothes",
           "value": 7
-        },
-        {
-          "name": "Harry finds the Mirror of Erised",
-          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-0-025",
-      "source": "GAMES",
+      "source": "FOOD",
       "unit": "sequence position",
       "sources": [
-        "https://minecraft.wiki/w/Tutorial:Beginner%27s_guide"
+        "https://en.wikipedia.org/wiki/Tea"
       ],
       "ordered": [
         {
-          "name": "Craft wooden planks",
-          "value": 2
+          "name": "Put fresh water in the kettle",
+          "value": 1
         },
         {
-          "name": "Craft a crafting table",
+          "name": "Pour the hot water over the teabag",
           "value": 3
         },
         {
-          "name": "Mine cobblestone",
+          "name": "Let the tea brew",
+          "value": 4
+        },
+        {
+          "name": "Remove the teabag",
           "value": 5
         },
         {
-          "name": "Craft a stone pickaxe",
+          "name": "Drink the finished tea",
           "value": 6
-        },
-        {
-          "name": "Smelt iron into ingots",
-          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-0-026",
-      "source": "GAMES",
+      "source": "CRAFT",
       "unit": "sequence position",
       "sources": [
-        "https://minecraft.wiki/w/Tutorial:Beginner%27s_guide"
+        "https://en.wikipedia.org/wiki/Pottery"
       ],
       "ordered": [
         {
-          "name": "Gather a log from a tree",
+          "name": "Knead the workable clay",
           "value": 1
         },
         {
-          "name": "Mine cobblestone",
+          "name": "Let the shaped bowl dry",
+          "value": 3
+        },
+        {
+          "name": "Apply glaze to the fired bowl",
           "value": 5
         },
         {
-          "name": "Mine iron ore",
+          "name": "Let the kiln and bowl cool",
           "value": 7
         },
         {
-          "name": "Craft an iron pickaxe",
-          "value": 9
-        },
-        {
-          "name": "Mine diamond ore with the iron pickaxe",
-          "value": 10
+          "name": "Use the finished bowl",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-0-027",
-      "source": "GAMES",
+      "source": "EVERYDAY",
       "unit": "sequence position",
       "sources": [
-        "https://minecraft.wiki/w/Tutorial:Beginner%27s_guide"
+        "https://en.wikipedia.org/wiki/Laundry"
       ],
       "ordered": [
         {
-          "name": "Craft wooden planks",
+          "name": "Sort the dirty laundry",
+          "value": 1
+        },
+        {
+          "name": "Load the washing machine with laundry and detergent",
           "value": 2
         },
         {
-          "name": "Craft a crafting table",
-          "value": 3
+          "name": "Remove the washed clothes",
+          "value": 4
         },
         {
-          "name": "Craft a stone pickaxe",
+          "name": "Take down the dry clothes",
           "value": 6
         },
         {
-          "name": "Mine iron ore",
-          "value": 7
-        },
-        {
-          "name": "Smelt iron into ingots",
+          "name": "Put the folded clothes away",
           "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-0-028",
-      "source": "GAMES",
+      "source": "CRAFT",
       "unit": "sequence position",
       "sources": [
-        "https://minecraft.wiki/w/Tutorial:Beginner%27s_guide"
+        "https://en.wikipedia.org/wiki/Pottery"
       ],
       "ordered": [
         {
-          "name": "Craft wooden planks",
+          "name": "Knead the workable clay",
+          "value": 1
+        },
+        {
+          "name": "Shape the clay into a bowl",
           "value": 2
         },
         {
-          "name": "Mine cobblestone",
+          "name": "Give the dry bowl its first firing",
+          "value": 4
+        },
+        {
+          "name": "Apply glaze to the fired bowl",
           "value": 5
         },
         {
-          "name": "Mine iron ore",
-          "value": 7
-        },
-        {
-          "name": "Smelt iron into ingots",
-          "value": 8
-        },
-        {
-          "name": "Mine diamond ore with the iron pickaxe",
-          "value": 10
+          "name": "Fire the glazed bowl",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-0-029",
-      "source": "GAMES",
+      "source": "EVERYDAY",
       "unit": "sequence position",
       "sources": [
-        "https://minecraft.wiki/w/Tutorial:Beginner%27s_guide"
+        "https://en.wikipedia.org/wiki/Dishwashing"
       ],
       "ordered": [
         {
-          "name": "Gather a log from a tree",
+          "name": "Scrape leftover food off the dirty dishes",
           "value": 1
         },
         {
-          "name": "Craft wooden planks",
+          "name": "Fill the sink with warm soapy water",
           "value": 2
         },
         {
-          "name": "Mine cobblestone",
+          "name": "Rinse the washed dishes",
+          "value": 4
+        },
+        {
+          "name": "Put the rinsed dishes on a drying rack",
           "value": 5
         },
         {
-          "name": "Mine iron ore",
+          "name": "Put the dry dishes away",
           "value": 7
-        },
-        {
-          "name": "Smelt iron into ingots",
-          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-0-030",
-      "source": "GAMES",
+      "source": "FOOD",
       "unit": "sequence position",
       "sources": [
-        "https://minecraft.wiki/w/Tutorial:Beginner%27s_guide"
+        "https://en.wikipedia.org/wiki/Rice"
       ],
       "ordered": [
         {
-          "name": "Craft wooden planks",
+          "name": "Put the rinsed rice and measured water in a pan",
           "value": 2
         },
         {
-          "name": "Craft a wooden pickaxe",
+          "name": "Cover and simmer the rice",
           "value": 4
         },
         {
-          "name": "Mine cobblestone",
+          "name": "Turn off the heat and let the rice stand",
           "value": 5
         },
         {
-          "name": "Craft a stone pickaxe",
+          "name": "Fluff the cooked rice",
           "value": 6
         },
         {
-          "name": "Smelt iron into ingots",
-          "value": 8
+          "name": "Serve the rice",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-0-031",
-      "source": "GAMES",
+      "source": "EVERYDAY",
       "unit": "sequence position",
       "sources": [
-        "https://minecraft.wiki/w/Tutorial:Beginner%27s_guide"
+        "https://en.wikipedia.org/wiki/Printing"
       ],
       "ordered": [
         {
-          "name": "Craft a crafting table",
-          "value": 3
+          "name": "Finish editing the document",
+          "value": 1
         },
         {
-          "name": "Craft a wooden pickaxe",
+          "name": "Open the print settings",
+          "value": 2
+        },
+        {
+          "name": "The printer feeds in the paper",
           "value": 4
         },
         {
-          "name": "Mine cobblestone",
+          "name": "The printer puts the document on the paper",
           "value": 5
         },
         {
-          "name": "Mine iron ore",
-          "value": 7
-        },
-        {
-          "name": "Smelt iron into ingots",
-          "value": 8
+          "name": "The printed page comes out",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-0-032",
-      "source": "GAMES",
+      "source": "FOOD",
       "unit": "sequence position",
       "sources": [
-        "https://minecraft.wiki/w/Tutorial:Beginner%27s_guide"
+        "https://en.wikipedia.org/wiki/Pasta"
       ],
       "ordered": [
         {
-          "name": "Craft wooden planks",
+          "name": "Fill a saucepan with water",
+          "value": 1
+        },
+        {
+          "name": "Bring the water to a boil",
           "value": 2
         },
         {
-          "name": "Mine cobblestone",
-          "value": 5
+          "name": "Add the dried pasta to the boiling water",
+          "value": 3
         },
         {
-          "name": "Craft a stone pickaxe",
+          "name": "Cook until the pasta is ready",
+          "value": 4
+        },
+        {
+          "name": "Serve the drained pasta",
           "value": 6
-        },
-        {
-          "name": "Mine iron ore",
-          "value": 7
-        },
-        {
-          "name": "Craft an iron pickaxe",
-          "value": 9
         }
       ]
     },
     {
       "id": "stack-familiar-1-001",
-      "source": "SCIENCE",
-      "unit": "(planet from the Sun)",
+      "source": "BODY",
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Visual_system"
+      ],
+      "ordered": [
+        {
+          "name": "Cornea",
+          "value": 1
+        },
+        {
+          "name": "Lens",
+          "value": 3
+        },
+        {
+          "name": "Retina",
+          "value": 4
+        },
+        {
+          "name": "Optic nerve",
+          "value": 5
+        },
+        {
+          "name": "Brain",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-002",
+      "source": "SPACE",
+      "unit": "sequence position",
       "sources": [
         "https://science.nasa.gov/solar-system/planets/"
       ],
       "ordered": [
-        {
-          "name": "Venus",
-          "value": 2
-        },
         {
           "name": "Earth",
           "value": 3
@@ -986,32 +1012,6 @@
         {
           "name": "Jupiter",
           "value": 5
-        },
-        {
-          "name": "Uranus",
-          "value": 7
-        }
-      ]
-    },
-    {
-      "id": "stack-familiar-1-002",
-      "source": "SCIENCE",
-      "unit": "(planet from the Sun)",
-      "sources": [
-        "https://science.nasa.gov/solar-system/planets/"
-      ],
-      "ordered": [
-        {
-          "name": "Earth",
-          "value": 3
-        },
-        {
-          "name": "Jupiter",
-          "value": 5
-        },
-        {
-          "name": "Saturn",
-          "value": 6
         },
         {
           "name": "Uranus",
@@ -1025,308 +1025,398 @@
     },
     {
       "id": "stack-familiar-1-003",
-      "source": "SCIENCE",
-      "unit": "(planet from the Sun)",
+      "source": "NATURE",
+      "unit": "sequence position",
       "sources": [
-        "https://science.nasa.gov/solar-system/planets/"
+        "https://en.wikipedia.org/wiki/Butterfly"
       ],
       "ordered": [
         {
-          "name": "Mercury",
+          "name": "The adult lays an egg",
           "value": 1
         },
         {
-          "name": "Earth",
+          "name": "The caterpillar feeds and grows",
           "value": 3
         },
         {
-          "name": "Jupiter",
+          "name": "The caterpillar forms a chrysalis",
+          "value": 4
+        },
+        {
+          "name": "The adult butterfly emerges",
           "value": 5
         },
         {
-          "name": "Uranus",
-          "value": 7
-        },
-        {
-          "name": "Neptune",
-          "value": 8
+          "name": "The butterfly's new wings expand and dry",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-1-004",
-      "source": "SCIENCE",
-      "unit": "(planet from the Sun)",
+      "source": "NATURE",
+      "unit": "sequence position",
       "sources": [
-        "https://science.nasa.gov/solar-system/planets/"
+        "https://en.wikipedia.org/wiki/Butterfly"
       ],
       "ordered": [
         {
-          "name": "Mercury",
+          "name": "The adult lays an egg",
           "value": 1
         },
         {
-          "name": "Venus",
+          "name": "The caterpillar hatches",
           "value": 2
         },
         {
-          "name": "Saturn",
+          "name": "The caterpillar forms a chrysalis",
+          "value": 4
+        },
+        {
+          "name": "The butterfly's new wings expand and dry",
           "value": 6
         },
         {
-          "name": "Uranus",
+          "name": "The butterfly takes its first flight",
           "value": 7
-        },
-        {
-          "name": "Neptune",
-          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-1-005",
-      "source": "SCIENCE",
-      "unit": "(planet from the Sun)",
+      "source": "NATURE",
+      "unit": "sequence position",
       "sources": [
-        "https://science.nasa.gov/solar-system/planets/"
+        "https://en.wikipedia.org/wiki/Water_cycle"
       ],
       "ordered": [
         {
-          "name": "Mercury",
+          "name": "Seawater evaporates",
           "value": 1
         },
         {
-          "name": "Mars",
+          "name": "Water vapour rises",
+          "value": 2
+        },
+        {
+          "name": "The vapour cools and condenses",
+          "value": 3
+        },
+        {
+          "name": "Cloud droplets grow large enough to fall",
           "value": 4
         },
         {
-          "name": "Jupiter",
+          "name": "Rain falls on the land",
           "value": 5
-        },
-        {
-          "name": "Saturn",
-          "value": 6
-        },
-        {
-          "name": "Uranus",
-          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-1-006",
-      "source": "SCIENCE",
-      "unit": "(planet from the Sun)",
+      "source": "EARTH",
+      "unit": "sequence position",
       "sources": [
-        "https://science.nasa.gov/solar-system/planets/"
+        "https://en.wikipedia.org/wiki/Trace_fossil"
       ],
       "ordered": [
         {
-          "name": "Mercury",
-          "value": 1
-        },
-        {
-          "name": "Venus",
+          "name": "The foot leaves an imprint",
           "value": 2
         },
         {
-          "name": "Earth",
+          "name": "The footprint-bearing mud dries",
           "value": 3
         },
         {
-          "name": "Jupiter",
+          "name": "New sediment buries the footprint",
+          "value": 4
+        },
+        {
+          "name": "The buried sediment hardens into rock",
           "value": 5
         },
         {
-          "name": "Saturn",
+          "name": "Erosion uncovers the fossil footprint",
           "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-1-007",
-      "source": "SCIENCE",
-      "unit": "(planet from the Sun)",
+      "source": "NATURE",
+      "unit": "sequence position",
       "sources": [
-        "https://science.nasa.gov/solar-system/planets/"
+        "https://en.wikipedia.org/wiki/Rainbow"
       ],
       "ordered": [
         {
-          "name": "Mercury",
+          "name": "Red",
           "value": 1
         },
         {
-          "name": "Mars",
-          "value": 4
+          "name": "Orange",
+          "value": 2
         },
         {
-          "name": "Saturn",
-          "value": 6
+          "name": "Yellow",
+          "value": 3
         },
         {
-          "name": "Uranus",
+          "name": "Blue",
+          "value": 5
+        },
+        {
+          "name": "Violet",
           "value": 7
-        },
-        {
-          "name": "Neptune",
-          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-1-008",
-      "source": "SCIENCE",
-      "unit": "(planet from the Sun)",
+      "source": "GARDEN",
+      "unit": "sequence position",
       "sources": [
-        "https://science.nasa.gov/solar-system/planets/"
+        "https://en.wikipedia.org/wiki/Apple"
       ],
       "ordered": [
         {
-          "name": "Venus",
-          "value": 2
+          "name": "A blossom opens on the tree",
+          "value": 1
         },
         {
-          "name": "Mars",
+          "name": "The apple grows on the tree",
           "value": 4
         },
         {
-          "name": "Jupiter",
+          "name": "The apple ripens",
           "value": 5
         },
         {
-          "name": "Saturn",
-          "value": 6
+          "name": "The picked apple is washed",
+          "value": 7
         },
         {
-          "name": "Uranus",
-          "value": 7
+          "name": "The washed apple is eaten",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-1-009",
-      "source": "SCIENCE",
-      "unit": "(planet from the Sun)",
+      "source": "EARTH",
+      "unit": "sequence position",
       "sources": [
-        "https://science.nasa.gov/solar-system/planets/"
+        "https://en.wikipedia.org/wiki/Volcano"
       ],
       "ordered": [
         {
-          "name": "Mercury",
+          "name": "Rock melts beneath Earth's surface",
           "value": 1
         },
         {
-          "name": "Venus",
-          "value": 2
+          "name": "Magma erupts as lava",
+          "value": 4
         },
         {
-          "name": "Jupiter",
+          "name": "Lava flows over the ground",
           "value": 5
         },
         {
-          "name": "Saturn",
+          "name": "The lava cools",
           "value": 6
         },
         {
-          "name": "Uranus",
+          "name": "The cooled lava hardens into rock",
           "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-1-010",
-      "source": "SCIENCE",
-      "unit": "(planet from the Sun)",
+      "source": "BODY",
+      "unit": "sequence position",
       "sources": [
-        "https://science.nasa.gov/solar-system/planets/"
+        "https://en.wikipedia.org/wiki/Ear"
       ],
       "ordered": [
         {
-          "name": "Mercury",
-          "value": 1
-        },
-        {
-          "name": "Venus",
+          "name": "Ear canal",
           "value": 2
         },
         {
-          "name": "Mars",
+          "name": "Eardrum",
+          "value": 3
+        },
+        {
+          "name": "Middle-ear bones",
           "value": 4
         },
         {
-          "name": "Saturn",
-          "value": 6
+          "name": "Cochlea",
+          "value": 5
         },
         {
-          "name": "Neptune",
-          "value": 8
+          "name": "Auditory nerve",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-1-011",
-      "source": "SCIENCE",
-      "unit": "(planet from the Sun)",
+      "source": "NATURE",
+      "unit": "sequence position",
       "sources": [
-        "https://science.nasa.gov/solar-system/planets/"
+        "https://en.wikipedia.org/wiki/Water_cycle"
       ],
       "ordered": [
         {
-          "name": "Mercury",
+          "name": "Seawater evaporates",
           "value": 1
         },
         {
-          "name": "Earth",
+          "name": "The vapour cools and condenses",
           "value": 3
         },
         {
-          "name": "Saturn",
+          "name": "Cloud droplets grow large enough to fall",
+          "value": 4
+        },
+        {
+          "name": "Rainwater flows into a river",
           "value": 6
         },
         {
-          "name": "Uranus",
+          "name": "The river carries the water back to the sea",
           "value": 7
-        },
-        {
-          "name": "Neptune",
-          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-1-012",
-      "source": "SCIENCE",
-      "unit": "(planet from the Sun)",
+      "source": "BODY",
+      "unit": "sequence position",
       "sources": [
-        "https://science.nasa.gov/solar-system/planets/"
+        "https://en.wikipedia.org/wiki/Human_digestive_system"
       ],
       "ordered": [
         {
-          "name": "Mercury",
+          "name": "Mouth",
           "value": 1
         },
         {
-          "name": "Earth",
+          "name": "Oesophagus",
+          "value": 2
+        },
+        {
+          "name": "Stomach",
           "value": 3
         },
         {
-          "name": "Mars",
-          "value": 4
+          "name": "Large intestine",
+          "value": 5
         },
         {
-          "name": "Saturn",
+          "name": "Rectum",
           "value": 6
-        },
-        {
-          "name": "Neptune",
-          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-1-013",
-      "source": "SCIENCE",
-      "unit": "(planet from the Sun)",
+      "source": "NATURE",
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Frog"
+      ],
+      "ordered": [
+        {
+          "name": "An egg is laid in water",
+          "value": 1
+        },
+        {
+          "name": "A tadpole hatches",
+          "value": 2
+        },
+        {
+          "name": "Front legs appear",
+          "value": 4
+        },
+        {
+          "name": "A froglet has a short remaining tail",
+          "value": 5
+        },
+        {
+          "name": "An adult frog has no tail",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-014",
+      "source": "EARTH",
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Structure_of_Earth"
+      ],
+      "ordered": [
+        {
+          "name": "Top of the crust",
+          "value": 1
+        },
+        {
+          "name": "Upper mantle",
+          "value": 3
+        },
+        {
+          "name": "Lower mantle",
+          "value": 4
+        },
+        {
+          "name": "Outer core",
+          "value": 5
+        },
+        {
+          "name": "Inner core",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-015",
+      "source": "BODY",
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ear"
+      ],
+      "ordered": [
+        {
+          "name": "Outer ear (pinna)",
+          "value": 1
+        },
+        {
+          "name": "Eardrum",
+          "value": 3
+        },
+        {
+          "name": "Cochlea",
+          "value": 5
+        },
+        {
+          "name": "Auditory nerve",
+          "value": 6
+        },
+        {
+          "name": "Brain",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-016",
+      "source": "SPACE",
+      "unit": "sequence position",
       "sources": [
         "https://science.nasa.gov/solar-system/planets/"
       ],
@@ -1334,108 +1424,18 @@
         {
           "name": "Mercury",
           "value": 1
+        },
+        {
+          "name": "Venus",
+          "value": 2
         },
         {
           "name": "Earth",
           "value": 3
         },
         {
-          "name": "Mars",
-          "value": 4
-        },
-        {
-          "name": "Jupiter",
-          "value": 5
-        },
-        {
-          "name": "Uranus",
-          "value": 7
-        }
-      ]
-    },
-    {
-      "id": "stack-familiar-1-014",
-      "source": "SCIENCE",
-      "unit": "(planet from the Sun)",
-      "sources": [
-        "https://science.nasa.gov/solar-system/planets/"
-      ],
-      "ordered": [
-        {
-          "name": "Mercury",
-          "value": 1
-        },
-        {
-          "name": "Venus",
-          "value": 2
-        },
-        {
-          "name": "Mars",
-          "value": 4
-        },
-        {
-          "name": "Jupiter",
-          "value": 5
-        },
-        {
-          "name": "Uranus",
-          "value": 7
-        }
-      ]
-    },
-    {
-      "id": "stack-familiar-1-015",
-      "source": "SCIENCE",
-      "unit": "(planet from the Sun)",
-      "sources": [
-        "https://science.nasa.gov/solar-system/planets/"
-      ],
-      "ordered": [
-        {
-          "name": "Venus",
-          "value": 2
-        },
-        {
-          "name": "Mars",
-          "value": 4
-        },
-        {
-          "name": "Jupiter",
-          "value": 5
-        },
-        {
           "name": "Saturn",
           "value": 6
-        },
-        {
-          "name": "Neptune",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "stack-familiar-1-016",
-      "source": "SCIENCE",
-      "unit": "(planet from the Sun)",
-      "sources": [
-        "https://science.nasa.gov/solar-system/planets/"
-      ],
-      "ordered": [
-        {
-          "name": "Mercury",
-          "value": 1
-        },
-        {
-          "name": "Venus",
-          "value": 2
-        },
-        {
-          "name": "Mars",
-          "value": 4
-        },
-        {
-          "name": "Uranus",
-          "value": 7
         },
         {
           "name": "Neptune",
@@ -1448,57 +1448,57 @@
       "source": "NATURE",
       "unit": "sequence position",
       "sources": [
-        "https://www.nasa.gov/learning-resources/nasas-picture-dictionary-r/"
+        "https://en.wikipedia.org/wiki/Frog"
       ],
       "ordered": [
         {
-          "name": "Red",
+          "name": "An egg is laid in water",
           "value": 1
         },
         {
-          "name": "Green",
+          "name": "A tadpole hatches",
+          "value": 2
+        },
+        {
+          "name": "The tadpole grows hind legs",
+          "value": 3
+        },
+        {
+          "name": "Front legs appear",
           "value": 4
         },
         {
-          "name": "Blue",
+          "name": "A froglet has a short remaining tail",
           "value": 5
-        },
-        {
-          "name": "Indigo",
-          "value": 6
-        },
-        {
-          "name": "Violet",
-          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-1-018",
-      "source": "NATURE",
+      "source": "GARDEN",
       "unit": "sequence position",
       "sources": [
-        "https://www.nasa.gov/learning-resources/nasas-picture-dictionary-r/"
+        "https://en.wikipedia.org/wiki/Helianthus_annuus"
       ],
       "ordered": [
         {
-          "name": "Orange",
+          "name": "The seed germinates",
           "value": 2
         },
         {
-          "name": "Yellow",
+          "name": "The seedling appears above the soil",
           "value": 3
         },
         {
-          "name": "Green",
+          "name": "The young sunflower grows leaves and a taller stem",
           "value": 4
         },
         {
-          "name": "Blue",
+          "name": "A flower bud forms",
           "value": 5
         },
         {
-          "name": "Indigo",
+          "name": "The sunflower blooms",
           "value": 6
         }
       ]
@@ -1508,88 +1508,88 @@
       "source": "NATURE",
       "unit": "sequence position",
       "sources": [
-        "https://www.nasa.gov/learning-resources/nasas-picture-dictionary-r/"
+        "https://en.wikipedia.org/wiki/Dog"
       ],
       "ordered": [
         {
-          "name": "Yellow",
+          "name": "Newborn puppy",
+          "value": 1
+        },
+        {
+          "name": "The puppy opens its eyes",
+          "value": 2
+        },
+        {
+          "name": "The puppy begins weaning",
           "value": 3
         },
         {
-          "name": "Green",
+          "name": "The puppy finishes weaning",
           "value": 4
         },
         {
-          "name": "Blue",
-          "value": 5
-        },
-        {
-          "name": "Indigo",
+          "name": "Adult dog",
           "value": 6
-        },
-        {
-          "name": "Violet",
-          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-1-020",
-      "source": "NATURE",
+      "source": "BODY",
       "unit": "sequence position",
       "sources": [
-        "https://www.nasa.gov/learning-resources/nasas-picture-dictionary-r/"
+        "https://en.wikipedia.org/wiki/Visual_system"
       ],
       "ordered": [
         {
-          "name": "Red",
+          "name": "Cornea",
           "value": 1
         },
         {
-          "name": "Orange",
+          "name": "Pupil",
           "value": 2
         },
         {
-          "name": "Green",
-          "value": 4
+          "name": "Lens",
+          "value": 3
         },
         {
-          "name": "Blue",
+          "name": "Optic nerve",
           "value": 5
         },
         {
-          "name": "Indigo",
+          "name": "Brain",
           "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-1-021",
-      "source": "NATURE",
+      "source": "BODY",
       "unit": "sequence position",
       "sources": [
-        "https://www.nasa.gov/learning-resources/nasas-picture-dictionary-r/"
+        "https://en.wikipedia.org/wiki/Human_digestive_system"
       ],
       "ordered": [
         {
-          "name": "Red",
-          "value": 1
-        },
-        {
-          "name": "Orange",
-          "value": 2
-        },
-        {
-          "name": "Yellow",
+          "name": "Stomach",
           "value": 3
         },
         {
-          "name": "Green",
+          "name": "Small intestine",
           "value": 4
         },
         {
-          "name": "Blue",
+          "name": "Large intestine",
           "value": 5
+        },
+        {
+          "name": "Rectum",
+          "value": 6
+        },
+        {
+          "name": "Anus",
+          "value": 7
         }
       ]
     },
@@ -1598,27 +1598,27 @@
       "source": "NATURE",
       "unit": "sequence position",
       "sources": [
-        "https://www.nasa.gov/learning-resources/nasas-picture-dictionary-r/"
+        "https://en.wikipedia.org/wiki/Bird"
       ],
       "ordered": [
         {
-          "name": "Orange",
-          "value": 2
+          "name": "The mother lays an egg",
+          "value": 1
         },
         {
-          "name": "Yellow",
-          "value": 3
-        },
-        {
-          "name": "Green",
+          "name": "The parents feed the nestling",
           "value": 4
         },
         {
-          "name": "Indigo",
+          "name": "The young bird grows flight feathers",
+          "value": 5
+        },
+        {
+          "name": "The young bird fledges from the nest",
           "value": 6
         },
         {
-          "name": "Violet",
+          "name": "The young bird becomes independent",
           "value": 7
         }
       ]
@@ -1628,12 +1628,252 @@
       "source": "NATURE",
       "unit": "sequence position",
       "sources": [
-        "https://www.nasa.gov/learning-resources/nasas-picture-dictionary-r/"
+        "https://en.wikipedia.org/wiki/Dog"
       ],
       "ordered": [
         {
-          "name": "Orange",
+          "name": "The puppy opens its eyes",
           "value": 2
+        },
+        {
+          "name": "The puppy finishes weaning",
+          "value": 4
+        },
+        {
+          "name": "Adolescent dog",
+          "value": 5
+        },
+        {
+          "name": "Adult dog",
+          "value": 6
+        },
+        {
+          "name": "Senior dog",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-024",
+      "source": "GARDEN",
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Helianthus_annuus"
+      ],
+      "ordered": [
+        {
+          "name": "A sunflower seed is planted",
+          "value": 1
+        },
+        {
+          "name": "The seed germinates",
+          "value": 2
+        },
+        {
+          "name": "The seedling appears above the soil",
+          "value": 3
+        },
+        {
+          "name": "The sunflower blooms",
+          "value": 6
+        },
+        {
+          "name": "The flower head develops mature seeds",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-025",
+      "source": "EARTH",
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Volcano"
+      ],
+      "ordered": [
+        {
+          "name": "Rock melts beneath Earth's surface",
+          "value": 1
+        },
+        {
+          "name": "Magma collects underground",
+          "value": 2
+        },
+        {
+          "name": "Magma rises towards the surface",
+          "value": 3
+        },
+        {
+          "name": "Magma erupts as lava",
+          "value": 4
+        },
+        {
+          "name": "Lava flows over the ground",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-026",
+      "source": "NATURE",
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Bird"
+      ],
+      "ordered": [
+        {
+          "name": "The mother lays an egg",
+          "value": 1
+        },
+        {
+          "name": "The egg is incubated",
+          "value": 2
+        },
+        {
+          "name": "The chick hatches",
+          "value": 3
+        },
+        {
+          "name": "The young bird grows flight feathers",
+          "value": 5
+        },
+        {
+          "name": "The young bird fledges from the nest",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-027",
+      "source": "PLANTS",
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Transpiration"
+      ],
+      "ordered": [
+        {
+          "name": "Water in the soil",
+          "value": 1
+        },
+        {
+          "name": "Water enters the root's water-carrying tissue",
+          "value": 3
+        },
+        {
+          "name": "Water moves up the stem",
+          "value": 4
+        },
+        {
+          "name": "Water evaporates inside the leaf",
+          "value": 6
+        },
+        {
+          "name": "Water vapour leaves through the stomata",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-028",
+      "source": "EARTH",
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Trace_fossil"
+      ],
+      "ordered": [
+        {
+          "name": "An animal steps in soft mud",
+          "value": 1
+        },
+        {
+          "name": "The foot leaves an imprint",
+          "value": 2
+        },
+        {
+          "name": "The footprint-bearing mud dries",
+          "value": 3
+        },
+        {
+          "name": "Erosion uncovers the fossil footprint",
+          "value": 6
+        },
+        {
+          "name": "Someone discovers the exposed footprint",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-029",
+      "source": "EARTH",
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Structure_of_Earth"
+      ],
+      "ordered": [
+        {
+          "name": "Top of the crust",
+          "value": 1
+        },
+        {
+          "name": "Bottom of the crust",
+          "value": 2
+        },
+        {
+          "name": "Lower mantle",
+          "value": 4
+        },
+        {
+          "name": "Outer core",
+          "value": 5
+        },
+        {
+          "name": "Centre of Earth",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-030",
+      "source": "PLANTS",
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Transpiration"
+      ],
+      "ordered": [
+        {
+          "name": "Root hairs absorb water",
+          "value": 2
+        },
+        {
+          "name": "Water enters the root's water-carrying tissue",
+          "value": 3
+        },
+        {
+          "name": "Water moves up the stem",
+          "value": 4
+        },
+        {
+          "name": "Water reaches the leaf veins",
+          "value": 5
+        },
+        {
+          "name": "Water evaporates inside the leaf",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-1-031",
+      "source": "NATURE",
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Rainbow"
+      ],
+      "ordered": [
+        {
+          "name": "Yellow",
+          "value": 3
         },
         {
           "name": "Green",
@@ -1654,2465 +1894,2183 @@
       ]
     },
     {
-      "id": "stack-familiar-1-024",
-      "source": "NATURE",
-      "unit": "sequence position",
-      "sources": [
-        "https://www.nasa.gov/learning-resources/nasas-picture-dictionary-r/"
-      ],
-      "ordered": [
-        {
-          "name": "Red",
-          "value": 1
-        },
-        {
-          "name": "Orange",
-          "value": 2
-        },
-        {
-          "name": "Yellow",
-          "value": 3
-        },
-        {
-          "name": "Indigo",
-          "value": 6
-        },
-        {
-          "name": "Violet",
-          "value": 7
-        }
-      ]
-    },
-    {
-      "id": "stack-familiar-1-025",
-      "source": "SCIENCE",
-      "unit": "sequence position",
-      "sources": [
-        "https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology"
-      ],
-      "ordered": [
-        {
-          "name": "Atom",
-          "value": 1
-        },
-        {
-          "name": "Molecule",
-          "value": 2
-        },
-        {
-          "name": "Organ",
-          "value": 6
-        },
-        {
-          "name": "Organ system",
-          "value": 7
-        },
-        {
-          "name": "Organism",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "stack-familiar-1-026",
-      "source": "SCIENCE",
-      "unit": "sequence position",
-      "sources": [
-        "https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology"
-      ],
-      "ordered": [
-        {
-          "name": "Molecule",
-          "value": 2
-        },
-        {
-          "name": "Organelle",
-          "value": 3
-        },
-        {
-          "name": "Cell",
-          "value": 4
-        },
-        {
-          "name": "Tissue",
-          "value": 5
-        },
-        {
-          "name": "Organism",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "stack-familiar-1-027",
-      "source": "SCIENCE",
-      "unit": "sequence position",
-      "sources": [
-        "https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology"
-      ],
-      "ordered": [
-        {
-          "name": "Atom",
-          "value": 1
-        },
-        {
-          "name": "Cell",
-          "value": 4
-        },
-        {
-          "name": "Tissue",
-          "value": 5
-        },
-        {
-          "name": "Organ",
-          "value": 6
-        },
-        {
-          "name": "Organ system",
-          "value": 7
-        }
-      ]
-    },
-    {
-      "id": "stack-familiar-1-028",
-      "source": "SCIENCE",
-      "unit": "sequence position",
-      "sources": [
-        "https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology"
-      ],
-      "ordered": [
-        {
-          "name": "Atom",
-          "value": 1
-        },
-        {
-          "name": "Molecule",
-          "value": 2
-        },
-        {
-          "name": "Cell",
-          "value": 4
-        },
-        {
-          "name": "Tissue",
-          "value": 5
-        },
-        {
-          "name": "Organ system",
-          "value": 7
-        }
-      ]
-    },
-    {
-      "id": "stack-familiar-1-029",
-      "source": "SCIENCE",
-      "unit": "sequence position",
-      "sources": [
-        "https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology"
-      ],
-      "ordered": [
-        {
-          "name": "Atom",
-          "value": 1
-        },
-        {
-          "name": "Molecule",
-          "value": 2
-        },
-        {
-          "name": "Cell",
-          "value": 4
-        },
-        {
-          "name": "Organ",
-          "value": 6
-        },
-        {
-          "name": "Organ system",
-          "value": 7
-        }
-      ]
-    },
-    {
-      "id": "stack-familiar-1-030",
-      "source": "SCIENCE",
-      "unit": "sequence position",
-      "sources": [
-        "https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology"
-      ],
-      "ordered": [
-        {
-          "name": "Atom",
-          "value": 1
-        },
-        {
-          "name": "Cell",
-          "value": 4
-        },
-        {
-          "name": "Organ",
-          "value": 6
-        },
-        {
-          "name": "Organ system",
-          "value": 7
-        },
-        {
-          "name": "Organism",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "stack-familiar-1-031",
-      "source": "SCIENCE",
-      "unit": "sequence position",
-      "sources": [
-        "https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology"
-      ],
-      "ordered": [
-        {
-          "name": "Organelle",
-          "value": 3
-        },
-        {
-          "name": "Cell",
-          "value": 4
-        },
-        {
-          "name": "Tissue",
-          "value": 5
-        },
-        {
-          "name": "Organ",
-          "value": 6
-        },
-        {
-          "name": "Organism",
-          "value": 8
-        }
-      ]
-    },
-    {
       "id": "stack-familiar-1-032",
-      "source": "SCIENCE",
+      "source": "GARDEN",
       "unit": "sequence position",
       "sources": [
-        "https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology"
+        "https://en.wikipedia.org/wiki/Apple"
       ],
       "ordered": [
         {
-          "name": "Atom",
-          "value": 1
-        },
-        {
-          "name": "Molecule",
+          "name": "The blossom is pollinated",
           "value": 2
         },
         {
-          "name": "Cell",
-          "value": 4
+          "name": "A small apple starts to form",
+          "value": 3
         },
         {
-          "name": "Organ system",
+          "name": "The apple ripens",
+          "value": 5
+        },
+        {
+          "name": "The ripe apple is picked",
+          "value": 6
+        },
+        {
+          "name": "The picked apple is washed",
           "value": 7
-        },
-        {
-          "name": "Organism",
-          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-2-001",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/Harry_Potter_(film_series)"
       ],
       "ordered": [
         {
-          "name": "Jaws",
-          "value": 1975
+          "name": "Harry Potter and the Chamber of Secrets",
+          "value": 2
         },
         {
-          "name": "Back to the Future",
-          "value": 1985
+          "name": "Harry Potter and the Prisoner of Azkaban",
+          "value": 3
         },
         {
-          "name": "Jurassic Park",
-          "value": 1993
+          "name": "Harry Potter and the Goblet of Fire",
+          "value": 4
         },
         {
-          "name": "The Matrix",
-          "value": 1999
+          "name": "Harry Potter and the Order of the Phoenix",
+          "value": 5
         },
         {
-          "name": "The Incredibles",
-          "value": 2004
+          "name": "Harry Potter and the Deathly Hallows – Part 2",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-2-002",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/Shrek"
       ],
       "ordered": [
         {
-          "name": "Back to the Future",
-          "value": 1985
+          "name": "Shrek reaches the dragon's castle",
+          "value": 4
         },
         {
-          "name": "Finding Nemo",
-          "value": 2003
+          "name": "Shrek rescues Fiona",
+          "value": 5
         },
         {
-          "name": "Ratatouille",
-          "value": 2007
+          "name": "Shrek and Fiona grow closer on the journey",
+          "value": 6
         },
         {
-          "name": "The Dark Knight",
-          "value": 2008
+          "name": "Fiona returns to Duloc to marry Farquaad",
+          "value": 7
         },
         {
-          "name": "Up",
-          "value": 2009
+          "name": "Shrek interrupts the wedding",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-2-003",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/Finding_Nemo"
       ],
       "ordered": [
         {
-          "name": "Back to the Future",
-          "value": 1985
+          "name": "Nemo starts school",
+          "value": 1
         },
         {
-          "name": "Jurassic Park",
-          "value": 1993
+          "name": "A diver takes Nemo",
+          "value": 2
         },
         {
-          "name": "Toy Story",
-          "value": 1995
+          "name": "Marlin and Dory escape the anglerfish",
+          "value": 5
         },
         {
-          "name": "Titanic",
-          "value": 1997
+          "name": "Marlin and Dory ride the East Australian Current",
+          "value": 6
         },
         {
-          "name": "Up",
-          "value": 2009
+          "name": "Marlin reunites with Nemo",
+          "value": 9
         }
       ]
     },
     {
       "id": "stack-familiar-2-004",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/List_of_Walt_Disney_Animation_Studios_films"
       ],
       "ordered": [
         {
-          "name": "The Truman Show",
-          "value": 1998
+          "name": "Snow White and the Seven Dwarfs",
+          "value": 1
         },
         {
-          "name": "The Matrix",
-          "value": 1999
+          "name": "Pinocchio",
+          "value": 2
         },
         {
-          "name": "Shrek",
-          "value": 2001
+          "name": "Cinderella",
+          "value": 3
         },
         {
-          "name": "The Dark Knight",
-          "value": 2008
+          "name": "Beauty and the Beast",
+          "value": 6
         },
         {
-          "name": "Up",
-          "value": 2009
+          "name": "Moana",
+          "value": 9
         }
       ]
     },
     {
       "id": "stack-familiar-2-005",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/Batman_in_film"
       ],
       "ordered": [
         {
-          "name": "Back to the Future",
-          "value": 1985
+          "name": "Batman Returns",
+          "value": 2
         },
         {
-          "name": "Jurassic Park",
-          "value": 1993
+          "name": "Batman Forever",
+          "value": 3
         },
         {
-          "name": "The Lion King",
-          "value": 1994
+          "name": "Batman & Robin",
+          "value": 4
         },
         {
-          "name": "Toy Story",
-          "value": 1995
+          "name": "The Dark Knight",
+          "value": 6
         },
         {
-          "name": "Up",
-          "value": 2009
+          "name": "The Dark Knight Rises",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-2-006",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/Toy_Story"
       ],
       "ordered": [
         {
-          "name": "Back to the Future",
-          "value": 1985
+          "name": "Andy receives Buzz Lightyear",
+          "value": 1
         },
         {
-          "name": "Jurassic Park",
-          "value": 1993
+          "name": "Woody becomes jealous of Buzz",
+          "value": 2
         },
         {
-          "name": "Monsters, Inc.",
-          "value": 2001
+          "name": "Buzz falls out of Andy's bedroom window",
+          "value": 3
         },
         {
-          "name": "Ratatouille",
-          "value": 2007
+          "name": "Woody and Buzz are left at the petrol station",
+          "value": 4
         },
         {
-          "name": "Up",
-          "value": 2009
+          "name": "Woody and Buzz land in Andy's car",
+          "value": 9
         }
       ]
     },
     {
       "id": "stack-familiar-2-007",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/List_of_Marvel_Cinematic_Universe_films"
       ],
       "ordered": [
         {
-          "name": "Jaws",
-          "value": 1975
+          "name": "Iron Man",
+          "value": 1
         },
         {
-          "name": "Monsters, Inc.",
-          "value": 2001
+          "name": "Iron Man 2",
+          "value": 2
         },
         {
-          "name": "Finding Nemo",
-          "value": 2003
+          "name": "Guardians of the Galaxy",
+          "value": 5
         },
         {
-          "name": "Ratatouille",
-          "value": 2007
+          "name": "Doctor Strange",
+          "value": 6
         },
         {
-          "name": "Up",
-          "value": 2009
+          "name": "Black Panther",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-2-008",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/Shrek"
       ],
       "ordered": [
         {
-          "name": "Jaws",
-          "value": 1975
+          "name": "Fairy-tale creatures arrive in Shrek's swamp",
+          "value": 1
         },
         {
-          "name": "Titanic",
-          "value": 1997
+          "name": "Shrek travels to Duloc with Donkey",
+          "value": 2
         },
         {
-          "name": "The Truman Show",
-          "value": 1998
+          "name": "Farquaad sends Shrek to rescue Fiona",
+          "value": 3
         },
         {
-          "name": "The Matrix",
-          "value": 1999
+          "name": "Fiona returns to Duloc to marry Farquaad",
+          "value": 7
         },
         {
-          "name": "Shrek",
-          "value": 2001
+          "name": "Shrek and Fiona marry",
+          "value": 9
         }
       ]
     },
     {
       "id": "stack-familiar-2-009",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/Frozen_(2013_film)"
       ],
       "ordered": [
         {
-          "name": "Back to the Future",
-          "value": 1985
+          "name": "Elsa accidentally injures Anna as a child",
+          "value": 1
         },
         {
-          "name": "Jurassic Park",
-          "value": 1993
+          "name": "The sisters grow up separated inside the castle",
+          "value": 2
         },
         {
-          "name": "The Truman Show",
-          "value": 1998
+          "name": "Elsa is crowned queen",
+          "value": 3
         },
         {
-          "name": "Monsters, Inc.",
-          "value": 2001
+          "name": "Elsa's powers are revealed at the celebration",
+          "value": 4
         },
         {
-          "name": "The Dark Knight",
-          "value": 2008
+          "name": "Anna reaches Elsa's ice palace",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-2-010",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/List_of_Pixar_films"
       ],
       "ordered": [
         {
-          "name": "Jaws",
-          "value": 1975
-        },
-        {
-          "name": "The Matrix",
-          "value": 1999
-        },
-        {
           "name": "Monsters, Inc.",
-          "value": 2001
+          "value": 3
+        },
+        {
+          "name": "Finding Nemo",
+          "value": 4
         },
         {
           "name": "The Incredibles",
-          "value": 2004
+          "value": 5
         },
         {
-          "name": "Up",
-          "value": 2009
+          "name": "Ratatouille",
+          "value": 6
+        },
+        {
+          "name": "Inside Out",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-2-011",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/Filmmaking"
       ],
       "ordered": [
         {
-          "name": "The Lion King",
-          "value": 1994
+          "name": "Write the screenplay",
+          "value": 1
         },
         {
-          "name": "Titanic",
-          "value": 1997
+          "name": "Plan and cast the production",
+          "value": 2
         },
         {
-          "name": "The Matrix",
-          "value": 1999
+          "name": "Shoot the scenes",
+          "value": 3
         },
         {
-          "name": "The Dark Knight",
-          "value": 2008
+          "name": "Edit the recorded footage",
+          "value": 4
         },
         {
-          "name": "Up",
-          "value": 2009
+          "name": "Finish the sound mix and final picture",
+          "value": 5
         }
       ]
     },
     {
       "id": "stack-familiar-2-012",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/List_of_Walt_Disney_Animation_Studios_films"
       ],
       "ordered": [
         {
-          "name": "Titanic",
-          "value": 1997
+          "name": "The Jungle Book",
+          "value": 4
         },
         {
-          "name": "The Matrix",
-          "value": 1999
+          "name": "The Little Mermaid",
+          "value": 5
         },
         {
-          "name": "Monsters, Inc.",
-          "value": 2001
+          "name": "Beauty and the Beast",
+          "value": 6
         },
         {
-          "name": "The Incredibles",
-          "value": 2004
+          "name": "The Lion King",
+          "value": 7
         },
         {
-          "name": "Up",
-          "value": 2009
+          "name": "Frozen",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-2-013",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/Frozen_(2013_film)"
       ],
       "ordered": [
         {
-          "name": "Toy Story",
-          "value": 1995
+          "name": "The sisters grow up separated inside the castle",
+          "value": 2
         },
         {
-          "name": "Titanic",
-          "value": 1997
+          "name": "Elsa builds an ice palace",
+          "value": 5
         },
         {
-          "name": "Shrek",
-          "value": 2001
+          "name": "Hans leaves Anna to die",
+          "value": 7
         },
         {
-          "name": "The Incredibles",
-          "value": 2004
+          "name": "Anna sacrifices herself to protect Elsa",
+          "value": 8
         },
         {
-          "name": "Up",
-          "value": 2009
+          "name": "Elsa thaws Arendelle",
+          "value": 9
         }
       ]
     },
     {
       "id": "stack-familiar-2-014",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/The_Lion_King"
       ],
       "ordered": [
         {
-          "name": "Back to the Future",
-          "value": 1985
+          "name": "Simba is presented at Pride Rock",
+          "value": 1
         },
         {
-          "name": "The Matrix",
-          "value": 1999
+          "name": "Mufasa rescues the cubs from the hyenas",
+          "value": 2
         },
         {
-          "name": "Monsters, Inc.",
-          "value": 2001
+          "name": "Adult Nala finds Simba",
+          "value": 6
         },
         {
-          "name": "The Incredibles",
-          "value": 2004
+          "name": "Simba returns to Pride Rock",
+          "value": 7
         },
         {
-          "name": "The Dark Knight",
-          "value": 2008
+          "name": "Simba takes his place as king",
+          "value": 9
         }
       ]
     },
     {
       "id": "stack-familiar-2-015",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/Batman_in_film"
       ],
       "ordered": [
         {
-          "name": "Jurassic Park",
-          "value": 1993
+          "name": "Batman (1989)",
+          "value": 1
         },
         {
-          "name": "Titanic",
-          "value": 1997
+          "name": "Batman Forever",
+          "value": 3
         },
         {
-          "name": "The Truman Show",
-          "value": 1998
+          "name": "Batman Begins",
+          "value": 5
         },
         {
-          "name": "Monsters, Inc.",
-          "value": 2001
+          "name": "The Dark Knight Rises",
+          "value": 7
         },
         {
-          "name": "Finding Nemo",
-          "value": 2003
+          "name": "The Batman",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-2-016",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/Jurassic_Park"
       ],
       "ordered": [
         {
-          "name": "Jaws",
-          "value": 1975
+          "name": "Jurassic Park",
+          "value": 1
         },
         {
-          "name": "Back to the Future",
-          "value": 1985
+          "name": "The Lost World: Jurassic Park",
+          "value": 2
         },
         {
-          "name": "Toy Story",
-          "value": 1995
+          "name": "Jurassic Park III",
+          "value": 3
         },
         {
-          "name": "The Incredibles",
-          "value": 2004
+          "name": "Jurassic World",
+          "value": 4
         },
         {
-          "name": "The Dark Knight",
-          "value": 2008
+          "name": "Jurassic World: Fallen Kingdom",
+          "value": 5
         }
       ]
     },
     {
       "id": "stack-familiar-2-017",
-      "source": "SCREEN TIME",
-      "unit": "",
+      "source": "CRAFT",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/Stop_motion"
       ],
       "ordered": [
         {
-          "name": "Jurassic Park",
-          "value": 1993
+          "name": "Sculpt the clay characters",
+          "value": 1
         },
         {
-          "name": "The Lion King",
-          "value": 1994
+          "name": "Place the characters on the set",
+          "value": 2
         },
         {
-          "name": "Titanic",
-          "value": 1997
+          "name": "Photograph the starting pose",
+          "value": 3
         },
         {
-          "name": "Shrek",
-          "value": 2001
+          "name": "Photograph the changed pose",
+          "value": 5
         },
         {
-          "name": "The Dark Knight",
-          "value": 2008
+          "name": "Repeat small movements and photographs",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-2-018",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/Computer_animation"
       ],
       "ordered": [
         {
-          "name": "Jurassic Park",
-          "value": 1993
+          "name": "Draw the storyboards",
+          "value": 1
         },
         {
-          "name": "The Truman Show",
-          "value": 1998
+          "name": "Build the animatic from the storyboards",
+          "value": 2
         },
         {
-          "name": "The Incredibles",
-          "value": 2004
+          "name": "Animate the characters in those shots",
+          "value": 4
         },
         {
-          "name": "Ratatouille",
-          "value": 2007
+          "name": "Composite the rendered images",
+          "value": 6
         },
         {
-          "name": "Up",
-          "value": 2009
+          "name": "Export the finished film",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-2-019",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/The_Lion_King"
       ],
       "ordered": [
         {
-          "name": "The Terminator",
-          "value": 1984
+          "name": "Mufasa rescues the cubs from the hyenas",
+          "value": 2
         },
         {
-          "name": "Titanic",
-          "value": 1997
+          "name": "The wildebeest stampede begins",
+          "value": 3
         },
         {
-          "name": "The Matrix",
-          "value": 1999
+          "name": "Simba flees the Pride Lands",
+          "value": 4
         },
         {
-          "name": "Finding Nemo",
-          "value": 2003
+          "name": "Timon and Pumbaa take Simba in",
+          "value": 5
         },
         {
-          "name": "Ratatouille",
-          "value": 2007
+          "name": "Simba confronts Scar",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-2-020",
-      "source": "SCREEN TIME",
-      "unit": "",
+      "source": "CRAFT",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/Stop_motion"
       ],
       "ordered": [
         {
-          "name": "The Terminator",
-          "value": 1984
+          "name": "Sculpt the clay characters",
+          "value": 1
         },
         {
-          "name": "Titanic",
-          "value": 1997
+          "name": "Photograph the starting pose",
+          "value": 3
         },
         {
-          "name": "The Matrix",
-          "value": 1999
+          "name": "Move the characters slightly",
+          "value": 4
         },
         {
-          "name": "Shrek",
-          "value": 2001
+          "name": "Repeat small movements and photographs",
+          "value": 6
         },
         {
-          "name": "The Dark Knight",
-          "value": 2008
+          "name": "Play the photographs as a moving sequence",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-2-021",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/Finding_Nemo"
       ],
       "ordered": [
         {
-          "name": "Back to the Future",
-          "value": 1985
+          "name": "Marlin meets Dory",
+          "value": 3
         },
         {
-          "name": "Jurassic Park",
-          "value": 1993
+          "name": "Marlin and Dory meet the sharks",
+          "value": 4
         },
         {
-          "name": "The Truman Show",
-          "value": 1998
+          "name": "A whale carries Marlin and Dory to Sydney",
+          "value": 7
         },
         {
-          "name": "The Matrix",
-          "value": 1999
+          "name": "Marlin reaches the dentist's surgery",
+          "value": 8
         },
         {
-          "name": "Ratatouille",
-          "value": 2007
+          "name": "Nemo helps free the fish caught in the net",
+          "value": 10
         }
       ]
     },
     {
       "id": "stack-familiar-2-022",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/Computer_animation"
       ],
       "ordered": [
         {
-          "name": "Jaws",
-          "value": 1975
+          "name": "Build the animatic from the storyboards",
+          "value": 2
         },
         {
-          "name": "Jurassic Park",
-          "value": 1993
+          "name": "Set up the digital shots",
+          "value": 3
         },
         {
-          "name": "Titanic",
-          "value": 1997
+          "name": "Animate the characters in those shots",
+          "value": 4
         },
         {
-          "name": "The Matrix",
-          "value": 1999
+          "name": "Light and render the animated shots",
+          "value": 5
         },
         {
-          "name": "Shrek",
-          "value": 2001
+          "name": "Composite the rendered images",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-2-023",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/The_Wizard_of_Oz_(1939_film)"
       ],
       "ordered": [
         {
-          "name": "The Terminator",
-          "value": 1984
+          "name": "Dorothy arrives in Munchkinland",
+          "value": 2
         },
         {
-          "name": "The Lion King",
-          "value": 1994
+          "name": "Dorothy meets the Scarecrow",
+          "value": 3
         },
         {
-          "name": "Shrek",
-          "value": 2001
+          "name": "Dorothy meets the Cowardly Lion",
+          "value": 5
         },
         {
-          "name": "The Incredibles",
-          "value": 2004
+          "name": "Dorothy melts the Wicked Witch",
+          "value": 7
         },
         {
-          "name": "Up",
-          "value": 2009
+          "name": "Dorothy returns home",
+          "value": 9
         }
       ]
     },
     {
       "id": "stack-familiar-2-024",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/Harry_Potter_(film_series)"
       ],
       "ordered": [
         {
-          "name": "The Terminator",
-          "value": 1984
+          "name": "Harry Potter and the Philosopher's Stone",
+          "value": 1
         },
         {
-          "name": "Back to the Future",
-          "value": 1985
+          "name": "Harry Potter and the Chamber of Secrets",
+          "value": 2
         },
         {
-          "name": "Toy Story",
-          "value": 1995
+          "name": "Harry Potter and the Order of the Phoenix",
+          "value": 5
         },
         {
-          "name": "Shrek",
-          "value": 2001
+          "name": "Harry Potter and the Half-Blood Prince",
+          "value": 6
         },
         {
-          "name": "The Dark Knight",
-          "value": 2008
+          "name": "Harry Potter and the Deathly Hallows – Part 1",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-2-025",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/Filmmaking"
       ],
       "ordered": [
         {
-          "name": "The Terminator",
-          "value": 1984
+          "name": "Write the screenplay",
+          "value": 1
         },
         {
-          "name": "Back to the Future",
-          "value": 1985
+          "name": "Plan and cast the production",
+          "value": 2
         },
         {
-          "name": "Ratatouille",
-          "value": 2007
+          "name": "Shoot the scenes",
+          "value": 3
         },
         {
-          "name": "The Dark Knight",
-          "value": 2008
+          "name": "Edit the recorded footage",
+          "value": 4
         },
         {
-          "name": "Up",
-          "value": 2009
+          "name": "Release the finished film to audiences",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-2-026",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/The_Wizard_of_Oz_(1939_film)"
       ],
       "ordered": [
         {
-          "name": "Jurassic Park",
-          "value": 1993
+          "name": "A tornado carries Dorothy's house away",
+          "value": 1
         },
         {
-          "name": "The Lion King",
-          "value": 1994
+          "name": "Dorothy meets the Scarecrow",
+          "value": 3
         },
         {
-          "name": "Monsters, Inc.",
-          "value": 2001
+          "name": "Dorothy meets the Tin Man",
+          "value": 4
         },
         {
-          "name": "Finding Nemo",
-          "value": 2003
+          "name": "The group reaches the Emerald City",
+          "value": 6
         },
         {
-          "name": "Ratatouille",
-          "value": 2007
+          "name": "The Wizard leaves in his balloon",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-2-027",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/Jurassic_Park"
       ],
       "ordered": [
         {
-          "name": "Back to the Future",
-          "value": 1985
+          "name": "Jurassic Park",
+          "value": 1
         },
         {
-          "name": "Toy Story",
-          "value": 1995
+          "name": "The Lost World: Jurassic Park",
+          "value": 2
         },
         {
-          "name": "Titanic",
-          "value": 1997
+          "name": "Jurassic Park III",
+          "value": 3
         },
         {
-          "name": "Monsters, Inc.",
-          "value": 2001
+          "name": "Jurassic World",
+          "value": 4
         },
         {
-          "name": "Up",
-          "value": 2009
+          "name": "Jurassic World Dominion",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-2-028",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/Toy_Story"
       ],
       "ordered": [
         {
-          "name": "The Terminator",
-          "value": 1984
+          "name": "Woody and Buzz are left at the petrol station",
+          "value": 4
         },
         {
-          "name": "Jurassic Park",
-          "value": 1993
+          "name": "Sid takes Woody and Buzz home",
+          "value": 5
         },
         {
-          "name": "The Lion King",
-          "value": 1994
+          "name": "Buzz discovers he is a toy",
+          "value": 6
         },
         {
-          "name": "The Truman Show",
-          "value": 1998
+          "name": "The toys frighten Sid",
+          "value": 7
         },
         {
-          "name": "The Dark Knight",
-          "value": 2008
+          "name": "Woody and Buzz chase the moving van",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-2-029",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/List_of_Star_Wars_films"
       ],
       "ordered": [
         {
-          "name": "Jurassic Park",
-          "value": 1993
+          "name": "Return of the Jedi",
+          "value": 3
         },
         {
-          "name": "The Matrix",
-          "value": 1999
+          "name": "The Phantom Menace",
+          "value": 4
         },
         {
-          "name": "Monsters, Inc.",
-          "value": 2001
+          "name": "Attack of the Clones",
+          "value": 5
         },
         {
-          "name": "Ratatouille",
-          "value": 2007
+          "name": "The Last Jedi",
+          "value": 8
         },
         {
-          "name": "Up",
-          "value": 2009
+          "name": "The Rise of Skywalker",
+          "value": 9
         }
       ]
     },
     {
       "id": "stack-familiar-2-030",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/List_of_Marvel_Cinematic_Universe_films"
       ],
       "ordered": [
         {
-          "name": "The Terminator",
-          "value": 1984
+          "name": "Iron Man",
+          "value": 1
         },
         {
-          "name": "Back to the Future",
-          "value": 1985
+          "name": "Thor",
+          "value": 3
         },
         {
-          "name": "Toy Story",
-          "value": 1995
+          "name": "The Avengers",
+          "value": 4
         },
         {
-          "name": "Titanic",
-          "value": 1997
+          "name": "Doctor Strange",
+          "value": 6
         },
         {
-          "name": "Ratatouille",
-          "value": 2007
+          "name": "Black Panther",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-2-031",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/List_of_Pixar_films"
       ],
       "ordered": [
         {
-          "name": "Titanic",
-          "value": 1997
+          "name": "Toy Story",
+          "value": 1
         },
         {
-          "name": "The Truman Show",
-          "value": 1998
+          "name": "A Bug's Life",
+          "value": 2
         },
         {
-          "name": "The Matrix",
-          "value": 1999
+          "name": "Ratatouille",
+          "value": 6
         },
         {
-          "name": "Monsters, Inc.",
-          "value": 2001
+          "name": "WALL-E",
+          "value": 7
         },
         {
-          "name": "Up",
-          "value": 2009
+          "name": "Coco",
+          "value": 9
         }
       ]
     },
     {
       "id": "stack-familiar-2-032",
       "source": "SCREEN TIME",
-      "unit": "",
+      "unit": "sequence position",
       "sources": [
-        "https://www.afi.com/afi-catalog/"
+        "https://en.wikipedia.org/wiki/List_of_Star_Wars_films"
       ],
       "ordered": [
         {
-          "name": "The Lion King",
-          "value": 1994
+          "name": "A New Hope",
+          "value": 1
         },
         {
-          "name": "Toy Story",
-          "value": 1995
+          "name": "The Empire Strikes Back",
+          "value": 2
         },
         {
-          "name": "Monsters, Inc.",
-          "value": 2001
+          "name": "The Phantom Menace",
+          "value": 4
         },
         {
-          "name": "Finding Nemo",
-          "value": 2003
+          "name": "Revenge of the Sith",
+          "value": 6
         },
         {
-          "name": "Up",
-          "value": 2009
+          "name": "The Force Awakens",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-3-001",
       "source": "GAMES",
-      "unit": "first launch year",
+      "unit": "sequence position",
       "sources": [
-        "https://www.nintendo.co.jp/corporate/en/history/index.html",
-        "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Nintendo-History-625945.html"
+        "https://en.wikipedia.org/wiki/Nintendo_video_game_consoles"
       ],
       "ordered": [
         {
           "name": "Famicom / NES",
-          "value": 1983
+          "value": 1
         },
         {
-          "name": "GameCube",
-          "value": 2001
+          "name": "Super Famicom / SNES",
+          "value": 2
+        },
+        {
+          "name": "Nintendo 64",
+          "value": 3
         },
         {
           "name": "Wii",
-          "value": 2006
+          "value": 5
         },
         {
-          "name": "Nintendo Switch",
-          "value": 2017
-        },
-        {
-          "name": "Nintendo Switch 2",
-          "value": 2025
+          "name": "Wii U",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-3-002",
       "source": "GAMES",
-      "unit": "first launch year",
+      "unit": "sequence position",
       "sources": [
-        "https://www.nintendo.co.jp/corporate/en/history/index.html",
-        "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Nintendo-History-625945.html"
+        "https://minecraft.wiki/w/Tutorial:Beginner%27s_guide"
       ],
       "ordered": [
         {
-          "name": "Nintendo 64",
-          "value": 1996
+          "name": "Collect a log",
+          "value": 1
         },
         {
-          "name": "GameCube",
-          "value": 2001
+          "name": "Mine cobblestone with the wooden pickaxe",
+          "value": 5
         },
         {
-          "name": "Wii",
-          "value": 2006
+          "name": "Craft a stone pickaxe",
+          "value": 6
         },
         {
-          "name": "Wii U",
-          "value": 2012
+          "name": "Mine iron ore with the stone pickaxe",
+          "value": 7
         },
         {
-          "name": "Nintendo Switch",
-          "value": 2017
+          "name": "Mine diamond ore with the iron pickaxe",
+          "value": 9
         }
       ]
     },
     {
       "id": "stack-familiar-3-003",
       "source": "GAMES",
-      "unit": "first launch year",
+      "unit": "sequence position",
       "sources": [
-        "https://www.nintendo.co.jp/corporate/en/history/index.html",
-        "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Nintendo-History-625945.html"
+        "https://en.wikipedia.org/wiki/Nintendo_video_game_consoles"
       ],
       "ordered": [
         {
-          "name": "Super Famicom / SNES",
-          "value": 1990
+          "name": "Famicom / NES",
+          "value": 1
         },
         {
           "name": "Nintendo 64",
-          "value": 1996
+          "value": 3
         },
         {
           "name": "GameCube",
-          "value": 2001
+          "value": 4
         },
         {
-          "name": "Wii",
-          "value": 2006
+          "name": "Wii U",
+          "value": 6
         },
         {
           "name": "Nintendo Switch",
-          "value": 2017
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-3-004",
       "source": "GAMES",
-      "unit": "first launch year",
+      "unit": "sequence position",
       "sources": [
-        "https://www.nintendo.co.jp/corporate/en/history/index.html",
-        "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Nintendo-History-625945.html"
+        "https://en.wikipedia.org/wiki/Super_Mario"
       ],
       "ordered": [
         {
-          "name": "Super Famicom / SNES",
-          "value": 1990
+          "name": "Super Mario Bros.",
+          "value": 1
         },
         {
-          "name": "Wii",
-          "value": 2006
+          "name": "Super Mario World",
+          "value": 3
         },
         {
-          "name": "Wii U",
-          "value": 2012
+          "name": "Super Mario 64",
+          "value": 4
         },
         {
-          "name": "Nintendo Switch",
-          "value": 2017
+          "name": "Super Mario Sunshine",
+          "value": 5
         },
         {
-          "name": "Nintendo Switch 2",
-          "value": 2025
+          "name": "Super Mario Odyssey",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-3-005",
       "source": "GAMES",
-      "unit": "first launch year",
+      "unit": "sequence position",
       "sources": [
-        "https://www.nintendo.co.jp/corporate/en/history/index.html",
-        "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Nintendo-History-625945.html"
+        "https://en.wikipedia.org/wiki/PlayStation"
       ],
       "ordered": [
         {
-          "name": "Super Famicom / SNES",
-          "value": 1990
+          "name": "PlayStation 2",
+          "value": 2
         },
         {
-          "name": "Nintendo 64",
-          "value": 1996
+          "name": "PlayStation Portable (PSP)",
+          "value": 3
         },
         {
-          "name": "GameCube",
-          "value": 2001
+          "name": "PlayStation Vita",
+          "value": 5
         },
         {
-          "name": "Wii",
-          "value": 2006
+          "name": "PlayStation 4",
+          "value": 6
         },
         {
-          "name": "Wii U",
-          "value": 2012
+          "name": "PlayStation 5",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-3-006",
-      "source": "GAMES",
-      "unit": "first launch year",
+      "source": "SPORT",
+      "unit": "sequence position",
       "sources": [
-        "https://www.nintendo.co.jp/corporate/en/history/index.html",
-        "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Nintendo-History-625945.html"
+        "https://en.wikipedia.org/wiki/List_of_Olympic_Games_host_cities"
       ],
       "ordered": [
         {
-          "name": "Famicom / NES",
-          "value": 1983
+          "name": "Athens",
+          "value": 1
         },
         {
-          "name": "Nintendo 64",
-          "value": 1996
+          "name": "Los Angeles",
+          "value": 4
         },
         {
-          "name": "GameCube",
-          "value": 2001
+          "name": "Melbourne",
+          "value": 5
         },
         {
-          "name": "Wii",
-          "value": 2006
+          "name": "Tokyo",
+          "value": 6
         },
         {
-          "name": "Nintendo Switch 2",
-          "value": 2025
+          "name": "Rio de Janeiro",
+          "value": 9
         }
       ]
     },
     {
       "id": "stack-familiar-3-007",
       "source": "GAMES",
-      "unit": "first launch year",
+      "unit": "sequence position",
       "sources": [
-        "https://www.nintendo.co.jp/corporate/en/history/index.html",
-        "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Nintendo-History-625945.html"
+        "https://minecraft.wiki/w/Tutorial:Beginner%27s_guide"
       ],
       "ordered": [
         {
-          "name": "GameCube",
-          "value": 2001
+          "name": "Collect a log",
+          "value": 1
         },
         {
-          "name": "Wii",
-          "value": 2006
+          "name": "Craft wooden planks from the log",
+          "value": 2
         },
         {
-          "name": "Wii U",
-          "value": 2012
+          "name": "Craft a crafting table",
+          "value": 3
         },
         {
-          "name": "Nintendo Switch",
-          "value": 2017
+          "name": "Craft a wooden pickaxe",
+          "value": 4
         },
         {
-          "name": "Nintendo Switch 2",
-          "value": 2025
+          "name": "Smelt the iron and craft an iron pickaxe",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-3-008",
-      "source": "GAMES",
-      "unit": "first launch year",
+      "source": "SPORT",
+      "unit": "sequence position",
       "sources": [
-        "https://www.nintendo.co.jp/corporate/en/history/index.html",
-        "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Nintendo-History-625945.html"
+        "https://en.wikipedia.org/wiki/Fosbury_flop"
       ],
       "ordered": [
         {
-          "name": "Super Famicom / SNES",
-          "value": 1990
+          "name": "Start the run-up",
+          "value": 1
         },
         {
-          "name": "Nintendo 64",
-          "value": 1996
+          "name": "Run the curved part of the approach",
+          "value": 2
         },
         {
-          "name": "GameCube",
-          "value": 2001
+          "name": "Plant the take-off foot",
+          "value": 3
         },
         {
-          "name": "Wii",
-          "value": 2006
+          "name": "Pass backwards over the bar",
+          "value": 5
         },
         {
-          "name": "Nintendo Switch 2",
-          "value": 2025
+          "name": "Land on the safety mat",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-3-009",
-      "source": "GAMES",
-      "unit": "first launch year",
+      "source": "TECHNOLOGY",
+      "unit": "sequence position",
       "sources": [
-        "https://sonyinteractive.com/en/our-company/expanded-company-timeline/"
+        "https://en.wikipedia.org/wiki/History_of_telecommunication"
       ],
       "ordered": [
         {
-          "name": "PlayStation",
-          "value": 1994
+          "name": "Gutenberg develops his printing press",
+          "value": 1
         },
         {
-          "name": "PlayStation 2",
-          "value": 2000
+          "name": "Bell patents the telephone",
+          "value": 2
         },
         {
-          "name": "PlayStation 3",
-          "value": 2006
+          "name": "Marconi sends a wireless signal across the Atlantic",
+          "value": 3
         },
         {
-          "name": "PlayStation Vita",
-          "value": 2011
+          "name": "Ray Tomlinson sends network email",
+          "value": 5
         },
         {
-          "name": "PlayStation 5",
-          "value": 2020
+          "name": "The World Wide Web opens to the public",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-3-010",
-      "source": "GAMES",
-      "unit": "first launch year",
+      "source": "HISTORY",
+      "unit": "sequence position",
       "sources": [
-        "https://sonyinteractive.com/en/our-company/expanded-company-timeline/"
+        "https://en.wikipedia.org/wiki/Timeline_of_human_history"
       ],
       "ordered": [
         {
-          "name": "PlayStation",
-          "value": 1994
+          "name": "The Great Pyramid of Giza is completed",
+          "value": 1
         },
         {
-          "name": "PlayStation 2",
-          "value": 2000
+          "name": "The Colosseum opens in Rome",
+          "value": 2
         },
         {
-          "name": "PlayStation 3",
-          "value": 2006
+          "name": "Magna Carta is issued",
+          "value": 3
         },
         {
-          "name": "PlayStation 4",
-          "value": 2013
+          "name": "Columbus reaches the Americas",
+          "value": 4
         },
         {
-          "name": "PlayStation 5",
-          "value": 2020
+          "name": "The Wright brothers make their powered flight",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-3-011",
-      "source": "GAMES",
-      "unit": "first launch year",
+      "source": "SPORT",
+      "unit": "sequence position",
       "sources": [
-        "https://sonyinteractive.com/en/our-company/expanded-company-timeline/"
+        "https://en.wikipedia.org/wiki/List_of_FIFA_World_Cup_hosts"
       ],
       "ordered": [
         {
-          "name": "PlayStation",
-          "value": 1994
+          "name": "England",
+          "value": 3
         },
         {
-          "name": "PSP",
-          "value": 2004
+          "name": "Germany / West Germany",
+          "value": 4
         },
         {
-          "name": "PlayStation Vita",
-          "value": 2011
+          "name": "USA",
+          "value": 5
         },
         {
-          "name": "PlayStation 4",
-          "value": 2013
+          "name": "South Africa",
+          "value": 6
         },
         {
-          "name": "PlayStation 5",
-          "value": 2020
+          "name": "Russia",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-3-012",
-      "source": "GAMES",
-      "unit": "first launch year",
+      "source": "SPORT",
+      "unit": "sequence position",
       "sources": [
-        "https://sonyinteractive.com/en/our-company/expanded-company-timeline/"
+        "https://en.wikipedia.org/wiki/Sprint_(running)"
       ],
       "ordered": [
         {
-          "name": "PlayStation",
-          "value": 1994
+          "name": "The starter calls on your marks",
+          "value": 2
         },
         {
-          "name": "PlayStation 2",
-          "value": 2000
+          "name": "The starting signal sounds",
+          "value": 5
         },
         {
-          "name": "PSP",
-          "value": 2004
+          "name": "The runners leave their blocks",
+          "value": 6
         },
         {
-          "name": "PlayStation 4",
-          "value": 2013
+          "name": "The runners cross the finish line",
+          "value": 7
         },
         {
-          "name": "PlayStation 5",
-          "value": 2020
+          "name": "The result is recorded",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-3-013",
       "source": "GAMES",
-      "unit": "first launch year",
+      "unit": "sequence position",
       "sources": [
-        "https://sonyinteractive.com/en/our-company/expanded-company-timeline/"
+        "https://en.wikipedia.org/wiki/Xbox"
       ],
       "ordered": [
         {
-          "name": "PlayStation",
-          "value": 1994
+          "name": "Xbox",
+          "value": 1
         },
         {
-          "name": "PSP",
-          "value": 2004
+          "name": "Xbox 360",
+          "value": 2
         },
         {
-          "name": "PlayStation 3",
-          "value": 2006
+          "name": "Xbox One",
+          "value": 3
         },
         {
-          "name": "PlayStation Vita",
-          "value": 2011
+          "name": "Xbox One S",
+          "value": 4
         },
         {
-          "name": "PlayStation 5",
-          "value": 2020
+          "name": "Xbox One X",
+          "value": 5
         }
       ]
     },
     {
       "id": "stack-familiar-3-014",
-      "source": "GAMES",
-      "unit": "first launch year",
+      "source": "SPORT",
+      "unit": "sequence position",
       "sources": [
-        "https://sonyinteractive.com/en/our-company/expanded-company-timeline/"
+        "https://en.wikipedia.org/wiki/Ten-pin_bowling"
       ],
       "ordered": [
         {
-          "name": "PlayStation",
-          "value": 1994
+          "name": "Release the ball",
+          "value": 3
         },
         {
-          "name": "PlayStation 2",
-          "value": 2000
+          "name": "The ball rolls down the lane",
+          "value": 4
         },
         {
-          "name": "PSP",
-          "value": 2004
+          "name": "The ball reaches the pins",
+          "value": 5
         },
         {
-          "name": "PlayStation Vita",
-          "value": 2011
+          "name": "Fallen pins are cleared",
+          "value": 6
         },
         {
-          "name": "PlayStation 5",
-          "value": 2020
+          "name": "The machine prepares the pins for the next shot",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-3-015",
-      "source": "GAMES",
-      "unit": "first launch year",
+      "source": "TECHNOLOGY",
+      "unit": "sequence position",
       "sources": [
-        "https://sonyinteractive.com/en/our-company/expanded-company-timeline/"
+        "https://en.wikipedia.org/wiki/Walkman",
+        "https://en.wikipedia.org/wiki/Compact_disc",
+        "https://en.wikipedia.org/wiki/IPod",
+        "https://en.wikipedia.org/wiki/YouTube",
+        "https://en.wikipedia.org/wiki/Netflix",
+        "https://en.wikipedia.org/wiki/Spotify"
       ],
       "ordered": [
         {
-          "name": "PlayStation",
-          "value": 1994
+          "name": "Sony Walkman",
+          "value": 1
         },
         {
-          "name": "PlayStation 3",
-          "value": 2006
+          "name": "Commercial audio CDs",
+          "value": 2
         },
         {
-          "name": "PlayStation Vita",
-          "value": 2011
+          "name": "Apple iPod",
+          "value": 3
         },
         {
-          "name": "PlayStation 4",
-          "value": 2013
+          "name": "YouTube",
+          "value": 4
         },
         {
-          "name": "PlayStation 5",
-          "value": 2020
+          "name": "Netflix streaming",
+          "value": 5
         }
       ]
     },
     {
       "id": "stack-familiar-3-016",
-      "source": "GAMES",
-      "unit": "first launch year",
+      "source": "SPORT",
+      "unit": "sequence position",
       "sources": [
-        "https://sonyinteractive.com/en/our-company/expanded-company-timeline/"
+        "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup"
       ],
       "ordered": [
         {
-          "name": "PSP",
-          "value": 2004
+          "name": "Round of 32",
+          "value": 2
         },
         {
-          "name": "PlayStation 3",
-          "value": 2006
+          "name": "Round of 16",
+          "value": 3
         },
         {
-          "name": "PlayStation Vita",
-          "value": 2011
+          "name": "Quarter-finals",
+          "value": 4
         },
         {
-          "name": "PlayStation 4",
-          "value": 2013
+          "name": "Semi-finals",
+          "value": 5
         },
         {
-          "name": "PlayStation 5",
-          "value": 2020
+          "name": "Trophy presentation",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-3-017",
-      "source": "HISTORY",
-      "unit": "year",
+      "source": "SPORT",
+      "unit": "sequence position",
       "sources": [
-        "https://www.pbs.org/empires/romans/special/timeline_26.html",
-        "https://christophercolumbus.org/wp-content/uploads/2019/01/2005.pdf",
-        "https://www.archives.gov/milestone-documents/declaration-of-independence",
-        "https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/the-wilbur-and-orville-wright-timeline-1846-to-1948/1901-to-1910/",
-        "https://www.noaa.gov/rms-titanic",
-        "https://en.wikipedia.org/wiki/Federation_of_Australia",
-        "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
-        "https://en.wikipedia.org/wiki/IPhone_(1st_generation)"
+        "https://en.wikipedia.org/wiki/Fosbury_flop"
       ],
       "ordered": [
         {
-          "name": "Rome’s Colosseum opens",
-          "value": 80
+          "name": "Start the run-up",
+          "value": 1
         },
         {
-          "name": "Columbus reaches the Caribbean",
-          "value": 1492
+          "name": "Plant the take-off foot",
+          "value": 3
         },
         {
-          "name": "The US Declaration of Independence is adopted",
-          "value": 1776
+          "name": "Push off the ground",
+          "value": 4
         },
         {
-          "name": "Australia becomes a federation",
-          "value": 1901
+          "name": "Pass backwards over the bar",
+          "value": 5
         },
         {
-          "name": "The Titanic sinks",
-          "value": 1912
+          "name": "Land on the safety mat",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-3-018",
-      "source": "HISTORY",
-      "unit": "year",
+      "source": "TECHNOLOGY",
+      "unit": "sequence position",
       "sources": [
-        "https://www.pbs.org/empires/romans/special/timeline_26.html",
-        "https://christophercolumbus.org/wp-content/uploads/2019/01/2005.pdf",
-        "https://www.archives.gov/milestone-documents/declaration-of-independence",
-        "https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/the-wilbur-and-orville-wright-timeline-1846-to-1948/1901-to-1910/",
-        "https://www.noaa.gov/rms-titanic",
-        "https://en.wikipedia.org/wiki/Federation_of_Australia",
-        "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
-        "https://en.wikipedia.org/wiki/IPhone_(1st_generation)"
+        "https://en.wikipedia.org/wiki/Walkman",
+        "https://en.wikipedia.org/wiki/Compact_disc",
+        "https://en.wikipedia.org/wiki/IPod",
+        "https://en.wikipedia.org/wiki/YouTube",
+        "https://en.wikipedia.org/wiki/Netflix",
+        "https://en.wikipedia.org/wiki/Spotify"
       ],
       "ordered": [
         {
-          "name": "Rome’s Colosseum opens",
-          "value": 80
+          "name": "Sony Walkman",
+          "value": 1
         },
         {
-          "name": "Columbus reaches the Caribbean",
-          "value": 1492
+          "name": "Commercial audio CDs",
+          "value": 2
         },
         {
-          "name": "Australia becomes a federation",
-          "value": 1901
+          "name": "Apple iPod",
+          "value": 3
         },
         {
-          "name": "The Wright brothers fly the Wright Flyer",
-          "value": 1903
+          "name": "Netflix streaming",
+          "value": 5
         },
         {
-          "name": "The Berlin Wall’s border crossings open",
-          "value": 1989
+          "name": "Spotify",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-3-019",
-      "source": "HISTORY",
-      "unit": "year",
+      "source": "GAMES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.pbs.org/empires/romans/special/timeline_26.html",
-        "https://christophercolumbus.org/wp-content/uploads/2019/01/2005.pdf",
-        "https://www.archives.gov/milestone-documents/declaration-of-independence",
-        "https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/the-wilbur-and-orville-wright-timeline-1846-to-1948/1901-to-1910/",
-        "https://www.noaa.gov/rms-titanic",
-        "https://en.wikipedia.org/wiki/Federation_of_Australia",
-        "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
-        "https://en.wikipedia.org/wiki/IPhone_(1st_generation)"
+        "https://en.wikipedia.org/wiki/Xbox"
       ],
       "ordered": [
         {
-          "name": "Rome’s Colosseum opens",
-          "value": 80
+          "name": "Xbox",
+          "value": 1
         },
         {
-          "name": "Columbus reaches the Caribbean",
-          "value": 1492
+          "name": "Xbox 360",
+          "value": 2
         },
         {
-          "name": "Australia becomes a federation",
-          "value": 1901
+          "name": "Xbox One",
+          "value": 3
         },
         {
-          "name": "The Titanic sinks",
-          "value": 1912
+          "name": "Xbox One X",
+          "value": 5
         },
         {
-          "name": "The Berlin Wall’s border crossings open",
-          "value": 1989
+          "name": "Xbox Series X",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-3-020",
-      "source": "HISTORY",
-      "unit": "year",
+      "source": "SPORT",
+      "unit": "sequence position",
       "sources": [
-        "https://www.pbs.org/empires/romans/special/timeline_26.html",
-        "https://christophercolumbus.org/wp-content/uploads/2019/01/2005.pdf",
-        "https://www.archives.gov/milestone-documents/declaration-of-independence",
-        "https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/the-wilbur-and-orville-wright-timeline-1846-to-1948/1901-to-1910/",
-        "https://www.noaa.gov/rms-titanic",
-        "https://en.wikipedia.org/wiki/Federation_of_Australia",
-        "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
-        "https://en.wikipedia.org/wiki/IPhone_(1st_generation)"
+        "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup"
       ],
       "ordered": [
         {
-          "name": "Columbus reaches the Caribbean",
-          "value": 1492
+          "name": "Group stage",
+          "value": 1
         },
         {
-          "name": "Australia becomes a federation",
-          "value": 1901
+          "name": "Quarter-finals",
+          "value": 4
         },
         {
-          "name": "The Wright brothers fly the Wright Flyer",
-          "value": 1903
+          "name": "Semi-finals",
+          "value": 5
         },
         {
-          "name": "The Berlin Wall’s border crossings open",
-          "value": 1989
+          "name": "Final",
+          "value": 6
         },
         {
-          "name": "The first iPhone goes on sale in the US",
-          "value": 2007
+          "name": "Trophy presentation",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-3-021",
-      "source": "HISTORY",
-      "unit": "year",
+      "source": "GAMES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.pbs.org/empires/romans/special/timeline_26.html",
-        "https://christophercolumbus.org/wp-content/uploads/2019/01/2005.pdf",
-        "https://www.archives.gov/milestone-documents/declaration-of-independence",
-        "https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/the-wilbur-and-orville-wright-timeline-1846-to-1948/1901-to-1910/",
-        "https://www.noaa.gov/rms-titanic",
-        "https://en.wikipedia.org/wiki/Federation_of_Australia",
-        "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
-        "https://en.wikipedia.org/wiki/IPhone_(1st_generation)"
+        "https://en.wikipedia.org/wiki/Super_Mario"
       ],
       "ordered": [
         {
-          "name": "Columbus reaches the Caribbean",
-          "value": 1492
+          "name": "Super Mario Bros.",
+          "value": 1
         },
         {
-          "name": "Australia becomes a federation",
-          "value": 1901
+          "name": "Super Mario Bros. 3",
+          "value": 2
         },
         {
-          "name": "The Wright brothers fly the Wright Flyer",
-          "value": 1903
+          "name": "Super Mario Sunshine",
+          "value": 5
         },
         {
-          "name": "The Titanic sinks",
-          "value": 1912
+          "name": "Super Mario Galaxy",
+          "value": 6
         },
         {
-          "name": "The Berlin Wall’s border crossings open",
-          "value": 1989
+          "name": "Super Mario Odyssey",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-3-022",
-      "source": "HISTORY",
-      "unit": "year",
+      "source": "SPORT",
+      "unit": "sequence position",
       "sources": [
-        "https://www.pbs.org/empires/romans/special/timeline_26.html",
-        "https://christophercolumbus.org/wp-content/uploads/2019/01/2005.pdf",
-        "https://www.archives.gov/milestone-documents/declaration-of-independence",
-        "https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/the-wilbur-and-orville-wright-timeline-1846-to-1948/1901-to-1910/",
-        "https://www.noaa.gov/rms-titanic",
-        "https://en.wikipedia.org/wiki/Federation_of_Australia",
-        "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
-        "https://en.wikipedia.org/wiki/IPhone_(1st_generation)"
+        "https://en.wikipedia.org/wiki/Association_football"
       ],
       "ordered": [
         {
-          "name": "Rome’s Colosseum opens",
-          "value": 80
+          "name": "Pre-match warm-up",
+          "value": 1
         },
         {
-          "name": "The US Declaration of Independence is adopted",
-          "value": 1776
+          "name": "Kick-off for the first half",
+          "value": 3
         },
         {
-          "name": "The Wright brothers fly the Wright Flyer",
-          "value": 1903
+          "name": "Half-time",
+          "value": 4
         },
         {
-          "name": "The Berlin Wall’s border crossings open",
-          "value": 1989
+          "name": "Kick-off for the second half",
+          "value": 5
         },
         {
-          "name": "The first iPhone goes on sale in the US",
-          "value": 2007
+          "name": "The final whistle",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-3-023",
-      "source": "HISTORY",
-      "unit": "year",
+      "source": "TECHNOLOGY",
+      "unit": "sequence position",
       "sources": [
-        "https://www.pbs.org/empires/romans/special/timeline_26.html",
-        "https://christophercolumbus.org/wp-content/uploads/2019/01/2005.pdf",
-        "https://www.archives.gov/milestone-documents/declaration-of-independence",
-        "https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/the-wilbur-and-orville-wright-timeline-1846-to-1948/1901-to-1910/",
-        "https://www.noaa.gov/rms-titanic",
-        "https://en.wikipedia.org/wiki/Federation_of_Australia",
-        "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
-        "https://en.wikipedia.org/wiki/IPhone_(1st_generation)"
+        "https://en.wikipedia.org/wiki/History_of_telecommunication"
       ],
       "ordered": [
         {
-          "name": "Rome’s Colosseum opens",
-          "value": 80
+          "name": "Gutenberg develops his printing press",
+          "value": 1
         },
         {
-          "name": "Columbus reaches the Caribbean",
-          "value": 1492
+          "name": "Bell patents the telephone",
+          "value": 2
         },
         {
-          "name": "The US Declaration of Independence is adopted",
-          "value": 1776
+          "name": "The first BBC television service begins",
+          "value": 4
         },
         {
-          "name": "The Wright brothers fly the Wright Flyer",
-          "value": 1903
+          "name": "The World Wide Web opens to the public",
+          "value": 6
         },
         {
-          "name": "The Berlin Wall’s border crossings open",
-          "value": 1989
+          "name": "The first iPhone goes on sale",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-3-024",
       "source": "HISTORY",
-      "unit": "year",
+      "unit": "sequence position",
       "sources": [
-        "https://www.pbs.org/empires/romans/special/timeline_26.html",
-        "https://christophercolumbus.org/wp-content/uploads/2019/01/2005.pdf",
-        "https://www.archives.gov/milestone-documents/declaration-of-independence",
-        "https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/the-wilbur-and-orville-wright-timeline-1846-to-1948/1901-to-1910/",
-        "https://www.noaa.gov/rms-titanic",
-        "https://en.wikipedia.org/wiki/Federation_of_Australia",
-        "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
-        "https://en.wikipedia.org/wiki/IPhone_(1st_generation)"
+        "https://en.wikipedia.org/wiki/Timeline_of_human_history"
       ],
       "ordered": [
         {
-          "name": "Rome’s Colosseum opens",
-          "value": 80
+          "name": "The Great Pyramid of Giza is completed",
+          "value": 1
         },
         {
-          "name": "Columbus reaches the Caribbean",
-          "value": 1492
+          "name": "The Colosseum opens in Rome",
+          "value": 2
         },
         {
-          "name": "Australia becomes a federation",
-          "value": 1901
+          "name": "The US Declaration of Independence is adopted",
+          "value": 5
         },
         {
-          "name": "The Titanic sinks",
-          "value": 1912
+          "name": "Humans first walk on the Moon",
+          "value": 7
         },
         {
-          "name": "The first iPhone goes on sale in the US",
-          "value": 2007
+          "name": "The World Wide Web is proposed",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-3-025",
-      "source": "SPORT",
-      "unit": "year Games were held",
+      "source": "TRANSPORT",
+      "unit": "sequence position",
       "sources": [
-        "https://olympics.com/en/olympic-games"
+        "https://en.wikipedia.org/wiki/Stephenson%27s_Rocket",
+        "https://en.wikipedia.org/wiki/Wright_Flyer",
+        "https://en.wikipedia.org/wiki/RMS_Titanic",
+        "https://en.wikipedia.org/wiki/Volkswagen_Beetle",
+        "https://en.wikipedia.org/wiki/Concorde",
+        "https://en.wikipedia.org/wiki/DMC_DeLorean",
+        "https://en.wikipedia.org/wiki/Tesla_Roadster_(first_generation)"
       ],
       "ordered": [
         {
-          "name": "Sydney",
-          "value": 2000
+          "name": "Stephenson's Rocket",
+          "value": 1
         },
         {
-          "name": "Athens",
-          "value": 2004
+          "name": "Wright Flyer",
+          "value": 2
         },
         {
-          "name": "London",
-          "value": 2012
+          "name": "Concorde",
+          "value": 5
         },
         {
-          "name": "Rio de Janeiro",
-          "value": 2016
+          "name": "DeLorean DMC-12",
+          "value": 6
         },
         {
-          "name": "Tokyo",
-          "value": 2021
+          "name": "Original Tesla Roadster",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-3-026",
-      "source": "SPORT",
-      "unit": "year Games were held",
+      "source": "TRANSPORT",
+      "unit": "sequence position",
       "sources": [
-        "https://olympics.com/en/olympic-games"
+        "https://en.wikipedia.org/wiki/Stephenson%27s_Rocket",
+        "https://en.wikipedia.org/wiki/Wright_Flyer",
+        "https://en.wikipedia.org/wiki/RMS_Titanic",
+        "https://en.wikipedia.org/wiki/Volkswagen_Beetle",
+        "https://en.wikipedia.org/wiki/Concorde",
+        "https://en.wikipedia.org/wiki/DMC_DeLorean",
+        "https://en.wikipedia.org/wiki/Tesla_Roadster_(first_generation)"
       ],
       "ordered": [
         {
-          "name": "Atlanta",
-          "value": 1996
+          "name": "Stephenson's Rocket",
+          "value": 1
         },
         {
-          "name": "Sydney",
-          "value": 2000
+          "name": "RMS Titanic",
+          "value": 3
         },
         {
-          "name": "Rio de Janeiro",
-          "value": 2016
+          "name": "Volkswagen Beetle",
+          "value": 4
         },
         {
-          "name": "Tokyo",
-          "value": 2021
+          "name": "Concorde",
+          "value": 5
         },
         {
-          "name": "Paris",
-          "value": 2024
+          "name": "Original Tesla Roadster",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-3-027",
       "source": "SPORT",
-      "unit": "year Games were held",
+      "unit": "sequence position",
       "sources": [
-        "https://olympics.com/en/olympic-games"
+        "https://en.wikipedia.org/wiki/Association_football"
       ],
       "ordered": [
         {
-          "name": "Atlanta",
-          "value": 1996
+          "name": "Pre-match warm-up",
+          "value": 1
         },
         {
-          "name": "Sydney",
-          "value": 2000
+          "name": "The captains' coin toss",
+          "value": 2
         },
         {
-          "name": "Athens",
-          "value": 2004
+          "name": "Kick-off for the first half",
+          "value": 3
         },
         {
-          "name": "London",
-          "value": 2012
+          "name": "The final whistle",
+          "value": 6
         },
         {
-          "name": "Paris",
-          "value": 2024
+          "name": "Post-match handshakes",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-3-028",
-      "source": "SPORT",
-      "unit": "year Games were held",
+      "source": "GAMES",
+      "unit": "sequence position",
       "sources": [
-        "https://olympics.com/en/olympic-games"
+        "https://en.wikipedia.org/wiki/PlayStation"
       ],
       "ordered": [
         {
-          "name": "Atlanta",
-          "value": 1996
+          "name": "PlayStation",
+          "value": 1
         },
         {
-          "name": "Sydney",
-          "value": 2000
+          "name": "PlayStation 2",
+          "value": 2
         },
         {
-          "name": "Athens",
-          "value": 2004
+          "name": "PlayStation 3",
+          "value": 4
         },
         {
-          "name": "Rio de Janeiro",
-          "value": 2016
+          "name": "PlayStation 4",
+          "value": 6
         },
         {
-          "name": "Paris",
-          "value": 2024
+          "name": "PlayStation 5",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-3-029",
       "source": "SPORT",
-      "unit": "year Games were held",
+      "unit": "sequence position",
       "sources": [
-        "https://olympics.com/en/olympic-games"
+        "https://en.wikipedia.org/wiki/Sprint_(running)"
       ],
       "ordered": [
         {
-          "name": "Atlanta",
-          "value": 1996
+          "name": "The athletes are called to the start",
+          "value": 1
         },
         {
-          "name": "Athens",
-          "value": 2004
+          "name": "The runners take their starting positions",
+          "value": 3
         },
         {
-          "name": "London",
-          "value": 2012
+          "name": "The starter calls set",
+          "value": 4
         },
         {
-          "name": "Rio de Janeiro",
-          "value": 2016
+          "name": "The runners cross the finish line",
+          "value": 7
         },
         {
-          "name": "Paris",
-          "value": 2024
+          "name": "The result is recorded",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-3-030",
       "source": "SPORT",
-      "unit": "year Games were held",
+      "unit": "sequence position",
       "sources": [
-        "https://olympics.com/en/olympic-games"
+        "https://en.wikipedia.org/wiki/Ten-pin_bowling"
       ],
       "ordered": [
         {
-          "name": "Sydney",
-          "value": 2000
+          "name": "Pick up the bowling ball",
+          "value": 1
         },
         {
-          "name": "Athens",
-          "value": 2004
+          "name": "Approach the foul line",
+          "value": 2
         },
         {
-          "name": "London",
-          "value": 2012
+          "name": "Release the ball",
+          "value": 3
         },
         {
-          "name": "Tokyo",
-          "value": 2021
+          "name": "Fallen pins are cleared",
+          "value": 6
         },
         {
-          "name": "Paris",
-          "value": 2024
+          "name": "The machine prepares the pins for the next shot",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-3-031",
       "source": "SPORT",
-      "unit": "year Games were held",
+      "unit": "sequence position",
       "sources": [
-        "https://olympics.com/en/olympic-games"
+        "https://en.wikipedia.org/wiki/List_of_Olympic_Games_host_cities"
       ],
       "ordered": [
         {
-          "name": "Atlanta",
-          "value": 1996
-        },
-        {
-          "name": "Athens",
-          "value": 2004
+          "name": "Paris",
+          "value": 2
         },
         {
           "name": "London",
-          "value": 2012
+          "value": 3
         },
         {
-          "name": "Tokyo",
-          "value": 2021
+          "name": "Sydney",
+          "value": 7
         },
         {
-          "name": "Paris",
-          "value": 2024
+          "name": "Beijing",
+          "value": 8
+        },
+        {
+          "name": "Rio de Janeiro",
+          "value": 9
         }
       ]
     },
     {
       "id": "stack-familiar-3-032",
       "source": "SPORT",
-      "unit": "year Games were held",
+      "unit": "sequence position",
       "sources": [
-        "https://olympics.com/en/olympic-games"
+        "https://en.wikipedia.org/wiki/List_of_FIFA_World_Cup_hosts"
       ],
       "ordered": [
         {
-          "name": "Atlanta",
-          "value": 1996
+          "name": "France",
+          "value": 1
         },
         {
-          "name": "Sydney",
-          "value": 2000
+          "name": "Brazil",
+          "value": 2
         },
         {
-          "name": "Athens",
-          "value": 2004
+          "name": "South Africa",
+          "value": 6
         },
         {
-          "name": "Beijing",
-          "value": 2008
+          "name": "Russia",
+          "value": 7
         },
         {
-          "name": "Rio de Janeiro",
-          "value": 2016
+          "name": "Qatar",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-4-001",
-      "source": "BOOKS",
-      "unit": "book position",
+      "source": "STORIES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.harrypotter.com/discover/books"
+        "https://en.wikipedia.org/wiki/The_Ugly_Duckling"
       ],
       "ordered": [
         {
-          "name": "Harry Potter and the Philosopher's Stone",
+          "name": "The unusual young bird hatches",
           "value": 1
         },
         {
-          "name": "Harry Potter and the Chamber of Secrets",
+          "name": "Other farmyard birds reject him",
           "value": 2
         },
         {
-          "name": "Harry Potter and the Order of the Phoenix",
+          "name": "He leaves the farmyard",
+          "value": 3
+        },
+        {
+          "name": "Spring arrives",
           "value": 5
         },
         {
-          "name": "Harry Potter and the Half-Blood Prince",
+          "name": "He recognises his reflection as a grown swan",
           "value": 6
-        },
-        {
-          "name": "Harry Potter and the Deathly Hallows",
-          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-4-002",
       "source": "BOOKS",
-      "unit": "book position",
+      "unit": "sequence position",
       "sources": [
-        "https://www.harrypotter.com/discover/books"
+        "https://en.wikipedia.org/wiki/Roald_Dahl_bibliography"
       ],
       "ordered": [
         {
-          "name": "Harry Potter and the Philosopher's Stone",
+          "name": "James and the Giant Peach",
           "value": 1
         },
         {
-          "name": "Harry Potter and the Prisoner of Azkaban",
+          "name": "Charlie and the Chocolate Factory",
+          "value": 2
+        },
+        {
+          "name": "Fantastic Mr Fox",
           "value": 3
         },
         {
-          "name": "Harry Potter and the Goblet of Fire",
-          "value": 4
-        },
-        {
-          "name": "Harry Potter and the Half-Blood Prince",
+          "name": "Matilda",
           "value": 6
         },
         {
-          "name": "Harry Potter and the Deathly Hallows",
+          "name": "Esio Trot",
           "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-4-003",
-      "source": "BOOKS",
-      "unit": "book position",
+      "source": "STORIES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.harrypotter.com/discover/books"
+        "https://en.wikipedia.org/wiki/The_Three_Little_Pigs"
       ],
       "ordered": [
         {
-          "name": "Harry Potter and the Philosopher's Stone",
+          "name": "The pigs leave home",
           "value": 1
         },
         {
-          "name": "Harry Potter and the Prisoner of Azkaban",
+          "name": "The wolf blows down the straw house",
           "value": 3
         },
         {
-          "name": "Harry Potter and the Order of the Phoenix",
+          "name": "The pigs shelter in the brick house",
           "value": 5
         },
         {
-          "name": "Harry Potter and the Half-Blood Prince",
+          "name": "The wolf fails to blow down the brick house",
           "value": 6
         },
         {
-          "name": "Harry Potter and the Deathly Hallows",
+          "name": "The wolf tries to enter through the chimney",
           "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-4-004",
-      "source": "BOOKS",
-      "unit": "book position",
+      "source": "STORIES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.harrypotter.com/discover/books"
+        "https://en.wikipedia.org/wiki/The_Gingerbread_Man"
       ],
       "ordered": [
         {
-          "name": "Harry Potter and the Philosopher's Stone",
+          "name": "The gingerbread man is baked",
           "value": 1
         },
         {
-          "name": "Harry Potter and the Chamber of Secrets",
+          "name": "The gingerbread man escapes from the oven",
           "value": 2
         },
         {
-          "name": "Harry Potter and the Goblet of Fire",
-          "value": 4
+          "name": "People and animals chase him",
+          "value": 3
         },
         {
-          "name": "Harry Potter and the Order of the Phoenix",
+          "name": "The fox offers to carry him",
           "value": 5
         },
         {
-          "name": "Harry Potter and the Deathly Hallows",
+          "name": "The fox eats the gingerbread man",
           "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-4-005",
-      "source": "BOOKS",
-      "unit": "book position",
+      "source": "MUSIC",
+      "unit": "sequence position",
       "sources": [
-        "https://www.harrypotter.com/discover/books"
+        "https://en.wikipedia.org/wiki/The_Beatles_discography"
       ],
       "ordered": [
         {
-          "name": "Harry Potter and the Philosopher's Stone",
+          "name": "Please Please Me",
           "value": 1
         },
         {
-          "name": "Harry Potter and the Chamber of Secrets",
-          "value": 2
-        },
-        {
-          "name": "Harry Potter and the Prisoner of Azkaban",
-          "value": 3
-        },
-        {
-          "name": "Harry Potter and the Order of the Phoenix",
-          "value": 5
-        },
-        {
-          "name": "Harry Potter and the Half-Blood Prince",
-          "value": 6
-        }
-      ]
-    },
-    {
-      "id": "stack-familiar-4-006",
-      "source": "BOOKS",
-      "unit": "book position",
-      "sources": [
-        "https://www.harrypotter.com/discover/books"
-      ],
-      "ordered": [
-        {
-          "name": "Harry Potter and the Chamber of Secrets",
-          "value": 2
-        },
-        {
-          "name": "Harry Potter and the Prisoner of Azkaban",
-          "value": 3
-        },
-        {
-          "name": "Harry Potter and the Goblet of Fire",
+          "name": "Revolver",
           "value": 4
         },
         {
-          "name": "Harry Potter and the Half-Blood Prince",
+          "name": "Sgt. Pepper's Lonely Hearts Club Band",
+          "value": 5
+        },
+        {
+          "name": "Abbey Road",
           "value": 6
         },
         {
-          "name": "Harry Potter and the Deathly Hallows",
+          "name": "Let It Be",
           "value": 7
         }
       ]
     },
     {
-      "id": "stack-familiar-4-007",
-      "source": "BOOKS",
-      "unit": "book position",
+      "id": "stack-familiar-4-006",
+      "source": "STORIES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.harrypotter.com/discover/books"
+        "https://en.wikipedia.org/wiki/Little_Red_Riding_Hood"
       ],
       "ordered": [
         {
-          "name": "Harry Potter and the Philosopher's Stone",
-          "value": 1
+          "name": "The wolf swallows Grandmother",
+          "value": 4
         },
         {
-          "name": "Harry Potter and the Chamber of Secrets",
-          "value": 2
+          "name": "The wolf disguises himself as Grandmother",
+          "value": 5
         },
         {
-          "name": "Harry Potter and the Prisoner of Azkaban",
-          "value": 3
-        },
-        {
-          "name": "Harry Potter and the Half-Blood Prince",
+          "name": "Red Riding Hood arrives and notices the wolf's features",
           "value": 6
         },
         {
-          "name": "Harry Potter and the Deathly Hallows",
+          "name": "The wolf swallows Red Riding Hood",
+          "value": 7
+        },
+        {
+          "name": "The huntsman rescues Red Riding Hood and Grandmother",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-familiar-4-007",
+      "source": "ART",
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Linocut"
+      ],
+      "ordered": [
+        {
+          "name": "Transfer the design onto the lino",
+          "value": 2
+        },
+        {
+          "name": "Carve the lino around the parts to print",
+          "value": 3
+        },
+        {
+          "name": "Roll ink onto the raised lino",
+          "value": 4
+        },
+        {
+          "name": "Lift off the printed sheet",
+          "value": 6
+        },
+        {
+          "name": "Let the ink on the print dry",
           "value": 7
         }
       ]
@@ -4120,814 +4078,762 @@
     {
       "id": "stack-familiar-4-008",
       "source": "BOOKS",
-      "unit": "book position",
+      "unit": "sequence position",
       "sources": [
-        "https://www.harrypotter.com/discover/books"
+        "https://en.wikipedia.org/wiki/Publishing"
       ],
       "ordered": [
         {
-          "name": "Harry Potter and the Chamber of Secrets",
+          "name": "The author writes the manuscript",
+          "value": 1
+        },
+        {
+          "name": "The manuscript is revised",
           "value": 2
         },
         {
-          "name": "Harry Potter and the Prisoner of Azkaban",
+          "name": "The finished text is copy-edited",
           "value": 3
         },
         {
-          "name": "Harry Potter and the Goblet of Fire",
+          "name": "The text is typeset into pages",
           "value": 4
         },
         {
-          "name": "Harry Potter and the Order of the Phoenix",
-          "value": 5
-        },
-        {
-          "name": "Harry Potter and the Deathly Hallows",
-          "value": 7
+          "name": "The approved book is printed",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-4-009",
-      "source": "SCREEN TIME",
-      "unit": "first release year",
+      "source": "MUSIC",
+      "unit": "sequence position",
       "sources": [
-        "https://www.pixar.com/feature-films/"
+        "https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography"
       ],
       "ordered": [
         {
-          "name": "Toy Story 3",
-          "value": 2010
+          "name": "Fearless",
+          "value": 2
         },
         {
-          "name": "Coco",
-          "value": 2017
+          "name": "Speak Now",
+          "value": 3
         },
         {
-          "name": "Luca",
-          "value": 2021
+          "name": "Reputation",
+          "value": 6
         },
         {
-          "name": "Inside Out 2",
-          "value": 2024
+          "name": "Lover",
+          "value": 7
         },
         {
-          "name": "Elio",
-          "value": 2025
+          "name": "Midnights",
+          "value": 9
         }
       ]
     },
     {
       "id": "stack-familiar-4-010",
-      "source": "SCREEN TIME",
-      "unit": "first release year",
+      "source": "STORIES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.pixar.com/feature-films/"
+        "https://en.wikipedia.org/wiki/The_Tortoise_and_the_Hare"
       ],
       "ordered": [
         {
-          "name": "Toy Story 3",
-          "value": 2010
+          "name": "The hare mocks the tortoise's speed",
+          "value": 1
         },
         {
-          "name": "Coco",
-          "value": 2017
+          "name": "The tortoise challenges the hare to a race",
+          "value": 2
         },
         {
-          "name": "Onward",
-          "value": 2020
+          "name": "The race begins",
+          "value": 3
         },
         {
-          "name": "Turning Red",
-          "value": 2022
+          "name": "The hare stops for a nap",
+          "value": 5
         },
         {
-          "name": "Elemental",
-          "value": 2023
+          "name": "The tortoise reaches the finish first",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-4-011",
-      "source": "SCREEN TIME",
-      "unit": "first release year",
+      "source": "SPACE",
+      "unit": "sequence position",
       "sources": [
-        "https://www.pixar.com/feature-films/"
+        "https://en.wikipedia.org/wiki/Timeline_of_space_exploration"
       ],
       "ordered": [
         {
-          "name": "Onward",
-          "value": 2020
+          "name": "Yuri Gagarin orbits Earth",
+          "value": 2
         },
         {
-          "name": "Luca",
-          "value": 2021
+          "name": "Apollo 11 lands people on the Moon",
+          "value": 3
         },
         {
-          "name": "Turning Red",
-          "value": 2022
+          "name": "The Hubble Space Telescope launches",
+          "value": 5
         },
         {
-          "name": "Elemental",
-          "value": 2023
+          "name": "The International Space Station receives its first resident crew",
+          "value": 6
         },
         {
-          "name": "Inside Out 2",
-          "value": 2024
+          "name": "The Curiosity rover lands on Mars",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-4-012",
-      "source": "SCREEN TIME",
-      "unit": "first release year",
+      "source": "BOOKS",
+      "unit": "sequence position",
       "sources": [
-        "https://www.pixar.com/feature-films/"
+        "https://en.wikipedia.org/wiki/Publishing"
       ],
       "ordered": [
         {
-          "name": "Toy Story 3",
-          "value": 2010
+          "name": "The author writes the manuscript",
+          "value": 1
         },
         {
-          "name": "Brave",
-          "value": 2012
+          "name": "Page proofs are checked",
+          "value": 5
         },
         {
-          "name": "Inside Out",
-          "value": 2015
+          "name": "The approved book is printed",
+          "value": 6
         },
         {
-          "name": "Coco",
-          "value": 2017
+          "name": "Printed copies are distributed to shops",
+          "value": 7
         },
         {
-          "name": "Elemental",
-          "value": 2023
+          "name": "Readers buy the published book",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-4-013",
-      "source": "SCREEN TIME",
-      "unit": "first release year",
+      "source": "BOOKS",
+      "unit": "sequence position",
       "sources": [
-        "https://www.pixar.com/feature-films/"
+        "https://en.wikipedia.org/wiki/The_Tale_of_Peter_Rabbit",
+        "https://en.wikipedia.org/wiki/Winnie-the-Pooh",
+        "https://en.wikipedia.org/wiki/The_Cat_in_the_Hat",
+        "https://en.wikipedia.org/wiki/The_Very_Hungry_Caterpillar",
+        "https://en.wikipedia.org/wiki/The_Gruffalo",
+        "https://en.wikipedia.org/wiki/Room_on_the_Broom",
+        "https://en.wikipedia.org/wiki/Stick_Man"
       ],
       "ordered": [
         {
-          "name": "Coco",
-          "value": 2017
+          "name": "Winnie-the-Pooh",
+          "value": 2
         },
         {
-          "name": "Luca",
-          "value": 2021
+          "name": "The Cat in the Hat",
+          "value": 3
         },
         {
-          "name": "Turning Red",
-          "value": 2022
+          "name": "The Gruffalo",
+          "value": 5
         },
         {
-          "name": "Elemental",
-          "value": 2023
+          "name": "Room on the Broom",
+          "value": 6
         },
         {
-          "name": "Inside Out 2",
-          "value": 2024
+          "name": "Stick Man",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-4-014",
-      "source": "SCREEN TIME",
-      "unit": "first release year",
+      "source": "STORIES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.pixar.com/feature-films/"
+        "https://en.wikipedia.org/wiki/The_Tortoise_and_the_Hare"
       ],
       "ordered": [
         {
-          "name": "Toy Story 3",
-          "value": 2010
+          "name": "The hare mocks the tortoise's speed",
+          "value": 1
         },
         {
-          "name": "Coco",
-          "value": 2017
+          "name": "The race begins",
+          "value": 3
         },
         {
-          "name": "Onward",
-          "value": 2020
+          "name": "The hare runs far ahead",
+          "value": 4
         },
         {
-          "name": "Elemental",
-          "value": 2023
+          "name": "The hare stops for a nap",
+          "value": 5
         },
         {
-          "name": "Inside Out 2",
-          "value": 2024
+          "name": "The tortoise passes the sleeping hare",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-4-015",
-      "source": "SCREEN TIME",
-      "unit": "first release year",
+      "source": "BOOKS",
+      "unit": "sequence position",
       "sources": [
-        "https://www.pixar.com/feature-films/"
+        "https://en.wikipedia.org/wiki/Dr._Seuss_bibliography"
       ],
       "ordered": [
         {
-          "name": "Toy Story 3",
-          "value": 2010
+          "name": "Horton Hears a Who!",
+          "value": 1
         },
         {
-          "name": "Coco",
-          "value": 2017
+          "name": "The Cat in the Hat",
+          "value": 2
         },
         {
-          "name": "Luca",
-          "value": 2021
+          "name": "Green Eggs and Ham",
+          "value": 3
         },
         {
-          "name": "Turning Red",
-          "value": 2022
+          "name": "Fox in Socks",
+          "value": 5
         },
         {
-          "name": "Elio",
-          "value": 2025
+          "name": "The Lorax",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-4-016",
-      "source": "SCREEN TIME",
-      "unit": "first release year",
+      "source": "STORIES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.pixar.com/feature-films/"
+        "https://en.wikipedia.org/wiki/Jack_and_the_Beanstalk"
       ],
       "ordered": [
         {
-          "name": "Toy Story 3",
-          "value": 2010
+          "name": "Jack takes the cow to market",
+          "value": 1
         },
         {
-          "name": "Brave",
-          "value": 2012
+          "name": "Jack trades the cow for magic beans",
+          "value": 2
         },
         {
-          "name": "Turning Red",
-          "value": 2022
+          "name": "The beanstalk grows overnight",
+          "value": 4
         },
         {
-          "name": "Inside Out 2",
-          "value": 2024
+          "name": "Jack climbs the beanstalk",
+          "value": 5
         },
         {
-          "name": "Elio",
-          "value": 2025
+          "name": "Jack chops down the beanstalk",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-4-017",
-      "source": "MUSIC",
-      "unit": "original release year",
+      "source": "STORIES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.taylorswift.com/",
-        "https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography"
+        "https://en.wikipedia.org/wiki/Little_Red_Riding_Hood"
       ],
       "ordered": [
         {
-          "name": "Taylor Swift",
-          "value": 2006
+          "name": "Red Riding Hood sets off with food for her grandmother",
+          "value": 1
         },
         {
-          "name": "Fearless",
-          "value": 2008
+          "name": "Red Riding Hood meets the wolf in the woods",
+          "value": 2
         },
         {
-          "name": "Speak Now",
-          "value": 2010
+          "name": "The wolf reaches Grandmother's house first",
+          "value": 3
         },
         {
-          "name": "Red",
-          "value": 2012
+          "name": "The wolf disguises himself as Grandmother",
+          "value": 5
         },
         {
-          "name": "Midnights",
-          "value": 2022
+          "name": "The huntsman rescues Red Riding Hood and Grandmother",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-4-018",
-      "source": "MUSIC",
-      "unit": "original release year",
+      "source": "STORIES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.taylorswift.com/",
-        "https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography"
+        "https://en.wikipedia.org/wiki/The_Gingerbread_Man"
       ],
       "ordered": [
         {
-          "name": "Fearless",
-          "value": 2008
+          "name": "The gingerbread man is baked",
+          "value": 1
         },
         {
-          "name": "Speak Now",
-          "value": 2010
+          "name": "People and animals chase him",
+          "value": 3
         },
         {
-          "name": "Red",
-          "value": 2012
+          "name": "He reaches a river he cannot cross",
+          "value": 4
         },
         {
-          "name": "1989",
-          "value": 2014
+          "name": "He climbs onto the fox",
+          "value": 6
         },
         {
-          "name": "Lover",
-          "value": 2019
+          "name": "The fox eats the gingerbread man",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-4-019",
-      "source": "MUSIC",
-      "unit": "original release year",
+      "source": "STORIES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.taylorswift.com/",
-        "https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography"
+        "https://en.wikipedia.org/wiki/Jack_and_the_Beanstalk"
       ],
       "ordered": [
         {
-          "name": "Taylor Swift",
-          "value": 2006
+          "name": "Jack's mother throws the beans away",
+          "value": 3
         },
         {
-          "name": "Speak Now",
-          "value": 2010
+          "name": "The beanstalk grows overnight",
+          "value": 4
         },
         {
-          "name": "Red",
-          "value": 2012
+          "name": "Jack climbs the beanstalk",
+          "value": 5
         },
         {
-          "name": "Reputation",
-          "value": 2017
+          "name": "Jack enters the giant's castle",
+          "value": 6
         },
         {
-          "name": "The Tortured Poets Department",
-          "value": 2024
+          "name": "Jack escapes down the beanstalk",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-4-020",
-      "source": "MUSIC",
-      "unit": "original release year",
+      "source": "ART",
+      "unit": "sequence position",
       "sources": [
-        "https://www.taylorswift.com/",
-        "https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography"
+        "https://en.wikipedia.org/wiki/Art_movement"
       ],
       "ordered": [
         {
-          "name": "Fearless",
-          "value": 2008
+          "name": "Renaissance",
+          "value": 1
         },
         {
-          "name": "Red",
-          "value": 2012
+          "name": "Baroque",
+          "value": 2
         },
         {
-          "name": "1989",
-          "value": 2014
+          "name": "Impressionism",
+          "value": 3
         },
         {
-          "name": "Reputation",
-          "value": 2017
+          "name": "Surrealism",
+          "value": 5
         },
         {
-          "name": "The Tortured Poets Department",
-          "value": 2024
+          "name": "Pop art",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-4-021",
-      "source": "MUSIC",
-      "unit": "original release year",
+      "source": "STORIES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.taylorswift.com/",
-        "https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography"
+        "https://en.wikipedia.org/wiki/Goldilocks_and_the_Three_Bears"
       ],
       "ordered": [
         {
-          "name": "Taylor Swift",
-          "value": 2006
+          "name": "The bears leave their porridge and go for a walk",
+          "value": 1
         },
         {
-          "name": "Speak Now",
-          "value": 2010
+          "name": "Goldilocks tries the chairs",
+          "value": 4
         },
         {
-          "name": "Lover",
-          "value": 2019
+          "name": "Goldilocks falls asleep in Baby Bear's bed",
+          "value": 6
         },
         {
-          "name": "Midnights",
-          "value": 2022
+          "name": "The bears return home",
+          "value": 7
         },
         {
-          "name": "The Tortured Poets Department",
-          "value": 2024
+          "name": "Goldilocks wakes and runs away",
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-4-022",
-      "source": "MUSIC",
-      "unit": "original release year",
+      "source": "ART",
+      "unit": "sequence position",
       "sources": [
-        "https://www.taylorswift.com/",
-        "https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography"
+        "https://en.wikipedia.org/wiki/Art_movement"
       ],
       "ordered": [
         {
-          "name": "Taylor Swift",
-          "value": 2006
+          "name": "Renaissance",
+          "value": 1
         },
         {
-          "name": "Fearless",
-          "value": 2008
+          "name": "Baroque",
+          "value": 2
         },
         {
-          "name": "Speak Now",
-          "value": 2010
+          "name": "Impressionism",
+          "value": 3
         },
         {
-          "name": "Midnights",
-          "value": 2022
+          "name": "Cubism",
+          "value": 4
         },
         {
-          "name": "The Tortured Poets Department",
-          "value": 2024
+          "name": "Surrealism",
+          "value": 5
         }
       ]
     },
     {
       "id": "stack-familiar-4-023",
-      "source": "MUSIC",
-      "unit": "original release year",
+      "source": "STORIES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.taylorswift.com/",
-        "https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography"
+        "https://en.wikipedia.org/wiki/The_Ugly_Duckling"
       ],
       "ordered": [
         {
-          "name": "Taylor Swift",
-          "value": 2006
+          "name": "The unusual young bird hatches",
+          "value": 1
         },
         {
-          "name": "Speak Now",
-          "value": 2010
+          "name": "Other farmyard birds reject him",
+          "value": 2
         },
         {
-          "name": "1989",
-          "value": 2014
+          "name": "He struggles through the winter",
+          "value": 4
         },
         {
-          "name": "Lover",
-          "value": 2019
+          "name": "He recognises his reflection as a grown swan",
+          "value": 6
         },
         {
-          "name": "The Tortured Poets Department",
-          "value": 2024
+          "name": "He takes flight with the other swans",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-4-024",
-      "source": "MUSIC",
-      "unit": "original release year",
+      "source": "STORIES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.taylorswift.com/",
-        "https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography"
+        "https://en.wikipedia.org/wiki/The_Three_Little_Pigs"
       ],
       "ordered": [
         {
-          "name": "Fearless",
-          "value": 2008
+          "name": "The pigs leave home",
+          "value": 1
         },
         {
-          "name": "Red",
-          "value": 2012
+          "name": "The pigs build their houses",
+          "value": 2
         },
         {
-          "name": "1989",
-          "value": 2014
+          "name": "The wolf blows down the stick house",
+          "value": 4
         },
         {
-          "name": "Reputation",
-          "value": 2017
+          "name": "The pigs shelter in the brick house",
+          "value": 5
         },
         {
-          "name": "Lover",
-          "value": 2019
+          "name": "The wolf fails to blow down the brick house",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-4-025",
       "source": "SPACE",
-      "unit": "year",
+      "unit": "sequence position",
       "sources": [
-        "https://www.nasa.gov/history/dawn-of-the-space-age/",
-        "https://www.fai.org/page/history-manned-spaceflight-pioneers",
-        "https://www.nasa.gov/mission/apollo-11/",
-        "https://www.nasa.gov/mission/sts-1/",
-        "https://science.nasa.gov/mission/hubble/overview/hubble-timeline/hubble-history-timeline-full-text/",
-        "https://www.jpl.nasa.gov/missions/mars-science-laboratory-curiosity-rover-msl/",
-        "https://science.nasa.gov/mission/webb/launch/",
-        "https://en.wikipedia.org/wiki/NASA"
+        "https://en.wikipedia.org/wiki/Timeline_of_space_exploration"
       ],
       "ordered": [
         {
-          "name": "NASA begins operations",
-          "value": 1958
+          "name": "Sputnik 1 reaches orbit",
+          "value": 1
         },
         {
           "name": "Yuri Gagarin orbits Earth",
-          "value": 1961
+          "value": 2
         },
         {
-          "name": "The Hubble Space Telescope launches",
-          "value": 1990
+          "name": "The first Space Shuttle launches",
+          "value": 4
         },
         {
-          "name": "Curiosity lands on Mars",
-          "value": 2012
+          "name": "The International Space Station receives its first resident crew",
+          "value": 6
         },
         {
           "name": "The James Webb Space Telescope launches",
-          "value": 2021
+          "value": 8
         }
       ]
     },
     {
       "id": "stack-familiar-4-026",
-      "source": "SPACE",
-      "unit": "year",
+      "source": "MUSIC",
+      "unit": "sequence position",
       "sources": [
-        "https://www.nasa.gov/history/dawn-of-the-space-age/",
-        "https://www.fai.org/page/history-manned-spaceflight-pioneers",
-        "https://www.nasa.gov/mission/apollo-11/",
-        "https://www.nasa.gov/mission/sts-1/",
-        "https://science.nasa.gov/mission/hubble/overview/hubble-timeline/hubble-history-timeline-full-text/",
-        "https://www.jpl.nasa.gov/missions/mars-science-laboratory-curiosity-rover-msl/",
-        "https://science.nasa.gov/mission/webb/launch/",
-        "https://en.wikipedia.org/wiki/NASA"
+        "https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography"
       ],
       "ordered": [
         {
-          "name": "Yuri Gagarin orbits Earth",
-          "value": 1961
+          "name": "Taylor Swift",
+          "value": 1
         },
         {
-          "name": "Apollo 11 lands on the Moon",
-          "value": 1969
+          "name": "Red",
+          "value": 4
         },
         {
-          "name": "The Hubble Space Telescope launches",
-          "value": 1990
+          "name": "1989",
+          "value": 5
         },
         {
-          "name": "Curiosity lands on Mars",
-          "value": 2012
+          "name": "Folklore",
+          "value": 8
         },
         {
-          "name": "The James Webb Space Telescope launches",
-          "value": 2021
+          "name": "Midnights",
+          "value": 9
         }
       ]
     },
     {
       "id": "stack-familiar-4-027",
-      "source": "SPACE",
-      "unit": "year",
+      "source": "MUSIC",
+      "unit": "sequence position",
       "sources": [
-        "https://www.nasa.gov/history/dawn-of-the-space-age/",
-        "https://www.fai.org/page/history-manned-spaceflight-pioneers",
-        "https://www.nasa.gov/mission/apollo-11/",
-        "https://www.nasa.gov/mission/sts-1/",
-        "https://science.nasa.gov/mission/hubble/overview/hubble-timeline/hubble-history-timeline-full-text/",
-        "https://www.jpl.nasa.gov/missions/mars-science-laboratory-curiosity-rover-msl/",
-        "https://science.nasa.gov/mission/webb/launch/",
-        "https://en.wikipedia.org/wiki/NASA"
+        "https://en.wikipedia.org/wiki/The_Beatles_discography"
       ],
       "ordered": [
         {
-          "name": "Sputnik 1 launches",
-          "value": 1957
+          "name": "Please Please Me",
+          "value": 1
         },
         {
-          "name": "NASA begins operations",
-          "value": 1958
+          "name": "A Hard Day's Night",
+          "value": 2
         },
         {
-          "name": "Apollo 11 lands on the Moon",
-          "value": 1969
+          "name": "Help!",
+          "value": 3
         },
         {
-          "name": "Curiosity lands on Mars",
-          "value": 2012
+          "name": "Revolver",
+          "value": 4
         },
         {
-          "name": "The James Webb Space Telescope launches",
-          "value": 2021
+          "name": "Sgt. Pepper's Lonely Hearts Club Band",
+          "value": 5
         }
       ]
     },
     {
       "id": "stack-familiar-4-028",
-      "source": "SPACE",
-      "unit": "year",
+      "source": "STORIES",
+      "unit": "sequence position",
       "sources": [
-        "https://www.nasa.gov/history/dawn-of-the-space-age/",
-        "https://www.fai.org/page/history-manned-spaceflight-pioneers",
-        "https://www.nasa.gov/mission/apollo-11/",
-        "https://www.nasa.gov/mission/sts-1/",
-        "https://science.nasa.gov/mission/hubble/overview/hubble-timeline/hubble-history-timeline-full-text/",
-        "https://www.jpl.nasa.gov/missions/mars-science-laboratory-curiosity-rover-msl/",
-        "https://science.nasa.gov/mission/webb/launch/",
-        "https://en.wikipedia.org/wiki/NASA"
+        "https://en.wikipedia.org/wiki/Goldilocks_and_the_Three_Bears"
       ],
       "ordered": [
         {
-          "name": "Sputnik 1 launches",
-          "value": 1957
+          "name": "Goldilocks enters the bears' house",
+          "value": 2
         },
         {
-          "name": "Yuri Gagarin orbits Earth",
-          "value": 1961
+          "name": "Goldilocks tastes the porridge",
+          "value": 3
         },
         {
-          "name": "Space Shuttle Columbia makes its first launch",
-          "value": 1981
+          "name": "Goldilocks tries the chairs",
+          "value": 4
         },
         {
-          "name": "The Hubble Space Telescope launches",
-          "value": 1990
+          "name": "Goldilocks tries the beds",
+          "value": 5
         },
         {
-          "name": "The James Webb Space Telescope launches",
-          "value": 2021
+          "name": "Goldilocks falls asleep in Baby Bear's bed",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-4-029",
-      "source": "SPACE",
-      "unit": "year",
+      "source": "ART",
+      "unit": "sequence position",
       "sources": [
-        "https://www.nasa.gov/history/dawn-of-the-space-age/",
-        "https://www.fai.org/page/history-manned-spaceflight-pioneers",
-        "https://www.nasa.gov/mission/apollo-11/",
-        "https://www.nasa.gov/mission/sts-1/",
-        "https://science.nasa.gov/mission/hubble/overview/hubble-timeline/hubble-history-timeline-full-text/",
-        "https://www.jpl.nasa.gov/missions/mars-science-laboratory-curiosity-rover-msl/",
-        "https://science.nasa.gov/mission/webb/launch/",
-        "https://en.wikipedia.org/wiki/NASA"
+        "https://en.wikipedia.org/wiki/Linocut"
       ],
       "ordered": [
         {
-          "name": "NASA begins operations",
-          "value": 1958
+          "name": "Draw the design",
+          "value": 1
         },
         {
-          "name": "Yuri Gagarin orbits Earth",
-          "value": 1961
+          "name": "Carve the lino around the parts to print",
+          "value": 3
         },
         {
-          "name": "Apollo 11 lands on the Moon",
-          "value": 1969
+          "name": "Roll ink onto the raised lino",
+          "value": 4
         },
         {
-          "name": "Space Shuttle Columbia makes its first launch",
-          "value": 1981
+          "name": "Press paper against the inked lino",
+          "value": 5
         },
         {
-          "name": "The Hubble Space Telescope launches",
-          "value": 1990
+          "name": "Lift off the printed sheet",
+          "value": 6
         }
       ]
     },
     {
       "id": "stack-familiar-4-030",
-      "source": "SPACE",
-      "unit": "year",
+      "source": "BOOKS",
+      "unit": "sequence position",
       "sources": [
-        "https://www.nasa.gov/history/dawn-of-the-space-age/",
-        "https://www.fai.org/page/history-manned-spaceflight-pioneers",
-        "https://www.nasa.gov/mission/apollo-11/",
-        "https://www.nasa.gov/mission/sts-1/",
-        "https://science.nasa.gov/mission/hubble/overview/hubble-timeline/hubble-history-timeline-full-text/",
-        "https://www.jpl.nasa.gov/missions/mars-science-laboratory-curiosity-rover-msl/",
-        "https://science.nasa.gov/mission/webb/launch/",
-        "https://en.wikipedia.org/wiki/NASA"
+        "https://en.wikipedia.org/wiki/Dr._Seuss_bibliography"
       ],
       "ordered": [
         {
-          "name": "NASA begins operations",
-          "value": 1958
+          "name": "Horton Hears a Who!",
+          "value": 1
         },
         {
-          "name": "Yuri Gagarin orbits Earth",
-          "value": 1961
+          "name": "Green Eggs and Ham",
+          "value": 3
         },
         {
-          "name": "Apollo 11 lands on the Moon",
-          "value": 1969
+          "name": "Hop on Pop",
+          "value": 4
         },
         {
-          "name": "The Hubble Space Telescope launches",
-          "value": 1990
+          "name": "The Lorax",
+          "value": 6
         },
         {
-          "name": "Curiosity lands on Mars",
-          "value": 2012
+          "name": "Oh, the Places You'll Go!",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-4-031",
-      "source": "SPACE",
-      "unit": "year",
+      "source": "BOOKS",
+      "unit": "sequence position",
       "sources": [
-        "https://www.nasa.gov/history/dawn-of-the-space-age/",
-        "https://www.fai.org/page/history-manned-spaceflight-pioneers",
-        "https://www.nasa.gov/mission/apollo-11/",
-        "https://www.nasa.gov/mission/sts-1/",
-        "https://science.nasa.gov/mission/hubble/overview/hubble-timeline/hubble-history-timeline-full-text/",
-        "https://www.jpl.nasa.gov/missions/mars-science-laboratory-curiosity-rover-msl/",
-        "https://science.nasa.gov/mission/webb/launch/",
-        "https://en.wikipedia.org/wiki/NASA"
+        "https://en.wikipedia.org/wiki/Roald_Dahl_bibliography"
       ],
       "ordered": [
         {
-          "name": "Sputnik 1 launches",
-          "value": 1957
+          "name": "Fantastic Mr Fox",
+          "value": 3
         },
         {
-          "name": "Apollo 11 lands on the Moon",
-          "value": 1969
+          "name": "The BFG",
+          "value": 4
         },
         {
-          "name": "The Hubble Space Telescope launches",
-          "value": 1990
+          "name": "The Witches",
+          "value": 5
         },
         {
-          "name": "Curiosity lands on Mars",
-          "value": 2012
+          "name": "Matilda",
+          "value": 6
         },
         {
-          "name": "The James Webb Space Telescope launches",
-          "value": 2021
+          "name": "Esio Trot",
+          "value": 7
         }
       ]
     },
     {
       "id": "stack-familiar-4-032",
-      "source": "SPACE",
-      "unit": "year",
+      "source": "BOOKS",
+      "unit": "sequence position",
       "sources": [
-        "https://www.nasa.gov/history/dawn-of-the-space-age/",
-        "https://www.fai.org/page/history-manned-spaceflight-pioneers",
-        "https://www.nasa.gov/mission/apollo-11/",
-        "https://www.nasa.gov/mission/sts-1/",
-        "https://science.nasa.gov/mission/hubble/overview/hubble-timeline/hubble-history-timeline-full-text/",
-        "https://www.jpl.nasa.gov/missions/mars-science-laboratory-curiosity-rover-msl/",
-        "https://science.nasa.gov/mission/webb/launch/",
-        "https://en.wikipedia.org/wiki/NASA"
+        "https://en.wikipedia.org/wiki/The_Tale_of_Peter_Rabbit",
+        "https://en.wikipedia.org/wiki/Winnie-the-Pooh",
+        "https://en.wikipedia.org/wiki/The_Cat_in_the_Hat",
+        "https://en.wikipedia.org/wiki/The_Very_Hungry_Caterpillar",
+        "https://en.wikipedia.org/wiki/The_Gruffalo",
+        "https://en.wikipedia.org/wiki/Room_on_the_Broom",
+        "https://en.wikipedia.org/wiki/Stick_Man"
       ],
       "ordered": [
         {
-          "name": "Sputnik 1 launches",
-          "value": 1957
+          "name": "The Tale of Peter Rabbit",
+          "value": 1
         },
         {
-          "name": "Yuri Gagarin orbits Earth",
-          "value": 1961
+          "name": "The Cat in the Hat",
+          "value": 3
         },
         {
-          "name": "The Hubble Space Telescope launches",
-          "value": 1990
+          "name": "The Very Hungry Caterpillar",
+          "value": 4
         },
         {
-          "name": "Curiosity lands on Mars",
-          "value": 2012
+          "name": "The Gruffalo",
+          "value": 5
         },
         {
-          "name": "The James Webb Space Telescope launches",
-          "value": 2021
+          "name": "Room on the Broom",
+          "value": 6
         }
       ]
     }

@@ -1,0 +1,3157 @@
+{
+  "version": 1,
+  "reviewedAt": "2026-10-27",
+  "note": "Active replacements for quantitative legacy Challenge slots; originals are frozen for saved-history compatibility.",
+  "stacks": [
+    {
+      "id": "stack-001",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/the-lion-king-1994"
+      ],
+      "ordered": [
+        {
+          "name": "Scar tells Simba about the elephant graveyard",
+          "value": 2
+        },
+        {
+          "name": "Mufasa rescues the cubs from the hyenas",
+          "value": 3
+        },
+        {
+          "name": "The wildebeest stampede begins",
+          "value": 4
+        },
+        {
+          "name": "Timon and Pumbaa take Simba in",
+          "value": 6
+        },
+        {
+          "name": "Simba confronts Scar",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-002",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/the-lion-king-1994"
+      ],
+      "ordered": [
+        {
+          "name": "Mufasa rescues the cubs from the hyenas",
+          "value": 3
+        },
+        {
+          "name": "The wildebeest stampede begins",
+          "value": 4
+        },
+        {
+          "name": "Simba flees the Pride Lands",
+          "value": 5
+        },
+        {
+          "name": "Timon and Pumbaa take Simba in",
+          "value": 6
+        },
+        {
+          "name": "Adult Nala finds Simba",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-003",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/the-lion-king-1994"
+      ],
+      "ordered": [
+        {
+          "name": "Mufasa rescues the cubs from the hyenas",
+          "value": 3
+        },
+        {
+          "name": "Simba flees the Pride Lands",
+          "value": 5
+        },
+        {
+          "name": "Timon and Pumbaa take Simba in",
+          "value": 6
+        },
+        {
+          "name": "Adult Nala finds Simba",
+          "value": 7
+        },
+        {
+          "name": "Simba takes his place as king",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-004",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/the-lion-king-1994"
+      ],
+      "ordered": [
+        {
+          "name": "Mufasa rescues the cubs from the hyenas",
+          "value": 3
+        },
+        {
+          "name": "Timon and Pumbaa take Simba in",
+          "value": 6
+        },
+        {
+          "name": "Adult Nala finds Simba",
+          "value": 7
+        },
+        {
+          "name": "Simba confronts Scar",
+          "value": 9
+        },
+        {
+          "name": "Simba takes his place as king",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-007",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/the-lion-king-1994"
+      ],
+      "ordered": [
+        {
+          "name": "Scar tells Simba about the elephant graveyard",
+          "value": 2
+        },
+        {
+          "name": "The wildebeest stampede begins",
+          "value": 4
+        },
+        {
+          "name": "Timon and Pumbaa take Simba in",
+          "value": 6
+        },
+        {
+          "name": "Simba returns to Pride Rock",
+          "value": 8
+        },
+        {
+          "name": "Simba takes his place as king",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-008",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/the-lion-king-1994"
+      ],
+      "ordered": [
+        {
+          "name": "Simba is presented at Pride Rock",
+          "value": 1
+        },
+        {
+          "name": "Mufasa rescues the cubs from the hyenas",
+          "value": 3
+        },
+        {
+          "name": "The wildebeest stampede begins",
+          "value": 4
+        },
+        {
+          "name": "Adult Nala finds Simba",
+          "value": 7
+        },
+        {
+          "name": "Simba takes his place as king",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-009",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/the-lion-king-1994"
+      ],
+      "ordered": [
+        {
+          "name": "Simba is presented at Pride Rock",
+          "value": 1
+        },
+        {
+          "name": "Timon and Pumbaa take Simba in",
+          "value": 6
+        },
+        {
+          "name": "Adult Nala finds Simba",
+          "value": 7
+        },
+        {
+          "name": "Simba returns to Pride Rock",
+          "value": 8
+        },
+        {
+          "name": "Simba confronts Scar",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-010",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.pixar.com/finding-nemo"
+      ],
+      "ordered": [
+        {
+          "name": "Marlin meets Dory",
+          "value": 3
+        },
+        {
+          "name": "Marlin and Dory meet the sharks",
+          "value": 4
+        },
+        {
+          "name": "Crush carries the pair in the ocean current",
+          "value": 6
+        },
+        {
+          "name": "Nigel carries the pair to the dentist's window",
+          "value": 8
+        },
+        {
+          "name": "Dory finds Nemo",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-011",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.pixar.com/finding-nemo"
+      ],
+      "ordered": [
+        {
+          "name": "A diver captures Nemo",
+          "value": 2
+        },
+        {
+          "name": "Marlin meets Dory",
+          "value": 3
+        },
+        {
+          "name": "Marlin and Dory cross the jellyfish field",
+          "value": 5
+        },
+        {
+          "name": "Nigel carries the pair to the dentist's window",
+          "value": 8
+        },
+        {
+          "name": "Nemo helps free the fish from the net",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-012",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.pixar.com/finding-nemo"
+      ],
+      "ordered": [
+        {
+          "name": "A diver captures Nemo",
+          "value": 2
+        },
+        {
+          "name": "Marlin meets Dory",
+          "value": 3
+        },
+        {
+          "name": "Marlin and Dory meet the sharks",
+          "value": 4
+        },
+        {
+          "name": "Crush carries the pair in the ocean current",
+          "value": 6
+        },
+        {
+          "name": "A whale takes the pair into its mouth",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-013",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.pixar.com/finding-nemo"
+      ],
+      "ordered": [
+        {
+          "name": "Nemo starts school",
+          "value": 1
+        },
+        {
+          "name": "A diver captures Nemo",
+          "value": 2
+        },
+        {
+          "name": "Marlin and Dory meet the sharks",
+          "value": 4
+        },
+        {
+          "name": "Crush carries the pair in the ocean current",
+          "value": 6
+        },
+        {
+          "name": "Dory finds Nemo",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-014",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.pixar.com/finding-nemo"
+      ],
+      "ordered": [
+        {
+          "name": "A diver captures Nemo",
+          "value": 2
+        },
+        {
+          "name": "Marlin meets Dory",
+          "value": 3
+        },
+        {
+          "name": "Nigel carries the pair to the dentist's window",
+          "value": 8
+        },
+        {
+          "name": "Dory finds Nemo",
+          "value": 9
+        },
+        {
+          "name": "Nemo helps free the fish from the net",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-015",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.pixar.com/finding-nemo"
+      ],
+      "ordered": [
+        {
+          "name": "A diver captures Nemo",
+          "value": 2
+        },
+        {
+          "name": "A whale takes the pair into its mouth",
+          "value": 7
+        },
+        {
+          "name": "Nigel carries the pair to the dentist's window",
+          "value": 8
+        },
+        {
+          "name": "Dory finds Nemo",
+          "value": 9
+        },
+        {
+          "name": "Nemo helps free the fish from the net",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-016",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.pixar.com/finding-nemo"
+      ],
+      "ordered": [
+        {
+          "name": "Nemo starts school",
+          "value": 1
+        },
+        {
+          "name": "Marlin meets Dory",
+          "value": 3
+        },
+        {
+          "name": "Marlin and Dory cross the jellyfish field",
+          "value": 5
+        },
+        {
+          "name": "Nigel carries the pair to the dentist's window",
+          "value": 8
+        },
+        {
+          "name": "Nemo helps free the fish from the net",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-017",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.pixar.com/toy-story"
+      ],
+      "ordered": [
+        {
+          "name": "The pair reach Pizza Planet",
+          "value": 5
+        },
+        {
+          "name": "Buzz sees the television advert for his toy",
+          "value": 7
+        },
+        {
+          "name": "Woody and the mutant toys frighten Sid",
+          "value": 8
+        },
+        {
+          "name": "Woody and Buzz chase the moving van",
+          "value": 9
+        },
+        {
+          "name": "The pair glide into Andy's car",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-018",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.pixar.com/toy-story"
+      ],
+      "ordered": [
+        {
+          "name": "Andy's birthday party begins",
+          "value": 1
+        },
+        {
+          "name": "Buzz arrives as Andy's new toy",
+          "value": 2
+        },
+        {
+          "name": "Buzz sees the television advert for his toy",
+          "value": 7
+        },
+        {
+          "name": "Woody and Buzz chase the moving van",
+          "value": 9
+        },
+        {
+          "name": "The pair glide into Andy's car",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-019",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.pixar.com/toy-story"
+      ],
+      "ordered": [
+        {
+          "name": "Buzz arrives as Andy's new toy",
+          "value": 2
+        },
+        {
+          "name": "Woody and Buzz become stranded at the petrol station",
+          "value": 4
+        },
+        {
+          "name": "The pair reach Pizza Planet",
+          "value": 5
+        },
+        {
+          "name": "Woody and Buzz chase the moving van",
+          "value": 9
+        },
+        {
+          "name": "The pair glide into Andy's car",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-020",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.pixar.com/toy-story"
+      ],
+      "ordered": [
+        {
+          "name": "Buzz arrives as Andy's new toy",
+          "value": 2
+        },
+        {
+          "name": "Woody knocks Buzz out of the window",
+          "value": 3
+        },
+        {
+          "name": "Buzz sees the television advert for his toy",
+          "value": 7
+        },
+        {
+          "name": "Woody and the mutant toys frighten Sid",
+          "value": 8
+        },
+        {
+          "name": "Woody and Buzz chase the moving van",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-021",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.pixar.com/toy-story"
+      ],
+      "ordered": [
+        {
+          "name": "Andy's birthday party begins",
+          "value": 1
+        },
+        {
+          "name": "Woody knocks Buzz out of the window",
+          "value": 3
+        },
+        {
+          "name": "Woody and Buzz become stranded at the petrol station",
+          "value": 4
+        },
+        {
+          "name": "Buzz sees the television advert for his toy",
+          "value": 7
+        },
+        {
+          "name": "Woody and the mutant toys frighten Sid",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-022",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.pixar.com/toy-story"
+      ],
+      "ordered": [
+        {
+          "name": "Andy's birthday party begins",
+          "value": 1
+        },
+        {
+          "name": "Buzz arrives as Andy's new toy",
+          "value": 2
+        },
+        {
+          "name": "The pair reach Pizza Planet",
+          "value": 5
+        },
+        {
+          "name": "Buzz sees the television advert for his toy",
+          "value": 7
+        },
+        {
+          "name": "Woody and the mutant toys frighten Sid",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-023",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.pixar.com/toy-story"
+      ],
+      "ordered": [
+        {
+          "name": "Buzz arrives as Andy's new toy",
+          "value": 2
+        },
+        {
+          "name": "Woody and Buzz become stranded at the petrol station",
+          "value": 4
+        },
+        {
+          "name": "The pair reach Pizza Planet",
+          "value": 5
+        },
+        {
+          "name": "Sid takes the pair home",
+          "value": 6
+        },
+        {
+          "name": "Woody and the mutant toys frighten Sid",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-024",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.dreamworks.com/movies/shrek"
+      ],
+      "ordered": [
+        {
+          "name": "Shrek and Donkey reach Duloc",
+          "value": 2
+        },
+        {
+          "name": "Farquaad sends Shrek to rescue Fiona",
+          "value": 3
+        },
+        {
+          "name": "Fiona fights Robin Hood's band",
+          "value": 6
+        },
+        {
+          "name": "Donkey discovers Fiona's nightly transformation",
+          "value": 7
+        },
+        {
+          "name": "Fiona reveals her ogre form in the church",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-025",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.dreamworks.com/movies/shrek"
+      ],
+      "ordered": [
+        {
+          "name": "Fairytale creatures arrive in Shrek's swamp",
+          "value": 1
+        },
+        {
+          "name": "Farquaad sends Shrek to rescue Fiona",
+          "value": 3
+        },
+        {
+          "name": "Shrek and Donkey enter the dragon's castle",
+          "value": 4
+        },
+        {
+          "name": "Fiona fights Robin Hood's band",
+          "value": 6
+        },
+        {
+          "name": "Fiona leaves with Farquaad",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-026",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.dreamworks.com/movies/shrek"
+      ],
+      "ordered": [
+        {
+          "name": "Fairytale creatures arrive in Shrek's swamp",
+          "value": 1
+        },
+        {
+          "name": "Shrek and Donkey reach Duloc",
+          "value": 2
+        },
+        {
+          "name": "Shrek and Donkey enter the dragon's castle",
+          "value": 4
+        },
+        {
+          "name": "Fiona leaves with Farquaad",
+          "value": 8
+        },
+        {
+          "name": "Shrek interrupts the wedding",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-027",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.dreamworks.com/movies/shrek"
+      ],
+      "ordered": [
+        {
+          "name": "Shrek and Donkey reach Duloc",
+          "value": 2
+        },
+        {
+          "name": "Shrek rescues Fiona from the tower",
+          "value": 5
+        },
+        {
+          "name": "Donkey discovers Fiona's nightly transformation",
+          "value": 7
+        },
+        {
+          "name": "Shrek interrupts the wedding",
+          "value": 9
+        },
+        {
+          "name": "Fiona reveals her ogre form in the church",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-028",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.dreamworks.com/movies/shrek"
+      ],
+      "ordered": [
+        {
+          "name": "Fairytale creatures arrive in Shrek's swamp",
+          "value": 1
+        },
+        {
+          "name": "Shrek and Donkey reach Duloc",
+          "value": 2
+        },
+        {
+          "name": "Shrek rescues Fiona from the tower",
+          "value": 5
+        },
+        {
+          "name": "Fiona leaves with Farquaad",
+          "value": 8
+        },
+        {
+          "name": "Shrek interrupts the wedding",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-029",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.dreamworks.com/movies/shrek"
+      ],
+      "ordered": [
+        {
+          "name": "Fairytale creatures arrive in Shrek's swamp",
+          "value": 1
+        },
+        {
+          "name": "Shrek and Donkey reach Duloc",
+          "value": 2
+        },
+        {
+          "name": "Shrek rescues Fiona from the tower",
+          "value": 5
+        },
+        {
+          "name": "Donkey discovers Fiona's nightly transformation",
+          "value": 7
+        },
+        {
+          "name": "Shrek interrupts the wedding",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-030",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.dreamworks.com/movies/shrek"
+      ],
+      "ordered": [
+        {
+          "name": "Fairytale creatures arrive in Shrek's swamp",
+          "value": 1
+        },
+        {
+          "name": "Shrek and Donkey reach Duloc",
+          "value": 2
+        },
+        {
+          "name": "Shrek rescues Fiona from the tower",
+          "value": 5
+        },
+        {
+          "name": "Fiona fights Robin Hood's band",
+          "value": 6
+        },
+        {
+          "name": "Shrek interrupts the wedding",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-031",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/frozen-2013"
+      ],
+      "ordered": [
+        {
+          "name": "The castle opens for Elsa's coronation",
+          "value": 2
+        },
+        {
+          "name": "Anna accepts Hans's proposal",
+          "value": 3
+        },
+        {
+          "name": "Anna meets Kristoff",
+          "value": 5
+        },
+        {
+          "name": "The trolls explain that Anna needs an act of true love",
+          "value": 8
+        },
+        {
+          "name": "Hans refuses to help Anna",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-032",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/frozen-2013"
+      ],
+      "ordered": [
+        {
+          "name": "Elsa accidentally hurts Anna as children",
+          "value": 1
+        },
+        {
+          "name": "Elsa reveals her magic and flees",
+          "value": 4
+        },
+        {
+          "name": "Anna meets Kristoff",
+          "value": 5
+        },
+        {
+          "name": "Elsa accidentally strikes Anna's heart",
+          "value": 7
+        },
+        {
+          "name": "Anna shields Elsa from Hans's sword",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-033",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/frozen-2013"
+      ],
+      "ordered": [
+        {
+          "name": "Elsa accidentally hurts Anna as children",
+          "value": 1
+        },
+        {
+          "name": "Anna accepts Hans's proposal",
+          "value": 3
+        },
+        {
+          "name": "Anna meets Kristoff",
+          "value": 5
+        },
+        {
+          "name": "Elsa accidentally strikes Anna's heart",
+          "value": 7
+        },
+        {
+          "name": "The trolls explain that Anna needs an act of true love",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-034",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/frozen-2013"
+      ],
+      "ordered": [
+        {
+          "name": "The castle opens for Elsa's coronation",
+          "value": 2
+        },
+        {
+          "name": "Anna accepts Hans's proposal",
+          "value": 3
+        },
+        {
+          "name": "Anna and Kristoff meet Olaf",
+          "value": 6
+        },
+        {
+          "name": "Hans refuses to help Anna",
+          "value": 9
+        },
+        {
+          "name": "Anna shields Elsa from Hans's sword",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-035",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/frozen-2013"
+      ],
+      "ordered": [
+        {
+          "name": "Elsa accidentally hurts Anna as children",
+          "value": 1
+        },
+        {
+          "name": "The castle opens for Elsa's coronation",
+          "value": 2
+        },
+        {
+          "name": "Anna and Kristoff meet Olaf",
+          "value": 6
+        },
+        {
+          "name": "The trolls explain that Anna needs an act of true love",
+          "value": 8
+        },
+        {
+          "name": "Anna shields Elsa from Hans's sword",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-036",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/frozen-2013"
+      ],
+      "ordered": [
+        {
+          "name": "Elsa accidentally hurts Anna as children",
+          "value": 1
+        },
+        {
+          "name": "Elsa reveals her magic and flees",
+          "value": 4
+        },
+        {
+          "name": "Anna and Kristoff meet Olaf",
+          "value": 6
+        },
+        {
+          "name": "Elsa accidentally strikes Anna's heart",
+          "value": 7
+        },
+        {
+          "name": "Hans refuses to help Anna",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-037",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/frozen-2013"
+      ],
+      "ordered": [
+        {
+          "name": "Elsa accidentally hurts Anna as children",
+          "value": 1
+        },
+        {
+          "name": "The castle opens for Elsa's coronation",
+          "value": 2
+        },
+        {
+          "name": "Anna accepts Hans's proposal",
+          "value": 3
+        },
+        {
+          "name": "Anna and Kristoff meet Olaf",
+          "value": 6
+        },
+        {
+          "name": "Anna shields Elsa from Hans's sword",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-038",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/moana-2016"
+      ],
+      "ordered": [
+        {
+          "name": "The ocean chooses young Moana",
+          "value": 1
+        },
+        {
+          "name": "Moana sets sail alone",
+          "value": 4
+        },
+        {
+          "name": "The Kakamora attack",
+          "value": 6
+        },
+        {
+          "name": "Moana and Maui enter Lalotai",
+          "value": 7
+        },
+        {
+          "name": "Maui's hook is damaged during the first attack on Te Ka",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-039",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/moana-2016"
+      ],
+      "ordered": [
+        {
+          "name": "The island's coconuts begin to fail",
+          "value": 2
+        },
+        {
+          "name": "The Kakamora attack",
+          "value": 6
+        },
+        {
+          "name": "Moana and Maui enter Lalotai",
+          "value": 7
+        },
+        {
+          "name": "Maui recovers his fishhook from Tamatoa",
+          "value": 8
+        },
+        {
+          "name": "Maui's hook is damaged during the first attack on Te Ka",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-040",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/moana-2016"
+      ],
+      "ordered": [
+        {
+          "name": "Gramma Tala shows Moana the voyaging canoes",
+          "value": 3
+        },
+        {
+          "name": "Moana finds Maui on his island",
+          "value": 5
+        },
+        {
+          "name": "The Kakamora attack",
+          "value": 6
+        },
+        {
+          "name": "Maui recovers his fishhook from Tamatoa",
+          "value": 8
+        },
+        {
+          "name": "Maui's hook is damaged during the first attack on Te Ka",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-041",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/moana-2016"
+      ],
+      "ordered": [
+        {
+          "name": "The ocean chooses young Moana",
+          "value": 1
+        },
+        {
+          "name": "The island's coconuts begin to fail",
+          "value": 2
+        },
+        {
+          "name": "Maui recovers his fishhook from Tamatoa",
+          "value": 8
+        },
+        {
+          "name": "Maui's hook is damaged during the first attack on Te Ka",
+          "value": 9
+        },
+        {
+          "name": "Moana restores the heart",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-042",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/moana-2016"
+      ],
+      "ordered": [
+        {
+          "name": "The island's coconuts begin to fail",
+          "value": 2
+        },
+        {
+          "name": "Moana sets sail alone",
+          "value": 4
+        },
+        {
+          "name": "The Kakamora attack",
+          "value": 6
+        },
+        {
+          "name": "Moana and Maui enter Lalotai",
+          "value": 7
+        },
+        {
+          "name": "Maui's hook is damaged during the first attack on Te Ka",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-043",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/moana-2016"
+      ],
+      "ordered": [
+        {
+          "name": "The island's coconuts begin to fail",
+          "value": 2
+        },
+        {
+          "name": "Gramma Tala shows Moana the voyaging canoes",
+          "value": 3
+        },
+        {
+          "name": "Moana finds Maui on his island",
+          "value": 5
+        },
+        {
+          "name": "The Kakamora attack",
+          "value": 6
+        },
+        {
+          "name": "Maui recovers his fishhook from Tamatoa",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-044",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/moana-2016"
+      ],
+      "ordered": [
+        {
+          "name": "The island's coconuts begin to fail",
+          "value": 2
+        },
+        {
+          "name": "Moana finds Maui on his island",
+          "value": 5
+        },
+        {
+          "name": "Moana and Maui enter Lalotai",
+          "value": 7
+        },
+        {
+          "name": "Maui recovers his fishhook from Tamatoa",
+          "value": 8
+        },
+        {
+          "name": "Moana restores the heart",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-045",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/cinderella-1950"
+      ],
+      "ordered": [
+        {
+          "name": "The invitation to the royal ball arrives",
+          "value": 1
+        },
+        {
+          "name": "The mice and birds repair Cinderella's dress",
+          "value": 2
+        },
+        {
+          "name": "The stepsisters tear the repaired dress",
+          "value": 3
+        },
+        {
+          "name": "Cinderella arrives at the ball",
+          "value": 5
+        },
+        {
+          "name": "Cinderella dances with the Prince",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "id": "stack-046",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/cinderella-1950"
+      ],
+      "ordered": [
+        {
+          "name": "The stepsisters tear the repaired dress",
+          "value": 3
+        },
+        {
+          "name": "Cinderella dances with the Prince",
+          "value": 6
+        },
+        {
+          "name": "Cinderella flees the palace",
+          "value": 7
+        },
+        {
+          "name": "Lady Tremaine locks Cinderella in her room",
+          "value": 8
+        },
+        {
+          "name": "The mice bring Cinderella the key",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-047",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/cinderella-1950"
+      ],
+      "ordered": [
+        {
+          "name": "The invitation to the royal ball arrives",
+          "value": 1
+        },
+        {
+          "name": "The stepsisters tear the repaired dress",
+          "value": 3
+        },
+        {
+          "name": "The Fairy Godmother appears",
+          "value": 4
+        },
+        {
+          "name": "Cinderella arrives at the ball",
+          "value": 5
+        },
+        {
+          "name": "Lady Tremaine locks Cinderella in her room",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-048",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/cinderella-1950"
+      ],
+      "ordered": [
+        {
+          "name": "The stepsisters tear the repaired dress",
+          "value": 3
+        },
+        {
+          "name": "Cinderella dances with the Prince",
+          "value": 6
+        },
+        {
+          "name": "Lady Tremaine locks Cinderella in her room",
+          "value": 8
+        },
+        {
+          "name": "The mice bring Cinderella the key",
+          "value": 9
+        },
+        {
+          "name": "Cinderella produces the matching glass slipper",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-049",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/cinderella-1950"
+      ],
+      "ordered": [
+        {
+          "name": "The mice and birds repair Cinderella's dress",
+          "value": 2
+        },
+        {
+          "name": "The stepsisters tear the repaired dress",
+          "value": 3
+        },
+        {
+          "name": "The Fairy Godmother appears",
+          "value": 4
+        },
+        {
+          "name": "Cinderella flees the palace",
+          "value": 7
+        },
+        {
+          "name": "The mice bring Cinderella the key",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-050",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/cinderella-1950"
+      ],
+      "ordered": [
+        {
+          "name": "Cinderella arrives at the ball",
+          "value": 5
+        },
+        {
+          "name": "Cinderella dances with the Prince",
+          "value": 6
+        },
+        {
+          "name": "Cinderella flees the palace",
+          "value": 7
+        },
+        {
+          "name": "Lady Tremaine locks Cinderella in her room",
+          "value": 8
+        },
+        {
+          "name": "Cinderella produces the matching glass slipper",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-051",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://movies.disney.com/cinderella-1950"
+      ],
+      "ordered": [
+        {
+          "name": "The mice and birds repair Cinderella's dress",
+          "value": 2
+        },
+        {
+          "name": "Cinderella arrives at the ball",
+          "value": 5
+        },
+        {
+          "name": "Cinderella flees the palace",
+          "value": 7
+        },
+        {
+          "name": "The mice bring Cinderella the key",
+          "value": 9
+        },
+        {
+          "name": "Cinderella produces the matching glass slipper",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-052",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.warnerbros.com/movies/wizard-oz"
+      ],
+      "ordered": [
+        {
+          "name": "Dorothy meets Professor Marvel",
+          "value": 2
+        },
+        {
+          "name": "Dorothy meets the Scarecrow",
+          "value": 5
+        },
+        {
+          "name": "The group first reaches the Emerald City",
+          "value": 8
+        },
+        {
+          "name": "Dorothy throws water on the Wicked Witch",
+          "value": 9
+        },
+        {
+          "name": "Dorothy returns to Kansas",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-073",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.warnerbros.com/movies/wizard-oz"
+      ],
+      "ordered": [
+        {
+          "name": "Dorothy meets Professor Marvel",
+          "value": 2
+        },
+        {
+          "name": "Dorothy meets the Tin Man",
+          "value": 6
+        },
+        {
+          "name": "The group first reaches the Emerald City",
+          "value": 8
+        },
+        {
+          "name": "Dorothy throws water on the Wicked Witch",
+          "value": 9
+        },
+        {
+          "name": "Dorothy returns to Kansas",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-074",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.warnerbros.com/movies/wizard-oz"
+      ],
+      "ordered": [
+        {
+          "name": "Dorothy meets the Scarecrow",
+          "value": 5
+        },
+        {
+          "name": "Dorothy meets the Cowardly Lion",
+          "value": 7
+        },
+        {
+          "name": "The group first reaches the Emerald City",
+          "value": 8
+        },
+        {
+          "name": "Dorothy throws water on the Wicked Witch",
+          "value": 9
+        },
+        {
+          "name": "Dorothy returns to Kansas",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-075",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.warnerbros.com/movies/wizard-oz"
+      ],
+      "ordered": [
+        {
+          "name": "The tornado carries Dorothy's house away",
+          "value": 3
+        },
+        {
+          "name": "Dorothy arrives in Munchkinland",
+          "value": 4
+        },
+        {
+          "name": "Dorothy meets the Tin Man",
+          "value": 6
+        },
+        {
+          "name": "Dorothy throws water on the Wicked Witch",
+          "value": 9
+        },
+        {
+          "name": "Dorothy returns to Kansas",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-076",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.warnerbros.com/movies/wizard-oz"
+      ],
+      "ordered": [
+        {
+          "name": "Dorothy meets Professor Marvel",
+          "value": 2
+        },
+        {
+          "name": "The tornado carries Dorothy's house away",
+          "value": 3
+        },
+        {
+          "name": "Dorothy arrives in Munchkinland",
+          "value": 4
+        },
+        {
+          "name": "Dorothy meets the Cowardly Lion",
+          "value": 7
+        },
+        {
+          "name": "Dorothy throws water on the Wicked Witch",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-077",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.warnerbros.com/movies/wizard-oz"
+      ],
+      "ordered": [
+        {
+          "name": "Dorothy runs away with Toto",
+          "value": 1
+        },
+        {
+          "name": "Dorothy arrives in Munchkinland",
+          "value": 4
+        },
+        {
+          "name": "Dorothy meets the Tin Man",
+          "value": 6
+        },
+        {
+          "name": "Dorothy meets the Cowardly Lion",
+          "value": 7
+        },
+        {
+          "name": "Dorothy returns to Kansas",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-078",
+      "source": "SCREEN TIME",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.warnerbros.com/movies/wizard-oz"
+      ],
+      "ordered": [
+        {
+          "name": "Dorothy runs away with Toto",
+          "value": 1
+        },
+        {
+          "name": "Dorothy meets the Tin Man",
+          "value": 6
+        },
+        {
+          "name": "Dorothy meets the Cowardly Lion",
+          "value": 7
+        },
+        {
+          "name": "The group first reaches the Emerald City",
+          "value": 8
+        },
+        {
+          "name": "Dorothy returns to Kansas",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-079",
+      "source": "BOOKS",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.tolkiensociety.org/author/books-by-tolkien/"
+      ],
+      "ordered": [
+        {
+          "name": "The dwarves visit Bag End",
+          "value": 1
+        },
+        {
+          "name": "The trolls capture the travellers",
+          "value": 2
+        },
+        {
+          "name": "The company stays with Beorn",
+          "value": 7
+        },
+        {
+          "name": "The company escapes in barrels",
+          "value": 9
+        },
+        {
+          "name": "Bilbo enters Smaug's lair",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-080",
+      "source": "BOOKS",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.tolkiensociety.org/author/books-by-tolkien/"
+      ],
+      "ordered": [
+        {
+          "name": "Goblins capture the company in the mountains",
+          "value": 4
+        },
+        {
+          "name": "Bilbo plays the riddle game with Gollum",
+          "value": 5
+        },
+        {
+          "name": "Eagles rescue the travellers",
+          "value": 6
+        },
+        {
+          "name": "The company stays with Beorn",
+          "value": 7
+        },
+        {
+          "name": "Bilbo fights the spiders in Mirkwood",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-081",
+      "source": "BOOKS",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.tolkiensociety.org/author/books-by-tolkien/"
+      ],
+      "ordered": [
+        {
+          "name": "The dwarves visit Bag End",
+          "value": 1
+        },
+        {
+          "name": "The trolls capture the travellers",
+          "value": 2
+        },
+        {
+          "name": "Bilbo plays the riddle game with Gollum",
+          "value": 5
+        },
+        {
+          "name": "The company stays with Beorn",
+          "value": 7
+        },
+        {
+          "name": "The company escapes in barrels",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-082",
+      "source": "BOOKS",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.tolkiensociety.org/author/books-by-tolkien/"
+      ],
+      "ordered": [
+        {
+          "name": "The trolls capture the travellers",
+          "value": 2
+        },
+        {
+          "name": "The company reaches Rivendell",
+          "value": 3
+        },
+        {
+          "name": "The company stays with Beorn",
+          "value": 7
+        },
+        {
+          "name": "Bilbo fights the spiders in Mirkwood",
+          "value": 8
+        },
+        {
+          "name": "The company escapes in barrels",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-083",
+      "source": "BOOKS",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.tolkiensociety.org/author/books-by-tolkien/"
+      ],
+      "ordered": [
+        {
+          "name": "The dwarves visit Bag End",
+          "value": 1
+        },
+        {
+          "name": "Bilbo plays the riddle game with Gollum",
+          "value": 5
+        },
+        {
+          "name": "Eagles rescue the travellers",
+          "value": 6
+        },
+        {
+          "name": "The company stays with Beorn",
+          "value": 7
+        },
+        {
+          "name": "Bilbo enters Smaug's lair",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-084",
+      "source": "BOOKS",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.tolkiensociety.org/author/books-by-tolkien/"
+      ],
+      "ordered": [
+        {
+          "name": "The dwarves visit Bag End",
+          "value": 1
+        },
+        {
+          "name": "Goblins capture the company in the mountains",
+          "value": 4
+        },
+        {
+          "name": "The company stays with Beorn",
+          "value": 7
+        },
+        {
+          "name": "The company escapes in barrels",
+          "value": 9
+        },
+        {
+          "name": "Bilbo enters Smaug's lair",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-085",
+      "source": "BOOKS",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.tolkiensociety.org/author/books-by-tolkien/"
+      ],
+      "ordered": [
+        {
+          "name": "The dwarves visit Bag End",
+          "value": 1
+        },
+        {
+          "name": "The company reaches Rivendell",
+          "value": 3
+        },
+        {
+          "name": "Eagles rescue the travellers",
+          "value": 6
+        },
+        {
+          "name": "The company stays with Beorn",
+          "value": 7
+        },
+        {
+          "name": "Bilbo fights the spiders in Mirkwood",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-086",
+      "source": "BOOKS",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.gutenberg.org/ebooks/11"
+      ],
+      "ordered": [
+        {
+          "name": "Alice reaches the hall of locked doors",
+          "value": 3
+        },
+        {
+          "name": "Alice joins the Caucus-race",
+          "value": 5
+        },
+        {
+          "name": "Alice meets the Caterpillar",
+          "value": 7
+        },
+        {
+          "name": "Alice visits the Duchess's house",
+          "value": 8
+        },
+        {
+          "name": "Alice plays croquet with the Queen",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-087",
+      "source": "BOOKS",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.gutenberg.org/ebooks/11"
+      ],
+      "ordered": [
+        {
+          "name": "Alice reaches the hall of locked doors",
+          "value": 3
+        },
+        {
+          "name": "Alice joins the Caucus-race",
+          "value": 5
+        },
+        {
+          "name": "Alice meets the Caterpillar",
+          "value": 7
+        },
+        {
+          "name": "Alice visits the Duchess's house",
+          "value": 8
+        },
+        {
+          "name": "Alice attends the tea party",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-088",
+      "source": "BOOKS",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.gutenberg.org/ebooks/11"
+      ],
+      "ordered": [
+        {
+          "name": "Alice falls down the rabbit hole",
+          "value": 2
+        },
+        {
+          "name": "Alice reaches the hall of locked doors",
+          "value": 3
+        },
+        {
+          "name": "Alice visits the Duchess's house",
+          "value": 8
+        },
+        {
+          "name": "Alice attends the tea party",
+          "value": 9
+        },
+        {
+          "name": "Alice plays croquet with the Queen",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-089",
+      "source": "BOOKS",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.gutenberg.org/ebooks/11"
+      ],
+      "ordered": [
+        {
+          "name": "Alice reaches the hall of locked doors",
+          "value": 3
+        },
+        {
+          "name": "Alice grows inside the White Rabbit's house",
+          "value": 6
+        },
+        {
+          "name": "Alice meets the Caterpillar",
+          "value": 7
+        },
+        {
+          "name": "Alice visits the Duchess's house",
+          "value": 8
+        },
+        {
+          "name": "Alice plays croquet with the Queen",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-090",
+      "source": "BOOKS",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.gutenberg.org/ebooks/11"
+      ],
+      "ordered": [
+        {
+          "name": "Alice joins the Caucus-race",
+          "value": 5
+        },
+        {
+          "name": "Alice grows inside the White Rabbit's house",
+          "value": 6
+        },
+        {
+          "name": "Alice meets the Caterpillar",
+          "value": 7
+        },
+        {
+          "name": "Alice visits the Duchess's house",
+          "value": 8
+        },
+        {
+          "name": "Alice attends the tea party",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-091",
+      "source": "BOOKS",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.gutenberg.org/ebooks/11"
+      ],
+      "ordered": [
+        {
+          "name": "Alice follows the White Rabbit",
+          "value": 1
+        },
+        {
+          "name": "Alice falls down the rabbit hole",
+          "value": 2
+        },
+        {
+          "name": "Alice reaches the hall of locked doors",
+          "value": 3
+        },
+        {
+          "name": "Alice meets the Caterpillar",
+          "value": 7
+        },
+        {
+          "name": "Alice plays croquet with the Queen",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-092",
+      "source": "BOOKS",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.gutenberg.org/ebooks/11"
+      ],
+      "ordered": [
+        {
+          "name": "Alice swims in the pool of tears",
+          "value": 4
+        },
+        {
+          "name": "Alice joins the Caucus-race",
+          "value": 5
+        },
+        {
+          "name": "Alice visits the Duchess's house",
+          "value": 8
+        },
+        {
+          "name": "Alice attends the tea party",
+          "value": 9
+        },
+        {
+          "name": "Alice plays croquet with the Queen",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-093",
+      "source": "GAMES",
+      "unit": "sequence position",
+      "sources": [
+        "https://bulbapedia.bulbagarden.net/wiki/Badge"
+      ],
+      "ordered": [
+        {
+          "name": "Boulder Badge",
+          "value": 1
+        },
+        {
+          "name": "Cascade Badge",
+          "value": 2
+        },
+        {
+          "name": "Thunder Badge",
+          "value": 3
+        },
+        {
+          "name": "Rainbow Badge",
+          "value": 4
+        },
+        {
+          "name": "Soul Badge",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "id": "stack-094",
+      "source": "GAMES",
+      "unit": "sequence position",
+      "sources": [
+        "https://bulbapedia.bulbagarden.net/wiki/Badge"
+      ],
+      "ordered": [
+        {
+          "name": "Boulder Badge",
+          "value": 1
+        },
+        {
+          "name": "Thunder Badge",
+          "value": 3
+        },
+        {
+          "name": "Rainbow Badge",
+          "value": 4
+        },
+        {
+          "name": "Soul Badge",
+          "value": 5
+        },
+        {
+          "name": "Earth Badge",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-095",
+      "source": "GAMES",
+      "unit": "sequence position",
+      "sources": [
+        "https://bulbapedia.bulbagarden.net/wiki/Badge"
+      ],
+      "ordered": [
+        {
+          "name": "Cascade Badge",
+          "value": 2
+        },
+        {
+          "name": "Rainbow Badge",
+          "value": 4
+        },
+        {
+          "name": "Soul Badge",
+          "value": 5
+        },
+        {
+          "name": "Marsh Badge",
+          "value": 6
+        },
+        {
+          "name": "Volcano Badge",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-096",
+      "source": "GAMES",
+      "unit": "sequence position",
+      "sources": [
+        "https://bulbapedia.bulbagarden.net/wiki/Badge"
+      ],
+      "ordered": [
+        {
+          "name": "Boulder Badge",
+          "value": 1
+        },
+        {
+          "name": "Soul Badge",
+          "value": 5
+        },
+        {
+          "name": "Marsh Badge",
+          "value": 6
+        },
+        {
+          "name": "Volcano Badge",
+          "value": 7
+        },
+        {
+          "name": "Earth Badge",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-097",
+      "source": "GAMES",
+      "unit": "sequence position",
+      "sources": [
+        "https://bulbapedia.bulbagarden.net/wiki/Badge"
+      ],
+      "ordered": [
+        {
+          "name": "Boulder Badge",
+          "value": 1
+        },
+        {
+          "name": "Thunder Badge",
+          "value": 3
+        },
+        {
+          "name": "Soul Badge",
+          "value": 5
+        },
+        {
+          "name": "Marsh Badge",
+          "value": 6
+        },
+        {
+          "name": "Earth Badge",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-098",
+      "source": "GAMES",
+      "unit": "sequence position",
+      "sources": [
+        "https://bulbapedia.bulbagarden.net/wiki/Badge"
+      ],
+      "ordered": [
+        {
+          "name": "Boulder Badge",
+          "value": 1
+        },
+        {
+          "name": "Cascade Badge",
+          "value": 2
+        },
+        {
+          "name": "Rainbow Badge",
+          "value": 4
+        },
+        {
+          "name": "Soul Badge",
+          "value": 5
+        },
+        {
+          "name": "Volcano Badge",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-099",
+      "source": "GAMES",
+      "unit": "sequence position",
+      "sources": [
+        "https://bulbapedia.bulbagarden.net/wiki/Badge"
+      ],
+      "ordered": [
+        {
+          "name": "Cascade Badge",
+          "value": 2
+        },
+        {
+          "name": "Thunder Badge",
+          "value": 3
+        },
+        {
+          "name": "Rainbow Badge",
+          "value": 4
+        },
+        {
+          "name": "Marsh Badge",
+          "value": 6
+        },
+        {
+          "name": "Volcano Badge",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-100",
+      "source": "GAMES",
+      "unit": "sequence position",
+      "sources": [
+        "https://zeldawiki.wiki/wiki/Dungeon"
+      ],
+      "ordered": [
+        {
+          "name": "Tail Cave",
+          "value": 1
+        },
+        {
+          "name": "Key Cavern",
+          "value": 3
+        },
+        {
+          "name": "Angler's Tunnel",
+          "value": 4
+        },
+        {
+          "name": "Catfish's Maw",
+          "value": 5
+        },
+        {
+          "name": "Eagle's Tower",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-101",
+      "source": "GAMES",
+      "unit": "sequence position",
+      "sources": [
+        "https://zeldawiki.wiki/wiki/Dungeon"
+      ],
+      "ordered": [
+        {
+          "name": "Tail Cave",
+          "value": 1
+        },
+        {
+          "name": "Angler's Tunnel",
+          "value": 4
+        },
+        {
+          "name": "Catfish's Maw",
+          "value": 5
+        },
+        {
+          "name": "Eagle's Tower",
+          "value": 7
+        },
+        {
+          "name": "Turtle Rock",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-102",
+      "source": "GAMES",
+      "unit": "sequence position",
+      "sources": [
+        "https://zeldawiki.wiki/wiki/Dungeon"
+      ],
+      "ordered": [
+        {
+          "name": "Tail Cave",
+          "value": 1
+        },
+        {
+          "name": "Catfish's Maw",
+          "value": 5
+        },
+        {
+          "name": "Face Shrine",
+          "value": 6
+        },
+        {
+          "name": "Eagle's Tower",
+          "value": 7
+        },
+        {
+          "name": "Turtle Rock",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-001",
+      "source": "GAMES",
+      "unit": "sequence position",
+      "sources": [
+        "https://zeldawiki.wiki/wiki/Dungeon"
+      ],
+      "ordered": [
+        {
+          "name": "Bottle Grotto",
+          "value": 2
+        },
+        {
+          "name": "Key Cavern",
+          "value": 3
+        },
+        {
+          "name": "Catfish's Maw",
+          "value": 5
+        },
+        {
+          "name": "Face Shrine",
+          "value": 6
+        },
+        {
+          "name": "Eagle's Tower",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-002",
+      "source": "GAMES",
+      "unit": "sequence position",
+      "sources": [
+        "https://zeldawiki.wiki/wiki/Dungeon"
+      ],
+      "ordered": [
+        {
+          "name": "Tail Cave",
+          "value": 1
+        },
+        {
+          "name": "Bottle Grotto",
+          "value": 2
+        },
+        {
+          "name": "Face Shrine",
+          "value": 6
+        },
+        {
+          "name": "Eagle's Tower",
+          "value": 7
+        },
+        {
+          "name": "Turtle Rock",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-003",
+      "source": "GAMES",
+      "unit": "sequence position",
+      "sources": [
+        "https://zeldawiki.wiki/wiki/Dungeon"
+      ],
+      "ordered": [
+        {
+          "name": "Tail Cave",
+          "value": 1
+        },
+        {
+          "name": "Key Cavern",
+          "value": 3
+        },
+        {
+          "name": "Angler's Tunnel",
+          "value": 4
+        },
+        {
+          "name": "Face Shrine",
+          "value": 6
+        },
+        {
+          "name": "Eagle's Tower",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-004",
+      "source": "GAMES",
+      "unit": "sequence position",
+      "sources": [
+        "https://zeldawiki.wiki/wiki/Dungeon"
+      ],
+      "ordered": [
+        {
+          "name": "Tail Cave",
+          "value": 1
+        },
+        {
+          "name": "Angler's Tunnel",
+          "value": 4
+        },
+        {
+          "name": "Catfish's Maw",
+          "value": 5
+        },
+        {
+          "name": "Face Shrine",
+          "value": 6
+        },
+        {
+          "name": "Eagle's Tower",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-007",
+      "source": "SCIENCE",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works"
+      ],
+      "ordered": [
+        {
+          "name": "Mouth",
+          "value": 1
+        },
+        {
+          "name": "Small intestine",
+          "value": 5
+        },
+        {
+          "name": "Large intestine",
+          "value": 6
+        },
+        {
+          "name": "Rectum",
+          "value": 7
+        },
+        {
+          "name": "Anus",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-008",
+      "source": "SCIENCE",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works"
+      ],
+      "ordered": [
+        {
+          "name": "Pharynx",
+          "value": 2
+        },
+        {
+          "name": "Oesophagus",
+          "value": 3
+        },
+        {
+          "name": "Stomach",
+          "value": 4
+        },
+        {
+          "name": "Large intestine",
+          "value": 6
+        },
+        {
+          "name": "Rectum",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-009",
+      "source": "SCIENCE",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works"
+      ],
+      "ordered": [
+        {
+          "name": "Oesophagus",
+          "value": 3
+        },
+        {
+          "name": "Small intestine",
+          "value": 5
+        },
+        {
+          "name": "Large intestine",
+          "value": 6
+        },
+        {
+          "name": "Rectum",
+          "value": 7
+        },
+        {
+          "name": "Anus",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-010",
+      "source": "SCIENCE",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works"
+      ],
+      "ordered": [
+        {
+          "name": "Mouth",
+          "value": 1
+        },
+        {
+          "name": "Oesophagus",
+          "value": 3
+        },
+        {
+          "name": "Stomach",
+          "value": 4
+        },
+        {
+          "name": "Large intestine",
+          "value": 6
+        },
+        {
+          "name": "Rectum",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-011",
+      "source": "SCIENCE",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works"
+      ],
+      "ordered": [
+        {
+          "name": "Mouth",
+          "value": 1
+        },
+        {
+          "name": "Oesophagus",
+          "value": 3
+        },
+        {
+          "name": "Small intestine",
+          "value": 5
+        },
+        {
+          "name": "Rectum",
+          "value": 7
+        },
+        {
+          "name": "Anus",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-012",
+      "source": "SCIENCE",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works"
+      ],
+      "ordered": [
+        {
+          "name": "Mouth",
+          "value": 1
+        },
+        {
+          "name": "Stomach",
+          "value": 4
+        },
+        {
+          "name": "Small intestine",
+          "value": 5
+        },
+        {
+          "name": "Large intestine",
+          "value": 6
+        },
+        {
+          "name": "Anus",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-013",
+      "source": "SCIENCE",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works"
+      ],
+      "ordered": [
+        {
+          "name": "Mouth",
+          "value": 1
+        },
+        {
+          "name": "Pharynx",
+          "value": 2
+        },
+        {
+          "name": "Small intestine",
+          "value": 5
+        },
+        {
+          "name": "Large intestine",
+          "value": 6
+        },
+        {
+          "name": "Anus",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-016",
+      "source": "NATURE",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.rhs.org.uk/vegetables/beans/grow-your-own"
+      ],
+      "ordered": [
+        {
+          "name": "The dry seed takes in water",
+          "value": 1
+        },
+        {
+          "name": "The shoot emerges from the seed",
+          "value": 3
+        },
+        {
+          "name": "The first foliage leaves open",
+          "value": 4
+        },
+        {
+          "name": "The flowers are pollinated",
+          "value": 6
+        },
+        {
+          "name": "The pods ripen and dry",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-017",
+      "source": "NATURE",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.rhs.org.uk/vegetables/beans/grow-your-own"
+      ],
+      "ordered": [
+        {
+          "name": "The shoot emerges from the seed",
+          "value": 3
+        },
+        {
+          "name": "The first foliage leaves open",
+          "value": 4
+        },
+        {
+          "name": "The plant opens its flowers",
+          "value": 5
+        },
+        {
+          "name": "The flowers are pollinated",
+          "value": 6
+        },
+        {
+          "name": "Seed pods develop",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-018",
+      "source": "NATURE",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.rhs.org.uk/vegetables/beans/grow-your-own"
+      ],
+      "ordered": [
+        {
+          "name": "The dry seed takes in water",
+          "value": 1
+        },
+        {
+          "name": "The first root emerges",
+          "value": 2
+        },
+        {
+          "name": "The shoot emerges from the seed",
+          "value": 3
+        },
+        {
+          "name": "The plant opens its flowers",
+          "value": 5
+        },
+        {
+          "name": "The flowers are pollinated",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-019",
+      "source": "NATURE",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.rhs.org.uk/vegetables/beans/grow-your-own"
+      ],
+      "ordered": [
+        {
+          "name": "The dry seed takes in water",
+          "value": 1
+        },
+        {
+          "name": "The first root emerges",
+          "value": 2
+        },
+        {
+          "name": "The shoot emerges from the seed",
+          "value": 3
+        },
+        {
+          "name": "Seed pods develop",
+          "value": 7
+        },
+        {
+          "name": "The pods ripen and dry",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-020",
+      "source": "NATURE",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.rhs.org.uk/vegetables/beans/grow-your-own"
+      ],
+      "ordered": [
+        {
+          "name": "The first root emerges",
+          "value": 2
+        },
+        {
+          "name": "The first foliage leaves open",
+          "value": 4
+        },
+        {
+          "name": "The flowers are pollinated",
+          "value": 6
+        },
+        {
+          "name": "Seed pods develop",
+          "value": 7
+        },
+        {
+          "name": "The pods ripen and dry",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-021",
+      "source": "NATURE",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.rhs.org.uk/vegetables/beans/grow-your-own"
+      ],
+      "ordered": [
+        {
+          "name": "The dry seed takes in water",
+          "value": 1
+        },
+        {
+          "name": "The first root emerges",
+          "value": 2
+        },
+        {
+          "name": "The first foliage leaves open",
+          "value": 4
+        },
+        {
+          "name": "The flowers are pollinated",
+          "value": 6
+        },
+        {
+          "name": "The pods ripen and dry",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-022",
+      "source": "NATURE",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.rhs.org.uk/vegetables/beans/grow-your-own"
+      ],
+      "ordered": [
+        {
+          "name": "The dry seed takes in water",
+          "value": 1
+        },
+        {
+          "name": "The first foliage leaves open",
+          "value": 4
+        },
+        {
+          "name": "The plant opens its flowers",
+          "value": 5
+        },
+        {
+          "name": "The flowers are pollinated",
+          "value": 6
+        },
+        {
+          "name": "The pods ripen and dry",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-025",
+      "source": "WORLD",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.danubecommission.org/dc/en/danube-river/"
+      ],
+      "ordered": [
+        {
+          "name": "Regensburg",
+          "value": 1
+        },
+        {
+          "name": "Passau",
+          "value": 2
+        },
+        {
+          "name": "Linz",
+          "value": 3
+        },
+        {
+          "name": "Bratislava",
+          "value": 5
+        },
+        {
+          "name": "Belgrade",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-026",
+      "source": "WORLD",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.danubecommission.org/dc/en/danube-river/"
+      ],
+      "ordered": [
+        {
+          "name": "Regensburg",
+          "value": 1
+        },
+        {
+          "name": "Linz",
+          "value": 3
+        },
+        {
+          "name": "Bratislava",
+          "value": 5
+        },
+        {
+          "name": "Budapest",
+          "value": 6
+        },
+        {
+          "name": "Belgrade",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-027",
+      "source": "WORLD",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.danubecommission.org/dc/en/danube-river/"
+      ],
+      "ordered": [
+        {
+          "name": "Regensburg",
+          "value": 1
+        },
+        {
+          "name": "Linz",
+          "value": 3
+        },
+        {
+          "name": "Vienna",
+          "value": 4
+        },
+        {
+          "name": "Novi Sad",
+          "value": 7
+        },
+        {
+          "name": "Belgrade",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-028",
+      "source": "WORLD",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.danubecommission.org/dc/en/danube-river/"
+      ],
+      "ordered": [
+        {
+          "name": "Regensburg",
+          "value": 1
+        },
+        {
+          "name": "Linz",
+          "value": 3
+        },
+        {
+          "name": "Bratislava",
+          "value": 5
+        },
+        {
+          "name": "Belgrade",
+          "value": 8
+        },
+        {
+          "name": "Tulcea",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-029",
+      "source": "WORLD",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.danubecommission.org/dc/en/danube-river/"
+      ],
+      "ordered": [
+        {
+          "name": "Regensburg",
+          "value": 1
+        },
+        {
+          "name": "Passau",
+          "value": 2
+        },
+        {
+          "name": "Budapest",
+          "value": 6
+        },
+        {
+          "name": "Novi Sad",
+          "value": 7
+        },
+        {
+          "name": "Ruse",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-030",
+      "source": "WORLD",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.danubecommission.org/dc/en/danube-river/"
+      ],
+      "ordered": [
+        {
+          "name": "Regensburg",
+          "value": 1
+        },
+        {
+          "name": "Passau",
+          "value": 2
+        },
+        {
+          "name": "Vienna",
+          "value": 4
+        },
+        {
+          "name": "Bratislava",
+          "value": 5
+        },
+        {
+          "name": "Budapest",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "id": "stack-launch-fact-031",
+      "source": "WORLD",
+      "unit": "sequence position",
+      "sources": [
+        "https://www.danubecommission.org/dc/en/danube-river/"
+      ],
+      "ordered": [
+        {
+          "name": "Vienna",
+          "value": 4
+        },
+        {
+          "name": "Bratislava",
+          "value": 5
+        },
+        {
+          "name": "Novi Sad",
+          "value": 7
+        },
+        {
+          "name": "Belgrade",
+          "value": 8
+        },
+        {
+          "name": "Tulcea",
+          "value": 10
+        }
+      ]
+    }
+  ]
+}

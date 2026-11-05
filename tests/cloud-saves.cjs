@@ -17,3 +17,7 @@ S.install(s,{stake:{[key]:complete},'stack-up':{},lowball:{pc_history:'{}'}});as
 assert.deepEqual(S.merge('lowball',{pc_country:'AU'},{}),{pc_country:'AU'});
 const duplicate=S.merge('lowball',{pc_last:'2026-10-20',pc_last_avg:'90',pc_last_share:'stale'},{pc_history:'{"19":40}'});assert.equal(duplicate.pc_last,'2026-10-20');assert.equal(duplicate.pc_last_avg,'40');assert.equal(duplicate.pc_last_share,undefined,'Native final result must match retained cloud history');
 console.log('PASS cloud saves: strict allowlist, native progress ordering, immutable cloud completions, Lowball history union/counters, installation preserves non-game storage.');
+
+// Content refresh: an existing cloud capture owns its question snapshots.
+const oldCaptured=JSON.stringify({version:2,scoreVersion:4,round:0,results:[],status:'playing',mistakes:0,stacks:[{prompt:'Old captured content'}]}),newCaptured=JSON.stringify({version:2,scoreVersion:4,round:1,results:[{}],status:'playing',mistakes:0,stacks:[{prompt:'New bank content'}]});
+assert.equal(S.merge('stack-up',{[sk]:newCaptured},{[sk]:oldCaptured})[sk],oldCaptured,'Higher progress on different content cannot overwrite the remote capture');

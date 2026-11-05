@@ -74,7 +74,7 @@
   for(const [key,value]of Object.entries(local)){
    // A captured cloud round owns its rules, even before completion.
    // Never combine attempts made with different clue or score versions.
-   if(game==='stack-up'&&out[key]!==undefined&&rank(game,value,key)>=0&&rank(game,out[key],key)>=0&&(parse(value).scoreVersion??1)!==(parse(out[key]).scoreVersion??1))continue;
+   if(game==='stack-up'&&out[key]!==undefined&&rank(game,value,key)>=0&&rank(game,out[key],key)>=0&&((parse(value).scoreVersion??1)!==(parse(out[key]).scoreVersion??1)||(Array.isArray(parse(value).stacks)&&Array.isArray(parse(out[key]).stacks)&&JSON.stringify(parse(value).stacks)!==JSON.stringify(parse(out[key]).stacks))))continue;
    if(['codebreak','seating-chart'].includes(game)&&out[key]!==undefined&&rank(game,value,key)>=0&&rank(game,out[key],key)>=0&&parse(value).version!==parse(out[key]).version)continue;
    if(out[key]===undefined||rank(game,value,key)>rank(game,out[key],key))out[key]=value;
   }

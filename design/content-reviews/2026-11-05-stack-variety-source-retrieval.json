@@ -1,0 +1,588 @@
+{
+  "reviewedAt": "2026-11-05",
+  "note": "Reference-page retrieval confirms availability. Ordering was editorially reviewed separately; source availability alone is not proof of every assertion. Full retrieved HTML is in local .artifacts/stack-variety-sources/.",
+  "sources": [
+    {
+      "url": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
+      "status": 200,
+      "bytes": 2735863,
+      "title": "2026 FIFA World Cup - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Air_travel",
+      "status": 200,
+      "bytes": 233082,
+      "title": "Air travel - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Apple",
+      "status": 200,
+      "bytes": 909119,
+      "title": "Apple - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Art_movement",
+      "status": 200,
+      "bytes": 453326,
+      "title": "Art movement - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Association_football",
+      "status": 200,
+      "bytes": 1170442,
+      "title": "Association football - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Batman_in_film",
+      "status": 200,
+      "bytes": 1351596,
+      "title": "Batman in film - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Bird",
+      "status": 200,
+      "bytes": 1934224,
+      "title": "Bird - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Bread",
+      "status": 200,
+      "bytes": 620102,
+      "title": "Bread - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Butterfly",
+      "status": 200,
+      "bytes": 801133,
+      "title": "Butterfly - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Compact_disc",
+      "status": 200,
+      "bytes": 648385,
+      "title": "Compact disc - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Computer_animation",
+      "status": 200,
+      "bytes": 499383,
+      "title": "Computer animation - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Concorde",
+      "status": 200,
+      "bytes": 1064848,
+      "title": "Concorde - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/DMC_DeLorean",
+      "status": 200,
+      "bytes": 482769,
+      "title": "DMC DeLorean - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Dishwashing",
+      "status": 200,
+      "bytes": 163232,
+      "title": "Dishwashing - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Dog",
+      "status": 200,
+      "bytes": 1605051,
+      "title": "Dog - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Dr._Seuss_bibliography",
+      "status": 200,
+      "bytes": 258698,
+      "title": "Dr. Seuss bibliography - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Ear",
+      "status": 200,
+      "bytes": 565955,
+      "title": "Ear - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Filmmaking",
+      "status": 200,
+      "bytes": 527754,
+      "title": "Filmmaking - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Finding_Nemo",
+      "status": 200,
+      "bytes": 919546,
+      "title": "Finding Nemo - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Fosbury_flop",
+      "status": 200,
+      "bytes": 98440,
+      "title": "Fosbury flop - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Frog",
+      "status": 200,
+      "bytes": 1286059,
+      "title": "Frog - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Frozen_(2013_film)",
+      "status": 200,
+      "bytes": 1897683,
+      "title": "Frozen (2013 film) - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Goldilocks_and_the_Three_Bears",
+      "status": 200,
+      "bytes": 218043,
+      "title": "Goldilocks and the Three Bears - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Harry_Potter_(film_series)",
+      "status": 200,
+      "bytes": 980100,
+      "title": "Harry Potter (film series) - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Helianthus_annuus",
+      "status": 200,
+      "bytes": 588088,
+      "title": "Common sunflower - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/History_of_telecommunication",
+      "status": 200,
+      "bytes": 387773,
+      "title": "History of telecommunication - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Human_digestive_system",
+      "status": 200,
+      "bytes": 614703,
+      "title": "Human digestive system - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/IPod",
+      "status": 200,
+      "bytes": 873269,
+      "title": "iPod - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Jack_and_the_Beanstalk",
+      "status": 200,
+      "bytes": 268096,
+      "title": "Jack and the Beanstalk - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Jurassic_Park",
+      "status": 200,
+      "bytes": 1928693,
+      "title": "Jurassic Park - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Laundry",
+      "status": 200,
+      "bytes": 305435,
+      "title": "Laundry - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Library_circulation",
+      "status": 200,
+      "bytes": 157579,
+      "title": "Library circulation - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Linocut",
+      "status": 200,
+      "bytes": 115539,
+      "title": "Linocut - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_FIFA_World_Cup_hosts",
+      "status": 200,
+      "bytes": 974530,
+      "title": "List of FIFA World Cup hosts - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_Marvel_Cinematic_Universe_films",
+      "status": 200,
+      "bytes": 2164776,
+      "title": "List of Marvel Cinematic Universe films - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_Olympic_Games_host_cities",
+      "status": 200,
+      "bytes": 589484,
+      "title": "List of Olympic Games host cities - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_Pixar_films",
+      "status": 200,
+      "bytes": 916956,
+      "title": "List of Pixar films - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_Star_Wars_films",
+      "status": 200,
+      "bytes": 1299701,
+      "title": "List of Star Wars films - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_Walt_Disney_Animation_Studios_films",
+      "status": 200,
+      "bytes": 1197862,
+      "title": "List of Walt Disney Animation Studios films - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Little_Red_Riding_Hood",
+      "status": 200,
+      "bytes": 459207,
+      "title": "Little Red Riding Hood - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Mail",
+      "status": 200,
+      "bytes": 494377,
+      "title": "Mail - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Movie_theater",
+      "status": 200,
+      "bytes": 593730,
+      "title": "Movie theater - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Netflix",
+      "status": 200,
+      "bytes": 2482417,
+      "title": "Netflix - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Nintendo_video_game_consoles",
+      "status": 200,
+      "bytes": 412483,
+      "title": "Nintendo video game consoles - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Online_shopping",
+      "status": 200,
+      "bytes": 533479,
+      "title": "Online shopping - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Pasta",
+      "status": 200,
+      "bytes": 623183,
+      "title": "Pasta - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Photographic_processing",
+      "status": 200,
+      "bytes": 234716,
+      "title": "Photographic processing - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/PlayStation",
+      "status": 200,
+      "bytes": 1211827,
+      "title": "PlayStation - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Popcorn",
+      "status": 200,
+      "bytes": 399927,
+      "title": "Popcorn - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Pottery",
+      "status": 200,
+      "bytes": 660985,
+      "title": "Pottery - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Printing",
+      "status": 200,
+      "bytes": 600035,
+      "title": "Printing - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Publishing",
+      "status": 200,
+      "bytes": 471873,
+      "title": "Publishing - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/RMS_Titanic",
+      "status": 200,
+      "bytes": 1437857,
+      "title": "Titanic - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Rainbow",
+      "status": 200,
+      "bytes": 593593,
+      "title": "Rainbow - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Rice",
+      "status": 200,
+      "bytes": 907660,
+      "title": "Rice - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Roald_Dahl_bibliography",
+      "status": 200,
+      "bytes": 243268,
+      "title": "Roald Dahl bibliography - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Room_on_the_Broom",
+      "status": 200,
+      "bytes": 86621,
+      "title": "Room on the Broom - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Seedling",
+      "status": 200,
+      "bytes": 144594,
+      "title": "Seedling - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Shrek",
+      "status": 200,
+      "bytes": 979256,
+      "title": "Shrek - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Spotify",
+      "status": 200,
+      "bytes": 1426569,
+      "title": "Spotify - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Sprint_(running)",
+      "status": 200,
+      "bytes": 559651,
+      "title": "Sprint (running) - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Stephenson%27s_Rocket",
+      "status": 200,
+      "bytes": 322461,
+      "title": "Stephenson's Rocket - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Stick_Man",
+      "status": 200,
+      "bytes": 106109,
+      "title": "Stick Man - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Stop_motion",
+      "status": 200,
+      "bytes": 504576,
+      "title": "Stop motion - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Structure_of_Earth",
+      "status": 200,
+      "bytes": 386875,
+      "title": "Internal structure of Earth - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Super_Mario",
+      "status": 200,
+      "bytes": 799615,
+      "title": "Super Mario - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography",
+      "status": 200,
+      "bytes": 675888,
+      "title": "Taylor Swift albums discography - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Tea",
+      "status": 200,
+      "bytes": 783776,
+      "title": "Tea - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Ten-pin_bowling",
+      "status": 200,
+      "bytes": 1000480,
+      "title": "Tenpin bowling - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Tesla_Roadster_(first_generation)",
+      "status": 200,
+      "bytes": 916198,
+      "title": "Tesla Roadster (first generation) - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/The_Beatles_discography",
+      "status": 200,
+      "bytes": 2291695,
+      "title": "The Beatles - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/The_Cat_in_the_Hat",
+      "status": 200,
+      "bytes": 416559,
+      "title": "The Cat in the Hat - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/The_Gingerbread_Man",
+      "status": 200,
+      "bytes": 119422,
+      "title": "The Gingerbread Man - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/The_Gruffalo",
+      "status": 200,
+      "bytes": 341754,
+      "title": "The Gruffalo - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/The_Lion_King",
+      "status": 200,
+      "bytes": 1533035,
+      "title": "The Lion King - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/The_Tale_of_Peter_Rabbit",
+      "status": 200,
+      "bytes": 232579,
+      "title": "The Tale of Peter Rabbit - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/The_Three_Little_Pigs",
+      "status": 200,
+      "bytes": 261840,
+      "title": "The Three Little Pigs - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/The_Tortoise_and_the_Hare",
+      "status": 200,
+      "bytes": 231981,
+      "title": "The Tortoise and the Hare - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/The_Ugly_Duckling",
+      "status": 200,
+      "bytes": 172524,
+      "title": "The Ugly Duckling - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/The_Very_Hungry_Caterpillar",
+      "status": 200,
+      "bytes": 267424,
+      "title": "The Very Hungry Caterpillar - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/The_Wizard_of_Oz_(1939_film)",
+      "status": 200,
+      "bytes": 1115699,
+      "title": "The Wizard of Oz - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Timeline_of_human_history",
+      "status": 200,
+      "bytes": 105550,
+      "title": "Timelines of Big History - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Timeline_of_space_exploration",
+      "status": 200,
+      "bytes": 802011,
+      "title": "Timeline of space exploration - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Toy_Story",
+      "status": 200,
+      "bytes": 1000643,
+      "title": "Toy Story - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Trace_fossil",
+      "status": 200,
+      "bytes": 416670,
+      "title": "Trace fossil - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Transpiration",
+      "status": 200,
+      "bytes": 242977,
+      "title": "Transpiration - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Visual_system",
+      "status": 200,
+      "bytes": 527842,
+      "title": "Visual system - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Volcano",
+      "status": 200,
+      "bytes": 776161,
+      "title": "Volcano - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Volkswagen_Beetle",
+      "status": 200,
+      "bytes": 1008640,
+      "title": "Volkswagen Beetle - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Walkman",
+      "status": 200,
+      "bytes": 385128,
+      "title": "Walkman - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Water_cycle",
+      "status": 200,
+      "bytes": 411424,
+      "title": "Water cycle - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Winnie-the-Pooh",
+      "status": 200,
+      "bytes": 662599,
+      "title": "Winnie-the-Pooh - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Wright_Flyer",
+      "status": 200,
+      "bytes": 368760,
+      "title": "Wright Flyer - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Xbox",
+      "status": 200,
+      "bytes": 876647,
+      "title": "Xbox - Wikipedia"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/YouTube",
+      "status": 200,
+      "bytes": 1726533,
+      "title": "YouTube - Wikipedia"
+    },
+    {
+      "url": "https://minecraft.wiki/w/Tutorial:Beginner%27s_guide",
+      "status": 200,
+      "bytes": 787808,
+      "title": "Tutorial:Beginner's guide \u2013 Minecraft Wiki"
+    },
+    {
+      "url": "https://science.nasa.gov/solar-system/planets/",
+      "status": 200,
+      "bytes": 330909,
+      "title": "About the Planets"
+    }
+  ]
+}

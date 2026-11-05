@@ -1,11 +1,13 @@
 {
-  "version": 2,
-  "reviewedAt": "2026-10-27",
-  "scope": "No maths, numerical facts or time-unit ordering. Chronology stays available. Stable lane slots and unchanged selector.",
+  "version": 3,
+  "reviewedAt": "2026-11-05",
+  "scope": "80 distinct themes; two variants per theme, 16 Daily slots apart. No numerical-fact or time-unit tasks. Stable IDs, selector and immutable saved snapshots.",
   "families": [
     {
+      "lane": 0,
+      "slot": 0,
       "category": "EVERYDAY",
-      "prompt": "Order these steps in the standard straight-dough method for a yeast bread loaf.",
+      "prompt": "Order these steps when making a yeast bread loaf, first to last.",
       "ends": [
         "FIRST",
         "LAST"
@@ -20,207 +22,770 @@
           "value": 2
         },
         {
-          "name": "Let the dough complete its first rise",
+          "name": "Let the dough rise",
           "value": 3
         },
         {
-          "name": "Knock back the risen dough",
+          "name": "Shape the risen dough into a loaf",
           "value": 4
-        },
-        {
-          "name": "Shape the loaf",
-          "value": 5
         },
         {
           "name": "Let the shaped loaf prove",
-          "value": 6
+          "value": 5
         },
         {
           "name": "Bake the loaf",
-          "value": 7
+          "value": 6
         },
         {
           "name": "Cool the baked loaf",
-          "value": 8
+          "value": 7
         },
         {
           "name": "Slice the cooled loaf",
-          "value": 9
-        }
-      ],
-      "sources": [
-        "https://www.bbcgoodfood.com/recipes/easy-white-bread"
-      ],
-      "explanation": "Follow the standard bulk-rise-and-final-proof bread method.",
-      "count": 8,
-      "unit": "sequence position",
-      "lane": 0,
-      "seed": "stack-no-numbers:daily:0"
-    },
-    {
-      "category": "NATURE",
-      "prompt": "Order these stages of a butterfly's life, from egg to its first flight.",
-      "ends": [
-        "FIRST",
-        "LAST"
-      ],
-      "items": [
-        {
-          "name": "An egg is laid",
-          "value": 1
-        },
-        {
-          "name": "The caterpillar hatches",
-          "value": 2
-        },
-        {
-          "name": "The caterpillar feeds and grows",
-          "value": 3
-        },
-        {
-          "name": "The caterpillar forms a chrysalis",
-          "value": 4
-        },
-        {
-          "name": "The adult butterfly emerges",
-          "value": 5
-        },
-        {
-          "name": "The butterfly expands its wings",
-          "value": 6
-        },
-        {
-          "name": "The adult takes its first flight",
-          "value": 7
-        }
-      ],
-      "sources": [
-        "https://www.floridamuseum.ufl.edu/educators/resource/butterfly-life-cycle/"
-      ],
-      "explanation": "Follow the life cycle from the egg through metamorphosis to the adult's first flight.",
-      "count": 8,
-      "unit": "sequence position",
-      "lane": 0,
-      "seed": "stack-no-numbers:daily:1"
-    },
-    {
-      "category": "SCREEN TIME",
-      "prompt": "Order these story moments from Harry Potter and the Philosopher's Stone, following Harry's story.",
-      "ends": [
-        "FIRST",
-        "LAST"
-      ],
-      "items": [
-        {
-          "name": "Harry's first Hogwarts letter arrives",
-          "value": 1
-        },
-        {
-          "name": "Hagrid tells Harry he is a wizard",
-          "value": 2
-        },
-        {
-          "name": "Harry shops in Diagon Alley",
-          "value": 3
-        },
-        {
-          "name": "Harry boards the Hogwarts Express",
-          "value": 4
-        },
-        {
-          "name": "The Sorting Hat places Harry in Gryffindor",
-          "value": 5
-        },
-        {
-          "name": "Harry helps defeat the troll",
-          "value": 6
-        },
-        {
-          "name": "Harry plays his first Quidditch match",
-          "value": 7
-        },
-        {
-          "name": "Harry finds the Mirror of Erised",
           "value": 8
-        },
-        {
-          "name": "Harry faces Quirrell",
-          "value": 9
-        },
-        {
-          "name": "Harry returns to the Dursleys",
-          "value": 10
         }
       ],
-      "sources": [
-        "https://www.harrypotter.com/discover/films/harry-potter-and-the-philosophers-stone"
-      ],
-      "explanation": "Follow the original film's narrative. The American title refers to the same film.",
-      "count": 8,
+      "count": 2,
       "unit": "sequence position",
-      "lane": 0,
-      "seed": "stack-no-numbers:daily:2"
+      "sources": [
+        "https://en.wikipedia.org/wiki/Bread"
+      ],
+      "seed": "stack-variety:20261105:0:0",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
     },
     {
-      "category": "GAMES",
-      "prompt": "Order these milestones on the standard crafting route from an empty inventory to mining a diamond in Minecraft Survival.",
+      "lane": 0,
+      "slot": 1,
+      "category": "FOOD",
+      "prompt": "Order these steps when making tea with a teabag, first to last.",
       "ends": [
         "FIRST",
         "LAST"
       ],
       "items": [
         {
-          "name": "Gather a log from a tree",
+          "name": "Put fresh water in the kettle",
           "value": 1
         },
         {
-          "name": "Craft wooden planks",
+          "name": "Boil the water",
           "value": 2
         },
         {
-          "name": "Craft a crafting table",
+          "name": "Pour the hot water over the teabag",
           "value": 3
         },
         {
-          "name": "Craft a wooden pickaxe",
+          "name": "Let the tea brew",
           "value": 4
         },
         {
-          "name": "Mine cobblestone",
+          "name": "Remove the teabag",
           "value": 5
         },
         {
-          "name": "Craft a stone pickaxe",
+          "name": "Drink the finished tea",
+          "value": 6
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Tea"
+      ],
+      "seed": "stack-variety:20261105:0:1",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 0,
+      "slot": 2,
+      "category": "FOOD",
+      "prompt": "Order these steps for cooking white rice by the absorption method, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Rinse the uncooked rice",
+          "value": 1
+        },
+        {
+          "name": "Put the rinsed rice and measured water in a pan",
+          "value": 2
+        },
+        {
+          "name": "Bring the pan to a boil",
+          "value": 3
+        },
+        {
+          "name": "Cover and simmer the rice",
+          "value": 4
+        },
+        {
+          "name": "Turn off the heat and let the rice stand",
+          "value": 5
+        },
+        {
+          "name": "Fluff the cooked rice",
           "value": 6
         },
         {
-          "name": "Mine iron ore",
+          "name": "Serve the rice",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Rice"
+      ],
+      "seed": "stack-variety:20261105:0:2",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 0,
+      "slot": 3,
+      "category": "FOOD",
+      "prompt": "Order these steps for cooking dried pasta in boiling water, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Fill a saucepan with water",
+          "value": 1
+        },
+        {
+          "name": "Bring the water to a boil",
+          "value": 2
+        },
+        {
+          "name": "Add the dried pasta to the boiling water",
+          "value": 3
+        },
+        {
+          "name": "Cook until the pasta is ready",
+          "value": 4
+        },
+        {
+          "name": "Drain the cooked pasta",
+          "value": 5
+        },
+        {
+          "name": "Serve the drained pasta",
+          "value": 6
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Pasta"
+      ],
+      "seed": "stack-variety:20261105:0:3",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 0,
+      "slot": 4,
+      "category": "EVERYDAY",
+      "prompt": "Order these stages of a wash-and-line-dry laundry load, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Sort the dirty laundry",
+          "value": 1
+        },
+        {
+          "name": "Load the washing machine with laundry and detergent",
+          "value": 2
+        },
+        {
+          "name": "Start the wash cycle",
+          "value": 3
+        },
+        {
+          "name": "Remove the washed clothes",
+          "value": 4
+        },
+        {
+          "name": "Hang the wet clothes on the line",
+          "value": 5
+        },
+        {
+          "name": "Take down the dry clothes",
+          "value": 6
+        },
+        {
+          "name": "Fold the dry clothes",
           "value": 7
         },
         {
-          "name": "Smelt iron into ingots",
+          "name": "Put the folded clothes away",
           "value": 8
-        },
-        {
-          "name": "Craft an iron pickaxe",
-          "value": 9
-        },
-        {
-          "name": "Mine diamond ore with the iron pickaxe",
-          "value": 10
         }
       ],
-      "sources": [
-        "https://minecraft.wiki/w/Tutorial:Beginner%27s_guide"
-      ],
-      "explanation": "Use the normal tool-upgrade route, without loot chests, trading or borrowed equipment.",
-      "count": 8,
+      "count": 2,
       "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Laundry"
+      ],
+      "seed": "stack-variety:20261105:0:4",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
       "lane": 0,
-      "seed": "stack-no-numbers:daily:3"
+      "slot": 5,
+      "category": "EVERYDAY",
+      "prompt": "Order these stages in sending a letter by post, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Write the letter",
+          "value": 1
+        },
+        {
+          "name": "Put the finished letter in an envelope",
+          "value": 2
+        },
+        {
+          "name": "Seal and address the envelope",
+          "value": 3
+        },
+        {
+          "name": "Pay the postage",
+          "value": 4
+        },
+        {
+          "name": "Post the letter",
+          "value": 5
+        },
+        {
+          "name": "The postal service sorts the letter",
+          "value": 6
+        },
+        {
+          "name": "A postal worker delivers the letter",
+          "value": 7
+        },
+        {
+          "name": "The recipient opens the envelope",
+          "value": 8
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mail"
+      ],
+      "seed": "stack-variety:20261105:0:5",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 0,
+      "slot": 6,
+      "category": "EVERYDAY",
+      "prompt": "Order these stages of borrowing a library book, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Choose a book from the shelves",
+          "value": 1
+        },
+        {
+          "name": "Check the book out",
+          "value": 2
+        },
+        {
+          "name": "Take the borrowed book home",
+          "value": 3
+        },
+        {
+          "name": "Read the borrowed book",
+          "value": 4
+        },
+        {
+          "name": "Return the book to the library",
+          "value": 5
+        },
+        {
+          "name": "The library checks the returned book in",
+          "value": 6
+        },
+        {
+          "name": "The returned book goes back on the shelf",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Library_circulation"
+      ],
+      "seed": "stack-variety:20261105:0:6",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 0,
+      "slot": 7,
+      "category": "GARDEN",
+      "prompt": "Order these steps when growing a plant from seed in a pot, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Fill a pot with potting mix",
+          "value": 1
+        },
+        {
+          "name": "Sow the seed in the prepared pot",
+          "value": 2
+        },
+        {
+          "name": "Water the newly sown seed",
+          "value": 3
+        },
+        {
+          "name": "The seed germinates",
+          "value": 4
+        },
+        {
+          "name": "A shoot appears above the soil",
+          "value": 5
+        },
+        {
+          "name": "The seedling grows its first true leaves",
+          "value": 6
+        },
+        {
+          "name": "Repot the established seedling into a larger pot",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Seedling"
+      ],
+      "seed": "stack-variety:20261105:0:7",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 0,
+      "slot": 8,
+      "category": "EVERYDAY",
+      "prompt": "Order these stages of printing and collecting a document, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Finish editing the document",
+          "value": 1
+        },
+        {
+          "name": "Open the print settings",
+          "value": 2
+        },
+        {
+          "name": "Send the print job to the printer",
+          "value": 3
+        },
+        {
+          "name": "The printer feeds in the paper",
+          "value": 4
+        },
+        {
+          "name": "The printer puts the document on the paper",
+          "value": 5
+        },
+        {
+          "name": "The printed page comes out",
+          "value": 6
+        },
+        {
+          "name": "Collect the finished printout",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Printing"
+      ],
+      "seed": "stack-variety:20261105:0:8",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 0,
+      "slot": 9,
+      "category": "TRAVEL",
+      "prompt": "Order these stages of taking a flight, from departure airport to arrival.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Check in for the flight",
+          "value": 1
+        },
+        {
+          "name": "Go through departure security",
+          "value": 2
+        },
+        {
+          "name": "Board the aircraft",
+          "value": 3
+        },
+        {
+          "name": "The aircraft taxis to the runway",
+          "value": 4
+        },
+        {
+          "name": "The aircraft takes off",
+          "value": 5
+        },
+        {
+          "name": "The aircraft lands at the destination",
+          "value": 6
+        },
+        {
+          "name": "Passengers leave the aircraft",
+          "value": 7
+        },
+        {
+          "name": "Leave the arrivals area",
+          "value": 8
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Air_travel"
+      ],
+      "seed": "stack-variety:20261105:0:9",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 0,
+      "slot": 10,
+      "category": "EVERYDAY",
+      "prompt": "Order these stages of a cinema visit, from buying a ticket to leaving after the film.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Buy a ticket for the screening",
+          "value": 1
+        },
+        {
+          "name": "Show the ticket at the entrance",
+          "value": 2
+        },
+        {
+          "name": "Find the seat for the screening",
+          "value": 3
+        },
+        {
+          "name": "Watch the pre-film trailers",
+          "value": 4
+        },
+        {
+          "name": "Watch the feature film",
+          "value": 5
+        },
+        {
+          "name": "Watch the end credits",
+          "value": 6
+        },
+        {
+          "name": "Leave the auditorium after the screening",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Movie_theater"
+      ],
+      "seed": "stack-variety:20261105:0:10",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 0,
+      "slot": 11,
+      "category": "SHOPPING",
+      "prompt": "Order these stages of an online order, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Choose an item on the website",
+          "value": 1
+        },
+        {
+          "name": "Add the item to the basket",
+          "value": 2
+        },
+        {
+          "name": "Complete checkout",
+          "value": 3
+        },
+        {
+          "name": "The shop confirms the order",
+          "value": 4
+        },
+        {
+          "name": "The shop dispatches the parcel",
+          "value": 5
+        },
+        {
+          "name": "The courier delivers the parcel",
+          "value": 6
+        },
+        {
+          "name": "Open the delivered parcel",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Online_shopping"
+      ],
+      "seed": "stack-variety:20261105:0:11",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 0,
+      "slot": 12,
+      "category": "EVERYDAY",
+      "prompt": "Order these steps for washing dishes by hand, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Scrape leftover food off the dirty dishes",
+          "value": 1
+        },
+        {
+          "name": "Fill the sink with warm soapy water",
+          "value": 2
+        },
+        {
+          "name": "Wash the dishes in the soapy water",
+          "value": 3
+        },
+        {
+          "name": "Rinse the washed dishes",
+          "value": 4
+        },
+        {
+          "name": "Put the rinsed dishes on a drying rack",
+          "value": 5
+        },
+        {
+          "name": "Let the dishes dry",
+          "value": 6
+        },
+        {
+          "name": "Put the dry dishes away",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Dishwashing"
+      ],
+      "seed": "stack-variety:20261105:0:12",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 0,
+      "slot": 13,
+      "category": "PHOTOGRAPHY",
+      "prompt": "Order these stages of taking and printing photographs on film, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Load an unused roll of film into the camera",
+          "value": 1
+        },
+        {
+          "name": "Take photographs on the film",
+          "value": 2
+        },
+        {
+          "name": "Rewind the exposed roll",
+          "value": 3
+        },
+        {
+          "name": "Remove the exposed roll from the camera",
+          "value": 4
+        },
+        {
+          "name": "Develop the exposed film",
+          "value": 5
+        },
+        {
+          "name": "Print photographs from the developed negatives",
+          "value": 6
+        },
+        {
+          "name": "Display the finished prints",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Photographic_processing"
+      ],
+      "seed": "stack-variety:20261105:0:13",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 0,
+      "slot": 14,
+      "category": "FOOD",
+      "prompt": "Order these steps for stovetop popcorn using preheated oil, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Heat the oil in a pan",
+          "value": 1
+        },
+        {
+          "name": "Add popcorn kernels to the hot oil",
+          "value": 2
+        },
+        {
+          "name": "Cover the pan",
+          "value": 3
+        },
+        {
+          "name": "The heated kernels start to pop",
+          "value": 4
+        },
+        {
+          "name": "Take the pan off the heat as popping slows",
+          "value": 5
+        },
+        {
+          "name": "Tip the popped corn into a serving bowl",
+          "value": 6
+        },
+        {
+          "name": "Eat the finished popcorn",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Popcorn"
+      ],
+      "seed": "stack-variety:20261105:0:14",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 0,
+      "slot": 15,
+      "category": "CRAFT",
+      "prompt": "Order these stages of making a twice-fired, glazed pottery bowl, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Knead the workable clay",
+          "value": 1
+        },
+        {
+          "name": "Shape the clay into a bowl",
+          "value": 2
+        },
+        {
+          "name": "Let the shaped bowl dry",
+          "value": 3
+        },
+        {
+          "name": "Give the dry bowl its first firing",
+          "value": 4
+        },
+        {
+          "name": "Apply glaze to the fired bowl",
+          "value": 5
+        },
+        {
+          "name": "Fire the glazed bowl",
+          "value": 6
+        },
+        {
+          "name": "Let the kiln and bowl cool",
+          "value": 7
+        },
+        {
+          "name": "Use the finished bowl",
+          "value": 8
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Pottery"
+      ],
+      "seed": "stack-variety:20261105:0:15",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
     },
     {
       "lane": 1,
+      "slot": 0,
       "category": "NATURE",
       "prompt": "Order these traditional rainbow colours from the outside of a primary rainbow towards the inside.",
       "ends": [
@@ -257,270 +822,743 @@
           "value": 7
         }
       ],
+      "count": 2,
+      "unit": "sequence position",
       "sources": [
-        "https://www.nasa.gov/learning-resources/nasas-picture-dictionary-r/"
+        "https://en.wikipedia.org/wiki/Rainbow"
       ],
-      "seed": "no-maths:rainbow:1",
-      "count": 8,
-      "unit": "sequence position"
+      "seed": "stack-variety:20261105:1:0",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
     },
     {
-      "category": "SCIENCE",
-      "prompt": "Order these levels of biological organisation from simpler building blocks to a complete living thing.",
+      "lane": 1,
+      "slot": 1,
+      "category": "SPACE",
+      "prompt": "Order these planets by distance from the Sun, nearest first.",
+      "ends": [
+        "NEARER",
+        "FARTHER"
+      ],
+      "items": [
+        {
+          "name": "Mercury",
+          "value": 1
+        },
+        {
+          "name": "Venus",
+          "value": 2
+        },
+        {
+          "name": "Earth",
+          "value": 3
+        },
+        {
+          "name": "Mars",
+          "value": 4
+        },
+        {
+          "name": "Jupiter",
+          "value": 5
+        },
+        {
+          "name": "Saturn",
+          "value": 6
+        },
+        {
+          "name": "Uranus",
+          "value": 7
+        },
+        {
+          "name": "Neptune",
+          "value": 8
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://science.nasa.gov/solar-system/planets/"
+      ],
+      "seed": "stack-variety:20261105:1:1",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 1,
+      "slot": 2,
+      "category": "NATURE",
+      "prompt": "Order these stages of a butterfly's life, from egg to its first flight.",
       "ends": [
         "FIRST",
         "LAST"
       ],
       "items": [
         {
-          "name": "Atom",
+          "name": "The adult lays an egg",
           "value": 1
         },
         {
-          "name": "Molecule",
+          "name": "The caterpillar hatches",
           "value": 2
         },
         {
-          "name": "Organelle",
+          "name": "The caterpillar feeds and grows",
           "value": 3
         },
         {
-          "name": "Cell",
+          "name": "The caterpillar forms a chrysalis",
           "value": 4
         },
         {
-          "name": "Tissue",
+          "name": "The adult butterfly emerges",
           "value": 5
         },
         {
-          "name": "Organ",
+          "name": "The butterfly's new wings expand and dry",
           "value": 6
         },
         {
-          "name": "Organ system",
+          "name": "The butterfly takes its first flight",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Butterfly"
+      ],
+      "seed": "stack-variety:20261105:1:2",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 1,
+      "slot": 3,
+      "category": "NATURE",
+      "prompt": "Order these stages as a frog grows from an egg into an adult.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "An egg is laid in water",
+          "value": 1
+        },
+        {
+          "name": "A tadpole hatches",
+          "value": 2
+        },
+        {
+          "name": "The tadpole grows hind legs",
+          "value": 3
+        },
+        {
+          "name": "Front legs appear",
+          "value": 4
+        },
+        {
+          "name": "A froglet has a short remaining tail",
+          "value": 5
+        },
+        {
+          "name": "An adult frog has no tail",
+          "value": 6
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Frog"
+      ],
+      "seed": "stack-variety:20261105:1:3",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 1,
+      "slot": 4,
+      "category": "NATURE",
+      "prompt": "Order these stages of a nestling songbird's early life, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "The mother lays an egg",
+          "value": 1
+        },
+        {
+          "name": "The egg is incubated",
+          "value": 2
+        },
+        {
+          "name": "The chick hatches",
+          "value": 3
+        },
+        {
+          "name": "The parents feed the nestling",
+          "value": 4
+        },
+        {
+          "name": "The young bird grows flight feathers",
+          "value": 5
+        },
+        {
+          "name": "The young bird fledges from the nest",
+          "value": 6
+        },
+        {
+          "name": "The young bird becomes independent",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Bird"
+      ],
+      "seed": "stack-variety:20261105:1:4",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 1,
+      "slot": 5,
+      "category": "GARDEN",
+      "prompt": "Order these stages as a sunflower grows from seed to a mature seed head.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "A sunflower seed is planted",
+          "value": 1
+        },
+        {
+          "name": "The seed germinates",
+          "value": 2
+        },
+        {
+          "name": "The seedling appears above the soil",
+          "value": 3
+        },
+        {
+          "name": "The young sunflower grows leaves and a taller stem",
+          "value": 4
+        },
+        {
+          "name": "A flower bud forms",
+          "value": 5
+        },
+        {
+          "name": "The sunflower blooms",
+          "value": 6
+        },
+        {
+          "name": "The flower head develops mature seeds",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Helianthus_annuus"
+      ],
+      "seed": "stack-variety:20261105:1:5",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 1,
+      "slot": 6,
+      "category": "GARDEN",
+      "prompt": "Order these stages from an apple blossom to eating the harvested apple.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "A blossom opens on the tree",
+          "value": 1
+        },
+        {
+          "name": "The blossom is pollinated",
+          "value": 2
+        },
+        {
+          "name": "A small apple starts to form",
+          "value": 3
+        },
+        {
+          "name": "The apple grows on the tree",
+          "value": 4
+        },
+        {
+          "name": "The apple ripens",
+          "value": 5
+        },
+        {
+          "name": "The ripe apple is picked",
+          "value": 6
+        },
+        {
+          "name": "The picked apple is washed",
           "value": 7
         },
         {
-          "name": "Organism",
+          "name": "The washed apple is eaten",
           "value": 8
         }
       ],
-      "sources": [
-        "https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology"
-      ],
-      "explanation": "Use the standard structural hierarchy in a multicellular organism.",
-      "count": 8,
+      "count": 2,
       "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Apple"
+      ],
+      "seed": "stack-variety:20261105:1:6",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
       "lane": 1,
-      "seed": "stack-no-numbers:daily:4"
+      "slot": 7,
+      "category": "NATURE",
+      "prompt": "Follow water from the sea into a rain cloud and back to the sea, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Seawater evaporates",
+          "value": 1
+        },
+        {
+          "name": "Water vapour rises",
+          "value": 2
+        },
+        {
+          "name": "The vapour cools and condenses",
+          "value": 3
+        },
+        {
+          "name": "Cloud droplets grow large enough to fall",
+          "value": 4
+        },
+        {
+          "name": "Rain falls on the land",
+          "value": 5
+        },
+        {
+          "name": "Rainwater flows into a river",
+          "value": 6
+        },
+        {
+          "name": "The river carries the water back to the sea",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Water_cycle"
+      ],
+      "seed": "stack-variety:20261105:1:7",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
     },
     {
-      "lane": 3,
-      "category": "GAMES",
-      "prompt": "Order these Nintendo console families by their first launch anywhere, oldest first. Famicom/NES and Super Famicom/SNES count as one family each.",
+      "lane": 1,
+      "slot": 8,
+      "category": "BODY",
+      "prompt": "Order these parts along the route food takes through the human digestive tract.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Mouth",
+          "value": 1
+        },
+        {
+          "name": "Oesophagus",
+          "value": 2
+        },
+        {
+          "name": "Stomach",
+          "value": 3
+        },
+        {
+          "name": "Small intestine",
+          "value": 4
+        },
+        {
+          "name": "Large intestine",
+          "value": 5
+        },
+        {
+          "name": "Rectum",
+          "value": 6
+        },
+        {
+          "name": "Anus",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Human_digestive_system"
+      ],
+      "seed": "stack-variety:20261105:1:8",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 1,
+      "slot": 9,
+      "category": "BODY",
+      "prompt": "Order these parts along the route sound takes from your outer ear to your brain.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Outer ear (pinna)",
+          "value": 1
+        },
+        {
+          "name": "Ear canal",
+          "value": 2
+        },
+        {
+          "name": "Eardrum",
+          "value": 3
+        },
+        {
+          "name": "Middle-ear bones",
+          "value": 4
+        },
+        {
+          "name": "Cochlea",
+          "value": 5
+        },
+        {
+          "name": "Auditory nerve",
+          "value": 6
+        },
+        {
+          "name": "Brain",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ear"
+      ],
+      "seed": "stack-variety:20261105:1:9",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 1,
+      "slot": 10,
+      "category": "BODY",
+      "prompt": "Order these parts along the path light and its nerve signal take into your brain.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Cornea",
+          "value": 1
+        },
+        {
+          "name": "Pupil",
+          "value": 2
+        },
+        {
+          "name": "Lens",
+          "value": 3
+        },
+        {
+          "name": "Retina",
+          "value": 4
+        },
+        {
+          "name": "Optic nerve",
+          "value": 5
+        },
+        {
+          "name": "Brain",
+          "value": 6
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Visual_system"
+      ],
+      "seed": "stack-variety:20261105:1:10",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 1,
+      "slot": 11,
+      "category": "EARTH",
+      "prompt": "Order these positions from Earth's surface towards its centre.",
+      "ends": [
+        "SURFACE",
+        "CENTRE"
+      ],
+      "items": [
+        {
+          "name": "Top of the crust",
+          "value": 1
+        },
+        {
+          "name": "Bottom of the crust",
+          "value": 2
+        },
+        {
+          "name": "Upper mantle",
+          "value": 3
+        },
+        {
+          "name": "Lower mantle",
+          "value": 4
+        },
+        {
+          "name": "Outer core",
+          "value": 5
+        },
+        {
+          "name": "Inner core",
+          "value": 6
+        },
+        {
+          "name": "Centre of Earth",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Structure_of_Earth"
+      ],
+      "seed": "stack-variety:20261105:1:11",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 1,
+      "slot": 12,
+      "category": "NATURE",
+      "prompt": "Order these stages in a dog's life, youngest first.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Newborn puppy",
+          "value": 1
+        },
+        {
+          "name": "The puppy opens its eyes",
+          "value": 2
+        },
+        {
+          "name": "The puppy begins weaning",
+          "value": 3
+        },
+        {
+          "name": "The puppy finishes weaning",
+          "value": 4
+        },
+        {
+          "name": "Adolescent dog",
+          "value": 5
+        },
+        {
+          "name": "Adult dog",
+          "value": 6
+        },
+        {
+          "name": "Senior dog",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Dog"
+      ],
+      "seed": "stack-variety:20261105:1:12",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 1,
+      "slot": 13,
+      "category": "EARTH",
+      "prompt": "Follow a footprint that dries before burial, from being made to being found as a fossil.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "An animal steps in soft mud",
+          "value": 1
+        },
+        {
+          "name": "The foot leaves an imprint",
+          "value": 2
+        },
+        {
+          "name": "The footprint-bearing mud dries",
+          "value": 3
+        },
+        {
+          "name": "New sediment buries the footprint",
+          "value": 4
+        },
+        {
+          "name": "The buried sediment hardens into rock",
+          "value": 5
+        },
+        {
+          "name": "Erosion uncovers the fossil footprint",
+          "value": 6
+        },
+        {
+          "name": "Someone discovers the exposed footprint",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Trace_fossil"
+      ],
+      "seed": "stack-variety:20261105:1:13",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 1,
+      "slot": 14,
+      "category": "EARTH",
+      "prompt": "Order these stages as magma rises, erupts and becomes solid surface rock.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Rock melts beneath Earth's surface",
+          "value": 1
+        },
+        {
+          "name": "Magma collects underground",
+          "value": 2
+        },
+        {
+          "name": "Magma rises towards the surface",
+          "value": 3
+        },
+        {
+          "name": "Magma erupts as lava",
+          "value": 4
+        },
+        {
+          "name": "Lava flows over the ground",
+          "value": 5
+        },
+        {
+          "name": "The lava cools",
+          "value": 6
+        },
+        {
+          "name": "The cooled lava hardens into rock",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Volcano"
+      ],
+      "seed": "stack-variety:20261105:1:14",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 1,
+      "slot": 15,
+      "category": "PLANTS",
+      "prompt": "Follow water from the soil through a plant and out through a leaf.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Water in the soil",
+          "value": 1
+        },
+        {
+          "name": "Root hairs absorb water",
+          "value": 2
+        },
+        {
+          "name": "Water enters the root's water-carrying tissue",
+          "value": 3
+        },
+        {
+          "name": "Water moves up the stem",
+          "value": 4
+        },
+        {
+          "name": "Water reaches the leaf veins",
+          "value": 5
+        },
+        {
+          "name": "Water evaporates inside the leaf",
+          "value": 6
+        },
+        {
+          "name": "Water vapour leaves through the stomata",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Transpiration"
+      ],
+      "seed": "stack-variety:20261105:1:15",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 2,
+      "slot": 0,
+      "category": "SCREEN TIME",
+      "prompt": "Order these Harry Potter films by release, oldest first.",
       "ends": [
         "OLDER",
         "NEWER"
-      ],
-      "items": [
-        {
-          "name": "Famicom / NES",
-          "value": 1983
-        },
-        {
-          "name": "Super Famicom / SNES",
-          "value": 1990
-        },
-        {
-          "name": "Nintendo 64",
-          "value": 1996
-        },
-        {
-          "name": "GameCube",
-          "value": 2001
-        },
-        {
-          "name": "Wii",
-          "value": 2006
-        },
-        {
-          "name": "Wii U",
-          "value": 2012
-        },
-        {
-          "name": "Nintendo Switch",
-          "value": 2017
-        },
-        {
-          "name": "Nintendo Switch 2",
-          "value": 2025
-        }
-      ],
-      "sources": [
-        "https://www.nintendo.co.jp/corporate/en/history/index.html",
-        "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Nintendo-History-625945.html"
-      ],
-      "seed": "no-maths:nintendo:1",
-      "count": 8,
-      "unit": "first launch year"
-    },
-    {
-      "lane": 3,
-      "category": "GAMES",
-      "prompt": "Order these PlayStation systems by their first launch anywhere, oldest first. Include the handheld systems.",
-      "ends": [
-        "OLDER",
-        "NEWER"
-      ],
-      "items": [
-        {
-          "name": "PlayStation",
-          "value": 1994
-        },
-        {
-          "name": "PlayStation 2",
-          "value": 2000
-        },
-        {
-          "name": "PSP",
-          "value": 2004
-        },
-        {
-          "name": "PlayStation 3",
-          "value": 2006
-        },
-        {
-          "name": "PlayStation Vita",
-          "value": 2011
-        },
-        {
-          "name": "PlayStation 4",
-          "value": 2013
-        },
-        {
-          "name": "PlayStation 5",
-          "value": 2020
-        }
-      ],
-      "sources": [
-        "https://sonyinteractive.com/en/our-company/expanded-company-timeline/"
-      ],
-      "seed": "no-maths:playstation:1",
-      "count": 8,
-      "unit": "first launch year"
-    },
-    {
-      "lane": 3,
-      "category": "HISTORY",
-      "prompt": "Order these historical milestones, earliest first.",
-      "ends": [
-        "EARLIER",
-        "LATER"
-      ],
-      "items": [
-        {
-          "name": "Rome’s Colosseum opens",
-          "value": 80
-        },
-        {
-          "name": "Columbus reaches the Caribbean",
-          "value": 1492
-        },
-        {
-          "name": "The US Declaration of Independence is adopted",
-          "value": 1776
-        },
-        {
-          "name": "The Wright brothers fly the Wright Flyer",
-          "value": 1903
-        },
-        {
-          "name": "The Titanic sinks",
-          "value": 1912
-        },
-        {
-          "name": "Australia becomes a federation",
-          "value": 1901
-        },
-        {
-          "name": "The Berlin Wall’s border crossings open",
-          "value": 1989
-        },
-        {
-          "name": "The first iPhone goes on sale in the US",
-          "value": 2007
-        }
-      ],
-      "sources": [
-        "https://www.pbs.org/empires/romans/special/timeline_26.html",
-        "https://christophercolumbus.org/wp-content/uploads/2019/01/2005.pdf",
-        "https://www.archives.gov/milestone-documents/declaration-of-independence",
-        "https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/the-wilbur-and-orville-wright-timeline-1846-to-1948/1901-to-1910/",
-        "https://www.noaa.gov/rms-titanic",
-        "https://en.wikipedia.org/wiki/Federation_of_Australia",
-        "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
-        "https://en.wikipedia.org/wiki/IPhone_(1st_generation)"
-      ],
-      "seed": "no-maths:history:1",
-      "count": 8,
-      "unit": "year"
-    },
-    {
-      "lane": 3,
-      "category": "SPORT",
-      "prompt": "Order these Summer Olympic host cities by when their listed Games took place, earliest first. Use their most recent Summer Games through Paris 2024.",
-      "ends": [
-        "EARLIER",
-        "LATER"
-      ],
-      "items": [
-        {
-          "name": "Atlanta",
-          "value": 1996
-        },
-        {
-          "name": "Sydney",
-          "value": 2000
-        },
-        {
-          "name": "Athens",
-          "value": 2004
-        },
-        {
-          "name": "Beijing",
-          "value": 2008
-        },
-        {
-          "name": "London",
-          "value": 2012
-        },
-        {
-          "name": "Rio de Janeiro",
-          "value": 2016
-        },
-        {
-          "name": "Tokyo",
-          "value": 2021
-        },
-        {
-          "name": "Paris",
-          "value": 2024
-        }
-      ],
-      "sources": [
-        "https://olympics.com/en/olympic-games"
-      ],
-      "seed": "no-maths:olympics:1",
-      "count": 8,
-      "unit": "year Games were held"
-    },
-    {
-      "lane": 4,
-      "category": "BOOKS",
-      "prompt": "Order these original Harry Potter novels by publication order, earliest first.",
-      "ends": [
-        "EARLIER",
-        "LATER"
       ],
       "items": [
         {
@@ -548,76 +1586,2211 @@
           "value": 6
         },
         {
-          "name": "Harry Potter and the Deathly Hallows",
+          "name": "Harry Potter and the Deathly Hallows – Part 1",
           "value": 7
+        },
+        {
+          "name": "Harry Potter and the Deathly Hallows – Part 2",
+          "value": 8
         }
       ],
+      "count": 2,
+      "unit": "sequence position",
       "sources": [
-        "https://www.harrypotter.com/discover/books"
+        "https://en.wikipedia.org/wiki/Harry_Potter_(film_series)"
       ],
-      "seed": "no-maths:potter:1",
-      "count": 8,
-      "unit": "book position"
+      "seed": "stack-variety:20261105:2:0",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
     },
     {
-      "lane": 4,
+      "lane": 2,
+      "slot": 1,
       "category": "SCREEN TIME",
-      "prompt": "Order these Pixar films by their original release, oldest first.",
+      "prompt": "Order these Star Wars films by cinema release, oldest first, rather than story chronology.",
       "ends": [
         "OLDER",
         "NEWER"
       ],
       "items": [
         {
-          "name": "Toy Story 3",
-          "value": 2010
+          "name": "A New Hope",
+          "value": 1
         },
         {
-          "name": "Brave",
-          "value": 2012
+          "name": "The Empire Strikes Back",
+          "value": 2
+        },
+        {
+          "name": "Return of the Jedi",
+          "value": 3
+        },
+        {
+          "name": "The Phantom Menace",
+          "value": 4
+        },
+        {
+          "name": "Attack of the Clones",
+          "value": 5
+        },
+        {
+          "name": "Revenge of the Sith",
+          "value": 6
+        },
+        {
+          "name": "The Force Awakens",
+          "value": 7
+        },
+        {
+          "name": "The Last Jedi",
+          "value": 8
+        },
+        {
+          "name": "The Rise of Skywalker",
+          "value": 9
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_Star_Wars_films"
+      ],
+      "seed": "stack-variety:20261105:2:1",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
+    },
+    {
+      "lane": 2,
+      "slot": 2,
+      "category": "SCREEN TIME",
+      "prompt": "Order these Jurassic films by release, oldest first.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "Jurassic Park",
+          "value": 1
+        },
+        {
+          "name": "The Lost World: Jurassic Park",
+          "value": 2
+        },
+        {
+          "name": "Jurassic Park III",
+          "value": 3
+        },
+        {
+          "name": "Jurassic World",
+          "value": 4
+        },
+        {
+          "name": "Jurassic World: Fallen Kingdom",
+          "value": 5
+        },
+        {
+          "name": "Jurassic World Dominion",
+          "value": 6
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jurassic_Park"
+      ],
+      "seed": "stack-variety:20261105:2:2",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
+    },
+    {
+      "lane": 2,
+      "slot": 3,
+      "category": "SCREEN TIME",
+      "prompt": "Order these original Pixar films by release, oldest first.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "Toy Story",
+          "value": 1
+        },
+        {
+          "name": "A Bug's Life",
+          "value": 2
+        },
+        {
+          "name": "Monsters, Inc.",
+          "value": 3
+        },
+        {
+          "name": "Finding Nemo",
+          "value": 4
+        },
+        {
+          "name": "The Incredibles",
+          "value": 5
+        },
+        {
+          "name": "Ratatouille",
+          "value": 6
+        },
+        {
+          "name": "WALL-E",
+          "value": 7
         },
         {
           "name": "Inside Out",
-          "value": 2015
+          "value": 8
         },
         {
           "name": "Coco",
-          "value": 2017
-        },
-        {
-          "name": "Onward",
-          "value": 2020
-        },
-        {
-          "name": "Luca",
-          "value": 2021
-        },
-        {
-          "name": "Turning Red",
-          "value": 2022
-        },
-        {
-          "name": "Elemental",
-          "value": 2023
-        },
-        {
-          "name": "Inside Out 2",
-          "value": 2024
-        },
-        {
-          "name": "Elio",
-          "value": 2025
+          "value": 9
         }
       ],
+      "count": 2,
+      "unit": "sequence position",
       "sources": [
-        "https://www.pixar.com/feature-films/"
+        "https://en.wikipedia.org/wiki/List_of_Pixar_films"
       ],
-      "seed": "no-maths:pixar:1",
-      "count": 8,
-      "unit": "first release year"
+      "seed": "stack-variety:20261105:2:3",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
+    },
+    {
+      "lane": 2,
+      "slot": 4,
+      "category": "SCREEN TIME",
+      "prompt": "Order these Disney animated films by release, oldest first.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "Snow White and the Seven Dwarfs",
+          "value": 1
+        },
+        {
+          "name": "Pinocchio",
+          "value": 2
+        },
+        {
+          "name": "Cinderella",
+          "value": 3
+        },
+        {
+          "name": "The Jungle Book",
+          "value": 4
+        },
+        {
+          "name": "The Little Mermaid",
+          "value": 5
+        },
+        {
+          "name": "Beauty and the Beast",
+          "value": 6
+        },
+        {
+          "name": "The Lion King",
+          "value": 7
+        },
+        {
+          "name": "Frozen",
+          "value": 8
+        },
+        {
+          "name": "Moana",
+          "value": 9
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_Walt_Disney_Animation_Studios_films"
+      ],
+      "seed": "stack-variety:20261105:2:4",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
+    },
+    {
+      "lane": 2,
+      "slot": 5,
+      "category": "SCREEN TIME",
+      "prompt": "Order these Marvel films by their original cinema release, oldest first.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "Iron Man",
+          "value": 1
+        },
+        {
+          "name": "Iron Man 2",
+          "value": 2
+        },
+        {
+          "name": "Thor",
+          "value": 3
+        },
+        {
+          "name": "The Avengers",
+          "value": 4
+        },
+        {
+          "name": "Guardians of the Galaxy",
+          "value": 5
+        },
+        {
+          "name": "Doctor Strange",
+          "value": 6
+        },
+        {
+          "name": "Black Panther",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_Marvel_Cinematic_Universe_films"
+      ],
+      "seed": "stack-variety:20261105:2:5",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
+    },
+    {
+      "lane": 2,
+      "slot": 6,
+      "category": "SCREEN TIME",
+      "prompt": "Order these Batman films by their original cinema release, oldest first.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "Batman (1989)",
+          "value": 1
+        },
+        {
+          "name": "Batman Returns",
+          "value": 2
+        },
+        {
+          "name": "Batman Forever",
+          "value": 3
+        },
+        {
+          "name": "Batman & Robin",
+          "value": 4
+        },
+        {
+          "name": "Batman Begins",
+          "value": 5
+        },
+        {
+          "name": "The Dark Knight",
+          "value": 6
+        },
+        {
+          "name": "The Dark Knight Rises",
+          "value": 7
+        },
+        {
+          "name": "The Batman",
+          "value": 8
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Batman_in_film"
+      ],
+      "seed": "stack-variety:20261105:2:6",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
+    },
+    {
+      "lane": 2,
+      "slot": 7,
+      "category": "SCREEN TIME",
+      "prompt": "Order these story moments from the original The Lion King, following the film's story.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Simba is presented at Pride Rock",
+          "value": 1
+        },
+        {
+          "name": "Mufasa rescues the cubs from the hyenas",
+          "value": 2
+        },
+        {
+          "name": "The wildebeest stampede begins",
+          "value": 3
+        },
+        {
+          "name": "Simba flees the Pride Lands",
+          "value": 4
+        },
+        {
+          "name": "Timon and Pumbaa take Simba in",
+          "value": 5
+        },
+        {
+          "name": "Adult Nala finds Simba",
+          "value": 6
+        },
+        {
+          "name": "Simba returns to Pride Rock",
+          "value": 7
+        },
+        {
+          "name": "Simba confronts Scar",
+          "value": 8
+        },
+        {
+          "name": "Simba takes his place as king",
+          "value": 9
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Lion_King"
+      ],
+      "seed": "stack-variety:20261105:2:7",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 2,
+      "slot": 8,
+      "category": "SCREEN TIME",
+      "prompt": "Order these story moments from Finding Nemo, following the film's story.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Nemo starts school",
+          "value": 1
+        },
+        {
+          "name": "A diver takes Nemo",
+          "value": 2
+        },
+        {
+          "name": "Marlin meets Dory",
+          "value": 3
+        },
+        {
+          "name": "Marlin and Dory meet the sharks",
+          "value": 4
+        },
+        {
+          "name": "Marlin and Dory escape the anglerfish",
+          "value": 5
+        },
+        {
+          "name": "Marlin and Dory ride the East Australian Current",
+          "value": 6
+        },
+        {
+          "name": "A whale carries Marlin and Dory to Sydney",
+          "value": 7
+        },
+        {
+          "name": "Marlin reaches the dentist's surgery",
+          "value": 8
+        },
+        {
+          "name": "Marlin reunites with Nemo",
+          "value": 9
+        },
+        {
+          "name": "Nemo helps free the fish caught in the net",
+          "value": 10
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Finding_Nemo"
+      ],
+      "seed": "stack-variety:20261105:2:8",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 2,
+      "slot": 9,
+      "category": "SCREEN TIME",
+      "prompt": "Order these story moments from the original Toy Story, following the film's story.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Andy receives Buzz Lightyear",
+          "value": 1
+        },
+        {
+          "name": "Woody becomes jealous of Buzz",
+          "value": 2
+        },
+        {
+          "name": "Buzz falls out of Andy's bedroom window",
+          "value": 3
+        },
+        {
+          "name": "Woody and Buzz are left at the petrol station",
+          "value": 4
+        },
+        {
+          "name": "Sid takes Woody and Buzz home",
+          "value": 5
+        },
+        {
+          "name": "Buzz discovers he is a toy",
+          "value": 6
+        },
+        {
+          "name": "The toys frighten Sid",
+          "value": 7
+        },
+        {
+          "name": "Woody and Buzz chase the moving van",
+          "value": 8
+        },
+        {
+          "name": "Woody and Buzz land in Andy's car",
+          "value": 9
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Toy_Story"
+      ],
+      "seed": "stack-variety:20261105:2:9",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 2,
+      "slot": 10,
+      "category": "SCREEN TIME",
+      "prompt": "Order these story moments from the original Shrek, following the film's story.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Fairy-tale creatures arrive in Shrek's swamp",
+          "value": 1
+        },
+        {
+          "name": "Shrek travels to Duloc with Donkey",
+          "value": 2
+        },
+        {
+          "name": "Farquaad sends Shrek to rescue Fiona",
+          "value": 3
+        },
+        {
+          "name": "Shrek reaches the dragon's castle",
+          "value": 4
+        },
+        {
+          "name": "Shrek rescues Fiona",
+          "value": 5
+        },
+        {
+          "name": "Shrek and Fiona grow closer on the journey",
+          "value": 6
+        },
+        {
+          "name": "Fiona returns to Duloc to marry Farquaad",
+          "value": 7
+        },
+        {
+          "name": "Shrek interrupts the wedding",
+          "value": 8
+        },
+        {
+          "name": "Shrek and Fiona marry",
+          "value": 9
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Shrek"
+      ],
+      "seed": "stack-variety:20261105:2:10",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 2,
+      "slot": 11,
+      "category": "SCREEN TIME",
+      "prompt": "Order these story moments from the original Frozen, following the film's story.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Elsa accidentally injures Anna as a child",
+          "value": 1
+        },
+        {
+          "name": "The sisters grow up separated inside the castle",
+          "value": 2
+        },
+        {
+          "name": "Elsa is crowned queen",
+          "value": 3
+        },
+        {
+          "name": "Elsa's powers are revealed at the celebration",
+          "value": 4
+        },
+        {
+          "name": "Elsa builds an ice palace",
+          "value": 5
+        },
+        {
+          "name": "Anna reaches Elsa's ice palace",
+          "value": 6
+        },
+        {
+          "name": "Hans leaves Anna to die",
+          "value": 7
+        },
+        {
+          "name": "Anna sacrifices herself to protect Elsa",
+          "value": 8
+        },
+        {
+          "name": "Elsa thaws Arendelle",
+          "value": 9
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Frozen_(2013_film)"
+      ],
+      "seed": "stack-variety:20261105:2:11",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 2,
+      "slot": 12,
+      "category": "SCREEN TIME",
+      "prompt": "Order these story moments from the 1939 film The Wizard of Oz, following Dorothy's journey.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "A tornado carries Dorothy's house away",
+          "value": 1
+        },
+        {
+          "name": "Dorothy arrives in Munchkinland",
+          "value": 2
+        },
+        {
+          "name": "Dorothy meets the Scarecrow",
+          "value": 3
+        },
+        {
+          "name": "Dorothy meets the Tin Man",
+          "value": 4
+        },
+        {
+          "name": "Dorothy meets the Cowardly Lion",
+          "value": 5
+        },
+        {
+          "name": "The group reaches the Emerald City",
+          "value": 6
+        },
+        {
+          "name": "Dorothy melts the Wicked Witch",
+          "value": 7
+        },
+        {
+          "name": "The Wizard leaves in his balloon",
+          "value": 8
+        },
+        {
+          "name": "Dorothy returns home",
+          "value": 9
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Wizard_of_Oz_(1939_film)"
+      ],
+      "seed": "stack-variety:20261105:2:12",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 2,
+      "slot": 13,
+      "category": "SCREEN TIME",
+      "prompt": "Order these broad stages of producing a live-action film, from script to release.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Write the screenplay",
+          "value": 1
+        },
+        {
+          "name": "Plan and cast the production",
+          "value": 2
+        },
+        {
+          "name": "Shoot the scenes",
+          "value": 3
+        },
+        {
+          "name": "Edit the recorded footage",
+          "value": 4
+        },
+        {
+          "name": "Finish the sound mix and final picture",
+          "value": 5
+        },
+        {
+          "name": "Release the finished film to audiences",
+          "value": 6
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Filmmaking"
+      ],
+      "seed": "stack-variety:20261105:2:13",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 2,
+      "slot": 14,
+      "category": "SCREEN TIME",
+      "prompt": "Order these stages in a typical computer-animated film workflow, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Draw the storyboards",
+          "value": 1
+        },
+        {
+          "name": "Build the animatic from the storyboards",
+          "value": 2
+        },
+        {
+          "name": "Set up the digital shots",
+          "value": 3
+        },
+        {
+          "name": "Animate the characters in those shots",
+          "value": 4
+        },
+        {
+          "name": "Light and render the animated shots",
+          "value": 5
+        },
+        {
+          "name": "Composite the rendered images",
+          "value": 6
+        },
+        {
+          "name": "Export the finished film",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Computer_animation"
+      ],
+      "seed": "stack-variety:20261105:2:14",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 2,
+      "slot": 15,
+      "category": "CRAFT",
+      "prompt": "Order these stages when making a simple clay stop-motion sequence, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Sculpt the clay characters",
+          "value": 1
+        },
+        {
+          "name": "Place the characters on the set",
+          "value": 2
+        },
+        {
+          "name": "Photograph the starting pose",
+          "value": 3
+        },
+        {
+          "name": "Move the characters slightly",
+          "value": 4
+        },
+        {
+          "name": "Photograph the changed pose",
+          "value": 5
+        },
+        {
+          "name": "Repeat small movements and photographs",
+          "value": 6
+        },
+        {
+          "name": "Play the photographs as a moving sequence",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Stop_motion"
+      ],
+      "seed": "stack-variety:20261105:2:15",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 3,
+      "slot": 0,
+      "category": "GAMES",
+      "prompt": "Order these Nintendo home-console families by their first launch, oldest first.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "Famicom / NES",
+          "value": 1
+        },
+        {
+          "name": "Super Famicom / SNES",
+          "value": 2
+        },
+        {
+          "name": "Nintendo 64",
+          "value": 3
+        },
+        {
+          "name": "GameCube",
+          "value": 4
+        },
+        {
+          "name": "Wii",
+          "value": 5
+        },
+        {
+          "name": "Wii U",
+          "value": 6
+        },
+        {
+          "name": "Nintendo Switch",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Nintendo_video_game_consoles"
+      ],
+      "seed": "stack-variety:20261105:3:0",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
+    },
+    {
+      "lane": 3,
+      "slot": 1,
+      "category": "GAMES",
+      "prompt": "Order these PlayStation systems by their first launch, oldest first. Handhelds are included.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "PlayStation",
+          "value": 1
+        },
+        {
+          "name": "PlayStation 2",
+          "value": 2
+        },
+        {
+          "name": "PlayStation Portable (PSP)",
+          "value": 3
+        },
+        {
+          "name": "PlayStation 3",
+          "value": 4
+        },
+        {
+          "name": "PlayStation Vita",
+          "value": 5
+        },
+        {
+          "name": "PlayStation 4",
+          "value": 6
+        },
+        {
+          "name": "PlayStation 5",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/PlayStation"
+      ],
+      "seed": "stack-variety:20261105:3:1",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
+    },
+    {
+      "lane": 3,
+      "slot": 2,
+      "category": "GAMES",
+      "prompt": "Order these Xbox systems by their first launch, oldest first.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "Xbox",
+          "value": 1
+        },
+        {
+          "name": "Xbox 360",
+          "value": 2
+        },
+        {
+          "name": "Xbox One",
+          "value": 3
+        },
+        {
+          "name": "Xbox One S",
+          "value": 4
+        },
+        {
+          "name": "Xbox One X",
+          "value": 5
+        },
+        {
+          "name": "Xbox Series X",
+          "value": 6
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Xbox"
+      ],
+      "seed": "stack-variety:20261105:3:2",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
+    },
+    {
+      "lane": 3,
+      "slot": 3,
+      "category": "GAMES",
+      "prompt": "Order these Super Mario games by their first release, oldest first.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "Super Mario Bros.",
+          "value": 1
+        },
+        {
+          "name": "Super Mario Bros. 3",
+          "value": 2
+        },
+        {
+          "name": "Super Mario World",
+          "value": 3
+        },
+        {
+          "name": "Super Mario 64",
+          "value": 4
+        },
+        {
+          "name": "Super Mario Sunshine",
+          "value": 5
+        },
+        {
+          "name": "Super Mario Galaxy",
+          "value": 6
+        },
+        {
+          "name": "Super Mario Odyssey",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Super_Mario"
+      ],
+      "seed": "stack-variety:20261105:3:3",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
+    },
+    {
+      "lane": 3,
+      "slot": 4,
+      "category": "GAMES",
+      "prompt": "Order these milestones on the standard crafting route from an empty inventory to mining a diamond in Minecraft Survival.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Collect a log",
+          "value": 1
+        },
+        {
+          "name": "Craft wooden planks from the log",
+          "value": 2
+        },
+        {
+          "name": "Craft a crafting table",
+          "value": 3
+        },
+        {
+          "name": "Craft a wooden pickaxe",
+          "value": 4
+        },
+        {
+          "name": "Mine cobblestone with the wooden pickaxe",
+          "value": 5
+        },
+        {
+          "name": "Craft a stone pickaxe",
+          "value": 6
+        },
+        {
+          "name": "Mine iron ore with the stone pickaxe",
+          "value": 7
+        },
+        {
+          "name": "Smelt the iron and craft an iron pickaxe",
+          "value": 8
+        },
+        {
+          "name": "Mine diamond ore with the iron pickaxe",
+          "value": 9
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://minecraft.wiki/w/Tutorial:Beginner%27s_guide"
+      ],
+      "seed": "stack-variety:20261105:3:4",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 3,
+      "slot": 5,
+      "category": "SPORT",
+      "prompt": "Order these men's football World Cup hosts by their first time hosting, earliest first.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "France",
+          "value": 1
+        },
+        {
+          "name": "Brazil",
+          "value": 2
+        },
+        {
+          "name": "England",
+          "value": 3
+        },
+        {
+          "name": "Germany / West Germany",
+          "value": 4
+        },
+        {
+          "name": "USA",
+          "value": 5
+        },
+        {
+          "name": "South Africa",
+          "value": 6
+        },
+        {
+          "name": "Russia",
+          "value": 7
+        },
+        {
+          "name": "Qatar",
+          "value": 8
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_FIFA_World_Cup_hosts"
+      ],
+      "seed": "stack-variety:20261105:3:5",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
+    },
+    {
+      "lane": 3,
+      "slot": 6,
+      "category": "SPORT",
+      "prompt": "Order these cities by when they first hosted the Summer Olympics, earliest first.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "Athens",
+          "value": 1
+        },
+        {
+          "name": "Paris",
+          "value": 2
+        },
+        {
+          "name": "London",
+          "value": 3
+        },
+        {
+          "name": "Los Angeles",
+          "value": 4
+        },
+        {
+          "name": "Melbourne",
+          "value": 5
+        },
+        {
+          "name": "Tokyo",
+          "value": 6
+        },
+        {
+          "name": "Sydney",
+          "value": 7
+        },
+        {
+          "name": "Beijing",
+          "value": 8
+        },
+        {
+          "name": "Rio de Janeiro",
+          "value": 9
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_Olympic_Games_host_cities"
+      ],
+      "seed": "stack-variety:20261105:3:6",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
+    },
+    {
+      "lane": 3,
+      "slot": 7,
+      "category": "SPORT",
+      "prompt": "Order these moments in a standard sprint race, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "The athletes are called to the start",
+          "value": 1
+        },
+        {
+          "name": "The starter calls on your marks",
+          "value": 2
+        },
+        {
+          "name": "The runners take their starting positions",
+          "value": 3
+        },
+        {
+          "name": "The starter calls set",
+          "value": 4
+        },
+        {
+          "name": "The starting signal sounds",
+          "value": 5
+        },
+        {
+          "name": "The runners leave their blocks",
+          "value": 6
+        },
+        {
+          "name": "The runners cross the finish line",
+          "value": 7
+        },
+        {
+          "name": "The result is recorded",
+          "value": 8
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Sprint_(running)"
+      ],
+      "seed": "stack-variety:20261105:3:7",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 3,
+      "slot": 8,
+      "category": "SPORT",
+      "prompt": "Order these stages of the 2026 men's football World Cup, from group matches to trophy presentation.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Group stage",
+          "value": 1
+        },
+        {
+          "name": "Round of 32",
+          "value": 2
+        },
+        {
+          "name": "Round of 16",
+          "value": 3
+        },
+        {
+          "name": "Quarter-finals",
+          "value": 4
+        },
+        {
+          "name": "Semi-finals",
+          "value": 5
+        },
+        {
+          "name": "Final",
+          "value": 6
+        },
+        {
+          "name": "Trophy presentation",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup"
+      ],
+      "seed": "stack-variety:20261105:3:8",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 3,
+      "slot": 9,
+      "category": "SPORT",
+      "prompt": "Order these stages of a ten-pin bowling shot and reset, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Pick up the bowling ball",
+          "value": 1
+        },
+        {
+          "name": "Approach the foul line",
+          "value": 2
+        },
+        {
+          "name": "Release the ball",
+          "value": 3
+        },
+        {
+          "name": "The ball rolls down the lane",
+          "value": 4
+        },
+        {
+          "name": "The ball reaches the pins",
+          "value": 5
+        },
+        {
+          "name": "Fallen pins are cleared",
+          "value": 6
+        },
+        {
+          "name": "The machine prepares the pins for the next shot",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ten-pin_bowling"
+      ],
+      "seed": "stack-variety:20261105:3:9",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 3,
+      "slot": 10,
+      "category": "HISTORY",
+      "prompt": "Order these historical milestones, earliest first.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "The Great Pyramid of Giza is completed",
+          "value": 1
+        },
+        {
+          "name": "The Colosseum opens in Rome",
+          "value": 2
+        },
+        {
+          "name": "Magna Carta is issued",
+          "value": 3
+        },
+        {
+          "name": "Columbus reaches the Americas",
+          "value": 4
+        },
+        {
+          "name": "The US Declaration of Independence is adopted",
+          "value": 5
+        },
+        {
+          "name": "The Wright brothers make their powered flight",
+          "value": 6
+        },
+        {
+          "name": "Humans first walk on the Moon",
+          "value": 7
+        },
+        {
+          "name": "The World Wide Web is proposed",
+          "value": 8
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Timeline_of_human_history"
+      ],
+      "seed": "stack-variety:20261105:3:10",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
+    },
+    {
+      "lane": 3,
+      "slot": 11,
+      "category": "TECHNOLOGY",
+      "prompt": "Order these communication milestones, earliest first.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "Gutenberg develops his printing press",
+          "value": 1
+        },
+        {
+          "name": "Bell patents the telephone",
+          "value": 2
+        },
+        {
+          "name": "Marconi sends a wireless signal across the Atlantic",
+          "value": 3
+        },
+        {
+          "name": "The first BBC television service begins",
+          "value": 4
+        },
+        {
+          "name": "Ray Tomlinson sends network email",
+          "value": 5
+        },
+        {
+          "name": "The World Wide Web opens to the public",
+          "value": 6
+        },
+        {
+          "name": "The first iPhone goes on sale",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/History_of_telecommunication"
+      ],
+      "seed": "stack-variety:20261105:3:11",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
+    },
+    {
+      "lane": 3,
+      "slot": 12,
+      "category": "TECHNOLOGY",
+      "prompt": "Order these entertainment products and services by their first launch, oldest first.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "Sony Walkman",
+          "value": 1
+        },
+        {
+          "name": "Commercial audio CDs",
+          "value": 2
+        },
+        {
+          "name": "Apple iPod",
+          "value": 3
+        },
+        {
+          "name": "YouTube",
+          "value": 4
+        },
+        {
+          "name": "Netflix streaming",
+          "value": 5
+        },
+        {
+          "name": "Spotify",
+          "value": 6
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Walkman",
+        "https://en.wikipedia.org/wiki/Compact_disc",
+        "https://en.wikipedia.org/wiki/IPod",
+        "https://en.wikipedia.org/wiki/YouTube",
+        "https://en.wikipedia.org/wiki/Netflix",
+        "https://en.wikipedia.org/wiki/Spotify"
+      ],
+      "seed": "stack-variety:20261105:3:12",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
+    },
+    {
+      "lane": 3,
+      "slot": 13,
+      "category": "TRANSPORT",
+      "prompt": "Order these vehicles by when they first appeared, oldest first.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "Stephenson's Rocket",
+          "value": 1
+        },
+        {
+          "name": "Wright Flyer",
+          "value": 2
+        },
+        {
+          "name": "RMS Titanic",
+          "value": 3
+        },
+        {
+          "name": "Volkswagen Beetle",
+          "value": 4
+        },
+        {
+          "name": "Concorde",
+          "value": 5
+        },
+        {
+          "name": "DeLorean DMC-12",
+          "value": 6
+        },
+        {
+          "name": "Original Tesla Roadster",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Stephenson%27s_Rocket",
+        "https://en.wikipedia.org/wiki/Wright_Flyer",
+        "https://en.wikipedia.org/wiki/RMS_Titanic",
+        "https://en.wikipedia.org/wiki/Volkswagen_Beetle",
+        "https://en.wikipedia.org/wiki/Concorde",
+        "https://en.wikipedia.org/wiki/DMC_DeLorean",
+        "https://en.wikipedia.org/wiki/Tesla_Roadster_(first_generation)"
+      ],
+      "seed": "stack-variety:20261105:3:13",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
+    },
+    {
+      "lane": 3,
+      "slot": 14,
+      "category": "SPORT",
+      "prompt": "Order these parts of a standard football match day, from the pre-match warm-up onwards.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Pre-match warm-up",
+          "value": 1
+        },
+        {
+          "name": "The captains' coin toss",
+          "value": 2
+        },
+        {
+          "name": "Kick-off for the first half",
+          "value": 3
+        },
+        {
+          "name": "Half-time",
+          "value": 4
+        },
+        {
+          "name": "Kick-off for the second half",
+          "value": 5
+        },
+        {
+          "name": "The final whistle",
+          "value": 6
+        },
+        {
+          "name": "Post-match handshakes",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Association_football"
+      ],
+      "seed": "stack-variety:20261105:3:14",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 3,
+      "slot": 15,
+      "category": "SPORT",
+      "prompt": "Order these parts of a high-jump attempt using the Fosbury flop, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Start the run-up",
+          "value": 1
+        },
+        {
+          "name": "Run the curved part of the approach",
+          "value": 2
+        },
+        {
+          "name": "Plant the take-off foot",
+          "value": 3
+        },
+        {
+          "name": "Push off the ground",
+          "value": 4
+        },
+        {
+          "name": "Pass backwards over the bar",
+          "value": 5
+        },
+        {
+          "name": "Land on the safety mat",
+          "value": 6
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Fosbury_flop"
+      ],
+      "seed": "stack-variety:20261105:3:15",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
     },
     {
       "lane": 4,
+      "slot": 0,
+      "category": "BOOKS",
+      "prompt": "Order these Dr Seuss books by their original publication, oldest first.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "Horton Hears a Who!",
+          "value": 1
+        },
+        {
+          "name": "The Cat in the Hat",
+          "value": 2
+        },
+        {
+          "name": "Green Eggs and Ham",
+          "value": 3
+        },
+        {
+          "name": "Hop on Pop",
+          "value": 4
+        },
+        {
+          "name": "Fox in Socks",
+          "value": 5
+        },
+        {
+          "name": "The Lorax",
+          "value": 6
+        },
+        {
+          "name": "Oh, the Places You'll Go!",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Dr._Seuss_bibliography"
+      ],
+      "seed": "stack-variety:20261105:4:0",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
+    },
+    {
+      "lane": 4,
+      "slot": 1,
+      "category": "BOOKS",
+      "prompt": "Order these stages in a typical printed-book publishing workflow, from manuscript to shop.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "The author writes the manuscript",
+          "value": 1
+        },
+        {
+          "name": "The manuscript is revised",
+          "value": 2
+        },
+        {
+          "name": "The finished text is copy-edited",
+          "value": 3
+        },
+        {
+          "name": "The text is typeset into pages",
+          "value": 4
+        },
+        {
+          "name": "Page proofs are checked",
+          "value": 5
+        },
+        {
+          "name": "The approved book is printed",
+          "value": 6
+        },
+        {
+          "name": "Printed copies are distributed to shops",
+          "value": 7
+        },
+        {
+          "name": "Readers buy the published book",
+          "value": 8
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Publishing"
+      ],
+      "seed": "stack-variety:20261105:4:1",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 4,
+      "slot": 2,
+      "category": "BOOKS",
+      "prompt": "Order these Roald Dahl children's books by publication, oldest first.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "James and the Giant Peach",
+          "value": 1
+        },
+        {
+          "name": "Charlie and the Chocolate Factory",
+          "value": 2
+        },
+        {
+          "name": "Fantastic Mr Fox",
+          "value": 3
+        },
+        {
+          "name": "The BFG",
+          "value": 4
+        },
+        {
+          "name": "The Witches",
+          "value": 5
+        },
+        {
+          "name": "Matilda",
+          "value": 6
+        },
+        {
+          "name": "Esio Trot",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Roald_Dahl_bibliography"
+      ],
+      "seed": "stack-variety:20261105:4:2",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
+    },
+    {
+      "lane": 4,
+      "slot": 3,
+      "category": "BOOKS",
+      "prompt": "Order these picture books by their original publication, oldest first.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "The Tale of Peter Rabbit",
+          "value": 1
+        },
+        {
+          "name": "Winnie-the-Pooh",
+          "value": 2
+        },
+        {
+          "name": "The Cat in the Hat",
+          "value": 3
+        },
+        {
+          "name": "The Very Hungry Caterpillar",
+          "value": 4
+        },
+        {
+          "name": "The Gruffalo",
+          "value": 5
+        },
+        {
+          "name": "Room on the Broom",
+          "value": 6
+        },
+        {
+          "name": "Stick Man",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Tale_of_Peter_Rabbit",
+        "https://en.wikipedia.org/wiki/Winnie-the-Pooh",
+        "https://en.wikipedia.org/wiki/The_Cat_in_the_Hat",
+        "https://en.wikipedia.org/wiki/The_Very_Hungry_Caterpillar",
+        "https://en.wikipedia.org/wiki/The_Gruffalo",
+        "https://en.wikipedia.org/wiki/Room_on_the_Broom",
+        "https://en.wikipedia.org/wiki/Stick_Man"
+      ],
+      "seed": "stack-variety:20261105:4:3",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
+    },
+    {
+      "lane": 4,
+      "slot": 4,
+      "category": "STORIES",
+      "prompt": "Order these moments from The Three Little Pigs, using the version in which all three pigs escape to the brick house.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "The pigs leave home",
+          "value": 1
+        },
+        {
+          "name": "The pigs build their houses",
+          "value": 2
+        },
+        {
+          "name": "The wolf blows down the straw house",
+          "value": 3
+        },
+        {
+          "name": "The wolf blows down the stick house",
+          "value": 4
+        },
+        {
+          "name": "The pigs shelter in the brick house",
+          "value": 5
+        },
+        {
+          "name": "The wolf fails to blow down the brick house",
+          "value": 6
+        },
+        {
+          "name": "The wolf tries to enter through the chimney",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Three_Little_Pigs"
+      ],
+      "seed": "stack-variety:20261105:4:4",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 4,
+      "slot": 5,
+      "category": "STORIES",
+      "prompt": "Order these moments from Little Red Riding Hood, using the version with a huntsman rescue.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Red Riding Hood sets off with food for her grandmother",
+          "value": 1
+        },
+        {
+          "name": "Red Riding Hood meets the wolf in the woods",
+          "value": 2
+        },
+        {
+          "name": "The wolf reaches Grandmother's house first",
+          "value": 3
+        },
+        {
+          "name": "The wolf swallows Grandmother",
+          "value": 4
+        },
+        {
+          "name": "The wolf disguises himself as Grandmother",
+          "value": 5
+        },
+        {
+          "name": "Red Riding Hood arrives and notices the wolf's features",
+          "value": 6
+        },
+        {
+          "name": "The wolf swallows Red Riding Hood",
+          "value": 7
+        },
+        {
+          "name": "The huntsman rescues Red Riding Hood and Grandmother",
+          "value": 8
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Little_Red_Riding_Hood"
+      ],
+      "seed": "stack-variety:20261105:4:5",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 4,
+      "slot": 6,
+      "category": "STORIES",
+      "prompt": "Order these moments from Jack and the Beanstalk, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Jack takes the cow to market",
+          "value": 1
+        },
+        {
+          "name": "Jack trades the cow for magic beans",
+          "value": 2
+        },
+        {
+          "name": "Jack's mother throws the beans away",
+          "value": 3
+        },
+        {
+          "name": "The beanstalk grows overnight",
+          "value": 4
+        },
+        {
+          "name": "Jack climbs the beanstalk",
+          "value": 5
+        },
+        {
+          "name": "Jack enters the giant's castle",
+          "value": 6
+        },
+        {
+          "name": "Jack escapes down the beanstalk",
+          "value": 7
+        },
+        {
+          "name": "Jack chops down the beanstalk",
+          "value": 8
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jack_and_the_Beanstalk"
+      ],
+      "seed": "stack-variety:20261105:4:6",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 4,
+      "slot": 7,
+      "category": "STORIES",
+      "prompt": "Order these moments from Goldilocks and the Three Bears, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "The bears leave their porridge and go for a walk",
+          "value": 1
+        },
+        {
+          "name": "Goldilocks enters the bears' house",
+          "value": 2
+        },
+        {
+          "name": "Goldilocks tastes the porridge",
+          "value": 3
+        },
+        {
+          "name": "Goldilocks tries the chairs",
+          "value": 4
+        },
+        {
+          "name": "Goldilocks tries the beds",
+          "value": 5
+        },
+        {
+          "name": "Goldilocks falls asleep in Baby Bear's bed",
+          "value": 6
+        },
+        {
+          "name": "The bears return home",
+          "value": 7
+        },
+        {
+          "name": "Goldilocks wakes and runs away",
+          "value": 8
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Goldilocks_and_the_Three_Bears"
+      ],
+      "seed": "stack-variety:20261105:4:7",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 4,
+      "slot": 8,
+      "category": "STORIES",
+      "prompt": "Order these moments from The Gingerbread Man, following his escape and meeting with the fox.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "The gingerbread man is baked",
+          "value": 1
+        },
+        {
+          "name": "The gingerbread man escapes from the oven",
+          "value": 2
+        },
+        {
+          "name": "People and animals chase him",
+          "value": 3
+        },
+        {
+          "name": "He reaches a river he cannot cross",
+          "value": 4
+        },
+        {
+          "name": "The fox offers to carry him",
+          "value": 5
+        },
+        {
+          "name": "He climbs onto the fox",
+          "value": 6
+        },
+        {
+          "name": "The fox eats the gingerbread man",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Gingerbread_Man"
+      ],
+      "seed": "stack-variety:20261105:4:8",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 4,
+      "slot": 9,
+      "category": "STORIES",
+      "prompt": "Order these stages from The Ugly Duckling, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "The unusual young bird hatches",
+          "value": 1
+        },
+        {
+          "name": "Other farmyard birds reject him",
+          "value": 2
+        },
+        {
+          "name": "He leaves the farmyard",
+          "value": 3
+        },
+        {
+          "name": "He struggles through the winter",
+          "value": 4
+        },
+        {
+          "name": "Spring arrives",
+          "value": 5
+        },
+        {
+          "name": "He recognises his reflection as a grown swan",
+          "value": 6
+        },
+        {
+          "name": "He takes flight with the other swans",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Ugly_Duckling"
+      ],
+      "seed": "stack-variety:20261105:4:9",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 4,
+      "slot": 10,
+      "category": "STORIES",
+      "prompt": "Order these moments from The Tortoise and the Hare, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "The hare mocks the tortoise's speed",
+          "value": 1
+        },
+        {
+          "name": "The tortoise challenges the hare to a race",
+          "value": 2
+        },
+        {
+          "name": "The race begins",
+          "value": 3
+        },
+        {
+          "name": "The hare runs far ahead",
+          "value": 4
+        },
+        {
+          "name": "The hare stops for a nap",
+          "value": 5
+        },
+        {
+          "name": "The tortoise passes the sleeping hare",
+          "value": 6
+        },
+        {
+          "name": "The tortoise reaches the finish first",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Tortoise_and_the_Hare"
+      ],
+      "seed": "stack-variety:20261105:4:10",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 4,
+      "slot": 11,
+      "category": "MUSIC",
+      "prompt": "Order these Beatles albums by their original UK release, oldest first.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "Please Please Me",
+          "value": 1
+        },
+        {
+          "name": "A Hard Day's Night",
+          "value": 2
+        },
+        {
+          "name": "Help!",
+          "value": 3
+        },
+        {
+          "name": "Revolver",
+          "value": 4
+        },
+        {
+          "name": "Sgt. Pepper's Lonely Hearts Club Band",
+          "value": 5
+        },
+        {
+          "name": "Abbey Road",
+          "value": 6
+        },
+        {
+          "name": "Let It Be",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Beatles_discography"
+      ],
+      "seed": "stack-variety:20261105:4:11",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
+    },
+    {
+      "lane": 4,
+      "slot": 12,
       "category": "MUSIC",
       "prompt": "Order these original Taylor Swift studio albums by release, oldest first. Ignore rerecordings.",
       "ends": [
@@ -627,104 +3800,193 @@
       "items": [
         {
           "name": "Taylor Swift",
-          "value": 2006
+          "value": 1
         },
         {
           "name": "Fearless",
-          "value": 2008
+          "value": 2
         },
         {
           "name": "Speak Now",
-          "value": 2010
+          "value": 3
         },
         {
           "name": "Red",
-          "value": 2012
+          "value": 4
         },
         {
           "name": "1989",
-          "value": 2014
+          "value": 5
         },
         {
           "name": "Reputation",
-          "value": 2017
+          "value": 6
         },
         {
           "name": "Lover",
-          "value": 2019
+          "value": 7
+        },
+        {
+          "name": "Folklore",
+          "value": 8
         },
         {
           "name": "Midnights",
-          "value": 2022
-        },
-        {
-          "name": "The Tortured Poets Department",
-          "value": 2024
+          "value": 9
         }
       ],
+      "count": 2,
+      "unit": "sequence position",
       "sources": [
-        "https://www.taylorswift.com/",
         "https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography"
       ],
-      "seed": "no-maths:albums:1",
-      "count": 8,
-      "unit": "original release year"
+      "seed": "stack-variety:20261105:4:12",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
     },
     {
       "lane": 4,
-      "category": "SPACE",
-      "prompt": "Order these space milestones, earliest first.",
+      "slot": 13,
+      "category": "ART",
+      "prompt": "Order these art periods and movements by when they emerged, earliest first.",
       "ends": [
-        "EARLIER",
-        "LATER"
+        "OLDER",
+        "NEWER"
       ],
       "items": [
         {
-          "name": "Sputnik 1 launches",
-          "value": 1957
+          "name": "Renaissance",
+          "value": 1
+        },
+        {
+          "name": "Baroque",
+          "value": 2
+        },
+        {
+          "name": "Impressionism",
+          "value": 3
+        },
+        {
+          "name": "Cubism",
+          "value": 4
+        },
+        {
+          "name": "Surrealism",
+          "value": 5
+        },
+        {
+          "name": "Pop art",
+          "value": 6
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Art_movement"
+      ],
+      "seed": "stack-variety:20261105:4:13",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
+    },
+    {
+      "lane": 4,
+      "slot": 14,
+      "category": "ART",
+      "prompt": "Order these steps for making a simple linocut print, first to last.",
+      "ends": [
+        "FIRST",
+        "LAST"
+      ],
+      "items": [
+        {
+          "name": "Draw the design",
+          "value": 1
+        },
+        {
+          "name": "Transfer the design onto the lino",
+          "value": 2
+        },
+        {
+          "name": "Carve the lino around the parts to print",
+          "value": 3
+        },
+        {
+          "name": "Roll ink onto the raised lino",
+          "value": 4
+        },
+        {
+          "name": "Press paper against the inked lino",
+          "value": 5
+        },
+        {
+          "name": "Lift off the printed sheet",
+          "value": 6
+        },
+        {
+          "name": "Let the ink on the print dry",
+          "value": 7
+        }
+      ],
+      "count": 2,
+      "unit": "sequence position",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Linocut"
+      ],
+      "seed": "stack-variety:20261105:4:14",
+      "explanation": "In this specified sequence:",
+      "ordering": "sequence"
+    },
+    {
+      "lane": 4,
+      "slot": 15,
+      "category": "SPACE",
+      "prompt": "Order these space-exploration milestones, earliest first.",
+      "ends": [
+        "OLDER",
+        "NEWER"
+      ],
+      "items": [
+        {
+          "name": "Sputnik 1 reaches orbit",
+          "value": 1
         },
         {
           "name": "Yuri Gagarin orbits Earth",
-          "value": 1961
+          "value": 2
         },
         {
-          "name": "Apollo 11 lands on the Moon",
-          "value": 1969
+          "name": "Apollo 11 lands people on the Moon",
+          "value": 3
         },
         {
-          "name": "Space Shuttle Columbia makes its first launch",
-          "value": 1981
+          "name": "The first Space Shuttle launches",
+          "value": 4
         },
         {
           "name": "The Hubble Space Telescope launches",
-          "value": 1990
+          "value": 5
         },
         {
-          "name": "Curiosity lands on Mars",
-          "value": 2012
+          "name": "The International Space Station receives its first resident crew",
+          "value": 6
+        },
+        {
+          "name": "The Curiosity rover lands on Mars",
+          "value": 7
         },
         {
           "name": "The James Webb Space Telescope launches",
-          "value": 2021
-        },
-        {
-          "name": "NASA begins operations",
-          "value": 1958
+          "value": 8
         }
       ],
+      "count": 2,
+      "unit": "sequence position",
       "sources": [
-        "https://www.nasa.gov/history/dawn-of-the-space-age/",
-        "https://www.fai.org/page/history-manned-spaceflight-pioneers",
-        "https://www.nasa.gov/mission/apollo-11/",
-        "https://www.nasa.gov/mission/sts-1/",
-        "https://science.nasa.gov/mission/hubble/overview/hubble-timeline/hubble-history-timeline-full-text/",
-        "https://www.jpl.nasa.gov/missions/mars-science-laboratory-curiosity-rover-msl/",
-        "https://science.nasa.gov/mission/webb/launch/",
-        "https://en.wikipedia.org/wiki/NASA"
+        "https://en.wikipedia.org/wiki/Timeline_of_space_exploration"
       ],
-      "seed": "no-maths:space:1",
-      "count": 8,
-      "unit": "year"
+      "seed": "stack-variety:20261105:4:15",
+      "explanation": "In this specified sequence:",
+      "ordering": "chronology"
     }
   ]
 }

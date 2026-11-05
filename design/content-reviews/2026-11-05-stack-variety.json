@@ -1,0 +1,46 @@
+{
+  "reviewedAt": "2026-11-05",
+  "problem": "160 Daily stacks came from16 recurring templates, including32 general film-release and16 planet variants.134 challenge rows contained only17 prompts.",
+  "daily": {
+    "stacks": 160,
+    "distinctThemes": 80,
+    "variantsPerTheme": 2,
+    "themeGapDays": 16,
+    "repeatFreeIdRotationDays": 32,
+    "laneIdsAndDateSlots": "unchanged",
+    "maximumChronologyQuestionsPerDaily": 2
+  },
+  "unlimited": {
+    "familiarThemes": 80,
+    "additionalChallengeThemes": 10,
+    "allTopics": 90,
+    "eligibleFamiliarAfterNewDailyExclusion": 75,
+    "policy": "One representative per theme/prompt. Exclude both variants of today's captured themes. No repeats until the eligible deck is exhausted."
+  },
+  "editorialChanges": [
+    "Interleave recipes, everyday tasks, nature, body, space, stories, games, sport, technology, art and familiar media.",
+    "Use stated story versions and first-hosting dates to resolve ambiguous ordering.",
+    "Avoid same-year tie breakers in the curated film, book and album sequences.",
+    "Exclude numerical-fact and time-unit questions; keep chronology.",
+    "All master lists have at least six distinct ordered steps/titles and generate two five-card selections with minimal shared cards."
+  ],
+  "compatibility": "Archive prior authored/generated data and engine. Retain captured questions, order drafts, deadline, attempts, scoring and completed results. Existing cloud question capture wins when snapshots differ. No database or scoring changes.",
+  "sourceRetrieval": {
+    "pages": 97,
+    "http200": 97,
+    "evidence": "2026-11-05-stack-variety-source-retrieval.json"
+  },
+  "checks": [
+    "Source/generator reproducibility and content studio validation.",
+    "80 Daily themes appearing exactly twice and16 days apart across complete32-day cycle; original ID/date continuity.",
+    "91 unique active practice prompts and no numerical/time-unit tasks.",
+    "Actual full eligible75-theme practice deck then continued play; all5 responsive widths; captured old familiar/numerical rounds retain their original data and timer.",
+    "Cloud conflict test prevents a new-content higher-progress run replacing old captured questions.",
+    "First-try100 scoring and all other game adapters remain unchanged."
+  ],
+  "limitations": [
+    "Recognition and enjoyment are editorial estimates; human playtesting may suggest further tuning.",
+    "Each Daily theme still has two variants per32-day cycle,16days apart.",
+    "Already captured Dailies keep the previous question set."
+  ]
+}

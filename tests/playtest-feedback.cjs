@@ -39,8 +39,9 @@ const retiredQuantitative=new Set(['PERIODIC TABLE','METALS','MATERIALS','GEOGRA
 assert.equal(replacements.length,105);
 assert.deepEqual(replacements.map(s=>s.id).sort(),originalStacks.filter(s=>retiredQuantitative.has(s.category)).map(s=>s.id).sort());
 const byId=new Map(replacements.map(s=>[s.id,s]));
-const active=[...originalStacks.map(s=>byId.get(s.id)||s),...familiar].filter(s=>s.category!=='NUMBER SENSE');
-assert.equal(active.length,294);assert.equal(active.filter(s=>s.collection!=='familiar').length,134);
+const controller=fs.readFileSync('games/stack-up/stack-up.js','utf8'),practiceSource=controller.slice(controller.indexOf(' const replacements='),controller.indexOf(' const memory='));
+const active=JSON.parse(JSON.stringify(vm.runInNewContext(practiceSource+';playablePool',box)));
+assert.equal(active.length,90);assert.equal(active.filter(s=>s.collection!=='familiar').length,10);assert.equal(new Set(active.map(s=>s.theme||s.prompt)).size,active.length,'One prompt per fresh practice theme');
 const prohibited=/atomic number|melting point|density|surface area|latitude|longitude|field elevation|lengths of time|fortnight|Monday-to-Sunday|months in order|fraction|percentages|cuboids|diagonals|interior angle/i;
 const fingerprints=new Set();
 for(const s of active){
@@ -53,13 +54,14 @@ for(const s of replacements){const a=replacementAudit.find(a=>a.id===s.id);asser
 const oldBox={window:{}};vm.runInNewContext(fs.readFileSync('content/archive/2026-10-27/stack-up-familiar-stacks.js','utf8'),oldBox);
 const oldFamiliar=JSON.parse(JSON.stringify(oldBox.window.STACK_UP_FAMILIAR_STACKS));
 assert.deepEqual(familiar.map(s=>s.id),oldFamiliar.map(s=>s.id));
-assert.equal(familiar.filter((s,i)=>JSON.stringify(s)!==JSON.stringify(oldFamiliar[i])).length,40);
+assert.equal(familiar.filter((s,i)=>JSON.stringify(s)!==JSON.stringify(oldFamiliar[i])).length,160);
 const selectorSource=fs.readFileSync('games/stack-up/stack-up.js','utf8').split('\n').filter(l=>/^ function (seeded|shuffle|dailySet)\(/.test(l)).join('\n');
 const select=pool=>vm.runInNewContext('const pool='+JSON.stringify(pool)+';'+selectorSource+';(day)=>dailySet(day).map(i=>pool[i]);');
 const beforeSelect=select([...originalStacks,...oldFamiliar]),afterSelect=select([...originalStacks.map(s=>byId.get(s.id)||s),...familiar]);
 for(let i=0;i<64;i++){const day=new Date(Date.UTC(2026,9,25+i)).toISOString().slice(0,10);assert.deepEqual(Array.from(afterSelect(day),s=>s.id),Array.from(beforeSelect(day),s=>s.id),'Stable Daily slots '+day);}
 assert(active.some(s=>/release|publication|historical milestones/i.test(s.prompt)),'Keep chronology');
-console.log('PASS Stack Up content policy: 40 Daily and 105 Challenge replacements, all active filters free of numerical/time-unit tasks, unique content and stable date slots.');
+const themes=new Map();for(let i=0;i<32;i++){const day=new Date(Date.UTC(2026,10,5+i)).toISOString().slice(0,10);assert(afterSelect(day).filter(q=>q.ordering==='chronology').length<=2,'Daily must mix chronology with other ordering types');for(const q of afterSelect(day)){const seen=themes.get(q.theme)||[];seen.push(i);themes.set(q.theme,seen);}}assert.equal(themes.size,80);for(const [theme,days]of themes){assert.equal(days.length,2,theme);assert.equal(days[1]-days[0],16,'Space variants of '+theme);}
+console.log('PASS Stack Up variety: 80 Daily themes, two variants 16 days apart, 90 distinct practice prompts, no numerical/time-unit tasks, source reproduction and stable 32-day ID slots.');
 
 const day='2026-10-23',cases=M.daily([...box.window.ALIBI_CASES,...bank],day),picks=cases.map(p=>M.solve(p)[0].culprit),run={version:1,day,edits:0,round:3,phase:'summary',cases,picks,selection:picks[3],notes:cases.map(M.notes)};
 const key=M.PREFIX+day,raw=JSON.stringify(run);assert.equal(M.record(run,day).arcadeScore,100);
