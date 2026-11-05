@@ -3737,6 +3737,17 @@
       "Editorial familiarity is not measured recognition or player-popularity data.",
       "Chromium responsive checks are not real iPhone/Safari or human playtesting.",
       "Live site deployment verification is a separate release step."
-    ]
+    ],
+    "firstPublication": {
+      "commit": "25b09f0736c8694a1bc25562689b442ec641f68e",
+      "run": "https://github.com/phoenix6716/Break-Room/actions/runs/41955916271",
+      "status": "success",
+      "liveChecks": "Exact bank/retirements, full Daily/Unlimited and archived capture verified at 390px and 1440px. An initial intermittent missing-art namespace error prompted the defensive follow-up."
+    },
+    "decorativeArtGuard": {
+      "change": "Guard the existing optional artwork namespace; keep normal visuals and all native rules/saves unchanged. Cache-bust the controller and artwork references.",
+      "localRegression": "Block art.js, enter a guess, reload the draft and finish a 5,000-point Daily with no JavaScript exception. Full five-width and 326-round checks also pass.",
+      "liveVerification": "Verify the follow-up deployment separately before claiming the fix live."
+    }
   }
 }
