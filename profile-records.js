@@ -5,15 +5,15 @@
   const games = [
     {id:'lowball', name:'Lowball', category:'PRICE GUESSING', unit:'points', max:100, note:'Scores out of 100. Best and average use retained saved history; played includes its lifetime counter.'},
     {id:'stake', name:'Stake', category:'TRIVIA / RISK', unit:'chips', max:15, note:'Net chips from completed five-question Dailies. Scores can be negative.'},
-    {id:'stack-up', name:'Stack Up', category:'SORTING / SPEED', unit:'points', max:31000, note:'Native points from completed five-stack Dailies; older runs used the original higher scale. Arcade scores compare both versions. Points can be negative.'},
+    {id:'stack-up', name:'Stack Up', category:'SORTING / SPEED', unit:'points', max:31000, note:'Each stack scores out of 100; new Daily scores average the five stacks. Saved older runs keep their original scoring.'},
     {id:'pack', name:'Pack', category:'PACKING / LOGIC', unit:'usefulness', max:600, note:'Total usefulness from three untimed Daily bags. Available points vary; Arcade scores compare each total with its exact optimum.'},
     {id:'prior', name:'Prior', category:'HISTORY / INSTINCT', unit:'correct', max:5, note:'Correct earlier-event choices out of five untimed Daily pairs. Arcade score is correct answers × 20.'},
     {id:'laser', name:'Laser', category:'LIGHT / LOGIC', unit:'solved', max:4, note:'First-fire hits out of four Daily boards. Retries and solution reveals never change the score.'},
     {id:'inner-clock',name:'Time Sense',category:'TIMING / INSTINCT',unit:'seconds miss',max:30,lowerBetter:true,note:'Average absolute timing miss in seconds: lower is better. Arcade score measures misses relative to each target length.'},
     {id:'bouncer',name:'Bouncer',category:'WORD / DEDUCTION',unit:'correct',max:16,note:'Correct words out of sixteen. Tested words earn half credit for the Arcade score; untested correct words earn full credit.'},
     {id:'alibi', name:'Alibi', category:'DEDUCTION / MYSTERY', unit:'correct', max:4, note:'Correct first accusations out of four untimed Daily cases. Notes never affect scoring.'}
-    ,{id:'time-drop',name:'Time Drop',category:'HISTORY / INSTINCT',unit:'points',max:5000,note:'Points from five first-lock year guesses (5,000 maximum). Older ten-round saves retain their 10,000-point scale. Arcade scores normalize each run against its own maximum.'},
-    {id:'clue-ladder',name:'Clue Ladder',category:'CLUES / KNOWLEDGE',unit:'points',max:5000,note:'Five untimed puzzles. Solves earn 1,000 / 800 / 600 / 400 / 200 by clue used; unsolved scores zero. Arcade score = Daily points divided by 50.'},
+    ,{id:'time-drop',name:'Time Drop',category:'HISTORY / INSTINCT',unit:'points',max:5000,note:'Each event scores out of 100; the Daily score is their average.'},
+    {id:'clue-ladder',name:'Clue Ladder',category:'CLUES / KNOWLEDGE',unit:'points',max:5000,note:'Each puzzle scores 100 / 80 / 60 / 40 / 20 by clue used, or zero; the Daily score is their average.'},
     {id:'seating-chart',name:'Seating Chart',category:'SEATING / LOGIC',unit:'drama',max:60,lowerBetter:true,note:'Total broken guest requests across the captured Daily tables: lower is better. New Dailies have three tables; saved older rounds retain five. Arcade credit penalises only avoidable drama above each table’s optimum.'},
     {id:'hidden-gem',name:'Sleeper',category:'TRIVIA / INSTINCT',unit:'points',max:100,note:'Five timed questions. Native and Arcade score are the average of five individual answer ratings, out of 100. Editorial ratings, not surveys.'},
     {id:'codebreak',name:'Codebreak',category:'DEDUCTION / LOGIC',unit:'points',max:100,note:'One untimed four-digit code. New rounds score 100 within four guesses, then 90/80/70/60; uncracked codes score zero. Saved rounds retain their original scoring.'},
@@ -96,8 +96,8 @@
         const valid=isObject(value)&&[1,2].includes(value.version)&&value.day===date&&Number.isInteger(value.round)&&value.round>=0&&value.round<5&&Number.isFinite(value.score)&&Number.isInteger(value.streak)&&value.streak>=0&&Array.isArray(value.order)&&value.order.length===5&&new Set(value.order).size===5&&value.order.every(n=>Number.isInteger(n)&&n>=1&&n<=5)&&Number.isFinite(value.deadline)&&Number.isInteger(value.mistakes)&&value.mistakes>=0&&['playing','review','complete'].includes(value.status)&&Array.isArray(value.results)&&value.results.every(r=>isObject(r)&&typeof r.correct==='boolean'&&Number.isFinite(r.points)&&Number.isInteger(r.mistakes)&&r.mistakes>=0)&&value.results.length===(value.status==='playing'?value.round:value.round+1)&&(value.version===1&&!value.stacks||Array.isArray(value.stacks)&&value.stacks.length===5&&value.stacks.every(s=>isObject(s)&&typeof s.prompt==='string'&&typeof s.fact==='string'&&Array.isArray(s.ends)&&s.ends.length===2&&Array.isArray(s.cards)&&s.cards.length===5&&s.cards.every((c,i)=>isObject(c)&&typeof c.name==='string'&&c.value===i+1))); 
         if(!valid){skipped++;continue;}
         if(value.status!=='complete'||value.round!==4){if(date===today)progress.add(game);continue;}
-        if(![undefined,1,2].includes(value.scoreVersion)){skipped++;continue;}
-        add(game,date,value.score,value.results.every(r=>r.correct&&r.mistakes===0),root.BREAK_ROOM_SCORE.stackUp(value.score,value.scoreVersion));
+        if(![undefined,1,2,3].includes(value.scoreVersion)){skipped++;continue;}
+        add(game,date,value.score,value.results.every(r=>r.correct&&r.mistakes===0),root.BREAK_ROOM_SCORE.stackUp(value.score,value.scoreVersion,value.results));
       }
     }
     records.sort((a,b)=>b.date.localeCompare(a.date)||a.game.localeCompare(b.game));

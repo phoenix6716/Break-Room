@@ -1,3 +1,11 @@
+## 0–100 scores for three games — owner scope, 5 November 2026
+
+This applies only to Clue Ladder, Time Drop and Stack Up. Do not change scoring or presentation for the other seven games. Each of these games shows a score out of 100 for each round and one final Daily score out of 100. Time Drop and Clue Ladder divide existing round points by ten; their final averages are mathematically unchanged. Their captured questions, timers, rules, raw saves and cloud score helpers remain unchanged. Profile/history/sharing for these three games use the same single visible scale.
+
+Fresh Stack Up runs retain outer version 2 and use `scoreVersion:3`: each round's net existing base credit is divided by its maximum (550 + 35 × zero-based round index), scaled to 100 and clamped to 0–100; failures score zero. Daily score is the unrounded average of five round scores, formatted to one decimal for display. Ninety-second timers, wrong-order feedback, raw base credits, streak mechanics and deadlines remain. Old scoreVersion 1/2 or untagged captures retain their original final calculation and data, displayed on the existing normalized 0–100 scale. Cloud merges retain the remote captured score version. Never regrade or restart saved runs.
+
+Apply `supabase/stack-up-score100.sql` before publishing. It adds one private score helper and only a scoreVersion-3 branch to the existing shared reader, leaving all other game branches and the write API unchanged. Existing player rows are not migrated. Current fresh installers include the same helper. Archive: `content/archive/2026-11-05-pre-three-game-scores/`. See the three game contracts and `tests/three-game-scoring.cjs`.
+
 ## Seating Chart has three Daily puzzles — 5 November 2026
 
 Fresh version-2 Dailies contain Easy (6 guests, original tier 1), Medium (8 guests, tier 3) and Hard (10 guests, tier 5), in that order. Keep the original 72-day index/epoch and unchanged 360-table bank. These 216 tables provide 72 nonrepeating three-table sets; all five original practice tiers remain available in Unlimited. Structural tiers are not human difficulty certification.

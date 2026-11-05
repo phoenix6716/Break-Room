@@ -1,3 +1,7 @@
+## Current score display — 5 November 2026
+
+Each event now displays its existing points divided by ten, out of 100. The Daily score is the average of all captured event scores. This includes older ten-event captures, without changing their questions, picks or final normalized scores. Main results, round feedback, summaries, share text and profile cards use the single 0–100 scale. The other seven games are unchanged. Earlier native-point documentation below describes the preserved storage/legacy contract.
+
 # Time Drop
 
 ## Familiar Time Drop subjects — owner feedback, 5 November 2026

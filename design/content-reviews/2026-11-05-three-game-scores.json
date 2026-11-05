@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-05",
+  "scope": [
+    "clue-ladder",
+    "time-drop",
+    "stack-up"
+  ],
+  "other_games": "No controller, model, question bank or scoring changes; unchanged score adapter source and private SQL branches verified against archive.",
+  "behavior": {
+    "clue-ladder": "Round raw points / 10; final unchanged normalized five-round mean.",
+    "time-drop": "Round raw points / 10; final unchanged normalized mean, including legacy ten-event captures.",
+    "stack-up": "Fresh scoreVersion 3: bounded net round credit / (550 + 35 * index) * 100; final exact mean of five rounds. Mistakes, streaks and timers retained."
+  },
+  "compatibility": "Captured Stack Up score versions 1/2 and untagged runs keep original final scores and raw data; remote captured version wins cloud conflicts. Existing Time Drop and Clue Ladder raw saves unchanged.",
+  "archive": "content/archive/2026-11-05-pre-three-game-scores/",
+  "checks": [
+    "Focused unit suite: rules, content, profile, cloud, database, friends, leagues, factual review, question banks, test selection.",
+    "PGlite actual prior production reader + migration twice; legacy rows and other branches unchanged; new client/server parity and forged receipt rejection.",
+    "Browser: score UI, accounts, friends, surfaces, leagues, feedback, profile, release, smoke, Stack Up feedback/shell/gameplay, Clue Ladder and Time Drop at mobile/desktop sizes.",
+    "Complete Unlimited decks and Daily reload, draft, locked result, sharing, timeout, cross-tab, midnight and denied-storage checks.",
+    "Build references, JavaScript parsing and legal footer checks."
+  ],
+  "production_database": {
+    "migration": "stack_up_score100",
+    "applied": true,
+    "rows_before_after": 7,
+    "row_fingerprint_before_after": "b21690a2dd32550cc9c9e04f67897937",
+    "write_api_hash_before_after": "27a85f50e0477643b0bb1189b9377e81",
+    "new_perfect_score": 100,
+    "new_helper_client_execute": false,
+    "security_advisors": "Identical before and after."
+  },
+  "limitations": [
+    "Historical Stack Up final scores retain their original weighted formula; the new simple average applies to fresh scoreVersion 3 runs.",
+    "UI rounds scores to at most one decimal; final means use unrounded values."
+  ]
+}

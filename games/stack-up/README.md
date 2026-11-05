@@ -1,3 +1,7 @@
+## Current score display — 5 November 2026
+
+Fresh runs use scoreVersion 3: each completed stack scores out of 100 and Daily takes the unrounded mean of all five. Net existing base credit (earned minus 30 per mistake) is divided by the round maximum 550 + 35 × zero-based round index, multiplied by 100 and clamped; a timeout scores zero. Existing 90-second deadlines, sorting controls and streak mechanics stay. Saved older runs keep their original final normalized result and raw points; they are never regraded. Apply `supabase/stack-up-score100.sql` before the frontend. Main results, round feedback, summaries, share text and profile cards use the single 0–100 scale. The other seven games are unchanged. Earlier native-point documentation below describes the preserved storage/legacy contract.
+
 ## Stack Up without numerical trivia or time-unit tasks — owner correction, 27 October 2026
 
 The owner explicitly wants to keep ordering films/books by release and historical events by date, while removing maths, number facts and time-unit questions. New Dailies replace 32 weekday/month/duration slots and eight continent-area slots with story, nature, crafting and everyday-process ordering. Keep the other 120 familiar stacks, all 160 IDs, five 32-item lanes and their exact Daily assignments.

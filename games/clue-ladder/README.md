@@ -1,3 +1,7 @@
+## Current score display — 5 November 2026
+
+Each puzzle displays 100 / 80 / 60 / 40 / 20 by clue used, or zero if unsolved. The Daily score is the average of the five puzzle scores. Underlying raw points, answer matching and captured saves remain unchanged. Main results, round feedback, summaries, share text and profile cards use the single 0–100 scale. The other seven games are unchanged. Earlier native-point documentation below describes the preserved storage/legacy contract.
+
 ## Original Clue Ladder appearance — owner correction, 28 October 2026
 
 Restore the original cream panel, orange ladder and native pixel climber. Clue Ladder opts out of the later shared game-scenes and game-art styles/scripts; the other games retain their artwork and motion. Keep the current question bank, clues, scores, Daily slots and captured saves. This supersedes the Clue Ladder portion of the shared scene/object artwork directions. The page matches its pre-scene version from before commit `1e56731`; the engine and bank are unchanged.
