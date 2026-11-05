@@ -99,6 +99,7 @@ function check(condition, message) { assert.ok(condition, message); checks++; }
       await frame.locator('#nextBtn').click();
     }
     await frame.locator('#finalScreen.show').waitFor();
+    await frame.waitForFunction(()=>Number.isFinite(Number(document.getElementById('finalTotal').textContent))&&Number(document.getElementById('finalTotal').textContent)>=0&&Number(document.getElementById('finalTotal').textContent)<=100);
     check(Number(await frame.locator('#finalTotal').innerText()) >= 0, 'Lowball final score');
     await page.reload({waitUntil: 'domcontentloaded'});
     frame = await lowballFrame(page);

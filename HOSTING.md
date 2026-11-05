@@ -1,3 +1,7 @@
+## Paid launch hosting — 5 November 2026
+
+The owner selected paid launch, Stripe and a custom domain. Read [PAID-LAUNCH.md](PAID-LAUNCH.md) before moving the site or enabling checkout. GitHub Pages remains the current free development site; its usage limits exclude primarily commercial hosting. Cloudflare Workers Static Assets is proposed, with a non-deploying `wrangler.json` configuration. New-domain ownership, host access, support email, SMTP and Stripe configuration remain pending. Preserve old-origin guest saves during cutover. `SITE_URL` generates canonical/share metadata and `sitemap.xml`; do not set it to an unverified domain. Earlier Pages-only launch instructions below are historical.
+
 ## Codebreak is the tenth launch game — 4 November 2026
 
 The owner chose Codebreak to replace shelved Sleeper in the ten-game launch. One untimed Daily code, four digits from 1–6 with repeats, eight guesses, separate free Unlimited. Full points within three guesses, then 10 fewer per extra guess; an uncracked code scores zero. Read `games/codebreak/README.md` for the frozen v1 rotation, saves, scores, accessibility and verification contract. Preserve every existing game's source and native/cloud history. Existing installations apply `supabase/codebreak.sql` after the current league setup; the new game uses a separate validated save table and private score helpers. The nine-game shelving entries below are historical; Sleeper stays hidden.
