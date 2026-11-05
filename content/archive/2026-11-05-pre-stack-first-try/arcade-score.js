@@ -1,0 +1,38 @@
+/* Break Room Arcade score v1: pure, deterministic and independent of game storage. */
+(root=>{
+ 'use strict';
+ const STACK_MAX=31000,WINDOW_DAYS=120;
+ const clamp=value=>Number.isFinite(value)?Math.min(100,Math.max(0,value)):null;
+ const mean=values=>values.length?values.reduce((sum,value)=>sum+value,0)/values.length:null;
+ function stake(bets,picks,answers){
+  if(!Array.isArray(bets)||!Array.isArray(picks)||!Array.isArray(answers)||!bets.length||bets.length!==picks.length||bets.length!==answers.length||!bets.every(n=>Number.isInteger(n)&&n>=1&&n<=3)||!picks.every(n=>Number.isInteger(n)&&n>=-1&&n<=2)||!answers.every(n=>Number.isInteger(n)&&n>=0&&n<=2))return null;
+  const total=bets.reduce((a,b)=>a+b,0),won=bets.reduce((sum,bet,i)=>sum+(picks[i]===answers[i]?bet:0),0);
+  return won/total*100;
+ }
+ function innerClock(targets,picks){
+  if(!Array.isArray(targets)||targets.length!==5||new Set(targets).size!==5||!targets.every(t=>Number.isInteger(t)&&t>=2000&&t<=12000&&t%50===0)||!Array.isArray(picks)||picks.length!==5||!picks.every(a=>a&&Number.isInteger(a.elapsed)&&a.elapsed>=0&&a.elapsed<=30000&&['stop','timeout'].includes(a.kind)&&(a.kind!=='timeout'||a.elapsed===30000)))return null;
+  return picks.reduce((n,a,i)=>n+(a.kind==='timeout'?0:Math.max(0,100*(1-Math.abs(a.elapsed-targets[i])/(targets[i]*.25)))),0)/5;
+ }
+ function summary(records,today,ids=['codebreak','hidden-gem','seating-chart','clue-ladder','lowball','stake','stack-up','pack','prior','laser','alibi','bouncer','inner-clock','time-drop','shift-work']){
+  const from=new Date(Date.parse(today+'T00:00:00Z')-(WINDOW_DAYS-1)*86400000).toISOString().slice(0,10);
+  const recent=records.filter(r=>r.date>=from&&r.date<=today&&Number.isFinite(r.arcadeScore)&&r.arcadeScore>=0&&r.arcadeScore<=100);
+  const games=ids.map(id=>{
+   const scores=recent.filter(r=>r.game===id).map(r=>r.arcadeScore);
+   return{id,count:scores.length,average:mean(scores),best:scores.length?Math.max(...scores):null};
+  });
+  const available=games.filter(g=>g.count>0);
+  return{version:1,windowDays:WINDOW_DAYS,from,to:today,games,average:mean(available.map(g=>g.average)),gamesPlayed:available.length,runs:available.reduce((sum,g)=>sum+g.count,0)};
+ }
+ function stackRound(result,index=0,scoreVersion=3){if(!result||typeof result.correct!=='boolean'||!Number.isFinite(result.points)||!Number.isInteger(result.mistakes)||result.mistakes<0||!Number.isInteger(index)||index<0)return null;const scale=scoreVersion===1?10:1;return result.correct?clamp((result.points/scale-30*result.mistakes)/(550+35*index)*100):0;}
+ function stackAverage(results,scoreVersion=3){if(!Array.isArray(results)||!results.length)return null;const scores=results.map((r,i)=>stackRound(r,i,scoreVersion));return scores.every(Number.isFinite)?mean(scores):null;}
+ function stackUp(points,scoreVersion=1,results=null){return !Number.isFinite(points)?null:scoreVersion===3?stackAverage(results,3):[1,2].includes(scoreVersion)?clamp(points/(scoreVersion===2?3100:STACK_MAX)*100):null;}
+ function badge(value){
+  const el=root.document.createElement('div');el.className='arcade-score';
+  const label=root.document.createElement('span');label.className='arcade-score-label';label.textContent='ARCADE SCORE';
+  const number=root.document.createElement('strong');number.textContent=format(value);
+  const outOf=root.document.createElement('small');outOf.textContent=' / 100';number.appendChild(outOf);
+  el.append(label,number);return el;
+ }
+ const format=value=>value===null||!Number.isFinite(value)?'—':new Intl.NumberFormat('en-AU',{maximumFractionDigits:1}).format(value);
+ root.BREAK_ROOM_SCORE=Object.freeze({version:1,codebreak:run=>root.BREAK_ROOM_CODEBREAK?.record(run,run?.day)?.arcadeScore??null,shiftWork:run=>root.BREAK_ROOM_SHIFT_WORK?.record(run,run?.day)?.arcadeScore??null,hiddenGem:run=>root.BREAK_ROOM_HIDDEN_GEM?.record(run,run?.day)?.arcadeScore??null,seatingChart:run=>root.BREAK_ROOM_SEATING_CHART?.record(run,run?.day)?.arcadeScore??null,clueLadder:run=>root.BREAK_ROOM_CLUE_LADDER?.record(run,run?.day)?.arcadeScore??null,timeDrop:run=>root.BREAK_ROOM_TIME_DROP?.record(run,run?.day)?.arcadeScore??null,innerClock,STACK_MAX,WINDOW_DAYS,lowball:clamp,bouncer:(correct,tests)=>Number.isInteger(correct)&&Number.isInteger(tests)&&tests>=0&&tests<=8&&correct>=tests&&correct<=16?(correct-tests/2)/16*100:null,alibi:correct=>Number.isInteger(correct)&&correct>=0&&correct<=4?correct*25:null,laser:solved=>Number.isInteger(solved)&&solved>=0&&solved<=4?solved*25:null,prior:correct=>Number.isInteger(correct)&&correct>=0&&correct<=5?correct*20:null,pack:(points,maximum)=>Number.isFinite(points)&&Number.isFinite(maximum)&&points>=0&&maximum>0?clamp(points/maximum*100):null,stake,stackRound,stackAverage,stackUp,summary,format,badge});
+})(typeof window==='undefined'?globalThis:window);

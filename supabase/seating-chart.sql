@@ -103,7 +103,7 @@ revoke all on function public._sc_int(jsonb,int,int),public._sc_order(jsonb,int,
 create or replace function public._stack_average(v jsonb) returns double precision language plpgsql immutable set search_path='' as $$
 declare i int;q jsonb;mistakes int;seconds int;streak int:=0;earned int;raw_total numeric:=0;credit double precision:=0;
 begin
- if v->'scoreVersion' is distinct from '3'::jsonb or jsonb_typeof(v->'results') is distinct from 'array' or jsonb_array_length(v->'results')<>5 then return null;end if;
+ if coalesce(v->'scoreVersion','null'::jsonb) not in ('3'::jsonb,'4'::jsonb) or jsonb_typeof(v->'results') is distinct from 'array' or jsonb_array_length(v->'results')<>5 then return null;end if;
  for i in 0..4 loop
   q=v->'results'->i;
   if jsonb_typeof(q->'correct') is distinct from 'boolean' or jsonb_typeof(q->'points') is distinct from 'number' or jsonb_typeof(q->'mistakes') is distinct from 'number' or jsonb_typeof(q->'seconds') is distinct from 'number' then return null;end if;
@@ -112,7 +112,7 @@ begin
   if (q->>'correct')::boolean then earned=100+5*seconds+35*streak;streak=streak+1;else if seconds<>0 then return null;end if;earned=-40;streak=0;end if;
   if (q->>'points')::numeric<>earned then return null;end if;
   raw_total=raw_total+earned-30*mistakes;
-  credit=credit+case when (q->>'correct')::boolean then greatest(0,least(100,(earned-30.0*mistakes)/(550+35*i)*100)) else 0 end;
+  credit=credit+case when (q->>'correct')::boolean then case when v->'scoreVersion'='4'::jsonb then greatest(0,100-20*mistakes) else greatest(0,least(100,(earned-30.0*mistakes)/(550+35*i)*100)) end else 0 end;
  end loop;
  if v->'score' is distinct from to_jsonb(raw_total) or v->'streak' is distinct from to_jsonb(streak) or v->'mistakes' is distinct from to_jsonb(mistakes) then return null;end if;
  return credit/5;
@@ -164,7 +164,7 @@ begin
     for j in 0..4 loop c=q->'cards'->j;if jsonb_typeof(c->'name') is distinct from 'string' or c->'value' is distinct from to_jsonb(j+1) then return null;end if;end loop;
    end loop;
   end if;
-  if v->'scoreVersion'='3'::jsonb then return public._stack_average(v);end if;
+  if v->'scoreVersion' in ('3'::jsonb,'4'::jsonb) then return public._stack_average(v);end if;
   if v ? 'scoreVersion' and v->'scoreVersion' not in ('1'::jsonb,'2'::jsonb) then return null;end if;
   return greatest(0,least(100,(v->>'score')::double precision/(case when v->'scoreVersion'='2'::jsonb then 3100 else 31000 end)*100));
  end if;return null;

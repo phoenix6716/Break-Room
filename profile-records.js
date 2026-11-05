@@ -96,7 +96,7 @@
         const valid=isObject(value)&&[1,2].includes(value.version)&&value.day===date&&Number.isInteger(value.round)&&value.round>=0&&value.round<5&&Number.isFinite(value.score)&&Number.isInteger(value.streak)&&value.streak>=0&&Array.isArray(value.order)&&value.order.length===5&&new Set(value.order).size===5&&value.order.every(n=>Number.isInteger(n)&&n>=1&&n<=5)&&Number.isFinite(value.deadline)&&Number.isInteger(value.mistakes)&&value.mistakes>=0&&['playing','review','complete'].includes(value.status)&&Array.isArray(value.results)&&value.results.every(r=>isObject(r)&&typeof r.correct==='boolean'&&Number.isFinite(r.points)&&Number.isInteger(r.mistakes)&&r.mistakes>=0)&&value.results.length===(value.status==='playing'?value.round:value.round+1)&&(value.version===1&&!value.stacks||Array.isArray(value.stacks)&&value.stacks.length===5&&value.stacks.every(s=>isObject(s)&&typeof s.prompt==='string'&&typeof s.fact==='string'&&Array.isArray(s.ends)&&s.ends.length===2&&Array.isArray(s.cards)&&s.cards.length===5&&s.cards.every((c,i)=>isObject(c)&&typeof c.name==='string'&&c.value===i+1))); 
         if(!valid){skipped++;continue;}
         if(value.status!=='complete'||value.round!==4){if(date===today)progress.add(game);continue;}
-        if(![undefined,1,2,3].includes(value.scoreVersion)){skipped++;continue;}
+        if(![undefined,1,2,3,4].includes(value.scoreVersion)){skipped++;continue;}
         add(game,date,value.score,value.results.every(r=>r.correct&&r.mistakes===0),root.BREAK_ROOM_SCORE.stackUp(value.score,value.scoreVersion,value.results));
       }
     }

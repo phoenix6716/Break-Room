@@ -1,3 +1,7 @@
+## Stack Up first-try scoring — owner correction, 5 November 2026
+
+Fresh Stack Up runs use `scoreVersion:4`: a correct first submission earns 100 regardless of time remaining or prior streak. Deduct 20 per wrong submission, bounded at zero; timeout scores zero. The Daily is the mean of its five round scores. Keep the 90-second timer and all raw receipt fields and mechanics for compatibility. All captured score versions 1/2/3, including unfinished captures, retain original scores, deadlines and rules. No data is regraded or reset. Only Stack Up changes in this correction. Apply `supabase/stack-up-first-try.sql` before publishing; the private receipt validator and score reader support both v3 and v4. Archive: `content/archive/2026-11-05-pre-stack-first-try/`. Earlier scoring entries below are historical.
+
 ## 0–100 scores for three games — owner scope, 5 November 2026
 
 This applies only to Clue Ladder, Time Drop and Stack Up. Do not change scoring or presentation for the other seven games. Each of these games shows a score out of 100 for each round and one final Daily score out of 100. Time Drop and Clue Ladder divide existing round points by ten; their final averages are mathematically unchanged. Their captured questions, timers, rules, raw saves and cloud score helpers remain unchanged. Profile/history/sharing for these three games use the same single visible scale.

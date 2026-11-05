@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-05",
+  "scope": "Stack Up scoring correction only",
+  "reason": "A correct first submission must score100 even after time has elapsed. Previous normalized score still included time/streak weighting.",
+  "new_score_version": 4,
+  "round_rule": "Correct: max(0,100-20*wrong submissions); timeout:0; independent of remaining seconds and prior streak.",
+  "daily_rule": "Unrounded mean of five round scores; display at most one decimal.",
+  "compatibility": "Outer version2,raw receipts,timers,deadlines,cloud writeAPI and existing rows unchanged. Captured versions1/2/3 retain original scores and rules.",
+  "archive": "content/archive/2026-11-05-pre-stack-first-try/",
+  "database_migration": "supabase/stack-up-first-try.sql",
+  "tests": [
+    "PGlite original reader + both migrations twice; unchanged other game branches and legacy saved rows.",
+    "Client/server100 for first-try solves with1/10/30/53/89/90seconds remaining; mixed attempts and timeout; version3 parity; forged receipts denied.",
+    "Profile version4 scoring and cloud cross-version capture ownership.",
+    "Mobile/desktop slow-first-try100; mistakes80/60/40; timeout0; final mean56; refresh/share."
+  ],
+  "remaining_limitations": [
+    "Previously captured runs retain their original scoring; new Daily rules start on the next uncaptured Daily."
+  ],
+  "production_database": {
+    "migration_applied": true,
+    "rows_before_after": 7,
+    "row_fingerprint_before_after": "b21690a2dd32550cc9c9e04f67897937",
+    "write_api_hash_before_after": "27a85f50e0477643b0bb1189b9377e81",
+    "slow_first_try_score": 100,
+    "equivalent_captured_version3_score": 69.9690252100453,
+    "helper_public": false,
+    "security_findings": "Unchanged, excluding generated timestamps."
+  }
+}

@@ -30,7 +30,7 @@ if(selected.length&&!selected.some(id=>['alibi','stack-up'].includes(id)))throw 
   await p.goto(base+'/games/stack-up/index.html');assert.equal(await p.locator('#intro-screen').count(),0);assert(await p.locator('#game-interface').isVisible());assert.equal(await p.locator('.sort-card').count(),5);
   assert(!/10×|ten times/.test(await p.locator('body').innerText()));
   for(let round=0;round<5;round++){
-   const current=await p.evaluate(()=>JSON.parse(localStorage.getItem('break-room:stack-up:daily:'+MIDNIGHT_ARCADE_CLOCK.dayKey())));assert.equal(current.scoreVersion,3);assert.equal(current.stacks[round].collection,'familiar');assert.equal(current.stacks[round].lane,round);
+   const current=await p.evaluate(()=>JSON.parse(localStorage.getItem('break-room:stack-up:daily:'+MIDNIGHT_ARCADE_CLOCK.dayKey())));assert.equal(current.scoreVersion,4);assert.equal(current.stacks[round].collection,'familiar');assert.equal(current.stacks[round].lane,round);
    await sort(p);await p.locator('#check-button').click();if(!round)assert.match(await p.locator('#result-detail').innerText(),/100 \/ 100/);await p.locator('#next-button').click();
   }
   assert.equal(await p.locator('#summary-score').innerText(),'100 / 100');assert.equal(await p.locator('#summary-round-scores li').count(),5);assert.equal(await p.locator('#record-best').innerText(),'100');

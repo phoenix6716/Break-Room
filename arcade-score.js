@@ -23,9 +23,9 @@
   const available=games.filter(g=>g.count>0);
   return{version:1,windowDays:WINDOW_DAYS,from,to:today,games,average:mean(available.map(g=>g.average)),gamesPlayed:available.length,runs:available.reduce((sum,g)=>sum+g.count,0)};
  }
- function stackRound(result,index=0,scoreVersion=3){if(!result||typeof result.correct!=='boolean'||!Number.isFinite(result.points)||!Number.isInteger(result.mistakes)||result.mistakes<0||!Number.isInteger(index)||index<0)return null;const scale=scoreVersion===1?10:1;return result.correct?clamp((result.points/scale-30*result.mistakes)/(550+35*index)*100):0;}
+ function stackRound(result,index=0,scoreVersion=3){if(!result||typeof result.correct!=='boolean'||!Number.isFinite(result.points)||!Number.isInteger(result.mistakes)||result.mistakes<0||!Number.isInteger(index)||index<0)return null;if(scoreVersion===4)return result.correct?clamp(100-20*result.mistakes):0;const scale=scoreVersion===1?10:1;return result.correct?clamp((result.points/scale-30*result.mistakes)/(550+35*index)*100):0;}
  function stackAverage(results,scoreVersion=3){if(!Array.isArray(results)||!results.length)return null;const scores=results.map((r,i)=>stackRound(r,i,scoreVersion));return scores.every(Number.isFinite)?mean(scores):null;}
- function stackUp(points,scoreVersion=1,results=null){return !Number.isFinite(points)?null:scoreVersion===3?stackAverage(results,3):[1,2].includes(scoreVersion)?clamp(points/(scoreVersion===2?3100:STACK_MAX)*100):null;}
+ function stackUp(points,scoreVersion=1,results=null){return !Number.isFinite(points)?null:[3,4].includes(scoreVersion)?stackAverage(results,scoreVersion):[1,2].includes(scoreVersion)?clamp(points/(scoreVersion===2?3100:STACK_MAX)*100):null;}
  function badge(value){
   const el=root.document.createElement('div');el.className='arcade-score';
   const label=root.document.createElement('span');label.className='arcade-score-label';label.textContent='ARCADE SCORE';

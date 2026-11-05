@@ -64,7 +64,7 @@ function selectChecks(changed,available,{full=false}={}){
    }
   }else if(model){game(model[1],true);add('profile-records.cjs','cloud-saves.cjs');if(model[1]==='inner-clock')add('accounts.cjs','friends.cjs','profile.cjs');}
   else if(['supabase/codebreak.sql','supabase/codebreak-v2.sql','supabase/codebreak-v3.sql','supabase/codebreak-v4.sql'].includes(file)){game('codebreak',true);add('leagues-database.cjs','leagues.cjs','friends.cjs','accounts.cjs');}
-  else if(file==='supabase/stack-up-score100.sql'){game('stack-up',true);add('three-game-scoring.cjs','friends-database.cjs','accounts.cjs','friends.cjs','leagues-database.cjs');}
+  else if(['supabase/stack-up-score100.sql','supabase/stack-up-first-try.sql'].includes(file)){game('stack-up',true);add('three-game-scoring.cjs','friends-database.cjs','accounts.cjs','friends.cjs','leagues-database.cjs');}
   else if(file==='supabase/seating-chart-three.sql'){game('seating-chart',true);add('accounts.cjs','friends.cjs','leagues-database.cjs','leagues.cjs','profile.cjs');}
   else if(file==='supabase/leagues.sql'){add('leagues-database.cjs','leagues.cjs','leagues-freshness.cjs');}
   else if(['supabase/hidden-gem.sql','supabase/hidden-gem-broader-answers.sql','supabase/hidden-gem-exact-rejections.sql'].includes(file)){game('hidden-gem',true);}

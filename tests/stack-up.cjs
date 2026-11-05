@@ -28,7 +28,8 @@ async function frozen(browser,width=1440,time='2026-10-19T03:00:00Z'){
    await page.locator('.sort-card').nth(1).locator('button').first().click();assert.equal(await page.locator('.sort-card').first().getAttribute('data-value'),original);
    await page.reload();assert(await page.locator('#game-interface').isVisible());assert.equal(await page.locator('.sort-card').first().getAttribute('data-value'),original);
    for(let round=0;round<5;round++){
-    await reorder(page,[1,2,3,4,5]);await page.locator('#check-button').click();assert(await page.locator('#result-modal').isVisible());
+    await page.clock.runFor(round===0?37000:12000);
+    await reorder(page,[1,2,3,4,5]);await page.locator('#check-button').click();assert(await page.locator('#result-modal').isVisible());assert.equal(await page.locator('#result-detail').innerText(),'100 / 100');
     if(round===0){await page.reload();assert(await page.locator('#result-modal').isVisible());await page.locator('#result-close').click();await page.locator('#check-button').click();}
     await page.locator('#next-button').click();
    }
@@ -66,6 +67,15 @@ async function frozen(browser,width=1440,time='2026-10-19T03:00:00Z'){
   }
   {
    const context=await browser.newContext();await context.addInitScript(()=>{Storage.prototype.getItem=()=>{throw Error('unavailable')};Storage.prototype.setItem=()=>{throw Error('unavailable')};});const page=await context.newPage();await page.goto(url);await page.locator('#help-dialog').waitFor({state:'visible'});await page.keyboard.press('Escape');assert(await page.locator('#save-warning').isVisible());await page.locator('[data-mode=infinite]').click();assert.equal(await page.locator('.sort-card').count(),5);await context.close();console.log('PASS: storage failure gives feedback and keeps practice playable.');
+  }
+  {
+   const {context,page}=await frozen(browser);await page.locator('[data-mode=daily]').click();
+   for(let round=0;round<5;round++){
+    if(round===4){await page.clock.runFor(91000);assert.equal(await page.locator('#result-detail').innerText(),'0 / 100');}
+    else{for(let wrong=0;wrong<round;wrong++){await reorder(page,[5,4,3,2,1]);await page.locator('#check-button').click();}await page.clock.runFor(21000);await reorder(page,[1,2,3,4,5]);await page.locator('#check-button').click();assert.equal(await page.locator('#result-detail').innerText(),(100-round*20)+' / 100');}
+    await page.locator('#next-button').click();
+   }
+   assert.equal(await page.locator('#summary-score').innerText(),'56 / 100');await page.reload();assert.equal(await page.locator('#summary-score').innerText(),'56 / 100');await context.close();console.log('PASS first-try rule: slow solves100, wrong submissions80/60/40, timeout0, exact mean56, reload preserved.');
   }
   assert.deepEqual(errors,[]);
  }finally{await browser.close();}

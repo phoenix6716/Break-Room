@@ -17,14 +17,14 @@ function copy(file,relative){
  const target=path.join(output,relative);fs.mkdirSync(path.dirname(target),{recursive:true});if(path.extname(file).toLowerCase()==='.html'){
   const html=fs.readFileSync(file,'utf8').replace(/<nav\b[^>]*class="[^"]*\bgame-menu\b[^"]*"[^>]*>[\s\S]*?<\/nav>/g,nav=>nav.replace(/<a\b[^>]*href="[^"]*games\/(?:alibi|bouncer|prior|stake|pixel-pairs|word-forge|gridlock|number-drop|memory-lane|mystery-cabinet|time-drop|clue-ladder|seating-chart|shift-work|codebreak|hidden-gem)\/index\.html"[^>]*>[\s\S]*?<\/a>/g,'').replace(/(<a\b[^>]*href="([^"]*)games\/laser\/index\.html"[^>]*>[\s\S]*?<\/a>)/,(_,link,prefix)=>link+'<a href="'+prefix+'games/time-drop/index.html">Time Drop</a><a href="'+prefix+'games/clue-ladder/index.html">Clue Ladder</a><a href="'+prefix+'games/seating-chart/index.html">Seating Chart</a><a href="'+prefix+'games/shift-work/index.html">Desk Jam</a><a href="'+prefix+'games/codebreak/index.html">Codebreak</a>'));
   // Keep generated static drawer labels aligned with the approved display name.
-  let rendered=html.replace(/(src="[^"]*(?:navigation|game-config)\.js)(?:\?[^\"]*)?"/g,'$1?v=score100-20261105"').replace(/(src="[^"]*inner-clock-model\.js)(?:\?[^\"]*)?"/g,'$1?v=no-repeat-20261026"').replace(/<nav\b[^>]*class="[^"]*\bgame-menu\b[^"]*"[^>]*>[\s\S]*?<\/nav>/g,nav=>nav.replace(/(<a\b[^>]*href="[^"]*games\/inner-clock\/index\.html"[^>]*>)[\s\S]*?(<\/a>)/g,(_,open,close)=>open+'Time Sense'+close));
-  if(rendered.includes('cloud-saves.js')&&!rendered.includes('codebreak-model.js')){const prefix=rendered.match(/src="([^"]*)cloud-saves\.js/)[1];rendered=rendered.replace(/<script\b(?=[^>]*src="[^"]*cloud-saves\.js)[^>]*><\/script>/,'<script src="'+prefix+'codebreak-model.js?v=score100-20261105"></script>$&');}
-  rendered=rendered.replace(/(src="[^"]*codebreak-model\.js)(?:\?[^\"]*)?"/g,'$1?v=score100-20261105"');
-  rendered=rendered.replace(/(src="[^"]*seating-chart-model\.js)(?:\?[^\"]*)?"/g,'$1?v=score100-20261105"');
+  let rendered=html.replace(/(src="[^"]*(?:navigation|game-config)\.js)(?:\?[^\"]*)?"/g,'$1?v=first-try-20261105"').replace(/(src="[^"]*inner-clock-model\.js)(?:\?[^\"]*)?"/g,'$1?v=no-repeat-20261026"').replace(/<nav\b[^>]*class="[^"]*\bgame-menu\b[^"]*"[^>]*>[\s\S]*?<\/nav>/g,nav=>nav.replace(/(<a\b[^>]*href="[^"]*games\/inner-clock\/index\.html"[^>]*>)[\s\S]*?(<\/a>)/g,(_,open,close)=>open+'Time Sense'+close));
+  if(rendered.includes('cloud-saves.js')&&!rendered.includes('codebreak-model.js')){const prefix=rendered.match(/src="([^"]*)cloud-saves\.js/)[1];rendered=rendered.replace(/<script\b(?=[^>]*src="[^"]*cloud-saves\.js)[^>]*><\/script>/,'<script src="'+prefix+'codebreak-model.js?v=first-try-20261105"></script>$&');}
+  rendered=rendered.replace(/(src="[^"]*codebreak-model\.js)(?:\?[^\"]*)?"/g,'$1?v=first-try-20261105"');
+  rendered=rendered.replace(/(src="[^"]*seating-chart-model\.js)(?:\?[^\"]*)?"/g,'$1?v=first-try-20261105"');
   rendered=rendered.replace(/(src="[^"]*time-drop-model\.js)(?:\?[^\"]*)?"/g,'$1?v=familiar-20261105"');
-  rendered=rendered.replace(/(src="[^"]*profile\.js)(?:\?[^"]*)?"/g,'$1?v=score100-20261105"');
-  rendered=rendered.replace(/(src="[^"]*arcade-score\.js)(?:\?[^"]*)?"/g,'$1?v=score100-20261105"');
-  fs.writeFileSync(target,applyBrand(rendered.replace(/(src="[^"]*cloud-saves\.js)(?:\?[^"]*)?"/g,'$1?v=score100-20261105"').replace(/(src="[^"]*hidden-gem-model\.js)(?:\?[^"]*)?"/g,'$1?v=coverage-20261101"').replace(/(src="[^"]*(?:profile-records|friends|leagues|leagues-model)\.js)(?:\?[^"]*)?"/g,'$1?v=score100-20261105"').replace(/(src="[^"]*accounts\.js)(?:\?[^"]*)?"/g,'$1?v=score100-20261105"'),relative));
+  rendered=rendered.replace(/(src="[^"]*profile\.js)(?:\?[^"]*)?"/g,'$1?v=first-try-20261105"');
+  rendered=rendered.replace(/(src="[^"]*arcade-score\.js)(?:\?[^"]*)?"/g,'$1?v=first-try-20261105"');
+  fs.writeFileSync(target,applyBrand(rendered.replace(/(src="[^"]*cloud-saves\.js)(?:\?[^"]*)?"/g,'$1?v=first-try-20261105"').replace(/(src="[^"]*hidden-gem-model\.js)(?:\?[^"]*)?"/g,'$1?v=coverage-20261101"').replace(/(src="[^"]*(?:profile-records|friends|leagues|leagues-model)\.js)(?:\?[^"]*)?"/g,'$1?v=first-try-20261105"').replace(/(src="[^"]*accounts\.js)(?:\?[^"]*)?"/g,'$1?v=first-try-20261105"'),relative));
  }else fs.copyFileSync(file,target);
  count++;total+=fs.statSync(target).size;
 }
