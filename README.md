@@ -1,3 +1,7 @@
+## Sound and smooth feedback — owner request, 5 November 2026
+
+All ten games gain richer short sound effects and smooth feedback without changing rules, scoring, captured rounds or deadlines. Preserve shared opt-in `break-room:game-sound` and Lowball's separate existing `pc_sound` preference; never autoplay or add duplicate controls. Audio failures must not affect play. Respect reduced motion, mute immediately and suppress hidden-page sounds. Time Sense must remain entirely silent/still while running, and even audio initialization must happen after a timed stop is measured. Keep Stack Up's live mouse drag and Desk Jam glides unchanged. See [IMMERSION.md](IMMERSION.md); browser coverage is in `tests/immersion.cjs` and the existing gameplay suites.
+
 ## Live achievement notices — owner request, 5 November 2026
 
 Profile now has 32 achievements: the existing 12 plus 20 completion, variety, streak and perfect-result milestones. Use only the ten current games' actual Daily records; practice and retired games do not count. The shared game-page notifier batches new unlocks, supports dismissal/reduced motion and remains accessible above result dialogs. Quietly baseline old history and cloud/account restores. Notification receipts stay outside gameplay/cloud saves, partitioned by the existing local save owner. Never rewrite results or persist data from the read-only Profile page. Full history scans occur only on new Daily completion, never on each card move or draft. See [ACHIEVEMENTS.md](ACHIEVEMENTS.md).

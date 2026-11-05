@@ -110,7 +110,7 @@ jobs:
           import os, pathlib, time, urllib.request
           base = os.environ["PUBLISHED_URL"].rstrip("/") + "/"
           paths = ["games/stack-up/familiar-stacks.js", "games/stack-up/stack-up.js", "games/time-drop/events.js", "games/clue-ladder/puzzles.js", "brand.css", "menu-brand.css", "assets/break-room-wordmark.png", "assets/break-room-mark.png", "assets/break-room-icon.svg", "assets/break-room-touch-icon.png", "assets/favicon.svg", "assets/logo.svg", "leagues.html", "leagues.js", "leagues-model.js", "leagues.css", "inner-clock-model.js", "arcade-score.js", "games/lowball/engine/index.html", "games/lowball/engine/reference-prices.js", "games/lowball/engine/item-art.js", "games/inner-clock/index.html", "games/inner-clock/inner-clock.js", "profile.html", "friends.html", "index.html", "games/codebreak/index.html", "games/codebreak/codebreak.js", "games/codebreak/codebreak.css", "games/codebreak/shell.js", "codebreak-model.js", "assets/cards/codebreak-pixel.webp", "games/shift-work/index.html", "games/shift-work/boards.js", "games/shift-work/shift-work.js", "games/shift-work/shift-work.css", "shift-work-model.js", "games/hidden-gem/index.html", "hidden-gem-model.js", "cloud-saves.js", "accounts.js", "friends.js", "profile-records.js", "profile.js", "navigation.js", "game-config.js", "game-scenes.js", "game-scenes.css", "games/pack/item-art.js", "games/pack/pack.js", "games/pack/pack.css"]
-          paths += ["game-art.js", "game-art.css", "assets/game-art/manifest.js", "game-help.js", "game-help.css"]
+          paths += ["game-feel.js", "game-feel.css", "achievements.js", "achievements.css", "game-art.js", "game-art.css", "assets/game-art/manifest.js", "game-help.js", "game-help.css"]
           paths += [str(p) for p in pathlib.Path("assets/game-art").rglob("*.svg")]
           paths += [str(p) for p in pathlib.Path("games/pack/art").glob("*.svg")]
           import json
@@ -152,6 +152,7 @@ jobs:
                           page = response.read()
                       assert b"How To Play</button>" in page and b"game-help.js?v=first-visit-20261028" in page and ('data-game="' + current + '"').encode() in page, "Missing labelled first-visit instructions: " + current
                       assert b'class="mobile-stats-label">Stats</span>' in page and b"game-help.css?v=mobile-stats-20261028" in page, "Missing mobile stats layout: " + current
+                      assert b"game-feel.js?v=immersion-20261105" in page and b"game-feel.css?v=immersion-20261105" in page and b"achievements.js?v=immersion-20261105" in page, "Missing immersive feedback: " + current
                       if current == "codebreak":
                           assert b'data-game-scene="codebreak"' in page and b"codebreak.css" in page and b"codebreak.js" in page, "Missing original Codebreak safe"
                           continue
@@ -163,7 +164,7 @@ jobs:
                       if current != "pack":
                           assert ('data-game-art="' + current + '"').encode() in page and b"game-art.js?v=objects-20261027" in page, "Missing game objects: " + current
                       if current == "pack":
-                          assert b"item-art.js?v=items-20261027" in page and b"pack.js?v=items-20261027" in page and b"pack.css?v=items-20261027" in page, "Missing custom Pack item graphics"
+                          assert b"item-art.js?v=items-20261027" in page and b"pack.js?v=immersion-20261105" in page and b"pack.css?v=items-20261027" in page, "Missing custom Pack item graphics"
                   print("Verified current game sets, original Clue Ladder, Pack item artwork and shared motion assets.")
                   for retired in ["hidden-gem","stake","prior","alibi","bouncer","pixel-pairs","word-forge","gridlock","number-drop","memory-lane","mystery-cabinet"]:
                       request = urllib.request.Request(base + "games/" + retired + "/index.html?release=" + os.environ["GITHUB_SHA"], headers={"Cache-Control":"no-cache"})

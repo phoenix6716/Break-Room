@@ -44,9 +44,9 @@
  function input(){if(!sync()||active().pick!==null)return;const y=typedGuess();$('lock-guess').disabled=y===null;$('year-error').textContent=y===null?'Enter a whole year from 1 to '+($('year-era').value==='bce'?'4000 BCE.':'2100 CE.'):'';
   if(y!==null){if(mode==='daily'){M.guess(daily,y);saveDaily();}else{practice.guess=y;savePractice();}$('td-readout').textContent=M.format(y);$('year-slider').value=pos(y);$('year-slider').setAttribute('aria-valuetext',M.format(y));window.BREAK_ROOM_TIME_DROP_ART?.draw(y);}}
  function lock(event){event?.preventDefault();if(!sync()||active().pick!==null)return;const y=typedGuess();if(y===null){input();$('year-input').focus();return;}
-  if(mode==='daily'){M.guess(daily,y);M.lock(daily);saveDaily();}else{practice.guess=y;practice.pick=y;practice.count++;practice.points+=M.result(practice.event,y).points;savePractice();}render(true);
+  if(mode==='daily'){M.guess(daily,y);M.lock(daily);saveDaily();}else{practice.guess=y;practice.pick=y;practice.count++;practice.points+=M.result(practice.event,y).points;savePractice();}render(true);const a=active(),result=M.result(a.event,y);window.BREAK_ROOM_FEEL?.cue(document.querySelector('.td-review'),{kind:result.points===1000?'perfect':result.points>=400?'win':'miss',variant:'settle'});
  }
- function next(){if(!sync()||active().pick===null)return;if(mode==='daily'){M.next(daily);saveDaily();}else nextPractice();render(true);}
+ function next(){if(!sync()||active().pick===null)return;if(mode==='daily'){M.next(daily);saveDaily();}else nextPractice();render(true);window.BREAK_ROOM_FEEL?.cue($('engine-slot'),{kind:'next',variant:'cards'});}
  function share(){const record=M.record(daily,daily.day),squares=record.results.map(r=>r.points>=900?'🟩':r.points>=400?'🟨':'🟥').join(''),text='Time Drop '+daily.day+'\n'+squares+'\n'+'Average score '+BREAK_ROOM_SCORE.format(record.arcadeScore)+'/100\n'+new URL('index.html',location.href).href;
   const fallback=()=>{const box=h('textarea','td-share');box.value=text;box.readOnly=true;box.setAttribute('aria-label','Result to copy manually');$('share-status').textContent='Could not copy automatically. Select and copy the result below.';$('share-box').replaceChildren(box);box.focus();box.select();};
   try{navigator.clipboard.writeText(text).then(()=>$('share-status').textContent='Copied!',fallback);}catch{fallback();}

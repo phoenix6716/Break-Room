@@ -79,6 +79,7 @@ const assetRoot = path.resolve(__dirname, '../games/lowball/engine/icons/generat
     assert.equal(await page.locator('#soundBtn img').count(),0);
     const appearance=el=>{const s=getComputedStyle(el);return ['backgroundColor','color','borderTopWidth','borderTopColor','boxShadow','fontFamily','fontSize','fontWeight','letterSpacing','paddingTop','paddingRight','minHeight','width','borderRadius'].map(k=>s[k]);};
     const pack=await browser.newPage();await pack.goto(base+'/games/pack/index.html');await pack.getByRole('button',{name:'Game sound',exact:true}).click();
+    await Promise.all([page.locator('#soundBtn'),pack.locator('.feel-sound')].map(button=>button.evaluate(el=>Promise.all(el.getAnimations().map(a=>a.finished.catch(()=>{}))))));
     assert.deepEqual(await page.locator('#soundBtn').evaluate(appearance),await pack.locator('.feel-sound').evaluate(appearance),'Lowball uses the same actual button styling as Pack');await pack.close();
     for (const width of [320,390,768,1440]) {
       await page.setViewportSize({width,height:1000});

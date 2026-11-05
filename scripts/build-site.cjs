@@ -24,6 +24,12 @@ function copy(file,relative){
   rendered=rendered.replace(/(src="[^"]*time-drop-model\.js)(?:\?[^\"]*)?"/g,'$1?v=familiar-20261105"');
   rendered=rendered.replace(/(src="[^"]*profile\.js)(?:\?[^"]*)?"/g,'$1?v=first-try-20261105"');
   rendered=rendered.replace(/(src="[^"]*arcade-score\.js)(?:\?[^"]*)?"/g,'$1?v=first-try-20261105"');
+  // Add feedback to every public game except Lowball's wrapper (its iframe owns sound).
+  if(/^games\/[^/]+\/index\.html$/.test(relative)&&activeGames.has(relative.split('/')[1])&&relative!=='games/lowball/index.html'&&!rendered.includes('game-feel.js')){
+   const base=path.posix.relative(path.posix.dirname(relative),'.')+'/';
+   rendered=rendered.replace('</head>','<link rel="stylesheet" href="'+base+'game-feel.css?v=immersion-20261105"><script src="'+base+'game-feel.js?v=immersion-20261105"></script></head>');
+  }
+  rendered=rendered.replace(/((?:src|href)="[^"]*game-feel\.(?:js|css))(?:\?[^"]*)?"/g,'$1?v=immersion-20261105"');
   // Shared achievement UI reads the same native results as Profile; no engine writes change.
   const achievementPage=(/^games\/[^/]+\/index\.html$/.test(relative)&&activeGames.has(relative.split('/')[1]));
   if(achievementPage){
@@ -32,7 +38,7 @@ function copy(file,relative){
    let additions=rendered.includes('arcade-score.js')?'':'<script src="'+base+'arcade-score.js?v=first-try-20261105"></script>';
    additions+=models.filter(id=>!rendered.includes(id+'-model.js')).map(id=>'<script src="'+base+id+'-model.js"></script>').join('');
    if(!rendered.includes('profile-records.js'))additions+='<script defer src="'+base+'profile-records.js?v=achievements-20261105"></script>';
-   additions+='<link rel="stylesheet" href="'+base+'achievements.css?v=achievements-20261105"><script defer src="'+base+'achievements.js?v=achievements-20261105"></script>';
+   additions+='<link rel="stylesheet" href="'+base+'achievements.css?v=immersion-20261105"><script defer src="'+base+'achievements.js?v=immersion-20261105"></script>';
    rendered=rendered.replace('</head>',additions+'</head>');
   }
   rendered=rendered.replace(/(src="[^"]*profile-records\.js)(?:\?[^"]*)?"/g,'$1?v=achievements-20261105"');

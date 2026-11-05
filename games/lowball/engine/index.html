@@ -493,15 +493,15 @@
   @keyframes dotPulse { from { transform: scale(1); } to { transform: scale(1.3); } }
   @keyframes fxBurst { to { transform: translate(var(--dx), var(--dy)) rotate(var(--r)); opacity: 0; } }
   @keyframes fxFall { to { transform: translate(var(--dx), 108vh) rotate(var(--r)); } }
-  .card.enter { animation: cardIn 0.3s steps(6) both; }
-  .card.shake { animation: cardShake 0.4s steps(8); }
-  .card.glow { animation: cardGlow 0.7s steps(7); }
-  .card.flash { animation: cardFlash 1s steps(10); }
-  .result.show .result-score { animation: scorePop 0.25s steps(4); }
-  .dot.current { animation: dotPulse 0.5s steps(3) infinite alternate; }
+  .card.enter { animation: cardIn 0.3s cubic-bezier(.2,.8,.2,1) both; }
+  .card.shake { animation: cardShake 0.4s ease-out; }
+  .card.glow { animation: cardGlow 0.7s ease-out; }
+  .card.flash { animation: cardFlash 1s ease-out; }
+  .result.show .result-score { animation: scorePop 0.25s cubic-bezier(.2,.8,.2,1); }
+  .dot.current { animation: dotPulse 0.5s ease-in-out infinite alternate; }
   .fx { position: fixed; inset: 0; pointer-events: none; z-index: 40; overflow: hidden; }
   .fx i { position: absolute; width: 8px; height: 8px; image-rendering: pixelated; }
-  .fx i.burst { animation: fxBurst 0.7s steps(8) forwards; }
+  .fx i.burst { animation: fxBurst 0.7s ease-out forwards; }
   .fx i.fall { animation: fxFall var(--t, 2s) linear forwards; }
   @media (prefers-reduced-motion: reduce) {
     .card.enter, .card.shake, .card.glow, .card.flash, .result.show .result-score, .dot.current { animation: none; }
@@ -896,6 +896,7 @@ function prettyDate(iso) {
 const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 let soundOn = true;
 let audioCtx = null;
+const activeTones = new Set();
 function ensureAudio() {
   if (!soundOn) return null;
   try {
@@ -904,23 +905,25 @@ function ensureAudio() {
       if (!AC) return null;
       audioCtx = new AC();
     }
-    if (audioCtx.state === "suspended") audioCtx.resume();
+    if (audioCtx.state === "suspended") audioCtx.resume().catch(()=>{});
     return audioCtx;
   } catch (e) { return null; }
 }
 function tone(freq, at, dur, vol, type) {
+  if (document.hidden) return;
   const ctx = ensureAudio();
   if (!ctx) return;
   try {
     const t0 = ctx.currentTime + at;
     const o = ctx.createOscillator();
     const g = ctx.createGain();
-    o.type = type || "square";
+    o.type = type || "triangle";
     o.frequency.setValueAtTime(freq, t0);
     g.gain.setValueAtTime(0.0001, t0);
     g.gain.exponentialRampToValueAtTime(vol || 0.06, t0 + 0.01);
     g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
     o.connect(g); g.connect(ctx.destination);
+    activeTones.add(o);o.onended=()=>{activeTones.delete(o);o.disconnect();g.disconnect();};
     o.start(t0); o.stop(t0 + dur + 0.02);
   } catch (e) {}
 }
@@ -935,8 +938,12 @@ const SFX = {
   great() { [NOTE.C5, NOTE.E5, NOTE.G5, NOTE.C6].forEach((n, i) => tone(n, i * 0.09, 0.14, 0.06)); },
   ok()    { tone(NOTE.E5, 0, 0.1, 0.06); tone(NOTE.G5, 0.1, 0.16, 0.06); },
   bad()   { tone(NOTE.E4, 0, 0.12, 0.06, "triangle"); tone(NOTE.C4, 0.12, 0.2, 0.06, "triangle"); },
+  achievement() { [NOTE.C5, NOTE.E5, NOTE.G5, NOTE.C6, NOTE.E6].forEach((n,i)=>tone(n,i*.055,.14,.035,"sine")); },
   fanfare() { [NOTE.C5, NOTE.E5, NOTE.G5, NOTE.C6, NOTE.G5, NOTE.C6, NOTE.E6].forEach((n, i) => tone(n, i * 0.1, 0.16, 0.06)); }
 };
+function silenceLowball(){for(const o of activeTones)try{o.stop();}catch{}activeTones.clear();}
+document.addEventListener("visibilitychange",()=>{if(document.hidden)silenceLowball();});
+window.addEventListener("break-room:achievement",()=>SFX.achievement());
 function playTierSound(score) {
   revealFx(score);
   if (score >= 98) SFX.perfect(); else if (score >= 80) SFX.great(); else if (score >= 50) SFX.ok(); else SFX.bad();
@@ -1909,8 +1916,9 @@ function guessCountry() {
     soundBtn.textContent = "♪  SOUND " + (soundOn ? "ON" : "OFF");
     soundBtn.setAttribute("aria-pressed", String(soundOn));
   };
+  window.addEventListener("storage",e=>{if(e.key==="pc_sound"){soundOn=e.newValue!=="0";paintSound();if(!soundOn)silenceLowball();}});
   paintSound();
-  soundBtn.addEventListener("click", () => { soundOn = !soundOn; safeSet("pc_sound", soundOn ? "1" : "0"); paintSound(); if (soundOn) SFX.tick(); });
+  soundBtn.addEventListener("click", () => { soundOn = !soundOn; safeSet("pc_sound", soundOn ? "1" : "0"); paintSound(); if (soundOn) SFX.tick();else silenceLowball(); });
   detectCountry();
   updateStatStrip();
   startNormalMode();

@@ -112,7 +112,7 @@ function selectChecks(changed,available,{full=false}={}){
   else if(/^game-help\.(?:js|css)$/.test(file)){add('first-visit-help.cjs','brand.cjs','mobile-access.cjs');['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','pack','lowball','inner-clock'].forEach(id=>game(id));}
   else if(/^game-art\.(?:js|css)$/.test(file)||file.startsWith('assets/game-art/')){add('game-art.cjs','game-art-catalog.cjs','game-scenes.cjs','smoke.cjs','mobile-access.cjs');['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','lowball','inner-clock'].forEach(id=>game(id));}
   else if(/^game-scenes\.(?:js|css)$/.test(file)){add('game-scenes.cjs','smoke.cjs','mobile-access.cjs','game-feel.cjs');['laser','time-drop','clue-ladder','seating-chart','shift-work','hidden-gem','stack-up','pack','lowball','inner-clock'].forEach(id=>game(id));}
-  else if(/^game-feel\.(?:js|css)$/.test(file)){add('game-feel.cjs');}
+  else if(/^game-feel\.(?:js|css)$/.test(file)){add('game-feel.cjs','immersion.cjs');}
   else if(/^(?:game-shell|game-access|game-dialog|game-layout|game-flow|daily-reset|break-room|styles|placeholder-layout|prototype-pages)\.(?:js|css)$/.test(file)){layout();}
   else if(file==='stack-layout.css'){game('stack-up');add('layout-goals.cjs');}
   else if(/^(?:navigation|game-config|game|menu|menu-brand)\.(?:js|css)$/.test(file)||file==='game.html'){add('smoke.cjs','game-surfaces.cjs');}
