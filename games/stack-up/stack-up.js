@@ -6,7 +6,7 @@
  const pool=[...window.STACK_UP_STACKS.map(s=>replacements.get(s.id)||s),...window.STACK_UP_FAMILIAR_STACKS], prefix='break-room:stack-up:daily:',version=2;
  const practiceThemes=new Set();
  const playablePool=[...pool.filter(s=>s.collection==='familiar'),...pool.filter(s=>s.collection!=='familiar')].filter(s=>{const theme=s.theme||s.prompt;if(s.category==='NUMBER SENSE'||practiceThemes.has(theme))return false;practiceThemes.add(theme);return true;});
- const memory=new Map();let persistent=true,run=null,mode='daily',dialog=null,feedbackTimer=null,warnedDeadline=null;let practiceRun=null,practiceCategory='familiar';const stackDeck=P.deck(s=>s.id||s.prompt);
+ const memory=new Map();let persistent=true,run=null,mode='daily',dialog=null,feedbackTimer=null,warnedDeadline=null;let practiceRun=null,practiceCategory='all';const stackDeck=P.deck(s=>s.id||s.prompt);
  const read=key=>{if(!persistent&&memory.has(key))return memory.get(key);try{return localStorage.getItem(key)||memory.get(key)||null}catch{return memory.get(key)||null}};
  function write(key,value){memory.set(key,value);try{localStorage.setItem(key,value);window.dispatchEvent(new Event("break-room:save"))}catch{persistent=false;$('save-warning').hidden=false;}}
  try{localStorage.setItem('break-room:stack-up:storage-check','1');localStorage.removeItem('break-room:stack-up:storage-check')}catch{persistent=false;$('save-warning').hidden=false;}
@@ -33,7 +33,7 @@
  function currentDay(){if(mode==='daily'&&run&&run.day!==clock.dayKey()){closeDialog();run=null;start('daily');$('day-notice').hidden=false;return false;}return true;}
  function start(nextMode){if(nextMode===mode&&run&&currentDay())return;closeDialog();if(mode==='infinite'&&run)practiceRun=run;mode=nextMode;run=mode==='daily'?load(clock.dayKey()):practiceRun;if(!run){run=newRun(mode);makeRound();if(mode==='infinite')practiceRun=run;}$('game-interface').hidden=false;$('game-interface').setAttribute('aria-hidden','false');$('day-notice').hidden=true;document.querySelectorAll('[data-mode]').forEach(b=>{b.classList.toggle('active',b.dataset.mode===mode);b.setAttribute('aria-selected',String(b.dataset.mode===mode));b.tabIndex=b.dataset.mode===mode?0:-1;});$('game-panel').setAttribute('aria-labelledby',mode==='daily'?'mode-daily':'mode-unlimited');render();if(run.status==='playing')tick();else if(run.status==='review')openResult();}
  function render(){
-  const complete=run.status==='complete',s=stack();$('cards').dataset.stackId=s.id||s.prompt;const practiceSlot=$('stack-practice');practiceSlot.replaceChildren();if(mode==='infinite')practiceSlot.append(P.panel({id:'stack-topic',label:'Topic',options:[['familiar','Familiar mix'],['challenge','Challenge mix'],['all','All topics'],...[...new Set(playablePool.map(s=>s.category))].sort().map(c=>[c,c])],value:practiceCategory,onChange:v=>{practiceCategory=v;},summary:`${run.results.length} ${run.results.length===1?'stack':'stacks'} · ${run.results.filter(r=>r.correct).length} cleared · ${run.results.filter(r=>r.correct&&r.mistakes===0).length} clean`}));
+  const complete=run.status==='complete',s=stack();$('cards').dataset.stackId=s.id||s.prompt;const practiceSlot=$('stack-practice');practiceSlot.replaceChildren();if(mode==='infinite')practiceSlot.append(P.panel({id:'stack-topic',label:'Topic',options:[['all','All topics'],['familiar','Familiar mix'],['challenge','Challenge mix'],...[...new Set(playablePool.map(s=>s.category))].sort().map(c=>[c,c])],value:practiceCategory,onChange:v=>{practiceCategory=v;},summary:`${run.results.length} ${run.results.length===1?'stack':'stacks'} · ${run.results.filter(r=>r.correct).length} cleared · ${run.results.filter(r=>r.correct&&r.mistakes===0).length} clean`}));
   $('daily-summary').hidden=!complete;document.querySelector('.game-column>.game-board').hidden=complete;
   $('timer-card').hidden=complete;
   $('eyebrow').textContent=mode==='daily'?(run.scoreVersion===4?'DAILY CHALLENGE':'SAVED DAILY · ORIGINAL SCORING'):'UNLIMITED · FREE PRACTICE';
@@ -48,7 +48,7 @@
   $('message').className='message';$('message').textContent=locked?'This stack is finished. View the answer to continue.':'Every correct stack earns points. Wrong guesses cost points.';
   renderCards();updateTimer();refreshStats();if(complete)renderSummary();
  }
- function move(from,to){if(!currentDay()||!run||run.status!=='playing'||to<0||to>4)return;if(secondsLeft()===0){finish(false);return;}const [value]=run.order.splice(from,1);run.order.splice(to,0,value);save();renderCards();const card=$('cards').querySelector(`[data-value="${value}"]`);card.focus();$('message').textContent=`${stack().cards.find(c=>c.value===value).name} moved to position ${to+1}.`;}
+ function move(from,to){if(!currentDay()||!run||run.status!=='playing'||to<0||to>4)return;if(secondsLeft()===0){finish(false);return;}const [value]=run.order.splice(from,1);run.order.splice(to,0,value);save();renderCards(true);const card=$('cards').querySelector(`[data-value="${value}"]`);card.focus({preventScroll:true});const animations=card.getAnimations?.()||[];Promise.allSettled(animations.map(a=>a.finished)).then(()=>{if(card.isConnected&&document.activeElement===card)card.scrollIntoView({block:'nearest',inline:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});$('message').textContent=`${stack().cards.find(c=>c.value===value).name} moved to position ${to+1}.`;}
  function clearPositionFeedback(){
   clearTimeout(feedbackTimer);feedbackTimer=null;
   [...$('cards').children].forEach((card,index)=>{
@@ -67,11 +67,15 @@
   feedbackTimer=setTimeout(clearPositionFeedback,1100);
   return correctCount;
  }
- function renderCards(){
+ function renderCards(animate=false){
+  const moving=animate&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&typeof Element.prototype.animate==='function';
+  // Capture the displayed positions before cancelling any interrupted swap.
+  const previous=moving?new Map([...$('cards').children].map(card=>[card.dataset.value,card.getBoundingClientRect()])):null;
+  [...$('cards').children].forEach(card=>(card.getAnimations?.()||[]).forEach(animation=>animation.cancel()));
   clearPositionFeedback();
   const locked=run.status!=='playing',s=stack();$('cards').textContent='';
   run.order.forEach((value,index)=>{
-   const item=s.cards.find(c=>c.value===value),card=document.createElement('article');card.className='sort-card';card.draggable=!locked;card.dataset.value=value;card.tabIndex=0;card.setAttribute('aria-label',`${item.name}, position ${index+1} of 5. Use arrow keys to move.`);card.setAttribute('aria-describedby','prompt');
+   const item=s.cards.find(c=>c.value===value),card=document.createElement('article');card.className=moving?'sort-card reordering':'sort-card';card.draggable=!locked;card.dataset.value=value;card.tabIndex=0;card.setAttribute('aria-label',`${item.name}, position ${index+1} of 5. Use arrow keys to move.`);card.setAttribute('aria-describedby','prompt');
    const number=document.createElement('span');number.className='card-number';number.textContent=String(index+1).padStart(2,'0');
    const symbol=document.createElement('span');symbol.className='card-symbol alt-'+index;symbol.textContent=item.symbol;symbol.setAttribute('aria-hidden','true');
    const name=document.createElement('div');name.className='card-name';name.textContent=item.name;
@@ -85,6 +89,16 @@
    card.ondrop=e=>{e.preventDefault();const from=run.order.indexOf(Number(e.dataTransfer.getData('text/plain')));if(from>=0)move(from,index);};
    $('cards').append(card);
   });
+  if(!previous)return;
+  // Read final grid geometry together, then animate position and size from the old layout.
+  const changes=[...$('cards').children].map(card=>({card,before:previous.get(card.dataset.value),after:card.getBoundingClientRect()}));
+  for(const {card,before,after} of changes){
+   if(!before||!after.width||!after.height){card.classList.remove('reordering');continue;}
+   const x=before.left-after.left,y=before.top-after.top,sx=before.width/after.width,sy=before.height/after.height;
+   if(Math.abs(x)<.5&&Math.abs(y)<.5&&Math.abs(sx-1)<.005&&Math.abs(sy-1)<.005){card.classList.remove('reordering');continue;}
+   const animation=card.animate([{transform:`translate(${x}px,${y}px) scale(${sx},${sy})`,transformOrigin:'top left'},{transform:'none',transformOrigin:'top left'}],{duration:260,easing:'cubic-bezier(.2,.8,.2,1)'});
+   animation.finished.catch(()=>{}).finally(()=>card.classList.remove('reordering'));
+  }
  }
  function updateTimer(){if(!run)return;const seconds=run.status==='playing'?secondsLeft():(run.results.at(-1)?.seconds||0);if(run.status==='playing'&&seconds>0&&seconds<=10&&warnedDeadline!==run.deadline){warnedDeadline=run.deadline;$('stack-announcement').textContent=seconds+' seconds left to finish this stack.';}$('timer').textContent=`${String(Math.floor(seconds/60)).padStart(2,'0')}:${String(seconds%60).padStart(2,'0')}`;$('timer').setAttribute('aria-label',seconds+' seconds remaining');$('timer-fill').style.width=seconds/90*100+'%';$('timer-card').classList.toggle('warning',run.status==='playing'&&seconds<=20);$('timer-card').classList.toggle('urgent',run.status==='playing'&&seconds<=10);$('timer-caption').textContent=run.status==='playing'?'The clock keeps running if you leave this stack.':'Clock stopped. Continue when you are ready.';}
  function check(){if(!run||!currentDay())return;if(run.status==='review'){openResult();return;}if(run.status!=='playing')return;if(secondsLeft()===0){finish(false);return;}if(run.order.every((v,i)=>v===i+1)){finish(true);return;}const loss=mode==='daily'&&![2,3,4].includes(run.scoreVersion)?300:30;run.score-=loss;run.streak=0;run.mistakes++;save();$('run-score').textContent=format(displayScore(run));$('streak-label').innerHTML='STREAK <b>0</b>';$('message').className='message bad';const correctCount=flashPositions();$('message').textContent=`Not quite. ${run.scoreVersion===4?'20 points off this round.':'Round credit reduced.'} ${correctCount} of 5 cards in the right position.`;}

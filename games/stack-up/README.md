@@ -1,3 +1,7 @@
+## Stack Up smooth swaps and All topics — owner request, 5 November 2026
+
+Fresh Unlimited sessions default to All topics; an explicitly chosen topic stays selected during mode switches and affects the next stack. Card moves use a 260ms eased position/size animation, including the full-width final card in the mobile grid. Rapid moves start from the displayed positions; keyboard focus and the saved order update immediately. Reduced motion and browsers without Web Animations use immediate reordering. Daily questions, scoring, saves, deadlines and other games are unchanged.
+
 ## Stack Up variety — owner feedback, 5 November 2026
 
 The 160 Daily stacks now cover 80 authored themes, replacing 16 heavily reused templates. Each theme has two distinct five-card selections, at calendar slots 16 days apart. Interleaved subject order prevents runs of film-release, recipe or life-cycle templates. Preserve all 160 IDs, five lanes, original date selector and 32-day repeat-free ID rotation. Author `content/stack-up-familiar-topics.json`; run `node scripts/build-familiar-stacks.cjs`. Each theme has reference links and a clear ordered master sequence. No maths, numerical-fact or time-unit tasks return.

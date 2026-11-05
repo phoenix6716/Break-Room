@@ -98,3 +98,7 @@
 #cards .sort-card.wrong{border-color:#b23b32;background:#f9d5cc}
 #cards .sort-card.correct .card-number{color:#285b38}
 #cards .sort-card.wrong .card-number{color:#8c2c26}
+
+/* JS animates grid reordering from the previous displayed bounds, including row wraps. */
+.sort-card.reordering{transform:none;transition:none;will-change:transform;z-index:2}
+.sort-card.reordering:focus{z-index:3}
