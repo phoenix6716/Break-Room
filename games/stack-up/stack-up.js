@@ -6,7 +6,7 @@
  const pool=[...window.STACK_UP_STACKS.map(s=>replacements.get(s.id)||s),...window.STACK_UP_FAMILIAR_STACKS], prefix='break-room:stack-up:daily:',version=2;
  const practiceThemes=new Set();
  const playablePool=[...pool.filter(s=>s.collection==='familiar'),...pool.filter(s=>s.collection!=='familiar')].filter(s=>{const theme=s.theme||s.prompt;if(s.category==='NUMBER SENSE'||practiceThemes.has(theme))return false;practiceThemes.add(theme);return true;});
- const memory=new Map();let persistent=true,run=null,mode='daily',dialog=null,feedbackTimer=null,warnedDeadline=null;let practiceRun=null,practiceCategory='all';const stackDeck=P.deck(s=>s.id||s.prompt);
+ const memory=new Map();let persistent=true,run=null,mode='daily',dialog=null,feedbackTimer=null,warnedDeadline=null;let practiceRun=null,practiceCategory='all',mouseDrag=null,settlingDrag=null;const stackDeck=P.deck(s=>s.id||s.prompt);
  const read=key=>{if(!persistent&&memory.has(key))return memory.get(key);try{return localStorage.getItem(key)||memory.get(key)||null}catch{return memory.get(key)||null}};
  function write(key,value){memory.set(key,value);try{localStorage.setItem(key,value);window.dispatchEvent(new Event("break-room:save"))}catch{persistent=false;$('save-warning').hidden=false;}}
  try{localStorage.setItem('break-room:stack-up:storage-check','1');localStorage.removeItem('break-room:stack-up:storage-check')}catch{persistent=false;$('save-warning').hidden=false;}
@@ -48,7 +48,49 @@
   $('message').className='message';$('message').textContent=locked?'This stack is finished. View the answer to continue.':'Every correct stack earns points. Wrong guesses cost points.';
   renderCards();updateTimer();refreshStats();if(complete)renderSummary();
  }
- function move(from,to){if(!currentDay()||!run||run.status!=='playing'||to<0||to>4)return;if(secondsLeft()===0){finish(false);return;}const [value]=run.order.splice(from,1);run.order.splice(to,0,value);save();renderCards(true);const card=$('cards').querySelector(`[data-value="${value}"]`);card.focus({preventScroll:true});const animations=card.getAnimations?.()||[];Promise.allSettled(animations.map(a=>a.finished)).then(()=>{if(card.isConnected&&document.activeElement===card)card.scrollIntoView({block:'nearest',inline:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});$('message').textContent=`${stack().cards.find(c=>c.value===value).name} moved to position ${to+1}.`;}
+ function move(from,to){if(!currentDay()||!run||run.status!=='playing'||to<0||to>4||from===to)return;if(secondsLeft()===0){finish(false);return;}const [value]=run.order.splice(from,1);run.order.splice(to,0,value);save();renderCards(true);const card=$('cards').querySelector(`[data-value="${value}"]`);card.focus({preventScroll:true});if(!mouseDrag?.active){const animations=card.getAnimations?.()||[];Promise.allSettled(animations.map(a=>a.finished)).then(()=>{if(card.isConnected&&document.activeElement===card)card.scrollIntoView({block:'nearest',inline:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});}$('message').textContent=mouseDrag?.active?`Release to place this card in position ${to+1}.`:`${stack().cards.find(c=>c.value===value).name} moved to position ${to+1}.`;}
+ function clearSettlingDrag(){if(!settlingDrag)return;const previous=settlingDrag;settlingDrag=null;previous.animation?.cancel();previous.target?.classList.remove('drag-placeholder');previous.layer.remove();}
+ function beginMouseDrag(e,value){
+  if(e.pointerType!=='mouse'||e.button!==0||e.target.closest('button')||!run||run.status!=='playing'||!currentDay())return;
+  if(secondsLeft()===0){finish(false);return;}
+  clearSettlingDrag();const card=e.currentTarget;card.focus({preventScroll:true});card.draggable=false;e.preventDefault();
+  const rect=card.getBoundingClientRect();mouseDrag={pointerId:e.pointerId,value,run,original:run.order.slice(),card,startX:e.clientX,startY:e.clientY,x:e.clientX,y:e.clientY,offsetX:e.clientX-rect.left,offsetY:e.clientY-rect.top,active:false,frame:null};
+  $('cards').setPointerCapture(e.pointerId);
+ }
+ function activateMouseDrag(){
+  const drag=mouseDrag;if(!drag||drag.active)return;clearPositionFeedback();
+  // Fixed layout slots keep animated neighbours from repeatedly changing the drop target.
+  drag.slots=[...$('cards').children].map(card=>{const parent=card.offsetParent,r=parent.getBoundingClientRect();return{left:r.left+parent.clientLeft+card.offsetLeft+scrollX,top:r.top+parent.clientTop+card.offsetTop+scrollY,width:card.offsetWidth,height:card.offsetHeight};});
+  const rect=drag.card.getBoundingClientRect();drag.layer=document.createElement('div');drag.layer.className='stack-drag-layer';drag.layer.setAttribute('aria-hidden','true');
+  drag.proxy=drag.card.cloneNode(true);drag.proxy.className='sort-card drag-proxy';drag.proxy.removeAttribute('data-value');drag.proxy.tabIndex=-1;drag.proxy.inert=true;drag.proxy.draggable=false;drag.proxy.style.width=rect.width+'px';drag.proxy.style.height=rect.height+'px';drag.proxy.style.transform=`translate3d(${rect.left}px,${rect.top}px,0)`;drag.layer.append(drag.proxy);document.body.append(drag.layer);
+  drag.active=true;drag.card.classList.add('drag-placeholder');document.body.classList.add('stack-mouse-dragging');
+  const frame=()=>{if(mouseDrag!==drag)return;if(run!==drag.run||run.status!=='playing'){endMouseDrag(false,false);return;}if(!currentDay())return;if(secondsLeft()===0){finish(false);return;}const edge=64,delta=drag.y<edge?-Math.min(14,(edge-drag.y)/4):drag.y>innerHeight-edge?Math.min(14,(drag.y-innerHeight+edge)/4):0;if(delta)window.scrollBy({top:delta,left:0,behavior:'instant'});updateMouseDrag();if(mouseDrag===drag)drag.frame=requestAnimationFrame(frame);};
+  drag.frame=requestAnimationFrame(frame);
+ }
+ function updateMouseDrag(){
+  const drag=mouseDrag;if(!drag?.active)return;drag.proxy.style.transform=`translate3d(${drag.x-drag.offsetX}px,${drag.y-drag.offsetY}px,0)`;
+  const x=drag.x+scrollX,y=drag.y+scrollY,slots=drag.slots;if(x<Math.min(...slots.map(s=>s.left))-20||x>Math.max(...slots.map(s=>s.left+s.width))+20||y<Math.min(...slots.map(s=>s.top))-20||y>Math.max(...slots.map(s=>s.top+s.height))+20)return;
+  let target=0,distance=Infinity;slots.forEach((s,i)=>{const d=Math.hypot(x-s.left-s.width/2,y-s.top-s.height/2);if(d<distance){target=i;distance=d;}});
+  const from=run.order.indexOf(drag.value);if(from!==target)move(from,target);
+ }
+ function endMouseDrag(commit,settle=true){
+  const drag=mouseDrag;if(!drag)return;mouseDrag=null;cancelAnimationFrame(drag.frame);document.body.classList.remove('stack-mouse-dragging');if($('cards').hasPointerCapture(drag.pointerId))$('cards').releasePointerCapture(drag.pointerId);
+  if(!drag.active){if(drag.card.isConnected)drag.card.draggable=run?.status==='playing';return;}
+  if(run!==drag.run||run.status!=='playing'){drag.layer.remove();return;}
+  if(!commit){run.order=drag.original.slice();save();renderCards(true,drag.value);}
+  const target=$('cards').querySelector(`[data-value="${drag.value}"]`);target?.focus({preventScroll:true});$('message').className='message';$('message').textContent=commit?`Card placed in position ${run.order.indexOf(drag.value)+1}.`:'Move cancelled.';
+  const remove=()=>{target?.classList.remove('drag-placeholder');drag.layer.remove();};
+  if(!settle||!target||matchMedia('(prefers-reduced-motion: reduce)').matches||typeof drag.proxy.animate!=='function'){remove();return;}
+  const rect=target.getBoundingClientRect(),state={layer:drag.layer,target,animation:null};settlingDrag=state;
+  state.animation=drag.proxy.animate([{transform:drag.proxy.style.transform},{transform:`translate3d(${rect.left}px,${rect.top}px,0) scale(${rect.width/drag.proxy.offsetWidth},${rect.height/drag.proxy.offsetHeight})`}],{duration:180,easing:'cubic-bezier(.2,.8,.2,1)',fill:'forwards'});
+  state.animation.finished.catch(()=>{}).finally(()=>{remove();if(settlingDrag===state)settlingDrag=null;});
+ }
+ const dragSurface=$('cards');
+ dragSurface.addEventListener('pointermove',e=>{if(!mouseDrag||e.pointerId!==mouseDrag.pointerId)return;mouseDrag.x=e.clientX;mouseDrag.y=e.clientY;if(!mouseDrag.active&&Math.hypot(e.clientX-mouseDrag.startX,e.clientY-mouseDrag.startY)>=6)activateMouseDrag();updateMouseDrag();});
+ dragSurface.addEventListener('pointerup',e=>{if(!mouseDrag||e.pointerId!==mouseDrag.pointerId)return;mouseDrag.x=e.clientX;mouseDrag.y=e.clientY;updateMouseDrag();const r=dragSurface.getBoundingClientRect(),inside=e.clientX>=r.left-20&&e.clientX<=r.right+20&&e.clientY>=r.top-20&&e.clientY<=r.bottom+20;endMouseDrag(inside);});
+ for(const event of ['pointercancel','lostpointercapture'])dragSurface.addEventListener(event,e=>{if(mouseDrag&&e.pointerId===mouseDrag.pointerId)endMouseDrag(false,false);});
+ window.addEventListener('blur',()=>endMouseDrag(false,false));window.addEventListener('resize',()=>endMouseDrag(false,false));
+
  function clearPositionFeedback(){
   clearTimeout(feedbackTimer);feedbackTimer=null;
   [...$('cards').children].forEach((card,index)=>{
@@ -67,15 +109,18 @@
   feedbackTimer=setTimeout(clearPositionFeedback,1100);
   return correctCount;
  }
- function renderCards(animate=false){
+ function renderCards(animate=false,placeholder=null){
+  if(!animate&&mouseDrag)endMouseDrag(false,false);
+  const dropped=settlingDrag?{value:settlingDrag.target?.dataset.value,rect:settlingDrag.layer.firstElementChild.getBoundingClientRect()}:null;
   const moving=animate&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&typeof Element.prototype.animate==='function';
   // Capture the displayed positions before cancelling any interrupted swap.
   const previous=moving?new Map([...$('cards').children].map(card=>[card.dataset.value,card.getBoundingClientRect()])):null;
+  if(previous&&dropped)previous.set(dropped.value,dropped.rect);clearSettlingDrag();
   [...$('cards').children].forEach(card=>(card.getAnimations?.()||[]).forEach(animation=>animation.cancel()));
   clearPositionFeedback();
   const locked=run.status!=='playing',s=stack();$('cards').textContent='';
   run.order.forEach((value,index)=>{
-   const item=s.cards.find(c=>c.value===value),card=document.createElement('article');card.className=moving?'sort-card reordering':'sort-card';card.draggable=!locked;card.dataset.value=value;card.tabIndex=0;card.setAttribute('aria-label',`${item.name}, position ${index+1} of 5. Use arrow keys to move.`);card.setAttribute('aria-describedby','prompt');
+   const item=s.cards.find(c=>c.value===value),card=document.createElement('article');card.className=moving?'sort-card reordering':'sort-card';card.classList.toggle('drag-placeholder',value===(placeholder??(mouseDrag?.active?mouseDrag.value:null)));card.onpointerdown=e=>beginMouseDrag(e,value);card.draggable=!locked;card.dataset.value=value;card.tabIndex=0;card.setAttribute('aria-label',`${item.name}, position ${index+1} of 5. Use arrow keys to move.`);card.setAttribute('aria-describedby','prompt');
    const number=document.createElement('span');number.className='card-number';number.textContent=String(index+1).padStart(2,'0');
    const symbol=document.createElement('span');symbol.className='card-symbol alt-'+index;symbol.textContent=item.symbol;symbol.setAttribute('aria-hidden','true');
    const name=document.createElement('div');name.className='card-name';name.textContent=item.name;
@@ -84,7 +129,7 @@
    [-1,1].forEach(offset=>{const button=document.createElement('button');button.type='button';button.textContent=offset<0?'←':'→';button.setAttribute('aria-label',`Move ${item.name} ${offset<0?'earlier':'later'}`);button.disabled=locked||index+offset<0||index+offset>4;button.onclick=()=>move(index,index+offset);moves.append(button);});
    card.append(number,symbol,name,detail,moves);
    card.onkeydown=e=>{if(e.target===card&&e.key==='Enter'){e.preventDefault();check();return;}if(e.target!==card||!['ArrowLeft','ArrowUp','ArrowRight','ArrowDown'].includes(e.key))return;e.preventDefault();move(index,index+(['ArrowLeft','ArrowUp'].includes(e.key)?-1:1));};
-   card.ondragstart=e=>{if(locked||e.target.closest('button')){e.preventDefault();return;}e.dataTransfer.setData('text/plain',String(value));e.dataTransfer.effectAllowed='move';card.classList.add('dragging');};
+   card.ondragstart=e=>{if(mouseDrag||locked||e.target.closest('button')){e.preventDefault();return;}e.dataTransfer.setData('text/plain',String(value));e.dataTransfer.effectAllowed='move';card.classList.add('dragging');};
    card.ondragend=()=>card.classList.remove('dragging');card.ondragover=e=>{if(!locked){e.preventDefault();e.dataTransfer.dropEffect='move';}};
    card.ondrop=e=>{e.preventDefault();const from=run.order.indexOf(Number(e.dataTransfer.getData('text/plain')));if(from>=0)move(from,index);};
    $('cards').append(card);
@@ -93,7 +138,7 @@
   // Read final grid geometry together, then animate position and size from the old layout.
   const changes=[...$('cards').children].map(card=>({card,before:previous.get(card.dataset.value),after:card.getBoundingClientRect()}));
   for(const {card,before,after} of changes){
-   if(!before||!after.width||!after.height){card.classList.remove('reordering');continue;}
+   if(card.classList.contains('drag-placeholder')||!before||!after.width||!after.height){card.classList.remove('reordering');continue;}
    const x=before.left-after.left,y=before.top-after.top,sx=before.width/after.width,sy=before.height/after.height;
    if(Math.abs(x)<.5&&Math.abs(y)<.5&&Math.abs(sx-1)<.005&&Math.abs(sy-1)<.005){card.classList.remove('reordering');continue;}
    const animation=card.animate([{transform:`translate(${x}px,${y}px) scale(${sx},${sy})`,transformOrigin:'top left'},{transform:'none',transformOrigin:'top left'}],{duration:260,easing:'cubic-bezier(.2,.8,.2,1)'});
@@ -101,7 +146,7 @@
   }
  }
  function updateTimer(){if(!run)return;const seconds=run.status==='playing'?secondsLeft():(run.results.at(-1)?.seconds||0);if(run.status==='playing'&&seconds>0&&seconds<=10&&warnedDeadline!==run.deadline){warnedDeadline=run.deadline;$('stack-announcement').textContent=seconds+' seconds left to finish this stack.';}$('timer').textContent=`${String(Math.floor(seconds/60)).padStart(2,'0')}:${String(seconds%60).padStart(2,'0')}`;$('timer').setAttribute('aria-label',seconds+' seconds remaining');$('timer-fill').style.width=seconds/90*100+'%';$('timer-card').classList.toggle('warning',run.status==='playing'&&seconds<=20);$('timer-card').classList.toggle('urgent',run.status==='playing'&&seconds<=10);$('timer-caption').textContent=run.status==='playing'?'The clock keeps running if you leave this stack.':'Clock stopped. Continue when you are ready.';}
- function check(){if(!run||!currentDay())return;if(run.status==='review'){openResult();return;}if(run.status!=='playing')return;if(secondsLeft()===0){finish(false);return;}if(run.order.every((v,i)=>v===i+1)){finish(true);return;}const loss=mode==='daily'&&![2,3,4].includes(run.scoreVersion)?300:30;run.score-=loss;run.streak=0;run.mistakes++;save();$('run-score').textContent=format(displayScore(run));$('streak-label').innerHTML='STREAK <b>0</b>';$('message').className='message bad';const correctCount=flashPositions();$('message').textContent=`Not quite. ${run.scoreVersion===4?'20 points off this round.':'Round credit reduced.'} ${correctCount} of 5 cards in the right position.`;}
+ function check(){if(mouseDrag)endMouseDrag(true,false);if(!run||!currentDay())return;if(run.status==='review'){openResult();return;}if(run.status!=='playing')return;if(secondsLeft()===0){finish(false);return;}if(run.order.every((v,i)=>v===i+1)){finish(true);return;}const loss=mode==='daily'&&![2,3,4].includes(run.scoreVersion)?300:30;run.score-=loss;run.streak=0;run.mistakes++;save();$('run-score').textContent=format(displayScore(run));$('streak-label').innerHTML='STREAK <b>0</b>';$('message').className='message bad';const correctCount=flashPositions();$('message').textContent=`Not quite. ${run.scoreVersion===4?'20 points off this round.':'Round credit reduced.'} ${correctCount} of 5 cards in the right position.`;}
  function finish(correct){if(!run||run.status!=='playing'||!currentDay())return;const seconds=secondsLeft(),multiplier=mode==='daily'&&![2,3,4].includes(run.scoreVersion)?10:1,points=correct?Math.round((100+seconds*5+run.streak*35)*multiplier):-40*multiplier;run.score+=points;run.streak=correct?run.streak+1:0;run.results.push({correct,points,seconds,mistakes:run.mistakes});run.status=mode==='daily'&&run.round===4?'complete':'review';save();render();openResult();window.BREAK_ROOM_FEEL.cue(document.querySelector('.result-card'),{kind:correct&&run.mistakes===0?'perfect':correct?'win':'miss',variant:'cards'});}
  function openResult(){if(!run||run.status==='playing')return;const r=run.results.at(-1),complete=run.status==='complete';$('result-kicker').textContent=complete?'DAILY COMPLETE':r.correct?'STACK COMPLETE':'TIME RAN OUT';$('result-title').textContent=complete?'Daily set finished.':r.correct?'Nice ordering.':'The clock got you.';$('result-detail').textContent=format(roundScore(run,run.results.length-1))+' / 100';$('fact-text').textContent=stack().fact;
   let order=$('correct-order');if(!order){order=document.createElement('p');order.id='correct-order';order.className='correct-order';$('fact-text').after(order);}order.textContent='Correct order: '+stack().cards.slice().sort((a,b)=>a.value-b.value).map(c=>c.name).join(' → ');
@@ -128,7 +173,7 @@
  document.querySelectorAll('[data-close]').forEach(b=>b.onclick=closeDialog);
  for(const id of ['result-modal','help-dialog','stats-dialog'])$(id).onclick=e=>{if(e.target===$(id))closeDialog();};
  $('summary-copy').onclick=copy;$('summary-infinite').onclick=()=>start('infinite');
- document.addEventListener('keydown',e=>{if(!dialog)return;if(e.key==='Escape'){e.preventDefault();closeDialog();return;}if(e.key==='Tab'){const list=[...dialog.overlay.querySelectorAll('button:not(:disabled),a[href]')],first=list[0],last=list.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
+ document.addEventListener('keydown',e=>{if(mouseDrag&&e.key==='Escape'){e.preventDefault();endMouseDrag(false);return;}if(!dialog)return;if(e.key==='Escape'){e.preventDefault();closeDialog();return;}if(e.key==='Tab'){const list=[...dialog.overlay.querySelectorAll('button:not(:disabled),a[href]')],first=list[0],last=list.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
  document.addEventListener('visibilitychange',tick);window.addEventListener('pageshow',tick);
  window.addEventListener('storage',e=>{if(mode==='daily'&&run&&e.key===prefix+run.day){const saved=load(run.day);if(saved){closeDialog();run=saved;render();tick();}}});
  setInterval(tick,250);refreshStats();

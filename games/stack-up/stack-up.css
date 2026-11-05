@@ -102,3 +102,9 @@
 /* JS animates grid reordering from the previous displayed bounds, including row wraps. */
 .sort-card.reordering{transform:none;transition:none;will-change:transform;z-index:2}
 .sort-card.reordering:focus{z-index:3}
+
+/* Mouse dragging uses a pointer-tracked card; the grid keeps a faint landing slot. */
+.stack-drag-layer{position:fixed;inset:0;z-index:1000;overflow:hidden;pointer-events:none}
+.sort-card.drag-proxy{position:absolute;left:0;top:0;margin:0;transform-origin:top left;transition:none;pointer-events:none;box-shadow:7px 7px 0 var(--ink);will-change:transform}
+.sort-card.drag-placeholder{opacity:.16;border-style:dashed;outline:none}
+.stack-mouse-dragging,.stack-mouse-dragging *{cursor:grabbing!important}

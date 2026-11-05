@@ -1,3 +1,7 @@
+## Stack Up live mouse dragging — owner clarification, 5 November 2026
+
+Mouse dragging must be smooth while the button is held, not only after dropping. A pointer-tracked floating card follows the mouse directly; other cards preview their positions using the existing eased animation. Keep a visible landing slot, edge scrolling and pointer capture. Escape, pointer cancellation, window blur and dropping outside restore the original draft order; dropping inside commits the preview. The existing deadline never resets and a timeout removes the drag preview. Reduced motion keeps direct pointer tracking with instant neighbour changes. Touch arrows, keyboard sorting, All topics default, scores and other games remain unchanged.
+
 ## Stack Up smooth swaps and All topics — owner request, 5 November 2026
 
 Fresh Unlimited sessions default to All topics; an explicitly chosen topic stays selected during mode switches and affects the next stack. Card moves use a 260ms eased position/size animation, including the full-width final card in the mobile grid. Rapid moves start from the displayed positions; keyboard focus and the saved order update immediately. Reduced motion and browsers without Web Animations use immediate reordering. Daily questions, scoring, saves, deadlines and other games are unchanged.
