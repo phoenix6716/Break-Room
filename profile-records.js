@@ -16,7 +16,7 @@
     {id:'clue-ladder',name:'Clue Ladder',category:'CLUES / KNOWLEDGE',unit:'points',max:5000,note:'Five untimed puzzles. Solves earn 1,000 / 800 / 600 / 400 / 200 by clue used; unsolved scores zero. Arcade score = Daily points divided by 50.'},
     {id:'seating-chart',name:'Seating Chart',category:'SEATING / LOGIC',unit:'drama',max:60,lowerBetter:true,note:'Total broken guest requests across five tables: lower is better. Arcade credit penalises only avoidable drama above each table’s optimum.'},
     {id:'hidden-gem',name:'Sleeper',category:'TRIVIA / INSTINCT',unit:'points',max:100,note:'Five timed questions. Native and Arcade score are the average of five individual answer ratings, out of 100. Editorial ratings, not surveys.'},
-    {id:'codebreak',name:'Codebreak',category:'DEDUCTION / LOGIC',unit:'points',max:100,note:'One untimed four-digit code. New rounds score 100 within five guesses, then 90/80/70; uncracked codes score zero. Saved classic rounds retain their original scoring.'},
+    {id:'codebreak',name:'Codebreak',category:'DEDUCTION / LOGIC',unit:'points',max:100,note:'One untimed four-digit code. New rounds score 100 within four guesses, then 90/80/70/60; uncracked codes score zero. Saved rounds retain their original scoring.'},
     {id:'shift-work',name:'Desk Jam',category:'SLIDING / LOGIC',unit:'moves',max:6000,lowerBetter:true,note:'Total moves across three untimed Daily boards: lower is better. Arcade score compares moves with each board’s minimum; hints cap board credit at 75.'},
   ];
   const isObject = value => value && typeof value === 'object' && !Array.isArray(value);

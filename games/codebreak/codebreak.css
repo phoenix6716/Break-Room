@@ -30,3 +30,15 @@
 .cb-legend{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 16px;font:700 11px/1.4 monospace}
 .cb-legend>span{padding:5px 7px;border:1px solid var(--cb-ink);color:var(--cb-ink)}
 .cb-captured-note{font-size:12px;line-height:1.5;margin:12px 0}
+
+/* The safe display is the one native answer input, including on saved rounds. */
+.cb-safe{max-width:440px;width:100%}.cb-safe-face{display:block;position:relative;width:100%}
+.cb-safe-face svg{display:block;width:100%;height:auto}
+.cb-entry .cb-safe-input,.cb-safe-readout{position:absolute;left:27.6923%;top:29.0698%;width:59.2308%;height:39.5349%;box-sizing:border-box;border:0;border-radius:0;background:#17263a;color:var(--cb-brass);font:700 clamp(22px,6vw,40px)/1.1 monospace;letter-spacing:.35em;text-align:center;padding:0 0 0 .35em;min-height:0;caret-color:var(--cb-brass);appearance:none}
+.cb-entry .cb-safe-input::placeholder{color:var(--cb-brass);opacity:.8}
+.cb-entry .cb-safe-input:focus{outline:3px solid var(--cb-brass);outline-offset:-3px}
+.cb-safe-readout{display:flex;align-items:center;justify-content:center;pointer-events:none}
+.cb-entry>label{text-align:center}.cb-entry .cb-hint{text-align:center}
+
+/* Override the shared paper input theme only inside the safe screen. */
+.codebreak-page .cb-entry .cb-safe-input{background:var(--cb-ink)!important;color:var(--cb-brass)!important;border:0!important}

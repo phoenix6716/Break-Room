@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-05",
+  "change": "Use the safe display as the real code input and lower the full-score threshold to four guesses",
+  "currentVersion": 4,
+  "scoreBySolveGuess": [
+    100,
+    100,
+    100,
+    100,
+    90,
+    80,
+    70,
+    60
+  ],
+  "failurePoints": 0,
+  "digits": "123456789",
+  "guesses": 8,
+  "rotationDays": 6561,
+  "input": {
+    "nativeField": "#code-input inside .cb-safe-face",
+    "singleField": true,
+    "supports": [
+      "typing",
+      "numeric mobile keyboard",
+      "tap safe frame to focus",
+      "keypad",
+      "caret edits",
+      "Delete/Clear",
+      "Enter submit",
+      "visible focus",
+      "accessible label and errors",
+      "immediate draft saves and reload"
+    ]
+  },
+  "preservation": {
+    "versions": [
+      1,
+      2,
+      3
+    ],
+    "frozen": [
+      "captured codes",
+      "drafts and guesses",
+      "digit ranges",
+      "clues",
+      "points",
+      "first completions and zeroes",
+      "cloud versions and owner keys"
+    ],
+    "ui": "All versions use the safe input; only fresh v4 captures use four-guess full scores"
+  },
+  "migration": "supabase/codebreak-v4.sql",
+  "archive": "content/archive/2026-11-05-pre-codebreak-safe-input/",
+  "verification": [
+    "All four model score tables, captured-version merges and read-only profiles",
+    "Real archived v1/v2/v3 SQL rows preserved through repeatable migration",
+    "All four/five-guess browser score boundaries",
+    "Safe input geometry, colour, focus, keyboard editing, keypad and draft reload at 320\u20131440px",
+    "Affected accounts, Friends, leagues, profiles and site release checks"
+  ],
+  "limits": [
+    "Responsive Chromium checks do not certify real-device Safari",
+    "Automated rule checks do not establish human difficulty",
+    "Live migration and deployment require separate release verification"
+  ],
+  "localChecks": "Passed: all selected unit and shared browser checks; final scoped safe styling and Codebreak browser checks, build/static validation and legal footer checks.",
+  "liveDatabase": {
+    "migration": "codebreak_v4_four_guess_score",
+    "applied": true,
+    "playerRowsUnchanged": true,
+    "bothCalendarsUnchanged": true,
+    "writeApiUnchanged": true,
+    "allFourVersionScoreBoundariesVerified": true,
+    "privateScorePrivilegesRetained": true,
+    "newSecurityAdvisorTypes": 0
+  }
+}
