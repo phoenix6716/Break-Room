@@ -1,3 +1,9 @@
+## Codebreak digit clues — 5 November 2026
+
+Fresh Codebreak rounds use version 2: each digit shows right place, elsewhere or no remaining match. Exact positions match first; remaining copies match left to right. Eight distinct guesses, four digits from 1–6, repeats and the 1,296-day Sydney calendar stay fixed. Solves within five guesses earn 100, then 90 / 80 / 70 on guesses 6–8; failure is zero. Clear signal still requires a solve within three guesses.
+
+Every captured version-1 Daily/Unlimited round retains count-only clues and original scoring (100 through three guesses, then 90 / 80 / 70 / 60 / 50). Never regrade history or switch a captured round's version. First valid cloud capture owns its rules; cross-version merges retain the remote snapshot and the server rejects rule changes or omission of captured keys. Existing projects apply `supabase/codebreak-v2.sql`; fresh projects use updated `supabase/codebreak.sql`. No player rows are migrated. See [the current contract](games/codebreak/README.md); older Codebreak release notes below are historical.
+
 ## Time Drop familiarity revision — 5 November 2026
 
 330 events, five per Daily, 66-day cycle. Revision 3 replaces 111 specialist subjects and simplifies 57 titles. Retained events keep their old calendar positions; new familiar subjects fill retired slots. Every Daily has three or more topics and two editorial familiarity anchors. Scores, saved captures and Prior originals remain fixed. Read [Time Drop’s current contract](games/time-drop/README.md). Earlier era-preserving revision notes below are historical.

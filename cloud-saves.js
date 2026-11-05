@@ -71,7 +71,12 @@
   local=clean(game,local);remote=clean(game,remote);
   if(game==='lowball')return clean(game,lowMerge(local,remote));
   const out={...remote};
-  for(const [key,value]of Object.entries(local))if(out[key]===undefined||rank(game,value,key)>rank(game,out[key],key))out[key]=value;
+  for(const [key,value]of Object.entries(local)){
+   // A captured cloud Codebreak round owns its rules, even before completion.
+   // Never combine attempts made with different clue or score versions.
+   if(game==='codebreak'&&out[key]!==undefined&&rank(game,value,key)>=0&&rank(game,out[key],key)>=0&&parse(value).version!==parse(out[key]).version)continue;
+   if(out[key]===undefined||rank(game,value,key)>rank(game,out[key],key))out[key]=value;
+  }
   if(game==='stake'){
    const days=Object.keys(out).filter(k=>k.startsWith('stake:d:')&&parse(out[k])?.p?.length===5).map(k=>k.slice(8)).sort();
    if(days.length){let n=1;for(let i=days.length-1;i>0&&Date.parse(days[i]) - Date.parse(days[i-1])===86400000;i--)n++;out['stake:streak']=JSON.stringify({last:days.at(-1),n});}

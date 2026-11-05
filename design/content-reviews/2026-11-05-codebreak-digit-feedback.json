@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-05",
+  "change": "Codebreak version 2 per-digit clues and five-guess full score",
+  "versions": {
+    "1": {
+      "clues": "counts only",
+      "solvePoints": [
+        100,
+        100,
+        100,
+        90,
+        80,
+        70,
+        60,
+        50
+      ]
+    },
+    "2": {
+      "clues": "exact positions first, then remaining copies left to right",
+      "solvePoints": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        90,
+        80,
+        70
+      ]
+    }
+  },
+  "failurePoints": 0,
+  "guesses": 8,
+  "digits": "123456",
+  "repeatDigits": true,
+  "rotationDays": 1296,
+  "reset": "Midnight Australia/Sydney",
+  "preservation": [
+    "Existing nine-field version-1 Daily/Unlimited snapshots",
+    "Drafts and committed guesses",
+    "Completed scores and zeroes",
+    "Calendar secrets and slot order",
+    "Existing owner/account/private social boundaries",
+    "Clear signal achievement remains within three guesses"
+  ],
+  "verification": [
+    "Independent exhaustive 1,679,616 secret/guess pairs",
+    "All 1,296 dates against archived v1 model",
+    "Archived-v1 PostgreSQL-compatible upgrade fixture and repeatable migration",
+    "Both score tables and pending/completed version locks",
+    "320\u20131440px browser gameplay and save compatibility",
+    "Affected accounts, Friends, leagues, profile and release suites"
+  ],
+  "limits": [
+    "Automated checks do not measure human difficulty",
+    "Chromium responsive checks are not real-device Safari certification",
+    "Already captured classic Daily remains under original rules",
+    "Production migration, CI and live-site status require separate release verification"
+  ],
+  "localChecks": "Passed: all selected unit suites, accounts, Codebreak, Friends freshness/Friends, game surfaces, leagues, profile, release and smoke; production build/static references and legal footer checks.",
+  "liveDatabase": {
+    "migration": "codebreak_v2_digit_feedback",
+    "applied": true,
+    "existingPlayerRowFingerprintUnchanged": true,
+    "calendarFunctionUnchanged": true,
+    "sharedSaveFunctionUnchanged": true,
+    "oldAndNewScoreTablesVerified": true,
+    "privateScorePrivilegesRetained": true,
+    "newSecurityAdvisorTypes": 0
+  }
+}

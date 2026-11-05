@@ -17,3 +17,16 @@
 .codebreak-page #save-warning{padding:12px;border:2px solid #8d281e;background:var(--cb-paper);color:#8d281e;font-size:13px}.codebreak-page #copy-fallback{box-sizing:border-box;width:100%;margin:12px 0;min-height:120px;padding:10px;font:13px monospace}.codebreak-page #status{font-size:12px;min-height:1.5em}.codebreak-page .br-game-progress{font:700 11px monospace}
 @media(max-width:650px){.codebreak-page #engine-slot{padding:14px}.cb-entry{padding:12px}.cb-guess{grid-template-columns:12px minmax(0,1fr) 110px;gap:6px;padding:7px}.cb-digits>span{font-size:21px;min-height:30px}.cb-keypad{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.cb-top h2{font-size:23px}.cb-result{padding:14px}.cb-result .cb-actions{display:grid;grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.codebreak-page *, .codebreak-page *:before{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* Per-digit v2 clues keep the safe palette and include symbols for colour-independent reading. */
+.cb-guess.cb-guess-digits{grid-template-columns:14px minmax(0,1fr)}
+.cb-guess-digits .cb-digits{max-width:220px;width:100%;gap:7px}
+.cb-guess-digits .cb-digits>span{position:relative;box-sizing:border-box;min-height:48px;padding-bottom:12px}
+.cb-guess-digits [data-state]:after{position:absolute;bottom:3px;right:5px;font:700 11px/1 monospace}
+.cb-guess-digits [data-state=placed],.cb-legend [data-state=placed]{background:var(--cb-mint)}
+.cb-guess-digits [data-state=elsewhere],.cb-legend [data-state=elsewhere]{background:var(--cb-brass)}
+.cb-guess-digits [data-state=absent],.cb-legend [data-state=absent]{background:#ded9ce}
+.cb-guess-digits [data-state=placed]:after{content:'✓'}.cb-guess-digits [data-state=elsewhere]:after{content:'↔'}.cb-guess-digits [data-state=absent]:after{content:'×'}
+.cb-legend{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 16px;font:700 11px/1.4 monospace}
+.cb-legend>span{padding:5px 7px;border:1px solid var(--cb-ink);color:var(--cb-ink)}
+.cb-captured-note{font-size:12px;line-height:1.5;margin:12px 0}

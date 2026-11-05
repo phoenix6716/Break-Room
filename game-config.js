@@ -17,7 +17,7 @@ window.MIDNIGHT_ARCADE_GAMES = [
     "title": "Codebreak",
     "category": "DEDUCTION / LOGIC",
     "description": "Four digits. Eight guesses. Crack the code.",
-    "instructions": "Crack a four-digit code using digits 1\u20136. Repeats allowed. Eight untimed guesses; count feedback narrows the code. One Daily and free Unlimited.",
+    "instructions": "Crack a four-digit code using digits 1\u20136. Repeats allowed. Eight untimed guesses; each digit gets a position clue. One Daily and free Unlimited.",
     "accent": "green",
     "status": "live",
     "scoreMax": 100,
