@@ -19,7 +19,7 @@ The owner selected paid launch, Stripe and a custom domain. This is the current 
 - [x] Custom 404 screen has a configured base URL for deep missing links and does not modify stored progress.
 - [x] Project-path and custom-domain metadata tests pass; legal/navigation/mobile checks pass locally.
 - [x] Proposed Cloudflare static configuration passes Wrangler 4.157.0 dry-run; no upload occurred.
-- [ ] Publish this preparation and verify actual sitemap, metadata and deep 404 on the live development host. A source commit alone is not live verification.
+- [x] Launch preparation published in [run 41939500323](https://github.com/phoenix6716/Break-Room/actions/runs/41939500323). Live 390px/1440px checks confirmed all 15 sitemap URLs, ten game previews, private-route noindex and a true deep 404 with loaded branding, working home recovery, preserved browser storage and no overflow/JavaScript errors.
 
 ## Domain and commercial hosting
 
