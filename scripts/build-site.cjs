@@ -24,7 +24,19 @@ function copy(file,relative){
   rendered=rendered.replace(/(src="[^"]*time-drop-model\.js)(?:\?[^\"]*)?"/g,'$1?v=familiar-20261105"');
   rendered=rendered.replace(/(src="[^"]*profile\.js)(?:\?[^"]*)?"/g,'$1?v=first-try-20261105"');
   rendered=rendered.replace(/(src="[^"]*arcade-score\.js)(?:\?[^"]*)?"/g,'$1?v=first-try-20261105"');
-  fs.writeFileSync(target,applyBrand(rendered.replace(/(src="[^"]*cloud-saves\.js)(?:\?[^"]*)?"/g,'$1?v=stack-variety-20261105"').replace(/(src="[^"]*hidden-gem-model\.js)(?:\?[^"]*)?"/g,'$1?v=coverage-20261101"').replace(/(src="[^"]*(?:profile-records|friends|leagues|leagues-model)\.js)(?:\?[^"]*)?"/g,'$1?v=first-try-20261105"').replace(/(src="[^"]*accounts\.js)(?:\?[^"]*)?"/g,'$1?v=first-try-20261105"'),relative));
+  // Shared achievement UI reads the same native results as Profile; no engine writes change.
+  const achievementPage=(/^games\/[^/]+\/index\.html$/.test(relative)&&activeGames.has(relative.split('/')[1]));
+  if(achievementPage){
+   const prefix=path.posix.relative(path.posix.dirname(relative),'.');const base=prefix?prefix+'/':'';
+   const models=['codebreak','pack','laser','inner-clock','time-drop','clue-ladder','seating-chart','shift-work'];
+   let additions=rendered.includes('arcade-score.js')?'':'<script src="'+base+'arcade-score.js?v=first-try-20261105"></script>';
+   additions+=models.filter(id=>!rendered.includes(id+'-model.js')).map(id=>'<script src="'+base+id+'-model.js"></script>').join('');
+   if(!rendered.includes('profile-records.js'))additions+='<script defer src="'+base+'profile-records.js?v=achievements-20261105"></script>';
+   additions+='<link rel="stylesheet" href="'+base+'achievements.css?v=achievements-20261105"><script defer src="'+base+'achievements.js?v=achievements-20261105"></script>';
+   rendered=rendered.replace('</head>',additions+'</head>');
+  }
+  rendered=rendered.replace(/(src="[^"]*profile-records\.js)(?:\?[^"]*)?"/g,'$1?v=achievements-20261105"');
+  fs.writeFileSync(target,applyBrand(rendered.replace(/(src="[^"]*cloud-saves\.js)(?:\?[^"]*)?"/g,'$1?v=stack-variety-20261105"').replace(/(src="[^"]*hidden-gem-model\.js)(?:\?[^"]*)?"/g,'$1?v=coverage-20261101"').replace(/(src="[^"]*(?:friends|leagues|leagues-model)\.js)(?:\?[^"]*)?"/g,'$1?v=first-try-20261105"').replace(/(src="[^"]*accounts\.js)(?:\?[^"]*)?"/g,'$1?v=first-try-20261105"'),relative));
  }else fs.copyFileSync(file,target);
  count++;total+=fs.statSync(target).size;
 }

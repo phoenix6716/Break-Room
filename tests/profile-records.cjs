@@ -39,7 +39,7 @@ assert.equal(visible.games.length,10);assert.equal(visible.records.length,4);ass
 assert.equal(visible.arcade.average,95);assert.equal(visible.arcade.runs,4);assert.equal(visible.arcade.gamesPlayed,2);
 assert(visible.games.every(g=>!['hidden-gem','stake','prior','alibi','bouncer'].includes(g.id)));
 assert(visible.achievements.every(a=>!['hidden-gem','stake','prior','alibi','bouncer','sweep'].includes(a.id)));
-assert.equal(visible.achievements.filter(a=>a.earned).length,3);assert.equal(JSON.stringify(full),unchanged);
+assert.equal(visible.achievements.filter(a=>a.earned).length,7);assert.equal(JSON.stringify(full),unchanged);
 const retiredWeek={};for(let i=0;i<7;i++)retiredWeek['stake:d:2026-10-'+(14+i)]={b:[3,3,3,3,3],p:[0,0,0,0,0],qs};
 const oldOnly=api.read(store(retiredWeek),'2026-10-20'),hidden=api.active(oldOnly);
 assert.equal(oldOnly.streak.best,7);assert.equal(hidden.streak.best,0);assert.equal(hidden.streak.current,0);
@@ -48,3 +48,16 @@ assert.equal(hidden.arcade.average,null);assert.equal(hidden.arcade.runs,0);asse
 console.log('PASS current-game profile view: retired history excluded from totals, averages, activity, streaks and earned badges; private native data remains intact.');
 
 module.exports={stackRun,qs};
+
+assert.equal(visible.achievements.length,32);assert.equal(new Set(visible.achievements.map(a=>a.id)).size,32);
+// Cross-game milestones use only public Daily completions, never retired results.
+const activeIds=visible.games.map(g=>g.id),base=api.read(store({}),'2026-10-20');
+function milestones(records){return api.active({...base,records,games:base.games.map(g=>({...g,played:records.filter(r=>r.game===g.id).length}))}).achievements;}
+const earned=(rows,id)=>milestones(rows).find(a=>a.id===id).earned;
+const rows=activeIds.map(game=>({game,date:'2026-10-20',score:0,arcadeScore:0,perfect:false}));
+assert(!earned(rows.slice(0,2),'three-games'));assert(earned(rows.slice(0,3),'three-games'));assert(!earned(rows.slice(0,4),'five-games'));assert(earned(rows.slice(0,5),'five-games'));assert(!earned(rows.slice(0,9),'full-house'));assert(earned(rows,'full-house'));assert(earned(rows,'explorer'));assert(earned(rows,'ten-runs'));
+const dates=Array.from({length:100},(_,i)=>({game:'stack-up',date:new Date(Date.UTC(2026,6,1+i)).toISOString().slice(0,10),score:100,arcadeScore:100,perfect:i<5}));
+assert(!earned(dates.slice(0,49),'fifty-runs'));assert(earned(dates.slice(0,50),'fifty-runs'));assert(!earned(dates.slice(0,99),'hundred-runs'));assert(earned(dates,'hundred-runs'));assert(!earned(dates.slice(0,2),'three-days'));assert(earned(dates.slice(0,3),'three-days'));assert(!earned(dates.slice(0,29),'thirty-days'));assert(earned(dates.slice(0,30),'thirty-days'));assert(!earned(dates.slice(0,4),'five-perfect'));assert(earned(dates.slice(0,5),'five-perfect'));assert(milestones(rows.map(r=>({...r,game:'stake'}))).every(a=>!a.earned));
+console.log('PASS 32 achievements: participation, exact play/streak/perfect thresholds and retired-game exclusion.');
+
+assert(!earned(dates.slice(0,5).map(r=>({...r,arcadeScore:80,perfect:true})),'five-perfect'));assert(earned(dates.slice(0,5).map(r=>({...r,perfect:false})),'five-perfect'),'Five-star break uses actual 100/100 scores, not game-specific badge rules');

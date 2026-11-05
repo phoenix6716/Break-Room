@@ -103,7 +103,8 @@ function selectChecks(changed,available,{full=false}={}){
   else if(file==='supabase/shelve-sleeper.sql'){add('leagues-database.cjs','leagues.cjs','retired-games.cjs');}
   else if(/^leagues(?:-model)?\.(?:js|css|html)$/.test(file)){add('leagues-database.cjs','leagues.cjs','leagues-freshness.cjs');}
   else if(/^friends\.(?:js|css|html)$/.test(file)){add('friends-database.cjs','friends.cjs','friends-freshness.cjs');}
-  else if(/^profile(?:-records)?\.(?:js|css|html)$/.test(file)){add('profile-records.cjs','profile.cjs');}
+  else if(/^achievements\.(?:js|css)$/.test(file)){add('profile-records.cjs','profile.cjs','achievements.cjs','accounts.cjs','release.cjs');}
+  else if(/^profile(?:-records)?\.(?:js|css|html)$/.test(file)){add('profile-records.cjs','profile.cjs');if(file==='profile-records.js')add('achievements.cjs');}
   else if(file==='arcade-score.js'){add('arcade-score.cjs','profile-records.cjs','cloud-saves.cjs','friends-database.cjs','arcade-score-ui.cjs','profile.cjs','friends.cjs','game-surfaces.cjs');}
   else if(file==='arcade-score.css'){layout();}
   else if(file==='daily-clock.js'){add('daily-clock.cjs','homepage-reset.cjs');GAMES.forEach(id=>game(id));}

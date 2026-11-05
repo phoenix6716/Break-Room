@@ -1,0 +1,13 @@
+# Achievements
+
+The public Profile has **32 achievements**: the 12 existing achievements and 20 additions. All use completed results from the ten current Daily games; practice and retired games never contribute. The read-only native-save adapters remain the source of truth. No scores, captured questions, deadlines or saved history are migrated.
+
+The additions are a first-Daily badge for each game, three/five/ten different games completed on one date, trying all ten games, 10/50/100 total Daily completions, three/thirty consecutive days, and five 100/100 Daily results. Existing game-specific perfect rules are unchanged. Total-play milestones use Profile's existing counts, including Lowball's retained lifetime counter. Streaks, exploration and 100-point milestones require dated saved evidence; missing history is not invented.
+
+A shared notification appears after a new Daily completion. Related unlocks are batched into one dismissible panel, with their names, requirements and a link to Profile. It stays above result dialogs without taking focus. The 8.5-second dismissal timer pauses for hover, keyboard focus or a hidden tab. Reduced motion removes the entrance animation. No sound is added.
+
+Previously earned achievements are baselined quietly on page load. Account switches and cloud restores are also quiet. Notification receipts are stored separately under `br:achievement-notices:v1:<save-owner-or-guest>`; they prevent repeat notices in that browser and account partition, and are not gameplay saves or cloud-synced award records. The existing Profile remains read-only and derives badges from real saved results. With blocked storage, notification receipts fall back to the current page; unavailable game history cannot produce invented awards.
+
+The builder includes `achievements.js`, `achievements.css`, the read-only Profile adapter and any missing pure model dependencies on each active game's top-level page. Lowball notifies its parent page from the iframe. Achievement checks validate the current Daily in isolation after save events; they scan full history only at a new completion. Cross-tab receipt writes use Web Locks when available. Other-tab save writes do not run full scans or create notices in the wrong tab.
+
+Validation: `tests/profile-records.cjs` checks all 32 IDs, exact milestone boundaries and retired-game exclusion. `tests/achievements.cjs` plays real Daily/Unlimited rounds at mobile/desktop widths, verifies reload deduplication, quiet imports, separate notification partitions, modal rehosting, all ten page integrations, completion-only history scans and Lowball's real iframe events. Existing profile, account, release and smoke checks cover save continuity and the shipped artifact.

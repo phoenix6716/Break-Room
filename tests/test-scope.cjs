@@ -28,3 +28,5 @@ console.log('PASS focused checks: Alibi-only help change, docs-only, each game, 
 
 for(const source of ['content/lowball-additions.json','content/lowball-original-items.json','content/lowball-original-selector.js','scripts/build-lowball-additions.cjs']){const p=plan([source]);assert(p.unit.includes('daily-content.cjs'));assert(p.browser.includes('price-reference.cjs'));assert(p.browser.includes('lowball-art.cjs'));}
 const timingModel=plan(['inner-clock-model.js']);for(const name of ['accounts.cjs','friends.cjs','profile.cjs'])assert(timingModel.browser.includes(name),'Exact targets reach '+name);
+
+const notices=plan(['achievements.js']);assert(notices.browser.includes('achievements.cjs'));assert(notices.browser.includes('accounts.cjs'));assert(plan(['profile-records.js']).browser.includes('achievements.cjs'),'Save-reader changes must check achievement notifications');

@@ -143,6 +143,20 @@
     const days=new Map();for(const r of records){if(!days.has(r.date))days.set(r.date,new Set());days.get(r.date).add(r.game);}
     const streak=streaks([...days.keys()],model.today),total=summaries.reduce((n,g)=>n+g.played,0);
     const achievements=model.achievements.filter(a=>ids.has(a.id)||['first','week'].includes(a.id)).map(a=>a.id==='first'?{...a,earned:total>0}:a.id==='week'?{...a,earned:streak.best>=7}:a);
+    for(const game of summaries)achievements.push({id:'start-'+game.id,name:game.name+' debut',detail:'Complete a Daily '+game.name+' game.',earned:game.played>0});
+    const busiest=Math.max(0,...[...days.values()].map(g=>g.size)),different=new Set(records.map(r=>r.game)).size;
+    achievements.push(
+      {id:'three-games',name:'Triple break',detail:'Complete three different Daily games on the same day.',earned:busiest>=3},
+      {id:'five-games',name:'Half the room',detail:'Complete five different Daily games on the same day.',earned:busiest>=5},
+      {id:'full-house',name:'Full house',detail:'Complete all ten current Daily games on the same day.',earned:busiest>=10},
+      {id:'explorer',name:'Room explorer',detail:'Complete a Daily in each of the ten current games in your saved history.',earned:different>=10},
+      {id:'ten-runs',name:'Getting settled',detail:'Complete ten Daily games across the current games.',earned:total>=10},
+      {id:'fifty-runs',name:'Regular visitor',detail:'Complete fifty Daily games across the current games.',earned:total>=50},
+      {id:'hundred-runs',name:'Part of the furniture',detail:'Complete one hundred Daily games across the current games.',earned:total>=100},
+      {id:'three-days',name:'Finding a rhythm',detail:'Complete a Daily on three consecutive days in your saved history.',earned:streak.best>=3},
+      {id:'thirty-days',name:'A month of breaks',detail:'Complete a Daily on thirty consecutive days in your saved history.',earned:streak.best>=30},
+      {id:'five-perfect',name:'Five-star break',detail:'Score 100/100 in five Daily games in your saved history.',earned:records.filter(r=>r.arcadeScore===100).length>=5}
+    );
     return {...model,records,games:summaries,arcade,total,days,streak,achievements};
   }
   root.BREAK_ROOM_RECORDS=Object.freeze({read,active,dateKey,streaks,legacyStakeAnswers});

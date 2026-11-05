@@ -1,3 +1,7 @@
+## Live achievement notices — owner request, 5 November 2026
+
+Profile now has 32 achievements: the existing 12 plus 20 completion, variety, streak and perfect-result milestones. Use only the ten current games' actual Daily records; practice and retired games do not count. The shared game-page notifier batches new unlocks, supports dismissal/reduced motion and remains accessible above result dialogs. Quietly baseline old history and cloud/account restores. Notification receipts stay outside gameplay/cloud saves, partitioned by the existing local save owner. Never rewrite results or persist data from the read-only Profile page. Full history scans occur only on new Daily completion, never on each card move or draft. See [ACHIEVEMENTS.md](ACHIEVEMENTS.md).
+
 ## Stack Up variety — owner feedback, 5 November 2026
 
 The 160 Daily stacks now cover 80 authored themes, replacing 16 heavily reused templates. Each theme has two distinct five-card selections, at calendar slots 16 days apart. Interleaved subject order prevents runs of film-release, recipe or life-cycle templates. Preserve all 160 IDs, five lanes, original date selector and 32-day repeat-free ID rotation. Author `content/stack-up-familiar-topics.json`; run `node scripts/build-familiar-stacks.cjs`. Each theme has reference links and a clear ordered master sequence. No maths, numerical-fact or time-unit tasks return.
