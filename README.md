@@ -1,3 +1,7 @@
+## Time Drop familiarity update — 5 November 2026
+
+Time Drop now uses 330 reviewed familiar subjects, replacing 111 specialist events and simplifying 57 titles. The five-question, 66-day rotation, scoring and existing captured rounds/saves remain unchanged. [Current contract](games/time-drop/README.md).
+
 ## Codebreak is the tenth launch game — 4 November 2026
 
 The owner chose Codebreak to replace shelved Sleeper in the ten-game launch. One untimed Daily code, four digits from 1–6 with repeats, eight guesses, separate free Unlimited. Full points within three guesses, then 10 fewer per extra guess; an uncracked code scores zero. Read `games/codebreak/README.md` for the frozen v1 rotation, saves, scores, accessibility and verification contract. Preserve every existing game's source and native/cloud history. Existing installations apply `supabase/codebreak.sql` after the current league setup; the new game uses a separate validated save table and private score helpers. The nine-game shelving entries below are historical; Sleeper stays hidden.

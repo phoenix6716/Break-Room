@@ -1,0 +1,3742 @@
+{
+  "date": "2026-11-05",
+  "scope": "All 330 active Time Drop events reviewed for recognisable subjects. Editorial familiarity is not measured player recognition or human difficulty evidence.",
+  "previousBank": "content/archive/2026-11-05-pre-time-drop-familiarity/time-drop-events.json",
+  "previousSha256": "fc3c5a137693bda501d8c82cd6d84e95ec2126c5ff8bd4ba77f755503ef03856",
+  "eventCount": 330,
+  "replacedIds": [
+    "prior-artemis",
+    "prior-bitcoin",
+    "prior-chandrayaan",
+    "prior-curiosity",
+    "prior-genome",
+    "prior-grav-waves",
+    "prior-hubble-fix",
+    "prior-impressionism",
+    "prior-jwst",
+    "prior-moma",
+    "prior-mozart",
+    "prior-new-horizons",
+    "prior-piano",
+    "prior-polo",
+    "prior-relativity-general",
+    "prior-rocket",
+    "prior-royal-society",
+    "td-003",
+    "td-004",
+    "td-005",
+    "td-006",
+    "td-007",
+    "td-008",
+    "td-009",
+    "td-010",
+    "td-012",
+    "td-013",
+    "td-015",
+    "td-018",
+    "td-022",
+    "td-023",
+    "td-024",
+    "td-026",
+    "td-027",
+    "td-029",
+    "td-030",
+    "td-031",
+    "td-032",
+    "td-033",
+    "td-035",
+    "td-036",
+    "td-037",
+    "td-039",
+    "td-040",
+    "td-041",
+    "td-043",
+    "td-047",
+    "td-048",
+    "td-049",
+    "td-050",
+    "td-051",
+    "td-056",
+    "td-057",
+    "td-058",
+    "td-060",
+    "td-061",
+    "td-062",
+    "td-063",
+    "td-067",
+    "td-068",
+    "td-069",
+    "td-070",
+    "td-072",
+    "td-073",
+    "td-074",
+    "td-076",
+    "td-080",
+    "td-081",
+    "td-083",
+    "td-084",
+    "td-086",
+    "td-089",
+    "td-090",
+    "td-092",
+    "td-096",
+    "td-097",
+    "td-098",
+    "td-099",
+    "td-100",
+    "td-107",
+    "td-108",
+    "td-109",
+    "td-110",
+    "td-111",
+    "td-112",
+    "td-113",
+    "td-114",
+    "td-115",
+    "td-116",
+    "td-117",
+    "td-118",
+    "td-119",
+    "td-122",
+    "td-123",
+    "td-124",
+    "td-129",
+    "td-131",
+    "td-132",
+    "td-134",
+    "td-140",
+    "td-141",
+    "td-144",
+    "td-145",
+    "td-146",
+    "td-147",
+    "td-162",
+    "td-168",
+    "td-169",
+    "td-174",
+    "td-195",
+    "td-200"
+  ],
+  "newIds": [
+    "td3-a-major-fire-damages-notre-dame-cathedral-in-paris",
+    "td3-a-minecraft-movie-reaches-cinemas",
+    "td3-a-patient-receives-the-first-permanent-artificial-heart",
+    "td3-abba-wins-eurovision-with-waterloo",
+    "td3-adele-releases-the-album-21",
+    "td3-amazon-opens-its-online-bookstore",
+    "td3-an-earthquake-and-tsunami-trigger-the-fukushima-nuclear-disaster",
+    "td3-an-olympic-gymnast-scores-the-first-perfect-10",
+    "td3-apple-s-original-airpods-go-on-sale",
+    "td3-apple-s-original-macintosh-goes-on-sale",
+    "td3-barack-obama-becomes-us-president",
+    "td3-beyonc-releases-her-debut-solo-album",
+    "td3-bluey-first-airs-on-australian-television",
+    "td3-brazil-wins-the-men-s-football-world-cup-for-the-first-time",
+    "td3-cathy-freeman-wins-olympic-gold-in-the-400-metres-in-sydney",
+    "td3-christopher-nolan-s-oppenheimer-reaches-cinemas",
+    "td3-concorde-makes-its-first-flight",
+    "td3-connect-four-first-goes-on-sale",
+    "td3-construction-of-the-international-space-station-begins-in-orbit",
+    "td3-despacito-is-released",
+    "td3-disney-s-animated-aladdin-reaches-us-cinemas",
+    "td3-disney-s-animated-beauty-and-the-beast-reaches-us-cinemas",
+    "td3-disney-s-animated-the-lion-king-reaches-us-cinemas",
+    "td3-disney-s-animated-the-little-mermaid-reaches-us-cinemas",
+    "td3-disney-s-original-mary-poppins-reaches-cinemas",
+    "td3-doctor-who-first-airs-on-british-television",
+    "td3-game-of-thrones-first-airs-on-television",
+    "td3-gps-becomes-fully-operational",
+    "td3-instagram-launches",
+    "td3-james-cameron-s-avatar-reaches-cinemas",
+    "td3-king-charles-iii-is-crowned",
+    "td3-kodak-builds-an-experimental-digital-camera",
+    "td3-london-s-big-ben-begins-chiming-at-the-palace-of-westminster",
+    "td3-marvel-s-the-avengers-reaches-cinemas",
+    "td3-michael-jordan-wins-his-first-nba-championship",
+    "td3-michael-phelps-wins-eight-gold-medals-at-one-olympics",
+    "td3-microsoft-releases-windows-xp",
+    "td3-microsoft-s-xbox-360-first-goes-on-sale",
+    "td3-monsters-inc-reaches-us-cinemas",
+    "td3-muhammad-ali-wins-his-first-world-heavyweight-title",
+    "td3-netflix-begins-offering-streaming-video",
+    "td3-nintendo-switch-2-goes-on-sale",
+    "td3-nutella-first-goes-on-sale",
+    "td3-oreo-biscuits-first-go-on-sale",
+    "td3-peppa-pig-first-airs-on-british-television",
+    "td3-pixar-s-cars-reaches-us-cinemas",
+    "td3-pixar-s-coco-reaches-us-cinemas",
+    "td3-pixar-s-up-reaches-us-cinemas",
+    "td3-play-doh-goes-on-sale-as-a-modelling-toy",
+    "td3-polaroid-s-first-instant-camera-goes-on-sale",
+    "td3-post-it-notes-go-on-sale-across-the-us",
+    "td3-pringles-first-go-on-sale-in-the-us",
+    "td3-psy-releases-gangnam-style",
+    "td3-queen-elizabeth-ii-dies",
+    "td3-queen-releases-bohemian-rhapsody",
+    "td3-rafael-nadal-wins-the-french-open-for-the-first-time",
+    "td3-ratatouille-reaches-us-cinemas",
+    "td3-red-bull-launches-in-austria",
+    "td3-roger-federer-wins-wimbledon-for-the-first-time",
+    "td3-san-francisco-s-golden-gate-bridge-opens",
+    "td3-scientists-identify-the-virus-that-causes-aids",
+    "td3-serena-williams-wins-her-first-grand-slam-singles-title",
+    "td3-sesame-street-first-airs-on-us-television",
+    "td3-simone-biles-wins-her-first-olympic-all-around-title",
+    "td3-snapchat-first-launches",
+    "td3-sony-s-playstation-5-first-goes-on-sale",
+    "td3-spongebob-squarepants-first-airs-on-us-television",
+    "td3-squid-game-first-appears-on-netflix",
+    "td3-stranger-things-first-appears-on-netflix",
+    "td3-taylor-swift-releases-her-debut-album",
+    "td3-the-atomic-bomb-is-dropped-on-hiroshima",
+    "td3-the-boeing-747-jumbo-jet-makes-its-first-flight",
+    "td3-the-burj-khalifa-opens-in-dubai",
+    "td3-the-card-game-uno-first-goes-on-sale",
+    "td3-the-channel-tunnel-between-britain-and-france-officially-opens",
+    "td3-the-film-grease-reaches-cinemas",
+    "td3-the-film-the-sound-of-music-reaches-cinemas",
+    "td3-the-first-android-phone-goes-on-sale",
+    "td3-the-first-apple-watch-goes-on-sale",
+    "td3-the-first-commercial-microwave-oven-goes-on-sale",
+    "td3-the-first-hunger-games-film-reaches-cinemas",
+    "td3-the-first-ipad-goes-on-sale",
+    "td3-the-first-paralympic-games-take-place",
+    "td3-the-first-paying-space-tourist-travels-to-space",
+    "td3-the-first-pizza-hut-opens",
+    "td3-the-first-starbucks-opens",
+    "td3-the-first-super-bowl-is-played",
+    "td3-the-first-wimbledon-tennis-championships-are-held",
+    "td3-the-first-winter-olympic-games-take-place",
+    "td3-the-incredibles-reaches-us-cinemas",
+    "td3-the-indian-ocean-earthquake-and-tsunami-strike",
+    "td3-the-live-action-barbie-film-reaches-cinemas",
+    "td3-the-mcdonald-brothers-open-their-first-mcdonald-s-restaurant",
+    "td3-the-online-marketplace-now-called-ebay-launches",
+    "td3-the-original-home-alone-reaches-cinemas",
+    "td3-the-original-inside-out-reaches-us-cinemas",
+    "td3-the-original-matrix-film-reaches-cinemas",
+    "td3-the-original-nintendo-switch-goes-on-sale",
+    "td3-the-rosetta-stone-is-discovered-in-egypt",
+    "td3-the-second-world-war-ends",
+    "td3-the-sitcom-friends-first-airs",
+    "td3-the-spice-girls-release-wannabe",
+    "td3-the-taj-mahal-complex-is-completed",
+    "td3-the-us-version-of-the-office-first-airs",
+    "td3-tiger-woods-wins-the-masters-for-the-first-time",
+    "td3-tiktok-launches-outside-mainland-china",
+    "td3-twitter-first-launches",
+    "td3-usain-bolt-runs-100-metres-in-a-world-record-9-58-seconds",
+    "td3-wall-e-reaches-us-cinemas",
+    "td3-whatsapp-launches",
+    "td3-zoom-launches-its-video-meeting-service"
+  ],
+  "reworded": [
+    {
+      "id": "prior-telephone",
+      "before": "Alexander Graham Bell receives his US telephone patent",
+      "after": "Alexander Graham Bell patents the telephone in the US"
+    },
+    {
+      "id": "prior-edison",
+      "before": "Edison demonstrates his practical incandescent lamp",
+      "after": "Edison demonstrates his practical electric light bulb"
+    },
+    {
+      "id": "prior-wright",
+      "before": "The Wright brothers fly the Wright Flyer",
+      "after": "The Wright brothers make their first powered flight"
+    },
+    {
+      "id": "prior-penicillin",
+      "before": "Fleming discovers penicillin’s antibacterial effect",
+      "after": "Alexander Fleming discovers penicillin"
+    },
+    {
+      "id": "prior-rome",
+      "before": "Romulus Augustulus is deposed",
+      "after": "The Western Roman Empire comes to an end"
+    },
+    {
+      "id": "prior-copernicus",
+      "before": "Copernicus publishes De revolutionibus",
+      "after": "Copernicus publishes his Sun-centred model of the solar system"
+    },
+    {
+      "id": "prior-galileo",
+      "before": "Galileo observes Jupiter’s four largest moons",
+      "after": "Galileo discovers Jupiter's four largest moons"
+    },
+    {
+      "id": "prior-newton",
+      "before": "Newton publishes the Principia",
+      "after": "Isaac Newton publishes his laws of motion"
+    },
+    {
+      "id": "prior-jenner",
+      "before": "Jenner tests his smallpox vaccination method",
+      "after": "The first smallpox vaccination is tested"
+    },
+    {
+      "id": "prior-darwin",
+      "before": "On the Origin of Species is published",
+      "after": "Charles Darwin publishes On the Origin of Species"
+    },
+    {
+      "id": "prior-einstein",
+      "before": "Einstein publishes special relativity",
+      "after": "Einstein publishes his theory of special relativity"
+    },
+    {
+      "id": "prior-dna",
+      "before": "Watson and Crick publish their DNA structure paper",
+      "after": "Scientists publish DNA's double-helix structure"
+    },
+    {
+      "id": "prior-gagarin",
+      "before": "Yuri Gagarin orbits Earth",
+      "after": "The first human travels into space"
+    },
+    {
+      "id": "prior-apollo",
+      "before": "Apollo 11 lands on the Moon",
+      "after": "Humans land on the Moon for the first time"
+    },
+    {
+      "id": "prior-lindbergh",
+      "before": "Lindbergh completes his solo New York–Paris flight",
+      "after": "The first solo nonstop flight from New York to Paris is completed"
+    },
+    {
+      "id": "prior-email",
+      "before": "Ray Tomlinson sends ARPANET network email",
+      "after": "The first email between computers is sent"
+    },
+    {
+      "id": "prior-cash-machine",
+      "before": "Barclays installs its Enfield cash dispenser",
+      "after": "A cash machine opens at a Barclays bank in London"
+    },
+    {
+      "id": "prior-cd-player",
+      "before": "Sony’s CDP-101 CD player goes on sale in Japan",
+      "after": "Sony's first CD player goes on sale in Japan"
+    },
+    {
+      "id": "prior-columbia",
+      "before": "Space Shuttle Columbia makes its first launch",
+      "after": "The Space Shuttle makes its first flight"
+    },
+    {
+      "id": "prior-sistine",
+      "before": "Michelangelo’s Sistine Chapel ceiling is unveiled",
+      "after": "Michelangelo's Sistine Chapel ceiling is unveiled"
+    },
+    {
+      "id": "prior-steam",
+      "before": "James Watt patents his separate condenser",
+      "after": "James Watt patents his improvement to the steam engine"
+    },
+    {
+      "id": "prior-morse",
+      "before": "Morse sends “What hath God wrought” by telegraph",
+      "after": "Morse sends his famous first Washington-to-Baltimore telegraph message"
+    },
+    {
+      "id": "prior-periodic",
+      "before": "Mendeleev’s periodic table is presented to the Russian Chemical Society",
+      "after": "Mendeleev presents his periodic table of the elements"
+    },
+    {
+      "id": "prior-peter-rabbit",
+      "before": "The commercial edition of The Tale of Peter Rabbit appears",
+      "after": "The Tale of Peter Rabbit is first published commercially"
+    },
+    {
+      "id": "prior-tutankhamun",
+      "before": "Howard Carter’s team discovers Tutankhamun’s tomb",
+      "after": "Tutankhamun's tomb is discovered"
+    },
+    {
+      "id": "prior-mickey",
+      "before": "Steamboat Willie is released",
+      "after": "Mickey Mouse appears in Steamboat Willie"
+    },
+    {
+      "id": "prior-superman",
+      "before": "Superman debuts in Action Comics",
+      "after": "Superman first appears in a comic book"
+    },
+    {
+      "id": "prior-lego",
+      "before": "LEGO files its stud-and-tube brick patent application",
+      "after": "LEGO files the patent for its modern interlocking brick"
+    },
+    {
+      "id": "prior-laser",
+      "before": "Theodore Maiman operates a working laser",
+      "after": "The first working laser is built"
+    },
+    {
+      "id": "prior-valentina",
+      "before": "Valentina Tereshkova flies into space",
+      "after": "The first woman travels into space"
+    },
+    {
+      "id": "prior-spacewalk",
+      "before": "Alexei Leonov makes the first spacewalk",
+      "after": "A person walks in space for the first time"
+    },
+    {
+      "id": "prior-simpsons",
+      "before": "The Simpsons begins as a half-hour series",
+      "after": "The Simpsons begins as a half-hour television series"
+    },
+    {
+      "id": "prior-black-hole",
+      "before": "The first image of a black hole’s shadow is released",
+      "after": "The first image of a black hole's shadow is released"
+    },
+    {
+      "id": "td-025",
+      "before": "The Hijra from Mecca to Medina takes place",
+      "after": "The prophet Muhammad moves from Mecca to Medina"
+    },
+    {
+      "id": "td-034",
+      "before": "Leif Erikson reaches North America (approximately)",
+      "after": "Viking explorers reach North America (approximately)"
+    },
+    {
+      "id": "td-038",
+      "before": "Temujin is proclaimed Genghis Khan",
+      "after": "Genghis Khan unites the Mongol tribes"
+    },
+    {
+      "id": "td-042",
+      "before": "The Hundred Years' War begins",
+      "after": "The Hundred Years' War begins between England and France"
+    },
+    {
+      "id": "td-046",
+      "before": "Constantinople falls to the Ottomans",
+      "after": "The Ottomans capture Constantinople, now Istanbul"
+    },
+    {
+      "id": "td-052",
+      "before": "The first circumnavigation is completed",
+      "after": "The first voyage around the world is completed"
+    },
+    {
+      "id": "td-054",
+      "before": "The Mayflower reaches what is now Massachusetts",
+      "after": "The Mayflower arrives in what is now Massachusetts"
+    },
+    {
+      "id": "td-059",
+      "before": "The Gunpowder Plot to blow up Parliament is uncovered",
+      "after": "Guy Fawkes is caught in the Gunpowder Plot"
+    },
+    {
+      "id": "td-065",
+      "before": "Cook's Endeavour reaches Australia's east coast",
+      "after": "Captain Cook's ship reaches Australia's east coast"
+    },
+    {
+      "id": "td-078",
+      "before": "The US Thirteenth Amendment is ratified",
+      "after": "The US abolishes slavery through the Thirteenth Amendment"
+    },
+    {
+      "id": "td-088",
+      "before": "The Treaty of Versailles is signed",
+      "after": "The Treaty of Versailles is signed after the First World War"
+    },
+    {
+      "id": "td-104",
+      "before": "South Africa holds its first all-race national election",
+      "after": "Nelson Mandela becomes president of South Africa"
+    },
+    {
+      "id": "td-121",
+      "before": "Alessandro Volta announces his electric pile",
+      "after": "Alessandro Volta announces the first electric battery"
+    },
+    {
+      "id": "td-126",
+      "before": "Röntgen discovers X-rays",
+      "after": "X-rays are discovered"
+    },
+    {
+      "id": "td-127",
+      "before": "Marie and Pierre Curie announce radium",
+      "after": "Marie and Pierre Curie announce the discovery of radium"
+    },
+    {
+      "id": "td-128",
+      "before": "John Logie Baird demonstrates television to invited observers",
+      "after": "John Logie Baird demonstrates a working television"
+    },
+    {
+      "id": "td-130",
+      "before": "Banting and Best begin their insulin experiments in Toronto",
+      "after": "Scientists discover insulin's potential to treat diabetes"
+    },
+    {
+      "id": "td-135",
+      "before": "Christiaan Barnard performs the first human-to-human heart transplant",
+      "after": "The first human-to-human heart transplant is performed"
+    },
+    {
+      "id": "td-136",
+      "before": "Louise Brown is born following IVF",
+      "after": "The first 'test-tube baby' is born through IVF"
+    },
+    {
+      "id": "td-138",
+      "before": "The Antarctic ozone hole is reported in Nature",
+      "after": "Scientists report a hole in the ozone layer over Antarctica"
+    },
+    {
+      "id": "td-148",
+      "before": "Sherlock Holmes first appears in A Study in Scarlet",
+      "after": "Sherlock Holmes first appears in print"
+    },
+    {
+      "id": "td-175",
+      "before": "Nintendo releases the Famicom in Japan",
+      "after": "Nintendo launches the console later called the NES in Japan"
+    },
+    {
+      "id": "td-194",
+      "before": "Argentina wins the men's FIFA World Cup in Qatar",
+      "after": "Lionel Messi and Argentina win the men's football World Cup"
+    },
+    {
+      "id": "td-202",
+      "before": "Usain Bolt wins the Olympic 100 metres in Beijing",
+      "after": "Usain Bolt wins Olympic gold in the 100 metres in Beijing"
+    }
+  ],
+  "retainedIds": [
+    "prior-alice",
+    "prior-apollo",
+    "prior-balloon",
+    "prior-barbie",
+    "prior-bastille",
+    "prior-beatles",
+    "prior-beethoven",
+    "prior-berlin-built",
+    "prior-berlin-falls",
+    "prior-black-death",
+    "prior-black-hole",
+    "prior-bond",
+    "prior-brooklyn",
+    "prior-cash-machine",
+    "prior-cd-player",
+    "prior-chernobyl",
+    "prior-coca-cola",
+    "prior-colosseum",
+    "prior-columbia",
+    "prior-columbus",
+    "prior-copernicus",
+    "prior-darwin",
+    "prior-dna",
+    "prior-dolly",
+    "prior-don-quixote",
+    "prior-edison",
+    "prior-eiffel",
+    "prior-einstein",
+    "prior-email",
+    "prior-empire",
+    "prior-england-cup",
+    "prior-euro",
+    "prior-everest",
+    "prior-facebook",
+    "prior-fanta",
+    "prior-federation",
+    "prior-frankenstein",
+    "prior-gagarin",
+    "prior-galileo",
+    "prior-google",
+    "prior-harbour",
+    "prior-harry-potter",
+    "prior-hastings",
+    "prior-hubble",
+    "prior-india",
+    "prior-iphone",
+    "prior-jaws",
+    "prior-jenner",
+    "prior-krakatoa",
+    "prior-laser",
+    "prior-lego",
+    "prior-liberty",
+    "prior-lindbergh",
+    "prior-london-fire",
+    "prior-magna-carta",
+    "prior-mario",
+    "prior-mickey",
+    "prior-model-t",
+    "prior-monopoly",
+    "prior-morse",
+    "prior-newton",
+    "prior-nobel",
+    "prior-olympics",
+    "prior-olympics-mexico",
+    "prior-opera",
+    "prior-pacman",
+    "prior-panama",
+    "prior-penicillin",
+    "prior-periodic",
+    "prior-peter-rabbit",
+    "prior-playstation",
+    "prior-pluto",
+    "prior-pluto-class",
+    "prior-pokemon",
+    "prior-pompeii",
+    "prior-pong",
+    "prior-radio-bbc",
+    "prior-robinson",
+    "prior-rome",
+    "prior-rubik",
+    "prior-shakespeare",
+    "prior-simpsons",
+    "prior-sistine",
+    "prior-snow-white",
+    "prior-space-invaders",
+    "prior-spacewalk",
+    "prior-sputnik",
+    "prior-star-wars",
+    "prior-steam",
+    "prior-steam-store",
+    "prior-suez",
+    "prior-superman",
+    "prior-sydney-games",
+    "prior-telephone",
+    "prior-tetris",
+    "prior-titanic",
+    "prior-tour",
+    "prior-toy-story",
+    "prior-tutankhamun",
+    "prior-un",
+    "prior-us-declaration",
+    "prior-valentina",
+    "prior-viking",
+    "prior-walkman",
+    "prior-web",
+    "prior-wikipedia",
+    "prior-wizard-oz",
+    "prior-world-cup",
+    "prior-wright",
+    "prior-youtube",
+    "prior-zelda",
+    "td-001",
+    "td-002",
+    "td-011",
+    "td-014",
+    "td-016",
+    "td-017",
+    "td-019",
+    "td-020",
+    "td-021",
+    "td-025",
+    "td-028",
+    "td-034",
+    "td-038",
+    "td-042",
+    "td-044",
+    "td-045",
+    "td-046",
+    "td-052",
+    "td-053",
+    "td-054",
+    "td-055",
+    "td-059",
+    "td-064",
+    "td-065",
+    "td-066",
+    "td-071",
+    "td-075",
+    "td-077",
+    "td-078",
+    "td-079",
+    "td-082",
+    "td-085",
+    "td-087",
+    "td-088",
+    "td-091",
+    "td-093",
+    "td-094",
+    "td-095",
+    "td-101",
+    "td-102",
+    "td-103",
+    "td-104",
+    "td-105",
+    "td-106",
+    "td-120",
+    "td-121",
+    "td-125",
+    "td-126",
+    "td-127",
+    "td-128",
+    "td-130",
+    "td-133",
+    "td-135",
+    "td-136",
+    "td-137",
+    "td-138",
+    "td-139",
+    "td-142",
+    "td-143",
+    "td-148",
+    "td-149",
+    "td-150",
+    "td-151",
+    "td-152",
+    "td-153",
+    "td-154",
+    "td-155",
+    "td-156",
+    "td-157",
+    "td-158",
+    "td-159",
+    "td-160",
+    "td-161",
+    "td-163",
+    "td-164",
+    "td-165",
+    "td-166",
+    "td-167",
+    "td-170",
+    "td-171",
+    "td-172",
+    "td-173",
+    "td-175",
+    "td-176",
+    "td-177",
+    "td-178",
+    "td-179",
+    "td-180",
+    "td-181",
+    "td-182",
+    "td-183",
+    "td-184",
+    "td-185",
+    "td-186",
+    "td-187",
+    "td-188",
+    "td-189",
+    "td-190",
+    "td-191",
+    "td-192",
+    "td-193",
+    "td-194",
+    "td-196",
+    "td-197",
+    "td-198",
+    "td-199",
+    "td-201",
+    "td-202"
+  ],
+  "editorialAnchorIds": [
+    "prior-alice",
+    "prior-apollo",
+    "prior-barbie",
+    "prior-beatles",
+    "prior-berlin-built",
+    "prior-berlin-falls",
+    "prior-black-hole",
+    "prior-bond",
+    "prior-cash-machine",
+    "prior-cd-player",
+    "prior-chernobyl",
+    "prior-coca-cola",
+    "prior-colosseum",
+    "prior-columbia",
+    "prior-darwin",
+    "prior-dna",
+    "prior-dolly",
+    "prior-edison",
+    "prior-eiffel",
+    "prior-einstein",
+    "prior-email",
+    "prior-empire",
+    "prior-england-cup",
+    "prior-euro",
+    "prior-everest",
+    "prior-facebook",
+    "prior-fanta",
+    "prior-federation",
+    "prior-frankenstein",
+    "prior-gagarin",
+    "prior-google",
+    "prior-harbour",
+    "prior-harry-potter",
+    "prior-hubble",
+    "prior-india",
+    "prior-iphone",
+    "prior-jaws",
+    "prior-laser",
+    "prior-lego",
+    "prior-liberty",
+    "prior-mario",
+    "prior-mickey",
+    "prior-model-t",
+    "prior-monopoly",
+    "prior-newton",
+    "prior-nobel",
+    "prior-olympics",
+    "prior-opera",
+    "prior-pacman",
+    "prior-panama",
+    "prior-penicillin",
+    "prior-peter-rabbit",
+    "prior-playstation",
+    "prior-pluto",
+    "prior-pluto-class",
+    "prior-pokemon",
+    "prior-pompeii",
+    "prior-pong",
+    "prior-radio-bbc",
+    "prior-rubik",
+    "prior-shakespeare",
+    "prior-simpsons",
+    "prior-snow-white",
+    "prior-space-invaders",
+    "prior-spacewalk",
+    "prior-star-wars",
+    "prior-steam-store",
+    "prior-superman",
+    "prior-sydney-games",
+    "prior-telephone",
+    "prior-tetris",
+    "prior-titanic",
+    "prior-toy-story",
+    "prior-tutankhamun",
+    "prior-un",
+    "prior-valentina",
+    "prior-walkman",
+    "prior-web",
+    "prior-wikipedia",
+    "prior-wizard-oz",
+    "prior-wright",
+    "prior-youtube",
+    "prior-zelda",
+    "td-001",
+    "td-016",
+    "td-017",
+    "td-020",
+    "td-028",
+    "td-064",
+    "td-065",
+    "td-066",
+    "td-071",
+    "td-075",
+    "td-077",
+    "td-078",
+    "td-082",
+    "td-085",
+    "td-087",
+    "td-091",
+    "td-095",
+    "td-101",
+    "td-102",
+    "td-103",
+    "td-104",
+    "td-105",
+    "td-106",
+    "td-120",
+    "td-121",
+    "td-126",
+    "td-127",
+    "td-128",
+    "td-130",
+    "td-133",
+    "td-135",
+    "td-136",
+    "td-137",
+    "td-138",
+    "td-139",
+    "td-142",
+    "td-143",
+    "td-148",
+    "td-149",
+    "td-150",
+    "td-151",
+    "td-152",
+    "td-153",
+    "td-154",
+    "td-155",
+    "td-156",
+    "td-157",
+    "td-158",
+    "td-159",
+    "td-160",
+    "td-161",
+    "td-163",
+    "td-164",
+    "td-165",
+    "td-166",
+    "td-167",
+    "td-170",
+    "td-171",
+    "td-172",
+    "td-173",
+    "td-175",
+    "td-176",
+    "td-177",
+    "td-178",
+    "td-179",
+    "td-180",
+    "td-181",
+    "td-182",
+    "td-183",
+    "td-184",
+    "td-185",
+    "td-186",
+    "td-187",
+    "td-188",
+    "td-189",
+    "td-190",
+    "td-191",
+    "td-192",
+    "td-193",
+    "td-194",
+    "td-196",
+    "td-197",
+    "td-198",
+    "td-199",
+    "td-201",
+    "td-202",
+    "td3-a-major-fire-damages-notre-dame-cathedral-in-paris",
+    "td3-a-minecraft-movie-reaches-cinemas",
+    "td3-a-patient-receives-the-first-permanent-artificial-heart",
+    "td3-abba-wins-eurovision-with-waterloo",
+    "td3-adele-releases-the-album-21",
+    "td3-amazon-opens-its-online-bookstore",
+    "td3-an-earthquake-and-tsunami-trigger-the-fukushima-nuclear-disaster",
+    "td3-an-olympic-gymnast-scores-the-first-perfect-10",
+    "td3-apple-s-original-airpods-go-on-sale",
+    "td3-apple-s-original-macintosh-goes-on-sale",
+    "td3-barack-obama-becomes-us-president",
+    "td3-beyonc-releases-her-debut-solo-album",
+    "td3-bluey-first-airs-on-australian-television",
+    "td3-brazil-wins-the-men-s-football-world-cup-for-the-first-time",
+    "td3-cathy-freeman-wins-olympic-gold-in-the-400-metres-in-sydney",
+    "td3-christopher-nolan-s-oppenheimer-reaches-cinemas",
+    "td3-concorde-makes-its-first-flight",
+    "td3-connect-four-first-goes-on-sale",
+    "td3-construction-of-the-international-space-station-begins-in-orbit",
+    "td3-despacito-is-released",
+    "td3-disney-s-animated-aladdin-reaches-us-cinemas",
+    "td3-disney-s-animated-beauty-and-the-beast-reaches-us-cinemas",
+    "td3-disney-s-animated-the-lion-king-reaches-us-cinemas",
+    "td3-disney-s-animated-the-little-mermaid-reaches-us-cinemas",
+    "td3-disney-s-original-mary-poppins-reaches-cinemas",
+    "td3-doctor-who-first-airs-on-british-television",
+    "td3-game-of-thrones-first-airs-on-television",
+    "td3-gps-becomes-fully-operational",
+    "td3-instagram-launches",
+    "td3-james-cameron-s-avatar-reaches-cinemas",
+    "td3-king-charles-iii-is-crowned",
+    "td3-kodak-builds-an-experimental-digital-camera",
+    "td3-london-s-big-ben-begins-chiming-at-the-palace-of-westminster",
+    "td3-marvel-s-the-avengers-reaches-cinemas",
+    "td3-michael-jordan-wins-his-first-nba-championship",
+    "td3-michael-phelps-wins-eight-gold-medals-at-one-olympics",
+    "td3-microsoft-releases-windows-xp",
+    "td3-microsoft-s-xbox-360-first-goes-on-sale",
+    "td3-monsters-inc-reaches-us-cinemas",
+    "td3-muhammad-ali-wins-his-first-world-heavyweight-title",
+    "td3-netflix-begins-offering-streaming-video",
+    "td3-nintendo-switch-2-goes-on-sale",
+    "td3-nutella-first-goes-on-sale",
+    "td3-oreo-biscuits-first-go-on-sale",
+    "td3-peppa-pig-first-airs-on-british-television",
+    "td3-pixar-s-cars-reaches-us-cinemas",
+    "td3-pixar-s-coco-reaches-us-cinemas",
+    "td3-pixar-s-up-reaches-us-cinemas",
+    "td3-play-doh-goes-on-sale-as-a-modelling-toy",
+    "td3-polaroid-s-first-instant-camera-goes-on-sale",
+    "td3-post-it-notes-go-on-sale-across-the-us",
+    "td3-pringles-first-go-on-sale-in-the-us",
+    "td3-psy-releases-gangnam-style",
+    "td3-queen-elizabeth-ii-dies",
+    "td3-queen-releases-bohemian-rhapsody",
+    "td3-rafael-nadal-wins-the-french-open-for-the-first-time",
+    "td3-ratatouille-reaches-us-cinemas",
+    "td3-red-bull-launches-in-austria",
+    "td3-roger-federer-wins-wimbledon-for-the-first-time",
+    "td3-san-francisco-s-golden-gate-bridge-opens",
+    "td3-scientists-identify-the-virus-that-causes-aids",
+    "td3-serena-williams-wins-her-first-grand-slam-singles-title",
+    "td3-sesame-street-first-airs-on-us-television",
+    "td3-simone-biles-wins-her-first-olympic-all-around-title",
+    "td3-snapchat-first-launches",
+    "td3-sony-s-playstation-5-first-goes-on-sale",
+    "td3-spongebob-squarepants-first-airs-on-us-television",
+    "td3-squid-game-first-appears-on-netflix",
+    "td3-stranger-things-first-appears-on-netflix",
+    "td3-taylor-swift-releases-her-debut-album",
+    "td3-the-atomic-bomb-is-dropped-on-hiroshima",
+    "td3-the-boeing-747-jumbo-jet-makes-its-first-flight",
+    "td3-the-burj-khalifa-opens-in-dubai",
+    "td3-the-card-game-uno-first-goes-on-sale",
+    "td3-the-channel-tunnel-between-britain-and-france-officially-opens",
+    "td3-the-film-grease-reaches-cinemas",
+    "td3-the-film-the-sound-of-music-reaches-cinemas",
+    "td3-the-first-android-phone-goes-on-sale",
+    "td3-the-first-apple-watch-goes-on-sale",
+    "td3-the-first-commercial-microwave-oven-goes-on-sale",
+    "td3-the-first-hunger-games-film-reaches-cinemas",
+    "td3-the-first-ipad-goes-on-sale",
+    "td3-the-first-paralympic-games-take-place",
+    "td3-the-first-paying-space-tourist-travels-to-space",
+    "td3-the-first-pizza-hut-opens",
+    "td3-the-first-starbucks-opens",
+    "td3-the-first-super-bowl-is-played",
+    "td3-the-first-wimbledon-tennis-championships-are-held",
+    "td3-the-first-winter-olympic-games-take-place",
+    "td3-the-incredibles-reaches-us-cinemas",
+    "td3-the-indian-ocean-earthquake-and-tsunami-strike",
+    "td3-the-live-action-barbie-film-reaches-cinemas",
+    "td3-the-mcdonald-brothers-open-their-first-mcdonald-s-restaurant",
+    "td3-the-online-marketplace-now-called-ebay-launches",
+    "td3-the-original-home-alone-reaches-cinemas",
+    "td3-the-original-inside-out-reaches-us-cinemas",
+    "td3-the-original-matrix-film-reaches-cinemas",
+    "td3-the-original-nintendo-switch-goes-on-sale",
+    "td3-the-rosetta-stone-is-discovered-in-egypt",
+    "td3-the-second-world-war-ends",
+    "td3-the-sitcom-friends-first-airs",
+    "td3-the-spice-girls-release-wannabe",
+    "td3-the-taj-mahal-complex-is-completed",
+    "td3-the-us-version-of-the-office-first-airs",
+    "td3-tiger-woods-wins-the-masters-for-the-first-time",
+    "td3-tiktok-launches-outside-mainland-china",
+    "td3-twitter-first-launches",
+    "td3-usain-bolt-runs-100-metres-in-a-world-record-9-58-seconds",
+    "td3-wall-e-reaches-us-cinemas",
+    "td3-whatsapp-launches",
+    "td3-zoom-launches-its-video-meeting-service"
+  ],
+  "dailyTopicsMinimum": 3,
+  "dailyEditorialAnchorsMinimum": 2,
+  "calendarPolicy": "Retained IDs keep the exact old day and position. New IDs fill removed slots. All five topic labels remain available. No scoring, validator or save-version change.",
+  "sourceReviewLimit": "Citations and explicit first-release scopes were editorially checked. Retrieval evidence is a separate availability check; do not describe it as independent certification of all facts. Human playtesting remains pending.",
+  "events": [
+    {
+      "id": "prior-columbus",
+      "title": "Columbus reaches the Caribbean",
+      "category": "World",
+      "year": 1492,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 92
+    },
+    {
+      "id": "prior-london-fire",
+      "title": "The Great Fire of London breaks out",
+      "category": "World",
+      "year": 1666,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 38
+    },
+    {
+      "id": "prior-us-declaration",
+      "title": "The US Declaration of Independence is adopted",
+      "category": "World",
+      "year": 1776,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 159
+    },
+    {
+      "id": "prior-bastille",
+      "title": "The Bastille is stormed",
+      "category": "World",
+      "year": 1789,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 326
+    },
+    {
+      "id": "prior-telephone",
+      "title": "Alexander Graham Bell patents the telephone in the US",
+      "category": "Science",
+      "year": 1876,
+      "decision": "plain wording",
+      "calendarSlot": 279
+    },
+    {
+      "id": "prior-edison",
+      "title": "Edison demonstrates his practical electric light bulb",
+      "category": "Science",
+      "year": 1879,
+      "decision": "plain wording",
+      "calendarSlot": 58
+    },
+    {
+      "id": "prior-wright",
+      "title": "The Wright brothers make their first powered flight",
+      "category": "Science",
+      "year": 1903,
+      "decision": "plain wording",
+      "calendarSlot": 91
+    },
+    {
+      "id": "prior-titanic",
+      "title": "The Titanic sinks",
+      "category": "World",
+      "year": 1912,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 78
+    },
+    {
+      "id": "prior-penicillin",
+      "title": "Alexander Fleming discovers penicillin",
+      "category": "Science",
+      "year": 1928,
+      "decision": "plain wording",
+      "calendarSlot": 156
+    },
+    {
+      "id": "prior-olympics",
+      "title": "Athens hosts the first modern Olympic Games",
+      "category": "Sport",
+      "year": 1896,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 31
+    },
+    {
+      "id": "prior-eiffel",
+      "title": "The Eiffel Tower is inaugurated",
+      "category": "World",
+      "year": 1889,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 103
+    },
+    {
+      "id": "prior-liberty",
+      "title": "The Statue of Liberty is dedicated",
+      "category": "World",
+      "year": 1886,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 115
+    },
+    {
+      "id": "prior-panama",
+      "title": "The Panama Canal officially opens",
+      "category": "World",
+      "year": 1914,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 39
+    },
+    {
+      "id": "prior-colosseum",
+      "title": "Rome’s Colosseum opens",
+      "category": "World",
+      "year": 80,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 138
+    },
+    {
+      "id": "prior-pompeii",
+      "title": "Vesuvius buries Pompeii",
+      "category": "World",
+      "year": 79,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 154
+    },
+    {
+      "id": "prior-rome",
+      "title": "The Western Roman Empire comes to an end",
+      "category": "World",
+      "year": 476,
+      "decision": "plain wording",
+      "calendarSlot": 278
+    },
+    {
+      "id": "prior-hastings",
+      "title": "The Battle of Hastings takes place",
+      "category": "World",
+      "year": 1066,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 206
+    },
+    {
+      "id": "prior-magna-carta",
+      "title": "King John seals Magna Carta",
+      "category": "World",
+      "year": 1215,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 28
+    },
+    {
+      "id": "prior-black-death",
+      "title": "The Black Death reaches Sicily",
+      "category": "World",
+      "year": 1347,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 182
+    },
+    {
+      "id": "prior-copernicus",
+      "title": "Copernicus publishes his Sun-centred model of the solar system",
+      "category": "Science",
+      "year": 1543,
+      "decision": "plain wording",
+      "calendarSlot": 17
+    },
+    {
+      "id": "prior-shakespeare",
+      "title": "William Shakespeare dies",
+      "category": "Culture",
+      "year": 1616,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 286
+    },
+    {
+      "id": "prior-galileo",
+      "title": "Galileo discovers Jupiter's four largest moons",
+      "category": "Science",
+      "year": 1610,
+      "decision": "plain wording",
+      "calendarSlot": 242
+    },
+    {
+      "id": "prior-newton",
+      "title": "Isaac Newton publishes his laws of motion",
+      "category": "Science",
+      "year": 1687,
+      "decision": "plain wording",
+      "calendarSlot": 312
+    },
+    {
+      "id": "prior-jenner",
+      "title": "The first smallpox vaccination is tested",
+      "category": "Science",
+      "year": 1796,
+      "decision": "plain wording",
+      "calendarSlot": 111
+    },
+    {
+      "id": "prior-darwin",
+      "title": "Charles Darwin publishes On the Origin of Species",
+      "category": "Science",
+      "year": 1859,
+      "decision": "plain wording",
+      "calendarSlot": 124
+    },
+    {
+      "id": "prior-einstein",
+      "title": "Einstein publishes his theory of special relativity",
+      "category": "Science",
+      "year": 1905,
+      "decision": "plain wording",
+      "calendarSlot": 26
+    },
+    {
+      "id": "prior-dna",
+      "title": "Scientists publish DNA's double-helix structure",
+      "category": "Science",
+      "year": 1953,
+      "decision": "plain wording",
+      "calendarSlot": 323
+    },
+    {
+      "id": "prior-everest",
+      "title": "Hillary and Tenzing reach Everest’s summit",
+      "category": "Sport",
+      "year": 1953,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 74
+    },
+    {
+      "id": "prior-sputnik",
+      "title": "Sputnik 1 launches",
+      "category": "Science",
+      "year": 1957,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 107
+    },
+    {
+      "id": "prior-gagarin",
+      "title": "The first human travels into space",
+      "category": "Science",
+      "year": 1961,
+      "decision": "plain wording",
+      "calendarSlot": 284
+    },
+    {
+      "id": "prior-apollo",
+      "title": "Humans land on the Moon for the first time",
+      "category": "Science",
+      "year": 1969,
+      "decision": "plain wording",
+      "calendarSlot": 216
+    },
+    {
+      "id": "prior-harbour",
+      "title": "The Sydney Harbour Bridge opens",
+      "category": "World",
+      "year": 1932,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 173
+    },
+    {
+      "id": "prior-opera",
+      "title": "The Sydney Opera House opens",
+      "category": "Culture",
+      "year": 1973,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 202
+    },
+    {
+      "id": "prior-federation",
+      "title": "Australia becomes a federation",
+      "category": "World",
+      "year": 1901,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 237
+    },
+    {
+      "id": "prior-sydney-games",
+      "title": "Sydney hosts the Summer Olympic Games",
+      "category": "Sport",
+      "year": 2000,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 67
+    },
+    {
+      "id": "prior-berlin-falls",
+      "title": "The Berlin Wall’s border crossings open",
+      "category": "World",
+      "year": 1989,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 224
+    },
+    {
+      "id": "prior-web",
+      "title": "The World Wide Web is announced publicly on the Internet",
+      "category": "Science",
+      "year": 1991,
+      "decision": "plain wording",
+      "calendarSlot": 227
+    },
+    {
+      "id": "prior-google",
+      "title": "Google is incorporated",
+      "category": "Everyday",
+      "year": 1998,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 205
+    },
+    {
+      "id": "prior-facebook",
+      "title": "Facebook launches at Harvard",
+      "category": "Everyday",
+      "year": 2004,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 180
+    },
+    {
+      "id": "prior-youtube",
+      "title": "YouTube is founded",
+      "category": "Everyday",
+      "year": 2005,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 119
+    },
+    {
+      "id": "prior-iphone",
+      "title": "The first iPhone goes on sale in the US",
+      "category": "Everyday",
+      "year": 2007,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 72
+    },
+    {
+      "id": "prior-chernobyl",
+      "title": "The Chernobyl reactor disaster occurs",
+      "category": "World",
+      "year": 1986,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 110
+    },
+    {
+      "id": "prior-dolly",
+      "title": "Dolly the sheep is born",
+      "category": "Science",
+      "year": 1996,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 169
+    },
+    {
+      "id": "prior-hubble",
+      "title": "The Hubble Space Telescope launches",
+      "category": "Science",
+      "year": 1990,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 296
+    },
+    {
+      "id": "prior-euro",
+      "title": "Euro banknotes and coins enter circulation",
+      "category": "Everyday",
+      "year": 2002,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 46
+    },
+    {
+      "id": "prior-pluto",
+      "title": "Clyde Tombaugh discovers Pluto",
+      "category": "Science",
+      "year": 1930,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 89
+    },
+    {
+      "id": "prior-pluto-class",
+      "title": "The IAU classifies Pluto as a dwarf planet",
+      "category": "Science",
+      "year": 2006,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 240
+    },
+    {
+      "id": "prior-krakatoa",
+      "title": "Krakatoa’s catastrophic eruption occurs",
+      "category": "World",
+      "year": 1883,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 129
+    },
+    {
+      "id": "prior-brooklyn",
+      "title": "The Brooklyn Bridge opens",
+      "category": "World",
+      "year": 1883,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 232
+    },
+    {
+      "id": "prior-suez",
+      "title": "The Suez Canal opens",
+      "category": "World",
+      "year": 1869,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 324
+    },
+    {
+      "id": "prior-model-t",
+      "title": "Ford introduces the Model T",
+      "category": "Everyday",
+      "year": 1908,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 316
+    },
+    {
+      "id": "prior-lindbergh",
+      "title": "The first solo nonstop flight from New York to Paris is completed",
+      "category": "Science",
+      "year": 1927,
+      "decision": "plain wording",
+      "calendarSlot": 3
+    },
+    {
+      "id": "prior-world-cup",
+      "title": "The first men’s FIFA World Cup takes place",
+      "category": "Sport",
+      "year": 1930,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 148
+    },
+    {
+      "id": "prior-email",
+      "title": "The first email between computers is sent",
+      "category": "Science",
+      "year": 1971,
+      "decision": "plain wording",
+      "calendarSlot": 291
+    },
+    {
+      "id": "prior-cash-machine",
+      "title": "A cash machine opens at a Barclays bank in London",
+      "category": "Everyday",
+      "year": 1967,
+      "decision": "plain wording",
+      "calendarSlot": 134
+    },
+    {
+      "id": "prior-rubik",
+      "title": "Ernő Rubik invents his cube",
+      "category": "Everyday",
+      "year": 1974,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 171
+    },
+    {
+      "id": "prior-cd-player",
+      "title": "Sony's first CD player goes on sale in Japan",
+      "category": "Everyday",
+      "year": 1982,
+      "decision": "plain wording",
+      "calendarSlot": 37
+    },
+    {
+      "id": "prior-columbia",
+      "title": "The Space Shuttle makes its first flight",
+      "category": "Science",
+      "year": 1981,
+      "decision": "plain wording",
+      "calendarSlot": 239
+    },
+    {
+      "id": "prior-tour",
+      "title": "The first Tour de France is held",
+      "category": "Sport",
+      "year": 1903,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 328
+    },
+    {
+      "id": "prior-sistine",
+      "title": "Michelangelo's Sistine Chapel ceiling is unveiled",
+      "category": "Culture",
+      "year": 1512,
+      "decision": "plain wording",
+      "calendarSlot": 229
+    },
+    {
+      "id": "prior-don-quixote",
+      "title": "The first part of Don Quixote is published",
+      "category": "Culture",
+      "year": 1605,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 2
+    },
+    {
+      "id": "prior-robinson",
+      "title": "Robinson Crusoe is first published",
+      "category": "Culture",
+      "year": 1719,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 164
+    },
+    {
+      "id": "prior-steam",
+      "title": "James Watt patents his improvement to the steam engine",
+      "category": "Science",
+      "year": 1769,
+      "decision": "plain wording",
+      "calendarSlot": 319
+    },
+    {
+      "id": "prior-balloon",
+      "title": "The first untethered crewed hot-air balloon flight takes place",
+      "category": "Science",
+      "year": 1783,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 54
+    },
+    {
+      "id": "prior-frankenstein",
+      "title": "Frankenstein is first published",
+      "category": "Culture",
+      "year": 1818,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 292
+    },
+    {
+      "id": "prior-beethoven",
+      "title": "Beethoven’s Ninth Symphony premieres",
+      "category": "Culture",
+      "year": 1824,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 8
+    },
+    {
+      "id": "prior-morse",
+      "title": "Morse sends his famous first Washington-to-Baltimore telegraph message",
+      "category": "Science",
+      "year": 1844,
+      "decision": "plain wording",
+      "calendarSlot": 187
+    },
+    {
+      "id": "prior-alice",
+      "title": "Alice’s Adventures in Wonderland is published",
+      "category": "Culture",
+      "year": 1865,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 309
+    },
+    {
+      "id": "prior-periodic",
+      "title": "Mendeleev presents his periodic table of the elements",
+      "category": "Science",
+      "year": 1869,
+      "decision": "plain wording",
+      "calendarSlot": 146
+    },
+    {
+      "id": "prior-coca-cola",
+      "title": "Coca-Cola is first sold in Atlanta",
+      "category": "Everyday",
+      "year": 1886,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 153
+    },
+    {
+      "id": "prior-nobel",
+      "title": "The first Nobel Prizes are awarded",
+      "category": "Science",
+      "year": 1901,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 116
+    },
+    {
+      "id": "prior-peter-rabbit",
+      "title": "The Tale of Peter Rabbit is first published commercially",
+      "category": "Culture",
+      "year": 1902,
+      "decision": "plain wording",
+      "calendarSlot": 281
+    },
+    {
+      "id": "prior-tutankhamun",
+      "title": "Tutankhamun's tomb is discovered",
+      "category": "World",
+      "year": 1922,
+      "decision": "plain wording",
+      "calendarSlot": 313
+    },
+    {
+      "id": "prior-radio-bbc",
+      "title": "The BBC begins regular radio broadcasts",
+      "category": "Everyday",
+      "year": 1922,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 189
+    },
+    {
+      "id": "prior-mickey",
+      "title": "Mickey Mouse appears in Steamboat Willie",
+      "category": "Culture",
+      "year": 1928,
+      "decision": "plain wording",
+      "calendarSlot": 244
+    },
+    {
+      "id": "prior-empire",
+      "title": "The Empire State Building opens",
+      "category": "World",
+      "year": 1931,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 163
+    },
+    {
+      "id": "prior-monopoly",
+      "title": "Parker Brothers publishes Monopoly",
+      "category": "Everyday",
+      "year": 1935,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 193
+    },
+    {
+      "id": "prior-snow-white",
+      "title": "Disney’s Snow White premieres",
+      "category": "Culture",
+      "year": 1937,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 199
+    },
+    {
+      "id": "prior-superman",
+      "title": "Superman first appears in a comic book",
+      "category": "Culture",
+      "year": 1938,
+      "decision": "plain wording",
+      "calendarSlot": 274
+    },
+    {
+      "id": "prior-wizard-oz",
+      "title": "The Wizard of Oz film is released",
+      "category": "Culture",
+      "year": 1939,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 42
+    },
+    {
+      "id": "prior-fanta",
+      "title": "Fanta is introduced in Germany",
+      "category": "Everyday",
+      "year": 1940,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 112
+    },
+    {
+      "id": "prior-un",
+      "title": "The United Nations comes into existence",
+      "category": "World",
+      "year": 1945,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 18
+    },
+    {
+      "id": "prior-india",
+      "title": "India becomes independent from British rule",
+      "category": "World",
+      "year": 1947,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 166
+    },
+    {
+      "id": "prior-lego",
+      "title": "LEGO files the patent for its modern interlocking brick",
+      "category": "Everyday",
+      "year": 1958,
+      "decision": "plain wording",
+      "calendarSlot": 51
+    },
+    {
+      "id": "prior-barbie",
+      "title": "Barbie debuts at the New York toy fair",
+      "category": "Everyday",
+      "year": 1959,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 212
+    },
+    {
+      "id": "prior-laser",
+      "title": "The first working laser is built",
+      "category": "Science",
+      "year": 1960,
+      "decision": "plain wording",
+      "calendarSlot": 104
+    },
+    {
+      "id": "prior-berlin-built",
+      "title": "Construction of the Berlin Wall begins",
+      "category": "World",
+      "year": 1961,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 22
+    },
+    {
+      "id": "prior-bond",
+      "title": "Dr. No launches the James Bond film series",
+      "category": "Culture",
+      "year": 1962,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 157
+    },
+    {
+      "id": "prior-valentina",
+      "title": "The first woman travels into space",
+      "category": "Science",
+      "year": 1963,
+      "decision": "plain wording",
+      "calendarSlot": 139
+    },
+    {
+      "id": "prior-beatles",
+      "title": "The Beatles make their first Ed Sullivan Show appearance",
+      "category": "Culture",
+      "year": 1964,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 90
+    },
+    {
+      "id": "prior-spacewalk",
+      "title": "A person walks in space for the first time",
+      "category": "Science",
+      "year": 1965,
+      "decision": "plain wording",
+      "calendarSlot": 204
+    },
+    {
+      "id": "prior-england-cup",
+      "title": "England wins the men’s FIFA World Cup",
+      "category": "Sport",
+      "year": 1966,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 230
+    },
+    {
+      "id": "prior-olympics-mexico",
+      "title": "Mexico City hosts the Summer Olympics",
+      "category": "Sport",
+      "year": 1968,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 177
+    },
+    {
+      "id": "prior-pong",
+      "title": "Atari releases Pong",
+      "category": "Everyday",
+      "year": 1972,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 106
+    },
+    {
+      "id": "prior-jaws",
+      "title": "Jaws reaches US cinemas",
+      "category": "Culture",
+      "year": 1975,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 123
+    },
+    {
+      "id": "prior-viking",
+      "title": "Viking 1 lands on Mars",
+      "category": "Science",
+      "year": 1976,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 253
+    },
+    {
+      "id": "prior-star-wars",
+      "title": "The original Star Wars reaches US cinemas",
+      "category": "Culture",
+      "year": 1977,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 191
+    },
+    {
+      "id": "prior-space-invaders",
+      "title": "Taito unveils Space Invaders in Japan",
+      "category": "Everyday",
+      "year": 1978,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 285
+    },
+    {
+      "id": "prior-walkman",
+      "title": "Sony launches the Walkman in Japan",
+      "category": "Everyday",
+      "year": 1979,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 264
+    },
+    {
+      "id": "prior-pacman",
+      "title": "Pac-Man begins its arcade release in Japan",
+      "category": "Everyday",
+      "year": 1980,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 270
+    },
+    {
+      "id": "prior-tetris",
+      "title": "Alexey Pajitnov creates Tetris",
+      "category": "Everyday",
+      "year": 1984,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 257
+    },
+    {
+      "id": "prior-mario",
+      "title": "Super Mario Bros. is released in Japan",
+      "category": "Everyday",
+      "year": 1985,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 276
+    },
+    {
+      "id": "prior-zelda",
+      "title": "The Legend of Zelda is released in Japan",
+      "category": "Everyday",
+      "year": 1986,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 77
+    },
+    {
+      "id": "prior-simpsons",
+      "title": "The Simpsons begins as a half-hour television series",
+      "category": "Culture",
+      "year": 1989,
+      "decision": "plain wording",
+      "calendarSlot": 13
+    },
+    {
+      "id": "prior-playstation",
+      "title": "The original PlayStation launches in Japan",
+      "category": "Everyday",
+      "year": 1994,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 128
+    },
+    {
+      "id": "prior-toy-story",
+      "title": "Toy Story reaches US cinemas",
+      "category": "Culture",
+      "year": 1995,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 52
+    },
+    {
+      "id": "prior-pokemon",
+      "title": "Pokémon Red and Green launch in Japan",
+      "category": "Everyday",
+      "year": 1996,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 19
+    },
+    {
+      "id": "prior-harry-potter",
+      "title": "The first Harry Potter novel is published in the UK",
+      "category": "Culture",
+      "year": 1997,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 267
+    },
+    {
+      "id": "prior-wikipedia",
+      "title": "Wikipedia launches",
+      "category": "Everyday",
+      "year": 2001,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 155
+    },
+    {
+      "id": "prior-steam-store",
+      "title": "Valve launches Steam",
+      "category": "Everyday",
+      "year": 2003,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 283
+    },
+    {
+      "id": "prior-black-hole",
+      "title": "The first image of a black hole's shadow is released",
+      "category": "Science",
+      "year": 2019,
+      "decision": "plain wording",
+      "calendarSlot": 120
+    },
+    {
+      "id": "td-001",
+      "title": "The Great Pyramid of Giza is completed (approximately)",
+      "category": "World",
+      "year": -2560,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 96
+    },
+    {
+      "id": "td-002",
+      "title": "The first recorded ancient Olympic Games take place",
+      "category": "Sport",
+      "year": -776,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 250
+    },
+    {
+      "id": "td-011",
+      "title": "Alexander the Great dies in Babylon",
+      "category": "World",
+      "year": -323,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 280
+    },
+    {
+      "id": "td-014",
+      "title": "Democratic reforms begin in ancient Athens (approximately)",
+      "category": "World",
+      "year": -508,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 11
+    },
+    {
+      "id": "td-016",
+      "title": "Julius Caesar is assassinated",
+      "category": "World",
+      "year": -44,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 306
+    },
+    {
+      "id": "td-017",
+      "title": "Cleopatra dies as Roman forces take control of Egypt",
+      "category": "World",
+      "year": -30,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 197
+    },
+    {
+      "id": "td-019",
+      "title": "The Great Fire of Rome breaks out",
+      "category": "World",
+      "year": 64,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 211
+    },
+    {
+      "id": "td-020",
+      "title": "Stonehenge's great stone circle is raised (approximately)",
+      "category": "World",
+      "year": -2500,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 50
+    },
+    {
+      "id": "td-021",
+      "title": "Construction of Hadrian's Wall begins",
+      "category": "World",
+      "year": 122,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 122
+    },
+    {
+      "id": "td-025",
+      "title": "The prophet Muhammad moves from Mecca to Medina",
+      "category": "World",
+      "year": 622,
+      "decision": "plain wording",
+      "calendarSlot": 311
+    },
+    {
+      "id": "td-028",
+      "title": "The Great Sphinx at Giza is built (approximately)",
+      "category": "World",
+      "year": -2500,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 245
+    },
+    {
+      "id": "td-034",
+      "title": "Viking explorers reach North America (approximately)",
+      "category": "World",
+      "year": 1000,
+      "decision": "plain wording",
+      "calendarSlot": 147
+    },
+    {
+      "id": "td-038",
+      "title": "Genghis Khan unites the Mongol tribes",
+      "category": "World",
+      "year": 1206,
+      "decision": "plain wording",
+      "calendarSlot": 185
+    },
+    {
+      "id": "td-042",
+      "title": "The Hundred Years' War begins between England and France",
+      "category": "World",
+      "year": 1337,
+      "decision": "plain wording",
+      "calendarSlot": 23
+    },
+    {
+      "id": "td-044",
+      "title": "Henry VIII becomes king of England",
+      "category": "World",
+      "year": 1509,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 293
+    },
+    {
+      "id": "td-045",
+      "title": "Joan of Arc is executed in Rouen",
+      "category": "World",
+      "year": 1431,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 221
+    },
+    {
+      "id": "td-046",
+      "title": "The Ottomans capture Constantinople, now Istanbul",
+      "category": "World",
+      "year": 1453,
+      "decision": "plain wording",
+      "calendarSlot": 297
+    },
+    {
+      "id": "td-052",
+      "title": "The first voyage around the world is completed",
+      "category": "World",
+      "year": 1522,
+      "decision": "plain wording",
+      "calendarSlot": 1
+    },
+    {
+      "id": "td-053",
+      "title": "Elizabeth I becomes queen of England",
+      "category": "World",
+      "year": 1558,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 322
+    },
+    {
+      "id": "td-054",
+      "title": "The Mayflower arrives in what is now Massachusetts",
+      "category": "World",
+      "year": 1620,
+      "decision": "plain wording",
+      "calendarSlot": 118
+    },
+    {
+      "id": "td-055",
+      "title": "The Spanish Armada's invasion campaign fails",
+      "category": "World",
+      "year": 1588,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 190
+    },
+    {
+      "id": "td-059",
+      "title": "Guy Fawkes is caught in the Gunpowder Plot",
+      "category": "World",
+      "year": 1605,
+      "decision": "plain wording",
+      "calendarSlot": 287
+    },
+    {
+      "id": "td-064",
+      "title": "George Washington becomes the first US president",
+      "category": "World",
+      "year": 1789,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 66
+    },
+    {
+      "id": "td-065",
+      "title": "Captain Cook's ship reaches Australia's east coast",
+      "category": "World",
+      "year": 1770,
+      "decision": "plain wording",
+      "calendarSlot": 282
+    },
+    {
+      "id": "td-066",
+      "title": "The First Fleet arrives at Sydney Cove",
+      "category": "World",
+      "year": 1788,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 44
+    },
+    {
+      "id": "td-071",
+      "title": "Napoleon is defeated at Waterloo",
+      "category": "World",
+      "year": 1815,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 137
+    },
+    {
+      "id": "td-075",
+      "title": "Abraham Lincoln is assassinated",
+      "category": "World",
+      "year": 1865,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 62
+    },
+    {
+      "id": "td-077",
+      "title": "The American Civil War begins",
+      "category": "World",
+      "year": 1861,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 99
+    },
+    {
+      "id": "td-078",
+      "title": "The US abolishes slavery through the Thirteenth Amendment",
+      "category": "World",
+      "year": 1865,
+      "decision": "plain wording",
+      "calendarSlot": 247
+    },
+    {
+      "id": "td-079",
+      "title": "Canadian Confederation takes effect",
+      "category": "World",
+      "year": 1867,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 288
+    },
+    {
+      "id": "td-082",
+      "title": "New Zealand grants women the parliamentary vote",
+      "category": "World",
+      "year": 1893,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 294
+    },
+    {
+      "id": "td-085",
+      "title": "The First World War begins",
+      "category": "World",
+      "year": 1914,
+      "decision": "plain wording",
+      "calendarSlot": 184
+    },
+    {
+      "id": "td-087",
+      "title": "The First World War armistice takes effect",
+      "category": "World",
+      "year": 1918,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 10
+    },
+    {
+      "id": "td-088",
+      "title": "The Treaty of Versailles is signed after the First World War",
+      "category": "World",
+      "year": 1919,
+      "decision": "plain wording",
+      "calendarSlot": 308
+    },
+    {
+      "id": "td-091",
+      "title": "Germany invades Poland",
+      "category": "World",
+      "year": 1939,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 252
+    },
+    {
+      "id": "td-093",
+      "title": "The Universal Declaration of Human Rights is adopted",
+      "category": "World",
+      "year": 1948,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 213
+    },
+    {
+      "id": "td-094",
+      "title": "The People's Republic of China is proclaimed",
+      "category": "World",
+      "year": 1949,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 261
+    },
+    {
+      "id": "td-095",
+      "title": "Martin Luther King Jr. gives his 'I Have a Dream' speech",
+      "category": "World",
+      "year": 1963,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 29
+    },
+    {
+      "id": "td-101",
+      "title": "The Woodstock music festival takes place",
+      "category": "World",
+      "year": 1969,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 275
+    },
+    {
+      "id": "td-102",
+      "title": "Queen Elizabeth II is crowned",
+      "category": "World",
+      "year": 1953,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 4
+    },
+    {
+      "id": "td-103",
+      "title": "East and West Germany reunite",
+      "category": "World",
+      "year": 1990,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 241
+    },
+    {
+      "id": "td-104",
+      "title": "Nelson Mandela becomes president of South Africa",
+      "category": "World",
+      "year": 1994,
+      "decision": "plain wording",
+      "calendarSlot": 149
+    },
+    {
+      "id": "td-105",
+      "title": "The September 11 attacks take place in the United States",
+      "category": "World",
+      "year": 2001,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 9
+    },
+    {
+      "id": "td-106",
+      "title": "The Soviet Union formally dissolves",
+      "category": "World",
+      "year": 1991,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 315
+    },
+    {
+      "id": "td-120",
+      "title": "NASA begins operations",
+      "category": "Science",
+      "year": 1958,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 329
+    },
+    {
+      "id": "td-121",
+      "title": "Alessandro Volta announces the first electric battery",
+      "category": "Science",
+      "year": 1800,
+      "decision": "plain wording",
+      "calendarSlot": 133
+    },
+    {
+      "id": "td-125",
+      "title": "Neptune is discovered through telescopic observation",
+      "category": "Science",
+      "year": 1846,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 262
+    },
+    {
+      "id": "td-126",
+      "title": "X-rays are discovered",
+      "category": "Science",
+      "year": 1895,
+      "decision": "plain wording",
+      "calendarSlot": 71
+    },
+    {
+      "id": "td-127",
+      "title": "Marie and Pierre Curie announce the discovery of radium",
+      "category": "Science",
+      "year": 1898,
+      "decision": "plain wording",
+      "calendarSlot": 265
+    },
+    {
+      "id": "td-128",
+      "title": "John Logie Baird demonstrates a working television",
+      "category": "Science",
+      "year": 1926,
+      "decision": "plain wording",
+      "calendarSlot": 178
+    },
+    {
+      "id": "td-130",
+      "title": "Scientists discover insulin's potential to treat diabetes",
+      "category": "Science",
+      "year": 1921,
+      "decision": "plain wording",
+      "calendarSlot": 141
+    },
+    {
+      "id": "td-133",
+      "title": "The first polio vaccine is announced as safe and effective",
+      "category": "Science",
+      "year": 1955,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 126
+    },
+    {
+      "id": "td-135",
+      "title": "The first human-to-human heart transplant is performed",
+      "category": "Science",
+      "year": 1967,
+      "decision": "plain wording",
+      "calendarSlot": 43
+    },
+    {
+      "id": "td-136",
+      "title": "The first 'test-tube baby' is born through IVF",
+      "category": "Science",
+      "year": 1978,
+      "decision": "plain wording",
+      "calendarSlot": 207
+    },
+    {
+      "id": "td-137",
+      "title": "The WHO declares smallpox eradicated",
+      "category": "Science",
+      "year": 1980,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 168
+    },
+    {
+      "id": "td-138",
+      "title": "Scientists report a hole in the ozone layer over Antarctica",
+      "category": "Science",
+      "year": 1985,
+      "decision": "plain wording",
+      "calendarSlot": 300
+    },
+    {
+      "id": "td-139",
+      "title": "ChatGPT is released to the public",
+      "category": "Science",
+      "year": 2022,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 256
+    },
+    {
+      "id": "td-142",
+      "title": "The WHO characterises COVID-19 as a pandemic",
+      "category": "Science",
+      "year": 2020,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 36
+    },
+    {
+      "id": "td-143",
+      "title": "The Paris climate agreement is adopted",
+      "category": "Science",
+      "year": 2015,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 5
+    },
+    {
+      "id": "td-148",
+      "title": "Sherlock Holmes first appears in print",
+      "category": "Culture",
+      "year": 1887,
+      "decision": "plain wording",
+      "calendarSlot": 73
+    },
+    {
+      "id": "td-149",
+      "title": "Dracula is published",
+      "category": "Culture",
+      "year": 1897,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 304
+    },
+    {
+      "id": "td-150",
+      "title": "The Great Gatsby is published",
+      "category": "Culture",
+      "year": 1925,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 234
+    },
+    {
+      "id": "td-151",
+      "title": "The Hobbit is published",
+      "category": "Culture",
+      "year": 1937,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 80
+    },
+    {
+      "id": "td-152",
+      "title": "The Little Prince is first published",
+      "category": "Culture",
+      "year": 1943,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 321
+    },
+    {
+      "id": "td-153",
+      "title": "Nineteen Eighty-Four is published",
+      "category": "Culture",
+      "year": 1949,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 152
+    },
+    {
+      "id": "td-154",
+      "title": "The Fellowship of the Ring is published",
+      "category": "Culture",
+      "year": 1954,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 223
+    },
+    {
+      "id": "td-155",
+      "title": "The Lion, the Witch and the Wardrobe is published",
+      "category": "Culture",
+      "year": 1950,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 217
+    },
+    {
+      "id": "td-156",
+      "title": "To Kill a Mockingbird is published",
+      "category": "Culture",
+      "year": 1960,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 248
+    },
+    {
+      "id": "td-157",
+      "title": "Roald Dahl's Charlie and the Chocolate Factory is published",
+      "category": "Culture",
+      "year": 1964,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 86
+    },
+    {
+      "id": "td-158",
+      "title": "Michael Jackson releases the album Thriller",
+      "category": "Culture",
+      "year": 1982,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 49
+    },
+    {
+      "id": "td-159",
+      "title": "The first Where's Wally? book is published",
+      "category": "Culture",
+      "year": 1987,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 136
+    },
+    {
+      "id": "td-160",
+      "title": "The first Sonic the Hedgehog game launches",
+      "category": "Culture",
+      "year": 1991,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 143
+    },
+    {
+      "id": "td-161",
+      "title": "Doom is released for PC",
+      "category": "Culture",
+      "year": 1993,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 108
+    },
+    {
+      "id": "td-163",
+      "title": "Shrek premieres in cinemas",
+      "category": "Culture",
+      "year": 2001,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 263
+    },
+    {
+      "id": "td-164",
+      "title": "Spirited Away opens in Japanese cinemas",
+      "category": "Culture",
+      "year": 2001,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 218
+    },
+    {
+      "id": "td-165",
+      "title": "Minecraft's first public version is released",
+      "category": "Culture",
+      "year": 2009,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 170
+    },
+    {
+      "id": "td-166",
+      "title": "Frozen opens in US cinemas",
+      "category": "Culture",
+      "year": 2013,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 186
+    },
+    {
+      "id": "td-167",
+      "title": "Black Panther opens in US cinemas",
+      "category": "Culture",
+      "year": 2018,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 16
+    },
+    {
+      "id": "td-170",
+      "title": "Nintendo launches the Wii",
+      "category": "Culture",
+      "year": 2006,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 301
+    },
+    {
+      "id": "td-171",
+      "title": "Nintendo launches the DS in North America",
+      "category": "Culture",
+      "year": 2004,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 317
+    },
+    {
+      "id": "td-172",
+      "title": "Microsoft launches the original Xbox in North America",
+      "category": "Culture",
+      "year": 2001,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 117
+    },
+    {
+      "id": "td-173",
+      "title": "Sony launches PlayStation 2 in Japan",
+      "category": "Culture",
+      "year": 2000,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 61
+    },
+    {
+      "id": "td-175",
+      "title": "Nintendo launches the console later called the NES in Japan",
+      "category": "Culture",
+      "year": 1983,
+      "decision": "plain wording",
+      "calendarSlot": 102
+    },
+    {
+      "id": "td-176",
+      "title": "Nintendo releases the Game Boy in Japan",
+      "category": "Culture",
+      "year": 1989,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 145
+    },
+    {
+      "id": "td-177",
+      "title": "E.T. the Extra-Terrestrial opens in US cinemas",
+      "category": "Culture",
+      "year": 1982,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 131
+    },
+    {
+      "id": "td-178",
+      "title": "Back to the Future opens in US cinemas",
+      "category": "Culture",
+      "year": 1985,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 183
+    },
+    {
+      "id": "td-179",
+      "title": "Jurassic Park opens in US cinemas",
+      "category": "Culture",
+      "year": 1993,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 327
+    },
+    {
+      "id": "td-180",
+      "title": "James Cameron's Titanic opens in US cinemas",
+      "category": "Culture",
+      "year": 1997,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 277
+    },
+    {
+      "id": "td-181",
+      "title": "The first Harry Potter film opens in UK cinemas",
+      "category": "Culture",
+      "year": 2001,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 214
+    },
+    {
+      "id": "td-182",
+      "title": "Finding Nemo opens in US cinemas",
+      "category": "Culture",
+      "year": 2003,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 114
+    },
+    {
+      "id": "td-183",
+      "title": "Beijing hosts the Summer Olympics",
+      "category": "Sport",
+      "year": 2008,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 25
+    },
+    {
+      "id": "td-184",
+      "title": "London hosts the Summer Olympics",
+      "category": "Sport",
+      "year": 2012,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 93
+    },
+    {
+      "id": "td-185",
+      "title": "Rio de Janeiro hosts the Summer Olympics",
+      "category": "Sport",
+      "year": 2016,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 40
+    },
+    {
+      "id": "td-186",
+      "title": "The postponed Tokyo Summer Olympics take place",
+      "category": "Sport",
+      "year": 2021,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 100
+    },
+    {
+      "id": "td-187",
+      "title": "Paris hosts the Summer Olympics for the third time",
+      "category": "Sport",
+      "year": 2024,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 132
+    },
+    {
+      "id": "td-188",
+      "title": "South Africa wins the men's Rugby World Cup at home",
+      "category": "Sport",
+      "year": 1995,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 0
+    },
+    {
+      "id": "td-189",
+      "title": "The first men's Rugby World Cup takes place",
+      "category": "Sport",
+      "year": 1987,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 225
+    },
+    {
+      "id": "td-190",
+      "title": "The first FIFA Women's World Cup takes place",
+      "category": "Sport",
+      "year": 1991,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 299
+    },
+    {
+      "id": "td-191",
+      "title": "The United States wins the Women's World Cup at home",
+      "category": "Sport",
+      "year": 1999,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 14
+    },
+    {
+      "id": "td-192",
+      "title": "Brazil wins the men's World Cup in Japan and South Korea",
+      "category": "Sport",
+      "year": 2002,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 307
+    },
+    {
+      "id": "td-193",
+      "title": "Spain wins its first men's FIFA World Cup",
+      "category": "Sport",
+      "year": 2010,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 200
+    },
+    {
+      "id": "td-194",
+      "title": "Lionel Messi and Argentina win the men's football World Cup",
+      "category": "Sport",
+      "year": 2022,
+      "decision": "plain wording",
+      "calendarSlot": 97
+    },
+    {
+      "id": "td-196",
+      "title": "New Zealand wins a second consecutive men's Rugby World Cup",
+      "category": "Sport",
+      "year": 2015,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 59
+    },
+    {
+      "id": "td-197",
+      "title": "England wins its first men's Cricket World Cup",
+      "category": "Sport",
+      "year": 2019,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 222
+    },
+    {
+      "id": "td-198",
+      "title": "Australia wins the men's Cricket World Cup in India",
+      "category": "Sport",
+      "year": 2023,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 196
+    },
+    {
+      "id": "td-199",
+      "title": "Jesse Owens wins four gold medals at the Berlin Olympics",
+      "category": "Sport",
+      "year": 1936,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 45
+    },
+    {
+      "id": "td-201",
+      "title": "Los Angeles hosts the Summer Olympics for the second time",
+      "category": "Sport",
+      "year": 1984,
+      "decision": "retain recognisable subject",
+      "calendarSlot": 162
+    },
+    {
+      "id": "td-202",
+      "title": "Usain Bolt wins Olympic gold in the 100 metres in Beijing",
+      "category": "Sport",
+      "year": 2008,
+      "decision": "plain wording",
+      "calendarSlot": 246
+    },
+    {
+      "id": "td3-pringles-first-go-on-sale-in-the-us",
+      "title": "Pringles first go on sale in the US",
+      "category": "Everyday",
+      "year": 1968,
+      "decision": "new familiar subject",
+      "calendarSlot": 6
+    },
+    {
+      "id": "td3-amazon-opens-its-online-bookstore",
+      "title": "Amazon opens its online bookstore",
+      "category": "Everyday",
+      "year": 1995,
+      "decision": "new familiar subject",
+      "calendarSlot": 7
+    },
+    {
+      "id": "td3-the-first-ipad-goes-on-sale",
+      "title": "The first iPad goes on sale",
+      "category": "Everyday",
+      "year": 2010,
+      "decision": "new familiar subject",
+      "calendarSlot": 12
+    },
+    {
+      "id": "td3-an-earthquake-and-tsunami-trigger-the-fukushima-nuclear-disaster",
+      "title": "An earthquake and tsunami trigger the Fukushima nuclear disaster",
+      "category": "World",
+      "year": 2011,
+      "decision": "new familiar subject",
+      "calendarSlot": 15
+    },
+    {
+      "id": "td3-adele-releases-the-album-21",
+      "title": "Adele releases the album 21",
+      "category": "Culture",
+      "year": 2011,
+      "decision": "new familiar subject",
+      "calendarSlot": 20
+    },
+    {
+      "id": "td3-stranger-things-first-appears-on-netflix",
+      "title": "Stranger Things first appears on Netflix",
+      "category": "Culture",
+      "year": 2016,
+      "decision": "new familiar subject",
+      "calendarSlot": 21
+    },
+    {
+      "id": "td3-the-first-starbucks-opens",
+      "title": "The first Starbucks opens",
+      "category": "Everyday",
+      "year": 1971,
+      "decision": "new familiar subject",
+      "calendarSlot": 24
+    },
+    {
+      "id": "td3-oreo-biscuits-first-go-on-sale",
+      "title": "Oreo biscuits first go on sale",
+      "category": "Everyday",
+      "year": 1912,
+      "decision": "new familiar subject",
+      "calendarSlot": 27
+    },
+    {
+      "id": "td3-disney-s-animated-the-lion-king-reaches-us-cinemas",
+      "title": "Disney's animated The Lion King reaches US cinemas",
+      "category": "Culture",
+      "year": 1994,
+      "decision": "new familiar subject",
+      "calendarSlot": 30
+    },
+    {
+      "id": "td3-the-first-hunger-games-film-reaches-cinemas",
+      "title": "The first Hunger Games film reaches cinemas",
+      "category": "Culture",
+      "year": 2012,
+      "decision": "new familiar subject",
+      "calendarSlot": 32
+    },
+    {
+      "id": "td3-queen-releases-bohemian-rhapsody",
+      "title": "Queen releases Bohemian Rhapsody",
+      "category": "Culture",
+      "year": 1975,
+      "decision": "new familiar subject",
+      "calendarSlot": 33
+    },
+    {
+      "id": "td3-play-doh-goes-on-sale-as-a-modelling-toy",
+      "title": "Play-Doh goes on sale as a modelling toy",
+      "category": "Everyday",
+      "year": 1956,
+      "decision": "new familiar subject",
+      "calendarSlot": 34
+    },
+    {
+      "id": "td3-ratatouille-reaches-us-cinemas",
+      "title": "Ratatouille reaches US cinemas",
+      "category": "Culture",
+      "year": 2007,
+      "decision": "new familiar subject",
+      "calendarSlot": 35
+    },
+    {
+      "id": "td3-james-cameron-s-avatar-reaches-cinemas",
+      "title": "James Cameron's Avatar reaches cinemas",
+      "category": "Culture",
+      "year": 2009,
+      "decision": "new familiar subject",
+      "calendarSlot": 41
+    },
+    {
+      "id": "td3-the-boeing-747-jumbo-jet-makes-its-first-flight",
+      "title": "The Boeing 747 jumbo jet makes its first flight",
+      "category": "Science",
+      "year": 1969,
+      "decision": "new familiar subject",
+      "calendarSlot": 47
+    },
+    {
+      "id": "td3-usain-bolt-runs-100-metres-in-a-world-record-9-58-seconds",
+      "title": "Usain Bolt runs 100 metres in a world-record 9.58 seconds",
+      "category": "Sport",
+      "year": 2009,
+      "decision": "new familiar subject",
+      "calendarSlot": 48
+    },
+    {
+      "id": "td3-the-first-winter-olympic-games-take-place",
+      "title": "The first Winter Olympic Games take place",
+      "category": "Sport",
+      "year": 1924,
+      "decision": "new familiar subject",
+      "calendarSlot": 53
+    },
+    {
+      "id": "td3-the-original-matrix-film-reaches-cinemas",
+      "title": "The original Matrix film reaches cinemas",
+      "category": "Culture",
+      "year": 1999,
+      "decision": "new familiar subject",
+      "calendarSlot": 55
+    },
+    {
+      "id": "td3-disney-s-original-mary-poppins-reaches-cinemas",
+      "title": "Disney's original Mary Poppins reaches cinemas",
+      "category": "Culture",
+      "year": 1964,
+      "decision": "new familiar subject",
+      "calendarSlot": 56
+    },
+    {
+      "id": "td3-kodak-builds-an-experimental-digital-camera",
+      "title": "Kodak builds an experimental digital camera",
+      "category": "Science",
+      "year": 1975,
+      "decision": "new familiar subject",
+      "calendarSlot": 57
+    },
+    {
+      "id": "td3-the-first-pizza-hut-opens",
+      "title": "The first Pizza Hut opens",
+      "category": "Everyday",
+      "year": 1958,
+      "decision": "new familiar subject",
+      "calendarSlot": 60
+    },
+    {
+      "id": "td3-the-spice-girls-release-wannabe",
+      "title": "The Spice Girls release Wannabe",
+      "category": "Culture",
+      "year": 1996,
+      "decision": "new familiar subject",
+      "calendarSlot": 63
+    },
+    {
+      "id": "td3-connect-four-first-goes-on-sale",
+      "title": "Connect Four first goes on sale",
+      "category": "Everyday",
+      "year": 1974,
+      "decision": "new familiar subject",
+      "calendarSlot": 64
+    },
+    {
+      "id": "td3-the-indian-ocean-earthquake-and-tsunami-strike",
+      "title": "The Indian Ocean earthquake and tsunami strike",
+      "category": "World",
+      "year": 2004,
+      "decision": "new familiar subject",
+      "calendarSlot": 65
+    },
+    {
+      "id": "td3-a-minecraft-movie-reaches-cinemas",
+      "title": "A Minecraft Movie reaches cinemas",
+      "category": "Culture",
+      "year": 2025,
+      "decision": "new familiar subject",
+      "calendarSlot": 68
+    },
+    {
+      "id": "td3-scientists-identify-the-virus-that-causes-aids",
+      "title": "Scientists identify the virus that causes AIDS",
+      "category": "Science",
+      "year": 1983,
+      "decision": "new familiar subject",
+      "calendarSlot": 69
+    },
+    {
+      "id": "td3-psy-releases-gangnam-style",
+      "title": "Psy releases Gangnam Style",
+      "category": "Culture",
+      "year": 2012,
+      "decision": "new familiar subject",
+      "calendarSlot": 70
+    },
+    {
+      "id": "td3-pixar-s-cars-reaches-us-cinemas",
+      "title": "Pixar's Cars reaches US cinemas",
+      "category": "Culture",
+      "year": 2006,
+      "decision": "new familiar subject",
+      "calendarSlot": 75
+    },
+    {
+      "id": "td3-the-film-grease-reaches-cinemas",
+      "title": "The film Grease reaches cinemas",
+      "category": "Culture",
+      "year": 1978,
+      "decision": "new familiar subject",
+      "calendarSlot": 76
+    },
+    {
+      "id": "td3-whatsapp-launches",
+      "title": "WhatsApp launches",
+      "category": "Everyday",
+      "year": 2009,
+      "decision": "new familiar subject",
+      "calendarSlot": 79
+    },
+    {
+      "id": "td3-apple-s-original-macintosh-goes-on-sale",
+      "title": "Apple's original Macintosh goes on sale",
+      "category": "Everyday",
+      "year": 1984,
+      "decision": "new familiar subject",
+      "calendarSlot": 81
+    },
+    {
+      "id": "td3-the-channel-tunnel-between-britain-and-france-officially-opens",
+      "title": "The Channel Tunnel between Britain and France officially opens",
+      "category": "World",
+      "year": 1994,
+      "decision": "new familiar subject",
+      "calendarSlot": 82
+    },
+    {
+      "id": "td3-spongebob-squarepants-first-airs-on-us-television",
+      "title": "SpongeBob SquarePants first airs on US television",
+      "category": "Culture",
+      "year": 1999,
+      "decision": "new familiar subject",
+      "calendarSlot": 83
+    },
+    {
+      "id": "td3-polaroid-s-first-instant-camera-goes-on-sale",
+      "title": "Polaroid's first instant camera goes on sale",
+      "category": "Science",
+      "year": 1948,
+      "decision": "new familiar subject",
+      "calendarSlot": 84
+    },
+    {
+      "id": "td3-construction-of-the-international-space-station-begins-in-orbit",
+      "title": "Construction of the International Space Station begins in orbit",
+      "category": "Science",
+      "year": 1998,
+      "decision": "new familiar subject",
+      "calendarSlot": 85
+    },
+    {
+      "id": "td3-the-second-world-war-ends",
+      "title": "The Second World War ends",
+      "category": "World",
+      "year": 1945,
+      "decision": "new familiar subject",
+      "calendarSlot": 87
+    },
+    {
+      "id": "td3-game-of-thrones-first-airs-on-television",
+      "title": "Game of Thrones first airs on television",
+      "category": "Culture",
+      "year": 2011,
+      "decision": "new familiar subject",
+      "calendarSlot": 88
+    },
+    {
+      "id": "td3-abba-wins-eurovision-with-waterloo",
+      "title": "ABBA wins Eurovision with Waterloo",
+      "category": "Culture",
+      "year": 1974,
+      "decision": "new familiar subject",
+      "calendarSlot": 94
+    },
+    {
+      "id": "td3-the-film-the-sound-of-music-reaches-cinemas",
+      "title": "The film The Sound of Music reaches cinemas",
+      "category": "Culture",
+      "year": 1965,
+      "decision": "new familiar subject",
+      "calendarSlot": 95
+    },
+    {
+      "id": "td3-apple-s-original-airpods-go-on-sale",
+      "title": "Apple's original AirPods go on sale",
+      "category": "Everyday",
+      "year": 2016,
+      "decision": "new familiar subject",
+      "calendarSlot": 98
+    },
+    {
+      "id": "td3-king-charles-iii-is-crowned",
+      "title": "King Charles III is crowned",
+      "category": "World",
+      "year": 2023,
+      "decision": "new familiar subject",
+      "calendarSlot": 101
+    },
+    {
+      "id": "td3-simone-biles-wins-her-first-olympic-all-around-title",
+      "title": "Simone Biles wins her first Olympic all-around title",
+      "category": "Sport",
+      "year": 2016,
+      "decision": "new familiar subject",
+      "calendarSlot": 105
+    },
+    {
+      "id": "td3-nutella-first-goes-on-sale",
+      "title": "Nutella first goes on sale",
+      "category": "Everyday",
+      "year": 1964,
+      "decision": "new familiar subject",
+      "calendarSlot": 109
+    },
+    {
+      "id": "td3-concorde-makes-its-first-flight",
+      "title": "Concorde makes its first flight",
+      "category": "Science",
+      "year": 1969,
+      "decision": "new familiar subject",
+      "calendarSlot": 113
+    },
+    {
+      "id": "td3-marvel-s-the-avengers-reaches-cinemas",
+      "title": "Marvel's The Avengers reaches cinemas",
+      "category": "Culture",
+      "year": 2012,
+      "decision": "new familiar subject",
+      "calendarSlot": 121
+    },
+    {
+      "id": "td3-the-rosetta-stone-is-discovered-in-egypt",
+      "title": "The Rosetta Stone is discovered in Egypt",
+      "category": "World",
+      "year": 1799,
+      "decision": "new familiar subject",
+      "calendarSlot": 125
+    },
+    {
+      "id": "td3-london-s-big-ben-begins-chiming-at-the-palace-of-westminster",
+      "title": "London's Big Ben begins chiming at the Palace of Westminster",
+      "category": "World",
+      "year": 1859,
+      "decision": "new familiar subject",
+      "calendarSlot": 127
+    },
+    {
+      "id": "td3-snapchat-first-launches",
+      "title": "Snapchat first launches",
+      "category": "Everyday",
+      "year": 2011,
+      "decision": "new familiar subject",
+      "calendarSlot": 130
+    },
+    {
+      "id": "td3-the-burj-khalifa-opens-in-dubai",
+      "title": "The Burj Khalifa opens in Dubai",
+      "category": "World",
+      "year": 2010,
+      "decision": "new familiar subject",
+      "calendarSlot": 135
+    },
+    {
+      "id": "td3-the-sitcom-friends-first-airs",
+      "title": "The sitcom Friends first airs",
+      "category": "Culture",
+      "year": 1994,
+      "decision": "new familiar subject",
+      "calendarSlot": 140
+    },
+    {
+      "id": "td3-wall-e-reaches-us-cinemas",
+      "title": "WALL-E reaches US cinemas",
+      "category": "Culture",
+      "year": 2008,
+      "decision": "new familiar subject",
+      "calendarSlot": 142
+    },
+    {
+      "id": "td3-barack-obama-becomes-us-president",
+      "title": "Barack Obama becomes US president",
+      "category": "World",
+      "year": 2009,
+      "decision": "new familiar subject",
+      "calendarSlot": 144
+    },
+    {
+      "id": "td3-the-first-paralympic-games-take-place",
+      "title": "The first Paralympic Games take place",
+      "category": "Sport",
+      "year": 1960,
+      "decision": "new familiar subject",
+      "calendarSlot": 150
+    },
+    {
+      "id": "td3-gps-becomes-fully-operational",
+      "title": "GPS becomes fully operational",
+      "category": "Science",
+      "year": 1995,
+      "decision": "new familiar subject",
+      "calendarSlot": 151
+    },
+    {
+      "id": "td3-the-incredibles-reaches-us-cinemas",
+      "title": "The Incredibles reaches US cinemas",
+      "category": "Culture",
+      "year": 2004,
+      "decision": "new familiar subject",
+      "calendarSlot": 158
+    },
+    {
+      "id": "td3-roger-federer-wins-wimbledon-for-the-first-time",
+      "title": "Roger Federer wins Wimbledon for the first time",
+      "category": "Sport",
+      "year": 2003,
+      "decision": "new familiar subject",
+      "calendarSlot": 160
+    },
+    {
+      "id": "td3-cathy-freeman-wins-olympic-gold-in-the-400-metres-in-sydney",
+      "title": "Cathy Freeman wins Olympic gold in the 400 metres in Sydney",
+      "category": "Sport",
+      "year": 2000,
+      "decision": "new familiar subject",
+      "calendarSlot": 161
+    },
+    {
+      "id": "td3-the-us-version-of-the-office-first-airs",
+      "title": "The US version of The Office first airs",
+      "category": "Culture",
+      "year": 2005,
+      "decision": "new familiar subject",
+      "calendarSlot": 165
+    },
+    {
+      "id": "td3-rafael-nadal-wins-the-french-open-for-the-first-time",
+      "title": "Rafael Nadal wins the French Open for the first time",
+      "category": "Sport",
+      "year": 2005,
+      "decision": "new familiar subject",
+      "calendarSlot": 167
+    },
+    {
+      "id": "td3-the-taj-mahal-complex-is-completed",
+      "title": "The Taj Mahal complex is completed",
+      "category": "World",
+      "year": 1653,
+      "decision": "new familiar subject",
+      "calendarSlot": 172
+    },
+    {
+      "id": "td3-microsoft-s-xbox-360-first-goes-on-sale",
+      "title": "Microsoft's Xbox 360 first goes on sale",
+      "category": "Everyday",
+      "year": 2005,
+      "decision": "new familiar subject",
+      "calendarSlot": 174
+    },
+    {
+      "id": "td3-serena-williams-wins-her-first-grand-slam-singles-title",
+      "title": "Serena Williams wins her first Grand Slam singles title",
+      "category": "Sport",
+      "year": 1999,
+      "decision": "new familiar subject",
+      "calendarSlot": 175
+    },
+    {
+      "id": "td3-sesame-street-first-airs-on-us-television",
+      "title": "Sesame Street first airs on US television",
+      "category": "Culture",
+      "year": 1969,
+      "decision": "new familiar subject",
+      "calendarSlot": 176
+    },
+    {
+      "id": "td3-disney-s-animated-aladdin-reaches-us-cinemas",
+      "title": "Disney's animated Aladdin reaches US cinemas",
+      "category": "Culture",
+      "year": 1992,
+      "decision": "new familiar subject",
+      "calendarSlot": 179
+    },
+    {
+      "id": "td3-the-first-apple-watch-goes-on-sale",
+      "title": "The first Apple Watch goes on sale",
+      "category": "Everyday",
+      "year": 2015,
+      "decision": "new familiar subject",
+      "calendarSlot": 181
+    },
+    {
+      "id": "td3-muhammad-ali-wins-his-first-world-heavyweight-title",
+      "title": "Muhammad Ali wins his first world heavyweight title",
+      "category": "Sport",
+      "year": 1964,
+      "decision": "new familiar subject",
+      "calendarSlot": 188
+    },
+    {
+      "id": "td3-tiger-woods-wins-the-masters-for-the-first-time",
+      "title": "Tiger Woods wins the Masters for the first time",
+      "category": "Sport",
+      "year": 1997,
+      "decision": "new familiar subject",
+      "calendarSlot": 192
+    },
+    {
+      "id": "td3-the-online-marketplace-now-called-ebay-launches",
+      "title": "The online marketplace now called eBay launches",
+      "category": "Everyday",
+      "year": 1995,
+      "decision": "new familiar subject",
+      "calendarSlot": 194
+    },
+    {
+      "id": "td3-netflix-begins-offering-streaming-video",
+      "title": "Netflix begins offering streaming video",
+      "category": "Everyday",
+      "year": 2007,
+      "decision": "new familiar subject",
+      "calendarSlot": 195
+    },
+    {
+      "id": "td3-the-first-paying-space-tourist-travels-to-space",
+      "title": "The first paying space tourist travels to space",
+      "category": "Science",
+      "year": 2001,
+      "decision": "new familiar subject",
+      "calendarSlot": 198
+    },
+    {
+      "id": "td3-san-francisco-s-golden-gate-bridge-opens",
+      "title": "San Francisco's Golden Gate Bridge opens",
+      "category": "World",
+      "year": 1937,
+      "decision": "new familiar subject",
+      "calendarSlot": 201
+    },
+    {
+      "id": "td3-michael-jordan-wins-his-first-nba-championship",
+      "title": "Michael Jordan wins his first NBA championship",
+      "category": "Sport",
+      "year": 1991,
+      "decision": "new familiar subject",
+      "calendarSlot": 203
+    },
+    {
+      "id": "td3-taylor-swift-releases-her-debut-album",
+      "title": "Taylor Swift releases her debut album",
+      "category": "Culture",
+      "year": 2006,
+      "decision": "new familiar subject",
+      "calendarSlot": 208
+    },
+    {
+      "id": "td3-instagram-launches",
+      "title": "Instagram launches",
+      "category": "Everyday",
+      "year": 2010,
+      "decision": "new familiar subject",
+      "calendarSlot": 209
+    },
+    {
+      "id": "td3-doctor-who-first-airs-on-british-television",
+      "title": "Doctor Who first airs on British television",
+      "category": "Culture",
+      "year": 1963,
+      "decision": "new familiar subject",
+      "calendarSlot": 210
+    },
+    {
+      "id": "td3-the-first-super-bowl-is-played",
+      "title": "The first Super Bowl is played",
+      "category": "Sport",
+      "year": 1967,
+      "decision": "new familiar subject",
+      "calendarSlot": 215
+    },
+    {
+      "id": "td3-despacito-is-released",
+      "title": "Despacito is released",
+      "category": "Culture",
+      "year": 2017,
+      "decision": "new familiar subject",
+      "calendarSlot": 219
+    },
+    {
+      "id": "td3-twitter-first-launches",
+      "title": "Twitter first launches",
+      "category": "Everyday",
+      "year": 2006,
+      "decision": "new familiar subject",
+      "calendarSlot": 220
+    },
+    {
+      "id": "td3-post-it-notes-go-on-sale-across-the-us",
+      "title": "Post-it Notes go on sale across the US",
+      "category": "Everyday",
+      "year": 1980,
+      "decision": "new familiar subject",
+      "calendarSlot": 226
+    },
+    {
+      "id": "td3-the-first-android-phone-goes-on-sale",
+      "title": "The first Android phone goes on sale",
+      "category": "Everyday",
+      "year": 2008,
+      "decision": "new familiar subject",
+      "calendarSlot": 228
+    },
+    {
+      "id": "td3-the-original-nintendo-switch-goes-on-sale",
+      "title": "The original Nintendo Switch goes on sale",
+      "category": "Everyday",
+      "year": 2017,
+      "decision": "new familiar subject",
+      "calendarSlot": 231
+    },
+    {
+      "id": "td3-a-patient-receives-the-first-permanent-artificial-heart",
+      "title": "A patient receives the first permanent artificial heart",
+      "category": "Science",
+      "year": 1982,
+      "decision": "new familiar subject",
+      "calendarSlot": 233
+    },
+    {
+      "id": "td3-beyonc-releases-her-debut-solo-album",
+      "title": "Beyoncé releases her debut solo album",
+      "category": "Culture",
+      "year": 2003,
+      "decision": "new familiar subject",
+      "calendarSlot": 235
+    },
+    {
+      "id": "td3-a-major-fire-damages-notre-dame-cathedral-in-paris",
+      "title": "A major fire damages Notre-Dame Cathedral in Paris",
+      "category": "World",
+      "year": 2019,
+      "decision": "new familiar subject",
+      "calendarSlot": 236
+    },
+    {
+      "id": "td3-disney-s-animated-beauty-and-the-beast-reaches-us-cinemas",
+      "title": "Disney's animated Beauty and the Beast reaches US cinemas",
+      "category": "Culture",
+      "year": 1991,
+      "decision": "new familiar subject",
+      "calendarSlot": 238
+    },
+    {
+      "id": "td3-pixar-s-coco-reaches-us-cinemas",
+      "title": "Pixar's Coco reaches US cinemas",
+      "category": "Culture",
+      "year": 2017,
+      "decision": "new familiar subject",
+      "calendarSlot": 243
+    },
+    {
+      "id": "td3-the-original-home-alone-reaches-cinemas",
+      "title": "The original Home Alone reaches cinemas",
+      "category": "Culture",
+      "year": 1990,
+      "decision": "new familiar subject",
+      "calendarSlot": 249
+    },
+    {
+      "id": "td3-tiktok-launches-outside-mainland-china",
+      "title": "TikTok launches outside mainland China",
+      "category": "Everyday",
+      "year": 2017,
+      "decision": "new familiar subject",
+      "calendarSlot": 251
+    },
+    {
+      "id": "td3-christopher-nolan-s-oppenheimer-reaches-cinemas",
+      "title": "Christopher Nolan's Oppenheimer reaches cinemas",
+      "category": "Culture",
+      "year": 2023,
+      "decision": "new familiar subject",
+      "calendarSlot": 254
+    },
+    {
+      "id": "td3-the-first-commercial-microwave-oven-goes-on-sale",
+      "title": "The first commercial microwave oven goes on sale",
+      "category": "Science",
+      "year": 1947,
+      "decision": "new familiar subject",
+      "calendarSlot": 255
+    },
+    {
+      "id": "td3-nintendo-switch-2-goes-on-sale",
+      "title": "Nintendo Switch 2 goes on sale",
+      "category": "Everyday",
+      "year": 2025,
+      "decision": "new familiar subject",
+      "calendarSlot": 258
+    },
+    {
+      "id": "td3-michael-phelps-wins-eight-gold-medals-at-one-olympics",
+      "title": "Michael Phelps wins eight gold medals at one Olympics",
+      "category": "Sport",
+      "year": 2008,
+      "decision": "new familiar subject",
+      "calendarSlot": 259
+    },
+    {
+      "id": "td3-the-first-wimbledon-tennis-championships-are-held",
+      "title": "The first Wimbledon tennis championships are held",
+      "category": "Sport",
+      "year": 1877,
+      "decision": "new familiar subject",
+      "calendarSlot": 260
+    },
+    {
+      "id": "td3-queen-elizabeth-ii-dies",
+      "title": "Queen Elizabeth II dies",
+      "category": "World",
+      "year": 2022,
+      "decision": "new familiar subject",
+      "calendarSlot": 266
+    },
+    {
+      "id": "td3-brazil-wins-the-men-s-football-world-cup-for-the-first-time",
+      "title": "Brazil wins the men's football World Cup for the first time",
+      "category": "Sport",
+      "year": 1958,
+      "decision": "new familiar subject",
+      "calendarSlot": 268
+    },
+    {
+      "id": "td3-the-live-action-barbie-film-reaches-cinemas",
+      "title": "The live-action Barbie film reaches cinemas",
+      "category": "Culture",
+      "year": 2023,
+      "decision": "new familiar subject",
+      "calendarSlot": 269
+    },
+    {
+      "id": "td3-the-atomic-bomb-is-dropped-on-hiroshima",
+      "title": "The atomic bomb is dropped on Hiroshima",
+      "category": "World",
+      "year": 1945,
+      "decision": "new familiar subject",
+      "calendarSlot": 271
+    },
+    {
+      "id": "td3-the-mcdonald-brothers-open-their-first-mcdonald-s-restaurant",
+      "title": "The McDonald brothers open their first McDonald's restaurant",
+      "category": "Everyday",
+      "year": 1940,
+      "decision": "new familiar subject",
+      "calendarSlot": 272
+    },
+    {
+      "id": "td3-red-bull-launches-in-austria",
+      "title": "Red Bull launches in Austria",
+      "category": "Everyday",
+      "year": 1987,
+      "decision": "new familiar subject",
+      "calendarSlot": 273
+    },
+    {
+      "id": "td3-peppa-pig-first-airs-on-british-television",
+      "title": "Peppa Pig first airs on British television",
+      "category": "Culture",
+      "year": 2004,
+      "decision": "new familiar subject",
+      "calendarSlot": 289
+    },
+    {
+      "id": "td3-zoom-launches-its-video-meeting-service",
+      "title": "Zoom launches its video-meeting service",
+      "category": "Everyday",
+      "year": 2013,
+      "decision": "new familiar subject",
+      "calendarSlot": 290
+    },
+    {
+      "id": "td3-sony-s-playstation-5-first-goes-on-sale",
+      "title": "Sony's PlayStation 5 first goes on sale",
+      "category": "Everyday",
+      "year": 2020,
+      "decision": "new familiar subject",
+      "calendarSlot": 295
+    },
+    {
+      "id": "td3-microsoft-releases-windows-xp",
+      "title": "Microsoft releases Windows XP",
+      "category": "Everyday",
+      "year": 2001,
+      "decision": "new familiar subject",
+      "calendarSlot": 298
+    },
+    {
+      "id": "td3-monsters-inc-reaches-us-cinemas",
+      "title": "Monsters, Inc. reaches US cinemas",
+      "category": "Culture",
+      "year": 2001,
+      "decision": "new familiar subject",
+      "calendarSlot": 302
+    },
+    {
+      "id": "td3-an-olympic-gymnast-scores-the-first-perfect-10",
+      "title": "An Olympic gymnast scores the first perfect 10",
+      "category": "Sport",
+      "year": 1976,
+      "decision": "new familiar subject",
+      "calendarSlot": 303
+    },
+    {
+      "id": "td3-bluey-first-airs-on-australian-television",
+      "title": "Bluey first airs on Australian television",
+      "category": "Culture",
+      "year": 2018,
+      "decision": "new familiar subject",
+      "calendarSlot": 305
+    },
+    {
+      "id": "td3-the-card-game-uno-first-goes-on-sale",
+      "title": "The card game Uno first goes on sale",
+      "category": "Everyday",
+      "year": 1971,
+      "decision": "new familiar subject",
+      "calendarSlot": 310
+    },
+    {
+      "id": "td3-the-original-inside-out-reaches-us-cinemas",
+      "title": "The original Inside Out reaches US cinemas",
+      "category": "Culture",
+      "year": 2015,
+      "decision": "new familiar subject",
+      "calendarSlot": 314
+    },
+    {
+      "id": "td3-squid-game-first-appears-on-netflix",
+      "title": "Squid Game first appears on Netflix",
+      "category": "Culture",
+      "year": 2021,
+      "decision": "new familiar subject",
+      "calendarSlot": 318
+    },
+    {
+      "id": "td3-disney-s-animated-the-little-mermaid-reaches-us-cinemas",
+      "title": "Disney's animated The Little Mermaid reaches US cinemas",
+      "category": "Culture",
+      "year": 1989,
+      "decision": "new familiar subject",
+      "calendarSlot": 320
+    },
+    {
+      "id": "td3-pixar-s-up-reaches-us-cinemas",
+      "title": "Pixar's Up reaches US cinemas",
+      "category": "Culture",
+      "year": 2009,
+      "decision": "new familiar subject",
+      "calendarSlot": 325
+    }
+  ],
+  "factClarifications": [
+    {
+      "id": "td-104",
+      "before": "Voters elected the government that brought Nelson Mandela to the presidency.",
+      "after": "After South Africa's first all-race national election, Mandela is inaugurated as president in May.",
+      "reason": "Explain the familiar presidency milestone named in the revised title."
+    },
+    {
+      "id": "td3-the-first-starbucks-opens",
+      "before": "The original store opens at Seattle's Pike Place Market.",
+      "after": "Three founders open Starbucks in Seattle, initially selling coffee beans, tea and spices.",
+      "reason": "Keep the founding milestone simple; the famous current Pike Place address was a later location."
+    }
+  ],
+  "primaryChecks": [
+    {
+      "source": "https://www.nintendo.co.jp/corporate/release/en/2025/250402.html",
+      "scope": "Switch 2 release date in official Nintendo announcement."
+    },
+    {
+      "source": "https://www.pixar.com/feature-films/",
+      "scope": "Pixar feature-film release-year roster."
+    },
+    {
+      "source": "https://about.starbucks.com/history/our-founders/",
+      "scope": "Founders and first store in 1971."
+    },
+    {
+      "source": "https://www.pikeplacemarket.org/history-of-the-pda-market-restoration-and-rehabilitation/",
+      "scope": "The later move from the original Starbucks premises; do not confuse the present tourist address with the first shop."
+    },
+    {
+      "source": "https://www.pasteur.fr/en/taxonomy/term/115/40-years-hiv-discovery-virus-responsible-aids-identified-may-20-1983",
+      "scope": "HIV isolation in 1983."
+    },
+    {
+      "source": "https://www.library.hbs.edu/special-collections-and-archives/exhibits/polaroid-from-concept-to-product/a-polaroid-timeline-1932-1977",
+      "scope": "Polaroid commercial Model 95 launch in 1948."
+    },
+    {
+      "source": "https://www.guinnessworldrecords.com/world-records/most-gold-medals-won-at-a-single-olympic-games-male",
+      "scope": "Phelps eight golds in Beijing 2008."
+    }
+  ],
+  "verification": {
+    "sourceAvailability": {
+      "report": "design/content-reviews/2026-11-05-time-drop-sources.json",
+      "newCitationURLsRetrieved": 111,
+      "newCitationURLsTotal": 111,
+      "targetYearPresent": 111,
+      "limit": "HTTP availability and year presence are not independent verification of the entire claim."
+    },
+    "liveScoreCompatibility": {
+      "method": "Read-only calls to the existing production public._friend_time_drop_score using isolated synthetic captures; no player rows written.",
+      "newFivePerfect": 100,
+      "oldFivePerfect": 100,
+      "oldTenPerfect": 100,
+      "oldCompletedZero": 0
+    },
+    "localChecks": [
+      "Focused content, rules, cloud, profile and calendar checks",
+      "Real PostgreSQL parity and private ownership tests",
+      "Account restore and private Friends browser suites",
+      "320/390/768/1100/1440 Time Drop gameplay",
+      "326 actual Unlimited draws and exhaustion",
+      "Pre-refresh Daily and Unlimited capture continuity, completed zero, two-tab and Sydney reset checks"
+    ],
+    "limits": [
+      "Editorial familiarity is not measured recognition or player-popularity data.",
+      "Chromium responsive checks are not real iPhone/Safari or human playtesting.",
+      "Live site deployment verification is a separate release step."
+    ]
+  }
+}

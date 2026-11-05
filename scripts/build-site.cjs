@@ -19,6 +19,7 @@ function copy(file,relative){
   // Keep generated static drawer labels aligned with the approved display name.
   let rendered=html.replace(/(src="[^"]*(?:navigation|game-config)\.js)(?:\?[^\"]*)?"/g,'$1?v=codebreak-20261104"').replace(/(src="[^"]*inner-clock-model\.js)(?:\?[^\"]*)?"/g,'$1?v=no-repeat-20261026"').replace(/<nav\b[^>]*class="[^"]*\bgame-menu\b[^"]*"[^>]*>[\s\S]*?<\/nav>/g,nav=>nav.replace(/(<a\b[^>]*href="[^"]*games\/inner-clock\/index\.html"[^>]*>)[\s\S]*?(<\/a>)/g,(_,open,close)=>open+'Time Sense'+close));
   if(rendered.includes('cloud-saves.js')&&!rendered.includes('codebreak-model.js')){const prefix=rendered.match(/src="([^"]*)cloud-saves\.js/)[1];rendered=rendered.replace(/<script\b(?=[^>]*src="[^"]*cloud-saves\.js)[^>]*><\/script>/,'<script src="'+prefix+'codebreak-model.js?v=1"></script>$&');}
+  rendered=rendered.replace(/(src="[^"]*time-drop-model\.js)(?:\?[^\"]*)?"/g,'$1?v=familiar-20261105"');
   rendered=rendered.replace(/(src="[^"]*arcade-score\.js)(?:\?[^"]*)?"/g,'$1?v=codebreak-20261104"');
   fs.writeFileSync(target,applyBrand(rendered.replace(/(src="[^"]*cloud-saves\.js)(?:\?[^"]*)?"/g,'$1?v=codebreak-20261104"').replace(/(src="[^"]*hidden-gem-model\.js)(?:\?[^"]*)?"/g,'$1?v=coverage-20261101"').replace(/(src="[^"]*(?:profile-records|friends|leagues|leagues-model)\.js)(?:\?[^"]*)?"/g,'$1?v=codebreak-20261104"').replace(/(src="[^"]*accounts\.js)(?:\?[^"]*)?"/g,'$1?v=codebreak-20261104"'),relative));
  }else fs.copyFileSync(file,target);

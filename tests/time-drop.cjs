@@ -1,6 +1,8 @@
 const assert=require('node:assert/strict'),{chromium}=require('playwright');
 const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000',url=base+'/games/time-drop/index.html',fixed=new Date('2026-10-23T03:00:00Z');
 const saved=p=>p.evaluate(()=>JSON.parse(localStorage.getItem(BREAK_ROOM_TIME_DROP.PREFIX+MIDNIGHT_ARCADE_CLOCK.dayKey())));
+require('../time-drop-model.js');
+const nativeModel=globalThis.BREAK_ROOM_TIME_DROP,oldBank=require('../content/archive/2026-11-05-pre-time-drop-familiarity/time-drop-events.json').events,activeBank=require('../content/time-drop-events.json').events;
 async function setup(p){p.setDefaultTimeout(8000);await p.clock.install({time:new Date(fixed.getTime()-60000)});await p.clock.pauseAt(fixed);}
 async function enter(p,y){await p.locator('#year-era').selectOption(y<0?'bce':'ce');await p.locator('#year-input').fill(String(Math.abs(y)));}
 async function answer(p,offset=0){const y=await p.evaluate(()=>TIME_DROP_EVENTS.find(e=>e.id===document.getElementById('engine-slot').dataset.eventId).year);await enter(p,y+offset===0?1:y+offset);await p.locator('#lock-guess').click();}
@@ -31,6 +33,20 @@ async function answer(p,offset=0){const y=await p.evaluate(()=>TIME_DROP_EVENTS.
  await oldPage.locator('#next-event').click();for(let i=1;i<10;i++){await answer(oldPage);await oldPage.locator('#next-event').click();}
  assert.equal(await oldPage.locator('.td-history li').count(),10);assert.match(await oldPage.locator('.td-total').innerText(),/10,000/);await oldContext.close();
 
+ // Actual pre-refresh captures include removed subjects and no new calendar fields.
+ const oldDay='2026-11-05',captured=nativeModel.create(oldBank,oldDay);nativeModel.guess(captured,1888);
+ assert(captured.events.some(e=>!activeBank.some(n=>n.id===e.id)));
+ const olderPractice={category:'all',era:'all',seen:['td-040'],count:7,points:4321,event:oldBank.find(e=>e.id==='td-040'),guess:1500,pick:null};
+ const compatibility=await browser.newContext({viewport:{width:390,height:1000},reducedMotion:'reduce'}),cp=await compatibility.newPage();
+ await compatibility.addInitScript(({r,practice})=>{const k='break-room:time-drop:daily:'+r.day;if(!localStorage.getItem(k))localStorage.setItem(k,JSON.stringify(r));if(!sessionStorage.getItem('break-room:time-drop:practice:guest'))sessionStorage.setItem('break-room:time-drop:practice:guest',JSON.stringify(practice));},{r:captured,practice:olderPractice});
+ await cp.clock.setFixedTime(new Date(oldDay+'T03:00:00Z'));await cp.goto(url);
+ assert.equal(JSON.stringify(await saved(cp)),JSON.stringify(captured),'Opening keeps the entire old captured Daily');
+ for(let i=0;i<5;i++){await enter(cp,captured.events[i].year);await cp.locator('#lock-guess').click();await cp.locator('#next-event').click();}
+ assert.match(await cp.locator('.td-total').innerText(),/5,000/);const frozenDaily=JSON.stringify(await saved(cp));await cp.reload();assert.equal(JSON.stringify(await saved(cp)),frozenDaily);
+ await cp.locator('#mode-unlimited').click();assert.equal(await cp.locator('#engine-slot').getAttribute('data-event-id'),'td-040');assert.equal(await cp.locator('#year-input').inputValue(),'1500');assert.equal(await cp.evaluate(()=>JSON.parse(sessionStorage.getItem('break-room:time-drop:practice:guest')).points),4321);
+ await enter(cp,1485);await cp.locator('#lock-guess').click();await cp.locator('#next-event').click();const newPracticeId=await cp.locator('#engine-slot').getAttribute('data-event-id');assert(activeBank.some(e=>e.id===newPracticeId),'After finishing the old practice capture, select only the replacement bank');assert.equal(await cp.evaluate(()=>JSON.parse(sessionStorage.getItem('break-room:time-drop:practice:guest')).points),5321);assert.equal(JSON.stringify(await saved(cp)),frozenDaily);await compatibility.close();
+ const missed=nativeModel.create(oldBank,oldDay);for(let i=0;i<5;i++){nativeModel.guess(missed,-4000);nativeModel.lock(missed);if(i<4)nativeModel.next(missed);}const zeroContext=await browser.newContext(),zeroPage=await zeroContext.newPage();await zeroContext.addInitScript(r=>localStorage.setItem('break-room:time-drop:daily:'+r.day,JSON.stringify(r)),missed);await zeroPage.clock.setFixedTime(new Date(oldDay+'T03:00:00Z'));await zeroPage.goto(url);assert.equal(JSON.stringify(await saved(zeroPage)),JSON.stringify(missed));await zeroPage.goto(base+'/profile.html');assert.equal(await zeroPage.locator('#arcade-average').innerText(),'0');await zeroContext.close();
+ console.log('PASS familiar-bank transition: real old Daily and Unlimited captures retain questions/years/drafts/points, old completed zero stays zero, and the next practice draw uses the new bank.');
  const bad=await browser.newContext(),b=await bad.newPage();await setup(b);await bad.addInitScript(()=>localStorage.setItem('break-room:time-drop:daily:2026-10-23','{broken'));await b.goto(url);assert.match(await b.locator('#engine-slot').innerText(),/kept unchanged/);assert.equal(await b.evaluate(()=>localStorage.getItem('break-room:time-drop:daily:2026-10-23')),'{broken');await bad.close();
  console.log('PASS Time Drop: cross-tab first lock, Sydney rollover, denied storage/copy and malformed-save preservation.');
  }finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

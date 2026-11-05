@@ -20,6 +20,13 @@
  const era=y=>y<1000?0:y<1700?1:y<1900?2:y<1950?3:y<1990?4:5;
  function deck(bank){
   if(bank.length<330||bank.length%ROUNDS||!bank.every(event)||new Set(bank.map(e=>e.id)).size!==bank.length)throw Error('Time Drop needs a complete, distinct event bank divisible by five.');
+  // Familiarity v3 pins each retained subject to its original date and position.
+  // Old banks still use the frozen v2 stratifier below; saved rounds own their events.
+  if(bank.some(e=>e.calendarSlot!==undefined||e.calendarVersion!==undefined)){
+   if(bank.length!==330||!bank.every(e=>e.calendarVersion===3&&int(e.calendarSlot,0,329))||new Set(bank.map(e=>e.calendarSlot)).size!==330)throw Error('Invalid Time Drop v3 calendar slots.');
+   const ordered=bank.slice().sort((a,b)=>a.calendarSlot-b.calendarSlot);
+   return Array.from({length:66},(_,i)=>ordered.slice(i*ROUNDS,(i+1)*ROUNDS));
+  }
   const days=bank.length/ROUNDS,buckets=Array.from({length:days},()=>[]),rnd=random('time-drop:balanced-deck:v2');
   for(let group=0;group<6;group++)for(const e of shuffle(bank.filter(e=>era(e.year)===group).sort((a,b)=>a.id.localeCompare(b.id)),rnd)){
    const candidates=shuffle(buckets.map((_,i)=>i),rnd).filter(i=>buckets[i].length<ROUNDS).sort((a,b)=>buckets[a].length-buckets[b].length||buckets[a].filter(x=>x.category===e.category).length-buckets[b].filter(x=>x.category===e.category).length);

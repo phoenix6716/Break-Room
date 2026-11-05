@@ -1,0 +1,894 @@
+{
+  "checkedAt": "2026-11-05",
+  "method": "HTTP page retrieval, resolved page title and presence of the target year. Availability/keyword evidence does not independently certify the full factual claim.",
+  "events": [
+    {
+      "id": "td3-pringles-first-go-on-sale-in-the-us",
+      "source": "https://en.wikipedia.org/wiki/Pringles",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Pringles",
+      "pageTitle": "Pringles - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-amazon-opens-its-online-bookstore",
+      "source": "https://en.wikipedia.org/wiki/Amazon_(company)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Amazon_(company)",
+      "pageTitle": "Amazon (company) - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-first-ipad-goes-on-sale",
+      "source": "https://en.wikipedia.org/wiki/IPad_(1st_generation)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/IPad_(1st_generation)",
+      "pageTitle": "iPad (1st generation) - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-an-earthquake-and-tsunami-trigger-the-fukushima-nuclear-disaster",
+      "source": "https://en.wikipedia.org/wiki/Fukushima_nuclear_accident",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Fukushima_nuclear_accident",
+      "pageTitle": "Fukushima nuclear accident - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-adele-releases-the-album-21",
+      "source": "https://en.wikipedia.org/wiki/21_(Adele_album)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/21_(Adele_album)",
+      "pageTitle": "21 (Adele album) - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-stranger-things-first-appears-on-netflix",
+      "source": "https://en.wikipedia.org/wiki/Stranger_Things",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Stranger_Things",
+      "pageTitle": "Stranger Things - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-first-starbucks-opens",
+      "source": "https://about.starbucks.com/history/our-founders/",
+      "status": 200,
+      "resolvedURL": "https://about.starbucks.com/history/our-founders/",
+      "pageTitle": "Our Founders - About Starbucks",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-oreo-biscuits-first-go-on-sale",
+      "source": "https://en.wikipedia.org/wiki/Oreo",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Oreo",
+      "pageTitle": "Oreo - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-disney-s-animated-the-lion-king-reaches-us-cinemas",
+      "source": "https://en.wikipedia.org/wiki/The_Lion_King",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/The_Lion_King",
+      "pageTitle": "The Lion King - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-first-hunger-games-film-reaches-cinemas",
+      "source": "https://en.wikipedia.org/wiki/The_Hunger_Games_(film)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/The_Hunger_Games_(film)",
+      "pageTitle": "The Hunger Games (film) - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-queen-releases-bohemian-rhapsody",
+      "source": "https://en.wikipedia.org/wiki/Bohemian_Rhapsody",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Bohemian_Rhapsody",
+      "pageTitle": "Bohemian Rhapsody - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-play-doh-goes-on-sale-as-a-modelling-toy",
+      "source": "https://en.wikipedia.org/wiki/Play-Doh",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Play-Doh",
+      "pageTitle": "Play-Doh - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-ratatouille-reaches-us-cinemas",
+      "source": "https://en.wikipedia.org/wiki/Ratatouille_(film)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Ratatouille_(film)",
+      "pageTitle": "Ratatouille (film) - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-james-cameron-s-avatar-reaches-cinemas",
+      "source": "https://en.wikipedia.org/wiki/Avatar_(2009_film)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Avatar_(2009_film)",
+      "pageTitle": "Avatar (2009 film) - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-boeing-747-jumbo-jet-makes-its-first-flight",
+      "source": "https://en.wikipedia.org/wiki/Boeing_747",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Boeing_747",
+      "pageTitle": "Boeing 747 - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-usain-bolt-runs-100-metres-in-a-world-record-9-58-seconds",
+      "source": "https://en.wikipedia.org/wiki/Men%27s_100_metres_world_record_progression",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Men%27s_100_metres_world_record_progression",
+      "pageTitle": "Men's 100 metres world record progression - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-first-winter-olympic-games-take-place",
+      "source": "https://en.wikipedia.org/wiki/1924_Winter_Olympics",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/1924_Winter_Olympics",
+      "pageTitle": "1924 Winter Olympics - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-original-matrix-film-reaches-cinemas",
+      "source": "https://en.wikipedia.org/wiki/The_Matrix",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/The_Matrix",
+      "pageTitle": "The Matrix - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-disney-s-original-mary-poppins-reaches-cinemas",
+      "source": "https://en.wikipedia.org/wiki/Mary_Poppins_(film)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Mary_Poppins_(film)",
+      "pageTitle": "Mary Poppins (film) - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-kodak-builds-an-experimental-digital-camera",
+      "source": "https://en.wikipedia.org/wiki/Digital_camera",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Digital_camera",
+      "pageTitle": "Digital camera - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-first-pizza-hut-opens",
+      "source": "https://en.wikipedia.org/wiki/Pizza_Hut",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Pizza_Hut",
+      "pageTitle": "Pizza Hut - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-spice-girls-release-wannabe",
+      "source": "https://en.wikipedia.org/wiki/Wannabe",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Wannabe",
+      "pageTitle": "Wannabe - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-connect-four-first-goes-on-sale",
+      "source": "https://en.wikipedia.org/wiki/Connect_Four",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Connect_Four",
+      "pageTitle": "Connect Four - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-indian-ocean-earthquake-and-tsunami-strike",
+      "source": "https://en.wikipedia.org/wiki/2004_Indian_Ocean_earthquake_and_tsunami",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/2004_Indian_Ocean_earthquake_and_tsunami",
+      "pageTitle": "2004 Indian Ocean earthquake and tsunami - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-a-minecraft-movie-reaches-cinemas",
+      "source": "https://en.wikipedia.org/wiki/A_Minecraft_Movie",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/A_Minecraft_Movie",
+      "pageTitle": "A Minecraft Movie - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-scientists-identify-the-virus-that-causes-aids",
+      "source": "https://www.pasteur.fr/en/taxonomy/term/115/40-years-hiv-discovery-virus-responsible-aids-identified-may-20-1983",
+      "status": 200,
+      "resolvedURL": "https://www.pasteur.fr/en/taxonomy/term/115/40-years-hiv-discovery-virus-responsible-aids-identified-may-20-1983",
+      "pageTitle": "40 years of HIV discovery: the virus responsible for AIDS is identified on May 20, 1983 | Institut Pasteur",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-psy-releases-gangnam-style",
+      "source": "https://en.wikipedia.org/wiki/Gangnam_Style",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Gangnam_Style",
+      "pageTitle": "Gangnam Style - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-pixar-s-cars-reaches-us-cinemas",
+      "source": "https://en.wikipedia.org/wiki/Cars_(film)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Cars_(film)",
+      "pageTitle": "Cars (film) - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-film-grease-reaches-cinemas",
+      "source": "https://en.wikipedia.org/wiki/Grease_(film)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Grease_(film)",
+      "pageTitle": "Grease (film) - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-whatsapp-launches",
+      "source": "https://en.wikipedia.org/wiki/WhatsApp",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/WhatsApp",
+      "pageTitle": "WhatsApp - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-apple-s-original-macintosh-goes-on-sale",
+      "source": "https://en.wikipedia.org/wiki/Macintosh_128K",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Macintosh_128K",
+      "pageTitle": "Macintosh 128K - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-channel-tunnel-between-britain-and-france-officially-opens",
+      "source": "https://en.wikipedia.org/wiki/Channel_Tunnel",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Channel_Tunnel",
+      "pageTitle": "Channel Tunnel - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-spongebob-squarepants-first-airs-on-us-television",
+      "source": "https://en.wikipedia.org/wiki/SpongeBob_SquarePants",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/SpongeBob_SquarePants",
+      "pageTitle": "SpongeBob SquarePants - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-polaroid-s-first-instant-camera-goes-on-sale",
+      "source": "https://www.library.hbs.edu/special-collections-and-archives/exhibits/polaroid-from-concept-to-product/a-polaroid-timeline-1932-1977",
+      "status": 200,
+      "resolvedURL": "https://www.library.hbs.edu/special-collections-and-archives/exhibits/polaroid-from-concept-to-product/a-polaroid-timeline-1932-1977",
+      "pageTitle": null,
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-construction-of-the-international-space-station-begins-in-orbit",
+      "source": "https://en.wikipedia.org/wiki/International_Space_Station",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/International_Space_Station",
+      "pageTitle": "International Space Station - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-second-world-war-ends",
+      "source": "https://www.nationalww2museum.org/war/topics/75th-anniversary-end-world-war-ii",
+      "status": 200,
+      "resolvedURL": "https://www.nationalww2museum.org/war/topics/end-world-war-ii-1945",
+      "pageTitle": "The End of World War II 1945 | The National WWII Museum | New Orleans",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-game-of-thrones-first-airs-on-television",
+      "source": "https://en.wikipedia.org/wiki/Game_of_Thrones",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Game_of_Thrones",
+      "pageTitle": "Game of Thrones - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-abba-wins-eurovision-with-waterloo",
+      "source": "https://en.wikipedia.org/wiki/Waterloo_(ABBA_song)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Waterloo_(ABBA_song)",
+      "pageTitle": "Waterloo (song) - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-film-the-sound-of-music-reaches-cinemas",
+      "source": "https://en.wikipedia.org/wiki/The_Sound_of_Music_(film)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/The_Sound_of_Music_(film)",
+      "pageTitle": "The Sound of Music (film) - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-apple-s-original-airpods-go-on-sale",
+      "source": "https://en.wikipedia.org/wiki/AirPods",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/AirPods",
+      "pageTitle": "AirPods - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-king-charles-iii-is-crowned",
+      "source": "https://en.wikipedia.org/wiki/Coronation_of_Charles_III_and_Camilla",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Coronation_of_Charles_III_and_Camilla",
+      "pageTitle": "Coronation of Charles III and Camilla - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-simone-biles-wins-her-first-olympic-all-around-title",
+      "source": "https://en.wikipedia.org/wiki/Simone_Biles",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Simone_Biles",
+      "pageTitle": "Simone Biles - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-nutella-first-goes-on-sale",
+      "source": "https://en.wikipedia.org/wiki/Nutella",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Nutella",
+      "pageTitle": "Nutella - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-concorde-makes-its-first-flight",
+      "source": "https://en.wikipedia.org/wiki/Concorde",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Concorde",
+      "pageTitle": "Concorde - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-marvel-s-the-avengers-reaches-cinemas",
+      "source": "https://en.wikipedia.org/wiki/The_Avengers_(2012_film)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/The_Avengers_(2012_film)",
+      "pageTitle": "The Avengers (2012 film) - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-rosetta-stone-is-discovered-in-egypt",
+      "source": "https://en.wikipedia.org/wiki/Rosetta_Stone",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Rosetta_Stone",
+      "pageTitle": "Rosetta Stone - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-london-s-big-ben-begins-chiming-at-the-palace-of-westminster",
+      "source": "https://en.wikipedia.org/wiki/Big_Ben",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Big_Ben",
+      "pageTitle": "Big Ben - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-snapchat-first-launches",
+      "source": "https://en.wikipedia.org/wiki/Snapchat",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Snapchat",
+      "pageTitle": "Snapchat - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-burj-khalifa-opens-in-dubai",
+      "source": "https://en.wikipedia.org/wiki/Burj_Khalifa",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Burj_Khalifa",
+      "pageTitle": "Burj Khalifa - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-sitcom-friends-first-airs",
+      "source": "https://en.wikipedia.org/wiki/Friends",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Friends",
+      "pageTitle": "Friends - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-wall-e-reaches-us-cinemas",
+      "source": "https://en.wikipedia.org/wiki/WALL-E",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/WALL-E",
+      "pageTitle": "WALL-E - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-barack-obama-becomes-us-president",
+      "source": "https://en.wikipedia.org/wiki/First_inauguration_of_Barack_Obama",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/First_inauguration_of_Barack_Obama",
+      "pageTitle": "First inauguration of Barack Obama - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-first-paralympic-games-take-place",
+      "source": "https://en.wikipedia.org/wiki/1960_Summer_Paralympics",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/1960_Summer_Paralympics",
+      "pageTitle": "1960 Summer Paralympics - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-gps-becomes-fully-operational",
+      "source": "https://en.wikipedia.org/wiki/Global_Positioning_System",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Global_Positioning_System",
+      "pageTitle": "Global Positioning System - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-incredibles-reaches-us-cinemas",
+      "source": "https://en.wikipedia.org/wiki/The_Incredibles",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/The_Incredibles",
+      "pageTitle": "The Incredibles - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-roger-federer-wins-wimbledon-for-the-first-time",
+      "source": "https://en.wikipedia.org/wiki/2003_Wimbledon_Championships_%E2%80%93_Men%27s_singles",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/2003_Wimbledon_Championships_%E2%80%93_Men%27s_singles",
+      "pageTitle": "2003 Wimbledon Championships – Men's singles - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-cathy-freeman-wins-olympic-gold-in-the-400-metres-in-sydney",
+      "source": "https://en.wikipedia.org/wiki/Cathy_Freeman",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Cathy_Freeman",
+      "pageTitle": "Cathy Freeman - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-us-version-of-the-office-first-airs",
+      "source": "https://en.wikipedia.org/wiki/The_Office_(American_TV_series)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/The_Office_(American_TV_series)",
+      "pageTitle": "The Office (American TV series) - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-rafael-nadal-wins-the-french-open-for-the-first-time",
+      "source": "https://en.wikipedia.org/wiki/2005_French_Open_%E2%80%93_Men%27s_singles",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/2005_French_Open_%E2%80%93_Men%27s_singles",
+      "pageTitle": "2005 French Open – Men's singles - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-taj-mahal-complex-is-completed",
+      "source": "https://en.wikipedia.org/wiki/Taj_Mahal",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Taj_Mahal",
+      "pageTitle": "Taj Mahal - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-microsoft-s-xbox-360-first-goes-on-sale",
+      "source": "https://en.wikipedia.org/wiki/Xbox_360",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Xbox_360",
+      "pageTitle": "Xbox 360 - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-serena-williams-wins-her-first-grand-slam-singles-title",
+      "source": "https://en.wikipedia.org/wiki/1999_US_Open_%E2%80%93_Women%27s_singles",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/1999_US_Open_%E2%80%93_Women%27s_singles",
+      "pageTitle": "1999 US Open – Women's singles - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-sesame-street-first-airs-on-us-television",
+      "source": "https://en.wikipedia.org/wiki/Sesame_Street",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Sesame_Street",
+      "pageTitle": "Sesame Street - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-disney-s-animated-aladdin-reaches-us-cinemas",
+      "source": "https://en.wikipedia.org/wiki/Aladdin_(1992_Disney_film)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Aladdin_(1992_Disney_film)",
+      "pageTitle": "Aladdin (1992 Disney film) - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-first-apple-watch-goes-on-sale",
+      "source": "https://en.wikipedia.org/wiki/Apple_Watch",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Apple_Watch",
+      "pageTitle": "Apple Watch - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-muhammad-ali-wins-his-first-world-heavyweight-title",
+      "source": "https://en.wikipedia.org/wiki/Muhammad_Ali_vs._Sonny_Liston",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Muhammad_Ali_vs._Sonny_Liston",
+      "pageTitle": "Muhammad Ali vs. Sonny Liston - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-tiger-woods-wins-the-masters-for-the-first-time",
+      "source": "https://en.wikipedia.org/wiki/1997_Masters_Tournament",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/1997_Masters_Tournament",
+      "pageTitle": "1997 Masters Tournament - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-online-marketplace-now-called-ebay-launches",
+      "source": "https://en.wikipedia.org/wiki/EBay",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/EBay",
+      "pageTitle": "eBay - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-netflix-begins-offering-streaming-video",
+      "source": "https://en.wikipedia.org/wiki/Netflix",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Netflix",
+      "pageTitle": "Netflix - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-first-paying-space-tourist-travels-to-space",
+      "source": "https://en.wikipedia.org/wiki/Dennis_Tito",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Dennis_Tito",
+      "pageTitle": "Dennis Tito - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-san-francisco-s-golden-gate-bridge-opens",
+      "source": "https://en.wikipedia.org/wiki/Golden_Gate_Bridge",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Golden_Gate_Bridge",
+      "pageTitle": "Golden Gate Bridge - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-michael-jordan-wins-his-first-nba-championship",
+      "source": "https://en.wikipedia.org/wiki/1991_NBA_Finals",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/1991_NBA_Finals",
+      "pageTitle": "1991 NBA Finals - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-taylor-swift-releases-her-debut-album",
+      "source": "https://en.wikipedia.org/wiki/Taylor_Swift_(album)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Taylor_Swift_(album)",
+      "pageTitle": "Taylor Swift (album) - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-instagram-launches",
+      "source": "https://en.wikipedia.org/wiki/Instagram",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Instagram",
+      "pageTitle": "Instagram - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-doctor-who-first-airs-on-british-television",
+      "source": "https://en.wikipedia.org/wiki/Doctor_Who",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Doctor_Who",
+      "pageTitle": "Doctor Who - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-first-super-bowl-is-played",
+      "source": "https://en.wikipedia.org/wiki/Super_Bowl_I",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Super_Bowl_I",
+      "pageTitle": "Super Bowl I - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-despacito-is-released",
+      "source": "https://en.wikipedia.org/wiki/Despacito",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Despacito",
+      "pageTitle": "Despacito - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-twitter-first-launches",
+      "source": "https://en.wikipedia.org/wiki/Twitter",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Twitter",
+      "pageTitle": "X (social network) - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-post-it-notes-go-on-sale-across-the-us",
+      "source": "https://en.wikipedia.org/wiki/Post-it_Note",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Post-it_Note",
+      "pageTitle": "Post-it note - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-first-android-phone-goes-on-sale",
+      "source": "https://en.wikipedia.org/wiki/HTC_Dream",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/HTC_Dream",
+      "pageTitle": "HTC Dream - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-original-nintendo-switch-goes-on-sale",
+      "source": "https://en.wikipedia.org/wiki/Nintendo_Switch",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Nintendo_Switch",
+      "pageTitle": "Nintendo Switch - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-a-patient-receives-the-first-permanent-artificial-heart",
+      "source": "https://en.wikipedia.org/wiki/Artificial_heart",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Artificial_heart",
+      "pageTitle": "Artificial heart - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-beyonc-releases-her-debut-solo-album",
+      "source": "https://en.wikipedia.org/wiki/Dangerously_in_Love",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Dangerously_in_Love",
+      "pageTitle": "Dangerously in Love - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-a-major-fire-damages-notre-dame-cathedral-in-paris",
+      "source": "https://en.wikipedia.org/wiki/Notre-Dame_fire",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Notre-Dame_fire",
+      "pageTitle": "Notre-Dame fire - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-disney-s-animated-beauty-and-the-beast-reaches-us-cinemas",
+      "source": "https://en.wikipedia.org/wiki/Beauty_and_the_Beast_(1991_film)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Beauty_and_the_Beast_(1991_film)",
+      "pageTitle": "Beauty and the Beast (1991 film) - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-pixar-s-coco-reaches-us-cinemas",
+      "source": "https://en.wikipedia.org/wiki/Coco_(2017_film)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Coco_(2017_film)",
+      "pageTitle": "Coco (2017 film) - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-original-home-alone-reaches-cinemas",
+      "source": "https://en.wikipedia.org/wiki/Home_Alone",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Home_Alone",
+      "pageTitle": "Home Alone - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-tiktok-launches-outside-mainland-china",
+      "source": "https://en.wikipedia.org/wiki/TikTok",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/TikTok",
+      "pageTitle": "TikTok - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-christopher-nolan-s-oppenheimer-reaches-cinemas",
+      "source": "https://en.wikipedia.org/wiki/Oppenheimer_(film)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Oppenheimer_(film)",
+      "pageTitle": "Oppenheimer (film) - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-first-commercial-microwave-oven-goes-on-sale",
+      "source": "https://en.wikipedia.org/wiki/Microwave_oven",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Microwave_oven",
+      "pageTitle": "Microwave oven - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-nintendo-switch-2-goes-on-sale",
+      "source": "https://www.nintendo.co.jp/corporate/release/en/2025/250402.html",
+      "status": 200,
+      "resolvedURL": "https://www.nintendo.co.jp/corporate/release/en/2025/250402.html",
+      "pageTitle": "News Release : April. 2, 2025 &quot;Nintendo Switch 2 to be released on June 5, 2025&quot;",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-michael-phelps-wins-eight-gold-medals-at-one-olympics",
+      "source": "https://www.guinnessworldrecords.com/world-records/most-gold-medals-won-at-a-single-olympic-games-male",
+      "status": 200,
+      "resolvedURL": "https://www.guinnessworldrecords.com/world-records/most-gold-medals-won-at-a-single-olympic-games-male",
+      "pageTitle": "Most Olympic golds at one Games (male) | Guinness World Records",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-first-wimbledon-tennis-championships-are-held",
+      "source": "https://en.wikipedia.org/wiki/1877_Wimbledon_Championship",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/1877_Wimbledon_Championship",
+      "pageTitle": "1877 Wimbledon Championship - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-queen-elizabeth-ii-dies",
+      "source": "https://en.wikipedia.org/wiki/Death_and_state_funeral_of_Elizabeth_II",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Death_and_state_funeral_of_Elizabeth_II",
+      "pageTitle": "Death and state funeral of Elizabeth II - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-brazil-wins-the-men-s-football-world-cup-for-the-first-time",
+      "source": "https://en.wikipedia.org/wiki/1958_FIFA_World_Cup",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/1958_FIFA_World_Cup",
+      "pageTitle": "1958 FIFA World Cup - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-live-action-barbie-film-reaches-cinemas",
+      "source": "https://en.wikipedia.org/wiki/Barbie_(film)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Barbie_(film)",
+      "pageTitle": "Barbie (film) - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-atomic-bomb-is-dropped-on-hiroshima",
+      "source": "https://en.wikipedia.org/wiki/Atomic_bombings_of_Hiroshima_and_Nagasaki",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Atomic_bombings_of_Hiroshima_and_Nagasaki",
+      "pageTitle": "Atomic bombings of Hiroshima and Nagasaki - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-mcdonald-brothers-open-their-first-mcdonald-s-restaurant",
+      "source": "https://en.wikipedia.org/wiki/McDonald%27s",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/McDonald%27s",
+      "pageTitle": "McDonald's - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-red-bull-launches-in-austria",
+      "source": "https://en.wikipedia.org/wiki/Red_Bull",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Red_Bull",
+      "pageTitle": "Red Bull - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-peppa-pig-first-airs-on-british-television",
+      "source": "https://en.wikipedia.org/wiki/Peppa_Pig",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Peppa_Pig",
+      "pageTitle": "Peppa Pig - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-zoom-launches-its-video-meeting-service",
+      "source": "https://en.wikipedia.org/wiki/Zoom_Communications",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Zoom_Communications",
+      "pageTitle": "Zoom Communications - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-sony-s-playstation-5-first-goes-on-sale",
+      "source": "https://en.wikipedia.org/wiki/PlayStation_5",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/PlayStation_5",
+      "pageTitle": "PlayStation 5 - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-microsoft-releases-windows-xp",
+      "source": "https://en.wikipedia.org/wiki/Windows_XP",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Windows_XP",
+      "pageTitle": "Windows XP - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-monsters-inc-reaches-us-cinemas",
+      "source": "https://en.wikipedia.org/wiki/Monsters,_Inc.",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Monsters,_Inc.",
+      "pageTitle": "Monsters, Inc. - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-an-olympic-gymnast-scores-the-first-perfect-10",
+      "source": "https://en.wikipedia.org/wiki/Nadia_Com%C4%83neci",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Nadia_Com%C4%83neci",
+      "pageTitle": "Nadia Comăneci - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-bluey-first-airs-on-australian-television",
+      "source": "https://en.wikipedia.org/wiki/Bluey_(2018_TV_series)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Bluey_(2018_TV_series)",
+      "pageTitle": "Bluey (TV series) - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-card-game-uno-first-goes-on-sale",
+      "source": "https://en.wikipedia.org/wiki/Uno_(card_game)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Uno_(card_game)",
+      "pageTitle": "Uno (card game) - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-the-original-inside-out-reaches-us-cinemas",
+      "source": "https://en.wikipedia.org/wiki/Inside_Out_(2015_film)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Inside_Out_(2015_film)",
+      "pageTitle": "Inside Out - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-squid-game-first-appears-on-netflix",
+      "source": "https://en.wikipedia.org/wiki/Squid_Game",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Squid_Game",
+      "pageTitle": "Squid Game - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-disney-s-animated-the-little-mermaid-reaches-us-cinemas",
+      "source": "https://en.wikipedia.org/wiki/The_Little_Mermaid_(1989_film)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/The_Little_Mermaid_(1989_film)",
+      "pageTitle": "The Little Mermaid (1989 film) - Wikipedia",
+      "targetYearAppears": true
+    },
+    {
+      "id": "td3-pixar-s-up-reaches-us-cinemas",
+      "source": "https://en.wikipedia.org/wiki/Up_(2009_film)",
+      "status": 200,
+      "resolvedURL": "https://en.wikipedia.org/wiki/Up_(2009_film)",
+      "pageTitle": "Up (2009 film) - Wikipedia",
+      "targetYearAppears": true
+    }
+  ]
+}
