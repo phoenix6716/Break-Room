@@ -63,7 +63,7 @@ function selectChecks(changed,available,{full=false}={}){
     if(/(?:questions|stacks|cases|evidence-cases|boards|puzzles|events|reference-prices|price-review)\.(?:js|json)$/.test(file))content=true;
    }
   }else if(model){game(model[1],true);add('profile-records.cjs','cloud-saves.cjs');if(model[1]==='inner-clock')add('accounts.cjs','friends.cjs','profile.cjs');}
-  else if(['supabase/codebreak.sql','supabase/codebreak-v2.sql'].includes(file)){game('codebreak',true);add('leagues-database.cjs','leagues.cjs','friends.cjs','accounts.cjs');}
+  else if(['supabase/codebreak.sql','supabase/codebreak-v2.sql','supabase/codebreak-v3.sql'].includes(file)){game('codebreak',true);add('leagues-database.cjs','leagues.cjs','friends.cjs','accounts.cjs');}
   else if(file==='supabase/leagues.sql'){add('leagues-database.cjs','leagues.cjs','leagues-freshness.cjs');}
   else if(['supabase/hidden-gem.sql','supabase/hidden-gem-broader-answers.sql','supabase/hidden-gem-exact-rejections.sql'].includes(file)){game('hidden-gem',true);}
   else if(/^supabase\//.test(file)){add('friends-database.cjs','cloud-database.cjs','playtest-feedback.cjs');}

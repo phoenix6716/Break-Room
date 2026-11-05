@@ -1,0 +1,32 @@
+/* Codebreak's small combination safe inside the shared centred game shell. */
+.codebreak-page{--cb-ink:#17263a;--cb-paper:#fffaf0;--cb-brass:#e4b65f;--cb-mint:#b9d1cd}
+.codebreak-page .br-game-board{background:#e6ddd0;border:3px solid var(--cb-ink);box-shadow:5px 5px 0 var(--cb-ink)}
+.codebreak-page #engine-slot{display:block;min-height:0;padding:22px;max-width:100%;overflow-wrap:anywhere}
+.codebreak-page #mode-description{font-size:12px;margin:0;padding:10px 16px;background:var(--cb-paper);border-top:2px solid var(--cb-ink);text-align:center}
+.cb-top{text-align:left}.cb-kicker{font:700 10px/1.5 monospace;letter-spacing:1px}.cb-top h2{font-size:clamp(22px,4vw,30px);line-height:1.15;margin:6px 0 12px}
+.cb-safe{max-width:300px;margin:0 auto}.cb-safe svg{display:block;width:100%;height:auto}.cb-rules{text-align:center;font-size:12px;font-weight:700;margin:10px 0 16px}
+.cb-history{list-style:none;padding:0;margin:0 0 18px;display:grid;gap:8px}.cb-history:empty{display:none}
+.cb-guess{display:grid;grid-template-columns:14px minmax(0,1fr) 110px;align-items:center;gap:8px;padding:8px;background:var(--cb-paper);border:2px solid var(--cb-ink)}
+.cb-number{font:700 11px monospace;opacity:.65}.cb-digits{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;max-width:180px}.cb-digits>span{display:grid;place-items:center;min-height:33px;border:1px solid var(--cb-ink);background:#f1ebde;font:700 23px/1 monospace}
+.cb-feedback{display:grid;gap:5px;font:700 12px/1.2 monospace}.cb-feedback>span{white-space:nowrap}.cb-placed:before,.cb-elsewhere:before{content:'';display:inline-block;width:7px;height:7px;border:1px solid var(--cb-ink);margin-right:5px;vertical-align:middle}.cb-placed:before{background:var(--cb-ink)}.cb-elsewhere:before{background:var(--cb-paper)}
+.cb-entry{display:grid;gap:10px;padding:16px;background:var(--cb-paper);border:2px solid var(--cb-ink)}.cb-entry label{font:700 11px monospace;letter-spacing:1px}.cb-entry input{appearance:none;width:100%;min-width:0;box-sizing:border-box;border:2px solid var(--cb-ink);border-radius:0;background:#f4eedf;color:var(--cb-ink);font:700 34px/1.3 monospace;text-align:center;letter-spacing:.48em;padding:8px 0 8px .48em;caret-color:var(--cb-ink)}
+.cb-entry input:focus{outline:3px solid var(--cb-brass);outline-offset:2px}.cb-hint{margin:0;font-size:12px;line-height:1.5}.cb-error{margin:0;color:#8d281e;font-size:12px;line-height:1.5}.cb-error:empty{display:none}.cb-keypad{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+.cb-entry button,.cb-actions button{border:2px solid var(--cb-ink);background:#f4eddc;color:var(--cb-ink);font:700 12px/1.2 monospace;min-height:44px;padding:9px 7px;cursor:pointer;border-radius:0;box-shadow:2px 2px 0 var(--cb-ink)}
+.cb-keypad button{font-size:22px;padding:6px}.cb-entry button:hover,.cb-actions button:hover{background:var(--cb-brass)}.cb-entry button:active,.cb-actions button:active{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--cb-ink)}.cb-entry button:focus-visible,.cb-actions button:focus-visible{outline:3px solid #bf4d40;outline-offset:3px}
+.cb-actions{display:flex;flex-wrap:wrap;gap:8px}.cb-actions>button{flex:1}.codebreak-page button.cb-primary{background:var(--cb-brass)}.cb-feedback-key{font-size:11px;line-height:1.5;margin:12px 0 0}.cb-result{background:var(--cb-paper);border:2px solid var(--cb-ink);padding:18px}.cb-result h3{font-size:22px;line-height:1.2;margin:0 0 12px}.cb-result p{font-size:14px;line-height:1.5}.cb-result .cb-score{margin:0;white-space:nowrap}.cb-score strong{font:700 58px/1.2 monospace}.cb-score small{font-size:17px}.cb-result .cb-score-note{font-size:12px}.cb-result .cb-actions{margin-top:18px}
+.codebreak-page #save-warning{padding:12px;border:2px solid #8d281e;background:var(--cb-paper);color:#8d281e;font-size:13px}.codebreak-page #copy-fallback{box-sizing:border-box;width:100%;margin:12px 0;min-height:120px;padding:10px;font:13px monospace}.codebreak-page #status{font-size:12px;min-height:1.5em}.codebreak-page .br-game-progress{font:700 11px monospace}
+@media(max-width:650px){.codebreak-page #engine-slot{padding:14px}.cb-entry{padding:12px}.cb-guess{grid-template-columns:12px minmax(0,1fr) 110px;gap:6px;padding:7px}.cb-digits>span{font-size:21px;min-height:30px}.cb-keypad{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.cb-top h2{font-size:23px}.cb-result{padding:14px}.cb-result .cb-actions{display:grid;grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.codebreak-page *, .codebreak-page *:before{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* Per-digit v2 clues keep the safe palette and include symbols for colour-independent reading. */
+.cb-guess.cb-guess-digits{grid-template-columns:14px minmax(0,1fr)}
+.cb-guess-digits .cb-digits{max-width:220px;width:100%;gap:7px}
+.cb-guess-digits .cb-digits>span{position:relative;box-sizing:border-box;min-height:48px;padding-bottom:12px}
+.cb-guess-digits [data-state]:after{position:absolute;bottom:3px;right:5px;font:700 11px/1 monospace}
+.cb-guess-digits [data-state=placed],.cb-legend [data-state=placed]{background:var(--cb-mint)}
+.cb-guess-digits [data-state=elsewhere],.cb-legend [data-state=elsewhere]{background:var(--cb-brass)}
+.cb-guess-digits [data-state=absent],.cb-legend [data-state=absent]{background:#ded9ce}
+.cb-guess-digits [data-state=placed]:after{content:'✓'}.cb-guess-digits [data-state=elsewhere]:after{content:'↔'}.cb-guess-digits [data-state=absent]:after{content:'×'}
+.cb-legend{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 16px;font:700 11px/1.4 monospace}
+.cb-legend>span{padding:5px 7px;border:1px solid var(--cb-ink);color:var(--cb-ink)}
+.cb-captured-note{font-size:12px;line-height:1.5;margin:12px 0}

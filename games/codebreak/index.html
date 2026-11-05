@@ -19,8 +19,8 @@
   <script defer src="../../navigation.js"></script>
   <script defer src="shell.js"></script>
   <script src="../../codebreak-model.js"></script>
-  <script defer src="codebreak.js?v=digit-feedback-20261105"></script>
-  <link rel="stylesheet" href="codebreak.css?v=digit-feedback-20261105">
+  <script defer src="codebreak.js?v=nine-digits-20261105"></script>
+  <link rel="stylesheet" href="codebreak.css?v=nine-digits-20261105">
   <link rel="stylesheet" href="../../game-help.css?v=mobile-stats-20261028-compact-reset">
   <script defer src="../../game-help.js?v=first-visit-20261028" data-game="codebreak"></script>
   <link rel="stylesheet" href="../../accounts.css">
@@ -91,15 +91,17 @@
       <h2 id="help-popup-title">HOW TO PLAY Codebreak</h2>
       <p data-template-slot="help-summary">Find the four-digit secret code. You have eight guesses and no timer.</p>
       <div class="popup-instructions">
-        <p><strong>1. Try a code.</strong> Enter four digits using 1–6. Digits can repeat. Use the keypad or type, then press Enter or Check guess.</p>
+        <p data-cb-version="1 2" hidden><strong>1. Try a code.</strong> Enter four digits using 1–6. Digits can repeat. Use the keypad or type, then press Enter or Check guess.</p>
+        <p data-cb-version="3"><strong>1. Try a code.</strong> Enter four digits using 1–9. Digits can repeat. Use the keypad or type, then press Enter or Check guess.</p>
         <p data-cb-version="1" hidden><strong>2. Read the counts.</strong> “Right place” counts correct digits in their exact positions. “Elsewhere” counts correct digits in other positions. These are totals; they do not identify which digits matched. Each copy of a digit can match only once.</p>
         <p data-cb-version="1" hidden><strong>An example.</strong> If the code is 1123 and you guess 1211, the feedback is 1 right place and 2 elsewhere. This saved round retains its original rules.</p>
-        <p data-cb-version="2"><strong>2. Read each digit.</strong> A green ✓ means the right digit in the right place. Yellow ↔ means that digit belongs elsewhere. Grey × means no remaining match: the code has no unused copy of that digit. Correct positions are matched first, then other copies from left to right.</p>
-        <p data-cb-version="2"><strong>An example.</strong> For code 1123 and guess 1211, the clues are ✓ ↔ ↔ ×. The last 1 has no match left because the two 1s in the code are already matched.</p>
+        <p data-cb-version="2 3"><strong>2. Read each digit.</strong> A green ✓ means the right digit in the right place. Yellow ↔ means that digit belongs elsewhere. Grey × means no remaining match: the code has no unused copy of that digit. Correct positions are matched first, then other copies from left to right.</p>
+        <p data-cb-version="2 3"><strong>An example.</strong> For code 1123 and guess 1211, the clues are ✓ ↔ ↔ ×. The last 1 has no match left because the two 1s in the code are already matched.</p>
         <p><strong>3. Narrow it down.</strong> Keep every previous clue in mind. Identical guesses are rejected without using a turn. The code opens when all four digits are in the right place.</p>
         <p data-cb-version="1" hidden><strong>Points.</strong> Solve in three guesses or fewer for 100 points. Each guess after that reduces the score by 10, down to 50 on guess eight. An uncracked code earns 0. There is no speed bonus. The Daily result locks when solved or after eight guesses.</p>
-        <p data-cb-version="2"><strong>Points.</strong> Solve within five guesses for 100 points. Guesses six, seven and eight score 90, 80 and 70. An uncracked code earns 0. There is no speed bonus. The first completed Daily locks.</p>
-        <p><strong>Daily.</strong> Everyone gets the same code. It changes at midnight Australia/Sydney, including daylight-saving changes. All 1,296 possible codes appear once per rotation. Daily progress saves as you play.</p>
+        <p data-cb-version="2 3"><strong>Points.</strong> Solve within five guesses for 100 points. Guesses six, seven and eight score 90, 80 and 70. An uncracked code earns 0. There is no speed bonus. The first completed Daily locks.</p>
+        <p data-cb-version="1 2" hidden><strong>Daily.</strong> Everyone gets the same code. It changes at midnight Australia/Sydney, including daylight-saving changes. All 1,296 possible codes appear once per rotation. Daily progress saves as you play.</p>
+        <p data-cb-version="3"><strong>Daily.</strong> Everyone starting a new round gets the same code. It changes at midnight Australia/Sydney, including daylight-saving changes. All 6,561 possible codes appear once per rotation. Existing captured rounds keep their original digits and rules.</p>
         <p><strong>Unlimited.</strong> Free practice keeps a separate run in this tab for the current account. It excludes today’s Daily code and cycles through other codes before repeating. Switching modes preserves both runs. Practice does not enter Daily stats, cloud history or comparisons.</p>
       </div>
       <button class="button pink popup-done" type="button" data-popup-close>GOT IT</button>

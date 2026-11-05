@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-05",
+  "change": "Expand fresh Codebreak rounds to digits 1\u20139",
+  "currentVersion": 3,
+  "digits": "123456789",
+  "positions": 4,
+  "guesses": 8,
+  "repeats": true,
+  "fullScoreGuesses": 5,
+  "pointsBySolveGuess": [
+    100,
+    100,
+    100,
+    100,
+    100,
+    90,
+    80,
+    70
+  ],
+  "failurePoints": 0,
+  "rotationDays": 6561,
+  "unlimitedPool": 6560,
+  "reset": "Midnight Australia/Sydney",
+  "compatibility": {
+    "versions": [
+      1,
+      2
+    ],
+    "digits": "123456",
+    "rotationDays": 1296,
+    "preserved": [
+      "captured code",
+      "guesses",
+      "draft",
+      "clues",
+      "scoring",
+      "completed zeroes",
+      "owner/cloud keys and first-completion locks"
+    ],
+    "cloudFirstCaptureAuthoritative": true
+  },
+  "matchingVerification": {
+    "equalityStructures": 4140,
+    "digitLabelRotations": 9,
+    "covers": "All equality patterns among four secret and four guessed positions; all nine digit labels exercised"
+  },
+  "solver": {
+    "secrets": 6561,
+    "method": "Candidate-partition strategy using only per-digit clues; not human difficulty calibration",
+    "maximumGuesses": 6,
+    "distribution": [
+      0,
+      1,
+      26,
+      1091,
+      3976,
+      1444,
+      23,
+      0,
+      0
+    ],
+    "nodes": 6863
+  },
+  "databaseVerification": "Real archived v1/v2 rows remain byte-identical through repeated migration; all three scoring scales and full calendars agree with JavaScript",
+  "archive": "content/archive/2026-11-05-pre-codebreak-nine-digits/",
+  "migration": "supabase/codebreak-v3.sql",
+  "limits": [
+    "Solver performance is not a human difficulty rating",
+    "Responsive Chromium checks are not real-device Safari certification",
+    "Live migration/deployment are separate release checks"
+  ],
+  "localChecks": "Passed: selected rules/solver/database/calendar/cloud/profile unit suites; accounts, Codebreak, Friends, game surfaces, leagues, profile, release and smoke browser suites; build/static references and legal footer checks.",
+  "liveDatabase": {
+    "migration": "codebreak_v3_nine_digits",
+    "applied": true,
+    "existingPlayerRowsUnchanged": true,
+    "oldCalendarFunctionUnchanged": true,
+    "sharedSaveApiUnchanged": true,
+    "codebreakWriteApiUnchanged": true,
+    "all6561DatesMatchJavaScript": true,
+    "calendarHash": "dcae66b5af44f5ec589ed0088374671c",
+    "oldAndNewScoringVerified": true,
+    "digits789AcceptedAndZeroRejected": true,
+    "privateHelpersRemainRevoked": true,
+    "newSecurityAdvisorTypes": 0
+  }
+}
