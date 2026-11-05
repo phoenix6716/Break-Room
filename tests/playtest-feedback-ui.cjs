@@ -24,7 +24,7 @@ if(selected.length&&!selected.some(id=>['alibi','stack-up'].includes(id)))throw 
    assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await p.locator('#next-case').click();
   }
   assert.equal(mechanisms.size,4);assert.equal(await p.locator('.arcade-score strong').innerText(),'75 / 100');await p.locator('#review-case-0').click();assert(await p.locator('#alibi-summary-review .alibi-key-evidence').isVisible());
-  await p.goto(base+'/profile.html');await p.locator('#result-filter').selectOption('alibi');assert.match(await p.locator('.profile-result').innerText(),/75/);
+  await p.goto(base+'/profile.html');await p.getByRole('tab',{name:'History',exact:true}).click();await p.locator('#result-filter').selectOption('alibi');assert.match(await p.locator('.profile-result').innerText(),/75/);
   }
   if(includes('stack-up')){
   await p.goto(base+'/games/stack-up/index.html');assert.equal(await p.locator('#intro-screen').count(),0);assert(await p.locator('#game-interface').isVisible());assert.equal(await p.locator('.sort-card').count(),5);

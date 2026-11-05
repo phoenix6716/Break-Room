@@ -66,7 +66,7 @@ function selectChecks(changed,available,{full=false}={}){
   else if(['supabase/codebreak.sql','supabase/codebreak-v2.sql','supabase/codebreak-v3.sql','supabase/codebreak-v4.sql'].includes(file)){game('codebreak',true);add('leagues-database.cjs','leagues.cjs','friends.cjs','accounts.cjs');}
   else if(['supabase/stack-up-score100.sql','supabase/stack-up-first-try.sql'].includes(file)){game('stack-up',true);add('three-game-scoring.cjs','friends-database.cjs','accounts.cjs','friends.cjs','leagues-database.cjs');}
   else if(file==='supabase/seating-chart-three.sql'){game('seating-chart',true);add('accounts.cjs','friends.cjs','leagues-database.cjs','leagues.cjs','profile.cjs');}
-  else if(file==='supabase/leagues.sql'){add('leagues-database.cjs','leagues.cjs','leagues-freshness.cjs');}
+  else if(file==='supabase/leagues.sql'){add('leagues-database.cjs','leagues.cjs','leagues-freshness.cjs','compact-hubs.cjs');}
   else if(['supabase/hidden-gem.sql','supabase/hidden-gem-broader-answers.sql','supabase/hidden-gem-exact-rejections.sql'].includes(file)){game('hidden-gem',true);}
   else if(/^supabase\//.test(file)){add('friends-database.cjs','cloud-database.cjs','playtest-feedback.cjs');}
   else if(file==='content/drafts/sleeper-broader-questions.json'){game('hidden-gem',true);content=true;}
@@ -101,10 +101,10 @@ function selectChecks(changed,available,{full=false}={}){
   else if(/^scripts\//.test(file)||/^\.github\/workflows\//.test(file)||/^package(?:-lock)?\.json$/.test(file)||file==='.node-version'){infra();}
   else if(/^(?:accounts|account-config|cloud-saves)\.(?:js|css)$/.test(file)||/^(?:account|login|signup|forgot-password|reset-password)\.html$/.test(file)||/^assets\/vendor\//.test(file)){auth();}
   else if(file==='supabase/shelve-sleeper.sql'){add('leagues-database.cjs','leagues.cjs','retired-games.cjs');}
-  else if(/^leagues(?:-model)?\.(?:js|css|html)$/.test(file)){add('leagues-database.cjs','leagues.cjs','leagues-freshness.cjs');}
-  else if(/^friends\.(?:js|css|html)$/.test(file)){add('friends-database.cjs','friends.cjs','friends-freshness.cjs');}
+  else if(/^leagues(?:-model)?\.(?:js|css|html)$/.test(file)){add('leagues-database.cjs','leagues.cjs','leagues-freshness.cjs','compact-hubs.cjs');}
+  else if(/^friends\.(?:js|css|html)$/.test(file)){add('friends-database.cjs','friends.cjs','friends-freshness.cjs','compact-hubs.cjs');}
   else if(/^achievements\.(?:js|css)$/.test(file)){add('profile-records.cjs','profile.cjs','achievements.cjs','accounts.cjs','release.cjs');}
-  else if(/^profile(?:-records)?\.(?:js|css|html)$/.test(file)){add('profile-records.cjs','profile.cjs');if(file==='profile-records.js')add('achievements.cjs');}
+  else if(/^profile(?:-records)?\.(?:js|css|html)$/.test(file)){add('profile-records.cjs','profile.cjs','compact-hubs.cjs');if(file==='profile-records.js')add('achievements.cjs');}
   else if(file==='arcade-score.js'){add('arcade-score.cjs','profile-records.cjs','cloud-saves.cjs','friends-database.cjs','arcade-score-ui.cjs','profile.cjs','friends.cjs','game-surfaces.cjs');}
   else if(file==='arcade-score.css'){layout();}
   else if(file==='daily-clock.js'){add('daily-clock.cjs','homepage-reset.cjs');GAMES.forEach(id=>game(id));}

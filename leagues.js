@@ -8,7 +8,7 @@ let state=null,busy=false,request=0,userId=null,selected=null,confirmation=null,
 function status(message,error=false){$('league-status').textContent=message;$('league-status').dataset.error=String(error);}
 function controls(disabled){for(const n of document.querySelectorAll('#league-content button,#league-content fieldset,#league-select'))n.disabled=disabled;$('league-content').setAttribute('aria-busy',String(disabled));}
 function clearBoard(){state=null;selected=null;confirmation=null;inviteLeague=null;$('league-confirm').hidden=true;$('league-board').hidden=true;$('league-standings').replaceChildren();$('required-games').replaceChildren();$('league-select').replaceChildren(el('option',null,'Choose a league'));$('league-invite').hidden=true;$('league-invite-url').value='';$('league-title').textContent='';}
-function clearPrivate(){request++;clearBoard();$('league-content').hidden=true;for(const id of ['league-name','league-display-name','join-display-name'])$(id).value='';for(const id of ['league-display-name','join-display-name'])$(id).readOnly=false;$('create-league-consent').checked=false;$('join-league-consent').checked=false;controls(true);}
+function clearPrivate(){$('league-tools').open=false;delete $('league-tools').dataset.ready;request++;clearBoard();$('league-content').hidden=true;for(const id of ['league-name','league-display-name','join-display-name'])$(id).value='';for(const id of ['league-display-name','join-display-name'])$(id).readOnly=false;$('create-league-consent').checked=false;$('join-league-consent').checked=false;controls(true);}
 function message(error){if(['42P01','42883','PGRST202','PGRST205','3F000'].includes(error?.code))return 'Leagues are not available yet. Please try again shortly.';if(/fetch|network|offline/i.test(error?.message||''))return 'Could not connect. Reconnect and refresh; your game saves are safe.';return error?.message||'Could not update leagues. Please try again.';}
 function showRequired(){
  $('league-dates').textContent=state.week+' to '+state.end+' · 2,100 points available';
@@ -30,17 +30,18 @@ function renderBoard(){
   for(const id of [...state.required,row.optional]){
    const g=row.games.find(x=>x.game===id),slot=el('div','league-slot');
    slot.append(el('span',null,state.required.includes(id)?'REQUIRED':'BEST OPTIONAL'),el('strong',null,id?M.name(id):'Play another game'),el('small',null,g?format(g.total)+' / 700 · '+g.completed+' / 7 Dailies':'0 / 700 · No optional Daily yet'));slots.append(slot);
-  }card.append(slots);
-  const details=el('details'),summary=el('summary',null,'Daily score breakdown');details.append(summary);
+  }
+  const details=el('details'),summary=el('summary',null,'Daily score breakdown');details.append(summary,slots);
   const wrap=el('div','league-daily'),table=el('table');table.append(el('caption',null,'All ten games shown. Counted games are marked *. A dash means no synced result and contributes zero. Future days also show a dash.'));
   const thead=el('thead'),hr=el('tr');hr.append(el('th',null,'Game'));for(const d of ['Mon','Tue','Wed','Thu','Fri','Sat','Sun','Total'])hr.append(el('th',null,d));thead.append(hr);table.append(thead);
   const body=el('tbody');for(const g of row.games){const tr=el('tr'),th=el('th',null,M.name(g.game)+(g.counted?' *':''));th.scope='row';tr.append(th);for(const score of g.scores)tr.append(el('td',null,score===null?'—':format(score)));tr.append(el('td',null,format(g.total)));body.append(tr);}table.append(body);wrap.append(table);details.append(wrap);card.append(details);
-  if(league.owner&&!row.self){const remove=el('button','remove-member','REMOVE PLAYER');remove.type='button';remove.setAttribute('aria-label','Remove '+row.name);remove.onclick=()=>confirmAction({p_action:'remove',p_league:league.id,p_target:row.id},'Remove '+row.name+'? They will lose access and cannot rejoin using an invite.');card.append(remove);}
+  if(league.owner&&!row.self){const remove=el('button','remove-member','REMOVE PLAYER');remove.type='button';remove.setAttribute('aria-label','Remove '+row.name);remove.onclick=()=>confirmAction({p_action:'remove',p_league:league.id,p_target:row.id},'Remove '+row.name+'? They will lose access and cannot rejoin using an invite.');details.append(remove);}
   return card;
  }));
 }
 function render(){
  $('league-guest').hidden=true;$('league-content').hidden=false;showRequired();
+ if(!$('league-tools').dataset.ready){$('league-tools').open=!state.leagues.length||!!$('league-token').value;$('league-tools').dataset.ready='true';}
  const select=$('league-select');select.replaceChildren(el('option',null,'Choose a league'));
  select.firstChild.value='';for(const league of state.leagues){const option=el('option',null,league.name+(league.owner?' · Owner':''));option.value=league.id;select.append(option);}
  if(!state.me){const name=api.getUser()?.user_metadata?.display_name||'';for(const id of ['league-display-name','join-display-name'])if(!$(id).value)$(id).value=name;}
@@ -60,7 +61,8 @@ async function load(args={},success){
    state=await api.friendsRPC('league_hub',{p_action:'view',p_league:state.leagues[0].id});if(id!==request||api.getUser()?.id!==expected)return;
   }
   render();
-  if(result.invite&&state.selected){const url=new URL('leagues.html',location.href);url.hash='join='+result.invite;$('league-invite-url').value=url.href;$('league-invite').hidden=false;inviteLeague=state.selected.id;}
+  if(result.invite&&state.selected){$('league-owner').open=true;const url=new URL('leagues.html',location.href);url.hash='join='+result.invite;$('league-invite-url').value=url.href;$('league-invite').hidden=false;inviteLeague=state.selected.id;}
+  if(['create','join'].includes(args.p_action))$('league-tools').open=false;
   if(args.p_action==='create'){$('league-name').value='';$('create-league-consent').checked=false;}
   if(args.p_action==='join'){$('league-token').value='';$('join-league-consent').checked=false;try{sessionStorage.removeItem('br:league:invite');}catch{}}
   status(synced===false?'Your new browser results could not sync. Showing saved cloud scores; we will retry automatically when you reconnect.':api.cloudActive?.()===false?'Your account progress has not loaded yet. Reconnect and reopen this page; your browser saves are safe.':success||(state.leagues.length?'Showing the latest synced Daily scores.':'Create a league or join one with an invite.'),synced===false);

@@ -9,52 +9,67 @@
   <link rel="icon" type="image/svg+xml" href="assets/break-room-icon.svg">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="break-room.css">
-  <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="profile.css?v=compact-20261106">
   <script defer src="daily-clock.js"></script>
   <script defer src="arcade-score.js?v=shift-work-20261025"></script>
   <script defer src="pack-model.js?v=launch-20261023"></script><script defer src="prior-model.js?v=launch-20261023"></script><script defer src="laser-model.js?v=launch-20261023"></script><script defer src="alibi-model.js?v=playtest-20261023"></script><script defer src="profile-records.js?v=current-games-20261027"></script>
-  <script defer src="profile.js?v=auto-cloud-20261028"></script>
+  <script defer src="profile.js?v=compact-20261106"></script>
 <link rel="stylesheet" href="accounts.css"><script defer src="assets/vendor/supabase.js"></script><script defer src="account-config.js"></script><script src="bouncer-model.js?v=launch-20261023"></script><script src="inner-clock-model.js"></script><script src="hidden-gem-model.js"></script><script defer src="cloud-saves.js?v=shift-work-20261025"></script><script defer src="accounts.js?v=profile-auto-20261028"></script><link rel="stylesheet" href="legal.css"><script src="time-drop-model.js"></script><script src="clue-ladder-model.js"></script><script src="seating-chart-model.js"></script><script src="shift-work-model.js?v=shift-work-20261025"></script><link rel="stylesheet" href="menu-brand.css?v=hub-topbar-20261027"></head>
 <body class="profile-page">
 <div class="hub-header-frame"><header class="topbar hub-topbar"><nav class="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="leagues.html">Leagues</a><a href="friends.html">Friends</a><a href="profile.html" aria-current="page">Profile</a></nav><a class="brand" href="index.html" aria-label="Break Room home"><img class="br-brand__image" src="assets/break-room-wordmark.png?v=tile05-20261025" alt="Break Room" decoding="async"></a><div class="account"><a class="login" href="login.html">Log in</a><a class="avatar" href="profile.html" aria-label="Your profile">?</a></div></header></div>
 <main class="page"><div class="wrap profile-wrap">
-  <section class="page-intro profile-intro">
-    <div><div class="eyebrow">YOUR PLAYER CARD / ON THIS BROWSER</div><h1>A little break.<br><span>Your own record.</span></h1><p>Your Daily games, streaks and well-earned little wins.</p></div>
-    <a class="button" href="index.html#daily-games">PLAY A DAILY →</a>
-  </section>
-  <p class="profile-storage-note"><img src="assets/icons/profile.svg" alt="">Saved on this browser. Sign in to sync your Daily saves across devices. Unlimited practice is not included.</p>
+  <section class="page-intro profile-intro"><div><h1>Your profile</h1><p>Your Dailies, progress and small victories.</p></div><a class="button" href="index.html#daily-games">PLAY →</a></section>
+  <p class="profile-storage-note">Saved in this browser · <a href="account.html">Account &amp; sync</a></p>
   <p class="profile-sync-status" data-account-status role="status" aria-live="polite"></p>
   <p id="storage-warning" class="profile-warning" role="status" hidden></p>
   <noscript><p class="profile-warning">Turn on JavaScript to read your saved game results. <a href="index.html">Browse games</a>.</p></noscript>
   <div id="profile-content" hidden>
-    <section class="profile-arcade" aria-labelledby="arcade-average-title">
-      <div><span class="profile-label" id="arcade-average-title">YOUR ARCADE AVERAGE</span><strong><span id="arcade-average">—</span><small> / 100</small></strong></div>
-      <div><h2>One scale. Every game.</h2><p id="arcade-basis">Complete a Daily to start your average.</p><p>Each game gets equal weight. Based on completed Daily scores in the last 120 days; unplayed games are excluded.</p></div>
+    <div class="profile-tabs" role="tablist" aria-label="Profile sections">
+      <button type="button" role="tab" id="profile-tab-overview" aria-controls="profile-view-overview" aria-selected="true">Overview</button>
+      <button type="button" role="tab" id="profile-tab-games" aria-controls="profile-view-games" aria-selected="false" tabindex="-1">Game stats</button>
+      <button type="button" role="tab" id="profile-tab-history" aria-controls="profile-view-history" aria-selected="false" tabindex="-1">History</button>
+      <button type="button" role="tab" id="profile-tab-achievements" aria-controls="profile-view-achievements" aria-selected="false" tabindex="-1">Achievements</button>
+    </div>
+    <section id="profile-view-overview" role="tabpanel" aria-labelledby="profile-tab-overview" tabindex="0">
+    <section class="profile-summary" aria-label="Your Daily overview">
+      <article class="profile-summary-average"><span class="profile-label" id="arcade-average-title">ARCADE AVERAGE</span><strong><span id="arcade-average">—</span><small> / 100</small></strong></article>
+      <article><span class="profile-label">DAILY RUNS</span><strong id="total-runs">—</strong></article>
+      <article><span class="profile-label">TODAY</span><strong id="today-count">—</strong><span id="today-caption" class="profile-fine"></span></article>
+      <article><span class="profile-label">STREAK</span><strong id="overall-streak">—</strong><span id="streak-caption" class="profile-fine"></span></article>
     </section>
-    <details class="profile-scoring"><summary>How the Arcade score works</summary><ul><li><b>Seating Chart:</b> each table starts at 100 credit and loses 20 per avoidable drama point, floored at zero. Average five table credits. Matching the stated minimum is perfect; native total drama stays visible.</li><li><b>Clue Ladder:</b> Each puzzle scores out of 100. The Daily score is the average of the five puzzle scores; fewer clues earn more points.</li><li><b>Time Drop:</b> Each first-lock year guess scores out of 100. The final Daily score is their average, including original captured runs. Exact years and accepted date ranges earn full credit.</li><li><b>Lowball:</b> your Daily average, already out of 100.</li><li><b>Stack Up:</b> Each stack scores out of 100. New Daily scores average all five rounds. Saved older runs keep their original final score on the same 0–100 display scale.</li><li><b>Pack:</b> usefulness points earned ÷ the exact best available total × 100 across three Daily bags. No timer or speed bonus.</li><li><b>Laser:</b> first-fire hits × 25. Four boards; retries and solutions never improve the scored result.</li><li><b>Time Sense:</b> each round loses four points per 1% away from its target, down to zero. Average all five; original average miss in seconds stays visible.</li></ul><p>We average each game’s scores over the last 120 days, then average those game averages equally. A zero is included; a missing game is not counted as zero. Original scores stay intact. This is a shared performance scale, not a player percentile or a guarantee that games have equal difficulty. Older scores missing from browser history cannot be included.</p></details>
-    <section class="profile-overview" aria-label="Your Daily overview">
-      <article><span class="profile-label">DAILY RUNS COMPLETED</span><strong id="total-runs">—</strong><p>Across the ten current games</p></article>
-      <article><span class="profile-label">TODAY’S CHECKLIST</span><strong id="today-count">—</strong><p id="today-caption">One fresh Daily per game</p></article>
-      <article><span class="profile-label">HISTORY STREAK</span><strong id="overall-streak">—</strong><p id="streak-caption">Consecutive days with a saved result</p></article>
+
+      <div class="section-head"><h2>Today’s games</h2><span class="section-meta">MIDNIGHT RESET · SYDNEY</span></div>
+      <section class="profile-empty" id="profile-empty" hidden><p>Play a Daily to start your record.</p></section>
+      <div id="profile-dailies" class="profile-dailies" aria-label="Your ten Daily games"></div>
+      <p class="profile-fine">A fresh Daily for every game. Your saved results stay in History.</p>
     </section>
-    <section class="profile-empty" id="profile-empty" hidden><span class="profile-label">A CLEAN SLATE</span><h2>Your first break starts here.</h2><p>Finish a Daily in Laser, Time Drop, Clue Ladder, Seating Chart, Desk Jam, Codebreak, Stack Up, Pack, Lowball or Time Sense to start your record. An unfinished run won’t count.</p><a href="index.html#daily-games" class="button secondary">FIND YOUR FIRST GAME →</a></section>
-    <div class="section-head"><h2>Your games</h2><span class="section-meta">SEVEN GAMES. ONE SHARED SCALE.</span></div>
-    <section class="profile-games" id="profile-games" aria-label="Game-by-game records"></section>
+    <section id="profile-view-games" role="tabpanel" aria-labelledby="profile-tab-games" tabindex="0" hidden>
+      <div class="section-head"><h2>Game stats</h2><label class="profile-filter">Game <select id="profile-game-filter" aria-label="Game statistics"></select></label></div>
+      <section class="profile-games" id="profile-games" aria-label="Game-by-game records"></section>
+      <p id="arcade-basis" class="profile-fine"></p>
+    <details class="profile-scoring"><summary>How the Arcade score works</summary><ul><li><b>Seating Chart:</b> each table starts at 100 credit and loses 20 per avoidable drama point, floored at zero. Average the tables in your captured Daily. Matching the stated minimum is perfect; native total drama stays visible.</li><li><b>Clue Ladder:</b> Each puzzle scores out of 100. The Daily score is the average of the five puzzle scores; fewer clues earn more points.</li><li><b>Time Drop:</b> Each first-lock year guess scores out of 100. The final Daily score is their average, including original captured runs. Exact years and accepted date ranges earn full credit.</li><li><b>Lowball:</b> your Daily average, already out of 100.</li><li><b>Stack Up:</b> Each stack scores out of 100. New Daily scores average all five rounds. Saved older runs keep their original final score on the same 0–100 display scale.</li><li><b>Pack:</b> usefulness points earned ÷ the exact best available total × 100 across three Daily bags. No timer or speed bonus.</li><li><b>Laser:</b> first-fire hits × 25. Four boards; retries and solutions never improve the scored result.</li><li><b>Time Sense:</b> each round loses four points per 1% away from its target, down to zero. Average all five; original average miss in seconds stays visible.</li></ul><p>We average each game’s scores over the last 120 days, then average those game averages equally. A zero is included; a missing game is not counted as zero. Original scores stay intact. This is a shared performance scale, not a player percentile or a guarantee that games have equal difficulty. Older scores missing from browser history cannot be included.</p><p class="profile-fine">Each square shows completed Dailies from the ten current games saved for that date. History streaks and achievements use the dated results still saved here. Lowball normally retains up to 121 days locally; cloud saves can preserve older results. Its lifetime play counter is included above.</p></details>
+
+    </section>
+    <section id="profile-view-history" role="tabpanel" aria-labelledby="profile-tab-history" tabindex="0" hidden>
     <section class="profile-activity" aria-labelledby="activity-title">
       <div class="section-head"><h2 id="activity-title">Little breaks add up.</h2><span class="section-meta">LAST 14 DAYS · SYDNEY TIME</span></div>
       <ol id="activity-days" class="activity-days" aria-label="Daily completion history"></ol>
-      <p class="profile-fine">Each square shows completed Dailies from the ten current games saved for that date. History streaks and achievements use the dated results still saved here. Lowball normally retains up to 121 days locally; cloud saves can preserve older results. Its lifetime play counter is included above.</p>
+
     </section>
     <section aria-labelledby="recent-title">
       <div class="section-head recent-heading"><h2 id="recent-title">Recent runs</h2><label class="profile-filter">GAME <select id="result-filter"><option value="all">All games</option><option value="shift-work">Desk Jam</option><option value="codebreak">Codebreak</option><option value="seating-chart">Seating Chart</option><option value="clue-ladder">Clue Ladder</option><option value="time-drop">Time Drop</option><option value="lowball">Lowball</option><option value="stack-up">Stack Up</option><option value="pack">Pack</option><option value="laser">Laser</option><option value="inner-clock">Time Sense</option></select></label></div>
       <p id="recent-count" class="profile-fine" role="status"></p>
       <div class="profile-results" id="recent-results"></div>
-      <button type="button" id="more-results" class="button secondary" hidden>SHOW MORE RUNS</button>
+      <div class="profile-pager"><button type="button" id="previous-results" disabled>← Previous</button><span id="recent-page" role="status"></span><button type="button" id="more-results" hidden>Next →</button></div>
     </section>
+    </section>
+    <section id="profile-view-achievements" role="tabpanel" aria-labelledby="profile-tab-achievements" tabindex="0" hidden>
     <section aria-labelledby="achievements-title">
       <div class="section-head"><h2 id="achievements-title">Small victories</h2><span class="section-meta" id="achievement-count"></span></div>
-      <div class="profile-achievements" id="achievements"></div>
+      <div class="profile-achievement-controls"><label for="achievement-filter">Show <select id="achievement-filter"><option value="all">All achievements</option><option value="earned">Unlocked</option><option value="locked">Locked</option></select></label></div><div class="profile-achievements" id="achievements"></div>
+      <div class="profile-pager"><button type="button" id="achievement-previous" aria-label="Previous achievements">← Previous</button><span id="achievement-page" role="status"></span><button type="button" id="achievement-next" aria-label="Next achievements">Next →</button></div>
       <p class="profile-fine">Unlocked from completed Daily records. Locked means the available saves don’t show it yet.</p>
+    </section>
     </section>
   </div>
 </div></main>

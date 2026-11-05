@@ -1,3 +1,5 @@
+Profile, Friends and Leagues use compact dashboards. Profile separates Overview, Game stats, paged History and paged Achievements; social setup and detailed score breakdowns expand on demand. Existing scores, saves and sharing choices are unchanged. Responsive/navigation coverage: `tests/compact-hubs.cjs`.
+
 ## Sound and smooth feedback — owner request, 5 November 2026
 
 All ten games gain richer short sound effects and smooth feedback without changing rules, scoring, captured rounds or deadlines. Preserve shared opt-in `break-room:game-sound` and Lowball's separate existing `pc_sound` preference; never autoplay or add duplicate controls. Audio failures must not affect play. Respect reduced motion, mute immediately and suppress hidden-page sounds. Time Sense must remain entirely silent/still while running, and even audio initialization must happen after a timed stop is measured. Keep Stack Up's live mouse drag and Desk Jam glides unchanged. See [IMMERSION.md](IMMERSION.md); browser coverage is in `tests/immersion.cjs` and the existing gameplay suites.

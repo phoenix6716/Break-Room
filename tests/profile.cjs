@@ -24,11 +24,11 @@ const snapshot=page=>page.evaluate(()=>Object.fromEntries(Object.keys(localStora
    const before=await snapshot(page);await page.reload();
    assert.equal(await page.locator('#total-runs').innerText(),'134');assert.equal(await page.locator('#today-count').innerText(),'2 / 10');assert.equal(await page.locator('#overall-streak').innerText(),'14 days');
    assert.equal(await page.locator('.profile-achievement.earned').count(),11);assert.equal(await page.locator('.activity-day[data-count="2"]').count(),14);
-   assert.equal(await page.locator('.profile-result').count(),10);await page.locator('#more-results').click();assert.equal(await page.locator('.profile-result').count(),20);
+   await page.getByRole('tab',{name:'History',exact:true}).click();assert.equal(await page.locator('.profile-result').count(),5);await page.locator('#more-results').click();assert.equal(await page.locator('.profile-result').count(),5);
    assert.equal(await page.locator('.profile-game[data-game=stake],.profile-result[data-game=stake],#result-filter option[value=stake]').count(),0);
    assert.equal(await page.locator('[data-achievement=stake],[data-achievement=sweep]').count(),0);
-   await page.locator('#result-filter').selectOption('stack-up');assert.equal(await page.locator('.profile-result').count(),10);assert.equal(await page.locator('.profile-result:not([data-game=stack-up])').count(),0);await page.locator('#more-results').click();assert.equal(await page.locator('.profile-result').count(),14);assert.equal(await page.locator('#more-results').isVisible(),false);
-   await page.locator('#result-filter').selectOption('all');
+   await page.getByRole('tab',{name:'History',exact:true}).click();await page.locator('#result-filter').selectOption('stack-up');assert.equal(await page.locator('.profile-result').count(),5);assert.equal(await page.locator('.profile-result:not([data-game=stack-up])').count(),0);await page.locator('#more-results').click();assert.equal(await page.locator('.profile-result').count(),5);await page.locator('#more-results').click();assert.equal(await page.locator('.profile-result').count(),4);assert.equal(await page.locator('#more-results').isVisible(),false);
+   await page.getByRole('tab',{name:'History',exact:true}).click();await page.locator('#result-filter').selectOption('all');
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
    for(const card of await page.locator('.profile-game').all()){
     assert.ok(await card.locator('a').getAttribute('href').then(h=>h.endsWith('/index.html')));

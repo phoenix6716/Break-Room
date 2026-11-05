@@ -10,7 +10,7 @@ const engine=plan(['games/alibi/alibi.js']);assert(engine.browser.includes('alib
 const clock=plan(['daily-clock.js']);assert.equal(clock.games.length,GAMES.length);assert(clock.unit.includes('daily-clock.cjs'));assert(!clock.browser.includes('extended-play.cjs'));
 const css=plan(['game-shell.css']);assert(css.browser.includes('game-surfaces.cjs'));assert(!css.browser.includes('extended-play.cjs'));
 const auth=plan(['accounts.js']);assert(auth.browser.includes('accounts.cjs'));assert(!auth.browser.includes('alibi.cjs'));
-const profile=plan(['profile.js']);assert.deepEqual(profile.browser,['profile.cjs']);
+const profile=plan(['profile.js']);assert.deepEqual(profile.browser,['compact-hubs.cjs','profile.cjs']);
 const direct=plan(['tests/stack-up.cjs']);assert.deepEqual(direct.browser,['stack-up.cjs']);assert.deepEqual(direct.unit,[]);
 assert.deepEqual(plan(['games/alibi/index.html','games/alibi/index.html']).browser,['alibi.cjs']);
 assert.deepEqual(plan(['games/alibi/old.js','games/pack/new.js']).games,['alibi','pack'],'A rename across games covers both old and new paths');

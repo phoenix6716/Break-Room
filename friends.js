@@ -8,7 +8,7 @@
  function status(text,error=false){$('friend-status').textContent=text;$('friend-status').dataset.error=String(error);}
  function errorText(error){if(['42P01','PGRST202','PGRST205'].includes(error?.code))return 'Friends setup is not installed yet. The site owner needs to run the friends database script in Supabase.';if(/fetch|network|offline/i.test(error?.message||''))return 'Could not connect. Check your connection and refresh. Your game saves are safe.';return error?.message||'Could not update your friends. Please try again.';}
  function controls(disabled){for(const e of document.querySelectorAll('#friend-content button,#friend-content fieldset,#enable-friends fieldset'))e.disabled=disabled;$('friend-content').setAttribute('aria-busy',String(disabled));}
- function clearPrivate(){settingsDirty=false;hub=null;records=[];requestId++;for(const id of ['incoming-list','outgoing-list','friends-list','blocked-list','friend-score-list'])$(id).replaceChildren();$('my-friend-code').textContent='';$('friend-name').value='';$('friend-code').value='';$('friend-content').hidden=true;$('friend-onboarding').hidden=true;controls(true);}
+ function clearPrivate(){settingsDirty=false;hub=null;records=[];requestId++;$('friend-management').open=false;delete $('friend-management').dataset.ready;for(const id of ['incoming-list','outgoing-list','friends-list','blocked-list','friend-score-list'])$(id).replaceChildren();$('my-friend-code').textContent='';$('friend-name').value='';$('friend-code').value='';$('friend-content').hidden=true;$('friend-onboarding').hidden=true;controls(true);}
  function list(id,people,actions,empty){
   $(id).replaceChildren(...people.map(person=>{
    const row=node('div','friend-person'),name=node('div');name.append(node('strong',null,person.name));if('sharing'in person)name.append(node('small',null,person.sharing?'Sharing completed Daily scores':'Score sharing is off'));
@@ -18,6 +18,8 @@
  function renderHub(){
   $('friend-guest').hidden=true;$('friend-onboarding').hidden=!!hub.me;$('friend-content').hidden=!hub.me;
   if(!hub.me){$('initial-name').value=api.getUser()?.user_metadata?.display_name||'';controls(false);return;}
+  if(!$('friend-management').dataset.ready){$('friend-management').open=!hub.friends.length||!!hub.incoming.length;$('friend-management').dataset.ready='true';}
+  $('friend-management-count').textContent=hub.incoming.length?hub.incoming.length+' incoming':hub.friends.length+(hub.friends.length===1?' friend':' friends');
   $('my-friend-code').textContent=hub.me.code.match(/.{1,4}/g).join('-');if(!settingsDirty){$('friend-name').value=hub.me.name;$('share-scores').checked=hub.me.sharing;}
   for(const [id,key]of [['incoming-count','incoming'],['outgoing-count','outgoing'],['friends-count','friends']])$(id).textContent=hub[key].length;
   list('incoming-list',hub.incoming,[['accept','Accept'],['decline','Decline'],['block','Block']],'No incoming requests.');
@@ -36,10 +38,11 @@
   }).sort((a,b)=>(b.summary.average??-1)-(a.summary.average??-1)||a.person.name.localeCompare(b.person.name));
   $('friend-score-list').replaceChildren(...rows.map(({person,summary})=>{
    const card=node('article','friend-score'+(person.self?' you':''));card.dataset.user=person.id;
-   const title=node('div','score-name',person.name+(person.self?' · You':''));title.append(node('small',null,person.self?(person.sharing?'Your scores are shared with accepted friends':'Your score sharing is off'):person.sharing?'Friend':'Score sharing is off'));
+   const title=node('div','score-name',person.name+(person.self?' · You':''));title.append(node('small',null,person.self?(person.sharing?'Sharing on':'Sharing off'):person.sharing?'Friend':'Score sharing is off'));
    const overall=node('div','score-cell overall');overall.append(node('span',null,selected==='all'?'ARCADE AVERAGE':'GAME AVERAGE'),node('strong',null,score.format(summary.average)));
    card.append(title,overall);
-   for(const [id,name]of games){const cell=node('div','score-cell');const result=summary.games.find(g=>g.id===id);cell.append(node('span',null,name),node('strong',null,score.format(result?.average??null)));card.append(cell);}
+   const details=node('details','friend-game-scores'),grid=node('div','friend-game-grid');details.append(node('summary',null,'Game scores'));
+   for(const [id,name]of games){const cell=node('div','score-cell');const result=summary.games.find(g=>g.id===id);cell.append(node('span',null,name),node('strong',null,score.format(result?.average??null)));grid.append(cell);}details.append(grid);card.append(details);
    card.append(node('div','score-detail',summary.runs?`${summary.gamesPlayed} ${summary.gamesPlayed===1?'game':'games'} · ${summary.runs} completed ${summary.runs===1?'Daily':'Dailies'} · scores out of 100`:'No shared completed results for this selection.'));return card;
   }));
  }
