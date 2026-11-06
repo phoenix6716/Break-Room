@@ -30,7 +30,7 @@ const pages=['leagues.html','friends.html','profile.html'],labels=['Home','Leagu
   await p.goto(base+'/leagues.html');await p.locator('header nav a[href="friends.html"]').click();await p.waitForURL('**/friends.html');
   await p.locator('header nav a[href="profile.html"]').click();await p.waitForURL('**/profile.html');
   await p.locator('header nav a[href="leagues.html"]').click();await p.waitForURL('**/leagues.html');
-  await p.locator('header .login').click();await p.waitForURL('**/login.html');
+  await p.locator('header .login').click();await p.getByRole('menuitem',{name:'Log in',exact:true}).click();await p.waitForURL('**/login.html');
   assert.deepEqual(errors,[]);await ctx.close();console.log('PASS social top bar '+width+'px: current-page underline, logo, account widths, keyboard, links and no overlaps/overflow.');
  }
  const ctx=await browser.newContext({javaScriptEnabled:false,viewport:{width:320,height:900}}),p=await ctx.newPage();

@@ -135,14 +135,17 @@
   });return true;}catch(error){status(friendly(error),true);return false;}finally{busy=false;}
  }
  async function logout(){
-  if(loggingOut)return;
+  if(loggingOut||!client)return false;
   const pending=syncUpload();loggingOut=true;
   try{
    await pending;busy=true;
    const id=owner();if(id)backup(cacheKey(id),snapshot());
-   const {error}=await client.auth.signOut({scope:'local'});if(error)throw error;
-   restoreGuest();session=null;status('Signed out. Guest progress restored; your account backup remains on this browser.');render();
-  }catch(error){status(friendly(error),true);}finally{busy=false;loggingOut=false;}
+   const {error}=await client.auth.signOut({scope:'local'});
+   // The official SDK may clear its local session even when revocation fails.
+   // Complete guest restoration in that case instead of leaving account saves active.
+   if(error){const {data}=await client.auth.getSession();if(data.session)throw error;}
+   restoreGuest();session=null;status(error?'Signed out on this browser. The account service could not confirm session revocation. Your account backup remains here.':'Signed out. Guest progress restored; your account backup remains on this browser.');render();return true;
+  }catch(error){status(friendly(error),true);return false;}finally{busy=false;loggingOut=false;}
  }
  function download(){
   try{const blob=new Blob([JSON.stringify({format:'break-room-native-saves',version:1,savedAt:new Date().toISOString(),games:saves.capture(storage(),false)},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='break-room-saves.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}catch(error){status(friendly(error),true);}
@@ -216,7 +219,31 @@
   }catch(error){status(friendly(error),true);}finally{resolveReady();}
  }
  function schedule(){clearTimeout(schedule.timer);schedule.timer=setTimeout(()=>syncUpload(),800);}
- window.BREAK_ROOM_ACCOUNTS=Object.freeze({sync:syncUpload,ready,getUser:()=>session?.user||null,
+ async function accountAction(task){
+  await ready;if(!client||!session)throw Error('Please sign in again.');
+  const id=session.user.id,signed=await authenticated();if(signed.user.id!==id)throw Error('Account changed. Please reload.');
+  const check=()=>{if(session?.user.id!==id)throw Error('Account changed. Please reload.');};
+  const result=await task(check);check();return result;
+ }
+ async function socialSettings(name,sharing){
+  return accountAction(async check=>{
+   const {data:hub,error}=await client.rpc('friend_hub',{p_action:'list'});if(error)throw error;check();
+   if(!hub?.me){if(sharing!==undefined)throw Error('Set up Friends first to choose score sharing.');return null;}
+   const {data,error:saveError}=await client.rpc('friend_hub',{p_action:'settings',p_name:name??hub.me.name,p_share:sharing??hub.me.sharing});if(saveError)throw saveError;check();return data;
+  });
+ }
+ async function updateName(value){
+  const name=value.trim();if([...name].length<2||[...name].length>30)throw Error('Use a display name of 2 to 30 characters.');
+  return accountAction(async check=>{
+   // Read current consent immediately before editing an existing social profile.
+   await socialSettings(name);check();
+   const {data,error}=await client.auth.updateUser({data:{display_name:name}});if(error)throw Error('Could not update your account name. If your Friends name changed, try saving again. '+friendly(error));check();
+   session={...session,user:data.user};render();return data.user;
+  });
+ }
+ async function updateEmail(value){return accountAction(async check=>{const {data,error}=await client.auth.updateUser({email:value.trim()},{emailRedirectTo:accountURL});if(error)throw error;check();session={...session,user:data.user};render();return data.user;});}
+ async function resetPassword(){return accountAction(async check=>{const email=session.user.email;if(!email)throw Error('This account has no email address.');const {error}=await client.auth.resetPasswordForEmail(email,{redirectTo:new URL('reset-password.html',base).href});if(error)throw error;check();});}
+ window.BREAK_ROOM_ACCOUNTS=Object.freeze({sync:syncUpload,ready,signOut:logout,exportSaves:download,updateName,updateEmail,resetPassword,setSharing:value=>{if(typeof value!=='boolean')throw Error('Choose a sharing setting.');return socialSettings(undefined,value);},getUser:()=>session?.user||null,
   cloudActive:()=>{try{return !!session&&owner()===session.user.id;}catch{return false;}},
   async friendsRPC(name,args={}){await ready;if(!['friend_hub','friend_scores','hidden_gem_friend_scores','shift_work_friend_scores','codebreak_friend_scores','league_hub'].includes(name))throw Error('Unknown friends operation.');if(!client||!session)throw Error('Please sign in to use friends.');const {data,error}=await client.rpc(name,args);if(error)throw error;return data;}
  });

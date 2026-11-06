@@ -893,17 +893,20 @@ function prettyDate(iso) {
 }
 
 // ---------- Sound and motion ----------
-const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const motionQuery=window.matchMedia("(prefers-reduced-motion: reduce)");
+let reduceMotion=motionQuery.matches;motionQuery.addEventListener("change",e=>{reduceMotion=e.matches;});
+const preferences=window.BREAK_ROOM_PREFERENCES;
+const soundVolume=()=>preferences?.get().volume??1;
 let soundOn = true;
-let audioCtx = null;
+let audioCtx = null, masterGain = null;
 const activeTones = new Set();
 function ensureAudio() {
-  if (!soundOn) return null;
+  if (!soundOn || soundVolume()===0) return null;
   try {
     if (!audioCtx) {
       const AC = window.AudioContext || window.webkitAudioContext;
       if (!AC) return null;
-      audioCtx = new AC();
+      audioCtx = new AC();masterGain=audioCtx.createGain();masterGain.gain.value=soundVolume();masterGain.connect(audioCtx.destination);
     }
     if (audioCtx.state === "suspended") audioCtx.resume().catch(()=>{});
     return audioCtx;
@@ -922,7 +925,7 @@ function tone(freq, at, dur, vol, type) {
     g.gain.setValueAtTime(0.0001, t0);
     g.gain.exponentialRampToValueAtTime(vol || 0.06, t0 + 0.01);
     g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
-    o.connect(g); g.connect(ctx.destination);
+    o.connect(g); g.connect(masterGain);
     activeTones.add(o);o.onended=()=>{activeTones.delete(o);o.disconnect();g.disconnect();};
     o.start(t0); o.stop(t0 + dur + 0.02);
   } catch (e) {}
@@ -1910,15 +1913,16 @@ function guessCountry() {
 // ---------- Init ----------
 (function init() {
   // Cloud-restored Dailies must survive first launch on a new device.
-  soundOn = safeGet("pc_sound", "1") !== "0";
+  soundOn = preferences?preferences.get().sound:safeGet("pc_sound", "1") !== "0";
   const soundBtn = document.getElementById("soundBtn");
   const paintSound = () => {
     soundBtn.textContent = "♪  SOUND " + (soundOn ? "ON" : "OFF");
     soundBtn.setAttribute("aria-pressed", String(soundOn));
   };
-  window.addEventListener("storage",e=>{if(e.key==="pc_sound"){soundOn=e.newValue!=="0";paintSound();if(!soundOn)silenceLowball();}});
+  window.addEventListener("break-room:preferences",()=>{soundOn=preferences.get().sound;if(masterGain)masterGain.gain.value=soundVolume();paintSound();if(!soundOn||soundVolume()===0)silenceLowball();});
+  window.addEventListener("storage",e=>{if(!preferences&&e.key==="pc_sound"){soundOn=e.newValue!=="0";paintSound();if(!soundOn)silenceLowball();}});
   paintSound();
-  soundBtn.addEventListener("click", () => { soundOn = !soundOn; safeSet("pc_sound", soundOn ? "1" : "0"); paintSound(); if (soundOn) SFX.tick();else silenceLowball(); });
+  soundBtn.addEventListener("click", () => { soundOn = !soundOn; if(preferences)preferences.set({sound:soundOn});else safeSet("pc_sound", soundOn ? "1" : "0"); paintSound(); if (soundOn) SFX.tick();else silenceLowball(); });
   detectCountry();
   updateStatStrip();
   startNormalMode();

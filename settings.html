@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f4eddc"><meta name="referrer" content="no-referrer"><title>Settings · Break Room</title><link rel="icon" href="assets/break-room-icon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="break-room.css"><link rel="stylesheet" href="accounts.css"><script defer src="assets/vendor/supabase.js"></script>
+<script defer src="account-config.js"></script>
+<script defer src="pack-model.js?v=launch-20261023"></script><script defer src="prior-model.js?v=launch-20261023"></script><script defer src="laser-model.js?v=launch-20261023"></script><script defer src="alibi-model.js?v=playtest-20261023"></script><script src="bouncer-model.js?v=launch-20261023"></script><script src="inner-clock-model.js"></script><script src="hidden-gem-model.js"></script><script defer src="cloud-saves.js?v=shift-work-20261025"></script>
+<script defer src="accounts.js?v=time-sense-20261025"></script><link rel="stylesheet" href="legal.css"><script src="time-drop-model.js"></script><script src="clue-ladder-model.js"></script><script src="seating-chart-model.js"></script><script src="shift-work-model.js?v=shift-work-20261025"></script><link rel="stylesheet" href="menu-brand.css?v=hub-topbar-20261027"><link rel="stylesheet" href="settings.css?v=settings-20261106"><script defer src="settings.js?v=settings-20261106"></script></head><body><div class="hub-header-frame"><header class="topbar hub-topbar"><nav class="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="leagues.html">Leagues</a><a href="friends.html">Friends</a><a href="profile.html">Profile</a></nav><a class="brand" href="index.html" aria-label="Break Room home"><img class="br-brand__image" src="assets/break-room-wordmark.png?v=cube-b-20261028" alt="Break Room" decoding="async"></a><div class="account"><a class="login" href="account.html" data-account-link="true">ACCOUNT</a></div></header></div><main class="page settings-page"><section class="settings-card" aria-labelledby="settings-heading">
+<div class="settings-heading"><h1 id="settings-heading">Settings</h1><a href="profile.html">Your profile →</a></div>
+<div class="settings-tabs" role="tablist" aria-label="Settings"><button type="button" id="tab-account" role="tab" aria-controls="panel-account" aria-selected="true">Account</button><button type="button" id="tab-game" role="tab" aria-controls="panel-game" aria-selected="false" tabindex="-1">Game preferences</button><button type="button" id="tab-saves" role="tab" aria-controls="panel-saves" aria-selected="false" tabindex="-1">Saves &amp; privacy</button></div>
+<p id="settings-message" role="status" aria-live="polite"></p>
+<section id="panel-account" role="tabpanel" aria-labelledby="tab-account">
+<p id="settings-guest">Log in to manage your account. <a href="login.html">Log in →</a></p>
+<div id="settings-auth" hidden>
+<form id="name-form"><label for="settings-name">Display name</label><div class="settings-inline"><input id="settings-name" name="name" minlength="2" maxlength="30" autocomplete="nickname" required><button class="button secondary" type="submit">Save name</button></div></form>
+<form id="email-form"><label for="settings-email">Email address</label><div class="settings-inline"><input id="settings-email" name="email" type="email" autocomplete="email" required><button class="button secondary" type="submit">Change email</button></div><p class="settings-note">Follow the confirmation instructions sent by email to finish changing your address.</p></form>
+<div class="settings-row"><div><strong>Password</strong><p class="settings-note">We’ll email you a secure reset link.</p></div><button class="button secondary" type="button" id="settings-password">Reset password</button></div>
+</div></section>
+<section id="panel-game" role="tabpanel" aria-labelledby="tab-game" hidden>
+<p class="settings-note">Applies to all ten games on this browser.</p>
+<label class="settings-row settings-check" for="settings-sound"><span><strong>Game sounds</strong><small>Short effects while you play.</small></span><input id="settings-sound" type="checkbox"></label>
+<label class="settings-volume" for="settings-volume">Volume <output id="volume-label" for="settings-volume">100%</output><input id="settings-volume" type="range" min="0" max="100" step="5"></label>
+<label class="settings-row settings-check" for="settings-motion"><span><strong>Reduce motion</strong><small>Your device’s reduced-motion setting is always respected.</small></span><input id="settings-motion" type="checkbox"></label>
+</section>
+<section id="panel-saves" role="tabpanel" aria-labelledby="tab-saves" hidden>
+<div class="settings-row"><div><strong>Your saves</strong><p class="settings-note" data-account-status>Saved on this browser.</p></div><button type="button" class="button secondary" id="settings-sync" hidden>Sync now</button></div>
+<div class="settings-row"><div><strong>Save backup</strong><p class="settings-note">Download this browser’s game saves as a JSON file.</p></div><button type="button" class="button secondary" id="settings-export">Download</button></div>
+<div id="sharing-section"><p id="sharing-note" class="settings-note">Log in to manage score sharing.</p><label class="settings-row settings-check" id="sharing-label" for="settings-sharing" hidden><span><strong>Share Daily scores</strong><small>Show your scores in Friends and Leagues.</small></span><input id="settings-sharing" type="checkbox"></label><button type="button" class="button secondary" id="sharing-retry" hidden>Retry sharing settings</button></div>
+<p class="settings-note"><a href="privacy.html">Privacy policy</a> · <a href="contact.html">Account &amp; data help</a></p>
+</section>
+<noscript><p>Turn on JavaScript to change settings. <a href="account.html">Account &amp; saves</a>.</p></noscript>
+</section></main><!-- shared-legal-footer:start -->
+<footer class="br-site-footer"><div class="br-footer-inner"><p class="br-footer-note">BREAK ROOM · A LITTLE BREAK. A FEW GOOD GAMES.</p><nav class="br-footer-nav" aria-label="Footer"><a href="index.html">All games</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact &amp; data help</a></nav></div></footer>
+<!-- shared-legal-footer:end -->
+</body></html>

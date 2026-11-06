@@ -1,3 +1,9 @@
+## Account menu and Settings — 6 November 2026
+
+Local selected coverage passed: six unit/database suites and all 15 affected browser suites (the motion correction and remaining suites were rerun in the final browser batch). Static build/reference/syntax and shared-footer checks passed. New `tests/settings.cjs` exercises real built pages and the official Supabase SDK over isolated mocked HTTPS: guests, keyboard/outside/Escape menu behavior, 320/390/768/1440px layouts, persisted sound/volume/motion, cross-tab and Lowball iframe controls, native Web Audio master volume, OS motion changes, blocked storage, legacy sound precedence, credential-free JSON exports, display-name/email/reset operations, preserved social consent, no automatic Friends setup, SDK local logout recovery and the pending-save barrier. Phone and desktop Settings screenshots were visually inspected.
+
+Existing account, Friends, Leagues, SQL/cloud, Profile-record, social freshness/loading, immersion, Time Sense, Lowball art/price, game feedback, release/smoke and responsive/no-JavaScript header checks passed. All 15 save adapters remain; no SQL migration, game rules or score changes. Real email delivery and authenticated production edits were deliberately not exercised; SDK email calls were intercepted and no real user records were changed. Physical devices and assistive-technology review remain launch checks. Deployment/live verification is separate from these local results.
+
 ## Prior implementation (20 October 2026)
 
 Final `npm test` passed all **35 suites**: 12 unit/database/maths and 23 browser suites. The artifact passed 337 shipped files, 828 local references and 35 parsed scripts; the smoke suite passes 596 assertions. Full local log: `/tmp/br-prior-release.log`. After that run the content CLI report was extended and checked separately to include Prior’s 128-event inventory and explicit independent-source-review gap; this does not change player assets or scoring.

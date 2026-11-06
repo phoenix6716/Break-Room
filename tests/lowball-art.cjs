@@ -68,8 +68,7 @@ const assetRoot = path.resolve(__dirname, '../games/lowball/engine/icons/generat
       assert.equal(await page.locator('#finalSquares img').count(), 0);
       assert.equal(await page.locator('#finalSquares svg path').first().getAttribute('fill'), colour);
     }
-    await page.locator('#soundBtn').click();
-    assert.equal(await page.locator('#soundBtn').getAttribute('aria-pressed'), 'false');
+    assert.equal(await page.locator('#soundBtn').getAttribute('aria-pressed'), 'false', 'All games now default to opt-in sound');
     assert.equal(await page.locator('#soundBtn').innerText(), '♪ SOUND OFF');
     await page.reload();
     assert.equal(await page.locator('#soundBtn').innerText(), '♪ SOUND OFF');

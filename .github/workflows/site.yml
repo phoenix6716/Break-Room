@@ -152,7 +152,7 @@ jobs:
                           page = response.read()
                       assert b"How To Play</button>" in page and b"game-help.js?v=first-visit-20261028" in page and ('data-game="' + current + '"').encode() in page, "Missing labelled first-visit instructions: " + current
                       assert b'class="mobile-stats-label">Stats</span>' in page and b"game-help.css?v=mobile-stats-20261028" in page, "Missing mobile stats layout: " + current
-                      assert b"game-feel.js?v=immersion-20261105" in page and b"game-feel.css?v=immersion-20261105" in page and b"achievements.js?v=immersion-20261105" in page, "Missing immersive feedback: " + current
+                      assert b"game-feel.js?v=settings-20261106" in page and b"game-feel.css?v=settings-20261106" in page and b"achievements.js?v=immersion-20261105" in page, "Missing immersive feedback: " + current
                       if current == "codebreak":
                           assert b'data-game-scene="codebreak"' in page and b"codebreak.css" in page and b"codebreak.js" in page, "Missing original Codebreak safe"
                           continue
