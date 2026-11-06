@@ -98,3 +98,10 @@
 :root[data-theme=dark] .td-steps button{background:#202d3c!important;color:#eee7d8!important;border-color:#53687b!important;box-shadow:3px 3px #080e16!important}
 :root[data-theme=dark] .td-lock{background:#36566c!important;color:#eee7d8!important;border-color:#7898ad!important}
 @media(max-width:480px){:root[data-theme=dark] .settings-tabs button{font-size:11px;letter-spacing:0}}
+/* Copy on dark game panels must never retain the light theme's navy ink. */
+:root[data-theme=dark] :where(.laser-kicker,.laser-intro,.laser-feedback p,.laser-control-hint,.laser-live,.laser-summary,.laser-notes,.pack-kicker,.trip-description,.pack-notes,.pack-live-status,.packing-tip,.clock-note,.clock-intro,.clock-live,.cl-kicker,.cl-label,.cl-tries,.td-kicker,.era-tag,.sw-note,.sw-status,.instructions,.local-note,.prototype-note){color:#fff!important}
+:root[data-theme=dark] #game-panel :where(p,label,small,dt,dd,summary){color:#fff!important}
+/* Light puzzle pieces retain dark, readable labels. */
+:root[data-theme=dark] :where(.laser-cell,.laser-coordinate,.sc-seat,.sc-cloth,.sw-piece,.bag-tag,.bag-empty){color:#17263a!important}
+:root[data-theme=dark] .suitcase :where(p,small,b,strong,span){color:#17263a!important}
+:root[data-theme=dark] :where(.sc-seat,.sc-cloth,.sw-piece,.bag-tag) :where(p,label,small){color:#17263a!important}
