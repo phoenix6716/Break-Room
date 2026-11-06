@@ -12,3 +12,13 @@
 .league-wrap #league-owner{display:block;padding:0 12px}.league-wrap #league-owner>summary{font:800 12px/1.5 Arial,sans-serif;min-height:44px;display:flex;align-items:center;cursor:pointer}.league-wrap #league-owner>summary::after{content:'+';margin-left:auto}.league-wrap #league-owner[open]>summary::after{content:'−'}.league-wrap #league-owner>p{margin:8px 0}.league-wrap #league-owner>button{margin:0 0 10px}.league-wrap .league-game>div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:center}.league-wrap .league-game .eyebrow{grid-column:1}.league-wrap .league-game h3{grid-column:1;grid-row:2;margin:0}.league-wrap .league-game .button{grid-column:2;grid-row:1/3}.league-wrap .league-entry .league-slots{margin:0 0 12px}
 @media(max-width:650px){.league-wrap .league-game>div{display:block}.league-wrap .league-game h3{margin:4px 0}.league-wrap .league-game .button{margin-top:6px}}
 .league-wrap .league-entry{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;align-items:center}.league-wrap .league-entry-head{display:contents}.league-wrap .league-player{grid-column:1;grid-row:1}.league-wrap .league-total{grid-column:2;grid-row:1;text-align:right}.league-wrap .league-entry>details{grid-column:1/-1}.league-wrap .league-entry>details:not([open]){grid-column:1;grid-row:2}.league-wrap .league-entry>details:not([open])>summary{min-height:44px}.league-wrap .league-entry:has(>details:not([open])){padding-top:10px;padding-bottom:6px}.league-wrap #league-board>.section-head .eyebrow{display:none}.league-wrap .league-required+.friend-fine{display:none}
+
+/* Consistent line spacing for wrapped mobile copy and compact summaries. */
+.league-wrap{line-height:1.45}.league-wrap .page-intro h1,.league-wrap h2{line-height:1.2}
+.league-wrap .page-intro p{line-height:1.45;margin:8px 0 0}
+.league-wrap #league-status{line-height:1.45;margin:12px 0}
+.league-wrap .league-rules>summary{line-height:1.4;padding:10px 0}
+.league-wrap .league-rules p{line-height:1.5;margin:0 0 12px}
+.league-wrap #league-dates{line-height:1.45}.league-wrap .eyebrow{line-height:1.35}
+.league-wrap .league-game h3,.league-wrap .league-slot strong{line-height:1.3}
+.league-wrap .league-player strong{line-height:1.35}.league-wrap .league-player small,.league-wrap .league-slot small{line-height:1.45}
