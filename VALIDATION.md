@@ -1,3 +1,9 @@
+## Shared score integrity — 6 November 2026
+
+All seven selected unit/database suites and five browser suites passed. The new SQL suite exercises nine native receipt formats plus Lowball through actual save RPCs and private triggers: pending-to-complete saves, immutable finishes/zeroes, deletion/reset, stale revisions, review-to-summary changes, future-date rejection, grandfathered future captures, Lowball history/legacy fallback/day aliases, Stack Up v1 hydration, repeatable migration, private privileges and account isolation. Friends browser checks install the migration and use the real SQL-backed save/comparison flows. Existing account, league, release and responsive smoke checks passed; the production artifact passed reference/syntax checks. No gameplay, score or timer changes were made.
+
+The concrete migration is `supabase/migrations/20261106042358_score_integrity_guards.sql`; see `SCORE-INTEGRITY.md` for installation order and limitations. Live activation requires the Supabase connector's database-update confirmation, which expired during two attempts. Local tests do not establish live activation. No production player records were changed. Browser-visible answers and plausible first forged submissions remain possible; no trusted leaderboard is claimed.
+
 ## Codebreak twenty-point deductions — 6 November 2026
 
 All eight selected unit/database suites and six browser suites passed. Coverage includes all eight scoring boundaries, v1/v2/v3/v4 frozen scores, v5 Daily/Unlimited captures, first-completion and cross-version locks, JS/SQL/Profile/social parity, unchanged calendars and input controls, 320–1440px layouts, captured Unlimited continuation, updated Help and a fresh eighth-guess result that remains 20 after reload. Build/reference/syntax and shared-footer checks passed.
