@@ -15,7 +15,7 @@ for(const host of ['https://phoenix6716.github.io/Break-Room/','https://games.ex
   for(const tag of ['canonical','description','og:title','og:description','og:url','og:image','twitter:card'])assert.equal([...output.matchAll(new RegExp('(?:name|property|rel)="'+tag+'"','g'))].length,1,path+' has one '+tag);
   assert.equal(metadata(output,path,site,pages),output,'Repeatable metadata');assert(output.includes(new URL(path==='index.html'?'./':path,site).href));
  }
- for(const path of ['account.html','login.html','signup.html','auth-callback.html','reset-password.html','forgot-password.html','profile.html','friends.html','leagues.html','game.html','games/hidden-gem/index.html','404.html']){
+ for(const path of ['account.html','login.html','signup.html','auth-callback.html','reset-password.html','forgot-password.html','profile.html','friends.html','leagues.html','leaderboards.html','game.html','games/hidden-gem/index.html','404.html']){
   const out=metadata('<html><head></head><body></body></html>',path,site,pages);
   assert(out.includes('noindex,follow'));assert(!out.includes('og:url'));assert(!out.includes('rel="canonical"'));if(path==='404.html')assert(out.includes('<base href="'+site.href+'">'));
  }

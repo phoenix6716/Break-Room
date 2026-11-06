@@ -1,3 +1,7 @@
+## Global Daily leaderboards — owner request, 6 November 2026
+
+`leaderboards.html` offers casual current-day standings for the ten current games, with equal displayed scores sharing rank, responsive pagination and own/nearby positions. Public participation uses a NEW independent opt-in and separate leaderboard name; never publish existing Friends/Leagues participants automatically. Guests can read only opted-in names, random public identifiers and eligible scores; never expose authentication IDs, emails, friend codes, relationships or raw saves. Only current-rule completed synced Dailies qualify; older captures retain their original history and scoring. No verified anti-cheat, prizes or overall ranking is claimed. Apply `supabase/migrations/20261106094324_daily_leaderboards.sql` after active integrity guards. An additive private RLS-protected cache derives scores from native saves via after-save triggers and opt-in backfill. No client score submission API exists. Preserve saves, existing consent, timers and all gameplay. See `LEADERBOARDS.md` and the leaderboard SQL/browser tests.
+
 ## Shared score integrity — owner request, 6 November 2026
 
 Activation confirmed, 6 November 2026: installed the additive migration after changing trigger setup to create only missing guards. Live readback confirms all three `br_integrity_guard` triggers are enabled, helpers are private and the existing save-row counts/digests are unchanged. The earlier confirmation timeouts are resolved. Reapplying the migration keeps existing triggers in place.

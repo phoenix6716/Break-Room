@@ -1,5 +1,5 @@
 /* Pure changed-file selection. Full game sweeps require an explicit --full request. */
-const UNITS=["score-integrity.cjs","three-game-scoring.cjs","site-metadata.cjs","codebreak-rules.cjs","codebreak-solvability.cjs","codebreak-database.cjs","leagues-database.cjs","content-refresh.cjs","daily-content.cjs","shift-work-rules.cjs","hidden-gem-rules.cjs","seating-chart-rules.cjs","clue-ladder-rules.cjs","time-drop-rules.cjs","test-scope.cjs","playtest-feedback.cjs","factual-review.cjs","launch-content.cjs","inner-clock-rules.cjs","bouncer-rules.cjs","alibi-scenarios.cjs","alibi-rules.cjs","laser-rules.cjs","practice-session-rules.cjs","prior-rules.cjs","pack-rules.cjs","content-tools.cjs","friends-database.cjs","account-navigation.cjs","cloud-saves.cjs","cloud-database.cjs","arcade-score.cjs","daily-clock.cjs","profile-records.cjs","question-banks.cjs"];
+const UNITS=["leaderboards-database.cjs","score-integrity.cjs","three-game-scoring.cjs","site-metadata.cjs","codebreak-rules.cjs","codebreak-solvability.cjs","codebreak-database.cjs","leagues-database.cjs","content-refresh.cjs","daily-content.cjs","shift-work-rules.cjs","hidden-gem-rules.cjs","seating-chart-rules.cjs","clue-ladder-rules.cjs","time-drop-rules.cjs","test-scope.cjs","playtest-feedback.cjs","factual-review.cjs","launch-content.cjs","inner-clock-rules.cjs","bouncer-rules.cjs","alibi-scenarios.cjs","alibi-rules.cjs","laser-rules.cjs","practice-session-rules.cjs","prior-rules.cjs","pack-rules.cjs","content-tools.cjs","friends-database.cjs","account-navigation.cjs","cloud-saves.cjs","cloud-database.cjs","arcade-score.cjs","daily-clock.cjs","profile-records.cjs","question-banks.cjs"];
 
 const DAILY_CONTENT_FILES=new Set(["codebreak-model.js","index.html","game-config.js","pack-model.js","laser-model.js","inner-clock-model.js","time-drop-model.js","clue-ladder-model.js","seating-chart-model.js","hidden-gem-model.js","shift-work-model.js","games/pack/puzzles.js","games/laser/boards.js","games/inner-clock/inner-clock.js","games/time-drop/events.js","games/clue-ladder/puzzles.js","games/seating-chart/puzzles.js","games/hidden-gem/questions.js","games/shift-work/boards.js","games/stack-up/stack-up.js","games/stack-up/stacks.js","games/stack-up/familiar-stacks.js","games/lowball/engine/index.html","content/time-drop-events.json","content/clue-ladder-puzzles.json","content/seating-chart-puzzles.json","content/hidden-gem-questions.json","content/shift-work-boards.json","content/stack-up-familiar.json","content/lowball-additions.json","content/lowball-original-items.json","content/lowball-original-selector.js"]);
 
@@ -40,7 +40,7 @@ function selectChecks(changed,available,{full=false}={}){
  const add=(...names)=>{for(const name of names.flat()){if(!known.has(name))throw Error('Missing mapped check: '+name);(UNITS.includes(name)?unit:browser).add(name);}};
  const game=(id,rules=false)=>{if(!GAMES.includes(id))throw Error('Add a test scope for game '+id);games.add(id);add(GAME_UI[id]);if(rules){add(GAME_RULES[id]);if(['alibi','stack-up'].includes(id))add('playtest-feedback-ui.cjs');}};
  const infra=()=>add('test-scope.cjs','smoke.cjs','release.cjs');
- const auth=()=>add('settings.cjs','social-loading.cjs','friends-freshness.cjs','leagues-freshness.cjs','account-navigation.cjs','cloud-saves.cjs','cloud-database.cjs','profile-records.cjs','accounts.cjs','friends.cjs','leagues.cjs');
+ const auth=()=>add('leaderboards.cjs','settings.cjs','social-loading.cjs','friends-freshness.cjs','leagues-freshness.cjs','account-navigation.cjs','cloud-saves.cjs','cloud-database.cjs','profile-records.cjs','accounts.cjs','friends.cjs','leagues.cjs');
  const layout=()=>add('game-surfaces.cjs','layout-goals.cjs','mobile-access.cjs','game-template.cjs');
  if(full){for(const name of available)if(name.endsWith('.cjs'))add(name);python=true;legal=true;content=true;GAMES.forEach(id=>games.add(id));reasons.push('Explicit full-suite request.');}
  else for(const file of files){
@@ -52,7 +52,7 @@ function selectChecks(changed,available,{full=false}={}){
   if(file.startsWith('content/archive/'))continue;
   if(/^tests\/[^/]+\.cjs$/.test(file)){const name=file.slice(6);if(known.has(name))add(name);else reasons.push('Deleted check: '+file);continue;}
   if(file==='tests/question-maths.py'){python=true;continue;}
-  if(file.startsWith('tests/fixtures/')){if(file.includes('alibi'))game('alibi',true);else throw Error('Add a test scope for fixture '+file);continue;}
+  if(file.startsWith('tests/fixtures/')){if(file==='tests/fixtures/native-daily-receipts.cjs')add('score-integrity.cjs','leaderboards-database.cjs');else if(file.includes('alibi'))game('alibi',true);else throw Error('Add a test scope for fixture '+file);continue;}
   const own=file.match(/^games\/([^/]+)\//);
   const model=file.match(/^(codebreak|shift-work|hidden-gem|pack|prior|laser|alibi|bouncer|inner-clock|time-drop|clue-ladder|seating-chart)-model\.js$/);
   if(own){
@@ -68,6 +68,7 @@ function selectChecks(changed,available,{full=false}={}){
   else if(file==='supabase/seating-chart-three.sql'){game('seating-chart',true);add('accounts.cjs','friends.cjs','leagues-database.cjs','leagues.cjs','profile.cjs');}
   else if(file==='supabase/leagues.sql'){add('leagues-database.cjs','leagues.cjs','leagues-freshness.cjs','compact-hubs.cjs');}
   else if(['supabase/hidden-gem.sql','supabase/hidden-gem-broader-answers.sql','supabase/hidden-gem-exact-rejections.sql'].includes(file)){game('hidden-gem',true);}
+  else if(file==='supabase/migrations/20261106094324_daily_leaderboards.sql'||/^leaderboards\.(?:js|css|html)$/.test(file)){add('leaderboards-database.cjs','leaderboards.cjs','score-integrity.cjs');auth();}
   else if(file==='supabase/migrations/20261106042358_score_integrity_guards.sql'){add('score-integrity.cjs','cloud-database.cjs','cloud-saves.cjs','friends-database.cjs','leagues-database.cjs','codebreak-database.cjs','accounts.cjs','friends.cjs','leagues.cjs');}
   else if(/^supabase\//.test(file)){add('friends-database.cjs','cloud-database.cjs','playtest-feedback.cjs');}
   else if(file==='content/drafts/sleeper-broader-questions.json'){game('hidden-gem',true);content=true;}
