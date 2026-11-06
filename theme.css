@@ -1,0 +1,72 @@
+/* Optional appearance only. Puzzle colours and feedback retain their meaning. */
+.br-header-actions{display:flex;align-items:center;justify-self:end;justify-content:flex-end;gap:8px;grid-column:3;grid-row:1;min-width:0}
+.br-header-actions>.game-header-account{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;white-space:nowrap}
+.br-theme-toggle{display:inline-grid!important;place-items:center;flex:0 0 44px;width:44px;height:44px;min-width:44px;min-height:44px;padding:10px!important;border:0!important;background:transparent!important;box-shadow:none!important;color:var(--ink,#17263a)!important;cursor:pointer;touch-action:manipulation;border-radius:0}
+.br-theme-toggle svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.br-theme-toggle:hover{background:var(--paper-deep,#e9dfc8)!important;transform:none!important}.br-theme-toggle:focus-visible{outline:3px solid var(--coral,#ee6557)!important;outline-offset:2px}
+.br-theme-status{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(max-width:600px){.br-header-actions{gap:2px}.br-header-actions>.game-header-account{font-size:9px}.game-site-header .brand.br-brand>.br-brand__image{width:112px!important}}
+@media(max-width:360px){.game-site-header .brand.br-brand>.br-brand__image{width:96px!important}}
+:root[data-theme=dark]{color-scheme:dark;--paper:#141e2a!important;--paper-deep:#293b4c!important;--white:#202d3c!important;--ink:#eee7d8!important;--ink-soft:#b2c0ce!important;--blue:#35566b!important;--blue-deep:#94cadc!important;--lime:#b8d57a!important;--coral:#ed8777!important;--yellow:#51442c!important;--purple:#403650!important;--green:#9ed4aa!important;--red:#ffaaa0!important;--pink:#ed8777!important;--cyan:#94cadc!important;--bg:#141e2a!important;--bg-raised:#293b4c!important;--panel:#202d3c!important;--panel-hover:#2b4053!important;--panel-deep:#192534!important;--card:#202d3c!important;--text:#eee7d8!important;--muted:#b2c0ce!important;--mut:#b2c0ce!important;--dim:#b2c0ce!important;--line:#53687b!important;--line-bright:#7790a4!important;--border:#53687b!important;--ok:#a4dfb5!important;--okbg:#293f34!important;--no:#ffaaa0!important;--nobg:#4b3034!important;--shadow:4px 4px 0 #080e16!important}
+:root[data-theme=dark] body{background-color:var(--paper)!important;color:var(--ink)!important;background-image:linear-gradient(90deg,#a4c1d306 50%,transparent 50%),linear-gradient(#a4c1d306 50%,transparent 50%)!important;background-size:10px 10px!important}
+:root[data-theme=dark] :where(h1,h2,h3){color:var(--ink)!important}:root[data-theme=dark] h1{text-shadow:3px 3px #314e61!important}:root[data-theme=dark] h1 em{color:var(--coral)!important;text-shadow:3px 3px #593a38!important}
+:root[data-theme=dark] a.brand.br-brand{background:#f4eddc!important;padding:6px!important;box-shadow:3px 3px 0 #080e16!important}
+:root[data-theme=dark] :where(.topbar,.hub-topbar,.section-head,.site-header,.game-site-header,.game-menu,.game-menu-group,.br-site-footer,.br-footer-inner,.site-footer,.standalone-site-footer){border-color:var(--line)!important}
+:root[data-theme=dark] :where(.game-card,.reset-panel,.panel,.stat,.auth-card,.account-card,.empty-state,.profile-panel,.profile-game,.profile-stat,.profile-daily,.profile-achievement,.friend-card,.friend-panel,.league-entry,.league-game,.league-chooser,.lb-panel,.settings-card,.settings-section,.game-popup,.result-card,.quick-stats,.br-game-board,.game-state,.card,.arcade-game-panel){background:var(--white)!important;color:var(--ink)!important;border-color:var(--line)!important;box-shadow:4px 4px 0 #080e16!important}
+:root[data-theme=dark] :where(.game-card-image){filter:brightness(.82) saturate(.9)}
+:root[data-theme=dark] :where(.game-art,.game-stats td,.game-stats th,.lb-table td,.lb-public,.lb-nearby,.lb-fine,.league-rules,.profile-tabs,.settings-tabs,.friend-row){border-color:var(--line)!important}
+:root[data-theme=dark] :where(.br-account-menu,.popup-instructions,.extended-stats-grid>div,.profile-empty,.profile-daily.progress,.profile-daily.complete,.league-entry.you,.league-slot,.friend-code,.notice,.settings-note,.achievement-toast){background:var(--paper-deep)!important;color:var(--ink)!important;border-color:var(--line)!important}
+:root[data-theme=dark] .br-account-menu :where(a:hover,a:focus-visible){background:#35566b;outline-color:#94cadc}
+:root[data-theme=dark] :where(input:not([type=checkbox]):not([type=range]),textarea,select){color:var(--ink)!important;background:var(--paper)!important;border-color:var(--line)!important}
+:root[data-theme=dark] :where(.button,.btn,.play-button,.check-button,.next-button,.sw-primary,.sw-next,.cb-primary){color:#17263a!important;background:var(--lime)!important;border-color:#0b1420!important;box-shadow:3px 3px 0 #080e16!important}
+:root[data-theme=dark] :where(.button.secondary,.btn.alt,.mini-tool,.br-mode-tabs button,.mode-option,.tabs button,.settings-tabs button,.profile-tabs button,.cb-keypad button,.cb-actions button:not(.cb-primary),.sw-controls button:not(.sw-primary):not(.sw-next)){background:var(--white)!important;color:var(--ink)!important;border-color:var(--line)!important;box-shadow:3px 3px 0 #080e16!important}
+:root[data-theme=dark] :where(.br-mode-tabs [aria-selected=true],.mode-option.is-selected,.tabs button[aria-selected=true],.settings-tabs [aria-selected=true],.profile-tabs [aria-selected=true]){background:var(--blue)!important;color:var(--ink)!important}
+:root[data-theme=dark] :where(.play-button span,.button small){color:#17263a!important}
+:root[data-theme=dark] :where(.nav img,.mini-tool img,.footer-links img){filter:brightness(0) invert(.9)!important}
+:root[data-theme=dark] :where(.game-popup-backdrop,.game-menu-backdrop,.menu-shade,.result-modal){background:#060c16c9!important}
+:root[data-theme=dark] :where(#game-panel,.br-game-board #engine-slot,.engine-slot){background:var(--white)!important;color:var(--ink)!important;border-color:var(--line)!important}
+:root[data-theme=dark] :where(#practice-settings,.sw-practice,.cl-card,.cl-rung,.cl-history li,.td-card,.td-result,.fact-box,.sort-card,.sort-stage,.pack-item,.pack-result,.pack-hud>div,.pack-breakdown>div,.pack-art-recap li,.sc-rules li,.sc-objective,.sc-pool button,.cb-entry,.cb-guess,.clock-review,.clock-stage){background:var(--paper-deep)!important;color:var(--ink)!important;border-color:var(--line)!important;box-shadow:3px 3px 0 #080e16!important}
+:root[data-theme=dark] :where(.cl-rung.current,.sc-rules li.related,.sc-pool button[aria-pressed=true],.pack-item[aria-pressed=true],.sort-card.drag-over){background:#35566b!important}
+:root[data-theme=dark] :where(.cl-rung.locked,.cl-rung.locked p){background:#1a2634!important;color:var(--ink-soft)!important}
+:root[data-theme=dark] :where(.cl-review,.sw-review,.pack-result.is-perfect){background:#293f34!important;color:var(--ink)!important}
+:root[data-theme=dark] :where(.cl-kicker,.cl-label,.cl-tries,.pack-kicker,.pack-heading,.trip-description,.pack-notes,.item-copy small,.pack-result-list,.pack-score-detail,.pack-live-status,.packing-tip,.clock-note,.clock-intro,.clock-live,.clock-recap strong,#clock-notice,.profile-daily.complete span){color:var(--ink-soft)!important}
+:root[data-theme=dark] :where(.cl-error,.pack-over){color:#ffaaa0!important}
+:root[data-theme=dark] :where(.clock-total,.clock-feedback){color:#a4dfb5!important}
+:root[data-theme=dark] .inner-clock-page{--clock-ink:#eee7d8;--clock-blue:#293b4c}
+:root[data-theme=dark] .clock-target{text-shadow:3px 3px #17263a}
+:root[data-theme=dark] .clock-dial{background:var(--paper)!important;box-shadow:4px 4px #080e16}
+/* Preserve light artwork / game tokens and the dark text they were drawn with. */
+:root[data-theme=dark] :where(.card-symbol,.result-burst,.results-stamp,.playfield-kicker,.sw-dot.done,.sw-piece,.sc-seat,.sc-cloth,.suitcase,.bag-tag,.bag-empty){color:#17263a!important}
+:root[data-theme=dark] .suitcase :where(p,small,b,strong,span){color:#17263a!important}
+:root[data-theme=dark] .cb-digits>span{color:#17263a!important}
+:root[data-theme=dark] .cb-safe-input{background:#17263a!important;color:#e4b65f!important;border:0!important}
+:root[data-theme=dark] :where(.cb-hint,.cb-feedback-key,.cb-kicker){color:var(--ink-soft)!important}
+:root[data-theme=dark] :where(.cb-legend [data-state],.cb-guess .cb-digits>[data-state]){color:#17263a!important}
+:root[data-theme=dark] :where(.cb-result,.sw-help-diagram,.clock-warning,#save-warning,#cl-notice,.pack-warning){background:var(--paper-deep)!important;color:var(--ink)!important;border-color:var(--line)!important}
+:root[data-theme=dark] :where(.scene-set-dressing,.td-scene-prop){opacity:.45}
+/* Lowball's same-origin iframe receives this same device preference. */
+:root[data-theme=dark] :where(.lowball-app,.app,.lowball-shell,.game-shell,.main-card,.result-panel,.final-panel){background:var(--white)!important;color:var(--ink)!important;border-color:var(--line)!important}
+@media(forced-colors:active){.br-theme-toggle{forced-color-adjust:auto}:root[data-theme=dark]{color-scheme:light dark}}
+
+/* Shared reset card and embedded counter use their own light-only source CSS. */
+:root[data-theme=dark] .daily-reset-card{background:var(--white)!important;border-color:var(--line)!important;box-shadow:4px 4px #080e16!important}
+:root[data-theme=dark] .daily-reset-card :where(strong,.reset-clock,[data-daily-countdown]){color:var(--ink)!important}
+:root[data-theme=dark] .daily-reset-card :where(p,.card-heading,.reset-label){color:var(--ink-soft)!important}
+:root[data-theme=dark] .clock-running .clock-action{background:#6d3f42!important;color:var(--ink)!important}
+:root[data-theme=dark] :where(.stat b,.country-row,.country-label,.sub,.stat span,.item-name,.item-detail,.product-label-kicker,.counter-topline,.till-topline,.result-label,.result-facts,.final-sub){color:var(--ink)!important}
+:root[data-theme=dark] :where(.cselect-btn,.cselect-list,.cselect-list li,.mode-toggle,.mode-btn,.product-label,.modal-panel,.modal-panel .stat,.tagline,.clock-metrics div){background:var(--white)!important;color:var(--ink)!important;border-color:var(--line)!important;border-image:none!important}
+:root[data-theme=dark] :where(.mode-btn.active,.cselect-list li.active,.price-till){background:var(--blue)!important;color:var(--ink)!important}
+:root[data-theme=dark] :where(.btn-gold){background:var(--lime)!important;color:#17263a!important;border-color:#0b1420!important;border-image:none!important}
+:root[data-theme=dark] :where(.btn-outline,.icon-btn,.currency-chip){background:var(--paper-deep)!important;color:var(--ink)!important;border-color:var(--line)!important;border-image:none!important}
+:root[data-theme=dark] .shelf-price-tag{color:#17263a}
+:root[data-theme=dark] #playArea{background-color:var(--paper-deep)!important;border-color:var(--line)!important}
+:root[data-theme=dark] .icon-btn svg rect{fill:var(--ink)!important}
+:root[data-theme=dark] :where(.profile-summary-average,.profile-game-arcade,.friend-score.you,.legal-summary,.legal-callout,.td-kicker,.sw-badge,#league-owner){background:var(--paper-deep)!important;color:var(--ink)!important;border-color:var(--line)!important}
+:root[data-theme=dark] :where(.br-site-footer,.br-site-footer a,.br-footer-note,.legal-main,.legal-main p,.legal-main li,.legal-main a){color:var(--ink-soft)!important}
+:root[data-theme=dark] :where(.activity-day:not([data-count="0"]) span,.friend-actions .accept){color:#17263a!important}
+:root[data-theme=dark] :where(.settings-card #settings-message){background:var(--okbg)!important;color:var(--ink)!important}
+:root[data-theme=dark] :where(.settings-card #settings-message[data-error=true]){background:var(--nobg)!important}
+:root[data-theme=dark] :where(.shelf-price-tag b,.shelf-price-tag span){color:#17263a!important}
+:root[data-theme=dark] :where(.td-review,.td-review h3,.td-history li,.br-achievement-toast,.br-achievement-header,.plan,.plans-notice){background:var(--white)!important;color:var(--ink)!important;border-color:var(--line)!important;box-shadow:3px 3px #080e16!important}
+:root[data-theme=dark] :where(.plans-main,.plans-main a,.br-achievement-list span,.era-tag){color:var(--ink-soft)!important}
+:root[data-theme=dark] :where(.br-achievement-close){background:var(--paper-deep)!important;color:var(--ink)!important;border-color:var(--line)!important}

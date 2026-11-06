@@ -1,3 +1,7 @@
+## Optional dark theme — 6 November 2026
+
+`tests/theme.cjs` checks all ten active game routes plus Profile, Friends, Leagues, leaderboards and Settings at 320/390/768/1440px. It checks the accessible 44px icon beside Account, keyboard operation, light default, reload/navigation, cross-tab and Lowball iframe updates, unchanged native saves, active Time Sense timer preservation, blocked storage and the no-JavaScript fallback. Visually inspect theme screenshots in `.artifacts/theme/`; retain the original puzzle/feedback colours and contrast on light artwork. Existing Settings and immersion checks cover sound/motion isolation.
+
 ## Codebreak v6 — 6 November 2026
 
 Focused rule/SQL/browser checks cover digits 0–9 and leading zeroes, the full 10,000-day calendar, v1–v5 capture/score/cloud merge compatibility, pool exhaustion, device-persistent Unlimited history, closed-tab and simultaneous-tab reservation, keypad/input/help and responsive layouts. The existing score-integrity and leaderboard suites exercise native v6 receipts. Practice history is local to a browser/account, not cloud synced.
