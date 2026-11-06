@@ -1,3 +1,7 @@
+## Remove the duplicate profile shortcut — owner request, 6 November 2026
+
+Remove the top-right `?` avatar/profile shortcut from all site headers, including account and legal pages. Keep the ordinary Profile navigation link and Log in/Account entry. The games' genuine How to play `?` buttons remain. Do not recreate the avatar during header work. Existing social-header and legal-page checks cover the updated markup and responsive/no-JavaScript navigation.
+
 ## Faster social-page loading — owner report, 6 November 2026
 
 Friends and Leagues restore the account once before reading scores. After that, `sync()` on those pages drains pending owned uploads without repeating all downloads; comparison RPCs still read fresh server scores after the upload barrier. Account and Profile retain full restore behavior. Exchange all 15 native save adapters, including archives, in at most four concurrent per-game workers. Keep each game's read/merge/write/revision retry serial; stop scheduling after failure and drain in-flight workers before releasing the account lock. Recheck authenticated identity before writes. Never skip first restoration, upload ordering, guest/account isolation, captured rules or server-derived score validation. See `SOCIAL-LOADING.md` and `tests/social-loading.cjs`.

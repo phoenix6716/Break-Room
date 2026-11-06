@@ -21,7 +21,7 @@ const pages=['leagues.html','friends.html','profile.html'],labels=['Home','Leagu
     for(let i=0;i<rects.length;i++)for(let j=i+1;j<rects.length;j++){const a=rects[i],b=rects[j];assert(!(Math.min(a.x+a.width,b.x+b.width)-Math.max(a.x,b.x)>1&&Math.min(a.y+a.height,b.y+b.height)-Math.max(a.y,b.y)>1),'Overlapping header links '+route+' '+width);}
    }
    assert.equal(new URL(await header.locator('.login').getAttribute('href'),base+'/').href,base+'/login.html');
-   assert.equal(await header.locator('.avatar').getAttribute('href'),'profile.html');
+   assert.equal(await header.locator('.avatar').count(),0,'No duplicate question-mark profile shortcut');
    assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'Page overflow '+route+' '+width);
    await p.keyboard.press('Tab');await nav.getByRole('link',{name:'Home',exact:true}).focus();
    assert.equal(await nav.getByRole('link',{name:'Home',exact:true}).evaluate(a=>getComputedStyle(a).outlineStyle),'solid');
