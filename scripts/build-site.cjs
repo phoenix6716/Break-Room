@@ -22,7 +22,6 @@ function copy(file,relative){
   rendered=rendered.replace(/(src="[^"]*codebreak-model\.js)(?:\?[^\"]*)?"/g,'$1?v=first-try-20261105"');
   rendered=rendered.replace(/(src="[^"]*seating-chart-model\.js)(?:\?[^\"]*)?"/g,'$1?v=first-try-20261105"');
   rendered=rendered.replace(/(src="[^"]*time-drop-model\.js)(?:\?[^\"]*)?"/g,'$1?v=familiar-20261105"');
-  rendered=rendered.replace(/(src="[^"]*accounts\.js)(?:\?[^"]*)?"/g,'$1?v=social-load-20261106"');
   rendered=rendered.replace(/(src="[^"]*profile\.js)(?:\?[^"]*)?"/g,'$1?v=stats-pages-20261106"');
   rendered=rendered.replace(/(src="[^"]*arcade-score\.js)(?:\?[^"]*)?"/g,'$1?v=first-try-20261105"');
   // Add feedback to every public game except Lowball's wrapper (its iframe owns sound).
@@ -43,7 +42,7 @@ function copy(file,relative){
    rendered=rendered.replace('</head>',additions+'</head>');
   }
   rendered=rendered.replace(/(src="[^"]*profile-records\.js)(?:\?[^"]*)?"/g,'$1?v=achievements-20261105"');
-  fs.writeFileSync(target,applyBrand(rendered.replace(/(src="[^"]*cloud-saves\.js)(?:\?[^"]*)?"/g,'$1?v=stack-variety-20261105"').replace(/(src="[^"]*hidden-gem-model\.js)(?:\?[^"]*)?"/g,'$1?v=coverage-20261101"').replace(/(src="[^"]*(?:friends|leagues|leagues-model)\.js)(?:\?[^"]*)?"/g,'$1?v=first-try-20261105"').replace(/(src="[^"]*accounts\.js)(?:\?[^"]*)?"/g,'$1?v=first-try-20261105"'),relative));
+  fs.writeFileSync(target,applyBrand(rendered.replace(/(src="[^"]*cloud-saves\.js)(?:\?[^"]*)?"/g,'$1?v=stack-variety-20261105"').replace(/(src="[^"]*hidden-gem-model\.js)(?:\?[^"]*)?"/g,'$1?v=coverage-20261101"').replace(/(src="[^"]*(?:friends|leagues|leagues-model)\.js)(?:\?[^"]*)?"/g,'$1?v=first-try-20261105"').replace(/(src="[^"]*accounts\.js)(?:\?[^"]*)?"/g,'$1?v=social-load-20261106"'),relative));
  }else fs.copyFileSync(file,target);
  count++;total+=fs.statSync(target).size;
 }
