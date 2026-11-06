@@ -1,5 +1,7 @@
 ## Shared score integrity — owner request, 6 November 2026
 
+Activation is pending: commit `9afd588` passed local and hosted checks, but the Supabase connector confirmation expired three times. Live readback showed no `br_integrity` schema and zero guard triggers. Do not claim these protections are active until the migration is confirmed and verified.
+
 Apply `supabase/migrations/20261106042358_score_integrity_guards.sql` last on existing and fresh projects. Private triggers protect the first valid cloud completion, including zeroes, for all ten launch games; reject deletion, changed committed results/puzzles or changed server-derived scores; preserve review-to-summary updates and legacy Stack Up hydration; lock Lowball dated history/fallback and reject new day aliases; and reject new/changed future captures by the server's Sydney date. Carry existing future cloud data unchanged. Keep native/local/offline saves, timers, scoring and write RPCs unchanged. Retired games stay untouched. This is incremental cloud-history protection: browser answers, outside help and plausible forged first submissions remain possible. Do not claim cheat-proof play or trusted global rankings. See `SCORE-INTEGRITY.md` and `tests/score-integrity.cjs`.
 
 ## Codebreak twenty-point deductions — owner request, 6 November 2026

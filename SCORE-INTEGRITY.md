@@ -1,5 +1,7 @@
 # Shared score integrity
 
+Activation status (6 November 2026): implemented, committed and tested; hosted activation awaits Supabase confirmation. Three confirmation attempts expired, and database readback showed no active guard triggers. The existing site remains operational.
+
 The ten launch games retain their current rules, scoring, timers, captured rounds, offline play and native saves. No leaderboard or paid service is introduced.
 
 Apply `supabase/migrations/20261106042358_score_integrity_guards.sql` **last**, after the current game installers and score-version migrations, on existing and fresh projects. It installs private BEFORE INSERT/UPDATE guards on `game_saves`, `shift_work_saves` and `codebreak_saves`. Reapplying it is safe. It never updates existing rows or regrades history. Retired game data is left alone. Keep this migration installed when applying future game updates.
