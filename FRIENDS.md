@@ -1,3 +1,7 @@
+## Codebreak v6 — 6 November 2026
+
+New rounds use digits 0–9 (leading zeroes allowed), eight guesses and the existing 100 / 80 / 60 / 40 / 20 scoring after the fourth guess. The Daily rotation contains 10,000 unique codes. Captured v1–v5 rounds keep their original calendars, digit ranges, drafts and scores. Unlimited reservations persist per owner/browser across tabs and visits until the available pool is exhausted; clearing device data resets the ledger. Apply `supabase/migrations/20261106105705_codebreak_zero_persistent_practice.sql` last. See `games/codebreak/README.md`; earlier version notes below are historical.
+
 ## Stack Up variety — owner feedback, 5 November 2026
 
 The 160 Daily stacks now cover 80 authored themes, replacing 16 heavily reused templates. Each theme has two distinct five-card selections, at calendar slots 16 days apart. Interleaved subject order prevents runs of film-release, recipe or life-cycle templates. Preserve all 160 IDs, five lanes, original date selector and 32-day repeat-free ID rotation. Author `content/stack-up-familiar-topics.json`; run `node scripts/build-familiar-stacks.cjs`. Each theme has reference links and a clear ordered master sequence. No maths, numerical-fact or time-unit tasks return.

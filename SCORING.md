@@ -1,3 +1,7 @@
+## Codebreak v6 — 6 November 2026
+
+New rounds use digits 0–9 (leading zeroes allowed), eight guesses and the existing 100 / 80 / 60 / 40 / 20 scoring after the fourth guess. The Daily rotation contains 10,000 unique codes. Captured v1–v5 rounds keep their original calendars, digit ranges, drafts and scores. Unlimited reservations persist per owner/browser across tabs and visits until the available pool is exhausted; clearing device data resets the ledger. Apply `supabase/migrations/20261106105705_codebreak_zero_persistent_practice.sql` last. See `games/codebreak/README.md`; earlier version notes below are historical.
+
 ## Codebreak twenty-point deductions — owner request, 6 November 2026
 
 Fresh version-5 Daily and Unlimited rounds award 100 through four guesses, then 80 / 60 / 40 / 20 on guesses 5–8; an uncracked code scores zero. Preserve all captured v1/v2/v3/v4 rounds, unfinished drafts, original rules and completed scores. Keep the nine-digit input, eight guesses, clues, Clear signal achievement and 6,561-day Sydney rotation unchanged. Existing projects apply `supabase/migrations/20261106040222_codebreak_v5_scoring.sql` after v4 before publishing; fresh projects use updated `supabase/codebreak.sql`. Only private validation/scoring helpers change; no player rows or shared write APIs change. Archive: `content/archive/2026-11-06-pre-codebreak-twenty-point/`. Cache-bust the shared model everywhere along with the controller. See `games/codebreak/README.md` and the rule, SQL and browser compatibility checks.

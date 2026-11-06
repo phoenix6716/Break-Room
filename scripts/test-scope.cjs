@@ -63,7 +63,7 @@ function selectChecks(changed,available,{full=false}={}){
     if(/(?:questions|stacks|cases|evidence-cases|boards|puzzles|events|reference-prices|price-review)\.(?:js|json)$/.test(file))content=true;
    }
   }else if(model){game(model[1],true);add('profile-records.cjs','cloud-saves.cjs');if(model[1]==='inner-clock')add('accounts.cjs','friends.cjs','profile.cjs');}
-  else if(['supabase/codebreak.sql','supabase/codebreak-v2.sql','supabase/codebreak-v3.sql','supabase/codebreak-v4.sql','supabase/migrations/20261106040222_codebreak_v5_scoring.sql'].includes(file)){game('codebreak',true);add('leagues-database.cjs','leagues.cjs','friends.cjs','accounts.cjs');}
+  else if(['supabase/codebreak.sql','supabase/codebreak-v2.sql','supabase/codebreak-v3.sql','supabase/codebreak-v4.sql','supabase/migrations/20261106040222_codebreak_v5_scoring.sql','supabase/migrations/20261106105705_codebreak_zero_persistent_practice.sql'].includes(file)){game('codebreak',true);add('leaderboards-database.cjs','leaderboards.cjs','score-integrity.cjs','leagues-database.cjs','leagues.cjs','friends.cjs','accounts.cjs');}
   else if(['supabase/stack-up-score100.sql','supabase/stack-up-first-try.sql'].includes(file)){game('stack-up',true);add('three-game-scoring.cjs','friends-database.cjs','accounts.cjs','friends.cjs','leagues-database.cjs');}
   else if(file==='supabase/seating-chart-three.sql'){game('seating-chart',true);add('accounts.cjs','friends.cjs','leagues-database.cjs','leagues.cjs','profile.cjs');}
   else if(file==='supabase/leagues.sql'){add('leagues-database.cjs','leagues.cjs','leagues-freshness.cjs','compact-hubs.cjs');}

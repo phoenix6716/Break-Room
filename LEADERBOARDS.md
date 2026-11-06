@@ -21,3 +21,5 @@ After-save triggers on the three native save tables derive entries with existing
 ## Checks
 
 `tests/leaderboards-database.cjs` runs the real PostgreSQL migration and save APIs: independent consent, no enrollment on install, trigger/backfill derivation, no client score writes, zeroes, ties/rounding, pagination, own/neighbors, legacy-rule exclusion, moderation, withdrawal, role privacy and account-deletion cascades. `tests/leaderboards.cjs` uses the official SDK against isolated real SQL fixtures to check guest/signed-in phone/desktop layouts, opt-in/out, XSS-safe names, pagination, sync ordering, errors, logout and navigation. Production verification must not publish fake players or alter real user records.
+
+Codebreak v6 (0–9): apply `supabase/migrations/20261106105705_codebreak_zero_persistent_practice.sql` last. Private current rules advance from 5 to 6; earlier captured rounds retain original results and remain outside the current cohort. Cached earlier entries stay stored under their original rules.

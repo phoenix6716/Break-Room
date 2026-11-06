@@ -1,3 +1,7 @@
+## Codebreak v6 — 6 November 2026
+
+Focused rule/SQL/browser checks cover digits 0–9 and leading zeroes, the full 10,000-day calendar, v1–v5 capture/score/cloud merge compatibility, pool exhaustion, device-persistent Unlimited history, closed-tab and simultaneous-tab reservation, keypad/input/help and responsive layouts. The existing score-integrity and leaderboard suites exercise native v6 receipts. Practice history is local to a browser/account, not cloud synced.
+
 ## Global Daily leaderboards — 6 November 2026
 
 All nine selected unit/database suites and thirteen browser suites passed, followed by focused reruns for enrollment/publication locking, shared native receipt fixtures and all ten game caches. Coverage includes independent opt-in/out, zero default enrollment, server-only score derivation/backfill/triggers, all ten current rule cohorts, zeroes, equal displayed ranks, rounded ties, pagination/own/neighbors, public versus private role access, no authentication IDs/raw saves in responses, name rendering, moderation, cascade deletion, cloud sync ordering, current-day visibility, mobile/desktop layouts, offline error clearing, logout and discoverable links. Phone and desktop leaderboard screenshots were visually inspected. Earlier captures, native scores/timers and Friends/Leagues consent remain unchanged.
