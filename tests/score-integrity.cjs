@@ -23,7 +23,7 @@ function fixtures(day){const out=[];
  for(const id of [uid,other])await db.query('insert into auth.users values($1)',[id]);
  // Historical future captures and malformed legacy drafts are not rewritten on install.
  await db.query('insert into public.codebreak_saves(user_id,data) values($1,$2)',[other,raw({[future.key]:raw(future.pending)})]);
- const before=(await db.query('select data::text,revision,updated_at from public.codebreak_saves')).rows;for(let i=0;i<2;i++)await db.exec(fs.readFileSync(migration,'utf8'));assert.deepEqual((await db.query('select data::text,revision,updated_at from public.codebreak_saves')).rows,before);
+ const before=(await db.query('select data::text,revision,updated_at from public.codebreak_saves')).rows;await db.exec(fs.readFileSync(migration,'utf8'));const triggerIds=(await db.query("select oid from pg_trigger where tgname='br_integrity_guard' order by oid")).rows;await db.exec(fs.readFileSync(migration,'utf8'));assert.deepEqual((await db.query("select oid from pg_trigger where tgname='br_integrity_guard' order by oid")).rows,triggerIds,'Reinstallation keeps existing guards in place');assert.deepEqual((await db.query('select data::text,revision,updated_at from public.codebreak_saves')).rows,before);
  const as=async id=>{await db.exec('reset role;set role authenticated');await db.query("select set_config('request.jwt.claim.sub',$1,false)",[id]);};
  const save=async(game,data,rev=0)=>{const name=game==='codebreak'?'save_codebreak':game==='shift-work'?'save_shift_work':'save_game';return (await db.query('select public.'+name+'($1,$2,$3) as r',[game,raw(data),rev])).rows[0].r;};
  await as(uid);

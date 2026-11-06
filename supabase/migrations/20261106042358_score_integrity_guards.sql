@@ -102,10 +102,19 @@ begin
 end $$;
 
 revoke all on function br_integrity.completed_score(text,jsonb,date),br_integrity.low_results(jsonb),br_integrity.guard_save() from public,anon,authenticated;
-drop trigger if exists br_integrity_guard on public.game_saves;
-create trigger br_integrity_guard before insert or update on public.game_saves for each row execute function br_integrity.guard_save();
-drop trigger if exists br_integrity_guard on public.shift_work_saves;
-create trigger br_integrity_guard before insert or update on public.shift_work_saves for each row execute function br_integrity.guard_save();
-drop trigger if exists br_integrity_guard on public.codebreak_saves;
-create trigger br_integrity_guard before insert or update on public.codebreak_saves for each row execute function br_integrity.guard_save();
+do $$ begin
+ if not exists(select 1 from pg_trigger where tgname='br_integrity_guard' and tgrelid='public.game_saves'::regclass and not tgisinternal) then
+  create trigger br_integrity_guard before insert or update on public.game_saves for each row execute function br_integrity.guard_save();
+ end if;
+end $$;
+do $$ begin
+ if not exists(select 1 from pg_trigger where tgname='br_integrity_guard' and tgrelid='public.shift_work_saves'::regclass and not tgisinternal) then
+  create trigger br_integrity_guard before insert or update on public.shift_work_saves for each row execute function br_integrity.guard_save();
+ end if;
+end $$;
+do $$ begin
+ if not exists(select 1 from pg_trigger where tgname='br_integrity_guard' and tgrelid='public.codebreak_saves'::regclass and not tgisinternal) then
+  create trigger br_integrity_guard before insert or update on public.codebreak_saves for each row execute function br_integrity.guard_save();
+ end if;
+end $$;
 commit;

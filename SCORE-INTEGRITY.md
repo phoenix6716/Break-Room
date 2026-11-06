@@ -1,6 +1,6 @@
 # Shared score integrity
 
-Activation status (6 November 2026): implemented, committed and tested; hosted activation awaits Supabase confirmation. Three confirmation attempts expired, and database readback showed no active guard triggers. The existing site remains operational.
+Activation confirmed (6 November 2026): installed and verified on the live Break Room database. All three guard triggers are enabled. Existing save-row counts and digests match the pre-install baseline; helpers remain inaccessible to browser/anonymous roles. Trigger installation only creates missing guards and does not drop existing triggers.
 
 The ten launch games retain their current rules, scoring, timers, captured rounds, offline play and native saves. No leaderboard or paid service is introduced.
 
