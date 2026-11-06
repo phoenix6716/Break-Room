@@ -1,3 +1,5 @@
+Friends and Leagues avoid duplicate account restores and use bounded parallel save requests; fresh scores still wait for pending uploads. Details and verification: [SOCIAL-LOADING.md](SOCIAL-LOADING.md).
+
 Profile, Friends and Leagues use compact dashboards. Profile separates Overview, paged Game stats, paged History and paged Achievements; social setup and detailed score breakdowns expand on demand. Existing scores, saves and sharing choices are unchanged. Responsive/navigation coverage: `tests/compact-hubs.cjs`.
 
 ## Sound and smooth feedback — owner request, 5 November 2026

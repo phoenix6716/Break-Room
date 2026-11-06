@@ -40,7 +40,7 @@ function selectChecks(changed,available,{full=false}={}){
  const add=(...names)=>{for(const name of names.flat()){if(!known.has(name))throw Error('Missing mapped check: '+name);(UNITS.includes(name)?unit:browser).add(name);}};
  const game=(id,rules=false)=>{if(!GAMES.includes(id))throw Error('Add a test scope for game '+id);games.add(id);add(GAME_UI[id]);if(rules){add(GAME_RULES[id]);if(['alibi','stack-up'].includes(id))add('playtest-feedback-ui.cjs');}};
  const infra=()=>add('test-scope.cjs','smoke.cjs','release.cjs');
- const auth=()=>add('friends-freshness.cjs','account-navigation.cjs','cloud-saves.cjs','cloud-database.cjs','profile-records.cjs','accounts.cjs','friends.cjs','leagues.cjs');
+ const auth=()=>add('social-loading.cjs','friends-freshness.cjs','leagues-freshness.cjs','account-navigation.cjs','cloud-saves.cjs','cloud-database.cjs','profile-records.cjs','accounts.cjs','friends.cjs','leagues.cjs');
  const layout=()=>add('game-surfaces.cjs','layout-goals.cjs','mobile-access.cjs','game-template.cjs');
  if(full){for(const name of available)if(name.endsWith('.cjs'))add(name);python=true;legal=true;content=true;GAMES.forEach(id=>games.add(id));reasons.push('Explicit full-suite request.');}
  else for(const file of files){

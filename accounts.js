@@ -4,9 +4,9 @@
  const config=window.BREAK_ROOM_ACCOUNT_CONFIG, saves=window.BREAK_ROOM_CLOUD_SAVES;
  const base=new URL('.',document.currentScript.src),accountURL=new URL('account.html',base).href;
  const generationKey='br:cloud:generation',ownerKey='br:cloud:owner',guestKey='br:cloud:guest',cacheKey=id=>'br:cloud:cache:'+id;
- const $=id=>document.getElementById(id),isAccount=!!$('account-content'),isGame=location.pathname.includes('/games/'),isProfile=!!document.querySelector('.profile-page');
+ const $=id=>document.getElementById(id),isAccount=!!$('account-content'),isGame=location.pathname.includes('/games/'),isProfile=!!document.querySelector('.profile-page'),isSocial=!!document.querySelector('#friend-content,#league-content');
  let resolveReady;const ready=new Promise(resolve=>resolveReady=resolve);
- let client=null,session=null,busy=false,lastUploaded='',syncTimer=null,uploadTask=null,initialOwner=null,redirecting=false,loggingOut=false;
+ let client=null,session=null,busy=false,lastUploaded='',syncTimer=null,uploadTask=null,initialOwner=null,restoredFor=null,redirecting=false,loggingOut=false;
  // Auth, ownership and generation events can arrive together on logout.
  // Navigate once so a second event cannot abort the first page load.
  function openAccount(continueGame=false){if(redirecting)return;redirecting=true;const url=new URL(accountURL);if(continueGame)url.searchParams.set('continue',location.pathname+location.search+location.hash);location.replace(url.href);}
@@ -44,19 +44,27 @@
  async function authenticated(){const {data,error}=await client.auth.getSession();if(error)throw error;if(!data.session)throw Error('Please sign in again.');return data.session;}
  async function exchange(userId,local){
   const result={};
-  for(const game of saves.games){
+  async function exchangeGame(game){
    let done=false;
    for(let attempt=0;attempt<4;attempt++){
     if((await authenticated()).user.id!==userId)throw Error('Account changed. Please reload this page.');
     const {data,error}=await client.from(game==='codebreak'?'codebreak_saves':game==='shift-work'?'shift_work_saves':game==='hidden-gem'?'hidden_gem_saves':'game_saves').select('data,revision').eq('user_id',userId).eq('game',game).maybeSingle();if(error)throw error;
     const merged=saves.merge(game,local[game]||{},data?.data||{});result[game]=merged;
     if(JSON.stringify(merged)===JSON.stringify(data?.data||{})){done=true;break;}
+    if((await authenticated()).user.id!==userId)throw Error('Account changed. Please reload this page.');
     const {data:reply,error:writeError}=await client.rpc(game==='codebreak'?'save_codebreak':game==='shift-work'?'save_shift_work':game==='hidden-gem'?'save_hidden_gem':'save_game',{p_game:game,p_data:merged,p_revision:data?.revision||0});if(writeError){if(['seating-chart','clue-ladder','time-drop','pack','prior','laser','alibi','bouncer','inner-clock'].includes(game)&&/Invalid save|Unsupported save entry|game_saves_game_check/i.test(writeError.message||''))throw Error(({'seating-chart':'Seating Chart','clue-ladder':'Clue Ladder','time-drop':'Time Drop',prior:'Prior',pack:'Pack',laser:'Laser',alibi:'Alibi',bouncer:'Bouncer','inner-clock':'Time Sense'}[game])+' cloud saves need a database update. The site owner must run supabase/inner-clock.sql (the latest complete update, including Seating Chart) in Supabase. Your browser saves are safe.');throw writeError;}
     if(!reply?.conflict){done=true;break;}
    }
    if(!done)throw Error('Another device is saving. Please try syncing again shortly.');
   }
-  return result;
+  // Independent per-game revisions can be exchanged concurrently. Each game still
+  // reads, merges and retries serially; stop scheduling work after any failure and
+  // drain in-flight requests before releasing the account lock or reporting failure.
+  let next=0,failed=false,failure;
+  async function worker(){while(!failed){const game=saves.games[next++];if(!game)return;try{await exchangeGame(game);}catch(error){failed=true;failure=error;}}}
+  await Promise.all(Array.from({length:Math.min(4,saves.games.length)},()=>worker()));
+  if(failed)throw failure;
+  return Object.fromEntries(saves.games.map(game=>[game,result[game]]));
  }
  function serial(task){return navigator.locks?navigator.locks.request('break-room-cloud-saves',task):task();}
  function syncUpload(){
@@ -66,7 +74,10 @@
   if(uploadTask)return uploadTask;
   if(loggingOut)return Promise.resolve(null);
   if(busy||!session||document.hidden)return Promise.resolve(null);
-  uploadTask=(!isGame&&!document.querySelector('form[data-auth]')?activate():uploadLatest()).finally(()=>{uploadTask=null;});
+  const restore=!isGame&&!document.querySelector('form[data-auth]')&&(!isSocial||restoredFor!==session.user.id);
+  // Social pages already restored before ready resolves. Subsequent comparisons
+  // only need to drain local uploads; their score RPCs read fresh server records.
+  uploadTask=(restore?activate():uploadLatest()).finally(()=>{uploadTask=null;});
   return uploadTask;
  }
  async function uploadLatest(){
@@ -89,7 +100,7 @@
   }catch(error){status(friendly(error),true);return false;}finally{busy=false;}
  }
  function restoreGuest(){
-  const id=owner();if(!id)return;
+  restoredFor=null;const id=owner();if(!id)return;
   backup(cacheKey(id),snapshot());
   const guest=loadBackup(guestKey)||Object.fromEntries(saves.games.map(g=>[g,{}]));
   saves.install(storage(),guest);storage().removeItem(ownerKey);storage().setItem(generationKey,crypto.randomUUID());initialOwner=null;window.dispatchEvent(new Event('break-room:saves-loaded'));
@@ -120,7 +131,7 @@
    backup(cacheKey(id),final);if(changed){saves.install(storage(),final);storage().setItem(ownerKey,id);storage().setItem(generationKey,crypto.randomUUID());}initialOwner=id;
    // Lowball percentile data is not a portable save.
    for(const k of ['pc_pct','pc_submitted'])storage().removeItem(k);
-   lastUploaded=signatureOf(merged);status('Your saved progress is up to date.');render();window.dispatchEvent(new Event('break-room:saves-loaded'));
+   lastUploaded=signatureOf(merged);restoredFor=id;status('Your saved progress is up to date.');render();window.dispatchEvent(new Event('break-room:saves-loaded'));
   });return true;}catch(error){status(friendly(error),true);return false;}finally{busy=false;}
  }
  async function logout(){

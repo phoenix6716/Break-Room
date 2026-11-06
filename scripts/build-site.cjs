@@ -22,6 +22,7 @@ function copy(file,relative){
   rendered=rendered.replace(/(src="[^"]*codebreak-model\.js)(?:\?[^\"]*)?"/g,'$1?v=first-try-20261105"');
   rendered=rendered.replace(/(src="[^"]*seating-chart-model\.js)(?:\?[^\"]*)?"/g,'$1?v=first-try-20261105"');
   rendered=rendered.replace(/(src="[^"]*time-drop-model\.js)(?:\?[^\"]*)?"/g,'$1?v=familiar-20261105"');
+  rendered=rendered.replace(/(src="[^"]*accounts\.js)(?:\?[^"]*)?"/g,'$1?v=social-load-20261106"');
   rendered=rendered.replace(/(src="[^"]*profile\.js)(?:\?[^"]*)?"/g,'$1?v=stats-pages-20261106"');
   rendered=rendered.replace(/(src="[^"]*arcade-score\.js)(?:\?[^"]*)?"/g,'$1?v=first-try-20261105"');
   // Add feedback to every public game except Lowball's wrapper (its iframe owns sound).
