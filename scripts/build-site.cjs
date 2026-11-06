@@ -34,7 +34,7 @@ function copy(file,relative){
   // shared across every authenticated header, including dynamically mounted games.
   const uiPrefix=path.posix.relative(path.posix.dirname(relative),'.');const uiBase=uiPrefix?uiPrefix+'/':'';
   rendered=rendered.replace(/<head([^>]*)>/,'<head$1><script src="'+uiBase+'preferences.js?v=settings-20261106"></script><link rel="stylesheet" href="'+uiBase+'preferences.css?v=settings-20261106">');
-  if(rendered.includes('accounts.js'))rendered=rendered.replace('</head>','<link rel="stylesheet" href="'+uiBase+'account-menu.css?v=settings-20261106"><script defer src="'+uiBase+'account-menu.js?v=settings-refresh-20261106"></script></head>');
+  if(rendered.includes('accounts.js'))rendered=rendered.replace('</head>','<link rel="stylesheet" href="'+uiBase+'account-menu.css?v=settings-20261106"><script defer src="'+uiBase+'account-menu.js?v=settings-logout-20261106"></script></head>');
   // Shared achievement UI reads the same native results as Profile; no engine writes change.
   const achievementPage=(/^games\/[^/]+\/index\.html$/.test(relative)&&activeGames.has(relative.split('/')[1]));
   if(achievementPage){
@@ -47,7 +47,7 @@ function copy(file,relative){
    rendered=rendered.replace('</head>',additions+'</head>');
   }
   rendered=rendered.replace(/(src="[^"]*profile-records\.js)(?:\?[^"]*)?"/g,'$1?v=achievements-20261105"');
-  fs.writeFileSync(target,applyBrand(rendered.replace(/(src="[^"]*cloud-saves\.js)(?:\?[^"]*)?"/g,'$1?v=stack-variety-20261105"').replace(/(src="[^"]*hidden-gem-model\.js)(?:\?[^"]*)?"/g,'$1?v=coverage-20261101"').replace(/(src="[^"]*(?:friends|leagues|leagues-model)\.js)(?:\?[^"]*)?"/g,'$1?v=first-try-20261105"').replace(/(src="[^"]*accounts\.js)(?:\?[^"]*)?"/g,'$1?v=settings-20261106"'),relative));
+  fs.writeFileSync(target,applyBrand(rendered.replace(/(src="[^"]*cloud-saves\.js)(?:\?[^"]*)?"/g,'$1?v=stack-variety-20261105"').replace(/(src="[^"]*hidden-gem-model\.js)(?:\?[^"]*)?"/g,'$1?v=coverage-20261101"').replace(/(src="[^"]*(?:friends|leagues|leagues-model)\.js)(?:\?[^"]*)?"/g,'$1?v=first-try-20261105"').replace(/(src="[^"]*accounts\.js)(?:\?[^"]*)?"/g,'$1?v=settings-logout-20261106"'),relative));
  }else fs.copyFileSync(file,target);
  count++;total+=fs.statSync(target).size;
 }

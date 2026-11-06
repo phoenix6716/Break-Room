@@ -134,6 +134,18 @@
    lastUploaded=signatureOf(merged);restoredFor=id;status('Your saved progress is up to date.');render();window.dispatchEvent(new Event('break-room:saves-loaded'));
   });return true;}catch(error){status(friendly(error),true);return false;}finally{busy=false;}
  }
+ const signOutRequestKey='br:account:sign-out-request';
+ function requestSignOut(){
+  if(!isGame)return logout();
+  // Engines can finalize drafts/timer interruptions on pagehide. Leave them
+  // under their original owner before restoring guest storage on Account.
+  const token=crypto.randomUUID();sessionStorage.setItem(signOutRequestKey,token);
+  const target=new URL(accountURL);target.searchParams.set('signout',token);location.replace(target.href);return Promise.resolve('redirect');
+ }
+ function consumeSignOut(){
+  const token=new URLSearchParams(location.search).get('signout');if(!token)return false;
+  try{const expected=sessionStorage.getItem(signOutRequestKey);sessionStorage.removeItem(signOutRequestKey);return token===expected;}catch{return false;}
+ }
  async function logout(){
   if(loggingOut||!client)return false;
   const pending=syncUpload();loggingOut=true;
@@ -206,6 +218,7 @@
    window.addEventListener('online',()=>syncUpload());
    document.addEventListener('visibilitychange',()=>{if(!document.hidden)syncUpload();});
    syncTimer=setInterval(()=>syncUpload(),15000);
+   if(isAccount&&consumeSignOut()){if(session)await logout();history.replaceState(null,'',accountURL);return;}
    // Never overwrite game storage while an engine is running. Downloads happen only
    // on Account and Profile; game pages only upload local changes after play.
    if(session&&!isGame&&!document.querySelector('form[data-auth]')){
@@ -243,7 +256,7 @@
  }
  async function updateEmail(value){return accountAction(async check=>{const {data,error}=await client.auth.updateUser({email:value.trim()},{emailRedirectTo:accountURL});if(error)throw error;check();session={...session,user:data.user};render();return data.user;});}
  async function resetPassword(){return accountAction(async check=>{const email=session.user.email;if(!email)throw Error('This account has no email address.');const {error}=await client.auth.resetPasswordForEmail(email,{redirectTo:new URL('reset-password.html',base).href});if(error)throw error;check();});}
- window.BREAK_ROOM_ACCOUNTS=Object.freeze({sync:syncUpload,ready,signOut:logout,exportSaves:download,updateName,updateEmail,resetPassword,setSharing:value=>{if(typeof value!=='boolean')throw Error('Choose a sharing setting.');return socialSettings(undefined,value);},getUser:()=>session?.user||null,
+ window.BREAK_ROOM_ACCOUNTS=Object.freeze({sync:syncUpload,ready,signOut:requestSignOut,exportSaves:download,updateName,updateEmail,resetPassword,setSharing:value=>{if(typeof value!=='boolean')throw Error('Choose a sharing setting.');return socialSettings(undefined,value);},getUser:()=>session?.user||null,
   cloudActive:()=>{try{return !!session&&owner()===session.user.id;}catch{return false;}},
   async friendsRPC(name,args={}){await ready;if(!['friend_hub','friend_scores','hidden_gem_friend_scores','shift_work_friend_scores','codebreak_friend_scores','league_hub'].includes(name))throw Error('Unknown friends operation.');if(!client||!session)throw Error('Please sign in to use friends.');const {data,error}=await client.rpc(name,args);if(error)throw error;return data;}
  });
