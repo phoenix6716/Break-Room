@@ -102,7 +102,7 @@ function selectChecks(changed,available,{full=false}={}){
   else if(file==='brand.css'||file==='scripts/site-brand.cjs'||file==='scripts/export-break-room-brand.cjs'||/^assets\/(?:source\/)?break-room-/.test(file)){add('brand.cjs','smoke.cjs');}
   else if(/^scripts\//.test(file)||/^\.github\/workflows\//.test(file)||/^package(?:-lock)?\.json$/.test(file)||file==='.node-version'){infra();}
   else if(/^(?:settings|account-menu)\.(?:js|css|html)$/.test(file)){add('settings.cjs','social-topbar.cjs');auth();}
-  else if(/^(?:theme|theme-toggle)\.(?:js|css)$/.test(file)){add('theme.cjs','settings.cjs','social-topbar.cjs','smoke.cjs','release.cjs');}
+  else if(/^(?:theme|theme-toggle)\.(?:js|css)$/.test(file)){add('theme.cjs','brand.cjs','settings.cjs','social-topbar.cjs','smoke.cjs','release.cjs');}
   else if(/^preferences\.(?:js|css)$/.test(file)){add('theme.cjs','settings.cjs','immersion.cjs','lowball-art.cjs','inner-clock.cjs','game-feel.cjs','cloud-saves.cjs');}
   else if(/^(?:accounts|account-config|cloud-saves)\.(?:js|css)$/.test(file)||/^(?:account|login|signup|forgot-password|reset-password)\.html$/.test(file)||/^assets\/vendor\//.test(file)){auth();}
   else if(file==='supabase/shelve-sleeper.sql'){add('leagues-database.cjs','leagues.cjs','retired-games.cjs');}

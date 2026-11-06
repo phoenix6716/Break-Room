@@ -6,11 +6,14 @@
 .br-theme-toggle:hover{background:var(--paper-deep,#e9dfc8)!important;transform:none!important}.br-theme-toggle:focus-visible{outline:3px solid var(--coral,#ee6557)!important;outline-offset:2px}
 .br-theme-status{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 @media(max-width:600px){.br-header-actions{gap:2px}.br-header-actions>.game-header-account{font-size:9px}.game-site-header .brand.br-brand>.br-brand__image{width:112px!important}}
-@media(max-width:360px){.game-site-header .brand.br-brand>.br-brand__image{width:96px!important}}
-:root[data-theme=dark]{color-scheme:dark;--paper:#141e2a!important;--paper-deep:#293b4c!important;--white:#202d3c!important;--ink:#eee7d8!important;--ink-soft:#b2c0ce!important;--blue:#35566b!important;--blue-deep:#94cadc!important;--lime:#b8d57a!important;--coral:#ed8777!important;--yellow:#51442c!important;--purple:#403650!important;--green:#9ed4aa!important;--red:#ffaaa0!important;--pink:#ed8777!important;--cyan:#94cadc!important;--bg:#141e2a!important;--bg-raised:#293b4c!important;--panel:#202d3c!important;--panel-hover:#2b4053!important;--panel-deep:#192534!important;--card:#202d3c!important;--text:#eee7d8!important;--muted:#b2c0ce!important;--mut:#b2c0ce!important;--dim:#b2c0ce!important;--line:#53687b!important;--line-bright:#7790a4!important;--border:#53687b!important;--ok:#a4dfb5!important;--okbg:#293f34!important;--no:#ffaaa0!important;--nobg:#4b3034!important;--shadow:4px 4px 0 #080e16!important}
+@media(max-width:360px){.game-site-header .brand.br-brand>.br-brand__image{width:104px!important}}
+:root[data-theme=dark]{color-scheme:dark;--paper:#141e2a!important;--paper-deep:#293b4c!important;--white:#202d3c!important;--ink:#eee7d8!important;--ink-soft:#b2c0ce!important;--blue:#35566b!important;--blue-deep:#94cadc!important;--lime:#36566c!important;--coral:#ed8777!important;--yellow:#51442c!important;--purple:#403650!important;--green:#9ed4aa!important;--red:#ffaaa0!important;--pink:#ed8777!important;--cyan:#94cadc!important;--bg:#141e2a!important;--bg-raised:#293b4c!important;--panel:#202d3c!important;--panel-hover:#2b4053!important;--panel-deep:#192534!important;--card:#202d3c!important;--text:#eee7d8!important;--muted:#b2c0ce!important;--mut:#b2c0ce!important;--dim:#b2c0ce!important;--line:#53687b!important;--line-bright:#7790a4!important;--border:#53687b!important;--ok:#a4dfb5!important;--okbg:#293f34!important;--no:#ffaaa0!important;--nobg:#4b3034!important;--shadow:4px 4px 0 #080e16!important}
 :root[data-theme=dark] body{background-color:var(--paper)!important;color:var(--ink)!important;background-image:linear-gradient(90deg,#a4c1d306 50%,transparent 50%),linear-gradient(#a4c1d306 50%,transparent 50%)!important;background-size:10px 10px!important}
 :root[data-theme=dark] :where(h1,h2,h3){color:var(--ink)!important}:root[data-theme=dark] h1{text-shadow:3px 3px #314e61!important}:root[data-theme=dark] h1 em{color:var(--coral)!important;text-shadow:3px 3px #593a38!important}
-:root[data-theme=dark] a.brand.br-brand{background:#f4eddc!important;padding:6px!important;box-shadow:3px 3px 0 #080e16!important}
+/* Reuse the exact approved alpha silhouette for cream lettering. Keep the
+   coloured cube untouched; the transparent gap ends at 28% of the wordmark. */
+:root[data-theme=dark] a.brand.br-brand{position:relative;background:transparent!important;padding:0!important;box-shadow:none!important}
+:root[data-theme=dark] a.brand.br-brand::after{content:"";position:absolute;inset:0;pointer-events:none;background:#eee7d8;-webkit-mask:url("assets/break-room-wordmark.png?v=cube-b-20261028") center/100% auto no-repeat;mask:url("assets/break-room-wordmark.png?v=cube-b-20261028") center/100% auto no-repeat;clip-path:inset(0 0 0 28%)}
 :root[data-theme=dark] :where(.topbar,.hub-topbar,.section-head,.site-header,.game-site-header,.game-menu,.game-menu-group,.br-site-footer,.br-footer-inner,.site-footer,.standalone-site-footer){border-color:var(--line)!important}
 :root[data-theme=dark] :where(.game-card,.reset-panel,.panel,.stat,.auth-card,.account-card,.empty-state,.profile-panel,.profile-game,.profile-stat,.profile-daily,.profile-achievement,.friend-card,.friend-panel,.league-entry,.league-game,.league-chooser,.lb-panel,.settings-card,.settings-section,.game-popup,.result-card,.quick-stats,.br-game-board,.game-state,.card,.arcade-game-panel){background:var(--white)!important;color:var(--ink)!important;border-color:var(--line)!important;box-shadow:4px 4px 0 #080e16!important}
 :root[data-theme=dark] :where(.game-card-image){filter:brightness(.82) saturate(.9)}
@@ -18,10 +21,10 @@
 :root[data-theme=dark] :where(.br-account-menu,.popup-instructions,.extended-stats-grid>div,.profile-empty,.profile-daily.progress,.profile-daily.complete,.league-entry.you,.league-slot,.friend-code,.notice,.settings-note,.achievement-toast){background:var(--paper-deep)!important;color:var(--ink)!important;border-color:var(--line)!important}
 :root[data-theme=dark] .br-account-menu :where(a:hover,a:focus-visible){background:#35566b;outline-color:#94cadc}
 :root[data-theme=dark] :where(input:not([type=checkbox]):not([type=range]),textarea,select){color:var(--ink)!important;background:var(--paper)!important;border-color:var(--line)!important}
-:root[data-theme=dark] :where(.button,.btn,.play-button,.check-button,.next-button,.sw-primary,.sw-next,.cb-primary){color:#17263a!important;background:var(--lime)!important;border-color:#0b1420!important;box-shadow:3px 3px 0 #080e16!important}
+:root[data-theme=dark] :where(.button,.btn,.play-button,.check-button,.next-button,.sw-primary,.sw-next,.cb-primary){color:var(--ink)!important;background:var(--lime)!important;border-color:#7898ad!important;box-shadow:3px 3px 0 #080e16!important}
 :root[data-theme=dark] :where(.button.secondary,.btn.alt,.mini-tool,.br-mode-tabs button,.mode-option,.tabs button,.settings-tabs button,.profile-tabs button,.cb-keypad button,.cb-actions button:not(.cb-primary),.sw-controls button:not(.sw-primary):not(.sw-next)){background:var(--white)!important;color:var(--ink)!important;border-color:var(--line)!important;box-shadow:3px 3px 0 #080e16!important}
 :root[data-theme=dark] :where(.br-mode-tabs [aria-selected=true],.mode-option.is-selected,.tabs button[aria-selected=true],.settings-tabs [aria-selected=true],.profile-tabs [aria-selected=true]){background:var(--blue)!important;color:var(--ink)!important}
-:root[data-theme=dark] :where(.play-button span,.button small){color:#17263a!important}
+:root[data-theme=dark] :where(.play-button span,.button small){color:inherit!important}
 :root[data-theme=dark] :where(.nav img,.mini-tool img,.footer-links img){filter:brightness(0) invert(.9)!important}
 :root[data-theme=dark] :where(.game-popup-backdrop,.game-menu-backdrop,.menu-shade,.result-modal){background:#060c16c9!important}
 :root[data-theme=dark] :where(#game-panel,.br-game-board #engine-slot,.engine-slot){background:var(--white)!important;color:var(--ink)!important;border-color:var(--line)!important}
@@ -63,10 +66,35 @@
 :root[data-theme=dark] .icon-btn svg rect{fill:var(--ink)!important}
 :root[data-theme=dark] :where(.profile-summary-average,.profile-game-arcade,.friend-score.you,.legal-summary,.legal-callout,.td-kicker,.sw-badge,#league-owner){background:var(--paper-deep)!important;color:var(--ink)!important;border-color:var(--line)!important}
 :root[data-theme=dark] :where(.br-site-footer,.br-site-footer a,.br-footer-note,.legal-main,.legal-main p,.legal-main li,.legal-main a){color:var(--ink-soft)!important}
-:root[data-theme=dark] :where(.activity-day:not([data-count="0"]) span,.friend-actions .accept){color:#17263a!important}
+:root[data-theme=dark] :where(.activity-day:not([data-count="0"]) span){background:#35566b!important;color:var(--ink)!important}
 :root[data-theme=dark] :where(.settings-card #settings-message){background:var(--okbg)!important;color:var(--ink)!important}
 :root[data-theme=dark] :where(.settings-card #settings-message[data-error=true]){background:var(--nobg)!important}
 :root[data-theme=dark] :where(.shelf-price-tag b,.shelf-price-tag span){color:#17263a!important}
 :root[data-theme=dark] :where(.td-review,.td-review h3,.td-history li,.br-achievement-toast,.br-achievement-header,.plan,.plans-notice){background:var(--white)!important;color:var(--ink)!important;border-color:var(--line)!important;box-shadow:3px 3px #080e16!important}
 :root[data-theme=dark] :where(.plans-main,.plans-main a,.br-achievement-list span,.era-tag){color:var(--ink-soft)!important}
 :root[data-theme=dark] :where(.br-achievement-close){background:var(--paper-deep)!important;color:var(--ink)!important;border-color:var(--line)!important}
+
+/* Shared dark control palette and typography. Game pieces keep their own art
+   and correct/incorrect states; ordinary actions no longer inherit pastels. */
+:root[data-theme=dark] :where(.button,.btn,.play-button,.check-button,.next-button,.sw-primary,.sw-next,.cb-primary,.td-lock,.clock-action,.btn-gold,.friend-actions .accept){background:#36566c!important;color:#eee7d8!important;border-color:#7898ad!important;box-shadow:3px 3px #080e16!important;text-shadow:none!important}
+:root[data-theme=dark] :where(.button.secondary,.btn.alt,.mini-tool,.cb-keypad button,.cb-actions button:not(.cb-primary),.sw-controls button:not(.sw-primary):not(.sw-next),.td-steps button,.btn-outline,.icon-btn,.profile-pager button,.friend-actions button:not(.accept),.game-popup-close,.game-menu-close){background:#202d3c!important;color:#eee7d8!important;border-color:#53687b!important;box-shadow:3px 3px #080e16!important;text-shadow:none!important}
+:root[data-theme=dark] button.clock-action{background:#36566c!important;color:#eee7d8!important;border-color:#7898ad!important}
+:root[data-theme=dark] .clock-running button.clock-action{background:#6d3f42!important;color:#eee7d8!important}
+:root[data-theme=dark] :where(.button,.btn,.play-button,.check-button,.next-button,.sw-controls button,.cb-keypad button,.cb-actions button,.cb-primary,.td-steps button,.td-lock,.clock-action,.mode-btn,.br-mode-tabs button,.profile-tabs button,.settings-tabs button,.icon-btn,.btn-gold,.btn-outline,.mini-tool,.cselect-btn,.friend-actions button,.profile-pager button,.game-menu-toggle,.game-header-account,header .login){font-family:"Courier New",ui-monospace,monospace!important;font-weight:700!important;line-height:1.3!important;letter-spacing:.035em;text-shadow:none!important}
+:root[data-theme=dark] :where(.button,.btn,.play-button,.check-button,.next-button,.sw-primary,.sw-next,.cb-primary,.td-lock,.btn-gold):hover:not(:disabled){background:#416a82!important;color:#fff6e6!important}
+:root[data-theme=dark] :where(.button,.btn,.check-button,.next-button,.sw-primary,.sw-next,.cb-primary,.td-lock,.btn-gold):disabled{background:#293746!important;color:#a5b4c2!important;border-color:#53687b!important;box-shadow:none!important;opacity:1}
+:root[data-theme=dark] :where(.category-tag,.tutorial-steps li b,.stack-sample span,.clock-dial,.sw-help-diagram span){background:var(--paper-deep)!important;color:var(--ink)!important;border-color:var(--line)!important}
+:root[data-theme=dark] :where(.sort-card.correct){background:#293f34!important;color:#eee7d8!important}
+:root[data-theme=dark] :where(.sort-card.wrong){background:#4b3034!important;color:#eee7d8!important}
+:root[data-theme=dark] :where(.sort-card.correct .card-number){color:#a4dfb5!important}
+:root[data-theme=dark] :where(.sort-card.wrong .card-number){color:#ffaaa0!important}
+:root[data-theme=dark] :where(.result-burst,.results-stamp,.playfield-kicker,.sw-dot.done,.card-symbol:not([class*="alt-"])){color:#eee7d8!important}
+
+/* Older account/auth headers use the same two-column phone arrangement as hubs. */
+@media(max-width:480px){.site-header:not(.game-site-header) .header-inner{grid-template-columns:minmax(0,1fr) auto}.site-header:not(.game-site-header) .header-inner>.brand{grid-column:1;justify-self:start}.site-header:not(.game-site-header) .header-inner>.header-user{grid-column:2}}
+:root[data-theme=dark] :where(.button img,.achievement-state img,.br-achievement-header img){filter:brightness(0) invert(.92)!important}
+@media(max-width:480px){:root[data-theme=dark] .profile-tabs{gap:3px}:root[data-theme=dark] .profile-tabs button{flex:1 1 auto;min-width:0;padding:10px 4px;font-size:11px;letter-spacing:0}}
+/* These controls have more-specific light scene overrides. */
+:root[data-theme=dark] .td-steps button{background:#202d3c!important;color:#eee7d8!important;border-color:#53687b!important;box-shadow:3px 3px #080e16!important}
+:root[data-theme=dark] .td-lock{background:#36566c!important;color:#eee7d8!important;border-color:#7898ad!important}
+@media(max-width:480px){:root[data-theme=dark] .settings-tabs button{font-size:11px;letter-spacing:0}}

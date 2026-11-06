@@ -34,7 +34,7 @@ function copy(file,relative){
   // shared across every authenticated header, including dynamically mounted games.
   const uiPrefix=path.posix.relative(path.posix.dirname(relative),'.');const uiBase=uiPrefix?uiPrefix+'/':'';
   rendered=rendered.replace(/<head([^>]*)>/,'<head$1><script src="'+uiBase+'preferences.js?v=theme-20261106"></script><link rel="stylesheet" href="'+uiBase+'preferences.css?v=settings-20261106">');
-  rendered=rendered.replace('</head>','<link rel="stylesheet" href="'+uiBase+'theme.css?v=theme-20261106"><script defer src="'+uiBase+'theme-toggle.js?v=theme-20261106"></script></head>');
+  rendered=rendered.replace('</head>','<link rel="stylesheet" href="'+uiBase+'theme.css?v=theme-polish-20261106"><script defer src="'+uiBase+'theme-toggle.js?v=theme-20261106"></script></head>');
   if(rendered.includes('accounts.js'))rendered=rendered.replace('</head>','<link rel="stylesheet" href="'+uiBase+'account-menu.css?v=leaderboards-20261106"><script defer src="'+uiBase+'account-menu.js?v=settings-logout-20261106"></script></head>');
   if(/^games\/[^/]+\/index\.html$/.test(relative)&&activeGames.has(relative.split('/')[1]))rendered=rendered.replace('<!-- shared-legal-footer:start -->','<p class="game-leaderboard-link"><a href="../../leaderboards.html?game='+relative.split('/')[1]+'">Daily leaderboard →</a></p><!-- shared-legal-footer:start -->');
   // Shared achievement UI reads the same native results as Profile; no engine writes change.
