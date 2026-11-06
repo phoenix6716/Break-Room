@@ -5,7 +5,7 @@
  const profile=document.createElement('a'),settings=document.createElement('a'),action=document.createElement('a'),status=document.createElement('p');
  profile.textContent='Your profile';profile.href=new URL('profile.html',base);settings.textContent='Settings';settings.href=new URL('settings.html',base);
  for(const a of [profile,settings,action])a.setAttribute('role','menuitem');status.setAttribute('role','status');menu.append(profile,settings,action,status);document.body.append(menu);
- let trigger=null,pending=false;
+ let trigger=null,pending=false,lastUser=api.getUser()?.id??null;
  function links(){return [...document.querySelectorAll('header a[href],nav a[data-account-link]')].filter(a=>a.dataset.accountLink==='true'||['account.html','login.html'].some(path=>a.href===new URL(path,base).href));}
  function paint(){for(const a of links()){a.textContent='ACCOUNT';a.setAttribute('role','button');a.setAttribute('aria-haspopup','menu');a.setAttribute('aria-controls',menu.id);a.setAttribute('aria-expanded',String(a===trigger&&!menu.hidden));}action.textContent=api.getUser()?'Log out':'Log in';action.href=new URL(api.getUser()?'account.html':'login.html',base);}
  function close(focus=false){menu.hidden=true;if(trigger){trigger.setAttribute('aria-expanded','false');if(focus)trigger.focus();}trigger=null;}
@@ -17,6 +17,6 @@
  });
  document.addEventListener('focusin',event=>{if(!menu.hidden&&!menu.contains(event.target)&&event.target!==trigger)close();});
  action.addEventListener('click',async event=>{if(!api.getUser())return;event.preventDefault();if(pending)return;pending=true;action.setAttribute('aria-disabled','true');status.textContent='Saving and logging out…';try{if(!await api.signOut())throw Error('Could not log out. Please try again.');location.assign(new URL('account.html',base));}catch(error){status.textContent=error.message;}finally{pending=false;action.removeAttribute('aria-disabled');}});
- window.addEventListener('break-room:auth-change',()=>{if(!pending)close();paint();});window.addEventListener('resize',position);window.addEventListener('scroll',position,{passive:true});
+ window.addEventListener('break-room:auth-change',()=>{const id=api.getUser()?.id??null;if(id!==lastUser&&!pending)close();lastUser=id;paint();});window.addEventListener('resize',position);window.addEventListener('scroll',position,{passive:true});
  new MutationObserver(()=>{for(const a of links())if(!a.hasAttribute('aria-haspopup'))paint();}).observe(document.body,{childList:true,subtree:true});paint();
 })();

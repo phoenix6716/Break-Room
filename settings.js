@@ -12,14 +12,14 @@
   try{const hub=await api.friendsRPC('friend_hub',{p_action:'list'});if(api.getUser()?.id!==id||request!==sharingRequest)return;if(hub?.me){$('settings-sharing').checked=hub.me.sharing;$('sharing-label').hidden=false;$('sharing-note').textContent='Only your Daily scores are shared when you choose this.';}else{const link=document.createElement('a');link.href='friends.html';link.textContent='Set up Friends';$('sharing-note').replaceChildren('Score sharing is off. ',link,' to choose who you play with.');}}
   catch(error){if(api.getUser()?.id!==id||request!==sharingRequest)return;$('sharing-note').textContent='Could not load score sharing. Your choice has not changed.';$('sharing-retry').hidden=false;}
  }
- function render(){const user=api.getUser(),id=user?.id??null;$('settings-guest').hidden=!!user;$('settings-auth').hidden=!user;$('settings-sync').hidden=!user;
-  if(!accountBusy){$('settings-name').value=user?.user_metadata?.display_name||'';$('settings-email').value=user?.email||'';}
+ function render(force=false){const user=api.getUser(),id=user?.id??null;$('settings-guest').hidden=!!user;$('settings-auth').hidden=!user;$('settings-sync').hidden=!user;
+  if(!accountBusy&&(force===true||id!==currentId)){$('settings-name').value=user?.user_metadata?.display_name||'';$('settings-email').value=user?.email||'';}
   if(id!==currentId){message('');currentId=id;loadSharing();}
   if(!user)document.querySelector('[data-account-status]').textContent='Saved on this browser. Log in to save across devices.';
  }
- async function run(control,task,success){if(accountBusy)return;const id=api.getUser()?.id;accountBusy=true;const controls=[...document.querySelectorAll('#settings-auth input,#settings-auth button,#settings-sharing,#settings-sync')];controls.forEach(el=>el.disabled=true);message('Saving…');try{await task();if(api.getUser()?.id===id)message(success);}catch(error){if(api.getUser()?.id===id)message(error.message||'Could not save. Please try again.',true);}finally{accountBusy=false;controls.forEach(el=>el.disabled=false);render();}}
- $('name-form').onsubmit=e=>{e.preventDefault();run(e.submitter,()=>api.updateName($('settings-name').value),'Display name saved.');};
- $('email-form').onsubmit=e=>{e.preventDefault();const email=$('settings-email').value;run(e.submitter,()=>api.updateEmail(email),'Email change requested. Follow the confirmation instructions sent by email.');};
+ async function run(control,task,success,refresh=false){if(accountBusy)return;const id=api.getUser()?.id;accountBusy=true;const controls=[...document.querySelectorAll('#settings-auth input,#settings-auth button,#settings-sharing,#settings-sync')];controls.forEach(el=>el.disabled=true);message('Saving…');let saved=false;try{await task();saved=true;if(api.getUser()?.id===id)message(success);}catch(error){if(api.getUser()?.id===id)message(error.message||'Could not save. Please try again.',true);}finally{accountBusy=false;controls.forEach(el=>el.disabled=false);render(refresh&&saved);}}
+ $('name-form').onsubmit=e=>{e.preventDefault();run(e.submitter,()=>api.updateName($('settings-name').value),'Display name saved.',true);};
+ $('email-form').onsubmit=e=>{e.preventDefault();const email=$('settings-email').value;run(e.submitter,()=>api.updateEmail(email),'Email change requested. Follow the confirmation instructions sent by email.',true);};
  $('settings-password').onclick=e=>run(e.currentTarget,()=>api.resetPassword(),'Password reset requested. Check your email for the secure link.');
  $('settings-sharing').onchange=e=>{const value=e.target.checked;run(e.target,()=>api.setSharing(value),value?'Daily score sharing is on.':'Daily score sharing is off.').then(loadSharing);};
  $('sharing-retry').onclick=loadSharing;
