@@ -34,3 +34,5 @@ const notices=plan(['achievements.js']);assert(notices.browser.includes('achieve
 const defaultEntry=plan(['supabase/migrations/20261108095333_leaderboard_default_entry.sql']);assert(defaultEntry.unit.includes('leaderboards-database.cjs'));assert(defaultEntry.unit.includes('score-integrity.cjs'));assert(defaultEntry.browser.includes('leaderboards.cjs'));
 
 const periodBoards=plan(['supabase/migrations/20261108101256_leaderboard_periods.sql']);assert(periodBoards.unit.includes('leaderboards-database.cjs'));assert(periodBoards.browser.includes('leaderboards.cjs'));
+
+const sharedName=plan(['supabase/migrations/20261108103751_leaderboard_display_name.sql']);assert(sharedName.unit.includes('leaderboards-database.cjs'));assert(sharedName.browser.includes('leaderboards.cjs'));assert(sharedName.browser.includes('settings.cjs'));

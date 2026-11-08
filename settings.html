@@ -9,7 +9,7 @@
 <section id="panel-account" role="tabpanel" aria-labelledby="tab-account">
 <p id="settings-guest">Log in to manage your account. <a href="login.html">Log in →</a></p>
 <div id="settings-auth" hidden>
-<form id="name-form"><label for="settings-name">Display name</label><div class="settings-inline"><input id="settings-name" name="name" minlength="2" maxlength="30" autocomplete="nickname" required><button class="button secondary" type="submit">Save name</button></div></form>
+<form id="name-form"><label for="settings-name">Display name</label><div class="settings-inline"><input id="settings-name" name="name" minlength="2" maxlength="30" autocomplete="nickname" required><button class="button secondary" type="submit">Save name</button></div><p class="settings-note">Used on public leaderboards.</p></form>
 <form id="email-form"><label for="settings-email">Email address</label><div class="settings-inline"><input id="settings-email" name="email" type="email" autocomplete="email" required><button class="button secondary" type="submit">Change email</button></div><p class="settings-note">Follow the confirmation instructions sent by email to finish changing your address.</p></form>
 <div class="settings-row"><div><strong>Password</strong><p class="settings-note">We’ll email you a secure reset link.</p></div><button class="button secondary" type="button" id="settings-password">Reset password</button></div>
 </div></section>
@@ -23,7 +23,7 @@
 <div class="settings-row"><div><strong>Your saves</strong><p class="settings-note" data-account-status>Saved on this browser.</p></div><button type="button" class="button secondary" id="settings-sync" hidden>Sync now</button></div>
 <div class="settings-row"><div><strong>Save backup</strong><p class="settings-note">Download this browser’s game saves as a JSON file.</p></div><button type="button" class="button secondary" id="settings-export">Download</button></div>
 <div id="sharing-section"><p id="sharing-note" class="settings-note">Log in to manage score sharing.</p><label class="settings-row settings-check" id="sharing-label" for="settings-sharing" hidden><span><strong>Share Daily scores</strong><small>Show your scores in Friends and Leagues.</small></span><input id="settings-sharing" type="checkbox"></label><button type="button" class="button secondary" id="sharing-retry" hidden>Retry sharing settings</button></div>
-<p class="settings-note"><a href="leaderboards.html#public-listing">Global leaderboards · manage your public listing →</a></p>
+<p class="settings-note"><a href="leaderboards.html#public-listing">Global leaderboards · score visibility →</a></p>
 <p class="settings-note"><a href="privacy.html">Privacy policy</a> · <a href="contact.html">Account &amp; data help</a></p>
 </section>
 <noscript><p>Turn on JavaScript to change settings. <a href="account.html">Account &amp; saves</a>.</p></noscript>
