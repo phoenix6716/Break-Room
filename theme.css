@@ -146,3 +146,15 @@
 /* Match the document canvas too: iframe/overscroll gaps must not flash cream. */
 :root[data-theme=dark]{background-color:#141e2a!important}
 :root[data-theme=dark] :is(.cb-error,#guess-error){color:#ffb4aa!important}
+
+/* Light copy needs its own contrast pairs; decorative artwork keeps its palette. */
+:root:not([data-theme=dark]) :is(h1 em,.popup-kicker,.tiny-label){color:#a33d33!important}
+:root:not([data-theme=dark]) .play-button>span{color:#17263a!important}
+:root:not([data-theme=dark]) :is(.laser-coordinate,.laser-progress-dots span,.sw-dot.current,.clock-stage-label,.clock-unit,.clock-instruction){color:#34465a!important}
+:root[data-theme=dark] .br-achievement-toast a{color:#b5e3ff!important}
+:root:not([data-theme=dark]) .time-drop-page{--ink-soft:#34465a}
+:root:not([data-theme=dark]) :is(.sc-seat small,.sw-dot.done){color:#34465a!important}
+:root:not([data-theme=dark]) :is(.streak-label b,.message.bad){color:#a33d33!important}
+:root:not([data-theme=dark]) :is(.text-link,.result a,.final-screen a){color:#285f77!important}
+:root:not([data-theme=dark]) .card-moves button:disabled{opacity:1;color:#526273;background:#e2e7e5;border-color:#74848f;box-shadow:none}
+:root:not([data-theme=dark]) #guess-error{color:#6e211d!important}

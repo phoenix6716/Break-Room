@@ -36,3 +36,5 @@ const defaultEntry=plan(['supabase/migrations/20261108095333_leaderboard_default
 const periodBoards=plan(['supabase/migrations/20261108101256_leaderboard_periods.sql']);assert(periodBoards.unit.includes('leaderboards-database.cjs'));assert(periodBoards.browser.includes('leaderboards.cjs'));
 
 const sharedName=plan(['supabase/migrations/20261108103751_leaderboard_display_name.sql']);assert(sharedName.unit.includes('leaderboards-database.cjs'));assert(sharedName.browser.includes('leaderboards.cjs'));assert(sharedName.browser.includes('settings.cjs'));
+
+const palette=plan(['theme.css']);for(const name of ['light-contrast.cjs','dark-contrast.cjs','dark-social.cjs','theme.cjs'])assert(palette.browser.includes(name),'Shared colours reach '+name);
