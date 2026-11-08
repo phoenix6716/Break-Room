@@ -54,6 +54,7 @@ function selectChecks(changed,available,{full=false}={}){
   if(file==='tests/question-maths.py'){python=true;continue;}
   if(file.startsWith('tests/fixtures/')){if(file==='tests/fixtures/contrast-audit.cjs')add('dark-contrast.cjs','light-contrast.cjs','dark-social.cjs');else if(file==='tests/fixtures/dark-social-audit.cjs')add('dark-social.cjs');else if(file==='tests/fixtures/native-daily-receipts.cjs')add('score-integrity.cjs','leaderboards-database.cjs');else if(file.includes('alibi'))game('alibi',true);else throw Error('Add a test scope for fixture '+file);continue;}
   if(file==='supabase/migrations/20261108232113_puzzle_challenge_variety.sql'){for(const id of ['shift-work','seating-chart'])game(id,true);add('puzzle-challenge.cjs','leaderboards-database.cjs','score-integrity.cjs','leaderboards.cjs');continue;}
+  if(/^playtest\.(?:js|css|html)$/.test(file)){add('challenge-playtest.cjs');continue;}
   const own=file.match(/^games\/([^/]+)\//);
   const model=file.match(/^(codebreak|shift-work|hidden-gem|pack|prior|laser|alibi|bouncer|inner-clock|time-drop|clue-ladder|seating-chart)-model\.js$/);
   if(own){
