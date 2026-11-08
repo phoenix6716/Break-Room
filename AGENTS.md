@@ -1,3 +1,7 @@
+## Visual leaderboards — 8 November 2026
+
+Keep Leaderboards directly accessible in the shared main navigation, with five responsive destinations and 44px targets. The leaderboard uses an artwork-led custom listbox picker, visual rank/initial/score rows and collapsed explanatory/privacy details. Its hidden select retains controller state only; players use `game-picker` and `game-options` with pointer or keyboard. Keep explicit independent public consent and existing RPC/save/rank semantics; never seed fake players or recalculate ranks client-side. Public-listing deep links must open the form. See `LEADERBOARDS.md` and the leaderboard, social-header and legal-page tests.
+
 ## Dark-mode rendered-state audit — 8 November 2026
 
 Dark theme changes must pass `tests/dark-contrast.cjs` and `tests/dark-social.cjs` as well as the theme/save checks. Audit actual ready/active rounds, completed/failed rounds, summaries, help/stats, Unlimited, Profile paging and signed-in social pages; a ready-screen screenshot is insufficient. Pair text and surface colours. Never blanket-whiten all `#game-panel` descendants: light puzzle seats/tokens need navy labels. Component-local variables (especially Lowball dialogs and Time Sense) must receive the selected palette. Preserve image backgrounds such as the stopwatch when styling surfaces. See `DARK-MODE.md` and `.artifacts/dark-audit/` for coverage, contrast reports and screenshots. This change is presentation only; do not rewrite captured rules, timers, scores or any native/cloud saves.

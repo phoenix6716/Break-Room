@@ -1,7 +1,7 @@
 /* Shared social-page top bar: geometry, navigation, keyboard and no-JS fallback. */
 const assert=require('node:assert/strict'),fs=require('node:fs'),{chromium}=require('playwright');
 const base=process.env.ARCADE_TEST_URL||'http://127.0.0.1:8000';
-const pages=['leagues.html','friends.html','profile.html'],labels=['Home','Leagues','Friends','Profile'];
+const pages=['leagues.html','friends.html','profile.html'],labels=['Home','Leaderboards','Leagues','Friends','Profile'];
 (async()=>{const browser=await chromium.launch({executablePath:process.env.ARCADE_CHROMIUM||'/usr/bin/chromium',args:['--no-sandbox']});try{
  for(const width of [320,390,480,481,540,650,768,820,821,900,1050,1100,1440]){
   const ctx=await browser.newContext({viewport:{width,height:1000},reducedMotion:'reduce'}),p=await ctx.newPage(),errors=[];
@@ -34,6 +34,6 @@ const pages=['leagues.html','friends.html','profile.html'],labels=['Home','Leagu
   assert.deepEqual(errors,[]);await ctx.close();console.log('PASS social top bar '+width+'px: current-page underline, logo, account widths, keyboard, links and no overlaps/overflow.');
  }
  const ctx=await browser.newContext({javaScriptEnabled:false,viewport:{width:320,height:900}}),p=await ctx.newPage();
- for(const route of pages){await p.goto(base+'/'+route);const header=p.locator('header.hub-topbar');assert(await header.locator('.br-brand__image').isVisible());assert.equal(await header.getByRole('navigation').getByRole('link').count(),4);assert.equal(new URL(await header.locator('.login').getAttribute('href'),base+'/').href,base+'/login.html');await header.locator('.brand').click();await p.waitForURL('**/index.html');}
+ for(const route of pages){await p.goto(base+'/'+route);const header=p.locator('header.hub-topbar');assert(await header.locator('.br-brand__image').isVisible());assert.equal(await header.getByRole('navigation').getByRole('link').count(),5);assert.equal(new URL(await header.locator('.login').getAttribute('href'),base+'/').href,base+'/login.html');await header.locator('.brand').click();await p.waitForURL('**/index.html');}
  await ctx.close();console.log('PASS social top bar without JavaScript: approved logo, navigation and account links remain usable.');
  }finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

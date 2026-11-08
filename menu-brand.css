@@ -19,3 +19,11 @@
 @media(max-width:540px){.hub-header-frame{padding-right:18px;padding-left:18px}.hub-topbar{gap:7px 5px}.hub-topbar .main-nav{gap:22px}.hub-topbar .main-nav a{padding:13px 5px;font-size:12px}.hub-topbar .account{gap:7px}.hub-topbar .login{font-size:11px}}
 @media(max-width:480px){.hub-topbar{grid-template-columns:minmax(0,1fr) auto}.hub-topbar .brand{grid-column:1;justify-self:start}.hub-topbar .account{grid-column:2}}
 @media(forced-colors:active){.hub-topbar .main-nav a[aria-current="page"]::after{background:LinkText}}
+
+/* Five primary destinations retain comfortable hit targets on narrow headers. */
+@media(max-width:1100px){.topbar{padding-top:12px;gap:8px;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)}.topbar .main-nav{grid-column:1/-1;grid-row:2;justify-content:center;gap:8px}.topbar .brand{grid-column:2;grid-row:1}.topbar .account{grid-column:3;grid-row:1}}
+@media(max-width:540px){.topbar .main-nav{gap:6px}.topbar .main-nav a{padding:13px 4px;font-size:11px}}
+@media(max-width:480px){.topbar{grid-template-columns:minmax(0,1fr) auto}.topbar .brand{grid-column:1;justify-self:start}.topbar .account{grid-column:2}}
+
+@media(max-width:540px){.topbar .main-nav{gap:2px}.topbar .main-nav a{padding-left:3px;padding-right:3px}}
+.topbar .main-nav a{min-height:44px;display:inline-flex;align-items:center;justify-content:center}

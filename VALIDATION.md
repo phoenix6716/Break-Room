@@ -1,3 +1,7 @@
+## Visual leaderboards — 8 November 2026
+
+`leaderboards.cjs` checks the artwork picker (ten games, arrows/Escape, selection/focus), compact public-listing controls, server ties/paging/own positions, network clearing, account reset and real SQL consent. It checks both themes with computed contrast and 320/390/768/1440px layouts. `social-topbar.cjs`, `brand.cjs` and `legal-pages.cjs` cover the five-link navigation and no-JS fallback. Rules and privacy content stay accessible through details, not removed. Existing native scores/history/timers are untouched.
+
 ## Dark-mode full state audit — 8 November 2026
 
 `tests/dark-contrast.cjs` audits 227 rendered mobile/desktop states across the ten games and fifteen site pages, including native completed/failed fixtures, final summaries, help/stats, Unlimited, populated Profile stats/achievement paging, Settings and legal/auth pages. `tests/dark-social.cjs` additionally runs existing real-SQL Friends and Leagues browser flows with dark mode and audits their nine responsive signed-in screenshots. Reports and full-page captures live in `.artifacts/dark-audit/`; `coverage.json` records the actual state list and `contrast.json` records failures.

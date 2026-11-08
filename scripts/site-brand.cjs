@@ -3,6 +3,7 @@ const fs=require('node:fs'),path=require('node:path');
 const VERSION='cube-b-20261028',wordmark=fs.readFileSync(path.resolve(__dirname,'../assets/break-room-wordmark.png')),width=wordmark.readUInt32BE(16),height=wordmark.readUInt32BE(20);
 function applyBrand(html,relative){
  const prefix='../'.repeat(Math.max(0,relative.replaceAll('\\','/').split('/').length-1));
+ html=html.replace(/<nav\b[^>]*class="[^"]*\bmain-nav\b[^"]*"[^>]*>[\s\S]*?<\/nav>/g,nav=>{if(relative==='leaderboards.html')nav=nav.replace(/ aria-current="page"/g,'');if(!nav.includes('leaderboards.html'))nav=nav.replace(/(<a\b[^>]*href="[^"]*index.html"[^>]*>[\s\S]*?<\/a>)/,'$1<a href="'+prefix+'leaderboards.html">Leaderboards</a>');if(relative==='leaderboards.html')nav=nav.replace(/(<a\b[^>]*href="[^"]*leaderboards.html")/,'$1 aria-current="page"');return nav;});
  let branded=false;
  html=html.replace(/<a\b([^>]*)>[\s\S]*?<\/a>/g,(full,attributes)=>{
   const classes=attributes.match(/\bclass=(["'])(.*?)\1/);
