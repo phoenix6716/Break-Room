@@ -1,3 +1,7 @@
+## Leaderboard listing controls — 8 November 2026
+
+Normal leaderboard browsing hides the public-listing section entirely, for both signed-in players and guests. Settings → Saves & privacy retains the management link (`leaderboards.html#public-listing`), which opens the existing explicit opt-in/name/withdrawal controls, including hash navigation without reload. This is presentation only: preserve all participation choices, actor checks and backend rules.
+
 ## Visual leaderboards — 8 November 2026
 
 Keep Leaderboards directly accessible in the shared main navigation, with five responsive destinations and 44px targets. The leaderboard uses an artwork-led custom listbox picker, visual rank/initial/score rows and collapsed explanatory/privacy details. Its hidden select retains controller state only; players use `game-picker` and `game-options` with pointer or keyboard. Keep explicit independent public consent and existing RPC/save/rank semantics; never seed fake players or recalculate ranks client-side. Public-listing deep links must open the form. See `LEADERBOARDS.md` and the leaderboard, social-header and legal-page tests.
