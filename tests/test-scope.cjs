@@ -32,3 +32,5 @@ const timingModel=plan(['inner-clock-model.js']);for(const name of ['accounts.cj
 const notices=plan(['achievements.js']);assert(notices.browser.includes('achievements.cjs'));assert(notices.browser.includes('accounts.cjs'));assert(plan(['profile-records.js']).browser.includes('achievements.cjs'),'Save-reader changes must check achievement notifications');
 
 const defaultEntry=plan(['supabase/migrations/20261108095333_leaderboard_default_entry.sql']);assert(defaultEntry.unit.includes('leaderboards-database.cjs'));assert(defaultEntry.unit.includes('score-integrity.cjs'));assert(defaultEntry.browser.includes('leaderboards.cjs'));
+
+const periodBoards=plan(['supabase/migrations/20261108101256_leaderboard_periods.sql']);assert(periodBoards.unit.includes('leaderboards-database.cjs'));assert(periodBoards.browser.includes('leaderboards.cjs'));
