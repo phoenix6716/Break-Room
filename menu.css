@@ -45,3 +45,6 @@ h1{margin:0;font:900 clamp(40px,4.5vw,60px)/.98 "Courier New",ui-monospace,monos
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;animation:none!important}}
 /* Keep the existing mixed menu arrangement on phones as well. */
 @media(max-width:540px){h1{font-size:clamp(35px,10.1vw,43px)}.game-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.game-art{height:126px}.game-art>svg{width:96%;height:80%;margin-top:12px}.art-label{left:8px;top:8px;font-size:8px;max-width:70px}.art-stamp{right:7px;top:23px;font-size:8px;padding:3px 4px}.card-content{padding:13px 10px 14px}.card-heading{gap:5px;align-items:flex-start}.card-heading h3{font-size:20px;overflow-wrap:anywhere}.card-description{font-size:14px;line-height:1.5}.card-meta{font-size:9px}.play-button{padding:0 8px;font-size:10px;gap:6px}.play-button span{font-size:17px}.coming-stamp{padding:7px 6px;font-size:10px;letter-spacing:0}.soon-line{font-size:9px;gap:5px}.card-number{font-size:9px;line-height:22px}}
+/* Keep the daily-reset fill distinct from its track in dark mode. */
+:root[data-theme=dark] .reset-rule{background:#141e2a;border-color:#b2c0ce}
+:root[data-theme=dark] .reset-rule span{background:#94cadc}
