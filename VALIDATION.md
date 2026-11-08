@@ -1,3 +1,9 @@
+## Dark-mode full state audit — 8 November 2026
+
+`tests/dark-contrast.cjs` audits 227 rendered mobile/desktop states across the ten games and fifteen site pages, including native completed/failed fixtures, final summaries, help/stats, Unlimited, populated Profile stats/achievement paging, Settings and legal/auth pages. `tests/dark-social.cjs` additionally runs existing real-SQL Friends and Leagues browser flows with dark mode and audits their nine responsive signed-in screenshots. Reports and full-page captures live in `.artifacts/dark-audit/`; `coverage.json` records the actual state list and `contrast.json` records failures.
+
+The text audit resolves computed foreground and ancestor surface colours, requiring 4.5:1 for normal text, 3:1 for large text, and a project-specific 3:1 minimum for disabled text. It excludes hidden, inert and decorative artwork. This is regression coverage, not a full WCAG certification or pixel-level proof: visually review light artwork labels, feedback colours, icons and background-image artwork as well. The stopwatch image is explicitly checked. Existing theme/settings checks verify light fallback, saved preference, header geometry, unchanged saves and running timer preservation.
+
 ## Optional dark theme — 6 November 2026
 
 `tests/theme.cjs` checks all ten active game routes plus Profile, Friends, Leagues, leaderboards and Settings at 320/390/768/1440px. It checks the accessible 44px icon beside Account, keyboard operation, light default, reload/navigation, cross-tab and Lowball iframe updates, unchanged native saves, active Time Sense timer preservation, blocked storage and the no-JavaScript fallback. Visually inspect theme screenshots in `.artifacts/theme/`; retain the original puzzle/feedback colours and contrast on light artwork. Existing Settings and immersion checks cover sound/motion isolation.

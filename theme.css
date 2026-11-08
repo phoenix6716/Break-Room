@@ -100,8 +100,49 @@
 @media(max-width:480px){:root[data-theme=dark] .settings-tabs button{font-size:11px;letter-spacing:0}}
 /* Copy on dark game panels must never retain the light theme's navy ink. */
 :root[data-theme=dark] :where(.laser-kicker,.laser-intro,.laser-feedback p,.laser-control-hint,.laser-live,.laser-summary,.laser-notes,.pack-kicker,.trip-description,.pack-notes,.pack-live-status,.packing-tip,.clock-note,.clock-intro,.clock-live,.cl-kicker,.cl-label,.cl-tries,.td-kicker,.era-tag,.sw-note,.sw-status,.instructions,.local-note,.prototype-note){color:#fff!important}
-:root[data-theme=dark] #game-panel :where(p,label,small,dt,dd,summary){color:#fff!important}
+
 /* Light puzzle pieces retain dark, readable labels. */
 :root[data-theme=dark] :where(.laser-cell,.laser-coordinate,.sc-seat,.sc-cloth,.sw-piece,.bag-tag,.bag-empty){color:#17263a!important}
 :root[data-theme=dark] .suitcase :where(p,small,b,strong,span){color:#17263a!important}
 :root[data-theme=dark] :where(.sc-seat,.sc-cloth,.sw-piece,.bag-tag) :where(p,label,small){color:#17263a!important}
+/* Component-owned palettes must not override the selected device theme. */
+:root[data-theme=dark] :is(.modal.game-popup-backdrop,.inner-clock-page){--white:#202d3c!important;--paper:#141e2a!important;--ink:#fff!important;--ink-soft:#c6d2df!important;--clock-ink:#fff!important;--clock-blue:#293b4c!important}
+:root[data-theme=dark] :is(.game-board,.stack-engine,#timer-card,.score-card,.laser-feedback,.laser-summary,.modal-panel.game-popup,.result.show,.final-screen.show){background:#202d3c!important;color:#fff!important;border-color:#7890a4!important}
+:root[data-theme=dark] :is(.game-board,.stack-engine,#timer-card,.score-card,.laser-feedback,.laser-summary,.modal-panel.game-popup,.result.show,.final-screen.show) :is(p,span,strong,b,small,dt,dd,li,h2,h3){color:#fff!important}
+:root[data-theme=dark] .clock-target{color:#fff!important;text-shadow:3px 3px #141e2a!important}
+:root[data-theme=dark] .pack-hud :is(span,strong){color:#fff!important}
+:root[data-theme=dark] :is(.till-hint,.till-hint span,.till-topline,.price-comparison dt,.price-comparison dd,.receipt-header,.receipt-header strong,.result-note,.result-label,#resultLabel,.score-caption,.result-score){color:#fff!important}
+:root[data-theme=dark] .till-entry input::placeholder{color:#c6d2df!important;opacity:1}
+:root[data-theme=dark] .laser-progress-dots span{background:#202d3c!important;color:#fff!important;border-color:#7890a4!important}
+:root[data-theme=dark] .laser-progress-dots .active{background:#36566c!important}
+:root[data-theme=dark] .laser-progress-dots .hit{background:#293f34!important}
+:root[data-theme=dark] .laser-progress-dots .miss{background:#4b3034!important}
+:root[data-theme=dark] #fire-beam{background:#36566c!important;color:#fff!important;border-color:#7898ad!important;opacity:1}
+:root[data-theme=dark] :is(button:disabled,.button:disabled){opacity:1!important;background:#293746!important;color:#bdcbd9!important;border-color:#53687b!important;box-shadow:none!important}
+:root[data-theme=dark] .card-moves button{background:#202d3c!important;color:#fff!important;border-color:#7890a4!important}
+:root[data-theme=dark] .sw-floor{background-color:#243544!important;background-image:linear-gradient(90deg,#94adc33d 1px,transparent 1px),linear-gradient(#94adc33d 1px,transparent 1px)!important;box-shadow:0 0 0 4px #53687b,0 0 0 7px #141e2a!important}
+/* Text on intentionally light game artwork stays navy, including its descendants. */
+:root[data-theme=dark] :is(.sw-piece .piece-letter,.sc-seat,.sc-cloth,.bag-tag,.shelf-price-tag,.cb-legend [data-state],.cb-digits>[data-state]){color:#17263a!important}
+:root[data-theme=dark] .sw-piece.target .piece-letter{color:#fff!important}
+:root[data-theme=dark] :is(#mode-description,.practice-panel,.sc-review,.feel-result){background:#202d3c!important;color:#fff!important;border-color:#7890a4!important}
+:root[data-theme=dark] .practice-panel :is(label,p,strong,.practice-summary,.practice-note){color:#fff!important}
+:root[data-theme=dark] .cl-review a,:root[data-theme=dark] :is(.result,.final-screen) a{color:#b5e3ff!important}
+:root[data-theme=dark] .sw-dot.current{color:#fff!important}
+:root[data-theme=dark] .dialog-close{background:#202d3c!important;color:#fff!important;border-color:#7890a4!important}
+:root[data-theme=dark] .feel-result .feel-stamp{background:#36566c!important;color:#fff!important;border-color:#7890a4!important}
+:root[data-theme=dark] .feel-result[data-perfect=true] .feel-stamp{background:#293f34!important;color:#fff!important}
+:root[data-theme=dark] .feel-result :is(p,.feel-best,.feel-meter>p){color:#fff!important}
+:root[data-theme=dark] :is(.feel-sound,#soundBtn){background:#202d3c!important;color:#fff!important;border-color:#7890a4!important}
+:root[data-theme=dark] :is(.feel-sound,#soundBtn)[aria-pressed=true]{background:#36566c!important}
+
+:root[data-theme=dark] :is(.pack-capacity-note,#capacity-remaining,.pack-result p,.cl-rung.current p){color:#fff!important}
+:root[data-theme=dark] .pack-result-actions .feel-replay{background:#36566c!important;color:#fff!important;border-color:#7890a4!important}
+:root[data-theme=dark] .laser-recap li{background:#293f34!important;color:#fff!important;border-color:#7890a4!important}
+:root[data-theme=dark] .laser-recap li.miss{background:#4b3034!important}
+:root[data-theme=dark] .profile-game-status.complete{color:#a4dfb5!important}
+:root[data-theme=dark] body[data-clock-art-loaded=true] .clock-dial{background:transparent url('assets/game-art/timing/stopwatch.svg?v=objects-20261027') center/contain no-repeat!important;box-shadow:none!important}
+:root[data-theme=dark] #fire-beam:disabled{background:#293746!important;color:#bdcbd9!important;border-color:#53687b!important}
+:root[data-theme=dark] :is(#finalTotal,.deck-count){color:#fff!important}
+/* Match the document canvas too: iframe/overscroll gaps must not flash cream. */
+:root[data-theme=dark]{background-color:#141e2a!important}
+:root[data-theme=dark] :is(.cb-error,#guess-error){color:#ffb4aa!important}
