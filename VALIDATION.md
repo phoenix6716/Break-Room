@@ -1,3 +1,7 @@
+## Default leaderboard entry — 8 November 2026
+
+`tests/leaderboards-database.cjs` applies the default-entry migration repeatedly against actual PostgreSQL: backfill of an existing completion, generated names independent of private metadata, restricted-role Auth signup, preserved opt-outs/moderation/names/IDs, unchanged native saves and Friends choices, withdrawal surviving further saves and reapplication, and all ten eligible score feeds. `tests/leaderboards.cjs` covers automatic inclusion without the listing form, editing the generated name and hiding scores through Settings, plus existing ranking/privacy/responsive checks. Legal/signup wording describes automatic entry and Settings opt-out.
+
 ## Visual leaderboards — 8 November 2026
 
 `leaderboards.cjs` checks the artwork picker (ten games, arrows/Escape, selection/focus), compact public-listing controls, server ties/paging/own positions, network clearing, account reset and real SQL consent. It checks both themes with computed contrast and 320/390/768/1440px layouts. `social-topbar.cjs`, `brand.cjs` and `legal-pages.cjs` cover the five-link navigation and no-JS fallback. Rules and privacy content stay accessible through details, not removed. Existing native scores/history/timers are untouched.

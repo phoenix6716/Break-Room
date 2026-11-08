@@ -30,3 +30,5 @@ for(const source of ['content/lowball-additions.json','content/lowball-original-
 const timingModel=plan(['inner-clock-model.js']);for(const name of ['accounts.cjs','friends.cjs','profile.cjs'])assert(timingModel.browser.includes(name),'Exact targets reach '+name);
 
 const notices=plan(['achievements.js']);assert(notices.browser.includes('achievements.cjs'));assert(notices.browser.includes('accounts.cjs'));assert(plan(['profile-records.js']).browser.includes('achievements.cjs'),'Save-reader changes must check achievement notifications');
+
+const defaultEntry=plan(['supabase/migrations/20261108095333_leaderboard_default_entry.sql']);assert(defaultEntry.unit.includes('leaderboards-database.cjs'));assert(defaultEntry.unit.includes('score-integrity.cjs'));assert(defaultEntry.browser.includes('leaderboards.cjs'));

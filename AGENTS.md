@@ -1,3 +1,7 @@
+## Default leaderboard entry — owner request, 8 November 2026
+
+This supersedes earlier explicit-opt-in instructions for global Daily leaderboards. Apply `supabase/migrations/20261108095333_leaderboard_default_entry.sql` after the Codebreak v6 migration. Existing accounts without a profile and new signups enter automatically under generated player names, never emails, signup/Friends names or authentication IDs. Preserve stored disabled/suspended profiles and existing names/public IDs. Only eligible completed synced current-day Dailies appear. Auth enrollment, native-save triggers and current-day backfill must work without visiting Leaderboards. Settings retains name/visibility controls via `#public-listing`; normal browsing keeps that section hidden. Do not auto-publish guests or change native saves/scoring, Friends sharing or league choices. Test restricted-role signup, reapplication, withdrawal persistence and all ten score feeds.
+
 ## Leaderboard listing controls — 8 November 2026
 
 Normal leaderboard browsing hides the public-listing section entirely, for both signed-in players and guests. Settings → Saves & privacy retains the management link (`leaderboards.html#public-listing`), which opens the existing explicit opt-in/name/withdrawal controls, including hash navigation without reload. This is presentation only: preserve all participation choices, actor checks and backend rules.

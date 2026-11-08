@@ -68,7 +68,7 @@ function selectChecks(changed,available,{full=false}={}){
   else if(file==='supabase/seating-chart-three.sql'){game('seating-chart',true);add('accounts.cjs','friends.cjs','leagues-database.cjs','leagues.cjs','profile.cjs');}
   else if(file==='supabase/leagues.sql'){add('leagues-database.cjs','leagues.cjs','leagues-freshness.cjs','compact-hubs.cjs');}
   else if(['supabase/hidden-gem.sql','supabase/hidden-gem-broader-answers.sql','supabase/hidden-gem-exact-rejections.sql'].includes(file)){game('hidden-gem',true);}
-  else if(file==='supabase/migrations/20261106094324_daily_leaderboards.sql'||/^leaderboards\.(?:js|css|html)$/.test(file)){add('leaderboards-database.cjs','leaderboards.cjs','score-integrity.cjs');auth();}
+  else if(['supabase/migrations/20261106094324_daily_leaderboards.sql','supabase/migrations/20261108095333_leaderboard_default_entry.sql'].includes(file)||/^leaderboards\.(?:js|css|html)$/.test(file)){add('leaderboards-database.cjs','leaderboards.cjs','score-integrity.cjs');auth();}
   else if(file==='supabase/migrations/20261106042358_score_integrity_guards.sql'){add('score-integrity.cjs','cloud-database.cjs','cloud-saves.cjs','friends-database.cjs','leagues-database.cjs','codebreak-database.cjs','accounts.cjs','friends.cjs','leagues.cjs');}
   else if(/^supabase\//.test(file)){add('friends-database.cjs','cloud-database.cjs','playtest-feedback.cjs');}
   else if(file==='content/drafts/sleeper-broader-questions.json'){game('hidden-gem',true);content=true;}
