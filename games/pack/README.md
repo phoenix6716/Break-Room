@@ -29,3 +29,6 @@ The uploaded original and candid initial review remain at `design/prototypes/pac
 ## Launch content release — 23 October 2026
 
 Read [the release contract](../../LAUNCH-CONTENT.md). New selection applies to fresh Dailies from 23 October 2026 and to newly requested practice rounds. Existing snapshots, drafts, native scores and completed history stay unchanged. The original banks remain available for compatibility; harder content and deterministic rotation must not regenerate an active run.
+
+## Challenge bags — 10 November 2026
+120 additive bags (40 per tier) keep existing item counts and scoring. All have a unique optimum; value-per-weight, highest-value-first and lightest-first each lose at least 8% / 14% / 20% against optimal usefulness by tier. Fresh Dailies from 10 November use these bags. Existing IDs and captured runs remain unchanged. Rebuild with `node scripts/build-challenge-puzzles.cjs`; older generators produce only their historical baseline.

@@ -30,6 +30,7 @@ function copy(file,relative){
    rendered=rendered.replace('</head>','<link rel="stylesheet" href="'+base+'game-feel.css?v=settings-20261106"><script src="'+base+'game-feel.js?v=settings-20261106"></script></head>');
   }
   rendered=rendered.replace(/((?:src|href)="[^"]*game-feel\.(?:js|css))(?:\?[^"]*)?"/g,'$1?v=settings-20261106"');
+  rendered=rendered.replace(/((?:src|href)="[^"]*(?:pack-model|laser-model|seating-chart-model|shift-work-model|games\/(?:pack\/puzzles|laser\/boards|seating-chart\/(?:puzzles|seating-chart)|shift-work\/boards))\.js)(?:\?[^"]*)?"/g,'$1?v=challenge-20261110"');
   // Load device preferences before controllers read sound or motion. Account UI is
   // shared across every authenticated header, including dynamically mounted games.
   const uiPrefix=path.posix.relative(path.posix.dirname(relative),'.');const uiBase=uiPrefix?uiPrefix+'/':'';

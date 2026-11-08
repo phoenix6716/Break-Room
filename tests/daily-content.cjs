@@ -17,7 +17,7 @@ function challenge(id,p){
  case 'laser':return [p.n,p.row,p.t,p.fx.slice().sort(),p.w.slice().sort()];
  case 'time-drop':return [p.title,p.year,p.earliest,p.latest];
  case 'clue-ladder':return [p.answer,p.clues];
- case 'seating-chart':return [p.g,p.names,p.rules.map(r=>[r.type,r.a,r.b]).sort()];
+ case 'seating-chart':return [p.g,p.names,p.rules.map(r=>[r.type,r.a,r.b,r.c,r.seats]).sort()];
  case 'shift-work':return [p.pieces.map(v=>[v.axis,v.len,v.lane]),p.start];
  case 'hidden-gem':return [p.prompt,p.scope,p.answers.map(a=>[a.name,a.points]).sort()];
  case 'pack':return [p.limit,p.items.map(i=>[i.name,i.weight,i.points]).sort()];

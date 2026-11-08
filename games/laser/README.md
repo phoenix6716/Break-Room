@@ -39,3 +39,6 @@ These checks establish implementation behavior, not long-term player enjoyment, 
 ## Launch content release — 23 October 2026
 
 Read [the release contract](../../LAUNCH-CONTENT.md). New selection applies to fresh Dailies from 23 October 2026 and to newly requested practice rounds. Existing snapshots, drafts, native scores and completed history stay unchanged. The original banks remain available for compatibility; harder content and deterministic rotation must not regenerate an active run.
+
+## Challenge selection — 10 November 2026
+Fresh Dailies keep the approachable Warm-up and select the more complex existing routes in later tiers, ranked offline by path length and interactions with fixed mirrors. Each later tier has 32 boards; all existing budgets, first-fire scoring and captured snapshots remain unchanged. No browser solver is added. Selection IDs are recorded in `content/laser-challenge-selection.json` and reproduced by `scripts/build-challenge-puzzles.cjs`. These structural measures need human playtesting.

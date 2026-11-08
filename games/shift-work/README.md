@@ -31,3 +31,6 @@ tests/shift-work-rules.cjs verifies all 180 minima, 40-day rotation, 177-board p
 
 ## Smooth movement
 Furniture follows constrained pointer pixels continuously. Releases snap to the nearest legal grid position with a 220ms glide; tap/keyboard moves, Undo and Restart travel from their current visible positions. Native moves and saves commit immediately and controls remain usable during motion. Re-grabbing a moving piece preserves its visible position. Reduced motion skips travel, hydration/remote updates stay quiet, and backgrounding cancels motion. Shared scenes leave furniture travel to the engine to avoid competing transforms.
+
+## Challenge schedule — 10 November 2026
+Fresh Dailies from 10 November draw Steady / Tricky / Hard (6–7 / 8–9 / 10–21 minimum slides) from the existing independently solved frozen boards. Captured old sets remain valid with their original scores. No timers, hints or scoring formula changes.
