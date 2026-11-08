@@ -16,3 +16,6 @@
 .laser-grid .laser-cell.entry{border-left:4px solid #d34c3a}
 .laser-board .laser-beam{inset:0}
 @media(max-width:650px){.laser-source{left:-6px;width:18px}.laser-source .laser-emitter{background:radial-gradient(ellipse at 40% 50%,#ff6255 0 15%,#ff625580 40%,transparent 70%)}}
+/* Keep light-mode control labels legible, including unavailable actions. */
+:root:not([data-theme=dark]) .laser-page :is(.laser-tools button,#fire-beam){color:#17263a!important}
+:root:not([data-theme=dark]) .laser-page :is(.laser-tools button,#fire-beam):disabled{opacity:1!important;color:#34465a!important;background:#e2e7e8!important;border-color:#6d7f8a!important;box-shadow:none!important}
