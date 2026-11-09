@@ -1,6 +1,6 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),{PGlite}=require('@electric-sql/pglite');
 for(const f of ['daily-clock','arcade-score','pack-model','prior-model','laser-model','cloud-saves','profile-records'])require('../'+f+'.js');
-const M=global.BREAK_ROOM_LASER,C=global.BREAK_ROOM_CLOUD_SAVES,S=global.BREAK_ROOM_SCORE,ctx={window:{}};vm.runInNewContext(fs.readFileSync('games/laser/boards.js','utf8'),ctx);const bank=JSON.parse(JSON.stringify(ctx.window.LASER_BOARDS));
+const M=global.BREAK_ROOM_LASER,C=global.BREAK_ROOM_CLOUD_SAVES,S=global.BREAK_ROOM_SCORE,ctx={window:{}};vm.runInNewContext(fs.readFileSync('games/laser/boards.js','utf8'),ctx);const bank=JSON.parse(JSON.stringify(ctx.window.LASER_BOARDS)).filter(b=>!b.id.startsWith('laser-v3-'));
 assert.equal(bank.length,248);assert.equal(new Set(bank.map(b=>b.id)).size,248);assert(bank.every(M.board));
 // Independent ray implementation uses vector transformations rather than the engine's lookup/trace.
 function ray(b,ps){let row=b.row,col=-1,d=[0,1];const seen=new Set();for(let k=0;k<4*b.n*b.n+1;k++){row+=d[0];col+=d[1];if(row<0||col<0||row>=b.n||col>=b.n)return false;if(row===b.t[0]&&col===b.t[1])return true;const key=[row,col,...d].join();if(seen.has(key))return false;seen.add(key);if(b.w.some(p=>p[0]===row&&p[1]===col))return false;const mirror=[...b.fx,...ps].find(p=>p[0]===row&&p[1]===col);if(mirror)d=mirror[2]==='/'?[-d[1],-d[0]]:[d[1],d[0]];}throw Error('Unbounded trace');}

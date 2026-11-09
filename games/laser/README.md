@@ -1,3 +1,7 @@
+# Current mirror progression — 10 November 2026
+
+Fresh Dailies use **2 / 3 / 3 / 4 player mirrors**. New Standard/Tricky/Expert practice rounds use the same tier budgets immediately. Additive v3 layouts keep 6×6 / 6×6 / 7×7 grids, with 5/5/8 fixed mirrors and 3/4/6 walls. The 96 new boards have unique exact-budget solutions, independently checked against all legal combinations including smaller budgets. The full bank now contains 344 boards; all 248 legacy boards remain byte-for-byte unchanged. Captured v1/v2 rounds retain their original two- or three-mirror allowance and scores. The resettable test page offers the new Daily set now. Rebuild with `node scripts/build-laser-progression.cjs`. Apply `20261109011202_laser_mirror_progression.sql` after prior migrations. Historical contracts follow below.
+
 ## Beam entry visual — 28 October 2026
 
 A static coral beam with a pale core marks the actual entry row at every screen size. No black side rail, arrow box or mobile header is added. The compact phone flare sits on the entry edge and preserves full grid width and touch targets. Layouts, legal mirror placements, tracing, scores and saved snapshots are unchanged.

@@ -1,7 +1,7 @@
 /* Additive harder content. Never replace an existing puzzle ID. */
 const fs=require('node:fs'),vm=require('node:vm');require('../pack-model.js');require('../laser-model.js');const P=BREAK_ROOM_PACK,L=BREAK_ROOM_LASER;
 const read=(file,key)=>{const c={window:{}};vm.runInNewContext(fs.readFileSync(file,'utf8'),c);return JSON.parse(JSON.stringify(c.window[key]));};
-const lasers=read('games/laser/boards.js','LASER_BOARDS');let selected=[0,1,2,3].map(level=>lasers.filter(b=>b.level===level).map(b=>{const path=L.trace(b,L.solve(b)[0]).path;return{b,c:path.length+4*b.fx.filter(p=>path.some(q=>q[0]===p[0]&&q[1]===p[1])).length};}).sort((a,b)=>b.c-a.c||a.b.id.localeCompare(b.b.id)).slice(0,level===0?40:level===3?32:32).map(x=>x.b.id));
+const lasers=read('games/laser/boards.js','LASER_BOARDS').filter(b=>!b.id.startsWith('laser-v3-'));let selected=[0,1,2,3].map(level=>lasers.filter(b=>b.level===level).map(b=>{const path=L.trace(b,L.solve(b)[0]).path;return{b,c:path.length+4*b.fx.filter(p=>path.some(q=>q[0]===p[0]&&q[1]===p[1])).length};}).sort((a,b)=>b.c-a.c||a.b.id.localeCompare(b.b.id)).slice(0,level===0?40:level===3?32:32).map(x=>x.b.id));
 const start=Date.UTC(2026,10,10),last=new Map();for(let i=31;i>0;i--){const d=new Date(start-i*86400000).toISOString().slice(0,10);for(const b of L.daily(lasers,d,true))last.set(b.id,-i);}
 selected=selected.map(ids=>{const remaining=ids.slice(),ordered=[];for(let i=0;remaining.length;i++){const j=remaining.findIndex(id=>!last.has(id)||i-last.get(id)>=32);if(j<0)throw Error('No repeat-free transition');ordered.push(remaining.splice(j,1)[0]);}return ordered;});
 fs.writeFileSync('content/laser-challenge-selection.json',JSON.stringify(selected,null,2)+'\n');
