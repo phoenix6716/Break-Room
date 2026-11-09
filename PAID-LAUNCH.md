@@ -1,3 +1,7 @@
+## Setup progress — 9 November 2026
+
+The owner registered `breakroomdaily.com` and connected Cloudflare hosting; production HTTPS and clean page URLs were verified. Resend SMTP is configured for Supabase account emails, and the owner confirmed password recovery works across laptop and phone after the recovery fix. Incoming `support@breakroomdaily.com` mail forwards through Cloudflare Email Routing to the owner's verified destination inbox; the owner confirmed a test arrived (initially in spam). This is forwarding rather than a separate outbound mailbox. The support address is published on Contact, Privacy and Terms. Stripe checkout, entitlements and paid access remain pending. Historical preparation notes follow.
+
 # Paid launch preparation — 5 November 2026
 
 The owner selected a paid launch, Stripe and a custom domain. The existing approved model remains A$4.99 AUD/month for all current/future Unlimited games, or A$7.99 AUD once for one game's Unlimited plus permanent site-wide ad removal. The owner has a Stripe account. No live checkout, charges, advertising or access restriction has been enabled.
