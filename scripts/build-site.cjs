@@ -6,7 +6,7 @@ const {siteURL,publicPages,metadata,sitemap}=require('./site-metadata.cjs');
 const root=path.resolve(__dirname,'..'),output=path.join(root,'dist');
 const registry={window:{}};require('node:vm').runInNewContext(fs.readFileSync(path.join(root,'game-config.js'),'utf8'),registry);
 const activeGames=new Set(registry.window.MIDNIGHT_ARCADE_GAMES.filter(g=>g.status==='live').map(g=>g.id));
-const site=siteURL(process.env.SITE_URL||'https://phoenix6716.github.io/Break-Room/');
+const site=siteURL(process.env.SITE_URL||'https://breakroomdaily.com/');
 const publicMetadata=publicPages(registry.window.MIDNIGHT_ARCADE_GAMES);
 const retiredGames=["hidden-gem","stake","prior","alibi","bouncer","pixel-pairs","word-forge","gridlock","number-drop","memory-lane","mystery-cabinet"];
 if(activeGames.size!==10)throw Error('Expected the ten launch games');
@@ -34,9 +34,9 @@ function copy(file,relative){
   // Load device preferences before controllers read sound or motion. Account UI is
   // shared across every authenticated header, including dynamically mounted games.
   const uiPrefix=path.posix.relative(path.posix.dirname(relative),'.');const uiBase=uiPrefix?uiPrefix+'/':'';
-  rendered=rendered.replace(/<head([^>]*)>/,'<head$1><script src="'+uiBase+'preferences.js?v=theme-20261106"></script><link rel="stylesheet" href="'+uiBase+'preferences.css?v=settings-20261106">');
+  rendered=rendered.replace(/<head([^>]*)>/,'<head$1><script src="'+uiBase+'clean-urls.js?v=clean-20261109"></script><script src="'+uiBase+'preferences.js?v=theme-20261106"></script><link rel="stylesheet" href="'+uiBase+'preferences.css?v=settings-20261106">');
   rendered=rendered.replace('</head>','<link rel="stylesheet" href="'+uiBase+'theme.css?v=theme-pairs-20261108"><script defer src="'+uiBase+'theme-toggle.js?v=theme-20261106"></script></head>');
-  if(rendered.includes('accounts.js'))rendered=rendered.replace('</head>','<link rel="stylesheet" href="'+uiBase+'account-menu.css?v=leaderboards-20261106"><script defer src="'+uiBase+'account-menu.js?v=settings-logout-20261106"></script></head>');
+  if(rendered.includes('accounts.js'))rendered=rendered.replace('</head>','<link rel="stylesheet" href="'+uiBase+'account-menu.css?v=leaderboards-20261106"><script defer src="'+uiBase+'account-menu.js?v=clean-urls-20261109"></script></head>');
   if(/^games\/[^/]+\/index\.html$/.test(relative)&&activeGames.has(relative.split('/')[1]))rendered=rendered.replace('<!-- shared-legal-footer:start -->','<p class="game-leaderboard-link"><a href="../../leaderboards.html?game='+relative.split('/')[1]+'">Daily leaderboard →</a></p><!-- shared-legal-footer:start -->');
   // Shared achievement UI reads the same native results as Profile; no engine writes change.
   const achievementPage=(/^games\/[^/]+\/index\.html$/.test(relative)&&activeGames.has(relative.split('/')[1]));
@@ -82,8 +82,9 @@ for(const [property,relative]of [['og:url','games/lowball/index.html'],['og:imag
 }
 fs.writeFileSync(engine,html);
 // Metadata is generated from the actual launch roster and configured host.
-function decorate(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){const file=path.join(dir,e.name);if(e.isDirectory())decorate(file);else if(e.name.endsWith('.html'))fs.writeFileSync(file,metadata(fs.readFileSync(file,'utf8'),path.relative(output,file).replaceAll('\\','/'),site,publicMetadata));}}
+const cleanPublicURLs=text=>text.replace(/https:\/\/breakroomdaily\.com\/[^\s"<>]*/g,value=>value.replace(/\/index\.html(?=[?#]|$)/,'/').replace(/\.html(?=[?#]|$)/,''));
+function decorate(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){const file=path.join(dir,e.name);if(e.isDirectory())decorate(file);else if(e.name.endsWith('.html'))fs.writeFileSync(file,cleanPublicURLs(metadata(fs.readFileSync(file,'utf8'),path.relative(output,file).replaceAll('\\','/'),site,publicMetadata)));}}
 decorate(output);
-fs.writeFileSync(path.join(output,'sitemap.xml'),sitemap(site,publicMetadata));
+fs.writeFileSync(path.join(output,'sitemap.xml'),cleanPublicURLs(sitemap(site,publicMetadata)));
 fs.writeFileSync(path.join(output,'.nojekyll'),'');
 console.log(`Built ${count} web files (${(total/1024/1024).toFixed(1)} MiB) in dist/; development docs, tests, templates and source atlases excluded.`);

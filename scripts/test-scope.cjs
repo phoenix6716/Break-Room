@@ -56,7 +56,7 @@ function selectChecks(changed,available,{full=false}={}){
   if(file==='supabase/migrations/20261108232113_puzzle_challenge_variety.sql'){for(const id of ['shift-work','seating-chart'])game(id,true);add('puzzle-challenge.cjs','leaderboards-database.cjs','score-integrity.cjs','leaderboards.cjs');continue;}
   if(/^playtest\.(?:js|css|html)$/.test(file)){add('challenge-playtest.cjs');continue;}
   if(file==='supabase/migrations/20261109011202_laser_mirror_progression.sql'){game('laser',true);add('laser-progression.cjs','score-integrity.cjs','leaderboards-database.cjs','leaderboards.cjs');continue;}
-  if(file==='worker.mjs'||file==='wrangler.json'){add('cloudflare-routing.cjs','release.cjs');continue;}
+  if(file==='worker.mjs'||file==='wrangler.json'||file==='clean-urls.js'){add('cloudflare-routing.cjs','clean-url-ui.cjs','release.cjs');continue;}
   const own=file.match(/^games\/([^/]+)\//);
   const model=file.match(/^(codebreak|shift-work|hidden-gem|pack|prior|laser|alibi|bouncer|inner-clock|time-drop|clue-ladder|seating-chart)-model\.js$/);
   if(own){

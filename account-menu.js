@@ -6,7 +6,7 @@
  profile.textContent='Your profile';profile.href=new URL('profile.html',base);settings.textContent='Settings';settings.href=new URL('settings.html',base);
  for(const a of [profile,settings,action])a.setAttribute('role','menuitem');status.setAttribute('role','status');menu.append(profile,settings,action,status);document.body.append(menu);
  let trigger=null,pending=false,lastUser=api.getUser()?.id??null;
- function links(){return [...document.querySelectorAll('header a[href],nav a[data-account-link]')].filter(a=>a.dataset.accountLink==='true'||['account.html','login.html'].some(path=>a.href===new URL(path,base).href));}
+ function links(){return [...document.querySelectorAll('header a[href],nav a[data-account-link]')].filter(a=>a.dataset.accountLink==='true'||['account.html','login.html'].some(path=>a.href===new URL(path,base).href||a.href===(window.BREAK_ROOM_URLS?.clean(new URL(path,base).href)||new URL(path,base).href)));}
  function paint(){for(const a of links()){a.textContent='ACCOUNT';a.setAttribute('role','button');a.setAttribute('aria-haspopup','menu');a.setAttribute('aria-controls',menu.id);a.setAttribute('aria-expanded',String(a===trigger&&!menu.hidden));}action.textContent=api.getUser()?'Log out':'Log in';action.href=new URL(api.getUser()?'account.html':'login.html',base);}
  function close(focus=false){menu.hidden=true;if(trigger){trigger.setAttribute('aria-expanded','false');if(focus)trigger.focus();}trigger=null;}
  function position(){if(!trigger)return;const box=trigger.getBoundingClientRect();menu.style.left=Math.max(8,Math.min(innerWidth-menu.offsetWidth-8,box.right-menu.offsetWidth))+'px';menu.style.top=Math.max(8,Math.min(innerHeight-menu.offsetHeight-8,box.bottom+8))+'px';}

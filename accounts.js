@@ -2,7 +2,7 @@
 (() => {
  'use strict';
  const config=window.BREAK_ROOM_ACCOUNT_CONFIG, saves=window.BREAK_ROOM_CLOUD_SAVES;
- const base=new URL('.',document.currentScript.src),accountURL=new URL('account.html',base).href;
+ const base=new URL('.',document.currentScript.src),pageURL=name=>window.BREAK_ROOM_URLS?.clean(new URL(name,base).href)||new URL(name,base).href,accountURL=pageURL('account.html');
  const generationKey='br:cloud:generation',ownerKey='br:cloud:owner',guestKey='br:cloud:guest',cacheKey=id=>'br:cloud:cache:'+id;
  const $=id=>document.getElementById(id),isAccount=!!$('account-content'),isGame=location.pathname.includes('/games/'),isProfile=!!document.querySelector('.profile-page'),isSocial=!!document.querySelector('#friend-content,#league-content,#leaderboard-content');
  let resolveReady;const ready=new Promise(resolve=>resolveReady=resolve);
@@ -24,7 +24,7 @@
  function render(){
   for(const a of document.querySelectorAll('a[href]')){
    const href=new URL(a.getAttribute('href'),location.href);
-   if((href.href===new URL('login.html',base).href||a.dataset.accountLink==='true') && (a.closest('header')||a.closest('nav'))){a.dataset.accountLink='true';a.textContent=session?'ACCOUNT':'LOG IN';a.href=session?accountURL:new URL('login.html',base).href;}
+   if((href.href===new URL('login.html',base).href||href.href===pageURL('login.html')||a.dataset.accountLink==='true') && (a.closest('header')||a.closest('nav'))){a.dataset.accountLink='true';a.textContent=session?'ACCOUNT':'LOG IN';a.href=session?accountURL:new URL('login.html',base).href;}
   }
   const signed=!!session;
   if($('signed-in'))$('signed-in').hidden=!signed;
@@ -166,9 +166,9 @@
   event.preventDefault();const form=event.currentTarget,fields=form.querySelector('fieldset');fields.disabled=true;status('Working…');
   try{
    const email=$('email')?.value.trim(),password=$('password')?.value;
-   let result;const redirect=new URL('account.html',base).href;
+   let result;const redirect=pageURL('account.html');
    if(form.dataset.auth==='signup')result=await client.auth.signUp({email,password,options:{data:{display_name:$('display-name').value.trim()},emailRedirectTo:redirect}});
-   else if(form.dataset.auth==='reset')result=await client.auth.resetPasswordForEmail(email,{redirectTo:new URL('reset-password.html',base).href});
+   else if(form.dataset.auth==='reset')result=await client.auth.resetPasswordForEmail(email,{redirectTo:pageURL('reset-password.html')});
    else if(form.dataset.auth==='update')result=await client.auth.updateUser({password});
    else result=await client.auth.signInWithPassword({email,password});
    if(result.error)throw result.error;
@@ -192,7 +192,7 @@
    client.auth.onAuthStateChange((event,next)=>{session=next;setTimeout(()=>{
     if(owner()&&owner()!==next?.user.id){if(isGame){openAccount();return;}try{restoreGuest();}catch(e){status(friendly(e),true);}if(next&&!isAccount){openAccount();return;}}
     render();
-    if(event==='PASSWORD_RECOVERY'&&location.pathname.endsWith('/reset-password.html')){$('password-fields').disabled=false;status('Choose your new password.');}
+    if(event==='PASSWORD_RECOVERY'&&/\/reset-password(?:\.html)?$/.test(location.pathname)){$('password-fields').disabled=false;status('Choose your new password.');}
    },0);});
    for(const form of document.querySelectorAll('form[data-auth]')){
     const update=form.dataset.auth==='update';form.querySelector('fieldset').disabled=update&&!session;
@@ -204,7 +204,7 @@
     const link=event.target.closest('a[href]');
     if(!link||!session||!uploadTask||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
     const target=new URL(link.href,base);
-    if(target.origin!==base.origin||!(/\/games\//.test(target.pathname)||/\/(?:index|profile)\.html$/.test(target.pathname)))return;
+    if(target.origin!==base.origin||!(/\/games\//.test(target.pathname)||/\/(?:index\.html|profile(?:\.html)?)?$/.test(target.pathname)))return;
     event.preventDefault();uploadTask.then(ok=>{if(ok)location.assign(target.href);});
    });
 
@@ -225,7 +225,7 @@
     const restored=await syncUpload();
     if(isAccount&&restored){
      const target=new URLSearchParams(location.search).get('continue');
-     if(target){const dest=new URL(target,base);const allowed=['laser','time-drop','clue-ladder','seating-chart','shift-work','codebreak','hidden-gem','stack-up','pack','lowball','inner-clock'].some(id=>dest.pathname===new URL('games/'+id+'/index.html',base).pathname);if(dest.origin===base.origin&&allowed){redirecting=true;location.replace(dest.href);}}
+     if(target){const dest=new URL(target,base);const allowed=['laser','time-drop','clue-ladder','seating-chart','shift-work','codebreak','hidden-gem','stack-up','pack','lowball','inner-clock'].some(id=>(dest.pathname===new URL('games/'+id+'/index.html',base).pathname||dest.pathname===new URL('games/'+id+'/',base).pathname));if(dest.origin===base.origin&&allowed){redirecting=true;location.replace(dest.href);}}
     }
    }
    else if(!isAccount)syncUpload();
@@ -255,7 +255,7 @@
   });
  }
  async function updateEmail(value){return accountAction(async check=>{const {data,error}=await client.auth.updateUser({email:value.trim()},{emailRedirectTo:accountURL});if(error)throw error;check();session={...session,user:data.user};render();return data.user;});}
- async function resetPassword(){return accountAction(async check=>{const email=session.user.email;if(!email)throw Error('This account has no email address.');const {error}=await client.auth.resetPasswordForEmail(email,{redirectTo:new URL('reset-password.html',base).href});if(error)throw error;check();});}
+ async function resetPassword(){return accountAction(async check=>{const email=session.user.email;if(!email)throw Error('This account has no email address.');const {error}=await client.auth.resetPasswordForEmail(email,{redirectTo:pageURL('reset-password.html')});if(error)throw error;check();});}
  window.BREAK_ROOM_ACCOUNTS=Object.freeze({sync:syncUpload,ready,signOut:requestSignOut,exportSaves:download,updateName,updateEmail,resetPassword,setSharing:value=>{if(typeof value!=='boolean')throw Error('Choose a sharing setting.');return socialSettings(undefined,value);},getUser:()=>session?.user||null,
   cloudActive:()=>{try{return !!session&&owner()===session.user.id;}catch{return false;}},
   async leaderboardRPC(name,args={}){await ready;if(!['daily_leaderboard','leaderboard_standings','leaderboard_profile'].includes(name))throw Error('Unknown leaderboard operation.');if(!client)throw Error('Account service is unavailable. Please try again.');if(name==='leaderboard_profile'&&!session)throw Error('Please sign in to manage your public listing.');if(name==='leaderboard_profile'&&args.p_action==='set'&&args.p_expected_user!==session.user.id)throw Error('Account changed. Please reload before changing your listing.');const {data,error}=await client.rpc(name,args);if(error)throw error;return data;},
