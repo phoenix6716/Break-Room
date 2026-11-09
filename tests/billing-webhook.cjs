@@ -15,6 +15,10 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),{createHmac}=re
  assert.equal((await handler(request({...event,type:'unhandled.test'}))).status,200);assert.equal(saved.length,1);
  assert.equal((await createHandler({secret,now:()=>now,enqueue:async()=>{throw Error('private db error')}})(request())).status,503);
  assert.equal((await createHandler({enqueue:async()=>{}})(request())).status,503);
+ let processed=0;
+ const processing=createHandler({secret,now:()=>now,enqueue:async()=>{},process:async id=>{assert.equal(id,event.id);processed++;}});
+ assert.equal((await processing(request())).status,200);assert.equal(processed,1);
+ assert.equal((await createHandler({secret,now:()=>now,enqueue:async()=>{},process:async()=>{throw Error('provider unavailable')}})(request())).status,503);
  const db=new PGlite();
  try {
   await db.exec('create role anon; create role authenticated; create role service_role bypassrls;');

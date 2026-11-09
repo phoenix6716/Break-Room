@@ -23,7 +23,7 @@ export async function signatureValid(raw, header, secret, now = Date.now()) {
  }
  return false;
 }
-export function createHandler({secret, enqueue, now = Date.now}) {
+export function createHandler({secret, enqueue, process, now = Date.now}) {
  return async request => {
   const reply = (body, status) => Response.json(body, {status,headers:{'Cache-Control':'no-store'}});
   if (request.method !== 'POST') return reply({error:'POST required'},405);
@@ -39,7 +39,8 @@ export function createHandler({secret, enqueue, now = Date.now}) {
   if (typeof event.data?.object?.id !== 'string' || event.data.object.id.length > 255) return reply({error:'Object ID required'},400);
   try {
    await enqueue({p_event_id:event.id,p_event_type:event.type,p_object_id:event.data.object.id,p_created:event.created});
-   return reply({received:true,queued:true},200);
-  } catch { return reply({error:'Could not store event; retry delivery'},503); }
+   if (process) await process(event.id);
+   return reply({received:true,queued:true,processed:!!process},200);
+  } catch { return reply({error:'Could not process event; retry delivery'},503); }
  };
 }

@@ -1,7 +1,9 @@
 import {createHandler} from './handler.mjs';
+import {billing} from '../_shared/billing-runtime.ts';
 
 Deno.serve(createHandler({
  secret:Deno.env.get('STRIPE_WEBHOOK_SECRET'),
+ process:(id:string)=>billing.event(id),
  enqueue:async (event:Record<string,unknown>) => {
   const key = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
   const url = Deno.env.get('SUPABASE_URL');

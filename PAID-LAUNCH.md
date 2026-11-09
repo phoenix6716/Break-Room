@@ -1,10 +1,20 @@
+## Sandbox checkout implementation — 9 November 2026
+
+The unlisted test page is `https://breakroomdaily.com/billing-test`. It shares the existing account session using the official Auth SDK and does not load save-sync code or touch native saves. The `billing` function verifies Auth accounts, permits only the eleven approved prices, creates/reuses account-bound hosted test Checkouts and opens a restricted Customer Portal for cancellation, payment methods and invoices. Customer mappings, checkout receipts and verified access snapshots are private and server-only. `STRIPE_SECRET_KEY` must be a test key, and `STRIPE_WEBHOOK_SECRET` must be set. Return URLs never grant purchases.
+
+The signed webhook now reconciles against freshly retrieved Stripe sessions/payments/subscriptions/refunds/disputes. Notifications are marked processed only after successful reconciliation; failures return 503 for Stripe retries. Per-customer expiring leases prevent older concurrent snapshots overwriting newer ones, and duplicate event IDs are harmless. Status reads also reconcile current provider state, recovering missed deliveries without trusting a browser receipt. A monthly subscription needs its paid latest invoice and unexpired paid period; individual purchases remain separate after subscription expiry. Full refunds and open/lost disputes suspend the affected purchase; partial refunds retain access and won disputes restore access. Historical invoices are not used to fabricate a paid latest period. No real access gate consumes these sandbox snapshots.
+
+Verified deployed API: GET readiness returned 200 after a real Stripe monthly-price read using the pinned API version and a private RPC probe; unauthenticated checkout returned 401 and an unsigned webhook returned 400. Both Edge entry points bundled, local PostgreSQL tests passed, and the phone/desktop dark-theme browser checks passed. A real hosted sandbox purchase and signed Stripe delivery still require the owner's test-card journey. No live payment, live entitlements or access restrictions have been enabled. The sandbox is deliberately bounded to 100 sessions per account and ten pages per provider list; exceeding a bound returns an error rather than discarding history.
+
+Pending owner test: sign into Break Room, open the test page, buy Laser with Stripe's `4242 4242 4242 4242` test card (any future expiry/three-digit CVC), then verify the purchase and a processed event. Test monthly checkout/cancellation, refund/dispute handling in Stripe and same-account access from another device before progressing to live launch. Public pricing buttons remain disabled and all games remain free.
+
 ## Sandbox webhook preparation — 9 November 2026
 
 The deployed `billing-catalog` function verified all eleven Stripe sandbox prices using the server-stored `STRIPE_SECRET_KEY`. The deployed endpoint is:
 
 `https://quhyzwivpdznmffmwhcr.supabase.co/functions/v1/billing-webhook`
 
-It verifies Stripe raw-body HMAC signatures with a five-minute tolerance, rejects live events, and stores only event ID/type/object ID/creation time in a private, RLS-protected inbox. Only the service role can call its insert RPC. Repeated IDs are harmless. Persistence failures return 503 so Stripe retries. The missing `STRIPE_WEBHOOK_SECRET` currently returns 503; the endpoint was verified live in that state. No checkout, Customer Portal, entitlement processor or access restriction is enabled. Inbox rows remain explicitly unprocessed until a subsequent provider-reconciling consumer is implemented. This is notification setup, not a completed billing integration.
+It verifies Stripe raw-body HMAC signatures with a five-minute tolerance, rejects live events, and stores only event ID/type/object ID/creation time in a private, RLS-protected inbox. Only the service role can call its insert RPC. Repeated IDs are harmless. Persistence failures return 503 so Stripe retries. Historical initial state: before the owner added `STRIPE_WEBHOOK_SECRET`, the endpoint returned 503 and only queued notifications. The implementation above supersedes that preparation state.
 
 In the Stripe sandbox create an event destination for this account using the URL above and these events:
 

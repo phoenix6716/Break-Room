@@ -12,9 +12,9 @@ Purchases belong to the signed-in account and work across devices. A purchased g
 
 ## Implementation status and next steps
 
-Pricing and product scope are approved. No checkout, payment provider integration, entitlement service or advertising service is enabled yet. Unlimited remains free during development until the purchase flow is implemented and verified.
+Pricing and product scope are approved. An unlisted Stripe sandbox checkout, billing portal and server-verified sandbox purchase records are implemented at `/billing-test`; the owner’s hosted test-card journey remains pending. No live payments, live entitlements, access restrictions or advertising service are enabled. Unlimited remains free during development.
 
-Selected provider (5 November 2026): Stripe Checkout and Customer Portal, with server-verified payment events and account-owned entitlements in Supabase. The owner has a Stripe account; its connection is not yet confirmed. See [PAID-LAUNCH.md](PAID-LAUNCH.md) for current hosting, domain and payment dependencies. Never grant access based only on a browser flag or checkout return URL.
+Selected provider (5 November 2026): Stripe Checkout and Customer Portal, with server-verified payment events and account-owned entitlements in Supabase. The owner's sandbox key and all eleven approved AUD prices have been verified server-side. See [PAID-LAUNCH.md](PAID-LAUNCH.md) for current hosting, domain and payment dependencies. Never grant access based only on a browser flag or checkout return URL.
 
 Before live payments: configure test-mode products/prices, implement authenticated checkout and billing management, verify signed payment events and duplicate-event handling, test purchase/renewal/cancellation/failure/refund flows and cross-device access, and align the public purchase terms and privacy information. Show the full customer price; determine applicable tax configuration before activation. Do not collect real payments or introduce ads merely from approval of this pricing model.
 
