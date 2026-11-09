@@ -1,3 +1,7 @@
+## Cross-device password recovery — 9 November 2026
+
+Reset email requests use a dedicated official Supabase SDK client with implicit flow, no persisted session, no URL detection and no refresh. This prevents adding a device-local PKCE challenge to recovery emails. The password-update page uses implicit session handling unless an older `?code=` link needs PKCE; normal login/signup remain PKCE. Never simply enable password fields without a validated session. Preserve save-owner checks and callback token cleanup. `tests/password-recovery.cjs` exercises a laptop request, fresh mobile browser, SDK verification and password update, and invalid-token lockout. Existing emailed PKCE links remain device-bound; users must request a fresh email to use the new flow.
+
 ## Clean production URLs — 9 November 2026
 
 Cloudflare serves static assets with `auto-trailing-slash`: `/account`, `/reset-password` and `/games/laser/` are canonical; old `.html` links redirect. No custom root Worker is needed. `clean-urls.js` normalizes same-origin navigation on breakroomdaily.com and workers.dev while preserving queries/fragments, directory-relative game assets and the GitHub Pages file-based preview. Account email callbacks use the same helper; recovery recognizes both clean and legacy paths. Keep old Supabase callback allowlist entries and add the two clean production callbacks. The production build defaults to the verified custom domain and normalizes canonical/sitemap URLs. Never redirect the old GitHub origin wholesale or delete its guest saves during migration.

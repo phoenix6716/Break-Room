@@ -5,7 +5,9 @@
  const base=new URL('.',document.currentScript.src),pageURL=name=>window.BREAK_ROOM_URLS?.clean(new URL(name,base).href)||new URL(name,base).href,accountURL=pageURL('account.html');
  const generationKey='br:cloud:generation',ownerKey='br:cloud:owner',guestKey='br:cloud:guest',cacheKey=id=>'br:cloud:cache:'+id;
  const $=id=>document.getElementById(id),isAccount=!!$('account-content'),isGame=location.pathname.includes('/games/'),isProfile=!!document.querySelector('.profile-page'),isSocial=!!document.querySelector('#friend-content,#league-content,#leaderboard-content');
+ const isRecovery=!!document.querySelector('form[data-auth=update]'),recoveryCode=new URL(location.href).searchParams.has('code'),recoveryLink=isRecovery&&(recoveryCode||new URLSearchParams(location.hash.slice(1)).has('access_token')||new URLSearchParams(location.hash.slice(1)).has('error'));
  let resolveReady;const ready=new Promise(resolve=>resolveReady=resolve);
+ let recoveryMailer=null;
  let client=null,session=null,busy=false,lastUploaded='',syncTimer=null,uploadTask=null,initialOwner=null,restoredFor=null,redirecting=false,loggingOut=false;
  // Auth, ownership and generation events can arrive together on logout.
  // Navigate once so a second event cannot abort the first page load.
@@ -162,13 +164,18 @@
  function download(){
   try{const blob=new Blob([JSON.stringify({format:'break-room-native-saves',version:1,savedAt:new Date().toISOString(),games:saves.capture(storage(),false)},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='break-room-saves.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}catch(error){status(friendly(error),true);}
  }
+ // Recovery emails must work on a different device: do not attach a local PKCE verifier.
+ function requestRecovery(email){
+  if(!recoveryMailer)recoveryMailer=window.BREAK_ROOM_SUPABASE.createClient(config.url,config.publishableKey,{auth:{storageKey:'br:supabase:recovery-request',flowType:'implicit',detectSessionInUrl:false,persistSession:false,autoRefreshToken:false}});
+  return recoveryMailer.auth.resetPasswordForEmail(email,{redirectTo:pageURL('reset-password.html')});
+ }
  async function submit(event){
   event.preventDefault();const form=event.currentTarget,fields=form.querySelector('fieldset');fields.disabled=true;status('Working…');
   try{
    const email=$('email')?.value.trim(),password=$('password')?.value;
    let result;const redirect=pageURL('account.html');
    if(form.dataset.auth==='signup')result=await client.auth.signUp({email,password,options:{data:{display_name:$('display-name').value.trim()},emailRedirectTo:redirect}});
-   else if(form.dataset.auth==='reset')result=await client.auth.resetPasswordForEmail(email,{redirectTo:pageURL('reset-password.html')});
+   else if(form.dataset.auth==='reset')result=await requestRecovery(email);
    else if(form.dataset.auth==='update')result=await client.auth.updateUser({password});
    else result=await client.auth.signInWithPassword({email,password});
    if(result.error)throw result.error;
@@ -183,7 +190,7 @@
   try{
    initialOwner=owner();
    if(!config||!/^https:\/\/[a-z0-9-]+\.supabase\.co$/.test(config.url)||!config.publishableKey.startsWith('sb_publishable_'))throw Error('Account service is not configured. Guest games still work.');
-   client=window.BREAK_ROOM_SUPABASE.createClient(config.url,config.publishableKey,{auth:{storageKey:'br:supabase:auth',flowType:'pkce',detectSessionInUrl:true,persistSession:true,autoRefreshToken:true}});
+   client=window.BREAK_ROOM_SUPABASE.createClient(config.url,config.publishableKey,{auth:{storageKey:'br:supabase:auth',flowType:isRecovery&&!recoveryCode?'implicit':'pkce',detectSessionInUrl:true,persistSession:true,autoRefreshToken:true}});
    // Register listeners before enabling a form. Without JS the form stays disabled.
    for(const form of document.querySelectorAll('form[data-auth]'))form.addEventListener('submit',submit);
    const {data,error}=await client.auth.getSession();if(error)throw error;session=data.session;
@@ -192,11 +199,11 @@
    client.auth.onAuthStateChange((event,next)=>{session=next;setTimeout(()=>{
     if(owner()&&owner()!==next?.user.id){if(isGame){openAccount();return;}try{restoreGuest();}catch(e){status(friendly(e),true);}if(next&&!isAccount){openAccount();return;}}
     render();
-    if(event==='PASSWORD_RECOVERY'&&/\/reset-password(?:\.html)?$/.test(location.pathname)){$('password-fields').disabled=false;status('Choose your new password.');}
+    if(event==='PASSWORD_RECOVERY'&&next?.user&&/\/reset-password(?:\.html)?$/.test(location.pathname)){$('password-fields').disabled=false;status('Choose your new password.');}
    },0);});
    for(const form of document.querySelectorAll('form[data-auth]')){
     const update=form.dataset.auth==='update';form.querySelector('fieldset').disabled=update&&!session;
-    if(update&&!session)status('Open the password reset link from your email, or request a new one.');
+    if(update&&!session)status(recoveryLink?'This reset link has expired or could not be verified. Request a new password-reset email.':'Open the password reset link from your email, or request a new one.',recoveryLink);
    }
    if($('sign-out'))$('sign-out').onclick=logout;
    if($('export-saves'))$('export-saves').onclick=download;
@@ -255,7 +262,7 @@
   });
  }
  async function updateEmail(value){return accountAction(async check=>{const {data,error}=await client.auth.updateUser({email:value.trim()},{emailRedirectTo:accountURL});if(error)throw error;check();session={...session,user:data.user};render();return data.user;});}
- async function resetPassword(){return accountAction(async check=>{const email=session.user.email;if(!email)throw Error('This account has no email address.');const {error}=await client.auth.resetPasswordForEmail(email,{redirectTo:pageURL('reset-password.html')});if(error)throw error;check();});}
+ async function resetPassword(){return accountAction(async check=>{const email=session.user.email;if(!email)throw Error('This account has no email address.');const {error}=await requestRecovery(email);if(error)throw error;check();});}
  window.BREAK_ROOM_ACCOUNTS=Object.freeze({sync:syncUpload,ready,signOut:requestSignOut,exportSaves:download,updateName,updateEmail,resetPassword,setSharing:value=>{if(typeof value!=='boolean')throw Error('Choose a sharing setting.');return socialSettings(undefined,value);},getUser:()=>session?.user||null,
   cloudActive:()=>{try{return !!session&&owner()===session.user.id;}catch{return false;}},
   async leaderboardRPC(name,args={}){await ready;if(!['daily_leaderboard','leaderboard_standings','leaderboard_profile'].includes(name))throw Error('Unknown leaderboard operation.');if(!client)throw Error('Account service is unavailable. Please try again.');if(name==='leaderboard_profile'&&!session)throw Error('Please sign in to manage your public listing.');if(name==='leaderboard_profile'&&args.p_action==='set'&&args.p_expected_user!==session.user.id)throw Error('Account changed. Please reload before changing your listing.');const {data,error}=await client.rpc(name,args);if(error)throw error;return data;},
