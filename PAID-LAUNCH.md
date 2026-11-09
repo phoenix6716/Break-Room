@@ -1,3 +1,30 @@
+## Sandbox webhook preparation — 9 November 2026
+
+The deployed `billing-catalog` function verified all eleven Stripe sandbox prices using the server-stored `STRIPE_SECRET_KEY`. The deployed endpoint is:
+
+`https://quhyzwivpdznmffmwhcr.supabase.co/functions/v1/billing-webhook`
+
+It verifies Stripe raw-body HMAC signatures with a five-minute tolerance, rejects live events, and stores only event ID/type/object ID/creation time in a private, RLS-protected inbox. Only the service role can call its insert RPC. Repeated IDs are harmless. Persistence failures return 503 so Stripe retries. The missing `STRIPE_WEBHOOK_SECRET` currently returns 503; the endpoint was verified live in that state. No checkout, Customer Portal, entitlement processor or access restriction is enabled. Inbox rows remain explicitly unprocessed until a subsequent provider-reconciling consumer is implemented. This is notification setup, not a completed billing integration.
+
+In the Stripe sandbox create an event destination for this account using the URL above and these events:
+
+- `checkout.session.completed`, `checkout.session.async_payment_succeeded`, `checkout.session.async_payment_failed`
+- `customer.subscription.created`, `customer.subscription.updated`, `customer.subscription.deleted`
+- `invoice.paid`, `invoice.payment_failed`
+- `charge.refunded`, `charge.dispute.created`, `charge.dispute.updated`, `charge.dispute.closed`
+
+Save its signing secret privately as Supabase Edge Function secret `STRIPE_WEBHOOK_SECRET`; never paste it into chat or commit it. Then verify a real signed sandbox delivery and build authenticated Checkout/Portal and provider-reconciled entitlements before testing paid access.
+
+Focused verification: `tests/billing-webhook.cjs` covers HMAC, timestamps, live rejection, retry semantics, minimal data, restricted SQL roles and duplicate events in PostgreSQL. Build/static checks passed. Security advisors report the intended no-client-policy private inbox (deny by default), plus existing unrelated findings; no new SECURITY DEFINER RPC is introduced.
+
+## Stripe sandbox identifiers — owner supplied, 9 November 2026
+
+- Break Room Monthly product: `prod_Vb1SHpsRqQ9vzJ`.
+- Monthly price: `price_1UZpPJGapFJk1jyWKUntRCZV` (intended AUD 4.99/month).
+- Laser — Unlimited price: `price_1UZpTcGapFJk1jyWhloJvRqJ` (intended AUD 7.99 once).
+- All ten one-time game prices are now owner-supplied in `supabase/billing-sandbox-prices.json`, including Desk Jam (`shift-work`) and Time Sense (`inner-clock`). The server-side catalogue check verified all eleven prices against Stripe on 9 November 2026.
+- These are sandbox-only identifiers supplied through the setup walkthrough. The stored sandbox key successfully read every approved active AUD price, including the monthly interval and expected product. No live purchases or paid access are enabled.
+
 ## Setup progress — 9 November 2026
 
 The owner registered `breakroomdaily.com` and connected Cloudflare hosting; production HTTPS and clean page URLs were verified. Resend SMTP is configured for Supabase account emails, and the owner confirmed password recovery works across laptop and phone after the recovery fix. Incoming `support@breakroomdaily.com` mail forwards through Cloudflare Email Routing to the owner's verified destination inbox; the owner confirmed a test arrived (initially in spam). This is forwarding rather than a separate outbound mailbox. The support address is published on Contact, Privacy and Terms. Stripe checkout, entitlements and paid access remain pending. Historical preparation notes follow.

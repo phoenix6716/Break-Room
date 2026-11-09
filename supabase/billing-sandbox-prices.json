@@ -1,0 +1,63 @@
+{
+  "environment": "sandbox",
+  "verified": true,
+  "currency": "aud",
+  "subscription": {
+    "product_id": "prod_Vb1SHpsRqQ9vzJ",
+    "price_id": "price_1UZpPJGapFJk1jyWKUntRCZV",
+    "unit_amount": 499,
+    "interval": "month"
+  },
+  "games": {
+    "laser": {
+      "price_id": "price_1UZpTcGapFJk1jyWhloJvRqJ",
+      "unit_amount": 799,
+      "type": "one_time"
+    },
+    "time-drop": {
+      "price_id": "price_1UZpVQGapFJk1jyWT5yEigWg",
+      "unit_amount": 799,
+      "type": "one_time"
+    },
+    "clue-ladder": {
+      "price_id": "price_1UZpWYGapFJk1jyWeo6ymZ2Q",
+      "unit_amount": 799,
+      "type": "one_time"
+    },
+    "seating-chart": {
+      "price_id": "price_1UZpXTGapFJk1jyWPga5DqeB",
+      "unit_amount": 799,
+      "type": "one_time"
+    },
+    "shift-work": {
+      "price_id": "price_1UZpYKGapFJk1jyW9FZzCKEu",
+      "unit_amount": 799,
+      "type": "one_time"
+    },
+    "codebreak": {
+      "price_id": "price_1UZpZ0GapFJk1jyWhJvkQBCG",
+      "unit_amount": 799,
+      "type": "one_time"
+    },
+    "stack-up": {
+      "price_id": "price_1UZpZnGapFJk1jyWP5XdaFPV",
+      "unit_amount": 799,
+      "type": "one_time"
+    },
+    "pack": {
+      "price_id": "price_1UZpaWGapFJk1jyWJZ4z2XNB",
+      "unit_amount": 799,
+      "type": "one_time"
+    },
+    "lowball": {
+      "price_id": "price_1UZpbFGapFJk1jyWbWKQFSpk",
+      "unit_amount": 799,
+      "type": "one_time"
+    },
+    "inner-clock": {
+      "price_id": "price_1UZpbzGapFJk1jyWWlCAAYEM",
+      "unit_amount": 799,
+      "type": "one_time"
+    }
+  }
+}
