@@ -1,3 +1,9 @@
+## Standard sandbox Checkout compatibility fix — 9 November 2026
+
+The first owner checkout failed because Stripe has Managed Payments enabled by default on this account. Stripe rejected the explicit `payment_method_types` parameter. The sandbox now explicitly sends `managed_payments[enabled]=false` per session and leaves payment-method selection to Stripe, matching the existing standard Checkout/Customer Portal design. The account-wide default is unchanged. This is not a live merchant-of-record or tax decision; those remain launch requirements.
+
+Verified against Stripe using the exact shared request builder: both Laser (payment, AUD 799 cents) and monthly (subscription, AUD 499 cents) returned HTTP 200, `livemode=false`. Both diagnostic sessions were immediately expired without payment details. The temporary token-protected diagnostic branch was removed from the deployed function. Regression coverage checks the explicit standard-flow parameter. Server diagnostics record only resource/method/status, safe machine codes and request IDs; raw Stripe messages, authorization values, payloads and customer IDs are not logged. The owner still needs to complete a hosted test-card purchase to verify payment delivery end to end.
+
 ## Sandbox checkout implementation — 9 November 2026
 
 The unlisted test page is `https://breakroomdaily.com/billing-test`. It shares the existing account session using the official Auth SDK and does not load save-sync code or touch native saves. The `billing` function verifies Auth accounts, permits only the eleven approved prices, creates/reuses account-bound hosted test Checkouts and opens a restricted Customer Portal for cancellation, payment methods and invoices. Customer mappings, checkout receipts and verified access snapshots are private and server-only. `STRIPE_SECRET_KEY` must be a test key, and `STRIPE_WEBHOOK_SECRET` must be set. Return URLs never grant purchases.

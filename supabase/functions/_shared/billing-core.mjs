@@ -105,7 +105,7 @@ export function createBilling({catalog,stripe,db,user,configured,now=Date.now}) 
    const pending=rows.find(r=>r.item===body.item&&r.state==='pending');
    if(pending){const s=sandbox(await stripe('GET','checkout/sessions/'+pending.session_id));return {url:trustedURL(s.url,'checkout.stripe.com')};}
    if(rows.length>=100)throw new BillingError('Sandbox session limit reached',429);
-   const params={mode:body.item==='monthly'?'subscription':'payment',customer:c.customer_id,client_reference_id:uid,'metadata[break_room_user]':uid,'metadata[break_room_item]':body.item,'line_items[0][price]':spec.price_id,'line_items[0][quantity]':'1','payment_method_types[0]':'card',success_url:BASE+'?returned=1',cancel_url:BASE+'?canceled=1','allow_promotion_codes':'false'};
+   const params=checkoutParams(uid,c.customer_id,body.item,spec.price_id);
    const s=sandbox(await stripe('POST','checkout/sessions',params,'br:sandbox:checkout:'+uid+':'+body.item+':'+body.request_id));
    if(s.status!=='open'||objectId(s.customer)!==c.customer_id)throw new BillingError('Unexpected Checkout session');
    await db('session_add',{...args,session_id:s.id,item:body.item,price_id:spec.price_id});
@@ -154,4 +154,14 @@ export function createBilling({catalog,stripe,db,user,configured,now=Date.now}) 
 export function trustedURL(value,hostname){
  let u;try{u=new URL(value);}catch{throw new BillingError('Provider redirect unavailable');}
  if(u.protocol!=='https:'||u.hostname!==hostname||u.username||u.password||u.port)throw new BillingError('Provider redirect rejected');return u.href;
+}
+
+// Sandbox uses the standard Checkout/Portal flow. Explicitly opt out per session
+// because new Stripe accounts may default to the separate Managed Payments flow.
+export function checkoutParams(uid,customer,item,priceId){
+ return {mode:item==='monthly'?'subscription':'payment',customer,client_reference_id:uid,
+  'metadata[break_room_user]':uid,'metadata[break_room_item]':item,
+  'line_items[0][price]':priceId,'line_items[0][quantity]':'1',
+  'managed_payments[enabled]':'false',success_url:BASE+'?returned=1',
+  cancel_url:BASE+'?canceled=1','allow_promotion_codes':'false'};
 }

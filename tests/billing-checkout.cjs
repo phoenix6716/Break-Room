@@ -51,7 +51,9 @@ const UID='00000000-0000-4000-8000-000000000001',OTHER='00000000-0000-4000-8000-
   assert.equal(requests.length,0);
   await checkout('laser');assert.equal(counter,1);
   await checkout('laser');assert.equal(counter,1,'Pending session reused across tabs');
-  assert.equal(requests.find(r=>r.path==='checkout/sessions'&&r.method==='POST').params.customer,'cus_one');
+  const sent=requests.find(r=>r.path==='checkout/sessions'&&r.method==='POST').params;
+  assert.equal(sent.customer,'cus_one');assert.equal(sent['managed_payments[enabled]'],'false','Account defaults must not switch this standard sandbox flow into Managed Payments');
+  assert.equal(sent['payment_method_types[0]'],undefined,'Let Stripe select eligible payment methods');
   assert.deepEqual((await service.action(OTHER,{action:'status'})).games,[],'Another account sees no purchases');
   const s=objects.cs_test_1;s.status='complete';s.payment_status='paid';
   assert.deepEqual((await service.action(UID,{action:'status'})).games,['laser']);
