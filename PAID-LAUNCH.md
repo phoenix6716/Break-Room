@@ -1,3 +1,9 @@
+## Live configuration continued — 12 November 2026
+
+Owner instruction: continue configuration; address representative setup only if Stripe requests action. This supersedes earlier blanket representative blockers. Seller name confirmed: Phoenix Phillips. Published future purchase, cancellation and refund terms; current free-development status remains explicit. No ABN was supplied or invented; GST collection remains off.
+
+Created and verified live portal `bpc_1UakY9KA3LunX0KLKco9zP6g`, with invoice history, payment-method updates, period-end cancellation and the site's policy/return URLs. Stored the ID through the existing private live settings RPC. Created live webhook `we_1UakZCKA3LunX0KLJrOq3yr9`, with exactly the twelve existing handled events and pinned API version 2025-02-24.acacia. It is disabled until both private server secrets are installed. No real customer, checkout, charge or subscription was created. Credential setup and signed live delivery remain unfinished; the live services and all ten games remain in their prelaunch state. Next owner step: create a restricted live key in Stripe, then save it directly in Supabase Edge Function secrets; never paste it into chat. See `STRIPE-LIVE-SETUP.md`.
+
 ## Website purchase integration prepared — 11 November 2026
 
 Account now includes membership status, paid-through/cancellation information, owned-game links, Refresh purchases and Manage billing. Normal browsing retains the free-development notice and does not auto-request unavailable live billing. The explicit `account.html?billing_preview=sandbox#purchases` preview reads only the signed-in player's test records and labels all test purchases. Actor changes discard pending replies and clear displayed ownership; failures do not fabricate Free/Owned states or permit redirects to arbitrary URLs.

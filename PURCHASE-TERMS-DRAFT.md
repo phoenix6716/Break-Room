@@ -1,6 +1,6 @@
-# Purchase terms — preparation draft
+# Purchase terms — published policy reference
 
-Not published. Real checkout remains disabled. The seller details and applicable account-representative requirements must be resolved before these terms are used for real purchases. The owner selected the case-by-case refund policy below.
+Published on Terms of play on 12 November 2026 as the policy for future paid plans. Real checkout remains disabled. The owner confirmed the legal seller name Phoenix Phillips and selected the case-by-case refund policy below.
 
 ## Approved plans
 
@@ -26,8 +26,8 @@ A full refund removes the access associated with that purchase. Other valid purc
 
 ## Required seller information
 
-Before publication, confirm the legal seller name and any required business identifiers, approved refund policy and customer-facing payment/support details. Do not populate these from unconfirmed identity data or publish personal verification documents.
+Seller: Phoenix Phillips (confirmed by the owner). Support: support@breakroomdaily.com. No ABN was supplied or invented. Do not publish personal verification documents.
 
 ## Publication boundary
 
-Current public terms continue to describe the free-development service. This draft does not activate purchases, add advertising, change tax registrations or restrict access to any game.
+Public terms explain that paid plans have not launched and all games remain free. Publishing this policy does not activate purchases, add advertising, change tax registrations or restrict access to any game.
