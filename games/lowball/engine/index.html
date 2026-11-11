@@ -1728,7 +1728,7 @@ document.getElementById("statsClose").addEventListener("click", () => closeModal
 document.getElementById("statsShare").addEventListener("click", function () { copyShare(this); });
 
 // ---------- Unlimited paywall (game side; payments connect through SITE.checkoutUrl and SITE.restoreApi) ----------
-function unlimitedUnlocked() { return Boolean(window.SITE && window.SITE.unlimitedFree) || safeGet("pc_pro", "") === "1"; }
+function unlimitedUnlocked() { return Boolean(window.SITE && window.SITE.unlimitedFree); }
 function showLock() {
   mode = "locked";
   track("paywall_view");
@@ -1775,6 +1775,7 @@ document.getElementById("restoreGo").addEventListener("click", async () => {
 
 // ---------- Mode + country switching ----------
 function startNormalMode() {
+  membershipAccess()?.cancel();
   rememberPractice();stopFx();document.getElementById("lowball-practice").replaceChildren();
   document.getElementById("final-score-label").textContent = "Arcade score / 100";
   mode = "normal";
@@ -1835,8 +1836,11 @@ function startNormalMode() {
   if (dailyDraft && dailyDraft.day === todayKey && dailyDraft.index === roundIndex) guessInput.value = dailyDraft.value;
 }
 
+function membershipAccess() { try { return window.parent !== window && window.parent.BREAK_ROOM_MEMBERSHIP || window.BREAK_ROOM_MEMBERSHIP; } catch { return window.BREAK_ROOM_MEMBERSHIP; } }
 function startUnlimitedMode(fresh = false) {
-  if (!unlimitedUnlocked()) { showLock(); return; }
+  const access = membershipAccess();
+  if (access) { if (!access.allow('lowball', () => startUnlimitedMode(fresh))) return; }
+  else if (!unlimitedUnlocked()) { showLock(); return; }
   if (mode === "unlimited" && fresh !== true) return;
   if (mode === "normal" && playArea.style.display !== "none") dailyDraft={day:getTodayKey(),index:roundIndex,value:guessInput.value};
   stopFx();

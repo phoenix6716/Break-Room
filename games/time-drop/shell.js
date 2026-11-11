@@ -7,6 +7,8 @@
   let mode='daily';
   function selectMode(next,focus=false){
     if(!['daily','unlimited'].includes(next))throw new RangeError('Unknown game mode');
+    if(next==='unlimited'&&window.BREAK_ROOM_MEMBERSHIP&&!window.BREAK_ROOM_MEMBERSHIP.allow('time-drop',()=>selectMode(next,focus)))return;
+    if(next==='daily')window.BREAK_ROOM_MEMBERSHIP?.cancel();
     mode=next;
     tabs.forEach(tab=>{const active=tab.dataset.gameMode===mode;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;if(active){panel.setAttribute('aria-labelledby',tab.id);if(focus)tab.focus()}});
     modeDescription.textContent=mode==='daily'?'Daily · Five untimed events.':'Unlimited · Free practice. No Daily score.';

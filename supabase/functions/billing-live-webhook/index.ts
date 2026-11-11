@@ -1,0 +1,18 @@
+import {createHandler} from '../billing-webhook/handler.mjs';
+import {billing} from '../_shared/billing-live-runtime.ts';
+
+Deno.serve(createHandler({
+ environment:'live',
+ secret:Deno.env.get('STRIPE_LIVE_WEBHOOK_SECRET'),
+ process:(id:string)=>billing.event(id),
+ enqueue:async (event:Record<string,unknown>) => {
+  const key = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+  const url = Deno.env.get('SUPABASE_URL');
+  if (!key || !url) throw Error('Server configuration unavailable');
+  const response = await fetch(url + '/rest/v1/rpc/billing_receive_live_event', {
+   method:'POST',headers:{apikey:key,Authorization:'Bearer ' + key,'Content-Type':'application/json'},
+   body:JSON.stringify(event),signal:AbortSignal.timeout(10000)
+  });
+  if (!response.ok) throw Error('Event persistence failed');
+ }
+}));

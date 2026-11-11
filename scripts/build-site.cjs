@@ -35,9 +35,13 @@ function copy(file,relative){
   // shared across every authenticated header, including dynamically mounted games.
   const uiPrefix=path.posix.relative(path.posix.dirname(relative),'.');const uiBase=uiPrefix?uiPrefix+'/':'';
   rendered=rendered.replace(/<head([^>]*)>/,'<head$1><script src="'+uiBase+'clean-urls.js?v=clean-20261109"></script><script src="'+uiBase+'preferences.js?v=theme-20261106"></script><link rel="stylesheet" href="'+uiBase+'preferences.css?v=settings-20261106">');
+  if((/^games\/[^/]+\/index\.html$/.test(relative)&&activeGames.has(relative.split('/')[1]))||relative==='games/lowball/engine/index.html'){
+   rendered=rendered.replace(/<head([^>]*)>/,'<head$1><script src="'+uiBase+'membership-policy.js?v=billing-20261111"></script><script src="'+uiBase+'membership.js?v=billing-20261111"></script><link rel="stylesheet" href="'+uiBase+'membership.css?v=billing-20261111">');
+  }
   rendered=rendered.replace('</head>','<link rel="stylesheet" href="'+uiBase+'theme.css?v=theme-pairs-20261108"><script defer src="'+uiBase+'theme-toggle.js?v=theme-20261106"></script></head>');
   if(rendered.includes('accounts.js'))rendered=rendered.replace('</head>','<link rel="stylesheet" href="'+uiBase+'account-menu.css?v=leaderboards-20261106"><script defer src="'+uiBase+'account-menu.js?v=clean-urls-20261109"></script></head>');
   if(/^games\/[^/]+\/index\.html$/.test(relative)&&activeGames.has(relative.split('/')[1]))rendered=rendered.replace('<!-- shared-legal-footer:start -->','<p class="game-leaderboard-link"><a href="../../leaderboards.html?game='+relative.split('/')[1]+'">Daily leaderboard →</a></p><!-- shared-legal-footer:start -->');
+  rendered=rendered.replace(/(src="[^"\n]*(?:shell|stack-up)\.js)(?:\?[^"\n]*)?"/g,'$1?v=billing-20261111"');
   // Shared achievement UI reads the same native results as Profile; no engine writes change.
   const achievementPage=(/^games\/[^/]+\/index\.html$/.test(relative)&&activeGames.has(relative.split('/')[1]));
   if(achievementPage){
@@ -50,7 +54,7 @@ function copy(file,relative){
    rendered=rendered.replace('</head>',additions+'</head>');
   }
   rendered=rendered.replace(/(src="[^"]*profile-records\.js)(?:\?[^"]*)?"/g,'$1?v=achievements-20261105"');
-  fs.writeFileSync(target,applyBrand(rendered.replace(/(src="[^"]*cloud-saves\.js)(?:\?[^"]*)?"/g,'$1?v=stack-variety-20261105"').replace(/(src="[^"]*hidden-gem-model\.js)(?:\?[^"]*)?"/g,'$1?v=coverage-20261101"').replace(/(src="[^"]*(?:friends|leagues|leagues-model)\.js)(?:\?[^"]*)?"/g,'$1?v=first-try-20261105"').replace(/(src="[^"]*accounts\.js)(?:\?[^"]*)?"/g,'$1?v=cross-device-recovery-20261109"'),relative));
+  fs.writeFileSync(target,applyBrand(rendered.replace(/(src="[^"]*cloud-saves\.js)(?:\?[^"]*)?"/g,'$1?v=stack-variety-20261105"').replace(/(src="[^"]*hidden-gem-model\.js)(?:\?[^"]*)?"/g,'$1?v=coverage-20261101"').replace(/(src="[^"]*(?:friends|leagues|leagues-model)\.js)(?:\?[^"]*)?"/g,'$1?v=first-try-20261105"').replace(/(src="[^"]*accounts\.js)(?:\?[^"]*)?"/g,'$1?v=account-billing-20261111"'),relative));
  }else fs.copyFileSync(file,target);
  count++;total+=fs.statSync(target).size;
 }

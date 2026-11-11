@@ -263,7 +263,17 @@
  }
  async function updateEmail(value){return accountAction(async check=>{const {data,error}=await client.auth.updateUser({email:value.trim()},{emailRedirectTo:accountURL});if(error)throw error;check();session={...session,user:data.user};render();return data.user;});}
  async function resetPassword(){return accountAction(async check=>{const email=session.user.email;if(!email)throw Error('This account has no email address.');const {error}=await requestRecovery(email);if(error)throw error;check();});}
- window.BREAK_ROOM_ACCOUNTS=Object.freeze({sync:syncUpload,ready,signOut:requestSignOut,exportSaves:download,updateName,updateEmail,resetPassword,setSharing:value=>{if(typeof value!=='boolean')throw Error('Choose a sharing setting.');return socialSettings(undefined,value);},getUser:()=>session?.user||null,
+ async function billingRequest(body,environment='live'){
+  if(!['live','sandbox'].includes(environment)||!['status','checkout','portal'].includes(body?.action))throw Error('Unknown billing operation.');
+  return accountAction(async check=>{
+   const signed=await authenticated(),actor=signed.user.id;
+   const response=await fetch(config.url+'/functions/v1/'+(environment==='live'?'billing-live':'billing'),{method:'POST',headers:{apikey:config.publishableKey,Authorization:'Bearer '+signed.access_token,'Content-Type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(90000)});
+   const value=await response.json();check();
+   if((await authenticated()).user.id!==actor)throw Error('Account changed. Please reload.');
+   if(!response.ok)throw Error(value.error||'Billing is unavailable. Please try again.');return value;
+  });
+ }
+ window.BREAK_ROOM_ACCOUNTS=Object.freeze({sync:syncUpload,ready,signOut:requestSignOut,exportSaves:download,billingRequest,updateName,updateEmail,resetPassword,setSharing:value=>{if(typeof value!=='boolean')throw Error('Choose a sharing setting.');return socialSettings(undefined,value);},getUser:()=>session?.user||null,
   cloudActive:()=>{try{return !!session&&owner()===session.user.id;}catch{return false;}},
   async leaderboardRPC(name,args={}){await ready;if(!['daily_leaderboard','leaderboard_standings','leaderboard_profile'].includes(name))throw Error('Unknown leaderboard operation.');if(!client)throw Error('Account service is unavailable. Please try again.');if(name==='leaderboard_profile'&&!session)throw Error('Please sign in to manage your public listing.');if(name==='leaderboard_profile'&&args.p_action==='set'&&args.p_expected_user!==session.user.id)throw Error('Account changed. Please reload before changing your listing.');const {data,error}=await client.rpc(name,args);if(error)throw error;return data;},
   async friendsRPC(name,args={}){await ready;if(!['friend_hub','friend_scores','hidden_gem_friend_scores','shift_work_friend_scores','codebreak_friend_scores','league_hub'].includes(name))throw Error('Unknown friends operation.');if(!client||!session)throw Error('Please sign in to use friends.');const {data,error}=await client.rpc(name,args);if(error)throw error;return data;}

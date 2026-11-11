@@ -23,7 +23,8 @@ export async function signatureValid(raw, header, secret, now = Date.now()) {
  }
  return false;
 }
-export function createHandler({secret, enqueue, process, now = Date.now}) {
+export function createHandler({secret, enqueue, process, now = Date.now, environment = 'sandbox'}) {
+ if(!['sandbox','live'].includes(environment))throw Error('Unknown webhook environment');
  return async request => {
   const reply = (body, status) => Response.json(body, {status,headers:{'Cache-Control':'no-store'}});
   if (request.method !== 'POST') return reply({error:'POST required'},405);
@@ -34,7 +35,7 @@ export function createHandler({secret, enqueue, process, now = Date.now}) {
   if (!await signatureValid(raw,request.headers.get('stripe-signature'),secret,now())) return reply({error:'Invalid signature'},400);
   let event;
   try { event = JSON.parse(raw); } catch { return reply({error:'Invalid JSON'},400); }
-  if (event.livemode !== false || !/^evt_[A-Za-z0-9]+$/.test(event.id || '') || !Number.isSafeInteger(event.created)) return reply({error:'Sandbox event required'},400);
+  if (event.livemode !== (environment === 'live') || !/^evt_[A-Za-z0-9]+$/.test(event.id || '') || !Number.isSafeInteger(event.created)) return reply({error:environment==='live'?'Live event required':'Sandbox event required'},400);
   if (!EVENTS.has(event.type)) return reply({received:true,ignored:true},200);
   if (typeof event.data?.object?.id !== 'string' || event.data.object.id.length > 255) return reply({error:'Object ID required'},400);
   try {

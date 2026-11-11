@@ -1,0 +1,87 @@
+{
+  "environment": "live",
+  "stripe_account_id": "acct_1UXajXKA3LunX0KL",
+  "verified": true,
+  "verified_date": "2026-11-11",
+  "checkout_enabled": false,
+  "currency": "aud",
+  "subscription": {
+    "product_id": "prod_Vb1SHpsRqQ9vzJ",
+    "price_id": "price_1UaPHMKA3LunX0KL9wxqsKTZ",
+    "unit_amount": 499,
+    "tax_behavior": "inclusive",
+    "interval": "month"
+  },
+  "games": {
+    "laser": {
+      "product_id": "prod_Vb1WzaYpFoc1TY",
+      "price_id": "price_1UaPHLKA3LunX0KL9SVQLQjr",
+      "unit_amount": 799,
+      "tax_behavior": "inclusive",
+      "type": "one_time"
+    },
+    "time-drop": {
+      "product_id": "prod_Vb1Y1tS6RVexFe",
+      "price_id": "price_1UaPHTKA3LunX0KLZSnZj2sa",
+      "unit_amount": 799,
+      "tax_behavior": "inclusive",
+      "type": "one_time"
+    },
+    "clue-ladder": {
+      "product_id": "prod_Vb1ZM4898YsdSU",
+      "price_id": "price_1UaPHTKA3LunX0KL7tWQT4Hv",
+      "unit_amount": 799,
+      "tax_behavior": "inclusive",
+      "type": "one_time"
+    },
+    "seating-chart": {
+      "product_id": "prod_Vb1atZ1WEQQ6gz",
+      "price_id": "price_1UaPHMKA3LunX0KLidVc9ApT",
+      "unit_amount": 799,
+      "tax_behavior": "inclusive",
+      "type": "one_time"
+    },
+    "shift-work": {
+      "product_id": "prod_Vb1bw6gWogqV5R",
+      "price_id": "price_1UaPHMKA3LunX0KL9bW93MXG",
+      "unit_amount": 799,
+      "tax_behavior": "inclusive",
+      "type": "one_time"
+    },
+    "codebreak": {
+      "product_id": "prod_Vb1ct2brKMN1Ah",
+      "price_id": "price_1UaPHMKA3LunX0KLvgbUgD1a",
+      "unit_amount": 799,
+      "tax_behavior": "inclusive",
+      "type": "one_time"
+    },
+    "stack-up": {
+      "product_id": "prod_Vb1dsQo5thtxi0",
+      "price_id": "price_1UaPHLKA3LunX0KLC34ERoaw",
+      "unit_amount": 799,
+      "tax_behavior": "inclusive",
+      "type": "one_time"
+    },
+    "pack": {
+      "product_id": "prod_Vb1dphYo43SG3x",
+      "price_id": "price_1UaPHMKA3LunX0KLhzPsGUw8",
+      "unit_amount": 799,
+      "tax_behavior": "inclusive",
+      "type": "one_time"
+    },
+    "lowball": {
+      "product_id": "prod_Vb1eoetxez3qWb",
+      "price_id": "price_1UaPHLKA3LunX0KLlEaEaIMW",
+      "unit_amount": 799,
+      "tax_behavior": "inclusive",
+      "type": "one_time"
+    },
+    "inner-clock": {
+      "product_id": "prod_Vb1frvFN6qBDu2",
+      "price_id": "price_1UaPHLKA3LunX0KLpv0uzTsU",
+      "unit_amount": 799,
+      "tax_behavior": "inclusive",
+      "type": "one_time"
+    }
+  }
+}
