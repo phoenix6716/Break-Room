@@ -1,6 +1,6 @@
 # Purchase terms — preparation draft
 
-Not published. Real checkout remains disabled. The seller details, applicable account-representative requirements and refund proposal below must be resolved before these terms are used for real purchases.
+Not published. Real checkout remains disabled. The seller details and applicable account-representative requirements must be resolved before these terms are used for real purchases. The owner selected the case-by-case refund policy below.
 
 ## Approved plans
 
@@ -16,9 +16,11 @@ Monthly subscriptions charge again at renewal. Customers can cancel renewal thro
 
 ## Refunds and consumer rights
 
-Customers can contact support@breakroomdaily.com about duplicate charges, technical faults, access problems or refund requests. Apply remedies required by Australian Consumer Law and other applicable consumer law. These terms must not exclude statutory rights or use a blanket no-refunds statement.
+For a refund request, email support@breakroomdaily.com with the reason for the request and enough purchase information to help us investigate. We review requests individually. Reasons may include duplicate or incorrect charges, paid access that was not provided, or a significant technical problem with the purchased service. This list is not exhaustive.
 
-**Owner decision pending — proposed voluntary policy:** offer a full refund requested within seven days of an individual purchase or subscription charge, including renewals. This proposal is not approved or published. Outside that voluntary window, statutory rights still apply.
+We do not normally offer refunds solely for a change of mind, except where required by applicable law. There is no automatic seven-day refund offer.
+
+Nothing in this policy excludes or limits refunds or other remedies available under Australian Consumer Law or other applicable consumer law. Statutory remedies are not dependent on our discretionary approval.
 
 A full refund removes the access associated with that purchase. Other valid purchases and any remaining valid subscription access stay in place. Payment changes do not erase gameplay progress.
 

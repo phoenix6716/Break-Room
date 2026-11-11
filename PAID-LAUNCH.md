@@ -1,5 +1,7 @@
 ## Live catalogue preparation — 11 November 2026
 
+The owner rejected an automatic seven-day refund window and selected case-by-case requests supported by a reason. `PURCHASE-TERMS-DRAFT.md` now reflects that choice, with examples of billing/access/service issues and statutory remedies preserved. The draft remains unpublished on the customer-facing site.
+
 The connected Stripe plugin verified the existing live Break Room catalogue: one active AUD 499-cent monthly price and ten active AUD 799-cent one-time prices, all with inclusive price tax behaviour. `supabase/billing-live-prices.json` records only public catalogue/account identifiers and approved amounts; `checkout_enabled` remains false. This reference is not imported into the sandbox runtime and is excluded from the public site build. No live Checkout session, charge, registration, webhook or access restriction was created.
 
 Stripe Tax settings return active, but the live account has no recorded tax registrations. The owner confirmed they are not registered for Australian GST. No GST collection is configured, and no tax registration should be added without the owner confirming an actual registration. This statement does not determine whether registration is legally required in any jurisdiction. No registration was added and automatic tax was not enabled. Price tax behaviour alone does not configure tax collection. Final refund/purchase terms, separate live-mode billing storage/configuration and confirmation of the applicable adult-representative requirement remain launch dependencies.
