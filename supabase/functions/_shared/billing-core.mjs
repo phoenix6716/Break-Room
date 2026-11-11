@@ -65,12 +65,21 @@ export function createBilling({catalog,stripe,db,user,configured,now=Date.now}) 
   const through=sub.current_period_end;
   if(!Number.isSafeInteger(through))throw new BillingError('Subscription paid period unavailable');
   result.paid_through=new Date(through*1000).toISOString();result.cancel_at_period_end=sub.cancel_at_period_end===true;
+  // A sandbox simulation advances Stripe's clock, not the server's wall clock.
+  let evaluatedAt=now();
+  if(sub.test_clock){
+   const clockId=objectId(sub.test_clock);
+   const clock=sandbox(await stripe('GET','test_helpers/test_clocks/'+encodeURIComponent(clockId)));
+   if(clock.id!==clockId||clock.status!=='ready'||!Number.isSafeInteger(clock.frozen_time))throw new BillingError('Stripe simulation is still advancing or unavailable. Retry when it is ready.');
+   evaluatedAt=clock.frozen_time*1000;
+  }
+  result.clock_now=evaluatedAt;
   // Never grant a new period from an unpaid/latest failed invoice or trial.
-  if(['active','canceled'].includes(sub.status)&&through*1000>now()&&invoice&&typeof invoice!=='string'&&invoice.livemode===false&&invoice.status==='paid'&&invoice.amount_paid>=spec.unit_amount&&await paymentValid(invoice.payment_intent))result.state='active';
+  if(['active','canceled'].includes(sub.status)&&through*1000>evaluatedAt&&invoice&&typeof invoice!=='string'&&invoice.livemode===false&&invoice.status==='paid'&&invoice.amount_paid>=spec.unit_amount&&await paymentValid(invoice.payment_intent))result.state='active';
   return result;
  }
  function summary(rows){
-  const monthly=rows.filter(r=>r.item==='monthly'&&r.state==='active'&&Date.parse(r.paid_through)>now()).sort((a,b)=>Date.parse(b.paid_through)-Date.parse(a.paid_through))[0];
+  const monthly=rows.filter(r=>r.item==='monthly'&&r.state==='active'&&Date.parse(r.paid_through)>(r.clock_now??now())).sort((a,b)=>Date.parse(b.paid_through)-Date.parse(a.paid_through))[0];
   const games=[...new Set(rows.filter(r=>r.item!=='monthly'&&r.state==='active').map(r=>r.item))];
   return {environment:'sandbox',verified:true,subscription_active:!!monthly,paid_through:monthly?.paid_through||null,cancel_at_period_end:monthly?.cancel_at_period_end||false,games,ad_free:!!monthly||games.length>0,pending:rows.filter(r=>r.state==='pending').length};
  }

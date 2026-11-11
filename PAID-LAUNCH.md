@@ -1,3 +1,9 @@
+## Owner sandbox checks and simulation preparation — 11 November 2026
+
+Owner-confirmed and database-verified: hosted monthly payment, cancellation of renewal with remaining paid access, one-time Laser payment, same-account visibility across devices, and full Laser refund. Signed events were processed; the refund made Laser inactive while monthly access remained active with renewal canceled. These results supersede earlier pending-owner-test notes below. Live payments remain disabled.
+
+Stripe's current Dashboard exposes **Run simulation** on the existing test subscription. The backend now evaluates clock-attached sandbox subscriptions using the provider's verified test-clock `frozen_time`, including the exact expiry boundary; it returns a retryable error while the clock advances. Browser-supplied time is never accepted. Regression coverage checks access before/at simulated expiry, advancing-clock failure, live-clock rejection and preservation of separate game ownership. Actual provider-simulated expiry and failed renewal remain pending until the owner advances the sandbox simulation.
+
 ## Standard sandbox Checkout compatibility fix — 9 November 2026
 
 The first owner checkout failed because Stripe has Managed Payments enabled by default on this account. Stripe rejected the explicit `payment_method_types` parameter. The sandbox now explicitly sends `managed_payments[enabled]=false` per session and leaves payment-method selection to Stripe, matching the existing standard Checkout/Customer Portal design. The account-wide default is unchanged. This is not a live merchant-of-record or tax decision; those remain launch requirements.

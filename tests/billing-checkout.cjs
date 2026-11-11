@@ -27,7 +27,7 @@ const UID='00000000-0000-4000-8000-000000000001',OTHER='00000000-0000-4000-8000-
   // Start clean for provider contracts, retaining real service-only PostgreSQL RPCs.
   await db.exec('reset role;delete from br_billing.sandbox_sessions;delete from br_billing.sandbox_customers;set role service_role;');
   const objects={},requests=[],now=1800000000000;
-  let counter=0,piStatus='succeeded',refunded=false,disputes=[],subStatus='active',invoicePaid=true,periodEnd=now/1000+3600,cancel=false;
+  let counter=0,piStatus='succeeded',refunded=false,disputes=[],subStatus='active',invoicePaid=true,periodEnd=now/1000+3600,cancel=false,subClock=null,clockTime=now/1000,clockStatus='ready',clockLive=false;
   const stripe=async(method,path,params,idem)=>{
    requests.push({method,path,params,idem});
    if(method==='POST'&&path==='customers')return {id:params['metadata[break_room_user]']===UID?'cus_one':'cus_other',livemode:false};
@@ -39,7 +39,8 @@ const UID='00000000-0000-4000-8000-000000000001',OTHER='00000000-0000-4000-8000-
    if(m){const s=objects[m[1]];if(!s)throw Error('missing session');return m[2]?{data:[{quantity:1,price:{id:s.price,livemode:false,currency:'aud',unit_amount:s.amount_total}}],has_more:false}:structuredClone(s);}
    if(path.startsWith('payment_intents/'))return {id:'pi_test',livemode:false,status:piStatus,latest_charge:{id:'ch_test',livemode:false,paid:true,refunded,amount_refunded:refunded?799:0,amount:799}};
    if(path.startsWith('disputes?'))return {data:structuredClone(disputes),has_more:false};
-   if(path.startsWith('subscriptions/'))return {id:'sub_test',livemode:false,customer:'cus_one',status:subStatus,cancel_at_period_end:cancel,current_period_end:periodEnd,items:{data:[{quantity:1,price:{id:catalog.subscription.price_id}}]},latest_invoice:{id:'in_test',livemode:false,status:invoicePaid?'paid':'open',amount_paid:invoicePaid?499:0,payment_intent:'pi_sub'}};
+   if(path.startsWith('subscriptions/'))return {id:'sub_test',livemode:false,customer:'cus_one',test_clock:subClock,status:subStatus,cancel_at_period_end:cancel,current_period_end:periodEnd,items:{data:[{quantity:1,price:{id:catalog.subscription.price_id}}]},latest_invoice:{id:'in_test',livemode:false,status:invoicePaid?'paid':'open',amount_paid:invoicePaid?499:0,payment_intent:'pi_sub'}};
+   if(path.startsWith('test_helpers/test_clocks/'))return {id:'clock_test',livemode:clockLive,status:clockStatus,frozen_time:clockTime};
    if(path.startsWith('events/'))return {id:path.slice(7),livemode:false,type:'customer.subscription.updated',data:{object:{customer:'cus_one'}}};
    if(path==='billing_portal/configurations')return {id:'bpc_test',livemode:false};
    if(path==='billing_portal/sessions')return {url:'https://billing.stripe.com/p/session/test'};
@@ -70,7 +71,13 @@ const UID='00000000-0000-4000-8000-000000000001',OTHER='00000000-0000-4000-8000-
   cancel=true;assert.equal((await service.action(UID,{action:'status'})).cancel_at_period_end,true);
   invoicePaid=false;assert.equal((await service.action(UID,{action:'status'})).subscription_active,false);invoicePaid=true;
   subStatus='past_due';assert.equal((await service.action(UID,{action:'status'})).subscription_active,false);
-  subStatus='canceled';periodEnd=now/1000-1;
+  subStatus='canceled';subClock='clock_test';clockTime=periodEnd-1;
+  assert.equal((await service.action(UID,{action:'status'})).subscription_active,true,'Canceled test access lasts through the simulated paid period');
+  clockTime=periodEnd;
+  assert.equal((await service.action(UID,{action:'status'})).subscription_active,false,'At the exact simulated expiry boundary access ends even before real time reaches it');
+  clockStatus='advancing';await assert.rejects(()=>service.action(UID,{action:'status'}),/simulation/);clockStatus='ready';
+  clockLive=true;await assert.rejects(()=>service.action(UID,{action:'status'}),/Sandbox/);clockLive=false;
+  subClock=null;periodEnd=now/1000-1;
   const expired=await service.action(UID,{action:'status'});assert.equal(expired.subscription_active,false);assert.deepEqual(expired.games,['laser']);assert.equal(expired.ad_free,true);
   await service.event('evt_outoforder');await service.event('evt_outoforder');assert.equal((await service.action(UID,{action:'status'})).subscription_active,false,'Old events reconcile latest provider state');
   assert.equal((await service.action(UID,{action:'portal'})).url,'https://billing.stripe.com/p/session/test');
