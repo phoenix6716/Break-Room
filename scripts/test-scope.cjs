@@ -56,7 +56,7 @@ function selectChecks(changed,available,{full=false}={}){
   if(file==='supabase/migrations/20261108232113_puzzle_challenge_variety.sql'){for(const id of ['shift-work','seating-chart'])game(id,true);add('puzzle-challenge.cjs','leaderboards-database.cjs','score-integrity.cjs','leaderboards.cjs');continue;}
   if(/^playtest\.(?:js|css|html)$/.test(file)){add('challenge-playtest.cjs');continue;}
   if(file==='supabase/migrations/20261109011202_laser_mirror_progression.sql'){game('laser',true);add('laser-progression.cjs','score-integrity.cjs','leaderboards-database.cjs','leaderboards.cjs');continue;}
-  if(/^supabase\/(?:functions\/(?:billing(?:-|\/)|_shared\/billing|_shared\/catalog)|billing-sandbox-prices\.json)/.test(file)||/^supabase\/migrations\/20261109(?:102638_sandbox_billing|104937_sandbox_checkout)\.sql$/.test(file)){add('billing-webhook.cjs','billing-checkout.cjs');continue;}
+  if(/^supabase\/(?:functions\/(?:billing(?:-|\/)|_shared\/billing|_shared\/catalog)|billing-(?:sandbox|live)-prices\.json)/.test(file)||/^supabase\/migrations\/20261109(?:102638_sandbox_billing|104937_sandbox_checkout)\.sql$/.test(file)){add('billing-webhook.cjs','billing-checkout.cjs');continue;}
   if(/^billing-test\.(?:html|js|css)$/.test(file)){add('billing-checkout.cjs','billing-checkout-ui.cjs');continue;}
   if(file==='worker.mjs'||file==='wrangler.json'||file==='clean-urls.js'){add('cloudflare-routing.cjs','clean-url-ui.cjs','release.cjs');continue;}
   const own=file.match(/^games\/([^/]+)\//);

@@ -1,3 +1,11 @@
+## Live catalogue preparation — 11 November 2026
+
+The connected Stripe plugin verified the existing live Break Room catalogue: one active AUD 499-cent monthly price and ten active AUD 799-cent one-time prices, all with inclusive price tax behaviour. `supabase/billing-live-prices.json` records only public catalogue/account identifiers and approved amounts; `checkout_enabled` remains false. This reference is not imported into the sandbox runtime and is excluded from the public site build. No live Checkout session, charge, registration, webhook or access restriction was created.
+
+Stripe Tax settings return active, but the live account has no recorded tax registrations. The owner confirmed they are not registered for Australian GST. No GST collection is configured, and no tax registration should be added without the owner confirming an actual registration. This statement does not determine whether registration is legally required in any jurisdiction. No registration was added and automatic tax was not enabled. Price tax behaviour alone does not configure tax collection. Final refund/purchase terms, separate live-mode billing storage/configuration and confirmation of the applicable adult-representative requirement remain launch dependencies.
+
+The owner also confirmed simulated cancellation expiry; database readback showed monthly access inactive and the signed subscription-deleted event processed. This supersedes the pending-expiry note below. Failed renewal still has automated coverage rather than a completed manual provider test.
+
 ## Owner sandbox checks and simulation preparation — 11 November 2026
 
 Owner-confirmed and database-verified: hosted monthly payment, cancellation of renewal with remaining paid access, one-time Laser payment, same-account visibility across devices, and full Laser refund. Signed events were processed; the refund made Laser inactive while monthly access remained active with renewal canceled. These results supersede earlier pending-owner-test notes below. Live payments remain disabled.
