@@ -1,5 +1,8 @@
 const assert=require('node:assert/strict'),{createGuard,games}=require('../membership-policy.js');
 (async()=>{
+ const {hasAccess}=require('../membership-policy.js'),test={environment:'sandbox',verified:true,configured:true,subscription_active:false,games:['laser']};
+ assert.equal(hasAccess(test,'laser'),false);assert.equal(hasAccess(test,'laser','sandbox'),true);assert.equal(hasAccess(test,'pack','sandbox'),false);assert.equal(hasAccess({...test,verified:false},'laser','sandbox'),false);
+
  let actor='one',reads=0,shown=[],result={environment:'live',configured:true,verified:true,subscription_active:false,games:[]};
  const free=createGuard({enforce:false,getActor:()=>{throw Error('Free play must not wait for auth')},readStatus:()=>{throw Error('Free play must not fetch billing')},show:()=>{throw Error('No paywall before launch')}});
  for(const game of games)assert.equal(free.allow(game,()=>{}),true);
