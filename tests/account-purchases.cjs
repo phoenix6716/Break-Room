@@ -21,7 +21,7 @@ const session={access_token:jwt,refresh_token:'test-refresh',token_type:'bearer'
   throw Error('Unexpected endpoint '+url.pathname);
  });
  await ctx.addInitScript(({session,uid})=>{localStorage.setItem('br:supabase:auth',JSON.stringify(session));localStorage.setItem('br:cloud:owner',uid);localStorage.setItem('break-room:theme','dark');localStorage.setItem('unrelated:save-backup','keep');},{session,uid});
- await p.goto(base+'/account.html');await p.evaluate(()=>BREAK_ROOM_ACCOUNTS.ready);assert.equal(requests.length,0,'Normal prelaunch account never starts a checkout or assumes paid access');
+ await p.goto(base+'/account.html');await p.evaluate(()=>BREAK_ROOM_ACCOUNTS.ready);await p.waitForFunction(()=>document.querySelector('#purchase-games').textContent.includes('Laser'));assert(requests.length>=1,'Account automatically verifies current purchases');assert(requests.every(r=>r.body.action==='status'),'Opening Account never creates a checkout');
  await p.locator('#purchase-refresh').click();await p.waitForFunction(()=>document.querySelector('#purchase-games').textContent.includes('Laser'));
  assert(requests.every(r=>r.endpoint.endsWith('billing-live')&&r.auth==='Bearer '+session.access_token),'Official account helper authenticates live status with its verified actor');
  await p.goto(base+'/account.html?billing_preview=sandbox#purchases');await p.waitForFunction(()=>document.querySelector('#purchase-games').textContent.includes('Laser'));

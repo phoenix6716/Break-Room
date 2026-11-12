@@ -22,7 +22,8 @@ async function logProviderFailure(response:Response,method:string,resource:strin
 return createBilling({
  environment,
  // Live activation requires a reviewed source change as well as private credentials.
- checkoutEnabled:()=>!live,
+ checkoutEnabled:()=>!live||catalog.checkout_enabled===true,
+ enforcementEnabled:()=>live&&catalog.checkout_enabled===true,
  returnURL:live?'https://breakroomdaily.com/account':'https://breakroomdaily.com/billing-test',
  catalog,
  configured:()=>!!(validKey()&&webhookSecret?.startsWith('whsec_')&&url&&service&&anon),

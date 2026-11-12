@@ -1,3 +1,7 @@
+## Public purchases requested — 12 November 2026
+
+Owner authorized the live monthly plan and all ten individual purchases, with Daily free and Unlimited entered through server-verified live ownership. Pricing, Account and Terms describe the active offering. Live catalogue activation and both live services are published with matching flags; no browser flag or sandbox purchase grants ownership. All amounts, monthly paid-through cancellation and statutory refund remedies remain as agreed. GST collection remains off and no ads are installed. Focused automated checks and live readiness/layout verification do not constitute a genuine customer's completed purchase; none is fabricated or claimed. Original 100-session/account fail-closed bound and public static engine limitations remain documented.
+
 ## Live secrets supplied; one read permission missing — 12 November 2026
 
 Both live secret names are now privately supplied by the owner and detected by the runtime. Readiness is not yet successful: the restricted key gets HTTP 403 `more_permissions_required` for `GET /v1/account`. The account-read permission was omitted from the walkthrough's on-screen list. Add Read to the resource covering that own-account identity endpoint, then recheck readiness before enabling the existing paused webhook. The database RPC probe passes. No customer, Checkout session, charge or subscription was created, and no signed live delivery has been verified. Safe diagnostics were added and deployed to the live billing service; no raw provider errors or secret values are logged.

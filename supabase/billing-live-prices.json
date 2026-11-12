@@ -3,7 +3,7 @@
   "stripe_account_id": "acct_1UXajXKA3LunX0KL",
   "verified": true,
   "verified_date": "2026-11-11",
-  "checkout_enabled": false,
+  "checkout_enabled": true,
   "currency": "aud",
   "subscription": {
     "product_id": "prod_Vb1SHpsRqQ9vzJ",

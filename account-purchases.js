@@ -14,7 +14,7 @@
  const check=(id,epoch)=>{if(id!==user()||epoch!==generation)throw Error('Account changed. Please refresh purchase status.');};
  function render(status){
   if(status.environment!==environment)throw Error('Unexpected billing environment. Please refresh.');
-  if(status.configured===false){clear();$('purchase-plan').textContent='Payments have not launched yet. Daily and Unlimited games are currently free.';message('Purchase and billing management will be available when payments launch.');return;}
+  if(status.configured===false){clear();$('purchase-plan').textContent='Purchases are temporarily unavailable. Your progress is safe.';message('Try Refresh purchases again shortly.');return;}
   if(status.verified!==true||!Array.isArray(status.games))throw Error('Purchase status could not be verified.');
   if(status.subscription_active){const end=new Date(status.paid_through);if(!Number.isFinite(end.getTime()))throw Error('Subscription period could not be verified.');$('purchase-plan').textContent='Monthly '+(sandbox?'test ':'')+'membership active until '+end.toLocaleString('en-AU',{timeZone:'Australia/Sydney',dateStyle:'medium',timeStyle:'short'})+' Sydney time. '+(status.cancel_at_period_end?'Renewal is canceled.':'Renews monthly unless canceled.');}
   else $('purchase-plan').textContent='No active '+(sandbox?'test ':'')+'monthly membership.';
@@ -31,7 +31,7 @@
   catch(error){if(id===user()&&epoch===generation){manageable=false;message(error.message||'Purchases could not be checked. Try again.',true);}}
   finally{if(epoch===generation){busy=false;controls();}}
  }
- function adopt(){const id=user();if(id===actor)return;generation++;actor=id;busy=false;clear();if(actor){if(sandbox||returned)void refresh();else{$('purchase-plan').textContent='Payments have not launched yet. Daily and Unlimited games are currently free.';message('Membership and billing management are being prepared.');}}else{$('purchase-plan').textContent='Sign in to view your membership and purchased games.';message('Daily and Unlimited games are currently free.');}controls();}
+ function adopt(){const id=user();if(id===actor)return;generation++;actor=id;busy=false;clear();if(actor){void refresh();}else{$('purchase-plan').textContent='Sign in to view your membership and purchased games.';message('Daily games are free. Explore plans for Unlimited.');}controls();}
  $('purchase-manage').textContent=sandbox?'Manage test billing':'Manage billing';
  $('purchase-preview').hidden=!sandbox;
  $('purchase-refresh').onclick=()=>{if(!busy)void refresh();};
@@ -42,7 +42,7 @@
   finally{if(epoch===generation){busy=false;controls();}}
  };
  window.addEventListener('break-room:auth-change',adopt);
- accounts.ready.then(()=>{adopt();if(!actor){$('purchase-plan').textContent='Sign in to view your membership and purchased games.';message('Daily and Unlimited games are currently free.');}});
+ accounts.ready.then(()=>{adopt();if(!actor){$('purchase-plan').textContent='Sign in to view your membership and purchased games.';message('Daily games are free. Explore plans for Unlimited.');}});
  const params=new URL(location.href).searchParams;
  if(params.has('returned')||params.has('canceled')){params.delete('returned');params.delete('canceled');history.replaceState(null,'',location.pathname+(params.size?'?'+params:'')+'#purchases');}
 })();

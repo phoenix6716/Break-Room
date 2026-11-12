@@ -1,3 +1,7 @@
+## Activation update — 12 November 2026
+
+The owner fixed account-read permission; readiness and genuine signed live delivery now pass. The webhook is enabled with its original twelve events. Owner subsequently authorized public purchases: all eleven checkout choices, Account management and verified-live Unlimited entry are activated after focused checks. No real test charge was made. Earlier private-key and paused-webhook checkpoints below are historical. GST collection remains off.
+
 # Live Stripe setup — 12 November 2026
 
 Continue live configuration under the owner's instruction. If Stripe requests verification or representative action, report the actual request then; do not invent a current blocker. Checkout and game enforcement remain off while setup and live delivery checks are unfinished.

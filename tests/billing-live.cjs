@@ -48,7 +48,7 @@ const uid='00000000-0000-4000-8000-000000000001',token='00000000-0000-4000-8000-
  const bundle=require('esbuild').buildSync({entryPoints:['supabase/functions/_shared/billing-runtime-factory.ts'],bundle:true,platform:'node',format:'cjs',write:false}).outputFiles[0].text;
  const secret=['rk','live','not-a-real-key'].join('_'),signing=['whsec','not-a-real-secret'].join('_');
  const vars={STRIPE_LIVE_RESTRICTED_KEY:secret,STRIPE_LIVE_WEBHOOK_SECRET:signing,SUPABASE_URL:'https://storage.invalid',SUPABASE_SERVICE_ROLE_KEY:'private-service-fixture',SUPABASE_ANON_KEY:'public-fixture'};
- for(const scenario of ['denied','mismatch','price','database','network','ready']){
+ for(const scenario of ['denied','mismatch','price','database','network','ready','enabled']){
   const logs=[],calls=[],module={exports:{}};
   const response=(body,status=200)=>new Response(JSON.stringify(body),{status,headers:{'content-type':'application/json'}});
   const box={module,exports:module.exports,Deno:{env:{get:name=>vars[name]}},Request,Response,URL,URLSearchParams,AbortSignal,crypto,console:{error:line=>logs.push(JSON.parse(line))},fetch:async(url,options)=>{
@@ -63,9 +63,9 @@ const uid='00000000-0000-4000-8000-000000000001',token='00000000-0000-4000-8000-
    throw Error('Unexpected runtime request');
   }};
   require('node:vm').runInNewContext(bundle,box);
-  const runtime=module.exports.createRuntime(catalog,'live'),result=await runtime.handler(new Request('https://example.com'));
-  const text=await result.text();assert.equal(result.status,scenario==='ready'?200:503,scenario);
-  assert.equal(JSON.parse(text).configured,scenario==='ready');assert.equal(JSON.parse(text).checkout_enabled,false);
+  const runtime=module.exports.createRuntime({...catalog,checkout_enabled:scenario==='enabled'},'live'),result=await runtime.handler(new Request('https://example.com'));
+  const text=await result.text();assert.equal(result.status,['ready','enabled'].includes(scenario)?200:503,scenario);
+  assert.equal(JSON.parse(text).configured,['ready','enabled'].includes(scenario));assert.equal(JSON.parse(text).checkout_enabled,scenario==='enabled');
   assert(!JSON.stringify(logs).includes(secret));assert(!JSON.stringify(logs).includes(signing));assert(!text.includes(secret));
   assert(!calls.some(c=>c.url.includes('/checkout/')||c.url.includes('/customers')),'Readiness never creates a customer or checkout');
   if(scenario==='denied'){assert.equal(logs[0].resource,'account');assert.equal(logs[0].status,403);assert.deepEqual(logs[0].permissions,['rak_account_read']);}

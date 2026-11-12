@@ -4,11 +4,11 @@ export class BillingError extends Error {
 }
 const BASE='https://breakroomdaily.com/billing-test';
 const objectId=value=>typeof value==='string'?value:value?.id;
-export function createBilling({catalog,stripe,db,user,configured,now=Date.now,environment='sandbox',checkoutEnabled=()=>environment==='sandbox',returnURL=BASE}) {
+export function createBilling({catalog,stripe,db,user,configured,now=Date.now,environment='sandbox',checkoutEnabled=()=>environment==='sandbox',enforcementEnabled=()=>false,returnURL=BASE}) {
  if(!['sandbox','live'].includes(environment))throw new Error('Unknown billing environment');
  const live=environment==='live';
  const provider=object=>{if(!object||object.livemode!==live)throw new BillingError(live?'Live provider object required':'Sandbox provider object required');return object;};
- const capabilities=()=>({environment,checkout_enabled:checkoutEnabled(),enforcement_enabled:false,live_payments:live&&checkoutEnabled()});
+ const capabilities=()=>({environment,checkout_enabled:checkoutEnabled(),enforcement_enabled:enforcementEnabled(),live_payments:live&&checkoutEnabled()});
  let readyAt=0,readyTask=null;
  const expected=item=>item==='monthly'?catalog.subscription:catalog.games[item];
  async function price(item){

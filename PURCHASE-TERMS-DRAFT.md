@@ -1,6 +1,6 @@
 # Purchase terms — published policy reference
 
-Published on Terms of play on 12 November 2026 as the policy for future paid plans. Real checkout remains disabled. The owner confirmed the legal seller name Phoenix Phillips and selected the case-by-case refund policy below.
+Published on Terms of play on 12 November 2026 as the policy for future paid plans. The owner subsequently authorized public checkout on 12 November 2026. The owner confirmed the legal seller name Phoenix Phillips and selected the case-by-case refund policy below.
 
 ## Approved plans
 
@@ -30,4 +30,4 @@ Seller: Phoenix Phillips (confirmed by the owner). Support: support@breakroomdai
 
 ## Publication boundary
 
-Public terms explain that paid plans have not launched and all games remain free. Publishing this policy does not activate purchases, add advertising, change tax registrations or restrict access to any game.
+Public terms describe active plans: Daily is free and Unlimited requires verified paid access. No ads are installed and no tax registration has been added.
