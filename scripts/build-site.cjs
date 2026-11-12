@@ -36,7 +36,7 @@ function copy(file,relative){
   const uiPrefix=path.posix.relative(path.posix.dirname(relative),'.');const uiBase=uiPrefix?uiPrefix+'/':'';
   rendered=rendered.replace(/<head([^>]*)>/,'<head$1><script src="'+uiBase+'clean-urls.js?v=clean-20261109"></script><script src="'+uiBase+'preferences.js?v=theme-20261106"></script><link rel="stylesheet" href="'+uiBase+'preferences.css?v=settings-20261106">');
   if((/^games\/[^/]+\/index\.html$/.test(relative)&&activeGames.has(relative.split('/')[1]))||relative==='games/lowball/engine/index.html'){
-   rendered=rendered.replace(/<head([^>]*)>/,'<head$1><script src="'+uiBase+'membership-policy.js?v=purchases-20261112"></script><script src="'+uiBase+'membership.js?v=purchases-20261112"></script><link rel="stylesheet" href="'+uiBase+'membership.css?v=billing-20261111">');
+   rendered=rendered.replace(/<head([^>]*)>/,'<head$1><script src="'+uiBase+'membership-policy.js?v=locked-tab-20261112"></script><script src="'+uiBase+'membership.js?v=locked-tab-20261112"></script><link rel="stylesheet" href="'+uiBase+'membership.css?v=locked-tab-20261112">');
   }
   rendered=rendered.replace('</head>','<link rel="stylesheet" href="'+uiBase+'theme.css?v=theme-pairs-20261108"><script defer src="'+uiBase+'theme-toggle.js?v=theme-20261106"></script></head>');
   if(rendered.includes('accounts.js'))rendered=rendered.replace('</head>','<link rel="stylesheet" href="'+uiBase+'account-menu.css?v=leaderboards-20261106"><script defer src="'+uiBase+'account-menu.js?v=clean-urls-20261109"></script></head>');
