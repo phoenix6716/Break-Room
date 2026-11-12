@@ -13,7 +13,7 @@
    const panel=doc.getElementById(game==='lowball'?'lowball-mode-panel':'game-panel');if(!panel||!unlimited||!daily)return;
    const tabs=[daily,unlimited].map(tab=>({tab,selected:tab.getAttribute('aria-selected'),index:tab.tabIndex,className:tab.className}));
    const card=doc.createElement('section');card.className='membership-lock';card.setAttribute('aria-labelledby','membership-lock-title');
-   const artwork=doc.createElement('img');artwork.className='membership-lock-art';artwork.src=new URL('assets/ui/unlimited-lock.png',base).href;artwork.alt='';artwork.width=96;artwork.height=96;
+   const artwork=doc.createElement('img');artwork.className='membership-lock-art';artwork.src=new URL('assets/ui/unlimited-lock.png?v=muted-20261113',base).href;artwork.alt='';artwork.width=96;artwork.height=96;
    const title=doc.createElement('h2');title.id='membership-lock-title';title.textContent='Unlimited is locked';
    const text=doc.createElement('p');text.id='membership-lock-text';text.setAttribute('role','status');
    const link=doc.createElement('a');link.href=new URL('pricing.html',base).href;link.target='_top';link.textContent='View plans';
