@@ -1,3 +1,7 @@
+## Header Subscribe shortcut — 13 November 2026
+
+`header-subscribe.js` mounts one Subscribe link immediately after the theme toggle, including rebuilt headers. It links to the existing plans page and never reads Auth, creates a checkout or writes saves. The companion stylesheet matches both themes and puts controls on a right-aligned second row at narrow widths so the logo, theme toggle and Account remain accessible. Keep the injected link unique, its 44px target and relative project-prefix URL. `tests/header-subscribe.cjs` checks nine page/header types at six widths; the social-topbar suite covers breakpoint boundaries and keyboard navigation.
+
 ## Reload replaces access-check action — 13 November 2026
 
 Removed the locked panel's manual “Check access again” control. A per-tab sessionStorage marker remembers only that a game's locked Unlimited tab was selected. Reload restores that tab after its engine has loaded and reruns the existing fresh, actor-checked live purchase verification; the marker can never grant ownership. Daily selection, account change and successful entry clear the marker. Lowball restores through the parent account verifier once, not both iframe and parent. Verification failures tell the player to reload. Tests cover reload in all ten locked tabs and a previously locked account becoming entitled after reload. Preserve native saves, scoring, captured rounds and timers.

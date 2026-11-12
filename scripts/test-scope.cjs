@@ -58,6 +58,7 @@ function selectChecks(changed,available,{full=false}={}){
   if(file==='supabase/migrations/20261109011202_laser_mirror_progression.sql'){game('laser',true);add('laser-progression.cjs','score-integrity.cjs','leaderboards-database.cjs','leaderboards.cjs');continue;}
   if(/^supabase\/(?:functions\/(?:billing(?:-|\/)|_shared\/billing|_shared\/(?:live-)?catalog)|billing-(?:sandbox|live)-prices\.json)/.test(file)||/^supabase\/migrations\/20261109(?:102638_sandbox_billing|104937_sandbox_checkout)\.sql$/.test(file)){add('billing-webhook.cjs','billing-checkout.cjs','billing-live.cjs');continue;}
   if(file==='supabase/migrations/20261111011927_live_billing_preparation.sql'){add('billing-live.cjs','billing-checkout.cjs','billing-webhook.cjs');continue;}
+  if(/^header-subscribe\.(?:js|css)$/.test(file)){add('header-subscribe.cjs','social-topbar.cjs');continue;}
   if(/^access-check\.(?:html|js)$/.test(file)){add('access-check.cjs','membership-policy.cjs');continue;}
   if(/^account-purchases\.(?:js|css)$/.test(file)){add('account-purchases.cjs','membership-policy.cjs');continue;}
   if(/^membership(?:-policy)?\.(?:js|css)$/.test(file)){add('membership-policy.cjs','membership-ui.cjs','account-purchases.cjs','access-check.cjs');continue;}
