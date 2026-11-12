@@ -1,3 +1,7 @@
+## Auth-aware generated lock artwork — 12 November 2026
+
+The sign-in action in locked Unlimited is guest-only and hidden while restoring Auth or checking purchases. The shared entry wrapper waits for the official account readiness promise; Daily cancellation fences that wait, and account changes cannot reuse an old authorization reply. Signed-in non-owners see plans and retry without a sign-in action. Generated transparent pixel-art lock `assets/ui/unlimited-lock.png` replaces the emoji in the tab and appears at 96px in the locked card. Original generation is retained outside the repository. Membership tests cover ten guest/non-owner/owner states, loaded art and a delayed restored session. Preserve existing engine DOM, timers and live-only purchase decisions.
+
 ## Inline locked Unlimited tab — 12 November 2026
 
 Membership entry now selects Unlimited visually and displays an inline lock card instead of a modal. The underlying engine is not switched or started until the same verified-live policy allows it. The card hides existing panel children through a scoped class rather than replacing them; returning to Daily restores tab attributes, description and untouched engine DOM. Lowball uses its iframe's actual mode panel with the parent account verifier. Keyboard navigation returns to Daily, and account changes fence pending ownership replies. Preserve captured rounds, saves and running timers. `tests/membership-ui.cjs` checks all ten selected/locked states, restoration and verified-owner entry. Query tags must change for both JS and CSS.
