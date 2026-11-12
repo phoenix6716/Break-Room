@@ -5,13 +5,11 @@
 .membership-lock h2{max-width:22ch;margin:0 0 14px;font:700 clamp(24px,4vw,28px)/1.2 'Courier New',monospace;text-align:center;text-wrap:balance}
 .membership-lock p{width:100%;max-width:34ch;margin:0 auto 24px;line-height:1.6;text-align:center;text-wrap:pretty}
 .membership-lock-actions{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px;width:100%;max-width:400px}
-.membership-lock a,.membership-lock button{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:48px;margin:0;padding:10px 18px;border:2px solid currentColor;color:inherit;background:transparent;font:700 16px 'Courier New',monospace;text-align:center;cursor:pointer}
+.membership-lock a{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:48px;margin:0;padding:10px 18px;border:2px solid currentColor;color:inherit;background:transparent;font:700 16px 'Courier New',monospace;text-align:center;cursor:pointer}
 .membership-lock-actions a:first-child{background:#36596c;color:#fff9ec;border-color:#36596c}
 .membership-lock a[hidden]{display:none!important}
-.membership-lock>button{margin-top:12px;border:0;text-decoration:underline;text-underline-offset:4px;font-size:14px}
 .membership-lock p.membership-lock-note{margin:8px auto 0;font-size:14px;opacity:.85}
 .membership-lock :focus-visible{outline:3px solid #bd5a45;outline-offset:4px}
-.membership-lock button:disabled{opacity:.6;cursor:wait}
 .membership-lock-icon{display:inline-block;width:24px;height:24px;object-fit:contain;vertical-align:middle;margin-left:8px}
 [data-theme=dark] .membership-lock{background:#203343;color:#f2e9d8}
 [data-theme=dark] .membership-lock-actions a:first-child{background:#9bbdca;color:#172b3c;border-color:#9bbdca}

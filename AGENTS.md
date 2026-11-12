@@ -1,3 +1,7 @@
+## Reload replaces access-check action — 13 November 2026
+
+Removed the locked panel's manual “Check access again” control. A per-tab sessionStorage marker remembers only that a game's locked Unlimited tab was selected. Reload restores that tab after its engine has loaded and reruns the existing fresh, actor-checked live purchase verification; the marker can never grant ownership. Daily selection, account change and successful entry clear the marker. Lowball restores through the parent account verifier once, not both iframe and parent. Verification failures tell the player to reload. Tests cover reload in all ten locked tabs and a previously locked account becoming entitled after reload. Preserve native saves, scoring, captured rounds and timers.
+
 ## Auth-aware generated lock artwork — 12 November 2026
 
 The sign-in action in locked Unlimited is guest-only and hidden while restoring Auth or checking purchases. The shared entry wrapper waits for the official account readiness promise; Daily cancellation fences that wait, and account changes cannot reuse an old authorization reply. Signed-in non-owners see plans and retry without a sign-in action. Generated transparent pixel-art lock `assets/ui/unlimited-lock.png` replaces the emoji in the tab and appears at 96px in the locked card. Original generation is retained outside the repository. Membership tests cover ten guest/non-owner/owner states, loaded art and a delayed restored session. Preserve existing engine DOM, timers and live-only purchase decisions.
