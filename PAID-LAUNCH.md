@@ -1,3 +1,7 @@
+## Live secrets supplied; one read permission missing — 12 November 2026
+
+Both live secret names are now privately supplied by the owner and detected by the runtime. Readiness is not yet successful: the restricted key gets HTTP 403 `more_permissions_required` for `GET /v1/account`. The account-read permission was omitted from the walkthrough's on-screen list. Add Read to the resource covering that own-account identity endpoint, then recheck readiness before enabling the existing paused webhook. The database RPC probe passes. No customer, Checkout session, charge or subscription was created, and no signed live delivery has been verified. Safe diagnostics were added and deployed to the live billing service; no raw provider errors or secret values are logged.
+
 ## Live configuration continued — 12 November 2026
 
 Owner instruction: continue configuration; address representative setup only if Stripe requests action. This supersedes earlier blanket representative blockers. Seller name confirmed: Phoenix Phillips. Published future purchase, cancellation and refund terms; current free-development status remains explicit. No ABN was supplied or invented; GST collection remains off.

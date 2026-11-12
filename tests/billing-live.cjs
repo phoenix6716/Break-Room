@@ -44,5 +44,36 @@ const uid='00000000-0000-4000-8000-000000000001',token='00000000-0000-4000-8000-
   const liveHook=createHandler({secret,environment:'live',now:()=>time*1000,enqueue:async()=>{seen++}}),sandboxHook=createHandler({secret,now:()=>time*1000,enqueue:async()=>{throw Error('Wrong environment')}});
   assert.equal((await liveHook(req())).status,200);assert.equal((await sandboxHook(req())).status,400);assert.equal(seen,1);
  }finally{await db.close();}
+ // Exercise the actual Deno runtime adapter, including redaction on account checks.
+ const bundle=require('esbuild').buildSync({entryPoints:['supabase/functions/_shared/billing-runtime-factory.ts'],bundle:true,platform:'node',format:'cjs',write:false}).outputFiles[0].text;
+ const secret=['rk','live','not-a-real-key'].join('_'),signing=['whsec','not-a-real-secret'].join('_');
+ const vars={STRIPE_LIVE_RESTRICTED_KEY:secret,STRIPE_LIVE_WEBHOOK_SECRET:signing,SUPABASE_URL:'https://storage.invalid',SUPABASE_SERVICE_ROLE_KEY:'private-service-fixture',SUPABASE_ANON_KEY:'public-fixture'};
+ for(const scenario of ['denied','mismatch','price','database','network','ready']){
+  const logs=[],calls=[],module={exports:{}};
+  const response=(body,status=200)=>new Response(JSON.stringify(body),{status,headers:{'content-type':'application/json'}});
+  const box={module,exports:module.exports,Deno:{env:{get:name=>vars[name]}},Request,Response,URL,URLSearchParams,AbortSignal,crypto,console:{error:line=>logs.push(JSON.parse(line))},fetch:async(url,options)=>{
+   calls.push({url,method:options?.method||'GET'});
+   if(url.endsWith('/v1/account')){
+    if(scenario==='network')throw Error(secret);
+    if(scenario==='denied')return response({error:{type:'invalid_request_error',code:secret,param:signing,message:'Need rak_account_read; invalid key '+secret+' '+signing}},403);
+    return response({id:scenario==='mismatch'?'acct_wrong_private':catalog.stripe_account_id});
+   }
+   if(url.includes('/v1/prices/'))return scenario==='price'?response({error:{type:'invalid_request_error',message:secret,code:'permission_missing'}},403):response({active:true,livemode:true,currency:'aud',unit_amount:499,type:'recurring',recurring:{interval:'month',interval_count:1},product:{id:catalog.subscription.product_id,active:true}});
+   if(url.includes('/rest/v1/rpc/'))return response(null,scenario==='database'?403:200);
+   throw Error('Unexpected runtime request');
+  }};
+  require('node:vm').runInNewContext(bundle,box);
+  const runtime=module.exports.createRuntime(catalog,'live'),result=await runtime.handler(new Request('https://example.com'));
+  const text=await result.text();assert.equal(result.status,scenario==='ready'?200:503,scenario);
+  assert.equal(JSON.parse(text).configured,scenario==='ready');assert.equal(JSON.parse(text).checkout_enabled,false);
+  assert(!JSON.stringify(logs).includes(secret));assert(!JSON.stringify(logs).includes(signing));assert(!text.includes(secret));
+  assert(!calls.some(c=>c.url.includes('/checkout/')||c.url.includes('/customers')),'Readiness never creates a customer or checkout');
+  if(scenario==='denied'){assert.equal(logs[0].resource,'account');assert.equal(logs[0].status,403);assert.deepEqual(logs[0].permissions,['rak_account_read']);}
+  if(scenario==='mismatch'){assert.equal(logs[0].event,'stripe_account_mismatch');assert(!JSON.stringify(logs).includes('acct_wrong_private'));}
+  if(scenario==='price')assert.equal(logs[0].resource,'prices');
+  if(scenario==='database')assert.equal(logs[0].event,'billing_storage_request_failed');
+  if(scenario==='ready')assert.equal(logs.length,0);
+ }
+ console.log('Live runtime: denied/mismatched account, price/storage/network failures, secret redaction and successful readiness passed.');
  console.log('Live billing preparation: separate PostgreSQL data/roles, test receipt rejection, signed event environment checks, live ownership and disabled checkout/enforcement passed.');
 })().catch(e=>{console.error(e);process.exitCode=1});

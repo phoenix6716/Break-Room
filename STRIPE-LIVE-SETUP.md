@@ -2,6 +2,10 @@
 
 Continue live configuration under the owner's instruction. If Stripe requests verification or representative action, report the actual request then; do not invent a current blocker. Checkout and game enforcement remain off while setup and live delivery checks are unfinished.
 
+## Current checkpoint
+
+Both secret names have been supplied privately. The account identity check currently gets HTTP 403 `more_permissions_required`. The walkthrough omitted account read access. Edit the restricted key and enable **Read** on the permission resource covering `GET /v1/account`. Keep the resource at Read, leave unrelated permissions and connected-account columns off, and do not bypass the merchant identity check. Recheck readiness before unpausing the webhook. No live signed delivery has been verified yet.
+
 ## Private restricted key
 
 In Stripe's live account, open https://dashboard.stripe.com/apikeys and create a restricted key named `Break Room production server`. This must be an `rk_live_` key for account `acct_1UXajXKA3LunX0KL`.
