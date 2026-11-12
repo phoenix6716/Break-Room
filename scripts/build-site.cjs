@@ -39,7 +39,7 @@ function copy(file,relative){
    rendered=rendered.replace(/<head([^>]*)>/,'<head$1><script src="'+uiBase+'membership-policy.js?v=lock-reload-20261113"></script><script src="'+uiBase+'membership.js?v=lock-reload-20261113"></script><link rel="stylesheet" href="'+uiBase+'membership.css?v=lock-reload-20261113">');
   }
   rendered=rendered.replace('</head>','<link rel="stylesheet" href="'+uiBase+'theme.css?v=theme-pairs-20261108"><script defer src="'+uiBase+'theme-toggle.js?v=theme-20261106"></script></head>');
-  rendered=rendered.replace('</head>','<link rel="stylesheet" href="'+uiBase+'header-subscribe.css?v=subscribe-20261113"><script defer src="'+uiBase+'header-subscribe.js?v=subscribe-20261113"></script></head>');
+  rendered=rendered.replace('</head>','<link rel="stylesheet" href="'+uiBase+'header-subscribe.css?v=subscribe-even-20261113"><script defer src="'+uiBase+'header-subscribe.js?v=subscribe-even-20261113"></script></head>');
   if(rendered.includes('accounts.js'))rendered=rendered.replace('</head>','<link rel="stylesheet" href="'+uiBase+'account-menu.css?v=leaderboards-20261106"><script defer src="'+uiBase+'account-menu.js?v=clean-urls-20261109"></script></head>');
   if(/^games\/[^/]+\/index\.html$/.test(relative)&&activeGames.has(relative.split('/')[1]))rendered=rendered.replace('<!-- shared-legal-footer:start -->','<p class="game-leaderboard-link"><a href="../../leaderboards.html?game='+relative.split('/')[1]+'">Daily leaderboard →</a></p><!-- shared-legal-footer:start -->');
   rendered=rendered.replace(/(src="[^"\n]*(?:shell|stack-up)\.js)(?:\?[^"\n]*)?"/g,'$1?v=billing-20261111"');

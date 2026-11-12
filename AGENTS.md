@@ -1,6 +1,6 @@
 ## Header Subscribe shortcut — 13 November 2026
 
-`header-subscribe.js` mounts one Subscribe link immediately after the theme toggle, including rebuilt headers. It links to the existing plans page and never reads Auth, creates a checkout or writes saves. The companion stylesheet matches both themes and puts controls on a right-aligned second row at narrow widths so the logo, theme toggle and Account remain accessible. Keep the injected link unique, its 44px target and relative project-prefix URL. `tests/header-subscribe.cjs` checks nine page/header types at six widths; the social-topbar suite covers breakpoint boundaries and keyboard navigation.
+`header-subscribe.js` mounts one Subscribe link immediately after the theme toggle, including rebuilt headers. It links to the existing plans page and never reads Auth, creates a checkout or writes saves. The companion stylesheet matches both themes and puts controls on a centred second row with balanced outer slots at narrow widths so the logo, theme toggle and Account remain accessible. Keep the injected link unique, its 44px target and relative project-prefix URL. `tests/header-subscribe.cjs` checks nine page/header types at six widths; the social-topbar suite covers breakpoint boundaries and keyboard navigation.
 
 ## Reload replaces access-check action — 13 November 2026
 
