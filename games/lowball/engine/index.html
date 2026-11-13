@@ -745,6 +745,7 @@ document.getElementById("lockArt").innerHTML = LOWBALL_ART.markup({ art: "lock" 
 // Starting price estimates per country — check against live local pricing
 // before launch, especially the bigger-ticket items which date quickly.
 const unlimitedLibrary=window.BREAK_ROOM_UNLIMITED_LIBRARY.create('lowball');
+let libraryItem = null;
 const ITEMS = [
   { name: "Big Mac", emoji: "🍔", detail: "McDonald's, single burger", prices: { AU: 8.50, US: 6.22, UK: 5.49, CA: 8.17 } },
   { name: "Netflix Standard", emoji: "📺", detail: "monthly, ads removed", prices: { AU: 20.99, US: 19.99, UK: 13.99, CA: 19.99 } },
@@ -1113,6 +1114,7 @@ let deck = [];
 let deckIndex = 0;
 let practiceQueue = [], practiceRecent = [], practiceSnapshot = null, practicePending = null, dailyDraft = null;
 function newDeck() {
+  libraryItem = null;
   const excluded = new Set(pickDailyItems().map(item => item.name));
   const allowed = ITEMS.filter(item => !excluded.has(item.name)).map(item => PRICE_REFERENCES.current(item,getTodayKey()));
   const remainder = practiceQueue.filter(item => !excluded.has(item.name));
@@ -1295,6 +1297,7 @@ function renderDots() {
 function showItem() {
   const advancing = resultArea.contains(document.activeElement) || finalScreen.contains(document.activeElement);
   currentItem = mode === "normal" ? roundItems[roundIndex] : deck[deckIndex];
+  if (mode === "unlimited" && currentItem !== libraryItem) { unlimitedLibrary.draw(currentItem.name); libraryItem = currentItem; }
   if (mode === "unlimited") practicePending = null;
   const emojiEl = document.getElementById("itemEmoji");
   emojiEl.innerHTML = LOWBALL_ART.markup(currentItem);
@@ -1856,9 +1859,9 @@ function startUnlimitedMode(fresh = false) {
   document.getElementById("playAgainBtn").style.display = "none";
   if (practiceSnapshot && fresh !== true) {
     const saved=practiceSnapshot;deck=saved.deck.slice();deckIndex=saved.deckIndex;roundScores=saved.scores.slice();roundGuesses=saved.guesses.slice();
+    if(saved.finished){currentItem=deck[Math.min(deckIndex,deck.length-1)];libraryItem=currentItem;stopFx();finishUnlimited(false);return;}
     showItem();guessInput.value=saved.draft;
     if(saved.pending){practicePending=saved.pending;renderResult(saved.pending.guess,saved.pending.country,false);}
-    if(saved.finished){stopFx();finishUnlimited(false);}
     return;
   }
   practiceSnapshot=null;practicePending=null;roundScores = [];roundGuesses = [];deck = newDeck();deckIndex = 0;showItem();
