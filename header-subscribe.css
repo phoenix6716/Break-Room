@@ -12,4 +12,34 @@ header .br-subscribe:focus-visible{outline:3px solid #bd5a45;outline-offset:4px}
  .topbar:has(.br-subscribe) .account{grid-column:1/-1;grid-row:2;justify-self:center;display:grid;grid-template-columns:minmax(44px,1fr) auto minmax(44px,1fr);justify-items:center;width:100%;max-width:360px;gap:12px}
  .topbar:has(.br-subscribe) .main-nav{grid-row:3}
 }
+/* Keep the homepage masthead compact and its utility controls consistent. */
+body:has(.menu-intro) .topbar{grid-template-columns:auto minmax(0,1fr) auto;gap:24px}
+body:has(.menu-intro) .topbar .brand{grid-column:1;grid-row:1;justify-self:start}
+body:has(.menu-intro) .topbar .main-nav{grid-column:2;grid-row:1;justify-content:center}
+body:has(.menu-intro) .topbar .account{grid-column:3;grid-row:1;display:flex;justify-self:end;width:auto;max-width:none;gap:8px}
+body:has(.menu-intro) .topbar .login,
+body:has(.menu-intro) .topbar .br-theme-toggle{box-sizing:border-box;border:2px solid var(--line,var(--ink))!important;background:var(--white)!important;box-shadow:2px 2px 0 var(--ink)!important;color:var(--ink)!important}
+body:has(.menu-intro) .topbar .login{justify-content:center;padding:8px 12px;font:700 12px/1.2 'Courier New',monospace;text-decoration:none}
+body:has(.menu-intro) .topbar .login:hover,
+body:has(.menu-intro) .topbar .br-theme-toggle:hover{background:var(--paper-deep)!important}
+:root[data-theme=dark] body:has(.menu-intro) .topbar .login,
+:root[data-theme=dark] body:has(.menu-intro) .topbar .br-theme-toggle{box-shadow:2px 2px 0 #080e16!important}
+@media(max-width:1100px){
+ body:has(.menu-intro) .topbar{grid-template-columns:minmax(0,1fr) auto;gap:10px 16px;padding-top:14px}
+ body:has(.menu-intro) .topbar .account{grid-column:2;grid-row:1}
+ body:has(.menu-intro) .topbar .main-nav{grid-column:1/-1;grid-row:2;justify-content:space-evenly;width:100%;gap:0}
+}
+@media(max-width:540px){
+ body:has(.menu-intro) .topbar{gap:8px;padding-top:12px}
+ body:has(.menu-intro) .topbar .brand>.br-brand__image{width:112px!important}
+ body:has(.menu-intro) .topbar .account{gap:6px}
+ body:has(.menu-intro) .topbar .login{padding:8px;font-size:11px}
+ body:has(.menu-intro) .topbar .br-subscribe{padding:8px;font-size:11px}
+}
+@media(max-width:360px){
+ body:has(.menu-intro) .topbar{column-gap:4px}
+ body:has(.menu-intro) .topbar .brand>.br-brand__image{width:92px!important}
+ body:has(.menu-intro) .topbar .account{gap:4px}
+ body:has(.menu-intro) .topbar .login{padding:8px 5px;font-size:10px}
+}
 @media(forced-colors:active){header .br-subscribe{border-color:ButtonText}}
