@@ -1,5 +1,5 @@
 /* Time Drop: first-lock answers, native snapshots and independent Unlimited sessions. */
-(()=>{'use strict';
+(()=>{'use strict';const L=window.BREAK_ROOM_UNLIMITED_LIBRARY.create('time-drop');
  const M=BREAK_ROOM_TIME_DROP,C=MIDNIGHT_ARCADE_CLOCK,B=TIME_DROP_EVENTS,$=id=>document.getElementById(id),mem=new Map();
  const h=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;};
  const button=(text,id,fn)=>{const e=h('button','button',text);if(id)e.id=id;e.type='button';e.addEventListener('click',fn);return e;};
@@ -30,8 +30,8 @@
  function pool(){const excluded=new Set(daily?.events.map(e=>e.id)||M.daily(B,C.dayKey()).map(e=>e.id));return B.filter(e=>!excluded.has(e.id)&&(practice.category==='all'||e.category===practice.category)&&(practice.era==='all'||practice.era==='early'&&e.year<1700||practice.era==='middle'&&e.year>=1700&&e.year<1900||practice.era==='modern'&&e.year>=1900));}
  function nextPractice(){
   let choices=pool();if(!choices.length){practice.category='all';practice.era='all';$('practice-category').value='all';$('practice-era').value='all';$('practice-note').textContent='No eligible events matched those settings. Switched to Mixed topics and All periods.';choices=pool();}
-  let eligible=choices.filter(e=>!practice.seen.includes(e.id));if(!eligible.length){practice.seen=[];eligible=choices.filter(e=>e.id!==practice.event?.id);if(!eligible.length)eligible=choices;}
-  const event=eligible[Math.floor(Math.random()*eligible.length)];practice.seen.push(event.id);practice.event=structuredClone(event);practice.guess=1900;practice.pick=null;savePractice();
+  choices=L.unseen(choices);let eligible=choices.filter(e=>!practice.seen.includes(e.id));if(!eligible.length){practice.seen=[];eligible=choices.filter(e=>e.id!==practice.event?.id);if(!eligible.length)eligible=choices;}
+  const event=eligible[Math.floor(Math.random()*eligible.length)];L.draw(event.id);practice.seen.push(event.id);practice.event=structuredClone(event);practice.guess=1900;practice.pick=null;savePractice();
  }
  function ensurePractice(){if(practice)return;try{const p=JSON.parse(sessionStorage.getItem(practiceKey));if(p&&M.event(p.event)&&M.year(p.guess)&&(p.pick===null||M.year(p.pick))&&Array.isArray(p.seen)&&p.seen.every(x=>typeof x==='string')&&Number.isSafeInteger(p.count)&&p.count>=0&&Number.isSafeInteger(p.points)&&p.points>=0&&p.points<=p.count*1000&&['all','World','Science','Culture','Sport','Everyday'].includes(p.category)&&['all','early','middle','modern'].includes(p.era))practice=p;}catch{}if(!practice){practice={category:'all',era:'all',seen:[],count:0,points:0,event:null,guess:1900,pick:null};nextPractice();}}
  const active=()=>mode==='daily'?{event:daily.events[daily.round],guess:daily.guess,pick:daily.phase==='guess'?null:daily.picks[daily.round]}:practice;
@@ -69,7 +69,7 @@
    const shareStatus=h('p');shareStatus.id='share-status';shareStatus.setAttribute('role','status');const shareBox=h('div');shareBox.id='share-box';out.append(button('COPY RESULT','copy-result',share),button('PLAY UNLIMITED','play-practice',()=>BREAK_ROOM_GAME_SHELL.selectMode('unlimited')),shareStatus,shareBox);
    const list=h('ol','td-history');daily.events.forEach((e,i)=>{const r=record.results[i],item=h('li');item.append(h('strong',null,e.title),h('span',null,'You: '+M.format(daily.picks[i])+' · '+answer(e)+' · '+BREAK_ROOM_SCORE.format(r.points/10)+' / 100'));const source=h('a',null,'Read the source');source.href=sourceURL(e);source.target='_blank';source.rel='noopener noreferrer';source.setAttribute('aria-label','Read the source for '+e.title+' (opens in a new tab)');item.append(source);list.append(item);});out.append(list);
   }else{
-   const a=active();out.dataset.eventId=a.event.id;out.dataset.phase=a.pick===null?'guess':'review';const stage=h('div','q-card td-card'),deco=h('div','deco');deco.id='deco';deco.setAttribute('aria-hidden','true');const eraTag=h('span','era-tag');eraTag.id='era-tag';const title=h('h2','td-question',a.event.title);title.id='td-question';title.tabIndex=-1;
+   const a=active();if(mode==='unlimited')L.show(out,pool().map(e=>e.id),a.event.id);out.dataset.eventId=a.event.id;out.dataset.phase=a.pick===null?'guess':'review';const stage=h('div','q-card td-card'),deco=h('div','deco');deco.id='deco';deco.setAttribute('aria-hidden','true');const eraTag=h('span','era-tag');eraTag.id='era-tag';const title=h('h2','td-question',a.event.title);title.id='td-question';title.tabIndex=-1;
    stage.append(deco,eraTag,h('p','td-kicker',a.event.category.toUpperCase()+' · WHEN DID THIS HAPPEN?'),title,controls(a));out.append(stage);
    if(a.pick!==null){const r=M.result(a.event,a.pick),review=h('section','td-review'),heading=h('h3',null,answer(a.event));heading.id='td-review-heading';heading.tabIndex=-1;
     review.append(heading,h('p','td-credit',r.band+' · +'+BREAK_ROOM_SCORE.format(r.points/10)+' / 100'),h('p',null,'You guessed '+M.format(a.pick)+'. '+(r.error===0?(a.event.earliest===a.event.latest?'Exactly right.':'Inside the accepted date range.'):r.error+' '+(r.error===1?'year':'years')+' from the accepted answer.')),h('p',null,a.event.fact));

@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<head>
+<head><script src="../../../unlimited-library.js?v=library-20261113"></script><link rel="stylesheet" href="../../../unlimited-library.css?v=library-20261113">
 <link rel="stylesheet" href="../../../game-help.css?v=mobile-stats-20261028-compact-reset">
 <script defer src="../../../game-help.js?v=first-visit-20261028" data-game="lowball"></script>
 <meta charset="UTF-8">
@@ -744,6 +744,7 @@ document.getElementById("lockArt").innerHTML = LOWBALL_ART.markup({ art: "lock" 
 // ---------- Item pool ----------
 // Starting price estimates per country — check against live local pricing
 // before launch, especially the bigger-ticket items which date quickly.
+const unlimitedLibrary=window.BREAK_ROOM_UNLIMITED_LIBRARY.create('lowball');
 const ITEMS = [
   { name: "Big Mac", emoji: "🍔", detail: "McDonald's, single burger", prices: { AU: 8.50, US: 6.22, UK: 5.49, CA: 8.17 } },
   { name: "Netflix Standard", emoji: "📺", detail: "monthly, ads removed", prices: { AU: 20.99, US: 19.99, UK: 13.99, CA: 19.99 } },
@@ -1117,7 +1118,7 @@ function newDeck() {
   const remainder = practiceQueue.filter(item => !excluded.has(item.name));
   practiceQueue = [];
   if (remainder.length) return remainder;
-  const d = allowed.slice();
+  const d = unlimitedLibrary.unseen(allowed,item=>item.name).slice();
   for (let i = d.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [d[i], d[j]] = [d[j], d[i]];
@@ -1134,7 +1135,7 @@ function updatePracticePanel() {
   const slot = document.getElementById("lowball-practice");slot.replaceChildren();if (mode !== "unlimited") return;
   const count = roundScores.length, average = count ? Math.round(roundScores.reduce((a,b)=>a+b,0)/count) : "—", best = count ? Math.max(...roundScores) : "—";
   const panel = window.BREAK_ROOM_PRACTICE.panel({id:"lowball-session",summary:count+" priced · "+average+" / 100 average · best guess "+best,note:"Game reference prices, not live retail quotes. Today's Daily items are held out. Session totals stay in this tab."});
-  const finish = document.createElement("button");finish.id="finish-practice";finish.className="btn-outline";finish.type="button";finish.textContent="FINISH SESSION";finish.disabled=!count;finish.hidden=finalScreen.classList.contains("show");finish.onclick=()=>{stopFx();finishUnlimited();};panel.append(finish);slot.append(panel);
+  const finish = document.createElement("button");finish.id="finish-practice";finish.className="btn-outline";finish.type="button";finish.textContent="FINISH SESSION";finish.disabled=!count;finish.hidden=finalScreen.classList.contains("show");finish.onclick=()=>{stopFx();finishUnlimited();};panel.append(finish);slot.append(panel);if(currentItem)unlimitedLibrary.show(slot,ITEMS.filter(item=>!pickDailyItems().some(d=>d.name===item.name)).map(item=>item.name),currentItem.name);
 }
 
 // Analytics hook: does nothing until a provider script (Plausible or Umami) is added to <head>.

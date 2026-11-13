@@ -38,3 +38,5 @@ const periodBoards=plan(['supabase/migrations/20261108101256_leaderboard_periods
 const sharedName=plan(['supabase/migrations/20261108103751_leaderboard_display_name.sql']);assert(sharedName.unit.includes('leaderboards-database.cjs'));assert(sharedName.browser.includes('leaderboards.cjs'));assert(sharedName.browser.includes('settings.cjs'));
 
 const palette=plan(['theme.css']);for(const name of ['light-contrast.cjs','dark-contrast.cjs','dark-social.cjs','theme.cjs'])assert(palette.browser.includes(name),'Shared colours reach '+name);
+
+const library=plan(['unlimited-library.js']);assert.equal(library.games.length,10);for(const id of ['laser','time-drop','clue-ladder','seating-chart','shift-work','codebreak','stack-up','pack','lowball','inner-clock'])assert(library.games.includes(id));assert(!library.games.includes('alibi'));assert(library.browser.includes('membership-ui.cjs'));assert(library.browser.includes('unlimited-library.cjs'));
