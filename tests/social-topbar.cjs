@@ -11,7 +11,7 @@ const pages=['leagues.html','friends.html','profile.html'],labels=['Home','Leade
    assert.equal(await header.count(),1);assert.deepEqual(await nav.getByRole('link').allTextContents(),labels);
    assert.equal(await nav.locator('[aria-current=page]').count(),1);assert.equal(await nav.locator('[aria-current=page]').getAttribute('href'),route);
    const logo=header.locator('.br-brand__image');await logo.evaluate(i=>i.decode());assert.equal(await logo.getAttribute('alt'),'Break Room');
-   const brand=await header.locator('.brand').boundingBox();if(width>480)assert(Math.abs(brand.x+brand.width/2-width/2)<1,'Centred logo '+width+' '+route);
+   const brand=await header.locator('.brand').boundingBox();assert(brand.x<width/2,'Logo stays left '+width+' '+route);const actions=await header.locator('.account').boundingBox();assert(brand.x+brand.width<=actions.x,'Brand and actions share a row without overlap');assert(Math.abs(brand.y+brand.height/2-actions.y-actions.height/2)<1,'Brand and actions align '+width+' '+route);
    const current=await nav.locator('[aria-current=page]').evaluate(a=>{const s=getComputedStyle(a,'::after');return{height:s.height,color:s.backgroundColor};});
    assert.equal(current.height,'4px');assert.equal(current.color,'rgb(238, 101, 87)');
    for(const label of ['LOG IN','ACCOUNT']){
