@@ -24,8 +24,8 @@ header .br-subscribe:focus-visible{outline:3px solid #bd5a45;outline-offset:4px}
 .topbar:has(.main-nav) .br-theme-toggle:hover{background:var(--paper-deep)!important}
 :root[data-theme=dark] .topbar:has(.main-nav) .login,
 :root[data-theme=dark] .topbar:has(.main-nav) .br-theme-toggle{box-shadow:2px 2px 0 #080e16!important}
-/* In light mode the appearance control stays quiet beside the primary action. */
-:root:not([data-theme=dark]) .topbar:has(.main-nav) .br-theme-toggle{border-color:transparent!important;background:transparent!important;box-shadow:none!important}
+/* Keep the outlined light-mode control warm against the paper background. */
+:root:not([data-theme=dark]) .topbar:has(.main-nav) .br-theme-toggle{background:var(--paper)!important}
 :root:not([data-theme=dark]) .topbar:has(.main-nav) .br-theme-toggle:hover{background:var(--paper-deep)!important}
 @media(max-width:1100px){
  .topbar:has(.main-nav){grid-template-columns:minmax(0,1fr) auto;gap:10px 16px;padding-top:14px}
