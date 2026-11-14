@@ -12,21 +12,21 @@ Proposed activation record: first qualifying invoice reference, verified payment
 
 Re-check the private live billing records and provider state when evaluating the trigger. A dated app-record audit is not continuous monitoring or a complete historical Stripe audit. No activation has been implemented or claimed by this plan.
 
-## Supply target
+## Demand-driven replenishment — owner decision, 14 November 2026
 
-The internal planning target is **100 unseen challenges per game per weekly release**:
+Save production time by reusing the published bank and writing more only when subscribers need it. **There is no fixed monthly authoring quota.** The weekly selection of up to 100 unseen challenges is a distribution limit, not an instruction to manufacture 100 new challenges every week.
 
-- Four release weeks require 400 unseen challenges per game: 4,000 across ten games.
-- A calendar month can contain five Monday releases: allow 500 per game, or 5,000 across ten games, for those months.
-- An uninterrupted weekly service needs 5,200 per game over 52 releases; 400 per calendar month averages only 4,800 per year.
-- A new subscriber can also receive the current partial-week selection before the next Monday. Keep that current selection available in addition to the upcoming four/five-release reserve; do not confuse a billing month with exactly four weekly windows.
-- If Daily and Unlimited share content and both count towards seen history, reserve additional eligible content for Daily. A raw bank of 400 entries is not automatically a four-week unseen buffer for an established Daily player.
+Keep unplayed questions in the archive across weeks and months. A newer subscriber can use older releases they have not seen. Previously seen questions remain labelled replays; a new calendar month does not discard content or reset exposure history.
 
-Track remaining unseen supply for the most advanced active subscriber, not just total catalogue size. A newly joined subscriber may have hundreds of older unseen challenges while a long-standing subscriber has exhausted them.
+For each game, review the smallest eligible unseen reserve among active subscribers, especially the most advanced returning player. Estimate time to exhaustion from actual consumption and selected filters. Start planning a top-up around **2–4 weeks of remaining supply**, allowing enough lead time for authoring and review. If subscribers still have ample unseen content, skip production for that game.
 
-These are production targets, not a new public guarantee. Keep the present “up to 100” disclosure until real eligible content can support a stronger promise. Current captured rounds, Daily calendars, scores and paid access remain unchanged while production is deferred.
+400–500 unseen challenges per game can be a useful reserve for a player consuming the full allowance across four or five weekly releases. It is not 400–500 newly written challenges every calendar month. Include the current partial-week selection and applicable Daily reservations when forecasting; total catalogue size alone does not measure a returning subscriber's remaining supply.
 
-Codebreak already has 10,000 possible codes; that is not 10,000 authored stories. Time Sense has 101 current practice durations (201 durations on its wider supported 50ms grid), so 400 meaningfully different challenges needs a separate game-design decision. Do not pad either inventory with cosmetic duplicates or new IDs for the same challenge. Prioritise the smaller authored banks: Stack Up, Laser and Lowball.
+The same authored question can serve many subscribers who have not seen it, so production should follow the furthest-advanced active user's needs rather than multiply by the number of subscribers. Newcomers should draw suitable unseen back-catalogue content before extra content is authored solely for them.
+
+Bulk production remains gated on the first confirmed paid live monthly subscription. That event starts inventory/consumption review; it does not automatically require a large batch for every game. Current captured rounds, Daily calendars, scores and paid access remain unchanged. Demand tracking and replenishment automation are planned, not deployed by this document.
+
+Codebreak already has 10,000 possible codes; that is not 10,000 authored stories. Time Sense has 101 current practice durations (201 on its wider supported 50ms grid), so expanding its meaningful variety needs a separate game-design decision. Do not pad either inventory with cosmetic duplicates or new IDs for the same challenge. Prioritise whichever authored bank is actually running low, using Stack Up, Laser and Lowball as initial inventory-review candidates.
 
 ## Account-wide seen-history design
 
@@ -71,7 +71,7 @@ Example: a subscriber joining in week five can receive week-one questions they h
 
 Prepare and test the account-wide ledger/selection service before or alongside the first-paid rollout, retaining the current browser history for migration and recovery. Earlier deployment of exposure tracking would preserve more free Daily history before a user subscribes; the content-production gate does not require delaying that infrastructure. This turn only specifies the design.
 
-After the qualifying real payment is confirmed, begin bulk content production and the first buffer expansion. Expand Unlimited archives additively rather than changing frozen Daily deck sizes without assessment. Keep the distinction between infrastructure preparation and gated content authorship explicit.
+After the qualifying real payment is confirmed, begin inventory and consumption review. Author and publish top-ups only for games whose eligible unseen reserve is approaching the 2–4-week planning threshold. Expand Unlimited archives additively rather than changing frozen Daily deck sizes without assessment. Keep the distinction between infrastructure preparation and gated content authorship explicit.
 
 Verify: older unseen content is eligible for a newcomer; an existing subscriber does not receive the same canonical challenge as fresh; two devices share one selection; assignments do not count as exposure; duplicate writes are harmless; a new week preserves seen history; non-owners cannot read/write another account's rows; corrupt/offline history preserves current rounds; and all native scoring, Daily saves and paid-access guards continue to pass.
 
