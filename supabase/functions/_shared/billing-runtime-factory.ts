@@ -44,7 +44,7 @@ return createBilling({
  },
  db:async(action:string,data:Record<string,unknown>)=>{
   if(!url||!service)throw new BillingError('Billing storage is unavailable');
-  const response=await fetch(url+'/rest/v1/rpc/billing_'+environment+'_server',{method:'POST',headers:{apikey:service,Authorization:'Bearer '+service,'Content-Type':'application/json'},body:JSON.stringify({p_action:action,p_data:data}),signal:AbortSignal.timeout(10000)});
+  const response=await fetch(url+'/rest/v1/rpc/'+(action==='content_activate'&&live?'content_library_server':'billing_'+environment+'_server'),{method:'POST',headers:{apikey:service,Authorization:'Bearer '+service,'Content-Type':'application/json'},body:JSON.stringify({p_action:action==='content_activate'&&live?'activate':action,p_data:data}),signal:AbortSignal.timeout(10000)});
   if(!response.ok){console.error(JSON.stringify({event:'billing_storage_request_failed',environment,status:response.status}));throw new BillingError('Billing is busy or unavailable. Please retry shortly.');}
   return response.json();
  },

@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<head><script src="../../../unlimited-library.js?v=weekly-20261114"></script><link rel="stylesheet" href="../../../unlimited-library.css?v=weekly-20261114">
+<head><script src="../../../unlimited-library.js?v=cloud-library-20261114"></script><link rel="stylesheet" href="../../../unlimited-library.css?v=cloud-library-20261114">
 <link rel="stylesheet" href="../../../game-help.css?v=mobile-stats-20261028-compact-reset">
 <script defer src="../../../game-help.js?v=first-visit-20261028" data-game="lowball"></script>
 <meta charset="UTF-8">
@@ -1301,6 +1301,7 @@ function renderDots() {
 function showItem() {
   const advancing = resultArea.contains(document.activeElement) || finalScreen.contains(document.activeElement);
   currentItem = mode === "normal" ? roundItems[roundIndex] : deck[deckIndex];
+  if (mode === "normal" && currentItem) unlimitedLibrary.observe(currentItem.name);
   if (mode === "unlimited" && currentItem !== libraryItem) { unlimitedLibrary.draw(currentItem.name); libraryItem = currentItem; }
   if (mode === "unlimited") practicePending = null;
   const emojiEl = document.getElementById("itemEmoji");
@@ -1426,7 +1427,8 @@ function renderResult(guess, ctry, animate) {
   if (animate) announceLowball(PRICE_REFERENCES.label(currentItem) + ": " + score + " out of 100. Your guess " + symbol + guess.toFixed(2) + ". Reference price " + symbol + actual.toFixed(2) + ". " + offByText(guess, actual, pctOff, symbol) + ".");
 }
 
-document.getElementById("nextBtn").addEventListener("click", () => {
+document.getElementById("nextBtn").addEventListener("click", function nextItem() {
+  if (mode === "unlimited" && !unlimitedLibrary.advance(nextItem)) return;
   stopFx();
   if (mode === "normal" && getTodayKey() !== loadedDayKey) { location.reload(); return; }
   if (mode === "normal") {

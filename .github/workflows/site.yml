@@ -150,7 +150,7 @@ jobs:
                       request = urllib.request.Request(base + "games/" + current + "/index.html?release=" + os.environ["GITHUB_SHA"], headers={"Cache-Control":"no-cache"})
                       with urllib.request.urlopen(request, timeout=20) as response:
                           page = response.read()
-                      assert (current + ".js?v=weekly-20261114").encode() in page and b"unlimited-library.js?v=weekly-20261114" in page and b"unlimited-library.css?v=weekly-20261114" in page, "Missing current Unlimited library: " + current
+                      assert (current + ".js?v=cloud-library-20261114").encode() in page and b"unlimited-library.js?v=cloud-library-20261114" in page and b"unlimited-library.css?v=cloud-library-20261114" in page, "Missing current Unlimited library: " + current
                       assert b"How To Play</button>" in page and b"game-help.js?v=first-visit-20261028" in page and ('data-game="' + current + '"').encode() in page, "Missing labelled first-visit instructions: " + current
                       assert b'class="mobile-stats-label">Stats</span>' in page and b"game-help.css?v=mobile-stats-20261028" in page, "Missing mobile stats layout: " + current
                       assert b"game-feel.js?v=settings-20261106" in page and b"game-feel.css?v=settings-20261106" in page and b"achievements.js?v=immersion-20261105" in page, "Missing immersive feedback: " + current
@@ -165,7 +165,7 @@ jobs:
                       if current != "pack":
                           assert ('data-game-art="' + current + '"').encode() in page and b"game-art.js?v=objects-20261027" in page, "Missing game objects: " + current
                       if current == "pack":
-                          assert b"item-art.js?v=items-20261027" in page and b"pack.js?v=weekly-20261114" in page and b"pack.css?v=items-20261027" in page, "Missing custom Pack item graphics"
+                          assert b"item-art.js?v=items-20261027" in page and b"pack.js?v=cloud-library-20261114" in page and b"pack.css?v=items-20261027" in page, "Missing custom Pack item graphics"
                   print("Verified current game sets, original Clue Ladder, Pack item artwork and shared motion assets.")
                   for retired in ["hidden-gem","stake","prior","alibi","bouncer","pixel-pairs","word-forge","gridlock","number-drop","memory-lane","mystery-cabinet"]:
                       request = urllib.request.Request(base + "games/" + retired + "/index.html?release=" + os.environ["GITHUB_SHA"], headers={"Cache-Control":"no-cache"})

@@ -273,7 +273,16 @@
    if(!response.ok)throw Error(value.error||'Billing is unavailable. Please try again.');return value;
   });
  }
- window.BREAK_ROOM_ACCOUNTS=Object.freeze({sync:syncUpload,ready,signOut:requestSignOut,exportSaves:download,billingRequest,updateName,updateEmail,resetPassword,setSharing:value=>{if(typeof value!=='boolean')throw Error('Choose a sharing setting.');return socialSettings(undefined,value);},getUser:()=>session?.user||null,
+ async function contentRequest(body,expectedActor=session?.user.id){
+  if(!['sync','shown'].includes(body?.action))throw Error('Unknown history operation.');
+  return accountAction(async check=>{
+   const signed=await authenticated(),actor=signed.user.id;if(!expectedActor||actor!==expectedActor)throw Error('Account changed. Please reload.');
+   const response=await fetch(config.url+'/functions/v1/content-library',{method:'POST',headers:{apikey:config.publishableKey,Authorization:'Bearer '+signed.access_token,'Content-Type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(25000)});
+   const value=await response.json();check();if((await authenticated()).user.id!==actor)throw Error('Account changed. Please reload.');
+   if(!response.ok)throw Error(value.error||'Question history unavailable.');return value;
+  });
+ }
+ window.BREAK_ROOM_ACCOUNTS=Object.freeze({sync:syncUpload,ready,signOut:requestSignOut,exportSaves:download,billingRequest,contentRequest,updateName,updateEmail,resetPassword,setSharing:value=>{if(typeof value!=='boolean')throw Error('Choose a sharing setting.');return socialSettings(undefined,value);},getUser:()=>session?.user||null,
   cloudActive:()=>{try{return !!session&&owner()===session.user.id;}catch{return false;}},
   async leaderboardRPC(name,args={}){await ready;if(!['daily_leaderboard','leaderboard_standings','leaderboard_profile'].includes(name))throw Error('Unknown leaderboard operation.');if(!client)throw Error('Account service is unavailable. Please try again.');if(name==='leaderboard_profile'&&!session)throw Error('Please sign in to manage your public listing.');if(name==='leaderboard_profile'&&args.p_action==='set'&&args.p_expected_user!==session.user.id)throw Error('Account changed. Please reload before changing your listing.');const {data,error}=await client.rpc(name,args);if(error)throw error;return data;},
   async friendsRPC(name,args={}){await ready;if(!['friend_hub','friend_scores','hidden_gem_friend_scores','shift_work_friend_scores','codebreak_friend_scores','league_hub'].includes(name))throw Error('Unknown friends operation.');if(!client||!session)throw Error('Please sign in to use friends.');const {data,error}=await client.rpc(name,args);if(error)throw error;return data;}

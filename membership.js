@@ -3,7 +3,7 @@
  'use strict';
  const base=new URL('.',document.currentScript.src),accountURL=new URL('account.html#purchases',base).href;
  const account=()=>window.BREAK_ROOM_ACCOUNTS;
- let game,view,waiting=false,waitVersion=0,authSettled=false;
+ let game,view,waiting=false,waitVersion=0,authSettled=false,historyReady='';
  const pageGame=location.pathname.match(/\/games\/([^/]+)\//)?.[1];
  const marker=id=>'break-room:membership:locked:'+id;
  const marked=id=>{try{return sessionStorage.getItem(marker(id))==='1';}catch{return false;}};
@@ -35,23 +35,24 @@
   }
   view.login.hidden=kind!=='signed-out'||!!account()?.getUser();
   if(view.description)view.description.textContent=kind==='checking'?'Unlimited · Checking access…':'Unlimited · Locked';
-  view.card.querySelector('p').textContent={checking:'Checking your purchases…','signed-out':'Sign in to see your purchases, or choose a plan to keep playing.',required:'Choose a monthly membership or unlock this game with a one-time purchase.',unavailable:'We could not verify your purchases. Check your connection, then reload this page to try again. Your game progress is safe.'}[kind];
-  view.card.querySelector('h2').textContent=kind==='checking'?'Checking Unlimited access…':kind==='unavailable'?'Access unavailable':'Unlock Unlimited';
+  view.card.querySelector('p').textContent={checking:'Checking your purchases…','signed-out':'Sign in to see your purchases, or choose a plan to keep playing.',required:'Choose a monthly membership or unlock this game with a one-time purchase.','history-unavailable':'We could not sync your question history. Your current round is safe. Check your connection, then reload to try again.',unavailable:'We could not verify your purchases. Check your connection, then reload this page to try again. Your game progress is safe.'}[kind];
+  view.card.querySelector('h2').textContent=kind==='checking'?'Checking Unlimited access…':kind==='history-unavailable'?'History unavailable':kind==='unavailable'?'Access unavailable':'Unlock Unlimited';
  }
  const guard=window.BREAK_ROOM_MEMBERSHIP_POLICY.createGuard({enforce:true,getActor:()=>account()?.getUser()?.id||null,readStatus:()=>account().billingRequest({action:'status'}),show});
- const cancel=()=>{mark(game,false);waitVersion++;waiting=false;guard.cancel();restore();};
+ const cancel=()=>{window.BREAK_ROOM_UNLIMITED_LIBRARY?.cancelPending();try{document.getElementById('lowball-game-frame')?.contentWindow?.BREAK_ROOM_UNLIMITED_LIBRARY?.cancelPending();}catch{}mark(game,false);waitVersion++;waiting=false;guard.cancel();restore();};
  function allow(next,resume){
   game=next;
   if(!guard.enforced)return guard.allow(next,resume);
-  if(authSettled)return guard.allow(next,resume);
+  const historyKey=(account()?.getUser()?.id||'guest')+':'+next;
+  if(authSettled&&historyReady===historyKey)return guard.allow(next,resume);
   if(waiting)return false;
   waiting=true;const version=++waitVersion;show('checking');
   const ready=account()?.ready||(document.readyState==='loading'?new Promise(resolve=>document.addEventListener('DOMContentLoaded',()=>resolve(account()?.ready),{once:true})):Promise.resolve());
-  Promise.resolve(ready).then(()=>{if(version!==waitVersion)return;waiting=false;authSettled=true;if(guard.allow(next,resume))resume();}).catch(()=>{if(version===waitVersion){waiting=false;show('unavailable');}});
+  Promise.resolve(ready).then(async()=>{if(version!==waitVersion)return;const doc=next==='lowball'?document.getElementById('lowball-game-frame')?.contentWindow:window;await doc?.BREAK_ROOM_UNLIMITED_LIBRARY?.prepare(next);if(version!==waitVersion)return;historyReady=(account()?.getUser()?.id||'guest')+':'+next;waiting=false;authSettled=true;if(guard.allow(next,resume))resume();}).catch(()=>{if(version===waitVersion){waiting=false;show('history-unavailable');}});
   return false;
  }
  let currentActor=account()?.getUser()?.id||null;
- window.addEventListener('break-room:auth-change',()=>{const next=account()?.getUser()?.id||null;if(next!==currentActor){currentActor=next;if(waiting)guard.cancel();else cancel();}});
+ window.addEventListener('break-room:auth-change',()=>{const next=account()?.getUser()?.id||null;if(next!==currentActor){currentActor=next;historyReady='';if(waiting)guard.cancel();else cancel();}});
  window.BREAK_ROOM_MEMBERSHIP=Object.freeze({allow,cancel,enforced:guard.enforced,accountURL});
  window.addEventListener('load',()=>{if(!reopenLocked||!marked(pageGame)||!window.BREAK_ROOM_MEMBERSHIP_POLICY.games.includes(pageGame))return;try{if(window.parent!==window&&window.parent.BREAK_ROOM_MEMBERSHIP)return;}catch{}const doc=pageGame==='lowball'?(document.getElementById('lowball-game-frame')?.contentDocument||document):document;doc.querySelector(pageGame==='lowball'?'#unlimitedModeBtn':'#mode-unlimited')?.click();},{once:true});
 })();

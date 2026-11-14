@@ -1,6 +1,6 @@
 # Subscriber-triggered content plan — 14 November 2026
 
-Status: planning only. The owner asked to start the content expansion after the first subscriber. Bulk content creation is deferred. This document does not install a billing trigger, cloud seen-history service, notification, scheduled authoring job or publication schedule.
+Status: account-history service and subscriber activation implemented; content authorship remains gated. The owner asked to start the content expansion after the first subscriber. Bulk content creation is deferred. The implementation adds a private cloud history service, shared weekly allocation and a verified first-payment activation record. It does not install a content authoring job or promise a fixed publication schedule.
 
 ## Start condition
 
@@ -8,9 +8,9 @@ Start production after the first successfully paid **live monthly subscription**
 
 The existing verified live webhook/reconciliation path is the appropriate place for the eventual activation signal. Resolve the invoice through the Subscription and the existing live catalogue/customer mapping; verify a real successful payment, the monthly price, correct account and live mode. A subscription becoming active by itself can precede a delayed payment. Browser flags and the success URL are not activation signals.
 
-Proposed activation record: first qualifying invoice reference, verified payment time, activation time and programme state. Create it once through a transaction with a uniqueness constraint. Duplicate or out-of-order events must not start production twice. A later cancellation does not erase the historical first-payment event or remove published content. Reconciliation should be able to recover a missed event. Keep the existing pinned Stripe API version and billing enforcement; implementing this signal is not a reason to change API versions or payment configuration.
+Activation record: first qualifying invoice reference, verified payment time, activation time and programme state. Create it once through a transaction with a uniqueness constraint. Duplicate or out-of-order events must not start production twice. A later cancellation does not erase the historical first-payment event or remove published content. Reconciliation should be able to recover a missed event. Keep the existing pinned Stripe API version and billing enforcement; implementing this signal is not a reason to change API versions or payment configuration.
 
-Re-check the private live billing records and provider state when evaluating the trigger. A dated app-record audit is not continuous monitoring or a complete historical Stripe audit. No activation has been implemented or claimed by this plan.
+Re-check the private live billing records and provider state when evaluating the trigger. A dated app-record audit is not continuous monitoring or a complete historical Stripe audit. The service is installed separately from any real payment; activation is not claimed until a qualifying payment is observed.
 
 ## Demand-driven replenishment — owner decision, 14 November 2026
 
@@ -24,15 +24,15 @@ For each game, review the smallest eligible unseen reserve among active subscrib
 
 The same authored question can serve many subscribers who have not seen it, so production should follow the furthest-advanced active user's needs rather than multiply by the number of subscribers. Newcomers should draw suitable unseen back-catalogue content before extra content is authored solely for them.
 
-Bulk production remains gated on the first confirmed paid live monthly subscription. That event starts inventory/consumption review; it does not automatically require a large batch for every game. Current captured rounds, Daily calendars, scores and paid access remain unchanged. Demand tracking and replenishment automation are planned, not deployed by this document.
+Bulk production remains gated on the first confirmed paid live monthly subscription. That event starts inventory/consumption review; it does not automatically require a large batch for every game. Current captured rounds, Daily calendars, scores and paid access remain unchanged. A private demand report is implemented; content authorship is still a reviewed production task.
 
 Codebreak already has 10,000 possible codes; that is not 10,000 authored stories. Time Sense has 101 current practice durations (201 on its wider supported 50ms grid), so expanding its meaningful variety needs a separate game-design decision. Do not pad either inventory with cosmetic duplicates or new IDs for the same challenge. Prioritise whichever authored bank is actually running low, using Stack Up, Laser and Lowball as initial inventory-review candidates.
 
 ## Account-wide seen-history design
 
-The current live implementation already tracks Unlimited IDs and selects older unseen content, but its ledger and weekly selection are local to an account on one browser. It is not cloud-synced. The proposed next version makes the authenticated account the history owner across devices.
+The authenticated account owns its private cloud ledger and shared weekly selection across devices. Browser recovery ledgers remain available and are union-imported when each game opens. Guest history remains browser-local.
 
-Proposed records:
+Private records:
 
 | Record | Purpose |
 | --- | --- |
@@ -69,7 +69,7 @@ Example: a subscriber joining in week five can receive week-one questions they h
 
 ## Implementation order
 
-Prepare and test the account-wide ledger/selection service before or alongside the first-paid rollout, retaining the current browser history for migration and recovery. Earlier deployment of exposure tracking would preserve more free Daily history before a user subscribes; the content-production gate does not require delaying that infrastructure. This turn only specifies the design.
+Prepare and test the account-wide ledger/selection service before or alongside the first-paid rollout, retaining the current browser history for migration and recovery. Earlier deployment of exposure tracking would preserve more free Daily history before a user subscribes; the content-production gate does not require delaying that infrastructure. The service implements this preparation; bulk authorship remains gated.
 
 After the qualifying real payment is confirmed, begin inventory and consumption review. Author and publish top-ups only for games whose eligible unseen reserve is approaching the 2–4-week planning threshold. Expand Unlimited archives additively rather than changing frozen Daily deck sizes without assessment. Keep the distinction between infrastructure preparation and gated content authorship explicit.
 
@@ -84,3 +84,13 @@ Weekly rotation already exists. It does not automatically author, review or publ
 - Supabase database building blocks: https://supabase.com/docs/guides/getting-started/the-supabase-way-to-build .
 - Stripe subscription events: https://docs.stripe.com/billing/subscriptions/webhooks .
 - Stripe delayed-payment confirmation: https://docs.stripe.com/billing/subscriptions/bacs-debit .
+
+## Implemented service — 14 November 2026
+
+`content-library` authenticates through the official Auth user endpoint and only exposes sync/shown operations for that actor. A service-only invoker RPC owns private `br_content` records. Account/game transaction locks serialize weekly allocation and exposures. The catalogue is reproducible with `scripts/content-catalog.cjs`; new authored releases must update the private catalogue additively before publishing the corresponding bank. Stack Up uses canonical themes; Codebreak codes and Time Sense targets are not cosmetic content releases.
+
+All ten controllers record the currently displayed Daily challenge, not unopened captured rounds. Unlimited entry and Next hydrate the shared account history, retain local imports and preserve native round state on failure. The exposure acknowledgement decides whether a newly drawn challenge is labelled new or replay: concurrent devices may briefly display the same question, but a duplicate acknowledgement is labelled replay. While checking, the badge says Checking history; failed acknowledgements never claim a globally unseen challenge. Native Codebreak IndexedDB reservations remain intact.
+
+The live billing reconciler records programme activation only from a paid monthly invoice with a verified successful, non-reversed payment and a positive approved amount. Storage failures remain retryable before reconciliation/event completion; duplicate activation retains the first stored proof. No real payment is generated for testing. This rollout starts with the existing source banks, not a manufactured 400-question monthly release.
+
+`br_content.inventory_review` is a private live report of active monthly subscribers who have played in the last 28 days. It calculates remaining unseen eligible inventory and recent consumption, suggesting top-up planning at four weeks or less. Imported history reduces available inventory but does not invent historical consumption dates. Zero observed usage requests observation, not automatic production. The view stays empty until programme activation. The estimate is an aggregate planning aid: selected filters and Daily holdouts still need review before authoring.

@@ -79,7 +79,14 @@ export function createBilling({catalog,stripe,db,user,configured,now=Date.now,en
   }
   result.clock_now=evaluatedAt;
   // Never grant a new period from an unpaid/latest failed invoice or trial.
-  if(['active','canceled'].includes(sub.status)&&through*1000>evaluatedAt&&invoice&&typeof invoice!=='string'&&invoice.livemode===live&&invoice.status==='paid'&&invoice.amount_paid>=spec.unit_amount&&await paymentValid(invoice.payment_intent))result.state='active';
+  const invoicePaid=invoice&&typeof invoice!=='string'&&invoice.livemode===live&&invoice.status==='paid'&&invoice.amount_paid>=spec.unit_amount&&await paymentValid(invoice.payment_intent);
+  if(['active','canceled'].includes(sub.status)&&through*1000>evaluatedAt&&invoicePaid)result.state='active';
+  // This proof is server-only. Active status alone, trials and zero invoices cannot activate production.
+  if(live&&invoicePaid&&objectId(invoice.customer)===c.customer_id&&objectId(invoice.subscription)===sub.id&&typeof invoice.id==='string'&&typeof sub.id==='string'&&
+   Number.isSafeInteger(invoice.status_transitions?.paid_at)&&invoice.status_transitions.paid_at>0&&invoice.status_transitions.paid_at*1000<=now()+300000){
+   result.content_payment={environment:'live',item:'monthly',invoice_id:invoice.id,subscription_id:sub.id,
+    payment_intent:objectId(invoice.payment_intent),amount_paid:invoice.amount_paid,paid_at:new Date(invoice.status_transitions.paid_at*1000).toISOString()};
+  }
   return result;
  }
  function summary(rows){
@@ -92,7 +99,8 @@ export function createBilling({catalog,stripe,db,user,configured,now=Date.now,en
   if(rows.length>100)throw new BillingError('Sandbox session limit reached');
   const states=[];
   for(let i=0;i<rows.length;i+=4)states.push(...await Promise.all(rows.slice(i,i+4).map(async row=>({...row,...await sessionState(row,c)}))));
-  await db('snapshot',{...args,rows:states});return {rows:states,status:summary(states)};
+  for(const state of states)if(state.content_payment)await db('content_activate',state.content_payment);
+  await db('snapshot',{...args,rows:states.map(({content_payment,...state})=>state)});return {rows:states,status:summary(states)};
  }
  async function action(uid,body){
   if(body.action==='checkout'&&!checkoutEnabled())throw new BillingError('Purchases have not launched yet',403);
