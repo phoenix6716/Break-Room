@@ -33,6 +33,8 @@ Native Daily saves, immutable answers/scores, captured active rounds, running ti
 
 ## Content update procedure
 
+Owner decision, 14 November 2026: defer the new 400-per-four-week content expansion until the first successfully paid live monthly subscription. Five-release months need 500 per game. The account-wide exposure/selection design and activation criteria are in [CONTENT-SUBSCRIPTION-PLAN.md](CONTENT-SUBSCRIPTION-PLAN.md). That cloud service and activation automation are planned, not deployed; current history remains browser-local.
+
 1. Review the smallest or most replayed banks first: Stack Up, Lowball and Laser. Review difficulty/topic filters as well as total counts. More Time Sense durations or Codebreak combinations alone are not equivalent to new authored content.
 2. Add reviewed content with fresh, stable identifiers (fresh themes for Stack Up). Never repurpose an existing ID for a changed puzzle, rewrite captured rounds, erase saves, or reset player history merely to call old content new.
 3. Use the relevant content source/generator and run its existing content, solver, calendar, snapshot and affected engine checks. Some Daily models require fixed bank sizes; do not append indiscriminately or silently change Daily rotations. Separate additive practice banks are an option when the Daily contract is fixed.
