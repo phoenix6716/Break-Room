@@ -43,7 +43,7 @@ function copy(file,relative){
   if(rendered.includes('accounts.js'))rendered=rendered.replace('</head>','<link rel="stylesheet" href="'+uiBase+'account-menu.css?v=leaderboards-20261106"><script defer src="'+uiBase+'account-menu.js?v=clean-urls-20261109"></script></head>');
   if(/^games\/[^/]+\/index\.html$/.test(relative)&&activeGames.has(relative.split('/')[1]))rendered=rendered.replace('<!-- shared-legal-footer:start -->','<p class="game-leaderboard-link"><a href="../../leaderboards.html?game='+relative.split('/')[1]+'">Daily leaderboard →</a></p><!-- shared-legal-footer:start -->');
   rendered=rendered.replace(/(src="[^"\n]*(?:shell|stack-up)\.js)(?:\?[^"\n]*)?"/g,'$1?v=billing-20261111"');
-  rendered=rendered.replace(/(src="(?:[^"]*\/)?(?:laser|time-drop|clue-ladder|seating-chart|shift-work|codebreak|pack|stack-up|inner-clock)\.js)(?:\?[^"]*)?"/g,'$1?v=library-20261113"');
+  rendered=rendered.replace(/(src="(?:[^"]*\/)?(?:laser|time-drop|clue-ladder|seating-chart|shift-work|codebreak|pack|stack-up|inner-clock)\.js)(?:\?[^"]*)?"/g,'$1?v=weekly-20261114"');
   // Shared achievement UI reads the same native results as Profile; no engine writes change.
   const achievementPage=(/^games\/[^/]+\/index\.html$/.test(relative)&&activeGames.has(relative.split('/')[1]));
   if(achievementPage){

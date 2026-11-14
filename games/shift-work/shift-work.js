@@ -10,8 +10,8 @@ function say(s){$('status').textContent=s;}
 function warn(s){$('save-warning').hidden=false;$('save-warning').textContent=s;}
 function raw(k){try{return !persistent&&mem.has(k)?mem.get(k):localStorage.getItem(k)||mem.get(k)||null;}catch{persistent=false;return mem.get(k)||null;}}
 function read(day){try{const r=JSON.parse(raw(SW.PREFIX+day));return SW.valid(r,day)?r:null;}catch{return null;}}
-function practicePool(){const held=new Set((state.daily?.boards||SW.daily(BOARDS,clock.dayKey())).map(b=>b.id));return BOARDS.filter(b=>(state.level==='Mixed'||b.tier===state.level)&&!held.has(b.id));}
-function draw(used,level,daily){const excluded=(daily?.boards||SW.daily(BOARDS,clock.dayKey())).map(b=>b.id),p=SW.practice(L.unseen(BOARDS.filter(b=>(level==='Mixed'||b.tier===level)&&!excluded.includes(b.id))),level,excluded,used,state.practice?.boards[0].id);used.splice(0,used.length,...p.used);L.draw(p.board.id);return p.board;}
+function practicePool(){const held=new Set((state.daily?.boards||SW.daily(BOARDS,clock.dayKey())).map(b=>b.id));return L.select(BOARDS,b=>b.id,b=>b.tier).filter(b=>(state.level==='Mixed'||b.tier===state.level)&&!held.has(b.id));}
+function draw(used,level,daily){const excluded=(daily?.boards||SW.daily(BOARDS,clock.dayKey())).map(b=>b.id),p=SW.practice(L.unseen(L.select(BOARDS,b=>b.id,b=>b.tier).filter(b=>(level==='Mixed'||b.tier===level)&&!excluded.includes(b.id))),level,excluded,used,state.practice?.boards[0].id);used.splice(0,used.length,...p.used);L.draw(p.board.id);return p.board;}
 
 function saveDaily(){if(!state.daily||blocked||owner()!==bootOwner)return;const key=SW.PREFIX+state.day,text=JSON.stringify(state.daily);mem.set(key,text);try{localStorage.setItem(key,text);window.dispatchEvent(new Event('break-room:save'));}catch{persistent=false;}if(!persistent)warn('Saving is unavailable. Progress stays in memory while this page remains open.');stats();}
 function freshDaily(){state.day=clock.dayKey();const value=raw(SW.PREFIX+state.day);state.daily=read(state.day);blocked=!!value&&!state.daily;if(!state.daily&&!blocked){state.daily=SW.create(SW.daily(BOARDS,state.day),state.day);saveDaily();}}

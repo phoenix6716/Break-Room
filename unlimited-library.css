@@ -4,3 +4,5 @@
 .unlimited-library>small{display:block;font:11px/1.5 Arial,sans-serif;color:var(--ink-soft,#526273)}
 :root[data-theme=dark] .unlimited-library{border-color:var(--line,#9caeb9);background:var(--white,#202e3d);color:var(--ink,#f2e9d8)}
 @media(forced-colors:active){.unlimited-library{border-color:CanvasText;background:Canvas;color:CanvasText}}
+
+.unlimited-library.unlimited-library-compact{padding:6px 10px;margin-bottom:12px;border:0;background:transparent}.unlimited-library [hidden]{display:none!important}

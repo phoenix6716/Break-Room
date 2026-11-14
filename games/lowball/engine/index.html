@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<head><script src="../../../unlimited-library.js?v=library-20261113"></script><link rel="stylesheet" href="../../../unlimited-library.css?v=library-20261113">
+<head><script src="../../../unlimited-library.js?v=weekly-20261114"></script><link rel="stylesheet" href="../../../unlimited-library.css?v=weekly-20261114">
 <link rel="stylesheet" href="../../../game-help.css?v=mobile-stats-20261028-compact-reset">
 <script defer src="../../../game-help.js?v=first-visit-20261028" data-game="lowball"></script>
 <meta charset="UTF-8">
@@ -1113,14 +1113,18 @@ function pickDailyItems() {
 let deck = [];
 let deckIndex = 0;
 let practiceQueue = [], practiceRecent = [], practiceSnapshot = null, practicePending = null, dailyDraft = null;
+function weeklyPracticeItems() {
+  const excluded=new Set(pickDailyItems().map(item=>item.name));
+  return unlimitedLibrary.select(ITEMS,item=>item.name).filter(item=>!excluded.has(item.name)).map(item=>PRICE_REFERENCES.current(item,getTodayKey()));
+}
 function newDeck() {
   libraryItem = null;
-  const excluded = new Set(pickDailyItems().map(item => item.name));
-  const allowed = ITEMS.filter(item => !excluded.has(item.name)).map(item => PRICE_REFERENCES.current(item,getTodayKey()));
-  const remainder = practiceQueue.filter(item => !excluded.has(item.name));
+  const allowed = weeklyPracticeItems();
+  const fresh=unlimitedLibrary.unseen(allowed,item=>item.name),eligible=new Set(fresh.map(item=>item.name));
+  const remainder = practiceQueue.filter(item => eligible.has(item.name));
   practiceQueue = [];
   if (remainder.length) return remainder;
-  const d = unlimitedLibrary.unseen(allowed,item=>item.name).slice();
+  const d = fresh.slice();
   for (let i = d.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [d[i], d[j]] = [d[j], d[i]];
@@ -1137,7 +1141,7 @@ function updatePracticePanel() {
   const slot = document.getElementById("lowball-practice");slot.replaceChildren();if (mode !== "unlimited") return;
   const count = roundScores.length, average = count ? Math.round(roundScores.reduce((a,b)=>a+b,0)/count) : "—", best = count ? Math.max(...roundScores) : "—";
   const panel = window.BREAK_ROOM_PRACTICE.panel({id:"lowball-session",summary:count+" priced · "+average+" / 100 average · best guess "+best,note:"Game reference prices, not live retail quotes. Today's Daily items are held out. Session totals stay in this tab."});
-  const finish = document.createElement("button");finish.id="finish-practice";finish.className="btn-outline";finish.type="button";finish.textContent="FINISH SESSION";finish.disabled=!count;finish.hidden=finalScreen.classList.contains("show");finish.onclick=()=>{stopFx();finishUnlimited();};panel.append(finish);slot.append(panel);if(currentItem)unlimitedLibrary.show(slot,ITEMS.filter(item=>!pickDailyItems().some(d=>d.name===item.name)).map(item=>item.name),currentItem.name);
+  const finish = document.createElement("button");finish.id="finish-practice";finish.className="btn-outline";finish.type="button";finish.textContent="FINISH SESSION";finish.disabled=!count;finish.hidden=finalScreen.classList.contains("show");finish.onclick=()=>{stopFx();finishUnlimited();};panel.append(finish);slot.append(panel);if(currentItem)unlimitedLibrary.show(slot,weeklyPracticeItems().map(item=>item.name),currentItem.name);
 }
 
 // Analytics hook: does nothing until a provider script (Plausible or Umami) is added to <head>.
@@ -1434,6 +1438,8 @@ document.getElementById("nextBtn").addEventListener("click", () => {
     saveProgress(null);
     showItem();
   } else {
+    const allowed=new Set(weeklyPracticeItems().map(item=>item.name));
+    deck=deck.slice(0,deckIndex+1).concat(deck.slice(deckIndex+1).filter(item=>allowed.has(item.name)));
     deckIndex++;
     if (deckIndex >= deck.length) { finishUnlimited(); return; }
     showItem();
