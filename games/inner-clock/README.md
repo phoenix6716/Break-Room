@@ -1,3 +1,5 @@
+> Current access and release status — 17 November 2026: [CURRENT-STATUS.md](../../CURRENT-STATUS.md) supersedes older launch/free-practice statements below. Daily is free; Unlimited needs verified live monthly or individual-game ownership and uses account-wide seen history/shared weekly selections. Historical save versions and captured rules remain supported; do not regrade or restart them.
+
 # Time Sense — integration v1
 
 Approved display name **Time Sense** (25 October 2026), formerly Inner Clock. Internal ID/route `inner-clock`, storage keys, models, SQL, scoring and achievements remain unchanged. Earlier roster and installer descriptions below are historical; see the current ten-game guidance in root AGENTS.md. Prototype archived unchanged at `design/prototypes/inner-clock/original.html`; its comments/hooks are not implementation instructions. No payments or separate Compare-code mode.

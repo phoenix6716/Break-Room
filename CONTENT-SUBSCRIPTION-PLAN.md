@@ -36,10 +36,10 @@ Private records:
 
 | Record | Purpose |
 | --- | --- |
-| Published challenge catalogue | Stable game ID, canonical challenge ID, content version/fingerprint, publish time, eligible modes, difficulty/topic and retirement state. |
+| Published challenge catalogue | Stable game/native or canonical theme ID, topic, eligibility and publish time. Dedicated version/fingerprint/lineage fields are future design work, not installed columns. |
 | Account exposure | One row per authenticated account + game + canonical challenge, with first-shown time and optional last-shown time. |
 | Account weekly selection | One shared selection of up to 100 IDs per account + game + Sydney week, with assignment and actual exposure tracked separately. |
-| Content programme state | One verified first-paid activation and dated inventory/release review state. |
+| Content programme state | One verified first-paid activation with invoice/subscription references and timestamps; a separate private live view computes inventory review. No authoring scheduler or release-review log is installed. |
 
 A stable canonical ID represents the actual challenge. A wording correction, renamed character, new illustration or shuffled display order does not erase seen history. Preserve old captured content versions. Materially different challenges get genuinely new IDs after review; maintain lineage where appropriate. Stack Up variants of the same theme should not inflate the distinct pool.
 

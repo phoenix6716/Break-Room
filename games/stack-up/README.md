@@ -1,3 +1,5 @@
+> Current access and release status — 17 November 2026: [CURRENT-STATUS.md](../../CURRENT-STATUS.md) supersedes older launch/free-practice statements below. Daily is free; Unlimited needs verified live monthly or individual-game ownership and uses account-wide seen history/shared weekly selections. Historical save versions and captured rules remain supported; do not regrade or restart them.
+
 ## Stack Up live mouse dragging — owner clarification, 5 November 2026
 
 Mouse dragging must be smooth while the button is held, not only after dropping. A pointer-tracked floating card follows the mouse directly; other cards preview their positions using the existing eased animation. Keep a visible landing slot, edge scrolling and pointer capture. Escape, pointer cancellation, window blur and dropping outside restore the original draft order; dropping inside commits the preview. The existing deadline never resets and a timeout removes the drag preview. Reduced motion keeps direct pointer tracking with instant neighbour changes. Touch arrows, keyboard sorting, All topics default, scores and other games remain unchanged.

@@ -1,3 +1,5 @@
+> Current-state note — 17 November 2026: read [CURRENT-STATUS.md](CURRENT-STATUS.md) first. This topic file includes dated release history and compatibility contracts. Older statements about free Unlimited, disabled billing, proposed hosting, game rosters or pending features do not override the deployed status; preserve old captured-save rules.
+
 ## Codebreak v6 — 6 November 2026
 
 New rounds use digits 0–9 (leading zeroes allowed), eight guesses and the existing 100 / 80 / 60 / 40 / 20 scoring after the fourth guess. The Daily rotation contains 10,000 unique codes. Captured v1–v5 rounds keep their original calendars, digit ranges, drafts and scores. Unlimited reservations persist per owner/browser across tabs and visits until the available pool is exhausted; clearing device data resets the ledger. Apply `supabase/migrations/20261106105705_codebreak_zero_persistent_practice.sql` last. See `games/codebreak/README.md`; earlier version notes below are historical.

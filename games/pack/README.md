@@ -1,3 +1,5 @@
+> Current access and release status — 17 November 2026: [CURRENT-STATUS.md](../../CURRENT-STATUS.md) supersedes older launch/free-practice statements below. Daily is free; Unlimited needs verified live monthly or individual-game ownership and uses account-wide seen history/shared weekly selections. Historical save versions and captured rules remain supported; do not regrade or restart them.
+
 # Pack — early working name
 
 A weight-and-usefulness puzzle, not a spatial packing game. Select items under the bag’s weight limit and maximize usefulness. All weights and usefulness values are **fictional puzzle values**, not real product measurements or travel advice.

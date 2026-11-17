@@ -1,3 +1,5 @@
+> Historical audit/draft — retained 17 November 2026. This records an earlier checkpoint, not today’s unfinished work. The owner subsequently completed launch setup. Read [CURRENT-STATUS.md](CURRENT-STATUS.md), [PAYMENTS.md](PAYMENTS.md) and the published site before acting on old pending items. Do not infer current provider settings or transactions from these dated observations.
+
 # Purchase terms — published policy reference
 
 Published on Terms of play on 12 November 2026 as the policy for future paid plans. The owner subsequently authorized public checkout on 12 November 2026. The owner confirmed the legal seller name Phoenix Phillips and selected the case-by-case refund policy below.

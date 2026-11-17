@@ -1,3 +1,5 @@
+> Current access and release status — 17 November 2026: [CURRENT-STATUS.md](../../CURRENT-STATUS.md) supersedes older launch/free-practice statements below. Daily is free; Unlimited needs verified live monthly or individual-game ownership and uses account-wide seen history/shared weekly selections. Historical save versions and captured rules remain supported; do not regrade or restart them.
+
 ## Current score display — 5 November 2026
 
 Each event now displays its existing points divided by ten, out of 100. The Daily score is the average of all captured event scores. This includes older ten-event captures, without changing their questions, picks or final normalized scores. Main results, round feedback, summaries, share text and profile cards use the single 0–100 scale. The other seven games are unchanged. Earlier native-point documentation below describes the preserved storage/legacy contract.

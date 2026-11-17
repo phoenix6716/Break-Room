@@ -1,3 +1,5 @@
+> Current access and release status — 17 November 2026: [CURRENT-STATUS.md](../../CURRENT-STATUS.md) supersedes older launch/free-practice statements below. Daily is free; Unlimited needs verified live monthly or individual-game ownership and uses account-wide seen history/shared weekly selections. Historical save versions and captured rules remain supported; do not regrade or restart them.
+
 # Desk Jam
 
 Approved display name **Desk Jam** (25 October 2026), formerly Shift Work. Keep the `shift-work` route/ID, internal symbols, storage/SQL contracts, frozen boards, artwork, scores and Smooth shift achievement unchanged. This is a display-name change with no data migration.

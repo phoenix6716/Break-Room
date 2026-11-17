@@ -1,3 +1,5 @@
+> Historical audit/draft — retained 17 November 2026. This records an earlier checkpoint, not today’s unfinished work. The owner subsequently completed launch setup. Read [CURRENT-STATUS.md](CURRENT-STATUS.md), [PAYMENTS.md](PAYMENTS.md) and the published site before acting on old pending items. Do not infer current provider settings or transactions from these dated observations.
+
 # Break Room launch audit
 
 Audit baseline: main commit `6783f46`, with navigation/theme fixes proposed in PR #2. Prepared 22 October 2026 (Australia/Sydney).

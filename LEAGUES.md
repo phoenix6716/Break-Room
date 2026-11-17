@@ -1,3 +1,5 @@
+> Current-state note — 17 November 2026: read [CURRENT-STATUS.md](CURRENT-STATUS.md) first. This topic file includes dated release history and compatibility contracts. Older statements about free Unlimited, disabled billing, proposed hosting, game rosters or pending features do not override the deployed status; preserve old captured-save rules.
+
 # Private weekly leagues
 
 Leagues use the owner-approved three-game weekly format. Two required games rotate through a five-week schedule covering all ten launch games (each game is required once), with the same pair for every league. Each player automatically counts their highest weekly total from one other game. All seven completed Daily Arcade scores count per selected game; each contributes up to 700, giving a 2,100 maximum. Missing Dailies score zero; completed zeroes count as played; pending, future, Unlimited and archived-game results are excluded. The optional slot is one game across the week, not a different game each day. It may switch as weekly totals change. Ties share competition rank (1, 1, 3); optional-game ties use the stable internal ID order. Display rounding never changes ranking.

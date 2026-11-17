@@ -1,8 +1,10 @@
+> Current access and release status — 17 November 2026: [CURRENT-STATUS.md](../../CURRENT-STATUS.md) supersedes older launch/free-practice statements below. Daily is free; Unlimited needs verified live monthly or individual-game ownership and uses account-wide seen history/shared weekly selections. Historical save versions and captured rules remain supported; do not regrade or restart them.
+
 # Codebreak
 
 The tenth launch game; Sleeper remains shelved with its source and saves preserved.
 
-## Current rules (version 5)
+## Current rules (version 6)
 
 Type directly into the safe’s dark display or use the keypad. It contains the single native input, with a visible focus outline, an associated label and numeric mobile keyboard support. Delete/Clear, Enter, validation and immediate draft saves use that field. The decorative safe is no longer duplicated above a separate answer box. Completed rounds show the revealed code in the same display.
 

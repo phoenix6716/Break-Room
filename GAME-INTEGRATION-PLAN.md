@@ -1,3 +1,5 @@
+> Current-state note — 17 November 2026: read [CURRENT-STATUS.md](CURRENT-STATUS.md) first. This topic file includes dated release history and compatibility contracts. Older statements about free Unlimited, disabled billing, proposed hosting, game rosters or pending features do not override the deployed status; preserve old captured-save rules.
+
 # Break Room game integration
 
 The canonical baseline is the current Stake shell and newer integrated engines. The former Midnight Arcade placeholder-template handover was outdated: accounts, cloud saves and private Friends are implemented, and the six placeholder cards remain removed. Use AGENTS.md and the current game contracts as source of truth.

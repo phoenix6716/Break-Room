@@ -1,3 +1,5 @@
+> Current-state note — 17 November 2026: read [CURRENT-STATUS.md](CURRENT-STATUS.md) first. This topic file includes dated release history and compatibility contracts. Older statements about free Unlimited, disabled billing, proposed hosting, game rosters or pending features do not override the deployed status; preserve old captured-save rules.
+
 # Global leaderboards
 
 Casual public standings for each of the ten current games. Signed-in accounts enter automatically using their account display name. Existing disabled listings remain disabled. Guests can browse; Friends sharing and league membership remain separate. Discover the page from Leagues, Settings → Saves & privacy, or the link below each game. Participation can be withdrawn immediately without changing other sharing choices.

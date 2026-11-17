@@ -1,3 +1,5 @@
+> Current access and release status — 17 November 2026: [CURRENT-STATUS.md](../../CURRENT-STATUS.md) supersedes older launch/free-practice statements below. Daily is free; Unlimited needs verified live monthly or individual-game ownership and uses account-wide seen history/shared weekly selections. Historical save versions and captured rules remain supported; do not regrade or restart them.
+
 ## Current score display — 5 November 2026
 
 Each puzzle displays 100 / 80 / 60 / 40 / 20 by clue used, or zero if unsolved. The Daily score is the average of the five puzzle scores. Underlying raw points, answer matching and captured saves remain unchanged. Main results, round feedback, summaries, share text and profile cards use the single 0–100 scale. The other seven games are unchanged. Earlier native-point documentation below describes the preserved storage/legacy contract.

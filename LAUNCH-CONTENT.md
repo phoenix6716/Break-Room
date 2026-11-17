@@ -1,3 +1,5 @@
+> Current-state note — 17 November 2026: read [CURRENT-STATUS.md](CURRENT-STATUS.md) first. This topic file includes dated release history and compatibility contracts. Older statements about free Unlimited, disabled billing, proposed hosting, game rosters or pending features do not override the deployed status; preserve old captured-save rules.
+
 ## Seating Chart has three Daily puzzles — 5 November 2026
 
 Fresh version-2 Dailies contain Easy (6 guests, original tier 1), Medium (8 guests, tier 3) and Hard (10 guests, tier 5), in that order. Keep the original 72-day index/epoch and unchanged 360-table bank. These 216 tables provide 72 nonrepeating three-table sets; all five original practice tiers remain available in Unlimited. Structural tiers are not human difficulty certification.

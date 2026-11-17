@@ -1,293 +1,36 @@
-Friends and Leagues avoid duplicate account restores and use bounded parallel save requests; fresh scores still wait for pending uploads. Details and verification: [SOCIAL-LOADING.md](SOCIAL-LOADING.md).
-
-Profile, Friends and Leagues use compact dashboards. Profile separates Overview, paged Game stats, paged History and paged Achievements; social setup and detailed score breakdowns expand on demand. Existing scores, saves and sharing choices are unchanged. Responsive/navigation coverage: `tests/compact-hubs.cjs`.
-
-## Sound and smooth feedback — owner request, 5 November 2026
-
-All ten games gain richer short sound effects and smooth feedback without changing rules, scoring, captured rounds or deadlines. Preserve shared opt-in `break-room:game-sound` and Lowball's separate existing `pc_sound` preference; never autoplay or add duplicate controls. Audio failures must not affect play. Respect reduced motion, mute immediately and suppress hidden-page sounds. Time Sense must remain entirely silent/still while running, and even audio initialization must happen after a timed stop is measured. Keep Stack Up's live mouse drag and Desk Jam glides unchanged. See [IMMERSION.md](IMMERSION.md); browser coverage is in `tests/immersion.cjs` and the existing gameplay suites.
-
-## Live achievement notices — owner request, 5 November 2026
-
-Profile now has 32 achievements: the existing 12 plus 20 completion, variety, streak and perfect-result milestones. Use only the ten current games' actual Daily records; practice and retired games do not count. The shared game-page notifier batches new unlocks, supports dismissal/reduced motion and remains accessible above result dialogs. Quietly baseline old history and cloud/account restores. Notification receipts stay outside gameplay/cloud saves, partitioned by the existing local save owner. Never rewrite results or persist data from the read-only Profile page. Full history scans occur only on new Daily completion, never on each card move or draft. See [ACHIEVEMENTS.md](ACHIEVEMENTS.md).
-
-## Stack Up variety — owner feedback, 5 November 2026
-
-The 160 Daily stacks now cover 80 authored themes, replacing 16 heavily reused templates. Each theme has two distinct five-card selections, at calendar slots 16 days apart. Interleaved subject order prevents runs of film-release, recipe or life-cycle templates. Preserve all 160 IDs, five lanes, original date selector and 32-day repeat-free ID rotation. Author `content/stack-up-familiar-topics.json`; run `node scripts/build-familiar-stacks.cjs`. Each theme has reference links and a clear ordered master sequence. No maths, numerical-fact or time-unit tasks return.
-
-Fresh Unlimited deduplicates by theme/prompt and favours the familiar version: 80 familiar themes plus 10 additional challenge prompts, 90 in All topics. Exclude the entire captured Daily theme from practice, not just its selected five-card variant. Topic changes still apply to the next stack. This deliberately retires near-duplicate practice variants rather than inflating the active count. Original source/challenge data remains for compatibility. Already captured Dailies retain original questions, drafts, timers, score versions and results; cloud merges retain an existing remote capture when question snapshots differ. No database migration, score change or other-game edit is required. Archive: `content/archive/2026-11-05-pre-stack-variety/`. Source retrieval and editorial review are recorded under `design/content-reviews/2026-11-05-stack-variety*`; accessibility is an editorial estimate, not measured player recognition. Earlier content counts below are historical.
-
-## Stack Up first-try scoring — owner correction, 5 November 2026
-
-Fresh Stack Up runs use `scoreVersion:4`: a correct first submission earns 100 regardless of time remaining or prior streak. Deduct 20 per wrong submission, bounded at zero; timeout scores zero. The Daily is the mean of its five round scores. Keep the 90-second timer and all raw receipt fields and mechanics for compatibility. All captured score versions 1/2/3, including unfinished captures, retain original scores, deadlines and rules. No data is regraded or reset. Only Stack Up changes in this correction. Apply `supabase/stack-up-first-try.sql` before publishing; the private receipt validator and score reader support both v3 and v4. Archive: `content/archive/2026-11-05-pre-stack-first-try/`. Earlier scoring entries below are historical.
-
-## 0–100 scores for three games — owner scope, 5 November 2026
-
-This applies only to Clue Ladder, Time Drop and Stack Up. Do not change scoring or presentation for the other seven games. Each of these games shows a score out of 100 for each round and one final Daily score out of 100. Time Drop and Clue Ladder divide existing round points by ten; their final averages are mathematically unchanged. Their captured questions, timers, rules, raw saves and cloud score helpers remain unchanged. Profile/history/sharing for these three games use the same single visible scale.
-
-Fresh Stack Up runs retain outer version 2 and use `scoreVersion:3`: each round's net existing base credit is divided by its maximum (550 + 35 × zero-based round index), scaled to 100 and clamped to 0–100; failures score zero. Daily score is the unrounded average of five round scores, formatted to one decimal for display. Ninety-second timers, wrong-order feedback, raw base credits, streak mechanics and deadlines remain. Old scoreVersion 1/2 or untagged captures retain their original final calculation and data, displayed on the existing normalized 0–100 scale. Cloud merges retain the remote captured score version. Never regrade or restart saved runs.
-
-Apply `supabase/stack-up-score100.sql` before publishing. It adds one private score helper and only a scoreVersion-3 branch to the existing shared reader, leaving all other game branches and the write API unchanged. Existing player rows are not migrated. Current fresh installers include the same helper. Archive: `content/archive/2026-11-05-pre-three-game-scores/`. See the three game contracts and `tests/three-game-scoring.cjs`.
-
-## Seating Chart has three Daily puzzles — 5 November 2026
-
-Fresh version-2 Dailies contain Easy (6 guests, original tier 1), Medium (8 guests, tier 3) and Hard (10 guests, tier 5), in that order. Keep the original 72-day index/epoch and unchanged 360-table bank. These 216 tables provide 72 nonrepeating three-table sets; all five original practice tiers remain available in Unlimited. Structural tiers are not human difficulty certification.
-
-Each table retains the original avoidable-drama formula. Daily Arcade is the three-table average (3,000 internal points / 30); native total drama remains lower-is-better. Saved version-1 Dailies keep five tables, their picks/drafts/Undo, original points / 50 and history. The third or fifth reception counts immediately according to its captured version. Perfect host means all tables in that captured Daily. Cloud merges retain the first remote capture's version. Do not mix three/five-table attempts or regrade history.
-
-Existing projects apply `supabase/seating-chart-three.sql`. Fresh Friends, Inner Clock and standalone Seating Chart installers include both score formats. The live update changes only the private score reader; no player rows or shared write API change. Archive: `content/archive/2026-11-05-pre-seating-chart-three/`. See [the current contract](games/seating-chart/README.md); earlier five-table notes below are historical.
-
-## Codebreak safe input and four-guess scoring — 5 November 2026
-
-The safe display is now the single native code input. Keep tap/keyboard entry, keypad, deletion, clearing, focus visibility, screen-reader labels and immediate draft saves working through that input. Fresh version-4 rounds award 100 through four guesses, then 90 / 80 / 70 / 60 on guesses 5–8; failure remains zero. Existing v1/v2/v3 captures retain their original digit ranges, clues and scoring, while using the new input surface. Do not regrade or change captured versions. The 6,561-day current calendar and eight-guess limit are unchanged; Clear signal still means within three guesses.
-
-Existing projects apply `supabase/codebreak-v4.sql` after v3; fresh setup uses updated `supabase/codebreak.sql`. Only private validation/scoring helpers change. No rows, calendars or write APIs are migrated. Archive: `content/archive/2026-11-05-pre-codebreak-safe-input/`. See [the current contract](games/codebreak/README.md); earlier release notes below are historical.
-
-## Codebreak uses digits 1–9 — 5 November 2026
-
-Fresh version-3 Codebreak rounds use four digits from 1–9, repeats allowed, per-digit clues and eight guesses. Points remain 100 through five guesses, then 90 / 80 / 70. The complete nonrepeating Daily rotation is now 6,561 days, resetting at midnight Australia/Sydney. Existing v1/v2 captures keep digits 1–6, their original 1,296-day calendar, clues, drafts and scores. Unlimited finishes its captured round before drawing v3. First cloud capture still owns its rules; never change captured versions or regrade results. Clear signal remains within three guesses.
-
-Apply `supabase/codebreak-v3.sql` after the v2 update for existing installations, or use updated `supabase/codebreak.sql` for fresh setup. The old private daily function and all player rows remain unchanged. Cache-bust the model on every built account/profile/social page together with the game controller. Archive: `content/archive/2026-11-05-pre-codebreak-nine-digits/`. Read [the current contract](games/codebreak/README.md); previous release notes below describe historical versions.
-
-## Codebreak digit clues — 5 November 2026
-
-Fresh Codebreak rounds use version 2: each digit shows right place, elsewhere or no remaining match. Exact positions match first; remaining copies match left to right. Eight distinct guesses, four digits from 1–6, repeats and the 1,296-day Sydney calendar stay fixed. Solves within five guesses earn 100, then 90 / 80 / 70 on guesses 6–8; failure is zero. Clear signal still requires a solve within three guesses.
-
-Every captured version-1 Daily/Unlimited round retains count-only clues and original scoring (100 through three guesses, then 90 / 80 / 70 / 60 / 50). Never regrade history or switch a captured round's version. First valid cloud capture owns its rules; cross-version merges retain the remote snapshot and the server rejects rule changes or omission of captured keys. Existing projects apply `supabase/codebreak-v2.sql`; fresh projects use updated `supabase/codebreak.sql`. No player rows are migrated. See [the current contract](games/codebreak/README.md); older Codebreak release notes below are historical.
-
-## Time Drop familiarity update — 5 November 2026
-
-Time Drop now uses 330 reviewed familiar subjects, replacing 111 specialist events and simplifying 57 titles. The five-question, 66-day rotation, scoring and existing captured rounds/saves remain unchanged. [Current contract](games/time-drop/README.md).
-
-## Codebreak is the tenth launch game — 4 November 2026
-
-The owner chose Codebreak to replace shelved Sleeper in the ten-game launch. One untimed Daily code, four digits from 1–6 with repeats, eight guesses, separate free Unlimited. Full points within three guesses, then 10 fewer per extra guess; an uncracked code scores zero. Read `games/codebreak/README.md` for the frozen v1 rotation, saves, scores, accessibility and verification contract. Preserve every existing game's source and native/cloud history. Existing installations apply `supabase/codebreak.sql` after the current league setup; the new game uses a separate validated save table and private score helpers. The nine-game shelving entries below are historical; Sleeper stays hidden.
-
-## Initial release: nine games
-
-Sleeper is shelved by owner decision on 4 November 2026. Its source and all native/cloud saves remain intact; public links and routes are hidden, and it no longer contributes to public profiles, Friends or current league standings. The unfinished rebuild is preserved on branch `sleeper-rebuild-shelved-20261104` (`9bd170e`), not deployed. Existing projects apply `supabase/shelve-sleeper.sql` after the league setup. Historical league weeks retain their original rules; the nine active games each become required twice per nine-week cycle.
-
-## Answer acceptance audit — owner request, 1 November 2026
-
-Revision 15 closes 1,452 rejected inputs from a prompt-led 5,998-case editorial challenge spanning all 240 Sleeper questions. The cases include everyday concepts, regional wording and natural phrases; all pass after correction. A separate geographic reference contributes 930 common-name/ISO probes. Explicit grammar variants broaden action answers. The active bank has 8,974 canonical answers (25–159 per question), 10,377 aliases, and the unchanged 48-day rotation. Passing this regression set is evidence about the reviewed cases, not proof that most conceivable answers or actual player guesses are covered.
-
-Author `content/hidden-gem-accessible-source.json` and regenerate with `node scripts/build-hidden-gem-questions.cjs`. Keep `content/hidden-gem-coverage-cases.json` and `design/content-reviews/2026-11-01-sleeper-coverage-audit.json` as reviewable regression evidence; preserve the baseline results against archived revision 14. Every previous canonical name, alias owner and score stays fixed. New names have explicit contextual editorial ratings. The matching/scoring formula, timers, save version, account saves and completed/zero results stay fixed. New Daily and Unlimited captures receive the broader lists. Midnight Australia/Sydney remains the Daily reset.
-
-Jordan repairs missing Red Sea coverage. A short scope explicitly includes inland seas, accepting Azerbaijan, Kazakhstan and Turkmenistan. The optional snapshot-owned `exactRejections` field prevents a known invalid name, Zambia, being fuzzy-corrected to Gambia on new coastline rounds. It never gets injected into old captures; those keep their original matching and scores. Apply `supabase/hidden-gem-exact-rejections.sql` to existing installations before publishing new captures; fresh installs use the updated `hidden-gem.sql`. Only private validators/matchers change, with client execution privileges still revoked. All shared built pages receive the updated model cache version. Original bank/source/model/generator/SQL are archived in `content/archive/2026-11-01-pre-coverage-audit/`.
-
-## Answer coverage expansion — owner request, 1 November 2026
-
-Revision 14 expands all 240 current Sleeper lists from 6,402 to 8,194 canonical answers (23–155 per question), plus 8,372 aliases. Each question gains new accepted input. Complete Olympic host-city membership gains real alternative city names rather than invented hosts. Other additions include everyday food, household objects, activities, valid word-constraint answers and missing countries. Synonyms share a canonical score. Offline lists remain finite; they cannot guarantee every conceivable valid answer.
-
-Author `content/hidden-gem-accessible-source.json` and regenerate with `node scripts/build-hidden-gem-questions.cjs`. Every new canonical answer has an explicit contextual editorial rating; all previous canonical answers, aliases and ratings stay fixed. The hg12 IDs, prompts, topics, scopes, 48-day calendar, midnight Australia/Sydney reset, gameplay formula and design stay fixed. Archive revision 13 in `content/archive/2026-11-01-pre-answer-expansion/`; see `design/content-reviews/2026-11-01-sleeper-answer-expansion.json` for per-question additions.
-
-Fresh Daily and Unlimited captures use expanded lists. Previously captured questions retain their original membership, scores, deadlines and results; new aliases may repair pending captures only under the existing same-ID/name/points rules. Do not inject new canonical answers into old snapshots or change completed zeroes. Cloud keys, validators, account schema and save version remain unchanged. This coverage request supersedes the previous instruction to freeze current membership and aliases.
-
-## Individually graded answer ratings — owner correction, 1 November 2026
-
-Revision 13 supersedes revision 12's neutral-50 fallback and single selected maximum. Every one of the 6,402 canonical answers across all 240 prompts now has an explicit, question-specific editorial rating. Each question has at least 14 distinct ratings and four distinct ratings strictly between 50 and 100. Comparable choices may tie, including at 100. These are rounded familiarity estimates, not player-survey percentages. Do not fill missing scores with 50, random noise, roster-order interpolation or a score borrowed from an unrelated question.
-
-Keep authoring explicit `points` in `content/hidden-gem-accessible-source.json`; each `ratingReview` records full coverage and a SHA-256 fingerprint of the named assignments. Run `node scripts/build-hidden-gem-questions.cjs`. Generation rejects missing/unreviewed assignments and compressed score distributions. Familiar-answer checks still require at least two straightforward answers rated 1–19. The source's `ratingPolicy` documents the approximate bands and permitted ties.
-
-The question wording, membership, aliases, hg12 IDs, 48-day calendar and 2026 content stay fixed. No gameplay formula, save schema, SQL, timer, layout or account change. An old captured answer retains its original points even when the same ID/name has a different current rating; completed zeroes and past results are immutable. Revision 12 bank/source are archived in `content/archive/2026-11-01-pre-graded-ratings/`. See `design/content-reviews/2026-11-01-sleeper-graded-ratings.json` and the current/archived PostgreSQL and phone/desktop regressions.
-
-## Accessibility takes precedence — owner correction, 1 November 2026
-
-Revision 12 replaces all 240 active specialist rosters with familiar everyday prompts based on the 50 approved examples. Examples include breakfast foods, pets, household objects, body measurements, travel items, games and familiar fictional characters. Every question has at least two individually reviewed straightforward answers rated 1–19, plus an explicit less-obvious maximum. Other unanchored answers stay neutral 50; scores remain editorial estimates, not survey data. The bank has 6,402 canonical answers, 19–154 per question, plus aliases. Do not substitute niche classifications, political rosters or award lists to make an offline bank exhaustive. Offline lists remain finite.
-
-Author `content/hidden-gem-accessible-source.json` and run `node scripts/build-hidden-gem-questions.cjs`. This supersedes revision 8–11's closed-roster authoring approach. All fresh Daily and Unlimited captures use `hg12-` IDs. Remove year cutoffs and technical edition restrictions from player-facing prompts/scopes; keep dated review evidence internally. Time-sensitive examples include the completed 2026 Winter Olympics and released 2026 animated films, checked as of 1 November. Do not presume future events have happened.
-
-Keep the 48-day, five-topic rotation and all 105 marked same/adjacent-day conflicts, including wraparound. The 1 November epoch continues the earlier accessible schedule by two slots so its 30/31 October sets do not repeat early; they return on 17/18 December. Dailies unlock at midnight Australia/Sydney (13:00 UTC during AEDT). Preserve every old full snapshot, unfinished round, completed/zero result, deadline, score and account save. An already captured Daily remains captured; Unlimited finishes its captured question, then selects the new bank. Retired topic selections fall back to All topics without changing the captured question or counters. Preserve all recovery-only alias corrections. The old bank/source/generator/runtime are in `content/archive/2026-11-01-pre-accessibility/`.
-
-Only the new calendar selection and the cache version change in shared model/build code. No scoring formula, save version, SQL migration, visuals or account flow changes. See `design/content-reviews/2026-11-01-sleeper-accessibility.json` and the accessible/archived source, alias, date-cutoff, calendar, cloud-score and phone/desktop browser regressions.
-
-## Ten-game content audit — 31 October 2026
-
-Sleeper revision 11 has 240 questions and 7,604 canonical answers (10–321 each), retaining the 48-day rotation and midnight Australia/Sydney reset. Merge duplicate emoji depictions, accept ordinary weather/paper wording and common plurals, remove non-job labels from the jobs roster, and correct obvious contextual rating inversions. Existing captured questions retain canonical membership, ratings, results and deadlines; narrowly scoped recovery aliases can accept corrected wording at the original captured points. Completed zeroes remain fixed. Ratings remain editorial estimates.
-
-Clue Ladder expands ordinary aliases, distinguishes the Oppenheimer film from the scientist, rejects Otter as Harry Potter, clarifies GPS and avoids a changing TikTok ownership claim. Time Drop identifies Henry Tudor's 1485 Bosworth victory without calling it the end of the Wars of the Roses. Archives are in `content/archive/2026-10-31-content-audit/`. See `design/content-reviews/2026-10-31-game-content.json` for all ten games, independent mathematical checks, freshly retrieved reference anchors and explicit limits. Lowball prices are dated scoped references: URL reachability alone does not certify a price; 64 source URLs were unavailable. No scoring formula, visuals, save version, account schema or SQL changes.
-
-# A month of Dailies — verified 25 October 2026
-
-All ten games pass 32 distinct Daily sets, covering 25 October–25 November inclusive, with current-date and later-window regression checks. [Daily coverage and exact inventory](DAILY-CONTENT.md) explain the longer repeat-free rotations and expected product/duration reuse in Lowball/Time Sense. No game or save changes were needed. Run `node tests/daily-content.cjs` to recheck.
-
-# Desk Jam — approved name, 25 October 2026
-
-Shift Work is now displayed as **Desk Jam** across the site. Existing `games/shift-work/` links, saves, scores, artwork and gameplay are unchanged. Older references below use the former name. Current shelf: Laser, Time Drop, Clue Ladder, Seating Chart, Desk Jam, Sleeper, Stack Up, Pack, Lowball and Time Sense.
-
-# Sleeper visual rebrand — 25 October 2026
-
-Sleeper now has a radar/star identity, blue/amber accents and “Quiet answers. Big points.” copy. Answer labels are Everyday 1–19, Good Call 20–39, Under the Radar 40–59, Sleeper 60–79 and Breakout 80–100. The existing badge is displayed as Breakout run. Numeric scores, answer content, saves, routes and gameplay are unchanged. This supersedes the older instruction below to keep the visible gem/crown bands. Read [the game contract](games/hidden-gem/README.md).
-
-# Sleeper — approved name, 25 October 2026
-
-Hidden Gem is now displayed as **Sleeper**. Its existing `games/hidden-gem/` URL, internal identifiers, save keys, content, scores and answer bands are unchanged. Older references below use the former name; the current lineup is Laser, Time Drop, Clue Ladder, Seating Chart, Shift Work, Sleeper, Stack Up, Pack, Lowball and Time Sense.
-
-# Time Sense — approved name, 25 October 2026
-
-Inner Clock is now displayed as **Time Sense** throughout the site. Its existing `games/inner-clock/` URL, internal IDs, save keys and scoring remain unchanged. Older references below use the former name.
-
-## Current release: Shift Work — 25 October 2026
-
-Shift Work is the tenth active game, after Seating Chart. Current shelf: Laser, Time Drop, Clue Ladder, Seating Chart, Shift Work, Hidden Gem, Stack Up, Pack, Lowball, Inner Clock. Stake/Prior/Alibi/Bouncer are archived; fourteen native formats remain supported. Older roster counts and complete-installer claims below are historical and superseded.
-
-Three untimed Daily boards keep the approved 4–5 / 6–7 / 8–9-slide challenge. 180 frozen boards provide 40 nonrepeating Daily sets and free Unlimited. Native total moves is lower-is-better; Arcade scores are higher-is-better. First solves lock, third counts immediately, and prototype records remain separate. Read [the full contract](games/shift-work/README.md).
-
-Apply [supabase/shift-work.sql](supabase/shift-work.sql) after setup/Friends/Hidden Gem. Fresh install: setup.sql → friends.sql → hidden-gem.sql → shift-work.sql. Only the game's private table, constrained APIs and private replay helpers are added; older tables/functions remain unchanged. Verify live SQL/configuration/Pages separately from CI. Human/device playtesting remains a launch check.
-
-# Stake shelved — owner decision, 24 October 2026
-
-Stake is removed from the active shelf, navigation drawers, current Daily checklist and Friends comparisons. Nine active games, in order: Laser → Time Drop → Clue Ladder → Seating Chart → Hidden Gem → Stack Up → Pack → Lowball → Inner Clock. Stake joins Prior, Alibi and Bouncer in the archive. Preserve its direct route, engine, question bank/artwork, local/cloud saves, native/Arcade scores and earned achievements. Profile shows saved Stake history without play prompts; unearned High roller and the legacy three-game Clean sweep are hidden, while earned badges retain their original meaning. Thirteen native save formats remain supported; no database/schema change is needed. The canonical shell still uses Stake's layout. This supersedes older active-roster counts below.
-
 # Break Room
 
-## Current release: Hidden Gem
+Ten free daily browser games, live at **https://breakroomdaily.com/**. Optional paid Unlimited offers weekly unseen selections and labelled replays.
 
-Hidden Gem is the tenth active game, after Seating Chart. It has five 30-second Daily questions, one input with retries for unlisted answers, individual 1–100 editorial answer ratings, and a five-question average out of 100 for both native and Arcade scores. Its 160 scoped questions / 1,004 answers provide 32 Daily sets and free nonrepeating Unlimited practice. See [the current contract](games/hidden-gem/README.md).
+Start with [CURRENT-STATUS.md](CURRENT-STATUS.md) for the deployed setup and current decisions. Coding agents must also read [AGENTS.md](AGENTS.md). Moving to another ChatGPT account? Follow [CHATGPT-HANDOVER.md](CHATGPT-HANDOVER.md).
 
-Existing saves and archived games remain supported: thirteen native formats. Apply [supabase/hidden-gem.sql](supabase/hidden-gem.sql) after setup/Friends. This creates only Hidden Gem’s private table/RPCs; the older shared save and Friends functions are unchanged. Fresh installation is setup.sql → friends.sql → hidden-gem.sql. Older roster counts and “complete installer” statements below are historical and superseded for this release. Live database and Pages status must be verified separately from CI.
+## Games
 
+Laser · Time Drop · Clue Ladder · Seating Chart · Desk Jam · Codebreak · Stack Up · Pack · Lowball · Time Sense.
 
-## Previous release: Seating Chart
+Internal IDs `shift-work` and `inner-clock` remain stable. Retired games and previous save versions are preserved; older rosters and rules in release notes are historical.
 
-Nine active games and twelve supported native cloud formats including archives. Seating Chart adds five untimed Daily seating puzzles, 360 frozen tables / 72 Daily sets, immediate draft saving and free Unlimited. Read [its current contract](games/seating-chart/README.md) for scoring, accessibility, save/schema and verification details. This supersedes older roster counts below; prior game contracts remain compatibility documentation.
+## Infrastructure
 
+Production uses Cloudflare Workers Static Assets on `breakroomdaily.com`, built from `main`. GitHub Pages remains the checked preview/legacy origin. Existing Supabase handles Auth, private saves/social data, live billing records and account-wide question history. Stripe Checkout and Customer Portal are live. Support uses Cloudflare forwarding for support@breakroomdaily.com. No ads are installed.
 
-## Clue Ladder — owner-approved build, 23 October 2026
+Daily is free; monthly is A$4.99 and an individual game is A$7.99 once. Up to 100 unseen challenges per game per Sydney week come from the available bank, followed by labelled replays. See [PAYMENTS.md](PAYMENTS.md) and the live [plans page](https://breakroomdaily.com/pricing).
 
-Clue Ladder is the eighth active game: Laser → Time Drop → Clue Ladder → Stack Up → Stake → Pack → Lowball → Inner Clock. Alibi, Bouncer and Prior remain archived; eleven native save formats are supported. This supersedes older roster counts below.
+## Work locally
 
-Five untimed Daily puzzles use five progressively clearer clues. Solves on clue 1 / 2 / 3 / 4 / 5 earn 1,000 / 800 / 600 / 400 / 200 points; unsolved earns zero. Maximum 5,000 native points, Arcade = points / 50. No speed penalty, Daily multiplier, hearts, intro screen or live AI. Preserve the ladder and pixel climber inside the centred Stake shell with ?-only help. Read `games/clue-ladder/README.md`.
-
-The 300 distinct, editorially reviewed familiar answers span eight topics and provide 60 nonrepeating Daily sets, each with five different topics. References and automation do not establish independent primary-source certification or human difficulty calibration. Save input, hints, attempts and frozen puzzle snapshots immediately; first completion wins. Owner-scoped tab-local Unlimited excludes today's five answers, applies topic changes next puzzle and reshuffles after eligible-pool exhaustion.
-
-Existing Time Drop projects apply `supabase/clue-ladder.sql`; updated complete `supabase/inner-clock.sql`, or fresh setup then friends, also includes it. Verify live SQL and deployment separately. Preserve existing saves, scores, artwork and archived routes.
-
-
-## Time Drop — owner direction, 23 October 2026
-
-Time Drop replaces Prior in the active lineup: Laser → Time Drop → Stack Up → Stake → Pack → Lowball → Inner Clock. Alibi, Bouncer and Prior remain shelved with their engines, sources and historical saves preserved. Seven active games; ten supported native save formats including archives.
-
-The owner requested no hearts anywhere in Time Drop, reasonable partial-credit scoring, expanded/balanced content, reliable saves and locked answers, a large ongoing Unlimited mode (never call it Endless), and the canonical Stake layout. Read `games/time-drop/README.md` for the exact 330-event/66-day deck, fixed era-based linear scoring, accepted date ranges, native 5,000-point / Arcade 100-point scales for new five-round Dailies (version 2); original ten-round version 1 saves retain their 10,000-point scale, first-lock saves and tab-owned practice. Preserve Prior's source and legacy results rather than reinterpreting them. Keep the original uploaded prototype outside the production artifact.
-
-Existing live projects apply `supabase/time-drop.sql` after the current Inner Clock/player-feedback migration. For an already-enabled Time Drop project, apply `supabase/time-drop-five-rounds.sql` to support both run lengths. Updated `supabase/inner-clock.sql` includes it; fresh setup then friends supports all ten formats. Do not reapply historical narrower migrations. Publication is already authorised automatically after affected checks; verify live SQL separately from CI and deployment.
-
-## Prior shelved; preserve its content — owner decision, 23 October 2026
-
-Prior joins Alibi and Bouncer outside the active lineup. The six current games are Laser, Stack Up, Stake, Pack, Lowball and Inner Clock. Remove Prior from the shelf, drawers and current Friends comparisons; keep archived profile history, earned achievements, saves, scoring compatibility and direct routes. The current Daily checklist uses six games.
-
-Preserve `content/prior-events.json` in full, including stable event IDs, dates, explanations and source links, plus `scripts/build-prior-events.cjs` and existing generated content. The owner wants a similar event-based replacement that can reuse this material. Its design is not decided; do not invent rules, alter the bank or add a replacement card yet. This supersedes the earlier seven-game roster below.
-
-A static daily games website with a warm cream grid, navy outlines, pastel panels and hard pixel shadows. The repository is `phoenix6716/Break-Room`, formerly `Midnight-Arcade`.
-
-## Play and develop
-
-The expected GitHub Pages address is [Break Room](https://phoenix6716.github.io/Break-Room/). Publication is gated by [Check and publish Break Room](https://github.com/phoenix6716/Break-Room/actions/workflows/site.yml); check its latest deployment when verifying a release.
-
-For a local source preview:
-
-```sh
-python3 -m http.server 8000 --bind 127.0.0.1
-```
-
-Open `http://127.0.0.1:8000/index.html`. Keep the full folder structure; links use explicit `index.html` targets for downloaded copies. A local server is recommended for account features and consistent browser storage.
-
-| Game | Current gameplay |
-| --- | --- |
-| Lowball | Four Daily price guesses, AU/US/UK/CA selection, generated pixel-art items and free Unlimited practice. |
-| Stake | Five Daily trivia questions, 1–3-chip bets and a 30-second timer after each bet; Unlimited practice. A timeout loses the bet. |
-| Laser | Four untimed mirror puzzles, first-fire Daily scoring, unscored retries/solutions and free practice. 216 solver-checked boards, including 96 three-mirror Experts. |
-| Pack | Three untimed easy/medium/hard packing puzzles, a visual bag, personalized swaps and free Unlimited practice. 180 validated bags. |
-| Inner Clock | Five blind Daily timing targets, native average miss and free Unlimited practice. |
-| Time Drop | Five untimed event-year guesses, fixed partial-credit points, era-changing art and 330-event free Unlimited practice. |
-| Stack Up | Five familiar Daily ordering sets, 90 seconds per stack and drag/touch/keyboard controls; optional Challenge mix in free Unlimited. |
-
-All Dailies reset at midnight **Australia/Sydney**, including daylight-saving changes. The homepage lists seven current games. Prior, Alibi and Bouncer are shelved; their engines, direct routes and saved history are preserved. All six cancelled placeholder cards remain removed. Native scores remain alongside the shared 0–100 Arcade score. See [SCORING.md](SCORING.md) for the exact formulas and equal-game average over the common 120-day window.
-
-## Current lineup — owner decision, 23 October 2026
-
-Alibi and Bouncer are shelved and removed from the active homepage, navigation drawers and current Friends comparisons. The seven current games, in shelf order, are Laser, Stack Up, Stake, Pack, Prior, Lowball and Inner Clock. Preserve the shelved engines, direct routes, artwork, local/cloud saves, historical native/Arcade scores and earned achievements. Profile keeps archived results for players who already have them, without play prompts, and its current Daily checklist uses seven games. Historical profile averages still include saved archived results; Friends compares the current lineup. Do not remove cloud/schema compatibility or erase records as part of shelving.
-
-The owner wants three better replacement games, with one prototype already lined up. Review that supplied game before integration; the other two concepts are not selected. Do not invent or advertise replacement games or restore cancelled placeholders. After three replacements the intended roster would be ten games. This decision supersedes older nine-game and Alibi/Bouncer launch-roster guidance below; those game contracts remain compatibility documentation.
-
-## Content tools
+Use Node 24 and the pinned lockfile:
 
 ```sh
 npm ci --ignore-scripts --no-audit --no-fund
-npm run content:studio
-```
-
-Open `http://127.0.0.1:9030` on the machine running the command. Search all **264 Stake questions, 368 Stack Up sets and 100 Lowball items**, write drafts, attach factual sources, preview player/answer views and save/download JSON proposals. This is a local development tool; it does not change live banks or publish content. Remote cloud loopback addresses require an attached browser/approved forwarding, or run the checkout on your own computer.
-
-```sh
-npm run content:report
-npm run content:check -- content/drafts/FILE.json --reviewed
-npm run content:export -- content/drafts/FILE.json
-npm run game:new -- word-ladder "Word Ladder"
-```
-
-Read [CONTENT.md](CONTENT.md) for the review/integration workflow, current source and price-evidence gaps, and Lowball compatibility risks. New game scaffolds stay in `game-drafts/` until implemented and deliberately registered. They use the canonical [Stake-based starter](games/_template/README.md) and [layout map](design/GAME-LAYOUT.md). Development tools and drafts are excluded from the published site.
-
-## Accounts, profiles and friends
-
-Guest progress stays local. Supabase email accounts support explicit cloud activation, optional guest import, account-isolated native saves and cross-device restore from the Account page. [ACCOUNTS.md](ACCOUNTS.md) explains database migrations, authentication redirects, email delivery and conflict/ownership rules. Only public client configuration belongs in `account-config.js`.
-
-The profile reads real completed Daily records without starting engines or rewriting saves. Missing, pending and Unlimited results are excluded; real zeroes count. Lowball's lifetime play count and retained history have different coverage, which the profile labels.
-
-Friends use private codes, accepted requests, remove/block controls and opt-in Today/120-day score comparisons. Apply the additional database migration as documented in [FRIENDS.md](FRIENDS.md). Friends receive server-derived scores, not raw guesses, answers or email addresses. Existing browser records are origin-specific; changing domains does not automatically migrate guest saves. The repository-path rename from `/Midnight-Arcade/` to `/Break-Room/` keeps the same HTTPS origin; it does not by itself move or erase localStorage saves.
-
-## Checks and deployment
-
-Use Node 24, Python 3.12+ and the locked dependencies:
-
-```sh
-npm ci --ignore-scripts --no-audit --no-fund
-npx playwright install --with-deps chromium
+npm run build
+npm run check
 npm test
 ```
 
-The suite creates a content review report, runs unit/database checks, builds `dist/`, validates shipped references/scripts and tests actual game/account/friend flows below the legacy test prefix `/Midnight-Arcade/` (the live Pages path is now `/Break-Room/`). Tests use isolated browser records and a local PostgreSQL implementation; mocked authentication transport does not establish live Supabase configuration or email delivery. `ARCADE_CHROMIUM` selects a browser executable; the managed environment can use `/usr/bin/chromium`.
+Browser checks need Chromium; see [HOSTING.md](HOSTING.md). Checks are selected from affected paths; use the full suite only when warranted. Source and native save contracts live beside each game. Do not reset or regrade captured rounds during a change.
 
-Only the checked `dist/` artifact is published by GitHub Actions after success on `main`. See [HOSTING.md](HOSTING.md) for activation, rollout, rollback and browser-storage limits. Reports/logs are retained in `.artifacts/`; screenshot tests may regenerate tracked files under `design/previews/`. [VALIDATION.md](VALIDATION.md) records verification scope and historical changes.
+## Current priorities
 
-## Shared structure and preservation
+The site is built and live. The owner’s focus is organic launch marketing on Instagram, YouTube and TikTok; [LAUNCH-MARKETING.md](LAUNCH-MARKETING.md) contains ready-to-adapt posts and video scripts. Content production starts after a verified paid monthly subscriber, then follows actual unseen supply rather than a fixed monthly quota.
 
-- `game-shell.css`, `game-dialog.css`, `daily-reset.css` and `daily-clock.js`: canonical centred shell, shared dialogs and Sydney reset rail.
-- `navigation.js`: Menu button and left drawer, keyboard/focus management and dismissal.
-- `game-config.js`: game metadata and explicit routes; live games own their engines.
-- `arcade-score.js`, `profile-records.js`: shared scoring and read-only native record adapters.
-- `accounts.js`, `cloud-saves.js`, `friends.js`, `supabase/`: account ownership, sync and private social comparisons.
-- `games/lowball/engine/icons/generated/` and `item-art.js`: generated PNG artwork with explicit mappings. No code-drawn substitutes or unrelated fallback images.
-
-Keep the left Menu drawer, centred brand/game, header stats and tools, right reset rail, and optional working sound toggle below the game. Preserve real saves, scoring, generated artwork, circular Stake chips and game-specific mechanics. Use the universal Privacy, Terms and Contact/data-help pages with the shared static footer; see [LEGAL.md](LEGAL.md). Read [AGENTS.md](AGENTS.md) before extending the project; older `design/prototypes/` and generic placeholder pages are historical references, not the canonical new-game standard.
-
-## Privacy, terms and help
-
-[Privacy](privacy.html), [Terms of play](terms.html) and [Contact & data help](contact.html) apply across all games. The footer is shared static HTML and works without JavaScript. Run `npm run legal:sync` after adding pages; CI checks for drift. Legacy Lowball policy links redirect to these universal pages. See [LEGAL.md](LEGAL.md) for maintenance and remaining owner-supplied launch details.
-
-## Game usability
-
-The live games share larger phone controls and readable supporting text, keyboard modes/sorting, visible focus and explicit validation/result feedback. Lowball dialogs contain focus across its iframe; Stake preserves focus during inactive-mode timeouts. See [ACCESSIBILITY.md](ACCESSIBILITY.md) for the verified behaviors, tests and remaining real-device/screen-reader checks.
-
-## Pack integration
-
-Pack is now a real fourth game, with the name still provisional. See [its implementation notes](games/pack/README.md). Existing Supabase projects should now use the complete [nine-game migration](supabase/inner-clock.sql), which includes Pack support, in SQL Editor for cloud saves and private friend comparisons; browser play and local profiles work immediately. Fresh projects apply updated `setup.sql` then `friends.sql`. The Content Studio still edits the three factual-content banks; Pack’s fictional, solver-checked bank uses its dedicated generator.
-
-## Prior integration
-
-Prior is the fifth game, with the name still provisional. See [its implementation notes](games/prior/README.md) and [candid prototype review](design/prototypes/prior/REVIEW.md). Existing Supabase projects run [supabase/inner-clock.sql](supabase/inner-clock.sql) **last**, after the earlier setup/social migrations; it also includes Pack support. Fresh projects use updated setup then friends. Browser play and local profiles work before the migration. Event source references are included, but independent source verification and human difficulty checks remain part of the prelaunch audit.
-
-## Laser integration
-
-Laser is the sixth game. See [its implementation notes](games/laser/README.md). Existing Supabase projects now run the complete [nine-game migration](supabase/inner-clock.sql) **last**, after setup/Friends; it includes both Laser formats and all other games. Fresh projects use updated setup then Friends. Local play works immediately; live cloud/Friends support needs this owner-applied SQL. The original prototype is preserved outside the build.
-
-## Alibi evidence files — current contract (v3)
-
-New games use **128 evidence-led files**, 32 per tier, across stamp matches, paired badge permissions, inventory differences and seal custody. All observations are verified; players match the physical evidence to a catalogue entry and deduce its owner. Each fresh Daily uses all four methods, with a 32-day rotation. Assignment notes are ungraded, and reveals explain the evidence match and deductions. Four untimed cases, first-confirmation finality and correct × 25 Arcade scoring remain.
-
-The 155 v2 visit scenarios and original v1 snapshots retain their original rules, notes, choices and scores. The existing eight-person portrait atlas is unchanged. See [the current Alibi contract](games/alibi/README.md) and [the player-feedback release](PLAYTEST-FEEDBACK.md) for sources, validation and limits.
-
-Before deploying this release to an existing project, apply **`supabase/playtest-feedback.sql` after the previous Inner Clock migration**, or use the updated complete `supabase/inner-clock.sql`. Fresh projects use current setup then Friends. These repeatable migrations support all three Alibi formats and versioned Stack Up scores without rewriting saves, RLS, relationships or sharing settings. Live SQL and deployment are separate from passing repository tests.
-
-## Bouncer addition
-
-Bouncer is the eighth integrated game: two untimed Daily secret spelling rules, eight words each, four free starting examples and up to four optional tests per door. Correct untested words earn one credit; tested words earn half. Native correct words out of sixteen is retained, alongside Arcade **(correct − tests/2)/16 × 100**. Only the first confirmed lists count; completed zeroes count, partials/practice do not. Existing records and achievement meanings stay intact. Read [the game contract](games/bouncer/README.md) for the 240-door bank, finite Rulebook, accessibility, snapshots and independent checks. Existing Supabase projects run **`supabase/inner-clock.sql` LAST**; it includes all previous game updates without deleting saves/relationships. Fresh projects use current setup/Friends. Owner-applied live SQL and human playtesting remain separate from local checks.
+The previous long development log is preserved in [README-HISTORY.md](README-HISTORY.md). Its older “current” sections are not current setup instructions.

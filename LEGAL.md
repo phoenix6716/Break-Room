@@ -1,3 +1,5 @@
+> Current-state note — 17 November 2026: read [CURRENT-STATUS.md](CURRENT-STATUS.md) first. This topic file includes dated release history and compatibility contracts. Older statements about free Unlimited, disabled billing, proposed hosting, game rosters or pending features do not override the deployed status; preserve old captured-save rules.
+
 # Shared legal pages
 
 `privacy.html`, `terms.html` and `contact.html` cover the whole Break Room site. They use static HTML, the existing header, `legal.css` and a single shared footer definition. Footer links work without JavaScript and retain explicit relative targets for downloaded copies and the GitHub Pages project path. Lowball's embedded engine has no duplicate legal footer. Its old privacy, terms and refunds URLs redirect to the shared policies, with a visible fallback link.
